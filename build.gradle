@@ -1,0 +1,28 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.3.11'
+}
+
+apply plugin: 'maven-publish'
+
+repositories {
+    jcenter()
+}
+
+kotlin {
+    targets {
+        def hostPreset = presets.linuxX64
+        fromPreset(hostPreset, 'native') {
+            compilations.main {
+                cinterops {
+                    gdnative {
+                        packageName 'gdnative'
+                        compilerOpts "-I$rootDir/godot_headers"
+                    }
+                }
+            }
+        }
+    }
+}
+
+group = 'com.github.raniejade'
+version = '0.1.0'
