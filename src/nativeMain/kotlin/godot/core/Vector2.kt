@@ -6,9 +6,10 @@ import kotlinx.cinterop.*
 
 inline class Vector2(val _handle: godot_vector2) {
     fun normalized(): Vector2 {
-        return copy(
-            safe(Godot.gdnative.godot_vector2_normalized)(_handle.ptr)
-        )
+        TODO()
+//        return copy(
+//            safe(Godot.gdnative.godot_vector2_normalized)(_handle.ptr)
+//        )
     }
 
     companion object {
