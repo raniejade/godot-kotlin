@@ -14,7 +14,7 @@ inline class StringName(val _handle: godot_string_name) {
                 handle.ptr,
                 GDString.new(name)._handle.ptr
             )
-cd
+
             return StringName(handle)
         }
     }
