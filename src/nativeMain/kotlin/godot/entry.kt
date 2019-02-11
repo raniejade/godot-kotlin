@@ -1,12 +1,22 @@
 package godot
 
 import gdnative.*
-import godot.core.Vector2
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
+import kotlin.native.concurrent.freeze
+import kotlin.native.ref.WeakReference
 
 private val _gdnative =  AtomicReference<CPointer<godot_gdnative_core_api_struct>?>(null)
 private val _nativescript =  AtomicReference<CPointer<godot_gdnative_ext_nativescript_api_struct>?>(null)
+
+internal interface GDObject {
+    fun free()
+}
+
+internal fun<T: GDObject> T.track(): T {
+    Godot.track(this)
+    return this
+}
 
 internal object Godot {
     val gdnative: godot_gdnative_core_api_struct
@@ -14,6 +24,20 @@ internal object Godot {
 
     val nativescript: godot_gdnative_ext_nativescript_api_struct
         get() = checkNotNull(_nativescript.value).pointed
+
+
+    private val refs = AtomicReference<List<WeakReference<out GDObject>>>(listOf())
+
+    fun<T: GDObject> track(obj: T): T {
+        val weakRef = WeakReference(obj)
+        val oldVal = refs.value
+        val newVal = mutableListOf<WeakReference<out GDObject>>()
+        newVal.addAll(oldVal)
+        newVal.add(weakRef)
+        newVal.freeze()
+        refs.compareAndSwap(oldVal, newVal)
+        return obj
+    }
 }
 
 fun gdnative_init(options: godot_gdnative_init_options) {
@@ -39,5 +63,5 @@ fun gdnative_terminate(options: godot_gdnative_terminate_options) {
 
 fun nativescript_init(handle: COpaquePointer) {
     val v = Vector2.new()
-    godot.core.print("$v")
+    print("$v")
 }
