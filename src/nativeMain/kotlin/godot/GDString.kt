@@ -3,11 +3,7 @@ package godot
 import gdnative.godot_string
 import kotlinx.cinterop.*
 
-internal inline class GDString(val _handle: godot_string): GDObject {
-    override fun free() {
-        nativeHeap.free(_handle.rawPtr)
-    }
-
+internal inline class GDString(val _handle: godot_string) {
     companion object {
         fun new(str: String): GDString {
             val dest = nativeHeap.alloc<godot_string>()
@@ -15,7 +11,7 @@ internal inline class GDString(val _handle: godot_string): GDObject {
             memScoped {
                 safeCall(Godot.gdnative.godot_string_parse_utf8)(dest.ptr, str.cstr.getPointer(this))
             }
-            return GDString(dest).track()
+            return GDString(dest)
         }
     }
 }
