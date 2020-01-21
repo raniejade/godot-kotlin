@@ -15,10 +15,6 @@ kotlin {
                 compilerOpts("-I$rootDir/godot_headers")
             }
         }
-
-        binaries {
-            sharedLib()
-        }
     }
 }
 

@@ -9,7 +9,7 @@ internal inline class GDString(val _handle: godot_string) {
             val dest = nativeHeap.alloc<godot_string>()
             safeCall(Godot.gdnative.godot_string_new)(dest.ptr)
             memScoped {
-                safeCall(Godot.gdnative.godot_string_parse_utf8)(dest.ptr, str.cstr.getPointer(this))
+                safeCall(Godot.gdnative.godot_string_parse_utf8)(dest.ptr, str.cstr.ptr)
             }
             return GDString(dest)
         }
