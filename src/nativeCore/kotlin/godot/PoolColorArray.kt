@@ -1,30 +1,28 @@
 package godot
 
 import gdnative.godot_pool_color_array
-import kotlinx.cinterop.CValue
-import kotlinx.cinterop.cValue
-import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.*
 
 class PoolColorArray(
   internal val handle: CValue<godot_pool_color_array>
 ) {
   companion object {
     fun new(): PoolColorArray {
-      val dest = cValue<godot_pool_color_array>()
-      memScoped {
-        checkNotNull(Godot.gdnative.godot_pool_color_array_new)(dest.ptr)
+      val handle = memScoped {
+        val tmp = alloc<godot_pool_color_array>()
+        checkNotNull(Godot.gdnative.godot_pool_color_array_new)(tmp.ptr)
+        tmp.readValue()
       }
-      return PoolColorArray(dest)
+      return PoolColorArray(handle)
     }
 
     fun new(from: GDArray): PoolColorArray {
-      val dest = cValue<godot_pool_color_array>()
-      memScoped {
-        checkNotNull(Godot.gdnative.godot_pool_color_array_new_with_array)(dest.ptr,
-          from.handle.ptr)
+      val handle = memScoped {
+        val tmp = alloc<godot_pool_color_array>()
+        checkNotNull(Godot.gdnative.godot_pool_color_array_new_with_array)(tmp.ptr, from.handle.ptr)
+        tmp.readValue()
       }
-      return PoolColorArray(dest)
+      return PoolColorArray(handle)
     }
   }
 }

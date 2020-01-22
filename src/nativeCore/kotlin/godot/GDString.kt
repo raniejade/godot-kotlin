@@ -4,7 +4,7 @@ import gdnative.godot_string
 import kotlinx.cinterop.*
 
 class GDString(
-  internal val handle: CValue<godot_string>
+  internal var handle: CValue<godot_string>
 ) {
   fun beginsWith(str: GDString): Boolean {
     return memScoped {

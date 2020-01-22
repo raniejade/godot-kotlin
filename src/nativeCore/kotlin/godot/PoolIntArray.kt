@@ -1,29 +1,28 @@
 package godot
 
 import gdnative.godot_pool_int_array
-import kotlinx.cinterop.CValue
-import kotlinx.cinterop.cValue
-import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.*
 
 class PoolIntArray(
-  internal val handle: CValue<godot_pool_int_array>
+  internal var handle: CValue<godot_pool_int_array>
 ) {
   companion object {
     fun new(): PoolIntArray {
-      val dest = cValue<godot_pool_int_array>()
-      memScoped {
-        checkNotNull(Godot.gdnative.godot_pool_int_array_new)(dest.ptr)
+      val handle = memScoped {
+        val tmp = alloc<godot_pool_int_array>()
+        checkNotNull(Godot.gdnative.godot_pool_int_array_new)(tmp.ptr)
+        tmp.readValue()
       }
-      return PoolIntArray(dest)
+      return PoolIntArray(handle)
     }
 
     fun new(from: GDArray): PoolIntArray {
-      val dest = cValue<godot_pool_int_array>()
-      memScoped {
-        checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(dest.ptr, from.handle.ptr)
+      val handle = memScoped {
+        val tmp = alloc<godot_pool_int_array>()
+        checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(tmp.ptr, from.handle.ptr)
+        tmp.readValue()
       }
-      return PoolIntArray(dest)
+      return PoolIntArray(handle)
     }
   }
 }

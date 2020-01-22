@@ -1,21 +1,19 @@
 package godot
 
 import gdnative.godot_rid
-import kotlinx.cinterop.CValue
-import kotlinx.cinterop.cValue
-import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.*
 
 class Rid(
-  internal val handle: CValue<godot_rid>
+  internal var handle: CValue<godot_rid>
 ) {
   companion object {
     fun new(): Rid {
-      val dest = cValue<godot_rid>()
-      memScoped {
-        checkNotNull(Godot.gdnative.godot_rid_new)(dest.ptr)
+      val handle = memScoped {
+        val tmp = alloc<godot_rid>()
+        checkNotNull(Godot.gdnative.godot_rid_new)(tmp.ptr)
+        tmp.readValue()
       }
-      return Rid(dest)
+      return Rid(handle)
     }
   }
 }

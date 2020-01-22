@@ -1,13 +1,10 @@
 package godot
 
 import gdnative.godot_vector3
-import kotlinx.cinterop.CValue
-import kotlinx.cinterop.cValue
-import kotlinx.cinterop.invoke
-import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.*
 
 class Vector3(
-  internal val handle: CValue<godot_vector3>
+  internal var handle: CValue<godot_vector3>
 ) {
   companion object {
     fun new(
@@ -15,11 +12,12 @@ class Vector3(
       y: Float,
       z: Float
     ): Vector3 {
-      val dest = cValue<godot_vector3>()
-      memScoped {
-        checkNotNull(Godot.gdnative.godot_vector3_new)(dest.ptr, x, y, z)
+      val handle = memScoped {
+        val tmp = alloc<godot_vector3>()
+        checkNotNull(Godot.gdnative.godot_vector3_new)(tmp.ptr, x, y, z)
+        tmp.readValue()
       }
-      return Vector3(dest)
+      return Vector3(handle)
     }
   }
 }
