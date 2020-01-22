@@ -1,4 +1,3 @@
-// GENERATED FILE DO NOT EDIT
 package godot
 
 import gdnative.godot_string_name

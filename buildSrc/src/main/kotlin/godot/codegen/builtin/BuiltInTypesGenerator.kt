@@ -71,7 +71,6 @@ class BuiltInTypesGenerator {
   }
 
   private fun generatedFileSpec(pkg: String, fileName: String) = FileSpec.builder(pkg, fileName)
-    .addComment("GENERATED FILE DO NOT EDIT")
 
   private fun parseJson(source: File): List<BuiltInType> {
     return mapper.readValue(source)

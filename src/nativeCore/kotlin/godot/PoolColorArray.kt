@@ -1,4 +1,3 @@
-// GENERATED FILE DO NOT EDIT
 package godot
 
 import gdnative.godot_pool_color_array
