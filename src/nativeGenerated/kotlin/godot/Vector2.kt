@@ -4,7 +4,7 @@ package godot
 import gdnative.godot_vector2
 
 class Vector2(
-  private val context: GDContext,
+  private val context: AllocationContext,
   internal val handle: godot_vector2
 ) {
   companion object

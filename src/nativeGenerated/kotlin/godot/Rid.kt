@@ -4,7 +4,7 @@ package godot
 import gdnative.godot_rid
 
 class Rid(
-  private val context: GDContext,
+  private val context: AllocationContext,
   internal val handle: godot_rid
 ) {
   companion object

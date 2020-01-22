@@ -52,15 +52,9 @@ class BuiltInTypesGenerator {
   }
 
   private fun generateGDContextType(): TypeSpec.Builder {
-    return TypeSpec.classBuilder(GDCONTEXT_CLASS_NAME)
+    return TypeSpec.interfaceBuilder(GDCONTEXT_CLASS_NAME)
       .addProperty(
         PropertySpec.builder("arena", ClassName("kotlinx.cinterop", "Arena"))
-          .addModifiers(KModifier.PRIVATE)
-          .initializer("Arena()")
-          .build()
-      ).addFunction(
-        FunSpec.builder("clear")
-          .addCode(CodeBlock.of("arena.clear()"))
           .build()
       )
   }
@@ -100,6 +94,6 @@ class BuiltInTypesGenerator {
   companion object {
     const val BASE_PACKAGE = "godot"
     const val GDNATIVE_PACKAGE = "gdnative"
-    val GDCONTEXT_CLASS_NAME = ClassName(BASE_PACKAGE, "GDContext")
+    val GDCONTEXT_CLASS_NAME = ClassName(BASE_PACKAGE, "AllocationContext")
   }
 }

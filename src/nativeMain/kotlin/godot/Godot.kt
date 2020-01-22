@@ -44,7 +44,13 @@ object Godot {
   }
 
   fun print(msg: String) {
-    with(GDContext()) {
+    val arena = Arena()
+    with(object: AllocationContext {
+      override val arena: Arena
+        get() = arena
+
+    }) {
+      nativescript.godot_nativescript_register_method
       val gdString = GDString.new()
       memScoped {
         checkNotNull(gdnative.godot_string_parse_utf8)(gdString.handle.ptr, msg.cstr.ptr)

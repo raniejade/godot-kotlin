@@ -4,7 +4,7 @@ package godot
 import gdnative.godot_string_name
 
 class StringName(
-  private val context: GDContext,
+  private val context: AllocationContext,
   internal val handle: godot_string_name
 ) {
   companion object
