@@ -11,7 +11,7 @@ class Rid(
 ) {
   companion object {
     fun new(): Rid {
-      val dest = cValue<gdnative.godot_rid>()
+      val dest = cValue<godot_rid>()
       memScoped {
         checkNotNull(Godot.gdnative.godot_rid_new)(dest.ptr)
       }

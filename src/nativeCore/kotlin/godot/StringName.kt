@@ -11,7 +11,7 @@ class StringName(
 ) {
   companion object {
     fun new(str: GDString): StringName {
-      val dest = cValue<gdnative.godot_string_name>()
+      val dest = cValue<godot_string_name>()
       memScoped {
         checkNotNull(Godot.gdnative.godot_string_name_new)(dest.ptr, str.handle.ptr)
       }

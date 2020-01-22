@@ -11,7 +11,7 @@ class PoolIntArray(
 ) {
   companion object {
     fun new(): PoolIntArray {
-      val dest = cValue<gdnative.godot_pool_int_array>()
+      val dest = cValue<godot_pool_int_array>()
       memScoped {
         checkNotNull(Godot.gdnative.godot_pool_int_array_new)(dest.ptr)
       }
@@ -19,7 +19,7 @@ class PoolIntArray(
     }
 
     fun new(from: GDArray): PoolIntArray {
-      val dest = cValue<gdnative.godot_pool_int_array>()
+      val dest = cValue<godot_pool_int_array>()
       memScoped {
         checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(dest.ptr, from.handle.ptr)
       }
