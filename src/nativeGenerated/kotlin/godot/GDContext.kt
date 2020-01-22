@@ -4,7 +4,9 @@ package godot
 import kotlin.Float
 import kotlinx.cinterop.Arena
 import kotlinx.cinterop.alloc
+import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.ptr
 
 class GDContext {
