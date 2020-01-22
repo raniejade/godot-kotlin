@@ -18,5 +18,17 @@
   {
     "name": "PoolStringArray",
     "builtinType": "godot_pool_string_array"
+  },
+  {
+    "name": "PoolVector2Array",
+    "builtinType": "godot_pool_vector2_array"
+  },
+  {
+    "name": "PoolVector3Array",
+    "builtinType": "godot_pool_vector3_array"
+  },
+  {
+    "name": "PoolColorArray",
+    "builtinType": "godot_pool_color_array"
   }
 ]
