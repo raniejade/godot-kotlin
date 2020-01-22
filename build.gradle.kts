@@ -1,5 +1,7 @@
+import godot.task.GenerateBuiltInTypesTask
+
 plugins {
-    kotlin("multiplatform") version "1.3.61"
+    kotlin("multiplatform")
 }
 
 repositories {
@@ -15,6 +17,13 @@ kotlin {
                 compilerOpts("-I$rootDir/godot_headers")
             }
         }
+    }
+}
+
+tasks {
+    val generateBuiltInTypes by creating(GenerateBuiltInTypesTask::class) {
+        source.set(project.file("builtinTypes.json"))
+        outputDir.set(project.file("src/nativeMain/kotlin"))
     }
 }
 
