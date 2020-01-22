@@ -12,6 +12,9 @@ repositories {
 kotlin {
     linuxX64("native") {
         compilations.getByName("main") {
+            defaultSourceSet {
+                kotlin.srcDirs("src/nativeMain/kotlin", "src/nativeGenerated/kotlin")
+            }
             val gdnative by cinterops.creating {
                 packageName("gdnative")
                 compilerOpts("-I$rootDir/godot_headers")
@@ -23,7 +26,7 @@ kotlin {
 tasks {
     val generateBuiltInTypes by creating(GenerateBuiltInTypesTask::class) {
         source.set(project.file("builtinTypes.json"))
-        outputDir.set(project.file("src/nativeMain/kotlin"))
+        outputDir.set(project.file("src/nativeGenerated/kotlin"))
     }
 }
 

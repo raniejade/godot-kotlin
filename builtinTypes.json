@@ -30,5 +30,25 @@
   {
     "name": "PoolColorArray",
     "builtinType": "godot_pool_color_array"
+  },
+  {
+    "name": "Rid",
+    "builtinType": "godot_rid"
+  },
+  {
+    "name": "GDString",
+    "builtinType": "godot_string"
+  },
+  {
+    "name": "Vector2",
+    "builtinType": "godot_vector2"
+  },
+  {
+    "name": "Vector3",
+    "builtinType": "godot_vector3"
+  },
+  {
+    "name": "StringName",
+    "builtinType": "godot_string_name"
   }
 ]
