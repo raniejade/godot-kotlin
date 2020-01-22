@@ -44,11 +44,12 @@ object Godot {
   }
 
   fun print(msg: String) {
-    val gdString = GDString.new()
+    print(GDString.new(msg))
+  }
+
+  fun print(msg: GDString) {
     memScoped {
-      val ptr = gdString.handle.ptr
-      checkNotNull(gdnative.godot_string_parse_utf8)(ptr, msg.cstr.ptr)
-      checkNotNull(gdnative.godot_print)(ptr)
+      checkNotNull(gdnative.godot_print)(msg.handle.ptr)
     }
   }
 }
