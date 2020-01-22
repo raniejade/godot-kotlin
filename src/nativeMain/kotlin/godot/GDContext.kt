@@ -98,6 +98,11 @@ class GDContext {
         checkNotNull(gdnative.godot_array_new_pool_byte_array)(dest.ptr, from.handle.ptr)
         return GDArray(this@GDContext, dest)
     }
+    fun GDArray.Companion.new(from: PoolIntArray): GDArray {
+        val dest = arena.alloc<godot_array>()
+        checkNotNull(gdnative.godot_array_new_pool_int_array)(dest.ptr, from.handle.ptr)
+        return GDArray(this@GDContext, dest)
+    }
 
     // PoolStringArray constructors
     fun PoolStringArray.Companion.new(): PoolStringArray {
@@ -131,5 +136,22 @@ class GDContext {
         val dest = arena.alloc<godot_pool_byte_array>()
         checkNotNull(gdnative.godot_pool_byte_array_new_with_array)(dest.ptr, from.handle.ptr)
         return PoolByteArray(this@GDContext, dest)
+    }
+
+    // PoolIntArray constructors
+    fun PoolIntArray.Companion.new(): PoolIntArray {
+        val dest = arena.alloc<godot_pool_int_array>()
+        checkNotNull(gdnative.godot_pool_int_array_new)(dest.ptr)
+        return PoolIntArray(this@GDContext, dest)
+    }
+    fun PoolIntArray.Companion.new(from: PoolIntArray): PoolIntArray {
+        val dest = arena.alloc<godot_pool_int_array>()
+        checkNotNull(gdnative.godot_pool_int_array_new_copy)(dest.ptr, from.handle.ptr)
+        return PoolIntArray(this@GDContext, dest)
+    }
+    fun PoolIntArray.Companion.new(from: GDArray): PoolIntArray {
+        val dest = arena.alloc<godot_pool_int_array>()
+        checkNotNull(gdnative.godot_pool_int_array_new_with_array)(dest.ptr, from.handle.ptr)
+        return PoolIntArray(this@GDContext, dest)
     }
 }
