@@ -4,16 +4,16 @@ import gdnative.godot_string_name
 import kotlinx.cinterop.*
 
 class StringName(
-  internal var handle: CValue<godot_string_name>
-) {
+  value: CValue<godot_string_name>
+): Primitive<godot_string_name>(value) {
   companion object {
     fun new(str: GDString): StringName {
-      val handle = memScoped {
+      val value = memScoped {
         val tmp = alloc<godot_string_name>()
-        checkNotNull(Godot.gdnative.godot_string_name_new)(tmp.ptr, str.handle.ptr)
+        checkNotNull(Godot.gdnative.godot_string_name_new)(tmp.ptr, str._value.ptr)
         tmp.readValue()
       }
-      return StringName(handle)
+      return StringName(value)
     }
   }
 }

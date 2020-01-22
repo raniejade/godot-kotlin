@@ -4,7 +4,7 @@ import gdnative.godot_array
 import kotlinx.cinterop.CValue
 
 class GDArray(
-  internal var handle: CValue<godot_array>
-) {
+  value: CValue<godot_array>
+): Primitive<godot_array>(value) {
   companion object
 }

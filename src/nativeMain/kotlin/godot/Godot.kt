@@ -49,7 +49,7 @@ object Godot {
 
   fun print(msg: GDString) {
     memScoped {
-      checkNotNull(gdnative.godot_print)(msg.handle.ptr)
+      checkNotNull(gdnative.godot_print)(msg._value.ptr)
     }
   }
 }

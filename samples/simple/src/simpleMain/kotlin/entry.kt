@@ -7,7 +7,8 @@ import kotlinx.cinterop.COpaquePointer
 @CName("godot_gdnative_init")
 fun godot_gdnative_init(options: godot_gdnative_init_options) {
     Godot.init(options)
-    val string = GDString.new("Hello Godot from Kotlin!")
+    val string = GDString.new("aaaHello Godot from Kotlin!")
+    string.erase(0, 3)
     Godot.print(string)
 
     if (string.beginsWith("Hello")) {
