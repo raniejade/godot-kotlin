@@ -1,6 +1,22 @@
 [
   {
+    "name": "GDArray",
+    "builtinType": "godot_array"
+  },
+  {
     "name": "PoolRealArray",
     "builtinType": "godot_pool_real_array"
+  },
+  {
+    "name": "PoolByteArray",
+    "builtinType": "godot_pool_byte_array"
+  },
+  {
+    "name": "PoolIntArray",
+    "builtinType": "godot_pool_int_array"
+  },
+  {
+    "name": "PoolStringArray",
+    "builtinType": "godot_pool_string_array"
   }
 ]
