@@ -3,15 +3,34 @@ package godot
 import gdnative.godot_string
 import kotlinx.cinterop.*
 
-internal inline class GDString(val _handle: godot_string) {
-    companion object {
-        fun new(str: String): GDString {
-            val dest = nativeHeap.alloc<godot_string>()
-            safeCall(Godot.gdnative.godot_string_new)(dest.ptr)
-            memScoped {
-                safeCall(Godot.gdnative.godot_string_parse_utf8)(dest.ptr, str.cstr.ptr)
-            }
-            return GDString(dest)
+class GDString(private val context: GDContext, internal val handle: godot_string) {
+    fun beginsWith(str: GDString): Boolean {
+        return with(context) {
+            checkNotNull(Godot.gdnative.godot_string_begins_with)(handle.ptr, str.handle.ptr)
         }
     }
+
+    fun beginsWith(str: String): Boolean {
+        return with(context) {
+            beginsWith(GDString.new(str))
+        }
+    }
+
+    fun cEscape(): GDString {
+        return with(context) {
+            new(
+                checkNotNull(Godot.gdnative.godot_string_c_escape)(handle.ptr)
+            )
+        }
+    }
+
+    fun cEscapeMultiline(): GDString {
+        return with(context) {
+            new(
+                checkNotNull(Godot.gdnative.godot_string_c_escape_multiline)(handle.ptr)
+            )
+        }
+    }
+
+    companion object
 }

@@ -4,20 +4,15 @@ import gdnative.*
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 
-
-class NativeScriptApi(private val handle: COpaquePointer) {
-    // TODO: register_class
-}
-
 object Godot {
-    private val _gdnative =  AtomicReference<CPointer<godot_gdnative_core_api_struct>?>(null)
-    private val _nativescript =  AtomicReference<CPointer<godot_gdnative_ext_nativescript_api_struct>?>(null)
+    private val gdnativeWrapper = AtomicReference<CPointer<godot_gdnative_core_api_struct>?>(null)
+    private val nativescriptWrapper = AtomicReference<CPointer<godot_gdnative_ext_nativescript_api_struct>?>(null)
 
     internal val gdnative: godot_gdnative_core_api_struct
-        get() = checkNotNull(_gdnative.value).pointed
+        get() = checkNotNull(gdnativeWrapper.value).pointed
 
     internal val nativescript: godot_gdnative_ext_nativescript_api_struct
-        get() = checkNotNull(_nativescript.value).pointed
+        get() = checkNotNull(nativescriptWrapper.value).pointed
 
     fun init(options: godot_gdnative_init_options) {
         val gdnative = checkNotNull(options.api_struct)
@@ -34,13 +29,13 @@ object Godot {
             }
         }
 
-        _gdnative.compareAndSwap(null, gdnative)
-        _nativescript.compareAndSwap(null, nativescript)
+        gdnativeWrapper.compareAndSwap(null, gdnative)
+        nativescriptWrapper.compareAndSwap(null, nativescript)
     }
 
     fun terminate(options: godot_gdnative_terminate_options) {
-        _gdnative.compareAndSwap(_gdnative.value, null)
-        _nativescript.compareAndSwap(_nativescript.value, null)
+        gdnativeWrapper.compareAndSwap(gdnativeWrapper.value, null)
+        nativescriptWrapper.compareAndSwap(nativescriptWrapper.value, null)
     }
 
     fun nativescriptInit(handle: COpaquePointer, setup: NativeScriptApi.() -> Unit) {
@@ -48,6 +43,8 @@ object Godot {
     }
 
     fun print(msg: String) {
-        safeCall(Godot.gdnative.godot_print)(GDString.new(msg)._handle.ptr)
+        with(GDContext()) {
+            checkNotNull(gdnative.godot_print)(GDString.new(msg).handle.ptr)
+        }
     }
 }
