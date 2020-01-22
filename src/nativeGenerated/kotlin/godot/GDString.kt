@@ -2,10 +2,21 @@
 package godot
 
 import gdnative.godot_string
+import kotlinx.cinterop.CValue
+import kotlinx.cinterop.cValue
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
 
 class GDString(
-  private val context: AllocationContext,
-  internal val handle: godot_string
+  internal val handle: CValue<godot_string>
 ) {
-  companion object
+  companion object {
+    fun new(): GDString {
+      val dest = cValue<gdnative.godot_string>()
+      memScoped {
+        checkNotNull(Godot.gdnative.godot_string_new)(dest.ptr)
+      }
+      return GDString(dest)
+    }
+  }
 }

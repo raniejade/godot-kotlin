@@ -44,18 +44,11 @@ object Godot {
   }
 
   fun print(msg: String) {
-    val arena = Arena()
-    with(object: AllocationContext {
-      override val arena: Arena
-        get() = arena
-
-    }) {
-      nativescript.godot_nativescript_register_method
-      val gdString = GDString.new()
-      memScoped {
-        checkNotNull(gdnative.godot_string_parse_utf8)(gdString.handle.ptr, msg.cstr.ptr)
-      }
-      checkNotNull(gdnative.godot_print)(gdString.handle.ptr)
+    val gdString = GDString.new()
+    memScoped {
+      val ptr = gdString.handle.ptr
+      checkNotNull(gdnative.godot_string_parse_utf8)(ptr, msg.cstr.ptr)
+      checkNotNull(gdnative.godot_print)(ptr)
     }
   }
 }

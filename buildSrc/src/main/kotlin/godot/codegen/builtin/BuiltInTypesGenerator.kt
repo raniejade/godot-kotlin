@@ -11,58 +11,20 @@ class BuiltInTypesGenerator {
 
   fun generate(source: File, outputDir: File) {
     val types = parseJson(source)
-    val contextTypeBuilder = generateGDContextType()
-    types.map { ts -> generateType(ts, contextTypeBuilder)}
+    types.map(this::generateType)
       .forEach { fs ->
         fs.writeTo(outputDir)
       }
-
-    generatedFileSpec(BASE_PACKAGE, GDCONTEXT_CLASS_NAME.simpleName)
-      .addImport("kotlinx.cinterop", "alloc", "ptr", "invoke")
-      .addType(contextTypeBuilder.build())
-      .build()
-      .writeTo(outputDir)
   }
 
-  private fun generateType(type: BuiltInType, contextTypeBuilder: TypeSpec.Builder): FileSpec {
-    val builtInClassName = ClassName(GDNATIVE_PACKAGE, type.builtinType)
-    generateContextConstructors(contextTypeBuilder, type)
-    return generatedFileSpec(BASE_PACKAGE, type.name)
-      .addType(
-        TypeSpec.classBuilder(type.name)
-          .primaryConstructor(
-            FunSpec.constructorBuilder()
-              .addParameter("context", GDCONTEXT_CLASS_NAME, KModifier.PRIVATE)
-              .addParameter("handle", builtInClassName, KModifier.INTERNAL)
-              .build()
-          ).addProperty(
-            PropertySpec.builder("context", GDCONTEXT_CLASS_NAME)
-              .initializer("context")
-              .build()
-          ).addProperty(
-            PropertySpec.builder("handle", builtInClassName)
-              .initializer("handle")
-              .build()
-          ).addType(
-            TypeSpec.companionObjectBuilder()
-              .build()
-          )
-          .build()
-      ).build()
-  }
-
-  private fun generateGDContextType(): TypeSpec.Builder {
-    return TypeSpec.interfaceBuilder(GDCONTEXT_CLASS_NAME)
-      .addProperty(
-        PropertySpec.builder("arena", ClassName("kotlinx.cinterop", "Arena"))
-          .build()
-      )
-  }
-
-  private fun generateContextConstructors(contextTypeBuilder: TypeSpec.Builder, type: BuiltInType) {
+  private fun generateType(type: BuiltInType): FileSpec {
+    val builtInClassName = with(ParameterizedTypeName) {
+      CVALUE_CLASS_NAME.parameterizedBy(ClassName(GDNATIVE_PACKAGE, type.builtinType))
+    }
+    // generateContextConstructors(contextTypeBuilder, type)
+    val companionObjectBuilder = TypeSpec.companionObjectBuilder()
     type.constructors.forEach { constructor ->
       val builder = FunSpec.builder("new")
-        .receiver(ClassName(BASE_PACKAGE, type.name, "Companion"))
       var parameterStr = ""
       constructor.params.forEach { param ->
         builder.addParameter(param.name, ClassName(param.type.pkg, param.type.name))
@@ -73,15 +35,39 @@ class BuiltInTypesGenerator {
       }
       val fqBuiltinType = "${GDNATIVE_PACKAGE}.${type.builtinType}"
       val code = CodeBlock.builder()
-      code.addStatement("val dest = arena.alloc<$fqBuiltinType>()")
-      code.addStatement("checkNotNull(Godot.gdnative.${type.builtinType}_${constructor.internalConstructor})(dest.ptr$parameterStr)")
-      code.addStatement("return ${type.name}(this@${GDCONTEXT_CLASS_NAME.simpleName}, dest)")
+      code.add("""
+        val dest = cValue<$fqBuiltinType>()
+        memScoped {
+          checkNotNull(Godot.gdnative.${type.builtinType}_${constructor.internalConstructor})(dest.ptr$parameterStr)
+        }
+        return ${type.name}(dest)
+      """.trimIndent())
       builder.addCode(code.build())
       builder.returns(ClassName(BASE_PACKAGE, type.name))
-      contextTypeBuilder.addFunction(
+      companionObjectBuilder.addFunction(
         builder.build()
       )
     }
+
+    val typeBuilder = generatedFileSpec(BASE_PACKAGE, type.name)
+      .addImport("kotlinx.cinterop", "memScoped", "invoke", "cValue")
+      .addType(
+        TypeSpec.classBuilder(type.name)
+          .primaryConstructor(
+            FunSpec.constructorBuilder()
+              .addParameter("handle", builtInClassName, KModifier.INTERNAL)
+              .build()
+          ).addProperty(
+            PropertySpec.builder("handle", builtInClassName)
+              .initializer("handle")
+              .build()
+          ).addType(
+            companionObjectBuilder
+              .build()
+          )
+          .build()
+      )
+    return typeBuilder.build()
   }
 
   private fun generatedFileSpec(pkg: String, fileName: String) = FileSpec.builder(pkg, fileName)
@@ -94,6 +80,6 @@ class BuiltInTypesGenerator {
   companion object {
     const val BASE_PACKAGE = "godot"
     const val GDNATIVE_PACKAGE = "gdnative"
-    val GDCONTEXT_CLASS_NAME = ClassName(BASE_PACKAGE, "AllocationContext")
+    val CVALUE_CLASS_NAME = ClassName("kotlinx.cinterop", "CValue")
   }
 }
