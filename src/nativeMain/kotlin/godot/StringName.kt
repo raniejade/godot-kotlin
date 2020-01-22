@@ -7,5 +7,5 @@ import kotlinx.cinterop.nativeHeap
 import kotlinx.cinterop.ptr
 
 class StringName(private val context: GDContext, internal val handle: godot_string_name) {
-    companion object
+  companion object
 }

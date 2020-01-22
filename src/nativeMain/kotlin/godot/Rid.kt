@@ -7,5 +7,5 @@ import kotlinx.cinterop.nativeHeap
 import kotlinx.cinterop.ptr
 
 class Rid(private val context: GDContext, internal val handle: godot_rid) {
-    companion object
+  companion object
 }
