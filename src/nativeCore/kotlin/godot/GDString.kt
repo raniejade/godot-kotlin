@@ -572,17 +572,7 @@ class GDString(
   }
 
   override fun iterator(): Iterator<Char> {
-    return object: Iterator<Char> {
-      val length = length()
-      var index = 0
-      override fun hasNext(): Boolean {
-        return index < length
-      }
-
-      override fun next(): Char {
-        return get(index++)
-      }
-    }
+    return IndexedIterator(length(), this::get)
   }
 
   override fun hashCode(): Int {
