@@ -4,7 +4,7 @@ Kotlin Native bindings for Godot.
 ### Status
 Work in progress, at the moment the following are possible:
 
-- loadable in Godot (see [samples/simple](https://github.com/raniejade/godot-kotlin/tree/master/samples/simple))
+- create shared library and load it in Godot (see [samples/simple](https://github.com/raniejade/godot-kotlin/tree/master/samples/simple))
 - Print to Godot's output tab (via `Godot.print`)
 
 **TODO**
