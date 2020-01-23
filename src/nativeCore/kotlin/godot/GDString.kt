@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 class GDString(
   value: CValue<godot_string>
-): Primitive<godot_string>(value) {
+): Primitive<godot_string>(value), Iterable<Char> {
   fun beginsWith(str: GDString): Boolean {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_string_begins_with)(_value.ptr, str._value.ptr)
@@ -568,6 +568,20 @@ class GDString(
   operator fun get(position: Int): Char {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_string_operator_index_const)(_value.ptr, position).toChar()
+    }
+  }
+
+  override fun iterator(): Iterator<Char> {
+    return object: Iterator<Char> {
+      val length = length()
+      var index = 0
+      override fun hasNext(): Boolean {
+        return index < length
+      }
+
+      override fun next(): Char {
+        return get(index++)
+      }
     }
   }
 

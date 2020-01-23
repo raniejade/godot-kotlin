@@ -11,6 +11,11 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     string.erase(0, 3)
     Godot.print(string)
 
+    for (c in string) {
+        print(c)
+    }
+    println()
+
     if (string[0] == 'H') {
         Godot.print("Yasss!")
     } else {
