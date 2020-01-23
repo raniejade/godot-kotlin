@@ -3,7 +3,7 @@ package godot
 import gdnative.godot_rid
 import kotlinx.cinterop.*
 
-class Rid(
+class RID(
   value: CValue<godot_rid>
 ): Primitive<godot_rid>(value) {
   fun getId(): Int {
@@ -18,7 +18,7 @@ class Rid(
     }
     return memScoped {
       when (other) {
-        is Rid -> checkNotNull(Godot.gdnative.godot_rid_operator_equal)(_value.ptr, other._value.ptr)
+        is RID -> checkNotNull(Godot.gdnative.godot_rid_operator_equal)(_value.ptr, other._value.ptr)
         else -> false
       }
     }
@@ -29,13 +29,13 @@ class Rid(
   }
 
   companion object {
-    fun new(): Rid {
+    fun new(): RID {
       val value = memScoped {
         val tmp = alloc<godot_rid>()
         checkNotNull(Godot.gdnative.godot_rid_new)(tmp.ptr)
         tmp.readValue()
       }
-      return Rid(value)
+      return RID(value)
     }
 
     // TODO: new_with_resource when GDObject is generated
