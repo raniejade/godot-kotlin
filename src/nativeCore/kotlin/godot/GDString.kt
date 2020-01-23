@@ -554,10 +554,20 @@ class GDString(
       return false
     }
 
-    return when(other) {
-      is GDString -> caseCmpTo(other) == 0
-      is String -> caseCmpTo(other) == 0
-      else -> false
+    val eq = checkNotNull(Godot.gdnative.godot_string_operator_equal)
+
+    return memScoped {
+      when(other) {
+        is GDString -> eq(_value.ptr, other._value.ptr)
+        is String -> eq(_value.ptr, new(other)._value.ptr)
+        else -> false
+      }
+    }
+  }
+
+  operator fun get(position: Int): Char {
+    return memScoped {
+      checkNotNull(Godot.gdnative.godot_string_operator_index_const)(_value.ptr, position).toChar()
     }
   }
 
