@@ -1,60 +1,17 @@
 package godot
 
 import gdnative.godot_vector3
+import gdnative.godot_vector3_axis
 import kotlinx.cinterop.*
 
 class Vector3(
   value: CValue<godot_vector3>
 ): Primitive<godot_vector3>(value) {
 
-  // TODO: properties missing?!?
-//  var x: Float
-//    get() {
-//      return memScoped {
-//        checkNotNull(Godot.gdnative.godot_vector3_get_x)(_value.ptr)
-//      }
-//    }
-//    set(value) {
-//      _value = memScoped {
-//        val ptr = _value.ptr
-//        checkNotNull(Godot.gdnative.godot_vector3_set_x)(_value.ptr, value)
-//        ptr.pointed.readValue()
-//      }
-//    }
-//
-//  var y: Float
-//    get() {
-//      return memScoped {
-//        checkNotNull(Godot.gdnative.godot_vector3_get_y)(_value.ptr)
-//      }
-//    }
-//    set(value) {
-//      _value = memScoped {
-//        val ptr = _value.ptr
-//        checkNotNull(Godot.gdnative.godot_vector3_set_y)(_value.ptr, value)
-//        ptr.pointed.readValue()
-//      }
-//    }
-//
-//  var z: Float
-//    get() {
-//      return memScoped {
-//        checkNotNull(Godot.gdnative.godot_vector3_get_z)(_value.ptr)
-//      }
-//    }
-//    set(value) {
-//      _value = memScoped {
-//        val ptr = _value.ptr
-//        checkNotNull(Godot.gdnative.godot_vector3_set_z)(_value.ptr, value)
-//        ptr.pointed.readValue()
-//      }
-//    }
-
-
-  enum class Axis(private val value: Int) {
-    X(0),
-    Y(1),
-    Z(2);
+  enum class Axis(private val value: Int, internal val axis: godot_vector3_axis) {
+    X(0, godot_vector3_axis.GODOT_VECTOR3_AXIS_X),
+    Y(1, godot_vector3_axis.GODOT_VECTOR3_AXIS_Y),
+    Z(2, godot_vector3_axis.GODOT_VECTOR3_AXIS_Z);
 
     companion object {
       fun fromValue(value: Int): Axis {
@@ -67,6 +24,30 @@ class Vector3(
       }
     }
   }
+
+  var x: Float
+    get() {
+      return getAxis(Axis.X)
+    }
+    set(value) {
+      setAxis(Axis.X, value)
+    }
+
+  var y: Float
+    get() {
+      return getAxis(Axis.Y)
+    }
+    set(value) {
+      setAxis(Axis.Y, value)
+    }
+
+  var z: Float
+    get() {
+      return getAxis(Axis.Z)
+    }
+    set(value) {
+      setAxis(Axis.Z, value)
+    }
 
   fun abs(): Vector3 {
     return memScoped {
@@ -138,6 +119,12 @@ class Vector3(
     }
   }
 
+  fun getAxis(axis: Axis): Float {
+    return memScoped {
+      checkNotNull(Godot.gdnative.godot_vector3_get_axis)(_value.ptr, axis.axis)
+    }
+  }
+
   fun inverse(): Vector3 {
     return memScoped {
       Vector3(
@@ -188,6 +175,14 @@ class Vector3(
     }
   }
 
+  fun moveToward(vec: Vector3, delta: Float): Vector3 {
+    return memScoped {
+      Vector3(
+        checkNotNull(Godot.gdnative12.godot_vector3_move_toward)(_value.ptr, vec._value.ptr, delta)
+      )
+    }
+  }
+
   fun normalized(): Vector3 {
     return memScoped {
       Vector3(
@@ -217,6 +212,14 @@ class Vector3(
       Vector3(
         checkNotNull(Godot.gdnative.godot_vector3_rotated)(_value.ptr, axis._value.ptr, phi)
       )
+    }
+  }
+
+  fun setAxis(axis: Axis, value: Float) {
+    _value = memScoped {
+      val ptr = _value.ptr
+      checkNotNull(Godot.gdnative.godot_vector3_set_axis)(_value.ptr, axis.axis, value)
+      ptr.pointed.readValue()
     }
   }
 
@@ -332,11 +335,7 @@ class Vector3(
   }
 
   companion object {
-    fun new(
-      x: Float,
-      y: Float,
-      z: Float
-    ): Vector3 {
+    fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f): Vector3 {
       val value = memScoped {
         val tmp = alloc<godot_vector3>()
         checkNotNull(Godot.gdnative.godot_vector3_new)(tmp.ptr, x, y, z)

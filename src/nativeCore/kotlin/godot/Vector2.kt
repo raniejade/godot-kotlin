@@ -148,6 +148,14 @@ class Vector2(
     }
   }
 
+  fun moveToward(vec: Vector2, delta: Float): Vector2 {
+    return memScoped {
+      Vector2(
+        checkNotNull(Godot.gdnative12.godot_vector2_move_toward)(_value.ptr, vec._value.ptr, delta)
+      )
+    }
+  }
+
   fun normalized(): Vector2 {
     return memScoped {
       Vector2(
@@ -292,7 +300,7 @@ class Vector2(
   }
 
   companion object {
-    fun new(x: Float, y: Float): Vector2 {
+    fun new(x: Float = 0f, y: Float = 0f): Vector2 {
       val value = memScoped {
         val tmp = alloc<godot_vector2>()
         checkNotNull(Godot.gdnative.godot_vector2_new)(tmp.ptr, x, y)
