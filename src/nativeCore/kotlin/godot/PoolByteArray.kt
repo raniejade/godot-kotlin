@@ -25,9 +25,13 @@ class PoolByteArray(
   }
 
   fun insert(index: Int, byte: UByte): godot_error {
-    return memScoped {
-      checkNotNull(Godot.gdnative.godot_pool_byte_array_insert)(_value.ptr, index, byte)
+    lateinit var ret: godot_error
+    _value = memScoped {
+      val ptr = _value.ptr
+      ret = checkNotNull(Godot.gdnative.godot_pool_byte_array_insert)(ptr, index, byte)
+      ptr.pointed.readValue()
     }
+    return ret
   }
 
   fun invert() {
