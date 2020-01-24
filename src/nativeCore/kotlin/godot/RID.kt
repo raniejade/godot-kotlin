@@ -6,11 +6,10 @@ import kotlinx.cinterop.*
 class RID(
   value: CValue<godot_rid>
 ): Primitive<godot_rid>(value) {
-  fun getId(): Int {
-    return memScoped {
+  val id: Int
+    get() = memScoped {
       checkNotNull(Godot.gdnative.godot_rid_get_id)(_value.ptr)
     }
-  }
 
   override fun equals(other: Any?): Boolean {
     if (other == null) {
@@ -25,7 +24,7 @@ class RID(
   }
 
   override fun hashCode(): Int {
-    return getId()
+    return id
   }
 
   companion object {
