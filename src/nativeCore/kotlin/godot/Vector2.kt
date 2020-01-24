@@ -196,6 +196,14 @@ class Vector2(
     }
   }
 
+  fun asString(): GDString {
+    return memScoped {
+      GDString(
+        checkNotNull(Godot.gdnative.godot_vector2_as_string)(_value.ptr)
+      )
+    }
+  }
+
   operator fun plus(vec: Vector2): Vector2 {
     return memScoped {
       Vector2(
