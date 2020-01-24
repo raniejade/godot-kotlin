@@ -83,7 +83,6 @@ class PoolColorArray(
     return IndexedIterator(size(), this::get)
   }
 
-
   companion object {
     fun new(): PoolColorArray {
       val value = memScoped {
