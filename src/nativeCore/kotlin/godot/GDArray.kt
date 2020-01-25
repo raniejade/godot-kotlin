@@ -177,7 +177,7 @@ class GDArray(
   }
 
   fun getRef(index: Int, cb: Variant.() -> Unit) {
-    return memScoped {
+    memScoped {
       val ptr = _value.ptr
       val ref = checkNotNull(Godot.gdnative.godot_array_operator_index)(ptr, index)!!
       val variant = Variant(ref.pointed.readValue())
