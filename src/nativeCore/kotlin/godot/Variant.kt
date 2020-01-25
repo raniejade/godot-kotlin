@@ -12,7 +12,6 @@ class Variant(
     VECTOR2
   }
 
-  @PublishedApi
   internal val type: godot_variant_type
     get() {
       return memScoped {
@@ -156,13 +155,6 @@ class Variant(
         checkNotNull(Godot.gdnative.godot_variant_as_vector3)(_value.ptr)
       )
     }
-  }
-
-  fun <T: Primitive<*>> asType(): T {
-    return when(type) {
-      godot_variant_type.GODOT_VARIANT_TYPE_VECTOR2 -> asVector2()
-      else -> TODO()
-    } as T
   }
 
   override fun toVariant(): Variant {

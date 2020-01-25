@@ -65,7 +65,7 @@ class PoolRealArray(
     }
   }
 
-  fun get(index: Int): Float {
+  operator fun get(index: Int): Float {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_pool_real_array_get)(_value.ptr, index)
     }

@@ -57,7 +57,7 @@ class PoolVector3Array(
     }
   }
 
-  fun set(index: Int, vec: Vector3) {
+  operator fun set(index: Int, vec: Vector3) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_vector3_array_set)(ptr, index, vec._value.ptr)
@@ -65,7 +65,7 @@ class PoolVector3Array(
     }
   }
 
-  fun get(index: Int): Vector3 {
+  operator fun get(index: Int): Vector3 {
     return memScoped {
       Vector3(
         checkNotNull(Godot.gdnative.godot_pool_vector3_array_get)(_value.ptr, index)

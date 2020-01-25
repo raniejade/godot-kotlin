@@ -58,7 +58,7 @@ class PoolByteArray(
     }
   }
 
-  fun set(index: Int, byte: UByte) {
+  operator fun set(index: Int, byte: UByte) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_byte_array_set)(ptr, index, byte)
@@ -66,7 +66,7 @@ class PoolByteArray(
     }
   }
 
-  fun get(index: Int): UByte {
+  operator fun get(index: Int): UByte {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_pool_byte_array_get)(_value.ptr, index)
     }

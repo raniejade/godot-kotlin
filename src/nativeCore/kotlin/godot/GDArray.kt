@@ -169,25 +169,23 @@ class GDArray(
     }
   }
 
-  fun <T: Primitive<*>> get(index: Int): T {
+  operator fun get(index: Int): Variant {
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_array_operator_index_const)(_value.ptr, index)
-      Variant(checkNotNull(ptr).pointed.readValue()).asType()
+      Variant(checkNotNull(ptr).pointed.readValue())
     }
   }
 
-  fun <T: Primitive<*>> getAndMutate(index: Int, cb: T.() -> Unit) {
-    val value = get<T>(index)
-    cb(value)
-    set(index, value)
-  }
-
-  fun <T: Primitive<*>> set(index: Int, value: T) {
+  operator fun set(index: Int, value: Variant) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_set)(ptr, index, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_set)(ptr, index, value._value.ptr)
       ptr.pointed.readValue()
     }
+  }
+
+  operator fun <T: Primitive<*>> set(index: Int, value: T) {
+    set(index, value.toVariant())
   }
 
   override fun toVariant(): Variant {
