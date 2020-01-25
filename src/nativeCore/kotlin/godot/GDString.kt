@@ -62,7 +62,7 @@ class GDString(
     }
   }
 
-  fun empty(): Boolean {
+  fun isEmpty(): Boolean {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_string_empty)(_value.ptr)
     }
