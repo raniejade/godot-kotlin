@@ -7,7 +7,6 @@ import kotlinx.cinterop.*
 class Vector3(
   value: CValue<godot_vector3>
 ): Primitive<godot_vector3>(value) {
-
   enum class Axis(private val value: Int, internal val axis: godot_vector3_axis) {
     X(0, godot_vector3_axis.GODOT_VECTOR3_AXIS_X),
     Y(1, godot_vector3_axis.GODOT_VECTOR3_AXIS_Y),
@@ -347,6 +346,16 @@ class Vector3(
   }
 
   companion object {
+    val Zero = Vector3.new()
+    val One = Vector3.new(1f, 1f, 0f)
+    val Inf = Vector3.new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val Left = Vector3.new(-1f, 0f, 0f)
+    val Right = Vector3.new(1f, 0f, 0f)
+    val Up = Vector3.new(0f, -1f, 0f)
+    val Down = Vector3.new(0f, 1f, 0f)
+    val Forward = Vector3.new(0f, 0f, -1f)
+    val Back = Vector3.new(0f, 0f, 1f)
+
     fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f): Vector3 {
       val value = memScoped {
         val tmp = alloc<godot_vector3>()

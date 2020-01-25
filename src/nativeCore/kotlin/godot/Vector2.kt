@@ -6,6 +6,22 @@ import kotlinx.cinterop.*
 class Vector2(
   value: CValue<godot_vector2>
 ): Primitive<godot_vector2>(value) {
+  enum class Axis(private val value: Int) {
+    X(0),
+    Y(1);
+
+    companion object {
+      fun fromValue(value: Int): Axis {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("Invalid enum value $value")
+      }
+    }
+  }
+
   var x: Float
     get() {
       return memScoped {
@@ -304,6 +320,14 @@ class Vector2(
   }
 
   companion object {
+    val Zero = Vector2.new()
+    val One = Vector2.new(1f, 1f)
+    val Inf = Vector2.new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val Left = Vector2.new(-1f, 0f)
+    val Right = Vector2.new(1f, 0f)
+    val Up = Vector2.new(0f, -1f)
+    val Down = Vector2.new(0f, 1f)
+
     fun new(x: Float = 0f, y: Float = 0f): Vector2 {
       val value = memScoped {
         val tmp = alloc<godot_vector2>()
