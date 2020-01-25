@@ -7,10 +7,10 @@ class GDArray(
   value: CValue<godot_array>
 ): Primitive<godot_array>(value) {
 
-  fun append(value: Variant) {
+  fun <T: Primitive<*>> append(value: T) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_append)(_value.ptr, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_append)(_value.ptr, value.toVariant()._value.ptr)
       ptr.pointed.readValue()
     }
   }
@@ -37,9 +37,9 @@ class GDArray(
     }
   }
 
-  fun contains(value: Variant): Boolean {
+  fun <T: Primitive<*>> contains(value: T): Boolean {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value.toVariant()._value.ptr)
     }
   }
 
@@ -51,21 +51,21 @@ class GDArray(
     }
   }
 
-  fun count(value: Variant): Int {
+  fun <T: Primitive<*>> count(value: T): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_count)(_value.ptr, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_count)(_value.ptr, value.toVariant()._value.ptr)
     }
   }
 
-  fun find(value: Variant, from: Int = 0): Int {
+  fun <T: Primitive<*>> find(value: T, from: Int = 0): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_find)(_value.ptr, value._value.ptr, from)
+      checkNotNull(Godot.gdnative.godot_array_find)(_value.ptr, value.toVariant()._value.ptr, from)
     }
   }
 
-  fun findLast(value: Variant): Int {
+  fun <T: Primitive<*>> findLast(value: T): Int {
     return memScoped {
-      checkNotNull(Godot.gdnative.godot_array_find_last)(_value.ptr, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_find_last)(_value.ptr, value.toVariant()._value.ptr)
     }
   }
 
@@ -81,10 +81,10 @@ class GDArray(
     }
   }
 
-  fun insert(index: Int, value: Variant) {
+  fun <T: Primitive<*>> insert(index: Int, value: T) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_insert)(_value.ptr, index, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_insert)(_value.ptr, index, value.toVariant()._value.ptr)
       ptr.pointed.readValue()
     }
   }
@@ -137,18 +137,18 @@ class GDArray(
     return ret
   }
 
-  fun pushFront(value: Variant) {
+  fun <T: Primitive<*>> pushFront(value: T) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value.toVariant()._value.ptr)
       ptr.pointed.readValue()
     }
   }
 
-  fun remove(value: Variant) {
+  fun <T: Primitive<*>> remove(value: T) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_erase)(_value.ptr, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_erase)(_value.ptr, value.toVariant()._value.ptr)
       ptr.pointed.readValue()
     }
   }
@@ -169,27 +169,23 @@ class GDArray(
     }
   }
 
-  fun get(index: Int): Variant {
+  fun <T: Primitive<*>> get(index: Int): T {
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_array_operator_index_const)(_value.ptr, index)
-      Variant(checkNotNull(ptr).pointed.readValue())
+      Variant(checkNotNull(ptr).pointed.readValue()).asType()
     }
   }
 
-  fun getRef(index: Int, cb: Variant.() -> Unit) {
-    memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_array_operator_index)(ptr, index)!!
-      val variant = Variant(ref.pointed.readValue())
-      cb(variant)
-      variant._value.write(ref.rawValue)
-    }
+  fun <T: Primitive<*>> getAndMutate(index: Int, cb: T.() -> Unit) {
+    val value = get<T>(index)
+    cb(value)
+    set(index, value)
   }
 
-  fun set(index: Int, value: Variant) {
+  fun <T: Primitive<*>> set(index: Int, value: T) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_set)(ptr, index, value._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_set)(ptr, index, value.toVariant()._value.ptr)
       ptr.pointed.readValue()
     }
   }

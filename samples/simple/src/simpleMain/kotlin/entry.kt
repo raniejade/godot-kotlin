@@ -20,13 +20,12 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     val variant = Variant.new(vec)
     val array = GDArray.new()
     array.append(variant)
-    array.getRef(0) {
-        asVector2Ref {
-            x = 12f
-            y = 16f
-        }
+    array.getAndMutate<Vector2>(0) {
+        x = 12f
+        y = -2121f
     }
-    println(array.get(0).asVector2())
+
+    println(array.get<Vector2>(0))
 }
 
 @CName("godot_gdnative_terminate")

@@ -1,11 +1,24 @@
 package godot
 
 import gdnative.godot_variant
+import gdnative.godot_variant_type
 import kotlinx.cinterop.*
 
 class Variant(
   value: CValue<godot_variant>
 ): Primitive<godot_variant>(value) {
+
+  enum class Type {
+    VECTOR2
+  }
+
+  @PublishedApi
+  internal val type: godot_variant_type
+    get() {
+      return memScoped {
+        checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr)
+      }
+    }
 
   fun asString(): GDString {
     return memScoped {
@@ -41,33 +54,11 @@ class Variant(
     }
   }
 
-  fun asBasisRef(cb: Basis.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_basis)(_value.ptr)
-      val refValue = Basis(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_basis)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asColor(): Color {
     return memScoped {
       Color(
         checkNotNull(Godot.gdnative.godot_variant_as_color)(_value.ptr)
       )
-    }
-  }
-
-  fun asColor(cb: Color.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_color)(_value.ptr)
-      val refValue = Color(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_color)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
     }
   }
 
@@ -79,33 +70,11 @@ class Variant(
     }
   }
 
-  fun asArrayRef(cb: GDArray.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_array)(_value.ptr)
-      val refValue = GDArray(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asPoolByteArray(): PoolByteArray {
     return memScoped {
       PoolByteArray(
         checkNotNull(Godot.gdnative.godot_variant_as_pool_byte_array)(_value.ptr)
       )
-    }
-  }
-
-  fun asPoolByteArrayRef(cb: PoolByteArray.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_byte_array)(_value.ptr)
-      val refValue = PoolByteArray(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_byte_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
     }
   }
 
@@ -117,33 +86,11 @@ class Variant(
     }
   }
 
-  fun asPoolColorArrayRef(cb: PoolColorArray.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_color_array)(_value.ptr)
-      val refValue = PoolColorArray(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_color_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asPoolIntArray(): PoolIntArray {
     return memScoped {
       PoolIntArray(
         checkNotNull(Godot.gdnative.godot_variant_as_pool_int_array)(_value.ptr)
       )
-    }
-  }
-
-  fun asPoolIntArrayRef(cb: PoolIntArray.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_int_array)(_value.ptr)
-      val refValue = PoolIntArray(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_int_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
     }
   }
 
@@ -155,33 +102,11 @@ class Variant(
     }
   }
 
-  fun asPoolRealArrayRef(cb: PoolRealArray.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_real_array)(_value.ptr)
-      val refValue = PoolRealArray(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_real_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asPoolStringArray(): PoolStringArray {
     return memScoped {
       PoolStringArray(
         checkNotNull(Godot.gdnative.godot_variant_as_pool_string_array)(_value.ptr)
       )
-    }
-  }
-
-  fun asPoolByteArrayRef(cb: PoolStringArray.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_string_array)(_value.ptr)
-      val refValue = PoolStringArray(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_string_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
     }
   }
 
@@ -193,17 +118,6 @@ class Variant(
     }
   }
 
-  fun asPoolVector2ArrayRef(cb: PoolVector2Array.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_vector2_array)(_value.ptr)
-      val refValue = PoolVector2Array(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_vector2_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asPoolVector3Array(): PoolVector3Array {
     return memScoped {
       PoolVector3Array(
@@ -212,33 +126,11 @@ class Variant(
     }
   }
 
-  fun asPoolVector3ArrayRef(cb: PoolVector3Array.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_pool_vector3_array)(_value.ptr)
-      val refValue = PoolVector3Array(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_pool_vector3_array)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asQuat(): Quat {
     return memScoped {
       Quat(
         checkNotNull(Godot.gdnative.godot_variant_as_quat)(_value.ptr)
       )
-    }
-  }
-
-  fun asQuatRef(cb: Quat.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_quat)(_value.ptr)
-      val refValue = Quat(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_quat)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
     }
   }
 
@@ -258,17 +150,6 @@ class Variant(
     }
   }
 
-  fun asVector2Ref(cb: Vector2.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_vector2)(_value.ptr)
-      val refValue = Vector2(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_vector2)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
-  }
-
   fun asVector3(): Vector3 {
     return memScoped {
       Vector3(
@@ -277,15 +158,11 @@ class Variant(
     }
   }
 
-  fun asVector3Ref(cb: Vector3.() -> Unit) {
-    _value = memScoped {
-      val ptr = _value.ptr
-      val ref = checkNotNull(Godot.gdnative.godot_variant_as_vector3)(_value.ptr)
-      val refValue = Vector3(ref)
-      cb(refValue)
-      checkNotNull(Godot.gdnative.godot_variant_new_vector3)(ptr, refValue._value.ptr)
-      ptr.pointed.readValue()
-    }
+  fun <T: Primitive<*>> asType(): T {
+    return when(type) {
+      godot_variant_type.GODOT_VARIANT_TYPE_VECTOR2 -> asVector2()
+      else -> TODO()
+    } as T
   }
 
   override fun toVariant(): Variant {
