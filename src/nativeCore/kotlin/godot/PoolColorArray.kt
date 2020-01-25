@@ -57,7 +57,7 @@ class PoolColorArray(
     }
   }
 
-  operator fun set(index: Int, color: Color) {
+  fun set(index: Int, color: Color) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_color_array_set)(ptr, index, color._value.ptr)
@@ -65,7 +65,7 @@ class PoolColorArray(
     }
   }
 
-  operator fun get(index: Int): Color {
+  fun get(index: Int): Color {
     return memScoped {
       Color(
         checkNotNull(Godot.gdnative.godot_pool_color_array_get)(_value.ptr, index)

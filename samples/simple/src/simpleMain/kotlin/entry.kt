@@ -1,7 +1,6 @@
 import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
-import godot.GDString
-import godot.Godot
+import godot.*
 import kotlinx.cinterop.COpaquePointer
 
 @CName("godot_gdnative_init")
@@ -11,16 +10,23 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     string.erase(0, 3)
     Godot.print(string.toString())
 
-    for (c in string) {
-        print(c)
-    }
-    println()
-
     if (string[0] == 'H') {
         Godot.print("Yasss!")
     } else {
         Godot.print("Noooo!")
     }
+
+    val vec = Vector2.new()
+    val variant = Variant.new(vec)
+    val array = GDArray.new()
+    array.append(variant)
+    array.getRef(0) {
+        asVector2Ref {
+            x = 12f
+            y = 16f
+        }
+    }
+    println(array.get(0).asVector2())
 }
 
 @CName("godot_gdnative_terminate")

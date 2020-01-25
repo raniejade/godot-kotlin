@@ -31,7 +31,7 @@ class Vector2(
     set(value) {
       _value = memScoped {
         val ptr = _value.ptr
-        checkNotNull(Godot.gdnative.godot_vector2_set_x)(_value.ptr, value)
+        checkNotNull(Godot.gdnative.godot_vector2_set_x)(ptr, value)
         ptr.pointed.readValue()
       }
     }
@@ -45,7 +45,7 @@ class Vector2(
     set(value) {
       _value = memScoped {
         val ptr = _value.ptr
-        checkNotNull(Godot.gdnative.godot_vector2_set_y)(_value.ptr, value)
+        checkNotNull(Godot.gdnative.godot_vector2_set_y)(ptr, value)
         ptr.pointed.readValue()
       }
     }

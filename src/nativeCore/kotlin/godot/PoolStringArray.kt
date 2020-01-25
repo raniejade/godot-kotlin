@@ -57,7 +57,7 @@ class PoolStringArray(
     }
   }
 
-  operator fun set(index: Int, string: GDString) {
+  fun set(index: Int, string: GDString) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_pool_string_array_set)(ptr, index, string._value.ptr)
@@ -65,7 +65,7 @@ class PoolStringArray(
     }
   }
 
-  operator fun get(index: Int): GDString {
+  fun get(index: Int): GDString {
     return memScoped {
       GDString(
         checkNotNull(Godot.gdnative.godot_pool_string_array_get)(_value.ptr, index)

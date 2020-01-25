@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
+
 plugins {
     kotlin("multiplatform")
 }
@@ -10,7 +12,7 @@ repositories {
 kotlin {
     linuxX64("simple") {
         binaries {
-            sharedLib()
+            sharedLib(listOf(NativeBuildType.DEBUG))
         }
     }
     sourceSets {

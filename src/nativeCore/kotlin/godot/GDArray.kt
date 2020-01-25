@@ -169,11 +169,28 @@ class GDArray(
     }
   }
 
-  // TODO: this is probably wrong, we probably want a reference to what is in the array
-  operator fun get(index: Int): Variant {
+  fun get(index: Int): Variant {
     return memScoped {
       val ptr = checkNotNull(Godot.gdnative.godot_array_operator_index_const)(_value.ptr, index)
       Variant(checkNotNull(ptr).pointed.readValue())
+    }
+  }
+
+  fun getRef(index: Int, cb: Variant.() -> Unit) {
+    return memScoped {
+      val ptr = _value.ptr
+      val ref = checkNotNull(Godot.gdnative.godot_array_operator_index)(ptr, index)!!
+      val variant = Variant(ref.pointed.readValue())
+      cb(variant)
+      variant._value.write(ref.rawValue)
+    }
+  }
+
+  fun set(index: Int, value: Variant) {
+    _value = memScoped {
+      val ptr = _value.ptr
+      checkNotNull(Godot.gdnative.godot_array_set)(ptr, index, value._value.ptr)
+      ptr.pointed.readValue()
     }
   }
 

@@ -217,7 +217,7 @@ class Vector3(
   fun setAxis(axis: Axis, value: Float) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_vector3_set_axis)(_value.ptr, axis.axis, value)
+      checkNotNull(Godot.gdnative.godot_vector3_set_axis)(ptr, axis.axis, value)
       ptr.pointed.readValue()
     }
   }
