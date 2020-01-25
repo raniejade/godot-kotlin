@@ -9,7 +9,7 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     Godot.init(options)
     val string = GDString.new("aaaHello Godot from Kotlin!")
     string.erase(0, 3)
-    Godot.print(string)
+    Godot.print(string.toString())
 
     for (c in string) {
         print(c)

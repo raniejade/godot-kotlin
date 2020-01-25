@@ -549,6 +549,15 @@ class GDString(
     }
   }
 
+  fun toKString(): String {
+    return memScoped {
+      val ptr = checkNotNull(Godot.gdnative.godot_string_wide_str)(_value.ptr)!!
+      ptr.toKStringFromUtf32()
+    }
+  }
+
+  override fun toString() = toKString()
+
   override fun equals(other: Any?): Boolean {
     if (other == null) {
       return false

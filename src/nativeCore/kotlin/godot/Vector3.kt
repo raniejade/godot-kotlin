@@ -247,6 +247,14 @@ class Vector3(
     }
   }
 
+  fun asString(): GDString {
+    return memScoped {
+      GDString(
+        checkNotNull(Godot.gdnative.godot_vector3_as_string)(_value.ptr)
+      )
+    }
+  }
+
   operator fun plus(vec: Vector3): Vector3 {
     return memScoped {
       Vector3(
@@ -315,6 +323,10 @@ class Vector3(
         1
       }
     }
+  }
+
+  override fun toString(): String {
+    return asString().toKString()
   }
 
   override fun equals(other: Any?): Boolean {

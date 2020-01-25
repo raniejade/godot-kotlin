@@ -282,6 +282,10 @@ class Vector2(
     }
   }
 
+  override fun toString(): String {
+    return asString().toKString()
+  }
+
   override fun equals(other: Any?): Boolean {
     if (other == null) {
       return false
