@@ -23,6 +23,12 @@ class PoolStringArray(
     }
   }
 
+  fun destroy() {
+    return memScoped {
+      checkNotNull(Godot.gdnative.godot_pool_string_array_destroy)(_value.ptr)
+    }
+  }
+
   fun insert(index: Int, string: GDString): godot_error {
     lateinit var ret: godot_error
     _value = memScoped {

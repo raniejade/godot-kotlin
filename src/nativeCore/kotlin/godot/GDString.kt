@@ -12,6 +12,12 @@ class GDString(
     }
   }
 
+  fun destroy() {
+    return memScoped {
+      checkNotNull(Godot.gdnative.godot_string_destroy)(_value.ptr)
+    }
+  }
+
   fun beginsWith(str: String): Boolean {
     return beginsWith(new(str))
   }
