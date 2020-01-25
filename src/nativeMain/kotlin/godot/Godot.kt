@@ -49,8 +49,8 @@ object Godot {
     setup(NativeScriptApi(handle))
   }
 
-  fun print(msg: String) {
-    print(GDString.new(msg))
+  fun print(msg: Any) {
+    print(GDString.new(msg.toString()))
   }
 
   fun print(msg: GDString) {
