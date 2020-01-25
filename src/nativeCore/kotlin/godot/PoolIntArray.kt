@@ -77,6 +77,10 @@ class PoolIntArray(
     }
   }
 
+  override fun toVariant(): Variant {
+    return Variant.new(this)
+  }
+
   override fun toGDString(): GDString {
     return GDString.new("PoolIntArray(${size()})")
   }

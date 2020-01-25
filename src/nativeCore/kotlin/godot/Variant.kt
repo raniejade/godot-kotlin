@@ -288,6 +288,10 @@ class Variant(
     }
   }
 
+  override fun toVariant(): Variant {
+    return this
+  }
+
   // TODO: this might be wrong
   override fun toGDString(): GDString {
     return asString()

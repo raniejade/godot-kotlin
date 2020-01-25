@@ -78,6 +78,10 @@ class PoolByteArray(
     }
   }
 
+  override fun toVariant(): Variant {
+    return Variant.new(this)
+  }
+
   override fun toGDString(): GDString {
     return GDString.new("PoolByteArray(${size()})")
   }

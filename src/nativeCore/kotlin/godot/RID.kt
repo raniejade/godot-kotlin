@@ -11,6 +11,10 @@ class RID(
       checkNotNull(Godot.gdnative.godot_rid_get_id)(_value.ptr)
     }
 
+  override fun toVariant(): Variant {
+    return Variant.new(this)
+  }
+
   override fun toGDString(): GDString {
     return GDString.new("$id")
   }

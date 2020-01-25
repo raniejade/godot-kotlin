@@ -182,6 +182,10 @@ class Quat(
     }
   }
 
+  override fun toVariant(): Variant {
+    return Variant.new(this)
+  }
+
   override fun toGDString(): GDString {
     return memScoped {
       GDString(

@@ -220,6 +220,10 @@ class Vector2(
     }
   }
 
+  override fun toVariant(): Variant {
+    return Variant.new(this)
+  }
+
   override fun toGDString(): GDString {
     return memScoped {
       GDString(
