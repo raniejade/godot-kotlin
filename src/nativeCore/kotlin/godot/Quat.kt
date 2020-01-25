@@ -182,6 +182,14 @@ class Quat(
     }
   }
 
+  override fun toGDString(): GDString {
+    return memScoped {
+      GDString(
+        checkNotNull(Godot.gdnative.godot_quat_as_string)(_value.ptr)
+      )
+    }
+  }
+
   override fun equals(other: Any?): Boolean {
     if (other == null) {
       return false

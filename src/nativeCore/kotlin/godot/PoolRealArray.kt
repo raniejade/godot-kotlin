@@ -71,6 +71,10 @@ class PoolRealArray(
     }
   }
 
+  override fun toGDString(): GDString {
+    return GDString.new("PoolRealArray(${size()})")
+  }
+
   fun size(): Int {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_pool_real_array_size)(_value.ptr)

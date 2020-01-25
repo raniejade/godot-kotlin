@@ -78,6 +78,10 @@ class PoolByteArray(
     }
   }
 
+  override fun toGDString(): GDString {
+    return GDString.new("PoolByteArray(${size()})")
+  }
+
   override fun iterator(): Iterator<UByte> {
     return IndexedIterator(size(), this::get)
   }

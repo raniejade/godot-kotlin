@@ -79,6 +79,10 @@ class PoolStringArray(
     }
   }
 
+  override fun toGDString(): GDString {
+    return GDString.new("PoolStringArray(${size()})")
+  }
+
   override fun iterator(): Iterator<GDString> {
     return IndexedIterator(size(), this::get)
   }

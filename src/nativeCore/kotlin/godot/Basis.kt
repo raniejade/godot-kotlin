@@ -166,8 +166,12 @@ class Basis(
     }
   }
 
-  override fun toString(): String {
-    return asString().toKString()
+  override fun toGDString(): GDString {
+    return memScoped {
+      GDString(
+        checkNotNull(Godot.gdnative.godot_basis_as_string)(_value.ptr)
+      )
+    }
   }
 
   companion object {

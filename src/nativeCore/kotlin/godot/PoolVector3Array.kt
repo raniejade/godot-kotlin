@@ -83,6 +83,10 @@ class PoolVector3Array(
     return IndexedIterator(size(), this::get)
   }
 
+  override fun toGDString(): GDString {
+    return GDString.new("PoolVector3Array(${size()})")
+  }
+
   companion object {
     fun new(): PoolVector3Array {
       val value = memScoped {

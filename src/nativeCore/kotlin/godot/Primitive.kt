@@ -12,4 +12,10 @@ abstract class Primitive<T: CStructVar>(value: CValue<T>) {
     set(value) {
       ref.compareAndSet(ref.value, value.freeze())
     }
+
+  abstract fun toGDString(): GDString
+
+  final override fun toString(): String {
+    return toGDString().toKString()
+  }
 }

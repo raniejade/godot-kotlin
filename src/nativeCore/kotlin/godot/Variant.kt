@@ -6,6 +6,15 @@ import kotlinx.cinterop.*
 class Variant(
   value: CValue<godot_variant>
 ): Primitive<godot_variant>(value) {
+  // TODO: this might be wrong
+  override fun toGDString(): GDString {
+    return memScoped {
+      GDString(
+        checkNotNull(Godot.gdnative.godot_variant_as_string)(_value.ptr)
+      )
+    }
+  }
+
   companion object {
     fun new(str: GDString): Variant {
       val value = memScoped {

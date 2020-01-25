@@ -11,6 +11,10 @@ class RID(
       checkNotNull(Godot.gdnative.godot_rid_get_id)(_value.ptr)
     }
 
+  override fun toGDString(): GDString {
+    return GDString.new("$id")
+  }
+
   override fun equals(other: Any?): Boolean {
     if (other == null) {
       return false
@@ -24,7 +28,7 @@ class RID(
   }
 
   override fun hashCode(): Int {
-    return id
+    return _value.hashCode()
   }
 
   companion object {

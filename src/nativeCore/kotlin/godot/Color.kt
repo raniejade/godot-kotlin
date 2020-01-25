@@ -95,6 +95,14 @@ class Color(
     }
   }
 
+  override fun toGDString(): GDString {
+    return memScoped {
+      GDString(
+        checkNotNull(Godot.gdnative.godot_color_as_string)(_value.ptr)
+      )
+    }
+  }
+
   companion object {
     fun rgb(r: Float, g: Float, b: Float, a: Float = 1f): Color {
       val value = memScoped {

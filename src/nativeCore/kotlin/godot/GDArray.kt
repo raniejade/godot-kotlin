@@ -6,6 +6,11 @@ import kotlinx.cinterop.*
 class GDArray(
   value: CValue<godot_array>
 ): Primitive<godot_array>(value) {
+
+  override fun toGDString(): GDString {
+    return GDString.new("GDArray()")
+  }
+
   companion object {
     fun new(): GDArray {
       val value = memScoped {

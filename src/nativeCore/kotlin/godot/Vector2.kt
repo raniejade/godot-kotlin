@@ -220,7 +220,7 @@ class Vector2(
     }
   }
 
-  fun asString(): GDString {
+  override fun toGDString(): GDString {
     return memScoped {
       GDString(
         checkNotNull(Godot.gdnative.godot_vector2_as_string)(_value.ptr)
@@ -296,10 +296,6 @@ class Vector2(
         1
       }
     }
-  }
-
-  override fun toString(): String {
-    return asString().toKString()
   }
 
   override fun equals(other: Any?): Boolean {
