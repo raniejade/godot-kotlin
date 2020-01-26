@@ -18,7 +18,6 @@ open class VisualShaderNodeVectorScalarStep internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorScalarStep".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeVectorScalarStep" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeVectorScalarStep(
         fn()
       )

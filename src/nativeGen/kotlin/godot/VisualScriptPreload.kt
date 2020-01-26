@@ -18,7 +18,6 @@ open class VisualScriptPreload internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPreload".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptPreload" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptPreload(
         fn()
       )

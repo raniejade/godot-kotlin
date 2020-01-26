@@ -17,7 +17,6 @@ open class AcceptDialog internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AcceptDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AcceptDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AcceptDialog(
         fn()
       )

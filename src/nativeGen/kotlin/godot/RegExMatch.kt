@@ -17,7 +17,6 @@ open class RegExMatch internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RegExMatch".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RegExMatch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RegExMatch(
         fn()
       )

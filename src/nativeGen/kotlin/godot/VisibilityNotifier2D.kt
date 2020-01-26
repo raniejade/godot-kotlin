@@ -18,7 +18,6 @@ open class VisibilityNotifier2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisibilityNotifier2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisibilityNotifier2D(
         fn()
       )

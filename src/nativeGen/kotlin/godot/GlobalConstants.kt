@@ -14,6 +14,15 @@ open class GlobalConstants internal constructor(
   internal val _handle: COpaquePointer
 ) {
   companion object {
+    val Instance: GlobalConstants = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("GlobalConstants".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton GlobalConstants" }
+          GlobalConstants(
+            handle
+          )
+        }
+
     val ButtonLeft: Int = 1
 
     val ButtonMaskLeft: Int = 1

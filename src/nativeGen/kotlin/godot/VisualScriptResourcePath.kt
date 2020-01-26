@@ -18,7 +18,6 @@ open class VisualScriptResourcePath internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptResourcePath".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptResourcePath" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptResourcePath(
         fn()
       )

@@ -18,7 +18,6 @@ open class CanvasModulate internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasModulate".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CanvasModulate" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CanvasModulate(
         fn()
       )

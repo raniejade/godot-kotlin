@@ -44,7 +44,6 @@ open class CubeMap internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CubeMap".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CubeMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CubeMap(
         fn()
       )

@@ -18,7 +18,6 @@ open class InputEventJoypadMotion internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventJoypadMotion".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InputEventJoypadMotion" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InputEventJoypadMotion(
         fn()
       )

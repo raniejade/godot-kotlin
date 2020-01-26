@@ -58,7 +58,6 @@ open class RichTextLabel internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RichTextLabel".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RichTextLabel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RichTextLabel(
         fn()
       )

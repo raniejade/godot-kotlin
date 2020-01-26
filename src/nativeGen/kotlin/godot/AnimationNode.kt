@@ -26,7 +26,6 @@ open class AnimationNode internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNode".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNode(
         fn()
       )

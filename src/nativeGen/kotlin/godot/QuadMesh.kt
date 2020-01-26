@@ -17,7 +17,6 @@ open class QuadMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("QuadMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for QuadMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       QuadMesh(
         fn()
       )

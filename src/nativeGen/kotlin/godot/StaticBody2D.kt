@@ -17,7 +17,6 @@ open class StaticBody2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StaticBody2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StaticBody2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StaticBody2D(
         fn()
       )

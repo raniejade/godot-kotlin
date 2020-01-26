@@ -18,7 +18,6 @@ open class VisualShaderNodeVectorSmoothStep internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorSmoothStep".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeVectorSmoothStep" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeVectorSmoothStep(
         fn()
       )

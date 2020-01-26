@@ -32,7 +32,6 @@ open class XMLParser internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("XMLParser".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for XMLParser" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       XMLParser(
         fn()
       )

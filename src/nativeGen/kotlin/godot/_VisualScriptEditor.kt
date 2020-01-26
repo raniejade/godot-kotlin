@@ -12,5 +12,14 @@ import kotlinx.cinterop.reinterpret
 open class _VisualScriptEditor internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: _VisualScriptEditor = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
+          _VisualScriptEditor(
+            handle
+          )
+        }
+  }
 }

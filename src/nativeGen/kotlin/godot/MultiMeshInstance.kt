@@ -18,7 +18,6 @@ open class MultiMeshInstance internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMeshInstance".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MultiMeshInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MultiMeshInstance(
         fn()
       )

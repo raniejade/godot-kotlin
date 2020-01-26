@@ -17,7 +17,6 @@ open class PopupPanel internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupPanel".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PopupPanel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PopupPanel(
         fn()
       )

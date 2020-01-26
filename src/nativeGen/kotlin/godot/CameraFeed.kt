@@ -32,7 +32,6 @@ open class CameraFeed internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraFeed".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CameraFeed" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CameraFeed(
         fn()
       )

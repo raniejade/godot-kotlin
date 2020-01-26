@@ -25,7 +25,6 @@ open class AnimationNodeStateMachineTransition internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachineTransition".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeStateMachineTransition" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeStateMachineTransition(
         fn()
       )

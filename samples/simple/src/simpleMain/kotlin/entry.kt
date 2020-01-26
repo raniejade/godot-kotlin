@@ -1,5 +1,6 @@
 import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
+import godot.PhysicsServer
 import godot.Spatial
 import godot.core.GDArray
 import godot.core.Godot
@@ -22,6 +23,7 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
         v
     }
     val spatial = Spatial.new()
+    val ps = PhysicsServer.Instance
     println(array[0])
 }
 

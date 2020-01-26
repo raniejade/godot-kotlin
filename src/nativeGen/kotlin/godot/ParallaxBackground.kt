@@ -18,7 +18,6 @@ open class ParallaxBackground internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxBackground".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ParallaxBackground" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ParallaxBackground(
         fn()
       )

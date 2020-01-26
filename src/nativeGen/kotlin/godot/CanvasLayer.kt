@@ -17,7 +17,6 @@ open class CanvasLayer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasLayer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CanvasLayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CanvasLayer(
         fn()
       )

@@ -17,7 +17,6 @@ open class GraphEdit internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GraphEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GraphEdit(
         fn()
       )

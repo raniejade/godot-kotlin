@@ -17,7 +17,6 @@ open class KinematicBody internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for KinematicBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       KinematicBody(
         fn()
       )

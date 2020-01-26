@@ -12,5 +12,14 @@ import kotlinx.cinterop.reinterpret
 open class ProjectSettings internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: ProjectSettings = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("ProjectSettings".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton ProjectSettings" }
+          ProjectSettings(
+            handle
+          )
+        }
+  }
 }

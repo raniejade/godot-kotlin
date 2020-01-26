@@ -25,7 +25,6 @@ open class VisualShaderNodeVectorDerivativeFunc internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeVectorDerivativeFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeVectorDerivativeFunc(
         fn()
       )

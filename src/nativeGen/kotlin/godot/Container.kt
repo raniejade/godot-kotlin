@@ -20,7 +20,6 @@ open class Container internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Container".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Container" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Container(
         fn()
       )

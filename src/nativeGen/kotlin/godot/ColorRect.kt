@@ -17,7 +17,6 @@ open class ColorRect internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorRect".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ColorRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ColorRect(
         fn()
       )

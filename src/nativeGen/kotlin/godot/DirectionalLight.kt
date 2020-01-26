@@ -29,7 +29,6 @@ open class DirectionalLight internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DirectionalLight".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for DirectionalLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       DirectionalLight(
         fn()
       )

@@ -76,7 +76,6 @@ open class UPNP internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UPNP".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for UPNP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       UPNP(
         fn()
       )

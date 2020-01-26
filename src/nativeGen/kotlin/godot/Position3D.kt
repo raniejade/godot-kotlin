@@ -17,7 +17,6 @@ open class Position3D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Position3D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Position3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Position3D(
         fn()
       )

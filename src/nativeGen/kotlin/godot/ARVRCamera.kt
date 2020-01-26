@@ -17,7 +17,6 @@ open class ARVRCamera internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRCamera".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ARVRCamera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ARVRCamera(
         fn()
       )

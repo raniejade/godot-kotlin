@@ -17,7 +17,6 @@ open class PlaneShape internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PlaneShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PlaneShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PlaneShape(
         fn()
       )

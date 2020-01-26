@@ -18,7 +18,6 @@ open class AudioStreamMicrophone internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamMicrophone".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioStreamMicrophone" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioStreamMicrophone(
         fn()
       )

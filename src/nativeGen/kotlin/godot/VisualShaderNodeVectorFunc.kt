@@ -89,7 +89,6 @@ open class VisualShaderNodeVectorFunc internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeVectorFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeVectorFunc(
         fn()
       )

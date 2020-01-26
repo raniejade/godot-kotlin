@@ -18,7 +18,6 @@ open class EditorResourceConversionPlugin internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorResourceConversionPlugin".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorResourceConversionPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorResourceConversionPlugin(
         fn()
       )

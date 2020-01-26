@@ -17,7 +17,6 @@ open class FuncRef internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("FuncRef".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for FuncRef" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       FuncRef(
         fn()
       )

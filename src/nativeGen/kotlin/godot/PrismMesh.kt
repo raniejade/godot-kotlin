@@ -17,7 +17,6 @@ open class PrismMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PrismMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PrismMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PrismMesh(
         fn()
       )

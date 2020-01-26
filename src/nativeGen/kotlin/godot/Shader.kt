@@ -24,7 +24,6 @@ open class Shader internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Shader".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Shader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Shader(
         fn()
       )

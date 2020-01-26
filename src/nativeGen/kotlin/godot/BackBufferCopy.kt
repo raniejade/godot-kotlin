@@ -25,7 +25,6 @@ open class BackBufferCopy internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BackBufferCopy".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for BackBufferCopy" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       BackBufferCopy(
         fn()
       )

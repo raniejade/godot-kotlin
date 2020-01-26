@@ -18,7 +18,6 @@ open class RectangleShape2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RectangleShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RectangleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RectangleShape2D(
         fn()
       )

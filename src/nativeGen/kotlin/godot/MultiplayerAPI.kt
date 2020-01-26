@@ -37,7 +37,6 @@ open class MultiplayerAPI internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiplayerAPI".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MultiplayerAPI" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MultiplayerAPI(
         fn()
       )

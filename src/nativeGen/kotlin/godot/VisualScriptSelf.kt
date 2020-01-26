@@ -18,7 +18,6 @@ open class VisualScriptSelf internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSelf".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptSelf" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptSelf(
         fn()
       )

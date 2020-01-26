@@ -28,7 +28,6 @@ open class GIProbe internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbe".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GIProbe" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GIProbe(
         fn()
       )

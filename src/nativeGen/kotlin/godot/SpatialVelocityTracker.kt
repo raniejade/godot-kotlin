@@ -18,7 +18,6 @@ open class SpatialVelocityTracker internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpatialVelocityTracker".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SpatialVelocityTracker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SpatialVelocityTracker(
         fn()
       )

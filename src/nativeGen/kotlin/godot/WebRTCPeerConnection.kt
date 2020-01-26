@@ -31,7 +31,6 @@ open class WebRTCPeerConnection internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCPeerConnection".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WebRTCPeerConnection" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WebRTCPeerConnection(
         fn()
       )

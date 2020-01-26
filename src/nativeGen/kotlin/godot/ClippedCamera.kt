@@ -22,7 +22,6 @@ open class ClippedCamera internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ClippedCamera".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ClippedCamera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ClippedCamera(
         fn()
       )

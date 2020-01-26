@@ -17,7 +17,6 @@ open class CSGBox internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGBox".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGBox(
         fn()
       )

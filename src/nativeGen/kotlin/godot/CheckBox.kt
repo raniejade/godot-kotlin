@@ -17,7 +17,6 @@ open class CheckBox internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CheckBox".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CheckBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CheckBox(
         fn()
       )

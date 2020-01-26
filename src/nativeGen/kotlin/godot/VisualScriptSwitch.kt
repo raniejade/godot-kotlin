@@ -18,7 +18,6 @@ open class VisualScriptSwitch internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSwitch".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptSwitch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptSwitch(
         fn()
       )

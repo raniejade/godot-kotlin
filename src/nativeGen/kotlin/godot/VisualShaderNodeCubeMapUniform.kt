@@ -18,7 +18,6 @@ open class VisualShaderNodeCubeMapUniform internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCubeMapUniform".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeCubeMapUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeCubeMapUniform(
         fn()
       )

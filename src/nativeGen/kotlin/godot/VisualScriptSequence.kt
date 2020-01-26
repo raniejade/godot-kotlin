@@ -18,7 +18,6 @@ open class VisualScriptSequence internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSequence".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptSequence" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptSequence(
         fn()
       )

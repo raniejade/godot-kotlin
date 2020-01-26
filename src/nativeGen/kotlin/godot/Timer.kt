@@ -22,7 +22,6 @@ open class Timer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Timer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Timer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Timer(
         fn()
       )

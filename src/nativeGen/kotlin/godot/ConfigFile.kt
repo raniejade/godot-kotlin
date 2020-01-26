@@ -17,7 +17,6 @@ open class ConfigFile internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConfigFile".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ConfigFile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ConfigFile(
         fn()
       )

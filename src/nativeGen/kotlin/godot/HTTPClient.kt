@@ -180,7 +180,6 @@ open class HTTPClient internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPClient".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HTTPClient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HTTPClient(
         fn()
       )

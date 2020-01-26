@@ -42,7 +42,6 @@ open class HTTPRequest internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPRequest".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HTTPRequest" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HTTPRequest(
         fn()
       )

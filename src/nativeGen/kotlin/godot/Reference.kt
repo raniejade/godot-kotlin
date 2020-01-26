@@ -17,7 +17,6 @@ open class Reference internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Reference".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Reference" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Reference(
         fn()
       )

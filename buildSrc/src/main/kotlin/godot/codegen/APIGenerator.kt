@@ -95,6 +95,23 @@ class APIGenerator {
       )
     }
 
+    // singleton
+    if (cls.singleton) {
+      companionObjectBuilder.addProperty(
+        PropertySpec.builder("Instance", className)
+          .initializer("""
+            memScoped {
+              val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("${cls.name}".cstr.ptr)
+              requireNotNull(handle) { "No instance found for singleton ${cls.name}" }
+              ${cls.name}(
+                handle
+              )
+            }
+          """.trimIndent())
+          .build()
+      )
+    }
+
     // constants
     if (cls.constants.isNotEmpty()) {
       companionObjectBuilder.addProperties(

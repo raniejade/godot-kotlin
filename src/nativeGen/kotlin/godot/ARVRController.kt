@@ -18,7 +18,6 @@ open class ARVRController internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRController".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ARVRController" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ARVRController(
         fn()
       )

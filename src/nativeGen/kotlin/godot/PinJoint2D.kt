@@ -17,7 +17,6 @@ open class PinJoint2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PinJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PinJoint2D(
         fn()
       )

@@ -18,7 +18,6 @@ open class InputEventMouseMotion internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMouseMotion".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InputEventMouseMotion" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InputEventMouseMotion(
         fn()
       )

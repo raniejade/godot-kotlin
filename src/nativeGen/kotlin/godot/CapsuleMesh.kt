@@ -17,7 +17,6 @@ open class CapsuleMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CapsuleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CapsuleMesh(
         fn()
       )

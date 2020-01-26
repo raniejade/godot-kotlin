@@ -18,7 +18,6 @@ open class PacketPeerStream internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerStream".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PacketPeerStream" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PacketPeerStream(
         fn()
       )

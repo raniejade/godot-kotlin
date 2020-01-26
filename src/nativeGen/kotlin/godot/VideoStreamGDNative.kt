@@ -18,7 +18,6 @@ open class VideoStreamGDNative internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoStreamGDNative".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VideoStreamGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VideoStreamGDNative(
         fn()
       )

@@ -25,7 +25,6 @@ open class DynamicFontData internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DynamicFontData".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for DynamicFontData" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       DynamicFontData(
         fn()
       )

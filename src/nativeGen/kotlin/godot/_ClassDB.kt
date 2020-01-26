@@ -12,5 +12,13 @@ import kotlinx.cinterop.reinterpret
 open class _ClassDB internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: _ClassDB = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ClassDB".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _ClassDB" }
+          _ClassDB(
+            handle
+          )
+        }
+  }
 }

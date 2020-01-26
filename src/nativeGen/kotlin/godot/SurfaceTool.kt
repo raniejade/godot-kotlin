@@ -17,7 +17,6 @@ open class SurfaceTool internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SurfaceTool".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SurfaceTool" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SurfaceTool(
         fn()
       )

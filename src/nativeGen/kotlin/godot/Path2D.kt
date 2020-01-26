@@ -17,7 +17,6 @@ open class Path2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Path2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Path2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Path2D(
         fn()
       )

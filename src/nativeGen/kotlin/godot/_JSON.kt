@@ -12,5 +12,13 @@ import kotlinx.cinterop.reinterpret
 open class _JSON internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: _JSON = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_JSON".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _JSON" }
+          _JSON(
+            handle
+          )
+        }
+  }
 }

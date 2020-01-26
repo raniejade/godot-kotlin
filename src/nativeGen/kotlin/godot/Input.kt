@@ -14,6 +14,14 @@ open class Input internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: Input = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Input".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton Input" }
+          Input(
+            handle
+          )
+        }
+
     val CursorArrow: Int = 0
 
     val CursorBdiagsize: Int = 11

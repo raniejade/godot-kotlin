@@ -17,7 +17,6 @@ open class LargeTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LargeTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for LargeTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       LargeTexture(
         fn()
       )

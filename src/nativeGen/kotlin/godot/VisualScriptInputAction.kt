@@ -27,7 +27,6 @@ open class VisualScriptInputAction internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptInputAction".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptInputAction" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptInputAction(
         fn()
       )

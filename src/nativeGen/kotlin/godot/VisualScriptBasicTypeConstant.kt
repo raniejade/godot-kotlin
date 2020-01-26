@@ -18,7 +18,6 @@ open class VisualScriptBasicTypeConstant internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptBasicTypeConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptBasicTypeConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptBasicTypeConstant(
         fn()
       )

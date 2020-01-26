@@ -18,7 +18,6 @@ open class PackedDataContainer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedDataContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PackedDataContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PackedDataContainer(
         fn()
       )

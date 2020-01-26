@@ -18,7 +18,6 @@ open class InputEventPanGesture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventPanGesture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InputEventPanGesture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InputEventPanGesture(
         fn()
       )

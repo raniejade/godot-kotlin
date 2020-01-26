@@ -18,7 +18,6 @@ open class MobileVRInterface internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MobileVRInterface".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MobileVRInterface" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MobileVRInterface(
         fn()
       )

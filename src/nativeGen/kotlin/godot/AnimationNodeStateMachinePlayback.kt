@@ -18,7 +18,6 @@ open class AnimationNodeStateMachinePlayback internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachinePlayback".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeStateMachinePlayback" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeStateMachinePlayback(
         fn()
       )

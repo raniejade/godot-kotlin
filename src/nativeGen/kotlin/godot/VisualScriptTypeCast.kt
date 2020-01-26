@@ -18,7 +18,6 @@ open class VisualScriptTypeCast internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptTypeCast".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptTypeCast" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptTypeCast(
         fn()
       )

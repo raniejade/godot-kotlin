@@ -17,7 +17,6 @@ open class CylinderShape internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CylinderShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CylinderShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CylinderShape(
         fn()
       )

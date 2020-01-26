@@ -18,7 +18,6 @@ open class AnimationNodeBlend2 internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlend2".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeBlend2" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeBlend2(
         fn()
       )

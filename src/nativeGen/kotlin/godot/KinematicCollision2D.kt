@@ -18,7 +18,6 @@ open class KinematicCollision2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicCollision2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for KinematicCollision2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       KinematicCollision2D(
         fn()
       )

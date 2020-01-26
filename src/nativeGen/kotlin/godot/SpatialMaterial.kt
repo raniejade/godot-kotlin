@@ -195,7 +195,6 @@ open class SpatialMaterial internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpatialMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SpatialMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SpatialMaterial(
         fn()
       )

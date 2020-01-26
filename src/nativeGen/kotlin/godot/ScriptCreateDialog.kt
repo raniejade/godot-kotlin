@@ -18,7 +18,6 @@ open class ScriptCreateDialog internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ScriptCreateDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ScriptCreateDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ScriptCreateDialog(
         fn()
       )

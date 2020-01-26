@@ -17,7 +17,6 @@ open class HSeparator internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HSeparator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HSeparator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HSeparator(
         fn()
       )

@@ -24,7 +24,6 @@ open class PackedScene internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedScene".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PackedScene" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PackedScene(
         fn()
       )

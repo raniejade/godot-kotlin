@@ -18,7 +18,6 @@ open class CollisionPolygon internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionPolygon".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CollisionPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CollisionPolygon(
         fn()
       )

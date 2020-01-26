@@ -18,7 +18,6 @@ open class InputEventAction internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventAction".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InputEventAction" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InputEventAction(
         fn()
       )

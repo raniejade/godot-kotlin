@@ -17,7 +17,6 @@ open class VideoPlayer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoPlayer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VideoPlayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VideoPlayer(
         fn()
       )

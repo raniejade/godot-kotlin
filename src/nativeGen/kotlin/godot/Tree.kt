@@ -30,7 +30,6 @@ open class Tree internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tree".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Tree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Tree(
         fn()
       )

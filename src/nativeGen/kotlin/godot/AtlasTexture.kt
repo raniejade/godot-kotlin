@@ -17,7 +17,6 @@ open class AtlasTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AtlasTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AtlasTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AtlasTexture(
         fn()
       )

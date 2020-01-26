@@ -12,5 +12,14 @@ import kotlinx.cinterop.reinterpret
 open class TranslationServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: TranslationServer = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("TranslationServer".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton TranslationServer" }
+          TranslationServer(
+            handle
+          )
+        }
+  }
 }

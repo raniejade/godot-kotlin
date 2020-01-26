@@ -42,7 +42,6 @@ open class SceneTree internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SceneTree".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SceneTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SceneTree(
         fn()
       )

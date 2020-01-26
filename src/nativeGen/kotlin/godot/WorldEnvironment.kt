@@ -18,7 +18,6 @@ open class WorldEnvironment internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WorldEnvironment".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WorldEnvironment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WorldEnvironment(
         fn()
       )

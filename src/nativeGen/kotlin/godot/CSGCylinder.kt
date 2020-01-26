@@ -17,7 +17,6 @@ open class CSGCylinder internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCylinder".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGCylinder" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGCylinder(
         fn()
       )

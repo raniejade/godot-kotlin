@@ -18,7 +18,6 @@ open class ViewportTexture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ViewportTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ViewportTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ViewportTexture(
         fn()
       )

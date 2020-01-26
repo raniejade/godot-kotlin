@@ -18,7 +18,6 @@ open class VisualScriptWhile internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptWhile".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptWhile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptWhile(
         fn()
       )

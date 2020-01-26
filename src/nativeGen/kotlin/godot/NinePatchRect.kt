@@ -24,7 +24,6 @@ open class NinePatchRect internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NinePatchRect".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for NinePatchRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       NinePatchRect(
         fn()
       )

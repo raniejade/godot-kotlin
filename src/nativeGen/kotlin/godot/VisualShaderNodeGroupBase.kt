@@ -18,7 +18,6 @@ open class VisualShaderNodeGroupBase internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeGroupBase".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeGroupBase" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeGroupBase(
         fn()
       )

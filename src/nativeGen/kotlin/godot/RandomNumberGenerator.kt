@@ -18,7 +18,6 @@ open class RandomNumberGenerator internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RandomNumberGenerator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RandomNumberGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RandomNumberGenerator(
         fn()
       )

@@ -17,7 +17,6 @@ open class BitMap internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitMap".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for BitMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       BitMap(
         fn()
       )

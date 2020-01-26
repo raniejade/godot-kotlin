@@ -20,7 +20,6 @@ open class GridMap internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridMap".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GridMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GridMap(
         fn()
       )

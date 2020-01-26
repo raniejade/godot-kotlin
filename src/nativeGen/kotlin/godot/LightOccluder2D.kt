@@ -18,7 +18,6 @@ open class LightOccluder2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("LightOccluder2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for LightOccluder2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       LightOccluder2D(
         fn()
       )

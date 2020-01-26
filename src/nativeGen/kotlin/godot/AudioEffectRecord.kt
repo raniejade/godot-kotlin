@@ -18,7 +18,6 @@ open class AudioEffectRecord internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectRecord".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectRecord" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectRecord(
         fn()
       )

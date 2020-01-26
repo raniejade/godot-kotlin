@@ -29,7 +29,6 @@ open class NetworkedMultiplayerENet internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NetworkedMultiplayerENet".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for NetworkedMultiplayerENet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       NetworkedMultiplayerENet(
         fn()
       )

@@ -17,7 +17,6 @@ open class PopupMenu internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupMenu".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PopupMenu" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PopupMenu(
         fn()
       )

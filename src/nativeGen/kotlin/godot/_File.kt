@@ -34,7 +34,6 @@ open class _File internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_File".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for _File" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       _File(
         fn()
       )

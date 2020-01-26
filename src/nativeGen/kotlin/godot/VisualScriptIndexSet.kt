@@ -18,7 +18,6 @@ open class VisualScriptIndexSet internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptIndexSet".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptIndexSet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptIndexSet(
         fn()
       )

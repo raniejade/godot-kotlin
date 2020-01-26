@@ -18,7 +18,6 @@ open class BoneAttachment internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BoneAttachment".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for BoneAttachment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       BoneAttachment(
         fn()
       )

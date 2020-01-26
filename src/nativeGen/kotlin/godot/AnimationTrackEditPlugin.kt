@@ -18,7 +18,6 @@ open class AnimationTrackEditPlugin internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTrackEditPlugin".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationTrackEditPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationTrackEditPlugin(
         fn()
       )

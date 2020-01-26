@@ -17,7 +17,6 @@ open class CSGTorus internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGTorus".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGTorus" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGTorus(
         fn()
       )

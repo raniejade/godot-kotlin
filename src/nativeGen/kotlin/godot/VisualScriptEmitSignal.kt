@@ -18,7 +18,6 @@ open class VisualScriptEmitSignal internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptEmitSignal".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptEmitSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptEmitSignal(
         fn()
       )

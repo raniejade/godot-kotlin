@@ -18,7 +18,6 @@ open class VideoStreamTheora internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoStreamTheora".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VideoStreamTheora" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VideoStreamTheora(
         fn()
       )

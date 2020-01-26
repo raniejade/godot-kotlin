@@ -18,7 +18,6 @@ open class VisualShaderNodeScalarClamp internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarClamp".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeScalarClamp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeScalarClamp(
         fn()
       )

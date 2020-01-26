@@ -17,7 +17,6 @@ open class TextureArray internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureArray".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TextureArray" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TextureArray(
         fn()
       )

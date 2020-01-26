@@ -24,7 +24,6 @@ open class LinkButton internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LinkButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for LinkButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       LinkButton(
         fn()
       )

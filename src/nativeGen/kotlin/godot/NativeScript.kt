@@ -17,7 +17,6 @@ open class NativeScript internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NativeScript".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for NativeScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       NativeScript(
         fn()
       )

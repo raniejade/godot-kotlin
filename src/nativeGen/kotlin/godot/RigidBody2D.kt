@@ -32,7 +32,6 @@ open class RigidBody2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RigidBody2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RigidBody2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RigidBody2D(
         fn()
       )

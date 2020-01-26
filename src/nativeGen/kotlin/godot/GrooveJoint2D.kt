@@ -17,7 +17,6 @@ open class GrooveJoint2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GrooveJoint2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GrooveJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GrooveJoint2D(
         fn()
       )

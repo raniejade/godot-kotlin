@@ -18,7 +18,6 @@ open class EditorProperty internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorProperty".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorProperty" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorProperty(
         fn()
       )

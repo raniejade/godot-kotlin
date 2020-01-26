@@ -33,7 +33,6 @@ open class AudioStreamSample internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamSample".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioStreamSample" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioStreamSample(
         fn()
       )

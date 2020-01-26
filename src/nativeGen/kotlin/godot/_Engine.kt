@@ -12,5 +12,13 @@ import kotlinx.cinterop.reinterpret
 open class _Engine internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: _Engine = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Engine".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _Engine" }
+          _Engine(
+            handle
+          )
+        }
+  }
 }

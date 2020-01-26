@@ -18,7 +18,6 @@ open class EditorInspector internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorInspector".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorInspector" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorInspector(
         fn()
       )

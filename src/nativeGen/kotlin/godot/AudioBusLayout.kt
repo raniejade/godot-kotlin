@@ -18,7 +18,6 @@ open class AudioBusLayout internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioBusLayout".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioBusLayout" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioBusLayout(
         fn()
       )

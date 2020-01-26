@@ -18,7 +18,6 @@ open class VisualShaderNodeVectorRefract internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorRefract".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeVectorRefract" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeVectorRefract(
         fn()
       )

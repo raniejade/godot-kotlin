@@ -25,7 +25,6 @@ open class VisualScriptPropertyGet internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPropertyGet".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptPropertyGet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptPropertyGet(
         fn()
       )

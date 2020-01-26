@@ -17,7 +17,6 @@ open class WindowDialog internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WindowDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WindowDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WindowDialog(
         fn()
       )

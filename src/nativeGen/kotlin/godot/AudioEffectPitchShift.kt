@@ -18,7 +18,6 @@ open class AudioEffectPitchShift internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPitchShift".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectPitchShift" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectPitchShift(
         fn()
       )

@@ -23,7 +23,6 @@ open class ReflectionProbe internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReflectionProbe".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ReflectionProbe" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ReflectionProbe(
         fn()
       )

@@ -17,7 +17,6 @@ open class Translation internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Translation".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Translation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Translation(
         fn()
       )

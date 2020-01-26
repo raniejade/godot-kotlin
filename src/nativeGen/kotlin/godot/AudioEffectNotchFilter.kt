@@ -18,7 +18,6 @@ open class AudioEffectNotchFilter internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectNotchFilter".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectNotchFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectNotchFilter(
         fn()
       )

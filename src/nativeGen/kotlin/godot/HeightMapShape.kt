@@ -18,7 +18,6 @@ open class HeightMapShape internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("HeightMapShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HeightMapShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HeightMapShape(
         fn()
       )

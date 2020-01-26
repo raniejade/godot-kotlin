@@ -18,7 +18,6 @@ open class VisualScriptConstant internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptConstant(
         fn()
       )

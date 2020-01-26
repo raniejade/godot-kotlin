@@ -28,7 +28,6 @@ open class StreamPeerSSL internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerSSL".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StreamPeerSSL" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StreamPeerSSL(
         fn()
       )

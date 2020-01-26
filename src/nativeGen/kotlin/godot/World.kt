@@ -17,7 +17,6 @@ open class World internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("World".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for World" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       World(
         fn()
       )

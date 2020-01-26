@@ -24,7 +24,6 @@ open class TabContainer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TabContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TabContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TabContainer(
         fn()
       )

@@ -17,7 +17,6 @@ open class Bone2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Bone2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Bone2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Bone2D(
         fn()
       )

@@ -17,7 +17,6 @@ open class ProxyTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProxyTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ProxyTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ProxyTexture(
         fn()
       )

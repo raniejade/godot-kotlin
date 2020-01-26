@@ -17,7 +17,6 @@ open class Navigation2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Navigation2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Navigation2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Navigation2D(
         fn()
       )

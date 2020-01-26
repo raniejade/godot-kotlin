@@ -18,7 +18,6 @@ open class EditorFileSystemDirectory internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFileSystemDirectory".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorFileSystemDirectory" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorFileSystemDirectory(
         fn()
       )

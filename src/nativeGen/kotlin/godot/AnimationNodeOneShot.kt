@@ -23,7 +23,6 @@ open class AnimationNodeOneShot internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeOneShot".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeOneShot" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeOneShot(
         fn()
       )

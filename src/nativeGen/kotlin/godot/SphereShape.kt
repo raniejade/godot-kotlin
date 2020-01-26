@@ -17,7 +17,6 @@ open class SphereShape internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SphereShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SphereShape(
         fn()
       )

@@ -14,6 +14,14 @@ open class _OS internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: _OS = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_OS".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _OS" }
+          _OS(
+            handle
+          )
+        }
+
     val DayFriday: Int = 5
 
     val DayMonday: Int = 1

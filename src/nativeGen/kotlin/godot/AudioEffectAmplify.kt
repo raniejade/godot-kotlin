@@ -18,7 +18,6 @@ open class AudioEffectAmplify internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectAmplify".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectAmplify" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectAmplify(
         fn()
       )

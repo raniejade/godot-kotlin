@@ -18,7 +18,6 @@ open class SegmentShape2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SegmentShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SegmentShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SegmentShape2D(
         fn()
       )

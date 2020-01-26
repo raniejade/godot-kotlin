@@ -26,7 +26,6 @@ open class ItemList internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ItemList".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ItemList" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ItemList(
         fn()
       )

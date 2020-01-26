@@ -17,7 +17,6 @@ open class StyleBoxEmpty internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxEmpty".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StyleBoxEmpty" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StyleBoxEmpty(
         fn()
       )

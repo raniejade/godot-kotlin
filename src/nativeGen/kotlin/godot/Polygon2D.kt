@@ -17,7 +17,6 @@ open class Polygon2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Polygon2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Polygon2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Polygon2D(
         fn()
       )

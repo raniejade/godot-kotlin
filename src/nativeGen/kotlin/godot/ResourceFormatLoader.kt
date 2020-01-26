@@ -18,7 +18,6 @@ open class ResourceFormatLoader internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourceFormatLoader".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ResourceFormatLoader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ResourceFormatLoader(
         fn()
       )

@@ -17,7 +17,6 @@ open class StreamTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StreamTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StreamTexture(
         fn()
       )

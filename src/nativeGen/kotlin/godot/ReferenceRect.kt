@@ -17,7 +17,6 @@ open class ReferenceRect internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReferenceRect".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ReferenceRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ReferenceRect(
         fn()
       )

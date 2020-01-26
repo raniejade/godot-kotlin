@@ -14,6 +14,15 @@ open class VisualServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: VisualServer = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("VisualServer".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton VisualServer" }
+          VisualServer(
+            handle
+          )
+        }
+
     val ArrayBones: Int = 6
 
     val ArrayColor: Int = 3

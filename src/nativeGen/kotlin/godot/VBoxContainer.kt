@@ -17,7 +17,6 @@ open class VBoxContainer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VBoxContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VBoxContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VBoxContainer(
         fn()
       )

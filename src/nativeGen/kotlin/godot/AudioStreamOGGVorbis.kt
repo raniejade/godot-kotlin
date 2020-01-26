@@ -18,7 +18,6 @@ open class AudioStreamOGGVorbis internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamOGGVorbis".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioStreamOGGVorbis" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioStreamOGGVorbis(
         fn()
       )

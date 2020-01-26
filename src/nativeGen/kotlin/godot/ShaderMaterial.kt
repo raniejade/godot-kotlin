@@ -18,7 +18,6 @@ open class ShaderMaterial internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ShaderMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ShaderMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ShaderMaterial(
         fn()
       )

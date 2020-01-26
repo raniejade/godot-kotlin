@@ -18,7 +18,6 @@ open class VisualScriptOperator internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptOperator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptOperator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptOperator(
         fn()
       )

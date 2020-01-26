@@ -17,7 +17,6 @@ open class VSlider internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSlider".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VSlider" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VSlider(
         fn()
       )

@@ -17,7 +17,6 @@ open class MenuButton internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MenuButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MenuButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MenuButton(
         fn()
       )

@@ -17,7 +17,6 @@ open class GridContainer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GridContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GridContainer(
         fn()
       )

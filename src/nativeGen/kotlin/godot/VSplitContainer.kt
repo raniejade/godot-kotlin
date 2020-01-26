@@ -18,7 +18,6 @@ open class VSplitContainer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSplitContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VSplitContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VSplitContainer(
         fn()
       )

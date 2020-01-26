@@ -17,7 +17,6 @@ open class ShortCut internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ShortCut".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ShortCut" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ShortCut(
         fn()
       )

@@ -17,7 +17,6 @@ open class CSGCombiner internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCombiner".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGCombiner" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGCombiner(
         fn()
       )

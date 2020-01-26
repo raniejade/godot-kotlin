@@ -67,7 +67,6 @@ open class Generic6DOFJoint internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Generic6DOFJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Generic6DOFJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Generic6DOFJoint(
         fn()
       )

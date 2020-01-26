@@ -18,7 +18,6 @@ open class ResourcePreloader internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourcePreloader".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ResourcePreloader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ResourcePreloader(
         fn()
       )

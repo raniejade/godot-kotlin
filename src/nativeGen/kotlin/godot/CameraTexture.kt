@@ -17,7 +17,6 @@ open class CameraTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CameraTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CameraTexture(
         fn()
       )

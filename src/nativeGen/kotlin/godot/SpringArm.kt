@@ -17,7 +17,6 @@ open class SpringArm internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpringArm".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SpringArm" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SpringArm(
         fn()
       )

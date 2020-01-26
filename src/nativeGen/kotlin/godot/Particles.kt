@@ -26,7 +26,6 @@ open class Particles internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Particles".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Particles" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Particles(
         fn()
       )

@@ -88,7 +88,6 @@ open class Node internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Node" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Node(
         fn()
       )

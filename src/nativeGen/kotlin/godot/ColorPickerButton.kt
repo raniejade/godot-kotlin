@@ -18,7 +18,6 @@ open class ColorPickerButton internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorPickerButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ColorPickerButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ColorPickerButton(
         fn()
       )

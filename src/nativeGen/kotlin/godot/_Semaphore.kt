@@ -17,7 +17,6 @@ open class _Semaphore internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Semaphore".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for _Semaphore" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       _Semaphore(
         fn()
       )

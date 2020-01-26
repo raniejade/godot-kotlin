@@ -18,7 +18,6 @@ open class ConfirmationDialog internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConfirmationDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ConfirmationDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ConfirmationDialog(
         fn()
       )

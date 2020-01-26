@@ -18,7 +18,6 @@ open class EditorSpatialGizmo internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSpatialGizmo".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorSpatialGizmo" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorSpatialGizmo(
         fn()
       )

@@ -17,7 +17,6 @@ open class _Directory internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Directory".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for _Directory" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       _Directory(
         fn()
       )

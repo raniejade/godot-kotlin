@@ -17,7 +17,6 @@ open class MeshLibrary internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshLibrary".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MeshLibrary" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MeshLibrary(
         fn()
       )

@@ -17,7 +17,6 @@ open class HScrollBar internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HScrollBar".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HScrollBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HScrollBar(
         fn()
       )

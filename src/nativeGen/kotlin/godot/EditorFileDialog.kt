@@ -39,7 +39,6 @@ open class EditorFileDialog internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFileDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorFileDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorFileDialog(
         fn()
       )

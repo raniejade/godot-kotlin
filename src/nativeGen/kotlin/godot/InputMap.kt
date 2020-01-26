@@ -12,5 +12,13 @@ import kotlinx.cinterop.reinterpret
 open class InputMap internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  companion object
+  companion object {
+    val Instance: InputMap = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("InputMap".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton InputMap" }
+          InputMap(
+            handle
+          )
+        }
+  }
 }

@@ -17,7 +17,6 @@ open class VehicleWheel internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleWheel".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VehicleWheel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VehicleWheel(
         fn()
       )

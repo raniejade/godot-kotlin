@@ -67,7 +67,6 @@ open class CPUParticles2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CPUParticles2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CPUParticles2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CPUParticles2D(
         fn()
       )

@@ -37,7 +37,6 @@ open class VisualScriptMathConstant internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptMathConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptMathConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptMathConstant(
         fn()
       )

@@ -17,7 +17,6 @@ open class PCKPacker internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PCKPacker".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PCKPacker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PCKPacker(
         fn()
       )

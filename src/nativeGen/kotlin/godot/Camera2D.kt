@@ -26,7 +26,6 @@ open class Camera2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Camera2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Camera2D(
         fn()
       )

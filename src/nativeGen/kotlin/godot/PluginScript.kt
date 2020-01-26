@@ -17,7 +17,6 @@ open class PluginScript internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PluginScript".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PluginScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PluginScript(
         fn()
       )

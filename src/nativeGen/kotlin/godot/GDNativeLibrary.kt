@@ -18,7 +18,6 @@ open class GDNativeLibrary internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDNativeLibrary".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GDNativeLibrary" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GDNativeLibrary(
         fn()
       )

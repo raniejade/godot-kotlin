@@ -18,7 +18,6 @@ open class WebRTCDataChannelGDNative internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCDataChannelGDNative".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WebRTCDataChannelGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WebRTCDataChannelGDNative(
         fn()
       )

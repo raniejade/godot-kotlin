@@ -18,7 +18,6 @@ open class AudioEffectEQ10 internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectEQ10".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectEQ10" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectEQ10(
         fn()
       )

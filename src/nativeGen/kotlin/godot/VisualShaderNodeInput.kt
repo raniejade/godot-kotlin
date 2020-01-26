@@ -18,7 +18,6 @@ open class VisualShaderNodeInput internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeInput".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeInput" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeInput(
         fn()
       )

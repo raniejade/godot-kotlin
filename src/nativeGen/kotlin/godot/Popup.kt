@@ -22,7 +22,6 @@ open class Popup internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Popup".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Popup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Popup(
         fn()
       )

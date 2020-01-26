@@ -18,7 +18,6 @@ open class VisualScriptLocalVar internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptLocalVar".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptLocalVar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptLocalVar(
         fn()
       )

@@ -23,7 +23,6 @@ open class ProximityGroup internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProximityGroup".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ProximityGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ProximityGroup(
         fn()
       )

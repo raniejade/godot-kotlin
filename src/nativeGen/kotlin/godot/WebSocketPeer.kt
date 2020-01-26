@@ -22,7 +22,6 @@ open class WebSocketPeer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketPeer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WebSocketPeer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WebSocketPeer(
         fn()
       )

@@ -18,7 +18,6 @@ open class VisualShaderNodeBooleanConstant internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeBooleanConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeBooleanConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeBooleanConstant(
         fn()
       )

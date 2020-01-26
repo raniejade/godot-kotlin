@@ -35,7 +35,6 @@ open class CanvasItemMaterial internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasItemMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CanvasItemMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CanvasItemMaterial(
         fn()
       )

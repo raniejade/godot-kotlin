@@ -18,7 +18,6 @@ open class EditorImportPlugin internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorImportPlugin".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorImportPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorImportPlugin(
         fn()
       )

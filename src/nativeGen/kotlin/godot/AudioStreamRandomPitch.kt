@@ -18,7 +18,6 @@ open class AudioStreamRandomPitch internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamRandomPitch".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioStreamRandomPitch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioStreamRandomPitch(
         fn()
       )

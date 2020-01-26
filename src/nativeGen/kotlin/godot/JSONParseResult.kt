@@ -18,7 +18,6 @@ open class JSONParseResult internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONParseResult".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for JSONParseResult" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       JSONParseResult(
         fn()
       )

@@ -17,7 +17,6 @@ open class Expression internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Expression".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Expression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Expression(
         fn()
       )

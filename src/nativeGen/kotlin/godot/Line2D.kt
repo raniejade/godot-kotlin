@@ -36,7 +36,6 @@ open class Line2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Line2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Line2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Line2D(
         fn()
       )

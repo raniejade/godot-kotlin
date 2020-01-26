@@ -17,7 +17,6 @@ open class Node2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Node2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Node2D(
         fn()
       )

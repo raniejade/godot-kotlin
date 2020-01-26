@@ -18,7 +18,6 @@ open class VisualShaderNodeScalarConstant internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarConstant".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeScalarConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeScalarConstant(
         fn()
       )

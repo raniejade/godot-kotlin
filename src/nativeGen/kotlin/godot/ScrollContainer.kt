@@ -18,7 +18,6 @@ open class ScrollContainer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ScrollContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ScrollContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ScrollContainer(
         fn()
       )

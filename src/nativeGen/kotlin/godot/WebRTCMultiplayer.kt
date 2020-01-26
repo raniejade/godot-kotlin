@@ -18,7 +18,6 @@ open class WebRTCMultiplayer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCMultiplayer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WebRTCMultiplayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WebRTCMultiplayer(
         fn()
       )

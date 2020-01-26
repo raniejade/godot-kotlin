@@ -17,7 +17,6 @@ open class CubeMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CubeMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CubeMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CubeMesh(
         fn()
       )

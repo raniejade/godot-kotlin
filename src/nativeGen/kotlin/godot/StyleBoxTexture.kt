@@ -25,7 +25,6 @@ open class StyleBoxTexture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StyleBoxTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StyleBoxTexture(
         fn()
       )

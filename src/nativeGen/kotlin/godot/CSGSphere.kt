@@ -17,7 +17,6 @@ open class CSGSphere internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGSphere".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGSphere" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGSphere(
         fn()
       )

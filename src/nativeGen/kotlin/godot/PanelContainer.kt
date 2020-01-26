@@ -18,7 +18,6 @@ open class PanelContainer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PanelContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PanelContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PanelContainer(
         fn()
       )

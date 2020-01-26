@@ -18,7 +18,6 @@ open class MarginContainer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MarginContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MarginContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MarginContainer(
         fn()
       )

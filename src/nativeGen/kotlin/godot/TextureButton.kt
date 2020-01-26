@@ -32,7 +32,6 @@ open class TextureButton internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TextureButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TextureButton(
         fn()
       )

@@ -17,7 +17,6 @@ open class ARVRAnchor internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRAnchor".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ARVRAnchor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ARVRAnchor(
         fn()
       )

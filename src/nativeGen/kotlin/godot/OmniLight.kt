@@ -26,7 +26,6 @@ open class OmniLight internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OmniLight".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for OmniLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       OmniLight(
         fn()
       )

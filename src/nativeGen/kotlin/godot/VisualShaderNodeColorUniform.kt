@@ -18,7 +18,6 @@ open class VisualShaderNodeColorUniform internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorUniform".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeColorUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeColorUniform(
         fn()
       )

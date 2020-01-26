@@ -60,7 +60,6 @@ open class ArrayMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ArrayMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ArrayMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ArrayMesh(
         fn()
       )

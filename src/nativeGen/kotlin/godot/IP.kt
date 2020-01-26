@@ -14,6 +14,14 @@ open class IP internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: IP = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("IP".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton IP" }
+          IP(
+            handle
+          )
+        }
+
     val ResolverInvalidId: Int = -1
 
     val ResolverMaxQueries: Int = 32

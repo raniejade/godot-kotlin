@@ -33,7 +33,6 @@ open class VisualShaderNodeTexture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeTexture(
         fn()
       )

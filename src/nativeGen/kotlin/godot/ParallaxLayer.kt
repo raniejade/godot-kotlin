@@ -17,7 +17,6 @@ open class ParallaxLayer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxLayer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ParallaxLayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ParallaxLayer(
         fn()
       )

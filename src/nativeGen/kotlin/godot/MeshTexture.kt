@@ -17,7 +17,6 @@ open class MeshTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MeshTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MeshTexture(
         fn()
       )

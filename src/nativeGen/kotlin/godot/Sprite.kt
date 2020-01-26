@@ -17,7 +17,6 @@ open class Sprite internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Sprite" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Sprite(
         fn()
       )

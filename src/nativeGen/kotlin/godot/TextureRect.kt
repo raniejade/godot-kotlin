@@ -34,7 +34,6 @@ open class TextureRect internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureRect".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TextureRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TextureRect(
         fn()
       )

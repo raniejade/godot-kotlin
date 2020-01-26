@@ -18,7 +18,6 @@ open class AudioEffectChorus internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectChorus".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectChorus" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectChorus(
         fn()
       )

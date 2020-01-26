@@ -14,6 +14,15 @@ open class Performance internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: Performance = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton Performance" }
+          Performance(
+            handle
+          )
+        }
+
     val AudioOutputLatency: Int = 28
 
     val MemoryDynamic: Int = 4

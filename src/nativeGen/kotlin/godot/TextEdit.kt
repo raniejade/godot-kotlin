@@ -40,7 +40,6 @@ open class TextEdit internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TextEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TextEdit(
         fn()
       )

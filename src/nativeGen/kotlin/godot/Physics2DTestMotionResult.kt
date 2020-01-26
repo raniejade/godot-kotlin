@@ -18,7 +18,6 @@ open class Physics2DTestMotionResult internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Physics2DTestMotionResult".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Physics2DTestMotionResult" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Physics2DTestMotionResult(
         fn()
       )

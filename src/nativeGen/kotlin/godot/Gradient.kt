@@ -17,7 +17,6 @@ open class Gradient internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Gradient".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Gradient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Gradient(
         fn()
       )

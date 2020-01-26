@@ -142,7 +142,6 @@ open class Control internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Control".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Control" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Control(
         fn()
       )

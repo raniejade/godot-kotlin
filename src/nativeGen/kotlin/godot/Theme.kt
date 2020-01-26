@@ -17,7 +17,6 @@ open class Theme internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Theme".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Theme" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Theme(
         fn()
       )

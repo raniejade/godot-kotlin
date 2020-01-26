@@ -18,7 +18,6 @@ open class VisualScriptCondition internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptCondition".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptCondition" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptCondition(
         fn()
       )

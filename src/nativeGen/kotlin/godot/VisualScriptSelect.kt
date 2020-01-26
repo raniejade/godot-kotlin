@@ -18,7 +18,6 @@ open class VisualScriptSelect internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSelect".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptSelect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptSelect(
         fn()
       )

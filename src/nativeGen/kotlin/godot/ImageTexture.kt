@@ -24,7 +24,6 @@ open class ImageTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImageTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ImageTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ImageTexture(
         fn()
       )

@@ -14,6 +14,15 @@ open class _ResourceSaver internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: _ResourceSaver = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceSaver".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _ResourceSaver" }
+          _ResourceSaver(
+            handle
+          )
+        }
+
     val FlagBundleResources: Int = 2
 
     val FlagChangePath: Int = 4

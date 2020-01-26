@@ -17,7 +17,6 @@ open class Path internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Path".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Path" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Path(
         fn()
       )

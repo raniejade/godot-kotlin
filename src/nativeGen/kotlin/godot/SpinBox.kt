@@ -17,7 +17,6 @@ open class SpinBox internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpinBox".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SpinBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SpinBox(
         fn()
       )

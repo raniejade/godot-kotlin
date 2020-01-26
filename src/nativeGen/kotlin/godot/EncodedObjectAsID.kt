@@ -18,7 +18,6 @@ open class EncodedObjectAsID internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EncodedObjectAsID".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EncodedObjectAsID" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EncodedObjectAsID(
         fn()
       )

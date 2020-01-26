@@ -18,7 +18,6 @@ open class ARVRInterfaceGDNative internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRInterfaceGDNative".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ARVRInterfaceGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ARVRInterfaceGDNative(
         fn()
       )

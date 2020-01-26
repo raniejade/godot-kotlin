@@ -18,7 +18,6 @@ open class PHashTranslation internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PHashTranslation".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PHashTranslation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PHashTranslation(
         fn()
       )

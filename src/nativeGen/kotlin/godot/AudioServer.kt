@@ -14,6 +14,15 @@ open class AudioServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: AudioServer = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("AudioServer".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton AudioServer" }
+          AudioServer(
+            handle
+          )
+        }
+
     val SpeakerModeStereo: Int = 0
 
     val SpeakerSurround31: Int = 1

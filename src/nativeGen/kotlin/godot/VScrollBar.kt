@@ -17,7 +17,6 @@ open class VScrollBar internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VScrollBar".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VScrollBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VScrollBar(
         fn()
       )

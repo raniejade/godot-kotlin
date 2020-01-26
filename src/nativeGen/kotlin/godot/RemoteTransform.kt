@@ -18,7 +18,6 @@ open class RemoteTransform internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RemoteTransform".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RemoteTransform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RemoteTransform(
         fn()
       )

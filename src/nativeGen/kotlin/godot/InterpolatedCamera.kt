@@ -18,7 +18,6 @@ open class InterpolatedCamera internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InterpolatedCamera".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InterpolatedCamera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InterpolatedCamera(
         fn()
       )

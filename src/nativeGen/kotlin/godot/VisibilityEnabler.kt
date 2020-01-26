@@ -25,7 +25,6 @@ open class VisibilityEnabler internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityEnabler".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisibilityEnabler" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisibilityEnabler(
         fn()
       )

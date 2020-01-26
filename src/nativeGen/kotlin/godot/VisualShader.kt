@@ -30,7 +30,6 @@ open class VisualShader internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShader".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShader(
         fn()
       )

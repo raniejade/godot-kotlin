@@ -17,7 +17,6 @@ open class TCP_Server internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TCP_Server".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TCP_Server" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TCP_Server(
         fn()
       )

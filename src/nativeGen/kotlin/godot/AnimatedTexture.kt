@@ -21,7 +21,6 @@ open class AnimatedTexture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimatedTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimatedTexture(
         fn()
       )

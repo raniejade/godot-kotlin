@@ -24,7 +24,6 @@ open class GraphNode internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphNode".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GraphNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GraphNode(
         fn()
       )

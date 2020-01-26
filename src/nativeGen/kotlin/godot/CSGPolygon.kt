@@ -30,7 +30,6 @@ open class CSGPolygon internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGPolygon".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGPolygon(
         fn()
       )

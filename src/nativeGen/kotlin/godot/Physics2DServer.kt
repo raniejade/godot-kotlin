@@ -14,6 +14,15 @@ open class Physics2DServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: Physics2DServer = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("Physics2DServer".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton Physics2DServer" }
+          Physics2DServer(
+            handle
+          )
+        }
+
     val AreaBodyAdded: Int = 0
 
     val AreaBodyRemoved: Int = 1

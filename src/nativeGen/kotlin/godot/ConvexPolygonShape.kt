@@ -18,7 +18,6 @@ open class ConvexPolygonShape internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConvexPolygonShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ConvexPolygonShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ConvexPolygonShape(
         fn()
       )

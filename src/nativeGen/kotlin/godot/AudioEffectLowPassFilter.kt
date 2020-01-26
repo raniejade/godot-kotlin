@@ -18,7 +18,6 @@ open class AudioEffectLowPassFilter internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectLowPassFilter".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectLowPassFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectLowPassFilter(
         fn()
       )

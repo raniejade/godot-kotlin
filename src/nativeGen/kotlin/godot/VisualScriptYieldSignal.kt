@@ -25,7 +25,6 @@ open class VisualScriptYieldSignal internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYieldSignal".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptYieldSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptYieldSignal(
         fn()
       )

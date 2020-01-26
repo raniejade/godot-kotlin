@@ -18,7 +18,6 @@ open class CapsuleShape2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CapsuleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CapsuleShape2D(
         fn()
       )

@@ -18,7 +18,6 @@ open class InputEventMagnifyGesture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMagnifyGesture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InputEventMagnifyGesture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InputEventMagnifyGesture(
         fn()
       )

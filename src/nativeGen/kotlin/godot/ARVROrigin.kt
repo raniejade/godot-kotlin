@@ -17,7 +17,6 @@ open class ARVROrigin internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVROrigin".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ARVROrigin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ARVROrigin(
         fn()
       )

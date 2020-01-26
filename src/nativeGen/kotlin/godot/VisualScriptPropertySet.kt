@@ -49,7 +49,6 @@ open class VisualScriptPropertySet internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPropertySet".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptPropertySet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptPropertySet(
         fn()
       )

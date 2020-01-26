@@ -17,7 +17,6 @@ open class BitmapFont internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitmapFont".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for BitmapFont" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       BitmapFont(
         fn()
       )

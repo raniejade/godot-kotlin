@@ -31,7 +31,6 @@ open class NavigationMesh internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for NavigationMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       NavigationMesh(
         fn()
       )

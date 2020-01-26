@@ -18,7 +18,6 @@ open class DampedSpringJoint2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DampedSpringJoint2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for DampedSpringJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       DampedSpringJoint2D(
         fn()
       )

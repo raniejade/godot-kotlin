@@ -25,7 +25,6 @@ open class AudioStreamPlayer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamPlayer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioStreamPlayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioStreamPlayer(
         fn()
       )

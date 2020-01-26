@@ -25,7 +25,6 @@ open class OccluderPolygon2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("OccluderPolygon2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for OccluderPolygon2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       OccluderPolygon2D(
         fn()
       )

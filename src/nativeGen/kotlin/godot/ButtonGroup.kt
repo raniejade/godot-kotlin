@@ -17,7 +17,6 @@ open class ButtonGroup internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ButtonGroup".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ButtonGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ButtonGroup(
         fn()
       )

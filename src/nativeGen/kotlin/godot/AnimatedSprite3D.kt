@@ -18,7 +18,6 @@ open class AnimatedSprite3D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedSprite3D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimatedSprite3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimatedSprite3D(
         fn()
       )

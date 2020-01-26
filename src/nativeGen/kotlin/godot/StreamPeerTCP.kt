@@ -26,7 +26,6 @@ open class StreamPeerTCP internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerTCP".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StreamPeerTCP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StreamPeerTCP(
         fn()
       )

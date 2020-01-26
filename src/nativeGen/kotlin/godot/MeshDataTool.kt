@@ -17,7 +17,6 @@ open class MeshDataTool internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshDataTool".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MeshDataTool" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MeshDataTool(
         fn()
       )

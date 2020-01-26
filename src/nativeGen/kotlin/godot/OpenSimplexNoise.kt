@@ -18,7 +18,6 @@ open class OpenSimplexNoise internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("OpenSimplexNoise".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for OpenSimplexNoise" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       OpenSimplexNoise(
         fn()
       )

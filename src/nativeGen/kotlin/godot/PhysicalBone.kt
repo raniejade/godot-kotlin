@@ -30,7 +30,6 @@ open class PhysicalBone internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicalBone".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PhysicalBone" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PhysicalBone(
         fn()
       )

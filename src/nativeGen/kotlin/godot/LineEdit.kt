@@ -42,7 +42,6 @@ open class LineEdit internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LineEdit".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for LineEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       LineEdit(
         fn()
       )

@@ -17,7 +17,6 @@ open class CircleShape2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CircleShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CircleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CircleShape2D(
         fn()
       )

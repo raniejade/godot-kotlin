@@ -17,7 +17,6 @@ open class AStar internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AStar".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AStar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AStar(
         fn()
       )

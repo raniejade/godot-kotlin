@@ -23,7 +23,6 @@ open class TouchScreenButton internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TouchScreenButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TouchScreenButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TouchScreenButton(
         fn()
       )

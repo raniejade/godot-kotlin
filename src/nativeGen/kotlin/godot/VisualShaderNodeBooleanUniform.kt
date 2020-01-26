@@ -18,7 +18,6 @@ open class VisualShaderNodeBooleanUniform internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeBooleanUniform".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeBooleanUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeBooleanUniform(
         fn()
       )

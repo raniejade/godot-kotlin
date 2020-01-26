@@ -17,7 +17,6 @@ open class HBoxContainer internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HBoxContainer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HBoxContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HBoxContainer(
         fn()
       )

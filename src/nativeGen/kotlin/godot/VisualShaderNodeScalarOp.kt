@@ -39,7 +39,6 @@ open class VisualShaderNodeScalarOp internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarOp".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeScalarOp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeScalarOp(
         fn()
       )

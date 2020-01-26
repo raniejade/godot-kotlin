@@ -17,7 +17,6 @@ open class HSlider internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HSlider".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HSlider" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HSlider(
         fn()
       )

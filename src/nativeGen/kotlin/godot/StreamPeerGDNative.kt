@@ -18,7 +18,6 @@ open class StreamPeerGDNative internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerGDNative".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for StreamPeerGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       StreamPeerGDNative(
         fn()
       )

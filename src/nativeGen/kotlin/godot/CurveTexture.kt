@@ -17,7 +17,6 @@ open class CurveTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CurveTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CurveTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CurveTexture(
         fn()
       )

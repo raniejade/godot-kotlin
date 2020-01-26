@@ -18,7 +18,6 @@ open class GradientTexture internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("GradientTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for GradientTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       GradientTexture(
         fn()
       )

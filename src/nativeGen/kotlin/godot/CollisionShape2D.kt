@@ -18,7 +18,6 @@ open class CollisionShape2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionShape2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CollisionShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CollisionShape2D(
         fn()
       )

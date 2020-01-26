@@ -17,7 +17,6 @@ open class ToolButton internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ToolButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ToolButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ToolButton(
         fn()
       )

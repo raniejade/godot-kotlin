@@ -42,7 +42,6 @@ open class MainLoop internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MainLoop".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MainLoop" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MainLoop(
         fn()
       )

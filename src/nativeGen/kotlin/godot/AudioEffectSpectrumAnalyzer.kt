@@ -31,7 +31,6 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectSpectrumAnalyzer".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectSpectrumAnalyzer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectSpectrumAnalyzer(
         fn()
       )

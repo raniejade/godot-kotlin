@@ -88,7 +88,6 @@ open class Viewport internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Viewport".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Viewport" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Viewport(
         fn()
       )

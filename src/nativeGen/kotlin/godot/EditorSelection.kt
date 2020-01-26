@@ -18,7 +18,6 @@ open class EditorSelection internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSelection".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorSelection" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorSelection(
         fn()
       )

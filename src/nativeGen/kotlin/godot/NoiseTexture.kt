@@ -17,7 +17,6 @@ open class NoiseTexture internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NoiseTexture".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for NoiseTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       NoiseTexture(
         fn()
       )

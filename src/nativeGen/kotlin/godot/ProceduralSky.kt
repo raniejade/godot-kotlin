@@ -30,7 +30,6 @@ open class ProceduralSky internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProceduralSky".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ProceduralSky" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ProceduralSky(
         fn()
       )

@@ -18,7 +18,6 @@ open class AudioEffectPhaser internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPhaser".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectPhaser" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectPhaser(
         fn()
       )

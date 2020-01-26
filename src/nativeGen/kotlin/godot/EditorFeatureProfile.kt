@@ -35,7 +35,6 @@ open class EditorFeatureProfile internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFeatureProfile".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorFeatureProfile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorFeatureProfile(
         fn()
       )

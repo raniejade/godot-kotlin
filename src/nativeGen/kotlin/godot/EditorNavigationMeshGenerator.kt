@@ -18,7 +18,6 @@ open class EditorNavigationMeshGenerator internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorNavigationMeshGenerator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorNavigationMeshGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorNavigationMeshGenerator(
         fn()
       )

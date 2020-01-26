@@ -18,7 +18,6 @@ open class AnimationNodeOutput internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeOutput".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeOutput" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeOutput(
         fn()
       )

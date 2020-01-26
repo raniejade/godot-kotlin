@@ -17,7 +17,6 @@ open class CylinderMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CylinderMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CylinderMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CylinderMesh(
         fn()
       )

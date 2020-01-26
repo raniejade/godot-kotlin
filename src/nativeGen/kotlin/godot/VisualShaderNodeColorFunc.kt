@@ -23,7 +23,6 @@ open class VisualShaderNodeColorFunc internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorFunc".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeColorFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeColorFunc(
         fn()
       )

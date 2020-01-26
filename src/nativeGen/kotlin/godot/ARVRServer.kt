@@ -14,6 +14,15 @@ open class ARVRServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: ARVRServer = memScoped {
+          val handle =
+            checkNotNull(Godot.gdnative.godot_global_get_singleton)("ARVRServer".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton ARVRServer" }
+          ARVRServer(
+            handle
+          )
+        }
+
     val DontResetRotation: Int = 2
 
     val ResetButKeepTilt: Int = 1

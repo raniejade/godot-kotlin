@@ -18,7 +18,6 @@ open class InputEventMouseButton internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMouseButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for InputEventMouseButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       InputEventMouseButton(
         fn()
       )

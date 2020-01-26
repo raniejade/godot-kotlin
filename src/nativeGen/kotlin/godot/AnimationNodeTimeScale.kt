@@ -18,7 +18,6 @@ open class AnimationNodeTimeScale internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeTimeScale".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeTimeScale" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeTimeScale(
         fn()
       )

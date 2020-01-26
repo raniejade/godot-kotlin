@@ -17,7 +17,6 @@ open class CSGMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for CSGMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       CSGMesh(
         fn()
       )

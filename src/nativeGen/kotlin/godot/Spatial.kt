@@ -26,7 +26,6 @@ open class Spatial internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Spatial".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Spatial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Spatial(
         fn()
       )

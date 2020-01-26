@@ -38,7 +38,6 @@ open class Light2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Light2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Light2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Light2D(
         fn()
       )

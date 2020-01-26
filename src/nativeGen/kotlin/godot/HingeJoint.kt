@@ -42,7 +42,6 @@ open class HingeJoint internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HingeJoint".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for HingeJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       HingeJoint(
         fn()
       )

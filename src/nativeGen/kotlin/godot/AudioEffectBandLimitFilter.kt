@@ -18,7 +18,6 @@ open class AudioEffectBandLimitFilter internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectBandLimitFilter".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectBandLimitFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectBandLimitFilter(
         fn()
       )

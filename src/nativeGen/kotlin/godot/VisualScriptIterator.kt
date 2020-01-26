@@ -18,7 +18,6 @@ open class VisualScriptIterator internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptIterator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptIterator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptIterator(
         fn()
       )

@@ -17,7 +17,6 @@ open class SphereMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SphereMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SphereMesh(
         fn()
       )

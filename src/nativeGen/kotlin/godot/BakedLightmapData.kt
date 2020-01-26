@@ -18,7 +18,6 @@ open class BakedLightmapData internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BakedLightmapData".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for BakedLightmapData" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       BakedLightmapData(
         fn()
       )

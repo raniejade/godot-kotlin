@@ -17,7 +17,6 @@ open class WeakRef internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WeakRef".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for WeakRef" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       WeakRef(
         fn()
       )

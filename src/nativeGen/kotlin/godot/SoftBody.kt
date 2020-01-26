@@ -17,7 +17,6 @@ open class SoftBody internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SoftBody".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SoftBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SoftBody(
         fn()
       )

@@ -17,7 +17,6 @@ open class RayCast internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayCast".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RayCast" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RayCast(
         fn()
       )

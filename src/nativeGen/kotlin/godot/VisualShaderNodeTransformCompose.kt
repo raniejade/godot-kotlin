@@ -18,7 +18,6 @@ open class VisualShaderNodeTransformCompose internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformCompose".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeTransformCompose" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeTransformCompose(
         fn()
       )

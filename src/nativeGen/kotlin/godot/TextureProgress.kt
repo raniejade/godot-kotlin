@@ -37,7 +37,6 @@ open class TextureProgress internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureProgress".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TextureProgress" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TextureProgress(
         fn()
       )

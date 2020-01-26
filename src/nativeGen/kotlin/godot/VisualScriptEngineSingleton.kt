@@ -18,7 +18,6 @@ open class VisualScriptEngineSingleton internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptEngineSingleton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualScriptEngineSingleton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualScriptEngineSingleton(
         fn()
       )

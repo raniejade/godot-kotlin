@@ -52,7 +52,6 @@ open class Tween internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tween".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Tween" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Tween(
         fn()
       )

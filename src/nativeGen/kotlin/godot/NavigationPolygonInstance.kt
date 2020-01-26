@@ -18,7 +18,6 @@ open class NavigationPolygonInstance internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationPolygonInstance".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for NavigationPolygonInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       NavigationPolygonInstance(
         fn()
       )

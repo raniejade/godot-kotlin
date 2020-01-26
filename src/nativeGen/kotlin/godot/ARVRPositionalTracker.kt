@@ -25,7 +25,6 @@ open class ARVRPositionalTracker internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRPositionalTracker".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ARVRPositionalTracker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ARVRPositionalTracker(
         fn()
       )

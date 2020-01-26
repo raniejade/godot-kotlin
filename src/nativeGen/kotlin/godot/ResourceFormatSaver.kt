@@ -18,7 +18,6 @@ open class ResourceFormatSaver internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourceFormatSaver".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ResourceFormatSaver" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ResourceFormatSaver(
         fn()
       )

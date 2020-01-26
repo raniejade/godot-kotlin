@@ -14,6 +14,14 @@ open class _Geometry internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   companion object {
+    val Instance: _Geometry = memScoped {
+          val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Geometry".cstr.ptr)
+          requireNotNull(handle) { "No instance found for singleton _Geometry" }
+          _Geometry(
+            handle
+          )
+        }
+
     val EndButt: Int = 2
 
     val EndJoined: Int = 1

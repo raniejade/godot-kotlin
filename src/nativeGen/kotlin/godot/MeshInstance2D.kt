@@ -18,7 +18,6 @@ open class MeshInstance2D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshInstance2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for MeshInstance2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       MeshInstance2D(
         fn()
       )

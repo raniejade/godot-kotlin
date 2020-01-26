@@ -18,7 +18,6 @@ open class AudioEffectDelay internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDelay".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectDelay" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectDelay(
         fn()
       )

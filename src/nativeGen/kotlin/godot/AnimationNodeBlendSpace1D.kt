@@ -18,7 +18,6 @@ open class AnimationNodeBlendSpace1D internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendSpace1D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AnimationNodeBlendSpace1D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AnimationNodeBlendSpace1D(
         fn()
       )

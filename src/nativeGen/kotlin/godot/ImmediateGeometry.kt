@@ -18,7 +18,6 @@ open class ImmediateGeometry internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImmediateGeometry".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ImmediateGeometry" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ImmediateGeometry(
         fn()
       )

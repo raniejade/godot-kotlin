@@ -24,7 +24,6 @@ open class UndoRedo internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UndoRedo".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for UndoRedo" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       UndoRedo(
         fn()
       )

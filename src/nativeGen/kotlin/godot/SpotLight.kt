@@ -17,7 +17,6 @@ open class SpotLight internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpotLight".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for SpotLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       SpotLight(
         fn()
       )

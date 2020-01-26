@@ -34,7 +34,6 @@ open class Label internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Label".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Label" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Label(
         fn()
       )

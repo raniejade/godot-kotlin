@@ -44,7 +44,6 @@ open class Animation internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Animation".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Animation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Animation(
         fn()
       )

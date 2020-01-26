@@ -18,7 +18,6 @@ open class PhysicsMaterial internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicsMaterial".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for PhysicsMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       PhysicsMaterial(
         fn()
       )

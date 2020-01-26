@@ -18,7 +18,6 @@ open class VisualShaderNodeExpression internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeExpression".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeExpression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VisualShaderNodeExpression(
         fn()
       )

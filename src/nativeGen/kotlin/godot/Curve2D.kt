@@ -17,7 +17,6 @@ open class Curve2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Curve2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Curve2D(
         fn()
       )

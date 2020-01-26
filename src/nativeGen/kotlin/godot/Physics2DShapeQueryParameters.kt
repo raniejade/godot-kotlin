@@ -18,7 +18,6 @@ open class Physics2DShapeQueryParameters internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Physics2DShapeQueryParameters".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Physics2DShapeQueryParameters" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Physics2DShapeQueryParameters(
         fn()
       )

@@ -18,7 +18,6 @@ open class AudioStreamGenerator internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamGenerator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioStreamGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioStreamGenerator(
         fn()
       )

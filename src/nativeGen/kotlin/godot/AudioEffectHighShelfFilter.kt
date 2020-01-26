@@ -18,7 +18,6 @@ open class AudioEffectHighShelfFilter internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectHighShelfFilter".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for AudioEffectHighShelfFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       AudioEffectHighShelfFilter(
         fn()
       )

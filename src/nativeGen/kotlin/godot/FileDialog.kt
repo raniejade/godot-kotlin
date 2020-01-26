@@ -34,7 +34,6 @@ open class FileDialog internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("FileDialog".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for FileDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       FileDialog(
         fn()
       )

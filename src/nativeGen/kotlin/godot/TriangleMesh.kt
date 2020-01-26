@@ -17,7 +17,6 @@ open class TriangleMesh internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TriangleMesh".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for TriangleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       TriangleMesh(
         fn()
       )

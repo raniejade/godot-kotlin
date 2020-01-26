@@ -24,7 +24,6 @@ open class Button internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Button".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Button" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Button(
         fn()
       )

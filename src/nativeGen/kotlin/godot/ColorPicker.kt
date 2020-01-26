@@ -17,7 +17,6 @@ open class ColorPicker internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorPicker".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for ColorPicker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       ColorPicker(
         fn()
       )

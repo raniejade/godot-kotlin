@@ -17,7 +17,6 @@ open class RayShape internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for RayShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       RayShape(
         fn()
       )

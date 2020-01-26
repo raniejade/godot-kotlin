@@ -130,7 +130,6 @@ open class Image internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Image".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Image" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Image(
         fn()
       )

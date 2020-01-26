@@ -18,7 +18,6 @@ open class EditorScenePostImport internal constructor(
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorScenePostImport".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for EditorScenePostImport" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       EditorScenePostImport(
         fn()
       )

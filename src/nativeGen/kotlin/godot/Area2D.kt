@@ -28,7 +28,6 @@ open class Area2D internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Area2D".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for Area2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       Area2D(
         fn()
       )

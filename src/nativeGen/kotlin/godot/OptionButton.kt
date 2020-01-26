@@ -17,7 +17,6 @@ open class OptionButton internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OptionButton".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for OptionButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       OptionButton(
         fn()
       )

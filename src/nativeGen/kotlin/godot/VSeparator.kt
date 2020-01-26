@@ -17,7 +17,6 @@ open class VSeparator internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSeparator".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for VSeparator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       VSeparator(
         fn()
       )

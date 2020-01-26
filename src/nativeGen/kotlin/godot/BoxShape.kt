@@ -17,7 +17,6 @@ open class BoxShape internal constructor(
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BoxShape".cstr.ptr)
       requireNotNull(fnPtr) { "No constructor found for BoxShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-
       BoxShape(
         fn()
       )
