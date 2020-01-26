@@ -112,12 +112,9 @@ class Color(
 
   companion object {
     fun rgb(r: Float, g: Float, b: Float, a: Float = 1f): Color {
-      val value = memScoped {
-        val tmp = alloc<godot_color>()
-        checkNotNull(Godot.gdnative.godot_color_new_rgba)(tmp.ptr, r, g, b, a)
-        tmp.readValue()
+      return allocType(::Color) {
+        checkNotNull(Godot.gdnative.godot_color_new_rgba)(it, r, g, b, a)
       }
-      return Color(value)
     }
 
     // COLOR CONSTANTS

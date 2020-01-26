@@ -601,37 +601,28 @@ internal class GDString(
   }
 
   companion object {
-    fun from(str: String, cb: (GDString) -> Unit) {
+    internal fun from(str: String, cb: (GDString) -> Unit) {
       val gdString = new(str)
       cb(gdString)
       gdString.destroy()
     }
 
     fun new(): GDString {
-      val value = memScoped {
-        val tmp = alloc<godot_string>()
-        checkNotNull(Godot.gdnative.godot_string_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::GDString) {
+        checkNotNull(Godot.gdnative.godot_string_new)(it)
       }
-      return GDString(value)
     }
 
     fun new(str: String): GDString{
-      val value = memScoped {
-        val tmp = alloc<godot_string>()
-        checkNotNull(Godot.gdnative.godot_string_parse_utf8)(tmp.ptr, str.cstr.ptr)
-        tmp.readValue()
+      return allocType(::GDString) {
+        checkNotNull(Godot.gdnative.godot_string_parse_utf8)(it, str.cstr.ptr)
       }
-      return GDString(value)
     }
 
     fun new(str: String, len: Int): GDString {
-      val value = memScoped {
-        val tmp = alloc<godot_string>()
-        checkNotNull(Godot.gdnative.godot_string_parse_utf8_with_len)(tmp.ptr, str.cstr.ptr, len)
-        tmp.readValue()
+      return allocType(::GDString) {
+        checkNotNull(Godot.gdnative.godot_string_parse_utf8_with_len)(it, str.cstr.ptr, len)
       }
-      return GDString(value)
     }
   }
 }

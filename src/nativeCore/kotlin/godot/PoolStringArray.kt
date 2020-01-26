@@ -108,21 +108,15 @@ class PoolStringArray(
   
   companion object {
     fun new(): PoolStringArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_string_array>()
-        checkNotNull(Godot.gdnative.godot_pool_string_array_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::PoolStringArray) {
+        checkNotNull(Godot.gdnative.godot_pool_string_array_new)(it)
       }
-      return PoolStringArray(value)
     }
 
     fun new(from: GDArray): PoolStringArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_string_array>()
-        checkNotNull(Godot.gdnative.godot_pool_string_array_new_with_array)(tmp.ptr, from._value.ptr)
-        tmp.readValue()
+      return allocType(::PoolStringArray) {
+        checkNotNull(Godot.gdnative.godot_pool_string_array_new_with_array)(it, from._value.ptr)
       }
-      return PoolStringArray(value)
     }
   }
 }

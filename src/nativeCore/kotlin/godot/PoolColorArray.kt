@@ -93,21 +93,15 @@ class PoolColorArray(
 
   companion object {
     fun new(): PoolColorArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_color_array>()
-        checkNotNull(Godot.gdnative.godot_pool_color_array_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::PoolColorArray) {
+        checkNotNull(Godot.gdnative.godot_pool_color_array_new)(it)
       }
-      return PoolColorArray(value)
     }
 
     fun new(from: GDArray): PoolColorArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_color_array>()
-        checkNotNull(Godot.gdnative.godot_pool_color_array_new_with_array)(tmp.ptr, from._value.ptr)
-        tmp.readValue()
+      return allocType(::PoolColorArray) {
+        checkNotNull(Godot.gdnative.godot_pool_color_array_new_with_array)(it, from._value.ptr)
       }
-      return PoolColorArray(value)
     }
   }
 }

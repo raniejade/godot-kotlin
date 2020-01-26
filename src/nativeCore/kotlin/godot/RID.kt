@@ -37,12 +37,9 @@ class RID(
 
   companion object {
     fun new(): RID {
-      val value = memScoped {
-        val tmp = alloc<godot_rid>()
-        checkNotNull(Godot.gdnative.godot_rid_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::RID) {
+        checkNotNull(Godot.gdnative.godot_rid_new)(it)
       }
-      return RID(value)
     }
 
     // TODO: new_with_resource when GDObject is generated

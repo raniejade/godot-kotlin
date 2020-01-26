@@ -91,21 +91,15 @@ class PoolRealArray(
 
   companion object {
     fun new(): PoolRealArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_real_array>()
-        checkNotNull(Godot.gdnative.godot_pool_real_array_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::PoolRealArray) {
+        checkNotNull(Godot.gdnative.godot_pool_real_array_new)(it)
       }
-      return PoolRealArray(value)
     }
 
     fun new(from: GDArray): PoolRealArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_real_array>()
-        checkNotNull(Godot.gdnative.godot_pool_real_array_new_with_array)(tmp.ptr, from._value.ptr)
-        tmp.readValue()
+      return allocType(::PoolRealArray) {
+        checkNotNull(Godot.gdnative.godot_pool_real_array_new_with_array)(it, from._value.ptr)
       }
-      return PoolRealArray(value)
     }
   }
 }

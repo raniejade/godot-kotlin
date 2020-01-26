@@ -213,39 +213,27 @@ class Quat(
 
   companion object {
     fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f, w: Float = 1f): Quat {
-      val value = memScoped {
-        val tmp = alloc<godot_quat>()
-        checkNotNull(Godot.gdnative.godot_quat_new)(tmp.ptr, x, y, z, w)
-        tmp.readValue()
+      return allocType(::Quat) {
+        checkNotNull(Godot.gdnative.godot_quat_new)(it, x, y, z, w)
       }
-      return Quat(value)
     }
 
     fun new(basis: Basis): Quat {
-      val value = memScoped {
-        val tmp = alloc<godot_quat>()
-        checkNotNull(Godot.gdnative11.godot_quat_new_with_basis)(tmp.ptr, basis._value.ptr)
-        tmp.readValue()
+      return allocType(::Quat) {
+        checkNotNull(Godot.gdnative11.godot_quat_new_with_basis)(it, basis._value.ptr)
       }
-      return Quat(value)
     }
 
     fun new(vec: Vector3): Quat {
-      val value = memScoped {
-        val tmp = alloc<godot_quat>()
-        checkNotNull(Godot.gdnative11.godot_quat_new_with_euler)(tmp.ptr, vec._value.ptr)
-        tmp.readValue()
+      return allocType(::Quat) {
+        checkNotNull(Godot.gdnative11.godot_quat_new_with_euler)(it, vec._value.ptr)
       }
-      return Quat(value)
     }
 
     fun new(axis: Vector3, angle: Float): Quat {
-      val value = memScoped {
-        val tmp = alloc<godot_quat>()
-        checkNotNull(Godot.gdnative.godot_quat_new_with_axis_angle)(tmp.ptr, axis._value.ptr, angle)
-        tmp.readValue()
+      return allocType(::Quat) {
+        checkNotNull(Godot.gdnative.godot_quat_new_with_axis_angle)(it, axis._value.ptr, angle)
       }
-      return Quat(value)
     }
   }
 }

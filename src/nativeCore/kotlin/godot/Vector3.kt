@@ -357,12 +357,9 @@ class Vector3(
     val Back = Vector3.new(0f, 0f, 1f)
 
     fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f): Vector3 {
-      val value = memScoped {
-        val tmp = alloc<godot_vector3>()
-        checkNotNull(Godot.gdnative.godot_vector3_new)(tmp.ptr, x, y, z)
-        tmp.readValue()
+      return allocType(::Vector3) {
+        checkNotNull(Godot.gdnative.godot_vector3_new)(it, x, y, z)
       }
-      return Vector3(value)
     }
   }
 }

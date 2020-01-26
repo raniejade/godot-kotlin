@@ -93,21 +93,15 @@ class PoolVector3Array(
 
   companion object {
     fun new(): PoolVector3Array {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_vector3_array>()
-        checkNotNull(Godot.gdnative.godot_pool_vector3_array_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::PoolVector3Array) {
+        checkNotNull(Godot.gdnative.godot_pool_vector3_array_new)(it)
       }
-      return PoolVector3Array(value)
     }
 
     fun new(from: GDArray): PoolVector3Array {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_vector3_array>()
-        checkNotNull(Godot.gdnative.godot_pool_vector3_array_new_with_array)(tmp.ptr, from._value.ptr)
-        tmp.readValue()
+      return allocType(::PoolVector3Array) {
+        checkNotNull(Godot.gdnative.godot_pool_vector3_array_new_with_array)(it, from._value.ptr)
       }
-      return PoolVector3Array(value)
     }
   }
 }

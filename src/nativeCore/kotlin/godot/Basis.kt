@@ -172,48 +172,33 @@ class Basis(
 
   companion object {
     fun new(): Basis {
-      val value = memScoped {
-        val tmp = alloc<godot_basis>()
-        checkNotNull(Godot.gdnative.godot_basis_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::Basis) {
+        checkNotNull(Godot.gdnative.godot_basis_new)(it)
       }
-      return Basis(value)
     }
 
     fun new(vec: Vector3): Basis {
-      val value = memScoped {
-        val tmp = alloc<godot_basis>()
-        checkNotNull(Godot.gdnative.godot_basis_new_with_euler)(tmp.ptr, vec._value.ptr)
-        tmp.readValue()
+      return allocType(::Basis) {
+        checkNotNull(Godot.gdnative.godot_basis_new_with_euler)(it, vec._value.ptr)
       }
-      return Basis(value)
     }
 
     fun new(vec: Vector3, phi: Float): Basis {
-      val value = memScoped {
-        val tmp = alloc<godot_basis>()
-        checkNotNull(Godot.gdnative.godot_basis_new_with_axis_and_angle)(tmp.ptr, vec._value.ptr, phi)
-        tmp.readValue()
+      return allocType(::Basis) {
+        checkNotNull(Godot.gdnative.godot_basis_new_with_axis_and_angle)(it, vec._value.ptr, phi)
       }
-      return Basis(value)
     }
 
     fun new(quat: Quat): Basis {
-      val value = memScoped {
-        val tmp = alloc<godot_basis>()
-        checkNotNull(Godot.gdnative.godot_basis_new_with_euler_quat)(tmp.ptr, quat._value.ptr)
-        tmp.readValue()
+      return allocType(::Basis) {
+        checkNotNull(Godot.gdnative.godot_basis_new_with_euler_quat)(it, quat._value.ptr)
       }
-      return Basis(value)
     }
 
     fun new(r1: Vector3, r2: Vector3, r3: Vector3): Basis {
-      val value = memScoped {
-        val tmp = alloc<godot_basis>()
-        checkNotNull(Godot.gdnative.godot_basis_new_with_rows)(tmp.ptr, r1._value.ptr, r2._value.ptr, r3._value.ptr)
-        tmp.readValue()
+      return allocType(::Basis) {
+        checkNotNull(Godot.gdnative.godot_basis_new_with_rows)(it, r1._value.ptr, r2._value.ptr, r3._value.ptr)
       }
-      return Basis(value)
     }
   }
 }

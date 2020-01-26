@@ -91,21 +91,15 @@ class PoolIntArray(
 
   companion object {
     fun new(): PoolIntArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_int_array>()
-        checkNotNull(Godot.gdnative.godot_pool_int_array_new)(tmp.ptr)
-        tmp.readValue()
+      return allocType(::PoolIntArray) {
+        checkNotNull(Godot.gdnative.godot_pool_int_array_new)(it)
       }
-      return PoolIntArray(value)
     }
 
     fun new(from: GDArray): PoolIntArray {
-      val value = memScoped {
-        val tmp = alloc<godot_pool_int_array>()
-        checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(tmp.ptr, from._value.ptr)
-        tmp.readValue()
+      return allocType(::PoolIntArray) {
+        checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(it, from._value.ptr)
       }
-      return PoolIntArray(value)
     }
   }
 }

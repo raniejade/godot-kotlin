@@ -28,9 +28,9 @@ class Variant(
     }
 
   fun asString(): String {
-    return memScoped {
+    return transmute {
       val gdString = GDString(
-        checkNotNull(Godot.gdnative.godot_variant_as_string)(_value.ptr)
+        checkNotNull(Godot.gdnative.godot_variant_as_string)(it)
       )
       val ret = gdString.toKString()
       gdString.destroy()
@@ -39,132 +39,110 @@ class Variant(
   }
 
   fun asUInt(): UInt64 {
-    return memScoped {
-      checkNotNull(Godot.gdnative.godot_variant_as_uint)(_value.ptr)
+    return transmute {
+      checkNotNull(Godot.gdnative.godot_variant_as_uint)(it)
     }
   }
 
   fun asInt(): Int64 {
-    return memScoped {
-      checkNotNull(Godot.gdnative.godot_variant_as_int)(_value.ptr)
+    return transmute {
+      checkNotNull(Godot.gdnative.godot_variant_as_int)(it)
     }
   }
 
   fun asReal(): Double {
-    return memScoped {
-      checkNotNull(Godot.gdnative.godot_variant_as_real)(_value.ptr)
+    return transmute {
+      checkNotNull(Godot.gdnative.godot_variant_as_real)(it)
     }
   }
 
   fun asBasis(): Basis {
-    return memScoped {
-      Basis(
-        checkNotNull(Godot.gdnative.godot_variant_as_basis)(_value.ptr)
-      )
+    return transmute(::Basis) {
+      checkNotNull(Godot.gdnative.godot_variant_as_basis)(it)
     }
   }
 
   fun asColor(): Color {
-    return memScoped {
-      Color(
-        checkNotNull(Godot.gdnative.godot_variant_as_color)(_value.ptr)
-      )
+    return transmute(::Color) {
+      checkNotNull(Godot.gdnative.godot_variant_as_color)(it)
     }
   }
 
   fun asArray(): GDArray {
-    return memScoped {
-      GDArray(
-        checkNotNull(Godot.gdnative.godot_variant_as_array)(_value.ptr)
-      )
+    return transmute(::GDArray) {
+      checkNotNull(Godot.gdnative.godot_variant_as_array)(it)
     }
   }
 
   fun asPoolByteArray(): PoolByteArray {
-    return memScoped {
-      PoolByteArray(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_byte_array)(_value.ptr)
-      )
+    return transmute(::PoolByteArray) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_byte_array)(it)
     }
   }
 
   fun asPoolColorArray(): PoolColorArray {
-    return memScoped {
-      PoolColorArray(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_color_array)(_value.ptr)
-      )
+    return transmute(::PoolColorArray) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_color_array)(it)
     }
   }
 
   fun asPoolIntArray(): PoolIntArray {
-    return memScoped {
-      PoolIntArray(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_int_array)(_value.ptr)
-      )
+    return transmute(::PoolIntArray) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_int_array)(it)
     }
   }
 
   fun asPoolRealArray(): PoolRealArray {
-    return memScoped {
-      PoolRealArray(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_real_array)(_value.ptr)
-      )
+    return transmute(::PoolRealArray) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_real_array)(it)
     }
   }
 
   fun asPoolStringArray(): PoolStringArray {
-    return memScoped {
-      PoolStringArray(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_string_array)(_value.ptr)
-      )
+    return transmute(::PoolStringArray) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_string_array)(it)
     }
   }
 
   fun asPoolVector2Array(): PoolVector2Array {
-    return memScoped {
-      PoolVector2Array(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_vector2_array)(_value.ptr)
-      )
+    return transmute(::PoolVector2Array) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_vector2_array)(it)
     }
   }
 
   fun asPoolVector3Array(): PoolVector3Array {
-    return memScoped {
-      PoolVector3Array(
-        checkNotNull(Godot.gdnative.godot_variant_as_pool_vector3_array)(_value.ptr)
-      )
+    return transmute(::PoolVector3Array) {
+      checkNotNull(Godot.gdnative.godot_variant_as_pool_vector3_array)(it)
     }
   }
 
   fun asQuat(): Quat {
-    return memScoped {
-      Quat(
-        checkNotNull(Godot.gdnative.godot_variant_as_quat)(_value.ptr)
-      )
+    return transmute(::Quat) {
+      checkNotNull(Godot.gdnative.godot_variant_as_quat)(it)
     }
   }
 
   fun asRID(): RID {
-    return memScoped {
-      RID(
-        checkNotNull(Godot.gdnative.godot_variant_as_rid)(_value.ptr)
-      )
+    return transmute(::RID) {
+      checkNotNull(Godot.gdnative.godot_variant_as_rid)(it)
     }
   }
 
   fun asVector2(): Vector2 {
-    return memScoped {
-      Vector2(
-        checkNotNull(Godot.gdnative.godot_variant_as_vector2)(_value.ptr)
-      )
+    return transmute(::Vector2) {
+      checkNotNull(Godot.gdnative.godot_variant_as_vector2)(it)
     }
   }
 
   fun asVector3(): Vector3 {
-    return memScoped {
-      Vector3(
-        checkNotNull(Godot.gdnative.godot_variant_as_vector3)(_value.ptr)
-      )
+    return transmute(::Vector3) {
+      checkNotNull(Godot.gdnative.godot_variant_as_vector3)(it)
+    }
+  }
+
+  fun asRect2(): Rect2 {
+    return transmute(::Rect2) {
+      checkNotNull(Godot.gdnative.godot_variant_as_rect2)(it)
     }
   }
 
@@ -172,169 +150,145 @@ class Variant(
     return asString()
   }
 
+  private fun <K: CStructVar, T: CoreType<K>> transmute(factory: (CValue<K>) -> T, transformer: (CPointer<godot_variant>) -> CValue<K>): T {
+    return memScoped {
+      factory(
+        transformer(_value.ptr)
+      )
+    }
+  }
+
+  private fun <T> transmute(transformer: (CPointer<godot_variant>) -> T): T {
+    return memScoped {
+      transformer(_value.ptr)
+    }
+  }
+
   companion object {
     fun new(str: String): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        GDString.from(str) {
-          checkNotNull(Godot.gdnative.godot_variant_new_string)(tmp.ptr, it._value.ptr)
+      return allocateVariant {
+        GDString.from(str) { str ->
+          checkNotNull(Godot.gdnative.godot_variant_new_string)(it, str._value.ptr)
         }
-        tmp.readValue()
       }
-      return Variant(value)
     }
 
     fun new(num: UInt64): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_uint)(tmp.ptr, num)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_uint)(it, num)
       }
-      return Variant(value)
     }
 
     fun new(num: Int64): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_int)(tmp.ptr, num)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_int)(it, num)
       }
-      return Variant(value)
     }
 
     fun new(num: Double): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_real)(tmp.ptr, num)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_real)(it, num)
       }
-      return Variant(value)
+    }
+
+    fun new(boolean: Boolean): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_bool)(it, boolean)
+      }
     }
 
     fun new(basis: Basis): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_basis)(tmp.ptr, basis._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_basis)(it, basis._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(color: Color): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_color)(tmp.ptr, color._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_color)(it, color._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: GDArray): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolByteArray): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_byte_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_byte_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolColorArray): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_color_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_color_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolIntArray): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_int_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_int_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolRealArray): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_real_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_real_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolStringArray): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_string_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_string_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolVector2Array): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_vector2_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_vector2_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(array: PoolVector3Array): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_pool_vector3_array)(tmp.ptr, array._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_pool_vector3_array)(it, array._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(quat: Quat): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_quat)(tmp.ptr, quat._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_quat)(it, quat._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(rid: RID): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_rid)(tmp.ptr, rid._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_rid)(it, rid._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(vec: Vector2): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_vector2)(tmp.ptr, vec._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_vector2)(it, vec._value.ptr)
       }
-      return Variant(value)
     }
 
     fun new(vec: Vector3): Variant {
-      val value = memScoped {
-        val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_vector3)(tmp.ptr, vec._value.ptr)
-        tmp.readValue()
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_vector3)(it, vec._value.ptr)
       }
-      return Variant(value)
+    }
+
+    fun new(rec: Rect2): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_rect2)(it, rec._value.ptr)
+      }
+    }
+
+    private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
+      return allocType(::Variant, constructor)
     }
   }
 }

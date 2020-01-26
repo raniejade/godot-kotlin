@@ -329,12 +329,9 @@ class Vector2(
     val Down = Vector2.new(0f, 1f)
 
     fun new(x: Float = 0f, y: Float = 0f): Vector2 {
-      val value = memScoped {
-        val tmp = alloc<godot_vector2>()
-        checkNotNull(Godot.gdnative.godot_vector2_new)(tmp.ptr, x, y)
-        tmp.readValue()
+      return allocType(::Vector2) {
+        checkNotNull(Godot.gdnative.godot_vector2_new)(it, x, y)
       }
-      return Vector2(value)
     }
   }
 }
