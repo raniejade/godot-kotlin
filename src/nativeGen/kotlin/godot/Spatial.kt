@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Spatial internal constructor(
   _handle: COpaquePointer
@@ -16,8 +22,13 @@ open class Spatial internal constructor(
 
     val NotificationVisibilityChanged: Int = 43
 
-    fun new(): Spatial {
-      TODO()
-    }
-  }
+    fun new(): Spatial = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Spatial".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Spatial" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Spatial(
+        fn()
+      )
+    }}
 }

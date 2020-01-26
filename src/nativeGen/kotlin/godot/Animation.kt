@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Animation internal constructor(
   _handle: COpaquePointer
@@ -34,8 +40,13 @@ open class Animation internal constructor(
 
     val UpdateTrigger: Int = 2
 
-    fun new(): Animation {
-      TODO()
-    }
-  }
+    fun new(): Animation = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Animation".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Animation" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Animation(
+        fn()
+      )
+    }}
 }

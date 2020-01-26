@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class RichTextLabel internal constructor(
   _handle: COpaquePointer
@@ -48,8 +54,13 @@ open class RichTextLabel internal constructor(
 
     val ListNumbers: Int = 0
 
-    fun new(): RichTextLabel {
-      TODO()
-    }
-  }
+    fun new(): RichTextLabel = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RichTextLabel".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for RichTextLabel" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      RichTextLabel(
+        fn()
+      )
+    }}
 }

@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Viewport internal constructor(
   _handle: COpaquePointer
@@ -78,8 +84,13 @@ open class Viewport internal constructor(
 
     val Usage3dNoEffects: Int = 3
 
-    fun new(): Viewport {
-      TODO()
-    }
-  }
+    fun new(): Viewport = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Viewport".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Viewport" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Viewport(
+        fn()
+      )
+    }}
 }

@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class CPUParticles internal constructor(
   _handle: COpaquePointer
@@ -58,8 +64,13 @@ open class CPUParticles internal constructor(
 
     val ParamTangentialAccel: Int = 5
 
-    fun new(): CPUParticles {
-      TODO()
-    }
-  }
+    fun new(): CPUParticles = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CPUParticles".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for CPUParticles" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      CPUParticles(
+        fn()
+      )
+    }}
 }

@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Image internal constructor(
   _handle: COpaquePointer
@@ -120,8 +126,13 @@ open class Image internal constructor(
 
     val MaxWidth: Int = 16384
 
-    fun new(): Image {
-      TODO()
-    }
-  }
+    fun new(): Image = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Image".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Image" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Image(
+        fn()
+      )
+    }}
 }

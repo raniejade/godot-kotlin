@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Node internal constructor(
   _handle: COpaquePointer
@@ -78,8 +84,13 @@ open class Node internal constructor(
 
     val PauseModeStop: Int = 1
 
-    fun new(): Node {
-      TODO()
-    }
-  }
+    fun new(): Node = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Node" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Node(
+        fn()
+      )
+    }}
 }

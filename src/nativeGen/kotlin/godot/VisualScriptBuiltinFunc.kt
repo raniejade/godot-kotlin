@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class VisualScriptBuiltinFunc internal constructor(
   _handle: COpaquePointer
@@ -140,8 +146,14 @@ open class VisualScriptBuiltinFunc internal constructor(
 
     val VarToStr: Int = 59
 
-    fun new(): VisualScriptBuiltinFunc {
-      TODO()
-    }
-  }
+    fun new(): VisualScriptBuiltinFunc = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptBuiltinFunc".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for VisualScriptBuiltinFunc" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      VisualScriptBuiltinFunc(
+        fn()
+      )
+    }}
 }

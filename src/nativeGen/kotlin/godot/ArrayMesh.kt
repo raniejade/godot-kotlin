@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class ArrayMesh internal constructor(
   _handle: COpaquePointer
@@ -50,8 +56,13 @@ open class ArrayMesh internal constructor(
 
     val NoIndexArray: Int = -1
 
-    fun new(): ArrayMesh {
-      TODO()
-    }
-  }
+    fun new(): ArrayMesh = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ArrayMesh".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for ArrayMesh" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      ArrayMesh(
+        fn()
+      )
+    }}
 }

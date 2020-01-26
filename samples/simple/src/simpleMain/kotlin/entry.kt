@@ -1,5 +1,6 @@
 import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
+import godot.Spatial
 import godot.core.GDArray
 import godot.core.Godot
 import godot.core.Variant
@@ -20,6 +21,7 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
         v.y = 162f
         v
     }
+    val spatial = Spatial.new()
     println(array[0])
 }
 

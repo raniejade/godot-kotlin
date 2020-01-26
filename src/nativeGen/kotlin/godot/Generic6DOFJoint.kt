@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Generic6DOFJoint internal constructor(
   _handle: COpaquePointer
@@ -56,8 +62,14 @@ open class Generic6DOFJoint internal constructor(
 
     val ParamMax: Int = 22
 
-    fun new(): Generic6DOFJoint {
-      TODO()
-    }
-  }
+    fun new(): Generic6DOFJoint = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("Generic6DOFJoint".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Generic6DOFJoint" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Generic6DOFJoint(
+        fn()
+      )
+    }}
 }

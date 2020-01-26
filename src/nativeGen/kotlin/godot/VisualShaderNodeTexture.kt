@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeTexture internal constructor(
   _handle: COpaquePointer
@@ -22,8 +28,14 @@ open class VisualShaderNodeTexture internal constructor(
 
     val TypeNormalmap: Int = 2
 
-    fun new(): VisualShaderNodeTexture {
-      TODO()
-    }
-  }
+    fun new(): VisualShaderNodeTexture = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTexture".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeTexture" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      VisualShaderNodeTexture(
+        fn()
+      )
+    }}
 }

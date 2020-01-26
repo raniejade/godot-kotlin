@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class AudioEffectDistortion internal constructor(
   _handle: COpaquePointer
@@ -18,8 +24,14 @@ open class AudioEffectDistortion internal constructor(
 
     val ModeWaveshape: Int = 4
 
-    fun new(): AudioEffectDistortion {
-      TODO()
-    }
-  }
+    fun new(): AudioEffectDistortion = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDistortion".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for AudioEffectDistortion" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      AudioEffectDistortion(
+        fn()
+      )
+    }}
 }

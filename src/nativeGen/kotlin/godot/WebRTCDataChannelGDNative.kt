@@ -1,14 +1,26 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class WebRTCDataChannelGDNative internal constructor(
   _handle: COpaquePointer
 ) : WebRTCDataChannel(_handle) {
   companion object {
-    fun new(): WebRTCDataChannelGDNative {
-      TODO()
-    }
-  }
+    fun new(): WebRTCDataChannelGDNative = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCDataChannelGDNative".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for WebRTCDataChannelGDNative" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      WebRTCDataChannelGDNative(
+        fn()
+      )
+    }}
 }

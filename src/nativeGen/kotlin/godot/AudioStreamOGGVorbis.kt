@@ -1,14 +1,26 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class AudioStreamOGGVorbis internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   companion object {
-    fun new(): AudioStreamOGGVorbis {
-      TODO()
-    }
-  }
+    fun new(): AudioStreamOGGVorbis = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamOGGVorbis".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for AudioStreamOGGVorbis" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      AudioStreamOGGVorbis(
+        fn()
+      )
+    }}
 }

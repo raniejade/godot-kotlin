@@ -22,6 +22,7 @@ class APIGenerator {
       .addComment("""
         DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
       """.trimIndent())
+      .addCommonImports(cls)
       .addType(generateType(cls))
       .build()
   }
@@ -73,13 +74,23 @@ class APIGenerator {
 
   private fun TypeSpec.Builder.generateCompanionObject(cls: GDClass): TypeSpec.Builder {
     val companionObjectBuilder = TypeSpec.companionObjectBuilder()
+    val className = ClassName(BASE_PACKAGE, cls.name)
 
     // constructor
     if (cls.instanciable) {
       companionObjectBuilder.addFunction(
         FunSpec.builder("new")
-          .addCode("TODO()")
-          .returns(ClassName(BASE_PACKAGE, cls.name))
+          .addCode("""
+            return memScoped {
+              val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("${cls.name}".cstr.ptr)
+              requireNotNull(fnPtr) { "No constructor found for ${cls.name}" }
+              val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+              ${cls.name}(
+                fn()
+              )
+            }
+          """.trimIndent())
+          .returns(className)
           .build()
       )
     }
@@ -98,6 +109,20 @@ class APIGenerator {
     addType(
       companionObjectBuilder
         .build()
+    )
+    return this
+  }
+
+  private fun FileSpec.Builder.addCommonImports(cls: GDClass): FileSpec.Builder {
+    addImport("godot.core", "Godot")
+    addImport(
+      "kotlinx.cinterop",
+      "COpaquePointer",
+      "invoke",
+      "cstr",
+      "memScoped",
+      "CFunction",
+      "reinterpret"
     )
     return this
   }

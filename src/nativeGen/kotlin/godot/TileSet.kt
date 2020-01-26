@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class TileSet internal constructor(
   _handle: COpaquePointer
@@ -36,8 +42,13 @@ open class TileSet internal constructor(
 
     val SingleTile: Int = 0
 
-    fun new(): TileSet {
-      TODO()
-    }
-  }
+    fun new(): TileSet = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TileSet".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for TileSet" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      TileSet(
+        fn()
+      )
+    }}
 }

@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class VisualShaderNodeColorOp internal constructor(
   _handle: COpaquePointer
@@ -26,8 +32,14 @@ open class VisualShaderNodeColorOp internal constructor(
 
     val OpSoftLight: Int = 7
 
-    fun new(): VisualShaderNodeColorOp {
-      TODO()
-    }
-  }
+    fun new(): VisualShaderNodeColorOp = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorOp".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeColorOp" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      VisualShaderNodeColorOp(
+        fn()
+      )
+    }}
 }

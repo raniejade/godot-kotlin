@@ -1,14 +1,25 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class CSGCylinder internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   companion object {
-    fun new(): CSGCylinder {
-      TODO()
-    }
-  }
+    fun new(): CSGCylinder = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCylinder".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for CSGCylinder" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      CSGCylinder(
+        fn()
+      )
+    }}
 }

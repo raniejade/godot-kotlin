@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Camera internal constructor(
   _handle: COpaquePointer
@@ -24,8 +30,13 @@ open class Camera internal constructor(
 
     val ProjectionPerspective: Int = 0
 
-    fun new(): Camera {
-      TODO()
-    }
-  }
+    fun new(): Camera = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Camera" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Camera(
+        fn()
+      )
+    }}
 }

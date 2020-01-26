@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class Tween internal constructor(
   _handle: COpaquePointer
@@ -42,8 +48,13 @@ open class Tween internal constructor(
 
     val TweenProcessPhysics: Int = 0
 
-    fun new(): Tween {
-      TODO()
-    }
-  }
+    fun new(): Tween = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tween".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for Tween" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      Tween(
+        fn()
+      )
+    }}
 }

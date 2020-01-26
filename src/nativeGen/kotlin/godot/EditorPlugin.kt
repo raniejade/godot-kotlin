@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class EditorPlugin internal constructor(
   _handle: COpaquePointer
@@ -50,8 +56,13 @@ open class EditorPlugin internal constructor(
 
     val DockSlotRightUr: Int = 6
 
-    fun new(): EditorPlugin {
-      TODO()
-    }
-  }
+    fun new(): EditorPlugin = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorPlugin".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for EditorPlugin" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      EditorPlugin(
+        fn()
+      )
+    }}
 }

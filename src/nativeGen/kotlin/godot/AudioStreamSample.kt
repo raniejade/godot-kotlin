@@ -1,8 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
 import kotlin.Int
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class AudioStreamSample internal constructor(
   _handle: COpaquePointer
@@ -22,8 +28,14 @@ open class AudioStreamSample internal constructor(
 
     val LoopPingPong: Int = 2
 
-    fun new(): AudioStreamSample {
-      TODO()
-    }
-  }
+    fun new(): AudioStreamSample = memScoped {
+      val fnPtr =
+        checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamSample".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for AudioStreamSample" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      AudioStreamSample(
+        fn()
+      )
+    }}
 }

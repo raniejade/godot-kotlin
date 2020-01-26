@@ -1,14 +1,25 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import godot.core.Godot
+import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.cstr
+import kotlinx.cinterop.invoke
+import kotlinx.cinterop.memScoped
+import kotlinx.cinterop.reinterpret
 
 open class InputEventKey internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   companion object {
-    fun new(): InputEventKey {
-      TODO()
-    }
-  }
+    fun new(): InputEventKey = memScoped {
+      val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventKey".cstr.ptr)
+      requireNotNull(fnPtr) { "No constructor found for InputEventKey" }
+      val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
+
+      InputEventKey(
+        fn()
+      )
+    }}
 }
