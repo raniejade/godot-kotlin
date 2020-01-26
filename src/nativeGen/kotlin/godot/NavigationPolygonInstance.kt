@@ -23,11 +23,11 @@ open class NavigationPolygonInstance internal constructor(
     TODO()
   }
 
-  fun setEnabled() {
+  fun setEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setNavigationPolygon() {
+  fun setNavigationPolygon(navpoly: NavigationPolygon) {
     TODO()
   }
 

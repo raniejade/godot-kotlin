@@ -90,67 +90,67 @@ open class Particles2D internal constructor(
     TODO()
   }
 
-  fun setAmount() {
+  fun setAmount(amount: Int) {
     TODO()
   }
 
-  fun setDrawOrder() {
+  fun setDrawOrder(order: Int) {
     TODO()
   }
 
-  fun setEmitting() {
+  fun setEmitting(emitting: Boolean) {
     TODO()
   }
 
-  fun setExplosivenessRatio() {
+  fun setExplosivenessRatio(ratio: Float) {
     TODO()
   }
 
-  fun setFixedFps() {
+  fun setFixedFps(fps: Int) {
     TODO()
   }
 
-  fun setFractionalDelta() {
+  fun setFractionalDelta(enable: Boolean) {
     TODO()
   }
 
-  fun setLifetime() {
+  fun setLifetime(secs: Float) {
     TODO()
   }
 
-  fun setNormalMap() {
+  fun setNormalMap(texture: Texture) {
     TODO()
   }
 
-  fun setOneShot() {
+  fun setOneShot(secs: Boolean) {
     TODO()
   }
 
-  fun setPreProcessTime() {
+  fun setPreProcessTime(secs: Float) {
     TODO()
   }
 
-  fun setProcessMaterial() {
+  fun setProcessMaterial(material: Material) {
     TODO()
   }
 
-  fun setRandomnessRatio() {
+  fun setRandomnessRatio(ratio: Float) {
     TODO()
   }
 
-  fun setSpeedScale() {
+  fun setSpeedScale(scale: Float) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setUseLocalCoordinates() {
+  fun setUseLocalCoordinates(enable: Boolean) {
     TODO()
   }
 
-  fun setVisibilityRect() {
+  fun setVisibilityRect(visibility_rect: Rect2) {
     TODO()
   }
 

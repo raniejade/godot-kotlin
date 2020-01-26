@@ -17,15 +17,15 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileSystemDirectory internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun findDirIndex(): Int {
+  fun findDirIndex(name: String): Int {
     TODO()
   }
 
-  fun findFileIndex(): Int {
+  fun findFileIndex(name: String): Int {
     TODO()
   }
 
-  fun getFile(): String {
+  fun getFile(idx: Int): String {
     TODO()
   }
 
@@ -33,23 +33,23 @@ open class EditorFileSystemDirectory internal constructor(
     TODO()
   }
 
-  fun getFileImportIsValid(): Boolean {
+  fun getFileImportIsValid(idx: Int): Boolean {
     TODO()
   }
 
-  fun getFilePath(): String {
+  fun getFilePath(idx: Int): String {
     TODO()
   }
 
-  fun getFileScriptClassExtends(): String {
+  fun getFileScriptClassExtends(idx: Int): String {
     TODO()
   }
 
-  fun getFileScriptClassName(): String {
+  fun getFileScriptClassName(idx: Int): String {
     TODO()
   }
 
-  fun getFileType(): String {
+  fun getFileType(idx: Int): String {
     TODO()
   }
 
@@ -65,7 +65,7 @@ open class EditorFileSystemDirectory internal constructor(
     TODO()
   }
 
-  fun getSubdir(): EditorFileSystemDirectory {
+  fun getSubdir(idx: Int): EditorFileSystemDirectory {
     TODO()
   }
 

@@ -48,35 +48,35 @@ open class TextureButton internal constructor(
     TODO()
   }
 
-  fun setClickMask() {
+  fun setClickMask(mask: BitMap) {
     TODO()
   }
 
-  fun setDisabledTexture() {
+  fun setDisabledTexture(texture: Texture) {
     TODO()
   }
 
-  fun setExpand() {
+  fun setExpand(p_expand: Boolean) {
     TODO()
   }
 
-  fun setFocusedTexture() {
+  fun setFocusedTexture(texture: Texture) {
     TODO()
   }
 
-  fun setHoverTexture() {
+  fun setHoverTexture(texture: Texture) {
     TODO()
   }
 
-  fun setNormalTexture() {
+  fun setNormalTexture(texture: Texture) {
     TODO()
   }
 
-  fun setPressedTexture() {
+  fun setPressedTexture(texture: Texture) {
     TODO()
   }
 
-  fun setStretchMode() {
+  fun setStretchMode(p_mode: Int) {
     TODO()
   }
 

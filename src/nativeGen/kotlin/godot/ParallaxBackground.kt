@@ -40,27 +40,27 @@ open class ParallaxBackground internal constructor(
     TODO()
   }
 
-  fun setIgnoreCameraZoom() {
+  fun setIgnoreCameraZoom(ignore: Boolean) {
     TODO()
   }
 
-  fun setLimitBegin() {
+  fun setLimitBegin(ofs: Vector2) {
     TODO()
   }
 
-  fun setLimitEnd() {
+  fun setLimitEnd(ofs: Vector2) {
     TODO()
   }
 
-  fun setScrollBaseOffset() {
+  fun setScrollBaseOffset(ofs: Vector2) {
     TODO()
   }
 
-  fun setScrollBaseScale() {
+  fun setScrollBaseScale(scale: Vector2) {
     TODO()
   }
 
-  fun setScrollOffset() {
+  fun setScrollOffset(ofs: Vector2) {
     TODO()
   }
 

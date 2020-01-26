@@ -41,27 +41,27 @@ open class CSGCylinder internal constructor(
     TODO()
   }
 
-  fun setCone() {
+  fun setCone(cone: Boolean) {
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Float) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(radius: Float) {
     TODO()
   }
 
-  fun setSides() {
+  fun setSides(sides: Int) {
     TODO()
   }
 
-  fun setSmoothFaces() {
+  fun setSmoothFaces(smooth_faces: Boolean) {
     TODO()
   }
 

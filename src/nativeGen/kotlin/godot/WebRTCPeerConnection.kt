@@ -2,8 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,7 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCPeerConnection internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addIceCandidate(): Error {
+  fun addIceCandidate(
+    media: String,
+    index: Int,
+    name: String
+  ): Error {
     TODO()
   }
 
@@ -23,7 +29,7 @@ open class WebRTCPeerConnection internal constructor(
     TODO()
   }
 
-  fun createDataChannel(): WebRTCDataChannel {
+  fun createDataChannel(label: String, options: Dictionary): WebRTCDataChannel {
     TODO()
   }
 
@@ -35,7 +41,7 @@ open class WebRTCPeerConnection internal constructor(
     TODO()
   }
 
-  fun initialize(): Error {
+  fun initialize(configuration: Dictionary): Error {
     TODO()
   }
 
@@ -43,11 +49,11 @@ open class WebRTCPeerConnection internal constructor(
     TODO()
   }
 
-  fun setLocalDescription(): Error {
+  fun setLocalDescription(type: String, sdp: String): Error {
     TODO()
   }
 
-  fun setRemoteDescription(): Error {
+  fun setRemoteDescription(type: String, sdp: String): Error {
     TODO()
   }
 

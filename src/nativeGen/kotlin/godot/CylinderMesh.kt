@@ -36,23 +36,23 @@ open class CylinderMesh internal constructor(
     TODO()
   }
 
-  fun setBottomRadius() {
+  fun setBottomRadius(radius: Float) {
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Float) {
     TODO()
   }
 
-  fun setRadialSegments() {
+  fun setRadialSegments(segments: Int) {
     TODO()
   }
 
-  fun setRings() {
+  fun setRings(rings: Int) {
     TODO()
   }
 
-  fun setTopRadius() {
+  fun setTopRadius(radius: Float) {
     TODO()
   }
 

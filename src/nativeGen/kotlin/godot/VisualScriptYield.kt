@@ -24,11 +24,11 @@ open class VisualScriptYield internal constructor(
     TODO()
   }
 
-  fun setWaitTime() {
+  fun setWaitTime(sec: Float) {
     TODO()
   }
 
-  fun setYieldMode() {
+  fun setYieldMode(mode: Int) {
     TODO()
   }
 

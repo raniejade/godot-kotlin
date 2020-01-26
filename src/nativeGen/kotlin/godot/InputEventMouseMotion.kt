@@ -23,11 +23,11 @@ open class InputEventMouseMotion internal constructor(
     TODO()
   }
 
-  fun setRelative() {
+  fun setRelative(relative: Vector2) {
     TODO()
   }
 
-  fun setSpeed() {
+  fun setSpeed(speed: Vector2) {
     TODO()
   }
 

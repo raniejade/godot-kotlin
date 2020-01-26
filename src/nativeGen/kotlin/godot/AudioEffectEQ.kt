@@ -20,11 +20,11 @@ open class AudioEffectEQ internal constructor(
     TODO()
   }
 
-  fun getBandGainDb(): Float {
+  fun getBandGainDb(band_idx: Int): Float {
     TODO()
   }
 
-  fun setBandGainDb() {
+  fun setBandGainDb(band_idx: Int, volume_db: Float) {
     TODO()
   }
 

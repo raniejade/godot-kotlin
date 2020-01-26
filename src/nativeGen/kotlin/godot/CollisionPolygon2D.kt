@@ -38,23 +38,23 @@ open class CollisionPolygon2D internal constructor(
     TODO()
   }
 
-  fun setBuildMode() {
+  fun setBuildMode(build_mode: Int) {
     TODO()
   }
 
-  fun setDisabled() {
+  fun setDisabled(disabled: Boolean) {
     TODO()
   }
 
-  fun setOneWayCollision() {
+  fun setOneWayCollision(enabled: Boolean) {
     TODO()
   }
 
-  fun setOneWayCollisionMargin() {
+  fun setOneWayCollisionMargin(margin: Float) {
     TODO()
   }
 
-  fun setPolygon() {
+  fun setPolygon(polygon: PoolVector2Array) {
     TODO()
   }
 

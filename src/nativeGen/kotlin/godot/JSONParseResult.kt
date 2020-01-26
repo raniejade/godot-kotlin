@@ -33,19 +33,19 @@ open class JSONParseResult internal constructor(
     TODO()
   }
 
-  fun setError() {
+  fun setError(error: Int) {
     TODO()
   }
 
-  fun setErrorLine() {
+  fun setErrorLine(error_line: Int) {
     TODO()
   }
 
-  fun setErrorString() {
+  fun setErrorString(error_string: String) {
     TODO()
   }
 
-  fun setResult() {
+  fun setResult(result: Variant) {
     TODO()
   }
 

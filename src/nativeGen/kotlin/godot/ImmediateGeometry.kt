@@ -2,7 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Plane
+import godot.core.Vector2
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,15 +21,20 @@ import kotlinx.cinterop.reinterpret
 open class ImmediateGeometry internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
-  fun addSphere() {
+  fun addSphere(
+    lats: Int,
+    lons: Int,
+    radius: Float,
+    add_uv: Boolean
+  ) {
     TODO()
   }
 
-  fun addVertex() {
+  fun addVertex(position: Vector3) {
     TODO()
   }
 
-  fun begin() {
+  fun begin(primitive: Int, texture: Texture) {
     TODO()
   }
 
@@ -34,23 +46,23 @@ open class ImmediateGeometry internal constructor(
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setNormal() {
+  fun setNormal(normal: Vector3) {
     TODO()
   }
 
-  fun setTangent() {
+  fun setTangent(tangent: Plane) {
     TODO()
   }
 
-  fun setUv() {
+  fun setUv(uv: Vector2) {
     TODO()
   }
 
-  fun setUv2() {
+  fun setUv2(uv: Vector2) {
     TODO()
   }
 

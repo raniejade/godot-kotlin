@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class BoxContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun addSpacer() {
+  fun addSpacer(begin: Boolean) {
     TODO()
   }
 
@@ -23,7 +24,7 @@ open class BoxContainer internal constructor(
     TODO()
   }
 
-  fun setAlignment() {
+  fun setAlignment(alignment: Int) {
     TODO()
   }
 

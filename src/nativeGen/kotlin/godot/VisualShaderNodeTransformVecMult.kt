@@ -19,7 +19,7 @@ open class VisualShaderNodeTransformVecMult internal constructor(
     TODO()
   }
 
-  fun setOperator() {
+  fun setOperator(op: Int) {
     TODO()
   }
 

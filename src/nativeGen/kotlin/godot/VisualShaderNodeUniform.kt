@@ -19,7 +19,7 @@ open class VisualShaderNodeUniform internal constructor(
     TODO()
   }
 
-  fun setUniformName() {
+  fun setUniformName(name: String) {
     TODO()
   }
 

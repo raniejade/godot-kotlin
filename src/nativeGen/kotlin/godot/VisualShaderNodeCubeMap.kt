@@ -23,11 +23,11 @@ open class VisualShaderNodeCubeMap internal constructor(
     TODO()
   }
 
-  fun setCubeMap() {
+  fun setCubeMap(value: CubeMap) {
     TODO()
   }
 
-  fun setTextureType() {
+  fun setTextureType(value: Int) {
     TODO()
   }
 

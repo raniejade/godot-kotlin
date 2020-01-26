@@ -47,7 +47,7 @@ open class TextureProgress internal constructor(
     TODO()
   }
 
-  fun getStretchMargin(): Int {
+  fun getStretchMargin(margin: Int): Int {
     TODO()
   }
 
@@ -67,51 +67,51 @@ open class TextureProgress internal constructor(
     TODO()
   }
 
-  fun setFillDegrees() {
+  fun setFillDegrees(mode: Float) {
     TODO()
   }
 
-  fun setFillMode() {
+  fun setFillMode(mode: Int) {
     TODO()
   }
 
-  fun setNinePatchStretch() {
+  fun setNinePatchStretch(stretch: Boolean) {
     TODO()
   }
 
-  fun setOverTexture() {
+  fun setOverTexture(tex: Texture) {
     TODO()
   }
 
-  fun setProgressTexture() {
+  fun setProgressTexture(tex: Texture) {
     TODO()
   }
 
-  fun setRadialCenterOffset() {
+  fun setRadialCenterOffset(mode: Vector2) {
     TODO()
   }
 
-  fun setRadialInitialAngle() {
+  fun setRadialInitialAngle(mode: Float) {
     TODO()
   }
 
-  fun setStretchMargin() {
+  fun setStretchMargin(margin: Int, value: Int) {
     TODO()
   }
 
-  fun setTintOver() {
+  fun setTintOver(tint: Color) {
     TODO()
   }
 
-  fun setTintProgress() {
+  fun setTintProgress(tint: Color) {
     TODO()
   }
 
-  fun setTintUnder() {
+  fun setTintUnder(tint: Color) {
     TODO()
   }
 
-  fun setUnderTexture() {
+  fun setUnderTexture(tex: Texture) {
     TODO()
   }
 

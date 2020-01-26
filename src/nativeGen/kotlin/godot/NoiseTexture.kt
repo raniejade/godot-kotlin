@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -32,27 +33,27 @@ open class NoiseTexture internal constructor(
     TODO()
   }
 
-  fun setAsNormalmap() {
+  fun setAsNormalmap(as_normalmap: Boolean) {
     TODO()
   }
 
-  fun setBumpStrength() {
+  fun setBumpStrength(bump_strength: Float) {
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Int) {
     TODO()
   }
 
-  fun setNoise() {
+  fun setNoise(noise: OpenSimplexNoise) {
     TODO()
   }
 
-  fun setSeamless() {
+  fun setSeamless(seamless: Boolean) {
     TODO()
   }
 
-  fun setWidth() {
+  fun setWidth(width: Int) {
     TODO()
   }
 

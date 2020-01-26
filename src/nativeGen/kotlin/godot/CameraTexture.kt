@@ -28,15 +28,15 @@ open class CameraTexture internal constructor(
     TODO()
   }
 
-  fun setCameraActive() {
+  fun setCameraActive(active: Boolean) {
     TODO()
   }
 
-  fun setCameraFeedId() {
+  fun setCameraFeedId(feed_id: Int) {
     TODO()
   }
 
-  fun setWhichFeed() {
+  fun setWhichFeed(which_feed: Int) {
     TODO()
   }
 

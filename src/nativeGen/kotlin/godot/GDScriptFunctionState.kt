@@ -16,11 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class GDScriptFunctionState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun isValid(): Boolean {
+  fun isValid(extended_check: Boolean): Boolean {
     TODO()
   }
 
-  fun resume(): Variant {
+  fun resume(arg: Variant): Variant {
     TODO()
   }
 

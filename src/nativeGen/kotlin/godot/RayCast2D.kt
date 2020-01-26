@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -17,11 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class RayCast2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun addException() {
+  fun addException(node: Object) {
     TODO()
   }
 
-  fun addExceptionRid() {
+  fun addExceptionRid(rid: RID) {
     TODO()
   }
 
@@ -49,7 +50,7 @@ open class RayCast2D internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -81,39 +82,39 @@ open class RayCast2D internal constructor(
     TODO()
   }
 
-  fun removeException() {
+  fun removeException(node: Object) {
     TODO()
   }
 
-  fun removeExceptionRid() {
+  fun removeExceptionRid(rid: RID) {
     TODO()
   }
 
-  fun setCastTo() {
+  fun setCastTo(local_point: Vector2) {
     TODO()
   }
 
-  fun setCollideWithAreas() {
+  fun setCollideWithAreas(enable: Boolean) {
     TODO()
   }
 
-  fun setCollideWithBodies() {
+  fun setCollideWithBodies(enable: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setEnabled() {
+  fun setEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setExcludeParentBody() {
+  fun setExcludeParentBody(mask: Boolean) {
     TODO()
   }
 

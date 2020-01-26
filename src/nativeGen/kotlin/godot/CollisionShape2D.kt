@@ -32,19 +32,19 @@ open class CollisionShape2D internal constructor(
     TODO()
   }
 
-  fun setDisabled() {
+  fun setDisabled(disabled: Boolean) {
     TODO()
   }
 
-  fun setOneWayCollision() {
+  fun setOneWayCollision(enabled: Boolean) {
     TODO()
   }
 
-  fun setOneWayCollisionMargin() {
+  fun setOneWayCollisionMargin(margin: Float) {
     TODO()
   }
 
-  fun setShape() {
+  fun setShape(shape: Shape2D) {
     TODO()
   }
 

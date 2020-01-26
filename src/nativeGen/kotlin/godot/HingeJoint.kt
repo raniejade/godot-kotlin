@@ -17,19 +17,19 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  fun getFlag(): Boolean {
+  fun getFlag(flag: Int): Boolean {
     TODO()
   }
 
-  fun getParam(): Float {
+  fun getParam(param: Int): Float {
     TODO()
   }
 
-  fun setFlag() {
+  fun setFlag(flag: Int, enabled: Boolean) {
     TODO()
   }
 
-  fun setParam() {
+  fun setParam(param: Int, value: Float) {
     TODO()
   }
 

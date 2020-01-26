@@ -55,39 +55,39 @@ open class AnimatedSprite internal constructor(
     TODO()
   }
 
-  fun play() {
+  fun play(anim: String, backwards: Boolean) {
     TODO()
   }
 
-  fun setAnimation() {
+  fun setAnimation(animation: String) {
     TODO()
   }
 
-  fun setCentered() {
+  fun setCentered(centered: Boolean) {
     TODO()
   }
 
-  fun setFlipH() {
+  fun setFlipH(flip_h: Boolean) {
     TODO()
   }
 
-  fun setFlipV() {
+  fun setFlipV(flip_v: Boolean) {
     TODO()
   }
 
-  fun setFrame() {
+  fun setFrame(frame: Int) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setSpeedScale() {
+  fun setSpeedScale(speed_scale: Float) {
     TODO()
   }
 
-  fun setSpriteFrames() {
+  fun setSpriteFrames(sprite_frames: SpriteFrames) {
     TODO()
   }
 

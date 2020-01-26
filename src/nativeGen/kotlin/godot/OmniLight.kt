@@ -23,11 +23,11 @@ open class OmniLight internal constructor(
     TODO()
   }
 
-  fun setShadowDetail() {
+  fun setShadowDetail(detail: Int) {
     TODO()
   }
 
-  fun setShadowMode() {
+  fun setShadowMode(mode: Int) {
     TODO()
   }
 

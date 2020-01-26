@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -18,11 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class EditorSettings internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addPropertyInfo() {
+  fun addPropertyInfo(info: Dictionary) {
     TODO()
   }
 
-  fun erase() {
+  fun erase(property: String) {
     TODO()
   }
 
@@ -30,7 +31,11 @@ open class EditorSettings internal constructor(
     TODO()
   }
 
-  fun getProjectMetadata(): Variant {
+  fun getProjectMetadata(
+    section: String,
+    key: String,
+    default: Variant
+  ): Variant {
     TODO()
   }
 
@@ -42,7 +47,7 @@ open class EditorSettings internal constructor(
     TODO()
   }
 
-  fun getSetting(): Variant {
+  fun getSetting(name: String): Variant {
     TODO()
   }
 
@@ -50,35 +55,43 @@ open class EditorSettings internal constructor(
     TODO()
   }
 
-  fun hasSetting(): Boolean {
+  fun hasSetting(name: String): Boolean {
     TODO()
   }
 
-  fun propertyCanRevert(): Boolean {
+  fun propertyCanRevert(name: String): Boolean {
     TODO()
   }
 
-  fun propertyGetRevert(): Variant {
+  fun propertyGetRevert(name: String): Variant {
     TODO()
   }
 
-  fun setFavorites() {
+  fun setFavorites(dirs: PoolStringArray) {
     TODO()
   }
 
-  fun setInitialValue() {
+  fun setInitialValue(
+    name: String,
+    value: Variant,
+    update_current: Boolean
+  ) {
     TODO()
   }
 
-  fun setProjectMetadata() {
+  fun setProjectMetadata(
+    section: String,
+    key: String,
+    data: Variant
+  ) {
     TODO()
   }
 
-  fun setRecentDirs() {
+  fun setRecentDirs(dirs: PoolStringArray) {
     TODO()
   }
 
-  fun setSetting() {
+  fun setSetting(name: String, value: Variant) {
     TODO()
   }
 

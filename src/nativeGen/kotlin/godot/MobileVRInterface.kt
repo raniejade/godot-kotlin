@@ -43,31 +43,31 @@ open class MobileVRInterface internal constructor(
     TODO()
   }
 
-  fun setDisplayToLens() {
+  fun setDisplayToLens(display_to_lens: Float) {
     TODO()
   }
 
-  fun setDisplayWidth() {
+  fun setDisplayWidth(display_width: Float) {
     TODO()
   }
 
-  fun setEyeHeight() {
+  fun setEyeHeight(eye_height: Float) {
     TODO()
   }
 
-  fun setIod() {
+  fun setIod(iod: Float) {
     TODO()
   }
 
-  fun setK1() {
+  fun setK1(k: Float) {
     TODO()
   }
 
-  fun setK2() {
+  fun setK2(k: Float) {
     TODO()
   }
 
-  fun setOversample() {
+  fun setOversample(oversample: Float) {
     TODO()
   }
 

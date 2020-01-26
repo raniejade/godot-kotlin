@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -17,11 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class ClippedCamera internal constructor(
   _handle: COpaquePointer
 ) : Camera(_handle) {
-  fun addException() {
+  fun addException(node: Object) {
     TODO()
   }
 
-  fun addExceptionRid() {
+  fun addExceptionRid(rid: RID) {
     TODO()
   }
 
@@ -37,7 +38,7 @@ open class ClippedCamera internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -57,35 +58,35 @@ open class ClippedCamera internal constructor(
     TODO()
   }
 
-  fun removeException() {
+  fun removeException(node: Object) {
     TODO()
   }
 
-  fun removeExceptionRid() {
+  fun removeExceptionRid(rid: RID) {
     TODO()
   }
 
-  fun setClipToAreas() {
+  fun setClipToAreas(enable: Boolean) {
     TODO()
   }
 
-  fun setClipToBodies() {
+  fun setClipToBodies(enable: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setMargin() {
+  fun setMargin(margin: Float) {
     TODO()
   }
 
-  fun setProcessMode() {
+  fun setProcessMode(process_mode: Int) {
     TODO()
   }
 

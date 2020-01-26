@@ -32,7 +32,7 @@ open class Area2D internal constructor(
     TODO()
   }
 
-  fun getCollisionLayerBit(): Boolean {
+  fun getCollisionLayerBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -40,7 +40,7 @@ open class Area2D internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -92,75 +92,75 @@ open class Area2D internal constructor(
     TODO()
   }
 
-  fun overlapsArea(): Boolean {
+  fun overlapsArea(area: Node): Boolean {
     TODO()
   }
 
-  fun overlapsBody(): Boolean {
+  fun overlapsBody(body: Node): Boolean {
     TODO()
   }
 
-  fun setAngularDamp() {
+  fun setAngularDamp(angular_damp: Float) {
     TODO()
   }
 
-  fun setAudioBusName() {
+  fun setAudioBusName(name: String) {
     TODO()
   }
 
-  fun setAudioBusOverride() {
+  fun setAudioBusOverride(enable: Boolean) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(collision_layer: Int) {
     TODO()
   }
 
-  fun setCollisionLayerBit() {
+  fun setCollisionLayerBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(collision_mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setGravity() {
+  fun setGravity(gravity: Float) {
     TODO()
   }
 
-  fun setGravityDistanceScale() {
+  fun setGravityDistanceScale(distance_scale: Float) {
     TODO()
   }
 
-  fun setGravityIsPoint() {
+  fun setGravityIsPoint(enable: Boolean) {
     TODO()
   }
 
-  fun setGravityVector() {
+  fun setGravityVector(vector: Vector2) {
     TODO()
   }
 
-  fun setLinearDamp() {
+  fun setLinearDamp(linear_damp: Float) {
     TODO()
   }
 
-  fun setMonitorable() {
+  fun setMonitorable(enable: Boolean) {
     TODO()
   }
 
-  fun setMonitoring() {
+  fun setMonitoring(enable: Boolean) {
     TODO()
   }
 
-  fun setPriority() {
+  fun setPriority(priority: Float) {
     TODO()
   }
 
-  fun setSpaceOverrideMode() {
+  fun setSpaceOverrideMode(space_override_mode: Int) {
     TODO()
   }
 

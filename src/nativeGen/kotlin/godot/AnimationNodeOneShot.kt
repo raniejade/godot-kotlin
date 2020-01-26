@@ -45,31 +45,31 @@ open class AnimationNodeOneShot internal constructor(
     TODO()
   }
 
-  fun setAutorestart() {
+  fun setAutorestart(enable: Boolean) {
     TODO()
   }
 
-  fun setAutorestartDelay() {
+  fun setAutorestartDelay(enable: Float) {
     TODO()
   }
 
-  fun setAutorestartRandomDelay() {
+  fun setAutorestartRandomDelay(enable: Float) {
     TODO()
   }
 
-  fun setFadeinTime() {
+  fun setFadeinTime(time: Float) {
     TODO()
   }
 
-  fun setFadeoutTime() {
+  fun setFadeoutTime(time: Float) {
     TODO()
   }
 
-  fun setMixMode() {
+  fun setMixMode(mode: Int) {
     TODO()
   }
 
-  fun setUseSync() {
+  fun setUseSync(enable: Boolean) {
     TODO()
   }
 

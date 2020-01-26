@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,11 +25,11 @@ open class VisualScriptConstructor internal constructor(
     TODO()
   }
 
-  fun setConstructor() {
+  fun setConstructor(constructor: Dictionary) {
     TODO()
   }
 
-  fun setConstructorType() {
+  fun setConstructorType(type: Int) {
     TODO()
   }
 

@@ -56,47 +56,47 @@ open class Range internal constructor(
     TODO()
   }
 
-  fun setAllowGreater() {
+  fun setAllowGreater(allow: Boolean) {
     TODO()
   }
 
-  fun setAllowLesser() {
+  fun setAllowLesser(allow: Boolean) {
     TODO()
   }
 
-  fun setAsRatio() {
+  fun setAsRatio(value: Float) {
     TODO()
   }
 
-  fun setExpRatio() {
+  fun setExpRatio(enabled: Boolean) {
     TODO()
   }
 
-  fun setMax() {
+  fun setMax(maximum: Float) {
     TODO()
   }
 
-  fun setMin() {
+  fun setMin(minimum: Float) {
     TODO()
   }
 
-  fun setPage() {
+  fun setPage(pagesize: Float) {
     TODO()
   }
 
-  fun setStep() {
+  fun setStep(step: Float) {
     TODO()
   }
 
-  fun setUseRoundedValues() {
+  fun setUseRoundedValues(enabled: Boolean) {
     TODO()
   }
 
-  fun setValue() {
+  fun setValue(value: Float) {
     TODO()
   }
 
-  fun share() {
+  fun share(with: Node) {
     TODO()
   }
 

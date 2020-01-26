@@ -29,19 +29,19 @@ open class InputEventMouseButton internal constructor(
     TODO()
   }
 
-  fun setButtonIndex() {
+  fun setButtonIndex(button_index: Int) {
     TODO()
   }
 
-  fun setDoubleclick() {
+  fun setDoubleclick(doubleclick: Boolean) {
     TODO()
   }
 
-  fun setFactor() {
+  fun setFactor(factor: Float) {
     TODO()
   }
 
-  fun setPressed() {
+  fun setPressed(pressed: Boolean) {
     TODO()
   }
 

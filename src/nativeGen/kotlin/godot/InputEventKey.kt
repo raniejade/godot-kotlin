@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -27,19 +28,19 @@ open class InputEventKey internal constructor(
     TODO()
   }
 
-  fun setEcho() {
+  fun setEcho(echo: Boolean) {
     TODO()
   }
 
-  fun setPressed() {
+  fun setPressed(pressed: Boolean) {
     TODO()
   }
 
-  fun setScancode() {
+  fun setScancode(scancode: Int) {
     TODO()
   }
 
-  fun setUnicode() {
+  fun setUnicode(unicode: Int) {
     TODO()
   }
 

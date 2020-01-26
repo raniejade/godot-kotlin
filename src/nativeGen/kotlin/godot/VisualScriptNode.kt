@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getDefaultInputValue(): Variant {
+  fun getDefaultInputValue(port_idx: Int): Variant {
     TODO()
   }
 
@@ -27,7 +28,7 @@ open class VisualScriptNode internal constructor(
     TODO()
   }
 
-  fun setDefaultInputValue() {
+  fun setDefaultInputValue(port_idx: Int, value: Variant) {
     TODO()
   }
 

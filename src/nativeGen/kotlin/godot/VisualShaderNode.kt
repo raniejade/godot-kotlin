@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getInputPortDefaultValue(): Variant {
+  fun getInputPortDefaultValue(port: Int): Variant {
     TODO()
   }
 
@@ -24,11 +24,11 @@ open class VisualShaderNode internal constructor(
     TODO()
   }
 
-  fun setInputPortDefaultValue() {
+  fun setInputPortDefaultValue(port: Int, value: Variant) {
     TODO()
   }
 
-  fun setOutputPortForPreview() {
+  fun setOutputPortForPreview(port: Int) {
     TODO()
   }
 

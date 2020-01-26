@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,11 +25,11 @@ open class FuncRef internal constructor(
     TODO()
   }
 
-  fun setFunction() {
+  fun setFunction(name: String) {
     TODO()
   }
 
-  fun setInstance() {
+  fun setInstance(instance: Object) {
     TODO()
   }
 

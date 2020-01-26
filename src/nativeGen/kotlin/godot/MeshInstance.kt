@@ -36,7 +36,7 @@ open class MeshInstance internal constructor(
     TODO()
   }
 
-  fun getSurfaceMaterial(): Material {
+  fun getSurfaceMaterial(surface: Int): Material {
     TODO()
   }
 
@@ -44,15 +44,15 @@ open class MeshInstance internal constructor(
     TODO()
   }
 
-  fun setMesh() {
+  fun setMesh(mesh: Mesh) {
     TODO()
   }
 
-  fun setSkeletonPath() {
+  fun setSkeletonPath(skeleton_path: NodePath) {
     TODO()
   }
 
-  fun setSurfaceMaterial() {
+  fun setSurfaceMaterial(surface: Int, material: Material) {
     TODO()
   }
 

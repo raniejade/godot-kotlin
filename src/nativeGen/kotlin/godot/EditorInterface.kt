@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class EditorInterface internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun editResource() {
+  fun editResource(resource: Resource) {
     TODO()
   }
 
@@ -65,23 +66,23 @@ open class EditorInterface internal constructor(
     TODO()
   }
 
-  fun inspectObject() {
+  fun inspectObject(`object`: Object, for_property: String) {
     TODO()
   }
 
-  fun isPluginEnabled(): Boolean {
+  fun isPluginEnabled(plugin: String): Boolean {
     TODO()
   }
 
-  fun makeMeshPreviews(): VariantArray {
+  fun makeMeshPreviews(meshes: VariantArray, preview_size: Int): VariantArray {
     TODO()
   }
 
-  fun openSceneFromPath() {
+  fun openSceneFromPath(scene_filepath: String) {
     TODO()
   }
 
-  fun reloadSceneFromPath() {
+  fun reloadSceneFromPath(scene_filepath: String) {
     TODO()
   }
 
@@ -89,15 +90,15 @@ open class EditorInterface internal constructor(
     TODO()
   }
 
-  fun saveSceneAs() {
+  fun saveSceneAs(path: String, with_preview: Boolean) {
     TODO()
   }
 
-  fun selectFile() {
+  fun selectFile(file: String) {
     TODO()
   }
 
-  fun setPluginEnabled() {
+  fun setPluginEnabled(plugin: String, enabled: Boolean) {
     TODO()
   }
 

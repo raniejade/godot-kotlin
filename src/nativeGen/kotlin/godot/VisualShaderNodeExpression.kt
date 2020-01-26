@@ -23,7 +23,7 @@ open class VisualShaderNodeExpression internal constructor(
     TODO()
   }
 
-  fun setExpression() {
+  fun setExpression(expression: String) {
     TODO()
   }
 

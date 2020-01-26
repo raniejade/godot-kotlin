@@ -37,23 +37,23 @@ open class Button internal constructor(
     TODO()
   }
 
-  fun setButtonIcon() {
+  fun setButtonIcon(texture: Texture) {
     TODO()
   }
 
-  fun setClipText() {
+  fun setClipText(enabled: Boolean) {
     TODO()
   }
 
-  fun setFlat() {
+  fun setFlat(enabled: Boolean) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 
-  fun setTextAlign() {
+  fun setTextAlign(align: Int) {
     TODO()
   }
 

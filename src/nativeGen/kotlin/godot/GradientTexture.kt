@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -18,11 +19,11 @@ open class GradientTexture internal constructor(
     TODO()
   }
 
-  fun setGradient() {
+  fun setGradient(gradient: Gradient) {
     TODO()
   }
 
-  fun setWidth() {
+  fun setWidth(width: Int) {
     TODO()
   }
 

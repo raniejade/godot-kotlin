@@ -40,27 +40,27 @@ open class CanvasItemMaterial internal constructor(
     TODO()
   }
 
-  fun setBlendMode() {
+  fun setBlendMode(blend_mode: Int) {
     TODO()
   }
 
-  fun setLightMode() {
+  fun setLightMode(light_mode: Int) {
     TODO()
   }
 
-  fun setParticlesAnimHFrames() {
+  fun setParticlesAnimHFrames(frames: Int) {
     TODO()
   }
 
-  fun setParticlesAnimLoop() {
+  fun setParticlesAnimLoop(loop: Boolean) {
     TODO()
   }
 
-  fun setParticlesAnimVFrames() {
+  fun setParticlesAnimVFrames(frames: Int) {
     TODO()
   }
 
-  fun setParticlesAnimation() {
+  fun setParticlesAnimation(particles_anim: Boolean) {
     TODO()
   }
 

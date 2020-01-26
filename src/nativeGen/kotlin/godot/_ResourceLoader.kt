@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,35 +17,39 @@ import kotlinx.cinterop.reinterpret
 open class _ResourceLoader internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun exists(): Boolean {
+  fun exists(path: String, type_hint: String): Boolean {
     TODO()
   }
 
-  fun getDependencies(): PoolStringArray {
+  fun getDependencies(path: String): PoolStringArray {
     TODO()
   }
 
-  fun getRecognizedExtensionsForType(): PoolStringArray {
+  fun getRecognizedExtensionsForType(type: String): PoolStringArray {
     TODO()
   }
 
-  fun has(): Boolean {
+  fun has(path: String): Boolean {
     TODO()
   }
 
-  fun hasCached(): Boolean {
+  fun hasCached(path: String): Boolean {
     TODO()
   }
 
-  fun load(): Resource {
+  fun load(
+    path: String,
+    type_hint: String,
+    no_cache: Boolean
+  ): Resource {
     TODO()
   }
 
-  fun loadInteractive(): ResourceInteractiveLoader {
+  fun loadInteractive(path: String, type_hint: String): ResourceInteractiveLoader {
     TODO()
   }
 
-  fun setAbortOnMissingResources() {
+  fun setAbortOnMissingResources(abort: Boolean) {
     TODO()
   }
 

@@ -18,11 +18,19 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachine internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
-  fun addNode() {
+  fun addNode(
+    name: String,
+    node: AnimationNode,
+    position: Vector2
+  ) {
     TODO()
   }
 
-  fun addTransition() {
+  fun addTransition(
+    from: String,
+    to: String,
+    transition: AnimationNodeStateMachineTransition
+  ) {
     TODO()
   }
 
@@ -34,15 +42,15 @@ open class AnimationNodeStateMachine internal constructor(
     TODO()
   }
 
-  fun getNode(): AnimationNode {
+  fun getNode(name: String): AnimationNode {
     TODO()
   }
 
-  fun getNodeName(): String {
+  fun getNodeName(node: AnimationNode): String {
     TODO()
   }
 
-  fun getNodePosition(): Vector2 {
+  fun getNodePosition(name: String): Vector2 {
     TODO()
   }
 
@@ -50,7 +58,7 @@ open class AnimationNodeStateMachine internal constructor(
     TODO()
   }
 
-  fun getTransition(): AnimationNodeStateMachineTransition {
+  fun getTransition(idx: Int): AnimationNodeStateMachineTransition {
     TODO()
   }
 
@@ -58,51 +66,51 @@ open class AnimationNodeStateMachine internal constructor(
     TODO()
   }
 
-  fun getTransitionFrom(): String {
+  fun getTransitionFrom(idx: Int): String {
     TODO()
   }
 
-  fun getTransitionTo(): String {
+  fun getTransitionTo(idx: Int): String {
     TODO()
   }
 
-  fun hasNode(): Boolean {
+  fun hasNode(name: String): Boolean {
     TODO()
   }
 
-  fun hasTransition(): Boolean {
+  fun hasTransition(from: String, to: String): Boolean {
     TODO()
   }
 
-  fun removeNode() {
+  fun removeNode(name: String) {
     TODO()
   }
 
-  fun removeTransition() {
+  fun removeTransition(from: String, to: String) {
     TODO()
   }
 
-  fun removeTransitionByIndex() {
+  fun removeTransitionByIndex(idx: Int) {
     TODO()
   }
 
-  fun renameNode() {
+  fun renameNode(name: String, new_name: String) {
     TODO()
   }
 
-  fun setEndNode() {
+  fun setEndNode(name: String) {
     TODO()
   }
 
-  fun setGraphOffset() {
+  fun setGraphOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setNodePosition() {
+  fun setNodePosition(name: String, position: Vector2) {
     TODO()
   }
 
-  fun setStartNode() {
+  fun setStartNode(name: String) {
     TODO()
   }
 

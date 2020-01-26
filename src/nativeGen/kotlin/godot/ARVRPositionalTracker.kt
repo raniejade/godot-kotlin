@@ -57,7 +57,7 @@ open class ARVRPositionalTracker internal constructor(
     TODO()
   }
 
-  fun getTransform(): Transform {
+  fun getTransform(adjust_by_reference_frame: Boolean): Transform {
     TODO()
   }
 
@@ -65,7 +65,7 @@ open class ARVRPositionalTracker internal constructor(
     TODO()
   }
 
-  fun setRumble() {
+  fun setRumble(rumble: Float) {
     TODO()
   }
 

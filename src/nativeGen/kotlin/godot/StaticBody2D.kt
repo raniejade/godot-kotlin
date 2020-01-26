@@ -36,23 +36,23 @@ open class StaticBody2D internal constructor(
     TODO()
   }
 
-  fun setBounce() {
+  fun setBounce(bounce: Float) {
     TODO()
   }
 
-  fun setConstantAngularVelocity() {
+  fun setConstantAngularVelocity(vel: Float) {
     TODO()
   }
 
-  fun setConstantLinearVelocity() {
+  fun setConstantLinearVelocity(vel: Vector2) {
     TODO()
   }
 
-  fun setFriction() {
+  fun setFriction(friction: Float) {
     TODO()
   }
 
-  fun setPhysicsMaterialOverride() {
+  fun setPhysicsMaterialOverride(physics_material_override: PhysicsMaterial) {
     TODO()
   }
 

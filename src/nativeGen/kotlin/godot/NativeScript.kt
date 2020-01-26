@@ -27,11 +27,11 @@ open class NativeScript internal constructor(
     TODO()
   }
 
-  fun getMethodDocumentation(): String {
+  fun getMethodDocumentation(method: String): String {
     TODO()
   }
 
-  fun getPropertyDocumentation(): String {
+  fun getPropertyDocumentation(path: String): String {
     TODO()
   }
 
@@ -43,7 +43,7 @@ open class NativeScript internal constructor(
     TODO()
   }
 
-  fun getSignalDocumentation(): String {
+  fun getSignalDocumentation(signal_name: String): String {
     TODO()
   }
 
@@ -51,19 +51,19 @@ open class NativeScript internal constructor(
     TODO()
   }
 
-  fun setClassName() {
+  fun setClassName(class_name: String) {
     TODO()
   }
 
-  fun setLibrary() {
+  fun setLibrary(library: GDNativeLibrary) {
     TODO()
   }
 
-  fun setScriptClassIconPath() {
+  fun setScriptClassIconPath(icon_path: String) {
     TODO()
   }
 
-  fun setScriptClassName() {
+  fun setScriptClassName(class_name: String) {
     TODO()
   }
 

@@ -102,83 +102,83 @@ open class AudioStreamPlayer3D internal constructor(
     TODO()
   }
 
-  fun play() {
+  fun play(from_position: Float) {
     TODO()
   }
 
-  fun seek() {
+  fun seek(to_position: Float) {
     TODO()
   }
 
-  fun setAreaMask() {
+  fun setAreaMask(mask: Int) {
     TODO()
   }
 
-  fun setAttenuationFilterCutoffHz() {
+  fun setAttenuationFilterCutoffHz(degrees: Float) {
     TODO()
   }
 
-  fun setAttenuationFilterDb() {
+  fun setAttenuationFilterDb(db: Float) {
     TODO()
   }
 
-  fun setAttenuationModel() {
+  fun setAttenuationModel(model: Int) {
     TODO()
   }
 
-  fun setAutoplay() {
+  fun setAutoplay(enable: Boolean) {
     TODO()
   }
 
-  fun setBus() {
+  fun setBus(bus: String) {
     TODO()
   }
 
-  fun setDopplerTracking() {
+  fun setDopplerTracking(mode: Int) {
     TODO()
   }
 
-  fun setEmissionAngle() {
+  fun setEmissionAngle(degrees: Float) {
     TODO()
   }
 
-  fun setEmissionAngleEnabled() {
+  fun setEmissionAngleEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setEmissionAngleFilterAttenuationDb() {
+  fun setEmissionAngleFilterAttenuationDb(db: Float) {
     TODO()
   }
 
-  fun setMaxDb() {
+  fun setMaxDb(max_db: Float) {
     TODO()
   }
 
-  fun setMaxDistance() {
+  fun setMaxDistance(metres: Float) {
     TODO()
   }
 
-  fun setOutOfRangeMode() {
+  fun setOutOfRangeMode(mode: Int) {
     TODO()
   }
 
-  fun setPitchScale() {
+  fun setPitchScale(pitch_scale: Float) {
     TODO()
   }
 
-  fun setStream() {
+  fun setStream(stream: AudioStream) {
     TODO()
   }
 
-  fun setStreamPaused() {
+  fun setStreamPaused(pause: Boolean) {
     TODO()
   }
 
-  fun setUnitDb() {
+  fun setUnitDb(unit_db: Float) {
     TODO()
   }
 
-  fun setUnitSize() {
+  fun setUnitSize(unit_size: Float) {
     TODO()
   }
 

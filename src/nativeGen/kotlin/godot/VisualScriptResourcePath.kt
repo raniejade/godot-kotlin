@@ -19,7 +19,7 @@ open class VisualScriptResourcePath internal constructor(
     TODO()
   }
 
-  fun setResourcePath() {
+  fun setResourcePath(path: String) {
     TODO()
   }
 

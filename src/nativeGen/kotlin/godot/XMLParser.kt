@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -21,11 +22,11 @@ open class XMLParser internal constructor(
     TODO()
   }
 
-  fun getAttributeName(): String {
+  fun getAttributeName(idx: Int): String {
     TODO()
   }
 
-  fun getAttributeValue(): String {
+  fun getAttributeValue(idx: Int): String {
     TODO()
   }
 
@@ -33,11 +34,11 @@ open class XMLParser internal constructor(
     TODO()
   }
 
-  fun getNamedAttributeValue(): String {
+  fun getNamedAttributeValue(name: String): String {
     TODO()
   }
 
-  fun getNamedAttributeValueSafe(): String {
+  fun getNamedAttributeValueSafe(name: String): String {
     TODO()
   }
 
@@ -57,7 +58,7 @@ open class XMLParser internal constructor(
     TODO()
   }
 
-  fun hasAttribute(): Boolean {
+  fun hasAttribute(name: String): Boolean {
     TODO()
   }
 
@@ -65,11 +66,11 @@ open class XMLParser internal constructor(
     TODO()
   }
 
-  fun open(): Error {
+  fun open(file: String): Error {
     TODO()
   }
 
-  fun openBuffer(): Error {
+  fun openBuffer(buffer: PoolByteArray): Error {
     TODO()
   }
 
@@ -77,7 +78,7 @@ open class XMLParser internal constructor(
     TODO()
   }
 
-  fun seek(): Error {
+  fun seek(position: Int): Error {
     TODO()
   }
 

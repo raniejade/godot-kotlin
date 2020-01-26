@@ -19,7 +19,7 @@ open class VisualScriptVariableSet internal constructor(
     TODO()
   }
 
-  fun setVariable() {
+  fun setVariable(name: String) {
     TODO()
   }
 

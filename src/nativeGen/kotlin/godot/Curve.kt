@@ -17,7 +17,13 @@ import kotlinx.cinterop.reinterpret
 open class Curve internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addPoint(): Int {
+  fun addPoint(
+    position: Vector2,
+    left_tangent: Float,
+    right_tangent: Float,
+    left_mode: Int,
+    right_mode: Int
+  ): Int {
     TODO()
   }
 
@@ -49,71 +55,71 @@ open class Curve internal constructor(
     TODO()
   }
 
-  fun getPointLeftMode(): TangentMode {
+  fun getPointLeftMode(index: Int): TangentMode {
     TODO()
   }
 
-  fun getPointLeftTangent(): Float {
+  fun getPointLeftTangent(index: Int): Float {
     TODO()
   }
 
-  fun getPointPosition(): Vector2 {
+  fun getPointPosition(index: Int): Vector2 {
     TODO()
   }
 
-  fun getPointRightMode(): TangentMode {
+  fun getPointRightMode(index: Int): TangentMode {
     TODO()
   }
 
-  fun getPointRightTangent(): Float {
+  fun getPointRightTangent(index: Int): Float {
     TODO()
   }
 
-  fun interpolate(): Float {
+  fun interpolate(offset: Float): Float {
     TODO()
   }
 
-  fun interpolateBaked(): Float {
+  fun interpolateBaked(offset: Float): Float {
     TODO()
   }
 
-  fun removePoint() {
+  fun removePoint(index: Int) {
     TODO()
   }
 
-  fun setBakeResolution() {
+  fun setBakeResolution(resolution: Int) {
     TODO()
   }
 
-  fun setMaxValue() {
+  fun setMaxValue(max: Float) {
     TODO()
   }
 
-  fun setMinValue() {
+  fun setMinValue(min: Float) {
     TODO()
   }
 
-  fun setPointLeftMode() {
+  fun setPointLeftMode(index: Int, mode: Int) {
     TODO()
   }
 
-  fun setPointLeftTangent() {
+  fun setPointLeftTangent(index: Int, tangent: Float) {
     TODO()
   }
 
-  fun setPointOffset(): Int {
+  fun setPointOffset(index: Int, offset: Float): Int {
     TODO()
   }
 
-  fun setPointRightMode() {
+  fun setPointRightMode(index: Int, mode: Int) {
     TODO()
   }
 
-  fun setPointRightTangent() {
+  fun setPointRightTangent(index: Int, tangent: Float) {
     TODO()
   }
 
-  fun setPointValue() {
+  fun setPointValue(index: Int, y: Float) {
     TODO()
   }
 

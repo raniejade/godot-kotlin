@@ -17,11 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class Translation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addMessage() {
+  fun addMessage(src_message: String, xlated_message: String) {
     TODO()
   }
 
-  fun eraseMessage() {
+  fun eraseMessage(src_message: String) {
     TODO()
   }
 
@@ -29,7 +29,7 @@ open class Translation internal constructor(
     TODO()
   }
 
-  fun getMessage(): String {
+  fun getMessage(src_message: String): String {
     TODO()
   }
 
@@ -41,7 +41,7 @@ open class Translation internal constructor(
     TODO()
   }
 
-  fun setLocale() {
+  fun setLocale(locale: String) {
     TODO()
   }
 

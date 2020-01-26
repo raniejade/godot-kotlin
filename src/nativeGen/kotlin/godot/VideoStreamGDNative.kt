@@ -19,7 +19,7 @@ open class VideoStreamGDNative internal constructor(
     TODO()
   }
 
-  fun setFile() {
+  fun setFile(file: String) {
     TODO()
   }
 

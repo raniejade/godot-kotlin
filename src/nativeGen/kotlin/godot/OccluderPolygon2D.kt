@@ -29,15 +29,15 @@ open class OccluderPolygon2D internal constructor(
     TODO()
   }
 
-  fun setClosed() {
+  fun setClosed(closed: Boolean) {
     TODO()
   }
 
-  fun setCullMode() {
+  fun setCullMode(cull_mode: Int) {
     TODO()
   }
 
-  fun setPolygon() {
+  fun setPolygon(polygon: PoolVector2Array) {
     TODO()
   }
 

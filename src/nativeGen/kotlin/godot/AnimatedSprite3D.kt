@@ -33,19 +33,19 @@ open class AnimatedSprite3D internal constructor(
     TODO()
   }
 
-  fun play() {
+  fun play(anim: String) {
     TODO()
   }
 
-  fun setAnimation() {
+  fun setAnimation(animation: String) {
     TODO()
   }
 
-  fun setFrame() {
+  fun setFrame(frame: Int) {
     TODO()
   }
 
-  fun setSpriteFrames() {
+  fun setSpriteFrames(sprite_frames: SpriteFrames) {
     TODO()
   }
 

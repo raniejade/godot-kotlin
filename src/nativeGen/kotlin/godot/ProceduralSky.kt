@@ -81,67 +81,67 @@ open class ProceduralSky internal constructor(
     TODO()
   }
 
-  fun setGroundBottomColor() {
+  fun setGroundBottomColor(color: Color) {
     TODO()
   }
 
-  fun setGroundCurve() {
+  fun setGroundCurve(curve: Float) {
     TODO()
   }
 
-  fun setGroundEnergy() {
+  fun setGroundEnergy(energy: Float) {
     TODO()
   }
 
-  fun setGroundHorizonColor() {
+  fun setGroundHorizonColor(color: Color) {
     TODO()
   }
 
-  fun setSkyCurve() {
+  fun setSkyCurve(curve: Float) {
     TODO()
   }
 
-  fun setSkyEnergy() {
+  fun setSkyEnergy(energy: Float) {
     TODO()
   }
 
-  fun setSkyHorizonColor() {
+  fun setSkyHorizonColor(color: Color) {
     TODO()
   }
 
-  fun setSkyTopColor() {
+  fun setSkyTopColor(color: Color) {
     TODO()
   }
 
-  fun setSunAngleMax() {
+  fun setSunAngleMax(degrees: Float) {
     TODO()
   }
 
-  fun setSunAngleMin() {
+  fun setSunAngleMin(degrees: Float) {
     TODO()
   }
 
-  fun setSunColor() {
+  fun setSunColor(color: Color) {
     TODO()
   }
 
-  fun setSunCurve() {
+  fun setSunCurve(curve: Float) {
     TODO()
   }
 
-  fun setSunEnergy() {
+  fun setSunEnergy(energy: Float) {
     TODO()
   }
 
-  fun setSunLatitude() {
+  fun setSunLatitude(degrees: Float) {
     TODO()
   }
 
-  fun setSunLongitude() {
+  fun setSunLongitude(degrees: Float) {
     TODO()
   }
 
-  fun setTextureSize() {
+  fun setTextureSize(size: Int) {
     TODO()
   }
 

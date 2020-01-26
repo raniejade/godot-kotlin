@@ -19,7 +19,7 @@ open class VisualScriptEngineSingleton internal constructor(
     TODO()
   }
 
-  fun setSingleton() {
+  fun setSingleton(name: String) {
     TODO()
   }
 

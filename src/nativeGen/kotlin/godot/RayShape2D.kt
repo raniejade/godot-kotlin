@@ -24,11 +24,11 @@ open class RayShape2D internal constructor(
     TODO()
   }
 
-  fun setLength() {
+  fun setLength(length: Float) {
     TODO()
   }
 
-  fun setSlipsOnSlope() {
+  fun setSlipsOnSlope(active: Boolean) {
     TODO()
   }
 

@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class Line2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun addPoint() {
+  fun addPoint(position: Vector2, at_position: Int) {
     TODO()
   }
 
@@ -51,7 +51,7 @@ open class Line2D internal constructor(
     TODO()
   }
 
-  fun getPointPosition(): Vector2 {
+  fun getPointPosition(i: Int): Vector2 {
     TODO()
   }
 
@@ -79,55 +79,55 @@ open class Line2D internal constructor(
     TODO()
   }
 
-  fun removePoint() {
+  fun removePoint(i: Int) {
     TODO()
   }
 
-  fun setBeginCapMode() {
+  fun setBeginCapMode(mode: Int) {
     TODO()
   }
 
-  fun setDefaultColor() {
+  fun setDefaultColor(color: Color) {
     TODO()
   }
 
-  fun setEndCapMode() {
+  fun setEndCapMode(mode: Int) {
     TODO()
   }
 
-  fun setGradient() {
+  fun setGradient(color: Gradient) {
     TODO()
   }
 
-  fun setJointMode() {
+  fun setJointMode(mode: Int) {
     TODO()
   }
 
-  fun setPointPosition() {
+  fun setPointPosition(i: Int, position: Vector2) {
     TODO()
   }
 
-  fun setPoints() {
+  fun setPoints(points: PoolVector2Array) {
     TODO()
   }
 
-  fun setRoundPrecision() {
+  fun setRoundPrecision(precision: Int) {
     TODO()
   }
 
-  fun setSharpLimit() {
+  fun setSharpLimit(limit: Float) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setTextureMode() {
+  fun setTextureMode(mode: Int) {
     TODO()
   }
 
-  fun setWidth() {
+  fun setWidth(width: Float) {
     TODO()
   }
 

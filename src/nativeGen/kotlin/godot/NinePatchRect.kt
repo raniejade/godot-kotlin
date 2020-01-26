@@ -21,7 +21,7 @@ open class NinePatchRect internal constructor(
     TODO()
   }
 
-  fun getPatchMargin(): Int {
+  fun getPatchMargin(margin: Int): Int {
     TODO()
   }
 
@@ -41,27 +41,27 @@ open class NinePatchRect internal constructor(
     TODO()
   }
 
-  fun setDrawCenter() {
+  fun setDrawCenter(draw_center: Boolean) {
     TODO()
   }
 
-  fun setHAxisStretchMode() {
+  fun setHAxisStretchMode(mode: Int) {
     TODO()
   }
 
-  fun setPatchMargin() {
+  fun setPatchMargin(margin: Int, value: Int) {
     TODO()
   }
 
-  fun setRegionRect() {
+  fun setRegionRect(rect: Rect2) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setVAxisStretchMode() {
+  fun setVAxisStretchMode(mode: Int) {
     TODO()
   }
 

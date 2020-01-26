@@ -44,31 +44,31 @@ open class AudioEffectCompressor internal constructor(
     TODO()
   }
 
-  fun setAttackUs() {
+  fun setAttackUs(attack_us: Float) {
     TODO()
   }
 
-  fun setGain() {
+  fun setGain(gain: Float) {
     TODO()
   }
 
-  fun setMix() {
+  fun setMix(mix: Float) {
     TODO()
   }
 
-  fun setRatio() {
+  fun setRatio(ratio: Float) {
     TODO()
   }
 
-  fun setReleaseMs() {
+  fun setReleaseMs(release_ms: Float) {
     TODO()
   }
 
-  fun setSidechain() {
+  fun setSidechain(sidechain: String) {
     TODO()
   }
 
-  fun setThreshold() {
+  fun setThreshold(threshold: Float) {
     TODO()
   }
 

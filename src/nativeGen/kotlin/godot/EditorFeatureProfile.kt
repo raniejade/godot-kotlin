@@ -17,47 +17,51 @@ import kotlinx.cinterop.reinterpret
 open class EditorFeatureProfile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun getFeatureName(): String {
+  fun getFeatureName(feature: Int): String {
     TODO()
   }
 
-  fun isClassDisabled(): Boolean {
+  fun isClassDisabled(class_name: String): Boolean {
     TODO()
   }
 
-  fun isClassEditorDisabled(): Boolean {
+  fun isClassEditorDisabled(class_name: String): Boolean {
     TODO()
   }
 
-  fun isClassPropertyDisabled(): Boolean {
+  fun isClassPropertyDisabled(class_name: String, arg1: String): Boolean {
     TODO()
   }
 
-  fun isFeatureDisabled(): Boolean {
+  fun isFeatureDisabled(feature: Int): Boolean {
     TODO()
   }
 
-  fun loadFromFile(): Error {
+  fun loadFromFile(path: String): Error {
     TODO()
   }
 
-  fun saveToFile(): Error {
+  fun saveToFile(path: String): Error {
     TODO()
   }
 
-  fun setDisableClass() {
+  fun setDisableClass(class_name: String, disable: Boolean) {
     TODO()
   }
 
-  fun setDisableClassEditor() {
+  fun setDisableClassEditor(class_name: String, disable: Boolean) {
     TODO()
   }
 
-  fun setDisableClassProperty() {
+  fun setDisableClassProperty(
+    class_name: String,
+    property: String,
+    arg2: Boolean
+  ) {
     TODO()
   }
 
-  fun setDisableFeature() {
+  fun setDisableFeature(feature: Int, disable: Boolean) {
     TODO()
   }
 

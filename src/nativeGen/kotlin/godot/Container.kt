@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class Container internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun fitChildInRect() {
+  fun fitChildInRect(child: Control, rect: Rect2) {
     TODO()
   }
 

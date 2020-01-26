@@ -57,39 +57,39 @@ open class TouchScreenButton internal constructor(
     TODO()
   }
 
-  fun setAction() {
+  fun setAction(action: String) {
     TODO()
   }
 
-  fun setBitmask() {
+  fun setBitmask(bitmask: BitMap) {
     TODO()
   }
 
-  fun setPassbyPress() {
+  fun setPassbyPress(enabled: Boolean) {
     TODO()
   }
 
-  fun setShape() {
+  fun setShape(shape: Shape2D) {
     TODO()
   }
 
-  fun setShapeCentered() {
+  fun setShapeCentered(bool: Boolean) {
     TODO()
   }
 
-  fun setShapeVisible() {
+  fun setShapeVisible(bool: Boolean) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setTexturePressed() {
+  fun setTexturePressed(texture_pressed: Texture) {
     TODO()
   }
 
-  fun setVisibilityMode() {
+  fun setVisibilityMode(mode: Int) {
     TODO()
   }
 

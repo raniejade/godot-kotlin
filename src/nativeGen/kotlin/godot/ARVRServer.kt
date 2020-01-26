@@ -5,8 +5,10 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform
 import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -18,11 +20,11 @@ import kotlinx.cinterop.reinterpret
 open class ARVRServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun centerOnHmd() {
+  fun centerOnHmd(rotation_mode: Int, keep_height: Boolean) {
     TODO()
   }
 
-  fun findInterface(): ARVRInterface {
+  fun findInterface(name: String): ARVRInterface {
     TODO()
   }
 
@@ -30,7 +32,7 @@ open class ARVRServer internal constructor(
     TODO()
   }
 
-  fun getInterface(): ARVRInterface {
+  fun getInterface(idx: Int): ARVRInterface {
     TODO()
   }
 
@@ -62,7 +64,7 @@ open class ARVRServer internal constructor(
     TODO()
   }
 
-  fun getTracker(): ARVRPositionalTracker {
+  fun getTracker(idx: Int): ARVRPositionalTracker {
     TODO()
   }
 
@@ -74,11 +76,11 @@ open class ARVRServer internal constructor(
     TODO()
   }
 
-  fun setPrimaryInterface() {
+  fun setPrimaryInterface(`interface`: ARVRInterface) {
     TODO()
   }
 
-  fun setWorldScale() {
+  fun setWorldScale(arg0: Float) {
     TODO()
   }
 

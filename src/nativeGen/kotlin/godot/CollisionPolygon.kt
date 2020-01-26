@@ -29,15 +29,15 @@ open class CollisionPolygon internal constructor(
     TODO()
   }
 
-  fun setDepth() {
+  fun setDepth(depth: Float) {
     TODO()
   }
 
-  fun setDisabled() {
+  fun setDisabled(disabled: Boolean) {
     TODO()
   }
 
-  fun setPolygon() {
+  fun setPolygon(polygon: PoolVector2Array) {
     TODO()
   }
 

@@ -28,15 +28,15 @@ open class InputEventMouse internal constructor(
     TODO()
   }
 
-  fun setButtonMask() {
+  fun setButtonMask(button_mask: Int) {
     TODO()
   }
 
-  fun setGlobalPosition() {
+  fun setGlobalPosition(global_position: Vector2) {
     TODO()
   }
 
-  fun setPosition() {
+  fun setPosition(position: Vector2) {
     TODO()
   }
 

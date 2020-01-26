@@ -22,7 +22,7 @@ import kotlinx.cinterop.reinterpret
 open class Camera internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun clearCurrent() {
+  fun clearCurrent(enable_next: Boolean) {
     TODO()
   }
 
@@ -38,7 +38,7 @@ open class Camera internal constructor(
     TODO()
   }
 
-  fun getCullMaskBit(): Boolean {
+  fun getCullMaskBit(layer: Int): Boolean {
     TODO()
   }
 
@@ -94,7 +94,7 @@ open class Camera internal constructor(
     TODO()
   }
 
-  fun isPositionBehind(): Boolean {
+  fun isPositionBehind(world_point: Vector3): Boolean {
     TODO()
   }
 
@@ -102,91 +102,104 @@ open class Camera internal constructor(
     TODO()
   }
 
-  fun projectLocalRayNormal(): Vector3 {
+  fun projectLocalRayNormal(screen_point: Vector2): Vector3 {
     TODO()
   }
 
-  fun projectPosition(): Vector3 {
+  fun projectPosition(screen_point: Vector2, z_depth: Float): Vector3 {
     TODO()
   }
 
-  fun projectRayNormal(): Vector3 {
+  fun projectRayNormal(screen_point: Vector2): Vector3 {
     TODO()
   }
 
-  fun projectRayOrigin(): Vector3 {
+  fun projectRayOrigin(screen_point: Vector2): Vector3 {
     TODO()
   }
 
-  fun setCullMask() {
+  fun setCullMask(mask: Int) {
     TODO()
   }
 
-  fun setCullMaskBit() {
+  fun setCullMaskBit(layer: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setCurrent() {
+  fun setCurrent(arg0: Boolean) {
     TODO()
   }
 
-  fun setDopplerTracking() {
+  fun setDopplerTracking(mode: Int) {
     TODO()
   }
 
-  fun setEnvironment() {
+  fun setEnvironment(env: Environment) {
     TODO()
   }
 
-  fun setFov() {
+  fun setFov(arg0: Float) {
     TODO()
   }
 
-  fun setFrustum() {
+  fun setFrustum(
+    size: Float,
+    offset: Vector2,
+    z_near: Float,
+    z_far: Float
+  ) {
     TODO()
   }
 
-  fun setFrustumOffset() {
+  fun setFrustumOffset(arg0: Vector2) {
     TODO()
   }
 
-  fun setHOffset() {
+  fun setHOffset(ofs: Float) {
     TODO()
   }
 
-  fun setKeepAspectMode() {
+  fun setKeepAspectMode(mode: Int) {
     TODO()
   }
 
-  fun setOrthogonal() {
+  fun setOrthogonal(
+    size: Float,
+    z_near: Float,
+    z_far: Float
+  ) {
     TODO()
   }
 
-  fun setPerspective() {
+  fun setPerspective(
+    fov: Float,
+    z_near: Float,
+    z_far: Float
+  ) {
     TODO()
   }
 
-  fun setProjection() {
+  fun setProjection(arg0: Int) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(arg0: Float) {
     TODO()
   }
 
-  fun setVOffset() {
+  fun setVOffset(ofs: Float) {
     TODO()
   }
 
-  fun setZfar() {
+  fun setZfar(arg0: Float) {
     TODO()
   }
 
-  fun setZnear() {
+  fun setZnear(arg0: Float) {
     TODO()
   }
 
-  fun unprojectPosition(): Vector2 {
+  fun unprojectPosition(world_point: Vector3): Vector2 {
     TODO()
   }
 

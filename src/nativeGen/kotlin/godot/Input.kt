@@ -21,15 +21,15 @@ import kotlinx.cinterop.reinterpret
 open class Input internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun actionPress() {
+  fun actionPress(action: String, strength: Float) {
     TODO()
   }
 
-  fun actionRelease() {
+  fun actionRelease(action: String) {
     TODO()
   }
 
-  fun addJoyMapping() {
+  fun addJoyMapping(mapping: String, update_existing: Boolean) {
     TODO()
   }
 
@@ -37,7 +37,7 @@ open class Input internal constructor(
     TODO()
   }
 
-  fun getActionStrength(): Float {
+  fun getActionStrength(action: String): Float {
     TODO()
   }
 
@@ -57,39 +57,39 @@ open class Input internal constructor(
     TODO()
   }
 
-  fun getJoyAxis(): Float {
+  fun getJoyAxis(device: Int, axis: Int): Float {
     TODO()
   }
 
-  fun getJoyAxisIndexFromString(): Int {
+  fun getJoyAxisIndexFromString(axis: String): Int {
     TODO()
   }
 
-  fun getJoyAxisString(): String {
+  fun getJoyAxisString(axis_index: Int): String {
     TODO()
   }
 
-  fun getJoyButtonIndexFromString(): Int {
+  fun getJoyButtonIndexFromString(button: String): Int {
     TODO()
   }
 
-  fun getJoyButtonString(): String {
+  fun getJoyButtonString(button_index: Int): String {
     TODO()
   }
 
-  fun getJoyGuid(): String {
+  fun getJoyGuid(device: Int): String {
     TODO()
   }
 
-  fun getJoyName(): String {
+  fun getJoyName(device: Int): String {
     TODO()
   }
 
-  fun getJoyVibrationDuration(): Float {
+  fun getJoyVibrationDuration(device: Int): Float {
     TODO()
   }
 
-  fun getJoyVibrationStrength(): Vector2 {
+  fun getJoyVibrationStrength(device: Int): Vector2 {
     TODO()
   }
 
@@ -109,71 +109,85 @@ open class Input internal constructor(
     TODO()
   }
 
-  fun isActionJustPressed(): Boolean {
+  fun isActionJustPressed(action: String): Boolean {
     TODO()
   }
 
-  fun isActionJustReleased(): Boolean {
+  fun isActionJustReleased(action: String): Boolean {
     TODO()
   }
 
-  fun isActionPressed(): Boolean {
+  fun isActionPressed(action: String): Boolean {
     TODO()
   }
 
-  fun isJoyButtonPressed(): Boolean {
+  fun isJoyButtonPressed(device: Int, button: Int): Boolean {
     TODO()
   }
 
-  fun isJoyKnown(): Boolean {
+  fun isJoyKnown(device: Int): Boolean {
     TODO()
   }
 
-  fun isKeyPressed(): Boolean {
+  fun isKeyPressed(scancode: Int): Boolean {
     TODO()
   }
 
-  fun isMouseButtonPressed(): Boolean {
+  fun isMouseButtonPressed(button: Int): Boolean {
     TODO()
   }
 
-  fun joyConnectionChanged() {
+  fun joyConnectionChanged(
+    device: Int,
+    connected: Boolean,
+    name: String,
+    guid: String
+  ) {
     TODO()
   }
 
-  fun parseInputEvent() {
+  fun parseInputEvent(event: InputEvent) {
     TODO()
   }
 
-  fun removeJoyMapping() {
+  fun removeJoyMapping(guid: String) {
     TODO()
   }
 
-  fun setCustomMouseCursor() {
+  fun setCustomMouseCursor(
+    image: Resource,
+    shape: Int,
+    hotspot: Vector2
+  ) {
     TODO()
   }
 
-  fun setDefaultCursorShape() {
+  fun setDefaultCursorShape(shape: Int) {
     TODO()
   }
 
-  fun setMouseMode() {
+  fun setMouseMode(mode: Int) {
     TODO()
   }
 
-  fun setUseAccumulatedInput() {
+  fun setUseAccumulatedInput(enable: Boolean) {
     TODO()
   }
 
-  fun startJoyVibration() {
+  fun startJoyVibration(
+    device: Int,
+    weak_magnitude: Float,
+    strong_magnitude: Float,
+    duration: Float
+  ) {
     TODO()
   }
 
-  fun stopJoyVibration() {
+  fun stopJoyVibration(device: Int) {
     TODO()
   }
 
-  fun warpMousePosition() {
+  fun warpMousePosition(to: Vector2) {
     TODO()
   }
 

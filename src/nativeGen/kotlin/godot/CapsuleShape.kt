@@ -23,11 +23,11 @@ open class CapsuleShape internal constructor(
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Float) {
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(radius: Float) {
     TODO()
   }
 

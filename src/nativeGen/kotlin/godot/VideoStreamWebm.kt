@@ -19,7 +19,7 @@ open class VideoStreamWebm internal constructor(
     TODO()
   }
 
-  fun setFile() {
+  fun setFile(file: String) {
     TODO()
   }
 

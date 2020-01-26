@@ -19,7 +19,7 @@ open class ReferenceRect internal constructor(
     TODO()
   }
 
-  fun setBorderColor() {
+  fun setBorderColor(color: Color) {
     TODO()
   }
 

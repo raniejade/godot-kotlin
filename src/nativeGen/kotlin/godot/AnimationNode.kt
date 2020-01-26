@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
 import godot.core.Variant
 import kotlin.Boolean
 import kotlin.Float
@@ -19,19 +20,40 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addInput() {
+  fun addInput(name: String) {
     TODO()
   }
 
-  fun blendAnimation() {
+  fun blendAnimation(
+    animation: String,
+    time: Float,
+    delta: Float,
+    seeked: Boolean,
+    blend: Float
+  ) {
     TODO()
   }
 
-  fun blendInput(): Float {
+  fun blendInput(
+    input_index: Int,
+    time: Float,
+    seek: Boolean,
+    blend: Float,
+    filter: Int,
+    optimize: Boolean
+  ): Float {
     TODO()
   }
 
-  fun blendNode(): Float {
+  fun blendNode(
+    name: String,
+    node: AnimationNode,
+    time: Float,
+    seek: Boolean,
+    blend: Float,
+    filter: Int,
+    optimize: Boolean
+  ): Float {
     TODO()
   }
 
@@ -39,11 +61,11 @@ open class AnimationNode internal constructor(
     TODO()
   }
 
-  fun getInputName(): String {
+  fun getInputName(input: Int): String {
     TODO()
   }
 
-  fun getParameter(): Variant {
+  fun getParameter(name: String): Variant {
     TODO()
   }
 
@@ -51,23 +73,23 @@ open class AnimationNode internal constructor(
     TODO()
   }
 
-  fun isPathFiltered(): Boolean {
+  fun isPathFiltered(path: NodePath): Boolean {
     TODO()
   }
 
-  fun removeInput() {
+  fun removeInput(index: Int) {
     TODO()
   }
 
-  fun setFilterEnabled() {
+  fun setFilterEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setFilterPath() {
+  fun setFilterPath(path: NodePath, enable: Boolean) {
     TODO()
   }
 
-  fun setParameter() {
+  fun setParameter(name: String, value: Variant) {
     TODO()
   }
 

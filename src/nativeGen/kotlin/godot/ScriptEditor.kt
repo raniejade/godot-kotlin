@@ -5,7 +5,10 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -17,11 +20,19 @@ import kotlinx.cinterop.reinterpret
 open class ScriptEditor internal constructor(
   _handle: COpaquePointer
 ) : PanelContainer(_handle) {
-  fun canDropDataFw(): Boolean {
+  fun canDropDataFw(
+    point: Vector2,
+    data: Variant,
+    from: Control
+  ): Boolean {
     TODO()
   }
 
-  fun dropDataFw() {
+  fun dropDataFw(
+    point: Vector2,
+    data: Variant,
+    from: Control
+  ) {
     TODO()
   }
 
@@ -29,7 +40,7 @@ open class ScriptEditor internal constructor(
     TODO()
   }
 
-  fun getDragDataFw(): Variant {
+  fun getDragDataFw(point: Vector2, from: Control): Variant {
     TODO()
   }
 
@@ -37,11 +48,11 @@ open class ScriptEditor internal constructor(
     TODO()
   }
 
-  fun gotoLine() {
+  fun gotoLine(line_number: Int) {
     TODO()
   }
 
-  fun openScriptCreateDialog() {
+  fun openScriptCreateDialog(base_name: String, base_path: String) {
     TODO()
   }
 

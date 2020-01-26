@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class PackedDataContainer internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun pack(): Error {
+  fun pack(value: Variant): Error {
     TODO()
   }
 

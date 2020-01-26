@@ -19,11 +19,11 @@ open class ConvexPolygonShape2D internal constructor(
     TODO()
   }
 
-  fun setPointCloud() {
+  fun setPointCloud(point_cloud: PoolVector2Array) {
     TODO()
   }
 
-  fun setPoints() {
+  fun setPoints(points: PoolVector2Array) {
     TODO()
   }
 

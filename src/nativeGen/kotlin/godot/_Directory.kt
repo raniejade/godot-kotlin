@@ -17,11 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class _Directory internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun changeDir(): Error {
+  fun changeDir(todir: String): Error {
     TODO()
   }
 
-  fun copy(): Error {
+  fun copy(from: String, to: String): Error {
     TODO()
   }
 
@@ -29,11 +29,11 @@ open class _Directory internal constructor(
     TODO()
   }
 
-  fun dirExists(): Boolean {
+  fun dirExists(path: String): Boolean {
     TODO()
   }
 
-  fun fileExists(): Boolean {
+  fun fileExists(path: String): Boolean {
     TODO()
   }
 
@@ -45,7 +45,7 @@ open class _Directory internal constructor(
     TODO()
   }
 
-  fun getDrive(): String {
+  fun getDrive(idx: Int): String {
     TODO()
   }
 
@@ -61,7 +61,7 @@ open class _Directory internal constructor(
     TODO()
   }
 
-  fun listDirBegin(): Error {
+  fun listDirBegin(skip_navigational: Boolean, skip_hidden: Boolean): Error {
     TODO()
   }
 
@@ -69,23 +69,23 @@ open class _Directory internal constructor(
     TODO()
   }
 
-  fun makeDir(): Error {
+  fun makeDir(path: String): Error {
     TODO()
   }
 
-  fun makeDirRecursive(): Error {
+  fun makeDirRecursive(path: String): Error {
     TODO()
   }
 
-  fun open(): Error {
+  fun open(path: String): Error {
     TODO()
   }
 
-  fun remove(): Error {
+  fun remove(path: String): Error {
     TODO()
   }
 
-  fun rename(): Error {
+  fun rename(from: String, to: String): Error {
     TODO()
   }
 

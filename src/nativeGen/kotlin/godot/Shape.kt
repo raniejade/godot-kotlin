@@ -19,7 +19,7 @@ open class Shape internal constructor(
     TODO()
   }
 
-  fun setMargin() {
+  fun setMargin(margin: Float) {
     TODO()
   }
 

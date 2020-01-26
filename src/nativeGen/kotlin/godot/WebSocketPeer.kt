@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
-  fun close() {
+  fun close(code: Int, reason: String) {
     TODO()
   }
 
@@ -37,7 +37,7 @@ open class WebSocketPeer internal constructor(
     TODO()
   }
 
-  fun setWriteMode() {
+  fun setWriteMode(mode: Int) {
     TODO()
   }
 

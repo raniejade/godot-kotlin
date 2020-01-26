@@ -47,35 +47,35 @@ open class AudioEffectReverb internal constructor(
     TODO()
   }
 
-  fun setDamping() {
+  fun setDamping(amount: Float) {
     TODO()
   }
 
-  fun setDry() {
+  fun setDry(amount: Float) {
     TODO()
   }
 
-  fun setHpf() {
+  fun setHpf(amount: Float) {
     TODO()
   }
 
-  fun setPredelayFeedback() {
+  fun setPredelayFeedback(feedback: Float) {
     TODO()
   }
 
-  fun setPredelayMsec() {
+  fun setPredelayMsec(msec: Float) {
     TODO()
   }
 
-  fun setRoomSize() {
+  fun setRoomSize(size: Float) {
     TODO()
   }
 
-  fun setSpread() {
+  fun setSpread(amount: Float) {
     TODO()
   }
 
-  fun setWet() {
+  fun setWet(amount: Float) {
     TODO()
   }
 

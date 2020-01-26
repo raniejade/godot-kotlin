@@ -22,35 +22,41 @@ import kotlinx.cinterop.reinterpret
 open class TreeItem internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addButton() {
+  fun addButton(
+    column: Int,
+    button: Texture,
+    button_idx: Int,
+    disabled: Boolean,
+    tooltip: String
+  ) {
     TODO()
   }
 
-  fun clearCustomBgColor() {
+  fun clearCustomBgColor(column: Int) {
     TODO()
   }
 
-  fun clearCustomColor() {
+  fun clearCustomColor(column: Int) {
     TODO()
   }
 
-  fun deselect() {
+  fun deselect(column: Int) {
     TODO()
   }
 
-  fun eraseButton() {
+  fun eraseButton(column: Int, button_idx: Int) {
     TODO()
   }
 
-  fun getButton(): Texture {
+  fun getButton(column: Int, button_idx: Int): Texture {
     TODO()
   }
 
-  fun getButtonCount(): Int {
+  fun getButtonCount(column: Int): Int {
     TODO()
   }
 
-  fun getCellMode(): TreeCellMode {
+  fun getCellMode(column: Int): TreeCellMode {
     TODO()
   }
 
@@ -58,7 +64,7 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun getCustomBgColor(): Color {
+  fun getCustomBgColor(column: Int): Color {
     TODO()
   }
 
@@ -66,23 +72,23 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun getExpandRight(): Boolean {
+  fun getExpandRight(column: Int): Boolean {
     TODO()
   }
 
-  fun getIcon(): Texture {
+  fun getIcon(column: Int): Texture {
     TODO()
   }
 
-  fun getIconMaxWidth(): Int {
+  fun getIconMaxWidth(column: Int): Int {
     TODO()
   }
 
-  fun getIconRegion(): Rect2 {
+  fun getIconRegion(column: Int): Rect2 {
     TODO()
   }
 
-  fun getMetadata(): Variant {
+  fun getMetadata(column: Int): Variant {
     TODO()
   }
 
@@ -90,7 +96,7 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun getNextVisible(): TreeItem {
+  fun getNextVisible(wrap: Boolean): TreeItem {
     TODO()
   }
 
@@ -102,35 +108,35 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun getPrevVisible(): TreeItem {
+  fun getPrevVisible(wrap: Boolean): TreeItem {
     TODO()
   }
 
-  fun getRange(): Float {
+  fun getRange(column: Int): Float {
     TODO()
   }
 
-  fun getRangeConfig(): Dictionary {
+  fun getRangeConfig(column: Int): Dictionary {
     TODO()
   }
 
-  fun getText(): String {
+  fun getText(column: Int): String {
     TODO()
   }
 
-  fun getTextAlign(): TextAlign {
+  fun getTextAlign(column: Int): TextAlign {
     TODO()
   }
 
-  fun getTooltip(): String {
+  fun getTooltip(column: Int): String {
     TODO()
   }
 
-  fun isButtonDisabled(): Boolean {
+  fun isButtonDisabled(column: Int, button_idx: Int): Boolean {
     TODO()
   }
 
-  fun isChecked(): Boolean {
+  fun isChecked(column: Int): Boolean {
     TODO()
   }
 
@@ -138,11 +144,11 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun isCustomSetAsButton(): Boolean {
+  fun isCustomSetAsButton(column: Int): Boolean {
     TODO()
   }
 
-  fun isEditable(): Boolean {
+  fun isEditable(column: Int): Boolean {
     TODO()
   }
 
@@ -150,11 +156,11 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun isSelectable(): Boolean {
+  fun isSelectable(column: Int): Boolean {
     TODO()
   }
 
-  fun isSelected(): Boolean {
+  fun isSelected(column: Int): Boolean {
     TODO()
   }
 
@@ -166,99 +172,117 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun removeChild() {
+  fun removeChild(child: Object) {
     TODO()
   }
 
-  fun select() {
+  fun select(column: Int) {
     TODO()
   }
 
-  fun setButton() {
+  fun setButton(
+    column: Int,
+    button_idx: Int,
+    button: Texture
+  ) {
     TODO()
   }
 
-  fun setCellMode() {
+  fun setCellMode(column: Int, mode: Int) {
     TODO()
   }
 
-  fun setChecked() {
+  fun setChecked(column: Int, checked: Boolean) {
     TODO()
   }
 
-  fun setCollapsed() {
+  fun setCollapsed(enable: Boolean) {
     TODO()
   }
 
-  fun setCustomAsButton() {
+  fun setCustomAsButton(column: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setCustomBgColor() {
+  fun setCustomBgColor(
+    column: Int,
+    color: Color,
+    just_outline: Boolean
+  ) {
     TODO()
   }
 
-  fun setCustomColor() {
+  fun setCustomColor(column: Int, color: Color) {
     TODO()
   }
 
-  fun setCustomDraw() {
+  fun setCustomDraw(
+    column: Int,
+    `object`: Object,
+    callback: String
+  ) {
     TODO()
   }
 
-  fun setCustomMinimumHeight() {
+  fun setCustomMinimumHeight(height: Int) {
     TODO()
   }
 
-  fun setDisableFolding() {
+  fun setDisableFolding(disable: Boolean) {
     TODO()
   }
 
-  fun setEditable() {
+  fun setEditable(column: Int, enabled: Boolean) {
     TODO()
   }
 
-  fun setExpandRight() {
+  fun setExpandRight(column: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setIcon() {
+  fun setIcon(column: Int, texture: Texture) {
     TODO()
   }
 
-  fun setIconMaxWidth() {
+  fun setIconMaxWidth(column: Int, width: Int) {
     TODO()
   }
 
-  fun setIconRegion() {
+  fun setIconRegion(column: Int, region: Rect2) {
     TODO()
   }
 
-  fun setMetadata() {
+  fun setMetadata(column: Int, meta: Variant) {
     TODO()
   }
 
-  fun setRange() {
+  fun setRange(column: Int, value: Float) {
     TODO()
   }
 
-  fun setRangeConfig() {
+  fun setRangeConfig(
+    column: Int,
+    min: Float,
+    max: Float,
+    step: Float,
+    expr: Boolean
+  ) {
     TODO()
   }
 
-  fun setSelectable() {
+  fun setSelectable(column: Int, selectable: Boolean) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(column: Int, text: String) {
     TODO()
   }
 
-  fun setTextAlign() {
+  fun setTextAlign(column: Int, text_align: Int) {
     TODO()
   }
 
-  fun setTooltip() {
+  fun setTooltip(column: Int, tooltip: String) {
     TODO()
   }
 

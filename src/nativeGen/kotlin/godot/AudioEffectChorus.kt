@@ -24,27 +24,27 @@ open class AudioEffectChorus internal constructor(
     TODO()
   }
 
-  fun getVoiceCutoffHz(): Float {
+  fun getVoiceCutoffHz(voice_idx: Int): Float {
     TODO()
   }
 
-  fun getVoiceDelayMs(): Float {
+  fun getVoiceDelayMs(voice_idx: Int): Float {
     TODO()
   }
 
-  fun getVoiceDepthMs(): Float {
+  fun getVoiceDepthMs(voice_idx: Int): Float {
     TODO()
   }
 
-  fun getVoiceLevelDb(): Float {
+  fun getVoiceLevelDb(voice_idx: Int): Float {
     TODO()
   }
 
-  fun getVoicePan(): Float {
+  fun getVoicePan(voice_idx: Int): Float {
     TODO()
   }
 
-  fun getVoiceRateHz(): Float {
+  fun getVoiceRateHz(voice_idx: Int): Float {
     TODO()
   }
 
@@ -52,39 +52,39 @@ open class AudioEffectChorus internal constructor(
     TODO()
   }
 
-  fun setDry() {
+  fun setDry(amount: Float) {
     TODO()
   }
 
-  fun setVoiceCount() {
+  fun setVoiceCount(voices: Int) {
     TODO()
   }
 
-  fun setVoiceCutoffHz() {
+  fun setVoiceCutoffHz(voice_idx: Int, cutoff_hz: Float) {
     TODO()
   }
 
-  fun setVoiceDelayMs() {
+  fun setVoiceDelayMs(voice_idx: Int, delay_ms: Float) {
     TODO()
   }
 
-  fun setVoiceDepthMs() {
+  fun setVoiceDepthMs(voice_idx: Int, depth_ms: Float) {
     TODO()
   }
 
-  fun setVoiceLevelDb() {
+  fun setVoiceLevelDb(voice_idx: Int, level_db: Float) {
     TODO()
   }
 
-  fun setVoicePan() {
+  fun setVoicePan(voice_idx: Int, pan: Float) {
     TODO()
   }
 
-  fun setVoiceRateHz() {
+  fun setVoiceRateHz(voice_idx: Int, rate_hz: Float) {
     TODO()
   }
 
-  fun setWet() {
+  fun setWet(amount: Float) {
     TODO()
   }
 

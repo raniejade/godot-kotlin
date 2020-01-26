@@ -19,7 +19,7 @@ open class AudioEffectPitchShift internal constructor(
     TODO()
   }
 
-  fun setPitchScale() {
+  fun setPitchScale(rate: Float) {
     TODO()
   }
 

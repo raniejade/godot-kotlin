@@ -3,15 +3,23 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.AABB
+import godot.core.Basis
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Plane
 import godot.core.PoolByteArray
+import godot.core.PoolColorArray
 import godot.core.PoolIntArray
+import godot.core.PoolRealArray
+import godot.core.PoolVector2Array
 import godot.core.RID
+import godot.core.Rect2
 import godot.core.Transform
 import godot.core.Transform2D
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
+import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -27,11 +35,21 @@ import kotlinx.cinterop.reinterpret
 open class VisualServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun blackBarsSetImages() {
+  fun blackBarsSetImages(
+    left: RID,
+    top: RID,
+    right: RID,
+    bottom: RID
+  ) {
     TODO()
   }
 
-  fun blackBarsSetMargins() {
+  fun blackBarsSetMargins(
+    left: Int,
+    top: Int,
+    right: Int,
+    bottom: Int
+  ) {
     TODO()
   }
 
@@ -39,31 +57,47 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun cameraSetCullMask() {
+  fun cameraSetCullMask(camera: RID, layers: Int) {
     TODO()
   }
 
-  fun cameraSetEnvironment() {
+  fun cameraSetEnvironment(camera: RID, env: RID) {
     TODO()
   }
 
-  fun cameraSetFrustum() {
+  fun cameraSetFrustum(
+    camera: RID,
+    size: Float,
+    offset: Vector2,
+    z_near: Float,
+    z_far: Float
+  ) {
     TODO()
   }
 
-  fun cameraSetOrthogonal() {
+  fun cameraSetOrthogonal(
+    camera: RID,
+    size: Float,
+    z_near: Float,
+    z_far: Float
+  ) {
     TODO()
   }
 
-  fun cameraSetPerspective() {
+  fun cameraSetPerspective(
+    camera: RID,
+    fovy_degrees: Float,
+    z_near: Float,
+    z_far: Float
+  ) {
     TODO()
   }
 
-  fun cameraSetTransform() {
+  fun cameraSetTransform(camera: RID, transform: Transform) {
     TODO()
   }
 
-  fun cameraSetUseVerticalAspect() {
+  fun cameraSetUseVerticalAspect(camera: RID, enable: Boolean) {
     TODO()
   }
 
@@ -71,67 +105,162 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun canvasItemAddCircle() {
+  fun canvasItemAddCircle(
+    item: RID,
+    pos: Vector2,
+    radius: Float,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun canvasItemAddClipIgnore() {
+  fun canvasItemAddClipIgnore(item: RID, ignore: Boolean) {
     TODO()
   }
 
-  fun canvasItemAddLine() {
+  fun canvasItemAddLine(
+    item: RID,
+    from: Vector2,
+    to: Vector2,
+    color: Color,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun canvasItemAddMesh() {
+  fun canvasItemAddMesh(
+    item: RID,
+    mesh: RID,
+    texture: Transform2D,
+    normal_map: Color,
+    arg4: RID,
+    arg5: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemAddMultimesh() {
+  fun canvasItemAddMultimesh(
+    item: RID,
+    mesh: RID,
+    texture: RID,
+    normal_map: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemAddNinePatch() {
+  fun canvasItemAddNinePatch(
+    item: RID,
+    rect: Rect2,
+    source: Rect2,
+    texture: RID,
+    topleft: Vector2,
+    bottomright: Vector2,
+    x_axis_mode: Int,
+    y_axis_mode: Int,
+    draw_center: Boolean,
+    modulate: Color,
+    normal_map: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemAddParticles() {
+  fun canvasItemAddParticles(
+    item: RID,
+    particles: RID,
+    texture: RID,
+    normal_map: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemAddPolygon() {
+  fun canvasItemAddPolygon(
+    item: RID,
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    uvs: PoolVector2Array,
+    texture: RID,
+    normal_map: RID,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun canvasItemAddPolyline() {
+  fun canvasItemAddPolyline(
+    item: RID,
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun canvasItemAddPrimitive() {
+  fun canvasItemAddPrimitive(
+    item: RID,
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    uvs: PoolVector2Array,
+    texture: RID,
+    width: Float,
+    normal_map: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemAddRect() {
+  fun canvasItemAddRect(
+    item: RID,
+    rect: Rect2,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun canvasItemAddSetTransform() {
+  fun canvasItemAddSetTransform(item: RID, transform: Transform2D) {
     TODO()
   }
 
-  fun canvasItemAddTextureRect() {
+  fun canvasItemAddTextureRect(
+    item: RID,
+    rect: Rect2,
+    texture: RID,
+    tile: Boolean,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemAddTextureRectRegion() {
+  fun canvasItemAddTextureRectRegion(
+    item: RID,
+    rect: Rect2,
+    texture: RID,
+    src_rect: Rect2,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: RID,
+    clip_uv: Boolean
+  ) {
     TODO()
   }
 
-  fun canvasItemAddTriangleArray() {
+  fun canvasItemAddTriangleArray(
+    item: RID,
+    indices: PoolIntArray,
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    uvs: PoolVector2Array,
+    bones: PoolIntArray,
+    weights: PoolRealArray,
+    texture: RID,
+    count: Int,
+    normal_map: RID
+  ) {
     TODO()
   }
 
-  fun canvasItemClear() {
+  fun canvasItemClear(item: RID) {
     TODO()
   }
 
@@ -139,75 +268,83 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun canvasItemSetClip() {
+  fun canvasItemSetClip(item: RID, clip: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetCopyToBackbuffer() {
+  fun canvasItemSetCopyToBackbuffer(
+    item: RID,
+    enabled: Boolean,
+    rect: Rect2
+  ) {
     TODO()
   }
 
-  fun canvasItemSetCustomRect() {
+  fun canvasItemSetCustomRect(
+    item: RID,
+    use_custom_rect: Boolean,
+    rect: Rect2
+  ) {
     TODO()
   }
 
-  fun canvasItemSetDistanceFieldMode() {
+  fun canvasItemSetDistanceFieldMode(item: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetDrawBehindParent() {
+  fun canvasItemSetDrawBehindParent(item: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetDrawIndex() {
+  fun canvasItemSetDrawIndex(item: RID, index: Int) {
     TODO()
   }
 
-  fun canvasItemSetLightMask() {
+  fun canvasItemSetLightMask(item: RID, mask: Int) {
     TODO()
   }
 
-  fun canvasItemSetMaterial() {
+  fun canvasItemSetMaterial(item: RID, material: RID) {
     TODO()
   }
 
-  fun canvasItemSetModulate() {
+  fun canvasItemSetModulate(item: RID, color: Color) {
     TODO()
   }
 
-  fun canvasItemSetParent() {
+  fun canvasItemSetParent(item: RID, parent: RID) {
     TODO()
   }
 
-  fun canvasItemSetSelfModulate() {
+  fun canvasItemSetSelfModulate(item: RID, color: Color) {
     TODO()
   }
 
-  fun canvasItemSetSortChildrenByY() {
+  fun canvasItemSetSortChildrenByY(item: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetTransform() {
+  fun canvasItemSetTransform(item: RID, transform: Transform2D) {
     TODO()
   }
 
-  fun canvasItemSetUseParentMaterial() {
+  fun canvasItemSetUseParentMaterial(item: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetVisible() {
+  fun canvasItemSetVisible(item: RID, visible: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetZAsRelativeToParent() {
+  fun canvasItemSetZAsRelativeToParent(item: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasItemSetZIndex() {
+  fun canvasItemSetZIndex(item: RID, z_index: Int) {
     TODO()
   }
 
-  fun canvasLightAttachToCanvas() {
+  fun canvasLightAttachToCanvas(light: RID, canvas: RID) {
     TODO()
   }
 
@@ -215,7 +352,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun canvasLightOccluderAttachToCanvas() {
+  fun canvasLightOccluderAttachToCanvas(occluder: RID, canvas: RID) {
     TODO()
   }
 
@@ -223,95 +360,103 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun canvasLightOccluderSetEnabled() {
+  fun canvasLightOccluderSetEnabled(occluder: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasLightOccluderSetLightMask() {
+  fun canvasLightOccluderSetLightMask(occluder: RID, mask: Int) {
     TODO()
   }
 
-  fun canvasLightOccluderSetPolygon() {
+  fun canvasLightOccluderSetPolygon(occluder: RID, polygon: RID) {
     TODO()
   }
 
-  fun canvasLightOccluderSetTransform() {
+  fun canvasLightOccluderSetTransform(occluder: RID, transform: Transform2D) {
     TODO()
   }
 
-  fun canvasLightSetColor() {
+  fun canvasLightSetColor(light: RID, color: Color) {
     TODO()
   }
 
-  fun canvasLightSetEnabled() {
+  fun canvasLightSetEnabled(light: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasLightSetEnergy() {
+  fun canvasLightSetEnergy(light: RID, energy: Float) {
     TODO()
   }
 
-  fun canvasLightSetHeight() {
+  fun canvasLightSetHeight(light: RID, height: Float) {
     TODO()
   }
 
-  fun canvasLightSetItemCullMask() {
+  fun canvasLightSetItemCullMask(light: RID, mask: Int) {
     TODO()
   }
 
-  fun canvasLightSetItemShadowCullMask() {
+  fun canvasLightSetItemShadowCullMask(light: RID, mask: Int) {
     TODO()
   }
 
-  fun canvasLightSetLayerRange() {
+  fun canvasLightSetLayerRange(
+    light: RID,
+    min_layer: Int,
+    max_layer: Int
+  ) {
     TODO()
   }
 
-  fun canvasLightSetMode() {
+  fun canvasLightSetMode(light: RID, mode: Int) {
     TODO()
   }
 
-  fun canvasLightSetScale() {
+  fun canvasLightSetScale(light: RID, scale: Float) {
     TODO()
   }
 
-  fun canvasLightSetShadowBufferSize() {
+  fun canvasLightSetShadowBufferSize(light: RID, size: Int) {
     TODO()
   }
 
-  fun canvasLightSetShadowColor() {
+  fun canvasLightSetShadowColor(light: RID, color: Color) {
     TODO()
   }
 
-  fun canvasLightSetShadowEnabled() {
+  fun canvasLightSetShadowEnabled(light: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun canvasLightSetShadowFilter() {
+  fun canvasLightSetShadowFilter(light: RID, filter: Int) {
     TODO()
   }
 
-  fun canvasLightSetShadowGradientLength() {
+  fun canvasLightSetShadowGradientLength(light: RID, length: Float) {
     TODO()
   }
 
-  fun canvasLightSetShadowSmooth() {
+  fun canvasLightSetShadowSmooth(light: RID, smooth: Float) {
     TODO()
   }
 
-  fun canvasLightSetTexture() {
+  fun canvasLightSetTexture(light: RID, texture: RID) {
     TODO()
   }
 
-  fun canvasLightSetTextureOffset() {
+  fun canvasLightSetTextureOffset(light: RID, offset: Vector2) {
     TODO()
   }
 
-  fun canvasLightSetTransform() {
+  fun canvasLightSetTransform(light: RID, transform: Transform2D) {
     TODO()
   }
 
-  fun canvasLightSetZRange() {
+  fun canvasLightSetZRange(
+    light: RID,
+    min_z: Int,
+    max_z: Int
+  ) {
     TODO()
   }
 
@@ -319,23 +464,31 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun canvasOccluderPolygonSetCullMode() {
+  fun canvasOccluderPolygonSetCullMode(occluder_polygon: RID, mode: Int) {
     TODO()
   }
 
-  fun canvasOccluderPolygonSetShape() {
+  fun canvasOccluderPolygonSetShape(
+    occluder_polygon: RID,
+    shape: PoolVector2Array,
+    closed: Boolean
+  ) {
     TODO()
   }
 
-  fun canvasOccluderPolygonSetShapeAsLines() {
+  fun canvasOccluderPolygonSetShapeAsLines(occluder_polygon: RID, shape: PoolVector2Array) {
     TODO()
   }
 
-  fun canvasSetItemMirroring() {
+  fun canvasSetItemMirroring(
+    canvas: RID,
+    item: RID,
+    mirroring: Vector2
+  ) {
     TODO()
   }
 
-  fun canvasSetModulate() {
+  fun canvasSetModulate(canvas: RID, color: Color) {
     TODO()
   }
 
@@ -343,7 +496,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun draw() {
+  fun draw(swap_buffers: Boolean, frame_step: Float) {
     TODO()
   }
 
@@ -351,75 +504,165 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun environmentSetAdjustment() {
+  fun environmentSetAdjustment(
+    env: RID,
+    enable: Boolean,
+    brightness: Float,
+    contrast: Float,
+    saturation: Float,
+    ramp: RID
+  ) {
     TODO()
   }
 
-  fun environmentSetAmbientLight() {
+  fun environmentSetAmbientLight(
+    env: RID,
+    color: Color,
+    energy: Float,
+    sky_contibution: Float
+  ) {
     TODO()
   }
 
-  fun environmentSetBackground() {
+  fun environmentSetBackground(env: RID, bg: Int) {
     TODO()
   }
 
-  fun environmentSetBgColor() {
+  fun environmentSetBgColor(env: RID, color: Color) {
     TODO()
   }
 
-  fun environmentSetBgEnergy() {
+  fun environmentSetBgEnergy(env: RID, energy: Float) {
     TODO()
   }
 
-  fun environmentSetCanvasMaxLayer() {
+  fun environmentSetCanvasMaxLayer(env: RID, max_layer: Int) {
     TODO()
   }
 
-  fun environmentSetDofBlurFar() {
+  fun environmentSetDofBlurFar(
+    env: RID,
+    enable: Boolean,
+    distance: Float,
+    transition: Float,
+    far_amount: Float,
+    quality: Int
+  ) {
     TODO()
   }
 
-  fun environmentSetDofBlurNear() {
+  fun environmentSetDofBlurNear(
+    env: RID,
+    enable: Boolean,
+    distance: Float,
+    transition: Float,
+    far_amount: Float,
+    quality: Int
+  ) {
     TODO()
   }
 
-  fun environmentSetFog() {
+  fun environmentSetFog(
+    env: RID,
+    enable: Boolean,
+    color: Color,
+    sun_color: Color,
+    sun_amount: Float
+  ) {
     TODO()
   }
 
-  fun environmentSetFogDepth() {
+  fun environmentSetFogDepth(
+    env: RID,
+    enable: Boolean,
+    depth_begin: Float,
+    depth_end: Float,
+    depth_curve: Float,
+    transmit: Boolean,
+    transmit_curve: Float
+  ) {
     TODO()
   }
 
-  fun environmentSetFogHeight() {
+  fun environmentSetFogHeight(
+    env: RID,
+    enable: Boolean,
+    min_height: Float,
+    max_height: Float,
+    height_curve: Float
+  ) {
     TODO()
   }
 
-  fun environmentSetGlow() {
+  fun environmentSetGlow(
+    env: RID,
+    enable: Boolean,
+    level_flags: Int,
+    intensity: Float,
+    strength: Float,
+    bloom_threshold: Float,
+    blend_mode: Int,
+    hdr_bleed_threshold: Float,
+    hdr_bleed_scale: Float,
+    hdr_luminance_cap: Float,
+    bicubic_upscale: Boolean
+  ) {
     TODO()
   }
 
-  fun environmentSetSky() {
+  fun environmentSetSky(env: RID, sky: RID) {
     TODO()
   }
 
-  fun environmentSetSkyCustomFov() {
+  fun environmentSetSkyCustomFov(env: RID, scale: Float) {
     TODO()
   }
 
-  fun environmentSetSkyOrientation() {
+  fun environmentSetSkyOrientation(env: RID, orientation: Basis) {
     TODO()
   }
 
-  fun environmentSetSsao() {
+  fun environmentSetSsao(
+    env: RID,
+    enable: Boolean,
+    radius: Float,
+    intensity: Float,
+    radius2: Float,
+    intensity2: Float,
+    bias: Float,
+    light_affect: Float,
+    ao_channel_affect: Float,
+    color: Color,
+    quality: Int,
+    blur: Int,
+    bilateral_sharpness: Float
+  ) {
     TODO()
   }
 
-  fun environmentSetSsr() {
+  fun environmentSetSsr(
+    env: RID,
+    enable: Boolean,
+    max_steps: Int,
+    fade_in: Float,
+    fade_out: Float,
+    depth_tolerance: Float,
+    roughness: Boolean
+  ) {
     TODO()
   }
 
-  fun environmentSetTonemap() {
+  fun environmentSetTonemap(
+    env: RID,
+    tone_mapper: Int,
+    exposure: Float,
+    white: Float,
+    auto_exposure: Boolean,
+    min_luminance: Float,
+    max_luminance: Float,
+    auto_exp_speed: Float,
+    auto_exp_grey: Float
+  ) {
     TODO()
   }
 
@@ -427,7 +670,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun forceDraw() {
+  fun forceDraw(swap_buffers: Boolean, frame_step: Float) {
     TODO()
   }
 
@@ -435,11 +678,11 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun freeRid() {
+  fun freeRid(rid: RID) {
     TODO()
   }
 
-  fun getRenderInfo(): Int {
+  fun getRenderInfo(info: Int): Int {
     TODO()
   }
 
@@ -459,91 +702,91 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun giProbeGetBias(): Float {
+  fun giProbeGetBias(probe: RID): Float {
     TODO()
   }
 
-  fun giProbeGetBounds(): AABB {
+  fun giProbeGetBounds(probe: RID): AABB {
     TODO()
   }
 
-  fun giProbeGetCellSize(): Float {
+  fun giProbeGetCellSize(probe: RID): Float {
     TODO()
   }
 
-  fun giProbeGetDynamicData(): PoolIntArray {
+  fun giProbeGetDynamicData(probe: RID): PoolIntArray {
     TODO()
   }
 
-  fun giProbeGetDynamicRange(): Int {
+  fun giProbeGetDynamicRange(probe: RID): Int {
     TODO()
   }
 
-  fun giProbeGetEnergy(): Float {
+  fun giProbeGetEnergy(probe: RID): Float {
     TODO()
   }
 
-  fun giProbeGetNormalBias(): Float {
+  fun giProbeGetNormalBias(probe: RID): Float {
     TODO()
   }
 
-  fun giProbeGetPropagation(): Float {
+  fun giProbeGetPropagation(probe: RID): Float {
     TODO()
   }
 
-  fun giProbeGetToCellXform(): Transform {
+  fun giProbeGetToCellXform(probe: RID): Transform {
     TODO()
   }
 
-  fun giProbeIsCompressed(): Boolean {
+  fun giProbeIsCompressed(probe: RID): Boolean {
     TODO()
   }
 
-  fun giProbeIsInterior(): Boolean {
+  fun giProbeIsInterior(probe: RID): Boolean {
     TODO()
   }
 
-  fun giProbeSetBias() {
+  fun giProbeSetBias(probe: RID, bias: Float) {
     TODO()
   }
 
-  fun giProbeSetBounds() {
+  fun giProbeSetBounds(probe: RID, bounds: AABB) {
     TODO()
   }
 
-  fun giProbeSetCellSize() {
+  fun giProbeSetCellSize(probe: RID, range: Float) {
     TODO()
   }
 
-  fun giProbeSetCompress() {
+  fun giProbeSetCompress(probe: RID, enable: Boolean) {
     TODO()
   }
 
-  fun giProbeSetDynamicData() {
+  fun giProbeSetDynamicData(probe: RID, data: PoolIntArray) {
     TODO()
   }
 
-  fun giProbeSetDynamicRange() {
+  fun giProbeSetDynamicRange(probe: RID, range: Int) {
     TODO()
   }
 
-  fun giProbeSetEnergy() {
+  fun giProbeSetEnergy(probe: RID, energy: Float) {
     TODO()
   }
 
-  fun giProbeSetInterior() {
+  fun giProbeSetInterior(probe: RID, enable: Boolean) {
     TODO()
   }
 
-  fun giProbeSetNormalBias() {
+  fun giProbeSetNormalBias(probe: RID, bias: Float) {
     TODO()
   }
 
-  fun giProbeSetPropagation() {
+  fun giProbeSetPropagation(probe: RID, propagation: Float) {
     TODO()
   }
 
-  fun giProbeSetToCellXform() {
+  fun giProbeSetToCellXform(probe: RID, xform: Transform) {
     TODO()
   }
 
@@ -551,23 +794,27 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun hasFeature(): Boolean {
+  fun hasFeature(feature: Int): Boolean {
     TODO()
   }
 
-  fun hasOsFeature(): Boolean {
+  fun hasOsFeature(feature: String): Boolean {
     TODO()
   }
 
-  fun immediateBegin() {
+  fun immediateBegin(
+    immediate: RID,
+    primitive: Int,
+    texture: RID
+  ) {
     TODO()
   }
 
-  fun immediateClear() {
+  fun immediateClear(immediate: RID) {
     TODO()
   }
 
-  fun immediateColor() {
+  fun immediateColor(immediate: RID, color: Color) {
     TODO()
   }
 
@@ -575,39 +822,39 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun immediateEnd() {
+  fun immediateEnd(immediate: RID) {
     TODO()
   }
 
-  fun immediateGetMaterial(): RID {
+  fun immediateGetMaterial(immediate: RID): RID {
     TODO()
   }
 
-  fun immediateNormal() {
+  fun immediateNormal(immediate: RID, normal: Vector3) {
     TODO()
   }
 
-  fun immediateSetMaterial() {
+  fun immediateSetMaterial(immediate: RID, material: RID) {
     TODO()
   }
 
-  fun immediateTangent() {
+  fun immediateTangent(immediate: RID, tangent: Plane) {
     TODO()
   }
 
-  fun immediateUv() {
+  fun immediateUv(immediate: RID, tex_uv: Vector2) {
     TODO()
   }
 
-  fun immediateUv2() {
+  fun immediateUv2(immediate: RID, tex_uv: Vector2) {
     TODO()
   }
 
-  fun immediateVertex() {
+  fun immediateVertex(immediate: RID, vertex: Vector3) {
     TODO()
   }
 
-  fun immediateVertex2d() {
+  fun immediateVertex2d(immediate: RID, vertex: Vector2) {
     TODO()
   }
 
@@ -615,11 +862,11 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun instanceAttachObjectInstanceId() {
+  fun instanceAttachObjectInstanceId(instance: RID, id: Int) {
     TODO()
   }
 
-  fun instanceAttachSkeleton() {
+  fun instanceAttachSkeleton(instance: RID, skeleton: RID) {
     TODO()
   }
 
@@ -627,139 +874,169 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun instanceCreate2(): RID {
+  fun instanceCreate2(base: RID, scenario: RID): RID {
     TODO()
   }
 
-  fun instanceGeometrySetAsInstanceLod() {
+  fun instanceGeometrySetAsInstanceLod(instance: RID, as_lod_of_instance: RID) {
     TODO()
   }
 
-  fun instanceGeometrySetCastShadowsSetting() {
+  fun instanceGeometrySetCastShadowsSetting(instance: RID, shadow_casting_setting: Int) {
     TODO()
   }
 
-  fun instanceGeometrySetDrawRange() {
+  fun instanceGeometrySetDrawRange(
+    instance: RID,
+    min: Float,
+    max: Float,
+    min_margin: Float,
+    max_margin: Float
+  ) {
     TODO()
   }
 
-  fun instanceGeometrySetFlag() {
+  fun instanceGeometrySetFlag(
+    instance: RID,
+    flag: Int,
+    enabled: Boolean
+  ) {
     TODO()
   }
 
-  fun instanceGeometrySetMaterialOverride() {
+  fun instanceGeometrySetMaterialOverride(instance: RID, material: RID) {
     TODO()
   }
 
-  fun instanceSetBase() {
+  fun instanceSetBase(instance: RID, base: RID) {
     TODO()
   }
 
-  fun instanceSetBlendShapeWeight() {
+  fun instanceSetBlendShapeWeight(
+    instance: RID,
+    shape: Int,
+    weight: Float
+  ) {
     TODO()
   }
 
-  fun instanceSetCustomAabb() {
+  fun instanceSetCustomAabb(instance: RID, aabb: AABB) {
     TODO()
   }
 
-  fun instanceSetExterior() {
+  fun instanceSetExterior(instance: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun instanceSetExtraVisibilityMargin() {
+  fun instanceSetExtraVisibilityMargin(instance: RID, margin: Float) {
     TODO()
   }
 
-  fun instanceSetLayerMask() {
+  fun instanceSetLayerMask(instance: RID, mask: Int) {
     TODO()
   }
 
-  fun instanceSetScenario() {
+  fun instanceSetScenario(instance: RID, scenario: RID) {
     TODO()
   }
 
-  fun instanceSetSurfaceMaterial() {
+  fun instanceSetSurfaceMaterial(
+    instance: RID,
+    surface: Int,
+    material: RID
+  ) {
     TODO()
   }
 
-  fun instanceSetTransform() {
+  fun instanceSetTransform(instance: RID, transform: Transform) {
     TODO()
   }
 
-  fun instanceSetUseLightmap() {
+  fun instanceSetUseLightmap(
+    instance: RID,
+    lightmap_instance: RID,
+    lightmap: RID
+  ) {
     TODO()
   }
 
-  fun instanceSetVisible() {
+  fun instanceSetVisible(instance: RID, visible: Boolean) {
     TODO()
   }
 
-  fun instancesCullAabb(): VariantArray {
+  fun instancesCullAabb(aabb: AABB, scenario: RID): VariantArray {
     TODO()
   }
 
-  fun instancesCullConvex(): VariantArray {
+  fun instancesCullConvex(convex: VariantArray, scenario: RID): VariantArray {
     TODO()
   }
 
-  fun instancesCullRay(): VariantArray {
+  fun instancesCullRay(
+    from: Vector3,
+    to: Vector3,
+    scenario: RID
+  ): VariantArray {
     TODO()
   }
 
-  fun lightDirectionalSetBlendSplits() {
+  fun lightDirectionalSetBlendSplits(light: RID, enable: Boolean) {
     TODO()
   }
 
-  fun lightDirectionalSetShadowDepthRangeMode() {
+  fun lightDirectionalSetShadowDepthRangeMode(light: RID, range_mode: Int) {
     TODO()
   }
 
-  fun lightDirectionalSetShadowMode() {
+  fun lightDirectionalSetShadowMode(light: RID, mode: Int) {
     TODO()
   }
 
-  fun lightOmniSetShadowDetail() {
+  fun lightOmniSetShadowDetail(light: RID, detail: Int) {
     TODO()
   }
 
-  fun lightOmniSetShadowMode() {
+  fun lightOmniSetShadowMode(light: RID, mode: Int) {
     TODO()
   }
 
-  fun lightSetColor() {
+  fun lightSetColor(light: RID, color: Color) {
     TODO()
   }
 
-  fun lightSetCullMask() {
+  fun lightSetCullMask(light: RID, mask: Int) {
     TODO()
   }
 
-  fun lightSetNegative() {
+  fun lightSetNegative(light: RID, enable: Boolean) {
     TODO()
   }
 
-  fun lightSetParam() {
+  fun lightSetParam(
+    light: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
-  fun lightSetProjector() {
+  fun lightSetProjector(light: RID, texture: RID) {
     TODO()
   }
 
-  fun lightSetReverseCullFaceMode() {
+  fun lightSetReverseCullFaceMode(light: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun lightSetShadow() {
+  fun lightSetShadow(light: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun lightSetShadowColor() {
+  fun lightSetShadowColor(light: RID, color: Color) {
     TODO()
   }
 
-  fun lightSetUseGi() {
+  fun lightSetUseGi(light: RID, enabled: Boolean) {
     TODO()
   }
 
@@ -767,47 +1044,51 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun lightmapCaptureGetBounds(): AABB {
+  fun lightmapCaptureGetBounds(capture: RID): AABB {
     TODO()
   }
 
-  fun lightmapCaptureGetEnergy(): Float {
+  fun lightmapCaptureGetEnergy(capture: RID): Float {
     TODO()
   }
 
-  fun lightmapCaptureGetOctree(): PoolByteArray {
+  fun lightmapCaptureGetOctree(capture: RID): PoolByteArray {
     TODO()
   }
 
-  fun lightmapCaptureGetOctreeCellSubdiv(): Int {
+  fun lightmapCaptureGetOctreeCellSubdiv(capture: RID): Int {
     TODO()
   }
 
-  fun lightmapCaptureGetOctreeCellTransform(): Transform {
+  fun lightmapCaptureGetOctreeCellTransform(capture: RID): Transform {
     TODO()
   }
 
-  fun lightmapCaptureSetBounds() {
+  fun lightmapCaptureSetBounds(capture: RID, bounds: AABB) {
     TODO()
   }
 
-  fun lightmapCaptureSetEnergy() {
+  fun lightmapCaptureSetEnergy(capture: RID, energy: Float) {
     TODO()
   }
 
-  fun lightmapCaptureSetOctree() {
+  fun lightmapCaptureSetOctree(capture: RID, octree: PoolByteArray) {
     TODO()
   }
 
-  fun lightmapCaptureSetOctreeCellSubdiv() {
+  fun lightmapCaptureSetOctreeCellSubdiv(capture: RID, subdiv: Int) {
     TODO()
   }
 
-  fun lightmapCaptureSetOctreeCellTransform() {
+  fun lightmapCaptureSetOctreeCellTransform(capture: RID, xform: Transform) {
     TODO()
   }
 
-  fun makeSphereMesh(): RID {
+  fun makeSphereMesh(
+    latitudes: Int,
+    longitudes: Int,
+    radius: Float
+  ): RID {
     TODO()
   }
 
@@ -815,43 +1096,53 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun materialGetParam(): Variant {
+  fun materialGetParam(material: RID, parameter: String): Variant {
     TODO()
   }
 
-  fun materialGetParamDefault(): Variant {
+  fun materialGetParamDefault(material: RID, parameter: String): Variant {
     TODO()
   }
 
-  fun materialGetShader(): RID {
+  fun materialGetShader(shader_material: RID): RID {
     TODO()
   }
 
-  fun materialSetLineWidth() {
+  fun materialSetLineWidth(material: RID, width: Float) {
     TODO()
   }
 
-  fun materialSetNextPass() {
+  fun materialSetNextPass(material: RID, next_material: RID) {
     TODO()
   }
 
-  fun materialSetParam() {
+  fun materialSetParam(
+    material: RID,
+    parameter: String,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun materialSetRenderPriority() {
+  fun materialSetRenderPriority(material: RID, priority: Int) {
     TODO()
   }
 
-  fun materialSetShader() {
+  fun materialSetShader(shader_material: RID, shader: RID) {
     TODO()
   }
 
-  fun meshAddSurfaceFromArrays() {
+  fun meshAddSurfaceFromArrays(
+    mesh: RID,
+    primtive: Int,
+    arrays: VariantArray,
+    blend_shapes: VariantArray,
+    compress_format: Int
+  ) {
     TODO()
   }
 
-  fun meshClear() {
+  fun meshClear(mesh: RID) {
     TODO()
   }
 
@@ -859,159 +1150,199 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun meshGetBlendShapeCount(): Int {
+  fun meshGetBlendShapeCount(mesh: RID): Int {
     TODO()
   }
 
-  fun meshGetBlendShapeMode(): BlendShapeMode {
+  fun meshGetBlendShapeMode(mesh: RID): BlendShapeMode {
     TODO()
   }
 
-  fun meshGetCustomAabb(): AABB {
+  fun meshGetCustomAabb(mesh: RID): AABB {
     TODO()
   }
 
-  fun meshGetSurfaceCount(): Int {
+  fun meshGetSurfaceCount(mesh: RID): Int {
     TODO()
   }
 
-  fun meshRemoveSurface() {
+  fun meshRemoveSurface(mesh: RID, index: Int) {
     TODO()
   }
 
-  fun meshSetBlendShapeCount() {
+  fun meshSetBlendShapeCount(mesh: RID, amount: Int) {
     TODO()
   }
 
-  fun meshSetBlendShapeMode() {
+  fun meshSetBlendShapeMode(mesh: RID, mode: Int) {
     TODO()
   }
 
-  fun meshSetCustomAabb() {
+  fun meshSetCustomAabb(mesh: RID, aabb: AABB) {
     TODO()
   }
 
-  fun meshSurfaceGetAabb(): AABB {
+  fun meshSurfaceGetAabb(mesh: RID, surface: Int): AABB {
     TODO()
   }
 
-  fun meshSurfaceGetArray(): PoolByteArray {
+  fun meshSurfaceGetArray(mesh: RID, surface: Int): PoolByteArray {
     TODO()
   }
 
-  fun meshSurfaceGetArrayIndexLen(): Int {
+  fun meshSurfaceGetArrayIndexLen(mesh: RID, surface: Int): Int {
     TODO()
   }
 
-  fun meshSurfaceGetArrayLen(): Int {
+  fun meshSurfaceGetArrayLen(mesh: RID, surface: Int): Int {
     TODO()
   }
 
-  fun meshSurfaceGetArrays(): VariantArray {
+  fun meshSurfaceGetArrays(mesh: RID, surface: Int): VariantArray {
     TODO()
   }
 
-  fun meshSurfaceGetBlendShapeArrays(): VariantArray {
+  fun meshSurfaceGetBlendShapeArrays(mesh: RID, surface: Int): VariantArray {
     TODO()
   }
 
-  fun meshSurfaceGetFormat(): Int {
+  fun meshSurfaceGetFormat(mesh: RID, surface: Int): Int {
     TODO()
   }
 
-  fun meshSurfaceGetFormatOffset(): Int {
+  fun meshSurfaceGetFormatOffset(
+    format: Int,
+    vertex_len: Int,
+    index_len: Int,
+    array_index: Int
+  ): Int {
     TODO()
   }
 
-  fun meshSurfaceGetFormatStride(): Int {
+  fun meshSurfaceGetFormatStride(
+    format: Int,
+    vertex_len: Int,
+    index_len: Int
+  ): Int {
     TODO()
   }
 
-  fun meshSurfaceGetIndexArray(): PoolByteArray {
+  fun meshSurfaceGetIndexArray(mesh: RID, surface: Int): PoolByteArray {
     TODO()
   }
 
-  fun meshSurfaceGetMaterial(): RID {
+  fun meshSurfaceGetMaterial(mesh: RID, surface: Int): RID {
     TODO()
   }
 
-  fun meshSurfaceGetPrimitiveType(): PrimitiveType {
+  fun meshSurfaceGetPrimitiveType(mesh: RID, surface: Int): PrimitiveType {
     TODO()
   }
 
-  fun meshSurfaceGetSkeletonAabb(): VariantArray {
+  fun meshSurfaceGetSkeletonAabb(mesh: RID, surface: Int): VariantArray {
     TODO()
   }
 
-  fun meshSurfaceSetMaterial() {
+  fun meshSurfaceSetMaterial(
+    mesh: RID,
+    surface: Int,
+    material: RID
+  ) {
     TODO()
   }
 
-  fun meshSurfaceUpdateRegion() {
+  fun meshSurfaceUpdateRegion(
+    mesh: RID,
+    surface: Int,
+    offset: Int,
+    data: PoolByteArray
+  ) {
     TODO()
   }
 
-  fun multimeshAllocate() {
+  fun multimeshAllocate(
+    multimesh: RID,
+    instances: Int,
+    transform_format: Int,
+    color_format: Int,
+    custom_data_format: Int
+  ) {
     TODO()
   }
 
-  fun multimeshGetAabb(): AABB {
+  fun multimeshGetAabb(multimesh: RID): AABB {
     TODO()
   }
 
-  fun multimeshGetInstanceCount(): Int {
+  fun multimeshGetInstanceCount(multimesh: RID): Int {
     TODO()
   }
 
-  fun multimeshGetMesh(): RID {
+  fun multimeshGetMesh(multimesh: RID): RID {
     TODO()
   }
 
-  fun multimeshGetVisibleInstances(): Int {
+  fun multimeshGetVisibleInstances(multimesh: RID): Int {
     TODO()
   }
 
-  fun multimeshInstanceGetColor(): Color {
+  fun multimeshInstanceGetColor(multimesh: RID, index: Int): Color {
     TODO()
   }
 
-  fun multimeshInstanceGetCustomData(): Color {
+  fun multimeshInstanceGetCustomData(multimesh: RID, index: Int): Color {
     TODO()
   }
 
-  fun multimeshInstanceGetTransform(): Transform {
+  fun multimeshInstanceGetTransform(multimesh: RID, index: Int): Transform {
     TODO()
   }
 
-  fun multimeshInstanceGetTransform2d(): Transform2D {
+  fun multimeshInstanceGetTransform2d(multimesh: RID, index: Int): Transform2D {
     TODO()
   }
 
-  fun multimeshInstanceSetColor() {
+  fun multimeshInstanceSetColor(
+    multimesh: RID,
+    index: Int,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun multimeshInstanceSetCustomData() {
+  fun multimeshInstanceSetCustomData(
+    multimesh: RID,
+    index: Int,
+    custom_data: Color
+  ) {
     TODO()
   }
 
-  fun multimeshInstanceSetTransform() {
+  fun multimeshInstanceSetTransform(
+    multimesh: RID,
+    index: Int,
+    transform: Transform
+  ) {
     TODO()
   }
 
-  fun multimeshInstanceSetTransform2d() {
+  fun multimeshInstanceSetTransform2d(
+    multimesh: RID,
+    index: Int,
+    transform: Transform2D
+  ) {
     TODO()
   }
 
-  fun multimeshSetAsBulkArray() {
+  fun multimeshSetAsBulkArray(multimesh: RID, array: PoolRealArray) {
     TODO()
   }
 
-  fun multimeshSetMesh() {
+  fun multimeshSetMesh(multimesh: RID, mesh: RID) {
     TODO()
   }
 
-  fun multimeshSetVisibleInstances() {
+  fun multimeshSetVisibleInstances(multimesh: RID, visible: Int) {
     TODO()
   }
 
@@ -1023,83 +1354,87 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun particlesGetCurrentAabb(): AABB {
+  fun particlesGetCurrentAabb(particles: RID): AABB {
     TODO()
   }
 
-  fun particlesGetEmitting(): Boolean {
+  fun particlesGetEmitting(particles: RID): Boolean {
     TODO()
   }
 
-  fun particlesRestart() {
+  fun particlesRestart(particles: RID) {
     TODO()
   }
 
-  fun particlesSetAmount() {
+  fun particlesSetAmount(particles: RID, amount: Int) {
     TODO()
   }
 
-  fun particlesSetCustomAabb() {
+  fun particlesSetCustomAabb(particles: RID, aabb: AABB) {
     TODO()
   }
 
-  fun particlesSetDrawOrder() {
+  fun particlesSetDrawOrder(particles: RID, order: Int) {
     TODO()
   }
 
-  fun particlesSetDrawPassMesh() {
+  fun particlesSetDrawPassMesh(
+    particles: RID,
+    pass: Int,
+    mesh: RID
+  ) {
     TODO()
   }
 
-  fun particlesSetDrawPasses() {
+  fun particlesSetDrawPasses(particles: RID, count: Int) {
     TODO()
   }
 
-  fun particlesSetEmissionTransform() {
+  fun particlesSetEmissionTransform(particles: RID, transform: Transform) {
     TODO()
   }
 
-  fun particlesSetEmitting() {
+  fun particlesSetEmitting(particles: RID, emitting: Boolean) {
     TODO()
   }
 
-  fun particlesSetExplosivenessRatio() {
+  fun particlesSetExplosivenessRatio(particles: RID, ratio: Float) {
     TODO()
   }
 
-  fun particlesSetFixedFps() {
+  fun particlesSetFixedFps(particles: RID, fps: Int) {
     TODO()
   }
 
-  fun particlesSetFractionalDelta() {
+  fun particlesSetFractionalDelta(particles: RID, enable: Boolean) {
     TODO()
   }
 
-  fun particlesSetLifetime() {
+  fun particlesSetLifetime(particles: RID, lifetime: Float) {
     TODO()
   }
 
-  fun particlesSetOneShot() {
+  fun particlesSetOneShot(particles: RID, one_shot: Boolean) {
     TODO()
   }
 
-  fun particlesSetPreProcessTime() {
+  fun particlesSetPreProcessTime(particles: RID, time: Float) {
     TODO()
   }
 
-  fun particlesSetProcessMaterial() {
+  fun particlesSetProcessMaterial(particles: RID, material: RID) {
     TODO()
   }
 
-  fun particlesSetRandomnessRatio() {
+  fun particlesSetRandomnessRatio(particles: RID, ratio: Float) {
     TODO()
   }
 
-  fun particlesSetSpeedScale() {
+  fun particlesSetSpeedScale(particles: RID, scale: Float) {
     TODO()
   }
 
-  fun particlesSetUseLocalCoordinates() {
+  fun particlesSetUseLocalCoordinates(particles: RID, enable: Boolean) {
     TODO()
   }
 
@@ -1107,55 +1442,59 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun reflectionProbeSetAsInterior() {
+  fun reflectionProbeSetAsInterior(probe: RID, enable: Boolean) {
     TODO()
   }
 
-  fun reflectionProbeSetCullMask() {
+  fun reflectionProbeSetCullMask(probe: RID, layers: Int) {
     TODO()
   }
 
-  fun reflectionProbeSetEnableBoxProjection() {
+  fun reflectionProbeSetEnableBoxProjection(probe: RID, enable: Boolean) {
     TODO()
   }
 
-  fun reflectionProbeSetEnableShadows() {
+  fun reflectionProbeSetEnableShadows(probe: RID, enable: Boolean) {
     TODO()
   }
 
-  fun reflectionProbeSetExtents() {
+  fun reflectionProbeSetExtents(probe: RID, extents: Vector3) {
     TODO()
   }
 
-  fun reflectionProbeSetIntensity() {
+  fun reflectionProbeSetIntensity(probe: RID, intensity: Float) {
     TODO()
   }
 
-  fun reflectionProbeSetInteriorAmbient() {
+  fun reflectionProbeSetInteriorAmbient(probe: RID, color: Color) {
     TODO()
   }
 
-  fun reflectionProbeSetInteriorAmbientEnergy() {
+  fun reflectionProbeSetInteriorAmbientEnergy(probe: RID, energy: Float) {
     TODO()
   }
 
-  fun reflectionProbeSetInteriorAmbientProbeContribution() {
+  fun reflectionProbeSetInteriorAmbientProbeContribution(probe: RID, contrib: Float) {
     TODO()
   }
 
-  fun reflectionProbeSetMaxDistance() {
+  fun reflectionProbeSetMaxDistance(probe: RID, distance: Float) {
     TODO()
   }
 
-  fun reflectionProbeSetOriginOffset() {
+  fun reflectionProbeSetOriginOffset(probe: RID, offset: Vector3) {
     TODO()
   }
 
-  fun reflectionProbeSetUpdateMode() {
+  fun reflectionProbeSetUpdateMode(probe: RID, mode: Int) {
     TODO()
   }
 
-  fun requestFrameDrawnCallback() {
+  fun requestFrameDrawnCallback(
+    where: Object,
+    method: String,
+    userdata: Variant
+  ) {
     TODO()
   }
 
@@ -1163,31 +1502,40 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun scenarioSetDebug() {
+  fun scenarioSetDebug(scenario: RID, debug_mode: Int) {
     TODO()
   }
 
-  fun scenarioSetEnvironment() {
+  fun scenarioSetEnvironment(scenario: RID, environment: RID) {
     TODO()
   }
 
-  fun scenarioSetFallbackEnvironment() {
+  fun scenarioSetFallbackEnvironment(scenario: RID, environment: RID) {
     TODO()
   }
 
-  fun scenarioSetReflectionAtlasSize() {
+  fun scenarioSetReflectionAtlasSize(
+    scenario: RID,
+    size: Int,
+    subdiv: Int
+  ) {
     TODO()
   }
 
-  fun setBootImage() {
+  fun setBootImage(
+    image: Image,
+    color: Color,
+    scale: Boolean,
+    use_filter: Boolean
+  ) {
     TODO()
   }
 
-  fun setDebugGenerateWireframes() {
+  fun setDebugGenerateWireframes(generate: Boolean) {
     TODO()
   }
 
-  fun setDefaultClearColor() {
+  fun setDefaultClearColor(color: Color) {
     TODO()
   }
 
@@ -1195,43 +1543,59 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun shaderGetCode(): String {
+  fun shaderGetCode(shader: RID): String {
     TODO()
   }
 
-  fun shaderGetDefaultTextureParam(): RID {
+  fun shaderGetDefaultTextureParam(shader: RID, name: String): RID {
     TODO()
   }
 
-  fun shaderGetParamList(): VariantArray {
+  fun shaderGetParamList(shader: RID): VariantArray {
     TODO()
   }
 
-  fun shaderSetCode() {
+  fun shaderSetCode(shader: RID, code: String) {
     TODO()
   }
 
-  fun shaderSetDefaultTextureParam() {
+  fun shaderSetDefaultTextureParam(
+    shader: RID,
+    name: String,
+    texture: RID
+  ) {
     TODO()
   }
 
-  fun skeletonAllocate() {
+  fun skeletonAllocate(
+    skeleton: RID,
+    bones: Int,
+    is_2d_skeleton: Boolean
+  ) {
     TODO()
   }
 
-  fun skeletonBoneGetTransform(): Transform {
+  fun skeletonBoneGetTransform(skeleton: RID, bone: Int): Transform {
     TODO()
   }
 
-  fun skeletonBoneGetTransform2d(): Transform2D {
+  fun skeletonBoneGetTransform2d(skeleton: RID, bone: Int): Transform2D {
     TODO()
   }
 
-  fun skeletonBoneSetTransform() {
+  fun skeletonBoneSetTransform(
+    skeleton: RID,
+    bone: Int,
+    transform: Transform
+  ) {
     TODO()
   }
 
-  fun skeletonBoneSetTransform2d() {
+  fun skeletonBoneSetTransform2d(
+    skeleton: RID,
+    bone: Int,
+    transform: Transform2D
+  ) {
     TODO()
   }
 
@@ -1239,7 +1603,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun skeletonGetBoneCount(): Int {
+  fun skeletonGetBoneCount(skeleton: RID): Int {
     TODO()
   }
 
@@ -1247,7 +1611,11 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun skySetTexture() {
+  fun skySetTexture(
+    sky: RID,
+    cube_map: RID,
+    radiance_size: Int
+  ) {
     TODO()
   }
 
@@ -1259,11 +1627,19 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun textureAllocate() {
+  fun textureAllocate(
+    texture: RID,
+    width: Int,
+    height: Int,
+    depth_3d: Int,
+    format: Int,
+    type: Int,
+    flags: Int
+  ) {
     TODO()
   }
 
-  fun textureBind() {
+  fun textureBind(texture: RID, number: Int) {
     TODO()
   }
 
@@ -1271,7 +1647,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun textureCreateFromImage(): RID {
+  fun textureCreateFromImage(image: Image, flags: Int): RID {
     TODO()
   }
 
@@ -1279,79 +1655,103 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun textureGetData(): Image {
+  fun textureGetData(texture: RID, cube_side: Int): Image {
     TODO()
   }
 
-  fun textureGetDepth(): Int {
+  fun textureGetDepth(texture: RID): Int {
     TODO()
   }
 
-  fun textureGetFlags(): Int {
+  fun textureGetFlags(texture: RID): Int {
     TODO()
   }
 
-  fun textureGetFormat(): Image.Format {
+  fun textureGetFormat(texture: RID): Image.Format {
     TODO()
   }
 
-  fun textureGetHeight(): Int {
+  fun textureGetHeight(texture: RID): Int {
     TODO()
   }
 
-  fun textureGetPath(): String {
+  fun textureGetPath(texture: RID): String {
     TODO()
   }
 
-  fun textureGetTexid(): Int {
+  fun textureGetTexid(texture: RID): Int {
     TODO()
   }
 
-  fun textureGetType(): TextureType {
+  fun textureGetType(texture: RID): TextureType {
     TODO()
   }
 
-  fun textureGetWidth(): Int {
+  fun textureGetWidth(texture: RID): Int {
     TODO()
   }
 
-  fun textureSetData() {
+  fun textureSetData(
+    texture: RID,
+    image: Image,
+    layer: Int
+  ) {
     TODO()
   }
 
-  fun textureSetDataPartial() {
+  fun textureSetDataPartial(
+    texture: RID,
+    image: Image,
+    src_x: Int,
+    src_y: Int,
+    src_w: Int,
+    src_h: Int,
+    dst_x: Int,
+    dst_y: Int,
+    dst_mip: Int,
+    layer: Int
+  ) {
     TODO()
   }
 
-  fun textureSetFlags() {
+  fun textureSetFlags(texture: RID, flags: Int) {
     TODO()
   }
 
-  fun textureSetPath() {
+  fun textureSetPath(texture: RID, path: String) {
     TODO()
   }
 
-  fun textureSetShrinkAllX2OnSetData() {
+  fun textureSetShrinkAllX2OnSetData(shrink: Boolean) {
     TODO()
   }
 
-  fun textureSetSizeOverride() {
+  fun textureSetSizeOverride(
+    texture: RID,
+    width: Int,
+    height: Int,
+    depth: Int
+  ) {
     TODO()
   }
 
-  fun texturesKeepOriginal() {
+  fun texturesKeepOriginal(enable: Boolean) {
     TODO()
   }
 
-  fun viewportAttachCamera() {
+  fun viewportAttachCamera(viewport: RID, camera: RID) {
     TODO()
   }
 
-  fun viewportAttachCanvas() {
+  fun viewportAttachCanvas(viewport: RID, canvas: RID) {
     TODO()
   }
 
-  fun viewportAttachToScreen() {
+  fun viewportAttachToScreen(
+    viewport: RID,
+    rect: Rect2,
+    screen: Int
+  ) {
     TODO()
   }
 
@@ -1359,111 +1759,128 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun viewportDetach() {
+  fun viewportDetach(viewport: RID) {
     TODO()
   }
 
-  fun viewportGetRenderInfo(): Int {
+  fun viewportGetRenderInfo(viewport: RID, info: Int): Int {
     TODO()
   }
 
-  fun viewportGetTexture(): RID {
+  fun viewportGetTexture(viewport: RID): RID {
     TODO()
   }
 
-  fun viewportRemoveCanvas() {
+  fun viewportRemoveCanvas(viewport: RID, canvas: RID) {
     TODO()
   }
 
-  fun viewportSetActive() {
+  fun viewportSetActive(viewport: RID, active: Boolean) {
     TODO()
   }
 
-  fun viewportSetCanvasStacking() {
+  fun viewportSetCanvasStacking(
+    viewport: RID,
+    canvas: RID,
+    layer: Int,
+    sublayer: Int
+  ) {
     TODO()
   }
 
-  fun viewportSetCanvasTransform() {
+  fun viewportSetCanvasTransform(
+    viewport: RID,
+    canvas: RID,
+    offset: Transform2D
+  ) {
     TODO()
   }
 
-  fun viewportSetClearMode() {
+  fun viewportSetClearMode(viewport: RID, clear_mode: Int) {
     TODO()
   }
 
-  fun viewportSetDebugDraw() {
+  fun viewportSetDebugDraw(viewport: RID, draw: Int) {
     TODO()
   }
 
-  fun viewportSetDisable3d() {
+  fun viewportSetDisable3d(viewport: RID, disabled: Boolean) {
     TODO()
   }
 
-  fun viewportSetDisableEnvironment() {
+  fun viewportSetDisableEnvironment(viewport: RID, disabled: Boolean) {
     TODO()
   }
 
-  fun viewportSetGlobalCanvasTransform() {
+  fun viewportSetGlobalCanvasTransform(viewport: RID, transform: Transform2D) {
     TODO()
   }
 
-  fun viewportSetHdr() {
+  fun viewportSetHdr(viewport: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun viewportSetHideCanvas() {
+  fun viewportSetHideCanvas(viewport: RID, hidden: Boolean) {
     TODO()
   }
 
-  fun viewportSetHideScenario() {
+  fun viewportSetHideScenario(viewport: RID, hidden: Boolean) {
     TODO()
   }
 
-  fun viewportSetMsaa() {
+  fun viewportSetMsaa(viewport: RID, msaa: Int) {
     TODO()
   }
 
-  fun viewportSetParentViewport() {
+  fun viewportSetParentViewport(viewport: RID, parent_viewport: RID) {
     TODO()
   }
 
-  fun viewportSetRenderDirectToScreen() {
+  fun viewportSetRenderDirectToScreen(viewport: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun viewportSetScenario() {
+  fun viewportSetScenario(viewport: RID, scenario: RID) {
     TODO()
   }
 
-  fun viewportSetShadowAtlasQuadrantSubdivision() {
+  fun viewportSetShadowAtlasQuadrantSubdivision(
+    viewport: RID,
+    quadrant: Int,
+    subdivision: Int
+  ) {
     TODO()
   }
 
-  fun viewportSetShadowAtlasSize() {
+  fun viewportSetShadowAtlasSize(viewport: RID, size: Int) {
     TODO()
   }
 
-  fun viewportSetSize() {
+  fun viewportSetSize(
+    viewport: RID,
+    width: Int,
+    height: Int
+  ) {
     TODO()
   }
 
-  fun viewportSetTransparentBackground() {
+  fun viewportSetTransparentBackground(viewport: RID, enabled: Boolean) {
     TODO()
   }
 
-  fun viewportSetUpdateMode() {
+  fun viewportSetUpdateMode(viewport: RID, update_mode: Int) {
     TODO()
   }
 
-  fun viewportSetUsage() {
+  fun viewportSetUsage(viewport: RID, usage: Int) {
     TODO()
   }
 
-  fun viewportSetUseArvr() {
+  fun viewportSetUseArvr(viewport: RID, use_arvr: Boolean) {
     TODO()
   }
 
-  fun viewportSetVflip() {
+  fun viewportSetVflip(viewport: RID, enabled: Boolean) {
     TODO()
   }
 

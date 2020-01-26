@@ -32,19 +32,19 @@ open class Slider internal constructor(
     TODO()
   }
 
-  fun setEditable() {
+  fun setEditable(editable: Boolean) {
     TODO()
   }
 
-  fun setScrollable() {
+  fun setScrollable(scrollable: Boolean) {
     TODO()
   }
 
-  fun setTicks() {
+  fun setTicks(count: Int) {
     TODO()
   }
 
-  fun setTicksOnBorders() {
+  fun setTicksOnBorders(ticks_on_border: Boolean) {
     TODO()
   }
 

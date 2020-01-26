@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class Performance internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun getMonitor(): Float {
+  fun getMonitor(monitor: Int): Float {
     TODO()
   }
 

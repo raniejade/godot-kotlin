@@ -28,11 +28,11 @@ open class WindowDialog internal constructor(
     TODO()
   }
 
-  fun setResizable() {
+  fun setResizable(resizable: Boolean) {
     TODO()
   }
 
-  fun setTitle() {
+  fun setTitle(title: String) {
     TODO()
   }
 

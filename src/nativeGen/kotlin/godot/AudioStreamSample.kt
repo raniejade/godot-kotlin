@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolByteArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -45,35 +46,35 @@ open class AudioStreamSample internal constructor(
     TODO()
   }
 
-  fun saveToWav(): Error {
+  fun saveToWav(path: String): Error {
     TODO()
   }
 
-  fun setData() {
+  fun setData(data: PoolByteArray) {
     TODO()
   }
 
-  fun setFormat() {
+  fun setFormat(format: Int) {
     TODO()
   }
 
-  fun setLoopBegin() {
+  fun setLoopBegin(loop_begin: Int) {
     TODO()
   }
 
-  fun setLoopEnd() {
+  fun setLoopEnd(loop_end: Int) {
     TODO()
   }
 
-  fun setLoopMode() {
+  fun setLoopMode(loop_mode: Int) {
     TODO()
   }
 
-  fun setMixRate() {
+  fun setMixRate(mix_rate: Int) {
     TODO()
   }
 
-  fun setStereo() {
+  fun setStereo(stereo: Boolean) {
     TODO()
   }
 

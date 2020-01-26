@@ -55,7 +55,7 @@ open class ParticlesMaterial internal constructor(
     TODO()
   }
 
-  fun getFlag(): Boolean {
+  fun getFlag(flag: Int): Boolean {
     TODO()
   }
 
@@ -67,15 +67,15 @@ open class ParticlesMaterial internal constructor(
     TODO()
   }
 
-  fun getParam(): Float {
+  fun getParam(param: Int): Float {
     TODO()
   }
 
-  fun getParamRandomness(): Float {
+  fun getParamRandomness(param: Int): Float {
     TODO()
   }
 
-  fun getParamTexture(): Texture {
+  fun getParamTexture(param: Int): Texture {
     TODO()
   }
 
@@ -95,79 +95,79 @@ open class ParticlesMaterial internal constructor(
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setColorRamp() {
+  fun setColorRamp(ramp: Texture) {
     TODO()
   }
 
-  fun setEmissionBoxExtents() {
+  fun setEmissionBoxExtents(extents: Vector3) {
     TODO()
   }
 
-  fun setEmissionColorTexture() {
+  fun setEmissionColorTexture(texture: Texture) {
     TODO()
   }
 
-  fun setEmissionNormalTexture() {
+  fun setEmissionNormalTexture(texture: Texture) {
     TODO()
   }
 
-  fun setEmissionPointCount() {
+  fun setEmissionPointCount(point_count: Int) {
     TODO()
   }
 
-  fun setEmissionPointTexture() {
+  fun setEmissionPointTexture(texture: Texture) {
     TODO()
   }
 
-  fun setEmissionShape() {
+  fun setEmissionShape(shape: Int) {
     TODO()
   }
 
-  fun setEmissionSphereRadius() {
+  fun setEmissionSphereRadius(radius: Float) {
     TODO()
   }
 
-  fun setFlag() {
+  fun setFlag(flag: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setFlatness() {
+  fun setFlatness(amount: Float) {
     TODO()
   }
 
-  fun setGravity() {
+  fun setGravity(accel_vec: Vector3) {
     TODO()
   }
 
-  fun setParam() {
+  fun setParam(param: Int, value: Float) {
     TODO()
   }
 
-  fun setParamRandomness() {
+  fun setParamRandomness(param: Int, randomness: Float) {
     TODO()
   }
 
-  fun setParamTexture() {
+  fun setParamTexture(param: Int, texture: Texture) {
     TODO()
   }
 
-  fun setSpread() {
+  fun setSpread(degrees: Float) {
     TODO()
   }
 
-  fun setTrailColorModifier() {
+  fun setTrailColorModifier(texture: GradientTexture) {
     TODO()
   }
 
-  fun setTrailDivisor() {
+  fun setTrailDivisor(divisor: Int) {
     TODO()
   }
 
-  fun setTrailSizeModifier() {
+  fun setTrailSizeModifier(texture: CurveTexture) {
     TODO()
   }
 

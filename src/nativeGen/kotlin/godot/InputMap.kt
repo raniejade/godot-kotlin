@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Float
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,39 +18,39 @@ import kotlinx.cinterop.reinterpret
 open class InputMap internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun actionAddEvent() {
+  fun actionAddEvent(action: String, event: InputEvent) {
     TODO()
   }
 
-  fun actionEraseEvent() {
+  fun actionEraseEvent(action: String, event: InputEvent) {
     TODO()
   }
 
-  fun actionEraseEvents() {
+  fun actionEraseEvents(action: String) {
     TODO()
   }
 
-  fun actionHasEvent(): Boolean {
+  fun actionHasEvent(action: String, event: InputEvent): Boolean {
     TODO()
   }
 
-  fun actionSetDeadzone() {
+  fun actionSetDeadzone(action: String, deadzone: Float) {
     TODO()
   }
 
-  fun addAction() {
+  fun addAction(action: String, deadzone: Float) {
     TODO()
   }
 
-  fun eraseAction() {
+  fun eraseAction(action: String) {
     TODO()
   }
 
-  fun eventIsAction(): Boolean {
+  fun eventIsAction(event: InputEvent, action: String): Boolean {
     TODO()
   }
 
-  fun getActionList(): VariantArray {
+  fun getActionList(action: String): VariantArray {
     TODO()
   }
 
@@ -56,7 +58,7 @@ open class InputMap internal constructor(
     TODO()
   }
 
-  fun hasAction(): Boolean {
+  fun hasAction(action: String): Boolean {
     TODO()
   }
 

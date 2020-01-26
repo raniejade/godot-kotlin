@@ -30,7 +30,7 @@ open class Particles internal constructor(
     TODO()
   }
 
-  fun getDrawPassMesh(): Mesh {
+  fun getDrawPassMesh(pass: Int): Mesh {
     TODO()
   }
 
@@ -90,67 +90,67 @@ open class Particles internal constructor(
     TODO()
   }
 
-  fun setAmount() {
+  fun setAmount(amount: Int) {
     TODO()
   }
 
-  fun setDrawOrder() {
+  fun setDrawOrder(order: Int) {
     TODO()
   }
 
-  fun setDrawPassMesh() {
+  fun setDrawPassMesh(pass: Int, mesh: Mesh) {
     TODO()
   }
 
-  fun setDrawPasses() {
+  fun setDrawPasses(passes: Int) {
     TODO()
   }
 
-  fun setEmitting() {
+  fun setEmitting(emitting: Boolean) {
     TODO()
   }
 
-  fun setExplosivenessRatio() {
+  fun setExplosivenessRatio(ratio: Float) {
     TODO()
   }
 
-  fun setFixedFps() {
+  fun setFixedFps(fps: Int) {
     TODO()
   }
 
-  fun setFractionalDelta() {
+  fun setFractionalDelta(enable: Boolean) {
     TODO()
   }
 
-  fun setLifetime() {
+  fun setLifetime(secs: Float) {
     TODO()
   }
 
-  fun setOneShot() {
+  fun setOneShot(enable: Boolean) {
     TODO()
   }
 
-  fun setPreProcessTime() {
+  fun setPreProcessTime(secs: Float) {
     TODO()
   }
 
-  fun setProcessMaterial() {
+  fun setProcessMaterial(material: Material) {
     TODO()
   }
 
-  fun setRandomnessRatio() {
+  fun setRandomnessRatio(ratio: Float) {
     TODO()
   }
 
-  fun setSpeedScale() {
+  fun setSpeedScale(scale: Float) {
     TODO()
   }
 
-  fun setUseLocalCoordinates() {
+  fun setUseLocalCoordinates(enable: Boolean) {
     TODO()
   }
 
-  fun setVisibilityAabb() {
+  fun setVisibilityAabb(aabb: AABB) {
     TODO()
   }
 

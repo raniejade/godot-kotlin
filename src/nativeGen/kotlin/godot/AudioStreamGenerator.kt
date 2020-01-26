@@ -23,11 +23,11 @@ open class AudioStreamGenerator internal constructor(
     TODO()
   }
 
-  fun setBufferLength() {
+  fun setBufferLength(seconds: Float) {
     TODO()
   }
 
-  fun setMixRate() {
+  fun setMixRate(hz: Float) {
     TODO()
   }
 

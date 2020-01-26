@@ -23,11 +23,11 @@ open class VisualShaderNodeTextureUniform internal constructor(
     TODO()
   }
 
-  fun setColorDefault() {
+  fun setColorDefault(type: Int) {
     TODO()
   }
 
-  fun setTextureType() {
+  fun setTextureType(type: Int) {
     TODO()
   }
 

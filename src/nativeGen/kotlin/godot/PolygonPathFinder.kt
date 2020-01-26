@@ -3,11 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
 import godot.core.Rect2
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -19,7 +21,7 @@ import kotlinx.cinterop.reinterpret
 open class PolygonPathFinder internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun findPath(): PoolVector2Array {
+  fun findPath(from: Vector2, to: Vector2): PoolVector2Array {
     TODO()
   }
 
@@ -27,27 +29,27 @@ open class PolygonPathFinder internal constructor(
     TODO()
   }
 
-  fun getClosestPoint(): Vector2 {
+  fun getClosestPoint(point: Vector2): Vector2 {
     TODO()
   }
 
-  fun getIntersections(): PoolVector2Array {
+  fun getIntersections(from: Vector2, to: Vector2): PoolVector2Array {
     TODO()
   }
 
-  fun getPointPenalty(): Float {
+  fun getPointPenalty(idx: Int): Float {
     TODO()
   }
 
-  fun isPointInside(): Boolean {
+  fun isPointInside(point: Vector2): Boolean {
     TODO()
   }
 
-  fun setPointPenalty() {
+  fun setPointPenalty(idx: Int, penalty: Float) {
     TODO()
   }
 
-  fun setup() {
+  fun setup(points: PoolVector2Array, connections: PoolIntArray) {
     TODO()
   }
 

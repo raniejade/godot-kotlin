@@ -74,43 +74,43 @@ open class Label internal constructor(
     TODO()
   }
 
-  fun setAlign() {
+  fun setAlign(align: Int) {
     TODO()
   }
 
-  fun setAutowrap() {
+  fun setAutowrap(enable: Boolean) {
     TODO()
   }
 
-  fun setClipText() {
+  fun setClipText(enable: Boolean) {
     TODO()
   }
 
-  fun setLinesSkipped() {
+  fun setLinesSkipped(lines_skipped: Int) {
     TODO()
   }
 
-  fun setMaxLinesVisible() {
+  fun setMaxLinesVisible(lines_visible: Int) {
     TODO()
   }
 
-  fun setPercentVisible() {
+  fun setPercentVisible(percent_visible: Float) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 
-  fun setUppercase() {
+  fun setUppercase(enable: Boolean) {
     TODO()
   }
 
-  fun setValign() {
+  fun setValign(valign: Int) {
     TODO()
   }
 
-  fun setVisibleCharacters() {
+  fun setVisibleCharacters(amount: Int) {
     TODO()
   }
 

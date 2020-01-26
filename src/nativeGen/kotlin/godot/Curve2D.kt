@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,7 +19,12 @@ import kotlinx.cinterop.reinterpret
 open class Curve2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addPoint() {
+  fun addPoint(
+    position: Vector2,
+    `in`: Vector2,
+    out: Vector2,
+    at_position: Int
+  ) {
     TODO()
   }
 
@@ -38,11 +44,11 @@ open class Curve2D internal constructor(
     TODO()
   }
 
-  fun getClosestOffset(): Float {
+  fun getClosestOffset(to_point: Vector2): Float {
     TODO()
   }
 
-  fun getClosestPoint(): Vector2 {
+  fun getClosestPoint(to_point: Vector2): Vector2 {
     TODO()
   }
 
@@ -50,51 +56,51 @@ open class Curve2D internal constructor(
     TODO()
   }
 
-  fun getPointIn(): Vector2 {
+  fun getPointIn(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getPointOut(): Vector2 {
+  fun getPointOut(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getPointPosition(): Vector2 {
+  fun getPointPosition(idx: Int): Vector2 {
     TODO()
   }
 
-  fun interpolate(): Vector2 {
+  fun interpolate(idx: Int, t: Float): Vector2 {
     TODO()
   }
 
-  fun interpolateBaked(): Vector2 {
+  fun interpolateBaked(offset: Float, cubic: Boolean): Vector2 {
     TODO()
   }
 
-  fun interpolatef(): Vector2 {
+  fun interpolatef(fofs: Float): Vector2 {
     TODO()
   }
 
-  fun removePoint() {
+  fun removePoint(idx: Int) {
     TODO()
   }
 
-  fun setBakeInterval() {
+  fun setBakeInterval(distance: Float) {
     TODO()
   }
 
-  fun setPointIn() {
+  fun setPointIn(idx: Int, position: Vector2) {
     TODO()
   }
 
-  fun setPointOut() {
+  fun setPointOut(idx: Int, position: Vector2) {
     TODO()
   }
 
-  fun setPointPosition() {
+  fun setPointPosition(idx: Int, position: Vector2) {
     TODO()
   }
 
-  fun tessellate(): PoolVector2Array {
+  fun tessellate(max_stages: Int, tolerance_degrees: Float): PoolVector2Array {
     TODO()
   }
 

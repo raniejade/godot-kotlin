@@ -64,43 +64,43 @@ open class BaseButton internal constructor(
     TODO()
   }
 
-  fun setActionMode() {
+  fun setActionMode(mode: Int) {
     TODO()
   }
 
-  fun setButtonGroup() {
+  fun setButtonGroup(button_group: ButtonGroup) {
     TODO()
   }
 
-  fun setButtonMask() {
+  fun setButtonMask(mask: Int) {
     TODO()
   }
 
-  fun setDisabled() {
+  fun setDisabled(disabled: Boolean) {
     TODO()
   }
 
-  fun setEnabledFocusMode() {
+  fun setEnabledFocusMode(mode: Int) {
     TODO()
   }
 
-  fun setKeepPressedOutside() {
+  fun setKeepPressedOutside(enabled: Boolean) {
     TODO()
   }
 
-  fun setPressed() {
+  fun setPressed(pressed: Boolean) {
     TODO()
   }
 
-  fun setShortcut() {
+  fun setShortcut(shortcut: ShortCut) {
     TODO()
   }
 
-  fun setShortcutInTooltip() {
+  fun setShortcutInTooltip(enabled: Boolean) {
     TODO()
   }
 
-  fun setToggleMode() {
+  fun setToggleMode(enabled: Boolean) {
     TODO()
   }
 

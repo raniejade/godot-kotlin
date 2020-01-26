@@ -42,27 +42,27 @@ open class AnimationNodeStateMachineTransition internal constructor(
     TODO()
   }
 
-  fun setAdvanceCondition() {
+  fun setAdvanceCondition(name: String) {
     TODO()
   }
 
-  fun setAutoAdvance() {
+  fun setAutoAdvance(auto_advance: Boolean) {
     TODO()
   }
 
-  fun setDisabled() {
+  fun setDisabled(disabled: Boolean) {
     TODO()
   }
 
-  fun setPriority() {
+  fun setPriority(priority: Int) {
     TODO()
   }
 
-  fun setSwitchMode() {
+  fun setSwitchMode(mode: Int) {
     TODO()
   }
 
-  fun setXfadeTime() {
+  fun setXfadeTime(secs: Float) {
     TODO()
   }
 

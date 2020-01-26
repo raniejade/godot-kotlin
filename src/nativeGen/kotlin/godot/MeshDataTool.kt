@@ -26,11 +26,11 @@ open class MeshDataTool internal constructor(
     TODO()
   }
 
-  fun commitToSurface(): Error {
+  fun commitToSurface(mesh: ArrayMesh): Error {
     TODO()
   }
 
-  fun createFromSurface(): Error {
+  fun createFromSurface(mesh: ArrayMesh, surface: Int): Error {
     TODO()
   }
 
@@ -38,15 +38,15 @@ open class MeshDataTool internal constructor(
     TODO()
   }
 
-  fun getEdgeFaces(): PoolIntArray {
+  fun getEdgeFaces(idx: Int): PoolIntArray {
     TODO()
   }
 
-  fun getEdgeMeta(): Variant {
+  fun getEdgeMeta(idx: Int): Variant {
     TODO()
   }
 
-  fun getEdgeVertex(): Int {
+  fun getEdgeVertex(idx: Int, vertex: Int): Int {
     TODO()
   }
 
@@ -54,19 +54,19 @@ open class MeshDataTool internal constructor(
     TODO()
   }
 
-  fun getFaceEdge(): Int {
+  fun getFaceEdge(idx: Int, edge: Int): Int {
     TODO()
   }
 
-  fun getFaceMeta(): Variant {
+  fun getFaceMeta(idx: Int): Variant {
     TODO()
   }
 
-  fun getFaceNormal(): Vector3 {
+  fun getFaceNormal(idx: Int): Vector3 {
     TODO()
   }
 
-  fun getFaceVertex(): Int {
+  fun getFaceVertex(idx: Int, vertex: Int): Int {
     TODO()
   }
 
@@ -78,15 +78,15 @@ open class MeshDataTool internal constructor(
     TODO()
   }
 
-  fun getVertex(): Vector3 {
+  fun getVertex(idx: Int): Vector3 {
     TODO()
   }
 
-  fun getVertexBones(): PoolIntArray {
+  fun getVertexBones(idx: Int): PoolIntArray {
     TODO()
   }
 
-  fun getVertexColor(): Color {
+  fun getVertexColor(idx: Int): Color {
     TODO()
   }
 
@@ -94,83 +94,83 @@ open class MeshDataTool internal constructor(
     TODO()
   }
 
-  fun getVertexEdges(): PoolIntArray {
+  fun getVertexEdges(idx: Int): PoolIntArray {
     TODO()
   }
 
-  fun getVertexFaces(): PoolIntArray {
+  fun getVertexFaces(idx: Int): PoolIntArray {
     TODO()
   }
 
-  fun getVertexMeta(): Variant {
+  fun getVertexMeta(idx: Int): Variant {
     TODO()
   }
 
-  fun getVertexNormal(): Vector3 {
+  fun getVertexNormal(idx: Int): Vector3 {
     TODO()
   }
 
-  fun getVertexTangent(): Plane {
+  fun getVertexTangent(idx: Int): Plane {
     TODO()
   }
 
-  fun getVertexUv(): Vector2 {
+  fun getVertexUv(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getVertexUv2(): Vector2 {
+  fun getVertexUv2(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getVertexWeights(): PoolRealArray {
+  fun getVertexWeights(idx: Int): PoolRealArray {
     TODO()
   }
 
-  fun setEdgeMeta() {
+  fun setEdgeMeta(idx: Int, meta: Variant) {
     TODO()
   }
 
-  fun setFaceMeta() {
+  fun setFaceMeta(idx: Int, meta: Variant) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setVertex() {
+  fun setVertex(idx: Int, vertex: Vector3) {
     TODO()
   }
 
-  fun setVertexBones() {
+  fun setVertexBones(idx: Int, bones: PoolIntArray) {
     TODO()
   }
 
-  fun setVertexColor() {
+  fun setVertexColor(idx: Int, color: Color) {
     TODO()
   }
 
-  fun setVertexMeta() {
+  fun setVertexMeta(idx: Int, meta: Variant) {
     TODO()
   }
 
-  fun setVertexNormal() {
+  fun setVertexNormal(idx: Int, normal: Vector3) {
     TODO()
   }
 
-  fun setVertexTangent() {
+  fun setVertexTangent(idx: Int, tangent: Plane) {
     TODO()
   }
 
-  fun setVertexUv() {
+  fun setVertexUv(idx: Int, uv: Vector2) {
     TODO()
   }
 
-  fun setVertexUv2() {
+  fun setVertexUv2(idx: Int, uv2: Vector2) {
     TODO()
   }
 
-  fun setVertexWeights() {
+  fun setVertexWeights(idx: Int, weights: PoolRealArray) {
     TODO()
   }
 

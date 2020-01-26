@@ -4,6 +4,10 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,11 +21,16 @@ import kotlinx.cinterop.reinterpret
 open class ArrayMesh internal constructor(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
-  fun addBlendShape() {
+  fun addBlendShape(name: String) {
     TODO()
   }
 
-  fun addSurfaceFromArrays() {
+  fun addSurfaceFromArrays(
+    primitive: Int,
+    arrays: VariantArray,
+    blend_shapes: VariantArray,
+    compress_flags: Int
+  ) {
     TODO()
   }
 
@@ -37,7 +46,7 @@ open class ArrayMesh internal constructor(
     TODO()
   }
 
-  fun getBlendShapeName(): String {
+  fun getBlendShapeName(index: Int): String {
     TODO()
   }
 
@@ -45,7 +54,7 @@ open class ArrayMesh internal constructor(
     TODO()
   }
 
-  fun lightmapUnwrap(): Error {
+  fun lightmapUnwrap(transform: Transform, texel_size: Float): Error {
     TODO()
   }
 
@@ -53,47 +62,51 @@ open class ArrayMesh internal constructor(
     TODO()
   }
 
-  fun setBlendShapeMode() {
+  fun setBlendShapeMode(mode: Int) {
     TODO()
   }
 
-  fun setCustomAabb() {
+  fun setCustomAabb(aabb: AABB) {
     TODO()
   }
 
-  fun surfaceFindByName(): Int {
+  fun surfaceFindByName(name: String): Int {
     TODO()
   }
 
-  fun surfaceGetArrayIndexLen(): Int {
+  fun surfaceGetArrayIndexLen(surf_idx: Int): Int {
     TODO()
   }
 
-  fun surfaceGetArrayLen(): Int {
+  fun surfaceGetArrayLen(surf_idx: Int): Int {
     TODO()
   }
 
-  fun surfaceGetFormat(): Int {
+  fun surfaceGetFormat(surf_idx: Int): Int {
     TODO()
   }
 
-  fun surfaceGetName(): String {
+  fun surfaceGetName(surf_idx: Int): String {
     TODO()
   }
 
-  fun surfaceGetPrimitiveType(): Mesh.PrimitiveType {
+  fun surfaceGetPrimitiveType(surf_idx: Int): Mesh.PrimitiveType {
     TODO()
   }
 
-  fun surfaceRemove() {
+  fun surfaceRemove(surf_idx: Int) {
     TODO()
   }
 
-  fun surfaceSetName() {
+  fun surfaceSetName(surf_idx: Int, name: String) {
     TODO()
   }
 
-  fun surfaceUpdateRegion() {
+  fun surfaceUpdateRegion(
+    surf_idx: Int,
+    offset: Int,
+    data: PoolByteArray
+  ) {
     TODO()
   }
 

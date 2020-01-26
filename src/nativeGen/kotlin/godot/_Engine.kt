@@ -60,7 +60,7 @@ open class _Engine internal constructor(
     TODO()
   }
 
-  fun getSingleton(): Object {
+  fun getSingleton(name: String): Object {
     TODO()
   }
 
@@ -76,7 +76,7 @@ open class _Engine internal constructor(
     TODO()
   }
 
-  fun hasSingleton(): Boolean {
+  fun hasSingleton(name: String): Boolean {
     TODO()
   }
 
@@ -88,23 +88,23 @@ open class _Engine internal constructor(
     TODO()
   }
 
-  fun setEditorHint() {
+  fun setEditorHint(enabled: Boolean) {
     TODO()
   }
 
-  fun setIterationsPerSecond() {
+  fun setIterationsPerSecond(iterations_per_second: Int) {
     TODO()
   }
 
-  fun setPhysicsJitterFix() {
+  fun setPhysicsJitterFix(physics_jitter_fix: Float) {
     TODO()
   }
 
-  fun setTargetFps() {
+  fun setTargetFps(target_fps: Int) {
     TODO()
   }
 
-  fun setTimeScale() {
+  fun setTimeScale(time_scale: Float) {
     TODO()
   }
 

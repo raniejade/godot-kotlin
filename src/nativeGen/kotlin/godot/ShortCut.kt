@@ -24,7 +24,7 @@ open class ShortCut internal constructor(
     TODO()
   }
 
-  fun isShortcut(): Boolean {
+  fun isShortcut(event: InputEvent): Boolean {
     TODO()
   }
 
@@ -32,7 +32,7 @@ open class ShortCut internal constructor(
     TODO()
   }
 
-  fun setShortcut() {
+  fun setShortcut(event: InputEvent) {
     TODO()
   }
 

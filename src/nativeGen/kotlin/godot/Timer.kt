@@ -45,27 +45,27 @@ open class Timer internal constructor(
     TODO()
   }
 
-  fun setAutostart() {
+  fun setAutostart(enable: Boolean) {
     TODO()
   }
 
-  fun setOneShot() {
+  fun setOneShot(enable: Boolean) {
     TODO()
   }
 
-  fun setPaused() {
+  fun setPaused(paused: Boolean) {
     TODO()
   }
 
-  fun setTimerProcessMode() {
+  fun setTimerProcessMode(mode: Int) {
     TODO()
   }
 
-  fun setWaitTime() {
+  fun setWaitTime(time_sec: Float) {
     TODO()
   }
 
-  fun start() {
+  fun start(time_sec: Float) {
     TODO()
   }
 

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
@@ -18,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class RegExMatch internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun getEnd(): Int {
+  fun getEnd(name: Variant): Int {
     TODO()
   }
 
@@ -30,11 +31,11 @@ open class RegExMatch internal constructor(
     TODO()
   }
 
-  fun getStart(): Int {
+  fun getStart(name: Variant): Int {
     TODO()
   }
 
-  fun getString(): String {
+  fun getString(name: Variant): String {
     TODO()
   }
 

@@ -29,15 +29,15 @@ open class AudioStreamOGGVorbis internal constructor(
     TODO()
   }
 
-  fun setData() {
+  fun setData(data: PoolByteArray) {
     TODO()
   }
 
-  fun setLoop() {
+  fun setLoop(enable: Boolean) {
     TODO()
   }
 
-  fun setLoopOffset() {
+  fun setLoopOffset(seconds: Float) {
     TODO()
   }
 

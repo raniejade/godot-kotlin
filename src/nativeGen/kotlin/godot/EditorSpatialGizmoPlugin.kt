@@ -2,7 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,23 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class EditorSpatialGizmoPlugin internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addMaterial() {
+  fun addMaterial(name: String, material: SpatialMaterial) {
     TODO()
   }
 
-  fun createHandleMaterial() {
+  fun createHandleMaterial(name: String, billboard: Boolean) {
     TODO()
   }
 
-  fun createIconMaterial() {
+  fun createIconMaterial(
+    name: String,
+    texture: Texture,
+    on_top: Boolean,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun createMaterial() {
+  fun createMaterial(
+    name: String,
+    color: Color,
+    billboard: Boolean,
+    on_top: Boolean,
+    use_vertex_color: Boolean
+  ) {
     TODO()
   }
 
-  fun getMaterial(): SpatialMaterial {
+  fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
     TODO()
   }
 

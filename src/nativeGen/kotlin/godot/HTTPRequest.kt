@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -49,23 +50,29 @@ open class HTTPRequest internal constructor(
     TODO()
   }
 
-  fun request(): Error {
+  fun request(
+    url: String,
+    custom_headers: PoolStringArray,
+    ssl_validate_domain: Boolean,
+    method: Int,
+    request_data: String
+  ): Error {
     TODO()
   }
 
-  fun setBodySizeLimit() {
+  fun setBodySizeLimit(bytes: Int) {
     TODO()
   }
 
-  fun setDownloadFile() {
+  fun setDownloadFile(path: String) {
     TODO()
   }
 
-  fun setMaxRedirects() {
+  fun setMaxRedirects(amount: Int) {
     TODO()
   }
 
-  fun setUseThreads() {
+  fun setUseThreads(enable: Boolean) {
     TODO()
   }
 

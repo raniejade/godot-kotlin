@@ -21,75 +21,91 @@ import kotlinx.cinterop.reinterpret
 open class AnimationTreePlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun addNode() {
+  fun addNode(type: Int, id: String) {
     TODO()
   }
 
-  fun advance() {
+  fun advance(delta: Float) {
     TODO()
   }
 
-  fun animationNodeGetAnimation(): Animation {
+  fun animationNodeGetAnimation(id: String): Animation {
     TODO()
   }
 
-  fun animationNodeGetMasterAnimation(): String {
+  fun animationNodeGetMasterAnimation(id: String): String {
     TODO()
   }
 
-  fun animationNodeGetPosition(): Float {
+  fun animationNodeGetPosition(id: String): Float {
     TODO()
   }
 
-  fun animationNodeSetAnimation() {
+  fun animationNodeSetAnimation(id: String, animation: Animation) {
     TODO()
   }
 
-  fun animationNodeSetFilterPath() {
+  fun animationNodeSetFilterPath(
+    id: String,
+    path: NodePath,
+    enable: Boolean
+  ) {
     TODO()
   }
 
-  fun animationNodeSetMasterAnimation() {
+  fun animationNodeSetMasterAnimation(id: String, source: String) {
     TODO()
   }
 
-  fun areNodesConnected(): Boolean {
+  fun areNodesConnected(
+    id: String,
+    dst_id: String,
+    dst_input_idx: Int
+  ): Boolean {
     TODO()
   }
 
-  fun blend2NodeGetAmount(): Float {
+  fun blend2NodeGetAmount(id: String): Float {
     TODO()
   }
 
-  fun blend2NodeSetAmount() {
+  fun blend2NodeSetAmount(id: String, blend: Float) {
     TODO()
   }
 
-  fun blend2NodeSetFilterPath() {
+  fun blend2NodeSetFilterPath(
+    id: String,
+    path: NodePath,
+    enable: Boolean
+  ) {
     TODO()
   }
 
-  fun blend3NodeGetAmount(): Float {
+  fun blend3NodeGetAmount(id: String): Float {
     TODO()
   }
 
-  fun blend3NodeSetAmount() {
+  fun blend3NodeSetAmount(id: String, blend: Float) {
     TODO()
   }
 
-  fun blend4NodeGetAmount(): Vector2 {
+  fun blend4NodeGetAmount(id: String): Vector2 {
     TODO()
   }
 
-  fun blend4NodeSetAmount() {
+  fun blend4NodeSetAmount(id: String, blend: Vector2) {
     TODO()
   }
 
-  fun connectNodes(): Error {
+  fun connectNodes(
+    id: String,
+    dst_id: String,
+    dst_input_idx: Int
+  ): Error {
     TODO()
   }
 
-  fun disconnectNodes() {
+  fun disconnectNodes(id: String, dst_input_idx: Int) {
     TODO()
   }
 
@@ -113,95 +129,99 @@ open class AnimationTreePlayer internal constructor(
     TODO()
   }
 
-  fun mixNodeGetAmount(): Float {
+  fun mixNodeGetAmount(id: String): Float {
     TODO()
   }
 
-  fun mixNodeSetAmount() {
+  fun mixNodeSetAmount(id: String, ratio: Float) {
     TODO()
   }
 
-  fun nodeExists(): Boolean {
+  fun nodeExists(node: String): Boolean {
     TODO()
   }
 
-  fun nodeGetInputCount(): Int {
+  fun nodeGetInputCount(id: String): Int {
     TODO()
   }
 
-  fun nodeGetInputSource(): String {
+  fun nodeGetInputSource(id: String, idx: Int): String {
     TODO()
   }
 
-  fun nodeGetPosition(): Vector2 {
+  fun nodeGetPosition(id: String): Vector2 {
     TODO()
   }
 
-  fun nodeGetType(): NodeType {
+  fun nodeGetType(id: String): NodeType {
     TODO()
   }
 
-  fun nodeRename(): Error {
+  fun nodeRename(node: String, new_name: String): Error {
     TODO()
   }
 
-  fun nodeSetPosition() {
+  fun nodeSetPosition(id: String, screen_position: Vector2) {
     TODO()
   }
 
-  fun oneshotNodeGetAutorestartDelay(): Float {
+  fun oneshotNodeGetAutorestartDelay(id: String): Float {
     TODO()
   }
 
-  fun oneshotNodeGetAutorestartRandomDelay(): Float {
+  fun oneshotNodeGetAutorestartRandomDelay(id: String): Float {
     TODO()
   }
 
-  fun oneshotNodeGetFadeinTime(): Float {
+  fun oneshotNodeGetFadeinTime(id: String): Float {
     TODO()
   }
 
-  fun oneshotNodeGetFadeoutTime(): Float {
+  fun oneshotNodeGetFadeoutTime(id: String): Float {
     TODO()
   }
 
-  fun oneshotNodeHasAutorestart(): Boolean {
+  fun oneshotNodeHasAutorestart(id: String): Boolean {
     TODO()
   }
 
-  fun oneshotNodeIsActive(): Boolean {
+  fun oneshotNodeIsActive(id: String): Boolean {
     TODO()
   }
 
-  fun oneshotNodeSetAutorestart() {
+  fun oneshotNodeSetAutorestart(id: String, enable: Boolean) {
     TODO()
   }
 
-  fun oneshotNodeSetAutorestartDelay() {
+  fun oneshotNodeSetAutorestartDelay(id: String, delay_sec: Float) {
     TODO()
   }
 
-  fun oneshotNodeSetAutorestartRandomDelay() {
+  fun oneshotNodeSetAutorestartRandomDelay(id: String, rand_sec: Float) {
     TODO()
   }
 
-  fun oneshotNodeSetFadeinTime() {
+  fun oneshotNodeSetFadeinTime(id: String, time_sec: Float) {
     TODO()
   }
 
-  fun oneshotNodeSetFadeoutTime() {
+  fun oneshotNodeSetFadeoutTime(id: String, time_sec: Float) {
     TODO()
   }
 
-  fun oneshotNodeSetFilterPath() {
+  fun oneshotNodeSetFilterPath(
+    id: String,
+    path: NodePath,
+    enable: Boolean
+  ) {
     TODO()
   }
 
-  fun oneshotNodeStart() {
+  fun oneshotNodeStart(id: String) {
     TODO()
   }
 
-  fun oneshotNodeStop() {
+  fun oneshotNodeStop(id: String) {
     TODO()
   }
 
@@ -209,7 +229,7 @@ open class AnimationTreePlayer internal constructor(
     TODO()
   }
 
-  fun removeNode() {
+  fun removeNode(id: String) {
     TODO()
   }
 
@@ -217,67 +237,71 @@ open class AnimationTreePlayer internal constructor(
     TODO()
   }
 
-  fun setActive() {
+  fun setActive(enabled: Boolean) {
     TODO()
   }
 
-  fun setAnimationProcessMode() {
+  fun setAnimationProcessMode(mode: Int) {
     TODO()
   }
 
-  fun setBasePath() {
+  fun setBasePath(path: NodePath) {
     TODO()
   }
 
-  fun setMasterPlayer() {
+  fun setMasterPlayer(nodepath: NodePath) {
     TODO()
   }
 
-  fun timescaleNodeGetScale(): Float {
+  fun timescaleNodeGetScale(id: String): Float {
     TODO()
   }
 
-  fun timescaleNodeSetScale() {
+  fun timescaleNodeSetScale(id: String, scale: Float) {
     TODO()
   }
 
-  fun timeseekNodeSeek() {
+  fun timeseekNodeSeek(id: String, seconds: Float) {
     TODO()
   }
 
-  fun transitionNodeDeleteInput() {
+  fun transitionNodeDeleteInput(id: String, input_idx: Int) {
     TODO()
   }
 
-  fun transitionNodeGetCurrent(): Int {
+  fun transitionNodeGetCurrent(id: String): Int {
     TODO()
   }
 
-  fun transitionNodeGetInputCount(): Int {
+  fun transitionNodeGetInputCount(id: String): Int {
     TODO()
   }
 
-  fun transitionNodeGetXfadeTime(): Float {
+  fun transitionNodeGetXfadeTime(id: String): Float {
     TODO()
   }
 
-  fun transitionNodeHasInputAutoAdvance(): Boolean {
+  fun transitionNodeHasInputAutoAdvance(id: String, input_idx: Int): Boolean {
     TODO()
   }
 
-  fun transitionNodeSetCurrent() {
+  fun transitionNodeSetCurrent(id: String, input_idx: Int) {
     TODO()
   }
 
-  fun transitionNodeSetInputAutoAdvance() {
+  fun transitionNodeSetInputAutoAdvance(
+    id: String,
+    input_idx: Int,
+    enable: Boolean
+  ) {
     TODO()
   }
 
-  fun transitionNodeSetInputCount() {
+  fun transitionNodeSetInputCount(id: String, count: Int) {
     TODO()
   }
 
-  fun transitionNodeSetXfadeTime() {
+  fun transitionNodeSetXfadeTime(id: String, time_sec: Float) {
     TODO()
   }
 

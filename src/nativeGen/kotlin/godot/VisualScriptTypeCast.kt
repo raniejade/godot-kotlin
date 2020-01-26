@@ -23,11 +23,11 @@ open class VisualScriptTypeCast internal constructor(
     TODO()
   }
 
-  fun setBaseScript() {
+  fun setBaseScript(path: String) {
     TODO()
   }
 
-  fun setBaseType() {
+  fun setBaseType(type: String) {
     TODO()
   }
 

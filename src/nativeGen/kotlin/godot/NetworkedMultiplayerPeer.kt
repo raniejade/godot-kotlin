@@ -40,15 +40,15 @@ open class NetworkedMultiplayerPeer internal constructor(
     TODO()
   }
 
-  fun setRefuseNewConnections() {
+  fun setRefuseNewConnections(enable: Boolean) {
     TODO()
   }
 
-  fun setTargetPeer() {
+  fun setTargetPeer(id: Int) {
     TODO()
   }
 
-  fun setTransferMode() {
+  fun setTransferMode(mode: Int) {
     TODO()
   }
 

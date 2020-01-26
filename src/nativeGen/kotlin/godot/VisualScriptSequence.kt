@@ -19,7 +19,7 @@ open class VisualScriptSequence internal constructor(
     TODO()
   }
 
-  fun setSteps() {
+  fun setSteps(steps: Int) {
     TODO()
   }
 

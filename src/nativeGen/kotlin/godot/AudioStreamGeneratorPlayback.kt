@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -16,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamGeneratorPlayback internal constructor(
   _handle: COpaquePointer
 ) : AudioStreamPlaybackResampled(_handle) {
-  fun canPushBuffer(): Boolean {
+  fun canPushBuffer(amount: Int): Boolean {
     TODO()
   }
 
@@ -32,11 +34,11 @@ open class AudioStreamGeneratorPlayback internal constructor(
     TODO()
   }
 
-  fun pushBuffer(): Boolean {
+  fun pushBuffer(frames: PoolVector2Array): Boolean {
     TODO()
   }
 
-  fun pushFrame(): Boolean {
+  fun pushFrame(frame: Vector2): Boolean {
     TODO()
   }
 

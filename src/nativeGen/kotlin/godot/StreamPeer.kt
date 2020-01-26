@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -40,7 +41,7 @@ open class StreamPeer internal constructor(
     TODO()
   }
 
-  fun getData(): VariantArray {
+  fun getData(bytes: Int): VariantArray {
     TODO()
   }
 
@@ -52,11 +53,11 @@ open class StreamPeer internal constructor(
     TODO()
   }
 
-  fun getPartialData(): VariantArray {
+  fun getPartialData(bytes: Int): VariantArray {
     TODO()
   }
 
-  fun getString(): String {
+  fun getString(bytes: Int): String {
     TODO()
   }
 
@@ -76,11 +77,11 @@ open class StreamPeer internal constructor(
     TODO()
   }
 
-  fun getUtf8String(): String {
+  fun getUtf8String(bytes: Int): String {
     TODO()
   }
 
-  fun getVar(): Variant {
+  fun getVar(allow_objects: Boolean): Variant {
     TODO()
   }
 
@@ -88,67 +89,67 @@ open class StreamPeer internal constructor(
     TODO()
   }
 
-  fun put16() {
+  fun put16(value: Int) {
     TODO()
   }
 
-  fun put32() {
+  fun put32(value: Int) {
     TODO()
   }
 
-  fun put64() {
+  fun put64(value: Int) {
     TODO()
   }
 
-  fun put8() {
+  fun put8(value: Int) {
     TODO()
   }
 
-  fun putData(): Error {
+  fun putData(data: PoolByteArray): Error {
     TODO()
   }
 
-  fun putDouble() {
+  fun putDouble(value: Float) {
     TODO()
   }
 
-  fun putFloat() {
+  fun putFloat(value: Float) {
     TODO()
   }
 
-  fun putPartialData(): VariantArray {
+  fun putPartialData(data: PoolByteArray): VariantArray {
     TODO()
   }
 
-  fun putString() {
+  fun putString(value: String) {
     TODO()
   }
 
-  fun putU16() {
+  fun putU16(value: Int) {
     TODO()
   }
 
-  fun putU32() {
+  fun putU32(value: Int) {
     TODO()
   }
 
-  fun putU64() {
+  fun putU64(value: Int) {
     TODO()
   }
 
-  fun putU8() {
+  fun putU8(value: Int) {
     TODO()
   }
 
-  fun putUtf8String() {
+  fun putUtf8String(value: String) {
     TODO()
   }
 
-  fun putVar() {
+  fun putVar(value: Variant, full_objects: Boolean) {
     TODO()
   }
 
-  fun setBigEndian() {
+  fun setBigEndian(enable: Boolean) {
     TODO()
   }
 

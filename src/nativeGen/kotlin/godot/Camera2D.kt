@@ -46,7 +46,7 @@ open class Camera2D internal constructor(
     TODO()
   }
 
-  fun getDragMargin(): Float {
+  fun getDragMargin(margin: Int): Float {
     TODO()
   }
 
@@ -58,7 +58,7 @@ open class Camera2D internal constructor(
     TODO()
   }
 
-  fun getLimit(): Int {
+  fun getLimit(margin: Int): Int {
     TODO()
   }
 
@@ -122,75 +122,75 @@ open class Camera2D internal constructor(
     TODO()
   }
 
-  fun setAnchorMode() {
+  fun setAnchorMode(anchor_mode: Int) {
     TODO()
   }
 
-  fun setCustomViewport() {
+  fun setCustomViewport(viewport: Node) {
     TODO()
   }
 
-  fun setDragMargin() {
+  fun setDragMargin(margin: Int, drag_margin: Float) {
     TODO()
   }
 
-  fun setEnableFollowSmoothing() {
+  fun setEnableFollowSmoothing(follow_smoothing: Boolean) {
     TODO()
   }
 
-  fun setFollowSmoothing() {
+  fun setFollowSmoothing(follow_smoothing: Float) {
     TODO()
   }
 
-  fun setHDragEnabled() {
+  fun setHDragEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setHOffset() {
+  fun setHOffset(ofs: Float) {
     TODO()
   }
 
-  fun setLimit() {
+  fun setLimit(margin: Int, limit: Int) {
     TODO()
   }
 
-  fun setLimitDrawingEnabled() {
+  fun setLimitDrawingEnabled(limit_drawing_enabled: Boolean) {
     TODO()
   }
 
-  fun setLimitSmoothingEnabled() {
+  fun setLimitSmoothingEnabled(limit_smoothing_enabled: Boolean) {
     TODO()
   }
 
-  fun setMarginDrawingEnabled() {
+  fun setMarginDrawingEnabled(margin_drawing_enabled: Boolean) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setProcessMode() {
+  fun setProcessMode(mode: Int) {
     TODO()
   }
 
-  fun setRotating() {
+  fun setRotating(rotating: Boolean) {
     TODO()
   }
 
-  fun setScreenDrawingEnabled() {
+  fun setScreenDrawingEnabled(screen_drawing_enabled: Boolean) {
     TODO()
   }
 
-  fun setVDragEnabled() {
+  fun setVDragEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setVOffset() {
+  fun setVOffset(ofs: Float) {
     TODO()
   }
 
-  fun setZoom() {
+  fun setZoom(zoom: Vector2) {
     TODO()
   }
 

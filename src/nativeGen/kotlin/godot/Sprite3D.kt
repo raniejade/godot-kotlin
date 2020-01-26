@@ -41,27 +41,27 @@ open class Sprite3D internal constructor(
     TODO()
   }
 
-  fun setFrame() {
+  fun setFrame(frame: Int) {
     TODO()
   }
 
-  fun setHframes() {
+  fun setHframes(hframes: Int) {
     TODO()
   }
 
-  fun setRegion() {
+  fun setRegion(enabled: Boolean) {
     TODO()
   }
 
-  fun setRegionRect() {
+  fun setRegionRect(rect: Rect2) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setVframes() {
+  fun setVframes(vframes: Int) {
     TODO()
   }
 

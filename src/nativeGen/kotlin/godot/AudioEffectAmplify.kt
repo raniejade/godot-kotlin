@@ -19,7 +19,7 @@ open class AudioEffectAmplify internal constructor(
     TODO()
   }
 
-  fun setVolumeDb() {
+  fun setVolumeDb(volume: Float) {
     TODO()
   }
 

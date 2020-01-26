@@ -23,11 +23,11 @@ open class MenuButton internal constructor(
     TODO()
   }
 
-  fun setDisableShortcuts() {
+  fun setDisableShortcuts(disabled: Boolean) {
     TODO()
   }
 
-  fun setSwitchOnHover() {
+  fun setSwitchOnHover(enable: Boolean) {
     TODO()
   }
 

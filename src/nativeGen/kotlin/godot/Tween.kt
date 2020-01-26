@@ -3,9 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.Variant
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -17,11 +20,31 @@ import kotlinx.cinterop.reinterpret
 open class Tween internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun followMethod(): Boolean {
+  fun followMethod(
+    `object`: Object,
+    method: String,
+    initial_val: Variant,
+    target: Object,
+    target_method: String,
+    duration: Float,
+    trans_type: Int,
+    ease_type: Int,
+    delay: Float
+  ): Boolean {
     TODO()
   }
 
-  fun followProperty(): Boolean {
+  fun followProperty(
+    `object`: Object,
+    property: NodePath,
+    initial_val: Variant,
+    target: Object,
+    target_property: NodePath,
+    duration: Float,
+    trans_type: Int,
+    ease_type: Int,
+    delay: Float
+  ): Boolean {
     TODO()
   }
 
@@ -37,19 +60,55 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun interpolateCallback(): Boolean {
+  fun interpolateCallback(
+    `object`: Object,
+    duration: Float,
+    callback: String,
+    arg1: Variant,
+    arg2: Variant,
+    arg3: Variant,
+    arg4: Variant,
+    arg5: Variant
+  ): Boolean {
     TODO()
   }
 
-  fun interpolateDeferredCallback(): Boolean {
+  fun interpolateDeferredCallback(
+    `object`: Object,
+    duration: Float,
+    callback: String,
+    arg1: Variant,
+    arg2: Variant,
+    arg3: Variant,
+    arg4: Variant,
+    arg5: Variant
+  ): Boolean {
     TODO()
   }
 
-  fun interpolateMethod(): Boolean {
+  fun interpolateMethod(
+    `object`: Object,
+    method: String,
+    initial_val: Variant,
+    final_val: Variant,
+    duration: Float,
+    trans_type: Int,
+    ease_type: Int,
+    delay: Float
+  ): Boolean {
     TODO()
   }
 
-  fun interpolateProperty(): Boolean {
+  fun interpolateProperty(
+    `object`: Object,
+    property: NodePath,
+    initial_val: Variant,
+    final_val: Variant,
+    duration: Float,
+    trans_type: Int,
+    ease_type: Int,
+    delay: Float
+  ): Boolean {
     TODO()
   }
 
@@ -61,7 +120,7 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun remove(): Boolean {
+  fun remove(`object`: Object, key: String): Boolean {
     TODO()
   }
 
@@ -69,7 +128,7 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun reset(): Boolean {
+  fun reset(`object`: Object, key: String): Boolean {
     TODO()
   }
 
@@ -77,7 +136,7 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun resume(): Boolean {
+  fun resume(`object`: Object, key: String): Boolean {
     TODO()
   }
 
@@ -85,23 +144,23 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun seek(): Boolean {
+  fun seek(time: Float): Boolean {
     TODO()
   }
 
-  fun setActive() {
+  fun setActive(active: Boolean) {
     TODO()
   }
 
-  fun setRepeat() {
+  fun setRepeat(repeat: Boolean) {
     TODO()
   }
 
-  fun setSpeedScale() {
+  fun setSpeedScale(speed: Float) {
     TODO()
   }
 
-  fun setTweenProcessMode() {
+  fun setTweenProcessMode(mode: Int) {
     TODO()
   }
 
@@ -109,7 +168,7 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun stop(): Boolean {
+  fun stop(`object`: Object, key: String): Boolean {
     TODO()
   }
 
@@ -117,11 +176,31 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun targetingMethod(): Boolean {
+  fun targetingMethod(
+    `object`: Object,
+    method: String,
+    initial: Object,
+    initial_method: String,
+    final_val: Variant,
+    duration: Float,
+    trans_type: Int,
+    ease_type: Int,
+    delay: Float
+  ): Boolean {
     TODO()
   }
 
-  fun targetingProperty(): Boolean {
+  fun targetingProperty(
+    `object`: Object,
+    property: NodePath,
+    initial: Object,
+    initial_val: NodePath,
+    final_val: Variant,
+    duration: Float,
+    trans_type: Int,
+    ease_type: Int,
+    delay: Float
+  ): Boolean {
     TODO()
   }
 

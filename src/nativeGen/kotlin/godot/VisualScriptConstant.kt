@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -23,11 +24,11 @@ open class VisualScriptConstant internal constructor(
     TODO()
   }
 
-  fun setConstantType() {
+  fun setConstantType(type: Int) {
     TODO()
   }
 
-  fun setConstantValue() {
+  fun setConstantValue(value: Variant) {
     TODO()
   }
 

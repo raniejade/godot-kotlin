@@ -18,7 +18,7 @@ open class PanoramaSky internal constructor(
     TODO()
   }
 
-  fun setPanorama() {
+  fun setPanorama(texture: Texture) {
     TODO()
   }
 

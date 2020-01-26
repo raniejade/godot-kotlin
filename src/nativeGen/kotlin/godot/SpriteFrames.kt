@@ -7,6 +7,7 @@ import godot.core.PoolStringArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -18,15 +19,19 @@ import kotlinx.cinterop.reinterpret
 open class SpriteFrames internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addAnimation() {
+  fun addAnimation(anim: String) {
     TODO()
   }
 
-  fun addFrame() {
+  fun addFrame(
+    anim: String,
+    frame: Texture,
+    at_position: Int
+  ) {
     TODO()
   }
 
-  fun clear() {
+  fun clear(anim: String) {
     TODO()
   }
 
@@ -34,7 +39,7 @@ open class SpriteFrames internal constructor(
     TODO()
   }
 
-  fun getAnimationLoop(): Boolean {
+  fun getAnimationLoop(anim: String): Boolean {
     TODO()
   }
 
@@ -42,43 +47,47 @@ open class SpriteFrames internal constructor(
     TODO()
   }
 
-  fun getAnimationSpeed(): Float {
+  fun getAnimationSpeed(anim: String): Float {
     TODO()
   }
 
-  fun getFrame(): Texture {
+  fun getFrame(anim: String, idx: Int): Texture {
     TODO()
   }
 
-  fun getFrameCount(): Int {
+  fun getFrameCount(anim: String): Int {
     TODO()
   }
 
-  fun hasAnimation(): Boolean {
+  fun hasAnimation(anim: String): Boolean {
     TODO()
   }
 
-  fun removeAnimation() {
+  fun removeAnimation(anim: String) {
     TODO()
   }
 
-  fun removeFrame() {
+  fun removeFrame(anim: String, idx: Int) {
     TODO()
   }
 
-  fun renameAnimation() {
+  fun renameAnimation(anim: String, newname: String) {
     TODO()
   }
 
-  fun setAnimationLoop() {
+  fun setAnimationLoop(anim: String, loop: Boolean) {
     TODO()
   }
 
-  fun setAnimationSpeed() {
+  fun setAnimationSpeed(anim: String, speed: Float) {
     TODO()
   }
 
-  fun setFrame() {
+  fun setFrame(
+    anim: String,
+    idx: Int,
+    txt: Texture
+  ) {
     TODO()
   }
 

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,7 +23,7 @@ open class Mesh internal constructor(
     TODO()
   }
 
-  fun createOutline(): Mesh {
+  fun createOutline(margin: Float): Mesh {
     TODO()
   }
 
@@ -46,23 +47,23 @@ open class Mesh internal constructor(
     TODO()
   }
 
-  fun setLightmapSizeHint() {
+  fun setLightmapSizeHint(size: Vector2) {
     TODO()
   }
 
-  fun surfaceGetArrays(): VariantArray {
+  fun surfaceGetArrays(surf_idx: Int): VariantArray {
     TODO()
   }
 
-  fun surfaceGetBlendShapeArrays(): VariantArray {
+  fun surfaceGetBlendShapeArrays(surf_idx: Int): VariantArray {
     TODO()
   }
 
-  fun surfaceGetMaterial(): Material {
+  fun surfaceGetMaterial(surf_idx: Int): Material {
     TODO()
   }
 
-  fun surfaceSetMaterial() {
+  fun surfaceSetMaterial(surf_idx: Int, material: Material) {
     TODO()
   }
 

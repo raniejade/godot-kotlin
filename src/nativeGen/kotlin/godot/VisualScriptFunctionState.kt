@@ -4,7 +4,9 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,7 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptFunctionState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun connectToSignal() {
+  fun connectToSignal(
+    obj: Object,
+    signals: String,
+    args: VariantArray
+  ) {
     TODO()
   }
 
@@ -24,7 +30,7 @@ open class VisualScriptFunctionState internal constructor(
     TODO()
   }
 
-  fun resume(): Variant {
+  fun resume(args: VariantArray): Variant {
     TODO()
   }
 

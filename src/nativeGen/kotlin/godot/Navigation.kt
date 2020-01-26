@@ -4,7 +4,9 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector3Array
+import godot.core.Transform
 import godot.core.Vector3
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,23 +19,31 @@ import kotlinx.cinterop.reinterpret
 open class Navigation internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun getClosestPoint(): Vector3 {
+  fun getClosestPoint(to_point: Vector3): Vector3 {
     TODO()
   }
 
-  fun getClosestPointNormal(): Vector3 {
+  fun getClosestPointNormal(to_point: Vector3): Vector3 {
     TODO()
   }
 
-  fun getClosestPointOwner(): Object {
+  fun getClosestPointOwner(to_point: Vector3): Object {
     TODO()
   }
 
-  fun getClosestPointToSegment(): Vector3 {
+  fun getClosestPointToSegment(
+    start: Vector3,
+    end: Vector3,
+    use_collision: Boolean
+  ): Vector3 {
     TODO()
   }
 
-  fun getSimplePath(): PoolVector3Array {
+  fun getSimplePath(
+    start: Vector3,
+    end: Vector3,
+    optimize: Boolean
+  ): PoolVector3Array {
     TODO()
   }
 
@@ -41,19 +51,23 @@ open class Navigation internal constructor(
     TODO()
   }
 
-  fun navmeshAdd(): Int {
+  fun navmeshAdd(
+    mesh: NavigationMesh,
+    xform: Transform,
+    owner: Object
+  ): Int {
     TODO()
   }
 
-  fun navmeshRemove() {
+  fun navmeshRemove(id: Int) {
     TODO()
   }
 
-  fun navmeshSetTransform() {
+  fun navmeshSetTransform(id: Int, xform: Transform) {
     TODO()
   }
 
-  fun setUpVector() {
+  fun setUpVector(up: Vector3) {
     TODO()
   }
 

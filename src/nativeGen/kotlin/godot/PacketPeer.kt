@@ -30,7 +30,7 @@ open class PacketPeer internal constructor(
     TODO()
   }
 
-  fun getVar(): Variant {
+  fun getVar(allow_objects: Boolean): Variant {
     TODO()
   }
 
@@ -38,15 +38,15 @@ open class PacketPeer internal constructor(
     TODO()
   }
 
-  fun putPacket(): Error {
+  fun putPacket(buffer: PoolByteArray): Error {
     TODO()
   }
 
-  fun putVar(): Error {
+  fun putVar(`var`: Variant, full_objects: Boolean): Error {
     TODO()
   }
 
-  fun setAllowObjectDecoding() {
+  fun setAllowObjectDecoding(enable: Boolean) {
     TODO()
   }
 

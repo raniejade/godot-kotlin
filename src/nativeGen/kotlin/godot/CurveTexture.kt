@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -18,11 +19,11 @@ open class CurveTexture internal constructor(
     TODO()
   }
 
-  fun setCurve() {
+  fun setCurve(curve: Curve) {
     TODO()
   }
 
-  fun setWidth() {
+  fun setWidth(width: Int) {
     TODO()
   }
 

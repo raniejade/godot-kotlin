@@ -18,11 +18,19 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeGroupBase internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  fun addInputPort() {
+  fun addInputPort(
+    id: Int,
+    type: Int,
+    name: String
+  ) {
     TODO()
   }
 
-  fun addOutputPort() {
+  fun addOutputPort(
+    id: Int,
+    type: Int,
+    name: String
+  ) {
     TODO()
   }
 
@@ -34,7 +42,7 @@ open class VisualShaderNodeGroupBase internal constructor(
     TODO()
   }
 
-  fun getControl(): Control {
+  fun getControl(index: Int): Control {
     TODO()
   }
 
@@ -66,51 +74,51 @@ open class VisualShaderNodeGroupBase internal constructor(
     TODO()
   }
 
-  fun hasInputPort(): Boolean {
+  fun hasInputPort(id: Int): Boolean {
     TODO()
   }
 
-  fun hasOutputPort(): Boolean {
+  fun hasOutputPort(id: Int): Boolean {
     TODO()
   }
 
-  fun removeInputPort() {
+  fun removeInputPort(id: Int) {
     TODO()
   }
 
-  fun removeOutputPort() {
+  fun removeOutputPort(id: Int) {
     TODO()
   }
 
-  fun setControl() {
+  fun setControl(control: Control, index: Int) {
     TODO()
   }
 
-  fun setInputPortName() {
+  fun setInputPortName(arg0: Int, arg1: String) {
     TODO()
   }
 
-  fun setInputPortType() {
+  fun setInputPortType(arg0: Int, arg1: Int) {
     TODO()
   }
 
-  fun setInputs() {
+  fun setInputs(inputs: String) {
     TODO()
   }
 
-  fun setOutputPortName() {
+  fun setOutputPortName(arg0: Int, arg1: String) {
     TODO()
   }
 
-  fun setOutputPortType() {
+  fun setOutputPortType(arg0: Int, arg1: Int) {
     TODO()
   }
 
-  fun setOutputs() {
+  fun setOutputs(outputs: String) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2) {
     TODO()
   }
 

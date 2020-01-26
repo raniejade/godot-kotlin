@@ -19,7 +19,7 @@ open class CanvasModulate internal constructor(
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 

@@ -32,19 +32,19 @@ open class AtlasTexture internal constructor(
     TODO()
   }
 
-  fun setAtlas() {
+  fun setAtlas(atlas: Texture) {
     TODO()
   }
 
-  fun setFilterClip() {
+  fun setFilterClip(enable: Boolean) {
     TODO()
   }
 
-  fun setMargin() {
+  fun setMargin(margin: Rect2) {
     TODO()
   }
 
-  fun setRegion() {
+  fun setRegion(region: Rect2) {
     TODO()
   }
 

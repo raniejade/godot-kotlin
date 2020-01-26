@@ -28,15 +28,15 @@ open class VisualScriptComment internal constructor(
     TODO()
   }
 
-  fun setDescription() {
+  fun setDescription(description: String) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2) {
     TODO()
   }
 
-  fun setTitle() {
+  fun setTitle(title: String) {
     TODO()
   }
 

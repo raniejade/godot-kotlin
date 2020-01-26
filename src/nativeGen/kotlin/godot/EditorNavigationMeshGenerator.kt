@@ -14,11 +14,11 @@ import kotlinx.cinterop.reinterpret
 open class EditorNavigationMeshGenerator internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun bake() {
+  fun bake(nav_mesh: NavigationMesh, root_node: Node) {
     TODO()
   }
 
-  fun clear() {
+  fun clear(nav_mesh: NavigationMesh) {
     TODO()
   }
 

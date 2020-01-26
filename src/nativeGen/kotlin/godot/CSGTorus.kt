@@ -41,27 +41,27 @@ open class CSGTorus internal constructor(
     TODO()
   }
 
-  fun setInnerRadius() {
+  fun setInnerRadius(radius: Float) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setOuterRadius() {
+  fun setOuterRadius(radius: Float) {
     TODO()
   }
 
-  fun setRingSides() {
+  fun setRingSides(sides: Int) {
     TODO()
   }
 
-  fun setSides() {
+  fun setSides(sides: Int) {
     TODO()
   }
 
-  fun setSmoothFaces() {
+  fun setSmoothFaces(smooth_faces: Boolean) {
     TODO()
   }
 

@@ -29,15 +29,15 @@ open class DynamicFontData internal constructor(
     TODO()
   }
 
-  fun setAntialiased() {
+  fun setAntialiased(antialiased: Boolean) {
     TODO()
   }
 
-  fun setFontPath() {
+  fun setFontPath(path: String) {
     TODO()
   }
 
-  fun setHinting() {
+  fun setHinting(mode: Int) {
     TODO()
   }
 

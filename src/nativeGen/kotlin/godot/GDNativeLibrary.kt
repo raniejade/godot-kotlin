@@ -41,23 +41,23 @@ open class GDNativeLibrary internal constructor(
     TODO()
   }
 
-  fun setConfigFile() {
+  fun setConfigFile(config_file: ConfigFile) {
     TODO()
   }
 
-  fun setLoadOnce() {
+  fun setLoadOnce(load_once: Boolean) {
     TODO()
   }
 
-  fun setReloadable() {
+  fun setReloadable(reloadable: Boolean) {
     TODO()
   }
 
-  fun setSingleton() {
+  fun setSingleton(singleton: Boolean) {
     TODO()
   }
 
-  fun setSymbolPrefix() {
+  fun setSymbolPrefix(symbol_prefix: String) {
     TODO()
   }
 

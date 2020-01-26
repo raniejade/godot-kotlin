@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -23,11 +24,11 @@ open class VisualScriptOperator internal constructor(
     TODO()
   }
 
-  fun setOperator() {
+  fun setOperator(op: Int) {
     TODO()
   }
 
-  fun setTyped() {
+  fun setTyped(type: Int) {
     TODO()
   }
 

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.Vector3
 import kotlin.Int
 import kotlin.String
@@ -17,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class ProximityGroup internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun broadcast() {
+  fun broadcast(name: String, parameters: Variant) {
     TODO()
   }
 
@@ -33,15 +34,15 @@ open class ProximityGroup internal constructor(
     TODO()
   }
 
-  fun setDispatchMode() {
+  fun setDispatchMode(mode: Int) {
     TODO()
   }
 
-  fun setGridRadius() {
+  fun setGridRadius(radius: Vector3) {
     TODO()
   }
 
-  fun setGroupName() {
+  fun setGroupName(name: String) {
     TODO()
   }
 

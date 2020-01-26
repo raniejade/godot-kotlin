@@ -19,7 +19,7 @@ open class ViewportTexture internal constructor(
     TODO()
   }
 
-  fun setViewportPathInScene() {
+  fun setViewportPathInScene(path: NodePath) {
     TODO()
   }
 

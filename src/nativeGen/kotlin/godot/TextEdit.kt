@@ -21,15 +21,20 @@ import kotlinx.cinterop.reinterpret
 open class TextEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun addColorRegion() {
+  fun addColorRegion(
+    begin_key: String,
+    end_key: String,
+    color: Color,
+    line_only: Boolean
+  ) {
     TODO()
   }
 
-  fun addKeywordColor() {
+  fun addKeywordColor(keyword: String, color: Color) {
     TODO()
   }
 
-  fun canFold(): Boolean {
+  fun canFold(line: Int): Boolean {
     TODO()
   }
 
@@ -65,23 +70,28 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun cursorSetBlinkEnabled() {
+  fun cursorSetBlinkEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun cursorSetBlinkSpeed() {
+  fun cursorSetBlinkSpeed(blink_speed: Float) {
     TODO()
   }
 
-  fun cursorSetBlockMode() {
+  fun cursorSetBlockMode(enable: Boolean) {
     TODO()
   }
 
-  fun cursorSetColumn() {
+  fun cursorSetColumn(column: Int, adjust_viewport: Boolean) {
     TODO()
   }
 
-  fun cursorSetLine() {
+  fun cursorSetLine(
+    line: Int,
+    adjust_viewport: Boolean,
+    can_be_hidden: Boolean,
+    wrap_index: Int
+  ) {
     TODO()
   }
 
@@ -97,7 +107,7 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun foldLine() {
+  fun foldLine(line: Int) {
     TODO()
   }
 
@@ -105,11 +115,11 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun getKeywordColor(): Color {
+  fun getKeywordColor(keyword: String): Color {
     TODO()
   }
 
-  fun getLine(): String {
+  fun getLine(line: Int): String {
     TODO()
   }
 
@@ -153,11 +163,11 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun hasKeywordColor(): Boolean {
+  fun hasKeywordColor(keyword: String): Boolean {
     TODO()
   }
 
-  fun insertTextAtCursor() {
+  fun insertTextAtCursor(text: String) {
     TODO()
   }
 
@@ -181,7 +191,7 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun isFolded(): Boolean {
+  fun isFolded(line: Int): Boolean {
     TODO()
   }
 
@@ -197,7 +207,7 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun isLineHidden(): Boolean {
+  fun isLineHidden(line: Int): Boolean {
     TODO()
   }
 
@@ -233,7 +243,7 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun menuOption() {
+  fun menuOption(option: Int) {
     TODO()
   }
 
@@ -249,11 +259,21 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun search(): PoolIntArray {
+  fun search(
+    key: String,
+    flags: Int,
+    from_line: Int,
+    from_column: Int
+  ): PoolIntArray {
     TODO()
   }
 
-  fun select() {
+  fun select(
+    from_line: Int,
+    from_column: Int,
+    to_line: Int,
+    to_column: Int
+  ) {
     TODO()
   }
 
@@ -261,79 +281,79 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun setBreakpointGutterEnabled() {
+  fun setBreakpointGutterEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setContextMenuEnabled() {
+  fun setContextMenuEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setDrawFoldGutter() {
+  fun setDrawFoldGutter(arg0: Boolean) {
     TODO()
   }
 
-  fun setDrawSpaces() {
+  fun setDrawSpaces(arg0: Boolean) {
     TODO()
   }
 
-  fun setDrawTabs() {
+  fun setDrawTabs(arg0: Boolean) {
     TODO()
   }
 
-  fun setHidingEnabled() {
+  fun setHidingEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setHighlightAllOccurrences() {
+  fun setHighlightAllOccurrences(enable: Boolean) {
     TODO()
   }
 
-  fun setHighlightCurrentLine() {
+  fun setHighlightCurrentLine(enabled: Boolean) {
     TODO()
   }
 
-  fun setLineAsHidden() {
+  fun setLineAsHidden(line: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setOverrideSelectedFontColor() {
+  fun setOverrideSelectedFontColor(override: Boolean) {
     TODO()
   }
 
-  fun setReadonly() {
+  fun setReadonly(enable: Boolean) {
     TODO()
   }
 
-  fun setRightClickMovesCaret() {
+  fun setRightClickMovesCaret(enable: Boolean) {
     TODO()
   }
 
-  fun setShowLineNumbers() {
+  fun setShowLineNumbers(enable: Boolean) {
     TODO()
   }
 
-  fun setSmoothScrollEnable() {
+  fun setSmoothScrollEnable(enable: Boolean) {
     TODO()
   }
 
-  fun setSyntaxColoring() {
+  fun setSyntaxColoring(enable: Boolean) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 
-  fun setVScrollSpeed() {
+  fun setVScrollSpeed(speed: Float) {
     TODO()
   }
 
-  fun setWrapEnabled() {
+  fun setWrapEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun toggleFoldLine() {
+  fun toggleFoldLine(line: Int) {
     TODO()
   }
 
@@ -341,7 +361,7 @@ open class TextEdit internal constructor(
     TODO()
   }
 
-  fun unfoldLine() {
+  fun unfoldLine(line: Int) {
     TODO()
   }
 

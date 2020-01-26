@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.PoolStringArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -22,23 +23,23 @@ open class Theme internal constructor(
     TODO()
   }
 
-  fun clearColor() {
+  fun clearColor(name: String, type: String) {
     TODO()
   }
 
-  fun clearConstant() {
+  fun clearConstant(name: String, type: String) {
     TODO()
   }
 
-  fun clearFont() {
+  fun clearFont(name: String, type: String) {
     TODO()
   }
 
-  fun clearIcon() {
+  fun clearIcon(name: String, type: String) {
     TODO()
   }
 
-  fun clearStylebox() {
+  fun clearStylebox(name: String, type: String) {
     TODO()
   }
 
@@ -46,23 +47,23 @@ open class Theme internal constructor(
     TODO()
   }
 
-  fun copyTheme() {
+  fun copyTheme(other: Theme) {
     TODO()
   }
 
-  fun getColor(): Color {
+  fun getColor(name: String, type: String): Color {
     TODO()
   }
 
-  fun getColorList(): PoolStringArray {
+  fun getColorList(type: String): PoolStringArray {
     TODO()
   }
 
-  fun getConstant(): Int {
+  fun getConstant(name: String, type: String): Int {
     TODO()
   }
 
-  fun getConstantList(): PoolStringArray {
+  fun getConstantList(type: String): PoolStringArray {
     TODO()
   }
 
@@ -70,27 +71,27 @@ open class Theme internal constructor(
     TODO()
   }
 
-  fun getFont(): Font {
+  fun getFont(name: String, type: String): Font {
     TODO()
   }
 
-  fun getFontList(): PoolStringArray {
+  fun getFontList(type: String): PoolStringArray {
     TODO()
   }
 
-  fun getIcon(): Texture {
+  fun getIcon(name: String, type: String): Texture {
     TODO()
   }
 
-  fun getIconList(): PoolStringArray {
+  fun getIconList(type: String): PoolStringArray {
     TODO()
   }
 
-  fun getStylebox(): StyleBox {
+  fun getStylebox(name: String, type: String): StyleBox {
     TODO()
   }
 
-  fun getStyleboxList(): PoolStringArray {
+  fun getStyleboxList(type: String): PoolStringArray {
     TODO()
   }
 
@@ -98,51 +99,71 @@ open class Theme internal constructor(
     TODO()
   }
 
-  fun getTypeList(): PoolStringArray {
+  fun getTypeList(type: String): PoolStringArray {
     TODO()
   }
 
-  fun hasColor(): Boolean {
+  fun hasColor(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasConstant(): Boolean {
+  fun hasConstant(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasFont(): Boolean {
+  fun hasFont(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasIcon(): Boolean {
+  fun hasIcon(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasStylebox(): Boolean {
+  fun hasStylebox(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(
+    name: String,
+    type: String,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun setConstant() {
+  fun setConstant(
+    name: String,
+    type: String,
+    constant: Int
+  ) {
     TODO()
   }
 
-  fun setDefaultFont() {
+  fun setDefaultFont(font: Font) {
     TODO()
   }
 
-  fun setFont() {
+  fun setFont(
+    name: String,
+    type: String,
+    font: Font
+  ) {
     TODO()
   }
 
-  fun setIcon() {
+  fun setIcon(
+    name: String,
+    type: String,
+    texture: Texture
+  ) {
     TODO()
   }
 
-  fun setStylebox() {
+  fun setStylebox(
+    name: String,
+    type: String,
+    texture: StyleBox
+  ) {
     TODO()
   }
 

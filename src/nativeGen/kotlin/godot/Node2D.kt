@@ -19,11 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class Node2D internal constructor(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
-  fun applyScale() {
+  fun applyScale(ratio: Vector2) {
     TODO()
   }
 
-  fun getAngleTo(): Float {
+  fun getAngleTo(point: Vector2): Float {
     TODO()
   }
 
@@ -47,7 +47,7 @@ open class Node2D internal constructor(
     TODO()
   }
 
-  fun getRelativeTransformToParent(): Transform2D {
+  fun getRelativeTransformToParent(parent: Node): Transform2D {
     TODO()
   }
 
@@ -67,7 +67,7 @@ open class Node2D internal constructor(
     TODO()
   }
 
-  fun globalTranslate() {
+  fun globalTranslate(offset: Vector2) {
     TODO()
   }
 
@@ -75,79 +75,79 @@ open class Node2D internal constructor(
     TODO()
   }
 
-  fun lookAt() {
+  fun lookAt(point: Vector2) {
     TODO()
   }
 
-  fun moveLocalX() {
+  fun moveLocalX(delta: Float, scaled: Boolean) {
     TODO()
   }
 
-  fun moveLocalY() {
+  fun moveLocalY(delta: Float, scaled: Boolean) {
     TODO()
   }
 
-  fun rotate() {
+  fun rotate(radians: Float) {
     TODO()
   }
 
-  fun setGlobalPosition() {
+  fun setGlobalPosition(position: Vector2) {
     TODO()
   }
 
-  fun setGlobalRotation() {
+  fun setGlobalRotation(radians: Float) {
     TODO()
   }
 
-  fun setGlobalRotationDegrees() {
+  fun setGlobalRotationDegrees(degrees: Float) {
     TODO()
   }
 
-  fun setGlobalScale() {
+  fun setGlobalScale(scale: Vector2) {
     TODO()
   }
 
-  fun setGlobalTransform() {
+  fun setGlobalTransform(xform: Transform2D) {
     TODO()
   }
 
-  fun setPosition() {
+  fun setPosition(position: Vector2) {
     TODO()
   }
 
-  fun setRotation() {
+  fun setRotation(radians: Float) {
     TODO()
   }
 
-  fun setRotationDegrees() {
+  fun setRotationDegrees(degrees: Float) {
     TODO()
   }
 
-  fun setScale() {
+  fun setScale(scale: Vector2) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(xform: Transform2D) {
     TODO()
   }
 
-  fun setZAsRelative() {
+  fun setZAsRelative(enable: Boolean) {
     TODO()
   }
 
-  fun setZIndex() {
+  fun setZIndex(z_index: Int) {
     TODO()
   }
 
-  fun toGlobal(): Vector2 {
+  fun toGlobal(local_point: Vector2): Vector2 {
     TODO()
   }
 
-  fun toLocal(): Vector2 {
+  fun toLocal(global_point: Vector2): Vector2 {
     TODO()
   }
 
-  fun translate() {
+  fun translate(offset: Vector2) {
     TODO()
   }
 

@@ -23,11 +23,11 @@ open class GraphNode internal constructor(
     TODO()
   }
 
-  fun clearSlot() {
+  fun clearSlot(idx: Int) {
     TODO()
   }
 
-  fun getConnectionInputColor(): Color {
+  fun getConnectionInputColor(idx: Int): Color {
     TODO()
   }
 
@@ -35,15 +35,15 @@ open class GraphNode internal constructor(
     TODO()
   }
 
-  fun getConnectionInputPosition(): Vector2 {
+  fun getConnectionInputPosition(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getConnectionInputType(): Int {
+  fun getConnectionInputType(idx: Int): Int {
     TODO()
   }
 
-  fun getConnectionOutputColor(): Color {
+  fun getConnectionOutputColor(idx: Int): Color {
     TODO()
   }
 
@@ -51,11 +51,11 @@ open class GraphNode internal constructor(
     TODO()
   }
 
-  fun getConnectionOutputPosition(): Vector2 {
+  fun getConnectionOutputPosition(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getConnectionOutputType(): Int {
+  fun getConnectionOutputType(idx: Int): Int {
     TODO()
   }
 
@@ -67,19 +67,19 @@ open class GraphNode internal constructor(
     TODO()
   }
 
-  fun getSlotColorLeft(): Color {
+  fun getSlotColorLeft(idx: Int): Color {
     TODO()
   }
 
-  fun getSlotColorRight(): Color {
+  fun getSlotColorRight(idx: Int): Color {
     TODO()
   }
 
-  fun getSlotTypeLeft(): Int {
+  fun getSlotTypeLeft(idx: Int): Int {
     TODO()
   }
 
-  fun getSlotTypeRight(): Int {
+  fun getSlotTypeRight(idx: Int): Int {
     TODO()
   }
 
@@ -103,43 +103,53 @@ open class GraphNode internal constructor(
     TODO()
   }
 
-  fun isSlotEnabledLeft(): Boolean {
+  fun isSlotEnabledLeft(idx: Int): Boolean {
     TODO()
   }
 
-  fun isSlotEnabledRight(): Boolean {
+  fun isSlotEnabledRight(idx: Int): Boolean {
     TODO()
   }
 
-  fun setComment() {
+  fun setComment(comment: Boolean) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setOverlay() {
+  fun setOverlay(overlay: Int) {
     TODO()
   }
 
-  fun setResizable() {
+  fun setResizable(resizable: Boolean) {
     TODO()
   }
 
-  fun setSelected() {
+  fun setSelected(selected: Boolean) {
     TODO()
   }
 
-  fun setShowCloseButton() {
+  fun setShowCloseButton(show: Boolean) {
     TODO()
   }
 
-  fun setSlot() {
+  fun setSlot(
+    idx: Int,
+    enable_left: Boolean,
+    type_left: Int,
+    color_left: Color,
+    enable_right: Boolean,
+    type_right: Int,
+    color_right: Color,
+    custom_left: Texture,
+    custom_right: Texture
+  ) {
     TODO()
   }
 
-  fun setTitle() {
+  fun setTitle(title: String) {
     TODO()
   }
 

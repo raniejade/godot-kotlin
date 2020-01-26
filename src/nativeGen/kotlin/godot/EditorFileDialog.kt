@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
-  fun addFilter() {
+  fun addFilter(filter: String) {
     TODO()
   }
 
@@ -65,35 +65,35 @@ open class EditorFileDialog internal constructor(
     TODO()
   }
 
-  fun setAccess() {
+  fun setAccess(access: Int) {
     TODO()
   }
 
-  fun setCurrentDir() {
+  fun setCurrentDir(dir: String) {
     TODO()
   }
 
-  fun setCurrentFile() {
+  fun setCurrentFile(file: String) {
     TODO()
   }
 
-  fun setCurrentPath() {
+  fun setCurrentPath(path: String) {
     TODO()
   }
 
-  fun setDisableOverwriteWarning() {
+  fun setDisableOverwriteWarning(disable: Boolean) {
     TODO()
   }
 
-  fun setDisplayMode() {
+  fun setDisplayMode(mode: Int) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setShowHiddenFiles() {
+  fun setShowHiddenFiles(show: Boolean) {
     TODO()
   }
 

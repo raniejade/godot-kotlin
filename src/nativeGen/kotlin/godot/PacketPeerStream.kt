@@ -27,15 +27,15 @@ open class PacketPeerStream internal constructor(
     TODO()
   }
 
-  fun setInputBufferMaxSize() {
+  fun setInputBufferMaxSize(max_size_bytes: Int) {
     TODO()
   }
 
-  fun setOutputBufferMaxSize() {
+  fun setOutputBufferMaxSize(max_size_bytes: Int) {
     TODO()
   }
 
-  fun setStreamPeer() {
+  fun setStreamPeer(peer: StreamPeer) {
     TODO()
   }
 

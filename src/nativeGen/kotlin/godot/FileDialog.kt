@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class FileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
-  fun addFilter() {
+  fun addFilter(filter: String) {
     TODO()
   }
 
@@ -74,35 +74,35 @@ open class FileDialog internal constructor(
     TODO()
   }
 
-  fun setAccess() {
+  fun setAccess(access: Int) {
     TODO()
   }
 
-  fun setCurrentDir() {
+  fun setCurrentDir(dir: String) {
     TODO()
   }
 
-  fun setCurrentFile() {
+  fun setCurrentFile(file: String) {
     TODO()
   }
 
-  fun setCurrentPath() {
+  fun setCurrentPath(path: String) {
     TODO()
   }
 
-  fun setFilters() {
+  fun setFilters(filters: PoolStringArray) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setModeOverridesTitle() {
+  fun setModeOverridesTitle(override: Boolean) {
     TODO()
   }
 
-  fun setShowHiddenFiles() {
+  fun setShowHiddenFiles(show: Boolean) {
     TODO()
   }
 

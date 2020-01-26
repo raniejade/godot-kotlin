@@ -28,15 +28,15 @@ open class DirectionalLight internal constructor(
     TODO()
   }
 
-  fun setBlendSplits() {
+  fun setBlendSplits(enabled: Boolean) {
     TODO()
   }
 
-  fun setShadowDepthRange() {
+  fun setShadowDepthRange(mode: Int) {
     TODO()
   }
 
-  fun setShadowMode() {
+  fun setShadowMode(mode: Int) {
     TODO()
   }
 

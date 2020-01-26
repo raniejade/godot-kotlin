@@ -19,11 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class Gradient internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addPoint() {
+  fun addPoint(offset: Float, color: Color) {
     TODO()
   }
 
-  fun getColor(): Color {
+  fun getColor(point: Int): Color {
     TODO()
   }
 
@@ -31,7 +31,7 @@ open class Gradient internal constructor(
     TODO()
   }
 
-  fun getOffset(): Float {
+  fun getOffset(point: Int): Float {
     TODO()
   }
 
@@ -43,27 +43,27 @@ open class Gradient internal constructor(
     TODO()
   }
 
-  fun interpolate(): Color {
+  fun interpolate(offset: Float): Color {
     TODO()
   }
 
-  fun removePoint() {
+  fun removePoint(offset: Int) {
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(point: Int, color: Color) {
     TODO()
   }
 
-  fun setColors() {
+  fun setColors(colors: PoolColorArray) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(point: Int, offset: Float) {
     TODO()
   }
 
-  fun setOffsets() {
+  fun setOffsets(offsets: PoolRealArray) {
     TODO()
   }
 

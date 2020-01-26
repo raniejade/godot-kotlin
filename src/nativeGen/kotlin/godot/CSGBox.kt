@@ -31,19 +31,19 @@ open class CSGBox internal constructor(
     TODO()
   }
 
-  fun setDepth() {
+  fun setDepth(depth: Float) {
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Float) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setWidth() {
+  fun setWidth(width: Float) {
     TODO()
   }
 

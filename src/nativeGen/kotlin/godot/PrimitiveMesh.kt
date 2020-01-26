@@ -33,15 +33,15 @@ open class PrimitiveMesh internal constructor(
     TODO()
   }
 
-  fun setCustomAabb() {
+  fun setCustomAabb(aabb: AABB) {
     TODO()
   }
 
-  fun setFlipFaces() {
+  fun setFlipFaces(flip_faces: Boolean) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 

@@ -15,7 +15,7 @@ import kotlinx.cinterop.reinterpret
 open class EditorSelection internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addNode() {
+  fun addNode(node: Node) {
     TODO()
   }
 
@@ -31,7 +31,7 @@ open class EditorSelection internal constructor(
     TODO()
   }
 
-  fun removeNode() {
+  fun removeNode(node: Node) {
     TODO()
   }
 

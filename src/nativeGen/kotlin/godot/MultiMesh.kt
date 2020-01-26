@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolRealArray
 import godot.core.Transform
 import godot.core.Transform2D
 import kotlin.Int
@@ -31,7 +32,7 @@ open class MultiMesh internal constructor(
     TODO()
   }
 
-  fun getInstanceColor(): Color {
+  fun getInstanceColor(instance: Int): Color {
     TODO()
   }
 
@@ -39,15 +40,15 @@ open class MultiMesh internal constructor(
     TODO()
   }
 
-  fun getInstanceCustomData(): Color {
+  fun getInstanceCustomData(instance: Int): Color {
     TODO()
   }
 
-  fun getInstanceTransform(): Transform {
+  fun getInstanceTransform(instance: Int): Transform {
     TODO()
   }
 
-  fun getInstanceTransform2d(): Transform2D {
+  fun getInstanceTransform2d(instance: Int): Transform2D {
     TODO()
   }
 
@@ -63,47 +64,47 @@ open class MultiMesh internal constructor(
     TODO()
   }
 
-  fun setAsBulkArray() {
+  fun setAsBulkArray(array: PoolRealArray) {
     TODO()
   }
 
-  fun setColorFormat() {
+  fun setColorFormat(format: Int) {
     TODO()
   }
 
-  fun setCustomDataFormat() {
+  fun setCustomDataFormat(format: Int) {
     TODO()
   }
 
-  fun setInstanceColor() {
+  fun setInstanceColor(instance: Int, color: Color) {
     TODO()
   }
 
-  fun setInstanceCount() {
+  fun setInstanceCount(count: Int) {
     TODO()
   }
 
-  fun setInstanceCustomData() {
+  fun setInstanceCustomData(instance: Int, custom_data: Color) {
     TODO()
   }
 
-  fun setInstanceTransform() {
+  fun setInstanceTransform(instance: Int, transform: Transform) {
     TODO()
   }
 
-  fun setInstanceTransform2d() {
+  fun setInstanceTransform2d(instance: Int, transform: Transform2D) {
     TODO()
   }
 
-  fun setMesh() {
+  fun setMesh(mesh: Mesh) {
     TODO()
   }
 
-  fun setTransformFormat() {
+  fun setTransformFormat(format: Int) {
     TODO()
   }
 
-  fun setVisibleInstanceCount() {
+  fun setVisibleInstanceCount(count: Int) {
     TODO()
   }
 

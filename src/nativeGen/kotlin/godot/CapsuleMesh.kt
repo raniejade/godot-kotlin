@@ -32,19 +32,19 @@ open class CapsuleMesh internal constructor(
     TODO()
   }
 
-  fun setMidHeight() {
+  fun setMidHeight(mid_height: Float) {
     TODO()
   }
 
-  fun setRadialSegments() {
+  fun setRadialSegments(segments: Int) {
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(radius: Float) {
     TODO()
   }
 
-  fun setRings() {
+  fun setRings(rings: Int) {
     TODO()
   }
 

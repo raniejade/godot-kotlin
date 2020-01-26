@@ -22,7 +22,7 @@ open class RegEx internal constructor(
     TODO()
   }
 
-  fun compile(): Error {
+  fun compile(pattern: String): Error {
     TODO()
   }
 
@@ -42,15 +42,29 @@ open class RegEx internal constructor(
     TODO()
   }
 
-  fun search(): RegExMatch {
+  fun search(
+    subject: String,
+    offset: Int,
+    end: Int
+  ): RegExMatch {
     TODO()
   }
 
-  fun searchAll(): VariantArray {
+  fun searchAll(
+    subject: String,
+    offset: Int,
+    end: Int
+  ): VariantArray {
     TODO()
   }
 
-  fun sub(): String {
+  fun sub(
+    subject: String,
+    replacement: String,
+    all: Boolean,
+    offset: Int,
+    end: Int
+  ): String {
     TODO()
   }
 

@@ -26,15 +26,15 @@ open class MeshInstance2D internal constructor(
     TODO()
   }
 
-  fun setMesh() {
+  fun setMesh(mesh: Mesh) {
     TODO()
   }
 
-  fun setNormalMap() {
+  fun setNormalMap(normal_map: Texture) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 

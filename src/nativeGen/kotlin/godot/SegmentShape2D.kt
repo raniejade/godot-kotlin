@@ -23,11 +23,11 @@ open class SegmentShape2D internal constructor(
     TODO()
   }
 
-  fun setA() {
+  fun setA(a: Vector2) {
     TODO()
   }
 
-  fun setB() {
+  fun setB(b: Vector2) {
     TODO()
   }
 

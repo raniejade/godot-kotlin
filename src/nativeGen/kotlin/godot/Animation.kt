@@ -5,9 +5,11 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolIntArray
+import godot.core.Quat
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -23,79 +25,123 @@ import kotlinx.cinterop.reinterpret
 open class Animation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addTrack(): Int {
+  fun addTrack(type: Int, at_position: Int): Int {
     TODO()
   }
 
-  fun animationTrackGetKeyAnimation(): String {
+  fun animationTrackGetKeyAnimation(idx: Int, key_idx: Int): String {
     TODO()
   }
 
-  fun animationTrackInsertKey(): Int {
+  fun animationTrackInsertKey(
+    track: Int,
+    time: Float,
+    animation: String
+  ): Int {
     TODO()
   }
 
-  fun animationTrackSetKeyAnimation() {
+  fun animationTrackSetKeyAnimation(
+    idx: Int,
+    key_idx: Int,
+    animation: String
+  ) {
     TODO()
   }
 
-  fun audioTrackGetKeyEndOffset(): Float {
+  fun audioTrackGetKeyEndOffset(idx: Int, key_idx: Int): Float {
     TODO()
   }
 
-  fun audioTrackGetKeyStartOffset(): Float {
+  fun audioTrackGetKeyStartOffset(idx: Int, key_idx: Int): Float {
     TODO()
   }
 
-  fun audioTrackGetKeyStream(): Resource {
+  fun audioTrackGetKeyStream(idx: Int, key_idx: Int): Resource {
     TODO()
   }
 
-  fun audioTrackInsertKey(): Int {
+  fun audioTrackInsertKey(
+    track: Int,
+    time: Float,
+    stream: Resource,
+    start_offset: Float,
+    end_offset: Float
+  ): Int {
     TODO()
   }
 
-  fun audioTrackSetKeyEndOffset() {
+  fun audioTrackSetKeyEndOffset(
+    idx: Int,
+    key_idx: Int,
+    offset: Float
+  ) {
     TODO()
   }
 
-  fun audioTrackSetKeyStartOffset() {
+  fun audioTrackSetKeyStartOffset(
+    idx: Int,
+    key_idx: Int,
+    offset: Float
+  ) {
     TODO()
   }
 
-  fun audioTrackSetKeyStream() {
+  fun audioTrackSetKeyStream(
+    idx: Int,
+    key_idx: Int,
+    stream: Resource
+  ) {
     TODO()
   }
 
-  fun bezierTrackGetKeyInHandle(): Vector2 {
+  fun bezierTrackGetKeyInHandle(idx: Int, key_idx: Int): Vector2 {
     TODO()
   }
 
-  fun bezierTrackGetKeyOutHandle(): Vector2 {
+  fun bezierTrackGetKeyOutHandle(idx: Int, key_idx: Int): Vector2 {
     TODO()
   }
 
-  fun bezierTrackGetKeyValue(): Float {
+  fun bezierTrackGetKeyValue(idx: Int, key_idx: Int): Float {
     TODO()
   }
 
-  fun bezierTrackInsertKey(): Int {
+  fun bezierTrackInsertKey(
+    track: Int,
+    time: Float,
+    value: Float,
+    in_handle: Vector2,
+    out_handle: Vector2
+  ): Int {
     TODO()
   }
 
-  fun bezierTrackInterpolate(): Float {
+  fun bezierTrackInterpolate(track: Int, time: Float): Float {
     TODO()
   }
 
-  fun bezierTrackSetKeyInHandle() {
+  fun bezierTrackSetKeyInHandle(
+    idx: Int,
+    key_idx: Int,
+    in_handle: Vector2
+  ) {
     TODO()
   }
 
-  fun bezierTrackSetKeyOutHandle() {
+  fun bezierTrackSetKeyOutHandle(
+    idx: Int,
+    key_idx: Int,
+    out_handle: Vector2
+  ) {
     TODO()
   }
 
-  fun bezierTrackSetKeyValue() {
+  fun bezierTrackSetKeyValue(
+    idx: Int,
+    key_idx: Int,
+    value: Float
+  ) {
     TODO()
   }
 
@@ -103,11 +149,11 @@ open class Animation internal constructor(
     TODO()
   }
 
-  fun copyTrack() {
+  fun copyTrack(track: Int, to_animation: Animation) {
     TODO()
   }
 
-  fun findTrack(): Int {
+  fun findTrack(path: NodePath): Int {
     TODO()
   }
 
@@ -127,155 +173,190 @@ open class Animation internal constructor(
     TODO()
   }
 
-  fun methodTrackGetKeyIndices(): PoolIntArray {
+  fun methodTrackGetKeyIndices(
+    idx: Int,
+    time_sec: Float,
+    delta: Float
+  ): PoolIntArray {
     TODO()
   }
 
-  fun methodTrackGetName(): String {
+  fun methodTrackGetName(idx: Int, key_idx: Int): String {
     TODO()
   }
 
-  fun methodTrackGetParams(): VariantArray {
+  fun methodTrackGetParams(idx: Int, key_idx: Int): VariantArray {
     TODO()
   }
 
-  fun removeTrack() {
+  fun removeTrack(idx: Int) {
     TODO()
   }
 
-  fun setLength() {
+  fun setLength(time_sec: Float) {
     TODO()
   }
 
-  fun setLoop() {
+  fun setLoop(enabled: Boolean) {
     TODO()
   }
 
-  fun setStep() {
+  fun setStep(size_sec: Float) {
     TODO()
   }
 
-  fun trackFindKey(): Int {
+  fun trackFindKey(
+    idx: Int,
+    time: Float,
+    exact: Boolean
+  ): Int {
     TODO()
   }
 
-  fun trackGetInterpolationLoopWrap(): Boolean {
+  fun trackGetInterpolationLoopWrap(idx: Int): Boolean {
     TODO()
   }
 
-  fun trackGetInterpolationType(): InterpolationType {
+  fun trackGetInterpolationType(idx: Int): InterpolationType {
     TODO()
   }
 
-  fun trackGetKeyCount(): Int {
+  fun trackGetKeyCount(idx: Int): Int {
     TODO()
   }
 
-  fun trackGetKeyTime(): Float {
+  fun trackGetKeyTime(idx: Int, key_idx: Int): Float {
     TODO()
   }
 
-  fun trackGetKeyTransition(): Float {
+  fun trackGetKeyTransition(idx: Int, key_idx: Int): Float {
     TODO()
   }
 
-  fun trackGetKeyValue(): Variant {
+  fun trackGetKeyValue(idx: Int, key_idx: Int): Variant {
     TODO()
   }
 
-  fun trackGetPath(): NodePath {
+  fun trackGetPath(idx: Int): NodePath {
     TODO()
   }
 
-  fun trackGetType(): TrackType {
+  fun trackGetType(idx: Int): TrackType {
     TODO()
   }
 
-  fun trackInsertKey() {
+  fun trackInsertKey(
+    idx: Int,
+    time: Float,
+    key: Variant,
+    transition: Float
+  ) {
     TODO()
   }
 
-  fun trackIsEnabled(): Boolean {
+  fun trackIsEnabled(idx: Int): Boolean {
     TODO()
   }
 
-  fun trackIsImported(): Boolean {
+  fun trackIsImported(idx: Int): Boolean {
     TODO()
   }
 
-  fun trackMoveDown() {
+  fun trackMoveDown(idx: Int) {
     TODO()
   }
 
-  fun trackMoveTo() {
+  fun trackMoveTo(idx: Int, to_idx: Int) {
     TODO()
   }
 
-  fun trackMoveUp() {
+  fun trackMoveUp(idx: Int) {
     TODO()
   }
 
-  fun trackRemoveKey() {
+  fun trackRemoveKey(idx: Int, key_idx: Int) {
     TODO()
   }
 
-  fun trackRemoveKeyAtPosition() {
+  fun trackRemoveKeyAtPosition(idx: Int, position: Float) {
     TODO()
   }
 
-  fun trackSetEnabled() {
+  fun trackSetEnabled(idx: Int, enabled: Boolean) {
     TODO()
   }
 
-  fun trackSetImported() {
+  fun trackSetImported(idx: Int, imported: Boolean) {
     TODO()
   }
 
-  fun trackSetInterpolationLoopWrap() {
+  fun trackSetInterpolationLoopWrap(idx: Int, interpolation: Boolean) {
     TODO()
   }
 
-  fun trackSetInterpolationType() {
+  fun trackSetInterpolationType(idx: Int, interpolation: Int) {
     TODO()
   }
 
-  fun trackSetKeyTime() {
+  fun trackSetKeyTime(
+    idx: Int,
+    key_idx: Int,
+    time: Float
+  ) {
     TODO()
   }
 
-  fun trackSetKeyTransition() {
+  fun trackSetKeyTransition(
+    idx: Int,
+    key_idx: Int,
+    transition: Float
+  ) {
     TODO()
   }
 
-  fun trackSetKeyValue() {
+  fun trackSetKeyValue(
+    idx: Int,
+    key: Int,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun trackSetPath() {
+  fun trackSetPath(idx: Int, path: NodePath) {
     TODO()
   }
 
-  fun trackSwap() {
+  fun trackSwap(idx: Int, with_idx: Int) {
     TODO()
   }
 
-  fun transformTrackInsertKey(): Int {
+  fun transformTrackInsertKey(
+    idx: Int,
+    time: Float,
+    location: Vector3,
+    rotation: Quat,
+    scale: Vector3
+  ): Int {
     TODO()
   }
 
-  fun transformTrackInterpolate(): VariantArray {
+  fun transformTrackInterpolate(idx: Int, time_sec: Float): VariantArray {
     TODO()
   }
 
-  fun valueTrackGetKeyIndices(): PoolIntArray {
+  fun valueTrackGetKeyIndices(
+    idx: Int,
+    time_sec: Float,
+    delta: Float
+  ): PoolIntArray {
     TODO()
   }
 
-  fun valueTrackGetUpdateMode(): UpdateMode {
+  fun valueTrackGetUpdateMode(idx: Int): UpdateMode {
     TODO()
   }
 
-  fun valueTrackSetUpdateMode() {
+  fun valueTrackSetUpdateMode(idx: Int, mode: Int) {
     TODO()
   }
 

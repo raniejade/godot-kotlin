@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
 import godot.core.Transform
 import godot.core.VariantArray
 import kotlin.Boolean
@@ -19,11 +20,11 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun addBone() {
+  fun addBone(name: String) {
     TODO()
   }
 
-  fun bindChildNodeToBone() {
+  fun bindChildNodeToBone(bone_idx: Int, node: Node) {
     TODO()
   }
 
@@ -31,7 +32,7 @@ open class Skeleton internal constructor(
     TODO()
   }
 
-  fun findBone(): Int {
+  fun findBone(name: String): Int {
     TODO()
   }
 
@@ -39,39 +40,39 @@ open class Skeleton internal constructor(
     TODO()
   }
 
-  fun getBoneCustomPose(): Transform {
+  fun getBoneCustomPose(bone_idx: Int): Transform {
     TODO()
   }
 
-  fun getBoneGlobalPose(): Transform {
+  fun getBoneGlobalPose(bone_idx: Int): Transform {
     TODO()
   }
 
-  fun getBoneName(): String {
+  fun getBoneName(bone_idx: Int): String {
     TODO()
   }
 
-  fun getBoneParent(): Int {
+  fun getBoneParent(bone_idx: Int): Int {
     TODO()
   }
 
-  fun getBonePose(): Transform {
+  fun getBonePose(bone_idx: Int): Transform {
     TODO()
   }
 
-  fun getBoneRest(): Transform {
+  fun getBoneRest(bone_idx: Int): Transform {
     TODO()
   }
 
-  fun getBoneTransform(): Transform {
+  fun getBoneTransform(bone_idx: Int): Transform {
     TODO()
   }
 
-  fun getBoundChildNodesToBone(): VariantArray {
+  fun getBoundChildNodesToBone(bone_idx: Int): VariantArray {
     TODO()
   }
 
-  fun isBoneRestDisabled(): Boolean {
+  fun isBoneRestDisabled(bone_idx: Int): Boolean {
     TODO()
   }
 
@@ -83,15 +84,15 @@ open class Skeleton internal constructor(
     TODO()
   }
 
-  fun physicalBonesAddCollisionException() {
+  fun physicalBonesAddCollisionException(exception: RID) {
     TODO()
   }
 
-  fun physicalBonesRemoveCollisionException() {
+  fun physicalBonesRemoveCollisionException(exception: RID) {
     TODO()
   }
 
-  fun physicalBonesStartSimulation() {
+  fun physicalBonesStartSimulation(bones: VariantArray) {
     TODO()
   }
 
@@ -99,43 +100,43 @@ open class Skeleton internal constructor(
     TODO()
   }
 
-  fun setBoneCustomPose() {
+  fun setBoneCustomPose(bone_idx: Int, custom_pose: Transform) {
     TODO()
   }
 
-  fun setBoneDisableRest() {
+  fun setBoneDisableRest(bone_idx: Int, disable: Boolean) {
     TODO()
   }
 
-  fun setBoneGlobalPose() {
+  fun setBoneGlobalPose(bone_idx: Int, pose: Transform) {
     TODO()
   }
 
-  fun setBoneIgnoreAnimation() {
+  fun setBoneIgnoreAnimation(bone: Int, ignore: Boolean) {
     TODO()
   }
 
-  fun setBoneParent() {
+  fun setBoneParent(bone_idx: Int, parent_idx: Int) {
     TODO()
   }
 
-  fun setBonePose() {
+  fun setBonePose(bone_idx: Int, pose: Transform) {
     TODO()
   }
 
-  fun setBoneRest() {
+  fun setBoneRest(bone_idx: Int, rest: Transform) {
     TODO()
   }
 
-  fun setUseBonesInWorldTransform() {
+  fun setUseBonesInWorldTransform(enable: Boolean) {
     TODO()
   }
 
-  fun unbindChildNodeFromBone() {
+  fun unbindChildNodeFromBone(bone_idx: Int, node: Node) {
     TODO()
   }
 
-  fun unparentBoneAndRest() {
+  fun unparentBoneAndRest(bone_idx: Int) {
     TODO()
   }
 

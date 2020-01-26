@@ -33,7 +33,7 @@ open class SpriteBase3D internal constructor(
     TODO()
   }
 
-  fun getDrawFlag(): Boolean {
+  fun getDrawFlag(flag: Int): Boolean {
     TODO()
   }
 
@@ -69,43 +69,43 @@ open class SpriteBase3D internal constructor(
     TODO()
   }
 
-  fun setAlphaCutMode() {
+  fun setAlphaCutMode(mode: Int) {
     TODO()
   }
 
-  fun setAxis() {
+  fun setAxis(axis: Int) {
     TODO()
   }
 
-  fun setCentered() {
+  fun setCentered(centered: Boolean) {
     TODO()
   }
 
-  fun setDrawFlag() {
+  fun setDrawFlag(flag: Int, enabled: Boolean) {
     TODO()
   }
 
-  fun setFlipH() {
+  fun setFlipH(flip_h: Boolean) {
     TODO()
   }
 
-  fun setFlipV() {
+  fun setFlipV(flip_v: Boolean) {
     TODO()
   }
 
-  fun setModulate() {
+  fun setModulate(modulate: Color) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setOpacity() {
+  fun setOpacity(opacity: Float) {
     TODO()
   }
 
-  fun setPixelSize() {
+  fun setPixelSize(pixel_size: Float) {
     TODO()
   }
 

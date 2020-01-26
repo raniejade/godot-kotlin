@@ -8,7 +8,9 @@ import godot.core.PoolByteArray
 import godot.core.Rect2
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -20,23 +22,41 @@ import kotlinx.cinterop.reinterpret
 open class Image internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun blendRect() {
+  fun blendRect(
+    src: Image,
+    src_rect: Rect2,
+    dst: Vector2
+  ) {
     TODO()
   }
 
-  fun blendRectMask() {
+  fun blendRectMask(
+    src: Image,
+    mask: Image,
+    src_rect: Rect2,
+    dst: Vector2
+  ) {
     TODO()
   }
 
-  fun blitRect() {
+  fun blitRect(
+    src: Image,
+    src_rect: Rect2,
+    dst: Vector2
+  ) {
     TODO()
   }
 
-  fun blitRectMask() {
+  fun blitRectMask(
+    src: Image,
+    mask: Image,
+    src_rect: Rect2,
+    dst: Vector2
+  ) {
     TODO()
   }
 
-  fun bumpmapToNormalmap() {
+  fun bumpmapToNormalmap(bump_scale: Float) {
     TODO()
   }
 
@@ -44,27 +64,42 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun compress(): Error {
+  fun compress(
+    mode: Int,
+    source: Int,
+    lossy_quality: Float
+  ): Error {
     TODO()
   }
 
-  fun convert() {
+  fun convert(format: Int) {
     TODO()
   }
 
-  fun copyFrom() {
+  fun copyFrom(src: Image) {
     TODO()
   }
 
-  fun create() {
+  fun create(
+    width: Int,
+    height: Int,
+    use_mipmaps: Boolean,
+    format: Int
+  ) {
     TODO()
   }
 
-  fun createFromData() {
+  fun createFromData(
+    width: Int,
+    height: Int,
+    use_mipmaps: Boolean,
+    format: Int,
+    data: PoolByteArray
+  ) {
     TODO()
   }
 
-  fun crop() {
+  fun crop(width: Int, height: Int) {
     TODO()
   }
 
@@ -80,7 +115,7 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun fill() {
+  fun fill(color: Color) {
     TODO()
   }
 
@@ -96,7 +131,7 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun generateMipmaps(): Error {
+  fun generateMipmaps(renormalize: Boolean): Error {
     TODO()
   }
 
@@ -112,19 +147,19 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun getMipmapOffset(): Int {
+  fun getMipmapOffset(mipmap: Int): Int {
     TODO()
   }
 
-  fun getPixel(): Color {
+  fun getPixel(x: Int, y: Int): Color {
     TODO()
   }
 
-  fun getPixelv(): Color {
+  fun getPixelv(src: Vector2): Color {
     TODO()
   }
 
-  fun getRect(): Image {
+  fun getRect(rect: Rect2): Image {
     TODO()
   }
 
@@ -156,19 +191,19 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun load(): Error {
+  fun load(path: String): Error {
     TODO()
   }
 
-  fun loadJpgFromBuffer(): Error {
+  fun loadJpgFromBuffer(buffer: PoolByteArray): Error {
     TODO()
   }
 
-  fun loadPngFromBuffer(): Error {
+  fun loadPngFromBuffer(buffer: PoolByteArray): Error {
     TODO()
   }
 
-  fun loadWebpFromBuffer(): Error {
+  fun loadWebpFromBuffer(buffer: PoolByteArray): Error {
     TODO()
   }
 
@@ -184,11 +219,15 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun resize() {
+  fun resize(
+    width: Int,
+    height: Int,
+    interpolation: Int
+  ) {
     TODO()
   }
 
-  fun resizeToPo2() {
+  fun resizeToPo2(square: Boolean) {
     TODO()
   }
 
@@ -196,15 +235,19 @@ open class Image internal constructor(
     TODO()
   }
 
-  fun savePng(): Error {
+  fun savePng(path: String): Error {
     TODO()
   }
 
-  fun setPixel() {
+  fun setPixel(
+    x: Int,
+    y: Int,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun setPixelv() {
+  fun setPixelv(dst: Vector2, color: Color) {
     TODO()
   }
 

@@ -35,11 +35,11 @@ open class World internal constructor(
     TODO()
   }
 
-  fun setEnvironment() {
+  fun setEnvironment(env: Environment) {
     TODO()
   }
 
-  fun setFallbackEnvironment() {
+  fun setFallbackEnvironment(env: Environment) {
     TODO()
   }
 

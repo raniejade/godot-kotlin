@@ -53,39 +53,39 @@ open class Physics2DShapeQueryParameters internal constructor(
     TODO()
   }
 
-  fun setCollideWithAreas() {
+  fun setCollideWithAreas(enable: Boolean) {
     TODO()
   }
 
-  fun setCollideWithBodies() {
+  fun setCollideWithBodies(enable: Boolean) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(collision_layer: Int) {
     TODO()
   }
 
-  fun setExclude() {
+  fun setExclude(exclude: VariantArray) {
     TODO()
   }
 
-  fun setMargin() {
+  fun setMargin(margin: Float) {
     TODO()
   }
 
-  fun setMotion() {
+  fun setMotion(motion: Vector2) {
     TODO()
   }
 
-  fun setShape() {
+  fun setShape(shape: Resource) {
     TODO()
   }
 
-  fun setShapeRid() {
+  fun setShapeRid(shape: RID) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(transform: Transform2D) {
     TODO()
   }
 

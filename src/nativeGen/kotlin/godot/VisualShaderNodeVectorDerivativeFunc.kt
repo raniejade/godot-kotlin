@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorDerivativeFunc internal constructor(
     TODO()
   }
 
-  fun setFunction() {
+  fun setFunction(func: Int) {
     TODO()
   }
 

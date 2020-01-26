@@ -19,7 +19,7 @@ open class AudioEffectPanner internal constructor(
     TODO()
   }
 
-  fun setPan() {
+  fun setPan(cpanume: Float) {
     TODO()
   }
 

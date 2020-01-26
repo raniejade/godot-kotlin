@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxTexture internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
-  fun getExpandMarginSize(): Float {
+  fun getExpandMarginSize(margin: Int): Float {
     TODO()
   }
 
@@ -27,7 +27,7 @@ open class StyleBoxTexture internal constructor(
     TODO()
   }
 
-  fun getMarginSize(): Float {
+  fun getMarginSize(margin: Int): Float {
     TODO()
   }
 
@@ -55,47 +55,52 @@ open class StyleBoxTexture internal constructor(
     TODO()
   }
 
-  fun setDrawCenter() {
+  fun setDrawCenter(enable: Boolean) {
     TODO()
   }
 
-  fun setExpandMarginAll() {
+  fun setExpandMarginAll(size: Float) {
     TODO()
   }
 
-  fun setExpandMarginIndividual() {
+  fun setExpandMarginIndividual(
+    size_left: Float,
+    size_top: Float,
+    size_right: Float,
+    size_bottom: Float
+  ) {
     TODO()
   }
 
-  fun setExpandMarginSize() {
+  fun setExpandMarginSize(margin: Int, size: Float) {
     TODO()
   }
 
-  fun setHAxisStretchMode() {
+  fun setHAxisStretchMode(mode: Int) {
     TODO()
   }
 
-  fun setMarginSize() {
+  fun setMarginSize(margin: Int, size: Float) {
     TODO()
   }
 
-  fun setModulate() {
+  fun setModulate(color: Color) {
     TODO()
   }
 
-  fun setNormalMap() {
+  fun setNormalMap(normal_map: Texture) {
     TODO()
   }
 
-  fun setRegionRect() {
+  fun setRegionRect(region: Rect2) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setVAxisStretchMode() {
+  fun setVAxisStretchMode(mode: Int) {
     TODO()
   }
 

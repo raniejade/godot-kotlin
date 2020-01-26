@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,27 +23,27 @@ open class Popup internal constructor(
     TODO()
   }
 
-  fun popup() {
+  fun popup(bounds: Rect2) {
     TODO()
   }
 
-  fun popupCentered() {
+  fun popupCentered(size: Vector2) {
     TODO()
   }
 
-  fun popupCenteredClamped() {
+  fun popupCenteredClamped(size: Vector2, fallback_ratio: Float) {
     TODO()
   }
 
-  fun popupCenteredMinsize() {
+  fun popupCenteredMinsize(minsize: Vector2) {
     TODO()
   }
 
-  fun popupCenteredRatio() {
+  fun popupCenteredRatio(ratio: Float) {
     TODO()
   }
 
-  fun setExclusive() {
+  fun setExclusive(enable: Boolean) {
     TODO()
   }
 

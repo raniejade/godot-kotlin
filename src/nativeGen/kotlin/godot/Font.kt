@@ -2,10 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.RID
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -17,11 +21,25 @@ import kotlinx.cinterop.reinterpret
 open class Font internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun draw() {
+  fun draw(
+    canvas_item: RID,
+    position: Vector2,
+    string: String,
+    modulate: Color,
+    clip_w: Int,
+    outline_modulate: Color
+  ) {
     TODO()
   }
 
-  fun drawChar(): Float {
+  fun drawChar(
+    canvas_item: RID,
+    position: Vector2,
+    char: Int,
+    next: Int,
+    modulate: Color,
+    outline: Boolean
+  ): Float {
     TODO()
   }
 
@@ -37,11 +55,11 @@ open class Font internal constructor(
     TODO()
   }
 
-  fun getStringSize(): Vector2 {
+  fun getStringSize(string: String): Vector2 {
     TODO()
   }
 
-  fun getWordwrapStringSize(): Vector2 {
+  fun getWordwrapStringSize(string: String, p_width: Float): Vector2 {
     TODO()
   }
 

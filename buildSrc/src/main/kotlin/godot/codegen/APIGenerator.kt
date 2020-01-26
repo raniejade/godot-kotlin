@@ -205,12 +205,8 @@ class APIGenerator {
   private fun TypeSpec.Builder.generateMethods(methods: List<GDMethod>): TypeSpec.Builder {
     val methodSpecs = methods.filter { method -> !method.is_virtual }
       .map { method ->
-        val name = normalizeTypeName(method.return_type)
-        val returnType = toClassName(name, TypeRegistry.get(name[0]))
-//        val parameters = method.arguments.map { argument ->
-//          val parametertype =
-//          ParameterSpec.builder()
-//        }
+        val returnTypeName = normalizeTypeName(method.return_type)
+        val returnType = toClassName(returnTypeName, TypeRegistry.get(returnTypeName[0]))
 
         val methodName = normalizeMethodName(method.name)
         val builder = FunSpec.builder(methodName)
@@ -222,6 +218,16 @@ class APIGenerator {
         if (returnType != null) {
           builder.returns(returnType)
         }
+
+        val parameters = method.arguments.map { argument ->
+          val argumentName = argument.name
+          val argumentTypeName = normalizeTypeName(argument.type)
+          val argumentType = checkNotNull(toClassName(argumentTypeName, TypeRegistry.get(argumentTypeName[0])))
+          ParameterSpec.builder(argumentName, argumentType)
+            .build()
+        }
+
+        builder.addParameters(parameters)
 
         builder.addCode("""
           TODO()

@@ -17,27 +17,27 @@ import kotlinx.cinterop.reinterpret
 open class Generic6DOFJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  fun getFlagX(): Boolean {
+  fun getFlagX(flag: Int): Boolean {
     TODO()
   }
 
-  fun getFlagY(): Boolean {
+  fun getFlagY(flag: Int): Boolean {
     TODO()
   }
 
-  fun getFlagZ(): Boolean {
+  fun getFlagZ(flag: Int): Boolean {
     TODO()
   }
 
-  fun getParamX(): Float {
+  fun getParamX(param: Int): Float {
     TODO()
   }
 
-  fun getParamY(): Float {
+  fun getParamY(param: Int): Float {
     TODO()
   }
 
-  fun getParamZ(): Float {
+  fun getParamZ(param: Int): Float {
     TODO()
   }
 
@@ -45,31 +45,31 @@ open class Generic6DOFJoint internal constructor(
     TODO()
   }
 
-  fun setFlagX() {
+  fun setFlagX(flag: Int, value: Boolean) {
     TODO()
   }
 
-  fun setFlagY() {
+  fun setFlagY(flag: Int, value: Boolean) {
     TODO()
   }
 
-  fun setFlagZ() {
+  fun setFlagZ(flag: Int, value: Boolean) {
     TODO()
   }
 
-  fun setParamX() {
+  fun setParamX(param: Int, value: Float) {
     TODO()
   }
 
-  fun setParamY() {
+  fun setParamY(param: Int, value: Float) {
     TODO()
   }
 
-  fun setParamZ() {
+  fun setParamZ(param: Int, value: Float) {
     TODO()
   }
 
-  fun setPrecision() {
+  fun setPrecision(precision: Int) {
     TODO()
   }
 

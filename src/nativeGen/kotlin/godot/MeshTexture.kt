@@ -27,15 +27,15 @@ open class MeshTexture internal constructor(
     TODO()
   }
 
-  fun setBaseTexture() {
+  fun setBaseTexture(texture: Texture) {
     TODO()
   }
 
-  fun setImageSize() {
+  fun setImageSize(size: Vector2) {
     TODO()
   }
 
-  fun setMesh() {
+  fun setMesh(mesh: Mesh) {
     TODO()
   }
 

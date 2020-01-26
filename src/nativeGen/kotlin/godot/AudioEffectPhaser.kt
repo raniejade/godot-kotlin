@@ -35,23 +35,23 @@ open class AudioEffectPhaser internal constructor(
     TODO()
   }
 
-  fun setDepth() {
+  fun setDepth(depth: Float) {
     TODO()
   }
 
-  fun setFeedback() {
+  fun setFeedback(fbk: Float) {
     TODO()
   }
 
-  fun setRangeMaxHz() {
+  fun setRangeMaxHz(hz: Float) {
     TODO()
   }
 
-  fun setRangeMinHz() {
+  fun setRangeMinHz(hz: Float) {
     TODO()
   }
 
-  fun setRateHz() {
+  fun setRateHz(hz: Float) {
     TODO()
   }
 

@@ -20,7 +20,12 @@ import kotlinx.cinterop.reinterpret
 open class Curve3D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addPoint() {
+  fun addPoint(
+    position: Vector3,
+    `in`: Vector3,
+    out: Vector3,
+    at_position: Int
+  ) {
     TODO()
   }
 
@@ -48,11 +53,11 @@ open class Curve3D internal constructor(
     TODO()
   }
 
-  fun getClosestOffset(): Float {
+  fun getClosestOffset(to_point: Vector3): Float {
     TODO()
   }
 
-  fun getClosestPoint(): Vector3 {
+  fun getClosestPoint(to_point: Vector3): Vector3 {
     TODO()
   }
 
@@ -60,35 +65,35 @@ open class Curve3D internal constructor(
     TODO()
   }
 
-  fun getPointIn(): Vector3 {
+  fun getPointIn(idx: Int): Vector3 {
     TODO()
   }
 
-  fun getPointOut(): Vector3 {
+  fun getPointOut(idx: Int): Vector3 {
     TODO()
   }
 
-  fun getPointPosition(): Vector3 {
+  fun getPointPosition(idx: Int): Vector3 {
     TODO()
   }
 
-  fun getPointTilt(): Float {
+  fun getPointTilt(idx: Int): Float {
     TODO()
   }
 
-  fun interpolate(): Vector3 {
+  fun interpolate(idx: Int, t: Float): Vector3 {
     TODO()
   }
 
-  fun interpolateBaked(): Vector3 {
+  fun interpolateBaked(offset: Float, cubic: Boolean): Vector3 {
     TODO()
   }
 
-  fun interpolateBakedUpVector(): Vector3 {
+  fun interpolateBakedUpVector(offset: Float, apply_tilt: Boolean): Vector3 {
     TODO()
   }
 
-  fun interpolatef(): Vector3 {
+  fun interpolatef(fofs: Float): Vector3 {
     TODO()
   }
 
@@ -96,35 +101,35 @@ open class Curve3D internal constructor(
     TODO()
   }
 
-  fun removePoint() {
+  fun removePoint(idx: Int) {
     TODO()
   }
 
-  fun setBakeInterval() {
+  fun setBakeInterval(distance: Float) {
     TODO()
   }
 
-  fun setPointIn() {
+  fun setPointIn(idx: Int, position: Vector3) {
     TODO()
   }
 
-  fun setPointOut() {
+  fun setPointOut(idx: Int, position: Vector3) {
     TODO()
   }
 
-  fun setPointPosition() {
+  fun setPointPosition(idx: Int, position: Vector3) {
     TODO()
   }
 
-  fun setPointTilt() {
+  fun setPointTilt(idx: Int, tilt: Float) {
     TODO()
   }
 
-  fun setUpVectorEnabled() {
+  fun setUpVectorEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun tessellate(): PoolVector3Array {
+  fun tessellate(max_stages: Int, tolerance_degrees: Float): PoolVector3Array {
     TODO()
   }
 

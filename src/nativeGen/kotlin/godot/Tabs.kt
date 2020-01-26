@@ -18,11 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class Tabs internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun addTab() {
+  fun addTab(title: String, icon: Texture) {
     TODO()
   }
 
-  fun ensureTabVisible() {
+  fun ensureTabVisible(idx: Int) {
     TODO()
   }
 
@@ -58,11 +58,11 @@ open class Tabs internal constructor(
     TODO()
   }
 
-  fun getTabDisabled(): Boolean {
+  fun getTabDisabled(tab_idx: Int): Boolean {
     TODO()
   }
 
-  fun getTabIcon(): Texture {
+  fun getTabIcon(tab_idx: Int): Texture {
     TODO()
   }
 
@@ -70,11 +70,11 @@ open class Tabs internal constructor(
     TODO()
   }
 
-  fun getTabRect(): Rect2 {
+  fun getTabRect(tab_idx: Int): Rect2 {
     TODO()
   }
 
-  fun getTabTitle(): String {
+  fun getTabTitle(tab_idx: Int): String {
     TODO()
   }
 
@@ -82,51 +82,51 @@ open class Tabs internal constructor(
     TODO()
   }
 
-  fun moveTab() {
+  fun moveTab(from: Int, to: Int) {
     TODO()
   }
 
-  fun removeTab() {
+  fun removeTab(tab_idx: Int) {
     TODO()
   }
 
-  fun setCurrentTab() {
+  fun setCurrentTab(tab_idx: Int) {
     TODO()
   }
 
-  fun setDragToRearrangeEnabled() {
+  fun setDragToRearrangeEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setScrollingEnabled() {
+  fun setScrollingEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setSelectWithRmb() {
+  fun setSelectWithRmb(enabled: Boolean) {
     TODO()
   }
 
-  fun setTabAlign() {
+  fun setTabAlign(align: Int) {
     TODO()
   }
 
-  fun setTabCloseDisplayPolicy() {
+  fun setTabCloseDisplayPolicy(policy: Int) {
     TODO()
   }
 
-  fun setTabDisabled() {
+  fun setTabDisabled(tab_idx: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setTabIcon() {
+  fun setTabIcon(tab_idx: Int, icon: Texture) {
     TODO()
   }
 
-  fun setTabTitle() {
+  fun setTabTitle(tab_idx: Int, title: String) {
     TODO()
   }
 
-  fun setTabsRearrangeGroup() {
+  fun setTabsRearrangeGroup(group_id: Int) {
     TODO()
   }
 

@@ -21,27 +21,27 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DDirectBodyState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addCentralForce() {
+  fun addCentralForce(force: Vector2) {
     TODO()
   }
 
-  fun addForce() {
+  fun addForce(offset: Vector2, force: Vector2) {
     TODO()
   }
 
-  fun addTorque() {
+  fun addTorque(torque: Float) {
     TODO()
   }
 
-  fun applyCentralImpulse() {
+  fun applyCentralImpulse(impulse: Vector2) {
     TODO()
   }
 
-  fun applyImpulse() {
+  fun applyImpulse(offset: Vector2, impulse: Vector2) {
     TODO()
   }
 
-  fun applyTorqueImpulse() {
+  fun applyTorqueImpulse(impulse: Float) {
     TODO()
   }
 
@@ -49,31 +49,31 @@ open class Physics2DDirectBodyState internal constructor(
     TODO()
   }
 
-  fun getContactCollider(): RID {
+  fun getContactCollider(contact_idx: Int): RID {
     TODO()
   }
 
-  fun getContactColliderId(): Int {
+  fun getContactColliderId(contact_idx: Int): Int {
     TODO()
   }
 
-  fun getContactColliderObject(): Object {
+  fun getContactColliderObject(contact_idx: Int): Object {
     TODO()
   }
 
-  fun getContactColliderPosition(): Vector2 {
+  fun getContactColliderPosition(contact_idx: Int): Vector2 {
     TODO()
   }
 
-  fun getContactColliderShape(): Int {
+  fun getContactColliderShape(contact_idx: Int): Int {
     TODO()
   }
 
-  fun getContactColliderShapeMetadata(): Variant {
+  fun getContactColliderShapeMetadata(contact_idx: Int): Variant {
     TODO()
   }
 
-  fun getContactColliderVelocityAtPosition(): Vector2 {
+  fun getContactColliderVelocityAtPosition(contact_idx: Int): Vector2 {
     TODO()
   }
 
@@ -81,15 +81,15 @@ open class Physics2DDirectBodyState internal constructor(
     TODO()
   }
 
-  fun getContactLocalNormal(): Vector2 {
+  fun getContactLocalNormal(contact_idx: Int): Vector2 {
     TODO()
   }
 
-  fun getContactLocalPosition(): Vector2 {
+  fun getContactLocalPosition(contact_idx: Int): Vector2 {
     TODO()
   }
 
-  fun getContactLocalShape(): Int {
+  fun getContactLocalShape(contact_idx: Int): Int {
     TODO()
   }
 
@@ -137,19 +137,19 @@ open class Physics2DDirectBodyState internal constructor(
     TODO()
   }
 
-  fun setAngularVelocity() {
+  fun setAngularVelocity(velocity: Float) {
     TODO()
   }
 
-  fun setLinearVelocity() {
+  fun setLinearVelocity(velocity: Vector2) {
     TODO()
   }
 
-  fun setSleepState() {
+  fun setSleepState(enabled: Boolean) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(transform: Transform2D) {
     TODO()
   }
 

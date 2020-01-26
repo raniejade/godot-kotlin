@@ -23,11 +23,11 @@ open class AudioStreamRandomPitch internal constructor(
     TODO()
   }
 
-  fun setAudioStream() {
+  fun setAudioStream(stream: AudioStream) {
     TODO()
   }
 
-  fun setRandomPitch() {
+  fun setRandomPitch(scale: Float) {
     TODO()
   }
 

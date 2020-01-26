@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
 import kotlin.Boolean
@@ -18,43 +19,43 @@ import kotlinx.cinterop.reinterpret
 open class ProjectSettings internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addPropertyInfo() {
+  fun addPropertyInfo(hint: Dictionary) {
     TODO()
   }
 
-  fun clear() {
+  fun clear(name: String) {
     TODO()
   }
 
-  fun getOrder(): Int {
+  fun getOrder(name: String): Int {
     TODO()
   }
 
-  fun getSetting(): Variant {
+  fun getSetting(name: String): Variant {
     TODO()
   }
 
-  fun globalizePath(): String {
+  fun globalizePath(path: String): String {
     TODO()
   }
 
-  fun hasSetting(): Boolean {
+  fun hasSetting(name: String): Boolean {
     TODO()
   }
 
-  fun loadResourcePack(): Boolean {
+  fun loadResourcePack(pack: String): Boolean {
     TODO()
   }
 
-  fun localizePath(): String {
+  fun localizePath(path: String): String {
     TODO()
   }
 
-  fun propertyCanRevert(): Boolean {
+  fun propertyCanRevert(name: String): Boolean {
     TODO()
   }
 
-  fun propertyGetRevert(): Variant {
+  fun propertyGetRevert(name: String): Variant {
     TODO()
   }
 
@@ -62,19 +63,19 @@ open class ProjectSettings internal constructor(
     TODO()
   }
 
-  fun saveCustom(): Error {
+  fun saveCustom(file: String): Error {
     TODO()
   }
 
-  fun setInitialValue() {
+  fun setInitialValue(name: String, value: Variant) {
     TODO()
   }
 
-  fun setOrder() {
+  fun setOrder(name: String, position: Int) {
     TODO()
   }
 
-  fun setSetting() {
+  fun setSetting(name: String, value: Variant) {
     TODO()
   }
 

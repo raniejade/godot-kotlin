@@ -18,11 +18,20 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeBlendSpace2D internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
-  fun addBlendPoint() {
+  fun addBlendPoint(
+    node: AnimationRootNode,
+    pos: Vector2,
+    at_index: Int
+  ) {
     TODO()
   }
 
-  fun addTriangle() {
+  fun addTriangle(
+    x: Int,
+    y: Int,
+    z: Int,
+    at_index: Int
+  ) {
     TODO()
   }
 
@@ -38,11 +47,11 @@ open class AnimationNodeBlendSpace2D internal constructor(
     TODO()
   }
 
-  fun getBlendPointNode(): AnimationRootNode {
+  fun getBlendPointNode(point: Int): AnimationRootNode {
     TODO()
   }
 
-  fun getBlendPointPosition(): Vector2 {
+  fun getBlendPointPosition(point: Int): Vector2 {
     TODO()
   }
 
@@ -62,7 +71,7 @@ open class AnimationNodeBlendSpace2D internal constructor(
     TODO()
   }
 
-  fun getTrianglePoint(): Int {
+  fun getTrianglePoint(triangle: Int, point: Int): Int {
     TODO()
   }
 
@@ -74,47 +83,47 @@ open class AnimationNodeBlendSpace2D internal constructor(
     TODO()
   }
 
-  fun removeBlendPoint() {
+  fun removeBlendPoint(point: Int) {
     TODO()
   }
 
-  fun removeTriangle() {
+  fun removeTriangle(triangle: Int) {
     TODO()
   }
 
-  fun setAutoTriangles() {
+  fun setAutoTriangles(enable: Boolean) {
     TODO()
   }
 
-  fun setBlendMode() {
+  fun setBlendMode(mode: Int) {
     TODO()
   }
 
-  fun setBlendPointNode() {
+  fun setBlendPointNode(point: Int, node: AnimationRootNode) {
     TODO()
   }
 
-  fun setBlendPointPosition() {
+  fun setBlendPointPosition(point: Int, pos: Vector2) {
     TODO()
   }
 
-  fun setMaxSpace() {
+  fun setMaxSpace(max_space: Vector2) {
     TODO()
   }
 
-  fun setMinSpace() {
+  fun setMinSpace(min_space: Vector2) {
     TODO()
   }
 
-  fun setSnap() {
+  fun setSnap(snap: Vector2) {
     TODO()
   }
 
-  fun setXLabel() {
+  fun setXLabel(text: String) {
     TODO()
   }
 
-  fun setYLabel() {
+  fun setYLabel(text: String) {
     TODO()
   }
 

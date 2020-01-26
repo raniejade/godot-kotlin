@@ -29,7 +29,7 @@ open class _File internal constructor(
     TODO()
   }
 
-  fun fileExists(): Boolean {
+  fun fileExists(path: String): Boolean {
     TODO()
   }
 
@@ -53,11 +53,11 @@ open class _File internal constructor(
     TODO()
   }
 
-  fun getBuffer(): PoolByteArray {
+  fun getBuffer(len: Int): PoolByteArray {
     TODO()
   }
 
-  fun getCsvLine(): PoolStringArray {
+  fun getCsvLine(delim: String): PoolStringArray {
     TODO()
   }
 
@@ -85,11 +85,11 @@ open class _File internal constructor(
     TODO()
   }
 
-  fun getMd5(): String {
+  fun getMd5(path: String): String {
     TODO()
   }
 
-  fun getModifiedTime(): Int {
+  fun getModifiedTime(file: String): Int {
     TODO()
   }
 
@@ -113,11 +113,11 @@ open class _File internal constructor(
     TODO()
   }
 
-  fun getSha256(): String {
+  fun getSha256(path: String): String {
     TODO()
   }
 
-  fun getVar(): Variant {
+  fun getVar(allow_objects: Boolean): Variant {
     TODO()
   }
 
@@ -125,83 +125,95 @@ open class _File internal constructor(
     TODO()
   }
 
-  fun open(): Error {
+  fun open(path: String, flags: Int): Error {
     TODO()
   }
 
-  fun openCompressed(): Error {
+  fun openCompressed(
+    path: String,
+    mode_flags: Int,
+    compression_mode: Int
+  ): Error {
     TODO()
   }
 
-  fun openEncrypted(): Error {
+  fun openEncrypted(
+    path: String,
+    mode_flags: Int,
+    key: PoolByteArray
+  ): Error {
     TODO()
   }
 
-  fun openEncryptedWithPass(): Error {
+  fun openEncryptedWithPass(
+    path: String,
+    mode_flags: Int,
+    pass: String
+  ): Error {
     TODO()
   }
 
-  fun seek() {
+  fun seek(position: Int) {
     TODO()
   }
 
-  fun seekEnd() {
+  fun seekEnd(position: Int) {
     TODO()
   }
 
-  fun setEndianSwap() {
+  fun setEndianSwap(enable: Boolean) {
     TODO()
   }
 
-  fun store16() {
+  fun store16(value: Int) {
     TODO()
   }
 
-  fun store32() {
+  fun store32(value: Int) {
     TODO()
   }
 
-  fun store64() {
+  fun store64(value: Int) {
     TODO()
   }
 
-  fun store8() {
+  fun store8(value: Int) {
     TODO()
   }
 
-  fun storeBuffer() {
+  fun storeBuffer(buffer: PoolByteArray) {
     TODO()
   }
 
-  fun storeCsvLine() {
+  fun storeCsvLine(values: PoolStringArray, delim: String) {
     TODO()
   }
 
-  fun storeDouble() {
+  fun storeDouble(value: Float) {
     TODO()
   }
 
-  fun storeFloat() {
+  fun storeFloat(value: Float) {
     TODO()
   }
 
-  fun storeLine() {
+  fun storeLine(line: String) {
     TODO()
   }
 
-  fun storePascalString() {
+  fun storePascalString(string: String) {
     TODO()
   }
 
-  fun storeReal() {
+  fun storeReal(value: Float) {
     TODO()
   }
 
-  fun storeString() {
+  fun storeString(string: String) {
     TODO()
   }
 
-  fun storeVar() {
+  fun storeVar(value: Variant, full_objects: Boolean) {
     TODO()
   }
 

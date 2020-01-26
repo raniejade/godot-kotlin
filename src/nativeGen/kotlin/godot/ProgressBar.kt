@@ -19,7 +19,7 @@ open class ProgressBar internal constructor(
     TODO()
   }
 
-  fun setPercentVisible() {
+  fun setPercentVisible(visible: Boolean) {
     TODO()
   }
 

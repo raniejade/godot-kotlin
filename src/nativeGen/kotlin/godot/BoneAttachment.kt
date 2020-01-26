@@ -19,7 +19,7 @@ open class BoneAttachment internal constructor(
     TODO()
   }
 
-  fun setBoneName() {
+  fun setBoneName(bone_name: String) {
     TODO()
   }
 

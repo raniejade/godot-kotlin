@@ -34,7 +34,7 @@ open class VisualInstance internal constructor(
     TODO()
   }
 
-  fun getLayerMaskBit(): Boolean {
+  fun getLayerMaskBit(layer: Int): Boolean {
     TODO()
   }
 
@@ -42,15 +42,15 @@ open class VisualInstance internal constructor(
     TODO()
   }
 
-  fun setBase() {
+  fun setBase(base: RID) {
     TODO()
   }
 
-  fun setLayerMask() {
+  fun setLayerMask(mask: Int) {
     TODO()
   }
 
-  fun setLayerMaskBit() {
+  fun setLayerMaskBit(layer: Int, enabled: Boolean) {
     TODO()
   }
 

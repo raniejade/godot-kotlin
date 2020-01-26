@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -17,11 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class ConfigFile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun eraseSection() {
+  fun eraseSection(section: String) {
     TODO()
   }
 
-  fun getSectionKeys(): PoolStringArray {
+  fun getSectionKeys(section: String): PoolStringArray {
     TODO()
   }
 
@@ -29,27 +30,35 @@ open class ConfigFile internal constructor(
     TODO()
   }
 
-  fun getValue(): Variant {
+  fun getValue(
+    section: String,
+    key: String,
+    default: Variant
+  ): Variant {
     TODO()
   }
 
-  fun hasSection(): Boolean {
+  fun hasSection(section: String): Boolean {
     TODO()
   }
 
-  fun hasSectionKey(): Boolean {
+  fun hasSectionKey(section: String, key: String): Boolean {
     TODO()
   }
 
-  fun load(): Error {
+  fun load(path: String): Error {
     TODO()
   }
 
-  fun save(): Error {
+  fun save(path: String): Error {
     TODO()
   }
 
-  fun setValue() {
+  fun setValue(
+    section: String,
+    key: String,
+    value: Variant
+  ) {
     TODO()
   }
 

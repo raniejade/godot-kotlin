@@ -24,15 +24,15 @@ open class SpatialVelocityTracker internal constructor(
     TODO()
   }
 
-  fun reset() {
+  fun reset(position: Vector3) {
     TODO()
   }
 
-  fun setTrackPhysicsStep() {
+  fun setTrackPhysicsStep(enable: Boolean) {
     TODO()
   }
 
-  fun updatePosition() {
+  fun updatePosition(position: Vector3) {
     TODO()
   }
 

@@ -60,39 +60,39 @@ open class CanvasLayer internal constructor(
     TODO()
   }
 
-  fun setCustomViewport() {
+  fun setCustomViewport(viewport: Node) {
     TODO()
   }
 
-  fun setFollowViewport() {
+  fun setFollowViewport(enable: Boolean) {
     TODO()
   }
 
-  fun setFollowViewportScale() {
+  fun setFollowViewportScale(scale: Float) {
     TODO()
   }
 
-  fun setLayer() {
+  fun setLayer(layer: Int) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setRotation() {
+  fun setRotation(radians: Float) {
     TODO()
   }
 
-  fun setRotationDegrees() {
+  fun setRotationDegrees(degrees: Float) {
     TODO()
   }
 
-  fun setScale() {
+  fun setScale(scale: Vector2) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(transform: Transform2D) {
     TODO()
   }
 

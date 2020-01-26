@@ -19,7 +19,7 @@ open class VisualShaderNodeTransformConstant internal constructor(
     TODO()
   }
 
-  fun setConstant() {
+  fun setConstant(value: Transform) {
     TODO()
   }
 

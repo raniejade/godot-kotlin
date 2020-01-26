@@ -33,19 +33,19 @@ open class VisualScriptYieldSignal internal constructor(
     TODO()
   }
 
-  fun setBasePath() {
+  fun setBasePath(base_path: NodePath) {
     TODO()
   }
 
-  fun setBaseType() {
+  fun setBaseType(base_type: String) {
     TODO()
   }
 
-  fun setCallMode() {
+  fun setCallMode(mode: Int) {
     TODO()
   }
 
-  fun setSignal() {
+  fun setSignal(signal: String) {
     TODO()
   }
 

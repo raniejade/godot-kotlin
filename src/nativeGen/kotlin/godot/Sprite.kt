@@ -62,7 +62,7 @@ open class Sprite internal constructor(
     TODO()
   }
 
-  fun isPixelOpaque(): Boolean {
+  fun isPixelOpaque(pos: Vector2): Boolean {
     TODO()
   }
 
@@ -74,51 +74,51 @@ open class Sprite internal constructor(
     TODO()
   }
 
-  fun setCentered() {
+  fun setCentered(centered: Boolean) {
     TODO()
   }
 
-  fun setFlipH() {
+  fun setFlipH(flip_h: Boolean) {
     TODO()
   }
 
-  fun setFlipV() {
+  fun setFlipV(flip_v: Boolean) {
     TODO()
   }
 
-  fun setFrame() {
+  fun setFrame(frame: Int) {
     TODO()
   }
 
-  fun setHframes() {
+  fun setHframes(hframes: Int) {
     TODO()
   }
 
-  fun setNormalMap() {
+  fun setNormalMap(normal_map: Texture) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setRegion() {
+  fun setRegion(enabled: Boolean) {
     TODO()
   }
 
-  fun setRegionFilterClip() {
+  fun setRegionFilterClip(enabled: Boolean) {
     TODO()
   }
 
-  fun setRegionRect() {
+  fun setRegionRect(rect: Rect2) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setVframes() {
+  fun setVframes(vframes: Int) {
     TODO()
   }
 

@@ -45,31 +45,31 @@ open class PathFollow internal constructor(
     TODO()
   }
 
-  fun setCubicInterpolation() {
+  fun setCubicInterpolation(enable: Boolean) {
     TODO()
   }
 
-  fun setHOffset() {
+  fun setHOffset(h_offset: Float) {
     TODO()
   }
 
-  fun setLoop() {
+  fun setLoop(loop: Boolean) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Float) {
     TODO()
   }
 
-  fun setRotationMode() {
+  fun setRotationMode(rotation_mode: Int) {
     TODO()
   }
 
-  fun setUnitOffset() {
+  fun setUnitOffset(unit_offset: Float) {
     TODO()
   }
 
-  fun setVOffset() {
+  fun setVOffset(v_offset: Float) {
     TODO()
   }
 

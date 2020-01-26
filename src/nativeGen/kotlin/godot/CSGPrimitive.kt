@@ -19,7 +19,7 @@ open class CSGPrimitive internal constructor(
     TODO()
   }
 
-  fun setInvertFaces() {
+  fun setInvertFaces(invert_faces: Boolean) {
     TODO()
   }
 

@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class LargeTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun addPiece(): Int {
+  fun addPiece(ofs: Vector2, texture: Texture): Int {
     TODO()
   }
 
@@ -28,23 +28,23 @@ open class LargeTexture internal constructor(
     TODO()
   }
 
-  fun getPieceOffset(): Vector2 {
+  fun getPieceOffset(idx: Int): Vector2 {
     TODO()
   }
 
-  fun getPieceTexture(): Texture {
+  fun getPieceTexture(idx: Int): Texture {
     TODO()
   }
 
-  fun setPieceOffset() {
+  fun setPieceOffset(idx: Int, ofs: Vector2) {
     TODO()
   }
 
-  fun setPieceTexture() {
+  fun setPieceTexture(idx: Int, texture: Texture) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2) {
     TODO()
   }
 

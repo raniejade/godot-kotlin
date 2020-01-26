@@ -71,55 +71,55 @@ open class CSGPolygon internal constructor(
     TODO()
   }
 
-  fun setDepth() {
+  fun setDepth(depth: Float) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setPathContinuousU() {
+  fun setPathContinuousU(enable: Boolean) {
     TODO()
   }
 
-  fun setPathInterval() {
+  fun setPathInterval(distance: Float) {
     TODO()
   }
 
-  fun setPathJoined() {
+  fun setPathJoined(enable: Boolean) {
     TODO()
   }
 
-  fun setPathLocal() {
+  fun setPathLocal(enable: Boolean) {
     TODO()
   }
 
-  fun setPathNode() {
+  fun setPathNode(path: NodePath) {
     TODO()
   }
 
-  fun setPathRotation() {
+  fun setPathRotation(mode: Int) {
     TODO()
   }
 
-  fun setPolygon() {
+  fun setPolygon(polygon: PoolVector2Array) {
     TODO()
   }
 
-  fun setSmoothFaces() {
+  fun setSmoothFaces(smooth_faces: Boolean) {
     TODO()
   }
 
-  fun setSpinDegrees() {
+  fun setSpinDegrees(degrees: Float) {
     TODO()
   }
 
-  fun setSpinSides() {
+  fun setSpinSides(spin_sides: Int) {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class ConcavePolygonShape2D internal constructor(
     TODO()
   }
 
-  fun setSegments() {
+  fun setSegments(segments: PoolVector2Array) {
     TODO()
   }
 

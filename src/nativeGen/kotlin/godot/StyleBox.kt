@@ -3,9 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Rect2
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -17,7 +20,7 @@ import kotlinx.cinterop.reinterpret
 open class StyleBox internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun draw() {
+  fun draw(canvas_item: RID, rect: Rect2) {
     TODO()
   }
 
@@ -29,11 +32,11 @@ open class StyleBox internal constructor(
     TODO()
   }
 
-  fun getDefaultMargin(): Float {
+  fun getDefaultMargin(margin: Int): Float {
     TODO()
   }
 
-  fun getMargin(): Float {
+  fun getMargin(margin: Int): Float {
     TODO()
   }
 
@@ -45,11 +48,11 @@ open class StyleBox internal constructor(
     TODO()
   }
 
-  fun setDefaultMargin() {
+  fun setDefaultMargin(margin: Int, offset: Float) {
     TODO()
   }
 
-  fun testMask(): Boolean {
+  fun testMask(point: Vector2, rect: Rect2): Boolean {
     TODO()
   }
 

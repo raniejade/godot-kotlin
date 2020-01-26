@@ -5,6 +5,9 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.VariantArray
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,23 +19,30 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsDirectSpaceState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun castMotion(): VariantArray {
+  fun castMotion(shape: PhysicsShapeQueryParameters, motion: Vector3): VariantArray {
     TODO()
   }
 
-  fun collideShape(): VariantArray {
+  fun collideShape(shape: PhysicsShapeQueryParameters, max_results: Int): VariantArray {
     TODO()
   }
 
-  fun getRestInfo(): Dictionary {
+  fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
     TODO()
   }
 
-  fun intersectRay(): Dictionary {
+  fun intersectRay(
+    from: Vector3,
+    to: Vector3,
+    exclude: VariantArray,
+    collision_mask: Int,
+    collide_with_bodies: Boolean,
+    collide_with_areas: Boolean
+  ): Dictionary {
     TODO()
   }
 
-  fun intersectShape(): VariantArray {
+  fun intersectShape(shape: PhysicsShapeQueryParameters, max_results: Int): VariantArray {
     TODO()
   }
 

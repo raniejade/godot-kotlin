@@ -8,6 +8,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -19,15 +20,15 @@ import kotlinx.cinterop.reinterpret
 open class GraphEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun addValidConnectionType() {
+  fun addValidConnectionType(from_type: Int, to_type: Int) {
     TODO()
   }
 
-  fun addValidLeftDisconnectType() {
+  fun addValidLeftDisconnectType(type: Int) {
     TODO()
   }
 
-  fun addValidRightDisconnectType() {
+  fun addValidRightDisconnectType(type: Int) {
     TODO()
   }
 
@@ -35,11 +36,21 @@ open class GraphEdit internal constructor(
     TODO()
   }
 
-  fun connectNode(): Error {
+  fun connectNode(
+    from: String,
+    from_port: Int,
+    to: String,
+    to_port: Int
+  ): Error {
     TODO()
   }
 
-  fun disconnectNode() {
+  fun disconnectNode(
+    from: String,
+    from_port: Int,
+    to: String,
+    to_port: Int
+  ) {
     TODO()
   }
 
@@ -63,7 +74,12 @@ open class GraphEdit internal constructor(
     TODO()
   }
 
-  fun isNodeConnected(): Boolean {
+  fun isNodeConnected(
+    from: String,
+    from_port: Int,
+    to: String,
+    to_port: Int
+  ): Boolean {
     TODO()
   }
 
@@ -75,47 +91,53 @@ open class GraphEdit internal constructor(
     TODO()
   }
 
-  fun isValidConnectionType(): Boolean {
+  fun isValidConnectionType(from_type: Int, to_type: Int): Boolean {
     TODO()
   }
 
-  fun removeValidConnectionType() {
+  fun removeValidConnectionType(from_type: Int, to_type: Int) {
     TODO()
   }
 
-  fun removeValidLeftDisconnectType() {
+  fun removeValidLeftDisconnectType(type: Int) {
     TODO()
   }
 
-  fun removeValidRightDisconnectType() {
+  fun removeValidRightDisconnectType(type: Int) {
     TODO()
   }
 
-  fun setConnectionActivity() {
+  fun setConnectionActivity(
+    from: String,
+    from_port: Int,
+    to: String,
+    to_port: Int,
+    amount: Float
+  ) {
     TODO()
   }
 
-  fun setRightDisconnects() {
+  fun setRightDisconnects(enable: Boolean) {
     TODO()
   }
 
-  fun setScrollOfs() {
+  fun setScrollOfs(ofs: Vector2) {
     TODO()
   }
 
-  fun setSelected() {
+  fun setSelected(node: Node) {
     TODO()
   }
 
-  fun setSnap() {
+  fun setSnap(pixels: Int) {
     TODO()
   }
 
-  fun setUseSnap() {
+  fun setUseSnap(enable: Boolean) {
     TODO()
   }
 
-  fun setZoom() {
+  fun setZoom(p_zoom: Float) {
     TODO()
   }
 

@@ -28,15 +28,15 @@ open class PlaneMesh internal constructor(
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2) {
     TODO()
   }
 
-  fun setSubdivideDepth() {
+  fun setSubdivideDepth(subdivide: Int) {
     TODO()
   }
 
-  fun setSubdivideWidth() {
+  fun setSubdivideWidth(subdivide: Int) {
     TODO()
   }
 

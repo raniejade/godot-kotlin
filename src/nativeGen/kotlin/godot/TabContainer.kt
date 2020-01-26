@@ -45,7 +45,7 @@ open class TabContainer internal constructor(
     TODO()
   }
 
-  fun getTabControl(): Control {
+  fun getTabControl(idx: Int): Control {
     TODO()
   }
 
@@ -53,15 +53,15 @@ open class TabContainer internal constructor(
     TODO()
   }
 
-  fun getTabDisabled(): Boolean {
+  fun getTabDisabled(tab_idx: Int): Boolean {
     TODO()
   }
 
-  fun getTabIcon(): Texture {
+  fun getTabIcon(tab_idx: Int): Texture {
     TODO()
   }
 
-  fun getTabTitle(): String {
+  fun getTabTitle(tab_idx: Int): String {
     TODO()
   }
 
@@ -69,39 +69,39 @@ open class TabContainer internal constructor(
     TODO()
   }
 
-  fun setCurrentTab() {
+  fun setCurrentTab(tab_idx: Int) {
     TODO()
   }
 
-  fun setDragToRearrangeEnabled() {
+  fun setDragToRearrangeEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setPopup() {
+  fun setPopup(popup: Node) {
     TODO()
   }
 
-  fun setTabAlign() {
+  fun setTabAlign(align: Int) {
     TODO()
   }
 
-  fun setTabDisabled() {
+  fun setTabDisabled(tab_idx: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setTabIcon() {
+  fun setTabIcon(tab_idx: Int, icon: Texture) {
     TODO()
   }
 
-  fun setTabTitle() {
+  fun setTabTitle(tab_idx: Int, title: String) {
     TODO()
   }
 
-  fun setTabsRearrangeGroup() {
+  fun setTabsRearrangeGroup(group_id: Int) {
     TODO()
   }
 
-  fun setTabsVisible() {
+  fun setTabsVisible(visible: Boolean) {
     TODO()
   }
 

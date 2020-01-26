@@ -24,11 +24,11 @@ open class RandomNumberGenerator internal constructor(
     TODO()
   }
 
-  fun randfRange(): Float {
+  fun randfRange(from: Float, to: Float): Float {
     TODO()
   }
 
-  fun randfn(): Float {
+  fun randfn(mean: Float, deviation: Float): Float {
     TODO()
   }
 
@@ -36,7 +36,7 @@ open class RandomNumberGenerator internal constructor(
     TODO()
   }
 
-  fun randiRange(): Int {
+  fun randiRange(from: Int, to: Int): Int {
     TODO()
   }
 
@@ -44,7 +44,7 @@ open class RandomNumberGenerator internal constructor(
     TODO()
   }
 
-  fun setSeed() {
+  fun setSeed(seed: Int) {
     TODO()
   }
 

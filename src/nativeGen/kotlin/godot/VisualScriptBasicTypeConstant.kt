@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -24,11 +25,11 @@ open class VisualScriptBasicTypeConstant internal constructor(
     TODO()
   }
 
-  fun setBasicType() {
+  fun setBasicType(name: Int) {
     TODO()
   }
 
-  fun setBasicTypeConstant() {
+  fun setBasicTypeConstant(name: String) {
     TODO()
   }
 

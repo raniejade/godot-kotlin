@@ -47,35 +47,35 @@ open class InputEventMIDI internal constructor(
     TODO()
   }
 
-  fun setChannel() {
+  fun setChannel(channel: Int) {
     TODO()
   }
 
-  fun setControllerNumber() {
+  fun setControllerNumber(controller_number: Int) {
     TODO()
   }
 
-  fun setControllerValue() {
+  fun setControllerValue(controller_value: Int) {
     TODO()
   }
 
-  fun setInstrument() {
+  fun setInstrument(instrument: Int) {
     TODO()
   }
 
-  fun setMessage() {
+  fun setMessage(message: Int) {
     TODO()
   }
 
-  fun setPitch() {
+  fun setPitch(pitch: Int) {
     TODO()
   }
 
-  fun setPressure() {
+  fun setPressure(pressure: Int) {
     TODO()
   }
 
-  fun setVelocity() {
+  fun setVelocity(velocity: Int) {
     TODO()
   }
 

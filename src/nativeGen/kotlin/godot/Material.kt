@@ -23,11 +23,11 @@ open class Material internal constructor(
     TODO()
   }
 
-  fun setNextPass() {
+  fun setNextPass(next_pass: Material) {
     TODO()
   }
 
-  fun setRenderPriority() {
+  fun setRenderPriority(priority: Int) {
     TODO()
   }
 

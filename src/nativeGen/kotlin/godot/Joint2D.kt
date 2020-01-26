@@ -33,19 +33,19 @@ open class Joint2D internal constructor(
     TODO()
   }
 
-  fun setBias() {
+  fun setBias(bias: Float) {
     TODO()
   }
 
-  fun setExcludeNodesFromCollision() {
+  fun setExcludeNodesFromCollision(enable: Boolean) {
     TODO()
   }
 
-  fun setNodeA() {
+  fun setNodeA(node: NodePath) {
     TODO()
   }
 
-  fun setNodeB() {
+  fun setNodeB(node: NodePath) {
     TODO()
   }
 

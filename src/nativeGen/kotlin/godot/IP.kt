@@ -17,11 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class IP internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun clearCache() {
+  fun clearCache(hostname: String) {
     TODO()
   }
 
-  fun eraseResolveItem() {
+  fun eraseResolveItem(id: Int) {
     TODO()
   }
 
@@ -29,19 +29,19 @@ open class IP internal constructor(
     TODO()
   }
 
-  fun getResolveItemAddress(): String {
+  fun getResolveItemAddress(id: Int): String {
     TODO()
   }
 
-  fun getResolveItemStatus(): ResolverStatus {
+  fun getResolveItemStatus(id: Int): ResolverStatus {
     TODO()
   }
 
-  fun resolveHostname(): String {
+  fun resolveHostname(host: String, ip_type: Int): String {
     TODO()
   }
 
-  fun resolveHostnameQueueItem(): Int {
+  fun resolveHostnameQueueItem(host: String, ip_type: Int): Int {
     TODO()
   }
 

@@ -32,15 +32,15 @@ open class SplitContainer internal constructor(
     TODO()
   }
 
-  fun setCollapsed() {
+  fun setCollapsed(collapsed: Boolean) {
     TODO()
   }
 
-  fun setDraggerVisibility() {
+  fun setDraggerVisibility(mode: Int) {
     TODO()
   }
 
-  fun setSplitOffset() {
+  fun setSplitOffset(offset: Int) {
     TODO()
   }
 

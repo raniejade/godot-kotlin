@@ -18,7 +18,7 @@ open class MultiMeshInstance internal constructor(
     TODO()
   }
 
-  fun setMultimesh() {
+  fun setMultimesh(multimesh: MultiMesh) {
     TODO()
   }
 

@@ -22,11 +22,11 @@ open class CSGMesh internal constructor(
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setMesh() {
+  fun setMesh(mesh: Mesh) {
     TODO()
   }
 

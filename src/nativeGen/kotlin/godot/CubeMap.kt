@@ -28,7 +28,7 @@ open class CubeMap internal constructor(
     TODO()
   }
 
-  fun getSide(): Image {
+  fun getSide(side: Int): Image {
     TODO()
   }
 
@@ -40,19 +40,19 @@ open class CubeMap internal constructor(
     TODO()
   }
 
-  fun setFlags() {
+  fun setFlags(flags: Int) {
     TODO()
   }
 
-  fun setLossyStorageQuality() {
+  fun setLossyStorageQuality(quality: Float) {
     TODO()
   }
 
-  fun setSide() {
+  fun setSide(side: Int, image: Image) {
     TODO()
   }
 
-  fun setStorage() {
+  fun setStorage(mode: Int) {
     TODO()
   }
 

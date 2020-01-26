@@ -23,11 +23,11 @@ open class VisualScriptClassConstant internal constructor(
     TODO()
   }
 
-  fun setBaseType() {
+  fun setBaseType(name: String) {
     TODO()
   }
 
-  fun setClassConstant() {
+  fun setClassConstant(name: String) {
     TODO()
   }
 

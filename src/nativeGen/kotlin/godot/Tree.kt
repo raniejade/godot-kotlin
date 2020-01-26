@@ -27,7 +27,7 @@ open class Tree internal constructor(
     TODO()
   }
 
-  fun createItem(): TreeItem {
+  fun createItem(parent: Object, idx: Int): TreeItem {
     TODO()
   }
 
@@ -43,15 +43,15 @@ open class Tree internal constructor(
     TODO()
   }
 
-  fun getColumnAtPosition(): Int {
+  fun getColumnAtPosition(position: Vector2): Int {
     TODO()
   }
 
-  fun getColumnTitle(): String {
+  fun getColumnTitle(column: Int): String {
     TODO()
   }
 
-  fun getColumnWidth(): Int {
+  fun getColumnWidth(column: Int): Int {
     TODO()
   }
 
@@ -67,7 +67,7 @@ open class Tree internal constructor(
     TODO()
   }
 
-  fun getDropSectionAtPosition(): Int {
+  fun getDropSectionAtPosition(position: Vector2): Int {
     TODO()
   }
 
@@ -79,15 +79,15 @@ open class Tree internal constructor(
     TODO()
   }
 
-  fun getItemAreaRect(): Rect2 {
+  fun getItemAreaRect(item: Object, column: Int): Rect2 {
     TODO()
   }
 
-  fun getItemAtPosition(): TreeItem {
+  fun getItemAtPosition(position: Vector2): TreeItem {
     TODO()
   }
 
-  fun getNextSelected(): TreeItem {
+  fun getNextSelected(from: Object): TreeItem {
     TODO()
   }
 
@@ -123,47 +123,47 @@ open class Tree internal constructor(
     TODO()
   }
 
-  fun setAllowReselect() {
+  fun setAllowReselect(allow: Boolean) {
     TODO()
   }
 
-  fun setAllowRmbSelect() {
+  fun setAllowRmbSelect(allow: Boolean) {
     TODO()
   }
 
-  fun setColumnExpand() {
+  fun setColumnExpand(column: Int, expand: Boolean) {
     TODO()
   }
 
-  fun setColumnMinWidth() {
+  fun setColumnMinWidth(column: Int, min_width: Int) {
     TODO()
   }
 
-  fun setColumnTitle() {
+  fun setColumnTitle(column: Int, title: String) {
     TODO()
   }
 
-  fun setColumnTitlesVisible() {
+  fun setColumnTitlesVisible(visible: Boolean) {
     TODO()
   }
 
-  fun setColumns() {
+  fun setColumns(amount: Int) {
     TODO()
   }
 
-  fun setDropModeFlags() {
+  fun setDropModeFlags(flags: Int) {
     TODO()
   }
 
-  fun setHideFolding() {
+  fun setHideFolding(hide: Boolean) {
     TODO()
   }
 
-  fun setHideRoot() {
+  fun setHideRoot(enable: Boolean) {
     TODO()
   }
 
-  fun setSelectMode() {
+  fun setSelectMode(mode: Int) {
     TODO()
   }
 

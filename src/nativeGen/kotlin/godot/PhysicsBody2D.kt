@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsBody2D internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject2D(_handle) {
-  fun addCollisionExceptionWith() {
+  fun addCollisionExceptionWith(body: Node) {
     TODO()
   }
 
@@ -29,7 +29,7 @@ open class PhysicsBody2D internal constructor(
     TODO()
   }
 
-  fun getCollisionLayerBit(): Boolean {
+  fun getCollisionLayerBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -37,27 +37,27 @@ open class PhysicsBody2D internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
-  fun removeCollisionExceptionWith() {
+  fun removeCollisionExceptionWith(body: Node) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(layer: Int) {
     TODO()
   }
 
-  fun setCollisionLayerBit() {
+  fun setCollisionLayerBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 

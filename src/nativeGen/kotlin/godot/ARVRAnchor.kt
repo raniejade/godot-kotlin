@@ -43,7 +43,7 @@ open class ARVRAnchor internal constructor(
     TODO()
   }
 
-  fun setAnchorId() {
+  fun setAnchorId(anchor_id: Int) {
     TODO()
   }
 

@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
+import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,27 +18,27 @@ import kotlinx.cinterop.reinterpret
 open class _Marshalls internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun base64ToRaw(): PoolByteArray {
+  fun base64ToRaw(base64_str: String): PoolByteArray {
     TODO()
   }
 
-  fun base64ToUtf8(): String {
+  fun base64ToUtf8(base64_str: String): String {
     TODO()
   }
 
-  fun base64ToVariant(): Variant {
+  fun base64ToVariant(base64_str: String, allow_objects: Boolean): Variant {
     TODO()
   }
 
-  fun rawToBase64(): String {
+  fun rawToBase64(array: PoolByteArray): String {
     TODO()
   }
 
-  fun utf8ToBase64(): String {
+  fun utf8ToBase64(utf8_str: String): String {
     TODO()
   }
 
-  fun variantToBase64(): String {
+  fun variantToBase64(variant: Variant, full_objects: Boolean): String {
     TODO()
   }
 

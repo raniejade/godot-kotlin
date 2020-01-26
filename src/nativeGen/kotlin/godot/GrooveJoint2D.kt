@@ -23,11 +23,11 @@ open class GrooveJoint2D internal constructor(
     TODO()
   }
 
-  fun setInitialOffset() {
+  fun setInitialOffset(offset: Float) {
     TODO()
   }
 
-  fun setLength() {
+  fun setLength(length: Float) {
     TODO()
   }
 

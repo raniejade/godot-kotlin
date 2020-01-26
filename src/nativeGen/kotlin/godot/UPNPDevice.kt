@@ -17,11 +17,17 @@ import kotlinx.cinterop.reinterpret
 open class UPNPDevice internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addPortMapping(): Int {
+  fun addPortMapping(
+    port: Int,
+    port_internal: Int,
+    desc: String,
+    proto: String,
+    duration: Int
+  ): Int {
     TODO()
   }
 
-  fun deletePortMapping(): Int {
+  fun deletePortMapping(port: Int, proto: String): Int {
     TODO()
   }
 
@@ -57,27 +63,27 @@ open class UPNPDevice internal constructor(
     TODO()
   }
 
-  fun setDescriptionUrl() {
+  fun setDescriptionUrl(url: String) {
     TODO()
   }
 
-  fun setIgdControlUrl() {
+  fun setIgdControlUrl(url: String) {
     TODO()
   }
 
-  fun setIgdOurAddr() {
+  fun setIgdOurAddr(addr: String) {
     TODO()
   }
 
-  fun setIgdServiceType() {
+  fun setIgdServiceType(type: String) {
     TODO()
   }
 
-  fun setIgdStatus() {
+  fun setIgdStatus(status: Int) {
     TODO()
   }
 
-  fun setServiceType() {
+  fun setServiceType(type: String) {
     TODO()
   }
 

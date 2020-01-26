@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmap internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  fun bake(): BakeError {
+  fun bake(from_node: Node, create_visual_debug: Boolean): BakeError {
     TODO()
   }
 
@@ -67,43 +67,43 @@ open class BakedLightmap internal constructor(
     TODO()
   }
 
-  fun setBakeCellSize() {
+  fun setBakeCellSize(bake_cell_size: Float) {
     TODO()
   }
 
-  fun setBakeMode() {
+  fun setBakeMode(bake_mode: Int) {
     TODO()
   }
 
-  fun setBakeQuality() {
+  fun setBakeQuality(bake_quality: Int) {
     TODO()
   }
 
-  fun setCaptureCellSize() {
+  fun setCaptureCellSize(capture_cell_size: Float) {
     TODO()
   }
 
-  fun setEnergy() {
+  fun setEnergy(energy: Float) {
     TODO()
   }
 
-  fun setExtents() {
+  fun setExtents(extents: Vector3) {
     TODO()
   }
 
-  fun setHdr() {
+  fun setHdr(hdr: Boolean) {
     TODO()
   }
 
-  fun setImagePath() {
+  fun setImagePath(image_path: String) {
     TODO()
   }
 
-  fun setLightData() {
+  fun setLightData(data: BakedLightmapData) {
     TODO()
   }
 
-  fun setPropagation() {
+  fun setPropagation(propagation: Float) {
     TODO()
   }
 

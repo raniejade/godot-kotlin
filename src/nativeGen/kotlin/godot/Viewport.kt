@@ -77,11 +77,11 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun getRenderInfo(): Int {
+  fun getRenderInfo(info: Int): Int {
     TODO()
   }
 
-  fun getShadowAtlasQuadrantSubdiv(): ShadowAtlasQuadrantSubdiv {
+  fun getShadowAtlasQuadrantSubdiv(quadrant: Int): ShadowAtlasQuadrantSubdiv {
     TODO()
   }
 
@@ -145,7 +145,7 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun input() {
+  fun input(local_event: InputEvent) {
     TODO()
   }
 
@@ -193,47 +193,47 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun setAsAudioListener() {
+  fun setAsAudioListener(enable: Boolean) {
     TODO()
   }
 
-  fun setAsAudioListener2d() {
+  fun setAsAudioListener2d(enable: Boolean) {
     TODO()
   }
 
-  fun setAttachToScreenRect() {
+  fun setAttachToScreenRect(rect: Rect2) {
     TODO()
   }
 
-  fun setCanvasTransform() {
+  fun setCanvasTransform(xform: Transform2D) {
     TODO()
   }
 
-  fun setClearMode() {
+  fun setClearMode(mode: Int) {
     TODO()
   }
 
-  fun setDebugDraw() {
+  fun setDebugDraw(debug_draw: Int) {
     TODO()
   }
 
-  fun setDisable3d() {
+  fun setDisable3d(disable: Boolean) {
     TODO()
   }
 
-  fun setDisableInput() {
+  fun setDisableInput(disable: Boolean) {
     TODO()
   }
 
-  fun setGlobalCanvasTransform() {
+  fun setGlobalCanvasTransform(xform: Transform2D) {
     TODO()
   }
 
-  fun setHandleInputLocally() {
+  fun setHandleInputLocally(enable: Boolean) {
     TODO()
   }
 
-  fun setHdr() {
+  fun setHdr(enable: Boolean) {
     TODO()
   }
 
@@ -241,79 +241,83 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun setKeep3dLinear() {
+  fun setKeep3dLinear(keep_3d_linear: Boolean) {
     TODO()
   }
 
-  fun setMsaa() {
+  fun setMsaa(msaa: Int) {
     TODO()
   }
 
-  fun setPhysicsObjectPicking() {
+  fun setPhysicsObjectPicking(enable: Boolean) {
     TODO()
   }
 
-  fun setShadowAtlasQuadrantSubdiv() {
+  fun setShadowAtlasQuadrantSubdiv(quadrant: Int, subdiv: Int) {
     TODO()
   }
 
-  fun setShadowAtlasSize() {
+  fun setShadowAtlasSize(size: Int) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2) {
     TODO()
   }
 
-  fun setSizeOverride() {
+  fun setSizeOverride(
+    enable: Boolean,
+    size: Vector2,
+    margin: Vector2
+  ) {
     TODO()
   }
 
-  fun setSizeOverrideStretch() {
+  fun setSizeOverrideStretch(enabled: Boolean) {
     TODO()
   }
 
-  fun setSnapControlsToPixels() {
+  fun setSnapControlsToPixels(enabled: Boolean) {
     TODO()
   }
 
-  fun setTransparentBackground() {
+  fun setTransparentBackground(enable: Boolean) {
     TODO()
   }
 
-  fun setUpdateMode() {
+  fun setUpdateMode(mode: Int) {
     TODO()
   }
 
-  fun setUsage() {
+  fun setUsage(usage: Int) {
     TODO()
   }
 
-  fun setUseArvr() {
+  fun setUseArvr(use: Boolean) {
     TODO()
   }
 
-  fun setUseOwnWorld() {
+  fun setUseOwnWorld(enable: Boolean) {
     TODO()
   }
 
-  fun setUseRenderDirectToScreen() {
+  fun setUseRenderDirectToScreen(enable: Boolean) {
     TODO()
   }
 
-  fun setVflip() {
+  fun setVflip(enable: Boolean) {
     TODO()
   }
 
-  fun setWorld() {
+  fun setWorld(world: World) {
     TODO()
   }
 
-  fun setWorld2d() {
+  fun setWorld2d(world_2d: World2D) {
     TODO()
   }
 
-  fun unhandledInput() {
+  fun unhandledInput(local_event: InputEvent) {
     TODO()
   }
 
@@ -325,7 +329,7 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun warpMouse() {
+  fun warpMouse(to_position: Vector2) {
     TODO()
   }
 

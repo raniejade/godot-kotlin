@@ -38,23 +38,23 @@ open class StyleBoxLine internal constructor(
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setGrowBegin() {
+  fun setGrowBegin(offset: Float) {
     TODO()
   }
 
-  fun setGrowEnd() {
+  fun setGrowEnd(offset: Float) {
     TODO()
   }
 
-  fun setThickness() {
+  fun setThickness(thickness: Int) {
     TODO()
   }
 
-  fun setVertical() {
+  fun setVertical(vertical: Boolean) {
     TODO()
   }
 

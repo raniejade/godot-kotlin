@@ -24,11 +24,11 @@ open class VisualScriptInputAction internal constructor(
     TODO()
   }
 
-  fun setActionMode() {
+  fun setActionMode(mode: Int) {
     TODO()
   }
 
-  fun setActionName() {
+  fun setActionName(name: String) {
     TODO()
   }
 

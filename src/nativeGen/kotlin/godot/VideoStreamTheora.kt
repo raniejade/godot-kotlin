@@ -19,7 +19,7 @@ open class VideoStreamTheora internal constructor(
     TODO()
   }
 
-  fun setFile() {
+  fun setFile(file: String) {
     TODO()
   }
 

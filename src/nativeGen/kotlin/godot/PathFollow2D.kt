@@ -48,35 +48,35 @@ open class PathFollow2D internal constructor(
     TODO()
   }
 
-  fun setCubicInterpolation() {
+  fun setCubicInterpolation(enable: Boolean) {
     TODO()
   }
 
-  fun setHOffset() {
+  fun setHOffset(h_offset: Float) {
     TODO()
   }
 
-  fun setLookahead() {
+  fun setLookahead(lookahead: Float) {
     TODO()
   }
 
-  fun setLoop() {
+  fun setLoop(loop: Boolean) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Float) {
     TODO()
   }
 
-  fun setRotate() {
+  fun setRotate(enable: Boolean) {
     TODO()
   }
 
-  fun setUnitOffset() {
+  fun setUnitOffset(unit_offset: Float) {
     TODO()
   }
 
-  fun setVOffset() {
+  fun setVOffset(v_offset: Float) {
     TODO()
   }
 

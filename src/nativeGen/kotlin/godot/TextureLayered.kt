@@ -15,7 +15,13 @@ import kotlinx.cinterop.reinterpret
 open class TextureLayered internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun create() {
+  fun create(
+    width: Int,
+    height: Int,
+    depth: Int,
+    format: Int,
+    flags: Int
+  ) {
     TODO()
   }
 
@@ -35,7 +41,7 @@ open class TextureLayered internal constructor(
     TODO()
   }
 
-  fun getLayerData(): Image {
+  fun getLayerData(layer: Int): Image {
     TODO()
   }
 
@@ -43,15 +49,21 @@ open class TextureLayered internal constructor(
     TODO()
   }
 
-  fun setDataPartial() {
+  fun setDataPartial(
+    image: Image,
+    x_offset: Int,
+    y_offset: Int,
+    layer: Int,
+    mipmap: Int
+  ) {
     TODO()
   }
 
-  fun setFlags() {
+  fun setFlags(flags: Int) {
     TODO()
   }
 
-  fun setLayerData() {
+  fun setLayerData(image: Image, layer: Int) {
     TODO()
   }
 

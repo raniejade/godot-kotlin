@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Boolean
+import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -36,19 +37,19 @@ open class SpinBox internal constructor(
     TODO()
   }
 
-  fun setAlign() {
+  fun setAlign(align: Int) {
     TODO()
   }
 
-  fun setEditable() {
+  fun setEditable(editable: Boolean) {
     TODO()
   }
 
-  fun setPrefix() {
+  fun setPrefix(prefix: String) {
     TODO()
   }
 
-  fun setSuffix() {
+  fun setSuffix(suffix: String) {
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform2D
+import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,7 +20,7 @@ import kotlinx.cinterop.reinterpret
 open class InputEvent internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun accumulate(): Boolean {
+  fun accumulate(with_event: InputEvent): Boolean {
     TODO()
   }
 
@@ -26,7 +28,7 @@ open class InputEvent internal constructor(
     TODO()
   }
 
-  fun getActionStrength(): Float {
+  fun getActionStrength(action: String): Float {
     TODO()
   }
 
@@ -34,15 +36,15 @@ open class InputEvent internal constructor(
     TODO()
   }
 
-  fun isAction(): Boolean {
+  fun isAction(action: String): Boolean {
     TODO()
   }
 
-  fun isActionPressed(): Boolean {
+  fun isActionPressed(action: String): Boolean {
     TODO()
   }
 
-  fun isActionReleased(): Boolean {
+  fun isActionReleased(action: String): Boolean {
     TODO()
   }
 
@@ -58,15 +60,15 @@ open class InputEvent internal constructor(
     TODO()
   }
 
-  fun setDevice() {
+  fun setDevice(device: Int) {
     TODO()
   }
 
-  fun shortcutMatch(): Boolean {
+  fun shortcutMatch(event: InputEvent): Boolean {
     TODO()
   }
 
-  fun xformedBy(): InputEvent {
+  fun xformedBy(xform: Transform2D, local_ofs: Vector2): InputEvent {
     TODO()
   }
 

@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class CameraServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addFeed() {
+  fun addFeed(feed: CameraFeed) {
     TODO()
   }
 
@@ -24,7 +24,7 @@ open class CameraServer internal constructor(
     TODO()
   }
 
-  fun getFeed(): CameraFeed {
+  fun getFeed(index: Int): CameraFeed {
     TODO()
   }
 
@@ -32,7 +32,7 @@ open class CameraServer internal constructor(
     TODO()
   }
 
-  fun removeFeed() {
+  fun removeFeed(feed: CameraFeed) {
     TODO()
   }
 

@@ -50,35 +50,35 @@ open class VisualScriptPropertySet internal constructor(
     TODO()
   }
 
-  fun setAssignOp() {
+  fun setAssignOp(assign_op: Int) {
     TODO()
   }
 
-  fun setBasePath() {
+  fun setBasePath(base_path: NodePath) {
     TODO()
   }
 
-  fun setBaseScript() {
+  fun setBaseScript(base_script: String) {
     TODO()
   }
 
-  fun setBaseType() {
+  fun setBaseType(base_type: String) {
     TODO()
   }
 
-  fun setBasicType() {
+  fun setBasicType(basic_type: Int) {
     TODO()
   }
 
-  fun setCallMode() {
+  fun setCallMode(mode: Int) {
     TODO()
   }
 
-  fun setIndex() {
+  fun setIndex(index: String) {
     TODO()
   }
 
-  fun setProperty() {
+  fun setProperty(property: String) {
     TODO()
   }
 

@@ -69,47 +69,47 @@ open class SkeletonIK internal constructor(
     TODO()
   }
 
-  fun setInterpolation() {
+  fun setInterpolation(interpolation: Float) {
     TODO()
   }
 
-  fun setMagnetPosition() {
+  fun setMagnetPosition(local_position: Vector3) {
     TODO()
   }
 
-  fun setMaxIterations() {
+  fun setMaxIterations(iterations: Int) {
     TODO()
   }
 
-  fun setMinDistance() {
+  fun setMinDistance(min_distance: Float) {
     TODO()
   }
 
-  fun setOverrideTipBasis() {
+  fun setOverrideTipBasis(override: Boolean) {
     TODO()
   }
 
-  fun setRootBone() {
+  fun setRootBone(root_bone: String) {
     TODO()
   }
 
-  fun setTargetNode() {
+  fun setTargetNode(node: NodePath) {
     TODO()
   }
 
-  fun setTargetTransform() {
+  fun setTargetTransform(target: Transform) {
     TODO()
   }
 
-  fun setTipBone() {
+  fun setTipBone(tip_bone: String) {
     TODO()
   }
 
-  fun setUseMagnet() {
+  fun setUseMagnet(use: Boolean) {
     TODO()
   }
 
-  fun start() {
+  fun start(one_time: Boolean) {
     TODO()
   }
 

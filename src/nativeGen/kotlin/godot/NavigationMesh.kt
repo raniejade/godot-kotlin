@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class NavigationMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addPolygon() {
+  fun addPolygon(polygon: PoolIntArray) {
     TODO()
   }
 
@@ -27,7 +27,7 @@ open class NavigationMesh internal constructor(
     TODO()
   }
 
-  fun createFromMesh() {
+  fun createFromMesh(mesh: Mesh) {
     TODO()
   }
 
@@ -59,7 +59,7 @@ open class NavigationMesh internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -95,7 +95,7 @@ open class NavigationMesh internal constructor(
     TODO()
   }
 
-  fun getPolygon(): PoolIntArray {
+  fun getPolygon(idx: Int): PoolIntArray {
     TODO()
   }
 
@@ -123,87 +123,87 @@ open class NavigationMesh internal constructor(
     TODO()
   }
 
-  fun setAgentHeight() {
+  fun setAgentHeight(agent_height: Float) {
     TODO()
   }
 
-  fun setAgentMaxClimb() {
+  fun setAgentMaxClimb(agent_max_climb: Float) {
     TODO()
   }
 
-  fun setAgentMaxSlope() {
+  fun setAgentMaxSlope(agent_max_slope: Float) {
     TODO()
   }
 
-  fun setAgentRadius() {
+  fun setAgentRadius(agent_radius: Float) {
     TODO()
   }
 
-  fun setCellHeight() {
+  fun setCellHeight(cell_height: Float) {
     TODO()
   }
 
-  fun setCellSize() {
+  fun setCellSize(cell_size: Float) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setDetailSampleDistance() {
+  fun setDetailSampleDistance(detail_sample_dist: Float) {
     TODO()
   }
 
-  fun setDetailSampleMaxError() {
+  fun setDetailSampleMaxError(detail_sample_max_error: Float) {
     TODO()
   }
 
-  fun setEdgeMaxError() {
+  fun setEdgeMaxError(edge_max_error: Float) {
     TODO()
   }
 
-  fun setEdgeMaxLength() {
+  fun setEdgeMaxLength(edge_max_length: Float) {
     TODO()
   }
 
-  fun setFilterLedgeSpans() {
+  fun setFilterLedgeSpans(filter_ledge_spans: Boolean) {
     TODO()
   }
 
-  fun setFilterLowHangingObstacles() {
+  fun setFilterLowHangingObstacles(filter_low_hanging_obstacles: Boolean) {
     TODO()
   }
 
-  fun setFilterWalkableLowHeightSpans() {
+  fun setFilterWalkableLowHeightSpans(filter_walkable_low_height_spans: Boolean) {
     TODO()
   }
 
-  fun setParsedGeometryType() {
+  fun setParsedGeometryType(geometry_type: Int) {
     TODO()
   }
 
-  fun setRegionMergeSize() {
+  fun setRegionMergeSize(region_merge_size: Float) {
     TODO()
   }
 
-  fun setRegionMinSize() {
+  fun setRegionMinSize(region_min_size: Float) {
     TODO()
   }
 
-  fun setSamplePartitionType() {
+  fun setSamplePartitionType(sample_partition_type: Int) {
     TODO()
   }
 
-  fun setVertices() {
+  fun setVertices(vertices: PoolVector3Array) {
     TODO()
   }
 
-  fun setVertsPerPoly() {
+  fun setVertsPerPoly(verts_per_poly: Float) {
     TODO()
   }
 

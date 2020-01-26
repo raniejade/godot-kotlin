@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorFunc internal constructor(
     TODO()
   }
 
-  fun setFunction() {
+  fun setFunction(func: Int) {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class GridContainer internal constructor(
     TODO()
   }
 
-  fun setColumns() {
+  fun setColumns(columns: Int) {
     TODO()
   }
 

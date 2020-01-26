@@ -20,7 +20,7 @@ import kotlinx.cinterop.reinterpret
 open class CollisionObject2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun createShapeOwner(): Int {
+  fun createShapeOwner(owner: Object): Int {
     TODO()
   }
 
@@ -28,7 +28,7 @@ open class CollisionObject2D internal constructor(
     TODO()
   }
 
-  fun getShapeOwnerOneWayCollisionMargin(): Float {
+  fun getShapeOwnerOneWayCollisionMargin(owner_id: Int): Float {
     TODO()
   }
 
@@ -40,71 +40,71 @@ open class CollisionObject2D internal constructor(
     TODO()
   }
 
-  fun isShapeOwnerDisabled(): Boolean {
+  fun isShapeOwnerDisabled(owner_id: Int): Boolean {
     TODO()
   }
 
-  fun isShapeOwnerOneWayCollisionEnabled(): Boolean {
+  fun isShapeOwnerOneWayCollisionEnabled(owner_id: Int): Boolean {
     TODO()
   }
 
-  fun removeShapeOwner() {
+  fun removeShapeOwner(owner_id: Int) {
     TODO()
   }
 
-  fun setPickable() {
+  fun setPickable(enabled: Boolean) {
     TODO()
   }
 
-  fun shapeFindOwner(): Int {
+  fun shapeFindOwner(shape_index: Int): Int {
     TODO()
   }
 
-  fun shapeOwnerAddShape() {
+  fun shapeOwnerAddShape(owner_id: Int, shape: Shape2D) {
     TODO()
   }
 
-  fun shapeOwnerClearShapes() {
+  fun shapeOwnerClearShapes(owner_id: Int) {
     TODO()
   }
 
-  fun shapeOwnerGetOwner(): Object {
+  fun shapeOwnerGetOwner(owner_id: Int): Object {
     TODO()
   }
 
-  fun shapeOwnerGetShape(): Shape2D {
+  fun shapeOwnerGetShape(owner_id: Int, shape_id: Int): Shape2D {
     TODO()
   }
 
-  fun shapeOwnerGetShapeCount(): Int {
+  fun shapeOwnerGetShapeCount(owner_id: Int): Int {
     TODO()
   }
 
-  fun shapeOwnerGetShapeIndex(): Int {
+  fun shapeOwnerGetShapeIndex(owner_id: Int, shape_id: Int): Int {
     TODO()
   }
 
-  fun shapeOwnerGetTransform(): Transform2D {
+  fun shapeOwnerGetTransform(owner_id: Int): Transform2D {
     TODO()
   }
 
-  fun shapeOwnerRemoveShape() {
+  fun shapeOwnerRemoveShape(owner_id: Int, shape_id: Int) {
     TODO()
   }
 
-  fun shapeOwnerSetDisabled() {
+  fun shapeOwnerSetDisabled(owner_id: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun shapeOwnerSetOneWayCollision() {
+  fun shapeOwnerSetOneWayCollision(owner_id: Int, enable: Boolean) {
     TODO()
   }
 
-  fun shapeOwnerSetOneWayCollisionMargin() {
+  fun shapeOwnerSetOneWayCollisionMargin(owner_id: Int, margin: Float) {
     TODO()
   }
 
-  fun shapeOwnerSetTransform() {
+  fun shapeOwnerSetTransform(owner_id: Int, transform: Transform2D) {
     TODO()
   }
 

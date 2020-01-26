@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class GIProbe internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  fun bake() {
+  fun bake(from_node: Node, create_visual_debug: Boolean) {
     TODO()
   }
 
@@ -66,43 +66,43 @@ open class GIProbe internal constructor(
     TODO()
   }
 
-  fun setBias() {
+  fun setBias(max: Float) {
     TODO()
   }
 
-  fun setCompress() {
+  fun setCompress(enable: Boolean) {
     TODO()
   }
 
-  fun setDynamicRange() {
+  fun setDynamicRange(max: Int) {
     TODO()
   }
 
-  fun setEnergy() {
+  fun setEnergy(max: Float) {
     TODO()
   }
 
-  fun setExtents() {
+  fun setExtents(extents: Vector3) {
     TODO()
   }
 
-  fun setInterior() {
+  fun setInterior(enable: Boolean) {
     TODO()
   }
 
-  fun setNormalBias() {
+  fun setNormalBias(max: Float) {
     TODO()
   }
 
-  fun setProbeData() {
+  fun setProbeData(data: GIProbeData) {
     TODO()
   }
 
-  fun setPropagation() {
+  fun setPropagation(max: Float) {
     TODO()
   }
 
-  fun setSubdiv() {
+  fun setSubdiv(subdiv: Int) {
     TODO()
   }
 

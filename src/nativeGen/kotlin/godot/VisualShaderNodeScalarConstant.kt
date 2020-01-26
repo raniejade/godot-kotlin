@@ -19,7 +19,7 @@ open class VisualShaderNodeScalarConstant internal constructor(
     TODO()
   }
 
-  fun setConstant() {
+  fun setConstant(value: Float) {
     TODO()
   }
 

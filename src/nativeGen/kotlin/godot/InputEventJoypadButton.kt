@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -24,15 +25,15 @@ open class InputEventJoypadButton internal constructor(
     TODO()
   }
 
-  fun setButtonIndex() {
+  fun setButtonIndex(button_index: Int) {
     TODO()
   }
 
-  fun setPressed() {
+  fun setPressed(pressed: Boolean) {
     TODO()
   }
 
-  fun setPressure() {
+  fun setPressure(pressure: Float) {
     TODO()
   }
 

@@ -16,11 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityEnabler2D internal constructor(
   _handle: COpaquePointer
 ) : VisibilityNotifier2D(_handle) {
-  fun isEnablerEnabled(): Boolean {
+  fun isEnablerEnabled(enabler: Int): Boolean {
     TODO()
   }
 
-  fun setEnabler() {
+  fun setEnabler(enabler: Int, enabled: Boolean) {
     TODO()
   }
 

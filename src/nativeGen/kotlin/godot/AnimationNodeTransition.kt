@@ -26,27 +26,27 @@ open class AnimationNodeTransition internal constructor(
     TODO()
   }
 
-  fun getInputCaption(): String {
+  fun getInputCaption(input: Int): String {
     TODO()
   }
 
-  fun isInputSetAsAutoAdvance(): Boolean {
+  fun isInputSetAsAutoAdvance(input: Int): Boolean {
     TODO()
   }
 
-  fun setCrossFadeTime() {
+  fun setCrossFadeTime(time: Float) {
     TODO()
   }
 
-  fun setEnabledInputs() {
+  fun setEnabledInputs(amount: Int) {
     TODO()
   }
 
-  fun setInputAsAutoAdvance() {
+  fun setInputAsAutoAdvance(input: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setInputCaption() {
+  fun setInputCaption(input: Int, caption: String) {
     TODO()
   }
 

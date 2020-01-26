@@ -74,43 +74,43 @@ open class VideoPlayer internal constructor(
     TODO()
   }
 
-  fun setAudioTrack() {
+  fun setAudioTrack(track: Int) {
     TODO()
   }
 
-  fun setAutoplay() {
+  fun setAutoplay(enabled: Boolean) {
     TODO()
   }
 
-  fun setBufferingMsec() {
+  fun setBufferingMsec(msec: Int) {
     TODO()
   }
 
-  fun setBus() {
+  fun setBus(bus: String) {
     TODO()
   }
 
-  fun setExpand() {
+  fun setExpand(enable: Boolean) {
     TODO()
   }
 
-  fun setPaused() {
+  fun setPaused(paused: Boolean) {
     TODO()
   }
 
-  fun setStream() {
+  fun setStream(stream: VideoStream) {
     TODO()
   }
 
-  fun setStreamPosition() {
+  fun setStreamPosition(position: Float) {
     TODO()
   }
 
-  fun setVolume() {
+  fun setVolume(volume: Float) {
     TODO()
   }
 
-  fun setVolumeDb() {
+  fun setVolumeDb(db: Float) {
     TODO()
   }
 

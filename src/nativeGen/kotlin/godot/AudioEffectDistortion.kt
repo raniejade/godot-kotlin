@@ -36,23 +36,23 @@ open class AudioEffectDistortion internal constructor(
     TODO()
   }
 
-  fun setDrive() {
+  fun setDrive(drive: Float) {
     TODO()
   }
 
-  fun setKeepHfHz() {
+  fun setKeepHfHz(keep_hf_hz: Float) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setPostGain() {
+  fun setPostGain(post_gain: Float) {
     TODO()
   }
 
-  fun setPreGain() {
+  fun setPreGain(pre_gain: Float) {
     TODO()
   }
 

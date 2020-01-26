@@ -37,23 +37,23 @@ open class PrismMesh internal constructor(
     TODO()
   }
 
-  fun setLeftToRight() {
+  fun setLeftToRight(left_to_right: Float) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector3) {
     TODO()
   }
 
-  fun setSubdivideDepth() {
+  fun setSubdivideDepth(segments: Int) {
     TODO()
   }
 
-  fun setSubdivideHeight() {
+  fun setSubdivideHeight(segments: Int) {
     TODO()
   }
 
-  fun setSubdivideWidth() {
+  fun setSubdivideWidth(segments: Int) {
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,11 +17,15 @@ import kotlinx.cinterop.reinterpret
 open class _JSON internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun parse(): JSONParseResult {
+  fun parse(json: String): JSONParseResult {
     TODO()
   }
 
-  fun print(): String {
+  fun print(
+    value: Variant,
+    indent: String,
+    sort_keys: Boolean
+  ): String {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class VisualShaderNodeColorConstant internal constructor(
     TODO()
   }
 
-  fun setConstant() {
+  fun setConstant(value: Color) {
     TODO()
   }
 

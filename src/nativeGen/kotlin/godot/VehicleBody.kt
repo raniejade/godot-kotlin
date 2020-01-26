@@ -27,15 +27,15 @@ open class VehicleBody internal constructor(
     TODO()
   }
 
-  fun setBrake() {
+  fun setBrake(brake: Float) {
     TODO()
   }
 
-  fun setEngineForce() {
+  fun setEngineForce(engine_force: Float) {
     TODO()
   }
 
-  fun setSteering() {
+  fun setSteering(steering: Float) {
     TODO()
   }
 

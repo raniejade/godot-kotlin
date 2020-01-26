@@ -14,7 +14,7 @@ import kotlinx.cinterop.reinterpret
 open class PHashTranslation internal constructor(
   _handle: COpaquePointer
 ) : Translation(_handle) {
-  fun generate() {
+  fun generate(from: Translation) {
     TODO()
   }
 

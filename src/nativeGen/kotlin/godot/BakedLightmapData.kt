@@ -20,7 +20,11 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmapData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addUser() {
+  fun addUser(
+    path: NodePath,
+    lightmap: Texture,
+    instance: Int
+  ) {
     TODO()
   }
 
@@ -52,31 +56,31 @@ open class BakedLightmapData internal constructor(
     TODO()
   }
 
-  fun getUserLightmap(): Texture {
+  fun getUserLightmap(user_idx: Int): Texture {
     TODO()
   }
 
-  fun getUserPath(): NodePath {
+  fun getUserPath(user_idx: Int): NodePath {
     TODO()
   }
 
-  fun setBounds() {
+  fun setBounds(bounds: AABB) {
     TODO()
   }
 
-  fun setCellSpaceTransform() {
+  fun setCellSpaceTransform(xform: Transform) {
     TODO()
   }
 
-  fun setCellSubdiv() {
+  fun setCellSubdiv(cell_subdiv: Int) {
     TODO()
   }
 
-  fun setEnergy() {
+  fun setEnergy(energy: Float) {
     TODO()
   }
 
-  fun setOctree() {
+  fun setOctree(octree: PoolByteArray) {
     TODO()
   }
 

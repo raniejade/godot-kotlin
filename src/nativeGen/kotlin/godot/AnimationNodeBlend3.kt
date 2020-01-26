@@ -19,7 +19,7 @@ open class AnimationNodeBlend3 internal constructor(
     TODO()
   }
 
-  fun setUseSync() {
+  fun setUseSync(enable: Boolean) {
     TODO()
   }
 

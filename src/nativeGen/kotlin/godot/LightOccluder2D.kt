@@ -23,11 +23,11 @@ open class LightOccluder2D internal constructor(
     TODO()
   }
 
-  fun setOccluderLightMask() {
+  fun setOccluderLightMask(mask: Int) {
     TODO()
   }
 
-  fun setOccluderPolygon() {
+  fun setOccluderPolygon(polygon: OccluderPolygon2D) {
     TODO()
   }
 

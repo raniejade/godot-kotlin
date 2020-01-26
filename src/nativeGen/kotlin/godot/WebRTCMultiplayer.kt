@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,7 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCMultiplayer internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
-  fun addPeer(): Error {
+  fun addPeer(
+    peer: WebRTCPeerConnection,
+    peer_id: Int,
+    unreliable_lifetime: Int
+  ): Error {
     TODO()
   }
 
@@ -24,7 +29,7 @@ open class WebRTCMultiplayer internal constructor(
     TODO()
   }
 
-  fun getPeer(): Dictionary {
+  fun getPeer(peer_id: Int): Dictionary {
     TODO()
   }
 
@@ -32,15 +37,15 @@ open class WebRTCMultiplayer internal constructor(
     TODO()
   }
 
-  fun hasPeer(): Boolean {
+  fun hasPeer(peer_id: Int): Boolean {
     TODO()
   }
 
-  fun initialize(): Error {
+  fun initialize(peer_id: Int, server_compatibility: Boolean): Error {
     TODO()
   }
 
-  fun removePeer() {
+  fun removePeer(peer_id: Int) {
     TODO()
   }
 

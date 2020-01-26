@@ -18,11 +18,15 @@ import kotlinx.cinterop.reinterpret
 open class OptionButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
-  fun addIconItem() {
+  fun addIconItem(
+    texture: Texture,
+    label: String,
+    id: Int
+  ) {
     TODO()
   }
 
-  fun addItem() {
+  fun addItem(label: String, id: Int) {
     TODO()
   }
 
@@ -38,23 +42,23 @@ open class OptionButton internal constructor(
     TODO()
   }
 
-  fun getItemIcon(): Texture {
+  fun getItemIcon(idx: Int): Texture {
     TODO()
   }
 
-  fun getItemId(): Int {
+  fun getItemId(idx: Int): Int {
     TODO()
   }
 
-  fun getItemIndex(): Int {
+  fun getItemIndex(id: Int): Int {
     TODO()
   }
 
-  fun getItemMetadata(): Variant {
+  fun getItemMetadata(idx: Int): Variant {
     TODO()
   }
 
-  fun getItemText(): String {
+  fun getItemText(idx: Int): String {
     TODO()
   }
 
@@ -74,35 +78,35 @@ open class OptionButton internal constructor(
     TODO()
   }
 
-  fun isItemDisabled(): Boolean {
+  fun isItemDisabled(idx: Int): Boolean {
     TODO()
   }
 
-  fun removeItem() {
+  fun removeItem(idx: Int) {
     TODO()
   }
 
-  fun select() {
+  fun select(idx: Int) {
     TODO()
   }
 
-  fun setItemDisabled() {
+  fun setItemDisabled(idx: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setItemIcon() {
+  fun setItemIcon(idx: Int, texture: Texture) {
     TODO()
   }
 
-  fun setItemId() {
+  fun setItemId(idx: Int, id: Int) {
     TODO()
   }
 
-  fun setItemMetadata() {
+  fun setItemMetadata(idx: Int, metadata: Variant) {
     TODO()
   }
 
-  fun setItemText() {
+  fun setItemText(idx: Int, text: String) {
     TODO()
   }
 

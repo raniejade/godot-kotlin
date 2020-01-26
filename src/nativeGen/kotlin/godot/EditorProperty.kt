@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -16,11 +17,16 @@ import kotlinx.cinterop.reinterpret
 open class EditorProperty internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun addFocusable() {
+  fun addFocusable(control: Control) {
     TODO()
   }
 
-  fun emitChanged() {
+  fun emitChanged(
+    property: String,
+    value: Variant,
+    field: String,
+    changing: Boolean
+  ) {
     TODO()
   }
 
@@ -60,31 +66,31 @@ open class EditorProperty internal constructor(
     TODO()
   }
 
-  fun setBottomEditor() {
+  fun setBottomEditor(editor: Control) {
     TODO()
   }
 
-  fun setCheckable() {
+  fun setCheckable(checkable: Boolean) {
     TODO()
   }
 
-  fun setChecked() {
+  fun setChecked(checked: Boolean) {
     TODO()
   }
 
-  fun setDrawRed() {
+  fun setDrawRed(draw_red: Boolean) {
     TODO()
   }
 
-  fun setKeying() {
+  fun setKeying(keying: Boolean) {
     TODO()
   }
 
-  fun setLabel() {
+  fun setLabel(text: String) {
     TODO()
   }
 
-  fun setReadOnly() {
+  fun setReadOnly(read_only: Boolean) {
     TODO()
   }
 

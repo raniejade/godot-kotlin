@@ -29,7 +29,7 @@ open class AnimationNodeStateMachinePlayback internal constructor(
     TODO()
   }
 
-  fun start() {
+  fun start(node: String) {
     TODO()
   }
 
@@ -37,7 +37,7 @@ open class AnimationNodeStateMachinePlayback internal constructor(
     TODO()
   }
 
-  fun travel() {
+  fun travel(to_node: String) {
     TODO()
   }
 

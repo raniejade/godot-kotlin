@@ -24,7 +24,7 @@ open class VisibilityNotifier internal constructor(
     TODO()
   }
 
-  fun setAabb() {
+  fun setAabb(rect: AABB) {
     TODO()
   }
 

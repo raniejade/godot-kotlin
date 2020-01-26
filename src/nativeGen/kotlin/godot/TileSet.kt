@@ -23,79 +23,99 @@ import kotlinx.cinterop.reinterpret
 open class TileSet internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun autotileClearBitmaskMap() {
+  fun autotileClearBitmaskMap(id: Int) {
     TODO()
   }
 
-  fun autotileGetBitmask(): Int {
+  fun autotileGetBitmask(id: Int, coord: Vector2): Int {
     TODO()
   }
 
-  fun autotileGetBitmaskMode(): BitmaskMode {
+  fun autotileGetBitmaskMode(id: Int): BitmaskMode {
     TODO()
   }
 
-  fun autotileGetIconCoordinate(): Vector2 {
+  fun autotileGetIconCoordinate(id: Int): Vector2 {
     TODO()
   }
 
-  fun autotileGetLightOccluder(): OccluderPolygon2D {
+  fun autotileGetLightOccluder(id: Int, coord: Vector2): OccluderPolygon2D {
     TODO()
   }
 
-  fun autotileGetNavigationPolygon(): NavigationPolygon {
+  fun autotileGetNavigationPolygon(id: Int, coord: Vector2): NavigationPolygon {
     TODO()
   }
 
-  fun autotileGetSize(): Vector2 {
+  fun autotileGetSize(id: Int): Vector2 {
     TODO()
   }
 
-  fun autotileGetSpacing(): Int {
+  fun autotileGetSpacing(id: Int): Int {
     TODO()
   }
 
-  fun autotileGetSubtilePriority(): Int {
+  fun autotileGetSubtilePriority(id: Int, coord: Vector2): Int {
     TODO()
   }
 
-  fun autotileGetZIndex(): Int {
+  fun autotileGetZIndex(id: Int, coord: Vector2): Int {
     TODO()
   }
 
-  fun autotileSetBitmask() {
+  fun autotileSetBitmask(
+    id: Int,
+    bitmask: Vector2,
+    flag: Int
+  ) {
     TODO()
   }
 
-  fun autotileSetBitmaskMode() {
+  fun autotileSetBitmaskMode(id: Int, mode: Int) {
     TODO()
   }
 
-  fun autotileSetIconCoordinate() {
+  fun autotileSetIconCoordinate(id: Int, coord: Vector2) {
     TODO()
   }
 
-  fun autotileSetLightOccluder() {
+  fun autotileSetLightOccluder(
+    id: Int,
+    light_occluder: OccluderPolygon2D,
+    coord: Vector2
+  ) {
     TODO()
   }
 
-  fun autotileSetNavigationPolygon() {
+  fun autotileSetNavigationPolygon(
+    id: Int,
+    navigation_polygon: NavigationPolygon,
+    coord: Vector2
+  ) {
     TODO()
   }
 
-  fun autotileSetSize() {
+  fun autotileSetSize(id: Int, size: Vector2) {
     TODO()
   }
 
-  fun autotileSetSpacing() {
+  fun autotileSetSpacing(id: Int, spacing: Int) {
     TODO()
   }
 
-  fun autotileSetSubtilePriority() {
+  fun autotileSetSubtilePriority(
+    id: Int,
+    coord: Vector2,
+    priority: Int
+  ) {
     TODO()
   }
 
-  fun autotileSetZIndex() {
+  fun autotileSetZIndex(
+    id: Int,
+    coord: Vector2,
+    z_index: Int
+  ) {
     TODO()
   }
 
@@ -103,11 +123,11 @@ open class TileSet internal constructor(
     TODO()
   }
 
-  fun createTile() {
+  fun createTile(id: Int) {
     TODO()
   }
 
-  fun findTileByName(): Int {
+  fun findTileByName(name: String): Int {
     TODO()
   }
 
@@ -119,167 +139,193 @@ open class TileSet internal constructor(
     TODO()
   }
 
-  fun removeTile() {
+  fun removeTile(id: Int) {
     TODO()
   }
 
-  fun tileAddShape() {
+  fun tileAddShape(
+    id: Int,
+    shape: Shape2D,
+    shape_transform: Transform2D,
+    one_way: Boolean,
+    autotile_coord: Vector2
+  ) {
     TODO()
   }
 
-  fun tileGetLightOccluder(): OccluderPolygon2D {
+  fun tileGetLightOccluder(id: Int): OccluderPolygon2D {
     TODO()
   }
 
-  fun tileGetMaterial(): ShaderMaterial {
+  fun tileGetMaterial(id: Int): ShaderMaterial {
     TODO()
   }
 
-  fun tileGetModulate(): Color {
+  fun tileGetModulate(id: Int): Color {
     TODO()
   }
 
-  fun tileGetName(): String {
+  fun tileGetName(id: Int): String {
     TODO()
   }
 
-  fun tileGetNavigationPolygon(): NavigationPolygon {
+  fun tileGetNavigationPolygon(id: Int): NavigationPolygon {
     TODO()
   }
 
-  fun tileGetNavigationPolygonOffset(): Vector2 {
+  fun tileGetNavigationPolygonOffset(id: Int): Vector2 {
     TODO()
   }
 
-  fun tileGetNormalMap(): Texture {
+  fun tileGetNormalMap(id: Int): Texture {
     TODO()
   }
 
-  fun tileGetOccluderOffset(): Vector2 {
+  fun tileGetOccluderOffset(id: Int): Vector2 {
     TODO()
   }
 
-  fun tileGetRegion(): Rect2 {
+  fun tileGetRegion(id: Int): Rect2 {
     TODO()
   }
 
-  fun tileGetShape(): Shape2D {
+  fun tileGetShape(id: Int, shape_id: Int): Shape2D {
     TODO()
   }
 
-  fun tileGetShapeCount(): Int {
+  fun tileGetShapeCount(id: Int): Int {
     TODO()
   }
 
-  fun tileGetShapeOffset(): Vector2 {
+  fun tileGetShapeOffset(id: Int, shape_id: Int): Vector2 {
     TODO()
   }
 
-  fun tileGetShapeOneWay(): Boolean {
+  fun tileGetShapeOneWay(id: Int, shape_id: Int): Boolean {
     TODO()
   }
 
-  fun tileGetShapeOneWayMargin(): Float {
+  fun tileGetShapeOneWayMargin(id: Int, shape_id: Int): Float {
     TODO()
   }
 
-  fun tileGetShapeTransform(): Transform2D {
+  fun tileGetShapeTransform(id: Int, shape_id: Int): Transform2D {
     TODO()
   }
 
-  fun tileGetShapes(): VariantArray {
+  fun tileGetShapes(id: Int): VariantArray {
     TODO()
   }
 
-  fun tileGetTexture(): Texture {
+  fun tileGetTexture(id: Int): Texture {
     TODO()
   }
 
-  fun tileGetTextureOffset(): Vector2 {
+  fun tileGetTextureOffset(id: Int): Vector2 {
     TODO()
   }
 
-  fun tileGetTileMode(): TileMode {
+  fun tileGetTileMode(id: Int): TileMode {
     TODO()
   }
 
-  fun tileGetZIndex(): Int {
+  fun tileGetZIndex(id: Int): Int {
     TODO()
   }
 
-  fun tileSetLightOccluder() {
+  fun tileSetLightOccluder(id: Int, light_occluder: OccluderPolygon2D) {
     TODO()
   }
 
-  fun tileSetMaterial() {
+  fun tileSetMaterial(id: Int, material: ShaderMaterial) {
     TODO()
   }
 
-  fun tileSetModulate() {
+  fun tileSetModulate(id: Int, color: Color) {
     TODO()
   }
 
-  fun tileSetName() {
+  fun tileSetName(id: Int, name: String) {
     TODO()
   }
 
-  fun tileSetNavigationPolygon() {
+  fun tileSetNavigationPolygon(id: Int, navigation_polygon: NavigationPolygon) {
     TODO()
   }
 
-  fun tileSetNavigationPolygonOffset() {
+  fun tileSetNavigationPolygonOffset(id: Int, navigation_polygon_offset: Vector2) {
     TODO()
   }
 
-  fun tileSetNormalMap() {
+  fun tileSetNormalMap(id: Int, normal_map: Texture) {
     TODO()
   }
 
-  fun tileSetOccluderOffset() {
+  fun tileSetOccluderOffset(id: Int, occluder_offset: Vector2) {
     TODO()
   }
 
-  fun tileSetRegion() {
+  fun tileSetRegion(id: Int, region: Rect2) {
     TODO()
   }
 
-  fun tileSetShape() {
+  fun tileSetShape(
+    id: Int,
+    shape_id: Int,
+    shape: Shape2D
+  ) {
     TODO()
   }
 
-  fun tileSetShapeOffset() {
+  fun tileSetShapeOffset(
+    id: Int,
+    shape_id: Int,
+    shape_offset: Vector2
+  ) {
     TODO()
   }
 
-  fun tileSetShapeOneWay() {
+  fun tileSetShapeOneWay(
+    id: Int,
+    shape_id: Int,
+    one_way: Boolean
+  ) {
     TODO()
   }
 
-  fun tileSetShapeOneWayMargin() {
+  fun tileSetShapeOneWayMargin(
+    id: Int,
+    shape_id: Int,
+    one_way: Float
+  ) {
     TODO()
   }
 
-  fun tileSetShapeTransform() {
+  fun tileSetShapeTransform(
+    id: Int,
+    shape_id: Int,
+    shape_transform: Transform2D
+  ) {
     TODO()
   }
 
-  fun tileSetShapes() {
+  fun tileSetShapes(id: Int, shapes: VariantArray) {
     TODO()
   }
 
-  fun tileSetTexture() {
+  fun tileSetTexture(id: Int, texture: Texture) {
     TODO()
   }
 
-  fun tileSetTextureOffset() {
+  fun tileSetTextureOffset(id: Int, texture_offset: Vector2) {
     TODO()
   }
 
-  fun tileSetTileMode() {
+  fun tileSetTileMode(id: Int, tilemode: Int) {
     TODO()
   }
 
-  fun tileSetZIndex() {
+  fun tileSetZIndex(id: Int, z_index: Int) {
     TODO()
   }
 

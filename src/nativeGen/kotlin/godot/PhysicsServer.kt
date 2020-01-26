@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -21,15 +22,20 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun areaAddShape() {
+  fun areaAddShape(
+    area: RID,
+    shape: RID,
+    transform: Transform,
+    disabled: Boolean
+  ) {
     TODO()
   }
 
-  fun areaAttachObjectInstanceId() {
+  fun areaAttachObjectInstanceId(area: RID, id: Int) {
     TODO()
   }
 
-  fun areaClearShapes() {
+  fun areaClearShapes(area: RID) {
     TODO()
   }
 
@@ -37,415 +43,544 @@ open class PhysicsServer internal constructor(
     TODO()
   }
 
-  fun areaGetObjectInstanceId(): Int {
+  fun areaGetObjectInstanceId(area: RID): Int {
     TODO()
   }
 
-  fun areaGetParam(): Variant {
+  fun areaGetParam(area: RID, param: Int): Variant {
     TODO()
   }
 
-  fun areaGetShape(): RID {
+  fun areaGetShape(area: RID, shape_idx: Int): RID {
     TODO()
   }
 
-  fun areaGetShapeCount(): Int {
+  fun areaGetShapeCount(area: RID): Int {
     TODO()
   }
 
-  fun areaGetShapeTransform(): Transform {
+  fun areaGetShapeTransform(area: RID, shape_idx: Int): Transform {
     TODO()
   }
 
-  fun areaGetSpace(): RID {
+  fun areaGetSpace(area: RID): RID {
     TODO()
   }
 
-  fun areaGetSpaceOverrideMode(): AreaSpaceOverrideMode {
+  fun areaGetSpaceOverrideMode(area: RID): AreaSpaceOverrideMode {
     TODO()
   }
 
-  fun areaGetTransform(): Transform {
+  fun areaGetTransform(area: RID): Transform {
     TODO()
   }
 
-  fun areaIsRayPickable(): Boolean {
+  fun areaIsRayPickable(area: RID): Boolean {
     TODO()
   }
 
-  fun areaRemoveShape() {
+  fun areaRemoveShape(area: RID, shape_idx: Int) {
     TODO()
   }
 
-  fun areaSetAreaMonitorCallback() {
+  fun areaSetAreaMonitorCallback(
+    area: RID,
+    receiver: Object,
+    method: String
+  ) {
     TODO()
   }
 
-  fun areaSetCollisionLayer() {
+  fun areaSetCollisionLayer(area: RID, layer: Int) {
     TODO()
   }
 
-  fun areaSetCollisionMask() {
+  fun areaSetCollisionMask(area: RID, mask: Int) {
     TODO()
   }
 
-  fun areaSetMonitorCallback() {
+  fun areaSetMonitorCallback(
+    area: RID,
+    receiver: Object,
+    method: String
+  ) {
     TODO()
   }
 
-  fun areaSetMonitorable() {
+  fun areaSetMonitorable(area: RID, monitorable: Boolean) {
     TODO()
   }
 
-  fun areaSetParam() {
+  fun areaSetParam(
+    area: RID,
+    param: Int,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun areaSetRayPickable() {
+  fun areaSetRayPickable(area: RID, enable: Boolean) {
     TODO()
   }
 
-  fun areaSetShape() {
+  fun areaSetShape(
+    area: RID,
+    shape_idx: Int,
+    shape: RID
+  ) {
     TODO()
   }
 
-  fun areaSetShapeDisabled() {
+  fun areaSetShapeDisabled(
+    area: RID,
+    shape_idx: Int,
+    disabled: Boolean
+  ) {
     TODO()
   }
 
-  fun areaSetShapeTransform() {
+  fun areaSetShapeTransform(
+    area: RID,
+    shape_idx: Int,
+    transform: Transform
+  ) {
     TODO()
   }
 
-  fun areaSetSpace() {
+  fun areaSetSpace(area: RID, space: RID) {
     TODO()
   }
 
-  fun areaSetSpaceOverrideMode() {
+  fun areaSetSpaceOverrideMode(area: RID, mode: Int) {
     TODO()
   }
 
-  fun areaSetTransform() {
+  fun areaSetTransform(area: RID, transform: Transform) {
     TODO()
   }
 
-  fun bodyAddCentralForce() {
+  fun bodyAddCentralForce(body: RID, force: Vector3) {
     TODO()
   }
 
-  fun bodyAddCollisionException() {
+  fun bodyAddCollisionException(body: RID, excepted_body: RID) {
     TODO()
   }
 
-  fun bodyAddForce() {
+  fun bodyAddForce(
+    body: RID,
+    force: Vector3,
+    position: Vector3
+  ) {
     TODO()
   }
 
-  fun bodyAddShape() {
+  fun bodyAddShape(
+    body: RID,
+    shape: RID,
+    transform: Transform,
+    disabled: Boolean
+  ) {
     TODO()
   }
 
-  fun bodyAddTorque() {
+  fun bodyAddTorque(body: RID, torque: Vector3) {
     TODO()
   }
 
-  fun bodyApplyCentralImpulse() {
+  fun bodyApplyCentralImpulse(body: RID, impulse: Vector3) {
     TODO()
   }
 
-  fun bodyApplyImpulse() {
+  fun bodyApplyImpulse(
+    body: RID,
+    position: Vector3,
+    impulse: Vector3
+  ) {
     TODO()
   }
 
-  fun bodyApplyTorqueImpulse() {
+  fun bodyApplyTorqueImpulse(body: RID, impulse: Vector3) {
     TODO()
   }
 
-  fun bodyAttachObjectInstanceId() {
+  fun bodyAttachObjectInstanceId(body: RID, id: Int) {
     TODO()
   }
 
-  fun bodyClearShapes() {
+  fun bodyClearShapes(body: RID) {
     TODO()
   }
 
-  fun bodyCreate(): RID {
+  fun bodyCreate(mode: Int, init_sleeping: Boolean): RID {
     TODO()
   }
 
-  fun bodyGetCollisionLayer(): Int {
+  fun bodyGetCollisionLayer(body: RID): Int {
     TODO()
   }
 
-  fun bodyGetCollisionMask(): Int {
+  fun bodyGetCollisionMask(body: RID): Int {
     TODO()
   }
 
-  fun bodyGetDirectState(): PhysicsDirectBodyState {
+  fun bodyGetDirectState(body: RID): PhysicsDirectBodyState {
     TODO()
   }
 
-  fun bodyGetKinematicSafeMargin(): Float {
+  fun bodyGetKinematicSafeMargin(body: RID): Float {
     TODO()
   }
 
-  fun bodyGetMaxContactsReported(): Int {
+  fun bodyGetMaxContactsReported(body: RID): Int {
     TODO()
   }
 
-  fun bodyGetMode(): BodyMode {
+  fun bodyGetMode(body: RID): BodyMode {
     TODO()
   }
 
-  fun bodyGetObjectInstanceId(): Int {
+  fun bodyGetObjectInstanceId(body: RID): Int {
     TODO()
   }
 
-  fun bodyGetParam(): Float {
+  fun bodyGetParam(body: RID, param: Int): Float {
     TODO()
   }
 
-  fun bodyGetShape(): RID {
+  fun bodyGetShape(body: RID, shape_idx: Int): RID {
     TODO()
   }
 
-  fun bodyGetShapeCount(): Int {
+  fun bodyGetShapeCount(body: RID): Int {
     TODO()
   }
 
-  fun bodyGetShapeTransform(): Transform {
+  fun bodyGetShapeTransform(body: RID, shape_idx: Int): Transform {
     TODO()
   }
 
-  fun bodyGetSpace(): RID {
+  fun bodyGetSpace(body: RID): RID {
     TODO()
   }
 
-  fun bodyGetState(): Variant {
+  fun bodyGetState(body: RID, state: Int): Variant {
     TODO()
   }
 
-  fun bodyIsAxisLocked(): Boolean {
+  fun bodyIsAxisLocked(body: RID, axis: Int): Boolean {
     TODO()
   }
 
-  fun bodyIsContinuousCollisionDetectionEnabled(): Boolean {
+  fun bodyIsContinuousCollisionDetectionEnabled(body: RID): Boolean {
     TODO()
   }
 
-  fun bodyIsOmittingForceIntegration(): Boolean {
+  fun bodyIsOmittingForceIntegration(body: RID): Boolean {
     TODO()
   }
 
-  fun bodyIsRayPickable(): Boolean {
+  fun bodyIsRayPickable(body: RID): Boolean {
     TODO()
   }
 
-  fun bodyRemoveCollisionException() {
+  fun bodyRemoveCollisionException(body: RID, excepted_body: RID) {
     TODO()
   }
 
-  fun bodyRemoveShape() {
+  fun bodyRemoveShape(body: RID, shape_idx: Int) {
     TODO()
   }
 
-  fun bodySetAxisLock() {
+  fun bodySetAxisLock(
+    body: RID,
+    axis: Int,
+    lock: Boolean
+  ) {
     TODO()
   }
 
-  fun bodySetAxisVelocity() {
+  fun bodySetAxisVelocity(body: RID, axis_velocity: Vector3) {
     TODO()
   }
 
-  fun bodySetCollisionLayer() {
+  fun bodySetCollisionLayer(body: RID, layer: Int) {
     TODO()
   }
 
-  fun bodySetCollisionMask() {
+  fun bodySetCollisionMask(body: RID, mask: Int) {
     TODO()
   }
 
-  fun bodySetEnableContinuousCollisionDetection() {
+  fun bodySetEnableContinuousCollisionDetection(body: RID, enable: Boolean) {
     TODO()
   }
 
-  fun bodySetForceIntegrationCallback() {
+  fun bodySetForceIntegrationCallback(
+    body: RID,
+    receiver: Object,
+    method: String,
+    userdata: Variant
+  ) {
     TODO()
   }
 
-  fun bodySetKinematicSafeMargin() {
+  fun bodySetKinematicSafeMargin(body: RID, margin: Float) {
     TODO()
   }
 
-  fun bodySetMaxContactsReported() {
+  fun bodySetMaxContactsReported(body: RID, amount: Int) {
     TODO()
   }
 
-  fun bodySetMode() {
+  fun bodySetMode(body: RID, mode: Int) {
     TODO()
   }
 
-  fun bodySetOmitForceIntegration() {
+  fun bodySetOmitForceIntegration(body: RID, enable: Boolean) {
     TODO()
   }
 
-  fun bodySetParam() {
+  fun bodySetParam(
+    body: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
-  fun bodySetRayPickable() {
+  fun bodySetRayPickable(body: RID, enable: Boolean) {
     TODO()
   }
 
-  fun bodySetShape() {
+  fun bodySetShape(
+    body: RID,
+    shape_idx: Int,
+    shape: RID
+  ) {
     TODO()
   }
 
-  fun bodySetShapeDisabled() {
+  fun bodySetShapeDisabled(
+    body: RID,
+    shape_idx: Int,
+    disabled: Boolean
+  ) {
     TODO()
   }
 
-  fun bodySetShapeTransform() {
+  fun bodySetShapeTransform(
+    body: RID,
+    shape_idx: Int,
+    transform: Transform
+  ) {
     TODO()
   }
 
-  fun bodySetSpace() {
+  fun bodySetSpace(body: RID, space: RID) {
     TODO()
   }
 
-  fun bodySetState() {
+  fun bodySetState(
+    body: RID,
+    state: Int,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun coneTwistJointGetParam(): Float {
+  fun coneTwistJointGetParam(joint: RID, param: Int): Float {
     TODO()
   }
 
-  fun coneTwistJointSetParam() {
+  fun coneTwistJointSetParam(
+    joint: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
-  fun freeRid() {
+  fun freeRid(rid: RID) {
     TODO()
   }
 
-  fun generic6dofJointGetFlag(): Boolean {
+  fun generic6dofJointGetFlag(
+    joint: RID,
+    axis: Int,
+    flag: Int
+  ): Boolean {
     TODO()
   }
 
-  fun generic6dofJointGetParam(): Float {
+  fun generic6dofJointGetParam(
+    joint: RID,
+    axis: Int,
+    param: Int
+  ): Float {
     TODO()
   }
 
-  fun generic6dofJointSetFlag() {
+  fun generic6dofJointSetFlag(
+    joint: RID,
+    axis: Int,
+    flag: Int,
+    enable: Boolean
+  ) {
     TODO()
   }
 
-  fun generic6dofJointSetParam() {
+  fun generic6dofJointSetParam(
+    joint: RID,
+    axis: Int,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
-  fun getProcessInfo(): Int {
+  fun getProcessInfo(process_info: Int): Int {
     TODO()
   }
 
-  fun hingeJointGetFlag(): Boolean {
+  fun hingeJointGetFlag(joint: RID, flag: Int): Boolean {
     TODO()
   }
 
-  fun hingeJointGetParam(): Float {
+  fun hingeJointGetParam(joint: RID, param: Int): Float {
     TODO()
   }
 
-  fun hingeJointSetFlag() {
+  fun hingeJointSetFlag(
+    joint: RID,
+    flag: Int,
+    enabled: Boolean
+  ) {
     TODO()
   }
 
-  fun hingeJointSetParam() {
+  fun hingeJointSetParam(
+    joint: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
-  fun jointCreateConeTwist(): RID {
+  fun jointCreateConeTwist(
+    body_A: RID,
+    local_ref_A: Transform,
+    body_B: RID,
+    local_ref_B: Transform
+  ): RID {
     TODO()
   }
 
-  fun jointCreateGeneric6dof(): RID {
+  fun jointCreateGeneric6dof(
+    body_A: RID,
+    local_ref_A: Transform,
+    body_B: RID,
+    local_ref_B: Transform
+  ): RID {
     TODO()
   }
 
-  fun jointCreateHinge(): RID {
+  fun jointCreateHinge(
+    body_A: RID,
+    hinge_A: Transform,
+    body_B: RID,
+    hinge_B: Transform
+  ): RID {
     TODO()
   }
 
-  fun jointCreatePin(): RID {
+  fun jointCreatePin(
+    body_A: RID,
+    local_A: Vector3,
+    body_B: RID,
+    local_B: Vector3
+  ): RID {
     TODO()
   }
 
-  fun jointCreateSlider(): RID {
+  fun jointCreateSlider(
+    body_A: RID,
+    local_ref_A: Transform,
+    body_B: RID,
+    local_ref_B: Transform
+  ): RID {
     TODO()
   }
 
-  fun jointGetSolverPriority(): Int {
+  fun jointGetSolverPriority(joint: RID): Int {
     TODO()
   }
 
-  fun jointGetType(): JointType {
+  fun jointGetType(joint: RID): JointType {
     TODO()
   }
 
-  fun jointSetSolverPriority() {
+  fun jointSetSolverPriority(joint: RID, priority: Int) {
     TODO()
   }
 
-  fun pinJointGetLocalA(): Vector3 {
+  fun pinJointGetLocalA(joint: RID): Vector3 {
     TODO()
   }
 
-  fun pinJointGetLocalB(): Vector3 {
+  fun pinJointGetLocalB(joint: RID): Vector3 {
     TODO()
   }
 
-  fun pinJointGetParam(): Float {
+  fun pinJointGetParam(joint: RID, param: Int): Float {
     TODO()
   }
 
-  fun pinJointSetLocalA() {
+  fun pinJointSetLocalA(joint: RID, local_A: Vector3) {
     TODO()
   }
 
-  fun pinJointSetLocalB() {
+  fun pinJointSetLocalB(joint: RID, local_B: Vector3) {
     TODO()
   }
 
-  fun pinJointSetParam() {
+  fun pinJointSetParam(
+    joint: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
-  fun setActive() {
+  fun setActive(active: Boolean) {
     TODO()
   }
 
-  fun shapeCreate(): RID {
+  fun shapeCreate(type: Int): RID {
     TODO()
   }
 
-  fun shapeGetData(): Variant {
+  fun shapeGetData(shape: RID): Variant {
     TODO()
   }
 
-  fun shapeGetType(): ShapeType {
+  fun shapeGetType(shape: RID): ShapeType {
     TODO()
   }
 
-  fun shapeSetData() {
+  fun shapeSetData(shape: RID, data: Variant) {
     TODO()
   }
 
-  fun sliderJointGetParam(): Float {
+  fun sliderJointGetParam(joint: RID, param: Int): Float {
     TODO()
   }
 
-  fun sliderJointSetParam() {
+  fun sliderJointSetParam(
+    joint: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 
@@ -453,23 +588,27 @@ open class PhysicsServer internal constructor(
     TODO()
   }
 
-  fun spaceGetDirectState(): PhysicsDirectSpaceState {
+  fun spaceGetDirectState(space: RID): PhysicsDirectSpaceState {
     TODO()
   }
 
-  fun spaceGetParam(): Float {
+  fun spaceGetParam(space: RID, param: Int): Float {
     TODO()
   }
 
-  fun spaceIsActive(): Boolean {
+  fun spaceIsActive(space: RID): Boolean {
     TODO()
   }
 
-  fun spaceSetActive() {
+  fun spaceSetActive(space: RID, active: Boolean) {
     TODO()
   }
 
-  fun spaceSetParam() {
+  fun spaceSetParam(
+    space: RID,
+    param: Int,
+    value: Float
+  ) {
     TODO()
   }
 

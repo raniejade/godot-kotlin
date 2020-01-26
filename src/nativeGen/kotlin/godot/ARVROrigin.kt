@@ -19,7 +19,7 @@ open class ARVROrigin internal constructor(
     TODO()
   }
 
-  fun setWorldScale() {
+  fun setWorldScale(world_scale: Float) {
     TODO()
   }
 

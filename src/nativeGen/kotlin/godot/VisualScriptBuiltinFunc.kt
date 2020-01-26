@@ -19,7 +19,7 @@ open class VisualScriptBuiltinFunc internal constructor(
     TODO()
   }
 
-  fun setFunc() {
+  fun setFunc(which: Int) {
     TODO()
   }
 

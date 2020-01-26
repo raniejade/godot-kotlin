@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,23 +16,33 @@ import kotlinx.cinterop.reinterpret
 open class EditorResourcePreview internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun addPreviewGenerator() {
+  fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
     TODO()
   }
 
-  fun checkForInvalidation() {
+  fun checkForInvalidation(path: String) {
     TODO()
   }
 
-  fun queueEditedResourcePreview() {
+  fun queueEditedResourcePreview(
+    resource: Resource,
+    receiver: Object,
+    receiver_func: String,
+    userdata: Variant
+  ) {
     TODO()
   }
 
-  fun queueResourcePreview() {
+  fun queueResourcePreview(
+    path: String,
+    receiver: Object,
+    receiver_func: String,
+    userdata: Variant
+  ) {
     TODO()
   }
 
-  fun removePreviewGenerator() {
+  fun removePreviewGenerator(generator: EditorResourcePreviewGenerator) {
     TODO()
   }
 

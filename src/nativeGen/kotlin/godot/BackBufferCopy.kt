@@ -24,11 +24,11 @@ open class BackBufferCopy internal constructor(
     TODO()
   }
 
-  fun setCopyMode() {
+  fun setCopyMode(copy_mode: Int) {
     TODO()
   }
 
-  fun setRect() {
+  fun setRect(rect: Rect2) {
     TODO()
   }
 

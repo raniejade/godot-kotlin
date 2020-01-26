@@ -37,23 +37,23 @@ open class SphereMesh internal constructor(
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Float) {
     TODO()
   }
 
-  fun setIsHemisphere() {
+  fun setIsHemisphere(is_hemisphere: Boolean) {
     TODO()
   }
 
-  fun setRadialSegments() {
+  fun setRadialSegments(radial_segments: Int) {
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(radius: Float) {
     TODO()
   }
 
-  fun setRings() {
+  fun setRings(rings: Int) {
     TODO()
   }
 

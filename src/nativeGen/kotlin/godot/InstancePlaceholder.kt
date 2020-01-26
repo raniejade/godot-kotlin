@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class InstancePlaceholder internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun createInstance(): Node {
+  fun createInstance(replace: Boolean, custom_scene: PackedScene): Node {
     TODO()
   }
 
@@ -24,11 +25,11 @@ open class InstancePlaceholder internal constructor(
     TODO()
   }
 
-  fun getStoredValues(): Dictionary {
+  fun getStoredValues(with_order: Boolean): Dictionary {
     TODO()
   }
 
-  fun replaceByInstance() {
+  fun replaceByInstance(custom_scene: PackedScene) {
     TODO()
   }
 

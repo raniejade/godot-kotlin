@@ -6,6 +6,7 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Rect2
+import godot.core.Variant
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -26,35 +27,35 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun addColorOverride() {
+  fun addColorOverride(name: String, color: Color) {
     TODO()
   }
 
-  fun addConstantOverride() {
+  fun addConstantOverride(name: String, constant: Int) {
     TODO()
   }
 
-  fun addFontOverride() {
+  fun addFontOverride(name: String, font: Font) {
     TODO()
   }
 
-  fun addIconOverride() {
+  fun addIconOverride(name: String, texture: Texture) {
     TODO()
   }
 
-  fun addShaderOverride() {
+  fun addShaderOverride(name: String, shader: Shader) {
     TODO()
   }
 
-  fun addStyleboxOverride() {
+  fun addStyleboxOverride(name: String, stylebox: StyleBox) {
     TODO()
   }
 
-  fun forceDrag() {
+  fun forceDrag(data: Variant, preview: Control) {
     TODO()
   }
 
-  fun getAnchor(): Float {
+  fun getAnchor(margin: Int): Float {
     TODO()
   }
 
@@ -62,7 +63,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getColor(): Color {
+  fun getColor(name: String, type: String): Color {
     TODO()
   }
 
@@ -70,11 +71,11 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getConstant(): Int {
+  fun getConstant(name: String, type: String): Int {
     TODO()
   }
 
-  fun getCursorShape(): CursorShape {
+  fun getCursorShape(position: Vector2): CursorShape {
     TODO()
   }
 
@@ -94,7 +95,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getFocusNeighbour(): NodePath {
+  fun getFocusNeighbour(margin: Int): NodePath {
     TODO()
   }
 
@@ -110,7 +111,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getFont(): Font {
+  fun getFont(name: String, type: String): Font {
     TODO()
   }
 
@@ -130,11 +131,11 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getIcon(): Texture {
+  fun getIcon(name: String, type: String): Texture {
     TODO()
   }
 
-  fun getMargin(): Float {
+  fun getMargin(margin: Int): Float {
     TODO()
   }
 
@@ -186,7 +187,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getStylebox(): StyleBox {
+  fun getStylebox(name: String, type: String): StyleBox {
     TODO()
   }
 
@@ -194,7 +195,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getTooltip(): String {
+  fun getTooltip(at_position: Vector2): String {
     TODO()
   }
 
@@ -214,19 +215,19 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun hasColor(): Boolean {
+  fun hasColor(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasColorOverride(): Boolean {
+  fun hasColorOverride(name: String): Boolean {
     TODO()
   }
 
-  fun hasConstant(): Boolean {
+  fun hasConstant(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasConstantOverride(): Boolean {
+  fun hasConstantOverride(name: String): Boolean {
     TODO()
   }
 
@@ -234,31 +235,31 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun hasFont(): Boolean {
+  fun hasFont(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasFontOverride(): Boolean {
+  fun hasFontOverride(name: String): Boolean {
     TODO()
   }
 
-  fun hasIcon(): Boolean {
+  fun hasIcon(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasIconOverride(): Boolean {
+  fun hasIconOverride(name: String): Boolean {
     TODO()
   }
 
-  fun hasShaderOverride(): Boolean {
+  fun hasShaderOverride(name: String): Boolean {
     TODO()
   }
 
-  fun hasStylebox(): Boolean {
+  fun hasStylebox(name: String, type: String): Boolean {
     TODO()
   }
 
-  fun hasStyleboxOverride(): Boolean {
+  fun hasStyleboxOverride(name: String): Boolean {
     TODO()
   }
 
@@ -274,139 +275,157 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun setAnchor() {
+  fun setAnchor(
+    margin: Int,
+    anchor: Float,
+    keep_margin: Boolean,
+    push_opposite_anchor: Boolean
+  ) {
     TODO()
   }
 
-  fun setAnchorAndMargin() {
+  fun setAnchorAndMargin(
+    margin: Int,
+    anchor: Float,
+    offset: Float,
+    push_opposite_anchor: Boolean
+  ) {
     TODO()
   }
 
-  fun setAnchorsAndMarginsPreset() {
+  fun setAnchorsAndMarginsPreset(
+    preset: Int,
+    resize_mode: Int,
+    margin: Int
+  ) {
     TODO()
   }
 
-  fun setAnchorsPreset() {
+  fun setAnchorsPreset(preset: Int, keep_margins: Boolean) {
     TODO()
   }
 
-  fun setBegin() {
+  fun setBegin(position: Vector2) {
     TODO()
   }
 
-  fun setClipContents() {
+  fun setClipContents(enable: Boolean) {
     TODO()
   }
 
-  fun setCustomMinimumSize() {
+  fun setCustomMinimumSize(size: Vector2) {
     TODO()
   }
 
-  fun setDefaultCursorShape() {
+  fun setDefaultCursorShape(shape: Int) {
     TODO()
   }
 
-  fun setDragForwarding() {
+  fun setDragForwarding(target: Control) {
     TODO()
   }
 
-  fun setDragPreview() {
+  fun setDragPreview(control: Control) {
     TODO()
   }
 
-  fun setEnd() {
+  fun setEnd(position: Vector2) {
     TODO()
   }
 
-  fun setFocusMode() {
+  fun setFocusMode(mode: Int) {
     TODO()
   }
 
-  fun setFocusNeighbour() {
+  fun setFocusNeighbour(margin: Int, neighbour: NodePath) {
     TODO()
   }
 
-  fun setFocusNext() {
+  fun setFocusNext(next: NodePath) {
     TODO()
   }
 
-  fun setFocusPrevious() {
+  fun setFocusPrevious(previous: NodePath) {
     TODO()
   }
 
-  fun setGlobalPosition() {
+  fun setGlobalPosition(position: Vector2, keep_margins: Boolean) {
     TODO()
   }
 
-  fun setHGrowDirection() {
+  fun setHGrowDirection(direction: Int) {
     TODO()
   }
 
-  fun setHSizeFlags() {
+  fun setHSizeFlags(flags: Int) {
     TODO()
   }
 
-  fun setMargin() {
+  fun setMargin(margin: Int, offset: Float) {
     TODO()
   }
 
-  fun setMarginsPreset() {
+  fun setMarginsPreset(
+    preset: Int,
+    resize_mode: Int,
+    margin: Int
+  ) {
     TODO()
   }
 
-  fun setMouseFilter() {
+  fun setMouseFilter(filter: Int) {
     TODO()
   }
 
-  fun setPivotOffset() {
+  fun setPivotOffset(pivot_offset: Vector2) {
     TODO()
   }
 
-  fun setPosition() {
+  fun setPosition(position: Vector2, keep_margins: Boolean) {
     TODO()
   }
 
-  fun setRotation() {
+  fun setRotation(radians: Float) {
     TODO()
   }
 
-  fun setRotationDegrees() {
+  fun setRotationDegrees(degrees: Float) {
     TODO()
   }
 
-  fun setScale() {
+  fun setScale(scale: Vector2) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2, keep_margins: Boolean) {
     TODO()
   }
 
-  fun setStretchRatio() {
+  fun setStretchRatio(ratio: Float) {
     TODO()
   }
 
-  fun setTheme() {
+  fun setTheme(theme: Theme) {
     TODO()
   }
 
-  fun setTooltip() {
+  fun setTooltip(tooltip: String) {
     TODO()
   }
 
-  fun setVGrowDirection() {
+  fun setVGrowDirection(direction: Int) {
     TODO()
   }
 
-  fun setVSizeFlags() {
+  fun setVSizeFlags(flags: Int) {
     TODO()
   }
 
-  fun showModal() {
+  fun showModal(exclusive: Boolean) {
     TODO()
   }
 
-  fun warpMouse() {
+  fun warpMouse(to_position: Vector2) {
     TODO()
   }
 

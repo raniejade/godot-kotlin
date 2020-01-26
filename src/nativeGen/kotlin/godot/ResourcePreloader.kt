@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,11 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class ResourcePreloader internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun addResource() {
+  fun addResource(name: String, resource: Resource) {
     TODO()
   }
 
-  fun getResource(): Resource {
+  fun getResource(name: String): Resource {
     TODO()
   }
 
@@ -28,15 +29,15 @@ open class ResourcePreloader internal constructor(
     TODO()
   }
 
-  fun hasResource(): Boolean {
+  fun hasResource(name: String): Boolean {
     TODO()
   }
 
-  fun removeResource() {
+  fun removeResource(name: String) {
     TODO()
   }
 
-  fun renameResource() {
+  fun renameResource(name: String, newname: String) {
     TODO()
   }
 

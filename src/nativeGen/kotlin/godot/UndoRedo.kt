@@ -18,31 +18,39 @@ import kotlinx.cinterop.reinterpret
 open class UndoRedo internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addDoMethod(): Variant {
+  fun addDoMethod(`object`: Object, method: String): Variant {
     TODO()
   }
 
-  fun addDoProperty() {
+  fun addDoProperty(
+    `object`: Object,
+    property: String,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun addDoReference() {
+  fun addDoReference(`object`: Object) {
     TODO()
   }
 
-  fun addUndoMethod(): Variant {
+  fun addUndoMethod(`object`: Object, method: String): Variant {
     TODO()
   }
 
-  fun addUndoProperty() {
+  fun addUndoProperty(
+    `object`: Object,
+    property: String,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun addUndoReference() {
+  fun addUndoReference(`object`: Object) {
     TODO()
   }
 
-  fun clearHistory() {
+  fun clearHistory(increase_version: Boolean) {
     TODO()
   }
 
@@ -50,7 +58,7 @@ open class UndoRedo internal constructor(
     TODO()
   }
 
-  fun createAction() {
+  fun createAction(name: String, merge_mode: Int) {
     TODO()
   }
 

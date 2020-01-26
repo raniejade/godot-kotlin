@@ -2,8 +2,21 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Plane
+import godot.core.PoolColorArray
+import godot.core.PoolIntArray
+import godot.core.PoolRealArray
+import godot.core.PoolVector2Array
+import godot.core.PoolVector3Array
+import godot.core.Transform
 import godot.core.VariantArray
+import godot.core.Vector2
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,55 +28,66 @@ import kotlinx.cinterop.reinterpret
 open class SurfaceTool internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addBones() {
+  fun addBones(bones: PoolIntArray) {
     TODO()
   }
 
-  fun addColor() {
+  fun addColor(color: Color) {
     TODO()
   }
 
-  fun addIndex() {
+  fun addIndex(index: Int) {
     TODO()
   }
 
-  fun addNormal() {
+  fun addNormal(normal: Vector3) {
     TODO()
   }
 
-  fun addSmoothGroup() {
+  fun addSmoothGroup(smooth: Boolean) {
     TODO()
   }
 
-  fun addTangent() {
+  fun addTangent(tangent: Plane) {
     TODO()
   }
 
-  fun addTriangleFan() {
+  fun addTriangleFan(
+    vertices: PoolVector3Array,
+    uvs: PoolVector2Array,
+    colors: PoolColorArray,
+    uv2s: PoolVector2Array,
+    normals: PoolVector3Array,
+    tangents: VariantArray
+  ) {
     TODO()
   }
 
-  fun addUv() {
+  fun addUv(uv: Vector2) {
     TODO()
   }
 
-  fun addUv2() {
+  fun addUv2(uv2: Vector2) {
     TODO()
   }
 
-  fun addVertex() {
+  fun addVertex(vertex: Vector3) {
     TODO()
   }
 
-  fun addWeights() {
+  fun addWeights(weights: PoolRealArray) {
     TODO()
   }
 
-  fun appendFrom() {
+  fun appendFrom(
+    existing: Mesh,
+    surface: Int,
+    transform: Transform
+  ) {
     TODO()
   }
 
-  fun begin() {
+  fun begin(primitive: Int) {
     TODO()
   }
 
@@ -71,7 +95,7 @@ open class SurfaceTool internal constructor(
     TODO()
   }
 
-  fun commit(): ArrayMesh {
+  fun commit(existing: ArrayMesh, flags: Int): ArrayMesh {
     TODO()
   }
 
@@ -79,11 +103,15 @@ open class SurfaceTool internal constructor(
     TODO()
   }
 
-  fun createFrom() {
+  fun createFrom(existing: Mesh, surface: Int) {
     TODO()
   }
 
-  fun createFromBlendShape() {
+  fun createFromBlendShape(
+    existing: Mesh,
+    surface: Int,
+    blend_shape: String
+  ) {
     TODO()
   }
 
@@ -91,7 +119,7 @@ open class SurfaceTool internal constructor(
     TODO()
   }
 
-  fun generateNormals() {
+  fun generateNormals(flip: Boolean) {
     TODO()
   }
 
@@ -103,7 +131,7 @@ open class SurfaceTool internal constructor(
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 

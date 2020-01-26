@@ -32,19 +32,19 @@ open class InputEventScreenDrag internal constructor(
     TODO()
   }
 
-  fun setIndex() {
+  fun setIndex(index: Int) {
     TODO()
   }
 
-  fun setPosition() {
+  fun setPosition(position: Vector2) {
     TODO()
   }
 
-  fun setRelative() {
+  fun setRelative(relative: Vector2) {
     TODO()
   }
 
-  fun setSpeed() {
+  fun setSpeed(speed: Vector2) {
     TODO()
   }
 

@@ -33,11 +33,15 @@ open class PacketPeerUDP internal constructor(
     TODO()
   }
 
-  fun listen(): Error {
+  fun listen(
+    port: Int,
+    bind_address: String,
+    recv_buf_size: Int
+  ): Error {
     TODO()
   }
 
-  fun setDestAddress(): Error {
+  fun setDestAddress(host: String, port: Int): Error {
     TODO()
   }
 

@@ -27,15 +27,15 @@ open class AudioEffectStereoEnhance internal constructor(
     TODO()
   }
 
-  fun setPanPullout() {
+  fun setPanPullout(amount: Float) {
     TODO()
   }
 
-  fun setSurround() {
+  fun setSurround(amount: Float) {
     TODO()
   }
 
-  fun setTimePullout() {
+  fun setTimePullout(amount: Float) {
     TODO()
   }
 

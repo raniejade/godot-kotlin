@@ -19,7 +19,7 @@ open class PlaneShape internal constructor(
     TODO()
   }
 
-  fun setPlane() {
+  fun setPlane(plane: Plane) {
     TODO()
   }
 

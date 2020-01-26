@@ -24,7 +24,7 @@ open class VisibilityNotifier2D internal constructor(
     TODO()
   }
 
-  fun setRect() {
+  fun setRect(rect: Rect2) {
     TODO()
   }
 

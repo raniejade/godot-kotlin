@@ -26,7 +26,12 @@ open class _Thread internal constructor(
     TODO()
   }
 
-  fun start(): Error {
+  fun start(
+    instance: Object,
+    method: String,
+    userdata: Variant,
+    priority: Int
+  ): Error {
     TODO()
   }
 

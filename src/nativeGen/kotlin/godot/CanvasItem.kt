@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolColorArray
+import godot.core.PoolVector2Array
 import godot.core.RID
 import godot.core.Rect2
 import godot.core.Transform2D
@@ -11,6 +13,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -22,83 +25,184 @@ import kotlinx.cinterop.reinterpret
 open class CanvasItem internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun drawChar(): Float {
+  fun drawChar(
+    font: Font,
+    position: Vector2,
+    char: String,
+    next: String,
+    modulate: Color
+  ): Float {
     TODO()
   }
 
-  fun drawCircle() {
+  fun drawCircle(
+    position: Vector2,
+    radius: Float,
+    color: Color
+  ) {
     TODO()
   }
 
-  fun drawColoredPolygon() {
+  fun drawColoredPolygon(
+    points: PoolVector2Array,
+    color: Color,
+    uvs: PoolVector2Array,
+    texture: Texture,
+    normal_map: Texture,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawLine() {
+  fun drawLine(
+    from: Vector2,
+    to: Vector2,
+    color: Color,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawMesh() {
+  fun drawMesh(
+    mesh: Mesh,
+    texture: Texture,
+    normal_map: Texture,
+    transform: Transform2D,
+    modulate: Color
+  ) {
     TODO()
   }
 
-  fun drawMultiline() {
+  fun drawMultiline(
+    points: PoolVector2Array,
+    color: Color,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawMultilineColors() {
+  fun drawMultilineColors(
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawMultimesh() {
+  fun drawMultimesh(
+    multimesh: MultiMesh,
+    texture: Texture,
+    normal_map: Texture
+  ) {
     TODO()
   }
 
-  fun drawPolygon() {
+  fun drawPolygon(
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    uvs: PoolVector2Array,
+    texture: Texture,
+    normal_map: Texture,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawPolyline() {
+  fun drawPolyline(
+    points: PoolVector2Array,
+    color: Color,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawPolylineColors() {
+  fun drawPolylineColors(
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    width: Float,
+    antialiased: Boolean
+  ) {
     TODO()
   }
 
-  fun drawPrimitive() {
+  fun drawPrimitive(
+    points: PoolVector2Array,
+    colors: PoolColorArray,
+    uvs: PoolVector2Array,
+    texture: Texture,
+    width: Float,
+    normal_map: Texture
+  ) {
     TODO()
   }
 
-  fun drawRect() {
+  fun drawRect(
+    rect: Rect2,
+    color: Color,
+    filled: Boolean
+  ) {
     TODO()
   }
 
-  fun drawSetTransform() {
+  fun drawSetTransform(
+    position: Vector2,
+    rotation: Float,
+    scale: Vector2
+  ) {
     TODO()
   }
 
-  fun drawSetTransformMatrix() {
+  fun drawSetTransformMatrix(xform: Transform2D) {
     TODO()
   }
 
-  fun drawString() {
+  fun drawString(
+    font: Font,
+    position: Vector2,
+    text: String,
+    modulate: Color,
+    clip_w: Int
+  ) {
     TODO()
   }
 
-  fun drawStyleBox() {
+  fun drawStyleBox(style_box: StyleBox, rect: Rect2) {
     TODO()
   }
 
-  fun drawTexture() {
+  fun drawTexture(
+    texture: Texture,
+    position: Vector2,
+    modulate: Color,
+    normal_map: Texture
+  ) {
     TODO()
   }
 
-  fun drawTextureRect() {
+  fun drawTextureRect(
+    texture: Texture,
+    rect: Rect2,
+    tile: Boolean,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: Texture
+  ) {
     TODO()
   }
 
-  fun drawTextureRectRegion() {
+  fun drawTextureRectRegion(
+    texture: Texture,
+    rect: Rect2,
+    src_rect: Rect2,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: Texture,
+    clip_uv: Boolean
+  ) {
     TODO()
   }
 
@@ -198,51 +302,51 @@ open class CanvasItem internal constructor(
     TODO()
   }
 
-  fun makeCanvasPositionLocal(): Vector2 {
+  fun makeCanvasPositionLocal(screen_point: Vector2): Vector2 {
     TODO()
   }
 
-  fun makeInputLocal(): InputEvent {
+  fun makeInputLocal(event: InputEvent): InputEvent {
     TODO()
   }
 
-  fun setAsToplevel() {
+  fun setAsToplevel(enable: Boolean) {
     TODO()
   }
 
-  fun setDrawBehindParent() {
+  fun setDrawBehindParent(enable: Boolean) {
     TODO()
   }
 
-  fun setLightMask() {
+  fun setLightMask(light_mask: Int) {
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setModulate() {
+  fun setModulate(modulate: Color) {
     TODO()
   }
 
-  fun setNotifyLocalTransform() {
+  fun setNotifyLocalTransform(enable: Boolean) {
     TODO()
   }
 
-  fun setNotifyTransform() {
+  fun setNotifyTransform(enable: Boolean) {
     TODO()
   }
 
-  fun setSelfModulate() {
+  fun setSelfModulate(self_modulate: Color) {
     TODO()
   }
 
-  fun setUseParentMaterial() {
+  fun setUseParentMaterial(enable: Boolean) {
     TODO()
   }
 
-  fun setVisible() {
+  fun setVisible(visible: Boolean) {
     TODO()
   }
 

@@ -32,11 +32,11 @@ open class ColorPickerButton internal constructor(
     TODO()
   }
 
-  fun setEditAlpha() {
+  fun setEditAlpha(show: Boolean) {
     TODO()
   }
 
-  fun setPickColor() {
+  fun setPickColor(color: Color) {
     TODO()
   }
 

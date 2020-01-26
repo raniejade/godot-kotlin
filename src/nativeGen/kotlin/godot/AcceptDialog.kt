@@ -16,11 +16,15 @@ import kotlinx.cinterop.reinterpret
 open class AcceptDialog internal constructor(
   _handle: COpaquePointer
 ) : WindowDialog(_handle) {
-  fun addButton(): Button {
+  fun addButton(
+    text: String,
+    right: Boolean,
+    action: String
+  ): Button {
     TODO()
   }
 
-  fun addCancel(): Button {
+  fun addCancel(name: String): Button {
     TODO()
   }
 
@@ -40,15 +44,15 @@ open class AcceptDialog internal constructor(
     TODO()
   }
 
-  fun registerTextEnter() {
+  fun registerTextEnter(line_edit: Node) {
     TODO()
   }
 
-  fun setHideOnOk() {
+  fun setHideOnOk(enabled: Boolean) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 

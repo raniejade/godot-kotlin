@@ -19,7 +19,7 @@ open class VisualScriptGlobalConstant internal constructor(
     TODO()
   }
 
-  fun setGlobalConstant() {
+  fun setGlobalConstant(index: Int) {
     TODO()
   }
 

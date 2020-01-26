@@ -18,7 +18,7 @@ open class ProxyTexture internal constructor(
     TODO()
   }
 
-  fun setBase() {
+  fun setBase(base: Texture) {
     TODO()
   }
 

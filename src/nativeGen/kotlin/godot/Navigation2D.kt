@@ -4,7 +4,9 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector2Array
+import godot.core.Transform2D
 import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,27 +19,35 @@ import kotlinx.cinterop.reinterpret
 open class Navigation2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun getClosestPoint(): Vector2 {
+  fun getClosestPoint(to_point: Vector2): Vector2 {
     TODO()
   }
 
-  fun getClosestPointOwner(): Object {
+  fun getClosestPointOwner(to_point: Vector2): Object {
     TODO()
   }
 
-  fun getSimplePath(): PoolVector2Array {
+  fun getSimplePath(
+    start: Vector2,
+    end: Vector2,
+    optimize: Boolean
+  ): PoolVector2Array {
     TODO()
   }
 
-  fun navpolyAdd(): Int {
+  fun navpolyAdd(
+    mesh: NavigationPolygon,
+    xform: Transform2D,
+    owner: Object
+  ): Int {
     TODO()
   }
 
-  fun navpolyRemove() {
+  fun navpolyRemove(id: Int) {
     TODO()
   }
 
-  fun navpolySetTransform() {
+  fun navpolySetTransform(id: Int, xform: Transform2D) {
     TODO()
   }
 

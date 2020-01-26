@@ -24,11 +24,11 @@ open class PackedScene internal constructor(
     TODO()
   }
 
-  fun instance(): Node {
+  fun instance(edit_state: Int): Node {
     TODO()
   }
 
-  fun pack(): Error {
+  fun pack(path: Node): Error {
     TODO()
   }
 

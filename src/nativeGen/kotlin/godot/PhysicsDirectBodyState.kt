@@ -21,27 +21,27 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsDirectBodyState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addCentralForce() {
+  fun addCentralForce(force: Vector3) {
     TODO()
   }
 
-  fun addForce() {
+  fun addForce(force: Vector3, position: Vector3) {
     TODO()
   }
 
-  fun addTorque() {
+  fun addTorque(torque: Vector3) {
     TODO()
   }
 
-  fun applyCentralImpulse() {
+  fun applyCentralImpulse(j: Vector3) {
     TODO()
   }
 
-  fun applyImpulse() {
+  fun applyImpulse(position: Vector3, j: Vector3) {
     TODO()
   }
 
-  fun applyTorqueImpulse() {
+  fun applyTorqueImpulse(j: Vector3) {
     TODO()
   }
 
@@ -53,27 +53,27 @@ open class PhysicsDirectBodyState internal constructor(
     TODO()
   }
 
-  fun getContactCollider(): RID {
+  fun getContactCollider(contact_idx: Int): RID {
     TODO()
   }
 
-  fun getContactColliderId(): Int {
+  fun getContactColliderId(contact_idx: Int): Int {
     TODO()
   }
 
-  fun getContactColliderObject(): Object {
+  fun getContactColliderObject(contact_idx: Int): Object {
     TODO()
   }
 
-  fun getContactColliderPosition(): Vector3 {
+  fun getContactColliderPosition(contact_idx: Int): Vector3 {
     TODO()
   }
 
-  fun getContactColliderShape(): Int {
+  fun getContactColliderShape(contact_idx: Int): Int {
     TODO()
   }
 
-  fun getContactColliderVelocityAtPosition(): Vector3 {
+  fun getContactColliderVelocityAtPosition(contact_idx: Int): Vector3 {
     TODO()
   }
 
@@ -81,19 +81,19 @@ open class PhysicsDirectBodyState internal constructor(
     TODO()
   }
 
-  fun getContactImpulse(): Float {
+  fun getContactImpulse(contact_idx: Int): Float {
     TODO()
   }
 
-  fun getContactLocalNormal(): Vector3 {
+  fun getContactLocalNormal(contact_idx: Int): Vector3 {
     TODO()
   }
 
-  fun getContactLocalPosition(): Vector3 {
+  fun getContactLocalPosition(contact_idx: Int): Vector3 {
     TODO()
   }
 
-  fun getContactLocalShape(): Int {
+  fun getContactLocalShape(contact_idx: Int): Int {
     TODO()
   }
 
@@ -145,19 +145,19 @@ open class PhysicsDirectBodyState internal constructor(
     TODO()
   }
 
-  fun setAngularVelocity() {
+  fun setAngularVelocity(velocity: Vector3) {
     TODO()
   }
 
-  fun setLinearVelocity() {
+  fun setLinearVelocity(velocity: Vector3) {
     TODO()
   }
 
-  fun setSleepState() {
+  fun setSleepState(enabled: Boolean) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(transform: Transform) {
     TODO()
   }
 

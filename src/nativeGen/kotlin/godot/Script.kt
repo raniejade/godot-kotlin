@@ -32,7 +32,7 @@ open class Script internal constructor(
     TODO()
   }
 
-  fun hasScriptSignal(): Boolean {
+  fun hasScriptSignal(signal_name: String): Boolean {
     TODO()
   }
 
@@ -40,7 +40,7 @@ open class Script internal constructor(
     TODO()
   }
 
-  fun instanceHas(): Boolean {
+  fun instanceHas(base_object: Object): Boolean {
     TODO()
   }
 
@@ -48,11 +48,11 @@ open class Script internal constructor(
     TODO()
   }
 
-  fun reload(): Error {
+  fun reload(keep_state: Boolean): Error {
     TODO()
   }
 
-  fun setSourceCode() {
+  fun setSourceCode(source: String) {
     TODO()
   }
 

@@ -18,7 +18,7 @@ open class WorldEnvironment internal constructor(
     TODO()
   }
 
-  fun setEnvironment() {
+  fun setEnvironment(env: Environment) {
     TODO()
   }
 

@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class ColorPicker internal constructor(
   _handle: COpaquePointer
 ) : BoxContainer(_handle) {
-  fun addPreset() {
+  fun addPreset(color: Color) {
     TODO()
   }
 
@@ -29,7 +29,7 @@ open class ColorPicker internal constructor(
     TODO()
   }
 
-  fun erasePreset() {
+  fun erasePreset(color: Color) {
     TODO()
   }
 
@@ -53,27 +53,27 @@ open class ColorPicker internal constructor(
     TODO()
   }
 
-  fun setDeferredMode() {
+  fun setDeferredMode(mode: Boolean) {
     TODO()
   }
 
-  fun setEditAlpha() {
+  fun setEditAlpha(show: Boolean) {
     TODO()
   }
 
-  fun setPickColor() {
+  fun setPickColor(color: Color) {
     TODO()
   }
 
-  fun setPresetsEnabled() {
+  fun setPresetsEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setPresetsVisible() {
+  fun setPresetsVisible(visible: Boolean) {
     TODO()
   }
 
-  fun setRawMode() {
+  fun setRawMode(mode: Boolean) {
     TODO()
   }
 

@@ -37,11 +37,11 @@ open class Bone2D internal constructor(
     TODO()
   }
 
-  fun setDefaultLength() {
+  fun setDefaultLength(default_length: Float) {
     TODO()
   }
 
-  fun setRest() {
+  fun setRest(rest: Transform2D) {
     TODO()
   }
 

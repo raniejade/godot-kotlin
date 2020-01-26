@@ -24,7 +24,12 @@ open class HTTPClient internal constructor(
     TODO()
   }
 
-  fun connectToHost(): Error {
+  fun connectToHost(
+    host: String,
+    port: Int,
+    use_ssl: Boolean,
+    verify_host: Boolean
+  ): Error {
     TODO()
   }
 
@@ -68,7 +73,7 @@ open class HTTPClient internal constructor(
     TODO()
   }
 
-  fun queryStringFromDict(): String {
+  fun queryStringFromDict(fields: Dictionary): String {
     TODO()
   }
 
@@ -76,23 +81,33 @@ open class HTTPClient internal constructor(
     TODO()
   }
 
-  fun request(): Error {
+  fun request(
+    method: Int,
+    url: String,
+    headers: PoolStringArray,
+    body: String
+  ): Error {
     TODO()
   }
 
-  fun requestRaw(): Error {
+  fun requestRaw(
+    method: Int,
+    url: String,
+    headers: PoolStringArray,
+    body: PoolByteArray
+  ): Error {
     TODO()
   }
 
-  fun setBlockingMode() {
+  fun setBlockingMode(enabled: Boolean) {
     TODO()
   }
 
-  fun setConnection() {
+  fun setConnection(connection: StreamPeer) {
     TODO()
   }
 
-  fun setReadChunkSize() {
+  fun setReadChunkSize(bytes: Int) {
     TODO()
   }
 

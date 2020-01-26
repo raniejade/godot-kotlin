@@ -23,11 +23,15 @@ import kotlinx.cinterop.reinterpret
 open class ItemList internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun addIconItem() {
+  fun addIconItem(icon: Texture, selectable: Boolean) {
     TODO()
   }
 
-  fun addItem() {
+  fun addItem(
+    text: String,
+    icon: Texture,
+    selectable: Boolean
+  ) {
     TODO()
   }
 
@@ -63,7 +67,7 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun getItemAtPosition(): Int {
+  fun getItemAtPosition(position: Vector2, exact: Boolean): Int {
     TODO()
   }
 
@@ -71,35 +75,35 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun getItemCustomBgColor(): Color {
+  fun getItemCustomBgColor(idx: Int): Color {
     TODO()
   }
 
-  fun getItemCustomFgColor(): Color {
+  fun getItemCustomFgColor(idx: Int): Color {
     TODO()
   }
 
-  fun getItemIcon(): Texture {
+  fun getItemIcon(idx: Int): Texture {
     TODO()
   }
 
-  fun getItemIconModulate(): Color {
+  fun getItemIconModulate(idx: Int): Color {
     TODO()
   }
 
-  fun getItemIconRegion(): Rect2 {
+  fun getItemIconRegion(idx: Int): Rect2 {
     TODO()
   }
 
-  fun getItemMetadata(): Variant {
+  fun getItemMetadata(idx: Int): Variant {
     TODO()
   }
 
-  fun getItemText(): String {
+  fun getItemText(idx: Int): String {
     TODO()
   }
 
-  fun getItemTooltip(): String {
+  fun getItemTooltip(idx: Int): String {
     TODO()
   }
 
@@ -131,19 +135,19 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun isItemDisabled(): Boolean {
+  fun isItemDisabled(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemIconTransposed(): Boolean {
+  fun isItemIconTransposed(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemSelectable(): Boolean {
+  fun isItemSelectable(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemTooltipEnabled(): Boolean {
+  fun isItemTooltipEnabled(idx: Int): Boolean {
     TODO()
   }
 
@@ -151,111 +155,111 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun isSelected(): Boolean {
+  fun isSelected(idx: Int): Boolean {
     TODO()
   }
 
-  fun moveItem() {
+  fun moveItem(from_idx: Int, to_idx: Int) {
     TODO()
   }
 
-  fun removeItem() {
+  fun removeItem(idx: Int) {
     TODO()
   }
 
-  fun select() {
+  fun select(idx: Int, single: Boolean) {
     TODO()
   }
 
-  fun setAllowReselect() {
+  fun setAllowReselect(allow: Boolean) {
     TODO()
   }
 
-  fun setAllowRmbSelect() {
+  fun setAllowRmbSelect(allow: Boolean) {
     TODO()
   }
 
-  fun setAutoHeight() {
+  fun setAutoHeight(enable: Boolean) {
     TODO()
   }
 
-  fun setFixedColumnWidth() {
+  fun setFixedColumnWidth(width: Int) {
     TODO()
   }
 
-  fun setFixedIconSize() {
+  fun setFixedIconSize(size: Vector2) {
     TODO()
   }
 
-  fun setIconMode() {
+  fun setIconMode(mode: Int) {
     TODO()
   }
 
-  fun setIconScale() {
+  fun setIconScale(scale: Float) {
     TODO()
   }
 
-  fun setItemCustomBgColor() {
+  fun setItemCustomBgColor(idx: Int, custom_bg_color: Color) {
     TODO()
   }
 
-  fun setItemCustomFgColor() {
+  fun setItemCustomFgColor(idx: Int, custom_fg_color: Color) {
     TODO()
   }
 
-  fun setItemDisabled() {
+  fun setItemDisabled(idx: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setItemIcon() {
+  fun setItemIcon(idx: Int, icon: Texture) {
     TODO()
   }
 
-  fun setItemIconModulate() {
+  fun setItemIconModulate(idx: Int, modulate: Color) {
     TODO()
   }
 
-  fun setItemIconRegion() {
+  fun setItemIconRegion(idx: Int, rect: Rect2) {
     TODO()
   }
 
-  fun setItemIconTransposed() {
+  fun setItemIconTransposed(idx: Int, rect: Boolean) {
     TODO()
   }
 
-  fun setItemMetadata() {
+  fun setItemMetadata(idx: Int, metadata: Variant) {
     TODO()
   }
 
-  fun setItemSelectable() {
+  fun setItemSelectable(idx: Int, selectable: Boolean) {
     TODO()
   }
 
-  fun setItemText() {
+  fun setItemText(idx: Int, text: String) {
     TODO()
   }
 
-  fun setItemTooltip() {
+  fun setItemTooltip(idx: Int, tooltip: String) {
     TODO()
   }
 
-  fun setItemTooltipEnabled() {
+  fun setItemTooltipEnabled(idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setMaxColumns() {
+  fun setMaxColumns(amount: Int) {
     TODO()
   }
 
-  fun setMaxTextLines() {
+  fun setMaxTextLines(lines: Int) {
     TODO()
   }
 
-  fun setSameColumnWidth() {
+  fun setSameColumnWidth(enable: Boolean) {
     TODO()
   }
 
-  fun setSelectMode() {
+  fun setSelectMode(mode: Int) {
     TODO()
   }
 
@@ -263,7 +267,7 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun unselect() {
+  fun unselect(idx: Int) {
     TODO()
   }
 

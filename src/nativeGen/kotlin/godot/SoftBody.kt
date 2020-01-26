@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class SoftBody internal constructor(
   _handle: COpaquePointer
 ) : MeshInstance(_handle) {
-  fun addCollisionExceptionWith() {
+  fun addCollisionExceptionWith(body: Node) {
     TODO()
   }
 
@@ -35,7 +35,7 @@ open class SoftBody internal constructor(
     TODO()
   }
 
-  fun getCollisionLayerBit(): Boolean {
+  fun getCollisionLayerBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -43,7 +43,7 @@ open class SoftBody internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -87,67 +87,67 @@ open class SoftBody internal constructor(
     TODO()
   }
 
-  fun removeCollisionExceptionWith() {
+  fun removeCollisionExceptionWith(body: Node) {
     TODO()
   }
 
-  fun setAreaAngularStiffness() {
+  fun setAreaAngularStiffness(areaAngular_stiffness: Float) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(collision_layer: Int) {
     TODO()
   }
 
-  fun setCollisionLayerBit() {
+  fun setCollisionLayerBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(collision_mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setDampingCoefficient() {
+  fun setDampingCoefficient(damping_coefficient: Float) {
     TODO()
   }
 
-  fun setDragCoefficient() {
+  fun setDragCoefficient(drag_coefficient: Float) {
     TODO()
   }
 
-  fun setLinearStiffness() {
+  fun setLinearStiffness(linear_stiffness: Float) {
     TODO()
   }
 
-  fun setParentCollisionIgnore() {
+  fun setParentCollisionIgnore(parent_collision_ignore: NodePath) {
     TODO()
   }
 
-  fun setPoseMatchingCoefficient() {
+  fun setPoseMatchingCoefficient(pose_matching_coefficient: Float) {
     TODO()
   }
 
-  fun setPressureCoefficient() {
+  fun setPressureCoefficient(pressure_coefficient: Float) {
     TODO()
   }
 
-  fun setRayPickable() {
+  fun setRayPickable(ray_pickable: Boolean) {
     TODO()
   }
 
-  fun setSimulationPrecision() {
+  fun setSimulationPrecision(simulation_precision: Int) {
     TODO()
   }
 
-  fun setTotalMass() {
+  fun setTotalMass(mass: Float) {
     TODO()
   }
 
-  fun setVolumeStiffness() {
+  fun setVolumeStiffness(volume_stiffness: Float) {
     TODO()
   }
 

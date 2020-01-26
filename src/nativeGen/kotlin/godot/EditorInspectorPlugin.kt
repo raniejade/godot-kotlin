@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,15 +16,19 @@ import kotlinx.cinterop.reinterpret
 open class EditorInspectorPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addCustomControl() {
+  fun addCustomControl(control: Control) {
     TODO()
   }
 
-  fun addPropertyEditor() {
+  fun addPropertyEditor(property: String, editor: Control) {
     TODO()
   }
 
-  fun addPropertyEditorForMultipleProperties() {
+  fun addPropertyEditorForMultipleProperties(
+    label: String,
+    properties: PoolStringArray,
+    editor: Control
+  ) {
     TODO()
   }
 

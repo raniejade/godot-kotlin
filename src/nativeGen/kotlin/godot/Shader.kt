@@ -21,7 +21,7 @@ open class Shader internal constructor(
     TODO()
   }
 
-  fun getDefaultTextureParam(): Texture {
+  fun getDefaultTextureParam(param: String): Texture {
     TODO()
   }
 
@@ -29,15 +29,15 @@ open class Shader internal constructor(
     TODO()
   }
 
-  fun hasParam(): Boolean {
+  fun hasParam(name: String): Boolean {
     TODO()
   }
 
-  fun setCode() {
+  fun setCode(code: String) {
     TODO()
   }
 
-  fun setDefaultTextureParam() {
+  fun setDefaultTextureParam(param: String, texture: Texture) {
     TODO()
   }
 

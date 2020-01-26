@@ -21,59 +21,67 @@ import kotlinx.cinterop.reinterpret
 open class _ClassDB internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun canInstance(): Boolean {
+  fun canInstance(`class`: String): Boolean {
     TODO()
   }
 
-  fun classExists(): Boolean {
+  fun classExists(`class`: String): Boolean {
     TODO()
   }
 
-  fun classGetCategory(): String {
+  fun classGetCategory(`class`: String): String {
     TODO()
   }
 
-  fun classGetIntegerConstant(): Int {
+  fun classGetIntegerConstant(`class`: String, name: String): Int {
     TODO()
   }
 
-  fun classGetIntegerConstantList(): PoolStringArray {
+  fun classGetIntegerConstantList(`class`: String, no_inheritance: Boolean): PoolStringArray {
     TODO()
   }
 
-  fun classGetMethodList(): VariantArray {
+  fun classGetMethodList(`class`: String, no_inheritance: Boolean): VariantArray {
     TODO()
   }
 
-  fun classGetProperty(): Variant {
+  fun classGetProperty(`object`: Object, property: String): Variant {
     TODO()
   }
 
-  fun classGetPropertyList(): VariantArray {
+  fun classGetPropertyList(`class`: String, no_inheritance: Boolean): VariantArray {
     TODO()
   }
 
-  fun classGetSignal(): Dictionary {
+  fun classGetSignal(`class`: String, signal: String): Dictionary {
     TODO()
   }
 
-  fun classGetSignalList(): VariantArray {
+  fun classGetSignalList(`class`: String, no_inheritance: Boolean): VariantArray {
     TODO()
   }
 
-  fun classHasIntegerConstant(): Boolean {
+  fun classHasIntegerConstant(`class`: String, name: String): Boolean {
     TODO()
   }
 
-  fun classHasMethod(): Boolean {
+  fun classHasMethod(
+    `class`: String,
+    method: String,
+    no_inheritance: Boolean
+  ): Boolean {
     TODO()
   }
 
-  fun classHasSignal(): Boolean {
+  fun classHasSignal(`class`: String, signal: String): Boolean {
     TODO()
   }
 
-  fun classSetProperty(): Error {
+  fun classSetProperty(
+    `object`: Object,
+    property: String,
+    value: Variant
+  ): Error {
     TODO()
   }
 
@@ -81,23 +89,23 @@ open class _ClassDB internal constructor(
     TODO()
   }
 
-  fun getInheritersFromClass(): PoolStringArray {
+  fun getInheritersFromClass(`class`: String): PoolStringArray {
     TODO()
   }
 
-  fun getParentClass(): String {
+  fun getParentClass(`class`: String): String {
     TODO()
   }
 
-  fun instance(): Variant {
+  fun instance(`class`: String): Variant {
     TODO()
   }
 
-  fun isClassEnabled(): Boolean {
+  fun isClassEnabled(`class`: String): Boolean {
     TODO()
   }
 
-  fun isParentClass(): Boolean {
+  fun isParentClass(`class`: String, inherits: String): Boolean {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class RectangleShape2D internal constructor(
     TODO()
   }
 
-  fun setExtents() {
+  fun setExtents(extents: Vector2) {
     TODO()
   }
 

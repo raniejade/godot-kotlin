@@ -66,47 +66,47 @@ open class AudioStreamPlayer2D internal constructor(
     TODO()
   }
 
-  fun play() {
+  fun play(from_position: Float) {
     TODO()
   }
 
-  fun seek() {
+  fun seek(to_position: Float) {
     TODO()
   }
 
-  fun setAreaMask() {
+  fun setAreaMask(mask: Int) {
     TODO()
   }
 
-  fun setAttenuation() {
+  fun setAttenuation(curve: Float) {
     TODO()
   }
 
-  fun setAutoplay() {
+  fun setAutoplay(enable: Boolean) {
     TODO()
   }
 
-  fun setBus() {
+  fun setBus(bus: String) {
     TODO()
   }
 
-  fun setMaxDistance() {
+  fun setMaxDistance(pixels: Float) {
     TODO()
   }
 
-  fun setPitchScale() {
+  fun setPitchScale(pitch_scale: Float) {
     TODO()
   }
 
-  fun setStream() {
+  fun setStream(stream: AudioStream) {
     TODO()
   }
 
-  fun setStreamPaused() {
+  fun setStreamPaused(pause: Boolean) {
     TODO()
   }
 
-  fun setVolumeDb() {
+  fun setVolumeDb(volume_db: Float) {
     TODO()
   }
 

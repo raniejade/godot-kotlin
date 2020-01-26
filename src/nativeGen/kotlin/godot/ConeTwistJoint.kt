@@ -16,11 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class ConeTwistJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  fun getParam(): Float {
+  fun getParam(param: Int): Float {
     TODO()
   }
 
-  fun setParam() {
+  fun setParam(param: Int, value: Float) {
     TODO()
   }
 

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -24,15 +25,15 @@ open class InputEventScreenTouch internal constructor(
     TODO()
   }
 
-  fun setIndex() {
+  fun setIndex(index: Int) {
     TODO()
   }
 
-  fun setPosition() {
+  fun setPosition(position: Vector2) {
     TODO()
   }
 
-  fun setPressed() {
+  fun setPressed(pressed: Boolean) {
     TODO()
   }
 

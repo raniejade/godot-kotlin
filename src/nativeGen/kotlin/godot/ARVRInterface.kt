@@ -58,15 +58,15 @@ open class ARVRInterface internal constructor(
     TODO()
   }
 
-  fun setAnchorDetectionIsEnabled() {
+  fun setAnchorDetectionIsEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setIsInitialized() {
+  fun setIsInitialized(initialized: Boolean) {
     TODO()
   }
 
-  fun setIsPrimary() {
+  fun setIsPrimary(enable: Boolean) {
     TODO()
   }
 

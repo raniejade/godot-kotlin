@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class Resource internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun duplicate(): Resource {
+  fun duplicate(subresources: Boolean): Resource {
     TODO()
   }
 
@@ -41,15 +41,15 @@ open class Resource internal constructor(
     TODO()
   }
 
-  fun setLocalToScene() {
+  fun setLocalToScene(enable: Boolean) {
     TODO()
   }
 
-  fun setName() {
+  fun setName(name: String) {
     TODO()
   }
 
-  fun setPath() {
+  fun setPath(path: String) {
     TODO()
   }
 
@@ -57,7 +57,7 @@ open class Resource internal constructor(
     TODO()
   }
 
-  fun takeOverPath() {
+  fun takeOverPath(path: String) {
     TODO()
   }
 

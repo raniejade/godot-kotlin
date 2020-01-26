@@ -17,11 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class DynamicFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
-  fun addFallback() {
+  fun addFallback(data: DynamicFontData) {
     TODO()
   }
 
-  fun getFallback(): DynamicFontData {
+  fun getFallback(idx: Int): DynamicFontData {
     TODO()
   }
 
@@ -45,7 +45,7 @@ open class DynamicFont internal constructor(
     TODO()
   }
 
-  fun getSpacing(): Int {
+  fun getSpacing(type: Int): Int {
     TODO()
   }
 
@@ -57,39 +57,39 @@ open class DynamicFont internal constructor(
     TODO()
   }
 
-  fun removeFallback() {
+  fun removeFallback(idx: Int) {
     TODO()
   }
 
-  fun setFallback() {
+  fun setFallback(idx: Int, data: DynamicFontData) {
     TODO()
   }
 
-  fun setFontData() {
+  fun setFontData(data: DynamicFontData) {
     TODO()
   }
 
-  fun setOutlineColor() {
+  fun setOutlineColor(color: Color) {
     TODO()
   }
 
-  fun setOutlineSize() {
+  fun setOutlineSize(size: Int) {
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(data: Int) {
     TODO()
   }
 
-  fun setSpacing() {
+  fun setSpacing(type: Int, value: Int) {
     TODO()
   }
 
-  fun setUseFilter() {
+  fun setUseFilter(enable: Boolean) {
     TODO()
   }
 
-  fun setUseMipmaps() {
+  fun setUseMipmaps(enable: Boolean) {
     TODO()
   }
 

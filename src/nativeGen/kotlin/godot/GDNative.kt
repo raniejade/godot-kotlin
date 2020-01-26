@@ -4,7 +4,9 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,7 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class GDNative internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun callNative(): Variant {
+  fun callNative(
+    calling_type: String,
+    procedure_name: String,
+    arguments: VariantArray
+  ): Variant {
     TODO()
   }
 
@@ -28,7 +34,7 @@ open class GDNative internal constructor(
     TODO()
   }
 
-  fun setLibrary() {
+  fun setLibrary(library: GDNativeLibrary) {
     TODO()
   }
 

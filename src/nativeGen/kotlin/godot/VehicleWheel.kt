@@ -72,47 +72,47 @@ open class VehicleWheel internal constructor(
     TODO()
   }
 
-  fun setDampingCompression() {
+  fun setDampingCompression(length: Float) {
     TODO()
   }
 
-  fun setDampingRelaxation() {
+  fun setDampingRelaxation(length: Float) {
     TODO()
   }
 
-  fun setFrictionSlip() {
+  fun setFrictionSlip(length: Float) {
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(length: Float) {
     TODO()
   }
 
-  fun setRollInfluence() {
+  fun setRollInfluence(roll_influence: Float) {
     TODO()
   }
 
-  fun setSuspensionMaxForce() {
+  fun setSuspensionMaxForce(length: Float) {
     TODO()
   }
 
-  fun setSuspensionRestLength() {
+  fun setSuspensionRestLength(length: Float) {
     TODO()
   }
 
-  fun setSuspensionStiffness() {
+  fun setSuspensionStiffness(length: Float) {
     TODO()
   }
 
-  fun setSuspensionTravel() {
+  fun setSuspensionTravel(length: Float) {
     TODO()
   }
 
-  fun setUseAsSteering() {
+  fun setUseAsSteering(enable: Boolean) {
     TODO()
   }
 
-  fun setUseAsTraction() {
+  fun setUseAsTraction(enable: Boolean) {
     TODO()
   }
 

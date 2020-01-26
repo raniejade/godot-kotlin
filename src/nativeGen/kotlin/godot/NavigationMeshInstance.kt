@@ -23,11 +23,11 @@ open class NavigationMeshInstance internal constructor(
     TODO()
   }
 
-  fun setEnabled() {
+  fun setEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setNavigationMesh() {
+  fun setNavigationMesh(navmesh: NavigationMesh) {
     TODO()
   }
 

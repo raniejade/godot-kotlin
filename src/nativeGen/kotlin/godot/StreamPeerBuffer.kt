@@ -36,15 +36,15 @@ open class StreamPeerBuffer internal constructor(
     TODO()
   }
 
-  fun resize() {
+  fun resize(size: Int) {
     TODO()
   }
 
-  fun seek() {
+  fun seek(position: Int) {
     TODO()
   }
 
-  fun setDataArray() {
+  fun setDataArray(data: PoolByteArray) {
     TODO()
   }
 

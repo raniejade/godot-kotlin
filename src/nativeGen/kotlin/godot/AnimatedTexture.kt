@@ -20,11 +20,11 @@ open class AnimatedTexture internal constructor(
     TODO()
   }
 
-  fun getFrameDelay(): Float {
+  fun getFrameDelay(frame: Int): Float {
     TODO()
   }
 
-  fun getFrameTexture(): Texture {
+  fun getFrameTexture(frame: Int): Texture {
     TODO()
   }
 
@@ -32,19 +32,19 @@ open class AnimatedTexture internal constructor(
     TODO()
   }
 
-  fun setFps() {
+  fun setFps(fps: Float) {
     TODO()
   }
 
-  fun setFrameDelay() {
+  fun setFrameDelay(frame: Int, delay: Float) {
     TODO()
   }
 
-  fun setFrameTexture() {
+  fun setFrameTexture(frame: Int, texture: Texture) {
     TODO()
   }
 
-  fun setFrames() {
+  fun setFrames(frames: Int) {
     TODO()
   }
 

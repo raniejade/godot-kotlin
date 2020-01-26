@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Transform
 import godot.core.Vector3
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -58,15 +59,15 @@ open class Spatial internal constructor(
     TODO()
   }
 
-  fun globalRotate() {
+  fun globalRotate(axis: Vector3, angle: Float) {
     TODO()
   }
 
-  fun globalScale() {
+  fun globalScale(scale: Vector3) {
     TODO()
   }
 
-  fun globalTranslate() {
+  fun globalTranslate(offset: Vector3) {
     TODO()
   }
 
@@ -98,11 +99,15 @@ open class Spatial internal constructor(
     TODO()
   }
 
-  fun lookAt() {
+  fun lookAt(target: Vector3, up: Vector3) {
     TODO()
   }
 
-  fun lookAtFromPosition() {
+  fun lookAtFromPosition(
+    position: Vector3,
+    target: Vector3,
+    up: Vector3
+  ) {
     TODO()
   }
 
@@ -110,43 +115,43 @@ open class Spatial internal constructor(
     TODO()
   }
 
-  fun rotate() {
+  fun rotate(axis: Vector3, angle: Float) {
     TODO()
   }
 
-  fun rotateObjectLocal() {
+  fun rotateObjectLocal(axis: Vector3, angle: Float) {
     TODO()
   }
 
-  fun rotateX() {
+  fun rotateX(angle: Float) {
     TODO()
   }
 
-  fun rotateY() {
+  fun rotateY(angle: Float) {
     TODO()
   }
 
-  fun rotateZ() {
+  fun rotateZ(angle: Float) {
     TODO()
   }
 
-  fun scaleObjectLocal() {
+  fun scaleObjectLocal(scale: Vector3) {
     TODO()
   }
 
-  fun setAsToplevel() {
+  fun setAsToplevel(enable: Boolean) {
     TODO()
   }
 
-  fun setDisableScale() {
+  fun setDisableScale(disable: Boolean) {
     TODO()
   }
 
-  fun setGizmo() {
+  fun setGizmo(gizmo: SpatialGizmo) {
     TODO()
   }
 
-  fun setGlobalTransform() {
+  fun setGlobalTransform(global: Transform) {
     TODO()
   }
 
@@ -154,39 +159,39 @@ open class Spatial internal constructor(
     TODO()
   }
 
-  fun setIgnoreTransformNotification() {
+  fun setIgnoreTransformNotification(enabled: Boolean) {
     TODO()
   }
 
-  fun setNotifyLocalTransform() {
+  fun setNotifyLocalTransform(enable: Boolean) {
     TODO()
   }
 
-  fun setNotifyTransform() {
+  fun setNotifyTransform(enable: Boolean) {
     TODO()
   }
 
-  fun setRotation() {
+  fun setRotation(euler: Vector3) {
     TODO()
   }
 
-  fun setRotationDegrees() {
+  fun setRotationDegrees(euler_degrees: Vector3) {
     TODO()
   }
 
-  fun setScale() {
+  fun setScale(scale: Vector3) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(local: Transform) {
     TODO()
   }
 
-  fun setTranslation() {
+  fun setTranslation(translation: Vector3) {
     TODO()
   }
 
-  fun setVisible() {
+  fun setVisible(visible: Boolean) {
     TODO()
   }
 
@@ -194,19 +199,19 @@ open class Spatial internal constructor(
     TODO()
   }
 
-  fun toGlobal(): Vector3 {
+  fun toGlobal(local_point: Vector3): Vector3 {
     TODO()
   }
 
-  fun toLocal(): Vector3 {
+  fun toLocal(global_point: Vector3): Vector3 {
     TODO()
   }
 
-  fun translate() {
+  fun translate(offset: Vector3) {
     TODO()
   }
 
-  fun translateObjectLocal() {
+  fun translateObjectLocal(offset: Vector3) {
     TODO()
   }
 

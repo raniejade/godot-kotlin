@@ -19,7 +19,7 @@ open class VisualShaderNodeVec3Constant internal constructor(
     TODO()
   }
 
-  fun setConstant() {
+  fun setConstant(value: Vector3) {
     TODO()
   }
 

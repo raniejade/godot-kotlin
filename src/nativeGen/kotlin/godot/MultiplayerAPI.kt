@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
 import godot.core.PoolIntArray
 import kotlin.Boolean
 import kotlin.Int
@@ -57,23 +58,27 @@ open class MultiplayerAPI internal constructor(
     TODO()
   }
 
-  fun sendBytes(): Error {
+  fun sendBytes(
+    bytes: PoolByteArray,
+    id: Int,
+    mode: Int
+  ): Error {
     TODO()
   }
 
-  fun setAllowObjectDecoding() {
+  fun setAllowObjectDecoding(enable: Boolean) {
     TODO()
   }
 
-  fun setNetworkPeer() {
+  fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     TODO()
   }
 
-  fun setRefuseNewNetworkConnections() {
+  fun setRefuseNewNetworkConnections(refuse: Boolean) {
     TODO()
   }
 
-  fun setRootNode() {
+  fun setRootNode(node: Node) {
     TODO()
   }
 

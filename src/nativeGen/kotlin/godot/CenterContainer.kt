@@ -19,7 +19,7 @@ open class CenterContainer internal constructor(
     TODO()
   }
 
-  fun setUseTopLeft() {
+  fun setUseTopLeft(enable: Boolean) {
     TODO()
   }
 

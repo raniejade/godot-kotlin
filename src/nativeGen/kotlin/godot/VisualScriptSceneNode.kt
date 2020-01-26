@@ -19,7 +19,7 @@ open class VisualScriptSceneNode internal constructor(
     TODO()
   }
 
-  fun setNodePath() {
+  fun setNodePath(path: NodePath) {
     TODO()
   }
 

@@ -30,7 +30,7 @@ open class Light internal constructor(
     TODO()
   }
 
-  fun getParam(): Float {
+  fun getParam(param: Int): Float {
     TODO()
   }
 
@@ -54,39 +54,39 @@ open class Light internal constructor(
     TODO()
   }
 
-  fun setBakeMode() {
+  fun setBakeMode(bake_mode: Int) {
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setCullMask() {
+  fun setCullMask(cull_mask: Int) {
     TODO()
   }
 
-  fun setEditorOnly() {
+  fun setEditorOnly(editor_only: Boolean) {
     TODO()
   }
 
-  fun setNegative() {
+  fun setNegative(enabled: Boolean) {
     TODO()
   }
 
-  fun setParam() {
+  fun setParam(param: Int, value: Float) {
     TODO()
   }
 
-  fun setShadow() {
+  fun setShadow(enabled: Boolean) {
     TODO()
   }
 
-  fun setShadowColor() {
+  fun setShadowColor(shadow_color: Color) {
     TODO()
   }
 
-  fun setShadowReverseCullFace() {
+  fun setShadowReverseCullFace(enable: Boolean) {
     TODO()
   }
 

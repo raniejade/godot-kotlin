@@ -103,87 +103,87 @@ open class Light2D internal constructor(
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setEditorOnly() {
+  fun setEditorOnly(editor_only: Boolean) {
     TODO()
   }
 
-  fun setEnabled() {
+  fun setEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setEnergy() {
+  fun setEnergy(energy: Float) {
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(height: Float) {
     TODO()
   }
 
-  fun setItemCullMask() {
+  fun setItemCullMask(item_cull_mask: Int) {
     TODO()
   }
 
-  fun setItemShadowCullMask() {
+  fun setItemShadowCullMask(item_shadow_cull_mask: Int) {
     TODO()
   }
 
-  fun setLayerRangeMax() {
+  fun setLayerRangeMax(layer: Int) {
     TODO()
   }
 
-  fun setLayerRangeMin() {
+  fun setLayerRangeMin(layer: Int) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setShadowBufferSize() {
+  fun setShadowBufferSize(size: Int) {
     TODO()
   }
 
-  fun setShadowColor() {
+  fun setShadowColor(shadow_color: Color) {
     TODO()
   }
 
-  fun setShadowEnabled() {
+  fun setShadowEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setShadowFilter() {
+  fun setShadowFilter(filter: Int) {
     TODO()
   }
 
-  fun setShadowGradientLength() {
+  fun setShadowGradientLength(multiplier: Float) {
     TODO()
   }
 
-  fun setShadowSmooth() {
+  fun setShadowSmooth(smooth: Float) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setTextureOffset() {
+  fun setTextureOffset(texture_offset: Vector2) {
     TODO()
   }
 
-  fun setTextureScale() {
+  fun setTextureScale(texture_scale: Float) {
     TODO()
   }
 
-  fun setZRangeMax() {
+  fun setZRangeMax(z: Int) {
     TODO()
   }
 
-  fun setZRangeMin() {
+  fun setZRangeMin(z: Int) {
     TODO()
   }
 

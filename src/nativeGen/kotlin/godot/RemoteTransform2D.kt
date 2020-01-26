@@ -36,23 +36,23 @@ open class RemoteTransform2D internal constructor(
     TODO()
   }
 
-  fun setRemoteNode() {
+  fun setRemoteNode(path: NodePath) {
     TODO()
   }
 
-  fun setUpdatePosition() {
+  fun setUpdatePosition(update_remote_position: Boolean) {
     TODO()
   }
 
-  fun setUpdateRotation() {
+  fun setUpdateRotation(update_remote_rotation: Boolean) {
     TODO()
   }
 
-  fun setUpdateScale() {
+  fun setUpdateScale(update_remote_scale: Boolean) {
     TODO()
   }
 
-  fun setUseGlobalCoordinates() {
+  fun setUseGlobalCoordinates(use_global_coordinates: Boolean) {
     TODO()
   }
 

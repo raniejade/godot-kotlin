@@ -61,7 +61,7 @@ open class WebRTCDataChannel internal constructor(
     TODO()
   }
 
-  fun setWriteMode() {
+  fun setWriteMode(write_mode: Int) {
     TODO()
   }
 

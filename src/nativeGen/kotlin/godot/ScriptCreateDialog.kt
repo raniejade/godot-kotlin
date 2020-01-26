@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,7 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class ScriptCreateDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
-  fun config() {
+  fun config(
+    inherits: String,
+    path: String,
+    built_in_enabled: Boolean
+  ) {
     TODO()
   }
 

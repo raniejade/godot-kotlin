@@ -29,11 +29,11 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getCell(): Int {
+  fun getCell(x: Int, y: Int): Int {
     TODO()
   }
 
-  fun getCellAutotileCoord(): Vector2 {
+  fun getCellAutotileCoord(x: Int, y: Int): Vector2 {
     TODO()
   }
 
@@ -41,7 +41,7 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getCellv(): Int {
+  fun getCellv(position: Vector2): Int {
     TODO()
   }
 
@@ -61,7 +61,7 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getCollisionLayerBit(): Boolean {
+  fun getCollisionLayerBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -69,7 +69,7 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -109,7 +109,7 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getUsedCellsById(): VariantArray {
+  fun getUsedCellsById(id: Int): VariantArray {
     TODO()
   }
 
@@ -117,15 +117,15 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun isCellTransposed(): Boolean {
+  fun isCellTransposed(x: Int, y: Int): Boolean {
     TODO()
   }
 
-  fun isCellXFlipped(): Boolean {
+  fun isCellXFlipped(x: Int, y: Int): Boolean {
     TODO()
   }
 
-  fun isCellYFlipped(): Boolean {
+  fun isCellYFlipped(x: Int, y: Int): Boolean {
     TODO()
   }
 
@@ -133,91 +133,105 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun mapToWorld(): Vector2 {
+  fun mapToWorld(map_position: Vector2, ignore_half_ofs: Boolean): Vector2 {
     TODO()
   }
 
-  fun setCell() {
+  fun setCell(
+    x: Int,
+    y: Int,
+    tile: Int,
+    flip_x: Boolean,
+    flip_y: Boolean,
+    transpose: Boolean,
+    autotile_coord: Vector2
+  ) {
     TODO()
   }
 
-  fun setCellSize() {
+  fun setCellSize(size: Vector2) {
     TODO()
   }
 
-  fun setCellv() {
+  fun setCellv(
+    position: Vector2,
+    tile: Int,
+    flip_x: Boolean,
+    flip_y: Boolean,
+    transpose: Boolean
+  ) {
     TODO()
   }
 
-  fun setClipUv() {
+  fun setClipUv(enable: Boolean) {
     TODO()
   }
 
-  fun setCollisionBounce() {
+  fun setCollisionBounce(value: Float) {
     TODO()
   }
 
-  fun setCollisionFriction() {
+  fun setCollisionFriction(value: Float) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(layer: Int) {
     TODO()
   }
 
-  fun setCollisionLayerBit() {
+  fun setCollisionLayerBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionUseKinematic() {
+  fun setCollisionUseKinematic(use_kinematic: Boolean) {
     TODO()
   }
 
-  fun setCustomTransform() {
+  fun setCustomTransform(custom_transform: Transform2D) {
     TODO()
   }
 
-  fun setHalfOffset() {
+  fun setHalfOffset(half_offset: Int) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setOccluderLightMask() {
+  fun setOccluderLightMask(mask: Int) {
     TODO()
   }
 
-  fun setQuadrantSize() {
+  fun setQuadrantSize(size: Int) {
     TODO()
   }
 
-  fun setTileOrigin() {
+  fun setTileOrigin(origin: Int) {
     TODO()
   }
 
-  fun setTileset() {
+  fun setTileset(tileset: TileSet) {
     TODO()
   }
 
-  fun setYSortMode() {
+  fun setYSortMode(enable: Boolean) {
     TODO()
   }
 
-  fun updateBitmaskArea() {
+  fun updateBitmaskArea(position: Vector2) {
     TODO()
   }
 
-  fun updateBitmaskRegion() {
+  fun updateBitmaskRegion(start: Vector2, end: Vector2) {
     TODO()
   }
 
@@ -225,7 +239,7 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun worldToMap(): Vector2 {
+  fun worldToMap(world_position: Vector2): Vector2 {
     TODO()
   }
 

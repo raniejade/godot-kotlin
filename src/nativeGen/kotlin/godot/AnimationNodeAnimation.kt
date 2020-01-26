@@ -19,7 +19,7 @@ open class AnimationNodeAnimation internal constructor(
     TODO()
   }
 
-  fun setAnimation() {
+  fun setAnimation(name: String) {
     TODO()
   }
 

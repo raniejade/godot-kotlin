@@ -33,19 +33,19 @@ open class Joint internal constructor(
     TODO()
   }
 
-  fun setExcludeNodesFromCollision() {
+  fun setExcludeNodesFromCollision(enable: Boolean) {
     TODO()
   }
 
-  fun setNodeA() {
+  fun setNodeA(node: NodePath) {
     TODO()
   }
 
-  fun setNodeB() {
+  fun setNodeB(node: NodePath) {
     TODO()
   }
 
-  fun setSolverPriority() {
+  fun setSolverPriority(priority: Int) {
     TODO()
   }
 

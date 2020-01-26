@@ -17,15 +17,15 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygon internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addOutline() {
+  fun addOutline(outline: PoolVector2Array) {
     TODO()
   }
 
-  fun addOutlineAtIndex() {
+  fun addOutlineAtIndex(outline: PoolVector2Array, index: Int) {
     TODO()
   }
 
-  fun addPolygon() {
+  fun addPolygon(polygon: PoolIntArray) {
     TODO()
   }
 
@@ -37,7 +37,7 @@ open class NavigationPolygon internal constructor(
     TODO()
   }
 
-  fun getOutline(): PoolVector2Array {
+  fun getOutline(idx: Int): PoolVector2Array {
     TODO()
   }
 
@@ -45,7 +45,7 @@ open class NavigationPolygon internal constructor(
     TODO()
   }
 
-  fun getPolygon(): PoolIntArray {
+  fun getPolygon(idx: Int): PoolIntArray {
     TODO()
   }
 
@@ -61,15 +61,15 @@ open class NavigationPolygon internal constructor(
     TODO()
   }
 
-  fun removeOutline() {
+  fun removeOutline(idx: Int) {
     TODO()
   }
 
-  fun setOutline() {
+  fun setOutline(idx: Int, outline: PoolVector2Array) {
     TODO()
   }
 
-  fun setVertices() {
+  fun setVertices(vertices: PoolVector2Array) {
     TODO()
   }
 

@@ -28,15 +28,15 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
     TODO()
   }
 
-  fun setBufferLength() {
+  fun setBufferLength(seconds: Float) {
     TODO()
   }
 
-  fun setFftSize() {
+  fun setFftSize(size: Int) {
     TODO()
   }
 
-  fun setTapBackPos() {
+  fun setTapBackPos(seconds: Float) {
     TODO()
   }
 

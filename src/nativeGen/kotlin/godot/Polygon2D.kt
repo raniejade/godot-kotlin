@@ -24,7 +24,7 @@ import kotlinx.cinterop.reinterpret
 open class Polygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun addBone() {
+  fun addBone(path: NodePath, weights: PoolRealArray) {
     TODO()
   }
 
@@ -32,7 +32,7 @@ open class Polygon2D internal constructor(
     TODO()
   }
 
-  fun eraseBone() {
+  fun eraseBone(index: Int) {
     TODO()
   }
 
@@ -44,11 +44,11 @@ open class Polygon2D internal constructor(
     TODO()
   }
 
-  fun getBonePath(): NodePath {
+  fun getBonePath(index: Int): NodePath {
     TODO()
   }
 
-  fun getBoneWeights(): PoolRealArray {
+  fun getBoneWeights(index: Int): PoolRealArray {
     TODO()
   }
 
@@ -112,75 +112,75 @@ open class Polygon2D internal constructor(
     TODO()
   }
 
-  fun setAntialiased() {
+  fun setAntialiased(antialiased: Boolean) {
     TODO()
   }
 
-  fun setBonePath() {
+  fun setBonePath(index: Int, path: NodePath) {
     TODO()
   }
 
-  fun setBoneWeights() {
+  fun setBoneWeights(index: Int, weights: PoolRealArray) {
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setInternalVertexCount() {
+  fun setInternalVertexCount(internal_vertex_count: Int) {
     TODO()
   }
 
-  fun setInvert() {
+  fun setInvert(invert: Boolean) {
     TODO()
   }
 
-  fun setInvertBorder() {
+  fun setInvertBorder(invert_border: Float) {
     TODO()
   }
 
-  fun setOffset() {
+  fun setOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setPolygon() {
+  fun setPolygon(polygon: PoolVector2Array) {
     TODO()
   }
 
-  fun setPolygons() {
+  fun setPolygons(polygons: VariantArray) {
     TODO()
   }
 
-  fun setSkeleton() {
+  fun setSkeleton(skeleton: NodePath) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 
-  fun setTextureOffset() {
+  fun setTextureOffset(texture_offset: Vector2) {
     TODO()
   }
 
-  fun setTextureRotation() {
+  fun setTextureRotation(texture_rotation: Float) {
     TODO()
   }
 
-  fun setTextureRotationDegrees() {
+  fun setTextureRotationDegrees(texture_rotation: Float) {
     TODO()
   }
 
-  fun setTextureScale() {
+  fun setTextureScale(texture_scale: Vector2) {
     TODO()
   }
 
-  fun setUv() {
+  fun setUv(uv: PoolVector2Array) {
     TODO()
   }
 
-  fun setVertexColors() {
+  fun setVertexColors(vertex_colors: PoolColorArray) {
     TODO()
   }
 

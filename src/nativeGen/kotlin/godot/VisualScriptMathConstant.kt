@@ -19,7 +19,7 @@ open class VisualScriptMathConstant internal constructor(
     TODO()
   }
 
-  fun setMathConstant() {
+  fun setMathConstant(which: Int) {
     TODO()
   }
 

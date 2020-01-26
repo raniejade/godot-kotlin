@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -17,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class SpringArm internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun addExcludedObject() {
+  fun addExcludedObject(RID: RID) {
     TODO()
   }
 
@@ -45,23 +46,23 @@ open class SpringArm internal constructor(
     TODO()
   }
 
-  fun removeExcludedObject(): Boolean {
+  fun removeExcludedObject(RID: RID): Boolean {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setLength() {
+  fun setLength(length: Float) {
     TODO()
   }
 
-  fun setMargin() {
+  fun setMargin(margin: Float) {
     TODO()
   }
 
-  fun setShape() {
+  fun setShape(shape: Shape) {
     TODO()
   }
 

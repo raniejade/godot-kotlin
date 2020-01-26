@@ -26,15 +26,15 @@ open class MultiMeshInstance2D internal constructor(
     TODO()
   }
 
-  fun setMultimesh() {
+  fun setMultimesh(multimesh: MultiMesh) {
     TODO()
   }
 
-  fun setNormalMap() {
+  fun setNormalMap(normal_map: Texture) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 

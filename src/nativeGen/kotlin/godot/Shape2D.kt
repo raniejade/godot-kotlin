@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform2D
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,19 +19,39 @@ import kotlinx.cinterop.reinterpret
 open class Shape2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun collide(): Boolean {
+  fun collide(
+    local_xform: Transform2D,
+    with_shape: Shape2D,
+    shape_xform: Transform2D
+  ): Boolean {
     TODO()
   }
 
-  fun collideAndGetContacts(): VariantArray {
+  fun collideAndGetContacts(
+    local_xform: Transform2D,
+    with_shape: Shape2D,
+    shape_xform: Transform2D
+  ): VariantArray {
     TODO()
   }
 
-  fun collideWithMotion(): Boolean {
+  fun collideWithMotion(
+    local_xform: Transform2D,
+    local_motion: Vector2,
+    with_shape: Shape2D,
+    shape_xform: Transform2D,
+    shape_motion: Vector2
+  ): Boolean {
     TODO()
   }
 
-  fun collideWithMotionAndGetContacts(): VariantArray {
+  fun collideWithMotionAndGetContacts(
+    local_xform: Transform2D,
+    local_motion: Vector2,
+    with_shape: Shape2D,
+    shape_xform: Transform2D,
+    shape_motion: Vector2
+  ): VariantArray {
     TODO()
   }
 
@@ -37,7 +59,7 @@ open class Shape2D internal constructor(
     TODO()
   }
 
-  fun setCustomSolverBias() {
+  fun setCustomSolverBias(bias: Float) {
     TODO()
   }
 

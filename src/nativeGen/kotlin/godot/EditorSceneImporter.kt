@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,11 +16,19 @@ import kotlinx.cinterop.reinterpret
 open class EditorSceneImporter internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun importAnimationFromOtherImporter(): Animation {
+  fun importAnimationFromOtherImporter(
+    path: String,
+    flags: Int,
+    bake_fps: Int
+  ): Animation {
     TODO()
   }
 
-  fun importSceneFromOtherImporter(): Node {
+  fun importSceneFromOtherImporter(
+    path: String,
+    flags: Int,
+    bake_fps: Int
+  ): Node {
     TODO()
   }
 

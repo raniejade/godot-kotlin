@@ -19,7 +19,7 @@ open class InputEventGesture internal constructor(
     TODO()
   }
 
-  fun setPosition() {
+  fun setPosition(position: Vector2) {
     TODO()
   }
 

@@ -29,19 +29,19 @@ open class InterpolatedCamera internal constructor(
     TODO()
   }
 
-  fun setInterpolationEnabled() {
+  fun setInterpolationEnabled(target_path: Boolean) {
     TODO()
   }
 
-  fun setSpeed() {
+  fun setSpeed(speed: Float) {
     TODO()
   }
 
-  fun setTarget() {
+  fun setTarget(target: Object) {
     TODO()
   }
 
-  fun setTargetPath() {
+  fun setTargetPath(target_path: NodePath) {
     TODO()
   }
 

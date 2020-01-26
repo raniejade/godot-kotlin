@@ -19,7 +19,7 @@ open class VisualShaderNodeInput internal constructor(
     TODO()
   }
 
-  fun setInputName() {
+  fun setInputName(name: String) {
     TODO()
   }
 

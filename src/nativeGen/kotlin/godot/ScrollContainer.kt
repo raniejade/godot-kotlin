@@ -44,23 +44,23 @@ open class ScrollContainer internal constructor(
     TODO()
   }
 
-  fun setDeadzone() {
+  fun setDeadzone(deadzone: Int) {
     TODO()
   }
 
-  fun setEnableHScroll() {
+  fun setEnableHScroll(enable: Boolean) {
     TODO()
   }
 
-  fun setEnableVScroll() {
+  fun setEnableVScroll(enable: Boolean) {
     TODO()
   }
 
-  fun setHScroll() {
+  fun setHScroll(value: Int) {
     TODO()
   }
 
-  fun setVScroll() {
+  fun setVScroll(value: Int) {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class ConvexPolygonShape internal constructor(
     TODO()
   }
 
-  fun setPoints() {
+  fun setPoints(points: PoolVector3Array) {
     TODO()
   }
 

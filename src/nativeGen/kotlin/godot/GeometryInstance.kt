@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
 import kotlin.Boolean
 import kotlin.Float
@@ -25,7 +26,7 @@ open class GeometryInstance internal constructor(
     TODO()
   }
 
-  fun getFlag(): Boolean {
+  fun getFlag(flag: Int): Boolean {
     TODO()
   }
 
@@ -49,39 +50,39 @@ open class GeometryInstance internal constructor(
     TODO()
   }
 
-  fun setCastShadowsSetting() {
+  fun setCastShadowsSetting(shadow_casting_setting: Int) {
     TODO()
   }
 
-  fun setCustomAabb() {
+  fun setCustomAabb(aabb: AABB) {
     TODO()
   }
 
-  fun setExtraCullMargin() {
+  fun setExtraCullMargin(margin: Float) {
     TODO()
   }
 
-  fun setFlag() {
+  fun setFlag(flag: Int, value: Boolean) {
     TODO()
   }
 
-  fun setLodMaxDistance() {
+  fun setLodMaxDistance(mode: Float) {
     TODO()
   }
 
-  fun setLodMaxHysteresis() {
+  fun setLodMaxHysteresis(mode: Float) {
     TODO()
   }
 
-  fun setLodMinDistance() {
+  fun setLodMinDistance(mode: Float) {
     TODO()
   }
 
-  fun setLodMinHysteresis() {
+  fun setLodMinHysteresis(mode: Float) {
     TODO()
   }
 
-  fun setMaterialOverride() {
+  fun setMaterialOverride(material: Material) {
     TODO()
   }
 

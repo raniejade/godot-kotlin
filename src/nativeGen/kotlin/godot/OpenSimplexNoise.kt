@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import godot.core.Vector3
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -16,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class OpenSimplexNoise internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getImage(): Image {
+  fun getImage(width: Int, height: Int): Image {
     TODO()
   }
 
@@ -24,27 +26,36 @@ open class OpenSimplexNoise internal constructor(
     TODO()
   }
 
-  fun getNoise1d(): Float {
+  fun getNoise1d(x: Float): Float {
     TODO()
   }
 
-  fun getNoise2d(): Float {
+  fun getNoise2d(x: Float, y: Float): Float {
     TODO()
   }
 
-  fun getNoise2dv(): Float {
+  fun getNoise2dv(pos: Vector2): Float {
     TODO()
   }
 
-  fun getNoise3d(): Float {
+  fun getNoise3d(
+    x: Float,
+    y: Float,
+    z: Float
+  ): Float {
     TODO()
   }
 
-  fun getNoise3dv(): Float {
+  fun getNoise3dv(pos: Vector3): Float {
     TODO()
   }
 
-  fun getNoise4d(): Float {
+  fun getNoise4d(
+    x: Float,
+    y: Float,
+    z: Float,
+    w: Float
+  ): Float {
     TODO()
   }
 
@@ -60,7 +71,7 @@ open class OpenSimplexNoise internal constructor(
     TODO()
   }
 
-  fun getSeamlessImage(): Image {
+  fun getSeamlessImage(size: Int): Image {
     TODO()
   }
 
@@ -68,23 +79,23 @@ open class OpenSimplexNoise internal constructor(
     TODO()
   }
 
-  fun setLacunarity() {
+  fun setLacunarity(lacunarity: Float) {
     TODO()
   }
 
-  fun setOctaves() {
+  fun setOctaves(octave_count: Int) {
     TODO()
   }
 
-  fun setPeriod() {
+  fun setPeriod(period: Float) {
     TODO()
   }
 
-  fun setPersistence() {
+  fun setPersistence(persistence: Float) {
     TODO()
   }
 
-  fun setSeed() {
+  fun setSeed(seed: Int) {
     TODO()
   }
 

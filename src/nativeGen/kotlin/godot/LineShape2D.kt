@@ -24,11 +24,11 @@ open class LineShape2D internal constructor(
     TODO()
   }
 
-  fun setD() {
+  fun setD(d: Float) {
     TODO()
   }
 
-  fun setNormal() {
+  fun setNormal(normal: Vector2) {
     TODO()
   }
 

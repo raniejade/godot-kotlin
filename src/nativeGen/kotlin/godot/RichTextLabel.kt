@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,15 +20,15 @@ import kotlinx.cinterop.reinterpret
 open class RichTextLabel internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun addImage() {
+  fun addImage(image: Texture) {
     TODO()
   }
 
-  fun addText() {
+  fun addText(text: String) {
     TODO()
   }
 
-  fun appendBbcode(): Error {
+  fun appendBbcode(bbcode: String): Error {
     TODO()
   }
 
@@ -102,7 +104,7 @@ open class RichTextLabel internal constructor(
     TODO()
   }
 
-  fun parseBbcode(): Error {
+  fun parseBbcode(bbcode: String): Error {
     TODO()
   }
 
@@ -110,7 +112,7 @@ open class RichTextLabel internal constructor(
     TODO()
   }
 
-  fun pushAlign() {
+  fun pushAlign(align: Int) {
     TODO()
   }
 
@@ -118,23 +120,23 @@ open class RichTextLabel internal constructor(
     TODO()
   }
 
-  fun pushColor() {
+  fun pushColor(color: Color) {
     TODO()
   }
 
-  fun pushFont() {
+  fun pushFont(font: Font) {
     TODO()
   }
 
-  fun pushIndent() {
+  fun pushIndent(level: Int) {
     TODO()
   }
 
-  fun pushList() {
+  fun pushList(type: Int) {
     TODO()
   }
 
-  fun pushMeta() {
+  fun pushMeta(data: Variant) {
     TODO()
   }
 
@@ -142,7 +144,7 @@ open class RichTextLabel internal constructor(
     TODO()
   }
 
-  fun pushTable() {
+  fun pushTable(columns: Int) {
     TODO()
   }
 
@@ -150,59 +152,63 @@ open class RichTextLabel internal constructor(
     TODO()
   }
 
-  fun removeLine(): Boolean {
+  fun removeLine(line: Int): Boolean {
     TODO()
   }
 
-  fun scrollToLine() {
+  fun scrollToLine(line: Int) {
     TODO()
   }
 
-  fun setBbcode() {
+  fun setBbcode(text: String) {
     TODO()
   }
 
-  fun setMetaUnderline() {
+  fun setMetaUnderline(enable: Boolean) {
     TODO()
   }
 
-  fun setOverrideSelectedFontColor() {
+  fun setOverrideSelectedFontColor(override: Boolean) {
     TODO()
   }
 
-  fun setPercentVisible() {
+  fun setPercentVisible(percent_visible: Float) {
     TODO()
   }
 
-  fun setScrollActive() {
+  fun setScrollActive(active: Boolean) {
     TODO()
   }
 
-  fun setScrollFollow() {
+  fun setScrollFollow(follow: Boolean) {
     TODO()
   }
 
-  fun setSelectionEnabled() {
+  fun setSelectionEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setTabSize() {
+  fun setTabSize(spaces: Int) {
     TODO()
   }
 
-  fun setTableColumnExpand() {
+  fun setTableColumnExpand(
+    column: Int,
+    expand: Boolean,
+    ratio: Int
+  ) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 
-  fun setUseBbcode() {
+  fun setUseBbcode(enable: Boolean) {
     TODO()
   }
 
-  fun setVisibleCharacters() {
+  fun setVisibleCharacters(amount: Int) {
     TODO()
   }
 

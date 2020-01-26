@@ -36,23 +36,23 @@ open class TextureRect internal constructor(
     TODO()
   }
 
-  fun setExpand() {
+  fun setExpand(enable: Boolean) {
     TODO()
   }
 
-  fun setFlipH() {
+  fun setFlipH(enable: Boolean) {
     TODO()
   }
 
-  fun setFlipV() {
+  fun setFlipV(enable: Boolean) {
     TODO()
   }
 
-  fun setStretchMode() {
+  fun setStretchMode(stretch_mode: Int) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(texture: Texture) {
     TODO()
   }
 

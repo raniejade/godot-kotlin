@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,11 +18,15 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketClient internal constructor(
   _handle: COpaquePointer
 ) : WebSocketMultiplayerPeer(_handle) {
-  fun connectToUrl(): Error {
+  fun connectToUrl(
+    url: String,
+    protocols: PoolStringArray,
+    gd_mp_api: Boolean
+  ): Error {
     TODO()
   }
 
-  fun disconnectFromHost() {
+  fun disconnectFromHost(code: Int, reason: String) {
     TODO()
   }
 
@@ -27,7 +34,7 @@ open class WebSocketClient internal constructor(
     TODO()
   }
 
-  fun setVerifySslEnabled() {
+  fun setVerifySslEnabled(enabled: Boolean) {
     TODO()
   }
 

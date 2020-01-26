@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerTCP internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
-  fun connectToHost(): Error {
+  fun connectToHost(host: String, port: Int): Error {
     TODO()
   }
 
@@ -41,7 +41,7 @@ open class StreamPeerTCP internal constructor(
     TODO()
   }
 
-  fun setNoDelay() {
+  fun setNoDelay(enabled: Boolean) {
     TODO()
   }
 

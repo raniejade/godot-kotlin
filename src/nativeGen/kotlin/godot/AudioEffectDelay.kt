@@ -68,55 +68,55 @@ open class AudioEffectDelay internal constructor(
     TODO()
   }
 
-  fun setDry() {
+  fun setDry(amount: Float) {
     TODO()
   }
 
-  fun setFeedbackActive() {
+  fun setFeedbackActive(amount: Boolean) {
     TODO()
   }
 
-  fun setFeedbackDelayMs() {
+  fun setFeedbackDelayMs(amount: Float) {
     TODO()
   }
 
-  fun setFeedbackLevelDb() {
+  fun setFeedbackLevelDb(amount: Float) {
     TODO()
   }
 
-  fun setFeedbackLowpass() {
+  fun setFeedbackLowpass(amount: Float) {
     TODO()
   }
 
-  fun setTap1Active() {
+  fun setTap1Active(amount: Boolean) {
     TODO()
   }
 
-  fun setTap1DelayMs() {
+  fun setTap1DelayMs(amount: Float) {
     TODO()
   }
 
-  fun setTap1LevelDb() {
+  fun setTap1LevelDb(amount: Float) {
     TODO()
   }
 
-  fun setTap1Pan() {
+  fun setTap1Pan(amount: Float) {
     TODO()
   }
 
-  fun setTap2Active() {
+  fun setTap2Active(amount: Boolean) {
     TODO()
   }
 
-  fun setTap2DelayMs() {
+  fun setTap2DelayMs(amount: Float) {
     TODO()
   }
 
-  fun setTap2LevelDb() {
+  fun setTap2LevelDb(amount: Float) {
     TODO()
   }
 
-  fun setTap2Pan() {
+  fun setTap2Pan(amount: Float) {
     TODO()
   }
 

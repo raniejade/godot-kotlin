@@ -17,11 +17,17 @@ import kotlinx.cinterop.reinterpret
 open class UPNP internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addDevice() {
+  fun addDevice(device: UPNPDevice) {
     TODO()
   }
 
-  fun addPortMapping(): Int {
+  fun addPortMapping(
+    port: Int,
+    port_internal: Int,
+    desc: String,
+    proto: String,
+    duration: Int
+  ): Int {
     TODO()
   }
 
@@ -29,15 +35,19 @@ open class UPNP internal constructor(
     TODO()
   }
 
-  fun deletePortMapping(): Int {
+  fun deletePortMapping(port: Int, proto: String): Int {
     TODO()
   }
 
-  fun discover(): Int {
+  fun discover(
+    timeout: Int,
+    ttl: Int,
+    device_filter: String
+  ): Int {
     TODO()
   }
 
-  fun getDevice(): UPNPDevice {
+  fun getDevice(index: Int): UPNPDevice {
     TODO()
   }
 
@@ -65,23 +75,23 @@ open class UPNP internal constructor(
     TODO()
   }
 
-  fun removeDevice() {
+  fun removeDevice(index: Int) {
     TODO()
   }
 
-  fun setDevice() {
+  fun setDevice(index: Int, device: UPNPDevice) {
     TODO()
   }
 
-  fun setDiscoverIpv6() {
+  fun setDiscoverIpv6(ipv6: Boolean) {
     TODO()
   }
 
-  fun setDiscoverLocalPort() {
+  fun setDiscoverLocalPort(port: Int) {
     TODO()
   }
 
-  fun setDiscoverMulticastIf() {
+  fun setDiscoverMulticastIf(m_if: String) {
     TODO()
   }
 

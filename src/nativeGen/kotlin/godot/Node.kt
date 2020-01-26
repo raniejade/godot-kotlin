@@ -21,15 +21,19 @@ import kotlinx.cinterop.reinterpret
 open class Node internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addChild() {
+  fun addChild(node: Node, legible_unique_name: Boolean) {
     TODO()
   }
 
-  fun addChildBelowNode() {
+  fun addChildBelowNode(
+    node: Node,
+    child_node: Node,
+    legible_unique_name: Boolean
+  ) {
     TODO()
   }
 
-  fun addToGroup() {
+  fun addToGroup(group: String, persistent: Boolean) {
     TODO()
   }
 
@@ -37,19 +41,23 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun duplicate(): Node {
+  fun duplicate(flags: Int): Node {
     TODO()
   }
 
-  fun findNode(): Node {
+  fun findNode(
+    mask: String,
+    recursive: Boolean,
+    owned: Boolean
+  ): Node {
     TODO()
   }
 
-  fun findParent(): Node {
+  fun findParent(mask: String): Node {
     TODO()
   }
 
-  fun getChild(): Node {
+  fun getChild(idx: Int): Node {
     TODO()
   }
 
@@ -89,15 +97,15 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun getNode(): Node {
+  fun getNode(path: NodePath): Node {
     TODO()
   }
 
-  fun getNodeAndResource(): VariantArray {
+  fun getNodeAndResource(path: NodePath): VariantArray {
     TODO()
   }
 
-  fun getNodeOrNull(): Node {
+  fun getNodeOrNull(path: NodePath): Node {
     TODO()
   }
 
@@ -113,7 +121,7 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun getPathTo(): NodePath {
+  fun getPathTo(node: Node): NodePath {
     TODO()
   }
 
@@ -145,15 +153,15 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun hasNode(): Boolean {
+  fun hasNode(path: NodePath): Boolean {
     TODO()
   }
 
-  fun hasNodeAndResource(): Boolean {
+  fun hasNodeAndResource(path: NodePath): Boolean {
     TODO()
   }
 
-  fun isAParentOf(): Boolean {
+  fun isAParentOf(node: Node): Boolean {
     TODO()
   }
 
@@ -161,11 +169,11 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun isGreaterThan(): Boolean {
+  fun isGreaterThan(node: Node): Boolean {
     TODO()
   }
 
-  fun isInGroup(): Boolean {
+  fun isInGroup(group: String): Boolean {
     TODO()
   }
 
@@ -205,7 +213,7 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun moveChild() {
+  fun moveChild(child_node: Node, to_position: Int) {
     TODO()
   }
 
@@ -221,11 +229,15 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun propagateCall() {
+  fun propagateCall(
+    method: String,
+    args: VariantArray,
+    parent_first: Boolean
+  ) {
     TODO()
   }
 
-  fun propagateNotification() {
+  fun propagateNotification(what: Int) {
     TODO()
   }
 
@@ -241,15 +253,15 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun removeChild() {
+  fun removeChild(node: Node) {
     TODO()
   }
 
-  fun removeFromGroup() {
+  fun removeFromGroup(group: String) {
     TODO()
   }
 
-  fun replaceBy() {
+  fun replaceBy(node: Node, keep_data: Boolean) {
     TODO()
   }
 
@@ -257,107 +269,115 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun rpc(): Variant {
+  fun rpc(method: String): Variant {
     TODO()
   }
 
-  fun rpcConfig() {
+  fun rpcConfig(method: String, mode: Int) {
     TODO()
   }
 
-  fun rpcId(): Variant {
+  fun rpcId(peer_id: Int, method: String): Variant {
     TODO()
   }
 
-  fun rpcUnreliable(): Variant {
+  fun rpcUnreliable(method: String): Variant {
     TODO()
   }
 
-  fun rpcUnreliableId(): Variant {
+  fun rpcUnreliableId(peer_id: Int, method: String): Variant {
     TODO()
   }
 
-  fun rset() {
+  fun rset(property: String, value: Variant) {
     TODO()
   }
 
-  fun rsetConfig() {
+  fun rsetConfig(property: String, mode: Int) {
     TODO()
   }
 
-  fun rsetId() {
+  fun rsetId(
+    peer_id: Int,
+    property: String,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun rsetUnreliable() {
+  fun rsetUnreliable(property: String, value: Variant) {
     TODO()
   }
 
-  fun rsetUnreliableId() {
+  fun rsetUnreliableId(
+    peer_id: Int,
+    property: String,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun setCustomMultiplayer() {
+  fun setCustomMultiplayer(api: MultiplayerAPI) {
     TODO()
   }
 
-  fun setDisplayFolded() {
+  fun setDisplayFolded(fold: Boolean) {
     TODO()
   }
 
-  fun setFilename() {
+  fun setFilename(filename: String) {
     TODO()
   }
 
-  fun setName() {
+  fun setName(name: String) {
     TODO()
   }
 
-  fun setNetworkMaster() {
+  fun setNetworkMaster(id: Int, recursive: Boolean) {
     TODO()
   }
 
-  fun setOwner() {
+  fun setOwner(owner: Node) {
     TODO()
   }
 
-  fun setPauseMode() {
+  fun setPauseMode(mode: Int) {
     TODO()
   }
 
-  fun setPhysicsProcess() {
+  fun setPhysicsProcess(enable: Boolean) {
     TODO()
   }
 
-  fun setPhysicsProcessInternal() {
+  fun setPhysicsProcessInternal(enable: Boolean) {
     TODO()
   }
 
-  fun setProcess() {
+  fun setProcess(enable: Boolean) {
     TODO()
   }
 
-  fun setProcessInput() {
+  fun setProcessInput(enable: Boolean) {
     TODO()
   }
 
-  fun setProcessInternal() {
+  fun setProcessInternal(enable: Boolean) {
     TODO()
   }
 
-  fun setProcessPriority() {
+  fun setProcessPriority(priority: Int) {
     TODO()
   }
 
-  fun setProcessUnhandledInput() {
+  fun setProcessUnhandledInput(enable: Boolean) {
     TODO()
   }
 
-  fun setProcessUnhandledKeyInput() {
+  fun setProcessUnhandledKeyInput(enable: Boolean) {
     TODO()
   }
 
-  fun setSceneInstanceLoadPlaceholder() {
+  fun setSceneInstanceLoadPlaceholder(load_placeholder: Boolean) {
     TODO()
   }
 

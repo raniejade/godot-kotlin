@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -20,23 +21,23 @@ open class ShaderMaterial internal constructor(
     TODO()
   }
 
-  fun getShaderParam(): Variant {
+  fun getShaderParam(param: String): Variant {
     TODO()
   }
 
-  fun propertyCanRevert(): Boolean {
+  fun propertyCanRevert(name: String): Boolean {
     TODO()
   }
 
-  fun propertyGetRevert(): Variant {
+  fun propertyGetRevert(name: String): Variant {
     TODO()
   }
 
-  fun setShader() {
+  fun setShader(shader: Shader) {
     TODO()
   }
 
-  fun setShaderParam() {
+  fun setShaderParam(param: String, value: Variant) {
     TODO()
   }
 

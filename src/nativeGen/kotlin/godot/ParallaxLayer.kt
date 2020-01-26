@@ -27,15 +27,15 @@ open class ParallaxLayer internal constructor(
     TODO()
   }
 
-  fun setMirroring() {
+  fun setMirroring(mirror: Vector2) {
     TODO()
   }
 
-  fun setMotionOffset() {
+  fun setMotionOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setMotionScale() {
+  fun setMotionScale(scale: Vector2) {
     TODO()
   }
 

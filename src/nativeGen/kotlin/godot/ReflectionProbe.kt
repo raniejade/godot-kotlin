@@ -67,51 +67,51 @@ open class ReflectionProbe internal constructor(
     TODO()
   }
 
-  fun setAsInterior() {
+  fun setAsInterior(enable: Boolean) {
     TODO()
   }
 
-  fun setCullMask() {
+  fun setCullMask(layers: Int) {
     TODO()
   }
 
-  fun setEnableBoxProjection() {
+  fun setEnableBoxProjection(enable: Boolean) {
     TODO()
   }
 
-  fun setEnableShadows() {
+  fun setEnableShadows(enable: Boolean) {
     TODO()
   }
 
-  fun setExtents() {
+  fun setExtents(extents: Vector3) {
     TODO()
   }
 
-  fun setIntensity() {
+  fun setIntensity(intensity: Float) {
     TODO()
   }
 
-  fun setInteriorAmbient() {
+  fun setInteriorAmbient(ambient: Color) {
     TODO()
   }
 
-  fun setInteriorAmbientEnergy() {
+  fun setInteriorAmbientEnergy(ambient_energy: Float) {
     TODO()
   }
 
-  fun setInteriorAmbientProbeContribution() {
+  fun setInteriorAmbientProbeContribution(ambient_probe_contribution: Float) {
     TODO()
   }
 
-  fun setMaxDistance() {
+  fun setMaxDistance(max_distance: Float) {
     TODO()
   }
 
-  fun setOriginOffset() {
+  fun setOriginOffset(origin_offset: Vector3) {
     TODO()
   }
 
-  fun setUpdateMode() {
+  fun setUpdateMode(mode: Int) {
     TODO()
   }
 

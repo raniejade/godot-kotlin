@@ -22,7 +22,7 @@ open class CSGShape internal constructor(
     TODO()
   }
 
-  fun getCollisionLayerBit(): Boolean {
+  fun getCollisionLayerBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -30,7 +30,7 @@ open class CSGShape internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -58,35 +58,35 @@ open class CSGShape internal constructor(
     TODO()
   }
 
-  fun setCalculateTangents() {
+  fun setCalculateTangents(enabled: Boolean) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(layer: Int) {
     TODO()
   }
 
-  fun setCollisionLayerBit() {
+  fun setCollisionLayerBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setOperation() {
+  fun setOperation(operation: Int) {
     TODO()
   }
 
-  fun setSnap() {
+  fun setSnap(snap: Float) {
     TODO()
   }
 
-  fun setUseCollision() {
+  fun setUseCollision(operation: Boolean) {
     TODO()
   }
 

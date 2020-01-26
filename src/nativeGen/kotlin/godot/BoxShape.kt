@@ -19,7 +19,7 @@ open class BoxShape internal constructor(
     TODO()
   }
 
-  fun setExtents() {
+  fun setExtents(extents: Vector3) {
     TODO()
   }
 

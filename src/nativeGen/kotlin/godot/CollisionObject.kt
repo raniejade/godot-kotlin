@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class CollisionObject internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun createShapeOwner(): Int {
+  fun createShapeOwner(owner: Object): Int {
     TODO()
   }
 
@@ -39,63 +39,63 @@ open class CollisionObject internal constructor(
     TODO()
   }
 
-  fun isShapeOwnerDisabled(): Boolean {
+  fun isShapeOwnerDisabled(owner_id: Int): Boolean {
     TODO()
   }
 
-  fun removeShapeOwner() {
+  fun removeShapeOwner(owner_id: Int) {
     TODO()
   }
 
-  fun setCaptureInputOnDrag() {
+  fun setCaptureInputOnDrag(enable: Boolean) {
     TODO()
   }
 
-  fun setRayPickable() {
+  fun setRayPickable(ray_pickable: Boolean) {
     TODO()
   }
 
-  fun shapeFindOwner(): Int {
+  fun shapeFindOwner(shape_index: Int): Int {
     TODO()
   }
 
-  fun shapeOwnerAddShape() {
+  fun shapeOwnerAddShape(owner_id: Int, shape: Shape) {
     TODO()
   }
 
-  fun shapeOwnerClearShapes() {
+  fun shapeOwnerClearShapes(owner_id: Int) {
     TODO()
   }
 
-  fun shapeOwnerGetOwner(): Object {
+  fun shapeOwnerGetOwner(owner_id: Int): Object {
     TODO()
   }
 
-  fun shapeOwnerGetShape(): Shape {
+  fun shapeOwnerGetShape(owner_id: Int, shape_id: Int): Shape {
     TODO()
   }
 
-  fun shapeOwnerGetShapeCount(): Int {
+  fun shapeOwnerGetShapeCount(owner_id: Int): Int {
     TODO()
   }
 
-  fun shapeOwnerGetShapeIndex(): Int {
+  fun shapeOwnerGetShapeIndex(owner_id: Int, shape_id: Int): Int {
     TODO()
   }
 
-  fun shapeOwnerGetTransform(): Transform {
+  fun shapeOwnerGetTransform(owner_id: Int): Transform {
     TODO()
   }
 
-  fun shapeOwnerRemoveShape() {
+  fun shapeOwnerRemoveShape(owner_id: Int, shape_id: Int) {
     TODO()
   }
 
-  fun shapeOwnerSetDisabled() {
+  fun shapeOwnerSetDisabled(owner_id: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun shapeOwnerSetTransform() {
+  fun shapeOwnerSetTransform(owner_id: Int, transform: Transform) {
     TODO()
   }
 

@@ -28,7 +28,7 @@ open class GridMap internal constructor(
     TODO()
   }
 
-  fun getBakeMeshInstance(): RID {
+  fun getBakeMeshInstance(idx: Int): RID {
     TODO()
   }
 
@@ -36,11 +36,19 @@ open class GridMap internal constructor(
     TODO()
   }
 
-  fun getCellItem(): Int {
+  fun getCellItem(
+    x: Int,
+    y: Int,
+    z: Int
+  ): Int {
     TODO()
   }
 
-  fun getCellItemOrientation(): Int {
+  fun getCellItemOrientation(
+    x: Int,
+    y: Int,
+    z: Int
+  ): Int {
     TODO()
   }
 
@@ -68,7 +76,7 @@ open class GridMap internal constructor(
     TODO()
   }
 
-  fun getCollisionLayerBit(): Boolean {
+  fun getCollisionLayerBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -76,7 +84,7 @@ open class GridMap internal constructor(
     TODO()
   }
 
-  fun getCollisionMaskBit(): Boolean {
+  fun getCollisionMaskBit(bit: Int): Boolean {
     TODO()
   }
 
@@ -100,75 +108,90 @@ open class GridMap internal constructor(
     TODO()
   }
 
-  fun makeBakedMeshes() {
+  fun makeBakedMeshes(gen_lightmap_uv: Boolean, lightmap_uv_texel_size: Float) {
     TODO()
   }
 
-  fun mapToWorld(): Vector3 {
+  fun mapToWorld(
+    x: Int,
+    y: Int,
+    z: Int
+  ): Vector3 {
     TODO()
   }
 
-  fun resourceChanged() {
+  fun resourceChanged(resource: Resource) {
     TODO()
   }
 
-  fun setCellItem() {
+  fun setCellItem(
+    x: Int,
+    y: Int,
+    z: Int,
+    item: Int,
+    orientation: Int
+  ) {
     TODO()
   }
 
-  fun setCellScale() {
+  fun setCellScale(scale: Float) {
     TODO()
   }
 
-  fun setCellSize() {
+  fun setCellSize(size: Vector3) {
     TODO()
   }
 
-  fun setCenterX() {
+  fun setCenterX(enable: Boolean) {
     TODO()
   }
 
-  fun setCenterY() {
+  fun setCenterY(enable: Boolean) {
     TODO()
   }
 
-  fun setCenterZ() {
+  fun setCenterZ(enable: Boolean) {
     TODO()
   }
 
-  fun setClip() {
+  fun setClip(
+    enabled: Boolean,
+    clipabove: Boolean,
+    floor: Int,
+    axis: Int
+  ) {
     TODO()
   }
 
-  fun setCollisionLayer() {
+  fun setCollisionLayer(layer: Int) {
     TODO()
   }
 
-  fun setCollisionLayerBit() {
+  fun setCollisionLayerBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setCollisionMask() {
+  fun setCollisionMask(mask: Int) {
     TODO()
   }
 
-  fun setCollisionMaskBit() {
+  fun setCollisionMaskBit(bit: Int, value: Boolean) {
     TODO()
   }
 
-  fun setMeshLibrary() {
+  fun setMeshLibrary(mesh_library: MeshLibrary) {
     TODO()
   }
 
-  fun setOctantSize() {
+  fun setOctantSize(size: Int) {
     TODO()
   }
 
-  fun setTheme() {
+  fun setTheme(theme: MeshLibrary) {
     TODO()
   }
 
-  fun worldToMap(): Vector3 {
+  fun worldToMap(pos: Vector3): Vector3 {
     TODO()
   }
 

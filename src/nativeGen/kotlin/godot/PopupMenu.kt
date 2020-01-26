@@ -19,51 +19,99 @@ import kotlinx.cinterop.reinterpret
 open class PopupMenu internal constructor(
   _handle: COpaquePointer
 ) : Popup(_handle) {
-  fun addCheckItem() {
+  fun addCheckItem(
+    label: String,
+    id: Int,
+    accel: Int
+  ) {
     TODO()
   }
 
-  fun addCheckShortcut() {
+  fun addCheckShortcut(
+    shortcut: ShortCut,
+    id: Int,
+    global: Boolean
+  ) {
     TODO()
   }
 
-  fun addIconCheckItem() {
+  fun addIconCheckItem(
+    texture: Texture,
+    label: String,
+    id: Int,
+    accel: Int
+  ) {
     TODO()
   }
 
-  fun addIconCheckShortcut() {
+  fun addIconCheckShortcut(
+    texture: Texture,
+    shortcut: ShortCut,
+    id: Int,
+    global: Boolean
+  ) {
     TODO()
   }
 
-  fun addIconItem() {
+  fun addIconItem(
+    texture: Texture,
+    label: String,
+    id: Int,
+    accel: Int
+  ) {
     TODO()
   }
 
-  fun addIconShortcut() {
+  fun addIconShortcut(
+    texture: Texture,
+    shortcut: ShortCut,
+    id: Int,
+    global: Boolean
+  ) {
     TODO()
   }
 
-  fun addItem() {
+  fun addItem(
+    label: String,
+    id: Int,
+    accel: Int
+  ) {
     TODO()
   }
 
-  fun addRadioCheckItem() {
+  fun addRadioCheckItem(
+    label: String,
+    id: Int,
+    accel: Int
+  ) {
     TODO()
   }
 
-  fun addRadioCheckShortcut() {
+  fun addRadioCheckShortcut(
+    shortcut: ShortCut,
+    id: Int,
+    global: Boolean
+  ) {
     TODO()
   }
 
-  fun addSeparator() {
+  fun addSeparator(label: String) {
     TODO()
   }
 
-  fun addShortcut() {
+  fun addShortcut(
+    shortcut: ShortCut,
+    id: Int,
+    global: Boolean
+  ) {
     TODO()
   }
 
-  fun addSubmenuItem() {
+  fun addSubmenuItem(
+    label: String,
+    submenu: String,
+    id: Int
+  ) {
     TODO()
   }
 
@@ -75,7 +123,7 @@ open class PopupMenu internal constructor(
     TODO()
   }
 
-  fun getItemAccelerator(): Int {
+  fun getItemAccelerator(idx: Int): Int {
     TODO()
   }
 
@@ -83,35 +131,35 @@ open class PopupMenu internal constructor(
     TODO()
   }
 
-  fun getItemIcon(): Texture {
+  fun getItemIcon(idx: Int): Texture {
     TODO()
   }
 
-  fun getItemId(): Int {
+  fun getItemId(idx: Int): Int {
     TODO()
   }
 
-  fun getItemIndex(): Int {
+  fun getItemIndex(id: Int): Int {
     TODO()
   }
 
-  fun getItemMetadata(): Variant {
+  fun getItemMetadata(idx: Int): Variant {
     TODO()
   }
 
-  fun getItemShortcut(): ShortCut {
+  fun getItemShortcut(idx: Int): ShortCut {
     TODO()
   }
 
-  fun getItemSubmenu(): String {
+  fun getItemSubmenu(idx: Int): String {
     TODO()
   }
 
-  fun getItemText(): String {
+  fun getItemText(idx: Int): String {
     TODO()
   }
 
-  fun getItemTooltip(): String {
+  fun getItemTooltip(idx: Int): String {
     TODO()
   }
 
@@ -135,123 +183,127 @@ open class PopupMenu internal constructor(
     TODO()
   }
 
-  fun isItemCheckable(): Boolean {
+  fun isItemCheckable(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemChecked(): Boolean {
+  fun isItemChecked(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemDisabled(): Boolean {
+  fun isItemDisabled(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemRadioCheckable(): Boolean {
+  fun isItemRadioCheckable(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemSeparator(): Boolean {
+  fun isItemSeparator(idx: Int): Boolean {
     TODO()
   }
 
-  fun isItemShortcutDisabled(): Boolean {
+  fun isItemShortcutDisabled(idx: Int): Boolean {
     TODO()
   }
 
-  fun removeItem() {
+  fun removeItem(idx: Int) {
     TODO()
   }
 
-  fun setAllowSearch() {
+  fun setAllowSearch(allow: Boolean) {
     TODO()
   }
 
-  fun setHideOnCheckableItemSelection() {
+  fun setHideOnCheckableItemSelection(enable: Boolean) {
     TODO()
   }
 
-  fun setHideOnItemSelection() {
+  fun setHideOnItemSelection(enable: Boolean) {
     TODO()
   }
 
-  fun setHideOnStateItemSelection() {
+  fun setHideOnStateItemSelection(enable: Boolean) {
     TODO()
   }
 
-  fun setHideOnWindowLoseFocus() {
+  fun setHideOnWindowLoseFocus(enable: Boolean) {
     TODO()
   }
 
-  fun setItemAccelerator() {
+  fun setItemAccelerator(idx: Int, accel: Int) {
     TODO()
   }
 
-  fun setItemAsCheckable() {
+  fun setItemAsCheckable(idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setItemAsRadioCheckable() {
+  fun setItemAsRadioCheckable(idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setItemAsSeparator() {
+  fun setItemAsSeparator(idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setItemChecked() {
+  fun setItemChecked(idx: Int, checked: Boolean) {
     TODO()
   }
 
-  fun setItemDisabled() {
+  fun setItemDisabled(idx: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setItemIcon() {
+  fun setItemIcon(idx: Int, icon: Texture) {
     TODO()
   }
 
-  fun setItemId() {
+  fun setItemId(idx: Int, id: Int) {
     TODO()
   }
 
-  fun setItemMetadata() {
+  fun setItemMetadata(idx: Int, metadata: Variant) {
     TODO()
   }
 
-  fun setItemMultistate() {
+  fun setItemMultistate(idx: Int, state: Int) {
     TODO()
   }
 
-  fun setItemShortcut() {
+  fun setItemShortcut(
+    idx: Int,
+    shortcut: ShortCut,
+    global: Boolean
+  ) {
     TODO()
   }
 
-  fun setItemShortcutDisabled() {
+  fun setItemShortcutDisabled(idx: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setItemSubmenu() {
+  fun setItemSubmenu(idx: Int, submenu: String) {
     TODO()
   }
 
-  fun setItemText() {
+  fun setItemText(idx: Int, text: String) {
     TODO()
   }
 
-  fun setItemTooltip() {
+  fun setItemTooltip(idx: Int, tooltip: String) {
     TODO()
   }
 
-  fun setSubmenuPopupDelay() {
+  fun setSubmenuPopupDelay(seconds: Float) {
     TODO()
   }
 
-  fun toggleItemChecked() {
+  fun toggleItemChecked(idx: Int) {
     TODO()
   }
 
-  fun toggleItemMultistate() {
+  fun toggleItemMultistate(idx: Int) {
     TODO()
   }
 

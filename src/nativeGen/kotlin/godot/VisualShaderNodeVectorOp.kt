@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorOp internal constructor(
     TODO()
   }
 
-  fun setOperator() {
+  fun setOperator(op: Int) {
     TODO()
   }
 

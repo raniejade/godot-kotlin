@@ -19,7 +19,7 @@ open class StreamTexture internal constructor(
     TODO()
   }
 
-  fun load(): Error {
+  fun load(path: String): Error {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class SphereShape internal constructor(
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(radius: Float) {
     TODO()
   }
 

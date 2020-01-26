@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,51 +17,61 @@ import kotlinx.cinterop.reinterpret
 open class EditorPlugin internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun addAutoloadSingleton() {
+  fun addAutoloadSingleton(name: String, path: String) {
     TODO()
   }
 
-  fun addControlToBottomPanel(): ToolButton {
+  fun addControlToBottomPanel(control: Control, title: String): ToolButton {
     TODO()
   }
 
-  fun addControlToContainer() {
+  fun addControlToContainer(container: Int, control: Control) {
     TODO()
   }
 
-  fun addControlToDock() {
+  fun addControlToDock(slot: Int, control: Control) {
     TODO()
   }
 
-  fun addCustomType() {
+  fun addCustomType(
+    type: String,
+    base: String,
+    script: Script,
+    icon: Texture
+  ) {
     TODO()
   }
 
-  fun addExportPlugin() {
+  fun addExportPlugin(plugin: EditorExportPlugin) {
     TODO()
   }
 
-  fun addImportPlugin() {
+  fun addImportPlugin(importer: EditorImportPlugin) {
     TODO()
   }
 
-  fun addInspectorPlugin() {
+  fun addInspectorPlugin(plugin: EditorInspectorPlugin) {
     TODO()
   }
 
-  fun addSceneImportPlugin() {
+  fun addSceneImportPlugin(scene_importer: EditorSceneImporter) {
     TODO()
   }
 
-  fun addSpatialGizmoPlugin() {
+  fun addSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
     TODO()
   }
 
-  fun addToolMenuItem() {
+  fun addToolMenuItem(
+    name: String,
+    handler: Object,
+    callback: String,
+    ud: Variant
+  ) {
     TODO()
   }
 
-  fun addToolSubmenuItem() {
+  fun addToolSubmenuItem(name: String, submenu: Object) {
     TODO()
   }
 
@@ -79,7 +91,7 @@ open class EditorPlugin internal constructor(
     TODO()
   }
 
-  fun makeBottomPanelItemVisible() {
+  fun makeBottomPanelItemVisible(item: Control) {
     TODO()
   }
 
@@ -87,47 +99,47 @@ open class EditorPlugin internal constructor(
     TODO()
   }
 
-  fun removeAutoloadSingleton() {
+  fun removeAutoloadSingleton(name: String) {
     TODO()
   }
 
-  fun removeControlFromBottomPanel() {
+  fun removeControlFromBottomPanel(control: Control) {
     TODO()
   }
 
-  fun removeControlFromContainer() {
+  fun removeControlFromContainer(container: Int, control: Control) {
     TODO()
   }
 
-  fun removeControlFromDocks() {
+  fun removeControlFromDocks(control: Control) {
     TODO()
   }
 
-  fun removeCustomType() {
+  fun removeCustomType(type: String) {
     TODO()
   }
 
-  fun removeExportPlugin() {
+  fun removeExportPlugin(plugin: EditorExportPlugin) {
     TODO()
   }
 
-  fun removeImportPlugin() {
+  fun removeImportPlugin(importer: EditorImportPlugin) {
     TODO()
   }
 
-  fun removeInspectorPlugin() {
+  fun removeInspectorPlugin(plugin: EditorInspectorPlugin) {
     TODO()
   }
 
-  fun removeSceneImportPlugin() {
+  fun removeSceneImportPlugin(scene_importer: EditorSceneImporter) {
     TODO()
   }
 
-  fun removeSpatialGizmoPlugin() {
+  fun removeSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
     TODO()
   }
 
-  fun removeToolMenuItem() {
+  fun removeToolMenuItem(name: String) {
     TODO()
   }
 

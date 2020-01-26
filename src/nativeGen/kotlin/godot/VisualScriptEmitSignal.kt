@@ -19,7 +19,7 @@ open class VisualScriptEmitSignal internal constructor(
     TODO()
   }
 
-  fun setSignal() {
+  fun setSignal(name: String) {
     TODO()
   }
 

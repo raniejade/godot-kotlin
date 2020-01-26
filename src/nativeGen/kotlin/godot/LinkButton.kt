@@ -24,11 +24,11 @@ open class LinkButton internal constructor(
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 
-  fun setUnderlineMode() {
+  fun setUnderlineMode(underline_mode: Int) {
     TODO()
   }
 

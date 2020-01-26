@@ -35,23 +35,23 @@ open class InputEventWithModifiers internal constructor(
     TODO()
   }
 
-  fun setAlt() {
+  fun setAlt(enable: Boolean) {
     TODO()
   }
 
-  fun setCommand() {
+  fun setCommand(enable: Boolean) {
     TODO()
   }
 
-  fun setControl() {
+  fun setControl(enable: Boolean) {
     TODO()
   }
 
-  fun setMetakey() {
+  fun setMetakey(enable: Boolean) {
     TODO()
   }
 
-  fun setShift() {
+  fun setShift(enable: Boolean) {
     TODO()
   }
 

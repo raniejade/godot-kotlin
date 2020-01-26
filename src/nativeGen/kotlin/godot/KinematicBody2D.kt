@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform2D
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -26,7 +27,7 @@ open class KinematicBody2D internal constructor(
     TODO()
   }
 
-  fun getSlideCollision(): KinematicCollision2D {
+  fun getSlideCollision(slide_idx: Int): KinematicCollision2D {
     TODO()
   }
 
@@ -50,27 +51,51 @@ open class KinematicBody2D internal constructor(
     TODO()
   }
 
-  fun moveAndCollide(): KinematicCollision2D {
+  fun moveAndCollide(
+    rel_vec: Vector2,
+    infinite_inertia: Boolean,
+    exclude_raycast_shapes: Boolean,
+    test_only: Boolean
+  ): KinematicCollision2D {
     TODO()
   }
 
-  fun moveAndSlide(): Vector2 {
+  fun moveAndSlide(
+    linear_velocity: Vector2,
+    floor_normal: Vector2,
+    stop_on_slope: Boolean,
+    max_slides: Int,
+    floor_max_angle: Float,
+    infinite_inertia: Boolean
+  ): Vector2 {
     TODO()
   }
 
-  fun moveAndSlideWithSnap(): Vector2 {
+  fun moveAndSlideWithSnap(
+    linear_velocity: Vector2,
+    snap: Vector2,
+    floor_normal: Vector2,
+    stop_on_slope: Boolean,
+    max_slides: Int,
+    floor_max_angle: Float,
+    infinite_inertia: Boolean
+  ): Vector2 {
     TODO()
   }
 
-  fun setSafeMargin() {
+  fun setSafeMargin(pixels: Float) {
     TODO()
   }
 
-  fun setSyncToPhysics() {
+  fun setSyncToPhysics(enable: Boolean) {
     TODO()
   }
 
-  fun testMove(): Boolean {
+  fun testMove(
+    from: Transform2D,
+    rel_vec: Vector2,
+    infinite_inertia: Boolean
+  ): Boolean {
     TODO()
   }
 

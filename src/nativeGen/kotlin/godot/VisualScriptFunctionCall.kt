@@ -59,43 +59,43 @@ open class VisualScriptFunctionCall internal constructor(
     TODO()
   }
 
-  fun setBasePath() {
+  fun setBasePath(base_path: NodePath) {
     TODO()
   }
 
-  fun setBaseScript() {
+  fun setBaseScript(base_script: String) {
     TODO()
   }
 
-  fun setBaseType() {
+  fun setBaseType(base_type: String) {
     TODO()
   }
 
-  fun setBasicType() {
+  fun setBasicType(basic_type: Int) {
     TODO()
   }
 
-  fun setCallMode() {
+  fun setCallMode(mode: Int) {
     TODO()
   }
 
-  fun setFunction() {
+  fun setFunction(function: String) {
     TODO()
   }
 
-  fun setRpcCallMode() {
+  fun setRpcCallMode(mode: Int) {
     TODO()
   }
 
-  fun setSingleton() {
+  fun setSingleton(singleton: String) {
     TODO()
   }
 
-  fun setUseDefaultArgs() {
+  fun setUseDefaultArgs(amount: Int) {
     TODO()
   }
 
-  fun setValidate() {
+  fun setValidate(enable: Boolean) {
     TODO()
   }
 

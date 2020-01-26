@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -17,19 +18,23 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketServer internal constructor(
   _handle: COpaquePointer
 ) : WebSocketMultiplayerPeer(_handle) {
-  fun disconnectPeer() {
+  fun disconnectPeer(
+    id: Int,
+    code: Int,
+    reason: String
+  ) {
     TODO()
   }
 
-  fun getPeerAddress(): String {
+  fun getPeerAddress(id: Int): String {
     TODO()
   }
 
-  fun getPeerPort(): Int {
+  fun getPeerPort(id: Int): Int {
     TODO()
   }
 
-  fun hasPeer(): Boolean {
+  fun hasPeer(id: Int): Boolean {
     TODO()
   }
 
@@ -37,7 +42,11 @@ open class WebSocketServer internal constructor(
     TODO()
   }
 
-  fun listen(): Error {
+  fun listen(
+    port: Int,
+    protocols: PoolStringArray,
+    gd_mp_api: Boolean
+  ): Error {
     TODO()
   }
 

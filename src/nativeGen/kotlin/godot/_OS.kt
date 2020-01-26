@@ -6,8 +6,10 @@ import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Rect2
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -21,7 +23,7 @@ import kotlinx.cinterop.reinterpret
 open class _OS internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun alert() {
+  fun alert(text: String, title: String) {
     TODO()
   }
 
@@ -41,27 +43,33 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun delayMsec() {
+  fun delayMsec(msec: Int) {
     TODO()
   }
 
-  fun delayUsec() {
+  fun delayUsec(usec: Int) {
     TODO()
   }
 
-  fun dumpMemoryToFile() {
+  fun dumpMemoryToFile(file: String) {
     TODO()
   }
 
-  fun dumpResourcesToFile() {
+  fun dumpResourcesToFile(file: String) {
     TODO()
   }
 
-  fun execute(): Int {
+  fun execute(
+    path: String,
+    arguments: PoolStringArray,
+    blocking: Boolean,
+    output: VariantArray,
+    read_stderr: Boolean
+  ): Int {
     TODO()
   }
 
-  fun findScancodeFromString(): Int {
+  fun findScancodeFromString(string: String): Int {
     TODO()
   }
 
@@ -69,7 +77,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getAudioDriverName(): String {
+  fun getAudioDriverName(driver: Int): String {
     TODO()
   }
 
@@ -97,15 +105,15 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getDate(): Dictionary {
+  fun getDate(utc: Boolean): Dictionary {
     TODO()
   }
 
-  fun getDatetime(): Dictionary {
+  fun getDatetime(utc: Boolean): Dictionary {
     TODO()
   }
 
-  fun getDatetimeFromUnixTime(): Dictionary {
+  fun getDatetimeFromUnixTime(unix_time_val: Int): Dictionary {
     TODO()
   }
 
@@ -113,7 +121,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getEnvironment(): String {
+  fun getEnvironment(environment: String): String {
     TODO()
   }
 
@@ -173,7 +181,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getScancodeString(): String {
+  fun getScancodeString(code: Int): String {
     TODO()
   }
 
@@ -181,7 +189,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getScreenDpi(): Int {
+  fun getScreenDpi(screen: Int): Int {
     TODO()
   }
 
@@ -189,11 +197,11 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getScreenPosition(): Vector2 {
+  fun getScreenPosition(screen: Int): Vector2 {
     TODO()
   }
 
-  fun getScreenSize(): Vector2 {
+  fun getScreenSize(screen: Int): Vector2 {
     TODO()
   }
 
@@ -209,7 +217,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getSystemDir(): String {
+  fun getSystemDir(dir: Int): String {
     TODO()
   }
 
@@ -229,7 +237,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getTime(): Dictionary {
+  fun getTime(utc: Boolean): Dictionary {
     TODO()
   }
 
@@ -245,7 +253,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getUnixTimeFromDatetime(): Int {
+  fun getUnixTimeFromDatetime(datetime: Dictionary): Int {
     TODO()
   }
 
@@ -257,7 +265,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getVideoDriverName(): String {
+  fun getVideoDriverName(driver: Int): String {
     TODO()
   }
 
@@ -281,11 +289,11 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun hasEnvironment(): Boolean {
+  fun hasEnvironment(environment: String): Boolean {
     TODO()
   }
 
-  fun hasFeature(): Boolean {
+  fun hasFeature(tag_name: String): Boolean {
     TODO()
   }
 
@@ -317,7 +325,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun isScancodeUnicode(): Boolean {
+  fun isScancodeUnicode(code: Int): Boolean {
     TODO()
   }
 
@@ -353,7 +361,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun kill(): Error {
+  fun kill(pid: Int): Error {
     TODO()
   }
 
@@ -369,7 +377,12 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun nativeVideoPlay(): Error {
+  fun nativeVideoPlay(
+    path: String,
+    volume: Float,
+    audio_track: String,
+    subtitle_track: String
+  ): Error {
     TODO()
   }
 
@@ -385,7 +398,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun printAllResources() {
+  fun printAllResources(tofile: String) {
     TODO()
   }
 
@@ -393,11 +406,11 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun printResourcesByType() {
+  fun printResourcesByType(types: PoolStringArray) {
     TODO()
   }
 
-  fun printResourcesInUse() {
+  fun printResourcesInUse(short: Boolean) {
     TODO()
   }
 
@@ -405,107 +418,107 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun requestPermission(): Boolean {
+  fun requestPermission(name: String): Boolean {
     TODO()
   }
 
-  fun setBorderlessWindow() {
+  fun setBorderlessWindow(borderless: Boolean) {
     TODO()
   }
 
-  fun setClipboard() {
+  fun setClipboard(clipboard: String) {
     TODO()
   }
 
-  fun setCurrentScreen() {
+  fun setCurrentScreen(screen: Int) {
     TODO()
   }
 
-  fun setExitCode() {
+  fun setExitCode(code: Int) {
     TODO()
   }
 
-  fun setIcon() {
+  fun setIcon(icon: Image) {
     TODO()
   }
 
-  fun setImeActive() {
+  fun setImeActive(active: Boolean) {
     TODO()
   }
 
-  fun setImePosition() {
+  fun setImePosition(position: Vector2) {
     TODO()
   }
 
-  fun setKeepScreenOn() {
+  fun setKeepScreenOn(enabled: Boolean) {
     TODO()
   }
 
-  fun setLowProcessorUsageMode() {
+  fun setLowProcessorUsageMode(enable: Boolean) {
     TODO()
   }
 
-  fun setNativeIcon() {
+  fun setNativeIcon(filename: String) {
     TODO()
   }
 
-  fun setScreenOrientation() {
+  fun setScreenOrientation(orientation: Int) {
     TODO()
   }
 
-  fun setThreadName(): Error {
+  fun setThreadName(name: String): Error {
     TODO()
   }
 
-  fun setUseFileAccessSaveAndSwap() {
+  fun setUseFileAccessSaveAndSwap(enabled: Boolean) {
     TODO()
   }
 
-  fun setUseVsync() {
+  fun setUseVsync(enable: Boolean) {
     TODO()
   }
 
-  fun setWindowAlwaysOnTop() {
+  fun setWindowAlwaysOnTop(enabled: Boolean) {
     TODO()
   }
 
-  fun setWindowFullscreen() {
+  fun setWindowFullscreen(enabled: Boolean) {
     TODO()
   }
 
-  fun setWindowMaximized() {
+  fun setWindowMaximized(enabled: Boolean) {
     TODO()
   }
 
-  fun setWindowMinimized() {
+  fun setWindowMinimized(enabled: Boolean) {
     TODO()
   }
 
-  fun setWindowPerPixelTransparencyEnabled() {
+  fun setWindowPerPixelTransparencyEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setWindowPosition() {
+  fun setWindowPosition(position: Vector2) {
     TODO()
   }
 
-  fun setWindowResizable() {
+  fun setWindowResizable(enabled: Boolean) {
     TODO()
   }
 
-  fun setWindowSize() {
+  fun setWindowSize(size: Vector2) {
     TODO()
   }
 
-  fun setWindowTitle() {
+  fun setWindowTitle(title: String) {
     TODO()
   }
 
-  fun shellOpen(): Error {
+  fun shellOpen(uri: String): Error {
     TODO()
   }
 
-  fun showVirtualKeyboard() {
+  fun showVirtualKeyboard(existing_text: String) {
     TODO()
   }
 

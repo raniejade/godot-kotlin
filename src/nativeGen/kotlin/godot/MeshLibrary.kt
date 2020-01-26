@@ -23,11 +23,11 @@ open class MeshLibrary internal constructor(
     TODO()
   }
 
-  fun createItem() {
+  fun createItem(id: Int) {
     TODO()
   }
 
-  fun findItemByName(): Int {
+  fun findItemByName(name: String): Int {
     TODO()
   }
 
@@ -35,27 +35,27 @@ open class MeshLibrary internal constructor(
     TODO()
   }
 
-  fun getItemMesh(): Mesh {
+  fun getItemMesh(id: Int): Mesh {
     TODO()
   }
 
-  fun getItemName(): String {
+  fun getItemName(id: Int): String {
     TODO()
   }
 
-  fun getItemNavmesh(): NavigationMesh {
+  fun getItemNavmesh(id: Int): NavigationMesh {
     TODO()
   }
 
-  fun getItemNavmeshTransform(): Transform {
+  fun getItemNavmeshTransform(id: Int): Transform {
     TODO()
   }
 
-  fun getItemPreview(): Texture {
+  fun getItemPreview(id: Int): Texture {
     TODO()
   }
 
-  fun getItemShapes(): VariantArray {
+  fun getItemShapes(id: Int): VariantArray {
     TODO()
   }
 
@@ -63,31 +63,31 @@ open class MeshLibrary internal constructor(
     TODO()
   }
 
-  fun removeItem() {
+  fun removeItem(id: Int) {
     TODO()
   }
 
-  fun setItemMesh() {
+  fun setItemMesh(id: Int, mesh: Mesh) {
     TODO()
   }
 
-  fun setItemName() {
+  fun setItemName(id: Int, name: String) {
     TODO()
   }
 
-  fun setItemNavmesh() {
+  fun setItemNavmesh(id: Int, navmesh: NavigationMesh) {
     TODO()
   }
 
-  fun setItemNavmeshTransform() {
+  fun setItemNavmeshTransform(id: Int, navmesh: Transform) {
     TODO()
   }
 
-  fun setItemPreview() {
+  fun setItemPreview(id: Int, texture: Texture) {
     TODO()
   }
 
-  fun setItemShapes() {
+  fun setItemShapes(id: Int, shapes: VariantArray) {
     TODO()
   }
 

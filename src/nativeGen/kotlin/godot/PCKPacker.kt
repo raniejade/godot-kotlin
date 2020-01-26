@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,15 +17,15 @@ import kotlinx.cinterop.reinterpret
 open class PCKPacker internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addFile(): Error {
+  fun addFile(pck_path: String, source_path: String): Error {
     TODO()
   }
 
-  fun flush(): Error {
+  fun flush(verbose: Boolean): Error {
     TODO()
   }
 
-  fun pckStart(): Error {
+  fun pckStart(pck_name: String, alignment: Int): Error {
     TODO()
   }
 

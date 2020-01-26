@@ -19,7 +19,7 @@ open class PinJoint2D internal constructor(
     TODO()
   }
 
-  fun setSoftness() {
+  fun setSoftness(softness: Float) {
     TODO()
   }
 

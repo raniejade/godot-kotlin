@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,11 +17,15 @@ import kotlinx.cinterop.reinterpret
 open class _ResourceSaver internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun getRecognizedExtensions(): PoolStringArray {
+  fun getRecognizedExtensions(type: Resource): PoolStringArray {
     TODO()
   }
 
-  fun save(): Error {
+  fun save(
+    path: String,
+    resource: Resource,
+    flags: Int
+  ): Error {
     TODO()
   }
 

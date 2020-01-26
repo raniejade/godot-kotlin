@@ -19,7 +19,7 @@ open class ColorRect internal constructor(
     TODO()
   }
 
-  fun setFrameColor() {
+  fun setFrameColor(color: Color) {
     TODO()
   }
 

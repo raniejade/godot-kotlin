@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.PoolStringArray
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,31 +18,35 @@ import kotlinx.cinterop.reinterpret
 open class EditorExportPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addFile() {
+  fun addFile(
+    path: String,
+    file: PoolByteArray,
+    remap: Boolean
+  ) {
     TODO()
   }
 
-  fun addIosBundleFile() {
+  fun addIosBundleFile(path: String) {
     TODO()
   }
 
-  fun addIosCppCode() {
+  fun addIosCppCode(code: String) {
     TODO()
   }
 
-  fun addIosFramework() {
+  fun addIosFramework(path: String) {
     TODO()
   }
 
-  fun addIosLinkerFlags() {
+  fun addIosLinkerFlags(flags: String) {
     TODO()
   }
 
-  fun addIosPlistContent() {
+  fun addIosPlistContent(plist_content: String) {
     TODO()
   }
 
-  fun addSharedObject() {
+  fun addSharedObject(path: String, tags: PoolStringArray) {
     TODO()
   }
 

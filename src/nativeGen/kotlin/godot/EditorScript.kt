@@ -14,7 +14,7 @@ import kotlinx.cinterop.reinterpret
 open class EditorScript internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addRootNode() {
+  fun addRootNode(node: Node) {
     TODO()
   }
 

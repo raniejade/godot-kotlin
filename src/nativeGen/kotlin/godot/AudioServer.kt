@@ -19,11 +19,15 @@ import kotlinx.cinterop.reinterpret
 open class AudioServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addBus() {
+  fun addBus(at_position: Int) {
     TODO()
   }
 
-  fun addBusEffect() {
+  fun addBusEffect(
+    bus_idx: Int,
+    effect: AudioEffect,
+    at_position: Int
+  ) {
     TODO()
   }
 
@@ -35,7 +39,7 @@ open class AudioServer internal constructor(
     TODO()
   }
 
-  fun captureSetDevice() {
+  fun captureSetDevice(name: String) {
     TODO()
   }
 
@@ -43,7 +47,7 @@ open class AudioServer internal constructor(
     TODO()
   }
 
-  fun getBusChannels(): Int {
+  fun getBusChannels(bus_idx: Int): Int {
     TODO()
   }
 
@@ -51,39 +55,43 @@ open class AudioServer internal constructor(
     TODO()
   }
 
-  fun getBusEffect(): AudioEffect {
+  fun getBusEffect(bus_idx: Int, effect_idx: Int): AudioEffect {
     TODO()
   }
 
-  fun getBusEffectCount(): Int {
+  fun getBusEffectCount(bus_idx: Int): Int {
     TODO()
   }
 
-  fun getBusEffectInstance(): AudioEffectInstance {
+  fun getBusEffectInstance(
+    bus_idx: Int,
+    effect_idx: Int,
+    channel: Int
+  ): AudioEffectInstance {
     TODO()
   }
 
-  fun getBusIndex(): Int {
+  fun getBusIndex(bus_name: String): Int {
     TODO()
   }
 
-  fun getBusName(): String {
+  fun getBusName(bus_idx: Int): String {
     TODO()
   }
 
-  fun getBusPeakVolumeLeftDb(): Float {
+  fun getBusPeakVolumeLeftDb(bus_idx: Int, channel: Int): Float {
     TODO()
   }
 
-  fun getBusPeakVolumeRightDb(): Float {
+  fun getBusPeakVolumeRightDb(bus_idx: Int, channel: Int): Float {
     TODO()
   }
 
-  fun getBusSend(): String {
+  fun getBusSend(bus_idx: Int): String {
     TODO()
   }
 
-  fun getBusVolumeDb(): Float {
+  fun getBusVolumeDb(bus_idx: Int): Float {
     TODO()
   }
 
@@ -115,19 +123,19 @@ open class AudioServer internal constructor(
     TODO()
   }
 
-  fun isBusBypassingEffects(): Boolean {
+  fun isBusBypassingEffects(bus_idx: Int): Boolean {
     TODO()
   }
 
-  fun isBusEffectEnabled(): Boolean {
+  fun isBusEffectEnabled(bus_idx: Int, effect_idx: Int): Boolean {
     TODO()
   }
 
-  fun isBusMute(): Boolean {
+  fun isBusMute(bus_idx: Int): Boolean {
     TODO()
   }
 
-  fun isBusSolo(): Boolean {
+  fun isBusSolo(bus_idx: Int): Boolean {
     TODO()
   }
 
@@ -135,59 +143,67 @@ open class AudioServer internal constructor(
     TODO()
   }
 
-  fun moveBus() {
+  fun moveBus(index: Int, to_index: Int) {
     TODO()
   }
 
-  fun removeBus() {
+  fun removeBus(index: Int) {
     TODO()
   }
 
-  fun removeBusEffect() {
+  fun removeBusEffect(bus_idx: Int, effect_idx: Int) {
     TODO()
   }
 
-  fun setBusBypassEffects() {
+  fun setBusBypassEffects(bus_idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setBusCount() {
+  fun setBusCount(amount: Int) {
     TODO()
   }
 
-  fun setBusEffectEnabled() {
+  fun setBusEffectEnabled(
+    bus_idx: Int,
+    effect_idx: Int,
+    enabled: Boolean
+  ) {
     TODO()
   }
 
-  fun setBusLayout() {
+  fun setBusLayout(bus_layout: AudioBusLayout) {
     TODO()
   }
 
-  fun setBusMute() {
+  fun setBusMute(bus_idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setBusName() {
+  fun setBusName(bus_idx: Int, name: String) {
     TODO()
   }
 
-  fun setBusSend() {
+  fun setBusSend(bus_idx: Int, send: String) {
     TODO()
   }
 
-  fun setBusSolo() {
+  fun setBusSolo(bus_idx: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setBusVolumeDb() {
+  fun setBusVolumeDb(bus_idx: Int, volume_db: Float) {
     TODO()
   }
 
-  fun setDevice() {
+  fun setDevice(device: String) {
     TODO()
   }
 
-  fun swapBusEffects() {
+  fun swapBusEffects(
+    bus_idx: Int,
+    effect_idx: Int,
+    by_effect_idx: Int
+  ) {
     TODO()
   }
 

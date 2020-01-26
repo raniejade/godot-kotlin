@@ -316,7 +316,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun isGlowLevelEnabled(): Boolean {
+  fun isGlowLevelEnabled(idx: Int): Boolean {
     TODO()
   }
 
@@ -332,315 +332,315 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun setAdjustmentBrightness() {
+  fun setAdjustmentBrightness(brightness: Float) {
     TODO()
   }
 
-  fun setAdjustmentColorCorrection() {
+  fun setAdjustmentColorCorrection(color_correction: Texture) {
     TODO()
   }
 
-  fun setAdjustmentContrast() {
+  fun setAdjustmentContrast(contrast: Float) {
     TODO()
   }
 
-  fun setAdjustmentEnable() {
+  fun setAdjustmentEnable(enabled: Boolean) {
     TODO()
   }
 
-  fun setAdjustmentSaturation() {
+  fun setAdjustmentSaturation(saturation: Float) {
     TODO()
   }
 
-  fun setAmbientLightColor() {
+  fun setAmbientLightColor(color: Color) {
     TODO()
   }
 
-  fun setAmbientLightEnergy() {
+  fun setAmbientLightEnergy(energy: Float) {
     TODO()
   }
 
-  fun setAmbientLightSkyContribution() {
+  fun setAmbientLightSkyContribution(energy: Float) {
     TODO()
   }
 
-  fun setBackground() {
+  fun setBackground(mode: Int) {
     TODO()
   }
 
-  fun setBgColor() {
+  fun setBgColor(color: Color) {
     TODO()
   }
 
-  fun setBgEnergy() {
+  fun setBgEnergy(energy: Float) {
     TODO()
   }
 
-  fun setCameraFeedId() {
+  fun setCameraFeedId(camera_feed_id: Int) {
     TODO()
   }
 
-  fun setCanvasMaxLayer() {
+  fun setCanvasMaxLayer(layer: Int) {
     TODO()
   }
 
-  fun setDofBlurFarAmount() {
+  fun setDofBlurFarAmount(intensity: Float) {
     TODO()
   }
 
-  fun setDofBlurFarDistance() {
+  fun setDofBlurFarDistance(intensity: Float) {
     TODO()
   }
 
-  fun setDofBlurFarEnabled() {
+  fun setDofBlurFarEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setDofBlurFarQuality() {
+  fun setDofBlurFarQuality(intensity: Int) {
     TODO()
   }
 
-  fun setDofBlurFarTransition() {
+  fun setDofBlurFarTransition(intensity: Float) {
     TODO()
   }
 
-  fun setDofBlurNearAmount() {
+  fun setDofBlurNearAmount(intensity: Float) {
     TODO()
   }
 
-  fun setDofBlurNearDistance() {
+  fun setDofBlurNearDistance(intensity: Float) {
     TODO()
   }
 
-  fun setDofBlurNearEnabled() {
+  fun setDofBlurNearEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setDofBlurNearQuality() {
+  fun setDofBlurNearQuality(level: Int) {
     TODO()
   }
 
-  fun setDofBlurNearTransition() {
+  fun setDofBlurNearTransition(intensity: Float) {
     TODO()
   }
 
-  fun setFogColor() {
+  fun setFogColor(color: Color) {
     TODO()
   }
 
-  fun setFogDepthBegin() {
+  fun setFogDepthBegin(distance: Float) {
     TODO()
   }
 
-  fun setFogDepthCurve() {
+  fun setFogDepthCurve(curve: Float) {
     TODO()
   }
 
-  fun setFogDepthEnabled() {
+  fun setFogDepthEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setFogDepthEnd() {
+  fun setFogDepthEnd(distance: Float) {
     TODO()
   }
 
-  fun setFogEnabled() {
+  fun setFogEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setFogHeightCurve() {
+  fun setFogHeightCurve(curve: Float) {
     TODO()
   }
 
-  fun setFogHeightEnabled() {
+  fun setFogHeightEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setFogHeightMax() {
+  fun setFogHeightMax(height: Float) {
     TODO()
   }
 
-  fun setFogHeightMin() {
+  fun setFogHeightMin(height: Float) {
     TODO()
   }
 
-  fun setFogSunAmount() {
+  fun setFogSunAmount(amount: Float) {
     TODO()
   }
 
-  fun setFogSunColor() {
+  fun setFogSunColor(color: Color) {
     TODO()
   }
 
-  fun setFogTransmitCurve() {
+  fun setFogTransmitCurve(curve: Float) {
     TODO()
   }
 
-  fun setFogTransmitEnabled() {
+  fun setFogTransmitEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setGlowBicubicUpscale() {
+  fun setGlowBicubicUpscale(enabled: Boolean) {
     TODO()
   }
 
-  fun setGlowBlendMode() {
+  fun setGlowBlendMode(mode: Int) {
     TODO()
   }
 
-  fun setGlowBloom() {
+  fun setGlowBloom(amount: Float) {
     TODO()
   }
 
-  fun setGlowEnabled() {
+  fun setGlowEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setGlowHdrBleedScale() {
+  fun setGlowHdrBleedScale(scale: Float) {
     TODO()
   }
 
-  fun setGlowHdrBleedThreshold() {
+  fun setGlowHdrBleedThreshold(threshold: Float) {
     TODO()
   }
 
-  fun setGlowHdrLuminanceCap() {
+  fun setGlowHdrLuminanceCap(amount: Float) {
     TODO()
   }
 
-  fun setGlowIntensity() {
+  fun setGlowIntensity(intensity: Float) {
     TODO()
   }
 
-  fun setGlowLevel() {
+  fun setGlowLevel(idx: Int, enabled: Boolean) {
     TODO()
   }
 
-  fun setGlowStrength() {
+  fun setGlowStrength(strength: Float) {
     TODO()
   }
 
-  fun setSky() {
+  fun setSky(sky: Sky) {
     TODO()
   }
 
-  fun setSkyCustomFov() {
+  fun setSkyCustomFov(scale: Float) {
     TODO()
   }
 
-  fun setSkyOrientation() {
+  fun setSkyOrientation(orientation: Basis) {
     TODO()
   }
 
-  fun setSkyRotation() {
+  fun setSkyRotation(euler_radians: Vector3) {
     TODO()
   }
 
-  fun setSkyRotationDegrees() {
+  fun setSkyRotationDegrees(euler_degrees: Vector3) {
     TODO()
   }
 
-  fun setSsaoAoChannelAffect() {
+  fun setSsaoAoChannelAffect(amount: Float) {
     TODO()
   }
 
-  fun setSsaoBias() {
+  fun setSsaoBias(bias: Float) {
     TODO()
   }
 
-  fun setSsaoBlur() {
+  fun setSsaoBlur(mode: Int) {
     TODO()
   }
 
-  fun setSsaoColor() {
+  fun setSsaoColor(color: Color) {
     TODO()
   }
 
-  fun setSsaoDirectLightAffect() {
+  fun setSsaoDirectLightAffect(amount: Float) {
     TODO()
   }
 
-  fun setSsaoEdgeSharpness() {
+  fun setSsaoEdgeSharpness(edge_sharpness: Float) {
     TODO()
   }
 
-  fun setSsaoEnabled() {
+  fun setSsaoEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setSsaoIntensity() {
+  fun setSsaoIntensity(intensity: Float) {
     TODO()
   }
 
-  fun setSsaoIntensity2() {
+  fun setSsaoIntensity2(intensity: Float) {
     TODO()
   }
 
-  fun setSsaoQuality() {
+  fun setSsaoQuality(quality: Int) {
     TODO()
   }
 
-  fun setSsaoRadius() {
+  fun setSsaoRadius(radius: Float) {
     TODO()
   }
 
-  fun setSsaoRadius2() {
+  fun setSsaoRadius2(radius: Float) {
     TODO()
   }
 
-  fun setSsrDepthTolerance() {
+  fun setSsrDepthTolerance(depth_tolerance: Float) {
     TODO()
   }
 
-  fun setSsrEnabled() {
+  fun setSsrEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setSsrFadeIn() {
+  fun setSsrFadeIn(fade_in: Float) {
     TODO()
   }
 
-  fun setSsrFadeOut() {
+  fun setSsrFadeOut(fade_out: Float) {
     TODO()
   }
 
-  fun setSsrMaxSteps() {
+  fun setSsrMaxSteps(max_steps: Int) {
     TODO()
   }
 
-  fun setSsrRough() {
+  fun setSsrRough(rough: Boolean) {
     TODO()
   }
 
-  fun setTonemapAutoExposure() {
+  fun setTonemapAutoExposure(auto_exposure: Boolean) {
     TODO()
   }
 
-  fun setTonemapAutoExposureGrey() {
+  fun setTonemapAutoExposureGrey(exposure_grey: Float) {
     TODO()
   }
 
-  fun setTonemapAutoExposureMax() {
+  fun setTonemapAutoExposureMax(exposure_max: Float) {
     TODO()
   }
 
-  fun setTonemapAutoExposureMin() {
+  fun setTonemapAutoExposureMin(exposure_min: Float) {
     TODO()
   }
 
-  fun setTonemapAutoExposureSpeed() {
+  fun setTonemapAutoExposureSpeed(exposure_speed: Float) {
     TODO()
   }
 
-  fun setTonemapExposure() {
+  fun setTonemapExposure(exposure: Float) {
     TODO()
   }
 
-  fun setTonemapWhite() {
+  fun setTonemapWhite(white: Float) {
     TODO()
   }
 
-  fun setTonemapper() {
+  fun setTonemapper(mode: Int) {
     TODO()
   }
 

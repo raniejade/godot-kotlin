@@ -6,8 +6,11 @@ import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.Variant
 import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -19,23 +22,27 @@ import kotlinx.cinterop.reinterpret
 open class SceneTree internal constructor(
   _handle: COpaquePointer
 ) : MainLoop(_handle) {
-  fun callGroup(): Variant {
+  fun callGroup(group: String, method: String): Variant {
     TODO()
   }
 
-  fun callGroupFlags(): Variant {
+  fun callGroupFlags(
+    flags: Int,
+    group: String,
+    method: String
+  ): Variant {
     TODO()
   }
 
-  fun changeScene(): Error {
+  fun changeScene(path: String): Error {
     TODO()
   }
 
-  fun changeSceneTo(): Error {
+  fun changeSceneTo(packed_scene: PackedScene): Error {
     TODO()
   }
 
-  fun createTimer(): SceneTreeTimer {
+  fun createTimer(time_sec: Float, pause_mode_process: Boolean): SceneTreeTimer {
     TODO()
   }
 
@@ -71,7 +78,7 @@ open class SceneTree internal constructor(
     TODO()
   }
 
-  fun getNodesInGroup(): VariantArray {
+  fun getNodesInGroup(group: String): VariantArray {
     TODO()
   }
 
@@ -83,7 +90,7 @@ open class SceneTree internal constructor(
     TODO()
   }
 
-  fun hasGroup(): Boolean {
+  fun hasGroup(name: String): Boolean {
     TODO()
   }
 
@@ -123,15 +130,19 @@ open class SceneTree internal constructor(
     TODO()
   }
 
-  fun notifyGroup() {
+  fun notifyGroup(group: String, notification: Int) {
     TODO()
   }
 
-  fun notifyGroupFlags() {
+  fun notifyGroupFlags(
+    call_flags: Int,
+    group: String,
+    notification: Int
+  ) {
     TODO()
   }
 
-  fun queueDelete() {
+  fun queueDelete(obj: Object) {
     TODO()
   }
 
@@ -143,31 +154,40 @@ open class SceneTree internal constructor(
     TODO()
   }
 
-  fun setAutoAcceptQuit() {
+  fun setAutoAcceptQuit(enabled: Boolean) {
     TODO()
   }
 
-  fun setCurrentScene() {
+  fun setCurrentScene(child_node: Node) {
     TODO()
   }
 
-  fun setDebugCollisionsHint() {
+  fun setDebugCollisionsHint(enable: Boolean) {
     TODO()
   }
 
-  fun setDebugNavigationHint() {
+  fun setDebugNavigationHint(enable: Boolean) {
     TODO()
   }
 
-  fun setEditedSceneRoot() {
+  fun setEditedSceneRoot(scene: Node) {
     TODO()
   }
 
-  fun setGroup() {
+  fun setGroup(
+    group: String,
+    property: String,
+    value: Variant
+  ) {
     TODO()
   }
 
-  fun setGroupFlags() {
+  fun setGroupFlags(
+    call_flags: Int,
+    group: String,
+    property: String,
+    value: Variant
+  ) {
     TODO()
   }
 
@@ -175,35 +195,40 @@ open class SceneTree internal constructor(
     TODO()
   }
 
-  fun setMultiplayer() {
+  fun setMultiplayer(multiplayer: MultiplayerAPI) {
     TODO()
   }
 
-  fun setMultiplayerPollEnabled() {
+  fun setMultiplayerPollEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun setNetworkPeer() {
+  fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     TODO()
   }
 
-  fun setPause() {
+  fun setPause(enable: Boolean) {
     TODO()
   }
 
-  fun setQuitOnGoBack() {
+  fun setQuitOnGoBack(enabled: Boolean) {
     TODO()
   }
 
-  fun setRefuseNewNetworkConnections() {
+  fun setRefuseNewNetworkConnections(refuse: Boolean) {
     TODO()
   }
 
-  fun setScreenStretch() {
+  fun setScreenStretch(
+    mode: Int,
+    aspect: Int,
+    minsize: Vector2,
+    shrink: Float
+  ) {
     TODO()
   }
 
-  fun setUseFontOversampling() {
+  fun setUseFontOversampling(enable: Boolean) {
     TODO()
   }
 

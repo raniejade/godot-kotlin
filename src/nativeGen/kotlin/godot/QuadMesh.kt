@@ -19,7 +19,7 @@ open class QuadMesh internal constructor(
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector2) {
     TODO()
   }
 

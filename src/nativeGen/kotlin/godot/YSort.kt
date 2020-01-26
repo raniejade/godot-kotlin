@@ -19,7 +19,7 @@ open class YSort internal constructor(
     TODO()
   }
 
-  fun setSortEnabled() {
+  fun setSortEnabled(enabled: Boolean) {
     TODO()
   }
 

@@ -18,7 +18,7 @@ open class VisualScriptPreload internal constructor(
     TODO()
   }
 
-  fun setPreload() {
+  fun setPreload(resource: Resource) {
     TODO()
   }
 

@@ -19,7 +19,7 @@ open class Sky internal constructor(
     TODO()
   }
 
-  fun setRadianceSize() {
+  fun setRadianceSize(size: Int) {
     TODO()
   }
 

@@ -4,7 +4,9 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -20,7 +22,7 @@ open class MainLoop internal constructor(
     TODO()
   }
 
-  fun idle(): Boolean {
+  fun idle(delta: Float): Boolean {
     TODO()
   }
 
@@ -28,15 +30,15 @@ open class MainLoop internal constructor(
     TODO()
   }
 
-  fun inputEvent() {
+  fun inputEvent(event: InputEvent) {
     TODO()
   }
 
-  fun inputText() {
+  fun inputText(text: String) {
     TODO()
   }
 
-  fun iteration(): Boolean {
+  fun iteration(delta: Float): Boolean {
     TODO()
   }
 

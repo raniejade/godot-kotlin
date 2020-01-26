@@ -17,19 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerENet internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
-  fun closeConnection() {
+  fun closeConnection(wait_usec: Int) {
     TODO()
   }
 
-  fun createClient(): Error {
+  fun createClient(
+    address: String,
+    port: Int,
+    in_bandwidth: Int,
+    out_bandwidth: Int,
+    client_port: Int
+  ): Error {
     TODO()
   }
 
-  fun createServer(): Error {
+  fun createServer(
+    port: Int,
+    max_clients: Int,
+    in_bandwidth: Int,
+    out_bandwidth: Int
+  ): Error {
     TODO()
   }
 
-  fun disconnectPeer() {
+  fun disconnectPeer(id: Int, now: Boolean) {
     TODO()
   }
 
@@ -49,11 +60,11 @@ open class NetworkedMultiplayerENet internal constructor(
     TODO()
   }
 
-  fun getPeerAddress(): String {
+  fun getPeerAddress(id: Int): String {
     TODO()
   }
 
-  fun getPeerPort(): Int {
+  fun getPeerPort(id: Int): Int {
     TODO()
   }
 
@@ -65,23 +76,23 @@ open class NetworkedMultiplayerENet internal constructor(
     TODO()
   }
 
-  fun setAlwaysOrdered() {
+  fun setAlwaysOrdered(ordered: Boolean) {
     TODO()
   }
 
-  fun setBindIp() {
+  fun setBindIp(ip: String) {
     TODO()
   }
 
-  fun setChannelCount() {
+  fun setChannelCount(channels: Int) {
     TODO()
   }
 
-  fun setCompressionMode() {
+  fun setCompressionMode(mode: Int) {
     TODO()
   }
 
-  fun setTransferChannel() {
+  fun setTransferChannel(channel: Int) {
     TODO()
   }
 

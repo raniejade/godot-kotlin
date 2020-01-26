@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class LineEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun appendAtCursor() {
+  fun appendAtCursor(text: String) {
     TODO()
   }
 
@@ -34,11 +34,11 @@ open class LineEdit internal constructor(
     TODO()
   }
 
-  fun cursorSetBlinkEnabled() {
+  fun cursorSetBlinkEnabled(enabled: Boolean) {
     TODO()
   }
 
-  fun cursorSetBlinkSpeed() {
+  fun cursorSetBlinkSpeed(blink_speed: Float) {
     TODO()
   }
 
@@ -98,11 +98,11 @@ open class LineEdit internal constructor(
     TODO()
   }
 
-  fun menuOption() {
+  fun menuOption(option: Int) {
     TODO()
   }
 
-  fun select() {
+  fun select(from: Int, to: Int) {
     TODO()
   }
 
@@ -110,51 +110,51 @@ open class LineEdit internal constructor(
     TODO()
   }
 
-  fun setAlign() {
+  fun setAlign(align: Int) {
     TODO()
   }
 
-  fun setClearButtonEnabled() {
+  fun setClearButtonEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setContextMenuEnabled() {
+  fun setContextMenuEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setCursorPosition() {
+  fun setCursorPosition(position: Int) {
     TODO()
   }
 
-  fun setEditable() {
+  fun setEditable(enabled: Boolean) {
     TODO()
   }
 
-  fun setExpandToTextLength() {
+  fun setExpandToTextLength(enabled: Boolean) {
     TODO()
   }
 
-  fun setMaxLength() {
+  fun setMaxLength(chars: Int) {
     TODO()
   }
 
-  fun setPlaceholder() {
+  fun setPlaceholder(text: String) {
     TODO()
   }
 
-  fun setPlaceholderAlpha() {
+  fun setPlaceholderAlpha(alpha: Float) {
     TODO()
   }
 
-  fun setSecret() {
+  fun setSecret(enabled: Boolean) {
     TODO()
   }
 
-  fun setSecretCharacter() {
+  fun setSecretCharacter(character: String) {
     TODO()
   }
 
-  fun setText() {
+  fun setText(text: String) {
     TODO()
   }
 

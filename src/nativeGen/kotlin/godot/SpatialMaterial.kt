@@ -119,11 +119,11 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getFeature(): Boolean {
+  fun getFeature(feature: Int): Boolean {
     TODO()
   }
 
-  fun getFlag(): Boolean {
+  fun getFlag(flag: Int): Boolean {
     TODO()
   }
 
@@ -203,7 +203,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getTexture(): Texture {
+  fun getTexture(param: Int): Texture {
     TODO()
   }
 
@@ -247,231 +247,231 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun setAlbedo() {
+  fun setAlbedo(albedo: Color) {
     TODO()
   }
 
-  fun setAlphaScissorThreshold() {
+  fun setAlphaScissorThreshold(threshold: Float) {
     TODO()
   }
 
-  fun setAnisotropy() {
+  fun setAnisotropy(anisotropy: Float) {
     TODO()
   }
 
-  fun setAoLightAffect() {
+  fun setAoLightAffect(amount: Float) {
     TODO()
   }
 
-  fun setAoTextureChannel() {
+  fun setAoTextureChannel(channel: Int) {
     TODO()
   }
 
-  fun setBillboardMode() {
+  fun setBillboardMode(mode: Int) {
     TODO()
   }
 
-  fun setBlendMode() {
+  fun setBlendMode(blend_mode: Int) {
     TODO()
   }
 
-  fun setClearcoat() {
+  fun setClearcoat(clearcoat: Float) {
     TODO()
   }
 
-  fun setClearcoatGloss() {
+  fun setClearcoatGloss(clearcoat_gloss: Float) {
     TODO()
   }
 
-  fun setCullMode() {
+  fun setCullMode(cull_mode: Int) {
     TODO()
   }
 
-  fun setDepthDeepParallax() {
+  fun setDepthDeepParallax(enable: Boolean) {
     TODO()
   }
 
-  fun setDepthDeepParallaxFlipBinormal() {
+  fun setDepthDeepParallaxFlipBinormal(flip: Boolean) {
     TODO()
   }
 
-  fun setDepthDeepParallaxFlipTangent() {
+  fun setDepthDeepParallaxFlipTangent(flip: Boolean) {
     TODO()
   }
 
-  fun setDepthDeepParallaxMaxLayers() {
+  fun setDepthDeepParallaxMaxLayers(layer: Int) {
     TODO()
   }
 
-  fun setDepthDeepParallaxMinLayers() {
+  fun setDepthDeepParallaxMinLayers(layer: Int) {
     TODO()
   }
 
-  fun setDepthDrawMode() {
+  fun setDepthDrawMode(depth_draw_mode: Int) {
     TODO()
   }
 
-  fun setDepthScale() {
+  fun setDepthScale(depth_scale: Float) {
     TODO()
   }
 
-  fun setDetailBlendMode() {
+  fun setDetailBlendMode(detail_blend_mode: Int) {
     TODO()
   }
 
-  fun setDetailUv() {
+  fun setDetailUv(detail_uv: Int) {
     TODO()
   }
 
-  fun setDiffuseMode() {
+  fun setDiffuseMode(diffuse_mode: Int) {
     TODO()
   }
 
-  fun setDistanceFade() {
+  fun setDistanceFade(mode: Int) {
     TODO()
   }
 
-  fun setDistanceFadeMaxDistance() {
+  fun setDistanceFadeMaxDistance(distance: Float) {
     TODO()
   }
 
-  fun setDistanceFadeMinDistance() {
+  fun setDistanceFadeMinDistance(distance: Float) {
     TODO()
   }
 
-  fun setEmission() {
+  fun setEmission(emission: Color) {
     TODO()
   }
 
-  fun setEmissionEnergy() {
+  fun setEmissionEnergy(emission_energy: Float) {
     TODO()
   }
 
-  fun setEmissionOperator() {
+  fun setEmissionOperator(operator: Int) {
     TODO()
   }
 
-  fun setFeature() {
+  fun setFeature(feature: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setFlag() {
+  fun setFlag(flag: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setGrow() {
+  fun setGrow(amount: Float) {
     TODO()
   }
 
-  fun setGrowEnabled() {
+  fun setGrowEnabled(enable: Boolean) {
     TODO()
   }
 
-  fun setLineWidth() {
+  fun setLineWidth(line_width: Float) {
     TODO()
   }
 
-  fun setMetallic() {
+  fun setMetallic(metallic: Float) {
     TODO()
   }
 
-  fun setMetallicTextureChannel() {
+  fun setMetallicTextureChannel(channel: Int) {
     TODO()
   }
 
-  fun setNormalScale() {
+  fun setNormalScale(normal_scale: Float) {
     TODO()
   }
 
-  fun setParticlesAnimHFrames() {
+  fun setParticlesAnimHFrames(frames: Int) {
     TODO()
   }
 
-  fun setParticlesAnimLoop() {
+  fun setParticlesAnimLoop(loop: Boolean) {
     TODO()
   }
 
-  fun setParticlesAnimVFrames() {
+  fun setParticlesAnimVFrames(frames: Int) {
     TODO()
   }
 
-  fun setPointSize() {
+  fun setPointSize(point_size: Float) {
     TODO()
   }
 
-  fun setProximityFade() {
+  fun setProximityFade(enabled: Boolean) {
     TODO()
   }
 
-  fun setProximityFadeDistance() {
+  fun setProximityFadeDistance(distance: Float) {
     TODO()
   }
 
-  fun setRefraction() {
+  fun setRefraction(refraction: Float) {
     TODO()
   }
 
-  fun setRefractionTextureChannel() {
+  fun setRefractionTextureChannel(channel: Int) {
     TODO()
   }
 
-  fun setRim() {
+  fun setRim(rim: Float) {
     TODO()
   }
 
-  fun setRimTint() {
+  fun setRimTint(rim_tint: Float) {
     TODO()
   }
 
-  fun setRoughness() {
+  fun setRoughness(roughness: Float) {
     TODO()
   }
 
-  fun setRoughnessTextureChannel() {
+  fun setRoughnessTextureChannel(channel: Int) {
     TODO()
   }
 
-  fun setSpecular() {
+  fun setSpecular(specular: Float) {
     TODO()
   }
 
-  fun setSpecularMode() {
+  fun setSpecularMode(specular_mode: Int) {
     TODO()
   }
 
-  fun setSubsurfaceScatteringStrength() {
+  fun setSubsurfaceScatteringStrength(strength: Float) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(param: Int, texture: Texture) {
     TODO()
   }
 
-  fun setTransmission() {
+  fun setTransmission(transmission: Color) {
     TODO()
   }
 
-  fun setUv1Offset() {
+  fun setUv1Offset(offset: Vector3) {
     TODO()
   }
 
-  fun setUv1Scale() {
+  fun setUv1Scale(scale: Vector3) {
     TODO()
   }
 
-  fun setUv1TriplanarBlendSharpness() {
+  fun setUv1TriplanarBlendSharpness(sharpness: Float) {
     TODO()
   }
 
-  fun setUv2Offset() {
+  fun setUv2Offset(offset: Vector3) {
     TODO()
   }
 
-  fun setUv2Scale() {
+  fun setUv2Scale(scale: Vector3) {
     TODO()
   }
 
-  fun setUv2TriplanarBlendSharpness() {
+  fun setUv2TriplanarBlendSharpness(sharpness: Float) {
     TODO()
   }
 

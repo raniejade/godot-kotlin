@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,7 +19,11 @@ import kotlinx.cinterop.reinterpret
 open class Expression internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun execute(): Variant {
+  fun execute(
+    inputs: VariantArray,
+    base_instance: Object,
+    show_error: Boolean
+  ): Variant {
     TODO()
   }
 
@@ -29,7 +35,7 @@ open class Expression internal constructor(
     TODO()
   }
 
-  fun parse(): Error {
+  fun parse(expression: String, input_names: PoolStringArray): Error {
     TODO()
   }
 

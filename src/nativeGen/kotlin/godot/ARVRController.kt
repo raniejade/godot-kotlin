@@ -34,7 +34,7 @@ open class ARVRController internal constructor(
     TODO()
   }
 
-  fun getJoystickAxis(): Float {
+  fun getJoystickAxis(axis: Int): Float {
     TODO()
   }
 
@@ -50,15 +50,15 @@ open class ARVRController internal constructor(
     TODO()
   }
 
-  fun isButtonPressed(): Int {
+  fun isButtonPressed(button: Int): Int {
     TODO()
   }
 
-  fun setControllerId() {
+  fun setControllerId(controller_id: Int) {
     TODO()
   }
 
-  fun setRumble() {
+  fun setRumble(rumble: Float) {
     TODO()
   }
 

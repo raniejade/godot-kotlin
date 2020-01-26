@@ -19,7 +19,7 @@ open class InputEventMagnifyGesture internal constructor(
     TODO()
   }
 
-  fun setFactor() {
+  fun setFactor(factor: Float) {
     TODO()
   }
 

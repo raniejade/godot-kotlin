@@ -27,15 +27,15 @@ open class VisualShaderNodeTexture internal constructor(
     TODO()
   }
 
-  fun setSource() {
+  fun setSource(value: Int) {
     TODO()
   }
 
-  fun setTexture() {
+  fun setTexture(value: Texture) {
     TODO()
   }
 
-  fun setTextureType() {
+  fun setTextureType(value: Int) {
     TODO()
   }
 

@@ -6,7 +6,9 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Transform
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -18,7 +20,7 @@ import kotlinx.cinterop.reinterpret
 open class AnimationTree internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun advance() {
+  fun advance(delta: Float) {
     TODO()
   }
 
@@ -46,27 +48,27 @@ open class AnimationTree internal constructor(
     TODO()
   }
 
-  fun renameParameter() {
+  fun renameParameter(old_name: String, new_name: String) {
     TODO()
   }
 
-  fun setActive() {
+  fun setActive(active: Boolean) {
     TODO()
   }
 
-  fun setAnimationPlayer() {
+  fun setAnimationPlayer(root: NodePath) {
     TODO()
   }
 
-  fun setProcessMode() {
+  fun setProcessMode(mode: Int) {
     TODO()
   }
 
-  fun setRootMotionTrack() {
+  fun setRootMotionTrack(path: NodePath) {
     TODO()
   }
 
-  fun setTreeRoot() {
+  fun setTreeRoot(root: AnimationNode) {
     TODO()
   }
 

@@ -3,8 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,11 +18,16 @@ import kotlinx.cinterop.reinterpret
 open class ImageTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun create() {
+  fun create(
+    width: Int,
+    height: Int,
+    format: Int,
+    flags: Int
+  ) {
     TODO()
   }
 
-  fun createFromImage() {
+  fun createFromImage(image: Image, flags: Int) {
     TODO()
   }
 
@@ -36,23 +43,23 @@ open class ImageTexture internal constructor(
     TODO()
   }
 
-  fun load(): Error {
+  fun load(path: String): Error {
     TODO()
   }
 
-  fun setData() {
+  fun setData(image: Image) {
     TODO()
   }
 
-  fun setLossyStorageQuality() {
+  fun setLossyStorageQuality(quality: Float) {
     TODO()
   }
 
-  fun setSizeOverride() {
+  fun setSizeOverride(size: Vector2) {
     TODO()
   }
 
-  fun setStorage() {
+  fun setStorage(mode: Int) {
     TODO()
   }
 

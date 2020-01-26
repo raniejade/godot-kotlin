@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Float
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -24,15 +25,15 @@ open class InputEventAction internal constructor(
     TODO()
   }
 
-  fun setAction() {
+  fun setAction(action: String) {
     TODO()
   }
 
-  fun setPressed() {
+  fun setPressed(pressed: Boolean) {
     TODO()
   }
 
-  fun setStrength() {
+  fun setStrength(strength: Float) {
     TODO()
   }
 

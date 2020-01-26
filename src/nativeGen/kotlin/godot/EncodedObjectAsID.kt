@@ -19,7 +19,7 @@ open class EncodedObjectAsID internal constructor(
     TODO()
   }
 
-  fun setObjectId() {
+  fun setObjectId(id: Int) {
     TODO()
   }
 

@@ -3,8 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
 import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,15 +20,25 @@ import kotlinx.cinterop.reinterpret
 open class BitmapFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
-  fun addChar() {
+  fun addChar(
+    character: Int,
+    texture: Int,
+    rect: Rect2,
+    align: Vector2,
+    advance: Float
+  ) {
     TODO()
   }
 
-  fun addKerningPair() {
+  fun addKerningPair(
+    char_a: Int,
+    char_b: Int,
+    kerning: Int
+  ) {
     TODO()
   }
 
-  fun addTexture() {
+  fun addTexture(texture: Texture) {
     TODO()
   }
 
@@ -32,11 +46,11 @@ open class BitmapFont internal constructor(
     TODO()
   }
 
-  fun createFromFnt(): Error {
+  fun createFromFnt(path: String): Error {
     TODO()
   }
 
-  fun getCharSize(): Vector2 {
+  fun getCharSize(char: Int, next: Int): Vector2 {
     TODO()
   }
 
@@ -44,11 +58,11 @@ open class BitmapFont internal constructor(
     TODO()
   }
 
-  fun getKerningPair(): Int {
+  fun getKerningPair(char_a: Int, char_b: Int): Int {
     TODO()
   }
 
-  fun getTexture(): Texture {
+  fun getTexture(idx: Int): Texture {
     TODO()
   }
 
@@ -56,19 +70,19 @@ open class BitmapFont internal constructor(
     TODO()
   }
 
-  fun setAscent() {
+  fun setAscent(px: Float) {
     TODO()
   }
 
-  fun setDistanceFieldHint() {
+  fun setDistanceFieldHint(enable: Boolean) {
     TODO()
   }
 
-  fun setFallback() {
+  fun setFallback(fallback: BitmapFont) {
     TODO()
   }
 
-  fun setHeight() {
+  fun setHeight(px: Float) {
     TODO()
   }
 

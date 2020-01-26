@@ -31,19 +31,19 @@ open class DampedSpringJoint2D internal constructor(
     TODO()
   }
 
-  fun setDamping() {
+  fun setDamping(damping: Float) {
     TODO()
   }
 
-  fun setLength() {
+  fun setLength(length: Float) {
     TODO()
   }
 
-  fun setRestLength() {
+  fun setRestLength(rest_length: Float) {
     TODO()
   }
 
-  fun setStiffness() {
+  fun setStiffness(stiffness: Float) {
     TODO()
   }
 

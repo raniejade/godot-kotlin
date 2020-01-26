@@ -4,9 +4,11 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Plane
 import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
 import godot.core.PoolVector3Array
+import godot.core.Transform2D
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
@@ -25,139 +27,233 @@ import kotlinx.cinterop.reinterpret
 open class _Geometry internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun buildBoxPlanes(): VariantArray {
+  fun buildBoxPlanes(extents: Vector3): VariantArray {
     TODO()
   }
 
-  fun buildCapsulePlanes(): VariantArray {
+  fun buildCapsulePlanes(
+    radius: Float,
+    height: Float,
+    sides: Int,
+    lats: Int,
+    axis: Int
+  ): VariantArray {
     TODO()
   }
 
-  fun buildCylinderPlanes(): VariantArray {
+  fun buildCylinderPlanes(
+    radius: Float,
+    height: Float,
+    sides: Int,
+    axis: Int
+  ): VariantArray {
     TODO()
   }
 
-  fun clipPolygon(): PoolVector3Array {
+  fun clipPolygon(points: PoolVector3Array, plane: Plane): PoolVector3Array {
     TODO()
   }
 
-  fun clipPolygons2d(): VariantArray {
+  fun clipPolygons2d(polygon_a: PoolVector2Array, polygon_b: PoolVector2Array): VariantArray {
     TODO()
   }
 
-  fun clipPolylineWithPolygon2d(): VariantArray {
+  fun clipPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
+      VariantArray {
     TODO()
   }
 
-  fun convexHull2d(): PoolVector2Array {
+  fun convexHull2d(points: PoolVector2Array): PoolVector2Array {
     TODO()
   }
 
-  fun excludePolygons2d(): VariantArray {
+  fun excludePolygons2d(polygon_a: PoolVector2Array, polygon_b: PoolVector2Array): VariantArray {
     TODO()
   }
 
-  fun getClosestPointToSegment(): Vector3 {
+  fun getClosestPointToSegment(
+    point: Vector3,
+    s1: Vector3,
+    s2: Vector3
+  ): Vector3 {
     TODO()
   }
 
-  fun getClosestPointToSegment2d(): Vector2 {
+  fun getClosestPointToSegment2d(
+    point: Vector2,
+    s1: Vector2,
+    s2: Vector2
+  ): Vector2 {
     TODO()
   }
 
-  fun getClosestPointToSegmentUncapped(): Vector3 {
+  fun getClosestPointToSegmentUncapped(
+    point: Vector3,
+    s1: Vector3,
+    s2: Vector3
+  ): Vector3 {
     TODO()
   }
 
-  fun getClosestPointToSegmentUncapped2d(): Vector2 {
+  fun getClosestPointToSegmentUncapped2d(
+    point: Vector2,
+    s1: Vector2,
+    s2: Vector2
+  ): Vector2 {
     TODO()
   }
 
-  fun getClosestPointsBetweenSegments(): PoolVector3Array {
+  fun getClosestPointsBetweenSegments(
+    p1: Vector3,
+    p2: Vector3,
+    q1: Vector3,
+    q2: Vector3
+  ): PoolVector3Array {
     TODO()
   }
 
-  fun getClosestPointsBetweenSegments2d(): PoolVector2Array {
+  fun getClosestPointsBetweenSegments2d(
+    p1: Vector2,
+    q1: Vector2,
+    p2: Vector2,
+    q2: Vector2
+  ): PoolVector2Array {
     TODO()
   }
 
-  fun getUv84NormalBit(): Int {
+  fun getUv84NormalBit(normal: Vector3): Int {
     TODO()
   }
 
-  fun intersectPolygons2d(): VariantArray {
+  fun intersectPolygons2d(polygon_a: PoolVector2Array, polygon_b: PoolVector2Array): VariantArray {
     TODO()
   }
 
-  fun intersectPolylineWithPolygon2d(): VariantArray {
+  fun intersectPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
+      VariantArray {
     TODO()
   }
 
-  fun isPolygonClockwise(): Boolean {
+  fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
     TODO()
   }
 
-  fun lineIntersectsLine2d(): Variant {
+  fun lineIntersectsLine2d(
+    from_a: Vector2,
+    dir_a: Vector2,
+    from_b: Vector2,
+    dir_b: Vector2
+  ): Variant {
     TODO()
   }
 
-  fun makeAtlas(): Dictionary {
+  fun makeAtlas(sizes: PoolVector2Array): Dictionary {
     TODO()
   }
 
-  fun mergePolygons2d(): VariantArray {
+  fun mergePolygons2d(polygon_a: PoolVector2Array, polygon_b: PoolVector2Array): VariantArray {
     TODO()
   }
 
-  fun offsetPolygon2d(): VariantArray {
+  fun offsetPolygon2d(
+    polygon: PoolVector2Array,
+    delta: Float,
+    join_type: Int
+  ): VariantArray {
     TODO()
   }
 
-  fun offsetPolyline2d(): VariantArray {
+  fun offsetPolyline2d(
+    polyline: PoolVector2Array,
+    delta: Float,
+    join_type: Int,
+    end_type: Int
+  ): VariantArray {
     TODO()
   }
 
-  fun pointIsInsideTriangle(): Boolean {
+  fun pointIsInsideTriangle(
+    point: Vector2,
+    a: Vector2,
+    b: Vector2,
+    c: Vector2
+  ): Boolean {
     TODO()
   }
 
-  fun rayIntersectsTriangle(): Variant {
+  fun rayIntersectsTriangle(
+    from: Vector3,
+    dir: Vector3,
+    a: Vector3,
+    b: Vector3,
+    c: Vector3
+  ): Variant {
     TODO()
   }
 
-  fun segmentIntersectsCircle(): Float {
+  fun segmentIntersectsCircle(
+    segment_from: Vector2,
+    segment_to: Vector2,
+    circle_position: Vector2,
+    circle_radius: Float
+  ): Float {
     TODO()
   }
 
-  fun segmentIntersectsConvex(): PoolVector3Array {
+  fun segmentIntersectsConvex(
+    from: Vector3,
+    to: Vector3,
+    planes: VariantArray
+  ): PoolVector3Array {
     TODO()
   }
 
-  fun segmentIntersectsCylinder(): PoolVector3Array {
+  fun segmentIntersectsCylinder(
+    from: Vector3,
+    to: Vector3,
+    height: Float,
+    radius: Float
+  ): PoolVector3Array {
     TODO()
   }
 
-  fun segmentIntersectsSegment2d(): Variant {
+  fun segmentIntersectsSegment2d(
+    from_a: Vector2,
+    to_a: Vector2,
+    from_b: Vector2,
+    to_b: Vector2
+  ): Variant {
     TODO()
   }
 
-  fun segmentIntersectsSphere(): PoolVector3Array {
+  fun segmentIntersectsSphere(
+    from: Vector3,
+    to: Vector3,
+    sphere_position: Vector3,
+    sphere_radius: Float
+  ): PoolVector3Array {
     TODO()
   }
 
-  fun segmentIntersectsTriangle(): Variant {
+  fun segmentIntersectsTriangle(
+    from: Vector3,
+    to: Vector3,
+    a: Vector3,
+    b: Vector3,
+    c: Vector3
+  ): Variant {
     TODO()
   }
 
-  fun transformPoints2d(): PoolVector2Array {
+  fun transformPoints2d(points: PoolVector2Array, transform: Transform2D): PoolVector2Array {
     TODO()
   }
 
-  fun triangulateDelaunay2d(): PoolIntArray {
+  fun triangulateDelaunay2d(points: PoolVector2Array): PoolIntArray {
     TODO()
   }
 
-  fun triangulatePolygon(): PoolIntArray {
+  fun triangulatePolygon(polygon: PoolVector2Array): PoolIntArray {
     TODO()
   }
 

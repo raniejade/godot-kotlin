@@ -31,19 +31,19 @@ open class AudioEffectLimiter internal constructor(
     TODO()
   }
 
-  fun setCeilingDb() {
+  fun setCeilingDb(ceiling: Float) {
     TODO()
   }
 
-  fun setSoftClipDb() {
+  fun setSoftClipDb(soft_clip: Float) {
     TODO()
   }
 
-  fun setSoftClipRatio() {
+  fun setSoftClipRatio(soft_clip: Float) {
     TODO()
   }
 
-  fun setThresholdDb() {
+  fun setThresholdDb(threshold: Float) {
     TODO()
   }
 

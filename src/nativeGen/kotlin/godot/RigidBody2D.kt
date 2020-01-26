@@ -19,27 +19,27 @@ import kotlinx.cinterop.reinterpret
 open class RigidBody2D internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
-  fun addCentralForce() {
+  fun addCentralForce(force: Vector2) {
     TODO()
   }
 
-  fun addForce() {
+  fun addForce(offset: Vector2, force: Vector2) {
     TODO()
   }
 
-  fun addTorque() {
+  fun addTorque(torque: Float) {
     TODO()
   }
 
-  fun applyCentralImpulse() {
+  fun applyCentralImpulse(impulse: Vector2) {
     TODO()
   }
 
-  fun applyImpulse() {
+  fun applyImpulse(offset: Vector2, impulse: Vector2) {
     TODO()
   }
 
-  fun applyTorqueImpulse() {
+  fun applyTorqueImpulse(torque: Float) {
     TODO()
   }
 
@@ -127,91 +127,96 @@ open class RigidBody2D internal constructor(
     TODO()
   }
 
-  fun setAngularDamp() {
+  fun setAngularDamp(angular_damp: Float) {
     TODO()
   }
 
-  fun setAngularVelocity() {
+  fun setAngularVelocity(angular_velocity: Float) {
     TODO()
   }
 
-  fun setAppliedForce() {
+  fun setAppliedForce(force: Vector2) {
     TODO()
   }
 
-  fun setAppliedTorque() {
+  fun setAppliedTorque(torque: Float) {
     TODO()
   }
 
-  fun setAxisVelocity() {
+  fun setAxisVelocity(axis_velocity: Vector2) {
     TODO()
   }
 
-  fun setBounce() {
+  fun setBounce(bounce: Float) {
     TODO()
   }
 
-  fun setCanSleep() {
+  fun setCanSleep(able_to_sleep: Boolean) {
     TODO()
   }
 
-  fun setContactMonitor() {
+  fun setContactMonitor(enabled: Boolean) {
     TODO()
   }
 
-  fun setContinuousCollisionDetectionMode() {
+  fun setContinuousCollisionDetectionMode(mode: Int) {
     TODO()
   }
 
-  fun setFriction() {
+  fun setFriction(friction: Float) {
     TODO()
   }
 
-  fun setGravityScale() {
+  fun setGravityScale(gravity_scale: Float) {
     TODO()
   }
 
-  fun setInertia() {
+  fun setInertia(inertia: Float) {
     TODO()
   }
 
-  fun setLinearDamp() {
+  fun setLinearDamp(linear_damp: Float) {
     TODO()
   }
 
-  fun setLinearVelocity() {
+  fun setLinearVelocity(linear_velocity: Vector2) {
     TODO()
   }
 
-  fun setMass() {
+  fun setMass(mass: Float) {
     TODO()
   }
 
-  fun setMaxContactsReported() {
+  fun setMaxContactsReported(amount: Int) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setPhysicsMaterialOverride() {
+  fun setPhysicsMaterialOverride(physics_material_override: PhysicsMaterial) {
     TODO()
   }
 
-  fun setSleeping() {
+  fun setSleeping(sleeping: Boolean) {
     TODO()
   }
 
-  fun setUseCustomIntegrator() {
+  fun setUseCustomIntegrator(enable: Boolean) {
     TODO()
   }
 
-  fun setWeight() {
+  fun setWeight(weight: Float) {
     TODO()
   }
 
-  fun testMotion(): Boolean {
+  fun testMotion(
+    motion: Vector2,
+    infinite_inertia: Boolean,
+    margin: Float,
+    result: Physics2DTestMotionResult
+  ): Boolean {
     TODO()
   }
 

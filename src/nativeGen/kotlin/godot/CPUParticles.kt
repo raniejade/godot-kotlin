@@ -21,7 +21,7 @@ import kotlinx.cinterop.reinterpret
 open class CPUParticles internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
-  fun convertFromParticles() {
+  fun convertFromParticles(particles: Node) {
     TODO()
   }
 
@@ -97,19 +97,19 @@ open class CPUParticles internal constructor(
     TODO()
   }
 
-  fun getParam(): Float {
+  fun getParam(param: Int): Float {
     TODO()
   }
 
-  fun getParamCurve(): Curve {
+  fun getParamCurve(param: Int): Curve {
     TODO()
   }
 
-  fun getParamRandomness(): Float {
+  fun getParamRandomness(param: Int): Float {
     TODO()
   }
 
-  fun getParticleFlag(): Boolean {
+  fun getParticleFlag(flag: Int): Boolean {
     TODO()
   }
 
@@ -141,115 +141,115 @@ open class CPUParticles internal constructor(
     TODO()
   }
 
-  fun setAmount() {
+  fun setAmount(amount: Int) {
     TODO()
   }
 
-  fun setColor() {
+  fun setColor(color: Color) {
     TODO()
   }
 
-  fun setColorRamp() {
+  fun setColorRamp(ramp: Gradient) {
     TODO()
   }
 
-  fun setDrawOrder() {
+  fun setDrawOrder(order: Int) {
     TODO()
   }
 
-  fun setEmissionBoxExtents() {
+  fun setEmissionBoxExtents(extents: Vector3) {
     TODO()
   }
 
-  fun setEmissionColors() {
+  fun setEmissionColors(array: PoolColorArray) {
     TODO()
   }
 
-  fun setEmissionNormals() {
+  fun setEmissionNormals(array: PoolVector3Array) {
     TODO()
   }
 
-  fun setEmissionPoints() {
+  fun setEmissionPoints(array: PoolVector3Array) {
     TODO()
   }
 
-  fun setEmissionShape() {
+  fun setEmissionShape(shape: Int) {
     TODO()
   }
 
-  fun setEmissionSphereRadius() {
+  fun setEmissionSphereRadius(radius: Float) {
     TODO()
   }
 
-  fun setEmitting() {
+  fun setEmitting(emitting: Boolean) {
     TODO()
   }
 
-  fun setExplosivenessRatio() {
+  fun setExplosivenessRatio(ratio: Float) {
     TODO()
   }
 
-  fun setFixedFps() {
+  fun setFixedFps(fps: Int) {
     TODO()
   }
 
-  fun setFlatness() {
+  fun setFlatness(amount: Float) {
     TODO()
   }
 
-  fun setFractionalDelta() {
+  fun setFractionalDelta(enable: Boolean) {
     TODO()
   }
 
-  fun setGravity() {
+  fun setGravity(accel_vec: Vector3) {
     TODO()
   }
 
-  fun setLifetime() {
+  fun setLifetime(secs: Float) {
     TODO()
   }
 
-  fun setMesh() {
+  fun setMesh(mesh: Mesh) {
     TODO()
   }
 
-  fun setOneShot() {
+  fun setOneShot(enable: Boolean) {
     TODO()
   }
 
-  fun setParam() {
+  fun setParam(param: Int, value: Float) {
     TODO()
   }
 
-  fun setParamCurve() {
+  fun setParamCurve(param: Int, curve: Curve) {
     TODO()
   }
 
-  fun setParamRandomness() {
+  fun setParamRandomness(param: Int, randomness: Float) {
     TODO()
   }
 
-  fun setParticleFlag() {
+  fun setParticleFlag(flag: Int, enable: Boolean) {
     TODO()
   }
 
-  fun setPreProcessTime() {
+  fun setPreProcessTime(secs: Float) {
     TODO()
   }
 
-  fun setRandomnessRatio() {
+  fun setRandomnessRatio(ratio: Float) {
     TODO()
   }
 
-  fun setSpeedScale() {
+  fun setSpeedScale(scale: Float) {
     TODO()
   }
 
-  fun setSpread() {
+  fun setSpread(degrees: Float) {
     TODO()
   }
 
-  fun setUseLocalCoordinates() {
+  fun setUseLocalCoordinates(enable: Boolean) {
     TODO()
   }
 

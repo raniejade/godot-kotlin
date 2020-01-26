@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
 import godot.core.PoolStringArray
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,19 +21,19 @@ import kotlinx.cinterop.reinterpret
 open class Object internal constructor(
   internal val _handle: COpaquePointer
 ) {
-  fun addUserSignal() {
+  fun addUserSignal(signal: String, arguments: VariantArray) {
     TODO()
   }
 
-  fun call(): Variant {
+  fun call(method: String): Variant {
     TODO()
   }
 
-  fun callDeferred(): Variant {
+  fun callDeferred(method: String): Variant {
     TODO()
   }
 
-  fun callv(): Variant {
+  fun callv(method: String, arg_array: VariantArray): Variant {
     TODO()
   }
 
@@ -40,15 +41,25 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun connect(): Error {
+  fun connect(
+    signal: String,
+    target: Object,
+    method: String,
+    binds: VariantArray,
+    flags: Int
+  ): Error {
     TODO()
   }
 
-  fun disconnect() {
+  fun disconnect(
+    signal: String,
+    target: Object,
+    method: String
+  ) {
     TODO()
   }
 
-  fun emitSignal(): Variant {
+  fun emitSignal(signal: String): Variant {
     TODO()
   }
 
@@ -56,7 +67,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun get(): Variant {
+  fun get(property: String): Variant {
     TODO()
   }
 
@@ -68,7 +79,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun getIndexed(): Variant {
+  fun getIndexed(property: NodePath): Variant {
     TODO()
   }
 
@@ -76,7 +87,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun getMeta(): Variant {
+  fun getMeta(name: String): Variant {
     TODO()
   }
 
@@ -96,7 +107,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun getSignalConnectionList(): VariantArray {
+  fun getSignalConnectionList(signal: String): VariantArray {
     TODO()
   }
 
@@ -104,15 +115,15 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun hasMeta(): Boolean {
+  fun hasMeta(name: String): Boolean {
     TODO()
   }
 
-  fun hasMethod(): Boolean {
+  fun hasMethod(method: String): Boolean {
     TODO()
   }
 
-  fun hasUserSignal(): Boolean {
+  fun hasUserSignal(signal: String): Boolean {
     TODO()
   }
 
@@ -120,11 +131,15 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun isClass(): Boolean {
+  fun isClass(type: String): Boolean {
     TODO()
   }
 
-  fun isConnected(): Boolean {
+  fun isConnected(
+    signal: String,
+    target: Object,
+    method: String
+  ): Boolean {
     TODO()
   }
 
@@ -132,7 +147,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun notification() {
+  fun notification(what: Int, reversed: Boolean) {
     TODO()
   }
 
@@ -140,35 +155,35 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun removeMeta() {
+  fun removeMeta(name: String) {
     TODO()
   }
 
-  fun set() {
+  fun set(property: String, value: Variant) {
     TODO()
   }
 
-  fun setBlockSignals() {
+  fun setBlockSignals(enable: Boolean) {
     TODO()
   }
 
-  fun setDeferred() {
+  fun setDeferred(property: String, value: Variant) {
     TODO()
   }
 
-  fun setIndexed() {
+  fun setIndexed(property: NodePath, value: Variant) {
     TODO()
   }
 
-  fun setMessageTranslation() {
+  fun setMessageTranslation(enable: Boolean) {
     TODO()
   }
 
-  fun setMeta() {
+  fun setMeta(name: String, value: Variant) {
     TODO()
   }
 
-  fun setScript() {
+  fun setScript(script: Reference) {
     TODO()
   }
 
@@ -176,7 +191,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun tr(): String {
+  fun tr(message: String): String {
     TODO()
   }
 

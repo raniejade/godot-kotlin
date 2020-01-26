@@ -19,7 +19,7 @@ open class ScrollBar internal constructor(
     TODO()
   }
 
-  fun setCustomStep() {
+  fun setCustomStep(step: Float) {
     TODO()
   }
 

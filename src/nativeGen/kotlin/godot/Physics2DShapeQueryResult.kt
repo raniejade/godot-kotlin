@@ -20,19 +20,19 @@ open class Physics2DShapeQueryResult internal constructor(
     TODO()
   }
 
-  fun getResultObject(): Object {
+  fun getResultObject(idx: Int): Object {
     TODO()
   }
 
-  fun getResultObjectId(): Int {
+  fun getResultObjectId(idx: Int): Int {
     TODO()
   }
 
-  fun getResultObjectShape(): Int {
+  fun getResultObjectShape(idx: Int): Int {
     TODO()
   }
 
-  fun getResultRid(): RID {
+  fun getResultRid(idx: Int): RID {
     TODO()
   }
 

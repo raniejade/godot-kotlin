@@ -28,15 +28,15 @@ open class HeightMapShape internal constructor(
     TODO()
   }
 
-  fun setMapData() {
+  fun setMapData(data: PoolRealArray) {
     TODO()
   }
 
-  fun setMapDepth() {
+  fun setMapDepth(height: Int) {
     TODO()
   }
 
-  fun setMapWidth() {
+  fun setMapWidth(width: Int) {
     TODO()
   }
 

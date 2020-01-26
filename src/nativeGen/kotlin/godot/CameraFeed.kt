@@ -38,11 +38,11 @@ open class CameraFeed internal constructor(
     TODO()
   }
 
-  fun setActive() {
+  fun setActive(active: Boolean) {
     TODO()
   }
 
-  fun setTransform() {
+  fun setTransform(transform: Transform2D) {
     TODO()
   }
 

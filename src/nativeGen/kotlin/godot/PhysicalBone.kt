@@ -66,35 +66,35 @@ open class PhysicalBone internal constructor(
     TODO()
   }
 
-  fun setBodyOffset() {
+  fun setBodyOffset(offset: Transform) {
     TODO()
   }
 
-  fun setBounce() {
+  fun setBounce(bounce: Float) {
     TODO()
   }
 
-  fun setFriction() {
+  fun setFriction(friction: Float) {
     TODO()
   }
 
-  fun setGravityScale() {
+  fun setGravityScale(gravity_scale: Float) {
     TODO()
   }
 
-  fun setJointOffset() {
+  fun setJointOffset(offset: Transform) {
     TODO()
   }
 
-  fun setJointType() {
+  fun setJointType(joint_type: Int) {
     TODO()
   }
 
-  fun setMass() {
+  fun setMass(mass: Float) {
     TODO()
   }
 
-  fun setWeight() {
+  fun setWeight(weight: Float) {
     TODO()
   }
 

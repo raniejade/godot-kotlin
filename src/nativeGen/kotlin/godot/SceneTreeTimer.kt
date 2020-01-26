@@ -19,7 +19,7 @@ open class SceneTreeTimer internal constructor(
     TODO()
   }
 
-  fun setTimeLeft() {
+  fun setTimeLeft(time: Float) {
     TODO()
   }
 

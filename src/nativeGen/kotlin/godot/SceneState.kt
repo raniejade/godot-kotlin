@@ -21,7 +21,7 @@ import kotlinx.cinterop.reinterpret
 open class SceneState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun getConnectionBinds(): VariantArray {
+  fun getConnectionBinds(idx: Int): VariantArray {
     TODO()
   }
 
@@ -29,23 +29,23 @@ open class SceneState internal constructor(
     TODO()
   }
 
-  fun getConnectionFlags(): Int {
+  fun getConnectionFlags(idx: Int): Int {
     TODO()
   }
 
-  fun getConnectionMethod(): String {
+  fun getConnectionMethod(idx: Int): String {
     TODO()
   }
 
-  fun getConnectionSignal(): String {
+  fun getConnectionSignal(idx: Int): String {
     TODO()
   }
 
-  fun getConnectionSource(): NodePath {
+  fun getConnectionSource(idx: Int): NodePath {
     TODO()
   }
 
-  fun getConnectionTarget(): NodePath {
+  fun getConnectionTarget(idx: Int): NodePath {
     TODO()
   }
 
@@ -53,51 +53,51 @@ open class SceneState internal constructor(
     TODO()
   }
 
-  fun getNodeGroups(): PoolStringArray {
+  fun getNodeGroups(idx: Int): PoolStringArray {
     TODO()
   }
 
-  fun getNodeIndex(): Int {
+  fun getNodeIndex(idx: Int): Int {
     TODO()
   }
 
-  fun getNodeInstance(): PackedScene {
+  fun getNodeInstance(idx: Int): PackedScene {
     TODO()
   }
 
-  fun getNodeInstancePlaceholder(): String {
+  fun getNodeInstancePlaceholder(idx: Int): String {
     TODO()
   }
 
-  fun getNodeName(): String {
+  fun getNodeName(idx: Int): String {
     TODO()
   }
 
-  fun getNodeOwnerPath(): NodePath {
+  fun getNodeOwnerPath(idx: Int): NodePath {
     TODO()
   }
 
-  fun getNodePath(): NodePath {
+  fun getNodePath(idx: Int, for_parent: Boolean): NodePath {
     TODO()
   }
 
-  fun getNodePropertyCount(): Int {
+  fun getNodePropertyCount(idx: Int): Int {
     TODO()
   }
 
-  fun getNodePropertyName(): String {
+  fun getNodePropertyName(idx: Int, prop_idx: Int): String {
     TODO()
   }
 
-  fun getNodePropertyValue(): Variant {
+  fun getNodePropertyValue(idx: Int, prop_idx: Int): Variant {
     TODO()
   }
 
-  fun getNodeType(): String {
+  fun getNodeType(idx: Int): String {
     TODO()
   }
 
-  fun isNodeInstancePlaceholder(): Boolean {
+  fun isNodeInstancePlaceholder(idx: Int): Boolean {
     TODO()
   }
 

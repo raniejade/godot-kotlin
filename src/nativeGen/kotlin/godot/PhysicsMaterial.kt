@@ -32,19 +32,19 @@ open class PhysicsMaterial internal constructor(
     TODO()
   }
 
-  fun setAbsorbent() {
+  fun setAbsorbent(absorbent: Boolean) {
     TODO()
   }
 
-  fun setBounce() {
+  fun setBounce(bounce: Float) {
     TODO()
   }
 
-  fun setFriction() {
+  fun setFriction(friction: Float) {
     TODO()
   }
 
-  fun setRough() {
+  fun setRough(rough: Boolean) {
     TODO()
   }
 

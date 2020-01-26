@@ -24,11 +24,11 @@ open class ViewportContainer internal constructor(
     TODO()
   }
 
-  fun setStretch() {
+  fun setStretch(enable: Boolean) {
     TODO()
   }
 
-  fun setStretchShrink() {
+  fun setStretchShrink(amount: Int) {
     TODO()
   }
 

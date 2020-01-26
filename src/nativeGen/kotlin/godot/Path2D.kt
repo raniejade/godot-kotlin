@@ -18,7 +18,7 @@ open class Path2D internal constructor(
     TODO()
   }
 
-  fun setCurve() {
+  fun setCurve(curve: Curve2D) {
     TODO()
   }
 

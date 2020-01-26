@@ -19,7 +19,7 @@ open class ConcavePolygonShape internal constructor(
     TODO()
   }
 
-  fun setFaces() {
+  fun setFaces(faces: PoolVector3Array) {
     TODO()
   }
 

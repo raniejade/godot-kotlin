@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -24,11 +25,11 @@ open class VisualScriptLocalVarSet internal constructor(
     TODO()
   }
 
-  fun setVarName() {
+  fun setVarName(name: String) {
     TODO()
   }
 
-  fun setVarType() {
+  fun setVarType(type: Int) {
     TODO()
   }
 

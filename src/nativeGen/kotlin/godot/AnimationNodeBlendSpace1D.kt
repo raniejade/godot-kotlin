@@ -17,7 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeBlendSpace1D internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
-  fun addBlendPoint() {
+  fun addBlendPoint(
+    node: AnimationRootNode,
+    pos: Float,
+    at_index: Int
+  ) {
     TODO()
   }
 
@@ -25,11 +29,11 @@ open class AnimationNodeBlendSpace1D internal constructor(
     TODO()
   }
 
-  fun getBlendPointNode(): AnimationRootNode {
+  fun getBlendPointNode(point: Int): AnimationRootNode {
     TODO()
   }
 
-  fun getBlendPointPosition(): Float {
+  fun getBlendPointPosition(point: Int): Float {
     TODO()
   }
 
@@ -49,31 +53,31 @@ open class AnimationNodeBlendSpace1D internal constructor(
     TODO()
   }
 
-  fun removeBlendPoint() {
+  fun removeBlendPoint(point: Int) {
     TODO()
   }
 
-  fun setBlendPointNode() {
+  fun setBlendPointNode(point: Int, node: AnimationRootNode) {
     TODO()
   }
 
-  fun setBlendPointPosition() {
+  fun setBlendPointPosition(point: Int, pos: Float) {
     TODO()
   }
 
-  fun setMaxSpace() {
+  fun setMaxSpace(max_space: Float) {
     TODO()
   }
 
-  fun setMinSpace() {
+  fun setMinSpace(min_space: Float) {
     TODO()
   }
 
-  fun setSnap() {
+  fun setSnap(snap: Float) {
     TODO()
   }
 
-  fun setValueLabel() {
+  fun setValueLabel(text: String) {
     TODO()
   }
 

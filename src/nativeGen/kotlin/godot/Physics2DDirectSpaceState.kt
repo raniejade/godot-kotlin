@@ -5,6 +5,9 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,31 +19,53 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DDirectSpaceState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun castMotion(): VariantArray {
+  fun castMotion(shape: Physics2DShapeQueryParameters): VariantArray {
     TODO()
   }
 
-  fun collideShape(): VariantArray {
+  fun collideShape(shape: Physics2DShapeQueryParameters, max_results: Int): VariantArray {
     TODO()
   }
 
-  fun getRestInfo(): Dictionary {
+  fun getRestInfo(shape: Physics2DShapeQueryParameters): Dictionary {
     TODO()
   }
 
-  fun intersectPoint(): VariantArray {
+  fun intersectPoint(
+    point: Vector2,
+    max_results: Int,
+    exclude: VariantArray,
+    collision_layer: Int,
+    collide_with_bodies: Boolean,
+    collide_with_areas: Boolean
+  ): VariantArray {
     TODO()
   }
 
-  fun intersectPointOnCanvas(): VariantArray {
+  fun intersectPointOnCanvas(
+    point: Vector2,
+    canvas_instance_id: Int,
+    max_results: Int,
+    exclude: VariantArray,
+    collision_layer: Int,
+    collide_with_bodies: Boolean,
+    collide_with_areas: Boolean
+  ): VariantArray {
     TODO()
   }
 
-  fun intersectRay(): Dictionary {
+  fun intersectRay(
+    from: Vector2,
+    to: Vector2,
+    exclude: VariantArray,
+    collision_layer: Int,
+    collide_with_bodies: Boolean,
+    collide_with_areas: Boolean
+  ): Dictionary {
     TODO()
   }
 
-  fun intersectShape(): VariantArray {
+  fun intersectShape(shape: Physics2DShapeQueryParameters, max_results: Int): VariantArray {
     TODO()
   }
 

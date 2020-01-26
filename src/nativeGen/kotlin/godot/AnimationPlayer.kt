@@ -20,19 +20,19 @@ import kotlinx.cinterop.reinterpret
 open class AnimationPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun addAnimation(): Error {
+  fun addAnimation(name: String, animation: Animation): Error {
     TODO()
   }
 
-  fun advance() {
+  fun advance(delta: Float) {
     TODO()
   }
 
-  fun animationGetNext(): String {
+  fun animationGetNext(anim_from: String): String {
     TODO()
   }
 
-  fun animationSetNext() {
+  fun animationSetNext(anim_from: String, anim_to: String) {
     TODO()
   }
 
@@ -44,11 +44,11 @@ open class AnimationPlayer internal constructor(
     TODO()
   }
 
-  fun findAnimation(): String {
+  fun findAnimation(animation: Animation): String {
     TODO()
   }
 
-  fun getAnimation(): Animation {
+  fun getAnimation(name: String): Animation {
     TODO()
   }
 
@@ -68,7 +68,7 @@ open class AnimationPlayer internal constructor(
     TODO()
   }
 
-  fun getBlendTime(): Float {
+  fun getBlendTime(anim_from: String, anim_to: String): Float {
     TODO()
   }
 
@@ -104,7 +104,7 @@ open class AnimationPlayer internal constructor(
     TODO()
   }
 
-  fun hasAnimation(): Boolean {
+  fun hasAnimation(name: String): Boolean {
     TODO()
   }
 
@@ -116,67 +116,76 @@ open class AnimationPlayer internal constructor(
     TODO()
   }
 
-  fun play() {
+  fun play(
+    name: String,
+    custom_blend: Float,
+    custom_speed: Float,
+    from_end: Boolean
+  ) {
     TODO()
   }
 
-  fun playBackwards() {
+  fun playBackwards(name: String, custom_blend: Float) {
     TODO()
   }
 
-  fun queue() {
+  fun queue(name: String) {
     TODO()
   }
 
-  fun removeAnimation() {
+  fun removeAnimation(name: String) {
     TODO()
   }
 
-  fun renameAnimation() {
+  fun renameAnimation(name: String, newname: String) {
     TODO()
   }
 
-  fun seek() {
+  fun seek(seconds: Float, update: Boolean) {
     TODO()
   }
 
-  fun setActive() {
+  fun setActive(active: Boolean) {
     TODO()
   }
 
-  fun setAnimationProcessMode() {
+  fun setAnimationProcessMode(mode: Int) {
     TODO()
   }
 
-  fun setAssignedAnimation() {
+  fun setAssignedAnimation(anim: String) {
     TODO()
   }
 
-  fun setAutoplay() {
+  fun setAutoplay(name: String) {
     TODO()
   }
 
-  fun setBlendTime() {
+  fun setBlendTime(
+    anim_from: String,
+    anim_to: String,
+    sec: Float
+  ) {
     TODO()
   }
 
-  fun setCurrentAnimation() {
+  fun setCurrentAnimation(anim: String) {
     TODO()
   }
 
-  fun setDefaultBlendTime() {
+  fun setDefaultBlendTime(sec: Float) {
     TODO()
   }
 
-  fun setRoot() {
+  fun setRoot(path: NodePath) {
     TODO()
   }
 
-  fun setSpeedScale() {
+  fun setSpeedScale(speed: Float) {
     TODO()
   }
 
-  fun stop() {
+  fun stop(reset: Boolean) {
     TODO()
   }
 

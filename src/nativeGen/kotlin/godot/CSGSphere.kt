@@ -37,23 +37,23 @@ open class CSGSphere internal constructor(
     TODO()
   }
 
-  fun setMaterial() {
+  fun setMaterial(material: Material) {
     TODO()
   }
 
-  fun setRadialSegments() {
+  fun setRadialSegments(radial_segments: Int) {
     TODO()
   }
 
-  fun setRadius() {
+  fun setRadius(radius: Float) {
     TODO()
   }
 
-  fun setRings() {
+  fun setRings(rings: Int) {
     TODO()
   }
 
-  fun setSmoothFaces() {
+  fun setSmoothFaces(smooth_faces: Boolean) {
     TODO()
   }
 

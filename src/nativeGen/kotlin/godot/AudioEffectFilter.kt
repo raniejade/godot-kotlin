@@ -32,19 +32,19 @@ open class AudioEffectFilter internal constructor(
     TODO()
   }
 
-  fun setCutoff() {
+  fun setCutoff(freq: Float) {
     TODO()
   }
 
-  fun setDb() {
+  fun setDb(amount: Int) {
     TODO()
   }
 
-  fun setGain() {
+  fun setGain(amount: Float) {
     TODO()
   }
 
-  fun setResonance() {
+  fun setResonance(amount: Float) {
     TODO()
   }
 

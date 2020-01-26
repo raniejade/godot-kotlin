@@ -19,7 +19,7 @@ open class VisualShaderNodeBooleanConstant internal constructor(
     TODO()
   }
 
-  fun setConstant() {
+  fun setConstant(value: Boolean) {
     TODO()
   }
 

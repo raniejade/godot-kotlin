@@ -32,19 +32,19 @@ open class CubeMesh internal constructor(
     TODO()
   }
 
-  fun setSize() {
+  fun setSize(size: Vector3) {
     TODO()
   }
 
-  fun setSubdivideDepth() {
+  fun setSubdivideDepth(divisions: Int) {
     TODO()
   }
 
-  fun setSubdivideHeight() {
+  fun setSubdivideHeight(divisions: Int) {
     TODO()
   }
 
-  fun setSubdivideWidth() {
+  fun setSubdivideWidth(subdivide: Int) {
     TODO()
   }
 

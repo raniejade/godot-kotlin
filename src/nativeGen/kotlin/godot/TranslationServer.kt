@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class TranslationServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addTranslation() {
+  fun addTranslation(translation: Translation) {
     TODO()
   }
 
@@ -32,19 +32,19 @@ open class TranslationServer internal constructor(
     TODO()
   }
 
-  fun getLocaleName(): String {
+  fun getLocaleName(locale: String): String {
     TODO()
   }
 
-  fun removeTranslation() {
+  fun removeTranslation(translation: Translation) {
     TODO()
   }
 
-  fun setLocale() {
+  fun setLocale(locale: String) {
     TODO()
   }
 
-  fun translate(): String {
+  fun translate(message: String): String {
     TODO()
   }
 

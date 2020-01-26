@@ -19,7 +19,7 @@ open class InputEventPanGesture internal constructor(
     TODO()
   }
 
-  fun setDelta() {
+  fun setDelta(delta: Vector2) {
     TODO()
   }
 

@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun getBone(): Bone2D {
+  fun getBone(idx: Int): Bone2D {
     TODO()
   }
 

@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileSystem internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun getFileType(): String {
+  fun getFileType(path: String): String {
     TODO()
   }
 
@@ -25,7 +25,7 @@ open class EditorFileSystem internal constructor(
     TODO()
   }
 
-  fun getFilesystemPath(): EditorFileSystemDirectory {
+  fun getFilesystemPath(path: String): EditorFileSystemDirectory {
     TODO()
   }
 
@@ -45,7 +45,7 @@ open class EditorFileSystem internal constructor(
     TODO()
   }
 
-  fun updateFile() {
+  fun updateFile(path: String) {
     TODO()
   }
 

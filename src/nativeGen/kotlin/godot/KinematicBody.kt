@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
@@ -18,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class KinematicBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
-  fun getAxisLock(): Boolean {
+  fun getAxisLock(axis: Int): Boolean {
     TODO()
   }
 
@@ -30,7 +31,7 @@ open class KinematicBody internal constructor(
     TODO()
   }
 
-  fun getSlideCollision(): KinematicCollision {
+  fun getSlideCollision(slide_idx: Int): KinematicCollision {
     TODO()
   }
 
@@ -50,27 +51,51 @@ open class KinematicBody internal constructor(
     TODO()
   }
 
-  fun moveAndCollide(): KinematicCollision {
+  fun moveAndCollide(
+    rel_vec: Vector3,
+    infinite_inertia: Boolean,
+    exclude_raycast_shapes: Boolean,
+    test_only: Boolean
+  ): KinematicCollision {
     TODO()
   }
 
-  fun moveAndSlide(): Vector3 {
+  fun moveAndSlide(
+    linear_velocity: Vector3,
+    floor_normal: Vector3,
+    stop_on_slope: Boolean,
+    max_slides: Int,
+    floor_max_angle: Float,
+    infinite_inertia: Boolean
+  ): Vector3 {
     TODO()
   }
 
-  fun moveAndSlideWithSnap(): Vector3 {
+  fun moveAndSlideWithSnap(
+    linear_velocity: Vector3,
+    snap: Vector3,
+    floor_normal: Vector3,
+    stop_on_slope: Boolean,
+    max_slides: Int,
+    floor_max_angle: Float,
+    infinite_inertia: Boolean
+  ): Vector3 {
     TODO()
   }
 
-  fun setAxisLock() {
+  fun setAxisLock(axis: Int, lock: Boolean) {
     TODO()
   }
 
-  fun setSafeMargin() {
+  fun setSafeMargin(pixels: Float) {
     TODO()
   }
 
-  fun testMove(): Boolean {
+  fun testMove(
+    from: Transform,
+    rel_vec: Vector3,
+    infinite_inertia: Boolean
+  ): Boolean {
     TODO()
   }
 

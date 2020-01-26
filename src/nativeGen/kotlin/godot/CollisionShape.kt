@@ -27,15 +27,15 @@ open class CollisionShape internal constructor(
     TODO()
   }
 
-  fun resourceChanged() {
+  fun resourceChanged(resource: Resource) {
     TODO()
   }
 
-  fun setDisabled() {
+  fun setDisabled(enable: Boolean) {
     TODO()
   }
 
-  fun setShape() {
+  fun setShape(shape: Shape) {
     TODO()
   }
 

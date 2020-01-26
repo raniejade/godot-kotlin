@@ -24,11 +24,11 @@ open class InputEventJoypadMotion internal constructor(
     TODO()
   }
 
-  fun setAxis() {
+  fun setAxis(axis: Int) {
     TODO()
   }
 
-  fun setAxisValue() {
+  fun setAxisValue(axis_value: Float) {
     TODO()
   }
 

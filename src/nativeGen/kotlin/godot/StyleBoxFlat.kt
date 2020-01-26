@@ -35,7 +35,7 @@ open class StyleBoxFlat internal constructor(
     TODO()
   }
 
-  fun getBorderWidth(): Int {
+  fun getBorderWidth(margin: Int): Int {
     TODO()
   }
 
@@ -47,11 +47,11 @@ open class StyleBoxFlat internal constructor(
     TODO()
   }
 
-  fun getCornerRadius(): Int {
+  fun getCornerRadius(corner: Int): Int {
     TODO()
   }
 
-  fun getExpandMargin(): Float {
+  fun getExpandMargin(margin: Int): Float {
     TODO()
   }
 
@@ -75,75 +75,85 @@ open class StyleBoxFlat internal constructor(
     TODO()
   }
 
-  fun setAaSize() {
+  fun setAaSize(size: Int) {
     TODO()
   }
 
-  fun setAntiAliased() {
+  fun setAntiAliased(anti_aliased: Boolean) {
     TODO()
   }
 
-  fun setBgColor() {
+  fun setBgColor(color: Color) {
     TODO()
   }
 
-  fun setBorderBlend() {
+  fun setBorderBlend(blend: Boolean) {
     TODO()
   }
 
-  fun setBorderColor() {
+  fun setBorderColor(color: Color) {
     TODO()
   }
 
-  fun setBorderWidth() {
+  fun setBorderWidth(margin: Int, width: Int) {
     TODO()
   }
 
-  fun setBorderWidthAll() {
+  fun setBorderWidthAll(width: Int) {
     TODO()
   }
 
-  fun setCornerDetail() {
+  fun setCornerDetail(detail: Int) {
     TODO()
   }
 
-  fun setCornerRadius() {
+  fun setCornerRadius(corner: Int, radius: Int) {
     TODO()
   }
 
-  fun setCornerRadiusAll() {
+  fun setCornerRadiusAll(radius: Int) {
     TODO()
   }
 
-  fun setCornerRadiusIndividual() {
+  fun setCornerRadiusIndividual(
+    radius_top_left: Int,
+    radius_top_right: Int,
+    radius_bottom_right: Int,
+    radius_bottom_left: Int
+  ) {
     TODO()
   }
 
-  fun setDrawCenter() {
+  fun setDrawCenter(draw_center: Boolean) {
     TODO()
   }
 
-  fun setExpandMargin() {
+  fun setExpandMargin(margin: Int, size: Float) {
     TODO()
   }
 
-  fun setExpandMarginAll() {
+  fun setExpandMarginAll(size: Float) {
     TODO()
   }
 
-  fun setExpandMarginIndividual() {
+  fun setExpandMarginIndividual(
+    size_left: Float,
+    size_top: Float,
+    size_right: Float,
+    size_bottom: Float
+  ) {
     TODO()
   }
 
-  fun setShadowColor() {
+  fun setShadowColor(color: Color) {
     TODO()
   }
 
-  fun setShadowOffset() {
+  fun setShadowOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setShadowSize() {
+  fun setShadowSize(size: Int) {
     TODO()
   }
 

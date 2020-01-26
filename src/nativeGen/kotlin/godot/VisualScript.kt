@@ -20,171 +20,234 @@ import kotlinx.cinterop.reinterpret
 open class VisualScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
-  fun addCustomSignal() {
+  fun addCustomSignal(name: String) {
     TODO()
   }
 
-  fun addFunction() {
+  fun addFunction(name: String) {
     TODO()
   }
 
-  fun addNode() {
+  fun addNode(
+    func: String,
+    id: Int,
+    node: VisualScriptNode,
+    position: Vector2
+  ) {
     TODO()
   }
 
-  fun addVariable() {
+  fun addVariable(
+    name: String,
+    default_value: Variant,
+    export: Boolean
+  ) {
     TODO()
   }
 
-  fun customSignalAddArgument() {
+  fun customSignalAddArgument(
+    name: String,
+    type: Int,
+    argname: String,
+    index: Int
+  ) {
     TODO()
   }
 
-  fun customSignalGetArgumentCount(): Int {
+  fun customSignalGetArgumentCount(name: String): Int {
     TODO()
   }
 
-  fun customSignalGetArgumentName(): String {
+  fun customSignalGetArgumentName(name: String, argidx: Int): String {
     TODO()
   }
 
-  fun customSignalGetArgumentType(): Variant.Type {
+  fun customSignalGetArgumentType(name: String, argidx: Int): Variant.Type {
     TODO()
   }
 
-  fun customSignalRemoveArgument() {
+  fun customSignalRemoveArgument(name: String, argidx: Int) {
     TODO()
   }
 
-  fun customSignalSetArgumentName() {
+  fun customSignalSetArgumentName(
+    name: String,
+    argidx: Int,
+    argname: String
+  ) {
     TODO()
   }
 
-  fun customSignalSetArgumentType() {
+  fun customSignalSetArgumentType(
+    name: String,
+    argidx: Int,
+    type: Int
+  ) {
     TODO()
   }
 
-  fun customSignalSwapArgument() {
+  fun customSignalSwapArgument(
+    name: String,
+    argidx: Int,
+    withidx: Int
+  ) {
     TODO()
   }
 
-  fun dataConnect() {
+  fun dataConnect(
+    func: String,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ) {
     TODO()
   }
 
-  fun dataDisconnect() {
+  fun dataDisconnect(
+    func: String,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ) {
     TODO()
   }
 
-  fun getFunctionNodeId(): Int {
+  fun getFunctionNodeId(name: String): Int {
     TODO()
   }
 
-  fun getFunctionScroll(): Vector2 {
+  fun getFunctionScroll(name: String): Vector2 {
     TODO()
   }
 
-  fun getNode(): VisualScriptNode {
+  fun getNode(func: String, id: Int): VisualScriptNode {
     TODO()
   }
 
-  fun getNodePosition(): Vector2 {
+  fun getNodePosition(func: String, id: Int): Vector2 {
     TODO()
   }
 
-  fun getVariableDefaultValue(): Variant {
+  fun getVariableDefaultValue(name: String): Variant {
     TODO()
   }
 
-  fun getVariableExport(): Boolean {
+  fun getVariableExport(name: String): Boolean {
     TODO()
   }
 
-  fun getVariableInfo(): Dictionary {
+  fun getVariableInfo(name: String): Dictionary {
     TODO()
   }
 
-  fun hasCustomSignal(): Boolean {
+  fun hasCustomSignal(name: String): Boolean {
     TODO()
   }
 
-  fun hasDataConnection(): Boolean {
+  fun hasDataConnection(
+    func: String,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ): Boolean {
     TODO()
   }
 
-  fun hasFunction(): Boolean {
+  fun hasFunction(name: String): Boolean {
     TODO()
   }
 
-  fun hasNode(): Boolean {
+  fun hasNode(func: String, id: Int): Boolean {
     TODO()
   }
 
-  fun hasSequenceConnection(): Boolean {
+  fun hasSequenceConnection(
+    func: String,
+    from_node: Int,
+    from_output: Int,
+    to_node: Int
+  ): Boolean {
     TODO()
   }
 
-  fun hasVariable(): Boolean {
+  fun hasVariable(name: String): Boolean {
     TODO()
   }
 
-  fun removeCustomSignal() {
+  fun removeCustomSignal(name: String) {
     TODO()
   }
 
-  fun removeFunction() {
+  fun removeFunction(name: String) {
     TODO()
   }
 
-  fun removeNode() {
+  fun removeNode(func: String, id: Int) {
     TODO()
   }
 
-  fun removeVariable() {
+  fun removeVariable(name: String) {
     TODO()
   }
 
-  fun renameCustomSignal() {
+  fun renameCustomSignal(name: String, new_name: String) {
     TODO()
   }
 
-  fun renameFunction() {
+  fun renameFunction(name: String, new_name: String) {
     TODO()
   }
 
-  fun renameVariable() {
+  fun renameVariable(name: String, new_name: String) {
     TODO()
   }
 
-  fun sequenceConnect() {
+  fun sequenceConnect(
+    func: String,
+    from_node: Int,
+    from_output: Int,
+    to_node: Int
+  ) {
     TODO()
   }
 
-  fun sequenceDisconnect() {
+  fun sequenceDisconnect(
+    func: String,
+    from_node: Int,
+    from_output: Int,
+    to_node: Int
+  ) {
     TODO()
   }
 
-  fun setFunctionScroll() {
+  fun setFunctionScroll(name: String, ofs: Vector2) {
     TODO()
   }
 
-  fun setInstanceBaseType() {
+  fun setInstanceBaseType(type: String) {
     TODO()
   }
 
-  fun setNodePosition() {
+  fun setNodePosition(
+    func: String,
+    id: Int,
+    position: Vector2
+  ) {
     TODO()
   }
 
-  fun setVariableDefaultValue() {
+  fun setVariableDefaultValue(name: String, value: Variant) {
     TODO()
   }
 
-  fun setVariableExport() {
+  fun setVariableExport(name: String, enable: Boolean) {
     TODO()
   }
 
-  fun setVariableInfo() {
+  fun setVariableInfo(name: String, value: Dictionary) {
     TODO()
   }
 

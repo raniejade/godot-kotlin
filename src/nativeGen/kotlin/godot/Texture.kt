@@ -2,7 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Rect2
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -17,15 +20,36 @@ import kotlinx.cinterop.reinterpret
 open class Texture internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun draw() {
+  fun draw(
+    canvas_item: RID,
+    position: Vector2,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: Texture
+  ) {
     TODO()
   }
 
-  fun drawRect() {
+  fun drawRect(
+    canvas_item: RID,
+    rect: Rect2,
+    tile: Boolean,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: Texture
+  ) {
     TODO()
   }
 
-  fun drawRectRegion() {
+  fun drawRectRegion(
+    canvas_item: RID,
+    rect: Rect2,
+    src_rect: Rect2,
+    modulate: Color,
+    transpose: Boolean,
+    normal_map: Texture,
+    clip_uv: Boolean
+  ) {
     TODO()
   }
 
@@ -53,7 +77,7 @@ open class Texture internal constructor(
     TODO()
   }
 
-  fun setFlags() {
+  fun setFlags(flags: Int) {
     TODO()
   }
 

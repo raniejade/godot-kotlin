@@ -3,9 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,15 +20,15 @@ import kotlinx.cinterop.reinterpret
 open class BitMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun create() {
+  fun create(size: Vector2) {
     TODO()
   }
 
-  fun createFromImageAlpha() {
+  fun createFromImageAlpha(image: Image, threshold: Float) {
     TODO()
   }
 
-  fun getBit(): Boolean {
+  fun getBit(position: Vector2): Boolean {
     TODO()
   }
 
@@ -38,19 +40,19 @@ open class BitMap internal constructor(
     TODO()
   }
 
-  fun growMask() {
+  fun growMask(pixels: Int, rect: Rect2) {
     TODO()
   }
 
-  fun opaqueToPolygons(): VariantArray {
+  fun opaqueToPolygons(rect: Rect2, epsilon: Float): VariantArray {
     TODO()
   }
 
-  fun setBit() {
+  fun setBit(position: Vector2, bit: Boolean) {
     TODO()
   }
 
-  fun setBitRect() {
+  fun setBitRect(rect: Rect2, bit: Boolean) {
     TODO()
   }
 

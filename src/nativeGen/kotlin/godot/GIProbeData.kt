@@ -64,47 +64,47 @@ open class GIProbeData internal constructor(
     TODO()
   }
 
-  fun setBias() {
+  fun setBias(bias: Float) {
     TODO()
   }
 
-  fun setBounds() {
+  fun setBounds(bounds: AABB) {
     TODO()
   }
 
-  fun setCellSize() {
+  fun setCellSize(cell_size: Float) {
     TODO()
   }
 
-  fun setCompress() {
+  fun setCompress(compress: Boolean) {
     TODO()
   }
 
-  fun setDynamicData() {
+  fun setDynamicData(dynamic_data: PoolIntArray) {
     TODO()
   }
 
-  fun setDynamicRange() {
+  fun setDynamicRange(dynamic_range: Int) {
     TODO()
   }
 
-  fun setEnergy() {
+  fun setEnergy(energy: Float) {
     TODO()
   }
 
-  fun setInterior() {
+  fun setInterior(interior: Boolean) {
     TODO()
   }
 
-  fun setNormalBias() {
+  fun setNormalBias(bias: Float) {
     TODO()
   }
 
-  fun setPropagation() {
+  fun setPropagation(propagation: Float) {
     TODO()
   }
 
-  fun setToCellXform() {
+  fun setToCellXform(to_cell_xform: Transform) {
     TODO()
   }
 

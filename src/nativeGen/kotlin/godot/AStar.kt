@@ -21,11 +21,15 @@ import kotlinx.cinterop.reinterpret
 open class AStar internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addPoint() {
+  fun addPoint(
+    id: Int,
+    position: Vector3,
+    weight_scale: Float
+  ) {
     TODO()
   }
 
-  fun arePointsConnected(): Boolean {
+  fun arePointsConnected(id: Int, to_id: Int): Boolean {
     TODO()
   }
 
@@ -33,11 +37,15 @@ open class AStar internal constructor(
     TODO()
   }
 
-  fun connectPoints() {
+  fun connectPoints(
+    id: Int,
+    to_id: Int,
+    bidirectional: Boolean
+  ) {
     TODO()
   }
 
-  fun disconnectPoints() {
+  fun disconnectPoints(id: Int, to_id: Int) {
     TODO()
   }
 
@@ -45,31 +53,31 @@ open class AStar internal constructor(
     TODO()
   }
 
-  fun getClosestPoint(): Int {
+  fun getClosestPoint(to_position: Vector3): Int {
     TODO()
   }
 
-  fun getClosestPositionInSegment(): Vector3 {
+  fun getClosestPositionInSegment(to_position: Vector3): Vector3 {
     TODO()
   }
 
-  fun getIdPath(): PoolIntArray {
+  fun getIdPath(from_id: Int, to_id: Int): PoolIntArray {
     TODO()
   }
 
-  fun getPointConnections(): PoolIntArray {
+  fun getPointConnections(id: Int): PoolIntArray {
     TODO()
   }
 
-  fun getPointPath(): PoolVector3Array {
+  fun getPointPath(from_id: Int, to_id: Int): PoolVector3Array {
     TODO()
   }
 
-  fun getPointPosition(): Vector3 {
+  fun getPointPosition(id: Int): Vector3 {
     TODO()
   }
 
-  fun getPointWeightScale(): Float {
+  fun getPointWeightScale(id: Int): Float {
     TODO()
   }
 
@@ -77,27 +85,27 @@ open class AStar internal constructor(
     TODO()
   }
 
-  fun hasPoint(): Boolean {
+  fun hasPoint(id: Int): Boolean {
     TODO()
   }
 
-  fun isPointDisabled(): Boolean {
+  fun isPointDisabled(id: Int): Boolean {
     TODO()
   }
 
-  fun removePoint() {
+  fun removePoint(id: Int) {
     TODO()
   }
 
-  fun setPointDisabled() {
+  fun setPointDisabled(id: Int, disabled: Boolean) {
     TODO()
   }
 
-  fun setPointPosition() {
+  fun setPointPosition(id: Int, position: Vector3) {
     TODO()
   }
 
-  fun setPointWeightScale() {
+  fun setPointWeightScale(id: Int, weight_scale: Float) {
     TODO()
   }
 

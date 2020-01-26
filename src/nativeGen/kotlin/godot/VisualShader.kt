@@ -19,23 +19,52 @@ import kotlinx.cinterop.reinterpret
 open class VisualShader internal constructor(
   _handle: COpaquePointer
 ) : Shader(_handle) {
-  fun addNode() {
+  fun addNode(
+    type: Int,
+    node: VisualShaderNode,
+    position: Vector2,
+    id: Int
+  ) {
     TODO()
   }
 
-  fun canConnectNodes(): Boolean {
+  fun canConnectNodes(
+    type: Int,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ): Boolean {
     TODO()
   }
 
-  fun connectNodes(): Error {
+  fun connectNodes(
+    type: Int,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ): Error {
     TODO()
   }
 
-  fun connectNodesForced() {
+  fun connectNodesForced(
+    type: Int,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ) {
     TODO()
   }
 
-  fun disconnectNodes() {
+  fun disconnectNodes(
+    type: Int,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ) {
     TODO()
   }
 
@@ -43,27 +72,33 @@ open class VisualShader internal constructor(
     TODO()
   }
 
-  fun getNode(): VisualShaderNode {
+  fun getNode(type: Int, id: Int): VisualShaderNode {
     TODO()
   }
 
-  fun getNodeConnections(): VariantArray {
+  fun getNodeConnections(type: Int): VariantArray {
     TODO()
   }
 
-  fun getNodeList(): PoolIntArray {
+  fun getNodeList(type: Int): PoolIntArray {
     TODO()
   }
 
-  fun getNodePosition(): Vector2 {
+  fun getNodePosition(type: Int, id: Int): Vector2 {
     TODO()
   }
 
-  fun getValidNodeId(): Int {
+  fun getValidNodeId(type: Int): Int {
     TODO()
   }
 
-  fun isNodeConnection(): Boolean {
+  fun isNodeConnection(
+    type: Int,
+    from_node: Int,
+    from_port: Int,
+    to_node: Int,
+    to_port: Int
+  ): Boolean {
     TODO()
   }
 
@@ -71,19 +106,23 @@ open class VisualShader internal constructor(
     TODO()
   }
 
-  fun removeNode() {
+  fun removeNode(type: Int, id: Int) {
     TODO()
   }
 
-  fun setGraphOffset() {
+  fun setGraphOffset(offset: Vector2) {
     TODO()
   }
 
-  fun setMode() {
+  fun setMode(mode: Int) {
     TODO()
   }
 
-  fun setNodePosition() {
+  fun setNodePosition(
+    type: Int,
+    id: Int,
+    position: Vector2
+  ) {
     TODO()
   }
 

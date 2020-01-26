@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector3Array
+import godot.core.RID
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,27 +18,41 @@ import kotlinx.cinterop.reinterpret
 open class EditorSpatialGizmo internal constructor(
   _handle: COpaquePointer
 ) : SpatialGizmo(_handle) {
-  fun addCollisionSegments() {
+  fun addCollisionSegments(segments: PoolVector3Array) {
     TODO()
   }
 
-  fun addCollisionTriangles() {
+  fun addCollisionTriangles(triangles: TriangleMesh) {
     TODO()
   }
 
-  fun addHandles() {
+  fun addHandles(
+    handles: PoolVector3Array,
+    material: Material,
+    billboard: Boolean,
+    secondary: Boolean
+  ) {
     TODO()
   }
 
-  fun addLines() {
+  fun addLines(
+    lines: PoolVector3Array,
+    material: Material,
+    billboard: Boolean
+  ) {
     TODO()
   }
 
-  fun addMesh() {
+  fun addMesh(
+    mesh: ArrayMesh,
+    billboard: Boolean,
+    skeleton: RID,
+    material: Material
+  ) {
     TODO()
   }
 
-  fun addUnscaledBillboard() {
+  fun addUnscaledBillboard(material: Material, default_scale: Float) {
     TODO()
   }
 
@@ -50,11 +68,11 @@ open class EditorSpatialGizmo internal constructor(
     TODO()
   }
 
-  fun setHidden() {
+  fun setHidden(hidden: Boolean) {
     TODO()
   }
 
-  fun setSpatialNode() {
+  fun setSpatialNode(node: Node) {
     TODO()
   }
 
