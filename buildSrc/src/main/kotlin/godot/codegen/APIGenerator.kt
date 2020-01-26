@@ -20,8 +20,9 @@ class APIGenerator {
 
   private fun generateFile(cls: GDClass): FileSpec {
     return FileSpec.builder("godot", cls.name)
-      .addComment("// DO NOT EDIT")
-      .addComment("// THIS FILE IS GENERATED FROM api.json")
+      .addComment("""
+        DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
+      """.trimIndent())
       .addType(generateType(cls))
       .build()
   }
