@@ -13,7 +13,7 @@ kotlin {
     linuxX64("native") {
         compilations.getByName("main") {
             defaultSourceSet {
-                kotlin.srcDirs("src/nativeMain/kotlin", "src/nativeCore/kotlin")
+                kotlin.srcDirs("src/nativeMain/kotlin", "src/nativeCore/kotlin", "src/nativeGen/kotlin")
             }
             val gdnative by cinterops.creating {
                 packageName("gdnative")
