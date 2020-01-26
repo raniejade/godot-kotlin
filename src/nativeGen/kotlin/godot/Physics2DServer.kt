@@ -68,7 +68,7 @@ open class Physics2DServer internal constructor(
     TODO()
   }
 
-  fun areaGetSpaceOverrideMode(): Physics2DServer.AreaSpaceOverrideMode {
+  fun areaGetSpaceOverrideMode(): AreaSpaceOverrideMode {
     TODO()
   }
 
@@ -188,7 +188,7 @@ open class Physics2DServer internal constructor(
     TODO()
   }
 
-  fun bodyGetContinuousCollisionDetectionMode(): Physics2DServer.CCDMode {
+  fun bodyGetContinuousCollisionDetectionMode(): CCDMode {
     TODO()
   }
 
@@ -200,7 +200,7 @@ open class Physics2DServer internal constructor(
     TODO()
   }
 
-  fun bodyGetMode(): Physics2DServer.BodyMode {
+  fun bodyGetMode(): BodyMode {
     TODO()
   }
 
@@ -360,7 +360,7 @@ open class Physics2DServer internal constructor(
     TODO()
   }
 
-  fun jointGetType(): Physics2DServer.JointType {
+  fun jointGetType(): JointType {
     TODO()
   }
 
@@ -396,7 +396,7 @@ open class Physics2DServer internal constructor(
     TODO()
   }
 
-  fun shapeGetType(): Physics2DServer.ShapeType {
+  fun shapeGetType(): ShapeType {
     TODO()
   }
 

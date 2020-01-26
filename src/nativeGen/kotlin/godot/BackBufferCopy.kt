@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class BackBufferCopy internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun getCopyMode(): BackBufferCopy.CopyMode {
+  fun getCopyMode(): CopyMode {
     TODO()
   }
 

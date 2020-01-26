@@ -25,7 +25,7 @@ open class Shader internal constructor(
     TODO()
   }
 
-  fun getMode(): Shader.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 

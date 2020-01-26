@@ -20,6 +20,8 @@ class Variant(
     VECTOR2
   }
 
+  enum class Operator {}
+
   internal val type: godot_variant_type
     get() {
       return memScoped {

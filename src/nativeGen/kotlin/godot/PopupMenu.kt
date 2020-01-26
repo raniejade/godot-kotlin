@@ -4,7 +4,6 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
-import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,22 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class PopupMenu internal constructor(
   _handle: COpaquePointer
 ) : Popup(_handle) {
-  fun getItems(): VariantArray {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
-  fun setItems() {
-    TODO()
-  }
-
-  fun submenuTimeout() {
-    TODO()
-  }
-
   fun addCheckItem() {
     TODO()
   }
@@ -285,42 +268,6 @@ open class PopupMenu internal constructor(
      * Container for method_bind pointers for PopupMenu
      */
     private object __method_bind {
-      val _get_items: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-              "_get_items".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_items" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _set_items: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-              "_set_items".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_items" }
-            }
-          }
-
-      val _submenu_timeout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-              "_submenu_timeout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _submenu_timeout" }
-            }
-          }
-
       val add_check_item: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

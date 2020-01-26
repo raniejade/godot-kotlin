@@ -16,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ViewportContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun input() {
-    TODO()
-  }
-
-  fun unhandledInput() {
-    TODO()
-  }
-
   fun getStretchShrink(): Int {
     TODO()
   }
@@ -54,24 +46,6 @@ open class ViewportContainer internal constructor(
      * Container for method_bind pointers for ViewportContainer
      */
     private object __method_bind {
-      val _input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-              "_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input" }
-            }
-          }
-
-      val _unhandled_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-              "_unhandled_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _unhandled_input" }
-            }
-          }
-
       val get_stretch_shrink: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

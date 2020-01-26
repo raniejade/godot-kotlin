@@ -15,7 +15,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeVectorOp internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  fun getOperator(): VisualShaderNodeVectorOp.Operator {
+  fun getOperator(): Operator {
     TODO()
   }
 

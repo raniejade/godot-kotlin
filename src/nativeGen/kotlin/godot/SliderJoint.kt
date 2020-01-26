@@ -16,22 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class SliderJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  fun getLowerLimitAngular(): Float {
-    TODO()
-  }
-
-  fun getUpperLimitAngular(): Float {
-    TODO()
-  }
-
-  fun setLowerLimitAngular() {
-    TODO()
-  }
-
-  fun setUpperLimitAngular() {
-    TODO()
-  }
-
   fun getParam(): Float {
     TODO()
   }
@@ -149,42 +133,6 @@ open class SliderJoint internal constructor(
      * Container for method_bind pointers for SliderJoint
      */
     private object __method_bind {
-      val _get_lower_limit_angular: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-              "_get_lower_limit_angular".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_lower_limit_angular" }
-            }
-          }
-
-      val _get_upper_limit_angular: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-              "_get_upper_limit_angular".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_upper_limit_angular" }
-            }
-          }
-
-      val _set_lower_limit_angular: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-              "_set_lower_limit_angular".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_lower_limit_angular" }
-            }
-          }
-
-      val _set_upper_limit_angular: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-              "_set_upper_limit_angular".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_upper_limit_angular" }
-            }
-          }
-
       val get_param: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

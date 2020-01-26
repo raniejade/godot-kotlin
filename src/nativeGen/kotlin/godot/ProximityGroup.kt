@@ -17,15 +17,11 @@ import kotlinx.cinterop.reinterpret
 open class ProximityGroup internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun proximityGroupBroadcast() {
-    TODO()
-  }
-
   fun broadcast() {
     TODO()
   }
 
-  fun getDispatchMode(): ProximityGroup.DispatchMode {
+  fun getDispatchMode(): DispatchMode {
     TODO()
   }
 
@@ -75,15 +71,6 @@ open class ProximityGroup internal constructor(
      * Container for method_bind pointers for ProximityGroup
      */
     private object __method_bind {
-      val _proximity_group_broadcast: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-              "_proximity_group_broadcast".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _proximity_group_broadcast" }
-            }
-          }
-
       val broadcast: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

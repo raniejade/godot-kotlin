@@ -29,7 +29,7 @@ open class WebSocketPeer internal constructor(
     TODO()
   }
 
-  fun getWriteMode(): WebSocketPeer.WriteMode {
+  fun getWriteMode(): WriteMode {
     TODO()
   }
 

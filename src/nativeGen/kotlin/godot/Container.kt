@@ -15,14 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class Container internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun childMinsizeChanged() {
-    TODO()
-  }
-
-  fun sortChildren() {
-    TODO()
-  }
-
   fun fitChildInRect() {
     TODO()
   }
@@ -46,24 +38,6 @@ open class Container internal constructor(
      * Container for method_bind pointers for Container
      */
     private object __method_bind {
-      val _child_minsize_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-              "_child_minsize_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _child_minsize_changed" }
-            }
-          }
-
-      val _sort_children: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-              "_sort_children".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _sort_children" }
-            }
-          }
-
       val fit_child_in_rect: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

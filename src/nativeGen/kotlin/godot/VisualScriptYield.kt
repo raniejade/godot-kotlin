@@ -20,7 +20,7 @@ open class VisualScriptYield internal constructor(
     TODO()
   }
 
-  fun getYieldMode(): VisualScriptYield.YieldMode {
+  fun getYieldMode(): YieldMode {
     TODO()
   }
 

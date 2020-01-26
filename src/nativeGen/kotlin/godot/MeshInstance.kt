@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class MeshInstance internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
-  fun meshChanged() {
-    TODO()
-  }
-
   fun createConvexCollision() {
     TODO()
   }
@@ -73,15 +69,6 @@ open class MeshInstance internal constructor(
      * Container for method_bind pointers for MeshInstance
      */
     private object __method_bind {
-      val _mesh_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-              "_mesh_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _mesh_changed" }
-            }
-          }
-
       val create_convex_collision: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

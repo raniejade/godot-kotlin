@@ -18,22 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class Camera2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun makeCurrent() {
-    TODO()
-  }
-
-  fun setCurrent() {
-    TODO()
-  }
-
-  fun setOldSmoothing() {
-    TODO()
-  }
-
-  fun updateScroll() {
-    TODO()
-  }
-
   fun align() {
     TODO()
   }
@@ -46,7 +30,7 @@ open class Camera2D internal constructor(
     TODO()
   }
 
-  fun getAnchorMode(): Camera2D.AnchorMode {
+  fun getAnchorMode(): AnchorMode {
     TODO()
   }
 
@@ -82,7 +66,7 @@ open class Camera2D internal constructor(
     TODO()
   }
 
-  fun getProcessMode(): Camera2D.Camera2DProcessMode {
+  fun getProcessMode(): Camera2DProcessMode {
     TODO()
   }
 
@@ -247,42 +231,6 @@ open class Camera2D internal constructor(
      * Container for method_bind pointers for Camera2D
      */
     private object __method_bind {
-      val _make_current: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-              "_make_current".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _make_current" }
-            }
-          }
-
-      val _set_current: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-              "_set_current".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_current" }
-            }
-          }
-
-      val _set_old_smoothing: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-              "_set_old_smoothing".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_old_smoothing" }
-            }
-          }
-
-      val _update_scroll: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-              "_update_scroll".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_scroll" }
-            }
-          }
-
       val align: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

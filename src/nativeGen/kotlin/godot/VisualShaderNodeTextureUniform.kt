@@ -15,11 +15,11 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTextureUniform internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeUniform(_handle) {
-  fun getColorDefault(): VisualShaderNodeTextureUniform.ColorDefault {
+  fun getColorDefault(): ColorDefault {
     TODO()
   }
 
-  fun getTextureType(): VisualShaderNodeTextureUniform.TextureType {
+  fun getTextureType(): TextureType {
     TODO()
   }
 

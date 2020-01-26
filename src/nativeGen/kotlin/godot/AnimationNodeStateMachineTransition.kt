@@ -26,7 +26,7 @@ open class AnimationNodeStateMachineTransition internal constructor(
     TODO()
   }
 
-  fun getSwitchMode(): AnimationNodeStateMachineTransition.SwitchMode {
+  fun getSwitchMode(): SwitchMode {
     TODO()
   }
 

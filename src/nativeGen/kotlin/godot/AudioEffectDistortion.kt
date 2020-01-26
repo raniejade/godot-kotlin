@@ -24,7 +24,7 @@ open class AudioEffectDistortion internal constructor(
     TODO()
   }
 
-  fun getMode(): AudioEffectDistortion.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 

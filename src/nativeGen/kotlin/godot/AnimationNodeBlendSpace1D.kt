@@ -21,14 +21,6 @@ open class AnimationNodeBlendSpace1D internal constructor(
     TODO()
   }
 
-  fun treeChanged() {
-    TODO()
-  }
-
-  fun addBlendPoint() {
-    TODO()
-  }
-
   fun getBlendPointCount(): Int {
     TODO()
   }
@@ -99,24 +91,6 @@ open class AnimationNodeBlendSpace1D internal constructor(
      * Container for method_bind pointers for AnimationNodeBlendSpace1D
      */
     private object __method_bind {
-      val _add_blend_point: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-              "_add_blend_point".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _add_blend_point" }
-            }
-          }
-
-      val _tree_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-              "_tree_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_changed" }
-            }
-          }
-
       val add_blend_point: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

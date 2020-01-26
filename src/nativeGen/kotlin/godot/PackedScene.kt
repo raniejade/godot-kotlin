@@ -2,7 +2,6 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
 import kotlin.Boolean
 import kotlin.Int
@@ -17,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class PackedScene internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getBundledScene(): Dictionary {
-    TODO()
-  }
-
-  fun setBundledScene() {
-    TODO()
-  }
-
   fun canInstance(): Boolean {
     TODO()
   }
@@ -70,24 +61,6 @@ open class PackedScene internal constructor(
      * Container for method_bind pointers for PackedScene
      */
     private object __method_bind {
-      val _get_bundled_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-              "_get_bundled_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_bundled_scene" }
-            }
-          }
-
-      val _set_bundled_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-              "_set_bundled_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_bundled_scene" }
-            }
-          }
-
       val can_instance: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

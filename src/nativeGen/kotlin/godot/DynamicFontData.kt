@@ -21,7 +21,7 @@ open class DynamicFontData internal constructor(
     TODO()
   }
 
-  fun getHinting(): DynamicFontData.Hinting {
+  fun getHinting(): Hinting {
     TODO()
   }
 

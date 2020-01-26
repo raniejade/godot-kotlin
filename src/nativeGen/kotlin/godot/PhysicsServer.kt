@@ -61,7 +61,7 @@ open class PhysicsServer internal constructor(
     TODO()
   }
 
-  fun areaGetSpaceOverrideMode(): PhysicsServer.AreaSpaceOverrideMode {
+  fun areaGetSpaceOverrideMode(): AreaSpaceOverrideMode {
     TODO()
   }
 
@@ -193,7 +193,7 @@ open class PhysicsServer internal constructor(
     TODO()
   }
 
-  fun bodyGetMode(): PhysicsServer.BodyMode {
+  fun bodyGetMode(): BodyMode {
     TODO()
   }
 
@@ -389,7 +389,7 @@ open class PhysicsServer internal constructor(
     TODO()
   }
 
-  fun jointGetType(): PhysicsServer.JointType {
+  fun jointGetType(): JointType {
     TODO()
   }
 
@@ -433,7 +433,7 @@ open class PhysicsServer internal constructor(
     TODO()
   }
 
-  fun shapeGetType(): PhysicsServer.ShapeType {
+  fun shapeGetType(): ShapeType {
     TODO()
   }
 

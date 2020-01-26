@@ -18,70 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class FileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
-  fun actionPressed() {
-    TODO()
-  }
-
-  fun cancelPressed() {
-    TODO()
-  }
-
-  fun dirEntered() {
-    TODO()
-  }
-
-  fun fileEntered() {
-    TODO()
-  }
-
-  fun filterSelected() {
-    TODO()
-  }
-
-  fun goUp() {
-    TODO()
-  }
-
-  fun makeDir() {
-    TODO()
-  }
-
-  fun makeDirConfirm() {
-    TODO()
-  }
-
-  fun saveConfirmPressed() {
-    TODO()
-  }
-
-  fun selectDrive() {
-    TODO()
-  }
-
-  fun treeItemActivated() {
-    TODO()
-  }
-
-  fun treeMultiSelected() {
-    TODO()
-  }
-
-  fun treeSelected() {
-    TODO()
-  }
-
-  fun unhandledInput() {
-    TODO()
-  }
-
-  fun updateDir() {
-    TODO()
-  }
-
-  fun updateFileList() {
-    TODO()
-  }
-
   fun addFilter() {
     TODO()
   }
@@ -94,7 +30,7 @@ open class FileDialog internal constructor(
     TODO()
   }
 
-  fun getAccess(): FileDialog.Access {
+  fun getAccess(): Access {
     TODO()
   }
 
@@ -118,7 +54,7 @@ open class FileDialog internal constructor(
     TODO()
   }
 
-  fun getMode(): FileDialog.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 
@@ -223,150 +159,6 @@ open class FileDialog internal constructor(
      * Container for method_bind pointers for FileDialog
      */
     private object __method_bind {
-      val _action_pressed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_action_pressed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _action_pressed" }
-            }
-          }
-
-      val _cancel_pressed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_cancel_pressed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _cancel_pressed" }
-            }
-          }
-
-      val _dir_entered: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_dir_entered".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _dir_entered" }
-            }
-          }
-
-      val _file_entered: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_file_entered".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _file_entered" }
-            }
-          }
-
-      val _filter_selected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_filter_selected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _filter_selected" }
-            }
-          }
-
-      val _go_up: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_go_up".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _go_up" }
-            }
-          }
-
-      val _make_dir: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_make_dir".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _make_dir" }
-            }
-          }
-
-      val _make_dir_confirm: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_make_dir_confirm".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _make_dir_confirm" }
-            }
-          }
-
-      val _save_confirm_pressed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_save_confirm_pressed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _save_confirm_pressed" }
-            }
-          }
-
-      val _select_drive: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_select_drive".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _select_drive" }
-            }
-          }
-
-      val _tree_item_activated: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_tree_item_activated".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_item_activated" }
-            }
-          }
-
-      val _tree_multi_selected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_tree_multi_selected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_multi_selected" }
-            }
-          }
-
-      val _tree_selected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_tree_selected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_selected" }
-            }
-          }
-
-      val _unhandled_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_unhandled_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _unhandled_input" }
-            }
-          }
-
-      val _update_dir: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_update_dir".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_dir" }
-            }
-          }
-
-      val _update_file_list: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FileDialog".cstr.ptr,
-              "_update_file_list".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_file_list" }
-            }
-          }
-
       val add_filter: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

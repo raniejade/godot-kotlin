@@ -22,58 +22,6 @@ import kotlinx.cinterop.reinterpret
 open class Control internal constructor(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
-  fun clipsInput(): Boolean {
-    TODO()
-  }
-
-  fun getMinimumSize(): Vector2 {
-    TODO()
-  }
-
-  fun getTooltip(): String {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
-  fun makeCustomTooltip(): Object {
-    TODO()
-  }
-
-  fun overrideChanged() {
-    TODO()
-  }
-
-  fun setAnchor() {
-    TODO()
-  }
-
-  fun setGlobalPosition() {
-    TODO()
-  }
-
-  fun setPosition() {
-    TODO()
-  }
-
-  fun setSize() {
-    TODO()
-  }
-
-  fun sizeChanged() {
-    TODO()
-  }
-
-  fun themeChanged() {
-    TODO()
-  }
-
-  fun updateMinimumSize() {
-    TODO()
-  }
-
   fun acceptEvent() {
     TODO()
   }
@@ -102,14 +50,6 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun canDropData(): Boolean {
-    TODO()
-  }
-
-  fun dropData() {
-    TODO()
-  }
-
   fun forceDrag() {
     TODO()
   }
@@ -134,7 +74,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getCursorShape(): Control.CursorShape {
+  fun getCursorShape(): CursorShape {
     TODO()
   }
 
@@ -142,11 +82,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getDefaultCursorShape(): Control.CursorShape {
-    TODO()
-  }
-
-  fun getDragData(): Object {
+  fun getDefaultCursorShape(): CursorShape {
     TODO()
   }
 
@@ -154,7 +90,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getFocusMode(): Control.FocusMode {
+  fun getFocusMode(): FocusMode {
     TODO()
   }
 
@@ -186,7 +122,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getHGrowDirection(): Control.GrowDirection {
+  fun getHGrowDirection(): GrowDirection {
     TODO()
   }
 
@@ -206,7 +142,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getMouseFilter(): Control.MouseFilter {
+  fun getMouseFilter(): MouseFilter {
     TODO()
   }
 
@@ -262,7 +198,7 @@ open class Control internal constructor(
     TODO()
   }
 
-  fun getVGrowDirection(): Control.GrowDirection {
+  fun getVGrowDirection(): GrowDirection {
     TODO()
   }
 
@@ -311,10 +247,6 @@ open class Control internal constructor(
   }
 
   fun hasIconOverride(): Boolean {
-    TODO()
-  }
-
-  fun hasPoint(): Boolean {
     TODO()
   }
 
@@ -753,123 +685,6 @@ open class Control internal constructor(
      * Container for method_bind pointers for Control
      */
     private object __method_bind {
-      val _clips_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_clips_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _clips_input" }
-            }
-          }
-
-      val _get_minimum_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_get_minimum_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_minimum_size" }
-            }
-          }
-
-      val _get_tooltip: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_get_tooltip".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_tooltip" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _make_custom_tooltip: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_make_custom_tooltip".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _make_custom_tooltip" }
-            }
-          }
-
-      val _override_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_override_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _override_changed" }
-            }
-          }
-
-      val _set_anchor: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_set_anchor".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_anchor" }
-            }
-          }
-
-      val _set_global_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_set_global_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_global_position" }
-            }
-          }
-
-      val _set_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_set_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_position" }
-            }
-          }
-
-      val _set_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_set_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_size" }
-            }
-          }
-
-      val _size_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_size_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _size_changed" }
-            }
-          }
-
-      val _theme_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_theme_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _theme_changed" }
-            }
-          }
-
-      val _update_minimum_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "_update_minimum_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_minimum_size" }
-            }
-          }
-
       val accept_event: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =
@@ -930,24 +745,6 @@ open class Control internal constructor(
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
               "add_stylebox_override".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method add_stylebox_override" }
-            }
-          }
-
-      val can_drop_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "can_drop_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method can_drop_data" }
-            }
-          }
-
-      val drop_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "drop_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method drop_data" }
             }
           }
 
@@ -1029,15 +826,6 @@ open class Control internal constructor(
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
               "get_default_cursor_shape".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method get_default_cursor_shape" }
-            }
-          }
-
-      val get_drag_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "get_drag_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_drag_data" }
             }
           }
 
@@ -1407,15 +1195,6 @@ open class Control internal constructor(
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
               "has_icon_override".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method has_icon_override" }
-            }
-          }
-
-      val has_point: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Control".cstr.ptr,
-              "has_point".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_point" }
             }
           }
 

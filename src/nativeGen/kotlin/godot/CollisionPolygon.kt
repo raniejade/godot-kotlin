@@ -17,10 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class CollisionPolygon internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun isEditable3dPolygon(): Boolean {
-    TODO()
-  }
-
   fun getDepth(): Float {
     TODO()
   }
@@ -59,15 +55,6 @@ open class CollisionPolygon internal constructor(
      * Container for method_bind pointers for CollisionPolygon
      */
     private object __method_bind {
-      val _is_editable_3d_polygon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon".cstr.ptr,
-              "_is_editable_3d_polygon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _is_editable_3d_polygon" }
-            }
-          }
-
       val get_depth: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

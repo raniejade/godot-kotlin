@@ -2,9 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,14 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptFunctionCall internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  fun getArgumentCache(): Dictionary {
-    TODO()
-  }
-
-  fun setArgumentCache() {
-    TODO()
-  }
-
   fun getBasePath(): NodePath {
     TODO()
   }
@@ -43,7 +35,7 @@ open class VisualScriptFunctionCall internal constructor(
     TODO()
   }
 
-  fun getCallMode(): VisualScriptFunctionCall.CallMode {
+  fun getCallMode(): CallMode {
     TODO()
   }
 
@@ -51,7 +43,7 @@ open class VisualScriptFunctionCall internal constructor(
     TODO()
   }
 
-  fun getRpcCallMode(): VisualScriptFunctionCall.RPCCallMode {
+  fun getRpcCallMode(): RPCCallMode {
     TODO()
   }
 
@@ -169,24 +161,6 @@ open class VisualScriptFunctionCall internal constructor(
      * Container for method_bind pointers for VisualScriptFunctionCall
      */
     private object __method_bind {
-      val _get_argument_cache: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-              "_get_argument_cache".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_argument_cache" }
-            }
-          }
-
-      val _set_argument_cache: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-              "_set_argument_cache".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_argument_cache" }
-            }
-          }
-
       val get_base_path: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

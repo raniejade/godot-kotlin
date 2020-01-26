@@ -19,18 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualShader internal constructor(
   _handle: COpaquePointer
 ) : Shader(_handle) {
-  fun inputTypeChanged() {
-    TODO()
-  }
-
-  fun queueUpdate() {
-    TODO()
-  }
-
-  fun updateShader() {
-    TODO()
-  }
-
   fun addNode() {
     TODO()
   }
@@ -136,33 +124,6 @@ open class VisualShader internal constructor(
      * Container for method_bind pointers for VisualShader
      */
     private object __method_bind {
-      val _input_type_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-              "_input_type_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input_type_changed" }
-            }
-          }
-
-      val _queue_update: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-              "_queue_update".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _queue_update" }
-            }
-          }
-
-      val _update_shader: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-              "_update_shader".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_shader" }
-            }
-          }
-
       val add_node: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -20,30 +20,6 @@ import kotlinx.cinterop.reinterpret
 open class Object internal constructor(
   internal val _handle: COpaquePointer
 ) {
-  fun get(): Variant {
-    TODO()
-  }
-
-  fun getPropertyList(): VariantArray {
-    TODO()
-  }
-
-  fun init() {
-    TODO()
-  }
-
-  fun notification() {
-    TODO()
-  }
-
-  fun set(): Boolean {
-    TODO()
-  }
-
-  fun toString(): String {
-    TODO()
-  }
-
   fun addUserSignal() {
     TODO()
   }
@@ -196,7 +172,7 @@ open class Object internal constructor(
     TODO()
   }
 
-  fun toString(): String {
+  override fun toString(): String {
     TODO()
   }
 
@@ -241,54 +217,6 @@ open class Object internal constructor(
      * Container for method_bind pointers for Object
      */
     private object __method_bind {
-      val _get: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-              "_get".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get" }
-            }
-          }
-
-      val _get_property_list: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-              "_get_property_list".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_property_list" }
-            }
-          }
-
-      val _init: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-              "_init".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _init" }
-            }
-          }
-
-      val _notification: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-              "_notification".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _notification" }
-            }
-          }
-
-      val _set: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-              "_set".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set" }
-            }
-          }
-
-      val _to_string: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-              "_to_string".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _to_string" }
-            }
-          }
-
       val add_user_signal: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,

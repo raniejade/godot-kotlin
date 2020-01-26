@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class HTTPRequest internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun redirectRequest() {
-    TODO()
-  }
-
-  fun requestDone() {
-    TODO()
-  }
-
   fun cancelRequest() {
     TODO()
   }
@@ -142,24 +134,6 @@ open class HTTPRequest internal constructor(
      * Container for method_bind pointers for HTTPRequest
      */
     private object __method_bind {
-      val _redirect_request: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "_redirect_request".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _redirect_request" }
-            }
-          }
-
-      val _request_done: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "_request_done".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _request_done" }
-            }
-          }
-
       val cancel_request: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -168,18 +168,19 @@ class APIGenerator {
     val builder = TypeSpec.objectBuilder("__method_bind")
       .addKdoc("Container for method_bind pointers for $className")
       .addModifiers(KModifier.PRIVATE)
-    val methodBindProperties = methods.map { method ->
-      PropertySpec.builder(method.name, METHOD_BIND_TYPE)
-        .delegate("""
-          lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
-              requireNotNull(ptr) { %S }
+    val methodBindProperties = methods.filter { method -> !method.is_virtual }
+      .map { method ->
+        PropertySpec.builder(method.name, METHOD_BIND_TYPE)
+          .delegate("""
+            lazy {
+              memScoped {
+                val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
+                requireNotNull(ptr) { %S }
+              }
             }
-          }
-        """.trimIndent(), className, method.name, "No method_bind found for method ${method.name}")
-        .build()
-    }
+          """.trimIndent(), className, method.name, "No method_bind found for method ${method.name}")
+          .build()
+      }
     builder.addProperties(methodBindProperties)
 
     addType(builder.build())
@@ -202,55 +203,64 @@ class APIGenerator {
   }
 
   private fun TypeSpec.Builder.generateMethods(methods: List<GDMethod>): TypeSpec.Builder {
-    val methodSpecs = methods.map { method ->
-      val type = TypeRegistry.get(method.return_type)
-      val returnType = when (type) {
-        GDType.VOID -> null
-        null -> ClassName("godot", normalizeTypeName(method.return_type))
-        else -> {
-          val packageName = if (type.primitive) {
-            "kotlin"
-          } else {
-            "godot.core"
-          }
-          val className = type.mappedName ?: type.gdName
-          ClassName(packageName, className)
+    val methodSpecs = methods.filter { method -> !method.is_virtual }
+      .map { method ->
+        val name = normalizeTypeName(method.return_type)
+        val returnType = toClassName(name, TypeRegistry.get(name[0]))
+//        val parameters = method.arguments.map { argument ->
+//          val parametertype =
+//          ParameterSpec.builder()
+//        }
+
+        val methodName = normalizeMethodName(method.name)
+        val builder = FunSpec.builder(methodName)
+
+        if (isMethodOverrideRequired(methodName)) {
+          builder.addModifiers(KModifier.OVERRIDE)
         }
+
+        if (returnType != null) {
+          builder.returns(returnType)
+        }
+
+        builder.addCode("""
+          TODO()
+        """.trimIndent())
+
+        builder.build()
       }
-
-      // TODO: generate parameters
-
-      val builder = FunSpec.builder(normalizeMethodName(method.name))
-
-      if (returnType != null) {
-        builder.returns(returnType)
-      }
-
-      builder.addCode("""
-        TODO()
-      """.trimIndent())
-
-      builder.build()
-    }
 
     addFunctions(methodSpecs)
     return this
   }
 
-  private fun normalizeTypeName(name: String): String {
+  private fun isMethodOverrideRequired(name: String): Boolean {
+    if (RESERVED_METHOD_NAMES.contains(name)) {
+      return true
+    }
+    return false
+  }
+
+  private fun normalizeTypeName(name: String): List<String> {
     if (name.startsWith("enum")) {
       return name.replace("enum.", "")
-        .replace("::", ".")
+        .split("::")
     }
 
-    return name
+    return listOf(name)
   }
 
   private fun normalizeMethodName(name: String): String {
-    return name.split("_")
+    val ret = name.split("_")
       .joinToString("") { it.capitalize() }
       .decapitalize()
 
+    // some godot methods begin with '_', we need to preserve it.
+    if (name.startsWith("_")) {
+      return "_$ret"
+    }
+
+    return ret
   }
 
   private fun getFormatFromConstantValue(v: Any): String {
@@ -258,6 +268,27 @@ class APIGenerator {
       return "%S"
     }
     return "%L"
+  }
+
+  private fun toClassName(fqName: List<String>, type: GDType?): ClassName? {
+    return when (type) {
+      GDType.VOID -> null
+      null -> ClassName("godot", fqName)
+      else -> {
+        val packageName = if (type.primitive) {
+          "kotlin"
+        } else {
+          "godot.core"
+        }
+        val classNames = mutableListOf(type.mappedName ?: type.gdName)
+
+        // inner type
+        if (fqName.size > 1) {
+          classNames.addAll(fqName.drop(1))
+        }
+        ClassName(packageName, classNames)
+      }
+    }
   }
 
   private fun parseJson(source: File): List<GDClass> {
@@ -268,5 +299,9 @@ class APIGenerator {
     const val BASE_PACKAGE = "godot"
     val METHOD_BIND_TYPE = ClassName("kotlinx.cinterop", "CPointer")
       .parameterizedBy(ClassName("gdnative", "godot_method_bind"))
+
+    val RESERVED_METHOD_NAMES = listOf(
+      "toString"
+    )
   }
 }

@@ -48,7 +48,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getBackground(): Environment.BGMode {
+  fun getBackground(): BGMode {
     TODO()
   }
 
@@ -76,7 +76,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getDofBlurFarQuality(): Environment.DOFBlurQuality {
+  fun getDofBlurFarQuality(): DOFBlurQuality {
     TODO()
   }
 
@@ -92,7 +92,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getDofBlurNearQuality(): Environment.DOFBlurQuality {
+  fun getDofBlurNearQuality(): DOFBlurQuality {
     TODO()
   }
 
@@ -140,7 +140,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getGlowBlendMode(): Environment.GlowBlendMode {
+  fun getGlowBlendMode(): GlowBlendMode {
     TODO()
   }
 
@@ -196,7 +196,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getSsaoBlur(): Environment.SSAOBlur {
+  fun getSsaoBlur(): SSAOBlur {
     TODO()
   }
 
@@ -220,7 +220,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getSsaoQuality(): Environment.SSAOQuality {
+  fun getSsaoQuality(): SSAOQuality {
     TODO()
   }
 
@@ -276,7 +276,7 @@ open class Environment internal constructor(
     TODO()
   }
 
-  fun getTonemapper(): Environment.ToneMapper {
+  fun getTonemapper(): ToneMapper {
     TODO()
   }
 

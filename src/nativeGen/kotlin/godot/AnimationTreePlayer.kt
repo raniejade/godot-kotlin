@@ -93,7 +93,7 @@ open class AnimationTreePlayer internal constructor(
     TODO()
   }
 
-  fun getAnimationProcessMode(): AnimationTreePlayer.AnimationProcessMode {
+  fun getAnimationProcessMode(): AnimationProcessMode {
     TODO()
   }
 
@@ -137,7 +137,7 @@ open class AnimationTreePlayer internal constructor(
     TODO()
   }
 
-  fun nodeGetType(): AnimationTreePlayer.NodeType {
+  fun nodeGetType(): NodeType {
     TODO()
   }
 

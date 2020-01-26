@@ -41,11 +41,11 @@ open class WebRTCDataChannel internal constructor(
     TODO()
   }
 
-  fun getReadyState(): WebRTCDataChannel.ChannelState {
+  fun getReadyState(): ChannelState {
     TODO()
   }
 
-  fun getWriteMode(): WebRTCDataChannel.WriteMode {
+  fun getWriteMode(): WriteMode {
     TODO()
   }
 

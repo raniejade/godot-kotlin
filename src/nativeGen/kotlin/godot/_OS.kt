@@ -93,7 +93,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getCurrentVideoDriver(): _OS.VideoDriver {
+  fun getCurrentVideoDriver(): VideoDriver {
     TODO()
   }
 
@@ -157,7 +157,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getPowerState(): _OS.PowerState {
+  fun getPowerState(): PowerState {
     TODO()
   }
 
@@ -185,7 +185,7 @@ open class _OS internal constructor(
     TODO()
   }
 
-  fun getScreenOrientation(): _OS.ScreenOrientation {
+  fun getScreenOrientation(): ScreenOrientation {
     TODO()
   }
 

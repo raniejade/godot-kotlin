@@ -5,7 +5,6 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector3Array
-import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,14 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class NavigationMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getPolygons(): VariantArray {
-    TODO()
-  }
-
-  fun setPolygons() {
-    TODO()
-  }
-
   fun addPolygon() {
     TODO()
   }
@@ -242,24 +233,6 @@ open class NavigationMesh internal constructor(
      * Container for method_bind pointers for NavigationMesh
      */
     private object __method_bind {
-      val _get_polygons: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-              "_get_polygons".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_polygons" }
-            }
-          }
-
-      val _set_polygons: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMesh".cstr.ptr,
-              "_set_polygons".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_polygons" }
-            }
-          }
-
       val add_polygon: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -21,34 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class Viewport internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun guiRemoveFocus() {
-    TODO()
-  }
-
-  fun guiShowTooltip() {
-    TODO()
-  }
-
-  fun postGuiGrabClickFocus() {
-    TODO()
-  }
-
-  fun subwindowVisibilityChanged() {
-    TODO()
-  }
-
-  fun vpInput() {
-    TODO()
-  }
-
-  fun vpInputText() {
-    TODO()
-  }
-
-  fun vpUnhandledInput() {
-    TODO()
-  }
-
   fun findWorld(): World {
     TODO()
   }
@@ -65,11 +37,11 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun getClearMode(): Viewport.ClearMode {
+  fun getClearMode(): ClearMode {
     TODO()
   }
 
-  fun getDebugDraw(): Viewport.DebugDraw {
+  fun getDebugDraw(): DebugDraw {
     TODO()
   }
 
@@ -97,7 +69,7 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun getMsaa(): Viewport.MSAA {
+  fun getMsaa(): MSAA {
     TODO()
   }
 
@@ -109,7 +81,7 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun getShadowAtlasQuadrantSubdiv(): Viewport.ShadowAtlasQuadrantSubdiv {
+  fun getShadowAtlasQuadrantSubdiv(): ShadowAtlasQuadrantSubdiv {
     TODO()
   }
 
@@ -129,11 +101,11 @@ open class Viewport internal constructor(
     TODO()
   }
 
-  fun getUpdateMode(): Viewport.UpdateMode {
+  fun getUpdateMode(): UpdateMode {
     TODO()
   }
 
-  fun getUsage(): Viewport.Usage {
+  fun getUsage(): Usage {
     TODO()
   }
 
@@ -538,70 +510,6 @@ open class Viewport internal constructor(
      * Container for method_bind pointers for Viewport
      */
     private object __method_bind {
-      val _gui_remove_focus: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_gui_remove_focus".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_remove_focus" }
-            }
-          }
-
-      val _gui_show_tooltip: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_gui_show_tooltip".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_show_tooltip" }
-            }
-          }
-
-      val _post_gui_grab_click_focus: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_post_gui_grab_click_focus".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _post_gui_grab_click_focus" }
-            }
-          }
-
-      val _subwindow_visibility_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_subwindow_visibility_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _subwindow_visibility_changed"
-              }
-            }
-          }
-
-      val _vp_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_vp_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _vp_input" }
-            }
-          }
-
-      val _vp_input_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_vp_input_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _vp_input_text" }
-            }
-          }
-
-      val _vp_unhandled_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Viewport".cstr.ptr,
-              "_vp_unhandled_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _vp_unhandled_input" }
-            }
-          }
-
       val find_world: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

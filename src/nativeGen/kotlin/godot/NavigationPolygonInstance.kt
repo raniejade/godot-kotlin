@@ -15,10 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygonInstance internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun navpolyChanged() {
-    TODO()
-  }
-
   fun getNavigationPolygon(): NavigationPolygon {
     TODO()
   }
@@ -49,15 +45,6 @@ open class NavigationPolygonInstance internal constructor(
      * Container for method_bind pointers for NavigationPolygonInstance
      */
     private object __method_bind {
-      val _navpoly_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-              "_navpoly_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _navpoly_changed" }
-            }
-          }
-
       val get_navigation_polygon: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

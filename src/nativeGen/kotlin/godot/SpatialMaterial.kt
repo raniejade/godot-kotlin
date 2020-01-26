@@ -35,15 +35,15 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getAoTextureChannel(): SpatialMaterial.TextureChannel {
+  fun getAoTextureChannel(): TextureChannel {
     TODO()
   }
 
-  fun getBillboardMode(): SpatialMaterial.BillboardMode {
+  fun getBillboardMode(): BillboardMode {
     TODO()
   }
 
-  fun getBlendMode(): SpatialMaterial.BlendMode {
+  fun getBlendMode(): BlendMode {
     TODO()
   }
 
@@ -55,7 +55,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getCullMode(): SpatialMaterial.CullMode {
+  fun getCullMode(): CullMode {
     TODO()
   }
 
@@ -75,7 +75,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getDepthDrawMode(): SpatialMaterial.DepthDrawMode {
+  fun getDepthDrawMode(): DepthDrawMode {
     TODO()
   }
 
@@ -83,19 +83,19 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getDetailBlendMode(): SpatialMaterial.BlendMode {
+  fun getDetailBlendMode(): BlendMode {
     TODO()
   }
 
-  fun getDetailUv(): SpatialMaterial.DetailUV {
+  fun getDetailUv(): DetailUV {
     TODO()
   }
 
-  fun getDiffuseMode(): SpatialMaterial.DiffuseMode {
+  fun getDiffuseMode(): DiffuseMode {
     TODO()
   }
 
-  fun getDistanceFade(): SpatialMaterial.DistanceFadeMode {
+  fun getDistanceFade(): DistanceFadeMode {
     TODO()
   }
 
@@ -115,7 +115,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getEmissionOperator(): SpatialMaterial.EmissionOperator {
+  fun getEmissionOperator(): EmissionOperator {
     TODO()
   }
 
@@ -139,7 +139,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getMetallicTextureChannel(): SpatialMaterial.TextureChannel {
+  fun getMetallicTextureChannel(): TextureChannel {
     TODO()
   }
 
@@ -171,7 +171,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getRefractionTextureChannel(): SpatialMaterial.TextureChannel {
+  fun getRefractionTextureChannel(): TextureChannel {
     TODO()
   }
 
@@ -187,7 +187,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getRoughnessTextureChannel(): SpatialMaterial.TextureChannel {
+  fun getRoughnessTextureChannel(): TextureChannel {
     TODO()
   }
 
@@ -195,7 +195,7 @@ open class SpatialMaterial internal constructor(
     TODO()
   }
 
-  fun getSpecularMode(): SpatialMaterial.SpecularMode {
+  fun getSpecularMode(): SpecularMode {
     TODO()
   }
 

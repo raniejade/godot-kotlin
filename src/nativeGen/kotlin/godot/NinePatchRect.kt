@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class NinePatchRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun getHAxisStretchMode(): NinePatchRect.AxisStretchMode {
+  fun getHAxisStretchMode(): AxisStretchMode {
     TODO()
   }
 
@@ -33,7 +33,7 @@ open class NinePatchRect internal constructor(
     TODO()
   }
 
-  fun getVAxisStretchMode(): NinePatchRect.AxisStretchMode {
+  fun getVAxisStretchMode(): AxisStretchMode {
     TODO()
   }
 

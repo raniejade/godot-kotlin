@@ -53,7 +53,7 @@ open class XMLParser internal constructor(
     TODO()
   }
 
-  fun getNodeType(): XMLParser.NodeType {
+  fun getNodeType(): NodeType {
     TODO()
   }
 

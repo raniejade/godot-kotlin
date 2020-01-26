@@ -20,7 +20,7 @@ open class AudioEffectFilter internal constructor(
     TODO()
   }
 
-  fun getDb(): AudioEffectFilter.FilterDB {
+  fun getDb(): FilterDB {
     TODO()
   }
 

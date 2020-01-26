@@ -15,7 +15,7 @@ import kotlinx.cinterop.reinterpret
 open class Sky internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getRadianceSize(): Sky.RadianceSize {
+  fun getRadianceSize(): RadianceSize {
     TODO()
   }
 

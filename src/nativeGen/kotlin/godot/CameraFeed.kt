@@ -18,30 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class CameraFeed internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun allocateTexture() {
-    TODO()
-  }
-
-  fun setRGBImg() {
-    TODO()
-  }
-
-  fun setYCbCrImg() {
-    TODO()
-  }
-
-  fun setYCbCrImgs() {
-    TODO()
-  }
-
-  fun setName() {
-    TODO()
-  }
-
-  fun setPosition() {
-    TODO()
-  }
-
   fun getId(): Int {
     TODO()
   }
@@ -50,7 +26,7 @@ open class CameraFeed internal constructor(
     TODO()
   }
 
-  fun getPosition(): CameraFeed.FeedPosition {
+  fun getPosition(): FeedPosition {
     TODO()
   }
 
@@ -119,60 +95,6 @@ open class CameraFeed internal constructor(
      * Container for method_bind pointers for CameraFeed
      */
     private object __method_bind {
-      val _allocate_texture: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-              "_allocate_texture".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _allocate_texture" }
-            }
-          }
-
-      val _set_RGB_img: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-              "_set_RGB_img".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_RGB_img" }
-            }
-          }
-
-      val _set_YCbCr_img: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-              "_set_YCbCr_img".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_YCbCr_img" }
-            }
-          }
-
-      val _set_YCbCr_imgs: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-              "_set_YCbCr_imgs".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_YCbCr_imgs" }
-            }
-          }
-
-      val _set_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-              "_set_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_name" }
-            }
-          }
-
-      val _set_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-              "_set_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_position" }
-            }
-          }
-
       val get_id: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

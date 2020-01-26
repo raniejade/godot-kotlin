@@ -21,10 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class CPUParticles2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun updateRenderThread() {
-    TODO()
-  }
-
   fun convertFromParticles() {
     TODO()
   }
@@ -41,7 +37,7 @@ open class CPUParticles2D internal constructor(
     TODO()
   }
 
-  fun getDrawOrder(): CPUParticles2D.DrawOrder {
+  fun getDrawOrder(): DrawOrder {
     TODO()
   }
 
@@ -61,7 +57,7 @@ open class CPUParticles2D internal constructor(
     TODO()
   }
 
-  fun getEmissionShape(): CPUParticles2D.EmissionShape {
+  fun getEmissionShape(): EmissionShape {
     TODO()
   }
 
@@ -391,15 +387,6 @@ open class CPUParticles2D internal constructor(
      * Container for method_bind pointers for CPUParticles2D
      */
     private object __method_bind {
-      val _update_render_thread: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CPUParticles2D".cstr.ptr,
-              "_update_render_thread".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_render_thread" }
-            }
-          }
-
       val convert_from_particles: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

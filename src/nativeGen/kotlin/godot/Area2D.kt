@@ -20,30 +20,6 @@ import kotlinx.cinterop.reinterpret
 open class Area2D internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject2D(_handle) {
-  fun areaEnterTree() {
-    TODO()
-  }
-
-  fun areaExitTree() {
-    TODO()
-  }
-
-  fun areaInout() {
-    TODO()
-  }
-
-  fun bodyEnterTree() {
-    TODO()
-  }
-
-  fun bodyExitTree() {
-    TODO()
-  }
-
-  fun bodyInout() {
-    TODO()
-  }
-
   fun getAngularDamp(): Float {
     TODO()
   }
@@ -96,7 +72,7 @@ open class Area2D internal constructor(
     TODO()
   }
 
-  fun getSpaceOverrideMode(): Area2D.SpaceOverride {
+  fun getSpaceOverrideMode(): SpaceOverride {
     TODO()
   }
 
@@ -225,54 +201,6 @@ open class Area2D internal constructor(
      * Container for method_bind pointers for Area2D
      */
     private object __method_bind {
-      val _area_enter_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-              "_area_enter_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _area_enter_tree" }
-            }
-          }
-
-      val _area_exit_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-              "_area_exit_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _area_exit_tree" }
-            }
-          }
-
-      val _area_inout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-              "_area_inout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _area_inout" }
-            }
-          }
-
-      val _body_enter_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-              "_body_enter_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _body_enter_tree" }
-            }
-          }
-
-      val _body_exit_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-              "_body_exit_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _body_exit_tree" }
-            }
-          }
-
-      val _body_inout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-              "_body_inout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _body_inout" }
-            }
-          }
-
       val get_angular_damp: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,

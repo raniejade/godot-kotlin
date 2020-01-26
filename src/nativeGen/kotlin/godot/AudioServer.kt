@@ -103,7 +103,7 @@ open class AudioServer internal constructor(
     TODO()
   }
 
-  fun getSpeakerMode(): AudioServer.SpeakerMode {
+  fun getSpeakerMode(): SpeakerMode {
     TODO()
   }
 

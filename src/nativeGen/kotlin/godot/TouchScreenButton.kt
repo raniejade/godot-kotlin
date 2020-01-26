@@ -17,10 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class TouchScreenButton internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun input() {
-    TODO()
-  }
-
   fun getAction(): String {
     TODO()
   }
@@ -41,7 +37,7 @@ open class TouchScreenButton internal constructor(
     TODO()
   }
 
-  fun getVisibilityMode(): TouchScreenButton.VisibilityMode {
+  fun getVisibilityMode(): VisibilityMode {
     TODO()
   }
 
@@ -123,15 +119,6 @@ open class TouchScreenButton internal constructor(
      * Container for method_bind pointers for TouchScreenButton
      */
     private object __method_bind {
-      val _input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TouchScreenButton".cstr.ptr,
-              "_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input" }
-            }
-          }
-
       val get_action: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

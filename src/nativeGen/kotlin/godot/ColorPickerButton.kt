@@ -16,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ColorPickerButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
-  fun colorChanged() {
-    TODO()
-  }
-
-  fun modalClosed() {
-    TODO()
-  }
-
   fun getPickColor(): Color {
     TODO()
   }
@@ -62,24 +54,6 @@ open class ColorPickerButton internal constructor(
      * Container for method_bind pointers for ColorPickerButton
      */
     private object __method_bind {
-      val _color_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-              "_color_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _color_changed" }
-            }
-          }
-
-      val _modal_closed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-              "_modal_closed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _modal_closed" }
-            }
-          }
-
       val get_pick_color: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

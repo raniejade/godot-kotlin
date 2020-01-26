@@ -16,22 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ConeTwistJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  fun getSwingSpan(): Float {
-    TODO()
-  }
-
-  fun getTwistSpan(): Float {
-    TODO()
-  }
-
-  fun setSwingSpan() {
-    TODO()
-  }
-
-  fun setTwistSpan() {
-    TODO()
-  }
-
   fun getParam(): Float {
     TODO()
   }
@@ -82,42 +66,6 @@ open class ConeTwistJoint internal constructor(
      * Container for method_bind pointers for ConeTwistJoint
      */
     private object __method_bind {
-      val _get_swing_span: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-              "_get_swing_span".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_swing_span" }
-            }
-          }
-
-      val _get_twist_span: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-              "_get_twist_span".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_twist_span" }
-            }
-          }
-
-      val _set_swing_span: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-              "_set_swing_span".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_swing_span" }
-            }
-          }
-
-      val _set_twist_span: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-              "_set_twist_span".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_twist_span" }
-            }
-          }
-
       val get_param: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

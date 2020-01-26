@@ -19,26 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class RigidBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
-  fun bodyEnterTree() {
-    TODO()
-  }
-
-  fun bodyExitTree() {
-    TODO()
-  }
-
-  fun directStateChanged() {
-    TODO()
-  }
-
-  fun integrateForces() {
-    TODO()
-  }
-
-  fun reloadPhysicsCharacteristics() {
-    TODO()
-  }
-
   fun addCentralForce() {
     TODO()
   }
@@ -107,7 +87,7 @@ open class RigidBody internal constructor(
     TODO()
   }
 
-  fun getMode(): RigidBody.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 
@@ -248,52 +228,6 @@ open class RigidBody internal constructor(
      * Container for method_bind pointers for RigidBody
      */
     private object __method_bind {
-      val _body_enter_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody".cstr.ptr,
-              "_body_enter_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _body_enter_tree" }
-            }
-          }
-
-      val _body_exit_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody".cstr.ptr,
-              "_body_exit_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _body_exit_tree" }
-            }
-          }
-
-      val _direct_state_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody".cstr.ptr,
-              "_direct_state_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _direct_state_changed" }
-            }
-          }
-
-      val _integrate_forces: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody".cstr.ptr,
-              "_integrate_forces".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _integrate_forces" }
-            }
-          }
-
-      val _reload_physics_characteristics: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RigidBody".cstr.ptr,
-              "_reload_physics_characteristics".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method _reload_physics_characteristics" }
-            }
-          }
-
       val add_central_force: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

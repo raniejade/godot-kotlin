@@ -45,7 +45,7 @@ open class ClippedCamera internal constructor(
     TODO()
   }
 
-  fun getProcessMode(): ClippedCamera.ProcessMode {
+  fun getProcessMode(): ProcessMode {
     TODO()
   }
 

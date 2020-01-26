@@ -16,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class EditorProperty internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun focusableFocused() {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
   fun addFocusable() {
     TODO()
   }
@@ -96,10 +88,6 @@ open class EditorProperty internal constructor(
     TODO()
   }
 
-  fun updateProperty() {
-    TODO()
-  }
-
   companion object {
     fun new(): EditorProperty = memScoped {
       val fnPtr =
@@ -114,24 +102,6 @@ open class EditorProperty internal constructor(
      * Container for method_bind pointers for EditorProperty
      */
     private object __method_bind {
-      val _focusable_focused: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-              "_focusable_focused".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _focusable_focused" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
       val add_focusable: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =
@@ -291,15 +261,6 @@ open class EditorProperty internal constructor(
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
               "set_read_only".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method set_read_only" }
-            }
-          }
-
-      val update_property: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-              "update_property".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method update_property" }
             }
           }
     }

@@ -15,10 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class LightOccluder2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun polyChanged() {
-    TODO()
-  }
-
   fun getOccluderLightMask(): Int {
     TODO()
   }
@@ -49,15 +45,6 @@ open class LightOccluder2D internal constructor(
      * Container for method_bind pointers for LightOccluder2D
      */
     private object __method_bind {
-      val _poly_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-              "_poly_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _poly_changed" }
-            }
-          }
-
       val get_occluder_light_mask: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -48,7 +48,7 @@ open class HTTPClient internal constructor(
     TODO()
   }
 
-  fun getStatus(): HTTPClient.Status {
+  fun getStatus(): Status {
     TODO()
   }
 

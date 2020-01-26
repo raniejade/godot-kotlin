@@ -5,9 +5,6 @@ import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Color
 import godot.core.Godot
-import godot.core.PoolColorArray
-import godot.core.PoolVector2Array
-import godot.core.PoolVector3Array
 import godot.core.Transform
 import godot.core.Transform2D
 import kotlin.Int
@@ -22,47 +19,15 @@ import kotlinx.cinterop.reinterpret
 open class MultiMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getColorArray(): PoolColorArray {
-    TODO()
-  }
-
-  fun getCustomDataArray(): PoolColorArray {
-    TODO()
-  }
-
-  fun getTransform2dArray(): PoolVector2Array {
-    TODO()
-  }
-
-  fun getTransformArray(): PoolVector3Array {
-    TODO()
-  }
-
-  fun setColorArray() {
-    TODO()
-  }
-
-  fun setCustomDataArray() {
-    TODO()
-  }
-
-  fun setTransform2dArray() {
-    TODO()
-  }
-
-  fun setTransformArray() {
-    TODO()
-  }
-
   fun getAabb(): AABB {
     TODO()
   }
 
-  fun getColorFormat(): MultiMesh.ColorFormat {
+  fun getColorFormat(): ColorFormat {
     TODO()
   }
 
-  fun getCustomDataFormat(): MultiMesh.CustomDataFormat {
+  fun getCustomDataFormat(): CustomDataFormat {
     TODO()
   }
 
@@ -90,7 +55,7 @@ open class MultiMesh internal constructor(
     TODO()
   }
 
-  fun getTransformFormat(): MultiMesh.TransformFormat {
+  fun getTransformFormat(): TransformFormat {
     TODO()
   }
 
@@ -199,78 +164,6 @@ open class MultiMesh internal constructor(
      * Container for method_bind pointers for MultiMesh
      */
     private object __method_bind {
-      val _get_color_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_get_color_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_color_array" }
-            }
-          }
-
-      val _get_custom_data_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_get_custom_data_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_custom_data_array" }
-            }
-          }
-
-      val _get_transform_2d_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_get_transform_2d_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_transform_2d_array" }
-            }
-          }
-
-      val _get_transform_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_get_transform_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_transform_array" }
-            }
-          }
-
-      val _set_color_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_set_color_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_color_array" }
-            }
-          }
-
-      val _set_custom_data_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_set_custom_data_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_custom_data_array" }
-            }
-          }
-
-      val _set_transform_2d_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_set_transform_2d_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_transform_2d_array" }
-            }
-          }
-
-      val _set_transform_array: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-              "_set_transform_array".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_transform_array" }
-            }
-          }
-
       val get_aabb: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

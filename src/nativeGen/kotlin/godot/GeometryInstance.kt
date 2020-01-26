@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class GeometryInstance internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  fun getCastShadowsSetting(): GeometryInstance.ShadowCastingSetting {
+  fun getCastShadowsSetting(): ShadowCastingSetting {
     TODO()
   }
 

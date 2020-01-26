@@ -37,7 +37,7 @@ open class NetworkedMultiplayerENet internal constructor(
     TODO()
   }
 
-  fun getCompressionMode(): NetworkedMultiplayerENet.CompressionMode {
+  fun getCompressionMode(): CompressionMode {
     TODO()
   }
 

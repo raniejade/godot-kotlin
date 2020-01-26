@@ -15,7 +15,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptMathConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  fun getMathConstant(): VisualScriptMathConstant.MathConstant {
+  fun getMathConstant(): MathConstant {
     TODO()
   }
 

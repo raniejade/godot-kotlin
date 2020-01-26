@@ -20,14 +20,6 @@ import kotlinx.cinterop.reinterpret
 open class AnimationPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun animationChanged() {
-    TODO()
-  }
-
-  fun nodeRemoved() {
-    TODO()
-  }
-
   fun addAnimation(): Error {
     TODO()
   }
@@ -64,7 +56,7 @@ open class AnimationPlayer internal constructor(
     TODO()
   }
 
-  fun getAnimationProcessMode(): AnimationPlayer.AnimationProcessMode {
+  fun getAnimationProcessMode(): AnimationProcessMode {
     TODO()
   }
 
@@ -218,24 +210,6 @@ open class AnimationPlayer internal constructor(
      * Container for method_bind pointers for AnimationPlayer
      */
     private object __method_bind {
-      val _animation_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-              "_animation_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _animation_changed" }
-            }
-          }
-
-      val _node_removed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-              "_node_removed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _node_removed" }
-            }
-          }
-
       val add_animation: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

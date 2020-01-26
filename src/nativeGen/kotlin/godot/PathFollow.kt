@@ -29,7 +29,7 @@ open class PathFollow internal constructor(
     TODO()
   }
 
-  fun getRotationMode(): PathFollow.RotationMode {
+  fun getRotationMode(): RotationMode {
     TODO()
   }
 

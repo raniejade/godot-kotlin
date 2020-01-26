@@ -3,7 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class LargeTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun getData(): VariantArray {
-    TODO()
-  }
-
-  fun setData() {
-    TODO()
-  }
-
   fun addPiece(): Int {
     TODO()
   }
@@ -70,24 +61,6 @@ open class LargeTexture internal constructor(
      * Container for method_bind pointers for LargeTexture
      */
     private object __method_bind {
-      val _get_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-              "_get_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_data" }
-            }
-          }
-
-      val _set_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-              "_set_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_data" }
-            }
-          }
-
       val add_piece: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

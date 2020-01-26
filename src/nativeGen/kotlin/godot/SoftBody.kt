@@ -19,10 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class SoftBody internal constructor(
   _handle: COpaquePointer
 ) : MeshInstance(_handle) {
-  fun drawSoftMesh() {
-    TODO()
-  }
-
   fun addCollisionExceptionWith() {
     TODO()
   }
@@ -168,15 +164,6 @@ open class SoftBody internal constructor(
      * Container for method_bind pointers for SoftBody
      */
     private object __method_bind {
-      val _draw_soft_mesh: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-              "_draw_soft_mesh".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _draw_soft_mesh" }
-            }
-          }
-
       val add_collision_exception_with: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

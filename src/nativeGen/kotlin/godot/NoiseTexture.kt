@@ -16,18 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class NoiseTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun generateTexture(): Image {
-    TODO()
-  }
-
-  fun threadDone() {
-    TODO()
-  }
-
-  fun updateTexture() {
-    TODO()
-  }
-
   fun getBumpStrength(): Float {
     TODO()
   }
@@ -81,33 +69,6 @@ open class NoiseTexture internal constructor(
      * Container for method_bind pointers for NoiseTexture
      */
     private object __method_bind {
-      val _generate_texture: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-              "_generate_texture".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _generate_texture" }
-            }
-          }
-
-      val _thread_done: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-              "_thread_done".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _thread_done" }
-            }
-          }
-
-      val _update_texture: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-              "_update_texture".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_texture" }
-            }
-          }
-
       val get_bump_strength: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

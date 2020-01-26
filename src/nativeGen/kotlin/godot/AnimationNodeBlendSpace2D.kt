@@ -3,7 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.PoolIntArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -23,26 +22,6 @@ open class AnimationNodeBlendSpace2D internal constructor(
     TODO()
   }
 
-  fun getTriangles(): PoolIntArray {
-    TODO()
-  }
-
-  fun setTriangles() {
-    TODO()
-  }
-
-  fun treeChanged() {
-    TODO()
-  }
-
-  fun updateTriangles() {
-    TODO()
-  }
-
-  fun addBlendPoint() {
-    TODO()
-  }
-
   fun addTriangle() {
     TODO()
   }
@@ -51,7 +30,7 @@ open class AnimationNodeBlendSpace2D internal constructor(
     TODO()
   }
 
-  fun getBlendMode(): AnimationNodeBlendSpace2D.BlendMode {
+  fun getBlendMode(): BlendMode {
     TODO()
   }
 
@@ -169,51 +148,6 @@ open class AnimationNodeBlendSpace2D internal constructor(
      * Container for method_bind pointers for AnimationNodeBlendSpace2D
      */
     private object __method_bind {
-      val _add_blend_point: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace2D".cstr.ptr,
-              "_add_blend_point".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _add_blend_point" }
-            }
-          }
-
-      val _get_triangles: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace2D".cstr.ptr,
-              "_get_triangles".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_triangles" }
-            }
-          }
-
-      val _set_triangles: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace2D".cstr.ptr,
-              "_set_triangles".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_triangles" }
-            }
-          }
-
-      val _tree_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace2D".cstr.ptr,
-              "_tree_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_changed" }
-            }
-          }
-
-      val _update_triangles: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace2D".cstr.ptr,
-              "_update_triangles".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_triangles" }
-            }
-          }
-
       val add_blend_point: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

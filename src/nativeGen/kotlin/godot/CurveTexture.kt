@@ -14,10 +14,6 @@ import kotlinx.cinterop.reinterpret
 open class CurveTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun update() {
-    TODO()
-  }
-
   fun getCurve(): Curve {
     TODO()
   }
@@ -43,15 +39,6 @@ open class CurveTexture internal constructor(
      * Container for method_bind pointers for CurveTexture
      */
     private object __method_bind {
-      val _update: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
-              "_update".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update" }
-            }
-          }
-
       val get_curve: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

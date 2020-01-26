@@ -15,7 +15,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTransformFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  fun getFunction(): VisualShaderNodeTransformFunc.Function {
+  fun getFunction(): Function {
     TODO()
   }
 

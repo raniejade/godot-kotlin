@@ -32,7 +32,7 @@ open class CubeMap internal constructor(
     TODO()
   }
 
-  fun getStorage(): CubeMap.Storage {
+  fun getStorage(): Storage {
     TODO()
   }
 

@@ -18,14 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class RichTextLabel internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
-  fun scrollChanged() {
-    TODO()
-  }
-
   fun addImage() {
     TODO()
   }
@@ -319,24 +311,6 @@ open class RichTextLabel internal constructor(
      * Container for method_bind pointers for RichTextLabel
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _scroll_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-              "_scroll_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _scroll_changed" }
-            }
-          }
-
       val add_image: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

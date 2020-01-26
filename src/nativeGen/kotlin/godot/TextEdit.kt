@@ -21,42 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class TextEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun clickSelectionHeld() {
-    TODO()
-  }
-
-  fun cursorChangedEmit() {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
-  fun pushCurrentOp() {
-    TODO()
-  }
-
-  fun scrollMoved() {
-    TODO()
-  }
-
-  fun textChangedEmit() {
-    TODO()
-  }
-
-  fun toggleDrawCaret() {
-    TODO()
-  }
-
-  fun updateWrapAt() {
-    TODO()
-  }
-
-  fun vScrollInput() {
-    TODO()
-  }
-
   fun addColorRegion() {
     TODO()
   }
@@ -450,87 +414,6 @@ open class TextEdit internal constructor(
      * Container for method_bind pointers for TextEdit
      */
     private object __method_bind {
-      val _click_selection_held: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_click_selection_held".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _click_selection_held" }
-            }
-          }
-
-      val _cursor_changed_emit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_cursor_changed_emit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _cursor_changed_emit" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _push_current_op: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_push_current_op".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _push_current_op" }
-            }
-          }
-
-      val _scroll_moved: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_scroll_moved".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _scroll_moved" }
-            }
-          }
-
-      val _text_changed_emit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_text_changed_emit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _text_changed_emit" }
-            }
-          }
-
-      val _toggle_draw_caret: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_toggle_draw_caret".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _toggle_draw_caret" }
-            }
-          }
-
-      val _update_wrap_at: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_update_wrap_at".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_wrap_at" }
-            }
-          }
-
-      val _v_scroll_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextEdit".cstr.ptr,
-              "_v_scroll_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _v_scroll_input" }
-            }
-          }
-
       val add_color_region: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

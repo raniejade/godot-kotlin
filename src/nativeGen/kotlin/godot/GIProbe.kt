@@ -54,7 +54,7 @@ open class GIProbe internal constructor(
     TODO()
   }
 
-  fun getSubdiv(): GIProbe.Subdiv {
+  fun getSubdiv(): Subdiv {
     TODO()
   }
 

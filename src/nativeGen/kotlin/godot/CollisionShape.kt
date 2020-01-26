@@ -15,14 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class CollisionShape internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun shapeChanged() {
-    TODO()
-  }
-
-  fun updateDebugShape() {
-    TODO()
-  }
-
   fun getShape(): Shape {
     TODO()
   }
@@ -61,24 +53,6 @@ open class CollisionShape internal constructor(
      * Container for method_bind pointers for CollisionShape
      */
     private object __method_bind {
-      val _shape_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-              "_shape_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _shape_changed" }
-            }
-          }
-
-      val _update_debug_shape: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-              "_update_debug_shape".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_debug_shape" }
-            }
-          }
-
       val get_shape: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

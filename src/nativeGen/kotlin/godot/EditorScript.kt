@@ -14,10 +14,6 @@ import kotlinx.cinterop.reinterpret
 open class EditorScript internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun run() {
-    TODO()
-  }
-
   fun addRootNode() {
     TODO()
   }
@@ -43,15 +39,6 @@ open class EditorScript internal constructor(
      * Container for method_bind pointers for EditorScript
      */
     private object __method_bind {
-      val _run: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-              "_run".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _run" }
-            }
-          }
-
       val add_root_node: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -3,9 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.Variant
-import kotlin.Boolean
-import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -45,35 +42,11 @@ open class EditorSpatialGizmo internal constructor(
     TODO()
   }
 
-  fun commitHandle() {
-    TODO()
-  }
-
-  fun getHandleName(): String {
-    TODO()
-  }
-
-  fun getHandleValue(): Variant {
-    TODO()
-  }
-
   fun getPlugin(): EditorSpatialGizmoPlugin {
     TODO()
   }
 
   fun getSpatialNode(): Spatial {
-    TODO()
-  }
-
-  fun isHandleHighlighted(): Boolean {
-    TODO()
-  }
-
-  fun redraw() {
-    TODO()
-  }
-
-  fun setHandle() {
     TODO()
   }
 
@@ -162,33 +135,6 @@ open class EditorSpatialGizmo internal constructor(
             }
           }
 
-      val commit_handle: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-              "commit_handle".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method commit_handle" }
-            }
-          }
-
-      val get_handle_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-              "get_handle_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_handle_name" }
-            }
-          }
-
-      val get_handle_value: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-              "get_handle_value".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_handle_value" }
-            }
-          }
-
       val get_plugin: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =
@@ -204,33 +150,6 @@ open class EditorSpatialGizmo internal constructor(
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
               "get_spatial_node".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method get_spatial_node" }
-            }
-          }
-
-      val is_handle_highlighted: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-              "is_handle_highlighted".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_handle_highlighted" }
-            }
-          }
-
-      val redraw: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-              "redraw".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method redraw" }
-            }
-          }
-
-      val set_handle: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-              "set_handle".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_handle" }
             }
           }
 

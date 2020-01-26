@@ -19,30 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class SceneTree internal constructor(
   _handle: COpaquePointer
 ) : MainLoop(_handle) {
-  fun changeScene() {
-    TODO()
-  }
-
-  fun connectedToServer() {
-    TODO()
-  }
-
-  fun connectionFailed() {
-    TODO()
-  }
-
-  fun networkPeerConnected() {
-    TODO()
-  }
-
-  fun networkPeerDisconnected() {
-    TODO()
-  }
-
-  fun serverDisconnected() {
-    TODO()
-  }
-
   fun callGroup(): Variant {
     TODO()
   }
@@ -304,60 +280,6 @@ open class SceneTree internal constructor(
      * Container for method_bind pointers for SceneTree
      */
     private object __method_bind {
-      val _change_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-              "_change_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _change_scene" }
-            }
-          }
-
-      val _connected_to_server: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-              "_connected_to_server".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _connected_to_server" }
-            }
-          }
-
-      val _connection_failed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-              "_connection_failed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _connection_failed" }
-            }
-          }
-
-      val _network_peer_connected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-              "_network_peer_connected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _network_peer_connected" }
-            }
-          }
-
-      val _network_peer_disconnected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-              "_network_peer_disconnected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _network_peer_disconnected" }
-            }
-          }
-
-      val _server_disconnected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-              "_server_disconnected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _server_disconnected" }
-            }
-          }
-
       val call_group: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

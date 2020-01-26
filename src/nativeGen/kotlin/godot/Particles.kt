@@ -26,7 +26,7 @@ open class Particles internal constructor(
     TODO()
   }
 
-  fun getDrawOrder(): Particles.DrawOrder {
+  fun getDrawOrder(): DrawOrder {
     TODO()
   }
 

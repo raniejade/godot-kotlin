@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class ProceduralSky internal constructor(
   _handle: COpaquePointer
 ) : Sky(_handle) {
-  fun threadDone() {
-    TODO()
-  }
-
-  fun updateSky() {
-    TODO()
-  }
-
   fun getGroundBottomColor(): Color {
     TODO()
   }
@@ -85,7 +77,7 @@ open class ProceduralSky internal constructor(
     TODO()
   }
 
-  fun getTextureSize(): ProceduralSky.TextureSize {
+  fun getTextureSize(): TextureSize {
     TODO()
   }
 
@@ -194,24 +186,6 @@ open class ProceduralSky internal constructor(
      * Container for method_bind pointers for ProceduralSky
      */
     private object __method_bind {
-      val _thread_done: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "_thread_done".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _thread_done" }
-            }
-          }
-
-      val _update_sky: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "_update_sky".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_sky" }
-            }
-          }
-
       val get_ground_bottom_color: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

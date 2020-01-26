@@ -18,22 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class LineEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun editorSettingsChanged() {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
-  fun textChanged() {
-    TODO()
-  }
-
-  fun toggleDrawCaret() {
-    TODO()
-  }
-
   fun appendAtCursor() {
     TODO()
   }
@@ -62,7 +46,7 @@ open class LineEdit internal constructor(
     TODO()
   }
 
-  fun getAlign(): LineEdit.Align {
+  fun getAlign(): Align {
     TODO()
   }
 
@@ -243,42 +227,6 @@ open class LineEdit internal constructor(
      * Container for method_bind pointers for LineEdit
      */
     private object __method_bind {
-      val _editor_settings_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-              "_editor_settings_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _editor_settings_changed" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _text_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-              "_text_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _text_changed" }
-            }
-          }
-
-      val _toggle_draw_caret: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineEdit".cstr.ptr,
-              "_toggle_draw_caret".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _toggle_draw_caret" }
-            }
-          }
-
       val append_at_cursor: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

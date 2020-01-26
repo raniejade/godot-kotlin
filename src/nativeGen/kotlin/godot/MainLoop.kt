@@ -16,34 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class MainLoop internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun dropFiles() {
-    TODO()
-  }
-
-  fun finalize() {
-    TODO()
-  }
-
-  fun idle() {
-    TODO()
-  }
-
-  fun initialize() {
-    TODO()
-  }
-
-  fun inputEvent() {
-    TODO()
-  }
-
-  fun inputText() {
-    TODO()
-  }
-
-  fun iteration() {
-    TODO()
-  }
-
   fun finish() {
     TODO()
   }
@@ -105,69 +77,6 @@ open class MainLoop internal constructor(
      * Container for method_bind pointers for MainLoop
      */
     private object __method_bind {
-      val _drop_files: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_drop_files".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _drop_files" }
-            }
-          }
-
-      val _finalize: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_finalize".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _finalize" }
-            }
-          }
-
-      val _idle: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_idle".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _idle" }
-            }
-          }
-
-      val _initialize: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_initialize".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _initialize" }
-            }
-          }
-
-      val _input_event: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_input_event".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input_event" }
-            }
-          }
-
-      val _input_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_input_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input_text" }
-            }
-          }
-
-      val _iteration: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-              "_iteration".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _iteration" }
-            }
-          }
-
       val finish: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

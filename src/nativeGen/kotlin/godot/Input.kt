@@ -45,7 +45,7 @@ open class Input internal constructor(
     TODO()
   }
 
-  fun getCurrentCursorShape(): Input.CursorShape {
+  fun getCurrentCursorShape(): CursorShape {
     TODO()
   }
 
@@ -105,7 +105,7 @@ open class Input internal constructor(
     TODO()
   }
 
-  fun getMouseMode(): Input.MouseMode {
+  fun getMouseMode(): MouseMode {
     TODO()
   }
 

@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun updateProxy() {
-    TODO()
-  }
-
   fun getFps(): Float {
     TODO()
   }
@@ -68,15 +64,6 @@ open class AnimatedTexture internal constructor(
      * Container for method_bind pointers for AnimatedTexture
      */
     private object __method_bind {
-      val _update_proxy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "_update_proxy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_proxy" }
-            }
-          }
-
       val get_fps: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

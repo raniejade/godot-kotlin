@@ -16,15 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class SplitContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
   fun clampSplitOffset() {
     TODO()
   }
 
-  fun getDraggerVisibility(): SplitContainer.DraggerVisibility {
+  fun getDraggerVisibility(): DraggerVisibility {
     TODO()
   }
 
@@ -69,15 +65,6 @@ open class SplitContainer internal constructor(
      * Container for method_bind pointers for SplitContainer
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
       val clamp_split_offset: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

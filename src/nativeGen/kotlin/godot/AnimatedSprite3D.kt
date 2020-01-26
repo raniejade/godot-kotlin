@@ -17,18 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedSprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
-  fun isPlaying(): Boolean {
-    TODO()
-  }
-
-  fun resChanged() {
-    TODO()
-  }
-
-  fun setPlaying() {
-    TODO()
-  }
-
   fun getAnimation(): String {
     TODO()
   }
@@ -79,33 +67,6 @@ open class AnimatedSprite3D internal constructor(
      * Container for method_bind pointers for AnimatedSprite3D
      */
     private object __method_bind {
-      val _is_playing: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-              "_is_playing".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _is_playing" }
-            }
-          }
-
-      val _res_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-              "_res_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _res_changed" }
-            }
-          }
-
-      val _set_playing: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-              "_set_playing".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_playing" }
-            }
-          }
-
       val get_animation: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

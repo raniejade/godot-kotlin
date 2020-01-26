@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class OccluderPolygon2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getCullMode(): OccluderPolygon2D.CullMode {
+  fun getCullMode(): CullMode {
     TODO()
   }
 

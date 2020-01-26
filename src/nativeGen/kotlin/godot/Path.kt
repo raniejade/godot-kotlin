@@ -14,10 +14,6 @@ import kotlinx.cinterop.reinterpret
 open class Path internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun curveChanged() {
-    TODO()
-  }
-
   fun getCurve(): Curve3D {
     TODO()
   }
@@ -39,14 +35,6 @@ open class Path internal constructor(
      * Container for method_bind pointers for Path
      */
     private object __method_bind {
-      val _curve_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path".cstr.ptr,
-              "_curve_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _curve_changed" }
-            }
-          }
-
       val get_curve: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path".cstr.ptr,

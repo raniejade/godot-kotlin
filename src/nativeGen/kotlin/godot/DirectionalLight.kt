@@ -16,11 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class DirectionalLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
-  fun getShadowDepthRange(): DirectionalLight.ShadowDepthRange {
+  fun getShadowDepthRange(): ShadowDepthRange {
     TODO()
   }
 
-  fun getShadowMode(): DirectionalLight.ShadowMode {
+  fun getShadowMode(): ShadowMode {
     TODO()
   }
 

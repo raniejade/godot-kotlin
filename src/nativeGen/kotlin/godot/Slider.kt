@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class Slider internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
   fun getTicks(): Int {
     TODO()
   }
@@ -57,14 +53,6 @@ open class Slider internal constructor(
      * Container for method_bind pointers for Slider
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
       val get_ticks: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,

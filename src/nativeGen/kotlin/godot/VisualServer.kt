@@ -863,7 +863,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun meshGetBlendShapeMode(): VisualServer.BlendShapeMode {
+  fun meshGetBlendShapeMode(): BlendShapeMode {
     TODO()
   }
 
@@ -935,7 +935,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun meshSurfaceGetPrimitiveType(): VisualServer.PrimitiveType {
+  fun meshSurfaceGetPrimitiveType(): PrimitiveType {
     TODO()
   }
 
@@ -1307,7 +1307,7 @@ open class VisualServer internal constructor(
     TODO()
   }
 
-  fun textureGetType(): VisualServer.TextureType {
+  fun textureGetType(): TextureType {
     TODO()
   }
 

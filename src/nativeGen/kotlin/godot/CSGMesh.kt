@@ -14,10 +14,6 @@ import kotlinx.cinterop.reinterpret
 open class CSGMesh internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
-  fun meshChanged() {
-    TODO()
-  }
-
   fun getMaterial(): Material {
     TODO()
   }
@@ -47,15 +43,6 @@ open class CSGMesh internal constructor(
      * Container for method_bind pointers for CSGMesh
      */
     private object __method_bind {
-      val _mesh_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-              "_mesh_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _mesh_changed" }
-            }
-          }
-
       val get_material: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

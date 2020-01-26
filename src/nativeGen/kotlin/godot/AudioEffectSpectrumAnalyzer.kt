@@ -20,7 +20,7 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
     TODO()
   }
 
-  fun getFftSize(): AudioEffectSpectrumAnalyzer.FFT_Size {
+  fun getFftSize(): FFT_Size {
     TODO()
   }
 

@@ -18,10 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class PhysicalBone internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
-  fun directStateChanged() {
-    TODO()
-  }
-
   fun getBodyOffset(): Transform {
     TODO()
   }
@@ -46,7 +42,7 @@ open class PhysicalBone internal constructor(
     TODO()
   }
 
-  fun getJointType(): PhysicalBone.JointType {
+  fun getJointType(): JointType {
     TODO()
   }
 
@@ -143,15 +139,6 @@ open class PhysicalBone internal constructor(
      * Container for method_bind pointers for PhysicalBone
      */
     private object __method_bind {
-      val _direct_state_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-              "_direct_state_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _direct_state_changed" }
-            }
-          }
-
       val get_body_offset: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

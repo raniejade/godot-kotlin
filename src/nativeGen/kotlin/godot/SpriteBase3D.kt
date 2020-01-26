@@ -6,6 +6,7 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Vector2
+import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,19 +21,11 @@ import kotlinx.cinterop.reinterpret
 open class SpriteBase3D internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
-  fun imUpdate() {
-    TODO()
-  }
-
-  fun queueUpdate() {
-    TODO()
-  }
-
   fun generateTriangleMesh(): TriangleMesh {
     TODO()
   }
 
-  fun getAlphaCutMode(): SpriteBase3D.AlphaCutMode {
+  fun getAlphaCutMode(): AlphaCutMode {
     TODO()
   }
 
@@ -157,24 +150,6 @@ open class SpriteBase3D internal constructor(
      * Container for method_bind pointers for SpriteBase3D
      */
     private object __method_bind {
-      val _im_update: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-              "_im_update".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _im_update" }
-            }
-          }
-
-      val _queue_update: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-              "_queue_update".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _queue_update" }
-            }
-          }
-
       val generate_triangle_mesh: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

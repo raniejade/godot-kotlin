@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class CollisionPolygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun getBuildMode(): CollisionPolygon2D.BuildMode {
+  fun getBuildMode(): BuildMode {
     TODO()
   }
 

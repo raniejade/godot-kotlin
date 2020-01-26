@@ -21,7 +21,7 @@ open class Timer internal constructor(
     TODO()
   }
 
-  fun getTimerProcessMode(): Timer.TimerProcessMode {
+  fun getTimerProcessMode(): TimerProcessMode {
     TODO()
   }
 

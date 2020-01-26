@@ -21,14 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class AStar internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun computeCost(): Float {
-    TODO()
-  }
-
-  fun estimateCost(): Float {
-    TODO()
-  }
-
   fun addPoint() {
     TODO()
   }
@@ -122,22 +114,6 @@ open class AStar internal constructor(
      * Container for method_bind pointers for AStar
      */
     private object __method_bind {
-      val _compute_cost: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
-              "_compute_cost".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _compute_cost" }
-            }
-          }
-
-      val _estimate_cost: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,
-              "_estimate_cost".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _estimate_cost" }
-            }
-          }
-
       val add_point: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AStar".cstr.ptr,

@@ -3,7 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.VariantArray
+import godot.core.Variant
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,14 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptDeconstruct internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  fun getElemCache(): VariantArray {
-    TODO()
-  }
-
-  fun setElemCache() {
-    TODO()
-  }
-
   fun getDeconstructType(): Variant.Type {
     TODO()
   }
@@ -45,24 +37,6 @@ open class VisualScriptDeconstruct internal constructor(
      * Container for method_bind pointers for VisualScriptDeconstruct
      */
     private object __method_bind {
-      val _get_elem_cache: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-              "_get_elem_cache".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_elem_cache" }
-            }
-          }
-
-      val _set_elem_cache: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-              "_set_elem_cache".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_elem_cache" }
-            }
-          }
-
       val get_deconstruct_type: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

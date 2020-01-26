@@ -31,7 +31,7 @@ open class WebRTCPeerConnection internal constructor(
     TODO()
   }
 
-  fun getConnectionState(): WebRTCPeerConnection.ConnectionState {
+  fun getConnectionState(): ConnectionState {
     TODO()
   }
 

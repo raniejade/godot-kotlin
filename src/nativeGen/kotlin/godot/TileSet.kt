@@ -23,18 +23,6 @@ import kotlinx.cinterop.reinterpret
 open class TileSet internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun forwardAtlasSubtileSelection(): Vector2 {
-    TODO()
-  }
-
-  fun forwardSubtileSelection(): Vector2 {
-    TODO()
-  }
-
-  fun isTileBound(): Boolean {
-    TODO()
-  }
-
   fun autotileClearBitmaskMap() {
     TODO()
   }
@@ -43,7 +31,7 @@ open class TileSet internal constructor(
     TODO()
   }
 
-  fun autotileGetBitmaskMode(): TileSet.BitmaskMode {
+  fun autotileGetBitmaskMode(): BitmaskMode {
     TODO()
   }
 
@@ -211,7 +199,7 @@ open class TileSet internal constructor(
     TODO()
   }
 
-  fun tileGetTileMode(): TileSet.TileMode {
+  fun tileGetTileMode(): TileMode {
     TODO()
   }
 
@@ -376,34 +364,6 @@ open class TileSet internal constructor(
      * Container for method_bind pointers for TileSet
      */
     private object __method_bind {
-      val _forward_atlas_subtile_selection: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-              "_forward_atlas_subtile_selection".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method _forward_atlas_subtile_selection" }
-            }
-          }
-
-      val _forward_subtile_selection: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-              "_forward_subtile_selection".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _forward_subtile_selection" }
-            }
-          }
-
-      val _is_tile_bound: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-              "_is_tile_bound".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _is_tile_bound" }
-            }
-          }
-
       val autotile_clear_bitmask_map: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

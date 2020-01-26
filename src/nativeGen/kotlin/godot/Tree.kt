@@ -19,34 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class Tree internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
-  fun popupSelect() {
-    TODO()
-  }
-
-  fun rangeClickTimeout() {
-    TODO()
-  }
-
-  fun scrollMoved() {
-    TODO()
-  }
-
-  fun textEditorEnter() {
-    TODO()
-  }
-
-  fun textEditorModalClose() {
-    TODO()
-  }
-
-  fun valueEditorChanged() {
-    TODO()
-  }
-
   fun areColumnTitlesVisible(): Boolean {
     TODO()
   }
@@ -131,7 +103,7 @@ open class Tree internal constructor(
     TODO()
   }
 
-  fun getSelectMode(): Tree.SelectMode {
+  fun getSelectMode(): SelectMode {
     TODO()
   }
 
@@ -240,62 +212,6 @@ open class Tree internal constructor(
      * Container for method_bind pointers for Tree
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _popup_select: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_popup_select".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _popup_select" }
-            }
-          }
-
-      val _range_click_timeout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_range_click_timeout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _range_click_timeout" }
-            }
-          }
-
-      val _scroll_moved: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_scroll_moved".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _scroll_moved" }
-            }
-          }
-
-      val _text_editor_enter: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_text_editor_enter".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _text_editor_enter" }
-            }
-          }
-
-      val _text_editor_modal_close: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_text_editor_modal_close".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _text_editor_modal_close" }
-            }
-          }
-
-      val _value_editor_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,
-              "_value_editor_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _value_editor_changed" }
-            }
-          }
-
       val are_column_titles_visible: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tree".cstr.ptr,

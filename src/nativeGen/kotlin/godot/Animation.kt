@@ -163,7 +163,7 @@ open class Animation internal constructor(
     TODO()
   }
 
-  fun trackGetInterpolationType(): Animation.InterpolationType {
+  fun trackGetInterpolationType(): InterpolationType {
     TODO()
   }
 
@@ -187,7 +187,7 @@ open class Animation internal constructor(
     TODO()
   }
 
-  fun trackGetType(): Animation.TrackType {
+  fun trackGetType(): TrackType {
     TODO()
   }
 
@@ -271,7 +271,7 @@ open class Animation internal constructor(
     TODO()
   }
 
-  fun valueTrackGetUpdateMode(): Animation.UpdateMode {
+  fun valueTrackGetUpdateMode(): UpdateMode {
     TODO()
   }
 

@@ -28,7 +28,7 @@ open class StreamPeerSSL internal constructor(
     TODO()
   }
 
-  fun getStatus(): StreamPeerSSL.Status {
+  fun getStatus(): Status {
     TODO()
   }
 

@@ -42,7 +42,7 @@ open class Camera internal constructor(
     TODO()
   }
 
-  fun getDopplerTracking(): Camera.DopplerTracking {
+  fun getDopplerTracking(): DopplerTracking {
     TODO()
   }
 
@@ -66,11 +66,11 @@ open class Camera internal constructor(
     TODO()
   }
 
-  fun getKeepAspectMode(): Camera.KeepAspect {
+  fun getKeepAspectMode(): KeepAspect {
     TODO()
   }
 
-  fun getProjection(): Camera.Projection {
+  fun getProjection(): Projection {
     TODO()
   }
 

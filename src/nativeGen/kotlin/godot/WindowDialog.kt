@@ -16,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class WindowDialog internal constructor(
   _handle: COpaquePointer
 ) : Popup(_handle) {
-  fun closed() {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
   fun getCloseButton(): TextureButton {
     TODO()
   }
@@ -57,24 +49,6 @@ open class WindowDialog internal constructor(
      * Container for method_bind pointers for WindowDialog
      */
     private object __method_bind {
-      val _closed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-              "_closed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _closed" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
       val get_close_button: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

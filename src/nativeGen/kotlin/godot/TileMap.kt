@@ -3,7 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.PoolIntArray
 import godot.core.Rect2
 import godot.core.Transform2D
 import godot.core.VariantArray
@@ -22,34 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class TileMap internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun clearQuadrants() {
-    TODO()
-  }
-
-  fun getOldCellSize(): Int {
-    TODO()
-  }
-
-  fun getTileData(): PoolIntArray {
-    TODO()
-  }
-
-  fun recreateQuadrants() {
-    TODO()
-  }
-
-  fun setCelld() {
-    TODO()
-  }
-
-  fun setOldCellSize() {
-    TODO()
-  }
-
-  fun setTileData() {
-    TODO()
-  }
-
   fun clear() {
     TODO()
   }
@@ -110,11 +81,11 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getHalfOffset(): TileMap.HalfOffset {
+  fun getHalfOffset(): HalfOffset {
     TODO()
   }
 
-  fun getMode(): TileMap.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 
@@ -126,7 +97,7 @@ open class TileMap internal constructor(
     TODO()
   }
 
-  fun getTileOrigin(): TileMap.TileOrigin {
+  fun getTileOrigin(): TileOrigin {
     TODO()
   }
 
@@ -329,69 +300,6 @@ open class TileMap internal constructor(
      * Container for method_bind pointers for TileMap
      */
     private object __method_bind {
-      val _clear_quadrants: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_clear_quadrants".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _clear_quadrants" }
-            }
-          }
-
-      val _get_old_cell_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_get_old_cell_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_old_cell_size" }
-            }
-          }
-
-      val _get_tile_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_get_tile_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_tile_data" }
-            }
-          }
-
-      val _recreate_quadrants: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_recreate_quadrants".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _recreate_quadrants" }
-            }
-          }
-
-      val _set_celld: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_set_celld".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_celld" }
-            }
-          }
-
-      val _set_old_cell_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_set_old_cell_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_old_cell_size" }
-            }
-          }
-
-      val _set_tile_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-              "_set_tile_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_tile_data" }
-            }
-          }
-
       val clear: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

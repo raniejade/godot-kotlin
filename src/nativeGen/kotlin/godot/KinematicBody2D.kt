@@ -18,10 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class KinematicBody2D internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
-  fun directStateChanged() {
-    TODO()
-  }
-
   fun getFloorVelocity(): Vector2 {
     TODO()
   }
@@ -92,15 +88,6 @@ open class KinematicBody2D internal constructor(
      * Container for method_bind pointers for KinematicBody2D
      */
     private object __method_bind {
-      val _direct_state_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody2D".cstr.ptr,
-              "_direct_state_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _direct_state_changed" }
-            }
-          }
-
       val get_floor_velocity: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

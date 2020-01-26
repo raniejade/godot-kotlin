@@ -4,7 +4,6 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
-import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,14 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getDefaultInputValues(): VariantArray {
-    TODO()
-  }
-
-  fun setDefaultInputValues() {
-    TODO()
-  }
-
   fun getDefaultInputValue(): Variant {
     TODO()
   }
@@ -45,24 +36,6 @@ open class VisualScriptNode internal constructor(
      * Container for method_bind pointers for VisualScriptNode
      */
     private object __method_bind {
-      val _get_default_input_values: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-              "_get_default_input_values".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_default_input_values" }
-            }
-          }
-
-      val _set_default_input_values: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-              "_set_default_input_values".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_default_input_values" }
-            }
-          }
-
       val get_default_input_value: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

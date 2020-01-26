@@ -50,7 +50,7 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun getCellMode(): TreeItem.TreeCellMode {
+  fun getCellMode(): TreeCellMode {
     TODO()
   }
 
@@ -118,7 +118,7 @@ open class TreeItem internal constructor(
     TODO()
   }
 
-  fun getTextAlign(): TreeItem.TextAlign {
+  fun getTextAlign(): TextAlign {
     TODO()
   }
 

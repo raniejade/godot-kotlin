@@ -3,7 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
@@ -18,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class Curve internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getData(): VariantArray {
-    TODO()
-  }
-
-  fun setData() {
-    TODO()
-  }
-
   fun addPoint(): Int {
     TODO()
   }
@@ -58,7 +49,7 @@ open class Curve internal constructor(
     TODO()
   }
 
-  fun getPointLeftMode(): Curve.TangentMode {
+  fun getPointLeftMode(): TangentMode {
     TODO()
   }
 
@@ -70,7 +61,7 @@ open class Curve internal constructor(
     TODO()
   }
 
-  fun getPointRightMode(): Curve.TangentMode {
+  fun getPointRightMode(): TangentMode {
     TODO()
   }
 
@@ -155,22 +146,6 @@ open class Curve internal constructor(
      * Container for method_bind pointers for Curve
      */
     private object __method_bind {
-      val _get_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-              "_get_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_data" }
-            }
-          }
-
-      val _set_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-              "_set_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_data" }
-            }
-          }
-
       val add_point: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,

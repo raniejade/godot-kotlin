@@ -15,7 +15,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeColorFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  fun getFunction(): VisualShaderNodeColorFunc.Function {
+  fun getFunction(): Function {
     TODO()
   }
 

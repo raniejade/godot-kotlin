@@ -21,50 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class Node internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun enterTree() {
-    TODO()
-  }
-
-  fun exitTree() {
-    TODO()
-  }
-
-  fun getConfigurationWarning(): String {
-    TODO()
-  }
-
-  fun getImportPath(): NodePath {
-    TODO()
-  }
-
-  fun input() {
-    TODO()
-  }
-
-  fun physicsProcess() {
-    TODO()
-  }
-
-  fun process() {
-    TODO()
-  }
-
-  fun ready() {
-    TODO()
-  }
-
-  fun setImportPath() {
-    TODO()
-  }
-
-  fun unhandledInput() {
-    TODO()
-  }
-
-  fun unhandledKeyInput() {
-    TODO()
-  }
-
   fun addChild() {
     TODO()
   }
@@ -161,7 +117,7 @@ open class Node internal constructor(
     TODO()
   }
 
-  fun getPauseMode(): Node.PauseMode {
+  fun getPauseMode(): PauseMode {
     TODO()
   }
 
@@ -510,94 +466,6 @@ open class Node internal constructor(
      * Container for method_bind pointers for Node
      */
     private object __method_bind {
-      val _enter_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_enter_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _enter_tree" }
-            }
-          }
-
-      val _exit_tree: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_exit_tree".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _exit_tree" }
-            }
-          }
-
-      val _get_configuration_warning: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_get_configuration_warning".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_configuration_warning" }
-            }
-          }
-
-      val _get_import_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_get_import_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_import_path" }
-            }
-          }
-
-      val _input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input" }
-            }
-          }
-
-      val _physics_process: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_physics_process".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _physics_process" }
-            }
-          }
-
-      val _process: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_process".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _process" }
-            }
-          }
-
-      val _ready: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_ready".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _ready" }
-            }
-          }
-
-      val _set_import_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_set_import_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_import_path" }
-            }
-          }
-
-      val _unhandled_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_unhandled_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _unhandled_input" }
-            }
-          }
-
-      val _unhandled_key_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,
-              "_unhandled_key_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _unhandled_key_input" }
-            }
-          }
-
       val add_child: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Node".cstr.ptr,

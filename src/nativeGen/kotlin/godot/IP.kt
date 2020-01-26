@@ -33,7 +33,7 @@ open class IP internal constructor(
     TODO()
   }
 
-  fun getResolveItemStatus(): IP.ResolverStatus {
+  fun getResolveItemStatus(): ResolverStatus {
     TODO()
   }
 

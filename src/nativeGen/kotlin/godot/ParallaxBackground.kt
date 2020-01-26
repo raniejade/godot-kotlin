@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ParallaxBackground internal constructor(
   _handle: COpaquePointer
 ) : CanvasLayer(_handle) {
-  fun cameraMoved() {
-    TODO()
-  }
-
   fun getLimitBegin(): Vector2 {
     TODO()
   }
@@ -82,15 +78,6 @@ open class ParallaxBackground internal constructor(
      * Container for method_bind pointers for ParallaxBackground
      */
     private object __method_bind {
-      val _camera_moved: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ParallaxBackground".cstr.ptr,
-              "_camera_moved".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _camera_moved" }
-            }
-          }
-
       val get_limit_begin: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -17,22 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  fun getLowerLimit(): Float {
-    TODO()
-  }
-
-  fun getUpperLimit(): Float {
-    TODO()
-  }
-
-  fun setLowerLimit() {
-    TODO()
-  }
-
-  fun setUpperLimit() {
-    TODO()
-  }
-
   fun getFlag(): Boolean {
     TODO()
   }
@@ -118,42 +102,6 @@ open class HingeJoint internal constructor(
      * Container for method_bind pointers for HingeJoint
      */
     private object __method_bind {
-      val _get_lower_limit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-              "_get_lower_limit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_lower_limit" }
-            }
-          }
-
-      val _get_upper_limit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-              "_get_upper_limit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_upper_limit" }
-            }
-          }
-
-      val _set_lower_limit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-              "_set_lower_limit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_lower_limit" }
-            }
-          }
-
-      val _set_upper_limit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-              "_set_upper_limit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_upper_limit" }
-            }
-          }
-
       val get_flag: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

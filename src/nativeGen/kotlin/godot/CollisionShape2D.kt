@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class CollisionShape2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun shapeChanged() {
-    TODO()
-  }
-
   fun getOneWayCollisionMargin(): Float {
     TODO()
   }
@@ -66,15 +62,6 @@ open class CollisionShape2D internal constructor(
      * Container for method_bind pointers for CollisionShape2D
      */
     private object __method_bind {
-      val _shape_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape2D".cstr.ptr,
-              "_shape_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _shape_changed" }
-            }
-          }
-
       val get_one_way_collision_margin: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

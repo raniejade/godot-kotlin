@@ -18,14 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class Tabs internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
-  fun updateHover() {
-    TODO()
-  }
-
   fun addTab() {
     TODO()
   }
@@ -54,11 +46,11 @@ open class Tabs internal constructor(
     TODO()
   }
 
-  fun getTabAlign(): Tabs.TabAlign {
+  fun getTabAlign(): TabAlign {
     TODO()
   }
 
-  fun getTabCloseDisplayPolicy(): Tabs.CloseButtonDisplayPolicy {
+  fun getTabCloseDisplayPolicy(): CloseButtonDisplayPolicy {
     TODO()
   }
 
@@ -191,22 +183,6 @@ open class Tabs internal constructor(
      * Container for method_bind pointers for Tabs
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _update_hover: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,
-              "_update_hover".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_hover" }
-            }
-          }
-
       val add_tab: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tabs".cstr.ptr,

@@ -16,18 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class AcceptDialog internal constructor(
   _handle: COpaquePointer
 ) : WindowDialog(_handle) {
-  fun builtinTextEntered() {
-    TODO()
-  }
-
-  fun customAction() {
-    TODO()
-  }
-
-  fun ok() {
-    TODO()
-  }
-
   fun addButton(): Button {
     TODO()
   }
@@ -77,33 +65,6 @@ open class AcceptDialog internal constructor(
      * Container for method_bind pointers for AcceptDialog
      */
     private object __method_bind {
-      val _builtin_text_entered: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-              "_builtin_text_entered".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _builtin_text_entered" }
-            }
-          }
-
-      val _custom_action: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-              "_custom_action".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _custom_action" }
-            }
-          }
-
-      val _ok: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-              "_ok".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _ok" }
-            }
-          }
-
       val add_button: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

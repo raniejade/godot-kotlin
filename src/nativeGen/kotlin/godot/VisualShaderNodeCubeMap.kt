@@ -19,7 +19,7 @@ open class VisualShaderNodeCubeMap internal constructor(
     TODO()
   }
 
-  fun getTextureType(): VisualShaderNodeCubeMap.TextureType {
+  fun getTextureType(): TextureType {
     TODO()
   }
 

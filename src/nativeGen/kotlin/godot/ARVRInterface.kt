@@ -38,7 +38,7 @@ open class ARVRInterface internal constructor(
     TODO()
   }
 
-  fun getTrackingStatus(): ARVRInterface.Tracking_status {
+  fun getTrackingStatus(): Tracking_status {
     TODO()
   }
 

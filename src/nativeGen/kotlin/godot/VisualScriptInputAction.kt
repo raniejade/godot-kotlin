@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptInputAction internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  fun getActionMode(): VisualScriptInputAction.Mode {
+  fun getActionMode(): Mode {
     TODO()
   }
 

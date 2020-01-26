@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class StaticBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
-  fun reloadPhysicsCharacteristics() {
-    TODO()
-  }
-
   fun getBounce(): Float {
     TODO()
   }
@@ -73,16 +69,6 @@ open class StaticBody internal constructor(
      * Container for method_bind pointers for StaticBody
      */
     private object __method_bind {
-      val _reload_physics_characteristics: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody".cstr.ptr,
-              "_reload_physics_characteristics".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method _reload_physics_characteristics" }
-            }
-          }
-
       val get_bounce: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

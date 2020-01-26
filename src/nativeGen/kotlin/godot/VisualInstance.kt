@@ -18,10 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualInstance internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun getVisualInstanceRid(): RID {
-    TODO()
-  }
-
   fun getAabb(): AABB {
     TODO()
   }
@@ -63,15 +59,6 @@ open class VisualInstance internal constructor(
      * Container for method_bind pointers for VisualInstance
      */
     private object __method_bind {
-      val _get_visual_instance_rid: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-              "_get_visual_instance_rid".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_visual_instance_rid" }
-            }
-          }
-
       val get_aabb: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -47,7 +47,7 @@ open class ParticlesMaterial internal constructor(
     TODO()
   }
 
-  fun getEmissionShape(): ParticlesMaterial.EmissionShape {
+  fun getEmissionShape(): EmissionShape {
     TODO()
   }
 

@@ -5,7 +5,6 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
-import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,22 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygon internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getOutlines(): VariantArray {
-    TODO()
-  }
-
-  fun getPolygons(): VariantArray {
-    TODO()
-  }
-
-  fun setOutlines() {
-    TODO()
-  }
-
-  fun setPolygons() {
-    TODO()
-  }
-
   fun addOutline() {
     TODO()
   }
@@ -104,42 +87,6 @@ open class NavigationPolygon internal constructor(
      * Container for method_bind pointers for NavigationPolygon
      */
     private object __method_bind {
-      val _get_outlines: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-              "_get_outlines".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_outlines" }
-            }
-          }
-
-      val _get_polygons: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-              "_get_polygons".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_polygons" }
-            }
-          }
-
-      val _set_outlines: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-              "_set_outlines".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_outlines" }
-            }
-          }
-
-      val _set_polygons: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-              "_set_polygons".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_polygons" }
-            }
-          }
-
       val add_outline: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

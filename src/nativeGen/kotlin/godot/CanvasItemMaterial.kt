@@ -16,11 +16,11 @@ import kotlinx.cinterop.reinterpret
 open class CanvasItemMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
-  fun getBlendMode(): CanvasItemMaterial.BlendMode {
+  fun getBlendMode(): BlendMode {
     TODO()
   }
 
-  fun getLightMode(): CanvasItemMaterial.LightMode {
+  fun getLightMode(): LightMode {
     TODO()
   }
 

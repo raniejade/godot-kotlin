@@ -16,26 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class SpinBox internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
-  fun lineEditFocusExit() {
-    TODO()
-  }
-
-  fun lineEditInput() {
-    TODO()
-  }
-
-  fun rangeClickTimeout() {
-    TODO()
-  }
-
-  fun textEntered() {
-    TODO()
-  }
-
   fun getAlign(): LineEdit.Align {
     TODO()
   }
@@ -85,51 +65,6 @@ open class SpinBox internal constructor(
      * Container for method_bind pointers for SpinBox
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _line_edit_focus_exit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "_line_edit_focus_exit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _line_edit_focus_exit" }
-            }
-          }
-
-      val _line_edit_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "_line_edit_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _line_edit_input" }
-            }
-          }
-
-      val _range_click_timeout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "_range_click_timeout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _range_click_timeout" }
-            }
-          }
-
-      val _text_entered: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "_text_entered".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _text_entered" }
-            }
-          }
-
       val get_align: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

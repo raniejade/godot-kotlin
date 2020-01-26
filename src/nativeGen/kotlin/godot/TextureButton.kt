@@ -44,7 +44,7 @@ open class TextureButton internal constructor(
     TODO()
   }
 
-  fun getStretchMode(): TextureButton.StretchMode {
+  fun getStretchMode(): StretchMode {
     TODO()
   }
 

@@ -16,14 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun updateBoneSetup() {
-    TODO()
-  }
-
-  fun updateTransform() {
-    TODO()
-  }
-
   fun getBone(): Bone2D {
     TODO()
   }
@@ -49,24 +41,6 @@ open class Skeleton2D internal constructor(
      * Container for method_bind pointers for Skeleton2D
      */
     private object __method_bind {
-      val _update_bone_setup: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-              "_update_bone_setup".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_bone_setup" }
-            }
-          }
-
-      val _update_transform: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-              "_update_transform".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_transform" }
-            }
-          }
-
       val get_bone: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

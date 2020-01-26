@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class Translation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getMessages(): PoolStringArray {
-    TODO()
-  }
-
-  fun setMessages() {
-    TODO()
-  }
-
   fun addMessage() {
     TODO()
   }
@@ -66,24 +58,6 @@ open class Translation internal constructor(
      * Container for method_bind pointers for Translation
      */
     private object __method_bind {
-      val _get_messages: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-              "_get_messages".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_messages" }
-            }
-          }
-
-      val _set_messages: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-              "_set_messages".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_messages" }
-            }
-          }
-
       val add_message: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

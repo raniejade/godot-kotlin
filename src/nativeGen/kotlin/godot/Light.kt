@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class Light internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  fun getBakeMode(): Light.BakeMode {
+  fun getBakeMode(): BakeMode {
     TODO()
   }
 

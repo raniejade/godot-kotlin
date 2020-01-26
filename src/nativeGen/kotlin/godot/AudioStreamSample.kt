@@ -21,7 +21,7 @@ open class AudioStreamSample internal constructor(
     TODO()
   }
 
-  fun getFormat(): AudioStreamSample.Format {
+  fun getFormat(): Format {
     TODO()
   }
 
@@ -33,7 +33,7 @@ open class AudioStreamSample internal constructor(
     TODO()
   }
 
-  fun getLoopMode(): AudioStreamSample.LoopMode {
+  fun getLoopMode(): LoopMode {
     TODO()
   }
 

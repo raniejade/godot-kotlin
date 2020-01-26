@@ -18,10 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class Spatial internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun updateGizmo() {
-    TODO()
-  }
-
   fun forceUpdateTransform() {
     TODO()
   }
@@ -239,15 +235,6 @@ open class Spatial internal constructor(
      * Container for method_bind pointers for Spatial
      */
     private object __method_bind {
-      val _update_gizmo: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-              "_update_gizmo".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_gizmo" }
-            }
-          }
-
       val force_update_transform: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

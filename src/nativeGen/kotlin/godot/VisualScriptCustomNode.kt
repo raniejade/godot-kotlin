@@ -3,13 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.Variant
-import kotlin.Boolean
 import kotlin.Int
-import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
-import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -18,66 +14,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptCustomNode internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  fun getCaption(): String {
-    TODO()
-  }
-
-  fun getCategory(): String {
-    TODO()
-  }
-
-  fun getInputValuePortCount(): Int {
-    TODO()
-  }
-
-  fun getInputValuePortName(): String {
-    TODO()
-  }
-
-  fun getInputValuePortType(): Int {
-    TODO()
-  }
-
-  fun getOutputSequencePortCount(): Int {
-    TODO()
-  }
-
-  fun getOutputSequencePortText(): String {
-    TODO()
-  }
-
-  fun getOutputValuePortCount(): Int {
-    TODO()
-  }
-
-  fun getOutputValuePortName(): String {
-    TODO()
-  }
-
-  fun getOutputValuePortType(): Int {
-    TODO()
-  }
-
-  fun getText(): String {
-    TODO()
-  }
-
-  fun getWorkingMemorySize(): Int {
-    TODO()
-  }
-
-  fun hasInputSequencePort(): Boolean {
-    TODO()
-  }
-
-  fun scriptChanged() {
-    TODO()
-  }
-
-  fun step(): Variant {
-    TODO()
-  }
-
   enum class StartMode(
     val value: Int
   ) {
@@ -117,143 +53,6 @@ open class VisualScriptCustomNode internal constructor(
     /**
      * Container for method_bind pointers for VisualScriptCustomNode
      */
-    private object __method_bind {
-      val _get_caption: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_caption".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_caption" }
-            }
-          }
-
-      val _get_category: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_category".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_category" }
-            }
-          }
-
-      val _get_input_value_port_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_input_value_port_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_input_value_port_count" }
-            }
-          }
-
-      val _get_input_value_port_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_input_value_port_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_input_value_port_name" }
-            }
-          }
-
-      val _get_input_value_port_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_input_value_port_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_input_value_port_type" }
-            }
-          }
-
-      val _get_output_sequence_port_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_output_sequence_port_count".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method _get_output_sequence_port_count" }
-            }
-          }
-
-      val _get_output_sequence_port_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_output_sequence_port_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_output_sequence_port_text"
-              }
-            }
-          }
-
-      val _get_output_value_port_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_output_value_port_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_output_value_port_count" }
-            }
-          }
-
-      val _get_output_value_port_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_output_value_port_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_output_value_port_name" }
-            }
-          }
-
-      val _get_output_value_port_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_output_value_port_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_output_value_port_type" }
-            }
-          }
-
-      val _get_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_text" }
-            }
-          }
-
-      val _get_working_memory_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_get_working_memory_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_working_memory_size" }
-            }
-          }
-
-      val _has_input_sequence_port: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_has_input_sequence_port".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _has_input_sequence_port" }
-            }
-          }
-
-      val _script_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_script_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _script_changed" }
-            }
-          }
-
-      val _step: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptCustomNode".cstr.ptr,
-              "_step".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _step" }
-            }
-          }
-    }
+    private object __method_bind
   }
 }

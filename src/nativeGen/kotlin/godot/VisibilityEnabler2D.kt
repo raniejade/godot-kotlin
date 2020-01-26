@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityEnabler2D internal constructor(
   _handle: COpaquePointer
 ) : VisibilityNotifier2D(_handle) {
-  fun nodeRemoved() {
-    TODO()
-  }
-
   fun isEnablerEnabled(): Boolean {
     TODO()
   }
@@ -74,15 +70,6 @@ open class VisibilityEnabler2D internal constructor(
      * Container for method_bind pointers for VisibilityEnabler2D
      */
     private object __method_bind {
-      val _node_removed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler2D".cstr.ptr,
-              "_node_removed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _node_removed" }
-            }
-          }
-
       val is_enabler_enabled: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

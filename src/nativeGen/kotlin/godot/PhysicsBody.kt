@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsBody internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject(_handle) {
-  fun getLayers(): Int {
-    TODO()
-  }
-
-  fun setLayers() {
-    TODO()
-  }
-
   fun addCollisionExceptionWith() {
     TODO()
   }
@@ -74,24 +66,6 @@ open class PhysicsBody internal constructor(
      * Container for method_bind pointers for PhysicsBody
      */
     private object __method_bind {
-      val _get_layers: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody".cstr.ptr,
-              "_get_layers".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_layers" }
-            }
-          }
-
-      val _set_layers: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsBody".cstr.ptr,
-              "_set_layers".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_layers" }
-            }
-          }
-
       val add_collision_exception_with: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

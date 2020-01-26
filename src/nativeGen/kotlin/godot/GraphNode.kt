@@ -19,10 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class GraphNode internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
   fun clearAllSlots() {
     TODO()
   }
@@ -67,7 +63,7 @@ open class GraphNode internal constructor(
     TODO()
   }
 
-  fun getOverlay(): GraphNode.Overlay {
+  fun getOverlay(): Overlay {
     TODO()
   }
 
@@ -176,15 +172,6 @@ open class GraphNode internal constructor(
      * Container for method_bind pointers for GraphNode
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
       val clear_all_slots: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

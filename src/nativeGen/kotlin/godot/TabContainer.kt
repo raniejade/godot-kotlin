@@ -17,22 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class TabContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun childRenamedCallback() {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
-  fun onThemeChanged() {
-    TODO()
-  }
-
-  fun updateCurrentTab() {
-    TODO()
-  }
-
   fun areTabsVisible(): Boolean {
     TODO()
   }
@@ -57,7 +41,7 @@ open class TabContainer internal constructor(
     TODO()
   }
 
-  fun getTabAlign(): TabContainer.TabAlign {
+  fun getTabAlign(): TabAlign {
     TODO()
   }
 
@@ -150,42 +134,6 @@ open class TabContainer internal constructor(
      * Container for method_bind pointers for TabContainer
      */
     private object __method_bind {
-      val _child_renamed_callback: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-              "_child_renamed_callback".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _child_renamed_callback" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _on_theme_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-              "_on_theme_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _on_theme_changed" }
-            }
-          }
-
-      val _update_current_tab: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-              "_update_current_tab".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_current_tab" }
-            }
-          }
-
       val are_tabs_visible: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

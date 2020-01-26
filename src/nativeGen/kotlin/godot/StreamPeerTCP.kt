@@ -33,7 +33,7 @@ open class StreamPeerTCP internal constructor(
     TODO()
   }
 
-  fun getStatus(): StreamPeerTCP.Status {
+  fun getStatus(): Status {
     TODO()
   }
 

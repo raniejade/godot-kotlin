@@ -25,7 +25,7 @@ open class VisualScriptYieldSignal internal constructor(
     TODO()
   }
 
-  fun getCallMode(): VisualScriptYieldSignal.CallMode {
+  fun getCallMode(): CallMode {
     TODO()
   }
 

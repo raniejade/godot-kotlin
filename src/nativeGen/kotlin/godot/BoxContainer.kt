@@ -19,7 +19,7 @@ open class BoxContainer internal constructor(
     TODO()
   }
 
-  fun getAlignment(): BoxContainer.AlignMode {
+  fun getAlignment(): AlignMode {
     TODO()
   }
 

@@ -24,18 +24,6 @@ import kotlinx.cinterop.reinterpret
 open class Polygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun getBones(): VariantArray {
-    TODO()
-  }
-
-  fun setBones() {
-    TODO()
-  }
-
-  fun skeletonBoneSetupChanged() {
-    TODO()
-  }
-
   fun addBone() {
     TODO()
   }
@@ -209,33 +197,6 @@ open class Polygon2D internal constructor(
      * Container for method_bind pointers for Polygon2D
      */
     private object __method_bind {
-      val _get_bones: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-              "_get_bones".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_bones" }
-            }
-          }
-
-      val _set_bones: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-              "_set_bones".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_bones" }
-            }
-          }
-
-      val _skeleton_bone_setup_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-              "_skeleton_bone_setup_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _skeleton_bone_setup_changed" }
-            }
-          }
-
       val add_bone: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

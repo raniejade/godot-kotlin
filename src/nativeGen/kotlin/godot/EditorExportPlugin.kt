@@ -14,18 +14,6 @@ import kotlinx.cinterop.reinterpret
 open class EditorExportPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun exportBegin() {
-    TODO()
-  }
-
-  fun exportEnd() {
-    TODO()
-  }
-
-  fun exportFile() {
-    TODO()
-  }
-
   fun addFile() {
     TODO()
   }
@@ -72,33 +60,6 @@ open class EditorExportPlugin internal constructor(
      * Container for method_bind pointers for EditorExportPlugin
      */
     private object __method_bind {
-      val _export_begin: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-              "_export_begin".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _export_begin" }
-            }
-          }
-
-      val _export_end: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-              "_export_end".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _export_end" }
-            }
-          }
-
-      val _export_file: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-              "_export_file".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _export_file" }
-            }
-          }
-
       val add_file: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

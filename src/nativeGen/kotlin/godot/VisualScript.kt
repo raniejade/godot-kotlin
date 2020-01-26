@@ -20,18 +20,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
-  fun getData(): Dictionary {
-    TODO()
-  }
-
-  fun nodePortsChanged() {
-    TODO()
-  }
-
-  fun setData() {
-    TODO()
-  }
-
   fun addCustomSignal() {
     TODO()
   }
@@ -213,33 +201,6 @@ open class VisualScript internal constructor(
      * Container for method_bind pointers for VisualScript
      */
     private object __method_bind {
-      val _get_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-              "_get_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_data" }
-            }
-          }
-
-      val _node_ports_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-              "_node_ports_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _node_ports_changed" }
-            }
-          }
-
-      val _set_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-              "_set_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_data" }
-            }
-          }
-
       val add_custom_signal: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

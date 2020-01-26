@@ -19,10 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class CollisionObject internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun inputEvent() {
-    TODO()
-  }
-
   fun createShapeOwner(): Int {
     TODO()
   }
@@ -108,15 +104,6 @@ open class CollisionObject internal constructor(
      * Container for method_bind pointers for CollisionObject
      */
     private object __method_bind {
-      val _input_event: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject".cstr.ptr,
-              "_input_event".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _input_event" }
-            }
-          }
-
       val create_shape_owner: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

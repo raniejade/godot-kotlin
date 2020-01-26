@@ -41,7 +41,7 @@ open class UPNPDevice internal constructor(
     TODO()
   }
 
-  fun getIgdStatus(): UPNPDevice.IGDStatus {
+  fun getIgdStatus(): IGDStatus {
     TODO()
   }
 

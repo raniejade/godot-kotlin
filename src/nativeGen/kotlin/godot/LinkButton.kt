@@ -20,7 +20,7 @@ open class LinkButton internal constructor(
     TODO()
   }
 
-  fun getUnderlineMode(): LinkButton.UnderlineMode {
+  fun getUnderlineMode(): UnderlineMode {
     TODO()
   }
 

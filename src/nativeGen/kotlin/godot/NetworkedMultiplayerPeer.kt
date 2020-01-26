@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
-  fun getConnectionStatus(): NetworkedMultiplayerPeer.ConnectionStatus {
+  fun getConnectionStatus(): ConnectionStatus {
     TODO()
   }
 
@@ -24,7 +24,7 @@ open class NetworkedMultiplayerPeer internal constructor(
     TODO()
   }
 
-  fun getTransferMode(): NetworkedMultiplayerPeer.TransferMode {
+  fun getTransferMode(): TransferMode {
     TODO()
   }
 

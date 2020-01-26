@@ -7,7 +7,6 @@ import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.Rect2
 import godot.core.Variant
-import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -24,22 +23,6 @@ import kotlinx.cinterop.reinterpret
 open class ItemList internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun getItems(): VariantArray {
-    TODO()
-  }
-
-  fun guiInput() {
-    TODO()
-  }
-
-  fun scrollChanged() {
-    TODO()
-  }
-
-  fun setItems() {
-    TODO()
-  }
-
   fun addIconItem() {
     TODO()
   }
@@ -72,7 +55,7 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun getIconMode(): ItemList.IconMode {
+  fun getIconMode(): IconMode {
     TODO()
   }
 
@@ -128,7 +111,7 @@ open class ItemList internal constructor(
     TODO()
   }
 
-  fun getSelectMode(): ItemList.SelectMode {
+  fun getSelectMode(): SelectMode {
     TODO()
   }
 
@@ -325,42 +308,6 @@ open class ItemList internal constructor(
      * Container for method_bind pointers for ItemList
      */
     private object __method_bind {
-      val _get_items: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-              "_get_items".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_items" }
-            }
-          }
-
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _scroll_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-              "_scroll_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _scroll_changed" }
-            }
-          }
-
-      val _set_items: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-              "_set_items".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_items" }
-            }
-          }
-
       val add_icon_item: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

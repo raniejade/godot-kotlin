@@ -7,7 +7,6 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolByteArray
 import godot.core.Transform
-import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -21,14 +20,6 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmapData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getUserData(): VariantArray {
-    TODO()
-  }
-
-  fun setUserData() {
-    TODO()
-  }
-
   fun addUser() {
     TODO()
   }
@@ -103,24 +94,6 @@ open class BakedLightmapData internal constructor(
      * Container for method_bind pointers for BakedLightmapData
      */
     private object __method_bind {
-      val _get_user_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-              "_get_user_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_user_data" }
-            }
-          }
-
-      val _set_user_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-              "_set_user_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_user_data" }
-            }
-          }
-
       val add_user: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

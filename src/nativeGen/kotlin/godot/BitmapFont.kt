@@ -3,8 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.PoolIntArray
-import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,30 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class BitmapFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
-  fun getChars(): PoolIntArray {
-    TODO()
-  }
-
-  fun getKernings(): PoolIntArray {
-    TODO()
-  }
-
-  fun getTextures(): VariantArray {
-    TODO()
-  }
-
-  fun setChars() {
-    TODO()
-  }
-
-  fun setKernings() {
-    TODO()
-  }
-
-  fun setTextures() {
-    TODO()
-  }
-
   fun addChar() {
     TODO()
   }
@@ -111,60 +85,6 @@ open class BitmapFont internal constructor(
      * Container for method_bind pointers for BitmapFont
      */
     private object __method_bind {
-      val _get_chars: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-              "_get_chars".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_chars" }
-            }
-          }
-
-      val _get_kernings: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-              "_get_kernings".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_kernings" }
-            }
-          }
-
-      val _get_textures: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-              "_get_textures".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_textures" }
-            }
-          }
-
-      val _set_chars: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-              "_set_chars".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_chars" }
-            }
-          }
-
-      val _set_kernings: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-              "_set_kernings".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_kernings" }
-            }
-          }
-
-      val _set_textures: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-              "_set_textures".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_textures" }
-            }
-          }
-
       val add_char: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

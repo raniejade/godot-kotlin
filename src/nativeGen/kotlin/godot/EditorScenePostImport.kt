@@ -23,10 +23,6 @@ open class EditorScenePostImport internal constructor(
     TODO()
   }
 
-  fun postImport(): Object {
-    TODO()
-  }
-
   companion object {
     fun new(): EditorScenePostImport = memScoped {
       val fnPtr =
@@ -56,15 +52,6 @@ open class EditorScenePostImport internal constructor(
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
               "get_source_folder".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method get_source_folder" }
-            }
-          }
-
-      val post_import: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
-              "post_import".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method post_import" }
             }
           }
     }

@@ -23,7 +23,7 @@ open class StyleBoxTexture internal constructor(
     TODO()
   }
 
-  fun getHAxisStretchMode(): StyleBoxTexture.AxisStretchMode {
+  fun getHAxisStretchMode(): AxisStretchMode {
     TODO()
   }
 
@@ -47,7 +47,7 @@ open class StyleBoxTexture internal constructor(
     TODO()
   }
 
-  fun getVAxisStretchMode(): StyleBoxTexture.AxisStretchMode {
+  fun getVAxisStretchMode(): AxisStretchMode {
     TODO()
   }
 

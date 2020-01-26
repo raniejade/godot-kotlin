@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class GDScriptFunctionState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun signalCallback(): Variant {
-    TODO()
-  }
-
   fun isValid(): Boolean {
     TODO()
   }
@@ -33,15 +29,6 @@ open class GDScriptFunctionState internal constructor(
      * Container for method_bind pointers for GDScriptFunctionState
      */
     private object __method_bind {
-      val _signal_callback: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScriptFunctionState".cstr.ptr,
-              "_signal_callback".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _signal_callback" }
-            }
-          }
-
       val is_valid: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

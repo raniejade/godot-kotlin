@@ -33,7 +33,7 @@ open class AnimationNodeOneShot internal constructor(
     TODO()
   }
 
-  fun getMixMode(): AnimationNodeOneShot.MixMode {
+  fun getMixMode(): MixMode {
     TODO()
   }
 

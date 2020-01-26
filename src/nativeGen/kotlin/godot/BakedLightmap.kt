@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmap internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  fun bake(): BakedLightmap.BakeError {
+  fun bake(): BakeError {
     TODO()
   }
 
@@ -31,11 +31,11 @@ open class BakedLightmap internal constructor(
     TODO()
   }
 
-  fun getBakeMode(): BakedLightmap.BakeMode {
+  fun getBakeMode(): BakeMode {
     TODO()
   }
 
-  fun getBakeQuality(): BakedLightmap.BakeQuality {
+  fun getBakeQuality(): BakeQuality {
     TODO()
   }
 

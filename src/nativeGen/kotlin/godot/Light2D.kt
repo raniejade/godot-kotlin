@@ -47,7 +47,7 @@ open class Light2D internal constructor(
     TODO()
   }
 
-  fun getMode(): Light2D.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 
@@ -59,7 +59,7 @@ open class Light2D internal constructor(
     TODO()
   }
 
-  fun getShadowFilter(): Light2D.ShadowFilter {
+  fun getShadowFilter(): ShadowFilter {
     TODO()
   }
 

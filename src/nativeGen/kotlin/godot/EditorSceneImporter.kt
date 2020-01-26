@@ -3,7 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
-import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,22 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class EditorSceneImporter internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun getExtensions(): VariantArray {
-    TODO()
-  }
-
-  fun getImportFlags(): Int {
-    TODO()
-  }
-
-  fun importAnimation(): Animation {
-    TODO()
-  }
-
-  fun importScene(): Node {
-    TODO()
-  }
-
   fun importAnimationFromOtherImporter(): Animation {
     TODO()
   }
@@ -74,42 +57,6 @@ open class EditorSceneImporter internal constructor(
      * Container for method_bind pointers for EditorSceneImporter
      */
     private object __method_bind {
-      val _get_extensions: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-              "_get_extensions".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_extensions" }
-            }
-          }
-
-      val _get_import_flags: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-              "_get_import_flags".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_import_flags" }
-            }
-          }
-
-      val _import_animation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-              "_import_animation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _import_animation" }
-            }
-          }
-
-      val _import_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-              "_import_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _import_scene" }
-            }
-          }
-
       val import_animation_from_other_importer: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

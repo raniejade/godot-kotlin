@@ -2,12 +2,8 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
-import godot.core.PoolStringArray
-import kotlin.Boolean
 import kotlin.Int
-import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -67,59 +63,7 @@ open class EditorPlugin internal constructor(
     TODO()
   }
 
-  fun applyChanges() {
-    TODO()
-  }
-
-  fun build(): Boolean {
-    TODO()
-  }
-
-  fun clear() {
-    TODO()
-  }
-
-  fun disablePlugin() {
-    TODO()
-  }
-
-  fun edit() {
-    TODO()
-  }
-
-  fun enablePlugin() {
-    TODO()
-  }
-
-  fun forwardCanvasDrawOverViewport() {
-    TODO()
-  }
-
-  fun forwardCanvasForceDrawOverViewport() {
-    TODO()
-  }
-
-  fun forwardCanvasGuiInput(): Boolean {
-    TODO()
-  }
-
-  fun forwardSpatialGuiInput(): Boolean {
-    TODO()
-  }
-
-  fun getBreakpoints(): PoolStringArray {
-    TODO()
-  }
-
   fun getEditorInterface(): EditorInterface {
-    TODO()
-  }
-
-  fun getPluginIcon(): Object {
-    TODO()
-  }
-
-  fun getPluginName(): String {
     TODO()
   }
 
@@ -127,23 +71,7 @@ open class EditorPlugin internal constructor(
     TODO()
   }
 
-  fun getState(): Dictionary {
-    TODO()
-  }
-
   fun getUndoRedo(): UndoRedo {
-    TODO()
-  }
-
-  fun getWindowLayout() {
-    TODO()
-  }
-
-  fun handles(): Boolean {
-    TODO()
-  }
-
-  fun hasMainScreen(): Boolean {
     TODO()
   }
 
@@ -152,10 +80,6 @@ open class EditorPlugin internal constructor(
   }
 
   fun makeBottomPanelItemVisible() {
-    TODO()
-  }
-
-  fun makeVisible() {
     TODO()
   }
 
@@ -207,23 +131,11 @@ open class EditorPlugin internal constructor(
     TODO()
   }
 
-  fun saveExternalData() {
-    TODO()
-  }
-
   fun setForceDrawOverForwardingEnabled() {
     TODO()
   }
 
   fun setInputEventForwardingAlwaysEnabled() {
-    TODO()
-  }
-
-  fun setState() {
-    TODO()
-  }
-
-  fun setWindowLayout() {
     TODO()
   }
 
@@ -444,131 +356,12 @@ open class EditorPlugin internal constructor(
             }
           }
 
-      val apply_changes: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "apply_changes".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method apply_changes" }
-            }
-          }
-
-      val build: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "build".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method build" }
-            }
-          }
-
-      val clear: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "clear".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method clear" }
-            }
-          }
-
-      val disable_plugin: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "disable_plugin".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method disable_plugin" }
-            }
-          }
-
-      val edit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "edit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method edit" }
-            }
-          }
-
-      val enable_plugin: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "enable_plugin".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method enable_plugin" }
-            }
-          }
-
-      val forward_canvas_draw_over_viewport: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "forward_canvas_draw_over_viewport".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method forward_canvas_draw_over_viewport" }
-            }
-          }
-
-      val forward_canvas_force_draw_over_viewport: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "forward_canvas_force_draw_over_viewport".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method forward_canvas_force_draw_over_viewport" }
-            }
-          }
-
-      val forward_canvas_gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "forward_canvas_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method forward_canvas_gui_input" }
-            }
-          }
-
-      val forward_spatial_gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "forward_spatial_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method forward_spatial_gui_input" }
-            }
-          }
-
-      val get_breakpoints: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "get_breakpoints".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_breakpoints" }
-            }
-          }
-
       val get_editor_interface: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
               "get_editor_interface".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
-            }
-          }
-
-      val get_plugin_icon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "get_plugin_icon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_plugin_icon" }
-            }
-          }
-
-      val get_plugin_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "get_plugin_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_plugin_name" }
             }
           }
 
@@ -581,48 +374,12 @@ open class EditorPlugin internal constructor(
             }
           }
 
-      val get_state: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "get_state".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_state" }
-            }
-          }
-
       val get_undo_redo: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =
               checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
               "get_undo_redo".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method get_undo_redo" }
-            }
-          }
-
-      val get_window_layout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "get_window_layout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_window_layout" }
-            }
-          }
-
-      val handles: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "handles".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method handles" }
-            }
-          }
-
-      val has_main_screen: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "has_main_screen".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_main_screen" }
             }
           }
 
@@ -642,15 +399,6 @@ open class EditorPlugin internal constructor(
               "make_bottom_panel_item_visible".cstr.ptr)
               requireNotNull(ptr) { "No method_bind found for method make_bottom_panel_item_visible"
               }
-            }
-          }
-
-      val make_visible: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "make_visible".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method make_visible" }
             }
           }
 
@@ -764,15 +512,6 @@ open class EditorPlugin internal constructor(
             }
           }
 
-      val save_external_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "save_external_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method save_external_data" }
-            }
-          }
-
       val set_force_draw_over_forwarding_enabled: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =
@@ -790,24 +529,6 @@ open class EditorPlugin internal constructor(
               "set_input_event_forwarding_always_enabled".cstr.ptr)
               requireNotNull(ptr) {
               "No method_bind found for method set_input_event_forwarding_always_enabled" }
-            }
-          }
-
-      val set_state: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "set_state".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_state" }
-            }
-          }
-
-      val set_window_layout: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-              "set_window_layout".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_window_layout" }
             }
           }
 

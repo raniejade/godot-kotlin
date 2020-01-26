@@ -29,7 +29,7 @@ open class Button internal constructor(
     TODO()
   }
 
-  fun getTextAlign(): Button.TextAlign {
+  fun getTextAlign(): TextAlign {
     TODO()
   }
 

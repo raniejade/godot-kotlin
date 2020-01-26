@@ -19,22 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class CSGPolygon internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
-  fun hasEditable3dPolygonNoDepth(): Boolean {
-    TODO()
-  }
-
-  fun isEditable3dPolygon(): Boolean {
-    TODO()
-  }
-
-  fun pathChanged() {
-    TODO()
-  }
-
-  fun pathExited() {
-    TODO()
-  }
-
   fun getDepth(): Float {
     TODO()
   }
@@ -43,7 +27,7 @@ open class CSGPolygon internal constructor(
     TODO()
   }
 
-  fun getMode(): CSGPolygon.Mode {
+  fun getMode(): Mode {
     TODO()
   }
 
@@ -55,7 +39,7 @@ open class CSGPolygon internal constructor(
     TODO()
   }
 
-  fun getPathRotation(): CSGPolygon.PathRotation {
+  fun getPathRotation(): PathRotation {
     TODO()
   }
 
@@ -184,43 +168,6 @@ open class CSGPolygon internal constructor(
      * Container for method_bind pointers for CSGPolygon
      */
     private object __method_bind {
-      val _has_editable_3d_polygon_no_depth: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-              "_has_editable_3d_polygon_no_depth".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method _has_editable_3d_polygon_no_depth" }
-            }
-          }
-
-      val _is_editable_3d_polygon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-              "_is_editable_3d_polygon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _is_editable_3d_polygon" }
-            }
-          }
-
-      val _path_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-              "_path_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _path_changed" }
-            }
-          }
-
-      val _path_exited: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-              "_path_exited".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _path_exited" }
-            }
-          }
-
       val get_depth: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

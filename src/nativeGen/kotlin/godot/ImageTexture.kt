@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ImageTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
-  fun reloadHook() {
-    TODO()
-  }
-
   fun create() {
     TODO()
   }
@@ -36,7 +32,7 @@ open class ImageTexture internal constructor(
     TODO()
   }
 
-  fun getStorage(): ImageTexture.Storage {
+  fun getStorage(): Storage {
     TODO()
   }
 
@@ -89,15 +85,6 @@ open class ImageTexture internal constructor(
      * Container for method_bind pointers for ImageTexture
      */
     private object __method_bind {
-      val _reload_hook: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-              "_reload_hook".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _reload_hook" }
-            }
-          }
-
       val create: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

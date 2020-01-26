@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class TextureRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun getStretchMode(): TextureRect.StretchMode {
+  fun getStretchMode(): StretchMode {
     TODO()
   }
 

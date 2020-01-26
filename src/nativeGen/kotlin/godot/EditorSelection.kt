@@ -15,14 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class EditorSelection internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun emitChange() {
-    TODO()
-  }
-
-  fun nodeRemoved() {
-    TODO()
-  }
-
   fun addNode() {
     TODO()
   }
@@ -57,24 +49,6 @@ open class EditorSelection internal constructor(
      * Container for method_bind pointers for EditorSelection
      */
     private object __method_bind {
-      val _emit_change: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-              "_emit_change".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _emit_change" }
-            }
-          }
-
-      val _node_removed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSelection".cstr.ptr,
-              "_node_removed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _node_removed" }
-            }
-          }
-
       val add_node: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

@@ -16,10 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ShaderMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
-  fun shaderChanged() {
-    TODO()
-  }
-
   fun getShader(): Shader {
     TODO()
   }
@@ -58,15 +54,6 @@ open class ShaderMaterial internal constructor(
      * Container for method_bind pointers for ShaderMaterial
      */
     private object __method_bind {
-      val _shader_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-              "_shader_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _shader_changed" }
-            }
-          }
-
       val get_shader: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

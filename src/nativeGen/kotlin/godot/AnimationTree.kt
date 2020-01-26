@@ -18,22 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class AnimationTree internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun clearCaches() {
-    TODO()
-  }
-
-  fun nodeRemoved() {
-    TODO()
-  }
-
-  fun treeChanged() {
-    TODO()
-  }
-
-  fun updateProperties() {
-    TODO()
-  }
-
   fun advance() {
     TODO()
   }
@@ -42,7 +26,7 @@ open class AnimationTree internal constructor(
     TODO()
   }
 
-  fun getProcessMode(): AnimationTree.AnimationProcessMode {
+  fun getProcessMode(): AnimationProcessMode {
     TODO()
   }
 
@@ -115,42 +99,6 @@ open class AnimationTree internal constructor(
      * Container for method_bind pointers for AnimationTree
      */
     private object __method_bind {
-      val _clear_caches: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-              "_clear_caches".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _clear_caches" }
-            }
-          }
-
-      val _node_removed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-              "_node_removed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _node_removed" }
-            }
-          }
-
-      val _tree_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-              "_tree_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_changed" }
-            }
-          }
-
-      val _update_properties: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-              "_update_properties".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_properties" }
-            }
-          }
-
       val advance: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

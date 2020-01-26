@@ -21,7 +21,8 @@ data class GDMethod(
   val is_reverse: Boolean,
   val is_virtual: Boolean,
   val has_varargs: Boolean,
-  val is_from_script: Boolean
+  val is_from_script: Boolean,
+  val arguments: List<GDArgument>
 )
 
 @JsonIgnoreProperties(ignoreUnknown = true)

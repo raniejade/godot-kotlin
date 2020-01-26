@@ -16,18 +16,6 @@ import kotlinx.cinterop.reinterpret
 open class ScrollContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  fun guiInput() {
-    TODO()
-  }
-
-  fun scrollMoved() {
-    TODO()
-  }
-
-  fun updateScrollbarPosition() {
-    TODO()
-  }
-
   fun getDeadzone(): Int {
     TODO()
   }
@@ -90,33 +78,6 @@ open class ScrollContainer internal constructor(
      * Container for method_bind pointers for ScrollContainer
      */
     private object __method_bind {
-      val _gui_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-              "_gui_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
-            }
-          }
-
-      val _scroll_moved: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-              "_scroll_moved".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _scroll_moved" }
-            }
-          }
-
-      val _update_scrollbar_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-              "_update_scrollbar_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _update_scrollbar_position" }
-            }
-          }
-
       val get_deadzone: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

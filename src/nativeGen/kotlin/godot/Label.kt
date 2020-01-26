@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class Label internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  fun getAlign(): Label.Align {
+  fun getAlign(): Align {
     TODO()
   }
 
@@ -50,7 +50,7 @@ open class Label internal constructor(
     TODO()
   }
 
-  fun getValign(): Label.VAlign {
+  fun getValign(): VAlign {
     TODO()
   }
 

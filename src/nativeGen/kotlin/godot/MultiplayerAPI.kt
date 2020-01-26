@@ -17,26 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class MultiplayerAPI internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addPeer() {
-    TODO()
-  }
-
-  fun connectedToServer() {
-    TODO()
-  }
-
-  fun connectionFailed() {
-    TODO()
-  }
-
-  fun delPeer() {
-    TODO()
-  }
-
-  fun serverDisconnected() {
-    TODO()
-  }
-
   fun clear() {
     TODO()
   }
@@ -151,51 +131,6 @@ open class MultiplayerAPI internal constructor(
      * Container for method_bind pointers for MultiplayerAPI
      */
     private object __method_bind {
-      val _add_peer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-              "_add_peer".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _add_peer" }
-            }
-          }
-
-      val _connected_to_server: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-              "_connected_to_server".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _connected_to_server" }
-            }
-          }
-
-      val _connection_failed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-              "_connection_failed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _connection_failed" }
-            }
-          }
-
-      val _del_peer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-              "_del_peer".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _del_peer" }
-            }
-          }
-
-      val _server_disconnected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-              "_server_disconnected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _server_disconnected" }
-            }
-          }
-
       val clear: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

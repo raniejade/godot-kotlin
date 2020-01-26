@@ -2,9 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,15 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptPropertySet internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  fun getTypeCache(): Dictionary {
-    TODO()
-  }
-
-  fun setTypeCache() {
-    TODO()
-  }
-
-  fun getAssignOp(): VisualScriptPropertySet.AssignOp {
+  fun getAssignOp(): AssignOp {
     TODO()
   }
 
@@ -46,7 +38,7 @@ open class VisualScriptPropertySet internal constructor(
     TODO()
   }
 
-  fun getCallMode(): VisualScriptPropertySet.CallMode {
+  fun getCallMode(): CallMode {
     TODO()
   }
 
@@ -172,24 +164,6 @@ open class VisualScriptPropertySet internal constructor(
      * Container for method_bind pointers for VisualScriptPropertySet
      */
     private object __method_bind {
-      val _get_type_cache: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertySet".cstr.ptr,
-              "_get_type_cache".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_type_cache" }
-            }
-          }
-
-      val _set_type_cache: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertySet".cstr.ptr,
-              "_set_type_cache".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_type_cache" }
-            }
-          }
-
       val get_assign_op: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

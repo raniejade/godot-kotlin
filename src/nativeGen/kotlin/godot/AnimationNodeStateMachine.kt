@@ -18,10 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachine internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
-  fun treeChanged() {
-    TODO()
-  }
-
   fun addNode() {
     TODO()
   }
@@ -124,15 +120,6 @@ open class AnimationNodeStateMachine internal constructor(
      * Container for method_bind pointers for AnimationNodeStateMachine
      */
     private object __method_bind {
-      val _tree_changed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-              "_tree_changed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _tree_changed" }
-            }
-          }
-
       val add_node: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

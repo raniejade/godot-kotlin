@@ -4,7 +4,6 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
-import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,22 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class SpriteFrames internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getAnimations(): VariantArray {
-    TODO()
-  }
-
-  fun getFrames(): VariantArray {
-    TODO()
-  }
-
-  fun setAnimations() {
-    TODO()
-  }
-
-  fun setFrames() {
-    TODO()
-  }
-
   fun addAnimation() {
     TODO()
   }
@@ -112,42 +95,6 @@ open class SpriteFrames internal constructor(
      * Container for method_bind pointers for SpriteFrames
      */
     private object __method_bind {
-      val _get_animations: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-              "_get_animations".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_animations" }
-            }
-          }
-
-      val _get_frames: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-              "_get_frames".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _get_frames" }
-            }
-          }
-
-      val _set_animations: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-              "_set_animations".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_animations" }
-            }
-          }
-
-      val _set_frames: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-              "_set_frames".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _set_frames" }
-            }
-          }
-
       val add_animation: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr =

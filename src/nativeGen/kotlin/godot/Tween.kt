@@ -17,10 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class Tween internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun removeByUid() {
-    TODO()
-  }
-
   fun followMethod(): Boolean {
     TODO()
   }
@@ -37,7 +33,7 @@ open class Tween internal constructor(
     TODO()
   }
 
-  fun getTweenProcessMode(): Tween.TweenProcessMode {
+  fun getTweenProcessMode(): TweenProcessMode {
     TODO()
   }
 
@@ -226,14 +222,6 @@ open class Tween internal constructor(
      * Container for method_bind pointers for Tween
      */
     private object __method_bind {
-      val _remove_by_uid: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-              "_remove_by_uid".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method _remove_by_uid" }
-            }
-          }
-
       val follow_method: CPointer<godot_method_bind> by lazy {
             memScoped {
               val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,

@@ -55,7 +55,7 @@ open class ReflectionProbe internal constructor(
     TODO()
   }
 
-  fun getUpdateMode(): ReflectionProbe.UpdateMode {
+  fun getUpdateMode(): UpdateMode {
     TODO()
   }
 
