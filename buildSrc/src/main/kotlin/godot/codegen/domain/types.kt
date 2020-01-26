@@ -1,23 +1,33 @@
 package godot.codegen.domain
 
-data class GDType(val name: String, val mappedName: String? = null, val primitive: Boolean = false) {
-  companion object {
-    val STRING = GDType("String", mappedName = "String", primitive = true)
-    val INT = GDType("int", mappedName = "Int", primitive = true)
-    val FLOAT = GDType("float", mappedName = "Float", primitive = true)
-    val BOOL = GDType("bool", mappedName = "Boolean", primitive = true)
+enum class GDType(val gdName: String, val mappedName: String? = null, val primitive: Boolean = false) {
+  STRING("String", mappedName = "String", primitive = true),
+  INT("int", mappedName = "Int", primitive = true),
+  FLOAT("float", mappedName = "Float", primitive = true),
+  BOOL("bool", mappedName = "Boolean", primitive = true),
 
-    val AABB = GDType("AABB")
-    val BASIS = GDType("Basis")
-    val DICTIONARY = GDType("Dictionary")
-    val COLOR = GDType("Color")
-    val ARRAY = GDType("Array", mappedName = "VariantArray")
-    val VARIANT = GDType("Variant")
-  }
-}
-
-
-object Types {
+  AABB("AABB"),
+  BASIS("Basis"),
+  COLOR("Color"),
+  DICTIONARY("Dictionary"),
+  NODE_PATH("NodePath"),
+  PLANE("Plane"),
+  POOL_BYTE_ARRAY("PoolByteArray"),
+  POOL_COLOR_ARRAY("PoolColorArray"),
+  POOL_INT_ARRAY("PoolIntArray"),
+  POOL_REAL_ARRAY("PoolRealArray"),
+  POOL_STRING_ARRAY("PoolStringArray"),
+  POOL_VECTOR2_ARRAY("PoolVector2Array"),
+  POOL_VECTOR3_ARRAY("PoolVector3Array"),
+  QUAT("Quat"),
+  RECT2("Rect2"),
+  RID("RID"),
+  TRANSFORM("Transform"),
+  TRANSFORM2D("Transform2D"),
+  VARIANT("Variant"),
+  VARIANT_ARRAY("Array", mappedName = "VariantArray"),
+  VECTOR2("Vector2"),
+  VECTOR3("Vector3")
 }
 
 object TypeRegistry {
@@ -25,11 +35,18 @@ object TypeRegistry {
 
   init {
     val tmp = mutableMapOf<String, GDType>()
-
-    fun MutableMap<String, GDType>.put(type: GDType) {
-      put(type.name, type)
+    GDType.values().forEach { v ->
+      tmp[v.gdName] = v
     }
 
     types = tmp.toMap()
+  }
+
+  fun get(name: String): GDType? {
+    return types[name]
+  }
+
+  fun contains(name: String): Boolean {
+    return types.containsKey(name)
   }
 }
