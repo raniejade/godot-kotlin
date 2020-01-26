@@ -176,6 +176,12 @@ class Variant(
     }
   }
 
+  fun asDictionary(): Dictionary {
+    return transmute(::Dictionary) {
+      checkNotNull(Godot.gdnative.godot_variant_as_dictionary)(it)
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -347,6 +353,11 @@ class Variant(
       }
     }
 
+    fun new(dictionary: Dictionary): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_dictionary)(it, dictionary._value.ptr)
+      }
+    }
 
     private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
       return allocType(::Variant, constructor)
