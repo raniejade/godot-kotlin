@@ -35,6 +35,7 @@ open class EditorScript internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorScript = EditorScript(ptr)
     /**
      * Container for method_bind pointers for EditorScript
      */

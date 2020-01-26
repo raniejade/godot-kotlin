@@ -168,6 +168,17 @@ open class LineEdit internal constructor(
     ALIGN_RIGHT(2),
 
     ALIGN_FILL(3);
+
+    companion object {
+      fun from(value: Int): Align {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MenuItems(
@@ -188,6 +199,17 @@ open class LineEdit internal constructor(
     MENU_REDO(6),
 
     MENU_MAX(7);
+
+    companion object {
+      fun from(value: Int): MenuItems {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -223,6 +245,7 @@ open class LineEdit internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): LineEdit = LineEdit(ptr)
     /**
      * Container for method_bind pointers for LineEdit
      */

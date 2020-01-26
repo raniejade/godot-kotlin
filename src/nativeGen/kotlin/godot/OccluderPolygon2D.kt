@@ -49,6 +49,17 @@ open class OccluderPolygon2D internal constructor(
     CULL_CLOCKWISE(1),
 
     CULL_COUNTER_CLOCKWISE(2);
+
+    companion object {
+      fun from(value: Int): CullMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -67,6 +78,7 @@ open class OccluderPolygon2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): OccluderPolygon2D = OccluderPolygon2D(ptr)
     /**
      * Container for method_bind pointers for OccluderPolygon2D
      */

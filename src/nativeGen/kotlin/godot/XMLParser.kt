@@ -102,6 +102,17 @@ open class XMLParser internal constructor(
     NODE_CDATA(5),
 
     NODE_UNKNOWN(6);
+
+    companion object {
+      fun from(value: Int): NodeType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -127,6 +138,7 @@ open class XMLParser internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): XMLParser = XMLParser(ptr)
     /**
      * Container for method_bind pointers for XMLParser
      */

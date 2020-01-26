@@ -125,6 +125,7 @@ open class VehicleWheel internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VehicleWheel = VehicleWheel(ptr)
     /**
      * Container for method_bind pointers for VehicleWheel
      */

@@ -119,6 +119,17 @@ open class SpriteBase3D internal constructor(
     FLAG_DOUBLE_SIDED(2),
 
     FLAG_MAX(3);
+
+    companion object {
+      fun from(value: Int): DrawFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AlphaCutMode(
@@ -129,6 +140,17 @@ open class SpriteBase3D internal constructor(
     ALPHA_CUT_DISCARD(1),
 
     ALPHA_CUT_OPAQUE_PREPASS(2);
+
+    companion object {
+      fun from(value: Int): AlphaCutMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

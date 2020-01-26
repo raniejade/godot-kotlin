@@ -67,6 +67,7 @@ open class StyleBoxLine internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StyleBoxLine = StyleBoxLine(ptr)
     /**
      * Container for method_bind pointers for StyleBoxLine
      */

@@ -23,6 +23,7 @@ open class VisualShaderNodeDotProduct internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeDotProduct = VisualShaderNodeDotProduct(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeDotProduct
      */

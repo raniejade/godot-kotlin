@@ -33,6 +33,7 @@ open class ConvexPolygonShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ConvexPolygonShape = ConvexPolygonShape(ptr)
     /**
      * Container for method_bind pointers for ConvexPolygonShape
      */

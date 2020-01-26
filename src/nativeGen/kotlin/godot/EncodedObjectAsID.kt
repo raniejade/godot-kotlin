@@ -33,6 +33,7 @@ open class EncodedObjectAsID internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EncodedObjectAsID = EncodedObjectAsID(ptr)
     /**
      * Container for method_bind pointers for EncodedObjectAsID
      */

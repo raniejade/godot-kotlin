@@ -36,6 +36,17 @@ open class BoxContainer internal constructor(
     ALIGN_CENTER(1),
 
     ALIGN_END(2);
+
+    companion object {
+      fun from(value: Int): AlignMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

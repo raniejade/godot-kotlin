@@ -47,9 +47,18 @@ class Variant(
     POOL_VECTOR3_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR3_ARRAY);
 
     companion object {
-      fun fromValue(value: godot_variant_type): Type {
+      fun from(value: godot_variant_type): Type {
         for (enumValue in values()) {
           if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("Unknown value: $value")
+      }
+
+      fun from(value: UInt): Type {
+        for (enumValue in values()) {
+          if (enumValue.value.value == value) {
             return enumValue
           }
         }
@@ -63,7 +72,7 @@ class Variant(
   val type: Type
     get() {
       return memScoped {
-        Type.fromValue(checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr))
+        Type.from(checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr))
       }
     }
 
@@ -228,10 +237,10 @@ class Variant(
     }
   }
 
-  fun asObject(): Object? {
+  fun <T: Object> asObject(factory: (COpaquePointer) -> T): T? {
     return memScoped {
       val obj = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
-      obj?.let(::Object)
+      obj?.let(factory)
     }
   }
 
@@ -268,15 +277,19 @@ class Variant(
       }
     }
 
+    fun new(num: Int): Variant {
+      return new(num.toLong())
+    }
+
     fun new(num: Int64): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_int)(it, num)
       }
     }
 
-    fun new(num: Double): Variant {
+    fun new(num: Float): Variant {
       return allocateVariant {
-        checkNotNull(Godot.gdnative.godot_variant_new_real)(it, num)
+        checkNotNull(Godot.gdnative.godot_variant_new_real)(it, num.toDouble())
       }
     }
 

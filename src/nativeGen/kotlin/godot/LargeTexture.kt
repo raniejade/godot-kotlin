@@ -57,6 +57,7 @@ open class LargeTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): LargeTexture = LargeTexture(ptr)
     /**
      * Container for method_bind pointers for LargeTexture
      */

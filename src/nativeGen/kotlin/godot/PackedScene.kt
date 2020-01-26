@@ -40,6 +40,17 @@ open class PackedScene internal constructor(
     GEN_EDIT_STATE_INSTANCE(1),
 
     GEN_EDIT_STATE_MAIN(2);
+
+    companion object {
+      fun from(value: Int): GenEditState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -57,6 +68,7 @@ open class PackedScene internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PackedScene = PackedScene(ptr)
     /**
      * Container for method_bind pointers for PackedScene
      */

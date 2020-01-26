@@ -23,6 +23,7 @@ open class VisualShaderNodeFaceForward internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeFaceForward = VisualShaderNodeFaceForward(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeFaceForward
      */

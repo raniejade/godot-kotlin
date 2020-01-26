@@ -61,6 +61,17 @@ open class StreamPeerSSL internal constructor(
     STATUS_ERROR(3),
 
     STATUS_ERROR_HOSTNAME_MISMATCH(4);
+
+    companion object {
+      fun from(value: Int): Status {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -82,6 +93,7 @@ open class StreamPeerSSL internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StreamPeerSSL = StreamPeerSSL(ptr)
     /**
      * Container for method_bind pointers for StreamPeerSSL
      */

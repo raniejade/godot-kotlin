@@ -79,6 +79,17 @@ open class Timer internal constructor(
     TIMER_PROCESS_PHYSICS(0),
 
     TIMER_PROCESS_IDLE(1);
+
+    companion object {
+      fun from(value: Int): TimerProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -94,6 +105,7 @@ open class Timer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Timer = Timer(ptr)
     /**
      * Container for method_bind pointers for Timer
      */

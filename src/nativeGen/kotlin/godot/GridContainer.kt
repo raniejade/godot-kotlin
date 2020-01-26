@@ -32,6 +32,7 @@ open class GridContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GridContainer = GridContainer(ptr)
     /**
      * Container for method_bind pointers for GridContainer
      */

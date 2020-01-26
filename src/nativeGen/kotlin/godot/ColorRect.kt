@@ -32,6 +32,7 @@ open class ColorRect internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ColorRect = ColorRect(ptr)
     /**
      * Container for method_bind pointers for ColorRect
      */

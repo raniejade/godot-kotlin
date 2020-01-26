@@ -82,6 +82,17 @@ open class Performance internal constructor(
     AUDIO_OUTPUT_LATENCY(28),
 
     MONITOR_MAX(29);
+
+    companion object {
+      fun from(value: Int): Monitor {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

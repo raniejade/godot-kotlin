@@ -62,6 +62,7 @@ open class SpinBox internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SpinBox = SpinBox(ptr)
     /**
      * Container for method_bind pointers for SpinBox
      */

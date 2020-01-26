@@ -23,6 +23,7 @@ open class PacketPeerGDNative internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PacketPeerGDNative = PacketPeerGDNative(ptr)
     /**
      * Container for method_bind pointers for PacketPeerGDNative
      */

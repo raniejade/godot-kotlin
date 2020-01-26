@@ -221,6 +221,17 @@ open class AudioServer internal constructor(
     SPEAKER_SURROUND_51(2),
 
     SPEAKER_SURROUND_71(3);
+
+    companion object {
+      fun from(value: Int): SpeakerMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

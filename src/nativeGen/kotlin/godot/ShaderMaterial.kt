@@ -51,6 +51,7 @@ open class ShaderMaterial internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ShaderMaterial = ShaderMaterial(ptr)
     /**
      * Container for method_bind pointers for ShaderMaterial
      */

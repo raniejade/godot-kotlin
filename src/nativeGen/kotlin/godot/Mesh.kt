@@ -73,6 +73,17 @@ open class Mesh internal constructor(
     BLEND_SHAPE_MODE_NORMALIZED(0),
 
     BLEND_SHAPE_MODE_RELATIVE(1);
+
+    companion object {
+      fun from(value: Int): BlendShapeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class PrimitiveType(
@@ -91,6 +102,17 @@ open class Mesh internal constructor(
     PRIMITIVE_TRIANGLE_STRIP(5),
 
     PRIMITIVE_TRIANGLE_FAN(6);
+
+    companion object {
+      fun from(value: Int): PrimitiveType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ArrayFormat(
@@ -139,6 +161,17 @@ open class Mesh internal constructor(
     ARRAY_FLAG_USE_2D_VERTICES(262144),
 
     ARRAY_FLAG_USE_16_BIT_BONES(524288);
+
+    companion object {
+      fun from(value: Int): ArrayFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ArrayType(
@@ -163,6 +196,17 @@ open class Mesh internal constructor(
     ARRAY_INDEX(8),
 
     ARRAY_MAX(9);
+
+    companion object {
+      fun from(value: Int): ArrayType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

@@ -23,6 +23,7 @@ open class AnimationTrackEditPlugin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationTrackEditPlugin = AnimationTrackEditPlugin(ptr)
     /**
      * Container for method_bind pointers for AnimationTrackEditPlugin
      */

@@ -103,6 +103,17 @@ open class DynamicFont internal constructor(
     SPACING_CHAR(2),
 
     SPACING_SPACE(3);
+
+    companion object {
+      fun from(value: Int): SpacingType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -122,6 +133,7 @@ open class DynamicFont internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): DynamicFont = DynamicFont(ptr)
     /**
      * Container for method_bind pointers for DynamicFont
      */

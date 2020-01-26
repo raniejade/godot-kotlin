@@ -39,6 +39,7 @@ open class CSGMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CSGMesh = CSGMesh(ptr)
     /**
      * Container for method_bind pointers for CSGMesh
      */

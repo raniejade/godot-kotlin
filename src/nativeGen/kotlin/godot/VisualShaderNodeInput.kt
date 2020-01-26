@@ -33,6 +33,7 @@ open class VisualShaderNodeInput internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeInput = VisualShaderNodeInput(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeInput
      */

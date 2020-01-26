@@ -271,6 +271,17 @@ open class Image internal constructor(
     ALPHA_BIT(1),
 
     ALPHA_BLEND(2);
+
+    companion object {
+      fun from(value: Int): AlphaMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CompressSource(
@@ -281,6 +292,17 @@ open class Image internal constructor(
     COMPRESS_SOURCE_SRGB(1),
 
     COMPRESS_SOURCE_NORMAL(2);
+
+    companion object {
+      fun from(value: Int): CompressSource {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Interpolation(
@@ -295,6 +317,17 @@ open class Image internal constructor(
     INTERPOLATE_TRILINEAR(3),
 
     INTERPOLATE_LANCZOS(4);
+
+    companion object {
+      fun from(value: Int): Interpolation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CompressMode(
@@ -309,6 +342,17 @@ open class Image internal constructor(
     COMPRESS_ETC(3),
 
     COMPRESS_ETC2(4);
+
+    companion object {
+      fun from(value: Int): CompressMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Format(
@@ -389,6 +433,17 @@ open class Image internal constructor(
     FORMAT_ETC2_RGB8A1(36),
 
     FORMAT_MAX(37);
+
+    companion object {
+      fun from(value: Int): Format {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -512,6 +567,7 @@ open class Image internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Image = Image(ptr)
     /**
      * Container for method_bind pointers for Image
      */

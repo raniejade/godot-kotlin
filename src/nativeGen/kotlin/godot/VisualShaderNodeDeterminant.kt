@@ -23,6 +23,7 @@ open class VisualShaderNodeDeterminant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeDeterminant = VisualShaderNodeDeterminant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeDeterminant
      */

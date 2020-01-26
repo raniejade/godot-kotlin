@@ -41,6 +41,7 @@ open class Listener internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Listener = Listener(ptr)
     /**
      * Container for method_bind pointers for Listener
      */

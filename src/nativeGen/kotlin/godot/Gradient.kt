@@ -76,6 +76,7 @@ open class Gradient internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Gradient = Gradient(ptr)
     /**
      * Container for method_bind pointers for Gradient
      */

@@ -81,6 +81,7 @@ open class MobileVRInterface internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MobileVRInterface = MobileVRInterface(ptr)
     /**
      * Container for method_bind pointers for MobileVRInterface
      */

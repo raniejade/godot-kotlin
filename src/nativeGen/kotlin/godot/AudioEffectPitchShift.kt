@@ -33,6 +33,7 @@ open class AudioEffectPitchShift internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectPitchShift = AudioEffectPitchShift(ptr)
     /**
      * Container for method_bind pointers for AudioEffectPitchShift
      */

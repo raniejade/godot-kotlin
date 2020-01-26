@@ -40,6 +40,17 @@ open class VisibilityEnabler2D internal constructor(
     ENABLER_PAUSE_ANIMATED_SPRITES(5),
 
     ENABLER_MAX(6);
+
+    companion object {
+      fun from(value: Int): Enabler {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -66,6 +77,7 @@ open class VisibilityEnabler2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisibilityEnabler2D = VisibilityEnabler2D(ptr)
     /**
      * Container for method_bind pointers for VisibilityEnabler2D
      */

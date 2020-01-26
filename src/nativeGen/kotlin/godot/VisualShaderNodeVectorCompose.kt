@@ -23,6 +23,8 @@ open class VisualShaderNodeVectorCompose internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorCompose =
+        VisualShaderNodeVectorCompose(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorCompose
      */

@@ -150,6 +150,7 @@ open class GraphEdit internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GraphEdit = GraphEdit(ptr)
     /**
      * Container for method_bind pointers for GraphEdit
      */

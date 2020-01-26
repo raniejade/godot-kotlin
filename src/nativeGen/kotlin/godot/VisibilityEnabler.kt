@@ -32,6 +32,17 @@ open class VisibilityEnabler internal constructor(
     ENABLER_FREEZE_BODIES(1),
 
     ENABLER_MAX(2);
+
+    companion object {
+      fun from(value: Int): Enabler {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -50,6 +61,7 @@ open class VisibilityEnabler internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisibilityEnabler = VisibilityEnabler(ptr)
     /**
      * Container for method_bind pointers for VisibilityEnabler
      */

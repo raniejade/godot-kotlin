@@ -33,6 +33,7 @@ open class CenterContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CenterContainer = CenterContainer(ptr)
     /**
      * Container for method_bind pointers for CenterContainer
      */

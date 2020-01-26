@@ -136,6 +136,17 @@ open class VisualShader internal constructor(
     TYPE_LIGHT(2),
 
     TYPE_MAX(3);
+
+    companion object {
+      fun from(value: Int): Type {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -159,6 +170,7 @@ open class VisualShader internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShader = VisualShader(ptr)
     /**
      * Container for method_bind pointers for VisualShader
      */

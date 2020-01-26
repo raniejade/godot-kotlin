@@ -311,6 +311,17 @@ open class AnimationTreePlayer internal constructor(
     ANIMATION_PROCESS_PHYSICS(0),
 
     ANIMATION_PROCESS_IDLE(1);
+
+    companion object {
+      fun from(value: Int): AnimationProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class NodeType(
@@ -335,6 +346,17 @@ open class AnimationTreePlayer internal constructor(
     NODE_TIMESEEK(8),
 
     NODE_TRANSITION(9);
+
+    companion object {
+      fun from(value: Int): NodeType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -371,6 +393,7 @@ open class AnimationTreePlayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationTreePlayer = AnimationTreePlayer(ptr)
     /**
      * Container for method_bind pointers for AnimationTreePlayer
      */

@@ -51,6 +51,7 @@ open class CollisionPolygon internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CollisionPolygon = CollisionPolygon(ptr)
     /**
      * Container for method_bind pointers for CollisionPolygon
      */

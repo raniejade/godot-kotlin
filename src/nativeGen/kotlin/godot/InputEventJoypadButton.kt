@@ -47,6 +47,7 @@ open class InputEventJoypadButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventJoypadButton = InputEventJoypadButton(ptr)
     /**
      * Container for method_bind pointers for InputEventJoypadButton
      */

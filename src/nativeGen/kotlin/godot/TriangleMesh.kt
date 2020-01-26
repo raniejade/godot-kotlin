@@ -22,6 +22,7 @@ open class TriangleMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TriangleMesh = TriangleMesh(ptr)
     /**
      * Container for method_bind pointers for TriangleMesh
      */

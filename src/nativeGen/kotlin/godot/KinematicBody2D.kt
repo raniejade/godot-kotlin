@@ -109,6 +109,7 @@ open class KinematicBody2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): KinematicBody2D = KinematicBody2D(ptr)
     /**
      * Container for method_bind pointers for KinematicBody2D
      */

@@ -11,7 +11,7 @@ class Vector2(
     Y(1);
 
     companion object {
-      fun fromValue(value: Int): Axis {
+      fun from(value: Int): Axis {
         for (enumValue in values()) {
           if (enumValue.value == value) {
             return enumValue

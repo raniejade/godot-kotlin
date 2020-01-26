@@ -281,6 +281,17 @@ open class ItemList internal constructor(
     SELECT_SINGLE(0),
 
     SELECT_MULTI(1);
+
+    companion object {
+      fun from(value: Int): SelectMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class IconMode(
@@ -289,6 +300,17 @@ open class ItemList internal constructor(
     ICON_MODE_TOP(0),
 
     ICON_MODE_LEFT(1);
+
+    companion object {
+      fun from(value: Int): IconMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -308,6 +330,7 @@ open class ItemList internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ItemList = ItemList(ptr)
     /**
      * Container for method_bind pointers for ItemList
      */

@@ -41,6 +41,7 @@ open class InputEventMouseMotion internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventMouseMotion = InputEventMouseMotion(ptr)
     /**
      * Container for method_bind pointers for InputEventMouseMotion
      */

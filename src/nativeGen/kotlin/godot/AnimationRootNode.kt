@@ -23,6 +23,7 @@ open class AnimationRootNode internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationRootNode = AnimationRootNode(ptr)
     /**
      * Container for method_bind pointers for AnimationRootNode
      */

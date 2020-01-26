@@ -56,6 +56,7 @@ open class CSGBox internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CSGBox = CSGBox(ptr)
     /**
      * Container for method_bind pointers for CSGBox
      */

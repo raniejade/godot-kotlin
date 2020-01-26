@@ -33,6 +33,7 @@ open class BoneAttachment internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BoneAttachment = BoneAttachment(ptr)
     /**
      * Container for method_bind pointers for BoneAttachment
      */

@@ -23,6 +23,7 @@ open class VisualScriptWhile internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptWhile = VisualScriptWhile(ptr)
     /**
      * Container for method_bind pointers for VisualScriptWhile
      */

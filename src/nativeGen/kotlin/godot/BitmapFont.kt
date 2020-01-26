@@ -95,6 +95,7 @@ open class BitmapFont internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BitmapFont = BitmapFont(ptr)
     /**
      * Container for method_bind pointers for BitmapFont
      */

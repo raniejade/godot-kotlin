@@ -100,6 +100,7 @@ open class MeshLibrary internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MeshLibrary = MeshLibrary(ptr)
     /**
      * Container for method_bind pointers for MeshLibrary
      */

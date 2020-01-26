@@ -181,6 +181,17 @@ open class ParticlesMaterial internal constructor(
     FLAG_DISABLE_Z(2),
 
     FLAG_MAX(3);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EmissionShape(
@@ -195,6 +206,17 @@ open class ParticlesMaterial internal constructor(
     EMISSION_SHAPE_POINTS(3),
 
     EMISSION_SHAPE_DIRECTED_POINTS(4);
+
+    companion object {
+      fun from(value: Int): EmissionShape {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Parameter(
@@ -225,6 +247,17 @@ open class ParticlesMaterial internal constructor(
     PARAM_ANIM_OFFSET(11),
 
     PARAM_MAX(12);
+
+    companion object {
+      fun from(value: Int): Parameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -281,6 +314,7 @@ open class ParticlesMaterial internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ParticlesMaterial = ParticlesMaterial(ptr)
     /**
      * Container for method_bind pointers for ParticlesMaterial
      */

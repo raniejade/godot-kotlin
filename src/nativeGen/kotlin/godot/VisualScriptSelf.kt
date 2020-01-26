@@ -23,6 +23,7 @@ open class VisualScriptSelf internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptSelf = VisualScriptSelf(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSelf
      */

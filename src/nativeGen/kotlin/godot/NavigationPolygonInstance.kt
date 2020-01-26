@@ -41,6 +41,7 @@ open class NavigationPolygonInstance internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): NavigationPolygonInstance = NavigationPolygonInstance(ptr)
     /**
      * Container for method_bind pointers for NavigationPolygonInstance
      */

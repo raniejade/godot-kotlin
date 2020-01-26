@@ -193,6 +193,7 @@ open class Polygon2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Polygon2D = Polygon2D(ptr)
     /**
      * Container for method_bind pointers for Polygon2D
      */

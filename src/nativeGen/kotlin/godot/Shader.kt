@@ -49,6 +49,17 @@ open class Shader internal constructor(
     MODE_CANVAS_ITEM(1),
 
     MODE_PARTICLES(2);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -66,6 +77,7 @@ open class Shader internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Shader = Shader(ptr)
     /**
      * Container for method_bind pointers for Shader
      */

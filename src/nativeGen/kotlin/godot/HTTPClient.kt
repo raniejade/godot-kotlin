@@ -133,6 +133,17 @@ open class HTTPClient internal constructor(
     STATUS_CONNECTION_ERROR(8),
 
     STATUS_SSL_HANDSHAKE_ERROR(9);
+
+    companion object {
+      fun from(value: Int): Status {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Method(
@@ -157,6 +168,17 @@ open class HTTPClient internal constructor(
     METHOD_PATCH(8),
 
     METHOD_MAX(9);
+
+    companion object {
+      fun from(value: Int): Method {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ResponseCode(
@@ -283,6 +305,17 @@ open class HTTPClient internal constructor(
     RESPONSE_NOT_EXTENDED(510),
 
     RESPONSE_NETWORK_AUTH_REQUIRED(511);
+
+    companion object {
+      fun from(value: Int): ResponseCode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -456,6 +489,7 @@ open class HTTPClient internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HTTPClient = HTTPClient(ptr)
     /**
      * Container for method_bind pointers for HTTPClient
      */

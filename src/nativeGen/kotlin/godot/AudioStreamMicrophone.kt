@@ -23,6 +23,7 @@ open class AudioStreamMicrophone internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamMicrophone = AudioStreamMicrophone(ptr)
     /**
      * Container for method_bind pointers for AudioStreamMicrophone
      */

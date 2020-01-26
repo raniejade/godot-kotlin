@@ -40,6 +40,7 @@ open class CylinderShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CylinderShape = CylinderShape(ptr)
     /**
      * Container for method_bind pointers for CylinderShape
      */

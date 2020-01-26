@@ -176,6 +176,7 @@ open class Theme internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Theme = Theme(ptr)
     /**
      * Container for method_bind pointers for Theme
      */

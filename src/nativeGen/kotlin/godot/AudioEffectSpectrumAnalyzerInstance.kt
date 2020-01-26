@@ -31,6 +31,17 @@ open class AudioEffectSpectrumAnalyzerInstance internal constructor(
     MAGNITUDE_AVERAGE(0),
 
     MAGNITUDE_MAX(1);
+
+    companion object {
+      fun from(value: Int): MagnitudeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

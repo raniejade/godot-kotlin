@@ -66,6 +66,17 @@ open class CubeMap internal constructor(
     FLAG_FILTER(4),
 
     FLAGS_DEFAULT(7);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Side(
@@ -82,6 +93,17 @@ open class CubeMap internal constructor(
     SIDE_FRONT(4),
 
     SIDE_BACK(5);
+
+    companion object {
+      fun from(value: Int): Side {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Storage(
@@ -92,6 +114,17 @@ open class CubeMap internal constructor(
     STORAGE_COMPRESS_LOSSY(1),
 
     STORAGE_COMPRESS_LOSSLESS(2);
+
+    companion object {
+      fun from(value: Int): Storage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -129,6 +162,7 @@ open class CubeMap internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CubeMap = CubeMap(ptr)
     /**
      * Container for method_bind pointers for CubeMap
      */

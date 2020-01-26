@@ -86,6 +86,7 @@ open class ColorPicker internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ColorPicker = ColorPicker(ptr)
     /**
      * Container for method_bind pointers for ColorPicker
      */

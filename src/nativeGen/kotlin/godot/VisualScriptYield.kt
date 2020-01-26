@@ -40,6 +40,17 @@ open class VisualScriptYield internal constructor(
     YIELD_PHYSICS_FRAME(2),
 
     YIELD_WAIT(3);
+
+    companion object {
+      fun from(value: Int): YieldMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -58,6 +69,7 @@ open class VisualScriptYield internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptYield = VisualScriptYield(ptr)
     /**
      * Container for method_bind pointers for VisualScriptYield
      */

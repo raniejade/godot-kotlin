@@ -23,6 +23,7 @@ open class VisualScriptSubCall internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptSubCall = VisualScriptSubCall(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSubCall
      */

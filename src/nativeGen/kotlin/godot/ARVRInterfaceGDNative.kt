@@ -23,6 +23,7 @@ open class ARVRInterfaceGDNative internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ARVRInterfaceGDNative = ARVRInterfaceGDNative(ptr)
     /**
      * Container for method_bind pointers for ARVRInterfaceGDNative
      */

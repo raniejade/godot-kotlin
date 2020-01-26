@@ -50,6 +50,7 @@ open class ColorPickerButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ColorPickerButton = ColorPickerButton(ptr)
     /**
      * Container for method_bind pointers for ColorPickerButton
      */

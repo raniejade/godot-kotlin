@@ -43,6 +43,17 @@ open class VisualScriptMathConstant internal constructor(
     MATH_CONSTANT_NAN(7),
 
     MATH_CONSTANT_MAX(8);
+
+    companion object {
+      fun from(value: Int): MathConstant {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -73,6 +84,7 @@ open class VisualScriptMathConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptMathConstant = VisualScriptMathConstant(ptr)
     /**
      * Container for method_bind pointers for VisualScriptMathConstant
      */

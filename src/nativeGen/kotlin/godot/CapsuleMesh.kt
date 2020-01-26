@@ -57,6 +57,7 @@ open class CapsuleMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CapsuleMesh = CapsuleMesh(ptr)
     /**
      * Container for method_bind pointers for CapsuleMesh
      */

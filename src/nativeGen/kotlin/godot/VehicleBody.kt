@@ -48,6 +48,7 @@ open class VehicleBody internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VehicleBody = VehicleBody(ptr)
     /**
      * Container for method_bind pointers for VehicleBody
      */

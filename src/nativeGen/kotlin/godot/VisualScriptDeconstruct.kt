@@ -34,6 +34,7 @@ open class VisualScriptDeconstruct internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptDeconstruct = VisualScriptDeconstruct(ptr)
     /**
      * Container for method_bind pointers for VisualScriptDeconstruct
      */

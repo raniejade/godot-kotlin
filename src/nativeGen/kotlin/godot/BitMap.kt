@@ -65,6 +65,7 @@ open class BitMap internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BitMap = BitMap(ptr)
     /**
      * Container for method_bind pointers for BitMap
      */

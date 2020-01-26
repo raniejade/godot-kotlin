@@ -374,6 +374,17 @@ open class Animation internal constructor(
     TYPE_AUDIO(4),
 
     TYPE_ANIMATION(5);
+
+    companion object {
+      fun from(value: Int): TrackType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class UpdateMode(
@@ -386,6 +397,17 @@ open class Animation internal constructor(
     UPDATE_TRIGGER(2),
 
     UPDATE_CAPTURE(3);
+
+    companion object {
+      fun from(value: Int): UpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class InterpolationType(
@@ -396,6 +418,17 @@ open class Animation internal constructor(
     INTERPOLATION_LINEAR(1),
 
     INTERPOLATION_CUBIC(2);
+
+    companion object {
+      fun from(value: Int): InterpolationType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -433,6 +466,7 @@ open class Animation internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Animation = Animation(ptr)
     /**
      * Container for method_bind pointers for Animation
      */

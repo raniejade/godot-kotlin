@@ -205,6 +205,17 @@ open class RigidBody internal constructor(
     MODE_CHARACTER(2),
 
     MODE_KINEMATIC(3);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -224,6 +235,7 @@ open class RigidBody internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RigidBody = RigidBody(ptr)
     /**
      * Container for method_bind pointers for RigidBody
      */

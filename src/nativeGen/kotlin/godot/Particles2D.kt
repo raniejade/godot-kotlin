@@ -160,6 +160,17 @@ open class Particles2D internal constructor(
     DRAW_ORDER_INDEX(0),
 
     DRAW_ORDER_LIFETIME(1);
+
+    companion object {
+      fun from(value: Int): DrawOrder {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -175,6 +186,7 @@ open class Particles2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Particles2D = Particles2D(ptr)
     /**
      * Container for method_bind pointers for Particles2D
      */

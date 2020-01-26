@@ -41,6 +41,17 @@ open class Sky internal constructor(
     RADIANCE_SIZE_2048(6),
 
     RADIANCE_SIZE_MAX(7);
+
+    companion object {
+      fun from(value: Int): RadianceSize {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

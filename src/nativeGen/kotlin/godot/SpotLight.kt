@@ -22,6 +22,7 @@ open class SpotLight internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SpotLight = SpotLight(ptr)
     /**
      * Container for method_bind pointers for SpotLight
      */

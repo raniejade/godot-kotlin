@@ -48,6 +48,7 @@ open class MeshInstance2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MeshInstance2D = MeshInstance2D(ptr)
     /**
      * Container for method_bind pointers for MeshInstance2D
      */

@@ -654,6 +654,17 @@ open class Environment internal constructor(
     SSAO_BLUR_2x2(2),
 
     SSAO_BLUR_3x3(3);
+
+    companion object {
+      fun from(value: Int): SSAOBlur {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ToneMapper(
@@ -666,6 +677,17 @@ open class Environment internal constructor(
     TONE_MAPPER_FILMIC(2),
 
     TONE_MAPPER_ACES(3);
+
+    companion object {
+      fun from(value: Int): ToneMapper {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class GlowBlendMode(
@@ -678,6 +700,17 @@ open class Environment internal constructor(
     GLOW_BLEND_MODE_SOFTLIGHT(2),
 
     GLOW_BLEND_MODE_REPLACE(3);
+
+    companion object {
+      fun from(value: Int): GlowBlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BGMode(
@@ -698,6 +731,17 @@ open class Environment internal constructor(
     BG_CAMERA_FEED(6),
 
     BG_MAX(7);
+
+    companion object {
+      fun from(value: Int): BGMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SSAOQuality(
@@ -708,6 +752,17 @@ open class Environment internal constructor(
     SSAO_QUALITY_MEDIUM(1),
 
     SSAO_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): SSAOQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DOFBlurQuality(
@@ -718,6 +773,17 @@ open class Environment internal constructor(
     DOF_BLUR_QUALITY_MEDIUM(1),
 
     DOF_BLUR_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): DOFBlurQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -781,6 +847,7 @@ open class Environment internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Environment = Environment(ptr)
     /**
      * Container for method_bind pointers for Environment
      */

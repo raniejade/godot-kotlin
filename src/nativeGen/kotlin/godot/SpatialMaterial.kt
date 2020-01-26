@@ -481,6 +481,17 @@ open class SpatialMaterial internal constructor(
     EMISSION_OP_ADD(0),
 
     EMISSION_OP_MULTIPLY(1);
+
+    companion object {
+      fun from(value: Int): EmissionOperator {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DiffuseMode(
@@ -495,6 +506,17 @@ open class SpatialMaterial internal constructor(
     DIFFUSE_OREN_NAYAR(3),
 
     DIFFUSE_TOON(4);
+
+    companion object {
+      fun from(value: Int): DiffuseMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SpecularMode(
@@ -509,6 +531,17 @@ open class SpatialMaterial internal constructor(
     SPECULAR_TOON(3),
 
     SPECULAR_DISABLED(4);
+
+    companion object {
+      fun from(value: Int): SpecularMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Feature(
@@ -539,6 +572,17 @@ open class SpatialMaterial internal constructor(
     FEATURE_DETAIL(11),
 
     FEATURE_MAX(12);
+
+    companion object {
+      fun from(value: Int): Feature {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Flags(
@@ -583,6 +627,17 @@ open class SpatialMaterial internal constructor(
     FLAG_USE_SHADOW_TO_OPACITY(18),
 
     FLAG_MAX(19);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CullMode(
@@ -593,6 +648,17 @@ open class SpatialMaterial internal constructor(
     CULL_FRONT(1),
 
     CULL_DISABLED(2);
+
+    companion object {
+      fun from(value: Int): CullMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DetailUV(
@@ -601,6 +667,17 @@ open class SpatialMaterial internal constructor(
     DETAIL_UV_1(0),
 
     DETAIL_UV_2(1);
+
+    companion object {
+      fun from(value: Int): DetailUV {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DistanceFadeMode(
@@ -613,6 +690,17 @@ open class SpatialMaterial internal constructor(
     DISTANCE_FADE_PIXEL_DITHER(2),
 
     DISTANCE_FADE_OBJECT_DITHER(3);
+
+    companion object {
+      fun from(value: Int): DistanceFadeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BillboardMode(
@@ -625,6 +713,17 @@ open class SpatialMaterial internal constructor(
     BILLBOARD_FIXED_Y(2),
 
     BILLBOARD_PARTICLES(3);
+
+    companion object {
+      fun from(value: Int): BillboardMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DepthDrawMode(
@@ -637,6 +736,17 @@ open class SpatialMaterial internal constructor(
     DEPTH_DRAW_DISABLED(2),
 
     DEPTH_DRAW_ALPHA_OPAQUE_PREPASS(3);
+
+    companion object {
+      fun from(value: Int): DepthDrawMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TextureChannel(
@@ -651,6 +761,17 @@ open class SpatialMaterial internal constructor(
     TEXTURE_CHANNEL_ALPHA(3),
 
     TEXTURE_CHANNEL_GRAYSCALE(4);
+
+    companion object {
+      fun from(value: Int): TextureChannel {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BlendMode(
@@ -663,6 +784,17 @@ open class SpatialMaterial internal constructor(
     BLEND_MODE_SUB(2),
 
     BLEND_MODE_MUL(3);
+
+    companion object {
+      fun from(value: Int): BlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TextureParam(
@@ -701,6 +833,17 @@ open class SpatialMaterial internal constructor(
     TEXTURE_DETAIL_NORMAL(15),
 
     TEXTURE_MAX(16);
+
+    companion object {
+      fun from(value: Int): TextureParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -889,6 +1032,7 @@ open class SpatialMaterial internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SpatialMaterial = SpatialMaterial(ptr)
     /**
      * Container for method_bind pointers for SpatialMaterial
      */

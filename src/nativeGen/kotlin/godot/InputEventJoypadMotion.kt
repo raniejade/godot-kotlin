@@ -42,6 +42,7 @@ open class InputEventJoypadMotion internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventJoypadMotion = InputEventJoypadMotion(ptr)
     /**
      * Container for method_bind pointers for InputEventJoypadMotion
      */

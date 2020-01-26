@@ -66,6 +66,7 @@ open class RemoteTransform2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RemoteTransform2D = RemoteTransform2D(ptr)
     /**
      * Container for method_bind pointers for RemoteTransform2D
      */

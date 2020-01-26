@@ -548,6 +548,17 @@ open class Physics2DServer internal constructor(
     INFO_COLLISION_PAIRS(1),
 
     INFO_ISLAND_COUNT(2);
+
+    companion object {
+      fun from(value: Int): ProcessInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AreaBodyStatus(
@@ -556,6 +567,17 @@ open class Physics2DServer internal constructor(
     AREA_BODY_ADDED(0),
 
     AREA_BODY_REMOVED(1);
+
+    companion object {
+      fun from(value: Int): AreaBodyStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DampedStringParam(
@@ -566,6 +588,17 @@ open class Physics2DServer internal constructor(
     DAMPED_STRING_STIFFNESS(1),
 
     DAMPED_STRING_DAMPING(2);
+
+    companion object {
+      fun from(value: Int): DampedStringParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BodyMode(
@@ -578,6 +611,17 @@ open class Physics2DServer internal constructor(
     BODY_MODE_RIGID(2),
 
     BODY_MODE_CHARACTER(3);
+
+    companion object {
+      fun from(value: Int): BodyMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShapeType(
@@ -600,6 +644,17 @@ open class Physics2DServer internal constructor(
     SHAPE_CONCAVE_POLYGON(7),
 
     SHAPE_CUSTOM(8);
+
+    companion object {
+      fun from(value: Int): ShapeType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class JointParam(
@@ -610,6 +665,17 @@ open class Physics2DServer internal constructor(
     JOINT_PARAM_MAX_BIAS(1),
 
     JOINT_PARAM_MAX_FORCE(2);
+
+    companion object {
+      fun from(value: Int): JointParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SpaceParameter(
@@ -630,6 +696,17 @@ open class Physics2DServer internal constructor(
     SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS(6),
 
     SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(7);
+
+    companion object {
+      fun from(value: Int): SpaceParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class JointType(
@@ -640,6 +717,17 @@ open class Physics2DServer internal constructor(
     JOINT_GROOVE(1),
 
     JOINT_DAMPED_SPRING(2);
+
+    companion object {
+      fun from(value: Int): JointType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CCDMode(
@@ -650,6 +738,17 @@ open class Physics2DServer internal constructor(
     CCD_MODE_CAST_RAY(1),
 
     CCD_MODE_CAST_SHAPE(2);
+
+    companion object {
+      fun from(value: Int): CCDMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BodyState(
@@ -664,6 +763,17 @@ open class Physics2DServer internal constructor(
     BODY_STATE_SLEEPING(3),
 
     BODY_STATE_CAN_SLEEP(4);
+
+    companion object {
+      fun from(value: Int): BodyState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BodyParameter(
@@ -684,6 +794,17 @@ open class Physics2DServer internal constructor(
     BODY_PARAM_ANGULAR_DAMP(6),
 
     BODY_PARAM_MAX(7);
+
+    companion object {
+      fun from(value: Int): BodyParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AreaSpaceOverrideMode(
@@ -698,6 +819,17 @@ open class Physics2DServer internal constructor(
     AREA_SPACE_OVERRIDE_REPLACE(3),
 
     AREA_SPACE_OVERRIDE_REPLACE_COMBINE(4);
+
+    companion object {
+      fun from(value: Int): AreaSpaceOverrideMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AreaParameter(
@@ -718,6 +850,17 @@ open class Physics2DServer internal constructor(
     AREA_PARAM_ANGULAR_DAMP(6),
 
     AREA_PARAM_PRIORITY(7);
+
+    companion object {
+      fun from(value: Int): AreaParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

@@ -23,6 +23,7 @@ open class StreamPeerGDNative internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StreamPeerGDNative = StreamPeerGDNative(ptr)
     /**
      * Container for method_bind pointers for StreamPeerGDNative
      */

@@ -36,6 +36,7 @@ open class Reference internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Reference = Reference(ptr)
     /**
      * Container for method_bind pointers for Reference
      */

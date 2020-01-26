@@ -121,6 +121,17 @@ open class ReflectionProbe internal constructor(
     UPDATE_ONCE(0),
 
     UPDATE_ALWAYS(1);
+
+    companion object {
+      fun from(value: Int): UpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -137,6 +148,7 @@ open class ReflectionProbe internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ReflectionProbe = ReflectionProbe(ptr)
     /**
      * Container for method_bind pointers for ReflectionProbe
      */

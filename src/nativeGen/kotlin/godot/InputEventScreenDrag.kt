@@ -58,6 +58,7 @@ open class InputEventScreenDrag internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventScreenDrag = InputEventScreenDrag(ptr)
     /**
      * Container for method_bind pointers for InputEventScreenDrag
      */

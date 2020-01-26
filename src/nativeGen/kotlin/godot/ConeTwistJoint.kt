@@ -38,6 +38,17 @@ open class ConeTwistJoint internal constructor(
     PARAM_RELAXATION(4),
 
     PARAM_MAX(5);
+
+    companion object {
+      fun from(value: Int): Param {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -62,6 +73,7 @@ open class ConeTwistJoint internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ConeTwistJoint = ConeTwistJoint(ptr)
     /**
      * Container for method_bind pointers for ConeTwistJoint
      */

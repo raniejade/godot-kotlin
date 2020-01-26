@@ -23,6 +23,7 @@ open class VSplitContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VSplitContainer = VSplitContainer(ptr)
     /**
      * Container for method_bind pointers for VSplitContainer
      */

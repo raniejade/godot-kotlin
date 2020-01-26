@@ -23,6 +23,8 @@ open class VisualShaderNodeScalarSmoothStep internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeScalarSmoothStep =
+        VisualShaderNodeScalarSmoothStep(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarSmoothStep
      */

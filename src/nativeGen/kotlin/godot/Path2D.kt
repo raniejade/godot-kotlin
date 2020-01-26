@@ -31,6 +31,7 @@ open class Path2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Path2D = Path2D(ptr)
     /**
      * Container for method_bind pointers for Path2D
      */

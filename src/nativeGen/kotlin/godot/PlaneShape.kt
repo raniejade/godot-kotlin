@@ -32,6 +32,7 @@ open class PlaneShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PlaneShape = PlaneShape(ptr)
     /**
      * Container for method_bind pointers for PlaneShape
      */

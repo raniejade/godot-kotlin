@@ -22,6 +22,17 @@ open class VisualScriptCustomNode internal constructor(
     START_MODE_CONTINUE_SEQUENCE(1),
 
     START_MODE_RESUME_YIELD(2);
+
+    companion object {
+      fun from(value: Int): StartMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -50,6 +61,7 @@ open class VisualScriptCustomNode internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptCustomNode = VisualScriptCustomNode(ptr)
     /**
      * Container for method_bind pointers for VisualScriptCustomNode
      */

@@ -41,6 +41,7 @@ open class CapsuleShape2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CapsuleShape2D = CapsuleShape2D(ptr)
     /**
      * Container for method_bind pointers for CapsuleShape2D
      */

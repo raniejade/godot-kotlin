@@ -140,6 +140,17 @@ open class Tabs internal constructor(
     CLOSE_BUTTON_SHOW_ALWAYS(2),
 
     CLOSE_BUTTON_MAX(3);
+
+    companion object {
+      fun from(value: Int): CloseButtonDisplayPolicy {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TabAlign(
@@ -152,6 +163,17 @@ open class Tabs internal constructor(
     ALIGN_RIGHT(2),
 
     ALIGN_MAX(3);
+
+    companion object {
+      fun from(value: Int): TabAlign {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -179,6 +201,7 @@ open class Tabs internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Tabs = Tabs(ptr)
     /**
      * Container for method_bind pointers for Tabs
      */

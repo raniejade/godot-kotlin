@@ -33,6 +33,17 @@ open class VisualShaderNodeTransformMult internal constructor(
     OP_AxB_COMP(2),
 
     OP_BxA_COMP(3);
+
+    companion object {
+      fun from(value: Int): Operator {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -53,6 +64,8 @@ open class VisualShaderNodeTransformMult internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeTransformMult =
+        VisualShaderNodeTransformMult(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTransformMult
      */

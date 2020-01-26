@@ -22,6 +22,7 @@ open class HSlider internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HSlider = HSlider(ptr)
     /**
      * Container for method_bind pointers for HSlider
      */

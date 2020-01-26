@@ -22,6 +22,7 @@ open class HSeparator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HSeparator = HSeparator(ptr)
     /**
      * Container for method_bind pointers for HSeparator
      */

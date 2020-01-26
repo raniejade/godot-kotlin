@@ -94,6 +94,7 @@ open class BakedLightmapData internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BakedLightmapData = BakedLightmapData(ptr)
     /**
      * Container for method_bind pointers for BakedLightmapData
      */

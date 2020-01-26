@@ -99,6 +99,17 @@ open class Texture internal constructor(
     FLAG_MIRRORED_REPEAT(32),
 
     FLAG_VIDEO_SURFACE(2048);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

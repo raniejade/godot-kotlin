@@ -33,6 +33,8 @@ open class VisualShaderNodeTransformConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeTransformConstant =
+        VisualShaderNodeTransformConstant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTransformConstant
      */

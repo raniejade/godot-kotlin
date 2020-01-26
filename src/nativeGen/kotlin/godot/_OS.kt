@@ -528,6 +528,17 @@ open class _OS internal constructor(
     VIDEO_DRIVER_GLES3(0),
 
     VIDEO_DRIVER_GLES2(1);
+
+    companion object {
+      fun from(value: Int): VideoDriver {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SystemDir(
@@ -548,6 +559,17 @@ open class _OS internal constructor(
     SYSTEM_DIR_PICTURES(6),
 
     SYSTEM_DIR_RINGTONES(7);
+
+    companion object {
+      fun from(value: Int): SystemDir {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ScreenOrientation(
@@ -566,6 +588,17 @@ open class _OS internal constructor(
     SCREEN_ORIENTATION_SENSOR_PORTRAIT(5),
 
     SCREEN_ORIENTATION_SENSOR(6);
+
+    companion object {
+      fun from(value: Int): ScreenOrientation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class PowerState(
@@ -580,6 +613,17 @@ open class _OS internal constructor(
     POWERSTATE_CHARGING(3),
 
     POWERSTATE_CHARGED(4);
+
+    companion object {
+      fun from(value: Int): PowerState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Month(
@@ -608,6 +652,17 @@ open class _OS internal constructor(
     MONTH_NOVEMBER(11),
 
     MONTH_DECEMBER(12);
+
+    companion object {
+      fun from(value: Int): Month {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Weekday(
@@ -626,6 +681,17 @@ open class _OS internal constructor(
     DAY_FRIDAY(5),
 
     DAY_SATURDAY(6);
+
+    companion object {
+      fun from(value: Int): Weekday {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

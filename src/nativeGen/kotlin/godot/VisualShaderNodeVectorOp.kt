@@ -49,6 +49,17 @@ open class VisualShaderNodeVectorOp internal constructor(
     OP_REFLECT(10),
 
     OP_STEP(11);
+
+    companion object {
+      fun from(value: Int): Operator {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -85,6 +96,7 @@ open class VisualShaderNodeVectorOp internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorOp = VisualShaderNodeVectorOp(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorOp
      */

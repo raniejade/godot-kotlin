@@ -244,6 +244,17 @@ open class SceneTree internal constructor(
     STRETCH_ASPECT_KEEP_HEIGHT(3),
 
     STRETCH_ASPECT_EXPAND(4);
+
+    companion object {
+      fun from(value: Int): StretchAspect {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class GroupCallFlags(
@@ -256,6 +267,17 @@ open class SceneTree internal constructor(
     GROUP_CALL_REALTIME(2),
 
     GROUP_CALL_UNIQUE(4);
+
+    companion object {
+      fun from(value: Int): GroupCallFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class StretchMode(
@@ -266,6 +288,17 @@ open class SceneTree internal constructor(
     STRETCH_MODE_2D(1),
 
     STRETCH_MODE_VIEWPORT(2);
+
+    companion object {
+      fun from(value: Int): StretchMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -301,6 +334,7 @@ open class SceneTree internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SceneTree = SceneTree(ptr)
     /**
      * Container for method_bind pointers for SceneTree
      */

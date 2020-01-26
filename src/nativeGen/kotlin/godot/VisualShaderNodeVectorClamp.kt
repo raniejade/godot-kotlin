@@ -23,6 +23,7 @@ open class VisualShaderNodeVectorClamp internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorClamp = VisualShaderNodeVectorClamp(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorClamp
      */

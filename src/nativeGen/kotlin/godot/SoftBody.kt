@@ -160,6 +160,7 @@ open class SoftBody internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SoftBody = SoftBody(ptr)
     /**
      * Container for method_bind pointers for SoftBody
      */

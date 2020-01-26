@@ -42,6 +42,7 @@ open class TCP_Server internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TCP_Server = TCP_Server(ptr)
     /**
      * Container for method_bind pointers for TCP_Server
      */

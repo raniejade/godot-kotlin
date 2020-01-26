@@ -47,6 +47,17 @@ open class VisualShaderNodeTexture internal constructor(
     TYPE_COLOR(1),
 
     TYPE_NORMALMAP(2);
+
+    companion object {
+      fun from(value: Int): TextureType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Source(
@@ -59,6 +70,17 @@ open class VisualShaderNodeTexture internal constructor(
     SOURCE_2D_TEXTURE(2),
 
     SOURCE_2D_NORMAL(3);
+
+    companion object {
+      fun from(value: Int): Source {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -85,6 +107,7 @@ open class VisualShaderNodeTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeTexture = VisualShaderNodeTexture(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTexture
      */

@@ -48,6 +48,7 @@ open class WebSocketClient internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WebSocketClient = WebSocketClient(ptr)
     /**
      * Container for method_bind pointers for WebSocketClient
      */

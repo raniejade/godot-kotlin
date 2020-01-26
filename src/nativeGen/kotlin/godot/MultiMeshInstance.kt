@@ -32,6 +32,7 @@ open class MultiMeshInstance internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MultiMeshInstance = MultiMeshInstance(ptr)
     /**
      * Container for method_bind pointers for MultiMeshInstance
      */

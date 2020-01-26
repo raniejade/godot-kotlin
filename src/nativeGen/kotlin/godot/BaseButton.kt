@@ -110,6 +110,17 @@ open class BaseButton internal constructor(
     ACTION_MODE_BUTTON_PRESS(0),
 
     ACTION_MODE_BUTTON_RELEASE(1);
+
+    companion object {
+      fun from(value: Int): ActionMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DrawMode(
@@ -124,6 +135,17 @@ open class BaseButton internal constructor(
     DRAW_DISABLED(3),
 
     DRAW_HOVER_PRESSED(4);
+
+    companion object {
+      fun from(value: Int): DrawMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

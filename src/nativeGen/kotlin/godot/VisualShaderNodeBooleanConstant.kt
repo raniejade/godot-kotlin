@@ -33,6 +33,8 @@ open class VisualShaderNodeBooleanConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeBooleanConstant =
+        VisualShaderNodeBooleanConstant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeBooleanConstant
      */

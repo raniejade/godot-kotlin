@@ -23,6 +23,7 @@ open class VisualShaderNodeFresnel internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeFresnel = VisualShaderNodeFresnel(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeFresnel
      */

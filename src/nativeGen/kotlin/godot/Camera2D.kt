@@ -200,6 +200,17 @@ open class Camera2D internal constructor(
     CAMERA2D_PROCESS_PHYSICS(0),
 
     CAMERA2D_PROCESS_IDLE(1);
+
+    companion object {
+      fun from(value: Int): Camera2DProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AnchorMode(
@@ -208,6 +219,17 @@ open class Camera2D internal constructor(
     ANCHOR_MODE_FIXED_TOP_LEFT(0),
 
     ANCHOR_MODE_DRAG_CENTER(1);
+
+    companion object {
+      fun from(value: Int): AnchorMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -227,6 +249,7 @@ open class Camera2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Camera2D = Camera2D(ptr)
     /**
      * Container for method_bind pointers for Camera2D
      */

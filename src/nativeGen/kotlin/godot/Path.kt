@@ -31,6 +31,7 @@ open class Path internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Path = Path(ptr)
     /**
      * Container for method_bind pointers for Path
      */

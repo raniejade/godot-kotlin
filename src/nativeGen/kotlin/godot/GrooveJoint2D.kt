@@ -40,6 +40,7 @@ open class GrooveJoint2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GrooveJoint2D = GrooveJoint2D(ptr)
     /**
      * Container for method_bind pointers for GrooveJoint2D
      */

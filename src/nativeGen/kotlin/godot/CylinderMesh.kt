@@ -65,6 +65,7 @@ open class CylinderMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CylinderMesh = CylinderMesh(ptr)
     /**
      * Container for method_bind pointers for CylinderMesh
      */

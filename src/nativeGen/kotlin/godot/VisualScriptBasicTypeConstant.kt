@@ -43,6 +43,8 @@ open class VisualScriptBasicTypeConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptBasicTypeConstant =
+        VisualScriptBasicTypeConstant(ptr)
     /**
      * Container for method_bind pointers for VisualScriptBasicTypeConstant
      */

@@ -98,6 +98,7 @@ open class _Directory internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): _Directory = _Directory(ptr)
     /**
      * Container for method_bind pointers for _Directory
      */

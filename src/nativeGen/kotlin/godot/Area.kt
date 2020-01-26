@@ -208,6 +208,17 @@ open class Area internal constructor(
     SPACE_OVERRIDE_REPLACE(3),
 
     SPACE_OVERRIDE_REPLACE_COMBINE(4);
+
+    companion object {
+      fun from(value: Int): SpaceOverride {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -229,6 +240,7 @@ open class Area internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Area = Area(ptr)
     /**
      * Container for method_bind pointers for Area
      */

@@ -58,6 +58,7 @@ open class PhysicsMaterial internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PhysicsMaterial = PhysicsMaterial(ptr)
     /**
      * Container for method_bind pointers for PhysicsMaterial
      */

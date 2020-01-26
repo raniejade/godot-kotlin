@@ -32,6 +32,7 @@ open class BoxShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BoxShape = BoxShape(ptr)
     /**
      * Container for method_bind pointers for BoxShape
      */

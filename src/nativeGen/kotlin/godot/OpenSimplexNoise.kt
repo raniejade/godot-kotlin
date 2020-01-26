@@ -109,6 +109,7 @@ open class OpenSimplexNoise internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): OpenSimplexNoise = OpenSimplexNoise(ptr)
     /**
      * Container for method_bind pointers for OpenSimplexNoise
      */

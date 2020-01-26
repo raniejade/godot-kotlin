@@ -106,6 +106,17 @@ open class VisualScriptPropertySet internal constructor(
     ASSIGN_OP_BIT_OR(9),
 
     ASSIGN_OP_BIT_XOR(10);
+
+    companion object {
+      fun from(value: Int): AssignOp {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CallMode(
@@ -118,6 +129,17 @@ open class VisualScriptPropertySet internal constructor(
     CALL_MODE_INSTANCE(2),
 
     CALL_MODE_BASIC_TYPE(3);
+
+    companion object {
+      fun from(value: Int): CallMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -160,6 +182,7 @@ open class VisualScriptPropertySet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptPropertySet = VisualScriptPropertySet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptPropertySet
      */

@@ -40,6 +40,17 @@ open class BackBufferCopy internal constructor(
     COPY_MODE_RECT(1),
 
     COPY_MODE_VIEWPORT(2);
+
+    companion object {
+      fun from(value: Int): CopyMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -58,6 +69,7 @@ open class BackBufferCopy internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BackBufferCopy = BackBufferCopy(ptr)
     /**
      * Container for method_bind pointers for BackBufferCopy
      */

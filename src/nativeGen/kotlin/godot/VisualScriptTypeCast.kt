@@ -41,6 +41,7 @@ open class VisualScriptTypeCast internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptTypeCast = VisualScriptTypeCast(ptr)
     /**
      * Container for method_bind pointers for VisualScriptTypeCast
      */

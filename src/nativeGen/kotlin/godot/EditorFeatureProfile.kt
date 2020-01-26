@@ -83,6 +83,17 @@ open class EditorFeatureProfile internal constructor(
     FEATURE_FILESYSTEM_DOCK(6),
 
     FEATURE_MAX(7);
+
+    companion object {
+      fun from(value: Int): Feature {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -111,6 +122,7 @@ open class EditorFeatureProfile internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorFeatureProfile = EditorFeatureProfile(ptr)
     /**
      * Container for method_bind pointers for EditorFeatureProfile
      */

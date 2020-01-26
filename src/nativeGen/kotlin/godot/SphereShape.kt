@@ -32,6 +32,7 @@ open class SphereShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SphereShape = SphereShape(ptr)
     /**
      * Container for method_bind pointers for SphereShape
      */

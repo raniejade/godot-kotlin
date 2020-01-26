@@ -23,6 +23,7 @@ open class VisualShaderNodeOuterProduct internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeOuterProduct = VisualShaderNodeOuterProduct(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeOuterProduct
      */

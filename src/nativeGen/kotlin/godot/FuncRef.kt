@@ -42,6 +42,7 @@ open class FuncRef internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): FuncRef = FuncRef(ptr)
     /**
      * Container for method_bind pointers for FuncRef
      */

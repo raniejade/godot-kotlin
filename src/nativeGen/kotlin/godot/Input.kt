@@ -201,6 +201,17 @@ open class Input internal constructor(
     MOUSE_MODE_CAPTURED(2),
 
     MOUSE_MODE_CONFINED(3);
+
+    companion object {
+      fun from(value: Int): MouseMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CursorShape(
@@ -239,6 +250,17 @@ open class Input internal constructor(
     CURSOR_HSPLIT(15),
 
     CURSOR_HELP(16);
+
+    companion object {
+      fun from(value: Int): CursorShape {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

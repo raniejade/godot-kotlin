@@ -74,6 +74,17 @@ open class TextureRect internal constructor(
     STRETCH_KEEP_ASPECT_CENTERED(6),
 
     STRETCH_KEEP_ASPECT_COVERED(7);
+
+    companion object {
+      fun from(value: Int): StretchMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -101,6 +112,7 @@ open class TextureRect internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TextureRect = TextureRect(ptr)
     /**
      * Container for method_bind pointers for TextureRect
      */

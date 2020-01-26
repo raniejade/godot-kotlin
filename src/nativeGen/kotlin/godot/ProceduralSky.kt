@@ -159,6 +159,17 @@ open class ProceduralSky internal constructor(
     TEXTURE_SIZE_4096(4),
 
     TEXTURE_SIZE_MAX(5);
+
+    companion object {
+      fun from(value: Int): TextureSize {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -182,6 +193,7 @@ open class ProceduralSky internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ProceduralSky = ProceduralSky(ptr)
     /**
      * Container for method_bind pointers for ProceduralSky
      */

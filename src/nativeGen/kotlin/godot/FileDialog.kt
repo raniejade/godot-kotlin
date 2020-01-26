@@ -118,6 +118,17 @@ open class FileDialog internal constructor(
     MODE_OPEN_ANY(3),
 
     MODE_SAVE_FILE(4);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Access(
@@ -128,6 +139,17 @@ open class FileDialog internal constructor(
     ACCESS_USERDATA(1),
 
     ACCESS_FILESYSTEM(2);
+
+    companion object {
+      fun from(value: Int): Access {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -155,6 +177,7 @@ open class FileDialog internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): FileDialog = FileDialog(ptr)
     /**
      * Container for method_bind pointers for FileDialog
      */

@@ -316,6 +316,7 @@ open class PopupMenu internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PopupMenu = PopupMenu(ptr)
     /**
      * Container for method_bind pointers for PopupMenu
      */

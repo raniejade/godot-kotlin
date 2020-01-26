@@ -88,6 +88,17 @@ open class AudioStreamSample internal constructor(
     LOOP_PING_PONG(2),
 
     LOOP_BACKWARD(3);
+
+    companion object {
+      fun from(value: Int): LoopMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Format(
@@ -98,6 +109,17 @@ open class AudioStreamSample internal constructor(
     FORMAT_16_BITS(1),
 
     FORMAT_IMA_ADPCM(2);
+
+    companion object {
+      fun from(value: Int): Format {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -124,6 +146,7 @@ open class AudioStreamSample internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamSample = AudioStreamSample(ptr)
     /**
      * Container for method_bind pointers for AudioStreamSample
      */

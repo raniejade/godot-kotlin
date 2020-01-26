@@ -92,6 +92,7 @@ open class AnimationNodeBlendTree internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeBlendTree = AnimationNodeBlendTree(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeBlendTree
      */

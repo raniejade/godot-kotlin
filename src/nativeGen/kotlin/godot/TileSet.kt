@@ -337,6 +337,17 @@ open class TileSet internal constructor(
     AUTO_TILE(1),
 
     ATLAS_TILE(2);
+
+    companion object {
+      fun from(value: Int): TileMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AutotileBindings(
@@ -357,6 +368,17 @@ open class TileSet internal constructor(
     BIND_BOTTOM(128),
 
     BIND_BOTTOMRIGHT(256);
+
+    companion object {
+      fun from(value: Int): AutotileBindings {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BitmaskMode(
@@ -367,6 +389,17 @@ open class TileSet internal constructor(
     BITMASK_3X3_MINIMAL(1),
 
     BITMASK_3X3(2);
+
+    companion object {
+      fun from(value: Int): BitmaskMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -406,6 +439,7 @@ open class TileSet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TileSet = TileSet(ptr)
     /**
      * Container for method_bind pointers for TileSet
      */

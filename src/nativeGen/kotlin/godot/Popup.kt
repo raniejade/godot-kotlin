@@ -60,6 +60,7 @@ open class Popup internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Popup = Popup(ptr)
     /**
      * Container for method_bind pointers for Popup
      */

@@ -32,6 +32,7 @@ open class QuadMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): QuadMesh = QuadMesh(ptr)
     /**
      * Container for method_bind pointers for QuadMesh
      */

@@ -40,6 +40,7 @@ open class CapsuleShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CapsuleShape = CapsuleShape(ptr)
     /**
      * Container for method_bind pointers for CapsuleShape
      */

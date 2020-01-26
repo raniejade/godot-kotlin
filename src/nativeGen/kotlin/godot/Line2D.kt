@@ -139,6 +139,17 @@ open class Line2D internal constructor(
     LINE_TEXTURE_TILE(1),
 
     LINE_TEXTURE_STRETCH(2);
+
+    companion object {
+      fun from(value: Int): LineTextureMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LineCapMode(
@@ -149,6 +160,17 @@ open class Line2D internal constructor(
     LINE_CAP_BOX(1),
 
     LINE_CAP_ROUND(2);
+
+    companion object {
+      fun from(value: Int): LineCapMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LineJointMode(
@@ -159,6 +181,17 @@ open class Line2D internal constructor(
     LINE_JOINT_BEVEL(1),
 
     LINE_JOINT_ROUND(2);
+
+    companion object {
+      fun from(value: Int): LineJointMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -188,6 +221,7 @@ open class Line2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Line2D = Line2D(ptr)
     /**
      * Container for method_bind pointers for Line2D
      */

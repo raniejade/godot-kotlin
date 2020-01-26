@@ -33,6 +33,8 @@ open class VisualShaderNodeColorConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeColorConstant =
+        VisualShaderNodeColorConstant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeColorConstant
      */

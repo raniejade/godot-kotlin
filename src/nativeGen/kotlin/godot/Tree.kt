@@ -175,6 +175,17 @@ open class Tree internal constructor(
     SELECT_ROW(1),
 
     SELECT_MULTI(2);
+
+    companion object {
+      fun from(value: Int): SelectMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DropModeFlags(
@@ -185,6 +196,17 @@ open class Tree internal constructor(
     DROP_MODE_ON_ITEM(1),
 
     DROP_MODE_INBETWEEN(2);
+
+    companion object {
+      fun from(value: Int): DropModeFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -208,6 +230,7 @@ open class Tree internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Tree = Tree(ptr)
     /**
      * Container for method_bind pointers for Tree
      */

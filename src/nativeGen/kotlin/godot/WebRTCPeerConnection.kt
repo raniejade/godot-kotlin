@@ -71,6 +71,17 @@ open class WebRTCPeerConnection internal constructor(
     STATE_FAILED(4),
 
     STATE_CLOSED(5);
+
+    companion object {
+      fun from(value: Int): ConnectionState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -95,6 +106,7 @@ open class WebRTCPeerConnection internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WebRTCPeerConnection = WebRTCPeerConnection(ptr)
     /**
      * Container for method_bind pointers for WebRTCPeerConnection
      */

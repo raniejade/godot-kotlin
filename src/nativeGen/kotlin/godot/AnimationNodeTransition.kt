@@ -60,6 +60,7 @@ open class AnimationNodeTransition internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeTransition = AnimationNodeTransition(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeTransition
      */

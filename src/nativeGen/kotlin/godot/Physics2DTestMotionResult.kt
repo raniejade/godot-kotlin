@@ -63,6 +63,7 @@ open class Physics2DTestMotionResult internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Physics2DTestMotionResult = Physics2DTestMotionResult(ptr)
     /**
      * Container for method_bind pointers for Physics2DTestMotionResult
      */

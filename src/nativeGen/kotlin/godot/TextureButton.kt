@@ -96,6 +96,17 @@ open class TextureButton internal constructor(
     STRETCH_KEEP_ASPECT_CENTERED(5),
 
     STRETCH_KEEP_ASPECT_COVERED(6);
+
+    companion object {
+      fun from(value: Int): StretchMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -121,6 +132,7 @@ open class TextureButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TextureButton = TextureButton(ptr)
     /**
      * Container for method_bind pointers for TextureButton
      */

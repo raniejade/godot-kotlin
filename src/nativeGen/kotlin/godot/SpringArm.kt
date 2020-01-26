@@ -75,6 +75,7 @@ open class SpringArm internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SpringArm = SpringArm(ptr)
     /**
      * Container for method_bind pointers for SpringArm
      */

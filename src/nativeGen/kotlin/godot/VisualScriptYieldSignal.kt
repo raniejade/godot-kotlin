@@ -57,6 +57,17 @@ open class VisualScriptYieldSignal internal constructor(
     CALL_MODE_NODE_PATH(1),
 
     CALL_MODE_INSTANCE(2);
+
+    companion object {
+      fun from(value: Int): CallMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -75,6 +86,7 @@ open class VisualScriptYieldSignal internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptYieldSignal = VisualScriptYieldSignal(ptr)
     /**
      * Container for method_bind pointers for VisualScriptYieldSignal
      */

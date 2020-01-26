@@ -103,6 +103,17 @@ open class AnimationNode internal constructor(
     FILTER_STOP(2),
 
     FILTER_BLEND(3);
+
+    companion object {
+      fun from(value: Int): FilterAction {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -122,6 +133,7 @@ open class AnimationNode internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNode = AnimationNode(ptr)
     /**
      * Container for method_bind pointers for AnimationNode
      */

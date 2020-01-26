@@ -51,6 +51,8 @@ open class AnimationNodeStateMachinePlayback internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeStateMachinePlayback =
+        AnimationNodeStateMachinePlayback(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeStateMachinePlayback
      */

@@ -62,6 +62,7 @@ open class EditorSceneImporter internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorSceneImporter = EditorSceneImporter(ptr)
     /**
      * Container for method_bind pointers for EditorSceneImporter
      */

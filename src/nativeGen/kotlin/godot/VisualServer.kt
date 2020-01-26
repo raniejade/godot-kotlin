@@ -1890,6 +1890,17 @@ open class VisualServer internal constructor(
     REFLECTION_PROBE_UPDATE_ONCE(0),
 
     REFLECTION_PROBE_UPDATE_ALWAYS(1);
+
+    companion object {
+      fun from(value: Int): ReflectionProbeUpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LightDirectionalShadowDepthRangeMode(
@@ -1898,6 +1909,17 @@ open class VisualServer internal constructor(
     LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_STABLE(0),
 
     LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_OPTIMIZED(1);
+
+    companion object {
+      fun from(value: Int): LightDirectionalShadowDepthRangeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BlendShapeMode(
@@ -1906,6 +1928,17 @@ open class VisualServer internal constructor(
     BLEND_SHAPE_MODE_NORMALIZED(0),
 
     BLEND_SHAPE_MODE_RELATIVE(1);
+
+    companion object {
+      fun from(value: Int): BlendShapeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class PrimitiveType(
@@ -1926,6 +1959,17 @@ open class VisualServer internal constructor(
     PRIMITIVE_TRIANGLE_FAN(6),
 
     PRIMITIVE_MAX(7);
+
+    companion object {
+      fun from(value: Int): PrimitiveType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TextureType(
@@ -1938,6 +1982,17 @@ open class VisualServer internal constructor(
     TEXTURE_TYPE_2D_ARRAY(2),
 
     TEXTURE_TYPE_3D(3);
+
+    companion object {
+      fun from(value: Int): TextureType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EnvironmentSSAOQuality(
@@ -1948,6 +2003,17 @@ open class VisualServer internal constructor(
     ENV_SSAO_QUALITY_MEDIUM(1),
 
     ENV_SSAO_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): EnvironmentSSAOQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EnvironmentDOFBlurQuality(
@@ -1958,6 +2024,17 @@ open class VisualServer internal constructor(
     ENV_DOF_BLUR_QUALITY_MEDIUM(1),
 
     ENV_DOF_BLUR_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): EnvironmentDOFBlurQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class RenderInfo(
@@ -1982,6 +2059,17 @@ open class VisualServer internal constructor(
     INFO_TEXTURE_MEM_USED(8),
 
     INFO_VERTEX_MEM_USED(9);
+
+    companion object {
+      fun from(value: Int): RenderInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class NinePatchAxisMode(
@@ -1992,6 +2080,17 @@ open class VisualServer internal constructor(
     NINE_PATCH_TILE(1),
 
     NINE_PATCH_TILE_FIT(2);
+
+    companion object {
+      fun from(value: Int): NinePatchAxisMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ViewportRenderInfo(
@@ -2010,6 +2109,17 @@ open class VisualServer internal constructor(
     VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME(5),
 
     VIEWPORT_RENDER_INFO_MAX(6);
+
+    companion object {
+      fun from(value: Int): ViewportRenderInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ViewportClearMode(
@@ -2020,6 +2130,17 @@ open class VisualServer internal constructor(
     VIEWPORT_CLEAR_NEVER(1),
 
     VIEWPORT_CLEAR_ONLY_NEXT_FRAME(2);
+
+    companion object {
+      fun from(value: Int): ViewportClearMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LightOmniShadowDetail(
@@ -2028,6 +2149,17 @@ open class VisualServer internal constructor(
     LIGHT_OMNI_SHADOW_DETAIL_VERTICAL(0),
 
     LIGHT_OMNI_SHADOW_DETAIL_HORIZONTAL(1);
+
+    companion object {
+      fun from(value: Int): LightOmniShadowDetail {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShaderMode(
@@ -2040,6 +2172,17 @@ open class VisualServer internal constructor(
     SHADER_PARTICLES(2),
 
     SHADER_MAX(3);
+
+    companion object {
+      fun from(value: Int): ShaderMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MultimeshTransformFormat(
@@ -2048,6 +2191,17 @@ open class VisualServer internal constructor(
     MULTIMESH_TRANSFORM_2D(0),
 
     MULTIMESH_TRANSFORM_3D(1);
+
+    companion object {
+      fun from(value: Int): MultimeshTransformFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShadowCastingSetting(
@@ -2060,6 +2214,17 @@ open class VisualServer internal constructor(
     SHADOW_CASTING_SETTING_DOUBLE_SIDED(2),
 
     SHADOW_CASTING_SETTING_SHADOWS_ONLY(3);
+
+    companion object {
+      fun from(value: Int): ShadowCastingSetting {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ViewportDebugDraw(
@@ -2072,6 +2237,17 @@ open class VisualServer internal constructor(
     VIEWPORT_DEBUG_DRAW_OVERDRAW(2),
 
     VIEWPORT_DEBUG_DRAW_WIREFRAME(3);
+
+    companion object {
+      fun from(value: Int): ViewportDebugDraw {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ViewportUsage(
@@ -2084,6 +2260,17 @@ open class VisualServer internal constructor(
     VIEWPORT_USAGE_3D(2),
 
     VIEWPORT_USAGE_3D_NO_EFFECTS(3);
+
+    companion object {
+      fun from(value: Int): ViewportUsage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EnvironmentBG(
@@ -2102,6 +2289,17 @@ open class VisualServer internal constructor(
     ENV_BG_KEEP(5),
 
     ENV_BG_MAX(7);
+
+    companion object {
+      fun from(value: Int): EnvironmentBG {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MultimeshCustomDataFormat(
@@ -2112,6 +2310,17 @@ open class VisualServer internal constructor(
     MULTIMESH_CUSTOM_DATA_8BIT(1),
 
     MULTIMESH_CUSTOM_DATA_FLOAT(2);
+
+    companion object {
+      fun from(value: Int): MultimeshCustomDataFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LightOmniShadowMode(
@@ -2120,6 +2329,17 @@ open class VisualServer internal constructor(
     LIGHT_OMNI_SHADOW_DUAL_PARABOLOID(0),
 
     LIGHT_OMNI_SHADOW_CUBE(1);
+
+    companion object {
+      fun from(value: Int): LightOmniShadowMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TextureFlags(
@@ -2140,6 +2360,17 @@ open class VisualServer internal constructor(
     TEXTURE_FLAG_MIRRORED_REPEAT(32),
 
     TEXTURE_FLAG_USED_FOR_STREAMING(2048);
+
+    companion object {
+      fun from(value: Int): TextureFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Features(
@@ -2148,6 +2379,17 @@ open class VisualServer internal constructor(
     FEATURE_SHADERS(0),
 
     FEATURE_MULTITHREADED(1);
+
+    companion object {
+      fun from(value: Int): Features {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class InstanceType(
@@ -2174,6 +2416,17 @@ open class VisualServer internal constructor(
     INSTANCE_MAX(9),
 
     INSTANCE_GEOMETRY_MASK(30);
+
+    companion object {
+      fun from(value: Int): InstanceType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EnvironmentSSAOBlur(
@@ -2186,6 +2439,17 @@ open class VisualServer internal constructor(
     ENV_SSAO_BLUR_2x2(2),
 
     ENV_SSAO_BLUR_3x3(3);
+
+    companion object {
+      fun from(value: Int): EnvironmentSSAOBlur {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EnvironmentToneMapper(
@@ -2198,6 +2462,17 @@ open class VisualServer internal constructor(
     ENV_TONE_MAPPER_FILMIC(2),
 
     ENV_TONE_MAPPER_ACES(3);
+
+    companion object {
+      fun from(value: Int): EnvironmentToneMapper {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EnvironmentGlowBlendMode(
@@ -2210,6 +2485,17 @@ open class VisualServer internal constructor(
     GLOW_BLEND_MODE_SOFTLIGHT(2),
 
     GLOW_BLEND_MODE_REPLACE(3);
+
+    companion object {
+      fun from(value: Int): EnvironmentGlowBlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MultimeshColorFormat(
@@ -2220,6 +2506,17 @@ open class VisualServer internal constructor(
     MULTIMESH_COLOR_8BIT(1),
 
     MULTIMESH_COLOR_FLOAT(2);
+
+    companion object {
+      fun from(value: Int): MultimeshColorFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CanvasLightShadowFilter(
@@ -2236,6 +2533,17 @@ open class VisualServer internal constructor(
     CANVAS_LIGHT_FILTER_PCF9(4),
 
     CANVAS_LIGHT_FILTER_PCF13(5);
+
+    companion object {
+      fun from(value: Int): CanvasLightShadowFilter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ScenarioDebugMode(
@@ -2248,6 +2556,17 @@ open class VisualServer internal constructor(
     SCENARIO_DEBUG_OVERDRAW(2),
 
     SCENARIO_DEBUG_SHADELESS(3);
+
+    companion object {
+      fun from(value: Int): ScenarioDebugMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ViewportUpdateMode(
@@ -2260,6 +2579,17 @@ open class VisualServer internal constructor(
     VIEWPORT_UPDATE_WHEN_VISIBLE(2),
 
     VIEWPORT_UPDATE_ALWAYS(3);
+
+    companion object {
+      fun from(value: Int): ViewportUpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ArrayFormat(
@@ -2306,6 +2636,17 @@ open class VisualServer internal constructor(
     ARRAY_FLAG_USE_2D_VERTICES(262144),
 
     ARRAY_FLAG_USE_16_BIT_BONES(524288);
+
+    companion object {
+      fun from(value: Int): ArrayFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ParticlesDrawOrder(
@@ -2316,6 +2657,17 @@ open class VisualServer internal constructor(
     PARTICLES_DRAW_ORDER_LIFETIME(1),
 
     PARTICLES_DRAW_ORDER_VIEW_DEPTH(2);
+
+    companion object {
+      fun from(value: Int): ParticlesDrawOrder {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CanvasLightMode(
@@ -2328,6 +2680,17 @@ open class VisualServer internal constructor(
     CANVAS_LIGHT_MODE_MIX(2),
 
     CANVAS_LIGHT_MODE_MASK(3);
+
+    companion object {
+      fun from(value: Int): CanvasLightMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LightDirectionalShadowMode(
@@ -2338,6 +2701,17 @@ open class VisualServer internal constructor(
     LIGHT_DIRECTIONAL_SHADOW_PARALLEL_2_SPLITS(1),
 
     LIGHT_DIRECTIONAL_SHADOW_PARALLEL_4_SPLITS(2);
+
+    companion object {
+      fun from(value: Int): LightDirectionalShadowMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LightParam(
@@ -2372,6 +2746,17 @@ open class VisualServer internal constructor(
     LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE(14),
 
     LIGHT_PARAM_MAX(15);
+
+    companion object {
+      fun from(value: Int): LightParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ArrayType(
@@ -2396,6 +2781,17 @@ open class VisualServer internal constructor(
     ARRAY_INDEX(8),
 
     ARRAY_MAX(9);
+
+    companion object {
+      fun from(value: Int): ArrayType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CanvasOccluderPolygonCullMode(
@@ -2406,6 +2802,17 @@ open class VisualServer internal constructor(
     CANVAS_OCCLUDER_POLYGON_CULL_CLOCKWISE(1),
 
     CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE(2);
+
+    companion object {
+      fun from(value: Int): CanvasOccluderPolygonCullMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class InstanceFlags(
@@ -2416,6 +2823,17 @@ open class VisualServer internal constructor(
     INSTANCE_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE(1),
 
     INSTANCE_FLAG_MAX(2);
+
+    companion object {
+      fun from(value: Int): InstanceFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ViewportMSAA(
@@ -2430,6 +2848,17 @@ open class VisualServer internal constructor(
     VIEWPORT_MSAA_8X(3),
 
     VIEWPORT_MSAA_16X(4);
+
+    companion object {
+      fun from(value: Int): ViewportMSAA {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LightType(
@@ -2440,6 +2869,17 @@ open class VisualServer internal constructor(
     LIGHT_OMNI(1),
 
     LIGHT_SPOT(2);
+
+    companion object {
+      fun from(value: Int): LightType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CubeMapSide(
@@ -2456,6 +2896,17 @@ open class VisualServer internal constructor(
     CUBEMAP_FRONT(4),
 
     CUBEMAP_BACK(5);
+
+    companion object {
+      fun from(value: Int): CubeMapSide {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

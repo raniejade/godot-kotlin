@@ -41,6 +41,7 @@ open class LineShape2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): LineShape2D = LineShape2D(ptr)
     /**
      * Container for method_bind pointers for LineShape2D
      */

@@ -74,6 +74,7 @@ open class CSGCylinder internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CSGCylinder = CSGCylinder(ptr)
     /**
      * Container for method_bind pointers for CSGCylinder
      */

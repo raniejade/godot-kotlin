@@ -22,6 +22,7 @@ open class HBoxContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HBoxContainer = HBoxContainer(ptr)
     /**
      * Container for method_bind pointers for HBoxContainer
      */

@@ -41,6 +41,7 @@ open class AudioStreamRandomPitch internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamRandomPitch = AudioStreamRandomPitch(ptr)
     /**
      * Container for method_bind pointers for AudioStreamRandomPitch
      */

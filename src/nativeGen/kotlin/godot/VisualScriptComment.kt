@@ -50,6 +50,7 @@ open class VisualScriptComment internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptComment = VisualScriptComment(ptr)
     /**
      * Container for method_bind pointers for VisualScriptComment
      */

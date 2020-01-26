@@ -41,6 +41,7 @@ open class NavigationMeshInstance internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): NavigationMeshInstance = NavigationMeshInstance(ptr)
     /**
      * Container for method_bind pointers for NavigationMeshInstance
      */

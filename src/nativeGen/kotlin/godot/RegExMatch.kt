@@ -56,6 +56,7 @@ open class RegExMatch internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RegExMatch = RegExMatch(ptr)
     /**
      * Container for method_bind pointers for RegExMatch
      */

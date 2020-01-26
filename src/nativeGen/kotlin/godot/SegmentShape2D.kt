@@ -41,6 +41,7 @@ open class SegmentShape2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SegmentShape2D = SegmentShape2D(ptr)
     /**
      * Container for method_bind pointers for SegmentShape2D
      */

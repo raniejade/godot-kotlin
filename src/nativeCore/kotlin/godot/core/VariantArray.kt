@@ -7,6 +7,22 @@ class VariantArray(
   value: CValue<godot_array>
 ): CoreType<godot_array>(value) {
 
+  fun append(value: Int) {
+    append(Variant.new(value))
+  }
+
+  fun append(value: Float) {
+    append(Variant.new(value))
+  }
+
+  fun append(value: Boolean) {
+    append(Variant.new(value))
+  }
+
+  fun append(value: String) {
+    append(Variant.new(value))
+  }
+
   fun <T: CoreType<*>> append(value: T) {
     append(value.toVariant())
   }

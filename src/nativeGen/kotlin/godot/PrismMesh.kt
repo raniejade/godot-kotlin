@@ -66,6 +66,7 @@ open class PrismMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PrismMesh = PrismMesh(ptr)
     /**
      * Container for method_bind pointers for PrismMesh
      */

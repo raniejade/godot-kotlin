@@ -65,6 +65,7 @@ open class AcceptDialog internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AcceptDialog = AcceptDialog(ptr)
     /**
      * Container for method_bind pointers for AcceptDialog
      */

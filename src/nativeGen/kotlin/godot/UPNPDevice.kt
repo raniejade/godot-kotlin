@@ -109,6 +109,17 @@ open class UPNPDevice internal constructor(
     IGD_STATUS_MALLOC_ERROR(8),
 
     IGD_STATUS_UNKNOWN_ERROR(9);
+
+    companion object {
+      fun from(value: Int): IGDStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -140,6 +151,7 @@ open class UPNPDevice internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): UPNPDevice = UPNPDevice(ptr)
     /**
      * Container for method_bind pointers for UPNPDevice
      */

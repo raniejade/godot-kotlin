@@ -33,6 +33,7 @@ open class VisualScriptSceneNode internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptSceneNode = VisualScriptSceneNode(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSceneNode
      */

@@ -54,6 +54,17 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
     FFT_SIZE_4096(4),
 
     FFT_SIZE_MAX(5);
+
+    companion object {
+      fun from(value: Int): FFT_Size {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -78,6 +89,7 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectSpectrumAnalyzer = AudioEffectSpectrumAnalyzer(ptr)
     /**
      * Container for method_bind pointers for AudioEffectSpectrumAnalyzer
      */

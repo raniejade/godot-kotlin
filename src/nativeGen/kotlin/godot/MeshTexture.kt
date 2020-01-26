@@ -48,6 +48,7 @@ open class MeshTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MeshTexture = MeshTexture(ptr)
     /**
      * Container for method_bind pointers for MeshTexture
      */

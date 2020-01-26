@@ -23,6 +23,8 @@ open class VisualShaderNodeVectorRefract internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorRefract =
+        VisualShaderNodeVectorRefract(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorRefract
      */

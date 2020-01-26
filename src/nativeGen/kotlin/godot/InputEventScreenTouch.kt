@@ -47,6 +47,7 @@ open class InputEventScreenTouch internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventScreenTouch = InputEventScreenTouch(ptr)
     /**
      * Container for method_bind pointers for InputEventScreenTouch
      */

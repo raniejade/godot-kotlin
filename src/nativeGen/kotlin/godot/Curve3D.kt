@@ -142,6 +142,7 @@ open class Curve3D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Curve3D = Curve3D(ptr)
     /**
      * Container for method_bind pointers for Curve3D
      */

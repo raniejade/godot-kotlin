@@ -41,6 +41,7 @@ open class VisualScriptClassConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptClassConstant = VisualScriptClassConstant(ptr)
     /**
      * Container for method_bind pointers for VisualScriptClassConstant
      */

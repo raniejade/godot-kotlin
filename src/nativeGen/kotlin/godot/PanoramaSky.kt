@@ -31,6 +31,7 @@ open class PanoramaSky internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PanoramaSky = PanoramaSky(ptr)
     /**
      * Container for method_bind pointers for PanoramaSky
      */

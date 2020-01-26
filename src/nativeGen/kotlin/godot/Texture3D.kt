@@ -22,6 +22,7 @@ open class Texture3D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Texture3D = Texture3D(ptr)
     /**
      * Container for method_bind pointers for Texture3D
      */

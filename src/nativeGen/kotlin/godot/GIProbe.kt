@@ -118,6 +118,17 @@ open class GIProbe internal constructor(
     SUBDIV_512(3),
 
     SUBDIV_MAX(4);
+
+    companion object {
+      fun from(value: Int): Subdiv {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -139,6 +150,7 @@ open class GIProbe internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GIProbe = GIProbe(ptr)
     /**
      * Container for method_bind pointers for GIProbe
      */

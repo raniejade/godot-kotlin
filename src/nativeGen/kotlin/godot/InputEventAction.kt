@@ -47,6 +47,7 @@ open class InputEventAction internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventAction = InputEventAction(ptr)
     /**
      * Container for method_bind pointers for InputEventAction
      */

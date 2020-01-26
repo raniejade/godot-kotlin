@@ -98,6 +98,7 @@ open class AudioEffectChorus internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectChorus = AudioEffectChorus(ptr)
     /**
      * Container for method_bind pointers for AudioEffectChorus
      */

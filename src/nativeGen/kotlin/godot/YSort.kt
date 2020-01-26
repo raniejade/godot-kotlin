@@ -32,6 +32,7 @@ open class YSort internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): YSort = YSort(ptr)
     /**
      * Container for method_bind pointers for YSort
      */

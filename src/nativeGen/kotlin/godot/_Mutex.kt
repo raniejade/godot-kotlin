@@ -35,6 +35,7 @@ open class _Mutex internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): _Mutex = _Mutex(ptr)
     /**
      * Container for method_bind pointers for _Mutex
      */

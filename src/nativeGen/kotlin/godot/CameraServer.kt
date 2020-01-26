@@ -46,6 +46,17 @@ open class CameraServer internal constructor(
     FEED_Y_IMAGE(0),
 
     FEED_CbCr_IMAGE(1);
+
+    companion object {
+      fun from(value: Int): FeedImage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

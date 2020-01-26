@@ -70,6 +70,7 @@ open class Resource internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Resource = Resource(ptr)
     /**
      * Container for method_bind pointers for Resource
      */

@@ -75,6 +75,7 @@ open class MainLoop internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MainLoop = MainLoop(ptr)
     /**
      * Container for method_bind pointers for MainLoop
      */

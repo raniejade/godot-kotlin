@@ -90,6 +90,17 @@ open class UndoRedo internal constructor(
     MERGE_ENDS(1),
 
     MERGE_ALL(2);
+
+    companion object {
+      fun from(value: Int): MergeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -107,6 +118,7 @@ open class UndoRedo internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): UndoRedo = UndoRedo(ptr)
     /**
      * Container for method_bind pointers for UndoRedo
      */

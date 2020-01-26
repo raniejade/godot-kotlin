@@ -23,6 +23,7 @@ open class VisualShaderNodeIf internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeIf = VisualShaderNodeIf(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeIf
      */

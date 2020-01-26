@@ -77,6 +77,7 @@ open class RegEx internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RegEx = RegEx(ptr)
     /**
      * Container for method_bind pointers for RegEx
      */

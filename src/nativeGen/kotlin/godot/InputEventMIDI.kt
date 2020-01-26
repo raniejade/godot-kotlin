@@ -89,6 +89,7 @@ open class InputEventMIDI internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventMIDI = InputEventMIDI(ptr)
     /**
      * Container for method_bind pointers for InputEventMIDI
      */

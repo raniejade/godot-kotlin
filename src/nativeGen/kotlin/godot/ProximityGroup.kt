@@ -52,6 +52,17 @@ open class ProximityGroup internal constructor(
     MODE_PROXY(0),
 
     MODE_SIGNAL(1);
+
+    companion object {
+      fun from(value: Int): DispatchMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -68,6 +79,7 @@ open class ProximityGroup internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ProximityGroup = ProximityGroup(ptr)
     /**
      * Container for method_bind pointers for ProximityGroup
      */

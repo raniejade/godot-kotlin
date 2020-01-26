@@ -71,6 +71,17 @@ open class ImageTexture internal constructor(
     STORAGE_COMPRESS_LOSSY(1),
 
     STORAGE_COMPRESS_LOSSLESS(2);
+
+    companion object {
+      fun from(value: Int): Storage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -88,6 +99,7 @@ open class ImageTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ImageTexture = ImageTexture(ptr)
     /**
      * Container for method_bind pointers for ImageTexture
      */

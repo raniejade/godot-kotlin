@@ -28,6 +28,7 @@ open class ConfirmationDialog internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ConfirmationDialog = ConfirmationDialog(ptr)
     /**
      * Container for method_bind pointers for ConfirmationDialog
      */

@@ -124,6 +124,7 @@ open class AudioStreamPlayer2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamPlayer2D = AudioStreamPlayer2D(ptr)
     /**
      * Container for method_bind pointers for AudioStreamPlayer2D
      */

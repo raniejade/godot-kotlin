@@ -132,6 +132,7 @@ open class VisualShaderNodeGroupBase internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeGroupBase = VisualShaderNodeGroupBase(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeGroupBase
      */

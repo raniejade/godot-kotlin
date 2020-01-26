@@ -59,6 +59,7 @@ open class JSONParseResult internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): JSONParseResult = JSONParseResult(ptr)
     /**
      * Container for method_bind pointers for JSONParseResult
      */

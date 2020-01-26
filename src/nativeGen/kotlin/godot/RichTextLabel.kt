@@ -222,6 +222,17 @@ open class RichTextLabel internal constructor(
     ALIGN_RIGHT(2),
 
     ALIGN_FILL(3);
+
+    companion object {
+      fun from(value: Int): Align {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ListType(
@@ -232,6 +243,17 @@ open class RichTextLabel internal constructor(
     LIST_LETTERS(1),
 
     LIST_DOTS(2);
+
+    companion object {
+      fun from(value: Int): ListType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ItemType(
@@ -262,6 +284,17 @@ open class RichTextLabel internal constructor(
     ITEM_TABLE(11),
 
     ITEM_META(12);
+
+    companion object {
+      fun from(value: Int): ItemType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -313,6 +346,7 @@ open class RichTextLabel internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RichTextLabel = RichTextLabel(ptr)
     /**
      * Container for method_bind pointers for RichTextLabel
      */

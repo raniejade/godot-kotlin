@@ -32,6 +32,7 @@ open class ReferenceRect internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ReferenceRect = ReferenceRect(ptr)
     /**
      * Container for method_bind pointers for ReferenceRect
      */

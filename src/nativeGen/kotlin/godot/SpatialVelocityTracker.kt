@@ -46,6 +46,7 @@ open class SpatialVelocityTracker internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SpatialVelocityTracker = SpatialVelocityTracker(ptr)
     /**
      * Container for method_bind pointers for SpatialVelocityTracker
      */

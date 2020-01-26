@@ -82,6 +82,7 @@ open class AudioEffectCompressor internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectCompressor = AudioEffectCompressor(ptr)
     /**
      * Container for method_bind pointers for AudioEffectCompressor
      */

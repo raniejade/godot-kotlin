@@ -33,6 +33,7 @@ open class RectangleShape2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RectangleShape2D = RectangleShape2D(ptr)
     /**
      * Container for method_bind pointers for RectangleShape2D
      */

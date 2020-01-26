@@ -36,6 +36,7 @@ open class CurveTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CurveTexture = CurveTexture(ptr)
     /**
      * Container for method_bind pointers for CurveTexture
      */

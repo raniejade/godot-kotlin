@@ -135,6 +135,17 @@ open class TextureProgress internal constructor(
     FILL_BILINEAR_TOP_AND_BOTTOM(7),
 
     FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE(8);
+
+    companion object {
+      fun from(value: Int): FillMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -165,6 +176,7 @@ open class TextureProgress internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TextureProgress = TextureProgress(ptr)
     /**
      * Container for method_bind pointers for TextureProgress
      */

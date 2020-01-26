@@ -34,6 +34,7 @@ open class ScriptCreateDialog internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ScriptCreateDialog = ScriptCreateDialog(ptr)
     /**
      * Container for method_bind pointers for ScriptCreateDialog
      */

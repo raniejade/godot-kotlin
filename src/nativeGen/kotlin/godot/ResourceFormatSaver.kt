@@ -23,6 +23,7 @@ open class ResourceFormatSaver internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ResourceFormatSaver = ResourceFormatSaver(ptr)
     /**
      * Container for method_bind pointers for ResourceFormatSaver
      */

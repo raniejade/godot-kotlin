@@ -227,6 +227,17 @@ open class _File internal constructor(
     COMPRESSION_ZSTD(2),
 
     COMPRESSION_GZIP(3);
+
+    companion object {
+      fun from(value: Int): CompressionMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ModeFlags(
@@ -239,6 +250,17 @@ open class _File internal constructor(
     READ_WRITE(3),
 
     WRITE_READ(7);
+
+    companion object {
+      fun from(value: Int): ModeFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -266,6 +288,7 @@ open class _File internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): _File = _File(ptr)
     /**
      * Container for method_bind pointers for _File
      */

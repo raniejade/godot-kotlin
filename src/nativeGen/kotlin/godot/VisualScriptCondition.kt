@@ -23,6 +23,7 @@ open class VisualScriptCondition internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptCondition = VisualScriptCondition(ptr)
     /**
      * Container for method_bind pointers for VisualScriptCondition
      */

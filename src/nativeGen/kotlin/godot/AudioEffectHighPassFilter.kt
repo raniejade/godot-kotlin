@@ -23,6 +23,7 @@ open class AudioEffectHighPassFilter internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectHighPassFilter = AudioEffectHighPassFilter(ptr)
     /**
      * Container for method_bind pointers for AudioEffectHighPassFilter
      */

@@ -41,6 +41,7 @@ open class RayShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RayShape = RayShape(ptr)
     /**
      * Container for method_bind pointers for RayShape
      */

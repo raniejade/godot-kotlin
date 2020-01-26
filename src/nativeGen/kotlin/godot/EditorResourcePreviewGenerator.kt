@@ -23,6 +23,8 @@ open class EditorResourcePreviewGenerator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorResourcePreviewGenerator =
+        EditorResourcePreviewGenerator(ptr)
     /**
      * Container for method_bind pointers for EditorResourcePreviewGenerator
      */

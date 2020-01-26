@@ -29,6 +29,17 @@ open class VisualShaderNodeColorFunc internal constructor(
     FUNC_GRAYSCALE(0),
 
     FUNC_SEPIA(1);
+
+    companion object {
+      fun from(value: Int): Function {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -45,6 +56,7 @@ open class VisualShaderNodeColorFunc internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeColorFunc = VisualShaderNodeColorFunc(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeColorFunc
      */

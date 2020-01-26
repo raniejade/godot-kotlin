@@ -64,6 +64,17 @@ open class CollisionPolygon2D internal constructor(
     BUILD_SOLIDS(0),
 
     BUILD_SEGMENTS(1);
+
+    companion object {
+      fun from(value: Int): BuildMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -80,6 +91,7 @@ open class CollisionPolygon2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CollisionPolygon2D = CollisionPolygon2D(ptr)
     /**
      * Container for method_bind pointers for CollisionPolygon2D
      */

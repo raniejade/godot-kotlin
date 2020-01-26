@@ -60,6 +60,7 @@ open class Navigation2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Navigation2D = Navigation2D(ptr)
     /**
      * Container for method_bind pointers for Navigation2D
      */

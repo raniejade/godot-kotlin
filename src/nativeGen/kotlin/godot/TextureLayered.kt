@@ -77,6 +77,17 @@ open class TextureLayered internal constructor(
     FLAG_FILTER(4),
 
     FLAGS_DEFAULT(4);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

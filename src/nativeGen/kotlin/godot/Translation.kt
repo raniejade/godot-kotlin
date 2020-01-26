@@ -54,6 +54,7 @@ open class Translation internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Translation = Translation(ptr)
     /**
      * Container for method_bind pointers for Translation
      */

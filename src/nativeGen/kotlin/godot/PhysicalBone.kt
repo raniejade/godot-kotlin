@@ -112,6 +112,17 @@ open class PhysicalBone internal constructor(
     JOINT_TYPE_SLIDER(4),
 
     JOINT_TYPE_6DOF(5);
+
+    companion object {
+      fun from(value: Int): JointType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -135,6 +146,7 @@ open class PhysicalBone internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PhysicalBone = PhysicalBone(ptr)
     /**
      * Container for method_bind pointers for PhysicalBone
      */

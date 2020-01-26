@@ -41,6 +41,7 @@ open class LightOccluder2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): LightOccluder2D = LightOccluder2D(ptr)
     /**
      * Container for method_bind pointers for LightOccluder2D
      */

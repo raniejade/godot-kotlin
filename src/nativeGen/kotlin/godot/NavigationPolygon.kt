@@ -83,6 +83,7 @@ open class NavigationPolygon internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): NavigationPolygon = NavigationPolygon(ptr)
     /**
      * Container for method_bind pointers for NavigationPolygon
      */

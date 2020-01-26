@@ -48,6 +48,17 @@ open class DirectionalLight internal constructor(
     SHADOW_PARALLEL_2_SPLITS(1),
 
     SHADOW_PARALLEL_4_SPLITS(2);
+
+    companion object {
+      fun from(value: Int): ShadowMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShadowDepthRange(
@@ -56,6 +67,17 @@ open class DirectionalLight internal constructor(
     SHADOW_DEPTH_RANGE_STABLE(0),
 
     SHADOW_DEPTH_RANGE_OPTIMIZED(1);
+
+    companion object {
+      fun from(value: Int): ShadowDepthRange {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -78,6 +100,7 @@ open class DirectionalLight internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): DirectionalLight = DirectionalLight(ptr)
     /**
      * Container for method_bind pointers for DirectionalLight
      */

@@ -51,6 +51,7 @@ open class AudioStreamOGGVorbis internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamOGGVorbis = AudioStreamOGGVorbis(ptr)
     /**
      * Container for method_bind pointers for AudioStreamOGGVorbis
      */

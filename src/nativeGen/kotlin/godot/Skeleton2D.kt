@@ -37,6 +37,7 @@ open class Skeleton2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Skeleton2D = Skeleton2D(ptr)
     /**
      * Container for method_bind pointers for Skeleton2D
      */

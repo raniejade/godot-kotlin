@@ -162,6 +162,17 @@ open class Particles internal constructor(
     DRAW_ORDER_LIFETIME(1),
 
     DRAW_ORDER_VIEW_DEPTH(2);
+
+    companion object {
+      fun from(value: Int): DrawOrder {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -181,6 +192,7 @@ open class Particles internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Particles = Particles(ptr)
     /**
      * Container for method_bind pointers for Particles
      */

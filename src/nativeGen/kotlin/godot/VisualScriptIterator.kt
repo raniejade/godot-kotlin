@@ -23,6 +23,7 @@ open class VisualScriptIterator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptIterator = VisualScriptIterator(ptr)
     /**
      * Container for method_bind pointers for VisualScriptIterator
      */

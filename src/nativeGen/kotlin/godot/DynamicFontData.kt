@@ -49,6 +49,17 @@ open class DynamicFontData internal constructor(
     HINTING_LIGHT(1),
 
     HINTING_NORMAL(2);
+
+    companion object {
+      fun from(value: Int): Hinting {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -67,6 +78,7 @@ open class DynamicFontData internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): DynamicFontData = DynamicFontData(ptr)
     /**
      * Container for method_bind pointers for DynamicFontData
      */

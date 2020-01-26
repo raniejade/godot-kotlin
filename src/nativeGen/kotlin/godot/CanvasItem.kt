@@ -372,6 +372,17 @@ open class CanvasItem internal constructor(
     BLEND_MODE_PREMULT_ALPHA(4),
 
     BLEND_MODE_DISABLED(5);
+
+    companion object {
+      fun from(value: Int): BlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

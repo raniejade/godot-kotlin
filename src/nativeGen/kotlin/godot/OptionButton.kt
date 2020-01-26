@@ -119,6 +119,7 @@ open class OptionButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): OptionButton = OptionButton(ptr)
     /**
      * Container for method_bind pointers for OptionButton
      */

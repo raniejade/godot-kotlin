@@ -160,6 +160,7 @@ open class Node2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Node2D = Node2D(ptr)
     /**
      * Container for method_bind pointers for Node2D
      */

@@ -72,6 +72,7 @@ open class ARVRController internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ARVRController = ARVRController(ptr)
     /**
      * Container for method_bind pointers for ARVRController
      */

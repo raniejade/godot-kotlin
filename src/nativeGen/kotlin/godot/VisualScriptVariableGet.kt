@@ -33,6 +33,7 @@ open class VisualScriptVariableGet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptVariableGet = VisualScriptVariableGet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptVariableGet
      */

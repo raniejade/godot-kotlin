@@ -131,6 +131,17 @@ open class CSGPolygon internal constructor(
     PATH_ROTATION_PATH(1),
 
     PATH_ROTATION_PATH_FOLLOW(2);
+
+    companion object {
+      fun from(value: Int): PathRotation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Mode(
@@ -141,6 +152,17 @@ open class CSGPolygon internal constructor(
     MODE_SPIN(1),
 
     MODE_PATH(2);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -164,6 +186,7 @@ open class CSGPolygon internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CSGPolygon = CSGPolygon(ptr)
     /**
      * Container for method_bind pointers for CSGPolygon
      */

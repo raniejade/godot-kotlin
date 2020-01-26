@@ -63,6 +63,7 @@ open class PolygonPathFinder internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PolygonPathFinder = PolygonPathFinder(ptr)
     /**
      * Container for method_bind pointers for PolygonPathFinder
      */

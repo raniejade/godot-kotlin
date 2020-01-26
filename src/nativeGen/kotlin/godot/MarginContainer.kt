@@ -23,6 +23,7 @@ open class MarginContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MarginContainer = MarginContainer(ptr)
     /**
      * Container for method_bind pointers for MarginContainer
      */

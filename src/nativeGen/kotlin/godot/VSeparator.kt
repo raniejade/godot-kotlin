@@ -22,6 +22,7 @@ open class VSeparator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VSeparator = VSeparator(ptr)
     /**
      * Container for method_bind pointers for VSeparator
      */

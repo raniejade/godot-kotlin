@@ -377,6 +377,17 @@ open class TextEdit internal constructor(
     SEARCH_WHOLE_WORDS(2),
 
     SEARCH_BACKWARDS(4);
+
+    companion object {
+      fun from(value: Int): SearchFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MenuItems(
@@ -397,6 +408,17 @@ open class TextEdit internal constructor(
     MENU_REDO(6),
 
     MENU_MAX(7);
+
+    companion object {
+      fun from(value: Int): MenuItems {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -430,6 +452,7 @@ open class TextEdit internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TextEdit = TextEdit(ptr)
     /**
      * Container for method_bind pointers for TextEdit
      */

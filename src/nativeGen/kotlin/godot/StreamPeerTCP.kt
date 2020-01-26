@@ -55,6 +55,17 @@ open class StreamPeerTCP internal constructor(
     STATUS_CONNECTED(2),
 
     STATUS_ERROR(3);
+
+    companion object {
+      fun from(value: Int): Status {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -74,6 +85,7 @@ open class StreamPeerTCP internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StreamPeerTCP = StreamPeerTCP(ptr)
     /**
      * Container for method_bind pointers for StreamPeerTCP
      */

@@ -74,6 +74,7 @@ open class ParallaxBackground internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ParallaxBackground = ParallaxBackground(ptr)
     /**
      * Container for method_bind pointers for ParallaxBackground
      */

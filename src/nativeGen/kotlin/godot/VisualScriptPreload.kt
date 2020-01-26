@@ -32,6 +32,7 @@ open class VisualScriptPreload internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptPreload = VisualScriptPreload(ptr)
     /**
      * Container for method_bind pointers for VisualScriptPreload
      */

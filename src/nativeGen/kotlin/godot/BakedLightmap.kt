@@ -115,6 +115,17 @@ open class BakedLightmap internal constructor(
     BAKE_QUALITY_MEDIUM(1),
 
     BAKE_QUALITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): BakeQuality {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BakeError(
@@ -129,6 +140,17 @@ open class BakedLightmap internal constructor(
     BAKE_ERROR_CANT_CREATE_IMAGE(3),
 
     BAKE_ERROR_USER_ABORTED(4);
+
+    companion object {
+      fun from(value: Int): BakeError {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BakeMode(
@@ -137,6 +159,17 @@ open class BakedLightmap internal constructor(
     BAKE_MODE_CONE_TRACE(0),
 
     BAKE_MODE_RAY_TRACE(1);
+
+    companion object {
+      fun from(value: Int): BakeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -168,6 +201,7 @@ open class BakedLightmap internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): BakedLightmap = BakedLightmap(ptr)
     /**
      * Container for method_bind pointers for BakedLightmap
      */

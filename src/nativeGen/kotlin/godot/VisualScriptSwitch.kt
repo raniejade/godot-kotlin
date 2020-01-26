@@ -23,6 +23,7 @@ open class VisualScriptSwitch internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptSwitch = VisualScriptSwitch(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSwitch
      */

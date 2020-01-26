@@ -32,6 +32,7 @@ open class ARVROrigin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ARVROrigin = ARVROrigin(ptr)
     /**
      * Container for method_bind pointers for ARVROrigin
      */

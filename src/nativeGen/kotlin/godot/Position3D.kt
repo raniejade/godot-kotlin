@@ -22,6 +22,7 @@ open class Position3D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Position3D = Position3D(ptr)
     /**
      * Container for method_bind pointers for Position3D
      */

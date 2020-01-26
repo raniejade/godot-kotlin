@@ -37,6 +37,7 @@ open class VisualShaderNodeExpression internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeExpression = VisualShaderNodeExpression(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeExpression
      */

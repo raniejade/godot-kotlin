@@ -41,6 +41,7 @@ open class AudioStreamGenerator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamGenerator = AudioStreamGenerator(ptr)
     /**
      * Container for method_bind pointers for AudioStreamGenerator
      */

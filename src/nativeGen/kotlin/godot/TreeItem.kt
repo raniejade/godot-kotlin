@@ -298,6 +298,17 @@ open class TreeItem internal constructor(
     CELL_MODE_ICON(3),
 
     CELL_MODE_CUSTOM(4);
+
+    companion object {
+      fun from(value: Int): TreeCellMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TextAlign(
@@ -308,6 +319,17 @@ open class TreeItem internal constructor(
     ALIGN_CENTER(1),
 
     ALIGN_RIGHT(2);
+
+    companion object {
+      fun from(value: Int): TextAlign {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

@@ -23,6 +23,7 @@ open class VisualShaderNodeColorUniform internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeColorUniform = VisualShaderNodeColorUniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeColorUniform
      */

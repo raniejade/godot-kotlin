@@ -60,6 +60,7 @@ open class AnimatedTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimatedTexture = AnimatedTexture(ptr)
     /**
      * Container for method_bind pointers for AnimatedTexture
      */

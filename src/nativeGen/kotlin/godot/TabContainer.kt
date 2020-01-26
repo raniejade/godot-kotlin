@@ -113,6 +113,17 @@ open class TabContainer internal constructor(
     ALIGN_CENTER(1),
 
     ALIGN_RIGHT(2);
+
+    companion object {
+      fun from(value: Int): TabAlign {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -130,6 +141,7 @@ open class TabContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TabContainer = TabContainer(ptr)
     /**
      * Container for method_bind pointers for TabContainer
      */

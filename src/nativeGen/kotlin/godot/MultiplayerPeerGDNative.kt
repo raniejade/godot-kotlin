@@ -23,6 +23,7 @@ open class MultiplayerPeerGDNative internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MultiplayerPeerGDNative = MultiplayerPeerGDNative(ptr)
     /**
      * Container for method_bind pointers for MultiplayerPeerGDNative
      */

@@ -127,6 +127,7 @@ open class VideoPlayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VideoPlayer = VideoPlayer(ptr)
     /**
      * Container for method_bind pointers for VideoPlayer
      */

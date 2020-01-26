@@ -31,6 +31,17 @@ open class VisualShaderNodeScalarDerivativeFunc internal constructor(
     FUNC_X(1),
 
     FUNC_Y(2);
+
+    companion object {
+      fun from(value: Int): Function {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -50,6 +61,8 @@ open class VisualShaderNodeScalarDerivativeFunc internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeScalarDerivativeFunc =
+        VisualShaderNodeScalarDerivativeFunc(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarDerivativeFunc
      */

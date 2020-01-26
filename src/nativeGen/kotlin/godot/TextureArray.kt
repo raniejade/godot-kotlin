@@ -22,6 +22,7 @@ open class TextureArray internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TextureArray = TextureArray(ptr)
     /**
      * Container for method_bind pointers for TextureArray
      */

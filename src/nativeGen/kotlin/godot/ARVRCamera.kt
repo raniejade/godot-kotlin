@@ -22,6 +22,7 @@ open class ARVRCamera internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ARVRCamera = ARVRCamera(ptr)
     /**
      * Container for method_bind pointers for ARVRCamera
      */

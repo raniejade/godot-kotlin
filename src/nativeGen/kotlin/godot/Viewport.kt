@@ -341,6 +341,17 @@ open class Viewport internal constructor(
     CLEAR_MODE_NEVER(1),
 
     CLEAR_MODE_ONLY_NEXT_FRAME(2);
+
+    companion object {
+      fun from(value: Int): ClearMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class RenderInfo(
@@ -359,6 +370,17 @@ open class Viewport internal constructor(
     RENDER_INFO_DRAW_CALLS_IN_FRAME(5),
 
     RENDER_INFO_MAX(6);
+
+    companion object {
+      fun from(value: Int): RenderInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Usage(
@@ -371,6 +393,17 @@ open class Viewport internal constructor(
     USAGE_3D(2),
 
     USAGE_3D_NO_EFFECTS(3);
+
+    companion object {
+      fun from(value: Int): Usage {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DebugDraw(
@@ -383,6 +416,17 @@ open class Viewport internal constructor(
     DEBUG_DRAW_OVERDRAW(2),
 
     DEBUG_DRAW_WIREFRAME(3);
+
+    companion object {
+      fun from(value: Int): DebugDraw {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShadowAtlasQuadrantSubdiv(
@@ -403,6 +447,17 @@ open class Viewport internal constructor(
     SHADOW_ATLAS_QUADRANT_SUBDIV_1024(6),
 
     SHADOW_ATLAS_QUADRANT_SUBDIV_MAX(7);
+
+    companion object {
+      fun from(value: Int): ShadowAtlasQuadrantSubdiv {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class UpdateMode(
@@ -415,6 +470,17 @@ open class Viewport internal constructor(
     UPDATE_WHEN_VISIBLE(2),
 
     UPDATE_ALWAYS(3);
+
+    companion object {
+      fun from(value: Int): UpdateMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MSAA(
@@ -429,6 +495,17 @@ open class Viewport internal constructor(
     MSAA_8X(3),
 
     MSAA_16X(4);
+
+    companion object {
+      fun from(value: Int): MSAA {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -510,6 +587,7 @@ open class Viewport internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Viewport = Viewport(ptr)
     /**
      * Container for method_bind pointers for Viewport
      */

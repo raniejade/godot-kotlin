@@ -23,6 +23,7 @@ open class EditorImportPlugin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorImportPlugin = EditorImportPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorImportPlugin
      */

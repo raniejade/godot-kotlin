@@ -151,6 +151,7 @@ open class Skeleton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Skeleton = Skeleton(ptr)
     /**
      * Container for method_bind pointers for Skeleton
      */

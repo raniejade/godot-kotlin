@@ -64,6 +64,7 @@ open class EditorExportPlugin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorExportPlugin = EditorExportPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorExportPlugin
      */

@@ -32,6 +32,7 @@ open class ProgressBar internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ProgressBar = ProgressBar(ptr)
     /**
      * Container for method_bind pointers for ProgressBar
      */

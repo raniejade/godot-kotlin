@@ -32,6 +32,7 @@ open class CircleShape2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CircleShape2D = CircleShape2D(ptr)
     /**
      * Container for method_bind pointers for CircleShape2D
      */

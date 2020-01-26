@@ -23,6 +23,7 @@ open class VisualShaderNodeVectorLen internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorLen = VisualShaderNodeVectorLen(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorLen
      */

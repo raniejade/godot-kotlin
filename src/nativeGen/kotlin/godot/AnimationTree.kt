@@ -80,6 +80,17 @@ open class AnimationTree internal constructor(
     ANIMATION_PROCESS_IDLE(1),
 
     ANIMATION_PROCESS_MANUAL(2);
+
+    companion object {
+      fun from(value: Int): AnimationProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -97,6 +108,7 @@ open class AnimationTree internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationTree = AnimationTree(ptr)
     /**
      * Container for method_bind pointers for AnimationTree
      */

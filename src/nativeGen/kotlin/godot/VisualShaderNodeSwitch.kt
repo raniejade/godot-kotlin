@@ -23,6 +23,7 @@ open class VisualShaderNodeSwitch internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeSwitch = VisualShaderNodeSwitch(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeSwitch
      */

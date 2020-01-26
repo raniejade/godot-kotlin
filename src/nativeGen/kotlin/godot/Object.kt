@@ -205,6 +205,17 @@ open class Object internal constructor(
     CONNECT_ONESHOT(4),
 
     CONNECT_REFERENCE_COUNTED(8);
+
+    companion object {
+      fun from(value: Int): ConnectFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -228,6 +239,7 @@ open class Object internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Object = Object(ptr)
     /**
      * Container for method_bind pointers for Object
      */

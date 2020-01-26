@@ -54,6 +54,7 @@ open class Bone2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Bone2D = Bone2D(ptr)
     /**
      * Container for method_bind pointers for Bone2D
      */

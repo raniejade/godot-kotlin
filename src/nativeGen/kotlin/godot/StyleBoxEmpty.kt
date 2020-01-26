@@ -22,6 +22,7 @@ open class StyleBoxEmpty internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StyleBoxEmpty = StyleBoxEmpty(ptr)
     /**
      * Container for method_bind pointers for StyleBoxEmpty
      */

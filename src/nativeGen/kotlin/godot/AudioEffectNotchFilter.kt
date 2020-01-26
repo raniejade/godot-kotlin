@@ -23,6 +23,7 @@ open class AudioEffectNotchFilter internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectNotchFilter = AudioEffectNotchFilter(ptr)
     /**
      * Container for method_bind pointers for AudioEffectNotchFilter
      */

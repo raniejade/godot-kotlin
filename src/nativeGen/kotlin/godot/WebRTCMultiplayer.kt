@@ -59,6 +59,7 @@ open class WebRTCMultiplayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WebRTCMultiplayer = WebRTCMultiplayer(ptr)
     /**
      * Container for method_bind pointers for WebRTCMultiplayer
      */

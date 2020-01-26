@@ -42,6 +42,7 @@ open class ViewportContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ViewportContainer = ViewportContainer(ptr)
     /**
      * Container for method_bind pointers for ViewportContainer
      */

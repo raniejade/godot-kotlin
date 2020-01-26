@@ -23,6 +23,7 @@ open class HSplitContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HSplitContainer = HSplitContainer(ptr)
     /**
      * Container for method_bind pointers for HSplitContainer
      */

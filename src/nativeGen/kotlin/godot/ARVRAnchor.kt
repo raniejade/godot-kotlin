@@ -56,6 +56,7 @@ open class ARVRAnchor internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ARVRAnchor = ARVRAnchor(ptr)
     /**
      * Container for method_bind pointers for ARVRAnchor
      */

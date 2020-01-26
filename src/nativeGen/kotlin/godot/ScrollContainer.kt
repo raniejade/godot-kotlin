@@ -74,6 +74,7 @@ open class ScrollContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ScrollContainer = ScrollContainer(ptr)
     /**
      * Container for method_bind pointers for ScrollContainer
      */

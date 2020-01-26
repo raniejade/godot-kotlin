@@ -42,6 +42,7 @@ open class EditorInspectorPlugin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorInspectorPlugin = EditorInspectorPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorInspectorPlugin
      */

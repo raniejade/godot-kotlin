@@ -33,6 +33,7 @@ open class CanvasModulate internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CanvasModulate = CanvasModulate(ptr)
     /**
      * Container for method_bind pointers for CanvasModulate
      */

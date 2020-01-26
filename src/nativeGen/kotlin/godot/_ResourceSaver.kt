@@ -45,6 +45,17 @@ open class _ResourceSaver internal constructor(
     FLAG_COMPRESS(32),
 
     FLAG_REPLACE_SUBRESOURCE_PATHS(64);
+
+    companion object {
+      fun from(value: Int): SaverFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

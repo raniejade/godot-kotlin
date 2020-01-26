@@ -57,6 +57,7 @@ open class DampedSpringJoint2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): DampedSpringJoint2D = DampedSpringJoint2D(ptr)
     /**
      * Container for method_bind pointers for DampedSpringJoint2D
      */

@@ -166,6 +166,7 @@ open class StyleBoxFlat internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StyleBoxFlat = StyleBoxFlat(ptr)
     /**
      * Container for method_bind pointers for StyleBoxFlat
      */

@@ -32,6 +32,7 @@ open class WorldEnvironment internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WorldEnvironment = WorldEnvironment(ptr)
     /**
      * Container for method_bind pointers for WorldEnvironment
      */

@@ -23,6 +23,8 @@ open class EditorResourceConversionPlugin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorResourceConversionPlugin =
+        EditorResourceConversionPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorResourceConversionPlugin
      */

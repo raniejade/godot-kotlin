@@ -82,6 +82,17 @@ open class VisualScriptPropertyGet internal constructor(
     CALL_MODE_NODE_PATH(1),
 
     CALL_MODE_INSTANCE(2);
+
+    companion object {
+      fun from(value: Int): CallMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -100,6 +111,7 @@ open class VisualScriptPropertyGet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptPropertyGet = VisualScriptPropertyGet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptPropertyGet
      */

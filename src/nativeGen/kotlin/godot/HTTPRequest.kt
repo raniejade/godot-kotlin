@@ -102,6 +102,17 @@ open class HTTPRequest internal constructor(
     RESULT_DOWNLOAD_FILE_WRITE_ERROR(10),
 
     RESULT_REDIRECT_LIMIT_REACHED(11);
+
+    companion object {
+      fun from(value: Int): Result {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -137,6 +148,7 @@ open class HTTPRequest internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HTTPRequest = HTTPRequest(ptr)
     /**
      * Container for method_bind pointers for HTTPRequest
      */

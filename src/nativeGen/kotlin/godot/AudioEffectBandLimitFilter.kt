@@ -23,6 +23,7 @@ open class AudioEffectBandLimitFilter internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectBandLimitFilter = AudioEffectBandLimitFilter(ptr)
     /**
      * Container for method_bind pointers for AudioEffectBandLimitFilter
      */

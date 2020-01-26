@@ -74,6 +74,7 @@ open class Sprite3D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Sprite3D = Sprite3D(ptr)
     /**
      * Container for method_bind pointers for Sprite3D
      */

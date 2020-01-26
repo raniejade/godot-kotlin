@@ -68,6 +68,17 @@ open class AudioEffectDistortion internal constructor(
     MODE_OVERDRIVE(3),
 
     MODE_WAVESHAPE(4);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -90,6 +101,7 @@ open class AudioEffectDistortion internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectDistortion = AudioEffectDistortion(ptr)
     /**
      * Container for method_bind pointers for AudioEffectDistortion
      */

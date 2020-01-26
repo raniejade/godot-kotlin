@@ -34,6 +34,7 @@ open class VisualScriptSelect internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptSelect = VisualScriptSelect(ptr)
     /**
      * Container for method_bind pointers for VisualScriptSelect
      */

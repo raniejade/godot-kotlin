@@ -23,6 +23,7 @@ open class AnimationNodeTimeSeek internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeTimeSeek = AnimationNodeTimeSeek(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeTimeSeek
      */

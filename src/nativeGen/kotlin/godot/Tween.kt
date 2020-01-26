@@ -232,6 +232,17 @@ open class Tween internal constructor(
     TRANS_BOUNCE(9),
 
     TRANS_BACK(10);
+
+    companion object {
+      fun from(value: Int): TransitionType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TweenProcessMode(
@@ -240,6 +251,17 @@ open class Tween internal constructor(
     TWEEN_PROCESS_PHYSICS(0),
 
     TWEEN_PROCESS_IDLE(1);
+
+    companion object {
+      fun from(value: Int): TweenProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EaseType(
@@ -252,6 +274,17 @@ open class Tween internal constructor(
     EASE_IN_OUT(2),
 
     EASE_OUT_IN(3);
+
+    companion object {
+      fun from(value: Int): EaseType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -297,6 +330,7 @@ open class Tween internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Tween = Tween(ptr)
     /**
      * Container for method_bind pointers for Tween
      */

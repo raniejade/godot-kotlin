@@ -37,6 +37,17 @@ open class OmniLight internal constructor(
     SHADOW_DUAL_PARABOLOID(0),
 
     SHADOW_CUBE(1);
+
+    companion object {
+      fun from(value: Int): ShadowMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShadowDetail(
@@ -45,6 +56,17 @@ open class OmniLight internal constructor(
     SHADOW_DETAIL_VERTICAL(0),
 
     SHADOW_DETAIL_HORIZONTAL(1);
+
+    companion object {
+      fun from(value: Int): ShadowDetail {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -64,6 +86,7 @@ open class OmniLight internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): OmniLight = OmniLight(ptr)
     /**
      * Container for method_bind pointers for OmniLight
      */

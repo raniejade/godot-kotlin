@@ -49,6 +49,7 @@ open class PacketPeerStream internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PacketPeerStream = PacketPeerStream(ptr)
     /**
      * Container for method_bind pointers for PacketPeerStream
      */

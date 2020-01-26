@@ -144,6 +144,7 @@ open class SurfaceTool internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SurfaceTool = SurfaceTool(ptr)
     /**
      * Container for method_bind pointers for SurfaceTool
      */

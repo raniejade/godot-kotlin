@@ -66,6 +66,7 @@ open class NoiseTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): NoiseTexture = NoiseTexture(ptr)
     /**
      * Container for method_bind pointers for NoiseTexture
      */

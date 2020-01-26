@@ -52,6 +52,7 @@ open class World internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): World = World(ptr)
     /**
      * Container for method_bind pointers for World
      */

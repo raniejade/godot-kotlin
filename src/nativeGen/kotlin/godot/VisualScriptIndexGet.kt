@@ -23,6 +23,7 @@ open class VisualScriptIndexGet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptIndexGet = VisualScriptIndexGet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptIndexGet
      */

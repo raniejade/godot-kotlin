@@ -13,7 +13,7 @@ class Vector3(
     Z(2, godot_vector3_axis.GODOT_VECTOR3_AXIS_Z);
 
     companion object {
-      fun fromValue(value: Int): Axis {
+      fun from(value: Int): Axis {
         for (enumValue in values()) {
           if (enumValue.value == value) {
             return enumValue
@@ -160,7 +160,7 @@ class Vector3(
 
   fun maxAxis(): Axis {
     return memScoped {
-      Axis.fromValue(
+      Axis.from(
         checkNotNull(Godot.gdnative.godot_vector3_max_axis)(_value.ptr)
       )
     }
@@ -168,7 +168,7 @@ class Vector3(
 
   fun minAxis(): Axis {
     return memScoped {
-      Axis.fromValue(
+      Axis.from(
         checkNotNull(Godot.gdnative.godot_vector3_min_axis)(_value.ptr)
       )
     }

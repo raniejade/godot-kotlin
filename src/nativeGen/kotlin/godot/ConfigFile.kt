@@ -71,6 +71,7 @@ open class ConfigFile internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ConfigFile = ConfigFile(ptr)
     /**
      * Container for method_bind pointers for ConfigFile
      */

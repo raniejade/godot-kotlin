@@ -80,6 +80,7 @@ open class Navigation internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Navigation = Navigation(ptr)
     /**
      * Container for method_bind pointers for Navigation
      */

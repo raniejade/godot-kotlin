@@ -66,6 +66,7 @@ open class SphereMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SphereMesh = SphereMesh(ptr)
     /**
      * Container for method_bind pointers for SphereMesh
      */

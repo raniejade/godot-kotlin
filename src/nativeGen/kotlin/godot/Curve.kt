@@ -131,6 +131,17 @@ open class Curve internal constructor(
     TANGENT_LINEAR(1),
 
     TANGENT_MODE_COUNT(2);
+
+    companion object {
+      fun from(value: Int): TangentMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -148,6 +159,7 @@ open class Curve internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Curve = Curve(ptr)
     /**
      * Container for method_bind pointers for Curve
      */

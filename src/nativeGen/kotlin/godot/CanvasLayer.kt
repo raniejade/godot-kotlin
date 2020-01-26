@@ -105,6 +105,7 @@ open class CanvasLayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CanvasLayer = CanvasLayer(ptr)
     /**
      * Container for method_bind pointers for CanvasLayer
      */

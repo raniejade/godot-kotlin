@@ -48,6 +48,7 @@ open class Expression internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Expression = Expression(ptr)
     /**
      * Container for method_bind pointers for Expression
      */

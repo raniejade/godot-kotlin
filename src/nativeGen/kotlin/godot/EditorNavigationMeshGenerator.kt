@@ -32,6 +32,8 @@ open class EditorNavigationMeshGenerator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorNavigationMeshGenerator =
+        EditorNavigationMeshGenerator(ptr)
     /**
      * Container for method_bind pointers for EditorNavigationMeshGenerator
      */

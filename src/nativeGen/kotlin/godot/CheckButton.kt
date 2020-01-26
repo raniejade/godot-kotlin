@@ -22,6 +22,7 @@ open class CheckButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CheckButton = CheckButton(ptr)
     /**
      * Container for method_bind pointers for CheckButton
      */

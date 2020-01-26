@@ -23,6 +23,7 @@ open class ResourceFormatLoader internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ResourceFormatLoader = ResourceFormatLoader(ptr)
     /**
      * Container for method_bind pointers for ResourceFormatLoader
      */

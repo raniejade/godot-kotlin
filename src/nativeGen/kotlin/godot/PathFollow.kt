@@ -85,6 +85,17 @@ open class PathFollow internal constructor(
     ROTATION_XYZ(3),
 
     ROTATION_ORIENTED(4);
+
+    companion object {
+      fun from(value: Int): RotationMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -106,6 +117,7 @@ open class PathFollow internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PathFollow = PathFollow(ptr)
     /**
      * Container for method_bind pointers for PathFollow
      */

@@ -86,6 +86,17 @@ open class ARVRInterface internal constructor(
     ARVR_UNKNOWN_TRACKING(3),
 
     ARVR_NOT_TRACKING(4);
+
+    companion object {
+      fun from(value: Int): Tracking_status {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Eyes(
@@ -96,6 +107,17 @@ open class ARVRInterface internal constructor(
     EYE_LEFT(1),
 
     EYE_RIGHT(2);
+
+    companion object {
+      fun from(value: Int): Eyes {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Capabilities(
@@ -110,6 +132,17 @@ open class ARVRInterface internal constructor(
     ARVR_AR(4),
 
     ARVR_EXTERNAL(8);
+
+    companion object {
+      fun from(value: Int): Capabilities {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

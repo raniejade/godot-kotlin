@@ -435,6 +435,17 @@ open class Control internal constructor(
     ANCHOR_BEGIN(0),
 
     ANCHOR_END(1);
+
+    companion object {
+      fun from(value: Int): Anchor {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class FocusMode(
@@ -445,6 +456,17 @@ open class Control internal constructor(
     FOCUS_CLICK(1),
 
     FOCUS_ALL(2);
+
+    companion object {
+      fun from(value: Int): FocusMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LayoutPresetMode(
@@ -457,6 +479,17 @@ open class Control internal constructor(
     PRESET_MODE_KEEP_HEIGHT(2),
 
     PRESET_MODE_KEEP_SIZE(3);
+
+    companion object {
+      fun from(value: Int): LayoutPresetMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class MouseFilter(
@@ -467,6 +500,17 @@ open class Control internal constructor(
     MOUSE_FILTER_PASS(1),
 
     MOUSE_FILTER_IGNORE(2);
+
+    companion object {
+      fun from(value: Int): MouseFilter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CursorShape(
@@ -505,6 +549,17 @@ open class Control internal constructor(
     CURSOR_HSPLIT(15),
 
     CURSOR_HELP(16);
+
+    companion object {
+      fun from(value: Int): CursorShape {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class GrowDirection(
@@ -515,6 +570,17 @@ open class Control internal constructor(
     GROW_DIRECTION_END(1),
 
     GROW_DIRECTION_BOTH(2);
+
+    companion object {
+      fun from(value: Int): GrowDirection {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SizeFlags(
@@ -529,6 +595,17 @@ open class Control internal constructor(
     SIZE_SHRINK_CENTER(4),
 
     SIZE_SHRINK_END(8);
+
+    companion object {
+      fun from(value: Int): SizeFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class LayoutPreset(
@@ -565,6 +642,17 @@ open class Control internal constructor(
     PRESET_HCENTER_WIDE(14),
 
     PRESET_WIDE(15);
+
+    companion object {
+      fun from(value: Int): LayoutPreset {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -700,6 +788,7 @@ open class Control internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Control = Control(ptr)
     /**
      * Container for method_bind pointers for Control
      */

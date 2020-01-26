@@ -83,6 +83,7 @@ open class EditorFileSystemDirectory internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorFileSystemDirectory = EditorFileSystemDirectory(ptr)
     /**
      * Container for method_bind pointers for EditorFileSystemDirectory
      */

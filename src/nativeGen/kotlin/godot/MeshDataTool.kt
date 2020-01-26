@@ -183,6 +183,7 @@ open class MeshDataTool internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MeshDataTool = MeshDataTool(ptr)
     /**
      * Container for method_bind pointers for MeshDataTool
      */

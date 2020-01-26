@@ -51,6 +51,7 @@ open class ResourcePreloader internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ResourcePreloader = ResourcePreloader(ptr)
     /**
      * Container for method_bind pointers for ResourcePreloader
      */

@@ -130,6 +130,7 @@ open class AudioEffectDelay internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectDelay = AudioEffectDelay(ptr)
     /**
      * Container for method_bind pointers for AudioEffectDelay
      */

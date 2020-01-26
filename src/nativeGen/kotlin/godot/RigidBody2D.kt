@@ -230,6 +230,17 @@ open class RigidBody2D internal constructor(
     MODE_CHARACTER(2),
 
     MODE_KINEMATIC(3);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CCDMode(
@@ -240,6 +251,17 @@ open class RigidBody2D internal constructor(
     CCD_MODE_CAST_RAY(1),
 
     CCD_MODE_CAST_SHAPE(2);
+
+    companion object {
+      fun from(value: Int): CCDMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -265,6 +287,7 @@ open class RigidBody2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RigidBody2D = RigidBody2D(ptr)
     /**
      * Container for method_bind pointers for RigidBody2D
      */

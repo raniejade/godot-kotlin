@@ -106,6 +106,17 @@ open class AudioStreamPlayer internal constructor(
     MIX_TARGET_SURROUND(1),
 
     MIX_TARGET_CENTER(2);
+
+    companion object {
+      fun from(value: Int): MixTarget {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -124,6 +135,7 @@ open class AudioStreamPlayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamPlayer = AudioStreamPlayer(ptr)
     /**
      * Container for method_bind pointers for AudioStreamPlayer
      */

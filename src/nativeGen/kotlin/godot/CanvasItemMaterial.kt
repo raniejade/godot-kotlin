@@ -72,6 +72,17 @@ open class CanvasItemMaterial internal constructor(
     LIGHT_MODE_UNSHADED(1),
 
     LIGHT_MODE_LIGHT_ONLY(2);
+
+    companion object {
+      fun from(value: Int): LightMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BlendMode(
@@ -86,6 +97,17 @@ open class CanvasItemMaterial internal constructor(
     BLEND_MODE_MUL(3),
 
     BLEND_MODE_PREMULT_ALPHA(4);
+
+    companion object {
+      fun from(value: Int): BlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -114,6 +136,7 @@ open class CanvasItemMaterial internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CanvasItemMaterial = CanvasItemMaterial(ptr)
     /**
      * Container for method_bind pointers for CanvasItemMaterial
      */

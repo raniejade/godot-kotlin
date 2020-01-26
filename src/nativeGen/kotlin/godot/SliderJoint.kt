@@ -72,6 +72,17 @@ open class SliderJoint internal constructor(
     PARAM_ANGULAR_ORTHOGONAL_DAMPING(21),
 
     PARAM_MAX(22);
+
+    companion object {
+      fun from(value: Int): Param {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -129,6 +140,7 @@ open class SliderJoint internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SliderJoint = SliderJoint(ptr)
     /**
      * Container for method_bind pointers for SliderJoint
      */

@@ -23,6 +23,7 @@ open class PanelContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PanelContainer = PanelContainer(ptr)
     /**
      * Container for method_bind pointers for PanelContainer
      */

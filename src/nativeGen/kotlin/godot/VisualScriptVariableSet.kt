@@ -33,6 +33,7 @@ open class VisualScriptVariableSet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptVariableSet = VisualScriptVariableSet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptVariableSet
      */

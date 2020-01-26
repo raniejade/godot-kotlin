@@ -197,6 +197,17 @@ open class AnimationPlayer internal constructor(
     ANIMATION_PROCESS_IDLE(1),
 
     ANIMATION_PROCESS_MANUAL(2);
+
+    companion object {
+      fun from(value: Int): AnimationProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -215,6 +226,7 @@ open class AnimationPlayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationPlayer = AnimationPlayer(ptr)
     /**
      * Container for method_bind pointers for AnimationPlayer
      */

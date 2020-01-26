@@ -23,6 +23,7 @@ open class AudioEffectEQ6 internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectEQ6 = AudioEffectEQ6(ptr)
     /**
      * Container for method_bind pointers for AudioEffectEQ6
      */

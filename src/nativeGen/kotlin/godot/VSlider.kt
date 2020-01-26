@@ -22,6 +22,7 @@ open class VSlider internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VSlider = VSlider(ptr)
     /**
      * Container for method_bind pointers for VSlider
      */

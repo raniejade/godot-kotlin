@@ -23,6 +23,8 @@ open class VisualShaderNodeBooleanUniform internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeBooleanUniform =
+        VisualShaderNodeBooleanUniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeBooleanUniform
      */

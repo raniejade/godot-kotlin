@@ -251,6 +251,17 @@ open class TileMap internal constructor(
     MODE_ISOMETRIC(1),
 
     MODE_CUSTOM(2);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TileOrigin(
@@ -261,6 +272,17 @@ open class TileMap internal constructor(
     TILE_ORIGIN_CENTER(1),
 
     TILE_ORIGIN_BOTTOM_LEFT(2);
+
+    companion object {
+      fun from(value: Int): TileOrigin {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class HalfOffset(
@@ -275,6 +297,17 @@ open class TileMap internal constructor(
     HALF_OFFSET_NEGATIVE_X(3),
 
     HALF_OFFSET_NEGATIVE_Y(4);
+
+    companion object {
+      fun from(value: Int): HalfOffset {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -310,6 +343,7 @@ open class TileMap internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TileMap = TileMap(ptr)
     /**
      * Container for method_bind pointers for TileMap
      */

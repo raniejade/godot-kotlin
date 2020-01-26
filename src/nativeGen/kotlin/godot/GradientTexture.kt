@@ -37,6 +37,7 @@ open class GradientTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GradientTexture = GradientTexture(ptr)
     /**
      * Container for method_bind pointers for GradientTexture
      */

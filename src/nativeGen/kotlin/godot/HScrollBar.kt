@@ -22,6 +22,7 @@ open class HScrollBar internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HScrollBar = HScrollBar(ptr)
     /**
      * Container for method_bind pointers for HScrollBar
      */

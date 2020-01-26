@@ -74,6 +74,7 @@ open class CSGTorus internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CSGTorus = CSGTorus(ptr)
     /**
      * Container for method_bind pointers for CSGTorus
      */

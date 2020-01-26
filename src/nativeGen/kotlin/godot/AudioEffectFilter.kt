@@ -58,6 +58,17 @@ open class AudioEffectFilter internal constructor(
     FILTER_18DB(2),
 
     FILTER_24DB(3);
+
+    companion object {
+      fun from(value: Int): FilterDB {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -78,6 +89,7 @@ open class AudioEffectFilter internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectFilter = AudioEffectFilter(ptr)
     /**
      * Container for method_bind pointers for AudioEffectFilter
      */

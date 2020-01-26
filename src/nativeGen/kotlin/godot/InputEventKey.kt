@@ -53,6 +53,7 @@ open class InputEventKey internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventKey = InputEventKey(ptr)
     /**
      * Container for method_bind pointers for InputEventKey
      */

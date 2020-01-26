@@ -55,6 +55,7 @@ open class InterpolatedCamera internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InterpolatedCamera = InterpolatedCamera(ptr)
     /**
      * Container for method_bind pointers for InterpolatedCamera
      */

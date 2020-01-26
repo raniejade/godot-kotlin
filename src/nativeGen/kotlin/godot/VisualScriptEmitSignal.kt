@@ -33,6 +33,7 @@ open class VisualScriptEmitSignal internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptEmitSignal = VisualScriptEmitSignal(ptr)
     /**
      * Container for method_bind pointers for VisualScriptEmitSignal
      */

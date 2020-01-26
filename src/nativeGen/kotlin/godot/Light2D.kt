@@ -201,6 +201,17 @@ open class Light2D internal constructor(
     SHADOW_FILTER_PCF9(4),
 
     SHADOW_FILTER_PCF13(5);
+
+    companion object {
+      fun from(value: Int): ShadowFilter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Mode(
@@ -213,6 +224,17 @@ open class Light2D internal constructor(
     MODE_MIX(2),
 
     MODE_MASK(3);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -244,6 +266,7 @@ open class Light2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Light2D = Light2D(ptr)
     /**
      * Container for method_bind pointers for Light2D
      */

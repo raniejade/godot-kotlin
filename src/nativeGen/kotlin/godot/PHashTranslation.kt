@@ -28,6 +28,7 @@ open class PHashTranslation internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PHashTranslation = PHashTranslation(ptr)
     /**
      * Container for method_bind pointers for PHashTranslation
      */

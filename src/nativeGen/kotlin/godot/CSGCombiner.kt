@@ -22,6 +22,7 @@ open class CSGCombiner internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CSGCombiner = CSGCombiner(ptr)
     /**
      * Container for method_bind pointers for CSGCombiner
      */

@@ -40,6 +40,7 @@ open class MenuButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MenuButton = MenuButton(ptr)
     /**
      * Container for method_bind pointers for MenuButton
      */

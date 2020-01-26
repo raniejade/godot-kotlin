@@ -33,6 +33,7 @@ open class VideoStreamGDNative internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VideoStreamGDNative = VideoStreamGDNative(ptr)
     /**
      * Container for method_bind pointers for VideoStreamGDNative
      */

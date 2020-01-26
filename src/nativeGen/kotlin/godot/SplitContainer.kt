@@ -52,6 +52,17 @@ open class SplitContainer internal constructor(
     DRAGGER_HIDDEN(1),
 
     DRAGGER_HIDDEN_COLLAPSED(2);
+
+    companion object {
+      fun from(value: Int): DraggerVisibility {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

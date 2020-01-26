@@ -47,6 +47,17 @@ open class _Thread internal constructor(
     PRIORITY_NORMAL(1),
 
     PRIORITY_HIGH(2);
+
+    companion object {
+      fun from(value: Int): Priority {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -64,6 +75,7 @@ open class _Thread internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): _Thread = _Thread(ptr)
     /**
      * Container for method_bind pointers for _Thread
      */

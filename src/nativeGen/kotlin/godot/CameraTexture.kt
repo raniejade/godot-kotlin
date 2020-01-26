@@ -49,6 +49,7 @@ open class CameraTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CameraTexture = CameraTexture(ptr)
     /**
      * Container for method_bind pointers for CameraTexture
      */

@@ -90,6 +90,7 @@ open class PhysicsShapeQueryParameters internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PhysicsShapeQueryParameters = PhysicsShapeQueryParameters(ptr)
     /**
      * Container for method_bind pointers for PhysicsShapeQueryParameters
      */

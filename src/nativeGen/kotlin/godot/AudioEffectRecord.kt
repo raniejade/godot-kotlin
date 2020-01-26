@@ -46,6 +46,7 @@ open class AudioEffectRecord internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectRecord = AudioEffectRecord(ptr)
     /**
      * Container for method_bind pointers for AudioEffectRecord
      */

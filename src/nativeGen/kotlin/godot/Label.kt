@@ -124,6 +124,17 @@ open class Label internal constructor(
     ALIGN_RIGHT(2),
 
     ALIGN_FILL(3);
+
+    companion object {
+      fun from(value: Int): Align {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class VAlign(
@@ -136,6 +147,17 @@ open class Label internal constructor(
     VALIGN_BOTTOM(2),
 
     VALIGN_FILL(3);
+
+    companion object {
+      fun from(value: Int): VAlign {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -163,6 +185,7 @@ open class Label internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Label = Label(ptr)
     /**
      * Container for method_bind pointers for Label
      */

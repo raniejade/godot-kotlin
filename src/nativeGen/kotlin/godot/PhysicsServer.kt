@@ -626,6 +626,17 @@ open class PhysicsServer internal constructor(
     BODY_AXIS_ANGULAR_Y(16),
 
     BODY_AXIS_ANGULAR_Z(32);
+
+    companion object {
+      fun from(value: Int): BodyAxis {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ProcessInfo(
@@ -636,6 +647,17 @@ open class PhysicsServer internal constructor(
     INFO_COLLISION_PAIRS(1),
 
     INFO_ISLAND_COUNT(2);
+
+    companion object {
+      fun from(value: Int): ProcessInfo {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AreaBodyStatus(
@@ -644,6 +666,17 @@ open class PhysicsServer internal constructor(
     AREA_BODY_ADDED(0),
 
     AREA_BODY_REMOVED(1);
+
+    companion object {
+      fun from(value: Int): AreaBodyStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BodyMode(
@@ -656,6 +689,17 @@ open class PhysicsServer internal constructor(
     BODY_MODE_RIGID(2),
 
     BODY_MODE_CHARACTER(3);
+
+    companion object {
+      fun from(value: Int): BodyMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShapeType(
@@ -680,6 +724,17 @@ open class PhysicsServer internal constructor(
     SHAPE_HEIGHTMAP(8),
 
     SHAPE_CUSTOM(9);
+
+    companion object {
+      fun from(value: Int): ShapeType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class PinJointParam(
@@ -690,6 +745,17 @@ open class PhysicsServer internal constructor(
     PIN_JOINT_DAMPING(1),
 
     PIN_JOINT_IMPULSE_CLAMP(2);
+
+    companion object {
+      fun from(value: Int): PinJointParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SpaceParameter(
@@ -712,6 +778,17 @@ open class PhysicsServer internal constructor(
     SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS(7),
 
     SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH(8);
+
+    companion object {
+      fun from(value: Int): SpaceParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ConeTwistJointParam(
@@ -726,6 +803,17 @@ open class PhysicsServer internal constructor(
     CONE_TWIST_JOINT_SOFTNESS(3),
 
     CONE_TWIST_JOINT_RELAXATION(4);
+
+    companion object {
+      fun from(value: Int): ConeTwistJointParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class JointType(
@@ -740,6 +828,17 @@ open class PhysicsServer internal constructor(
     JOINT_CONE_TWIST(3),
 
     JOINT_6DOF(4);
+
+    companion object {
+      fun from(value: Int): JointType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BodyState(
@@ -754,6 +853,17 @@ open class PhysicsServer internal constructor(
     BODY_STATE_SLEEPING(3),
 
     BODY_STATE_CAN_SLEEP(4);
+
+    companion object {
+      fun from(value: Int): BodyState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class BodyParameter(
@@ -772,6 +882,17 @@ open class PhysicsServer internal constructor(
     BODY_PARAM_ANGULAR_DAMP(5),
 
     BODY_PARAM_MAX(6);
+
+    companion object {
+      fun from(value: Int): BodyParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class G6DOFJointAxisParam(
@@ -808,6 +929,17 @@ open class PhysicsServer internal constructor(
     G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY(17),
 
     G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT(18);
+
+    companion object {
+      fun from(value: Int): G6DOFJointAxisParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class SliderJointParam(
@@ -858,6 +990,17 @@ open class PhysicsServer internal constructor(
     SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING(21),
 
     SLIDER_JOINT_MAX(22);
+
+    companion object {
+      fun from(value: Int): SliderJointParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class HingeJointParam(
@@ -878,6 +1021,17 @@ open class PhysicsServer internal constructor(
     HINGE_JOINT_MOTOR_TARGET_VELOCITY(6),
 
     HINGE_JOINT_MOTOR_MAX_IMPULSE(7);
+
+    companion object {
+      fun from(value: Int): HingeJointParam {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class G6DOFJointAxisFlag(
@@ -890,6 +1044,17 @@ open class PhysicsServer internal constructor(
     G6DOF_JOINT_FLAG_ENABLE_MOTOR(4),
 
     G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR(5);
+
+    companion object {
+      fun from(value: Int): G6DOFJointAxisFlag {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class HingeJointFlag(
@@ -898,6 +1063,17 @@ open class PhysicsServer internal constructor(
     HINGE_JOINT_FLAG_USE_LIMIT(0),
 
     HINGE_JOINT_FLAG_ENABLE_MOTOR(1);
+
+    companion object {
+      fun from(value: Int): HingeJointFlag {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AreaSpaceOverrideMode(
@@ -912,6 +1088,17 @@ open class PhysicsServer internal constructor(
     AREA_SPACE_OVERRIDE_REPLACE(3),
 
     AREA_SPACE_OVERRIDE_REPLACE_COMBINE(4);
+
+    companion object {
+      fun from(value: Int): AreaSpaceOverrideMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class AreaParameter(
@@ -932,6 +1119,17 @@ open class PhysicsServer internal constructor(
     AREA_PARAM_ANGULAR_DAMP(6),
 
     AREA_PARAM_PRIORITY(7);
+
+    companion object {
+      fun from(value: Int): AreaParameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

@@ -89,6 +89,7 @@ open class PathFollow2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PathFollow2D = PathFollow2D(ptr)
     /**
      * Container for method_bind pointers for PathFollow2D
      */

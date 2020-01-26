@@ -33,6 +33,7 @@ open class InputEventPanGesture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventPanGesture = InputEventPanGesture(ptr)
     /**
      * Container for method_bind pointers for InputEventPanGesture
      */

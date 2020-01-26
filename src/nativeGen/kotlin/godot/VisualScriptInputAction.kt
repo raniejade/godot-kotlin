@@ -42,6 +42,17 @@ open class VisualScriptInputAction internal constructor(
     MODE_JUST_PRESSED(2),
 
     MODE_JUST_RELEASED(3);
+
+    companion object {
+      fun from(value: Int): Mode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -62,6 +73,7 @@ open class VisualScriptInputAction internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptInputAction = VisualScriptInputAction(ptr)
     /**
      * Container for method_bind pointers for VisualScriptInputAction
      */

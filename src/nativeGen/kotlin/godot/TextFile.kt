@@ -22,6 +22,7 @@ open class TextFile internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TextFile = TextFile(ptr)
     /**
      * Container for method_bind pointers for TextFile
      */

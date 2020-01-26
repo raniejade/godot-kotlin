@@ -23,6 +23,7 @@ open class VisualShaderNodeVec3Uniform internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVec3Uniform = VisualShaderNodeVec3Uniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVec3Uniform
      */

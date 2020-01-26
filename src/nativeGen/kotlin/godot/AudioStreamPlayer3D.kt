@@ -196,6 +196,17 @@ open class AudioStreamPlayer3D internal constructor(
     ATTENUATION_LOGARITHMIC(2),
 
     ATTENUATION_DISABLED(3);
+
+    companion object {
+      fun from(value: Int): AttenuationModel {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class OutOfRangeMode(
@@ -204,6 +215,17 @@ open class AudioStreamPlayer3D internal constructor(
     OUT_OF_RANGE_MIX(0),
 
     OUT_OF_RANGE_PAUSE(1);
+
+    companion object {
+      fun from(value: Int): OutOfRangeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DopplerTracking(
@@ -214,6 +236,17 @@ open class AudioStreamPlayer3D internal constructor(
     DOPPLER_TRACKING_IDLE_STEP(1),
 
     DOPPLER_TRACKING_PHYSICS_STEP(2);
+
+    companion object {
+      fun from(value: Int): DopplerTracking {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -244,6 +277,7 @@ open class AudioStreamPlayer3D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioStreamPlayer3D = AudioStreamPlayer3D(ptr)
     /**
      * Container for method_bind pointers for AudioStreamPlayer3D
      */

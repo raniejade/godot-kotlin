@@ -33,6 +33,7 @@ open class VisualScriptGlobalConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptGlobalConstant = VisualScriptGlobalConstant(ptr)
     /**
      * Container for method_bind pointers for VisualScriptGlobalConstant
      */

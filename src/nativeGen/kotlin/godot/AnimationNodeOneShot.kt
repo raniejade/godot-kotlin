@@ -79,6 +79,17 @@ open class AnimationNodeOneShot internal constructor(
     MIX_MODE_BLEND(0),
 
     MIX_MODE_ADD(1);
+
+    companion object {
+      fun from(value: Int): MixMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -95,6 +106,7 @@ open class AnimationNodeOneShot internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeOneShot = AnimationNodeOneShot(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeOneShot
      */

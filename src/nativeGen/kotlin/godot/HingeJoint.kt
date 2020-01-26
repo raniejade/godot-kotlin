@@ -53,6 +53,17 @@ open class HingeJoint internal constructor(
     PARAM_MOTOR_MAX_IMPULSE(7),
 
     PARAM_MAX(8);
+
+    companion object {
+      fun from(value: Int): Param {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Flag(
@@ -63,6 +74,17 @@ open class HingeJoint internal constructor(
     FLAG_ENABLE_MOTOR(1),
 
     FLAG_MAX(2);
+
+    companion object {
+      fun from(value: Int): Flag {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -98,6 +120,7 @@ open class HingeJoint internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HingeJoint = HingeJoint(ptr)
     /**
      * Container for method_bind pointers for HingeJoint
      */

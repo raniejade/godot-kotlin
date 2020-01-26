@@ -23,6 +23,7 @@ open class WebRTCDataChannelGDNative internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WebRTCDataChannelGDNative = WebRTCDataChannelGDNative(ptr)
     /**
      * Container for method_bind pointers for WebRTCDataChannelGDNative
      */

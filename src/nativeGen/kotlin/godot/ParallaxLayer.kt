@@ -48,6 +48,7 @@ open class ParallaxLayer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ParallaxLayer = ParallaxLayer(ptr)
     /**
      * Container for method_bind pointers for ParallaxLayer
      */

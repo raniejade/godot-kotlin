@@ -45,6 +45,7 @@ open class WindowDialog internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WindowDialog = WindowDialog(ptr)
     /**
      * Container for method_bind pointers for WindowDialog
      */

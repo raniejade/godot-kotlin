@@ -23,6 +23,8 @@ open class VisualShaderNodeCubeMapUniform internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeCubeMapUniform =
+        VisualShaderNodeCubeMapUniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeCubeMapUniform
      */

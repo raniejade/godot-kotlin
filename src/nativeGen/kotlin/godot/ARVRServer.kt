@@ -92,6 +92,17 @@ open class ARVRServer internal constructor(
     RESET_BUT_KEEP_TILT(1),
 
     DONT_RESET_ROTATION(2);
+
+    companion object {
+      fun from(value: Int): RotationMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TrackerType(
@@ -108,6 +119,17 @@ open class ARVRServer internal constructor(
     TRACKER_UNKNOWN(128),
 
     TRACKER_ANY(255);
+
+    companion object {
+      fun from(value: Int): TrackerType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

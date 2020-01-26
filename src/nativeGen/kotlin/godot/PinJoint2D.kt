@@ -32,6 +32,7 @@ open class PinJoint2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PinJoint2D = PinJoint2D(ptr)
     /**
      * Container for method_bind pointers for PinJoint2D
      */

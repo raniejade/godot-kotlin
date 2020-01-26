@@ -75,6 +75,7 @@ open class GDNativeLibrary internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GDNativeLibrary = GDNativeLibrary(ptr)
     /**
      * Container for method_bind pointers for GDNativeLibrary
      */

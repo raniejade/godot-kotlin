@@ -57,6 +57,7 @@ open class CubeMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CubeMesh = CubeMesh(ptr)
     /**
      * Container for method_bind pointers for CubeMesh
      */

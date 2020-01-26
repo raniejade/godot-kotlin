@@ -33,6 +33,7 @@ open class EditorScenePostImport internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorScenePostImport = EditorScenePostImport(ptr)
     /**
      * Container for method_bind pointers for EditorScenePostImport
      */

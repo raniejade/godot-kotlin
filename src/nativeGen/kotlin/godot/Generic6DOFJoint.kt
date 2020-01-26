@@ -109,6 +109,17 @@ open class Generic6DOFJoint internal constructor(
     PARAM_ANGULAR_MOTOR_FORCE_LIMIT(18),
 
     PARAM_MAX(22);
+
+    companion object {
+      fun from(value: Int): Param {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Flag(
@@ -127,6 +138,17 @@ open class Generic6DOFJoint internal constructor(
     FLAG_ENABLE_LINEAR_MOTOR(5),
 
     FLAG_MAX(6);
+
+    companion object {
+      fun from(value: Int): Flag {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -187,6 +209,7 @@ open class Generic6DOFJoint internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Generic6DOFJoint = Generic6DOFJoint(ptr)
     /**
      * Container for method_bind pointers for Generic6DOFJoint
      */

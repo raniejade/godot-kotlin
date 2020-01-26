@@ -31,6 +31,7 @@ open class ProxyTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ProxyTexture = ProxyTexture(ptr)
     /**
      * Container for method_bind pointers for ProxyTexture
      */

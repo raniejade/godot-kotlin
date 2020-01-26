@@ -389,6 +389,17 @@ open class Node internal constructor(
     PAUSE_MODE_STOP(1),
 
     PAUSE_MODE_PROCESS(2);
+
+    companion object {
+      fun from(value: Int): PauseMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DuplicateFlags(
@@ -401,6 +412,17 @@ open class Node internal constructor(
     DUPLICATE_SCRIPTS(4),
 
     DUPLICATE_USE_INSTANCING(8);
+
+    companion object {
+      fun from(value: Int): DuplicateFlags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -482,6 +504,7 @@ open class Node internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Node = Node(ptr)
     /**
      * Container for method_bind pointers for Node
      */

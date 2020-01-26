@@ -33,6 +33,7 @@ open class InputEventMagnifyGesture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): InputEventMagnifyGesture = InputEventMagnifyGesture(ptr)
     /**
      * Container for method_bind pointers for InputEventMagnifyGesture
      */

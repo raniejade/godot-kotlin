@@ -42,6 +42,7 @@ open class VisualScriptOperator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptOperator = VisualScriptOperator(ptr)
     /**
      * Container for method_bind pointers for VisualScriptOperator
      */

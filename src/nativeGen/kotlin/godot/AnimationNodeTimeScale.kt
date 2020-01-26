@@ -23,6 +23,7 @@ open class AnimationNodeTimeScale internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeTimeScale = AnimationNodeTimeScale(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeTimeScale
      */

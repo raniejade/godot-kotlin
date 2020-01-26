@@ -98,6 +98,17 @@ open class CSGShape internal constructor(
     OPERATION_INTERSECTION(1),
 
     OPERATION_SUBTRACTION(2);
+
+    companion object {
+      fun from(value: Int): Operation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

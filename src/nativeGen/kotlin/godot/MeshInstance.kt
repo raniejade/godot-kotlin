@@ -65,6 +65,7 @@ open class MeshInstance internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MeshInstance = MeshInstance(ptr)
     /**
      * Container for method_bind pointers for MeshInstance
      */

@@ -206,6 +206,7 @@ open class GridMap internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GridMap = GridMap(ptr)
     /**
      * Container for method_bind pointers for GridMap
      */

@@ -34,6 +34,7 @@ open class PackedDataContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PackedDataContainer = PackedDataContainer(ptr)
     /**
      * Container for method_bind pointers for PackedDataContainer
      */

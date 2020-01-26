@@ -23,6 +23,7 @@ open class VisualShaderNodeVectorInterp internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorInterp = VisualShaderNodeVectorInterp(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorInterp
      */

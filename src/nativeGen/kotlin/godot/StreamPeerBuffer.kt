@@ -58,6 +58,7 @@ open class StreamPeerBuffer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StreamPeerBuffer = StreamPeerBuffer(ptr)
     /**
      * Container for method_bind pointers for StreamPeerBuffer
      */

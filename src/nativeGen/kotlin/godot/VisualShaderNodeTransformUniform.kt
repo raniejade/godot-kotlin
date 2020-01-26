@@ -23,6 +23,8 @@ open class VisualShaderNodeTransformUniform internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeTransformUniform =
+        VisualShaderNodeTransformUniform(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeTransformUniform
      */

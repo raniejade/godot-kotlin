@@ -269,6 +269,17 @@ open class _Geometry internal constructor(
     END_SQUARE(3),
 
     END_ROUND(4);
+
+    companion object {
+      fun from(value: Int): PolyEndType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class PolyBooleanOperation(
@@ -281,6 +292,17 @@ open class _Geometry internal constructor(
     OPERATION_INTERSECTION(2),
 
     OPERATION_XOR(3);
+
+    companion object {
+      fun from(value: Int): PolyBooleanOperation {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class PolyJoinType(
@@ -291,6 +313,17 @@ open class _Geometry internal constructor(
     JOIN_ROUND(1),
 
     JOIN_MITER(2);
+
+    companion object {
+      fun from(value: Int): PolyJoinType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

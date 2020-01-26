@@ -105,6 +105,7 @@ open class AnimatedSprite internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimatedSprite = AnimatedSprite(ptr)
     /**
      * Container for method_bind pointers for AnimatedSprite
      */

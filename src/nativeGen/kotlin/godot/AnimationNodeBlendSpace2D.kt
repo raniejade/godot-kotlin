@@ -135,6 +135,17 @@ open class AnimationNodeBlendSpace2D internal constructor(
     BLEND_MODE_DISCRETE(1),
 
     BLEND_MODE_DISCRETE_CARRY(2);
+
+    companion object {
+      fun from(value: Int): BlendMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -153,6 +164,7 @@ open class AnimationNodeBlendSpace2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeBlendSpace2D = AnimationNodeBlendSpace2D(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeBlendSpace2D
      */

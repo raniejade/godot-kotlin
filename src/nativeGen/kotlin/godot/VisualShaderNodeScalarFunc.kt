@@ -89,6 +89,17 @@ open class VisualShaderNodeScalarFunc internal constructor(
     FUNC_TRUNC(30),
 
     FUNC_ONEMINUS(31);
+
+    companion object {
+      fun from(value: Int): Function {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -165,6 +176,7 @@ open class VisualShaderNodeScalarFunc internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeScalarFunc = VisualShaderNodeScalarFunc(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarFunc
      */

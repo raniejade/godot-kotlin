@@ -32,6 +32,7 @@ open class GDScript internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GDScript = GDScript(ptr)
     /**
      * Container for method_bind pointers for GDScript
      */

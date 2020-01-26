@@ -57,6 +57,7 @@ open class AtlasTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AtlasTexture = AtlasTexture(ptr)
     /**
      * Container for method_bind pointers for AtlasTexture
      */

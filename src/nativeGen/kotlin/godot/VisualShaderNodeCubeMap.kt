@@ -39,6 +39,17 @@ open class VisualShaderNodeCubeMap internal constructor(
     TYPE_COLOR(1),
 
     TYPE_NORMALMAP(2);
+
+    companion object {
+      fun from(value: Int): TextureType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -57,6 +68,7 @@ open class VisualShaderNodeCubeMap internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeCubeMap = VisualShaderNodeCubeMap(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeCubeMap
      */

@@ -38,6 +38,7 @@ open class VisibilityNotifier2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisibilityNotifier2D = VisibilityNotifier2D(ptr)
     /**
      * Container for method_bind pointers for VisibilityNotifier2D
      */

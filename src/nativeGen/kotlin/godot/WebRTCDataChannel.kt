@@ -75,6 +75,17 @@ open class WebRTCDataChannel internal constructor(
     WRITE_MODE_TEXT(0),
 
     WRITE_MODE_BINARY(1);
+
+    companion object {
+      fun from(value: Int): WriteMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ChannelState(
@@ -87,6 +98,17 @@ open class WebRTCDataChannel internal constructor(
     STATE_CLOSING(2),
 
     STATE_CLOSED(3);
+
+    companion object {
+      fun from(value: Int): ChannelState {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

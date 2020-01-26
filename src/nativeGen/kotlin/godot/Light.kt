@@ -98,6 +98,17 @@ open class Light internal constructor(
     BAKE_INDIRECT(1),
 
     BAKE_ALL(2);
+
+    companion object {
+      fun from(value: Int): BakeMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Param(
@@ -134,6 +145,17 @@ open class Light internal constructor(
     PARAM_SHADOW_BIAS_SPLIT_SCALE(14),
 
     PARAM_MAX(15);
+
+    companion object {
+      fun from(value: Int): Param {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

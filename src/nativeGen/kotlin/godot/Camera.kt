@@ -209,6 +209,17 @@ open class Camera internal constructor(
     KEEP_WIDTH(0),
 
     KEEP_HEIGHT(1);
+
+    companion object {
+      fun from(value: Int): KeepAspect {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Projection(
@@ -219,6 +230,17 @@ open class Camera internal constructor(
     PROJECTION_ORTHOGONAL(1),
 
     PROJECTION_FRUSTUM(2);
+
+    companion object {
+      fun from(value: Int): Projection {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DopplerTracking(
@@ -229,6 +251,17 @@ open class Camera internal constructor(
     DOPPLER_TRACKING_IDLE_STEP(1),
 
     DOPPLER_TRACKING_PHYSICS_STEP(2);
+
+    companion object {
+      fun from(value: Int): DopplerTracking {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -256,6 +289,7 @@ open class Camera internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Camera = Camera(ptr)
     /**
      * Container for method_bind pointers for Camera
      */

@@ -32,6 +32,7 @@ open class StreamTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StreamTexture = StreamTexture(ptr)
     /**
      * Container for method_bind pointers for StreamTexture
      */

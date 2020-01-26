@@ -23,6 +23,8 @@ open class VisualShaderNodeVectorDistance internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVectorDistance =
+        VisualShaderNodeVectorDistance(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVectorDistance
      */

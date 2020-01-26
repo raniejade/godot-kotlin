@@ -37,7 +37,7 @@ class APIGenerator {
       .addModifiers(KModifier.OPEN)
       .generatePrimaryConstructor(cls)
       .maybeGenerateInheritance(cls)
-      .generateEnums(cls.enums)
+      .generateEnums(cls.name, cls.enums)
       .generateMethods(cls.methods)
       .generateCompanionObject(cls)
 
@@ -45,7 +45,7 @@ class APIGenerator {
       .build()
   }
 
-  private fun TypeSpec.Builder.generateEnums(enums: List<GDEnum>): TypeSpec.Builder {
+  private fun TypeSpec.Builder.generateEnums(className: String, enums: List<GDEnum>): TypeSpec.Builder {
     val enumSpecs = enums.map { enum ->
       val paramName = "value"
       val builder = TypeSpec.enumBuilder(enum.name)
@@ -58,6 +58,26 @@ class APIGenerator {
             .initializer(paramName)
             .build()
         )
+
+      // Enum.from method
+      builder.addType(
+        TypeSpec.companionObjectBuilder()
+          .addFunction(
+            FunSpec.builder("from")
+              .addParameter("value", Int::class)
+              .returns(ClassName(BASE_PACKAGE, className, enum.name))
+              .addCode("""
+                for (enumValue in values()) {
+                  if (enumValue.value == value) {
+                    return enumValue
+                  }
+                }
+                throw AssertionError(%P)
+              """.trimIndent(), "Unsupported enum value: \$value")
+              .build()
+          )
+          .build()
+      )
 
       enum.values.forEach { (k, v) ->
         builder.addEnumConstant(
@@ -124,6 +144,16 @@ class APIGenerator {
             }
           """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
           .returns(className)
+          .build()
+      )
+
+      companionObjectBuilder.addFunction(
+        FunSpec.builder("from")
+          .addParameter("ptr", ClassName("kotlinx.cinterop", "COpaquePointer"))
+          .returns(className)
+          .addCode("""
+            return %L(ptr)
+          """.trimIndent(), cls.name)
           .build()
       )
     }

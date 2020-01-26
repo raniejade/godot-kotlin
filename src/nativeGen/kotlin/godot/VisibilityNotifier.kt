@@ -38,6 +38,7 @@ open class VisibilityNotifier internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisibilityNotifier = VisibilityNotifier(ptr)
     /**
      * Container for method_bind pointers for VisibilityNotifier
      */

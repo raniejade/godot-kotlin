@@ -118,6 +118,7 @@ open class AStar internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AStar = AStar(ptr)
     /**
      * Container for method_bind pointers for AStar
      */

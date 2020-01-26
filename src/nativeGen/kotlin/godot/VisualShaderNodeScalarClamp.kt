@@ -23,6 +23,7 @@ open class VisualShaderNodeScalarClamp internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeScalarClamp = VisualShaderNodeScalarClamp(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarClamp
      */

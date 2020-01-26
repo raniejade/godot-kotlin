@@ -33,6 +33,7 @@ open class VideoStreamWebm internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VideoStreamWebm = VideoStreamWebm(ptr)
     /**
      * Container for method_bind pointers for VideoStreamWebm
      */

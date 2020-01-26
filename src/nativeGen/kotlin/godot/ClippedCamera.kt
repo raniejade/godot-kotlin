@@ -96,6 +96,17 @@ open class ClippedCamera internal constructor(
     CLIP_PROCESS_PHYSICS(0),
 
     CLIP_PROCESS_IDLE(1);
+
+    companion object {
+      fun from(value: Int): ProcessMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -111,6 +122,7 @@ open class ClippedCamera internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ClippedCamera = ClippedCamera(ptr)
     /**
      * Container for method_bind pointers for ClippedCamera
      */

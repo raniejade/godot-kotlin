@@ -175,6 +175,17 @@ open class EditorPlugin internal constructor(
     DOCK_SLOT_RIGHT_BR(7),
 
     DOCK_SLOT_MAX(8);
+
+    companion object {
+      fun from(value: Int): DockSlot {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CustomControlContainer(
@@ -203,6 +214,17 @@ open class EditorPlugin internal constructor(
     CONTAINER_PROJECT_SETTING_TAB_LEFT(10),
 
     CONTAINER_PROJECT_SETTING_TAB_RIGHT(11);
+
+    companion object {
+      fun from(value: Int): CustomControlContainer {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -256,6 +278,7 @@ open class EditorPlugin internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorPlugin = EditorPlugin(ptr)
     /**
      * Container for method_bind pointers for EditorPlugin
      */

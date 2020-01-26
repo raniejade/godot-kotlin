@@ -92,6 +92,17 @@ open class GeometryInstance internal constructor(
     FLAG_USE_BAKED_LIGHT(0),
 
     FLAG_MAX(2);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ShadowCastingSetting(
@@ -104,6 +115,17 @@ open class GeometryInstance internal constructor(
     SHADOW_CASTING_SETTING_DOUBLE_SIDED(2),
 
     SHADOW_CASTING_SETTING_SHADOWS_ONLY(3);
+
+    companion object {
+      fun from(value: Int): ShadowCastingSetting {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

@@ -31,6 +31,7 @@ open class _Semaphore internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): _Semaphore = _Semaphore(ptr)
     /**
      * Container for method_bind pointers for _Semaphore
      */

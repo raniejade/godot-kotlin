@@ -157,6 +157,17 @@ open class VisualScriptBuiltinFunc internal constructor(
     MATH_SMOOTHSTEP(64),
 
     FUNC_MAX(65);
+
+    companion object {
+      fun from(value: Int): BuiltinFunc {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -301,6 +312,7 @@ open class VisualScriptBuiltinFunc internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptBuiltinFunc = VisualScriptBuiltinFunc(ptr)
     /**
      * Container for method_bind pointers for VisualScriptBuiltinFunc
      */

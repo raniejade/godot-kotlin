@@ -100,6 +100,7 @@ open class SpriteFrames internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SpriteFrames = SpriteFrames(ptr)
     /**
      * Container for method_bind pointers for SpriteFrames
      */

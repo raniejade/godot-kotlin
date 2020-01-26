@@ -130,6 +130,17 @@ open class ArrayMesh internal constructor(
     ARRAY_FORMAT_WEIGHTS(128),
 
     ARRAY_FORMAT_INDEX(256);
+
+    companion object {
+      fun from(value: Int): ArrayFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ArrayType(
@@ -154,6 +165,17 @@ open class ArrayMesh internal constructor(
     ARRAY_INDEX(8),
 
     ARRAY_MAX(9);
+
+    companion object {
+      fun from(value: Int): ArrayType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -207,6 +229,7 @@ open class ArrayMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ArrayMesh = ArrayMesh(ptr)
     /**
      * Container for method_bind pointers for ArrayMesh
      */

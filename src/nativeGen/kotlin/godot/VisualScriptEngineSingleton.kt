@@ -33,6 +33,7 @@ open class VisualScriptEngineSingleton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptEngineSingleton = VisualScriptEngineSingleton(ptr)
     /**
      * Container for method_bind pointers for VisualScriptEngineSingleton
      */

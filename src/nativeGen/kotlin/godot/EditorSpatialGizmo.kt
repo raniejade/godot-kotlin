@@ -86,6 +86,7 @@ open class EditorSpatialGizmo internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorSpatialGizmo = EditorSpatialGizmo(ptr)
     /**
      * Container for method_bind pointers for EditorSpatialGizmo
      */

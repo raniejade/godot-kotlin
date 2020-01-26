@@ -155,6 +155,17 @@ open class UPNP internal constructor(
     UPNP_RESULT_NO_DEVICES(27),
 
     UPNP_RESULT_UNKNOWN_ERROR(28);
+
+    companion object {
+      fun from(value: Int): UPNPResult {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -224,6 +235,7 @@ open class UPNP internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): UPNP = UPNP(ptr)
     /**
      * Container for method_bind pointers for UPNP
      */

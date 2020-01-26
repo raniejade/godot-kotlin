@@ -65,6 +65,7 @@ open class AudioEffectPhaser internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectPhaser = AudioEffectPhaser(ptr)
     /**
      * Container for method_bind pointers for AudioEffectPhaser
      */

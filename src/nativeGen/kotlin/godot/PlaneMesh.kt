@@ -49,6 +49,7 @@ open class PlaneMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PlaneMesh = PlaneMesh(ptr)
     /**
      * Container for method_bind pointers for PlaneMesh
      */

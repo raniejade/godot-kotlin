@@ -71,6 +71,7 @@ open class KinematicCollision internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): KinematicCollision = KinematicCollision(ptr)
     /**
      * Container for method_bind pointers for KinematicCollision
      */

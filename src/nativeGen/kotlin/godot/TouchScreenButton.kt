@@ -99,6 +99,17 @@ open class TouchScreenButton internal constructor(
     VISIBILITY_ALWAYS(0),
 
     VISIBILITY_TOUCHSCREEN_ONLY(1);
+
+    companion object {
+      fun from(value: Int): VisibilityMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -115,6 +126,7 @@ open class TouchScreenButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): TouchScreenButton = TouchScreenButton(ptr)
     /**
      * Container for method_bind pointers for TouchScreenButton
      */

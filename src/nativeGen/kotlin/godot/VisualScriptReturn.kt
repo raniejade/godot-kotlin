@@ -43,6 +43,7 @@ open class VisualScriptReturn internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptReturn = VisualScriptReturn(ptr)
     /**
      * Container for method_bind pointers for VisualScriptReturn
      */

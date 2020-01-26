@@ -45,6 +45,7 @@ open class EditorSelection internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorSelection = EditorSelection(ptr)
     /**
      * Container for method_bind pointers for EditorSelection
      */

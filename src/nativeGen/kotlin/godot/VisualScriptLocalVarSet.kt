@@ -43,6 +43,7 @@ open class VisualScriptLocalVarSet internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptLocalVarSet = VisualScriptLocalVarSet(ptr)
     /**
      * Container for method_bind pointers for VisualScriptLocalVarSet
      */

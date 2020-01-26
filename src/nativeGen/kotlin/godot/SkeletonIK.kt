@@ -126,6 +126,7 @@ open class SkeletonIK internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): SkeletonIK = SkeletonIK(ptr)
     /**
      * Container for method_bind pointers for SkeletonIK
      */

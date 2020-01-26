@@ -33,6 +33,7 @@ open class VisualScriptResourcePath internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptResourcePath = VisualScriptResourcePath(ptr)
     /**
      * Container for method_bind pointers for VisualScriptResourcePath
      */

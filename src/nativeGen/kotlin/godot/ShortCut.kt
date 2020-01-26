@@ -45,6 +45,7 @@ open class ShortCut internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ShortCut = ShortCut(ptr)
     /**
      * Container for method_bind pointers for ShortCut
      */

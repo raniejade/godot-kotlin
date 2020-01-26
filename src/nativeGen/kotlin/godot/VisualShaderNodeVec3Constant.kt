@@ -33,6 +33,7 @@ open class VisualShaderNodeVec3Constant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeVec3Constant = VisualShaderNodeVec3Constant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeVec3Constant
      */

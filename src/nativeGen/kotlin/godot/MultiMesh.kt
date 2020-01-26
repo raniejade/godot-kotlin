@@ -114,6 +114,17 @@ open class MultiMesh internal constructor(
     TRANSFORM_2D(0),
 
     TRANSFORM_3D(1);
+
+    companion object {
+      fun from(value: Int): TransformFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CustomDataFormat(
@@ -124,6 +135,17 @@ open class MultiMesh internal constructor(
     CUSTOM_DATA_8BIT(1),
 
     CUSTOM_DATA_FLOAT(2);
+
+    companion object {
+      fun from(value: Int): CustomDataFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class ColorFormat(
@@ -134,6 +156,17 @@ open class MultiMesh internal constructor(
     COLOR_8BIT(1),
 
     COLOR_FLOAT(2);
+
+    companion object {
+      fun from(value: Int): ColorFormat {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -161,6 +194,7 @@ open class MultiMesh internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MultiMesh = MultiMesh(ptr)
     /**
      * Container for method_bind pointers for MultiMesh
      */

@@ -99,6 +99,8 @@ open class Physics2DShapeQueryParameters internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Physics2DShapeQueryParameters =
+        Physics2DShapeQueryParameters(ptr)
     /**
      * Container for method_bind pointers for Physics2DShapeQueryParameters
      */

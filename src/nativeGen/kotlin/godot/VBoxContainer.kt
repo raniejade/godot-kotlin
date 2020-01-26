@@ -22,6 +22,7 @@ open class VBoxContainer internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VBoxContainer = VBoxContainer(ptr)
     /**
      * Container for method_bind pointers for VBoxContainer
      */

@@ -33,6 +33,8 @@ open class VisualShaderNodeScalarConstant internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualShaderNodeScalarConstant =
+        VisualShaderNodeScalarConstant(ptr)
     /**
      * Container for method_bind pointers for VisualShaderNodeScalarConstant
      */

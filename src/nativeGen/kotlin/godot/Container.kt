@@ -35,6 +35,7 @@ open class Container internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Container = Container(ptr)
     /**
      * Container for method_bind pointers for Container
      */

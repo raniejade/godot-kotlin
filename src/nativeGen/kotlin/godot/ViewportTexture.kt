@@ -33,6 +33,7 @@ open class ViewportTexture internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ViewportTexture = ViewportTexture(ptr)
     /**
      * Container for method_bind pointers for ViewportTexture
      */

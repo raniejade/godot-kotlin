@@ -58,6 +58,7 @@ open class CollisionShape2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CollisionShape2D = CollisionShape2D(ptr)
     /**
      * Container for method_bind pointers for CollisionShape2D
      */

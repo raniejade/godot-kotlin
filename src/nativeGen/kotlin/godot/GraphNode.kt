@@ -161,6 +161,17 @@ open class GraphNode internal constructor(
     OVERLAY_BREAKPOINT(1),
 
     OVERLAY_POSITION(2);
+
+    companion object {
+      fun from(value: Int): Overlay {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -178,6 +189,7 @@ open class GraphNode internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GraphNode = GraphNode(ptr)
     /**
      * Container for method_bind pointers for GraphNode
      */

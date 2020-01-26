@@ -23,6 +23,7 @@ open class VisualScriptExpression internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptExpression = VisualScriptExpression(ptr)
     /**
      * Container for method_bind pointers for VisualScriptExpression
      */

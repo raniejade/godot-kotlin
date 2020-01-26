@@ -55,6 +55,17 @@ open class IP internal constructor(
     RESOLVER_STATUS_DONE(2),
 
     RESOLVER_STATUS_ERROR(3);
+
+    companion object {
+      fun from(value: Int): ResolverStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Type(
@@ -67,6 +78,17 @@ open class IP internal constructor(
     TYPE_IPV6(2),
 
     TYPE_ANY(3);
+
+    companion object {
+      fun from(value: Int): Type {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {

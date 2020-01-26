@@ -113,6 +113,7 @@ open class Curve2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Curve2D = Curve2D(ptr)
     /**
      * Container for method_bind pointers for Curve2D
      */

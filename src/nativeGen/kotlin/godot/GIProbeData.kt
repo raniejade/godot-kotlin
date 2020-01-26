@@ -117,6 +117,7 @@ open class GIProbeData internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): GIProbeData = GIProbeData(ptr)
     /**
      * Container for method_bind pointers for GIProbeData
      */

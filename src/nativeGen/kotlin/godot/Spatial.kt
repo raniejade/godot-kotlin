@@ -236,6 +236,7 @@ open class Spatial internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Spatial = Spatial(ptr)
     /**
      * Container for method_bind pointers for Spatial
      */

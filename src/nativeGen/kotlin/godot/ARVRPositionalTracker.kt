@@ -77,6 +77,17 @@ open class ARVRPositionalTracker internal constructor(
     TRACKER_LEFT_HAND(1),
 
     TRACKER_RIGHT_HAND(2);
+
+    companion object {
+      fun from(value: Int): TrackerHand {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -95,6 +106,7 @@ open class ARVRPositionalTracker internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ARVRPositionalTracker = ARVRPositionalTracker(ptr)
     /**
      * Container for method_bind pointers for ARVRPositionalTracker
      */

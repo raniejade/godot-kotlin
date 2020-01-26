@@ -91,6 +91,7 @@ open class AnimationNodeBlendSpace1D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AnimationNodeBlendSpace1D = AnimationNodeBlendSpace1D(ptr)
     /**
      * Container for method_bind pointers for AnimationNodeBlendSpace1D
      */

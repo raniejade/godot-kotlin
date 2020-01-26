@@ -50,6 +50,7 @@ open class HeightMapShape internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): HeightMapShape = HeightMapShape(ptr)
     /**
      * Container for method_bind pointers for HeightMapShape
      */

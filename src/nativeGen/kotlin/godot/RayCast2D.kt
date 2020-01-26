@@ -127,6 +127,7 @@ open class RayCast2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RayCast2D = RayCast2D(ptr)
     /**
      * Container for method_bind pointers for RayCast2D
      */

@@ -56,6 +56,17 @@ open class CameraFeed internal constructor(
     FEED_YCbCr(2),
 
     FEED_YCbCr_Sep(3);
+
+    companion object {
+      fun from(value: Int): FeedDataType {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class FeedPosition(
@@ -66,6 +77,17 @@ open class CameraFeed internal constructor(
     FEED_FRONT(1),
 
     FEED_BACK(2);
+
+    companion object {
+      fun from(value: Int): FeedPosition {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -91,6 +113,7 @@ open class CameraFeed internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CameraFeed = CameraFeed(ptr)
     /**
      * Container for method_bind pointers for CameraFeed
      */

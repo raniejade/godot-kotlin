@@ -28,6 +28,7 @@ open class WeakRef internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): WeakRef = WeakRef(ptr)
     /**
      * Container for method_bind pointers for WeakRef
      */

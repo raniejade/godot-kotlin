@@ -65,6 +65,7 @@ open class StaticBody2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): StaticBody2D = StaticBody2D(ptr)
     /**
      * Container for method_bind pointers for StaticBody2D
      */

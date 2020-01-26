@@ -33,6 +33,7 @@ open class VideoStreamTheora internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VideoStreamTheora = VideoStreamTheora(ptr)
     /**
      * Container for method_bind pointers for VideoStreamTheora
      */

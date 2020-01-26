@@ -58,6 +58,7 @@ open class PacketPeerUDP internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): PacketPeerUDP = PacketPeerUDP(ptr)
     /**
      * Container for method_bind pointers for PacketPeerUDP
      */

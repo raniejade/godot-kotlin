@@ -76,6 +76,7 @@ open class NativeScript internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): NativeScript = NativeScript(ptr)
     /**
      * Container for method_bind pointers for NativeScript
      */

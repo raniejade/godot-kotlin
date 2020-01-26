@@ -263,6 +263,17 @@ open class CPUParticles internal constructor(
     FLAG_DISABLE_Z(2),
 
     FLAG_MAX(3);
+
+    companion object {
+      fun from(value: Int): Flags {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class EmissionShape(
@@ -277,6 +288,17 @@ open class CPUParticles internal constructor(
     EMISSION_SHAPE_POINTS(3),
 
     EMISSION_SHAPE_DIRECTED_POINTS(4);
+
+    companion object {
+      fun from(value: Int): EmissionShape {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class Parameter(
@@ -307,6 +329,17 @@ open class CPUParticles internal constructor(
     PARAM_ANIM_OFFSET(11),
 
     PARAM_MAX(12);
+
+    companion object {
+      fun from(value: Int): Parameter {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class DrawOrder(
@@ -317,6 +350,17 @@ open class CPUParticles internal constructor(
     DRAW_ORDER_LIFETIME(1),
 
     DRAW_ORDER_VIEW_DEPTH(2);
+
+    companion object {
+      fun from(value: Int): DrawOrder {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -378,6 +422,7 @@ open class CPUParticles internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): CPUParticles = CPUParticles(ptr)
     /**
      * Container for method_bind pointers for CPUParticles
      */

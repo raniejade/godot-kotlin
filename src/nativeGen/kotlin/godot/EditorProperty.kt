@@ -104,6 +104,7 @@ open class EditorProperty internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorProperty = EditorProperty(ptr)
     /**
      * Container for method_bind pointers for EditorProperty
      */

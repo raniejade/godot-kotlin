@@ -36,6 +36,7 @@ open class World2D internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): World2D = World2D(ptr)
     /**
      * Container for method_bind pointers for World2D
      */

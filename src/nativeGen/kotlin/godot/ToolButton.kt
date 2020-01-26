@@ -22,6 +22,7 @@ open class ToolButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ToolButton = ToolButton(ptr)
     /**
      * Container for method_bind pointers for ToolButton
      */

@@ -32,6 +32,7 @@ open class ButtonGroup internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): ButtonGroup = ButtonGroup(ptr)
     /**
      * Container for method_bind pointers for ButtonGroup
      */

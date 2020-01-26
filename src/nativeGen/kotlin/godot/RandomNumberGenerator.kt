@@ -58,6 +58,7 @@ open class RandomNumberGenerator internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): RandomNumberGenerator = RandomNumberGenerator(ptr)
     /**
      * Container for method_bind pointers for RandomNumberGenerator
      */

@@ -111,6 +111,17 @@ open class VisualScriptFunctionCall internal constructor(
     RPC_RELIABLE_TO_ID(3),
 
     RPC_UNRELIABLE_TO_ID(4);
+
+    companion object {
+      fun from(value: Int): RPCCallMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class CallMode(
@@ -125,6 +136,17 @@ open class VisualScriptFunctionCall internal constructor(
     CALL_MODE_BASIC_TYPE(3),
 
     CALL_MODE_SINGLETON(4);
+
+    companion object {
+      fun from(value: Int): CallMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -157,6 +179,7 @@ open class VisualScriptFunctionCall internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): VisualScriptFunctionCall = VisualScriptFunctionCall(ptr)
     /**
      * Container for method_bind pointers for VisualScriptFunctionCall
      */

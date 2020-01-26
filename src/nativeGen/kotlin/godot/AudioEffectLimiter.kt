@@ -57,6 +57,7 @@ open class AudioEffectLimiter internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): AudioEffectLimiter = AudioEffectLimiter(ptr)
     /**
      * Container for method_bind pointers for AudioEffectLimiter
      */

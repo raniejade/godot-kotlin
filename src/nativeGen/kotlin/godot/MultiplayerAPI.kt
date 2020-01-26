@@ -102,6 +102,17 @@ open class MultiplayerAPI internal constructor(
     RPC_MODE_MASTERSYNC(5),
 
     RPC_MODE_PUPPETSYNC(6);
+
+    companion object {
+      fun from(value: Int): RPCMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -132,6 +143,7 @@ open class MultiplayerAPI internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): MultiplayerAPI = MultiplayerAPI(ptr)
     /**
      * Container for method_bind pointers for MultiplayerAPI
      */

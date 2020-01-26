@@ -73,6 +73,17 @@ open class NinePatchRect internal constructor(
     AXIS_STRETCH_MODE_TILE(1),
 
     AXIS_STRETCH_MODE_TILE_FIT(2);
+
+    companion object {
+      fun from(value: Int): AxisStretchMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -90,6 +101,7 @@ open class NinePatchRect internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): NinePatchRect = NinePatchRect(ptr)
     /**
      * Container for method_bind pointers for NinePatchRect
      */

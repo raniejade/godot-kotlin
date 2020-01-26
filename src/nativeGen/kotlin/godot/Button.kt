@@ -65,6 +65,17 @@ open class Button internal constructor(
     ALIGN_CENTER(1),
 
     ALIGN_RIGHT(2);
+
+    companion object {
+      fun from(value: Int): TextAlign {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -82,6 +93,7 @@ open class Button internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): Button = Button(ptr)
     /**
      * Container for method_bind pointers for Button
      */

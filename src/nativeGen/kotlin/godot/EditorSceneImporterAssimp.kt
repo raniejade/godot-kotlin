@@ -23,6 +23,7 @@ open class EditorSceneImporterAssimp internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): EditorSceneImporterAssimp = EditorSceneImporterAssimp(ptr)
     /**
      * Container for method_bind pointers for EditorSceneImporterAssimp
      */

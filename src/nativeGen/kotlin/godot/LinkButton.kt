@@ -40,6 +40,17 @@ open class LinkButton internal constructor(
     UNDERLINE_MODE_ON_HOVER(1),
 
     UNDERLINE_MODE_NEVER(2);
+
+    companion object {
+      fun from(value: Int): UnderlineMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
@@ -57,6 +68,7 @@ open class LinkButton internal constructor(
         fn()
       )
     }
+    fun from(ptr: COpaquePointer): LinkButton = LinkButton(ptr)
     /**
      * Container for method_bind pointers for LinkButton
      */

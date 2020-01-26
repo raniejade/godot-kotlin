@@ -60,6 +60,17 @@ open class NetworkedMultiplayerPeer internal constructor(
     CONNECTION_CONNECTING(1),
 
     CONNECTION_CONNECTED(2);
+
+    companion object {
+      fun from(value: Int): ConnectionStatus {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   enum class TransferMode(
@@ -70,6 +81,17 @@ open class NetworkedMultiplayerPeer internal constructor(
     TRANSFER_MODE_UNRELIABLE_ORDERED(1),
 
     TRANSFER_MODE_RELIABLE(2);
+
+    companion object {
+      fun from(value: Int): TransferMode {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("""Unsupported enum value: $value""")
+      }
+    }
   }
 
   companion object {
