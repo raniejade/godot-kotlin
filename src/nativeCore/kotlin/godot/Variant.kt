@@ -164,6 +164,12 @@ class Variant(
     }
   }
 
+  fun asNodePath(): NodePath {
+    return transmute(::NodePath) {
+      checkNotNull(Godot.gdnative.godot_variant_as_node_path)(it)
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -320,6 +326,12 @@ class Variant(
     fun new(aabb: AABB): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_aabb)(it, aabb._value.ptr)
+      }
+    }
+
+    fun new(nodePath: NodePath): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_node_path)(it, nodePath._value.ptr)
       }
     }
 
