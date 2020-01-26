@@ -158,6 +158,12 @@ class Variant(
     }
   }
 
+  fun asAABB(): AABB {
+    return transmute(::AABB) {
+      checkNotNull(Godot.gdnative.godot_variant_as_aabb)(it)
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -308,6 +314,12 @@ class Variant(
     fun new(plane: Plane): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_plane)(it, plane._value.ptr)
+      }
+    }
+
+    fun new(aabb: AABB): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_aabb)(it, aabb._value.ptr)
       }
     }
 
