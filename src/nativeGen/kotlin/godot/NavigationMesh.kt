@@ -14,17 +14,17 @@ open class NavigationMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   companion object {
-    val ParsedGeometryBoth: Int = 2
+    val PARSED_GEOMETRY_BOTH: Int = 2
 
-    val ParsedGeometryMeshInstances: Int = 0
+    val PARSED_GEOMETRY_MESH_INSTANCES: Int = 0
 
-    val ParsedGeometryStaticColliders: Int = 1
+    val PARSED_GEOMETRY_STATIC_COLLIDERS: Int = 1
 
-    val SamplePartitionLayers: Int = 2
+    val SAMPLE_PARTITION_LAYERS: Int = 2
 
-    val SamplePartitionMonotone: Int = 1
+    val SAMPLE_PARTITION_MONOTONE: Int = 1
 
-    val SamplePartitionWatershed: Int = 0
+    val SAMPLE_PARTITION_WATERSHED: Int = 0
 
     fun new(): NavigationMesh = memScoped {
       val fnPtr =

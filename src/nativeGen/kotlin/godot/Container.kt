@@ -14,7 +14,7 @@ open class Container internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   companion object {
-    val NotificationSortChildren: Int = 50
+    val NOTIFICATION_SORT_CHILDREN: Int = 50
 
     fun new(): Container = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Container".cstr.ptr)

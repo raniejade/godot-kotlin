@@ -13,16 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class GIProbe internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  enum class Subdiv(
+    val value: Int
+  ) {
+    SUBDIV_64(0),
+
+    SUBDIV_128(1),
+
+    SUBDIV_256(2),
+
+    SUBDIV_512(3),
+
+    SUBDIV_MAX(4);
+  }
+
   companion object {
-    val Subdiv128: Int = 1
+    val SUBDIV_128: Int = 1
 
-    val Subdiv256: Int = 2
+    val SUBDIV_256: Int = 2
 
-    val Subdiv512: Int = 3
+    val SUBDIV_512: Int = 3
 
-    val Subdiv64: Int = 0
+    val SUBDIV_64: Int = 0
 
-    val SubdivMax: Int = 4
+    val SUBDIV_MAX: Int = 4
 
     fun new(): GIProbe = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbe".cstr.ptr)

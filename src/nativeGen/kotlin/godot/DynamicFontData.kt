@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class DynamicFontData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class Hinting(
+    val value: Int
+  ) {
+    HINTING_NONE(0),
+
+    HINTING_LIGHT(1),
+
+    HINTING_NORMAL(2);
+  }
+
   companion object {
-    val HintingLight: Int = 1
+    val HINTING_LIGHT: Int = 1
 
-    val HintingNone: Int = 0
+    val HINTING_NONE: Int = 0
 
-    val HintingNormal: Int = 2
+    val HINTING_NORMAL: Int = 2
 
     fun new(): DynamicFontData = memScoped {
       val fnPtr =

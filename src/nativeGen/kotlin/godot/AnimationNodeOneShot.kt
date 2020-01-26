@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeOneShot internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
-  companion object {
-    val MixModeAdd: Int = 1
+  enum class MixMode(
+    val value: Int
+  ) {
+    MIX_MODE_BLEND(0),
 
-    val MixModeBlend: Int = 0
+    MIX_MODE_ADD(1);
+  }
+
+  companion object {
+    val MIX_MODE_ADD: Int = 1
+
+    val MIX_MODE_BLEND: Int = 0
 
     fun new(): AnimationNodeOneShot = memScoped {
       val fnPtr =

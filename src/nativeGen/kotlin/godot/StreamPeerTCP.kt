@@ -13,14 +13,26 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerTCP internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
+  enum class Status(
+    val value: Int
+  ) {
+    STATUS_NONE(0),
+
+    STATUS_CONNECTING(1),
+
+    STATUS_CONNECTED(2),
+
+    STATUS_ERROR(3);
+  }
+
   companion object {
-    val StatusConnected: Int = 2
+    val STATUS_CONNECTED: Int = 2
 
-    val StatusConnecting: Int = 1
+    val STATUS_CONNECTING: Int = 1
 
-    val StatusError: Int = 3
+    val STATUS_ERROR: Int = 3
 
-    val StatusNone: Int = 0
+    val STATUS_NONE: Int = 0
 
     fun new(): StreamPeerTCP = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerTCP".cstr.ptr)

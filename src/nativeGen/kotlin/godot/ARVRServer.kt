@@ -13,6 +13,32 @@ import kotlinx.cinterop.reinterpret
 open class ARVRServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class RotationMode(
+    val value: Int
+  ) {
+    RESET_FULL_ROTATION(0),
+
+    RESET_BUT_KEEP_TILT(1),
+
+    DONT_RESET_ROTATION(2);
+  }
+
+  enum class TrackerType(
+    val value: Int
+  ) {
+    TRACKER_CONTROLLER(1),
+
+    TRACKER_BASESTATION(2),
+
+    TRACKER_ANCHOR(4),
+
+    TRACKER_ANY_KNOWN(127),
+
+    TRACKER_UNKNOWN(128),
+
+    TRACKER_ANY(255);
+  }
+
   companion object {
     val Instance: ARVRServer = memScoped {
           val handle =
@@ -23,22 +49,22 @@ open class ARVRServer internal constructor(
           )
         }
 
-    val DontResetRotation: Int = 2
+    val DONT_RESET_ROTATION: Int = 2
 
-    val ResetButKeepTilt: Int = 1
+    val RESET_BUT_KEEP_TILT: Int = 1
 
-    val ResetFullRotation: Int = 0
+    val RESET_FULL_ROTATION: Int = 0
 
-    val TrackerAnchor: Int = 4
+    val TRACKER_ANCHOR: Int = 4
 
-    val TrackerAny: Int = 255
+    val TRACKER_ANY: Int = 255
 
-    val TrackerAnyKnown: Int = 127
+    val TRACKER_ANY_KNOWN: Int = 127
 
-    val TrackerBasestation: Int = 2
+    val TRACKER_BASESTATION: Int = 2
 
-    val TrackerController: Int = 1
+    val TRACKER_CONTROLLER: Int = 1
 
-    val TrackerUnknown: Int = 128
+    val TRACKER_UNKNOWN: Int = 128
   }
 }

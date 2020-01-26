@@ -13,17 +13,37 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCDataChannel internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  enum class WriteMode(
+    val value: Int
+  ) {
+    WRITE_MODE_TEXT(0),
+
+    WRITE_MODE_BINARY(1);
+  }
+
+  enum class ChannelState(
+    val value: Int
+  ) {
+    STATE_CONNECTING(0),
+
+    STATE_OPEN(1),
+
+    STATE_CLOSING(2),
+
+    STATE_CLOSED(3);
+  }
+
   companion object {
-    val StateClosed: Int = 3
+    val STATE_CLOSED: Int = 3
 
-    val StateClosing: Int = 2
+    val STATE_CLOSING: Int = 2
 
-    val StateConnecting: Int = 0
+    val STATE_CONNECTING: Int = 0
 
-    val StateOpen: Int = 1
+    val STATE_OPEN: Int = 1
 
-    val WriteModeBinary: Int = 1
+    val WRITE_MODE_BINARY: Int = 1
 
-    val WriteModeText: Int = 0
+    val WRITE_MODE_TEXT: Int = 0
   }
 }

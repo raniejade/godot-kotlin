@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class LinkButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
+  enum class UnderlineMode(
+    val value: Int
+  ) {
+    UNDERLINE_MODE_ALWAYS(0),
+
+    UNDERLINE_MODE_ON_HOVER(1),
+
+    UNDERLINE_MODE_NEVER(2);
+  }
+
   companion object {
-    val UnderlineModeAlways: Int = 0
+    val UNDERLINE_MODE_ALWAYS: Int = 0
 
-    val UnderlineModeNever: Int = 2
+    val UNDERLINE_MODE_NEVER: Int = 2
 
-    val UnderlineModeOnHover: Int = 1
+    val UNDERLINE_MODE_ON_HOVER: Int = 1
 
     fun new(): LinkButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LinkButton".cstr.ptr)

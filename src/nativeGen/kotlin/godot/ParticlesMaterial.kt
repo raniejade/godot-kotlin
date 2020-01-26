@@ -13,50 +13,106 @@ import kotlinx.cinterop.reinterpret
 open class ParticlesMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  enum class Flags(
+    val value: Int
+  ) {
+    FLAG_ALIGN_Y_TO_VELOCITY(0),
+
+    FLAG_ROTATE_Y(1),
+
+    FLAG_DISABLE_Z(2),
+
+    FLAG_MAX(3);
+  }
+
+  enum class EmissionShape(
+    val value: Int
+  ) {
+    EMISSION_SHAPE_POINT(0),
+
+    EMISSION_SHAPE_SPHERE(1),
+
+    EMISSION_SHAPE_BOX(2),
+
+    EMISSION_SHAPE_POINTS(3),
+
+    EMISSION_SHAPE_DIRECTED_POINTS(4);
+  }
+
+  enum class Parameter(
+    val value: Int
+  ) {
+    PARAM_INITIAL_LINEAR_VELOCITY(0),
+
+    PARAM_ANGULAR_VELOCITY(1),
+
+    PARAM_ORBIT_VELOCITY(2),
+
+    PARAM_LINEAR_ACCEL(3),
+
+    PARAM_RADIAL_ACCEL(4),
+
+    PARAM_TANGENTIAL_ACCEL(5),
+
+    PARAM_DAMPING(6),
+
+    PARAM_ANGLE(7),
+
+    PARAM_SCALE(8),
+
+    PARAM_HUE_VARIATION(9),
+
+    PARAM_ANIM_SPEED(10),
+
+    PARAM_ANIM_OFFSET(11),
+
+    PARAM_MAX(12);
+  }
+
   companion object {
-    val EmissionShapeBox: Int = 2
+    val EMISSION_SHAPE_BOX: Int = 2
 
-    val EmissionShapeDirectedPoints: Int = 4
+    val EMISSION_SHAPE_DIRECTED_POINTS: Int = 4
 
-    val EmissionShapePoint: Int = 0
+    val EMISSION_SHAPE_POINT: Int = 0
 
-    val EmissionShapePoints: Int = 3
+    val EMISSION_SHAPE_POINTS: Int = 3
 
-    val EmissionShapeSphere: Int = 1
+    val EMISSION_SHAPE_SPHERE: Int = 1
 
-    val FlagAlignYToVelocity: Int = 0
+    val FLAG_ALIGN_Y_TO_VELOCITY: Int = 0
 
-    val FlagDisableZ: Int = 2
+    val FLAG_DISABLE_Z: Int = 2
 
-    val FlagMax: Int = 3
+    val FLAG_MAX: Int = 3
 
-    val FlagRotateY: Int = 1
+    val FLAG_ROTATE_Y: Int = 1
 
-    val ParamAngle: Int = 7
+    val PARAM_ANGLE: Int = 7
 
-    val ParamAngularVelocity: Int = 1
+    val PARAM_ANGULAR_VELOCITY: Int = 1
 
-    val ParamAnimOffset: Int = 11
+    val PARAM_ANIM_OFFSET: Int = 11
 
-    val ParamAnimSpeed: Int = 10
+    val PARAM_ANIM_SPEED: Int = 10
 
-    val ParamDamping: Int = 6
+    val PARAM_DAMPING: Int = 6
 
-    val ParamHueVariation: Int = 9
+    val PARAM_HUE_VARIATION: Int = 9
 
-    val ParamInitialLinearVelocity: Int = 0
+    val PARAM_INITIAL_LINEAR_VELOCITY: Int = 0
 
-    val ParamLinearAccel: Int = 3
+    val PARAM_LINEAR_ACCEL: Int = 3
 
-    val ParamMax: Int = 12
+    val PARAM_MAX: Int = 12
 
-    val ParamOrbitVelocity: Int = 2
+    val PARAM_ORBIT_VELOCITY: Int = 2
 
-    val ParamRadialAccel: Int = 4
+    val PARAM_RADIAL_ACCEL: Int = 4
 
-    val ParamScale: Int = 8
+    val PARAM_SCALE: Int = 8
 
-    val ParamTangentialAccel: Int = 5
+    val PARAM_TANGENTIAL_ACCEL: Int = 5
 
     fun new(): ParticlesMaterial = memScoped {
       val fnPtr =

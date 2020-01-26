@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class TabContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  enum class TabAlign(
+    val value: Int
+  ) {
+    ALIGN_LEFT(0),
+
+    ALIGN_CENTER(1),
+
+    ALIGN_RIGHT(2);
+  }
+
   companion object {
-    val AlignCenter: Int = 1
+    val ALIGN_CENTER: Int = 1
 
-    val AlignLeft: Int = 0
+    val ALIGN_LEFT: Int = 0
 
-    val AlignRight: Int = 2
+    val ALIGN_RIGHT: Int = 2
 
     fun new(): TabContainer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TabContainer".cstr.ptr)

@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeColorFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  companion object {
-    val FuncGrayscale: Int = 0
+  enum class Function(
+    val value: Int
+  ) {
+    FUNC_GRAYSCALE(0),
 
-    val FuncSepia: Int = 1
+    FUNC_SEPIA(1);
+  }
+
+  companion object {
+    val FUNC_GRAYSCALE: Int = 0
+
+    val FUNC_SEPIA: Int = 1
 
     fun new(): VisualShaderNodeColorFunc = memScoped {
       val fnPtr =

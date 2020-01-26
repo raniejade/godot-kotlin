@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptYield internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  enum class YieldMode(
+    val value: Int
+  ) {
+    YIELD_FRAME(1),
+
+    YIELD_PHYSICS_FRAME(2),
+
+    YIELD_WAIT(3);
+  }
+
   companion object {
-    val YieldFrame: Int = 1
+    val YIELD_FRAME: Int = 1
 
-    val YieldPhysicsFrame: Int = 2
+    val YIELD_PHYSICS_FRAME: Int = 2
 
-    val YieldWait: Int = 3
+    val YIELD_WAIT: Int = 3
 
     fun new(): VisualScriptYield = memScoped {
       val fnPtr =

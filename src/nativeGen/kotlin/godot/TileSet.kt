@@ -13,34 +13,74 @@ import kotlinx.cinterop.reinterpret
 open class TileSet internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class TileMode(
+    val value: Int
+  ) {
+    SINGLE_TILE(0),
+
+    AUTO_TILE(1),
+
+    ATLAS_TILE(2);
+  }
+
+  enum class AutotileBindings(
+    val value: Int
+  ) {
+    BIND_TOPLEFT(1),
+
+    BIND_TOP(2),
+
+    BIND_TOPRIGHT(4),
+
+    BIND_LEFT(8),
+
+    BIND_RIGHT(32),
+
+    BIND_BOTTOMLEFT(64),
+
+    BIND_BOTTOM(128),
+
+    BIND_BOTTOMRIGHT(256);
+  }
+
+  enum class BitmaskMode(
+    val value: Int
+  ) {
+    BITMASK_2X2(0),
+
+    BITMASK_3X3_MINIMAL(1),
+
+    BITMASK_3X3(2);
+  }
+
   companion object {
-    val AtlasTile: Int = 2
+    val ATLAS_TILE: Int = 2
 
-    val AutoTile: Int = 1
+    val AUTO_TILE: Int = 1
 
-    val BindBottom: Int = 128
+    val BIND_BOTTOM: Int = 128
 
-    val BindBottomleft: Int = 64
+    val BIND_BOTTOMLEFT: Int = 64
 
-    val BindBottomright: Int = 256
+    val BIND_BOTTOMRIGHT: Int = 256
 
-    val BindLeft: Int = 8
+    val BIND_LEFT: Int = 8
 
-    val BindRight: Int = 32
+    val BIND_RIGHT: Int = 32
 
-    val BindTop: Int = 2
+    val BIND_TOP: Int = 2
 
-    val BindTopleft: Int = 1
+    val BIND_TOPLEFT: Int = 1
 
-    val BindTopright: Int = 4
+    val BIND_TOPRIGHT: Int = 4
 
-    val Bitmask2x2: Int = 0
+    val BITMASK_2X2: Int = 0
 
-    val Bitmask3x3: Int = 2
+    val BITMASK_3X3: Int = 2
 
-    val Bitmask3x3Minimal: Int = 1
+    val BITMASK_3X3_MINIMAL: Int = 1
 
-    val SingleTile: Int = 0
+    val SINGLE_TILE: Int = 0
 
     fun new(): TileSet = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TileSet".cstr.ptr)

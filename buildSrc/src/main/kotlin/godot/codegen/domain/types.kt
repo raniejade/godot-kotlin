@@ -3,6 +3,9 @@ package godot.codegen.domain
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+data class GDEnum(val name: String, val values: Map<String, Int>)
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class GDClass(
   val name: String,
   val base_class: String,
@@ -10,5 +13,6 @@ data class GDClass(
   val instanciable: Boolean,
   val is_reference: Boolean,
   val api_type: String,
-  val constants: Map<String, Any>
+  val constants: Map<String, Any>,
+  val enums: List<GDEnum>
 )

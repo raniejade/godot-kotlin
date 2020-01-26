@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class CollisionPolygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  companion object {
-    val BuildSegments: Int = 1
+  enum class BuildMode(
+    val value: Int
+  ) {
+    BUILD_SOLIDS(0),
 
-    val BuildSolids: Int = 0
+    BUILD_SEGMENTS(1);
+  }
+
+  companion object {
+    val BUILD_SEGMENTS: Int = 1
+
+    val BUILD_SOLIDS: Int = 0
 
     fun new(): CollisionPolygon2D = memScoped {
       val fnPtr =

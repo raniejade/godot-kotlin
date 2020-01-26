@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class Shader internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class Mode(
+    val value: Int
+  ) {
+    MODE_SPATIAL(0),
+
+    MODE_CANVAS_ITEM(1),
+
+    MODE_PARTICLES(2);
+  }
+
   companion object {
-    val ModeCanvasItem: Int = 1
+    val MODE_CANVAS_ITEM: Int = 1
 
-    val ModeParticles: Int = 2
+    val MODE_PARTICLES: Int = 2
 
-    val ModeSpatial: Int = 0
+    val MODE_SPATIAL: Int = 0
 
     fun new(): Shader = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Shader".cstr.ptr)

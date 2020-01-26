@@ -13,14 +13,26 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptInputAction internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  enum class Mode(
+    val value: Int
+  ) {
+    MODE_PRESSED(0),
+
+    MODE_RELEASED(1),
+
+    MODE_JUST_PRESSED(2),
+
+    MODE_JUST_RELEASED(3);
+  }
+
   companion object {
-    val ModeJustPressed: Int = 2
+    val MODE_JUST_PRESSED: Int = 2
 
-    val ModeJustReleased: Int = 3
+    val MODE_JUST_RELEASED: Int = 3
 
-    val ModePressed: Int = 0
+    val MODE_PRESSED: Int = 0
 
-    val ModeReleased: Int = 1
+    val MODE_RELEASED: Int = 1
 
     fun new(): VisualScriptInputAction = memScoped {
       val fnPtr =

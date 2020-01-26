@@ -13,22 +13,50 @@ import kotlinx.cinterop.reinterpret
 open class Camera internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  enum class KeepAspect(
+    val value: Int
+  ) {
+    KEEP_WIDTH(0),
+
+    KEEP_HEIGHT(1);
+  }
+
+  enum class Projection(
+    val value: Int
+  ) {
+    PROJECTION_PERSPECTIVE(0),
+
+    PROJECTION_ORTHOGONAL(1),
+
+    PROJECTION_FRUSTUM(2);
+  }
+
+  enum class DopplerTracking(
+    val value: Int
+  ) {
+    DOPPLER_TRACKING_DISABLED(0),
+
+    DOPPLER_TRACKING_IDLE_STEP(1),
+
+    DOPPLER_TRACKING_PHYSICS_STEP(2);
+  }
+
   companion object {
-    val DopplerTrackingDisabled: Int = 0
+    val DOPPLER_TRACKING_DISABLED: Int = 0
 
-    val DopplerTrackingIdleStep: Int = 1
+    val DOPPLER_TRACKING_IDLE_STEP: Int = 1
 
-    val DopplerTrackingPhysicsStep: Int = 2
+    val DOPPLER_TRACKING_PHYSICS_STEP: Int = 2
 
-    val KeepHeight: Int = 1
+    val KEEP_HEIGHT: Int = 1
 
-    val KeepWidth: Int = 0
+    val KEEP_WIDTH: Int = 0
 
-    val ProjectionFrustum: Int = 2
+    val PROJECTION_FRUSTUM: Int = 2
 
-    val ProjectionOrthogonal: Int = 1
+    val PROJECTION_ORTHOGONAL: Int = 1
 
-    val ProjectionPerspective: Int = 0
+    val PROJECTION_PERSPECTIVE: Int = 0
 
     fun new(): Camera = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera".cstr.ptr)

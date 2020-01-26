@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class PackedScene internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class GenEditState(
+    val value: Int
+  ) {
+    GEN_EDIT_STATE_DISABLED(0),
+
+    GEN_EDIT_STATE_INSTANCE(1),
+
+    GEN_EDIT_STATE_MAIN(2);
+  }
+
   companion object {
-    val GenEditStateDisabled: Int = 0
+    val GEN_EDIT_STATE_DISABLED: Int = 0
 
-    val GenEditStateInstance: Int = 1
+    val GEN_EDIT_STATE_INSTANCE: Int = 1
 
-    val GenEditStateMain: Int = 2
+    val GEN_EDIT_STATE_MAIN: Int = 2
 
     fun new(): PackedScene = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedScene".cstr.ptr)

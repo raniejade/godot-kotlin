@@ -13,6 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class AudioServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class SpeakerMode(
+    val value: Int
+  ) {
+    SPEAKER_MODE_STEREO(0),
+
+    SPEAKER_SURROUND_31(1),
+
+    SPEAKER_SURROUND_51(2),
+
+    SPEAKER_SURROUND_71(3);
+  }
+
   companion object {
     val Instance: AudioServer = memScoped {
           val handle =
@@ -23,12 +35,12 @@ open class AudioServer internal constructor(
           )
         }
 
-    val SpeakerModeStereo: Int = 0
+    val SPEAKER_MODE_STEREO: Int = 0
 
-    val SpeakerSurround31: Int = 1
+    val SPEAKER_SURROUND_31: Int = 1
 
-    val SpeakerSurround51: Int = 2
+    val SPEAKER_SURROUND_51: Int = 2
 
-    val SpeakerSurround71: Int = 3
+    val SPEAKER_SURROUND_71: Int = 3
   }
 }

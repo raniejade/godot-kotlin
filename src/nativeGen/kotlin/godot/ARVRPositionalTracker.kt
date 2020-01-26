@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class ARVRPositionalTracker internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class TrackerHand(
+    val value: Int
+  ) {
+    TRACKER_HAND_UNKNOWN(0),
+
+    TRACKER_LEFT_HAND(1),
+
+    TRACKER_RIGHT_HAND(2);
+  }
+
   companion object {
-    val TrackerHandUnknown: Int = 0
+    val TRACKER_HAND_UNKNOWN: Int = 0
 
-    val TrackerLeftHand: Int = 1
+    val TRACKER_LEFT_HAND: Int = 1
 
-    val TrackerRightHand: Int = 2
+    val TRACKER_RIGHT_HAND: Int = 2
 
     fun new(): ARVRPositionalTracker = memScoped {
       val fnPtr =

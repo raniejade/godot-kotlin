@@ -13,14 +13,26 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTransformVecMult internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  enum class Operator(
+    val value: Int
+  ) {
+    OP_AxB(0),
+
+    OP_BxA(1),
+
+    OP_3x3_AxB(2),
+
+    OP_3x3_BxA(3);
+  }
+
   companion object {
-    val Op3x3Axb: Int = 2
+    val OP_3x3_AxB: Int = 2
 
-    val Op3x3Bxa: Int = 3
+    val OP_3x3_BxA: Int = 3
 
-    val OpAxb: Int = 0
+    val OP_AxB: Int = 0
 
-    val OpBxa: Int = 1
+    val OP_BxA: Int = 1
 
     fun new(): VisualShaderNodeTransformVecMult = memScoped {
       val fnPtr =

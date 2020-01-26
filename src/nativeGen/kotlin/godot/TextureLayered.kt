@@ -13,13 +13,25 @@ import kotlinx.cinterop.reinterpret
 open class TextureLayered internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class Flags(
+    val value: Int
+  ) {
+    FLAG_MIPMAPS(1),
+
+    FLAG_REPEAT(2),
+
+    FLAG_FILTER(4),
+
+    FLAGS_DEFAULT(4);
+  }
+
   companion object {
-    val FlagsDefault: Int = 4
+    val FLAGS_DEFAULT: Int = 4
 
-    val FlagFilter: Int = 4
+    val FLAG_FILTER: Int = 4
 
-    val FlagMipmaps: Int = 1
+    val FLAG_MIPMAPS: Int = 1
 
-    val FlagRepeat: Int = 2
+    val FLAG_REPEAT: Int = 2
   }
 }

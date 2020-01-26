@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class BackBufferCopy internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  enum class CopyMode(
+    val value: Int
+  ) {
+    COPY_MODE_DISABLED(0),
+
+    COPY_MODE_RECT(1),
+
+    COPY_MODE_VIEWPORT(2);
+  }
+
   companion object {
-    val CopyModeDisabled: Int = 0
+    val COPY_MODE_DISABLED: Int = 0
 
-    val CopyModeRect: Int = 1
+    val COPY_MODE_RECT: Int = 1
 
-    val CopyModeViewport: Int = 2
+    val COPY_MODE_VIEWPORT: Int = 2
 
     fun new(): BackBufferCopy = memScoped {
       val fnPtr =

@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  enum class MixTarget(
+    val value: Int
+  ) {
+    MIX_TARGET_STEREO(0),
+
+    MIX_TARGET_SURROUND(1),
+
+    MIX_TARGET_CENTER(2);
+  }
+
   companion object {
-    val MixTargetCenter: Int = 2
+    val MIX_TARGET_CENTER: Int = 2
 
-    val MixTargetStereo: Int = 0
+    val MIX_TARGET_STEREO: Int = 0
 
-    val MixTargetSurround: Int = 1
+    val MIX_TARGET_SURROUND: Int = 1
 
     fun new(): AudioStreamPlayer = memScoped {
       val fnPtr =

@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class Timer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  companion object {
-    val TimerProcessIdle: Int = 1
+  enum class TimerProcessMode(
+    val value: Int
+  ) {
+    TIMER_PROCESS_PHYSICS(0),
 
-    val TimerProcessPhysics: Int = 0
+    TIMER_PROCESS_IDLE(1);
+  }
+
+  companion object {
+    val TIMER_PROCESS_IDLE: Int = 1
+
+    val TIMER_PROCESS_PHYSICS: Int = 0
 
     fun new(): Timer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Timer".cstr.ptr)

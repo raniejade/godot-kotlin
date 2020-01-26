@@ -14,7 +14,7 @@ open class Skeleton internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   companion object {
-    val NotificationUpdateSkeleton: Int = 50
+    val NOTIFICATION_UPDATE_SKELETON: Int = 50
 
     fun new(): Skeleton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skeleton".cstr.ptr)

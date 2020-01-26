@@ -14,7 +14,7 @@ open class AnimatedTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   companion object {
-    val MaxFrames: Int = 256
+    val MAX_FRAMES: Int = 256
 
     fun new(): AnimatedTexture = memScoped {
       val fnPtr =

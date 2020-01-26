@@ -13,20 +13,38 @@ import kotlinx.cinterop.reinterpret
 open class TextureButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
+  enum class StretchMode(
+    val value: Int
+  ) {
+    STRETCH_SCALE(0),
+
+    STRETCH_TILE(1),
+
+    STRETCH_KEEP(2),
+
+    STRETCH_KEEP_CENTERED(3),
+
+    STRETCH_KEEP_ASPECT(4),
+
+    STRETCH_KEEP_ASPECT_CENTERED(5),
+
+    STRETCH_KEEP_ASPECT_COVERED(6);
+  }
+
   companion object {
-    val StretchKeep: Int = 2
+    val STRETCH_KEEP: Int = 2
 
-    val StretchKeepAspect: Int = 4
+    val STRETCH_KEEP_ASPECT: Int = 4
 
-    val StretchKeepAspectCentered: Int = 5
+    val STRETCH_KEEP_ASPECT_CENTERED: Int = 5
 
-    val StretchKeepAspectCovered: Int = 6
+    val STRETCH_KEEP_ASPECT_COVERED: Int = 6
 
-    val StretchKeepCentered: Int = 3
+    val STRETCH_KEEP_CENTERED: Int = 3
 
-    val StretchScale: Int = 0
+    val STRETCH_SCALE: Int = 0
 
-    val StretchTile: Int = 1
+    val STRETCH_TILE: Int = 1
 
     fun new(): TextureButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureButton".cstr.ptr)

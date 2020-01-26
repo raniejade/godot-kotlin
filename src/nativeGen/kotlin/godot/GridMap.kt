@@ -14,7 +14,7 @@ open class GridMap internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   companion object {
-    val InvalidCellItem: Int = -1
+    val INVALID_CELL_ITEM: Int = -1
 
     fun new(): GridMap = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridMap".cstr.ptr)

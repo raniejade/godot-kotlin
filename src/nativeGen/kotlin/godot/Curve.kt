@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class Curve internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class TangentMode(
+    val value: Int
+  ) {
+    TANGENT_FREE(0),
+
+    TANGENT_LINEAR(1),
+
+    TANGENT_MODE_COUNT(2);
+  }
+
   companion object {
-    val TangentFree: Int = 0
+    val TANGENT_FREE: Int = 0
 
-    val TangentLinear: Int = 1
+    val TANGENT_LINEAR: Int = 1
 
-    val TangentModeCount: Int = 2
+    val TANGENT_MODE_COUNT: Int = 2
 
     fun new(): Curve = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve".cstr.ptr)

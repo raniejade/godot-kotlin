@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
-  companion object {
-    val WriteModeBinary: Int = 1
+  enum class WriteMode(
+    val value: Int
+  ) {
+    WRITE_MODE_TEXT(0),
 
-    val WriteModeText: Int = 0
+    WRITE_MODE_BINARY(1);
+  }
+
+  companion object {
+    val WRITE_MODE_BINARY: Int = 1
+
+    val WRITE_MODE_TEXT: Int = 0
 
     fun new(): WebSocketPeer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketPeer".cstr.ptr)

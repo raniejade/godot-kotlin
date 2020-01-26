@@ -13,19 +13,41 @@ import kotlinx.cinterop.reinterpret
 open class BaseButton internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  enum class ActionMode(
+    val value: Int
+  ) {
+    ACTION_MODE_BUTTON_PRESS(0),
+
+    ACTION_MODE_BUTTON_RELEASE(1);
+  }
+
+  enum class DrawMode(
+    val value: Int
+  ) {
+    DRAW_NORMAL(0),
+
+    DRAW_PRESSED(1),
+
+    DRAW_HOVER(2),
+
+    DRAW_DISABLED(3),
+
+    DRAW_HOVER_PRESSED(4);
+  }
+
   companion object {
-    val ActionModeButtonPress: Int = 0
+    val ACTION_MODE_BUTTON_PRESS: Int = 0
 
-    val ActionModeButtonRelease: Int = 1
+    val ACTION_MODE_BUTTON_RELEASE: Int = 1
 
-    val DrawDisabled: Int = 3
+    val DRAW_DISABLED: Int = 3
 
-    val DrawHover: Int = 2
+    val DRAW_HOVER: Int = 2
 
-    val DrawHoverPressed: Int = 4
+    val DRAW_HOVER_PRESSED: Int = 4
 
-    val DrawNormal: Int = 0
+    val DRAW_NORMAL: Int = 0
 
-    val DrawPressed: Int = 1
+    val DRAW_PRESSED: Int = 1
   }
 }

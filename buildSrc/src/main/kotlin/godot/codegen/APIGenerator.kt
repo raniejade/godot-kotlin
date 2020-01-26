@@ -4,6 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.squareup.kotlinpoet.*
 import godot.codegen.domain.GDClass
+import godot.codegen.domain.GDEnum
 import java.io.File
 
 class APIGenerator {
@@ -36,10 +37,41 @@ class APIGenerator {
       .addModifiers(KModifier.OPEN)
       .generatePrimaryConstructor(cls)
       .maybeGenerateInheritance(cls)
+      .generateEnums(cls.enums)
       .generateCompanionObject(cls)
 
     return classBuilder
       .build()
+  }
+
+  private fun TypeSpec.Builder.generateEnums(enums: List<GDEnum>): TypeSpec.Builder {
+    val enumSpecs = enums.map { enum ->
+      val paramName = "value"
+      val builder = TypeSpec.enumBuilder(enum.name)
+        .primaryConstructor(
+          FunSpec.constructorBuilder()
+            .addParameter(paramName, Int::class)
+            .build()
+        ).addProperty(
+          PropertySpec.builder(paramName, Int::class)
+            .initializer(paramName)
+            .build()
+        )
+
+      enum.values.forEach { (k, v) ->
+        builder.addEnumConstant(
+          k,
+          TypeSpec.anonymousClassBuilder()
+            .addSuperclassConstructorParameter("$v")
+            .build()
+        )
+      }
+
+      builder.build()
+    }
+
+    addTypes(enumSpecs)
+    return this
   }
 
   private fun TypeSpec.Builder.generatePrimaryConstructor(cls: GDClass): TypeSpec.Builder {
@@ -116,7 +148,7 @@ class APIGenerator {
     if (cls.constants.isNotEmpty()) {
       companionObjectBuilder.addProperties(
         cls.constants.map { (k, v) ->
-          PropertySpec.builder(formatConstantName(k), v::class)
+          PropertySpec.builder(k, v::class)
             .initializer(formatValue(v))
             .build()
         }
@@ -149,10 +181,6 @@ class APIGenerator {
       return "\"$v\""
     }
     return "$v"
-  }
-
-  private fun formatConstantName(name: String): String {
-    return name.split("_").joinToString("") { it.toLowerCase().capitalize() }
   }
 
   private fun parseJson(source: File): List<GDClass> {

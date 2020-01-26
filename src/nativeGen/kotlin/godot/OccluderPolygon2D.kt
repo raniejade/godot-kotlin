@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class OccluderPolygon2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class CullMode(
+    val value: Int
+  ) {
+    CULL_DISABLED(0),
+
+    CULL_CLOCKWISE(1),
+
+    CULL_COUNTER_CLOCKWISE(2);
+  }
+
   companion object {
-    val CullClockwise: Int = 1
+    val CULL_CLOCKWISE: Int = 1
 
-    val CullCounterClockwise: Int = 2
+    val CULL_COUNTER_CLOCKWISE: Int = 2
 
-    val CullDisabled: Int = 0
+    val CULL_DISABLED: Int = 0
 
     fun new(): OccluderPolygon2D = memScoped {
       val fnPtr =

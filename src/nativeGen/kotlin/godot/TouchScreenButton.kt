@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class TouchScreenButton internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  companion object {
-    val VisibilityAlways: Int = 0
+  enum class VisibilityMode(
+    val value: Int
+  ) {
+    VISIBILITY_ALWAYS(0),
 
-    val VisibilityTouchscreenOnly: Int = 1
+    VISIBILITY_TOUCHSCREEN_ONLY(1);
+  }
+
+  companion object {
+    val VISIBILITY_ALWAYS: Int = 0
+
+    val VISIBILITY_TOUCHSCREEN_ONLY: Int = 1
 
     fun new(): TouchScreenButton = memScoped {
       val fnPtr =

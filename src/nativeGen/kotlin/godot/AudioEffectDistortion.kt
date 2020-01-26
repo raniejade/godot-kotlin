@@ -13,16 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectDistortion internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  enum class Mode(
+    val value: Int
+  ) {
+    MODE_CLIP(0),
+
+    MODE_ATAN(1),
+
+    MODE_LOFI(2),
+
+    MODE_OVERDRIVE(3),
+
+    MODE_WAVESHAPE(4);
+  }
+
   companion object {
-    val ModeAtan: Int = 1
+    val MODE_ATAN: Int = 1
 
-    val ModeClip: Int = 0
+    val MODE_CLIP: Int = 0
 
-    val ModeLofi: Int = 2
+    val MODE_LOFI: Int = 2
 
-    val ModeOverdrive: Int = 3
+    val MODE_OVERDRIVE: Int = 3
 
-    val ModeWaveshape: Int = 4
+    val MODE_WAVESHAPE: Int = 4
 
     fun new(): AudioEffectDistortion = memScoped {
       val fnPtr =

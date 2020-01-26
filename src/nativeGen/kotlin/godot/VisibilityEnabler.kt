@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityEnabler internal constructor(
   _handle: COpaquePointer
 ) : VisibilityNotifier(_handle) {
+  enum class Enabler(
+    val value: Int
+  ) {
+    ENABLER_PAUSE_ANIMATIONS(0),
+
+    ENABLER_FREEZE_BODIES(1),
+
+    ENABLER_MAX(2);
+  }
+
   companion object {
-    val EnablerFreezeBodies: Int = 1
+    val ENABLER_FREEZE_BODIES: Int = 1
 
-    val EnablerMax: Int = 2
+    val ENABLER_MAX: Int = 2
 
-    val EnablerPauseAnimations: Int = 0
+    val ENABLER_PAUSE_ANIMATIONS: Int = 0
 
     fun new(): VisibilityEnabler = memScoped {
       val fnPtr =

@@ -13,22 +13,46 @@ import kotlinx.cinterop.reinterpret
 open class Label internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  enum class Align(
+    val value: Int
+  ) {
+    ALIGN_LEFT(0),
+
+    ALIGN_CENTER(1),
+
+    ALIGN_RIGHT(2),
+
+    ALIGN_FILL(3);
+  }
+
+  enum class VAlign(
+    val value: Int
+  ) {
+    VALIGN_TOP(0),
+
+    VALIGN_CENTER(1),
+
+    VALIGN_BOTTOM(2),
+
+    VALIGN_FILL(3);
+  }
+
   companion object {
-    val AlignCenter: Int = 1
+    val ALIGN_CENTER: Int = 1
 
-    val AlignFill: Int = 3
+    val ALIGN_FILL: Int = 3
 
-    val AlignLeft: Int = 0
+    val ALIGN_LEFT: Int = 0
 
-    val AlignRight: Int = 2
+    val ALIGN_RIGHT: Int = 2
 
-    val ValignBottom: Int = 2
+    val VALIGN_BOTTOM: Int = 2
 
-    val ValignCenter: Int = 1
+    val VALIGN_CENTER: Int = 1
 
-    val ValignFill: Int = 3
+    val VALIGN_FILL: Int = 3
 
-    val ValignTop: Int = 0
+    val VALIGN_TOP: Int = 0
 
     fun new(): Label = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Label".cstr.ptr)

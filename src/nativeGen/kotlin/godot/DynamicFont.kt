@@ -13,14 +13,26 @@ import kotlinx.cinterop.reinterpret
 open class DynamicFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
+  enum class SpacingType(
+    val value: Int
+  ) {
+    SPACING_TOP(0),
+
+    SPACING_BOTTOM(1),
+
+    SPACING_CHAR(2),
+
+    SPACING_SPACE(3);
+  }
+
   companion object {
-    val SpacingBottom: Int = 1
+    val SPACING_BOTTOM: Int = 1
 
-    val SpacingChar: Int = 2
+    val SPACING_CHAR: Int = 2
 
-    val SpacingSpace: Int = 3
+    val SPACING_SPACE: Int = 3
 
-    val SpacingTop: Int = 0
+    val SPACING_TOP: Int = 0
 
     fun new(): DynamicFont = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("DynamicFont".cstr.ptr)

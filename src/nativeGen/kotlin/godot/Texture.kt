@@ -13,21 +13,41 @@ import kotlinx.cinterop.reinterpret
 open class Texture internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class Flags(
+    val value: Int
+  ) {
+    FLAG_MIPMAPS(1),
+
+    FLAG_REPEAT(2),
+
+    FLAG_FILTER(4),
+
+    FLAGS_DEFAULT(7),
+
+    FLAG_ANISOTROPIC_FILTER(8),
+
+    FLAG_CONVERT_TO_LINEAR(16),
+
+    FLAG_MIRRORED_REPEAT(32),
+
+    FLAG_VIDEO_SURFACE(2048);
+  }
+
   companion object {
-    val FlagsDefault: Int = 7
+    val FLAGS_DEFAULT: Int = 7
 
-    val FlagAnisotropicFilter: Int = 8
+    val FLAG_ANISOTROPIC_FILTER: Int = 8
 
-    val FlagConvertToLinear: Int = 16
+    val FLAG_CONVERT_TO_LINEAR: Int = 16
 
-    val FlagFilter: Int = 4
+    val FLAG_FILTER: Int = 4
 
-    val FlagMipmaps: Int = 1
+    val FLAG_MIPMAPS: Int = 1
 
-    val FlagMirroredRepeat: Int = 32
+    val FLAG_MIRRORED_REPEAT: Int = 32
 
-    val FlagRepeat: Int = 2
+    val FLAG_REPEAT: Int = 2
 
-    val FlagVideoSurface: Int = 2048
+    val FLAG_VIDEO_SURFACE: Int = 2048
   }
 }

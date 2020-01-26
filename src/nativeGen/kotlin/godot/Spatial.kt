@@ -14,13 +14,13 @@ open class Spatial internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   companion object {
-    val NotificationEnterWorld: Int = 41
+    val NOTIFICATION_ENTER_WORLD: Int = 41
 
-    val NotificationExitWorld: Int = 42
+    val NOTIFICATION_EXIT_WORLD: Int = 42
 
-    val NotificationTransformChanged: Int = 2000
+    val NOTIFICATION_TRANSFORM_CHANGED: Int = 2000
 
-    val NotificationVisibilityChanged: Int = 43
+    val NOTIFICATION_VISIBILITY_CHANGED: Int = 43
 
     fun new(): Spatial = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Spatial".cstr.ptr)

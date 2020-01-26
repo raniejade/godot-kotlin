@@ -13,18 +13,38 @@ import kotlinx.cinterop.reinterpret
 open class CSGPolygon internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  enum class PathRotation(
+    val value: Int
+  ) {
+    PATH_ROTATION_POLYGON(0),
+
+    PATH_ROTATION_PATH(1),
+
+    PATH_ROTATION_PATH_FOLLOW(2);
+  }
+
+  enum class Mode(
+    val value: Int
+  ) {
+    MODE_DEPTH(0),
+
+    MODE_SPIN(1),
+
+    MODE_PATH(2);
+  }
+
   companion object {
-    val ModeDepth: Int = 0
+    val MODE_DEPTH: Int = 0
 
-    val ModePath: Int = 2
+    val MODE_PATH: Int = 2
 
-    val ModeSpin: Int = 1
+    val MODE_SPIN: Int = 1
 
-    val PathRotationPath: Int = 1
+    val PATH_ROTATION_PATH: Int = 1
 
-    val PathRotationPathFollow: Int = 2
+    val PATH_ROTATION_PATH_FOLLOW: Int = 2
 
-    val PathRotationPolygon: Int = 0
+    val PATH_ROTATION_POLYGON: Int = 0
 
     fun new(): CSGPolygon = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGPolygon".cstr.ptr)

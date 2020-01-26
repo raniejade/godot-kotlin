@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeBlendSpace2D internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
+  enum class BlendMode(
+    val value: Int
+  ) {
+    BLEND_MODE_INTERPOLATED(0),
+
+    BLEND_MODE_DISCRETE(1),
+
+    BLEND_MODE_DISCRETE_CARRY(2);
+  }
+
   companion object {
-    val BlendModeDiscrete: Int = 1
+    val BLEND_MODE_DISCRETE: Int = 1
 
-    val BlendModeDiscreteCarry: Int = 2
+    val BLEND_MODE_DISCRETE_CARRY: Int = 2
 
-    val BlendModeInterpolated: Int = 0
+    val BLEND_MODE_INTERPOLATED: Int = 0
 
     fun new(): AnimationNodeBlendSpace2D = memScoped {
       val fnPtr =

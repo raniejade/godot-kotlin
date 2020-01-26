@@ -13,16 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class PathFollow internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  enum class RotationMode(
+    val value: Int
+  ) {
+    ROTATION_NONE(0),
+
+    ROTATION_Y(1),
+
+    ROTATION_XY(2),
+
+    ROTATION_XYZ(3),
+
+    ROTATION_ORIENTED(4);
+  }
+
   companion object {
-    val RotationNone: Int = 0
+    val ROTATION_NONE: Int = 0
 
-    val RotationOriented: Int = 4
+    val ROTATION_ORIENTED: Int = 4
 
-    val RotationXy: Int = 2
+    val ROTATION_XY: Int = 2
 
-    val RotationXyz: Int = 3
+    val ROTATION_XYZ: Int = 3
 
-    val RotationY: Int = 1
+    val ROTATION_Y: Int = 1
 
     fun new(): PathFollow = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow".cstr.ptr)

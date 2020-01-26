@@ -13,6 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class IP internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class ResolverStatus(
+    val value: Int
+  ) {
+    RESOLVER_STATUS_NONE(0),
+
+    RESOLVER_STATUS_WAITING(1),
+
+    RESOLVER_STATUS_DONE(2),
+
+    RESOLVER_STATUS_ERROR(3);
+  }
+
+  enum class Type(
+    val value: Int
+  ) {
+    TYPE_NONE(0),
+
+    TYPE_IPV4(1),
+
+    TYPE_IPV6(2),
+
+    TYPE_ANY(3);
+  }
+
   companion object {
     val Instance: IP = memScoped {
           val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("IP".cstr.ptr)
@@ -22,24 +46,24 @@ open class IP internal constructor(
           )
         }
 
-    val ResolverInvalidId: Int = -1
+    val RESOLVER_INVALID_ID: Int = -1
 
-    val ResolverMaxQueries: Int = 32
+    val RESOLVER_MAX_QUERIES: Int = 32
 
-    val ResolverStatusDone: Int = 2
+    val RESOLVER_STATUS_DONE: Int = 2
 
-    val ResolverStatusError: Int = 3
+    val RESOLVER_STATUS_ERROR: Int = 3
 
-    val ResolverStatusNone: Int = 0
+    val RESOLVER_STATUS_NONE: Int = 0
 
-    val ResolverStatusWaiting: Int = 1
+    val RESOLVER_STATUS_WAITING: Int = 1
 
-    val TypeAny: Int = 3
+    val TYPE_ANY: Int = 3
 
-    val TypeIpv4: Int = 1
+    val TYPE_IPV4: Int = 1
 
-    val TypeIpv6: Int = 2
+    val TYPE_IPV6: Int = 2
 
-    val TypeNone: Int = 0
+    val TYPE_NONE: Int = 0
   }
 }

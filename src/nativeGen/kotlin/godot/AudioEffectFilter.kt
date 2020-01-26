@@ -13,14 +13,26 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectFilter internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  enum class FilterDB(
+    val value: Int
+  ) {
+    FILTER_6DB(0),
+
+    FILTER_12DB(1),
+
+    FILTER_18DB(2),
+
+    FILTER_24DB(3);
+  }
+
   companion object {
-    val Filter12db: Int = 1
+    val FILTER_12DB: Int = 1
 
-    val Filter18db: Int = 2
+    val FILTER_18DB: Int = 2
 
-    val Filter24db: Int = 3
+    val FILTER_24DB: Int = 3
 
-    val Filter6db: Int = 0
+    val FILTER_6DB: Int = 0
 
     fun new(): AudioEffectFilter = memScoped {
       val fnPtr =

@@ -13,24 +13,46 @@ import kotlinx.cinterop.reinterpret
 open class MultiplayerAPI internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  enum class RPCMode(
+    val value: Int
+  ) {
+    RPC_MODE_DISABLED(0),
+
+    RPC_MODE_REMOTE(1),
+
+    RPC_MODE_MASTER(2),
+
+    RPC_MODE_PUPPET(3),
+
+    RPC_MODE_SLAVE(3),
+
+    RPC_MODE_REMOTESYNC(4),
+
+    RPC_MODE_SYNC(4),
+
+    RPC_MODE_MASTERSYNC(5),
+
+    RPC_MODE_PUPPETSYNC(6);
+  }
+
   companion object {
-    val RpcModeDisabled: Int = 0
+    val RPC_MODE_DISABLED: Int = 0
 
-    val RpcModeMaster: Int = 2
+    val RPC_MODE_MASTER: Int = 2
 
-    val RpcModeMastersync: Int = 5
+    val RPC_MODE_MASTERSYNC: Int = 5
 
-    val RpcModePuppet: Int = 3
+    val RPC_MODE_PUPPET: Int = 3
 
-    val RpcModePuppetsync: Int = 6
+    val RPC_MODE_PUPPETSYNC: Int = 6
 
-    val RpcModeRemote: Int = 1
+    val RPC_MODE_REMOTE: Int = 1
 
-    val RpcModeRemotesync: Int = 4
+    val RPC_MODE_REMOTESYNC: Int = 4
 
-    val RpcModeSlave: Int = 3
+    val RPC_MODE_SLAVE: Int = 3
 
-    val RpcModeSync: Int = 4
+    val RPC_MODE_SYNC: Int = 4
 
     fun new(): MultiplayerAPI = memScoped {
       val fnPtr =

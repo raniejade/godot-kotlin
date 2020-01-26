@@ -13,16 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerSSL internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
+  enum class Status(
+    val value: Int
+  ) {
+    STATUS_DISCONNECTED(0),
+
+    STATUS_HANDSHAKING(1),
+
+    STATUS_CONNECTED(2),
+
+    STATUS_ERROR(3),
+
+    STATUS_ERROR_HOSTNAME_MISMATCH(4);
+  }
+
   companion object {
-    val StatusConnected: Int = 2
+    val STATUS_CONNECTED: Int = 2
 
-    val StatusDisconnected: Int = 0
+    val STATUS_DISCONNECTED: Int = 0
 
-    val StatusError: Int = 3
+    val STATUS_ERROR: Int = 3
 
-    val StatusErrorHostnameMismatch: Int = 4
+    val STATUS_ERROR_HOSTNAME_MISMATCH: Int = 4
 
-    val StatusHandshaking: Int = 1
+    val STATUS_HANDSHAKING: Int = 1
 
     fun new(): StreamPeerSSL = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerSSL".cstr.ptr)

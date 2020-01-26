@@ -13,21 +13,45 @@ import kotlinx.cinterop.reinterpret
 open class TreeItem internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class TreeCellMode(
+    val value: Int
+  ) {
+    CELL_MODE_STRING(0),
+
+    CELL_MODE_CHECK(1),
+
+    CELL_MODE_RANGE(2),
+
+    CELL_MODE_ICON(3),
+
+    CELL_MODE_CUSTOM(4);
+  }
+
+  enum class TextAlign(
+    val value: Int
+  ) {
+    ALIGN_LEFT(0),
+
+    ALIGN_CENTER(1),
+
+    ALIGN_RIGHT(2);
+  }
+
   companion object {
-    val AlignCenter: Int = 1
+    val ALIGN_CENTER: Int = 1
 
-    val AlignLeft: Int = 0
+    val ALIGN_LEFT: Int = 0
 
-    val AlignRight: Int = 2
+    val ALIGN_RIGHT: Int = 2
 
-    val CellModeCheck: Int = 1
+    val CELL_MODE_CHECK: Int = 1
 
-    val CellModeCustom: Int = 4
+    val CELL_MODE_CUSTOM: Int = 4
 
-    val CellModeIcon: Int = 3
+    val CELL_MODE_ICON: Int = 3
 
-    val CellModeRange: Int = 2
+    val CELL_MODE_RANGE: Int = 2
 
-    val CellModeString: Int = 0
+    val CELL_MODE_STRING: Int = 0
   }
 }

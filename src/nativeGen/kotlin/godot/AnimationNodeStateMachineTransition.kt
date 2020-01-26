@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachineTransition internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class SwitchMode(
+    val value: Int
+  ) {
+    SWITCH_MODE_IMMEDIATE(0),
+
+    SWITCH_MODE_SYNC(1),
+
+    SWITCH_MODE_AT_END(2);
+  }
+
   companion object {
-    val SwitchModeAtEnd: Int = 2
+    val SWITCH_MODE_AT_END: Int = 2
 
-    val SwitchModeImmediate: Int = 0
+    val SWITCH_MODE_IMMEDIATE: Int = 0
 
-    val SwitchModeSync: Int = 1
+    val SWITCH_MODE_SYNC: Int = 1
 
     fun new(): AnimationNodeStateMachineTransition = memScoped {
       val fnPtr =

@@ -13,30 +13,62 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  enum class Param(
+    val value: Int
+  ) {
+    PARAM_BIAS(0),
+
+    PARAM_LIMIT_UPPER(1),
+
+    PARAM_LIMIT_LOWER(2),
+
+    PARAM_LIMIT_BIAS(3),
+
+    PARAM_LIMIT_SOFTNESS(4),
+
+    PARAM_LIMIT_RELAXATION(5),
+
+    PARAM_MOTOR_TARGET_VELOCITY(6),
+
+    PARAM_MOTOR_MAX_IMPULSE(7),
+
+    PARAM_MAX(8);
+  }
+
+  enum class Flag(
+    val value: Int
+  ) {
+    FLAG_USE_LIMIT(0),
+
+    FLAG_ENABLE_MOTOR(1),
+
+    FLAG_MAX(2);
+  }
+
   companion object {
-    val FlagEnableMotor: Int = 1
+    val FLAG_ENABLE_MOTOR: Int = 1
 
-    val FlagMax: Int = 2
+    val FLAG_MAX: Int = 2
 
-    val FlagUseLimit: Int = 0
+    val FLAG_USE_LIMIT: Int = 0
 
-    val ParamBias: Int = 0
+    val PARAM_BIAS: Int = 0
 
-    val ParamLimitBias: Int = 3
+    val PARAM_LIMIT_BIAS: Int = 3
 
-    val ParamLimitLower: Int = 2
+    val PARAM_LIMIT_LOWER: Int = 2
 
-    val ParamLimitRelaxation: Int = 5
+    val PARAM_LIMIT_RELAXATION: Int = 5
 
-    val ParamLimitSoftness: Int = 4
+    val PARAM_LIMIT_SOFTNESS: Int = 4
 
-    val ParamLimitUpper: Int = 1
+    val PARAM_LIMIT_UPPER: Int = 1
 
-    val ParamMax: Int = 8
+    val PARAM_MAX: Int = 8
 
-    val ParamMotorMaxImpulse: Int = 7
+    val PARAM_MOTOR_MAX_IMPULSE: Int = 7
 
-    val ParamMotorTargetVelocity: Int = 6
+    val PARAM_MOTOR_TARGET_VELOCITY: Int = 6
 
     fun new(): HingeJoint = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HingeJoint".cstr.ptr)

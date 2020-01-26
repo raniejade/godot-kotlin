@@ -13,18 +13,38 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTextureUniform internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeUniform(_handle) {
+  enum class TextureType(
+    val value: Int
+  ) {
+    TYPE_DATA(0),
+
+    TYPE_COLOR(1),
+
+    TYPE_NORMALMAP(2),
+
+    TYPE_ANISO(3);
+  }
+
+  enum class ColorDefault(
+    val value: Int
+  ) {
+    COLOR_DEFAULT_WHITE(0),
+
+    COLOR_DEFAULT_BLACK(1);
+  }
+
   companion object {
-    val ColorDefaultBlack: Int = 1
+    val COLOR_DEFAULT_BLACK: Int = 1
 
-    val ColorDefaultWhite: Int = 0
+    val COLOR_DEFAULT_WHITE: Int = 0
 
-    val TypeAniso: Int = 3
+    val TYPE_ANISO: Int = 3
 
-    val TypeColor: Int = 1
+    val TYPE_COLOR: Int = 1
 
-    val TypeData: Int = 0
+    val TYPE_DATA: Int = 0
 
-    val TypeNormalmap: Int = 2
+    val TYPE_NORMALMAP: Int = 2
 
     fun new(): VisualShaderNodeTextureUniform = memScoped {
       val fnPtr =

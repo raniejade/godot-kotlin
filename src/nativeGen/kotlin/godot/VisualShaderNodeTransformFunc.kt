@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTransformFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  companion object {
-    val FuncInverse: Int = 0
+  enum class Function(
+    val value: Int
+  ) {
+    FUNC_INVERSE(0),
 
-    val FuncTranspose: Int = 1
+    FUNC_TRANSPOSE(1);
+  }
+
+  companion object {
+    val FUNC_INVERSE: Int = 0
+
+    val FUNC_TRANSPOSE: Int = 1
 
     fun new(): VisualShaderNodeTransformFunc = memScoped {
       val fnPtr =

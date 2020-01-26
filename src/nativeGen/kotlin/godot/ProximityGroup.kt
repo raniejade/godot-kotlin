@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class ProximityGroup internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  companion object {
-    val ModeProxy: Int = 0
+  enum class DispatchMode(
+    val value: Int
+  ) {
+    MODE_PROXY(0),
 
-    val ModeSignal: Int = 1
+    MODE_SIGNAL(1);
+  }
+
+  companion object {
+    val MODE_PROXY: Int = 0
+
+    val MODE_SIGNAL: Int = 1
 
     fun new(): ProximityGroup = memScoped {
       val fnPtr =

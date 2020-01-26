@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeScalarDerivativeFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  enum class Function(
+    val value: Int
+  ) {
+    FUNC_SUM(0),
+
+    FUNC_X(1),
+
+    FUNC_Y(2);
+  }
+
   companion object {
-    val FuncSum: Int = 0
+    val FUNC_SUM: Int = 0
 
-    val FuncX: Int = 1
+    val FUNC_X: Int = 1
 
-    val FuncY: Int = 2
+    val FUNC_Y: Int = 2
 
     fun new(): VisualShaderNodeScalarDerivativeFunc = memScoped {
       val fnPtr =

@@ -13,16 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerENet internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
+  enum class CompressionMode(
+    val value: Int
+  ) {
+    COMPRESS_NONE(0),
+
+    COMPRESS_RANGE_CODER(1),
+
+    COMPRESS_FASTLZ(2),
+
+    COMPRESS_ZLIB(3),
+
+    COMPRESS_ZSTD(4);
+  }
+
   companion object {
-    val CompressFastlz: Int = 2
+    val COMPRESS_FASTLZ: Int = 2
 
-    val CompressNone: Int = 0
+    val COMPRESS_NONE: Int = 0
 
-    val CompressRangeCoder: Int = 1
+    val COMPRESS_RANGE_CODER: Int = 1
 
-    val CompressZlib: Int = 3
+    val COMPRESS_ZLIB: Int = 3
 
-    val CompressZstd: Int = 4
+    val COMPRESS_ZSTD: Int = 4
 
     fun new(): NetworkedMultiplayerENet = memScoped {
       val fnPtr =

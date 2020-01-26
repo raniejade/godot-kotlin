@@ -13,18 +13,30 @@ import kotlinx.cinterop.reinterpret
 open class VisualShader internal constructor(
   _handle: COpaquePointer
 ) : Shader(_handle) {
+  enum class Type(
+    val value: Int
+  ) {
+    TYPE_VERTEX(0),
+
+    TYPE_FRAGMENT(1),
+
+    TYPE_LIGHT(2),
+
+    TYPE_MAX(3);
+  }
+
   companion object {
-    val NodeIdInvalid: Int = -1
+    val NODE_ID_INVALID: Int = -1
 
-    val NodeIdOutput: Int = 0
+    val NODE_ID_OUTPUT: Int = 0
 
-    val TypeFragment: Int = 1
+    val TYPE_FRAGMENT: Int = 1
 
-    val TypeLight: Int = 2
+    val TYPE_LIGHT: Int = 2
 
-    val TypeMax: Int = 3
+    val TYPE_MAX: Int = 3
 
-    val TypeVertex: Int = 0
+    val TYPE_VERTEX: Int = 0
 
     fun new(): VisualShader = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShader".cstr.ptr)

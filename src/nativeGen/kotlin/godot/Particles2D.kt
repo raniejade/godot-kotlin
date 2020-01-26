@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class Particles2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  companion object {
-    val DrawOrderIndex: Int = 0
+  enum class DrawOrder(
+    val value: Int
+  ) {
+    DRAW_ORDER_INDEX(0),
 
-    val DrawOrderLifetime: Int = 1
+    DRAW_ORDER_LIFETIME(1);
+  }
+
+  companion object {
+    val DRAW_ORDER_INDEX: Int = 0
+
+    val DRAW_ORDER_LIFETIME: Int = 1
 
     fun new(): Particles2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Particles2D".cstr.ptr)

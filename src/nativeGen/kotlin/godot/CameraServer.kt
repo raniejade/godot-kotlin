@@ -13,6 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class CameraServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class FeedImage(
+    val value: Int
+  ) {
+    FEED_RGBA_IMAGE(0),
+
+    FEED_YCbCr_IMAGE(0),
+
+    FEED_Y_IMAGE(0),
+
+    FEED_CbCr_IMAGE(1);
+  }
+
   companion object {
     val Instance: CameraServer = memScoped {
           val handle =
@@ -23,12 +35,12 @@ open class CameraServer internal constructor(
           )
         }
 
-    val FeedCbcrImage: Int = 1
+    val FEED_CbCr_IMAGE: Int = 1
 
-    val FeedRgbaImage: Int = 0
+    val FEED_RGBA_IMAGE: Int = 0
 
-    val FeedYcbcrImage: Int = 0
+    val FEED_YCbCr_IMAGE: Int = 0
 
-    val FeedYImage: Int = 0
+    val FEED_Y_IMAGE: Int = 0
   }
 }

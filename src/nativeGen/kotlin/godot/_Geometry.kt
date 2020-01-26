@@ -13,6 +13,42 @@ import kotlinx.cinterop.reinterpret
 open class _Geometry internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  enum class PolyEndType(
+    val value: Int
+  ) {
+    END_POLYGON(0),
+
+    END_JOINED(1),
+
+    END_BUTT(2),
+
+    END_SQUARE(3),
+
+    END_ROUND(4);
+  }
+
+  enum class PolyBooleanOperation(
+    val value: Int
+  ) {
+    OPERATION_UNION(0),
+
+    OPERATION_DIFFERENCE(1),
+
+    OPERATION_INTERSECTION(2),
+
+    OPERATION_XOR(3);
+  }
+
+  enum class PolyJoinType(
+    val value: Int
+  ) {
+    JOIN_SQUARE(0),
+
+    JOIN_ROUND(1),
+
+    JOIN_MITER(2);
+  }
+
   companion object {
     val Instance: _Geometry = memScoped {
           val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Geometry".cstr.ptr)
@@ -22,28 +58,28 @@ open class _Geometry internal constructor(
           )
         }
 
-    val EndButt: Int = 2
+    val END_BUTT: Int = 2
 
-    val EndJoined: Int = 1
+    val END_JOINED: Int = 1
 
-    val EndPolygon: Int = 0
+    val END_POLYGON: Int = 0
 
-    val EndRound: Int = 4
+    val END_ROUND: Int = 4
 
-    val EndSquare: Int = 3
+    val END_SQUARE: Int = 3
 
-    val JoinMiter: Int = 2
+    val JOIN_MITER: Int = 2
 
-    val JoinRound: Int = 1
+    val JOIN_ROUND: Int = 1
 
-    val JoinSquare: Int = 0
+    val JOIN_SQUARE: Int = 0
 
-    val OperationDifference: Int = 1
+    val OPERATION_DIFFERENCE: Int = 1
 
-    val OperationIntersection: Int = 2
+    val OPERATION_INTERSECTION: Int = 2
 
-    val OperationUnion: Int = 0
+    val OPERATION_UNION: Int = 0
 
-    val OperationXor: Int = 3
+    val OPERATION_XOR: Int = 3
   }
 }

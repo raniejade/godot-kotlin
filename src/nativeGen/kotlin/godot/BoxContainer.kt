@@ -13,11 +13,21 @@ import kotlinx.cinterop.reinterpret
 open class BoxContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  enum class AlignMode(
+    val value: Int
+  ) {
+    ALIGN_BEGIN(0),
+
+    ALIGN_CENTER(1),
+
+    ALIGN_END(2);
+  }
+
   companion object {
-    val AlignBegin: Int = 0
+    val ALIGN_BEGIN: Int = 0
 
-    val AlignCenter: Int = 1
+    val ALIGN_CENTER: Int = 1
 
-    val AlignEnd: Int = 2
+    val ALIGN_END: Int = 2
   }
 }

@@ -13,16 +13,34 @@ import kotlinx.cinterop.reinterpret
 open class DirectionalLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
+  enum class ShadowMode(
+    val value: Int
+  ) {
+    SHADOW_ORTHOGONAL(0),
+
+    SHADOW_PARALLEL_2_SPLITS(1),
+
+    SHADOW_PARALLEL_4_SPLITS(2);
+  }
+
+  enum class ShadowDepthRange(
+    val value: Int
+  ) {
+    SHADOW_DEPTH_RANGE_STABLE(0),
+
+    SHADOW_DEPTH_RANGE_OPTIMIZED(1);
+  }
+
   companion object {
-    val ShadowDepthRangeOptimized: Int = 1
+    val SHADOW_DEPTH_RANGE_OPTIMIZED: Int = 1
 
-    val ShadowDepthRangeStable: Int = 0
+    val SHADOW_DEPTH_RANGE_STABLE: Int = 0
 
-    val ShadowOrthogonal: Int = 0
+    val SHADOW_ORTHOGONAL: Int = 0
 
-    val ShadowParallel2Splits: Int = 1
+    val SHADOW_PARALLEL_2_SPLITS: Int = 1
 
-    val ShadowParallel4Splits: Int = 2
+    val SHADOW_PARALLEL_4_SPLITS: Int = 2
 
     fun new(): DirectionalLight = memScoped {
       val fnPtr =

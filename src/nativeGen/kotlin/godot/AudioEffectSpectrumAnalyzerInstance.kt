@@ -13,9 +13,17 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectSpectrumAnalyzerInstance internal constructor(
   _handle: COpaquePointer
 ) : AudioEffectInstance(_handle) {
-  companion object {
-    val MagnitudeAverage: Int = 0
+  enum class MagnitudeMode(
+    val value: Int
+  ) {
+    MAGNITUDE_AVERAGE(0),
 
-    val MagnitudeMax: Int = 1
+    MAGNITUDE_MAX(1);
+  }
+
+  companion object {
+    val MAGNITUDE_AVERAGE: Int = 0
+
+    val MAGNITUDE_MAX: Int = 1
   }
 }

@@ -13,22 +13,50 @@ import kotlinx.cinterop.reinterpret
 open class MultiMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  enum class TransformFormat(
+    val value: Int
+  ) {
+    TRANSFORM_2D(0),
+
+    TRANSFORM_3D(1);
+  }
+
+  enum class CustomDataFormat(
+    val value: Int
+  ) {
+    CUSTOM_DATA_NONE(0),
+
+    CUSTOM_DATA_8BIT(1),
+
+    CUSTOM_DATA_FLOAT(2);
+  }
+
+  enum class ColorFormat(
+    val value: Int
+  ) {
+    COLOR_NONE(0),
+
+    COLOR_8BIT(1),
+
+    COLOR_FLOAT(2);
+  }
+
   companion object {
-    val Color8bit: Int = 1
+    val COLOR_8BIT: Int = 1
 
-    val ColorFloat: Int = 2
+    val COLOR_FLOAT: Int = 2
 
-    val ColorNone: Int = 0
+    val COLOR_NONE: Int = 0
 
-    val CustomData8bit: Int = 1
+    val CUSTOM_DATA_8BIT: Int = 1
 
-    val CustomDataFloat: Int = 2
+    val CUSTOM_DATA_FLOAT: Int = 2
 
-    val CustomDataNone: Int = 0
+    val CUSTOM_DATA_NONE: Int = 0
 
-    val Transform2d: Int = 0
+    val TRANSFORM_2D: Int = 0
 
-    val Transform3d: Int = 1
+    val TRANSFORM_3D: Int = 1
 
     fun new(): MultiMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMesh".cstr.ptr)

@@ -14,8 +14,8 @@ open class Material internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   companion object {
-    val RenderPriorityMax: Int = 127
+    val RENDER_PRIORITY_MAX: Int = 127
 
-    val RenderPriorityMin: Int = -128
+    val RENDER_PRIORITY_MIN: Int = -128
   }
 }

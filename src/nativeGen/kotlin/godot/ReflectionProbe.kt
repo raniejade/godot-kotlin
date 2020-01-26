@@ -13,10 +13,18 @@ import kotlinx.cinterop.reinterpret
 open class ReflectionProbe internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  companion object {
-    val UpdateAlways: Int = 1
+  enum class UpdateMode(
+    val value: Int
+  ) {
+    UPDATE_ONCE(0),
 
-    val UpdateOnce: Int = 0
+    UPDATE_ALWAYS(1);
+  }
+
+  companion object {
+    val UPDATE_ALWAYS: Int = 1
+
+    val UPDATE_ONCE: Int = 0
 
     fun new(): ReflectionProbe = memScoped {
       val fnPtr =

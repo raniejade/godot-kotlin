@@ -13,14 +13,26 @@ import kotlinx.cinterop.reinterpret
 open class RigidBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
+  enum class Mode(
+    val value: Int
+  ) {
+    MODE_RIGID(0),
+
+    MODE_STATIC(1),
+
+    MODE_CHARACTER(2),
+
+    MODE_KINEMATIC(3);
+  }
+
   companion object {
-    val ModeCharacter: Int = 2
+    val MODE_CHARACTER: Int = 2
 
-    val ModeKinematic: Int = 3
+    val MODE_KINEMATIC: Int = 3
 
-    val ModeRigid: Int = 0
+    val MODE_RIGID: Int = 0
 
-    val ModeStatic: Int = 1
+    val MODE_STATIC: Int = 1
 
     fun new(): RigidBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RigidBody".cstr.ptr)

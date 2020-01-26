@@ -13,20 +13,42 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamSample internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
+  enum class LoopMode(
+    val value: Int
+  ) {
+    LOOP_DISABLED(0),
+
+    LOOP_FORWARD(1),
+
+    LOOP_PING_PONG(2),
+
+    LOOP_BACKWARD(3);
+  }
+
+  enum class Format(
+    val value: Int
+  ) {
+    FORMAT_8_BITS(0),
+
+    FORMAT_16_BITS(1),
+
+    FORMAT_IMA_ADPCM(2);
+  }
+
   companion object {
-    val Format16Bits: Int = 1
+    val FORMAT_16_BITS: Int = 1
 
-    val Format8Bits: Int = 0
+    val FORMAT_8_BITS: Int = 0
 
-    val FormatImaAdpcm: Int = 2
+    val FORMAT_IMA_ADPCM: Int = 2
 
-    val LoopBackward: Int = 3
+    val LOOP_BACKWARD: Int = 3
 
-    val LoopDisabled: Int = 0
+    val LOOP_DISABLED: Int = 0
 
-    val LoopForward: Int = 1
+    val LOOP_FORWARD: Int = 1
 
-    val LoopPingPong: Int = 2
+    val LOOP_PING_PONG: Int = 2
 
     fun new(): AudioStreamSample = memScoped {
       val fnPtr =

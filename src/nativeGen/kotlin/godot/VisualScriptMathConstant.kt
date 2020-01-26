@@ -13,24 +13,46 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptMathConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  enum class MathConstant(
+    val value: Int
+  ) {
+    MATH_CONSTANT_ONE(0),
+
+    MATH_CONSTANT_PI(1),
+
+    MATH_CONSTANT_HALF_PI(2),
+
+    MATH_CONSTANT_TAU(3),
+
+    MATH_CONSTANT_E(4),
+
+    MATH_CONSTANT_SQRT2(5),
+
+    MATH_CONSTANT_INF(6),
+
+    MATH_CONSTANT_NAN(7),
+
+    MATH_CONSTANT_MAX(8);
+  }
+
   companion object {
-    val MathConstantE: Int = 4
+    val MATH_CONSTANT_E: Int = 4
 
-    val MathConstantHalfPi: Int = 2
+    val MATH_CONSTANT_HALF_PI: Int = 2
 
-    val MathConstantInf: Int = 6
+    val MATH_CONSTANT_INF: Int = 6
 
-    val MathConstantMax: Int = 8
+    val MATH_CONSTANT_MAX: Int = 8
 
-    val MathConstantNan: Int = 7
+    val MATH_CONSTANT_NAN: Int = 7
 
-    val MathConstantOne: Int = 0
+    val MATH_CONSTANT_ONE: Int = 0
 
-    val MathConstantPi: Int = 1
+    val MATH_CONSTANT_PI: Int = 1
 
-    val MathConstantSqrt2: Int = 5
+    val MATH_CONSTANT_SQRT2: Int = 5
 
-    val MathConstantTau: Int = 3
+    val MATH_CONSTANT_TAU: Int = 3
 
     fun new(): VisualScriptMathConstant = memScoped {
       val fnPtr =

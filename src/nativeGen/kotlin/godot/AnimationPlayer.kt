@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class AnimationPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  enum class AnimationProcessMode(
+    val value: Int
+  ) {
+    ANIMATION_PROCESS_PHYSICS(0),
+
+    ANIMATION_PROCESS_IDLE(1),
+
+    ANIMATION_PROCESS_MANUAL(2);
+  }
+
   companion object {
-    val AnimationProcessIdle: Int = 1
+    val ANIMATION_PROCESS_IDLE: Int = 1
 
-    val AnimationProcessManual: Int = 2
+    val ANIMATION_PROCESS_MANUAL: Int = 2
 
-    val AnimationProcessPhysics: Int = 0
+    val ANIMATION_PROCESS_PHYSICS: Int = 0
 
     fun new(): AnimationPlayer = memScoped {
       val fnPtr =

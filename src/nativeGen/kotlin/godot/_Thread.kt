@@ -13,12 +13,22 @@ import kotlinx.cinterop.reinterpret
 open class _Thread internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  enum class Priority(
+    val value: Int
+  ) {
+    PRIORITY_LOW(0),
+
+    PRIORITY_NORMAL(1),
+
+    PRIORITY_HIGH(2);
+  }
+
   companion object {
-    val PriorityHigh: Int = 2
+    val PRIORITY_HIGH: Int = 2
 
-    val PriorityLow: Int = 0
+    val PRIORITY_LOW: Int = 0
 
-    val PriorityNormal: Int = 1
+    val PRIORITY_NORMAL: Int = 1
 
     fun new(): _Thread = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Thread".cstr.ptr)

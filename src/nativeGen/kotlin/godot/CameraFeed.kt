@@ -13,20 +13,42 @@ import kotlinx.cinterop.reinterpret
 open class CameraFeed internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  enum class FeedDataType(
+    val value: Int
+  ) {
+    FEED_NOIMAGE(0),
+
+    FEED_RGB(1),
+
+    FEED_YCbCr(2),
+
+    FEED_YCbCr_Sep(3);
+  }
+
+  enum class FeedPosition(
+    val value: Int
+  ) {
+    FEED_UNSPECIFIED(0),
+
+    FEED_FRONT(1),
+
+    FEED_BACK(2);
+  }
+
   companion object {
-    val FeedBack: Int = 2
+    val FEED_BACK: Int = 2
 
-    val FeedFront: Int = 1
+    val FEED_FRONT: Int = 1
 
-    val FeedNoimage: Int = 0
+    val FEED_NOIMAGE: Int = 0
 
-    val FeedRgb: Int = 1
+    val FEED_RGB: Int = 1
 
-    val FeedUnspecified: Int = 0
+    val FEED_UNSPECIFIED: Int = 0
 
-    val FeedYcbcr: Int = 2
+    val FEED_YCbCr: Int = 2
 
-    val FeedYcbcrSep: Int = 3
+    val FEED_YCbCr_Sep: Int = 3
 
     fun new(): CameraFeed = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraFeed".cstr.ptr)

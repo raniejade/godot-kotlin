@@ -14,9 +14,9 @@ open class Popup internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   companion object {
-    val NotificationPopupHide: Int = 81
+    val NOTIFICATION_POPUP_HIDE: Int = 81
 
-    val NotificationPostPopup: Int = 80
+    val NOTIFICATION_POST_POPUP: Int = 80
 
     fun new(): Popup = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Popup".cstr.ptr)
