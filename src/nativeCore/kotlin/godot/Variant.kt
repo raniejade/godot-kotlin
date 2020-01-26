@@ -170,6 +170,12 @@ class Variant(
     }
   }
 
+  fun asTransform(): Transform {
+    return transmute(::Transform) {
+      checkNotNull(Godot.gdnative.godot_variant_as_transform)(it)
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -334,6 +340,13 @@ class Variant(
         checkNotNull(Godot.gdnative.godot_variant_new_node_path)(it, nodePath._value.ptr)
       }
     }
+
+    fun new(transform: Transform): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_transform)(it, transform._value.ptr)
+      }
+    }
+
 
     private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
       return allocType(::Variant, constructor)
