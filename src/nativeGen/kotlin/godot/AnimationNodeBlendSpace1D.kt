@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeBlendSpace1D internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
+  fun addBlendPoint() {
+    TODO()
+  }
+
+  fun treeChanged() {
+    TODO()
+  }
+
+  fun addBlendPoint() {
+    TODO()
+  }
+
+  fun getBlendPointCount(): Int {
+    TODO()
+  }
+
+  fun getBlendPointNode(): AnimationRootNode {
+    TODO()
+  }
+
+  fun getBlendPointPosition(): Float {
+    TODO()
+  }
+
+  fun getMaxSpace(): Float {
+    TODO()
+  }
+
+  fun getMinSpace(): Float {
+    TODO()
+  }
+
+  fun getSnap(): Float {
+    TODO()
+  }
+
+  fun getValueLabel(): String {
+    TODO()
+  }
+
+  fun removeBlendPoint() {
+    TODO()
+  }
+
+  fun setBlendPointNode() {
+    TODO()
+  }
+
+  fun setBlendPointPosition() {
+    TODO()
+  }
+
+  fun setMaxSpace() {
+    TODO()
+  }
+
+  fun setMinSpace() {
+    TODO()
+  }
+
+  fun setSnap() {
+    TODO()
+  }
+
+  fun setValueLabel() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimationNodeBlendSpace1D = memScoped {
       val fnPtr =

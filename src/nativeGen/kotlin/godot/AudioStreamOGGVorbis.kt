@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamOGGVorbis internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
+  fun getData(): PoolByteArray {
+    TODO()
+  }
+
+  fun getLoopOffset(): Float {
+    TODO()
+  }
+
+  fun hasLoop(): Boolean {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun setLoop() {
+    TODO()
+  }
+
+  fun setLoopOffset() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioStreamOGGVorbis = memScoped {
       val fnPtr =

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,78 @@ import kotlinx.cinterop.reinterpret
 open class OpenSimplexNoise internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getImage(): Image {
+    TODO()
+  }
+
+  fun getLacunarity(): Float {
+    TODO()
+  }
+
+  fun getNoise1d(): Float {
+    TODO()
+  }
+
+  fun getNoise2d(): Float {
+    TODO()
+  }
+
+  fun getNoise2dv(): Float {
+    TODO()
+  }
+
+  fun getNoise3d(): Float {
+    TODO()
+  }
+
+  fun getNoise3dv(): Float {
+    TODO()
+  }
+
+  fun getNoise4d(): Float {
+    TODO()
+  }
+
+  fun getOctaves(): Int {
+    TODO()
+  }
+
+  fun getPeriod(): Float {
+    TODO()
+  }
+
+  fun getPersistence(): Float {
+    TODO()
+  }
+
+  fun getSeamlessImage(): Image {
+    TODO()
+  }
+
+  fun getSeed(): Int {
+    TODO()
+  }
+
+  fun setLacunarity() {
+    TODO()
+  }
+
+  fun setOctaves() {
+    TODO()
+  }
+
+  fun setPeriod() {
+    TODO()
+  }
+
+  fun setPersistence() {
+    TODO()
+  }
+
+  fun setSeed() {
+    TODO()
+  }
+
   companion object {
     fun new(): OpenSimplexNoise = memScoped {
       val fnPtr =

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class CSGTorus internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  fun getInnerRadius(): Float {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getOuterRadius(): Float {
+    TODO()
+  }
+
+  fun getRingSides(): Int {
+    TODO()
+  }
+
+  fun getSides(): Int {
+    TODO()
+  }
+
+  fun getSmoothFaces(): Boolean {
+    TODO()
+  }
+
+  fun setInnerRadius() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setOuterRadius() {
+    TODO()
+  }
+
+  fun setRingSides() {
+    TODO()
+  }
+
+  fun setSides() {
+    TODO()
+  }
+
+  fun setSmoothFaces() {
+    TODO()
+  }
+
   companion object {
     fun new(): CSGTorus = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGTorus".cstr.ptr)

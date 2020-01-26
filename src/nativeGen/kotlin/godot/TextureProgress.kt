@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,102 @@ import kotlinx.cinterop.reinterpret
 open class TextureProgress internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
+  fun getFillDegrees(): Float {
+    TODO()
+  }
+
+  fun getFillMode(): Int {
+    TODO()
+  }
+
+  fun getNinePatchStretch(): Boolean {
+    TODO()
+  }
+
+  fun getOverTexture(): Texture {
+    TODO()
+  }
+
+  fun getProgressTexture(): Texture {
+    TODO()
+  }
+
+  fun getRadialCenterOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getRadialInitialAngle(): Float {
+    TODO()
+  }
+
+  fun getStretchMargin(): Int {
+    TODO()
+  }
+
+  fun getTintOver(): Color {
+    TODO()
+  }
+
+  fun getTintProgress(): Color {
+    TODO()
+  }
+
+  fun getTintUnder(): Color {
+    TODO()
+  }
+
+  fun getUnderTexture(): Texture {
+    TODO()
+  }
+
+  fun setFillDegrees() {
+    TODO()
+  }
+
+  fun setFillMode() {
+    TODO()
+  }
+
+  fun setNinePatchStretch() {
+    TODO()
+  }
+
+  fun setOverTexture() {
+    TODO()
+  }
+
+  fun setProgressTexture() {
+    TODO()
+  }
+
+  fun setRadialCenterOffset() {
+    TODO()
+  }
+
+  fun setRadialInitialAngle() {
+    TODO()
+  }
+
+  fun setStretchMargin() {
+    TODO()
+  }
+
+  fun setTintOver() {
+    TODO()
+  }
+
+  fun setTintProgress() {
+    TODO()
+  }
+
+  fun setTintUnder() {
+    TODO()
+  }
+
+  fun setUnderTexture() {
+    TODO()
+  }
+
   enum class FillMode(
     val value: Int
   ) {

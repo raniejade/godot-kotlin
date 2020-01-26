@@ -2,8 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,86 @@ import kotlinx.cinterop.reinterpret
 open class ArrayMesh internal constructor(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
+  fun addBlendShape() {
+    TODO()
+  }
+
+  fun addSurfaceFromArrays() {
+    TODO()
+  }
+
+  fun clearBlendShapes() {
+    TODO()
+  }
+
+  fun getBlendShapeCount(): Int {
+    TODO()
+  }
+
+  fun getBlendShapeMode(): Mesh.BlendShapeMode {
+    TODO()
+  }
+
+  fun getBlendShapeName(): String {
+    TODO()
+  }
+
+  fun getCustomAabb(): AABB {
+    TODO()
+  }
+
+  fun lightmapUnwrap(): Error {
+    TODO()
+  }
+
+  fun regenNormalmaps() {
+    TODO()
+  }
+
+  fun setBlendShapeMode() {
+    TODO()
+  }
+
+  fun setCustomAabb() {
+    TODO()
+  }
+
+  fun surfaceFindByName(): Int {
+    TODO()
+  }
+
+  fun surfaceGetArrayIndexLen(): Int {
+    TODO()
+  }
+
+  fun surfaceGetArrayLen(): Int {
+    TODO()
+  }
+
+  fun surfaceGetFormat(): Int {
+    TODO()
+  }
+
+  fun surfaceGetName(): String {
+    TODO()
+  }
+
+  fun surfaceGetPrimitiveType(): Mesh.PrimitiveType {
+    TODO()
+  }
+
+  fun surfaceRemove() {
+    TODO()
+  }
+
+  fun surfaceSetName() {
+    TODO()
+  }
+
+  fun surfaceUpdateRegion() {
+    TODO()
+  }
+
   enum class ArrayFormat(
     val value: Int
   ) {

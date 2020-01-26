@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class RandomNumberGenerator internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getSeed(): Int {
+    TODO()
+  }
+
+  fun randf(): Float {
+    TODO()
+  }
+
+  fun randfRange(): Float {
+    TODO()
+  }
+
+  fun randfn(): Float {
+    TODO()
+  }
+
+  fun randi(): Int {
+    TODO()
+  }
+
+  fun randiRange(): Int {
+    TODO()
+  }
+
+  fun randomize() {
+    TODO()
+  }
+
+  fun setSeed() {
+    TODO()
+  }
+
   companion object {
     fun new(): RandomNumberGenerator = memScoped {
       val fnPtr =

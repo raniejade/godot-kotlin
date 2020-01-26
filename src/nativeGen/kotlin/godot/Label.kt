@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,102 @@ import kotlinx.cinterop.reinterpret
 open class Label internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getAlign(): Label.Align {
+    TODO()
+  }
+
+  fun getLineCount(): Int {
+    TODO()
+  }
+
+  fun getLineHeight(): Int {
+    TODO()
+  }
+
+  fun getLinesSkipped(): Int {
+    TODO()
+  }
+
+  fun getMaxLinesVisible(): Int {
+    TODO()
+  }
+
+  fun getPercentVisible(): Float {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getTotalCharacterCount(): Int {
+    TODO()
+  }
+
+  fun getValign(): Label.VAlign {
+    TODO()
+  }
+
+  fun getVisibleCharacters(): Int {
+    TODO()
+  }
+
+  fun getVisibleLineCount(): Int {
+    TODO()
+  }
+
+  fun hasAutowrap(): Boolean {
+    TODO()
+  }
+
+  fun isClippingText(): Boolean {
+    TODO()
+  }
+
+  fun isUppercase(): Boolean {
+    TODO()
+  }
+
+  fun setAlign() {
+    TODO()
+  }
+
+  fun setAutowrap() {
+    TODO()
+  }
+
+  fun setClipText() {
+    TODO()
+  }
+
+  fun setLinesSkipped() {
+    TODO()
+  }
+
+  fun setMaxLinesVisible() {
+    TODO()
+  }
+
+  fun setPercentVisible() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
+  fun setUppercase() {
+    TODO()
+  }
+
+  fun setValign() {
+    TODO()
+  }
+
+  fun setVisibleCharacters() {
+    TODO()
+  }
+
   enum class Align(
     val value: Int
   ) {

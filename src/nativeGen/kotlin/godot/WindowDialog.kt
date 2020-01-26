@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,34 @@ import kotlinx.cinterop.reinterpret
 open class WindowDialog internal constructor(
   _handle: COpaquePointer
 ) : Popup(_handle) {
+  fun closed() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun getCloseButton(): TextureButton {
+    TODO()
+  }
+
+  fun getResizable(): Boolean {
+    TODO()
+  }
+
+  fun getTitle(): String {
+    TODO()
+  }
+
+  fun setResizable() {
+    TODO()
+  }
+
+  fun setTitle() {
+    TODO()
+  }
+
   companion object {
     fun new(): WindowDialog = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WindowDialog".cstr.ptr)

@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,202 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
+  fun actionPressed() {
+    TODO()
+  }
+
+  fun cancelPressed() {
+    TODO()
+  }
+
+  fun dirEntered() {
+    TODO()
+  }
+
+  fun favoriteMoveDown() {
+    TODO()
+  }
+
+  fun favoriteMoveUp() {
+    TODO()
+  }
+
+  fun favoritePressed() {
+    TODO()
+  }
+
+  fun favoriteSelected() {
+    TODO()
+  }
+
+  fun fileEntered() {
+    TODO()
+  }
+
+  fun filterSelected() {
+    TODO()
+  }
+
+  fun goBack() {
+    TODO()
+  }
+
+  fun goForward() {
+    TODO()
+  }
+
+  fun goUp() {
+    TODO()
+  }
+
+  fun itemDbSelected() {
+    TODO()
+  }
+
+  fun itemListItemRmbSelected() {
+    TODO()
+  }
+
+  fun itemListRmbClicked() {
+    TODO()
+  }
+
+  fun itemMenuIdPressed() {
+    TODO()
+  }
+
+  fun itemSelected() {
+    TODO()
+  }
+
+  fun itemsClearSelection() {
+    TODO()
+  }
+
+  fun makeDir() {
+    TODO()
+  }
+
+  fun makeDirConfirm() {
+    TODO()
+  }
+
+  fun multiSelected() {
+    TODO()
+  }
+
+  fun recentSelected() {
+    TODO()
+  }
+
+  fun saveConfirmPressed() {
+    TODO()
+  }
+
+  fun selectDrive() {
+    TODO()
+  }
+
+  fun thumbnailDone() {
+    TODO()
+  }
+
+  fun thumbnailResult() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun updateDir() {
+    TODO()
+  }
+
+  fun updateFileList() {
+    TODO()
+  }
+
+  fun addFilter() {
+    TODO()
+  }
+
+  fun clearFilters() {
+    TODO()
+  }
+
+  fun getAccess(): EditorFileDialog.Access {
+    TODO()
+  }
+
+  fun getCurrentDir(): String {
+    TODO()
+  }
+
+  fun getCurrentFile(): String {
+    TODO()
+  }
+
+  fun getCurrentPath(): String {
+    TODO()
+  }
+
+  fun getDisplayMode(): EditorFileDialog.DisplayMode {
+    TODO()
+  }
+
+  fun getMode(): EditorFileDialog.Mode {
+    TODO()
+  }
+
+  fun getVbox(): VBoxContainer {
+    TODO()
+  }
+
+  fun invalidate() {
+    TODO()
+  }
+
+  fun isOverwriteWarningDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isShowingHiddenFiles(): Boolean {
+    TODO()
+  }
+
+  fun setAccess() {
+    TODO()
+  }
+
+  fun setCurrentDir() {
+    TODO()
+  }
+
+  fun setCurrentFile() {
+    TODO()
+  }
+
+  fun setCurrentPath() {
+    TODO()
+  }
+
+  fun setDisableOverwriteWarning() {
+    TODO()
+  }
+
+  fun setDisplayMode() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setShowHiddenFiles() {
+    TODO()
+  }
+
   enum class DisplayMode(
     val value: Int
   ) {

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class CSGPrimitive internal constructor(
   _handle: COpaquePointer
 ) : CSGShape(_handle) {
+  fun isInvertingFaces(): Boolean {
+    TODO()
+  }
+
+  fun setInvertFaces() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for CSGPrimitive

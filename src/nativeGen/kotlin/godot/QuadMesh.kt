@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class QuadMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
   companion object {
     fun new(): QuadMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("QuadMesh".cstr.ptr)

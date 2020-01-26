@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,158 @@ import kotlinx.cinterop.reinterpret
 open class FileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
+  fun actionPressed() {
+    TODO()
+  }
+
+  fun cancelPressed() {
+    TODO()
+  }
+
+  fun dirEntered() {
+    TODO()
+  }
+
+  fun fileEntered() {
+    TODO()
+  }
+
+  fun filterSelected() {
+    TODO()
+  }
+
+  fun goUp() {
+    TODO()
+  }
+
+  fun makeDir() {
+    TODO()
+  }
+
+  fun makeDirConfirm() {
+    TODO()
+  }
+
+  fun saveConfirmPressed() {
+    TODO()
+  }
+
+  fun selectDrive() {
+    TODO()
+  }
+
+  fun treeItemActivated() {
+    TODO()
+  }
+
+  fun treeMultiSelected() {
+    TODO()
+  }
+
+  fun treeSelected() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun updateDir() {
+    TODO()
+  }
+
+  fun updateFileList() {
+    TODO()
+  }
+
+  fun addFilter() {
+    TODO()
+  }
+
+  fun clearFilters() {
+    TODO()
+  }
+
+  fun deselectItems() {
+    TODO()
+  }
+
+  fun getAccess(): FileDialog.Access {
+    TODO()
+  }
+
+  fun getCurrentDir(): String {
+    TODO()
+  }
+
+  fun getCurrentFile(): String {
+    TODO()
+  }
+
+  fun getCurrentPath(): String {
+    TODO()
+  }
+
+  fun getFilters(): PoolStringArray {
+    TODO()
+  }
+
+  fun getLineEdit(): LineEdit {
+    TODO()
+  }
+
+  fun getMode(): FileDialog.Mode {
+    TODO()
+  }
+
+  fun getVbox(): VBoxContainer {
+    TODO()
+  }
+
+  fun invalidate() {
+    TODO()
+  }
+
+  fun isModeOverridingTitle(): Boolean {
+    TODO()
+  }
+
+  fun isShowingHiddenFiles(): Boolean {
+    TODO()
+  }
+
+  fun setAccess() {
+    TODO()
+  }
+
+  fun setCurrentDir() {
+    TODO()
+  }
+
+  fun setCurrentFile() {
+    TODO()
+  }
+
+  fun setCurrentPath() {
+    TODO()
+  }
+
+  fun setFilters() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setModeOverridesTitle() {
+    TODO()
+  }
+
+  fun setShowHiddenFiles() {
+    TODO()
+  }
+
   enum class Mode(
     val value: Int
   ) {

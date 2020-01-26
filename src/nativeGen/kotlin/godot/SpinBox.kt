@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,62 @@ import kotlinx.cinterop.reinterpret
 open class SpinBox internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun lineEditFocusExit() {
+    TODO()
+  }
+
+  fun lineEditInput() {
+    TODO()
+  }
+
+  fun rangeClickTimeout() {
+    TODO()
+  }
+
+  fun textEntered() {
+    TODO()
+  }
+
+  fun getAlign(): LineEdit.Align {
+    TODO()
+  }
+
+  fun getLineEdit(): LineEdit {
+    TODO()
+  }
+
+  fun getPrefix(): String {
+    TODO()
+  }
+
+  fun getSuffix(): String {
+    TODO()
+  }
+
+  fun isEditable(): Boolean {
+    TODO()
+  }
+
+  fun setAlign() {
+    TODO()
+  }
+
+  fun setEditable() {
+    TODO()
+  }
+
+  fun setPrefix() {
+    TODO()
+  }
+
+  fun setSuffix() {
+    TODO()
+  }
+
   companion object {
     fun new(): SpinBox = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpinBox".cstr.ptr)

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,110 @@ import kotlinx.cinterop.reinterpret
 open class Generic6DOFJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  fun getAngularHiLimitX(): Float {
+    TODO()
+  }
+
+  fun getAngularHiLimitY(): Float {
+    TODO()
+  }
+
+  fun getAngularHiLimitZ(): Float {
+    TODO()
+  }
+
+  fun getAngularLoLimitX(): Float {
+    TODO()
+  }
+
+  fun getAngularLoLimitY(): Float {
+    TODO()
+  }
+
+  fun getAngularLoLimitZ(): Float {
+    TODO()
+  }
+
+  fun setAngularHiLimitX() {
+    TODO()
+  }
+
+  fun setAngularHiLimitY() {
+    TODO()
+  }
+
+  fun setAngularHiLimitZ() {
+    TODO()
+  }
+
+  fun setAngularLoLimitX() {
+    TODO()
+  }
+
+  fun setAngularLoLimitY() {
+    TODO()
+  }
+
+  fun setAngularLoLimitZ() {
+    TODO()
+  }
+
+  fun getFlagX(): Boolean {
+    TODO()
+  }
+
+  fun getFlagY(): Boolean {
+    TODO()
+  }
+
+  fun getFlagZ(): Boolean {
+    TODO()
+  }
+
+  fun getParamX(): Float {
+    TODO()
+  }
+
+  fun getParamY(): Float {
+    TODO()
+  }
+
+  fun getParamZ(): Float {
+    TODO()
+  }
+
+  fun getPrecision(): Int {
+    TODO()
+  }
+
+  fun setFlagX() {
+    TODO()
+  }
+
+  fun setFlagY() {
+    TODO()
+  }
+
+  fun setFlagZ() {
+    TODO()
+  }
+
+  fun setParamX() {
+    TODO()
+  }
+
+  fun setParamY() {
+    TODO()
+  }
+
+  fun setParamZ() {
+    TODO()
+  }
+
+  fun setPrecision() {
+    TODO()
+  }
+
   enum class Param(
     val value: Int
   ) {

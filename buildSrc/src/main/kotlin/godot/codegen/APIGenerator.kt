@@ -4,9 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.squareup.kotlinpoet.*
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
-import godot.codegen.domain.GDClass
-import godot.codegen.domain.GDEnum
-import godot.codegen.domain.GDMethod
+import godot.codegen.domain.*
 import java.io.File
 
 class APIGenerator {
@@ -40,6 +38,7 @@ class APIGenerator {
       .generatePrimaryConstructor(cls)
       .maybeGenerateInheritance(cls)
       .generateEnums(cls.enums)
+      .generateMethods(cls.methods)
       .generateCompanionObject(cls)
 
     return classBuilder
@@ -151,7 +150,7 @@ class APIGenerator {
       companionObjectBuilder.addProperties(
         cls.constants.map { (k, v) ->
           PropertySpec.builder(k, v::class)
-            .initializer(formatValue(v))
+            .initializer(getFormatFromConstantValue(v), v)
             .build()
         }
       )
@@ -165,7 +164,7 @@ class APIGenerator {
     return this
   }
 
-  fun TypeSpec.Builder.generateMethodBindObject(className: String, methods: List<GDMethod>): TypeSpec.Builder {
+  private fun TypeSpec.Builder.generateMethodBindObject(className: String, methods: List<GDMethod>): TypeSpec.Builder {
     val builder = TypeSpec.objectBuilder("__method_bind")
       .addKdoc("Container for method_bind pointers for $className")
       .addModifiers(KModifier.PRIVATE)
@@ -202,11 +201,63 @@ class APIGenerator {
     return this
   }
 
-  private fun formatValue(v: Any): String {
-    if (v is String) {
-      return "\"$v\""
+  private fun TypeSpec.Builder.generateMethods(methods: List<GDMethod>): TypeSpec.Builder {
+    val methodSpecs = methods.map { method ->
+      val type = TypeRegistry.get(method.return_type)
+      val returnType = when (type) {
+        GDType.VOID -> null
+        null -> ClassName("godot", normalizeTypeName(method.return_type))
+        else -> {
+          val packageName = if (type.primitive) {
+            "kotlin"
+          } else {
+            "godot.core"
+          }
+          val className = type.mappedName ?: type.gdName
+          ClassName(packageName, className)
+        }
+      }
+
+      // TODO: generate parameters
+
+      val builder = FunSpec.builder(normalizeMethodName(method.name))
+
+      if (returnType != null) {
+        builder.returns(returnType)
+      }
+
+      builder.addCode("""
+        TODO()
+      """.trimIndent())
+
+      builder.build()
     }
-    return "$v"
+
+    addFunctions(methodSpecs)
+    return this
+  }
+
+  private fun normalizeTypeName(name: String): String {
+    if (name.startsWith("enum")) {
+      return name.replace("enum.", "")
+        .replace("::", ".")
+    }
+
+    return name
+  }
+
+  private fun normalizeMethodName(name: String): String {
+    return name.split("_")
+      .joinToString("") { it.capitalize() }
+      .decapitalize()
+
+  }
+
+  private fun getFormatFromConstantValue(v: Any): String {
+    if (v is String) {
+      return "%S"
+    }
+    return "%L"
   }
 
   private fun parseJson(source: File): List<GDClass> {

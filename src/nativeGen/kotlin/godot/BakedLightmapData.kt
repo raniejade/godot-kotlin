@@ -2,7 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolByteArray
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +21,74 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmapData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getUserData(): VariantArray {
+    TODO()
+  }
+
+  fun setUserData() {
+    TODO()
+  }
+
+  fun addUser() {
+    TODO()
+  }
+
+  fun clearUsers() {
+    TODO()
+  }
+
+  fun getBounds(): AABB {
+    TODO()
+  }
+
+  fun getCellSpaceTransform(): Transform {
+    TODO()
+  }
+
+  fun getCellSubdiv(): Int {
+    TODO()
+  }
+
+  fun getEnergy(): Float {
+    TODO()
+  }
+
+  fun getOctree(): PoolByteArray {
+    TODO()
+  }
+
+  fun getUserCount(): Int {
+    TODO()
+  }
+
+  fun getUserLightmap(): Texture {
+    TODO()
+  }
+
+  fun getUserPath(): NodePath {
+    TODO()
+  }
+
+  fun setBounds() {
+    TODO()
+  }
+
+  fun setCellSpaceTransform() {
+    TODO()
+  }
+
+  fun setCellSubdiv() {
+    TODO()
+  }
+
+  fun setEnergy() {
+    TODO()
+  }
+
+  fun setOctree() {
+    TODO()
+  }
+
   companion object {
     fun new(): BakedLightmapData = memScoped {
       val fnPtr =

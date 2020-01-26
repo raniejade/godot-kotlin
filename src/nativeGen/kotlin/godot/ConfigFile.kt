@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.Variant
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,42 @@ import kotlinx.cinterop.reinterpret
 open class ConfigFile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun eraseSection() {
+    TODO()
+  }
+
+  fun getSectionKeys(): PoolStringArray {
+    TODO()
+  }
+
+  fun getSections(): PoolStringArray {
+    TODO()
+  }
+
+  fun getValue(): Variant {
+    TODO()
+  }
+
+  fun hasSection(): Boolean {
+    TODO()
+  }
+
+  fun hasSectionKey(): Boolean {
+    TODO()
+  }
+
+  fun load(): Error {
+    TODO()
+  }
+
+  fun save(): Error {
+    TODO()
+  }
+
+  fun setValue() {
+    TODO()
+  }
+
   companion object {
     fun new(): ConfigFile = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConfigFile".cstr.ptr)

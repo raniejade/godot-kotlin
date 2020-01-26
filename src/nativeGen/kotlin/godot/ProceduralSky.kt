@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,142 @@ import kotlinx.cinterop.reinterpret
 open class ProceduralSky internal constructor(
   _handle: COpaquePointer
 ) : Sky(_handle) {
+  fun threadDone() {
+    TODO()
+  }
+
+  fun updateSky() {
+    TODO()
+  }
+
+  fun getGroundBottomColor(): Color {
+    TODO()
+  }
+
+  fun getGroundCurve(): Float {
+    TODO()
+  }
+
+  fun getGroundEnergy(): Float {
+    TODO()
+  }
+
+  fun getGroundHorizonColor(): Color {
+    TODO()
+  }
+
+  fun getSkyCurve(): Float {
+    TODO()
+  }
+
+  fun getSkyEnergy(): Float {
+    TODO()
+  }
+
+  fun getSkyHorizonColor(): Color {
+    TODO()
+  }
+
+  fun getSkyTopColor(): Color {
+    TODO()
+  }
+
+  fun getSunAngleMax(): Float {
+    TODO()
+  }
+
+  fun getSunAngleMin(): Float {
+    TODO()
+  }
+
+  fun getSunColor(): Color {
+    TODO()
+  }
+
+  fun getSunCurve(): Float {
+    TODO()
+  }
+
+  fun getSunEnergy(): Float {
+    TODO()
+  }
+
+  fun getSunLatitude(): Float {
+    TODO()
+  }
+
+  fun getSunLongitude(): Float {
+    TODO()
+  }
+
+  fun getTextureSize(): ProceduralSky.TextureSize {
+    TODO()
+  }
+
+  fun setGroundBottomColor() {
+    TODO()
+  }
+
+  fun setGroundCurve() {
+    TODO()
+  }
+
+  fun setGroundEnergy() {
+    TODO()
+  }
+
+  fun setGroundHorizonColor() {
+    TODO()
+  }
+
+  fun setSkyCurve() {
+    TODO()
+  }
+
+  fun setSkyEnergy() {
+    TODO()
+  }
+
+  fun setSkyHorizonColor() {
+    TODO()
+  }
+
+  fun setSkyTopColor() {
+    TODO()
+  }
+
+  fun setSunAngleMax() {
+    TODO()
+  }
+
+  fun setSunAngleMin() {
+    TODO()
+  }
+
+  fun setSunColor() {
+    TODO()
+  }
+
+  fun setSunCurve() {
+    TODO()
+  }
+
+  fun setSunEnergy() {
+    TODO()
+  }
+
+  fun setSunLatitude() {
+    TODO()
+  }
+
+  fun setSunLongitude() {
+    TODO()
+  }
+
+  fun setTextureSize() {
+    TODO()
+  }
+
   enum class TextureSize(
     val value: Int
   ) {

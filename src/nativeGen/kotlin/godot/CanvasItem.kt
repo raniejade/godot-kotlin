@@ -2,7 +2,15 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Rect2
+import godot.core.Transform2D
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +23,318 @@ import kotlinx.cinterop.reinterpret
 open class CanvasItem internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun draw() {
+    TODO()
+  }
+
+  fun editGetPivot(): Vector2 {
+    TODO()
+  }
+
+  fun editGetPosition(): Vector2 {
+    TODO()
+  }
+
+  fun editGetRect(): Rect2 {
+    TODO()
+  }
+
+  fun editGetRotation(): Float {
+    TODO()
+  }
+
+  fun editGetScale(): Vector2 {
+    TODO()
+  }
+
+  fun editGetState(): Dictionary {
+    TODO()
+  }
+
+  fun editSetPivot() {
+    TODO()
+  }
+
+  fun editSetPosition() {
+    TODO()
+  }
+
+  fun editSetRect() {
+    TODO()
+  }
+
+  fun editSetRotation() {
+    TODO()
+  }
+
+  fun editSetScale() {
+    TODO()
+  }
+
+  fun editSetState() {
+    TODO()
+  }
+
+  fun editUsePivot(): Boolean {
+    TODO()
+  }
+
+  fun editUseRect(): Boolean {
+    TODO()
+  }
+
+  fun editUseRotation(): Boolean {
+    TODO()
+  }
+
+  fun isOnTop(): Boolean {
+    TODO()
+  }
+
+  fun setOnTop() {
+    TODO()
+  }
+
+  fun toplevelRaiseSelf() {
+    TODO()
+  }
+
+  fun updateCallback() {
+    TODO()
+  }
+
+  fun drawChar(): Float {
+    TODO()
+  }
+
+  fun drawCircle() {
+    TODO()
+  }
+
+  fun drawColoredPolygon() {
+    TODO()
+  }
+
+  fun drawLine() {
+    TODO()
+  }
+
+  fun drawMesh() {
+    TODO()
+  }
+
+  fun drawMultiline() {
+    TODO()
+  }
+
+  fun drawMultilineColors() {
+    TODO()
+  }
+
+  fun drawMultimesh() {
+    TODO()
+  }
+
+  fun drawPolygon() {
+    TODO()
+  }
+
+  fun drawPolyline() {
+    TODO()
+  }
+
+  fun drawPolylineColors() {
+    TODO()
+  }
+
+  fun drawPrimitive() {
+    TODO()
+  }
+
+  fun drawRect() {
+    TODO()
+  }
+
+  fun drawSetTransform() {
+    TODO()
+  }
+
+  fun drawSetTransformMatrix() {
+    TODO()
+  }
+
+  fun drawString() {
+    TODO()
+  }
+
+  fun drawStyleBox() {
+    TODO()
+  }
+
+  fun drawTexture() {
+    TODO()
+  }
+
+  fun drawTextureRect() {
+    TODO()
+  }
+
+  fun drawTextureRectRegion() {
+    TODO()
+  }
+
+  fun forceUpdateTransform() {
+    TODO()
+  }
+
+  fun getCanvas(): RID {
+    TODO()
+  }
+
+  fun getCanvasItem(): RID {
+    TODO()
+  }
+
+  fun getCanvasTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getGlobalMousePosition(): Vector2 {
+    TODO()
+  }
+
+  fun getGlobalTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getGlobalTransformWithCanvas(): Transform2D {
+    TODO()
+  }
+
+  fun getLightMask(): Int {
+    TODO()
+  }
+
+  fun getLocalMousePosition(): Vector2 {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getModulate(): Color {
+    TODO()
+  }
+
+  fun getSelfModulate(): Color {
+    TODO()
+  }
+
+  fun getTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getUseParentMaterial(): Boolean {
+    TODO()
+  }
+
+  fun getViewportRect(): Rect2 {
+    TODO()
+  }
+
+  fun getViewportTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getWorld2d(): World2D {
+    TODO()
+  }
+
+  fun hide() {
+    TODO()
+  }
+
+  fun isDrawBehindParentEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isLocalTransformNotificationEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSetAsToplevel(): Boolean {
+    TODO()
+  }
+
+  fun isTransformNotificationEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isVisible(): Boolean {
+    TODO()
+  }
+
+  fun isVisibleInTree(): Boolean {
+    TODO()
+  }
+
+  fun makeCanvasPositionLocal(): Vector2 {
+    TODO()
+  }
+
+  fun makeInputLocal(): InputEvent {
+    TODO()
+  }
+
+  fun setAsToplevel() {
+    TODO()
+  }
+
+  fun setDrawBehindParent() {
+    TODO()
+  }
+
+  fun setLightMask() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setModulate() {
+    TODO()
+  }
+
+  fun setNotifyLocalTransform() {
+    TODO()
+  }
+
+  fun setNotifyTransform() {
+    TODO()
+  }
+
+  fun setSelfModulate() {
+    TODO()
+  }
+
+  fun setUseParentMaterial() {
+    TODO()
+  }
+
+  fun setVisible() {
+    TODO()
+  }
+
+  fun show() {
+    TODO()
+  }
+
+  fun update() {
+    TODO()
+  }
+
   enum class BlendMode(
     val value: Int
   ) {

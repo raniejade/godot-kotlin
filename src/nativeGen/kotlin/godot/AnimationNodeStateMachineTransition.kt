@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,54 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachineTransition internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getAdvanceCondition(): String {
+    TODO()
+  }
+
+  fun getPriority(): Int {
+    TODO()
+  }
+
+  fun getSwitchMode(): AnimationNodeStateMachineTransition.SwitchMode {
+    TODO()
+  }
+
+  fun getXfadeTime(): Float {
+    TODO()
+  }
+
+  fun hasAutoAdvance(): Boolean {
+    TODO()
+  }
+
+  fun isDisabled(): Boolean {
+    TODO()
+  }
+
+  fun setAdvanceCondition() {
+    TODO()
+  }
+
+  fun setAutoAdvance() {
+    TODO()
+  }
+
+  fun setDisabled() {
+    TODO()
+  }
+
+  fun setPriority() {
+    TODO()
+  }
+
+  fun setSwitchMode() {
+    TODO()
+  }
+
+  fun setXfadeTime() {
+    TODO()
+  }
+
   enum class SwitchMode(
     val value: Int
   ) {

@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,202 @@ import kotlinx.cinterop.reinterpret
 open class RigidBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
+  fun bodyEnterTree() {
+    TODO()
+  }
+
+  fun bodyExitTree() {
+    TODO()
+  }
+
+  fun directStateChanged() {
+    TODO()
+  }
+
+  fun integrateForces() {
+    TODO()
+  }
+
+  fun reloadPhysicsCharacteristics() {
+    TODO()
+  }
+
+  fun addCentralForce() {
+    TODO()
+  }
+
+  fun addForce() {
+    TODO()
+  }
+
+  fun addTorque() {
+    TODO()
+  }
+
+  fun applyCentralImpulse() {
+    TODO()
+  }
+
+  fun applyImpulse() {
+    TODO()
+  }
+
+  fun applyTorqueImpulse() {
+    TODO()
+  }
+
+  fun getAngularDamp(): Float {
+    TODO()
+  }
+
+  fun getAngularVelocity(): Vector3 {
+    TODO()
+  }
+
+  fun getAxisLock(): Boolean {
+    TODO()
+  }
+
+  fun getBounce(): Float {
+    TODO()
+  }
+
+  fun getCollidingBodies(): VariantArray {
+    TODO()
+  }
+
+  fun getFriction(): Float {
+    TODO()
+  }
+
+  fun getGravityScale(): Float {
+    TODO()
+  }
+
+  fun getLinearDamp(): Float {
+    TODO()
+  }
+
+  fun getLinearVelocity(): Vector3 {
+    TODO()
+  }
+
+  fun getMass(): Float {
+    TODO()
+  }
+
+  fun getMaxContactsReported(): Int {
+    TODO()
+  }
+
+  fun getMode(): RigidBody.Mode {
+    TODO()
+  }
+
+  fun getPhysicsMaterialOverride(): PhysicsMaterial {
+    TODO()
+  }
+
+  fun getWeight(): Float {
+    TODO()
+  }
+
+  fun isAbleToSleep(): Boolean {
+    TODO()
+  }
+
+  fun isContactMonitorEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSleeping(): Boolean {
+    TODO()
+  }
+
+  fun isUsingContinuousCollisionDetection(): Boolean {
+    TODO()
+  }
+
+  fun isUsingCustomIntegrator(): Boolean {
+    TODO()
+  }
+
+  fun setAngularDamp() {
+    TODO()
+  }
+
+  fun setAngularVelocity() {
+    TODO()
+  }
+
+  fun setAxisLock() {
+    TODO()
+  }
+
+  fun setAxisVelocity() {
+    TODO()
+  }
+
+  fun setBounce() {
+    TODO()
+  }
+
+  fun setCanSleep() {
+    TODO()
+  }
+
+  fun setContactMonitor() {
+    TODO()
+  }
+
+  fun setFriction() {
+    TODO()
+  }
+
+  fun setGravityScale() {
+    TODO()
+  }
+
+  fun setLinearDamp() {
+    TODO()
+  }
+
+  fun setLinearVelocity() {
+    TODO()
+  }
+
+  fun setMass() {
+    TODO()
+  }
+
+  fun setMaxContactsReported() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setPhysicsMaterialOverride() {
+    TODO()
+  }
+
+  fun setSleeping() {
+    TODO()
+  }
+
+  fun setUseContinuousCollisionDetection() {
+    TODO()
+  }
+
+  fun setUseCustomIntegrator() {
+    TODO()
+  }
+
+  fun setWeight() {
+    TODO()
+  }
+
   enum class Mode(
     val value: Int
   ) {

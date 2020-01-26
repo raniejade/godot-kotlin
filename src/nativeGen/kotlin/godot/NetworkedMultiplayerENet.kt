@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerENet internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
+  fun closeConnection() {
+    TODO()
+  }
+
+  fun createClient(): Error {
+    TODO()
+  }
+
+  fun createServer(): Error {
+    TODO()
+  }
+
+  fun disconnectPeer() {
+    TODO()
+  }
+
+  fun getChannelCount(): Int {
+    TODO()
+  }
+
+  fun getCompressionMode(): NetworkedMultiplayerENet.CompressionMode {
+    TODO()
+  }
+
+  fun getLastPacketChannel(): Int {
+    TODO()
+  }
+
+  fun getPacketChannel(): Int {
+    TODO()
+  }
+
+  fun getPeerAddress(): String {
+    TODO()
+  }
+
+  fun getPeerPort(): Int {
+    TODO()
+  }
+
+  fun getTransferChannel(): Int {
+    TODO()
+  }
+
+  fun isAlwaysOrdered(): Boolean {
+    TODO()
+  }
+
+  fun setAlwaysOrdered() {
+    TODO()
+  }
+
+  fun setBindIp() {
+    TODO()
+  }
+
+  fun setChannelCount() {
+    TODO()
+  }
+
+  fun setCompressionMode() {
+    TODO()
+  }
+
+  fun setTransferChannel() {
+    TODO()
+  }
+
   enum class CompressionMode(
     val value: Int
   ) {

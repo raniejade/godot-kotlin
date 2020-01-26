@@ -3,7 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,94 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmap internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  fun bake(): BakedLightmap.BakeError {
+    TODO()
+  }
+
+  fun debugBake() {
+    TODO()
+  }
+
+  fun getBakeCellSize(): Float {
+    TODO()
+  }
+
+  fun getBakeMode(): BakedLightmap.BakeMode {
+    TODO()
+  }
+
+  fun getBakeQuality(): BakedLightmap.BakeQuality {
+    TODO()
+  }
+
+  fun getCaptureCellSize(): Float {
+    TODO()
+  }
+
+  fun getEnergy(): Float {
+    TODO()
+  }
+
+  fun getExtents(): Vector3 {
+    TODO()
+  }
+
+  fun getImagePath(): String {
+    TODO()
+  }
+
+  fun getLightData(): BakedLightmapData {
+    TODO()
+  }
+
+  fun getPropagation(): Float {
+    TODO()
+  }
+
+  fun isHdr(): Boolean {
+    TODO()
+  }
+
+  fun setBakeCellSize() {
+    TODO()
+  }
+
+  fun setBakeMode() {
+    TODO()
+  }
+
+  fun setBakeQuality() {
+    TODO()
+  }
+
+  fun setCaptureCellSize() {
+    TODO()
+  }
+
+  fun setEnergy() {
+    TODO()
+  }
+
+  fun setExtents() {
+    TODO()
+  }
+
+  fun setHdr() {
+    TODO()
+  }
+
+  fun setImagePath() {
+    TODO()
+  }
+
+  fun setLightData() {
+    TODO()
+  }
+
+  fun setPropagation() {
+    TODO()
+  }
+
   enum class BakeQuality(
     val value: Int
   ) {

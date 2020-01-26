@@ -14,6 +14,46 @@ import kotlinx.cinterop.reinterpret
 open class ImmediateGeometry internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  fun addSphere() {
+    TODO()
+  }
+
+  fun addVertex() {
+    TODO()
+  }
+
+  fun begin() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun end() {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setNormal() {
+    TODO()
+  }
+
+  fun setTangent() {
+    TODO()
+  }
+
+  fun setUv() {
+    TODO()
+  }
+
+  fun setUv2() {
+    TODO()
+  }
+
   companion object {
     fun new(): ImmediateGeometry = memScoped {
       val fnPtr =

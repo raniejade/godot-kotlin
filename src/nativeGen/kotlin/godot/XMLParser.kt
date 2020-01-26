@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class XMLParser internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getAttributeCount(): Int {
+    TODO()
+  }
+
+  fun getAttributeName(): String {
+    TODO()
+  }
+
+  fun getAttributeValue(): String {
+    TODO()
+  }
+
+  fun getCurrentLine(): Int {
+    TODO()
+  }
+
+  fun getNamedAttributeValue(): String {
+    TODO()
+  }
+
+  fun getNamedAttributeValueSafe(): String {
+    TODO()
+  }
+
+  fun getNodeData(): String {
+    TODO()
+  }
+
+  fun getNodeName(): String {
+    TODO()
+  }
+
+  fun getNodeOffset(): Int {
+    TODO()
+  }
+
+  fun getNodeType(): XMLParser.NodeType {
+    TODO()
+  }
+
+  fun hasAttribute(): Boolean {
+    TODO()
+  }
+
+  fun isEmpty(): Boolean {
+    TODO()
+  }
+
+  fun open(): Error {
+    TODO()
+  }
+
+  fun openBuffer(): Error {
+    TODO()
+  }
+
+  fun read(): Error {
+    TODO()
+  }
+
+  fun seek(): Error {
+    TODO()
+  }
+
+  fun skipSection() {
+    TODO()
+  }
+
   enum class NodeType(
     val value: Int
   ) {

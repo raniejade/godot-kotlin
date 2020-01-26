@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedSprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun resChanged() {
+    TODO()
+  }
+
+  fun setPlaying() {
+    TODO()
+  }
+
+  fun getAnimation(): String {
+    TODO()
+  }
+
+  fun getFrame(): Int {
+    TODO()
+  }
+
+  fun getSpriteFrames(): SpriteFrames {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun setAnimation() {
+    TODO()
+  }
+
+  fun setFrame() {
+    TODO()
+  }
+
+  fun setSpriteFrames() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimatedSprite3D = memScoped {
       val fnPtr =

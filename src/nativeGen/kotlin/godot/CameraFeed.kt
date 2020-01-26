@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform2D
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,58 @@ import kotlinx.cinterop.reinterpret
 open class CameraFeed internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun allocateTexture() {
+    TODO()
+  }
+
+  fun setRGBImg() {
+    TODO()
+  }
+
+  fun setYCbCrImg() {
+    TODO()
+  }
+
+  fun setYCbCrImgs() {
+    TODO()
+  }
+
+  fun setName() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
+  fun getId(): Int {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getPosition(): CameraFeed.FeedPosition {
+    TODO()
+  }
+
+  fun getTransform(): Transform2D {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun setTransform() {
+    TODO()
+  }
+
   enum class FeedDataType(
     val value: Int
   ) {

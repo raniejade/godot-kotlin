@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,98 @@ import kotlinx.cinterop.reinterpret
 open class SurfaceTool internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addBones() {
+    TODO()
+  }
+
+  fun addColor() {
+    TODO()
+  }
+
+  fun addIndex() {
+    TODO()
+  }
+
+  fun addNormal() {
+    TODO()
+  }
+
+  fun addSmoothGroup() {
+    TODO()
+  }
+
+  fun addTangent() {
+    TODO()
+  }
+
+  fun addTriangleFan() {
+    TODO()
+  }
+
+  fun addUv() {
+    TODO()
+  }
+
+  fun addUv2() {
+    TODO()
+  }
+
+  fun addVertex() {
+    TODO()
+  }
+
+  fun addWeights() {
+    TODO()
+  }
+
+  fun appendFrom() {
+    TODO()
+  }
+
+  fun begin() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun commit(): ArrayMesh {
+    TODO()
+  }
+
+  fun commitToArrays(): VariantArray {
+    TODO()
+  }
+
+  fun createFrom() {
+    TODO()
+  }
+
+  fun createFromBlendShape() {
+    TODO()
+  }
+
+  fun deindex() {
+    TODO()
+  }
+
+  fun generateNormals() {
+    TODO()
+  }
+
+  fun generateTangents() {
+    TODO()
+  }
+
+  fun index() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
   companion object {
     fun new(): SurfaceTool = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SurfaceTool".cstr.ptr)

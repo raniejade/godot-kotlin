@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.Transform
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,74 @@ import kotlinx.cinterop.reinterpret
 open class AnimationTree internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun clearCaches() {
+    TODO()
+  }
+
+  fun nodeRemoved() {
+    TODO()
+  }
+
+  fun treeChanged() {
+    TODO()
+  }
+
+  fun updateProperties() {
+    TODO()
+  }
+
+  fun advance() {
+    TODO()
+  }
+
+  fun getAnimationPlayer(): NodePath {
+    TODO()
+  }
+
+  fun getProcessMode(): AnimationTree.AnimationProcessMode {
+    TODO()
+  }
+
+  fun getRootMotionTrack(): NodePath {
+    TODO()
+  }
+
+  fun getRootMotionTransform(): Transform {
+    TODO()
+  }
+
+  fun getTreeRoot(): AnimationNode {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun renameParameter() {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun setAnimationPlayer() {
+    TODO()
+  }
+
+  fun setProcessMode() {
+    TODO()
+  }
+
+  fun setRootMotionTrack() {
+    TODO()
+  }
+
+  fun setTreeRoot() {
+    TODO()
+  }
+
   enum class AnimationProcessMode(
     val value: Int
   ) {

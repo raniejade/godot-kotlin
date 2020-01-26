@@ -14,6 +14,18 @@ import kotlinx.cinterop.reinterpret
 open class Path internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun curveChanged() {
+    TODO()
+  }
+
+  fun getCurve(): Curve3D {
+    TODO()
+  }
+
+  fun setCurve() {
+    TODO()
+  }
+
   companion object {
     fun new(): Path = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Path".cstr.ptr)

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,46 @@ import kotlinx.cinterop.reinterpret
 open class Font internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun draw() {
+    TODO()
+  }
+
+  fun drawChar(): Float {
+    TODO()
+  }
+
+  fun getAscent(): Float {
+    TODO()
+  }
+
+  fun getDescent(): Float {
+    TODO()
+  }
+
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getStringSize(): Vector2 {
+    TODO()
+  }
+
+  fun getWordwrapStringSize(): Vector2 {
+    TODO()
+  }
+
+  fun hasOutline(): Boolean {
+    TODO()
+  }
+
+  fun isDistanceFieldHint(): Boolean {
+    TODO()
+  }
+
+  fun updateChanges() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Font

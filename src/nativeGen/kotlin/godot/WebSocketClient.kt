@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketClient internal constructor(
   _handle: COpaquePointer
 ) : WebSocketMultiplayerPeer(_handle) {
+  fun connectToUrl(): Error {
+    TODO()
+  }
+
+  fun disconnectFromHost() {
+    TODO()
+  }
+
+  fun isVerifySslEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setVerifySslEnabled() {
+    TODO()
+  }
+
   companion object {
     fun new(): WebSocketClient = memScoped {
       val fnPtr =

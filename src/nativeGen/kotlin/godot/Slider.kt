@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,42 @@ import kotlinx.cinterop.reinterpret
 open class Slider internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun getTicks(): Int {
+    TODO()
+  }
+
+  fun getTicksOnBorders(): Boolean {
+    TODO()
+  }
+
+  fun isEditable(): Boolean {
+    TODO()
+  }
+
+  fun isScrollable(): Boolean {
+    TODO()
+  }
+
+  fun setEditable() {
+    TODO()
+  }
+
+  fun setScrollable() {
+    TODO()
+  }
+
+  fun setTicks() {
+    TODO()
+  }
+
+  fun setTicksOnBorders() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Slider

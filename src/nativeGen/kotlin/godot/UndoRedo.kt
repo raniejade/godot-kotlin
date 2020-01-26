@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,62 @@ import kotlinx.cinterop.reinterpret
 open class UndoRedo internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addDoMethod(): Variant {
+    TODO()
+  }
+
+  fun addDoProperty() {
+    TODO()
+  }
+
+  fun addDoReference() {
+    TODO()
+  }
+
+  fun addUndoMethod(): Variant {
+    TODO()
+  }
+
+  fun addUndoProperty() {
+    TODO()
+  }
+
+  fun addUndoReference() {
+    TODO()
+  }
+
+  fun clearHistory() {
+    TODO()
+  }
+
+  fun commitAction() {
+    TODO()
+  }
+
+  fun createAction() {
+    TODO()
+  }
+
+  fun getCurrentActionName(): String {
+    TODO()
+  }
+
+  fun getVersion(): Int {
+    TODO()
+  }
+
+  fun isCommitingAction(): Boolean {
+    TODO()
+  }
+
+  fun redo(): Boolean {
+    TODO()
+  }
+
+  fun undo(): Boolean {
+    TODO()
+  }
+
   enum class MergeMode(
     val value: Int
   ) {

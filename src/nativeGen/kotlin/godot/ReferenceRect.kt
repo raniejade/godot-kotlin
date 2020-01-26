@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class ReferenceRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getBorderColor(): Color {
+    TODO()
+  }
+
+  fun setBorderColor() {
+    TODO()
+  }
+
   companion object {
     fun new(): ReferenceRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReferenceRect".cstr.ptr)

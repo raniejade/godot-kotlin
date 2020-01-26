@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,46 @@ import kotlinx.cinterop.reinterpret
 open class SphereMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getIsHemisphere(): Boolean {
+    TODO()
+  }
+
+  fun getRadialSegments(): Int {
+    TODO()
+  }
+
+  fun getRadius(): Float {
+    TODO()
+  }
+
+  fun getRings(): Int {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setIsHemisphere() {
+    TODO()
+  }
+
+  fun setRadialSegments() {
+    TODO()
+  }
+
+  fun setRadius() {
+    TODO()
+  }
+
+  fun setRings() {
+    TODO()
+  }
+
   companion object {
     fun new(): SphereMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereMesh".cstr.ptr)

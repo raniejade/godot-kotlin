@@ -14,6 +14,18 @@ import kotlinx.cinterop.reinterpret
 open class Path2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun curveChanged() {
+    TODO()
+  }
+
+  fun getCurve(): Curve2D {
+    TODO()
+  }
+
+  fun setCurve() {
+    TODO()
+  }
+
   companion object {
     fun new(): Path2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Path2D".cstr.ptr)

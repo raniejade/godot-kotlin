@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.VariantArray
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +20,162 @@ import kotlinx.cinterop.reinterpret
 open class GridMap internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun updateOctantsCallback() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun clearBakedMeshes() {
+    TODO()
+  }
+
+  fun getBakeMeshInstance(): RID {
+    TODO()
+  }
+
+  fun getBakeMeshes(): VariantArray {
+    TODO()
+  }
+
+  fun getCellItem(): Int {
+    TODO()
+  }
+
+  fun getCellItemOrientation(): Int {
+    TODO()
+  }
+
+  fun getCellScale(): Float {
+    TODO()
+  }
+
+  fun getCellSize(): Vector3 {
+    TODO()
+  }
+
+  fun getCenterX(): Boolean {
+    TODO()
+  }
+
+  fun getCenterY(): Boolean {
+    TODO()
+  }
+
+  fun getCenterZ(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun getCollisionLayerBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getMeshLibrary(): MeshLibrary {
+    TODO()
+  }
+
+  fun getMeshes(): VariantArray {
+    TODO()
+  }
+
+  fun getOctantSize(): Int {
+    TODO()
+  }
+
+  fun getTheme(): MeshLibrary {
+    TODO()
+  }
+
+  fun getUsedCells(): VariantArray {
+    TODO()
+  }
+
+  fun makeBakedMeshes() {
+    TODO()
+  }
+
+  fun mapToWorld(): Vector3 {
+    TODO()
+  }
+
+  fun resourceChanged() {
+    TODO()
+  }
+
+  fun setCellItem() {
+    TODO()
+  }
+
+  fun setCellScale() {
+    TODO()
+  }
+
+  fun setCellSize() {
+    TODO()
+  }
+
+  fun setCenterX() {
+    TODO()
+  }
+
+  fun setCenterY() {
+    TODO()
+  }
+
+  fun setCenterZ() {
+    TODO()
+  }
+
+  fun setClip() {
+    TODO()
+  }
+
+  fun setCollisionLayer() {
+    TODO()
+  }
+
+  fun setCollisionLayerBit() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setMeshLibrary() {
+    TODO()
+  }
+
+  fun setOctantSize() {
+    TODO()
+  }
+
+  fun setTheme() {
+    TODO()
+  }
+
+  fun worldToMap(): Vector3 {
+    TODO()
+  }
+
   companion object {
     val INVALID_CELL_ITEM: Int = -1
 

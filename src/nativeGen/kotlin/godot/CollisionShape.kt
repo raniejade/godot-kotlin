@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,38 @@ import kotlinx.cinterop.reinterpret
 open class CollisionShape internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun shapeChanged() {
+    TODO()
+  }
+
+  fun updateDebugShape() {
+    TODO()
+  }
+
+  fun getShape(): Shape {
+    TODO()
+  }
+
+  fun isDisabled(): Boolean {
+    TODO()
+  }
+
+  fun makeConvexFromBrothers() {
+    TODO()
+  }
+
+  fun resourceChanged() {
+    TODO()
+  }
+
+  fun setDisabled() {
+    TODO()
+  }
+
+  fun setShape() {
+    TODO()
+  }
+
   companion object {
     fun new(): CollisionShape = memScoped {
       val fnPtr =

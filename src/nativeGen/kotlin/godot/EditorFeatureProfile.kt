@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,50 @@ import kotlinx.cinterop.reinterpret
 open class EditorFeatureProfile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getFeatureName(): String {
+    TODO()
+  }
+
+  fun isClassDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isClassEditorDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isClassPropertyDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isFeatureDisabled(): Boolean {
+    TODO()
+  }
+
+  fun loadFromFile(): Error {
+    TODO()
+  }
+
+  fun saveToFile(): Error {
+    TODO()
+  }
+
+  fun setDisableClass() {
+    TODO()
+  }
+
+  fun setDisableClassEditor() {
+    TODO()
+  }
+
+  fun setDisableClassProperty() {
+    TODO()
+  }
+
+  fun setDisableFeature() {
+    TODO()
+  }
+
   enum class Feature(
     val value: Int
   ) {

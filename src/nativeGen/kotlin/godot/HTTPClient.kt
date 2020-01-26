@@ -2,8 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.PoolStringArray
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +20,82 @@ import kotlinx.cinterop.reinterpret
 open class HTTPClient internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun close() {
+    TODO()
+  }
+
+  fun connectToHost(): Error {
+    TODO()
+  }
+
+  fun getConnection(): StreamPeer {
+    TODO()
+  }
+
+  fun getResponseBodyLength(): Int {
+    TODO()
+  }
+
+  fun getResponseCode(): Int {
+    TODO()
+  }
+
+  fun getResponseHeaders(): PoolStringArray {
+    TODO()
+  }
+
+  fun getResponseHeadersAsDictionary(): Dictionary {
+    TODO()
+  }
+
+  fun getStatus(): HTTPClient.Status {
+    TODO()
+  }
+
+  fun hasResponse(): Boolean {
+    TODO()
+  }
+
+  fun isBlockingModeEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isResponseChunked(): Boolean {
+    TODO()
+  }
+
+  fun poll(): Error {
+    TODO()
+  }
+
+  fun queryStringFromDict(): String {
+    TODO()
+  }
+
+  fun readResponseBodyChunk(): PoolByteArray {
+    TODO()
+  }
+
+  fun request(): Error {
+    TODO()
+  }
+
+  fun requestRaw(): Error {
+    TODO()
+  }
+
+  fun setBlockingMode() {
+    TODO()
+  }
+
+  fun setConnection() {
+    TODO()
+  }
+
+  fun setReadChunkSize() {
+    TODO()
+  }
+
   enum class Status(
     val value: Int
   ) {

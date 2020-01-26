@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,18 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeExpression internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeGroupBase(_handle) {
+  fun build() {
+    TODO()
+  }
+
+  fun getExpression(): String {
+    TODO()
+  }
+
+  fun setExpression() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualShaderNodeExpression = memScoped {
       val fnPtr =

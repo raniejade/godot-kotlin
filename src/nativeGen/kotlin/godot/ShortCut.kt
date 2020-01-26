@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class ShortCut internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getAsText(): String {
+    TODO()
+  }
+
+  fun getShortcut(): InputEvent {
+    TODO()
+  }
+
+  fun isShortcut(): Boolean {
+    TODO()
+  }
+
+  fun isValid(): Boolean {
+    TODO()
+  }
+
+  fun setShortcut() {
+    TODO()
+  }
+
   companion object {
     fun new(): ShortCut = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ShortCut".cstr.ptr)

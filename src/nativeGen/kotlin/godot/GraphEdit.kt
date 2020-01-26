@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,158 @@ import kotlinx.cinterop.reinterpret
 open class GraphEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun connectionsLayerDraw() {
+    TODO()
+  }
+
+  fun graphNodeMoved() {
+    TODO()
+  }
+
+  fun graphNodeRaised() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun scrollMoved() {
+    TODO()
+  }
+
+  fun snapToggled() {
+    TODO()
+  }
+
+  fun snapValueChanged() {
+    TODO()
+  }
+
+  fun topLayerDraw() {
+    TODO()
+  }
+
+  fun topLayerInput() {
+    TODO()
+  }
+
+  fun updateScrollOffset() {
+    TODO()
+  }
+
+  fun zoomMinus() {
+    TODO()
+  }
+
+  fun zoomPlus() {
+    TODO()
+  }
+
+  fun zoomReset() {
+    TODO()
+  }
+
+  fun addValidConnectionType() {
+    TODO()
+  }
+
+  fun addValidLeftDisconnectType() {
+    TODO()
+  }
+
+  fun addValidRightDisconnectType() {
+    TODO()
+  }
+
+  fun clearConnections() {
+    TODO()
+  }
+
+  fun connectNode(): Error {
+    TODO()
+  }
+
+  fun disconnectNode() {
+    TODO()
+  }
+
+  fun getConnectionList(): VariantArray {
+    TODO()
+  }
+
+  fun getScrollOfs(): Vector2 {
+    TODO()
+  }
+
+  fun getSnap(): Int {
+    TODO()
+  }
+
+  fun getZoom(): Float {
+    TODO()
+  }
+
+  fun getZoomHbox(): HBoxContainer {
+    TODO()
+  }
+
+  fun isNodeConnected(): Boolean {
+    TODO()
+  }
+
+  fun isRightDisconnectsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isUsingSnap(): Boolean {
+    TODO()
+  }
+
+  fun isValidConnectionType(): Boolean {
+    TODO()
+  }
+
+  fun removeValidConnectionType() {
+    TODO()
+  }
+
+  fun removeValidLeftDisconnectType() {
+    TODO()
+  }
+
+  fun removeValidRightDisconnectType() {
+    TODO()
+  }
+
+  fun setConnectionActivity() {
+    TODO()
+  }
+
+  fun setRightDisconnects() {
+    TODO()
+  }
+
+  fun setScrollOfs() {
+    TODO()
+  }
+
+  fun setSelected() {
+    TODO()
+  }
+
+  fun setSnap() {
+    TODO()
+  }
+
+  fun setUseSnap() {
+    TODO()
+  }
+
+  fun setZoom() {
+    TODO()
+  }
+
   companion object {
     fun new(): GraphEdit = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphEdit".cstr.ptr)

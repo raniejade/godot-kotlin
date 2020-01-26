@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class CapsuleShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getRadius(): Float {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setRadius() {
+    TODO()
+  }
+
   companion object {
     fun new(): CapsuleShape2D = memScoped {
       val fnPtr =

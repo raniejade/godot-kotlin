@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectPanner internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getPan(): Float {
+    TODO()
+  }
+
+  fun setPan() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectPanner = memScoped {
       val fnPtr =

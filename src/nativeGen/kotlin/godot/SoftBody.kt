@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,142 @@ import kotlinx.cinterop.reinterpret
 open class SoftBody internal constructor(
   _handle: COpaquePointer
 ) : MeshInstance(_handle) {
+  fun drawSoftMesh() {
+    TODO()
+  }
+
+  fun addCollisionExceptionWith() {
+    TODO()
+  }
+
+  fun getAreaAngularStiffness(): Float {
+    TODO()
+  }
+
+  fun getCollisionExceptions(): VariantArray {
+    TODO()
+  }
+
+  fun getCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun getCollisionLayerBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getDampingCoefficient(): Float {
+    TODO()
+  }
+
+  fun getDragCoefficient(): Float {
+    TODO()
+  }
+
+  fun getLinearStiffness(): Float {
+    TODO()
+  }
+
+  fun getParentCollisionIgnore(): NodePath {
+    TODO()
+  }
+
+  fun getPoseMatchingCoefficient(): Float {
+    TODO()
+  }
+
+  fun getPressureCoefficient(): Float {
+    TODO()
+  }
+
+  fun getSimulationPrecision(): Int {
+    TODO()
+  }
+
+  fun getTotalMass(): Float {
+    TODO()
+  }
+
+  fun getVolumeStiffness(): Float {
+    TODO()
+  }
+
+  fun isRayPickable(): Boolean {
+    TODO()
+  }
+
+  fun removeCollisionExceptionWith() {
+    TODO()
+  }
+
+  fun setAreaAngularStiffness() {
+    TODO()
+  }
+
+  fun setCollisionLayer() {
+    TODO()
+  }
+
+  fun setCollisionLayerBit() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setDampingCoefficient() {
+    TODO()
+  }
+
+  fun setDragCoefficient() {
+    TODO()
+  }
+
+  fun setLinearStiffness() {
+    TODO()
+  }
+
+  fun setParentCollisionIgnore() {
+    TODO()
+  }
+
+  fun setPoseMatchingCoefficient() {
+    TODO()
+  }
+
+  fun setPressureCoefficient() {
+    TODO()
+  }
+
+  fun setRayPickable() {
+    TODO()
+  }
+
+  fun setSimulationPrecision() {
+    TODO()
+  }
+
+  fun setTotalMass() {
+    TODO()
+  }
+
+  fun setVolumeStiffness() {
+    TODO()
+  }
+
   companion object {
     fun new(): SoftBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SoftBody".cstr.ptr)

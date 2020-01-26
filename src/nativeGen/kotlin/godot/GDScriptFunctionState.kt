@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,18 @@ import kotlinx.cinterop.reinterpret
 open class GDScriptFunctionState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun signalCallback(): Variant {
+    TODO()
+  }
+
+  fun isValid(): Boolean {
+    TODO()
+  }
+
+  fun resume(): Variant {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for GDScriptFunctionState

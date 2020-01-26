@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class TranslationServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addTranslation() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getLoadedLocales(): VariantArray {
+    TODO()
+  }
+
+  fun getLocale(): String {
+    TODO()
+  }
+
+  fun getLocaleName(): String {
+    TODO()
+  }
+
+  fun removeTranslation() {
+    TODO()
+  }
+
+  fun setLocale() {
+    TODO()
+  }
+
+  fun translate(): String {
+    TODO()
+  }
+
   companion object {
     val Instance: TranslationServer = memScoped {
           val handle =

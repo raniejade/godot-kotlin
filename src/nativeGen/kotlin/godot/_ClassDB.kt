@@ -2,7 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +21,86 @@ import kotlinx.cinterop.reinterpret
 open class _ClassDB internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun canInstance(): Boolean {
+    TODO()
+  }
+
+  fun classExists(): Boolean {
+    TODO()
+  }
+
+  fun classGetCategory(): String {
+    TODO()
+  }
+
+  fun classGetIntegerConstant(): Int {
+    TODO()
+  }
+
+  fun classGetIntegerConstantList(): PoolStringArray {
+    TODO()
+  }
+
+  fun classGetMethodList(): VariantArray {
+    TODO()
+  }
+
+  fun classGetProperty(): Variant {
+    TODO()
+  }
+
+  fun classGetPropertyList(): VariantArray {
+    TODO()
+  }
+
+  fun classGetSignal(): Dictionary {
+    TODO()
+  }
+
+  fun classGetSignalList(): VariantArray {
+    TODO()
+  }
+
+  fun classHasIntegerConstant(): Boolean {
+    TODO()
+  }
+
+  fun classHasMethod(): Boolean {
+    TODO()
+  }
+
+  fun classHasSignal(): Boolean {
+    TODO()
+  }
+
+  fun classSetProperty(): Error {
+    TODO()
+  }
+
+  fun getClassList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getInheritersFromClass(): PoolStringArray {
+    TODO()
+  }
+
+  fun getParentClass(): String {
+    TODO()
+  }
+
+  fun instance(): Variant {
+    TODO()
+  }
+
+  fun isClassEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isParentClass(): Boolean {
+    TODO()
+  }
+
   companion object {
     val Instance: _ClassDB = memScoped {
           val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ClassDB".cstr.ptr)

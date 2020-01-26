@@ -14,6 +14,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptOperator internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getOperator(): Variant.Operator {
+    TODO()
+  }
+
+  fun getTyped(): Variant.Type {
+    TODO()
+  }
+
+  fun setOperator() {
+    TODO()
+  }
+
+  fun setTyped() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptOperator = memScoped {
       val fnPtr =

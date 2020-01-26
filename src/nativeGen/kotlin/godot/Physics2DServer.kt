@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform2D
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +20,414 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun areaAddShape() {
+    TODO()
+  }
+
+  fun areaAttachCanvasInstanceId() {
+    TODO()
+  }
+
+  fun areaAttachObjectInstanceId() {
+    TODO()
+  }
+
+  fun areaClearShapes() {
+    TODO()
+  }
+
+  fun areaCreate(): RID {
+    TODO()
+  }
+
+  fun areaGetCanvasInstanceId(): Int {
+    TODO()
+  }
+
+  fun areaGetObjectInstanceId(): Int {
+    TODO()
+  }
+
+  fun areaGetParam(): Variant {
+    TODO()
+  }
+
+  fun areaGetShape(): RID {
+    TODO()
+  }
+
+  fun areaGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun areaGetShapeTransform(): Transform2D {
+    TODO()
+  }
+
+  fun areaGetSpace(): RID {
+    TODO()
+  }
+
+  fun areaGetSpaceOverrideMode(): Physics2DServer.AreaSpaceOverrideMode {
+    TODO()
+  }
+
+  fun areaGetTransform(): Transform2D {
+    TODO()
+  }
+
+  fun areaRemoveShape() {
+    TODO()
+  }
+
+  fun areaSetAreaMonitorCallback() {
+    TODO()
+  }
+
+  fun areaSetCollisionLayer() {
+    TODO()
+  }
+
+  fun areaSetCollisionMask() {
+    TODO()
+  }
+
+  fun areaSetMonitorCallback() {
+    TODO()
+  }
+
+  fun areaSetMonitorable() {
+    TODO()
+  }
+
+  fun areaSetParam() {
+    TODO()
+  }
+
+  fun areaSetShape() {
+    TODO()
+  }
+
+  fun areaSetShapeDisabled() {
+    TODO()
+  }
+
+  fun areaSetShapeTransform() {
+    TODO()
+  }
+
+  fun areaSetSpace() {
+    TODO()
+  }
+
+  fun areaSetSpaceOverrideMode() {
+    TODO()
+  }
+
+  fun areaSetTransform() {
+    TODO()
+  }
+
+  fun bodyAddCentralForce() {
+    TODO()
+  }
+
+  fun bodyAddCollisionException() {
+    TODO()
+  }
+
+  fun bodyAddForce() {
+    TODO()
+  }
+
+  fun bodyAddShape() {
+    TODO()
+  }
+
+  fun bodyAddTorque() {
+    TODO()
+  }
+
+  fun bodyApplyCentralImpulse() {
+    TODO()
+  }
+
+  fun bodyApplyImpulse() {
+    TODO()
+  }
+
+  fun bodyApplyTorqueImpulse() {
+    TODO()
+  }
+
+  fun bodyAttachCanvasInstanceId() {
+    TODO()
+  }
+
+  fun bodyAttachObjectInstanceId() {
+    TODO()
+  }
+
+  fun bodyClearShapes() {
+    TODO()
+  }
+
+  fun bodyCreate(): RID {
+    TODO()
+  }
+
+  fun bodyGetCanvasInstanceId(): Int {
+    TODO()
+  }
+
+  fun bodyGetCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun bodyGetCollisionMask(): Int {
+    TODO()
+  }
+
+  fun bodyGetContinuousCollisionDetectionMode(): Physics2DServer.CCDMode {
+    TODO()
+  }
+
+  fun bodyGetDirectState(): Physics2DDirectBodyState {
+    TODO()
+  }
+
+  fun bodyGetMaxContactsReported(): Int {
+    TODO()
+  }
+
+  fun bodyGetMode(): Physics2DServer.BodyMode {
+    TODO()
+  }
+
+  fun bodyGetObjectInstanceId(): Int {
+    TODO()
+  }
+
+  fun bodyGetParam(): Float {
+    TODO()
+  }
+
+  fun bodyGetShape(): RID {
+    TODO()
+  }
+
+  fun bodyGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun bodyGetShapeMetadata(): Variant {
+    TODO()
+  }
+
+  fun bodyGetShapeTransform(): Transform2D {
+    TODO()
+  }
+
+  fun bodyGetSpace(): RID {
+    TODO()
+  }
+
+  fun bodyGetState(): Variant {
+    TODO()
+  }
+
+  fun bodyIsOmittingForceIntegration(): Boolean {
+    TODO()
+  }
+
+  fun bodyRemoveCollisionException() {
+    TODO()
+  }
+
+  fun bodyRemoveShape() {
+    TODO()
+  }
+
+  fun bodySetAxisVelocity() {
+    TODO()
+  }
+
+  fun bodySetCollisionLayer() {
+    TODO()
+  }
+
+  fun bodySetCollisionMask() {
+    TODO()
+  }
+
+  fun bodySetContinuousCollisionDetectionMode() {
+    TODO()
+  }
+
+  fun bodySetForceIntegrationCallback() {
+    TODO()
+  }
+
+  fun bodySetMaxContactsReported() {
+    TODO()
+  }
+
+  fun bodySetMode() {
+    TODO()
+  }
+
+  fun bodySetOmitForceIntegration() {
+    TODO()
+  }
+
+  fun bodySetParam() {
+    TODO()
+  }
+
+  fun bodySetShape() {
+    TODO()
+  }
+
+  fun bodySetShapeAsOneWayCollision() {
+    TODO()
+  }
+
+  fun bodySetShapeDisabled() {
+    TODO()
+  }
+
+  fun bodySetShapeMetadata() {
+    TODO()
+  }
+
+  fun bodySetShapeTransform() {
+    TODO()
+  }
+
+  fun bodySetSpace() {
+    TODO()
+  }
+
+  fun bodySetState() {
+    TODO()
+  }
+
+  fun bodyTestMotion(): Boolean {
+    TODO()
+  }
+
+  fun capsuleShapeCreate(): RID {
+    TODO()
+  }
+
+  fun circleShapeCreate(): RID {
+    TODO()
+  }
+
+  fun concavePolygonShapeCreate(): RID {
+    TODO()
+  }
+
+  fun convexPolygonShapeCreate(): RID {
+    TODO()
+  }
+
+  fun dampedSpringJointCreate(): RID {
+    TODO()
+  }
+
+  fun dampedStringJointGetParam(): Float {
+    TODO()
+  }
+
+  fun dampedStringJointSetParam() {
+    TODO()
+  }
+
+  fun freeRid() {
+    TODO()
+  }
+
+  fun getProcessInfo(): Int {
+    TODO()
+  }
+
+  fun grooveJointCreate(): RID {
+    TODO()
+  }
+
+  fun jointGetParam(): Float {
+    TODO()
+  }
+
+  fun jointGetType(): Physics2DServer.JointType {
+    TODO()
+  }
+
+  fun jointSetParam() {
+    TODO()
+  }
+
+  fun lineShapeCreate(): RID {
+    TODO()
+  }
+
+  fun pinJointCreate(): RID {
+    TODO()
+  }
+
+  fun rayShapeCreate(): RID {
+    TODO()
+  }
+
+  fun rectangleShapeCreate(): RID {
+    TODO()
+  }
+
+  fun segmentShapeCreate(): RID {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun shapeGetData(): Variant {
+    TODO()
+  }
+
+  fun shapeGetType(): Physics2DServer.ShapeType {
+    TODO()
+  }
+
+  fun shapeSetData() {
+    TODO()
+  }
+
+  fun spaceCreate(): RID {
+    TODO()
+  }
+
+  fun spaceGetDirectState(): Physics2DDirectSpaceState {
+    TODO()
+  }
+
+  fun spaceGetParam(): Float {
+    TODO()
+  }
+
+  fun spaceIsActive(): Boolean {
+    TODO()
+  }
+
+  fun spaceSetActive() {
+    TODO()
+  }
+
+  fun spaceSetParam() {
+    TODO()
+  }
+
   enum class ProcessInfo(
     val value: Int
   ) {

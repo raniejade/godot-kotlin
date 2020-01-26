@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import godot.core.Vector2
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,122 @@ import kotlinx.cinterop.reinterpret
 open class Line2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun gradientChanged() {
+    TODO()
+  }
+
+  fun addPoint() {
+    TODO()
+  }
+
+  fun clearPoints() {
+    TODO()
+  }
+
+  fun getBeginCapMode(): Line2D.LineCapMode {
+    TODO()
+  }
+
+  fun getDefaultColor(): Color {
+    TODO()
+  }
+
+  fun getEndCapMode(): Line2D.LineCapMode {
+    TODO()
+  }
+
+  fun getGradient(): Gradient {
+    TODO()
+  }
+
+  fun getJointMode(): Line2D.LineJointMode {
+    TODO()
+  }
+
+  fun getPointCount(): Int {
+    TODO()
+  }
+
+  fun getPointPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getPoints(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getRoundPrecision(): Int {
+    TODO()
+  }
+
+  fun getSharpLimit(): Float {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTextureMode(): Line2D.LineTextureMode {
+    TODO()
+  }
+
+  fun getWidth(): Float {
+    TODO()
+  }
+
+  fun removePoint() {
+    TODO()
+  }
+
+  fun setBeginCapMode() {
+    TODO()
+  }
+
+  fun setDefaultColor() {
+    TODO()
+  }
+
+  fun setEndCapMode() {
+    TODO()
+  }
+
+  fun setGradient() {
+    TODO()
+  }
+
+  fun setJointMode() {
+    TODO()
+  }
+
+  fun setPointPosition() {
+    TODO()
+  }
+
+  fun setPoints() {
+    TODO()
+  }
+
+  fun setRoundPrecision() {
+    TODO()
+  }
+
+  fun setSharpLimit() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setTextureMode() {
+    TODO()
+  }
+
+  fun setWidth() {
+    TODO()
+  }
+
   enum class LineTextureMode(
     val value: Int
   ) {

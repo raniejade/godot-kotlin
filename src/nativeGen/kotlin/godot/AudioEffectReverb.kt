@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,70 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectReverb internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getDamping(): Float {
+    TODO()
+  }
+
+  fun getDry(): Float {
+    TODO()
+  }
+
+  fun getHpf(): Float {
+    TODO()
+  }
+
+  fun getPredelayFeedback(): Float {
+    TODO()
+  }
+
+  fun getPredelayMsec(): Float {
+    TODO()
+  }
+
+  fun getRoomSize(): Float {
+    TODO()
+  }
+
+  fun getSpread(): Float {
+    TODO()
+  }
+
+  fun getWet(): Float {
+    TODO()
+  }
+
+  fun setDamping() {
+    TODO()
+  }
+
+  fun setDry() {
+    TODO()
+  }
+
+  fun setHpf() {
+    TODO()
+  }
+
+  fun setPredelayFeedback() {
+    TODO()
+  }
+
+  fun setPredelayMsec() {
+    TODO()
+  }
+
+  fun setRoomSize() {
+    TODO()
+  }
+
+  fun setSpread() {
+    TODO()
+  }
+
+  fun setWet() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectReverb = memScoped {
       val fnPtr =

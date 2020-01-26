@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,30 @@ import kotlinx.cinterop.reinterpret
 open class VehicleBody internal constructor(
   _handle: COpaquePointer
 ) : RigidBody(_handle) {
+  fun getBrake(): Float {
+    TODO()
+  }
+
+  fun getEngineForce(): Float {
+    TODO()
+  }
+
+  fun getSteering(): Float {
+    TODO()
+  }
+
+  fun setBrake() {
+    TODO()
+  }
+
+  fun setEngineForce() {
+    TODO()
+  }
+
+  fun setSteering() {
+    TODO()
+  }
+
   companion object {
     fun new(): VehicleBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleBody".cstr.ptr)

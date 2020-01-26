@@ -2,7 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.Transform
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,94 @@ import kotlinx.cinterop.reinterpret
 open class GIProbeData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getBias(): Float {
+    TODO()
+  }
+
+  fun getBounds(): AABB {
+    TODO()
+  }
+
+  fun getCellSize(): Float {
+    TODO()
+  }
+
+  fun getDynamicData(): PoolIntArray {
+    TODO()
+  }
+
+  fun getDynamicRange(): Int {
+    TODO()
+  }
+
+  fun getEnergy(): Float {
+    TODO()
+  }
+
+  fun getNormalBias(): Float {
+    TODO()
+  }
+
+  fun getPropagation(): Float {
+    TODO()
+  }
+
+  fun getToCellXform(): Transform {
+    TODO()
+  }
+
+  fun isCompressed(): Boolean {
+    TODO()
+  }
+
+  fun isInterior(): Boolean {
+    TODO()
+  }
+
+  fun setBias() {
+    TODO()
+  }
+
+  fun setBounds() {
+    TODO()
+  }
+
+  fun setCellSize() {
+    TODO()
+  }
+
+  fun setCompress() {
+    TODO()
+  }
+
+  fun setDynamicData() {
+    TODO()
+  }
+
+  fun setDynamicRange() {
+    TODO()
+  }
+
+  fun setEnergy() {
+    TODO()
+  }
+
+  fun setInterior() {
+    TODO()
+  }
+
+  fun setNormalBias() {
+    TODO()
+  }
+
+  fun setPropagation() {
+    TODO()
+  }
+
+  fun setToCellXform() {
+    TODO()
+  }
+
   companion object {
     fun new(): GIProbeData = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbeData".cstr.ptr)

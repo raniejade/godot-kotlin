@@ -2,7 +2,17 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.PoolVector2Array
+import godot.core.PoolVector3Array
+import godot.core.Variant
+import godot.core.VariantArray
+import godot.core.Vector2
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +25,142 @@ import kotlinx.cinterop.reinterpret
 open class _Geometry internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun buildBoxPlanes(): VariantArray {
+    TODO()
+  }
+
+  fun buildCapsulePlanes(): VariantArray {
+    TODO()
+  }
+
+  fun buildCylinderPlanes(): VariantArray {
+    TODO()
+  }
+
+  fun clipPolygon(): PoolVector3Array {
+    TODO()
+  }
+
+  fun clipPolygons2d(): VariantArray {
+    TODO()
+  }
+
+  fun clipPolylineWithPolygon2d(): VariantArray {
+    TODO()
+  }
+
+  fun convexHull2d(): PoolVector2Array {
+    TODO()
+  }
+
+  fun excludePolygons2d(): VariantArray {
+    TODO()
+  }
+
+  fun getClosestPointToSegment(): Vector3 {
+    TODO()
+  }
+
+  fun getClosestPointToSegment2d(): Vector2 {
+    TODO()
+  }
+
+  fun getClosestPointToSegmentUncapped(): Vector3 {
+    TODO()
+  }
+
+  fun getClosestPointToSegmentUncapped2d(): Vector2 {
+    TODO()
+  }
+
+  fun getClosestPointsBetweenSegments(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getClosestPointsBetweenSegments2d(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getUv84NormalBit(): Int {
+    TODO()
+  }
+
+  fun intersectPolygons2d(): VariantArray {
+    TODO()
+  }
+
+  fun intersectPolylineWithPolygon2d(): VariantArray {
+    TODO()
+  }
+
+  fun isPolygonClockwise(): Boolean {
+    TODO()
+  }
+
+  fun lineIntersectsLine2d(): Variant {
+    TODO()
+  }
+
+  fun makeAtlas(): Dictionary {
+    TODO()
+  }
+
+  fun mergePolygons2d(): VariantArray {
+    TODO()
+  }
+
+  fun offsetPolygon2d(): VariantArray {
+    TODO()
+  }
+
+  fun offsetPolyline2d(): VariantArray {
+    TODO()
+  }
+
+  fun pointIsInsideTriangle(): Boolean {
+    TODO()
+  }
+
+  fun rayIntersectsTriangle(): Variant {
+    TODO()
+  }
+
+  fun segmentIntersectsCircle(): Float {
+    TODO()
+  }
+
+  fun segmentIntersectsConvex(): PoolVector3Array {
+    TODO()
+  }
+
+  fun segmentIntersectsCylinder(): PoolVector3Array {
+    TODO()
+  }
+
+  fun segmentIntersectsSegment2d(): Variant {
+    TODO()
+  }
+
+  fun segmentIntersectsSphere(): PoolVector3Array {
+    TODO()
+  }
+
+  fun segmentIntersectsTriangle(): Variant {
+    TODO()
+  }
+
+  fun transformPoints2d(): PoolVector2Array {
+    TODO()
+  }
+
+  fun triangulateDelaunay2d(): PoolIntArray {
+    TODO()
+  }
+
+  fun triangulatePolygon(): PoolIntArray {
+    TODO()
+  }
+
   enum class PolyEndType(
     val value: Int
   ) {

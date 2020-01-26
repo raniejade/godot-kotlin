@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,34 @@ import kotlinx.cinterop.reinterpret
 open class World internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getDirectSpaceState(): PhysicsDirectSpaceState {
+    TODO()
+  }
+
+  fun getEnvironment(): Environment {
+    TODO()
+  }
+
+  fun getFallbackEnvironment(): Environment {
+    TODO()
+  }
+
+  fun getScenario(): RID {
+    TODO()
+  }
+
+  fun getSpace(): RID {
+    TODO()
+  }
+
+  fun setEnvironment() {
+    TODO()
+  }
+
+  fun setFallbackEnvironment() {
+    TODO()
+  }
+
   companion object {
     fun new(): World = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("World".cstr.ptr)

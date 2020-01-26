@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,246 @@ import kotlinx.cinterop.reinterpret
 open class ScriptEditor internal constructor(
   _handle: COpaquePointer
 ) : PanelContainer(_handle) {
+  fun addCallback() {
+    TODO()
+  }
+
+  fun autosaveScripts() {
+    TODO()
+  }
+
+  fun breaked() {
+    TODO()
+  }
+
+  fun clearExecution() {
+    TODO()
+  }
+
+  fun closeAllTabs() {
+    TODO()
+  }
+
+  fun closeCurrentTab() {
+    TODO()
+  }
+
+  fun closeDiscardCurrentTab() {
+    TODO()
+  }
+
+  fun closeDocsTab() {
+    TODO()
+  }
+
+  fun closeOtherTabs() {
+    TODO()
+  }
+
+  fun copyScriptPath() {
+    TODO()
+  }
+
+  fun editorPause() {
+    TODO()
+  }
+
+  fun editorPlay() {
+    TODO()
+  }
+
+  fun editorSettingsChanged() {
+    TODO()
+  }
+
+  fun editorStop() {
+    TODO()
+  }
+
+  fun fileDialogAction() {
+    TODO()
+  }
+
+  fun getDebugTooltip(): String {
+    TODO()
+  }
+
+  fun gotoScriptLine() {
+    TODO()
+  }
+
+  fun gotoScriptLine2() {
+    TODO()
+  }
+
+  fun helpClassGoto() {
+    TODO()
+  }
+
+  fun helpClassOpen() {
+    TODO()
+  }
+
+  fun helpOverviewSelected() {
+    TODO()
+  }
+
+  fun helpSearch() {
+    TODO()
+  }
+
+  fun historyBack() {
+    TODO()
+  }
+
+  fun historyForward() {
+    TODO()
+  }
+
+  fun liveAutoReloadRunningScripts() {
+    TODO()
+  }
+
+  fun membersOverviewSelected() {
+    TODO()
+  }
+
+  fun menuOption() {
+    TODO()
+  }
+
+  fun onFindInFilesModifiedFiles() {
+    TODO()
+  }
+
+  fun onFindInFilesRequested() {
+    TODO()
+  }
+
+  fun onFindInFilesResultSelected() {
+    TODO()
+  }
+
+  fun openRecentScript() {
+    TODO()
+  }
+
+  fun reloadScripts() {
+    TODO()
+  }
+
+  fun requestHelp() {
+    TODO()
+  }
+
+  fun resSavedCallback() {
+    TODO()
+  }
+
+  fun resaveScripts() {
+    TODO()
+  }
+
+  fun saveHistory() {
+    TODO()
+  }
+
+  fun scriptChanged() {
+    TODO()
+  }
+
+  fun scriptCreated() {
+    TODO()
+  }
+
+  fun scriptListGuiInput() {
+    TODO()
+  }
+
+  fun scriptSelected() {
+    TODO()
+  }
+
+  fun scriptSplitDragged() {
+    TODO()
+  }
+
+  fun setExecution() {
+    TODO()
+  }
+
+  fun showDebugger() {
+    TODO()
+  }
+
+  fun startFindInFiles() {
+    TODO()
+  }
+
+  fun tabChanged() {
+    TODO()
+  }
+
+  fun themeOption() {
+    TODO()
+  }
+
+  fun toggleMembersOverviewAlphaSort() {
+    TODO()
+  }
+
+  fun treeChanged() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun updateMembersOverview() {
+    TODO()
+  }
+
+  fun updateRecentScripts() {
+    TODO()
+  }
+
+  fun updateScriptConnections() {
+    TODO()
+  }
+
+  fun updateScriptNames() {
+    TODO()
+  }
+
+  fun canDropDataFw(): Boolean {
+    TODO()
+  }
+
+  fun dropDataFw() {
+    TODO()
+  }
+
+  fun getCurrentScript(): Script {
+    TODO()
+  }
+
+  fun getDragDataFw(): Variant {
+    TODO()
+  }
+
+  fun getOpenScripts(): VariantArray {
+    TODO()
+  }
+
+  fun gotoLine() {
+    TODO()
+  }
+
+  fun openScriptCreateDialog() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for ScriptEditor

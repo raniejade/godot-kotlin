@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,58 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCDataChannel internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  fun close() {
+    TODO()
+  }
+
+  fun getId(): Int {
+    TODO()
+  }
+
+  fun getLabel(): String {
+    TODO()
+  }
+
+  fun getMaxPacketLifeTime(): Int {
+    TODO()
+  }
+
+  fun getMaxRetransmits(): Int {
+    TODO()
+  }
+
+  fun getProtocol(): String {
+    TODO()
+  }
+
+  fun getReadyState(): WebRTCDataChannel.ChannelState {
+    TODO()
+  }
+
+  fun getWriteMode(): WebRTCDataChannel.WriteMode {
+    TODO()
+  }
+
+  fun isNegotiated(): Boolean {
+    TODO()
+  }
+
+  fun isOrdered(): Boolean {
+    TODO()
+  }
+
+  fun poll(): Error {
+    TODO()
+  }
+
+  fun setWriteMode() {
+    TODO()
+  }
+
+  fun wasStringPacket(): Boolean {
+    TODO()
+  }
+
   enum class WriteMode(
     val value: Int
   ) {

@@ -3,6 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.Rect2
+import godot.core.Transform2D
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +22,242 @@ import kotlinx.cinterop.reinterpret
 open class TileMap internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun clearQuadrants() {
+    TODO()
+  }
+
+  fun getOldCellSize(): Int {
+    TODO()
+  }
+
+  fun getTileData(): PoolIntArray {
+    TODO()
+  }
+
+  fun recreateQuadrants() {
+    TODO()
+  }
+
+  fun setCelld() {
+    TODO()
+  }
+
+  fun setOldCellSize() {
+    TODO()
+  }
+
+  fun setTileData() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun fixInvalidTiles() {
+    TODO()
+  }
+
+  fun getCell(): Int {
+    TODO()
+  }
+
+  fun getCellAutotileCoord(): Vector2 {
+    TODO()
+  }
+
+  fun getCellSize(): Vector2 {
+    TODO()
+  }
+
+  fun getCellv(): Int {
+    TODO()
+  }
+
+  fun getClipUv(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionBounce(): Float {
+    TODO()
+  }
+
+  fun getCollisionFriction(): Float {
+    TODO()
+  }
+
+  fun getCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun getCollisionLayerBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionUseKinematic(): Boolean {
+    TODO()
+  }
+
+  fun getCustomTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getHalfOffset(): TileMap.HalfOffset {
+    TODO()
+  }
+
+  fun getMode(): TileMap.Mode {
+    TODO()
+  }
+
+  fun getOccluderLightMask(): Int {
+    TODO()
+  }
+
+  fun getQuadrantSize(): Int {
+    TODO()
+  }
+
+  fun getTileOrigin(): TileMap.TileOrigin {
+    TODO()
+  }
+
+  fun getTileset(): TileSet {
+    TODO()
+  }
+
+  fun getUsedCells(): VariantArray {
+    TODO()
+  }
+
+  fun getUsedCellsById(): VariantArray {
+    TODO()
+  }
+
+  fun getUsedRect(): Rect2 {
+    TODO()
+  }
+
+  fun isCellTransposed(): Boolean {
+    TODO()
+  }
+
+  fun isCellXFlipped(): Boolean {
+    TODO()
+  }
+
+  fun isCellYFlipped(): Boolean {
+    TODO()
+  }
+
+  fun isYSortModeEnabled(): Boolean {
+    TODO()
+  }
+
+  fun mapToWorld(): Vector2 {
+    TODO()
+  }
+
+  fun setCell() {
+    TODO()
+  }
+
+  fun setCellSize() {
+    TODO()
+  }
+
+  fun setCellv() {
+    TODO()
+  }
+
+  fun setClipUv() {
+    TODO()
+  }
+
+  fun setCollisionBounce() {
+    TODO()
+  }
+
+  fun setCollisionFriction() {
+    TODO()
+  }
+
+  fun setCollisionLayer() {
+    TODO()
+  }
+
+  fun setCollisionLayerBit() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setCollisionUseKinematic() {
+    TODO()
+  }
+
+  fun setCustomTransform() {
+    TODO()
+  }
+
+  fun setHalfOffset() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setOccluderLightMask() {
+    TODO()
+  }
+
+  fun setQuadrantSize() {
+    TODO()
+  }
+
+  fun setTileOrigin() {
+    TODO()
+  }
+
+  fun setTileset() {
+    TODO()
+  }
+
+  fun setYSortMode() {
+    TODO()
+  }
+
+  fun updateBitmaskArea() {
+    TODO()
+  }
+
+  fun updateBitmaskRegion() {
+    TODO()
+  }
+
+  fun updateDirtyQuadrants() {
+    TODO()
+  }
+
+  fun worldToMap(): Vector2 {
+    TODO()
+  }
+
   enum class Mode(
     val value: Int
   ) {

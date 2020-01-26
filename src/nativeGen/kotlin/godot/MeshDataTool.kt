@@ -2,7 +2,15 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Plane
+import godot.core.PoolIntArray
+import godot.core.PoolRealArray
+import godot.core.Variant
+import godot.core.Vector2
+import godot.core.Vector3
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +22,158 @@ import kotlinx.cinterop.reinterpret
 open class MeshDataTool internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun clear() {
+    TODO()
+  }
+
+  fun commitToSurface(): Error {
+    TODO()
+  }
+
+  fun createFromSurface(): Error {
+    TODO()
+  }
+
+  fun getEdgeCount(): Int {
+    TODO()
+  }
+
+  fun getEdgeFaces(): PoolIntArray {
+    TODO()
+  }
+
+  fun getEdgeMeta(): Variant {
+    TODO()
+  }
+
+  fun getEdgeVertex(): Int {
+    TODO()
+  }
+
+  fun getFaceCount(): Int {
+    TODO()
+  }
+
+  fun getFaceEdge(): Int {
+    TODO()
+  }
+
+  fun getFaceMeta(): Variant {
+    TODO()
+  }
+
+  fun getFaceNormal(): Vector3 {
+    TODO()
+  }
+
+  fun getFaceVertex(): Int {
+    TODO()
+  }
+
+  fun getFormat(): Int {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getVertex(): Vector3 {
+    TODO()
+  }
+
+  fun getVertexBones(): PoolIntArray {
+    TODO()
+  }
+
+  fun getVertexColor(): Color {
+    TODO()
+  }
+
+  fun getVertexCount(): Int {
+    TODO()
+  }
+
+  fun getVertexEdges(): PoolIntArray {
+    TODO()
+  }
+
+  fun getVertexFaces(): PoolIntArray {
+    TODO()
+  }
+
+  fun getVertexMeta(): Variant {
+    TODO()
+  }
+
+  fun getVertexNormal(): Vector3 {
+    TODO()
+  }
+
+  fun getVertexTangent(): Plane {
+    TODO()
+  }
+
+  fun getVertexUv(): Vector2 {
+    TODO()
+  }
+
+  fun getVertexUv2(): Vector2 {
+    TODO()
+  }
+
+  fun getVertexWeights(): PoolRealArray {
+    TODO()
+  }
+
+  fun setEdgeMeta() {
+    TODO()
+  }
+
+  fun setFaceMeta() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setVertex() {
+    TODO()
+  }
+
+  fun setVertexBones() {
+    TODO()
+  }
+
+  fun setVertexColor() {
+    TODO()
+  }
+
+  fun setVertexMeta() {
+    TODO()
+  }
+
+  fun setVertexNormal() {
+    TODO()
+  }
+
+  fun setVertexTangent() {
+    TODO()
+  }
+
+  fun setVertexUv() {
+    TODO()
+  }
+
+  fun setVertexUv2() {
+    TODO()
+  }
+
+  fun setVertexWeights() {
+    TODO()
+  }
+
   companion object {
     fun new(): MeshDataTool = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshDataTool".cstr.ptr)

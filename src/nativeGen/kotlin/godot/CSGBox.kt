@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,38 @@ import kotlinx.cinterop.reinterpret
 open class CSGBox internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  fun getDepth(): Float {
+    TODO()
+  }
+
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getWidth(): Float {
+    TODO()
+  }
+
+  fun setDepth() {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setWidth() {
+    TODO()
+  }
+
   companion object {
     fun new(): CSGBox = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGBox".cstr.ptr)

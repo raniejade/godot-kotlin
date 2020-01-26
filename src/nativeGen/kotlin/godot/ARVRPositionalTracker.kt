@@ -2,8 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Basis
 import godot.core.Godot
+import godot.core.Transform
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,78 @@ import kotlinx.cinterop.reinterpret
 open class ARVRPositionalTracker internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun setJoyId() {
+    TODO()
+  }
+
+  fun setMesh() {
+    TODO()
+  }
+
+  fun setName() {
+    TODO()
+  }
+
+  fun setOrientation() {
+    TODO()
+  }
+
+  fun setRwPosition() {
+    TODO()
+  }
+
+  fun setType() {
+    TODO()
+  }
+
+  fun getHand(): ARVRPositionalTracker.TrackerHand {
+    TODO()
+  }
+
+  fun getJoyId(): Int {
+    TODO()
+  }
+
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getOrientation(): Basis {
+    TODO()
+  }
+
+  fun getPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getRumble(): Float {
+    TODO()
+  }
+
+  fun getTracksOrientation(): Boolean {
+    TODO()
+  }
+
+  fun getTracksPosition(): Boolean {
+    TODO()
+  }
+
+  fun getTransform(): Transform {
+    TODO()
+  }
+
+  fun getType(): ARVRServer.TrackerType {
+    TODO()
+  }
+
+  fun setRumble() {
+    TODO()
+  }
+
   enum class TrackerHand(
     val value: Int
   ) {

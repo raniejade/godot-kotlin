@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,86 @@ import kotlinx.cinterop.reinterpret
 open class MultiplayerAPI internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addPeer() {
+    TODO()
+  }
+
+  fun connectedToServer() {
+    TODO()
+  }
+
+  fun connectionFailed() {
+    TODO()
+  }
+
+  fun delPeer() {
+    TODO()
+  }
+
+  fun serverDisconnected() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getNetworkConnectedPeers(): PoolIntArray {
+    TODO()
+  }
+
+  fun getNetworkPeer(): NetworkedMultiplayerPeer {
+    TODO()
+  }
+
+  fun getNetworkUniqueId(): Int {
+    TODO()
+  }
+
+  fun getRpcSenderId(): Int {
+    TODO()
+  }
+
+  fun hasNetworkPeer(): Boolean {
+    TODO()
+  }
+
+  fun isNetworkServer(): Boolean {
+    TODO()
+  }
+
+  fun isObjectDecodingAllowed(): Boolean {
+    TODO()
+  }
+
+  fun isRefusingNewNetworkConnections(): Boolean {
+    TODO()
+  }
+
+  fun poll() {
+    TODO()
+  }
+
+  fun sendBytes(): Error {
+    TODO()
+  }
+
+  fun setAllowObjectDecoding() {
+    TODO()
+  }
+
+  fun setNetworkPeer() {
+    TODO()
+  }
+
+  fun setRefuseNewNetworkConnections() {
+    TODO()
+  }
+
+  fun setRootNode() {
+    TODO()
+  }
+
   enum class RPCMode(
     val value: Int
   ) {

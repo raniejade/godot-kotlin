@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,50 @@ import kotlinx.cinterop.reinterpret
 open class ARVRController internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getControllerId(): Int {
+    TODO()
+  }
+
+  fun getControllerName(): String {
+    TODO()
+  }
+
+  fun getHand(): ARVRPositionalTracker.TrackerHand {
+    TODO()
+  }
+
+  fun getIsActive(): Boolean {
+    TODO()
+  }
+
+  fun getJoystickAxis(): Float {
+    TODO()
+  }
+
+  fun getJoystickId(): Int {
+    TODO()
+  }
+
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun getRumble(): Float {
+    TODO()
+  }
+
+  fun isButtonPressed(): Int {
+    TODO()
+  }
+
+  fun setControllerId() {
+    TODO()
+  }
+
+  fun setRumble() {
+    TODO()
+  }
+
   companion object {
     fun new(): ARVRController = memScoped {
       val fnPtr =

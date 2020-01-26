@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,30 @@ import kotlinx.cinterop.reinterpret
 open class ParallaxLayer internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getMirroring(): Vector2 {
+    TODO()
+  }
+
+  fun getMotionOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getMotionScale(): Vector2 {
+    TODO()
+  }
+
+  fun setMirroring() {
+    TODO()
+  }
+
+  fun setMotionOffset() {
+    TODO()
+  }
+
+  fun setMotionScale() {
+    TODO()
+  }
+
   companion object {
     fun new(): ParallaxLayer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxLayer".cstr.ptr)

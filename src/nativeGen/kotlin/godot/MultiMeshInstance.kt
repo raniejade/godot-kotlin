@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class MultiMeshInstance internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  fun getMultimesh(): MultiMesh {
+    TODO()
+  }
+
+  fun setMultimesh() {
+    TODO()
+  }
+
   companion object {
     fun new(): MultiMeshInstance = memScoped {
       val fnPtr =

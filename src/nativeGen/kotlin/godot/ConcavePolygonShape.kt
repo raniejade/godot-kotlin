@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector3Array
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class ConcavePolygonShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  fun getFaces(): PoolVector3Array {
+    TODO()
+  }
+
+  fun setFaces() {
+    TODO()
+  }
+
   companion object {
     fun new(): ConcavePolygonShape = memScoped {
       val fnPtr =

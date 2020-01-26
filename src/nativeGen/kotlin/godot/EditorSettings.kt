@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,70 @@ import kotlinx.cinterop.reinterpret
 open class EditorSettings internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun addPropertyInfo() {
+    TODO()
+  }
+
+  fun erase() {
+    TODO()
+  }
+
+  fun getFavorites(): PoolStringArray {
+    TODO()
+  }
+
+  fun getProjectMetadata(): Variant {
+    TODO()
+  }
+
+  fun getProjectSettingsDir(): String {
+    TODO()
+  }
+
+  fun getRecentDirs(): PoolStringArray {
+    TODO()
+  }
+
+  fun getSetting(): Variant {
+    TODO()
+  }
+
+  fun getSettingsDir(): String {
+    TODO()
+  }
+
+  fun hasSetting(): Boolean {
+    TODO()
+  }
+
+  fun propertyCanRevert(): Boolean {
+    TODO()
+  }
+
+  fun propertyGetRevert(): Variant {
+    TODO()
+  }
+
+  fun setFavorites() {
+    TODO()
+  }
+
+  fun setInitialValue() {
+    TODO()
+  }
+
+  fun setProjectMetadata() {
+    TODO()
+  }
+
+  fun setRecentDirs() {
+    TODO()
+  }
+
+  fun setSetting() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for EditorSettings

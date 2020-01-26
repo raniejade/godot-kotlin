@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector3Array
+import godot.core.Vector3
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,46 @@ import kotlinx.cinterop.reinterpret
 open class Navigation internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getClosestPoint(): Vector3 {
+    TODO()
+  }
+
+  fun getClosestPointNormal(): Vector3 {
+    TODO()
+  }
+
+  fun getClosestPointOwner(): Object {
+    TODO()
+  }
+
+  fun getClosestPointToSegment(): Vector3 {
+    TODO()
+  }
+
+  fun getSimplePath(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getUpVector(): Vector3 {
+    TODO()
+  }
+
+  fun navmeshAdd(): Int {
+    TODO()
+  }
+
+  fun navmeshRemove() {
+    TODO()
+  }
+
+  fun navmeshSetTransform() {
+    TODO()
+  }
+
+  fun setUpVector() {
+    TODO()
+  }
+
   companion object {
     fun new(): Navigation = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Navigation".cstr.ptr)

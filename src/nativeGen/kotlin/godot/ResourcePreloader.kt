@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class ResourcePreloader internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun getResources(): VariantArray {
+    TODO()
+  }
+
+  fun setResources() {
+    TODO()
+  }
+
+  fun addResource() {
+    TODO()
+  }
+
+  fun getResource(): Resource {
+    TODO()
+  }
+
+  fun getResourceList(): PoolStringArray {
+    TODO()
+  }
+
+  fun hasResource(): Boolean {
+    TODO()
+  }
+
+  fun removeResource() {
+    TODO()
+  }
+
+  fun renameResource() {
+    TODO()
+  }
+
   companion object {
     fun new(): ResourcePreloader = memScoped {
       val fnPtr =

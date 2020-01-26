@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class EditorSpatialGizmo internal constructor(
   _handle: COpaquePointer
 ) : SpatialGizmo(_handle) {
+  fun addCollisionSegments() {
+    TODO()
+  }
+
+  fun addCollisionTriangles() {
+    TODO()
+  }
+
+  fun addHandles() {
+    TODO()
+  }
+
+  fun addLines() {
+    TODO()
+  }
+
+  fun addMesh() {
+    TODO()
+  }
+
+  fun addUnscaledBillboard() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun commitHandle() {
+    TODO()
+  }
+
+  fun getHandleName(): String {
+    TODO()
+  }
+
+  fun getHandleValue(): Variant {
+    TODO()
+  }
+
+  fun getPlugin(): EditorSpatialGizmoPlugin {
+    TODO()
+  }
+
+  fun getSpatialNode(): Spatial {
+    TODO()
+  }
+
+  fun isHandleHighlighted(): Boolean {
+    TODO()
+  }
+
+  fun redraw() {
+    TODO()
+  }
+
+  fun setHandle() {
+    TODO()
+  }
+
+  fun setHidden() {
+    TODO()
+  }
+
+  fun setSpatialNode() {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorSpatialGizmo = memScoped {
       val fnPtr =

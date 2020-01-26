@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class InputEventGesture internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for InputEventGesture

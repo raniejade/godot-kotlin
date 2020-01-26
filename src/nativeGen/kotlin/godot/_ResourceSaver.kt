@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,14 @@ import kotlinx.cinterop.reinterpret
 open class _ResourceSaver internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun getRecognizedExtensions(): PoolStringArray {
+    TODO()
+  }
+
+  fun save(): Error {
+    TODO()
+  }
+
   enum class SaverFlags(
     val value: Int
   ) {

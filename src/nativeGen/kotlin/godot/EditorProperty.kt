@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,90 @@ import kotlinx.cinterop.reinterpret
 open class EditorProperty internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun focusableFocused() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun addFocusable() {
+    TODO()
+  }
+
+  fun emitChanged() {
+    TODO()
+  }
+
+  fun getEditedObject(): Object {
+    TODO()
+  }
+
+  fun getEditedProperty(): String {
+    TODO()
+  }
+
+  fun getLabel(): String {
+    TODO()
+  }
+
+  fun getTooltipText(): String {
+    TODO()
+  }
+
+  fun isCheckable(): Boolean {
+    TODO()
+  }
+
+  fun isChecked(): Boolean {
+    TODO()
+  }
+
+  fun isDrawRed(): Boolean {
+    TODO()
+  }
+
+  fun isKeying(): Boolean {
+    TODO()
+  }
+
+  fun isReadOnly(): Boolean {
+    TODO()
+  }
+
+  fun setBottomEditor() {
+    TODO()
+  }
+
+  fun setCheckable() {
+    TODO()
+  }
+
+  fun setChecked() {
+    TODO()
+  }
+
+  fun setDrawRed() {
+    TODO()
+  }
+
+  fun setKeying() {
+    TODO()
+  }
+
+  fun setLabel() {
+    TODO()
+  }
+
+  fun setReadOnly() {
+    TODO()
+  }
+
+  fun updateProperty() {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorProperty = memScoped {
       val fnPtr =

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class EditorSpatialGizmoPlugin internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun addMaterial() {
+    TODO()
+  }
+
+  fun canBeHidden(): Boolean {
+    TODO()
+  }
+
+  fun commitHandle() {
+    TODO()
+  }
+
+  fun createGizmo(): EditorSpatialGizmo {
+    TODO()
+  }
+
+  fun createHandleMaterial() {
+    TODO()
+  }
+
+  fun createIconMaterial() {
+    TODO()
+  }
+
+  fun createMaterial() {
+    TODO()
+  }
+
+  fun getHandleName(): String {
+    TODO()
+  }
+
+  fun getHandleValue(): Variant {
+    TODO()
+  }
+
+  fun getMaterial(): SpatialMaterial {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getPriority(): String {
+    TODO()
+  }
+
+  fun hasGizmo(): Boolean {
+    TODO()
+  }
+
+  fun isHandleHighlighted(): Boolean {
+    TODO()
+  }
+
+  fun isSelectableWhenHidden(): Boolean {
+    TODO()
+  }
+
+  fun redraw() {
+    TODO()
+  }
+
+  fun setHandle() {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorSpatialGizmoPlugin = memScoped {
       val fnPtr =

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class CameraServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addFeed() {
+    TODO()
+  }
+
+  fun feeds(): VariantArray {
+    TODO()
+  }
+
+  fun getFeed(): CameraFeed {
+    TODO()
+  }
+
+  fun getFeedCount(): Int {
+    TODO()
+  }
+
+  fun removeFeed() {
+    TODO()
+  }
+
   enum class FeedImage(
     val value: Int
   ) {

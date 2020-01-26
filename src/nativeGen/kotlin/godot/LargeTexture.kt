@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,46 @@ import kotlinx.cinterop.reinterpret
 open class LargeTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun getData(): VariantArray {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun addPiece(): Int {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getPieceCount(): Int {
+    TODO()
+  }
+
+  fun getPieceOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getPieceTexture(): Texture {
+    TODO()
+  }
+
+  fun setPieceOffset() {
+    TODO()
+  }
+
+  fun setPieceTexture() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
   companion object {
     fun new(): LargeTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LargeTexture".cstr.ptr)

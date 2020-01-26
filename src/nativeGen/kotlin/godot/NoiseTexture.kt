@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,58 @@ import kotlinx.cinterop.reinterpret
 open class NoiseTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun generateTexture(): Image {
+    TODO()
+  }
+
+  fun threadDone() {
+    TODO()
+  }
+
+  fun updateTexture() {
+    TODO()
+  }
+
+  fun getBumpStrength(): Float {
+    TODO()
+  }
+
+  fun getNoise(): OpenSimplexNoise {
+    TODO()
+  }
+
+  fun getSeamless(): Boolean {
+    TODO()
+  }
+
+  fun isNormalmap(): Boolean {
+    TODO()
+  }
+
+  fun setAsNormalmap() {
+    TODO()
+  }
+
+  fun setBumpStrength() {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setNoise() {
+    TODO()
+  }
+
+  fun setSeamless() {
+    TODO()
+  }
+
+  fun setWidth() {
+    TODO()
+  }
+
   companion object {
     fun new(): NoiseTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NoiseTexture".cstr.ptr)

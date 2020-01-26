@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,26 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygonInstance internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun navpolyChanged() {
+    TODO()
+  }
+
+  fun getNavigationPolygon(): NavigationPolygon {
+    TODO()
+  }
+
+  fun isEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setEnabled() {
+    TODO()
+  }
+
+  fun setNavigationPolygon() {
+    TODO()
+  }
+
   companion object {
     fun new(): NavigationPolygonInstance = memScoped {
       val fnPtr =

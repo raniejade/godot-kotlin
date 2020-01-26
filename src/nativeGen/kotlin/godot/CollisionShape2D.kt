@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,42 @@ import kotlinx.cinterop.reinterpret
 open class CollisionShape2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun shapeChanged() {
+    TODO()
+  }
+
+  fun getOneWayCollisionMargin(): Float {
+    TODO()
+  }
+
+  fun getShape(): Shape2D {
+    TODO()
+  }
+
+  fun isDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isOneWayCollisionEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setDisabled() {
+    TODO()
+  }
+
+  fun setOneWayCollision() {
+    TODO()
+  }
+
+  fun setOneWayCollisionMargin() {
+    TODO()
+  }
+
+  fun setShape() {
+    TODO()
+  }
+
   companion object {
     fun new(): CollisionShape2D = memScoped {
       val fnPtr =

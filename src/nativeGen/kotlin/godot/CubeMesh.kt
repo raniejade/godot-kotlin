@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class CubeMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  fun getSize(): Vector3 {
+    TODO()
+  }
+
+  fun getSubdivideDepth(): Int {
+    TODO()
+  }
+
+  fun getSubdivideHeight(): Int {
+    TODO()
+  }
+
+  fun getSubdivideWidth(): Int {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
+  fun setSubdivideDepth() {
+    TODO()
+  }
+
+  fun setSubdivideHeight() {
+    TODO()
+  }
+
+  fun setSubdivideWidth() {
+    TODO()
+  }
+
   companion object {
     fun new(): CubeMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CubeMesh".cstr.ptr)

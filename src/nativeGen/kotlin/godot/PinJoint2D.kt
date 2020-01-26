@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class PinJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
+  fun getSoftness(): Float {
+    TODO()
+  }
+
+  fun setSoftness() {
+    TODO()
+  }
+
   companion object {
     fun new(): PinJoint2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint2D".cstr.ptr)

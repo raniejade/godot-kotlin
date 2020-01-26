@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,34 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCMultiplayer internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
+  fun addPeer(): Error {
+    TODO()
+  }
+
+  fun close() {
+    TODO()
+  }
+
+  fun getPeer(): Dictionary {
+    TODO()
+  }
+
+  fun getPeers(): Dictionary {
+    TODO()
+  }
+
+  fun hasPeer(): Boolean {
+    TODO()
+  }
+
+  fun initialize(): Error {
+    TODO()
+  }
+
+  fun removePeer() {
+    TODO()
+  }
+
   companion object {
     fun new(): WebRTCMultiplayer = memScoped {
       val fnPtr =

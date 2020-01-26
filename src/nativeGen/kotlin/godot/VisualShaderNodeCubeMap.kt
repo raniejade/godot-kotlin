@@ -15,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeCubeMap internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getCubeMap(): CubeMap {
+    TODO()
+  }
+
+  fun getTextureType(): VisualShaderNodeCubeMap.TextureType {
+    TODO()
+  }
+
+  fun setCubeMap() {
+    TODO()
+  }
+
+  fun setTextureType() {
+    TODO()
+  }
+
   enum class TextureType(
     val value: Int
   ) {

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DShapeQueryResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getResultCount(): Int {
+    TODO()
+  }
+
+  fun getResultObject(): Object {
+    TODO()
+  }
+
+  fun getResultObjectId(): Int {
+    TODO()
+  }
+
+  fun getResultObjectShape(): Int {
+    TODO()
+  }
+
+  fun getResultRid(): RID {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Physics2DShapeQueryResult

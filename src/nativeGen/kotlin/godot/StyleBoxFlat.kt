@@ -2,7 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,134 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxFlat internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
+  fun getAaSize(): Int {
+    TODO()
+  }
+
+  fun getBgColor(): Color {
+    TODO()
+  }
+
+  fun getBorderBlend(): Boolean {
+    TODO()
+  }
+
+  fun getBorderColor(): Color {
+    TODO()
+  }
+
+  fun getBorderWidth(): Int {
+    TODO()
+  }
+
+  fun getBorderWidthMin(): Int {
+    TODO()
+  }
+
+  fun getCornerDetail(): Int {
+    TODO()
+  }
+
+  fun getCornerRadius(): Int {
+    TODO()
+  }
+
+  fun getExpandMargin(): Float {
+    TODO()
+  }
+
+  fun getShadowColor(): Color {
+    TODO()
+  }
+
+  fun getShadowOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getShadowSize(): Int {
+    TODO()
+  }
+
+  fun isAntiAliased(): Boolean {
+    TODO()
+  }
+
+  fun isDrawCenterEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setAaSize() {
+    TODO()
+  }
+
+  fun setAntiAliased() {
+    TODO()
+  }
+
+  fun setBgColor() {
+    TODO()
+  }
+
+  fun setBorderBlend() {
+    TODO()
+  }
+
+  fun setBorderColor() {
+    TODO()
+  }
+
+  fun setBorderWidth() {
+    TODO()
+  }
+
+  fun setBorderWidthAll() {
+    TODO()
+  }
+
+  fun setCornerDetail() {
+    TODO()
+  }
+
+  fun setCornerRadius() {
+    TODO()
+  }
+
+  fun setCornerRadiusAll() {
+    TODO()
+  }
+
+  fun setCornerRadiusIndividual() {
+    TODO()
+  }
+
+  fun setDrawCenter() {
+    TODO()
+  }
+
+  fun setExpandMargin() {
+    TODO()
+  }
+
+  fun setExpandMarginAll() {
+    TODO()
+  }
+
+  fun setExpandMarginIndividual() {
+    TODO()
+  }
+
+  fun setShadowColor() {
+    TODO()
+  }
+
+  fun setShadowOffset() {
+    TODO()
+  }
+
+  fun setShadowSize() {
+    TODO()
+  }
+
   companion object {
     fun new(): StyleBoxFlat = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxFlat".cstr.ptr)

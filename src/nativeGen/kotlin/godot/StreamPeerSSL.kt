@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,34 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerSSL internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
+  fun acceptStream(): Error {
+    TODO()
+  }
+
+  fun connectToStream(): Error {
+    TODO()
+  }
+
+  fun disconnectFromStream() {
+    TODO()
+  }
+
+  fun getStatus(): StreamPeerSSL.Status {
+    TODO()
+  }
+
+  fun isBlockingHandshakeEnabled(): Boolean {
+    TODO()
+  }
+
+  fun poll() {
+    TODO()
+  }
+
+  fun setBlockingHandshakeEnabled() {
+    TODO()
+  }
+
   enum class Status(
     val value: Int
   ) {

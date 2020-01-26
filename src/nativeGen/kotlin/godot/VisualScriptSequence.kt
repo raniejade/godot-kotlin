@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptSequence internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getSteps(): Int {
+    TODO()
+  }
+
+  fun setSteps() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptSequence = memScoped {
       val fnPtr =

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class GridContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun getColumns(): Int {
+    TODO()
+  }
+
+  fun setColumns() {
+    TODO()
+  }
+
   companion object {
     fun new(): GridContainer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridContainer".cstr.ptr)

@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptSelect internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getTyped(): Variant.Type {
+    TODO()
+  }
+
+  fun setTyped() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptSelect = memScoped {
       val fnPtr =

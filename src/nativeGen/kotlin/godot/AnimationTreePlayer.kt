@@ -3,7 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolStringArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,266 @@ import kotlinx.cinterop.reinterpret
 open class AnimationTreePlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun addNode() {
+    TODO()
+  }
+
+  fun advance() {
+    TODO()
+  }
+
+  fun animationNodeGetAnimation(): Animation {
+    TODO()
+  }
+
+  fun animationNodeGetMasterAnimation(): String {
+    TODO()
+  }
+
+  fun animationNodeGetPosition(): Float {
+    TODO()
+  }
+
+  fun animationNodeSetAnimation() {
+    TODO()
+  }
+
+  fun animationNodeSetFilterPath() {
+    TODO()
+  }
+
+  fun animationNodeSetMasterAnimation() {
+    TODO()
+  }
+
+  fun areNodesConnected(): Boolean {
+    TODO()
+  }
+
+  fun blend2NodeGetAmount(): Float {
+    TODO()
+  }
+
+  fun blend2NodeSetAmount() {
+    TODO()
+  }
+
+  fun blend2NodeSetFilterPath() {
+    TODO()
+  }
+
+  fun blend3NodeGetAmount(): Float {
+    TODO()
+  }
+
+  fun blend3NodeSetAmount() {
+    TODO()
+  }
+
+  fun blend4NodeGetAmount(): Vector2 {
+    TODO()
+  }
+
+  fun blend4NodeSetAmount() {
+    TODO()
+  }
+
+  fun connectNodes(): Error {
+    TODO()
+  }
+
+  fun disconnectNodes() {
+    TODO()
+  }
+
+  fun getAnimationProcessMode(): AnimationTreePlayer.AnimationProcessMode {
+    TODO()
+  }
+
+  fun getBasePath(): NodePath {
+    TODO()
+  }
+
+  fun getMasterPlayer(): NodePath {
+    TODO()
+  }
+
+  fun getNodeList(): PoolStringArray {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun mixNodeGetAmount(): Float {
+    TODO()
+  }
+
+  fun mixNodeSetAmount() {
+    TODO()
+  }
+
+  fun nodeExists(): Boolean {
+    TODO()
+  }
+
+  fun nodeGetInputCount(): Int {
+    TODO()
+  }
+
+  fun nodeGetInputSource(): String {
+    TODO()
+  }
+
+  fun nodeGetPosition(): Vector2 {
+    TODO()
+  }
+
+  fun nodeGetType(): AnimationTreePlayer.NodeType {
+    TODO()
+  }
+
+  fun nodeRename(): Error {
+    TODO()
+  }
+
+  fun nodeSetPosition() {
+    TODO()
+  }
+
+  fun oneshotNodeGetAutorestartDelay(): Float {
+    TODO()
+  }
+
+  fun oneshotNodeGetAutorestartRandomDelay(): Float {
+    TODO()
+  }
+
+  fun oneshotNodeGetFadeinTime(): Float {
+    TODO()
+  }
+
+  fun oneshotNodeGetFadeoutTime(): Float {
+    TODO()
+  }
+
+  fun oneshotNodeHasAutorestart(): Boolean {
+    TODO()
+  }
+
+  fun oneshotNodeIsActive(): Boolean {
+    TODO()
+  }
+
+  fun oneshotNodeSetAutorestart() {
+    TODO()
+  }
+
+  fun oneshotNodeSetAutorestartDelay() {
+    TODO()
+  }
+
+  fun oneshotNodeSetAutorestartRandomDelay() {
+    TODO()
+  }
+
+  fun oneshotNodeSetFadeinTime() {
+    TODO()
+  }
+
+  fun oneshotNodeSetFadeoutTime() {
+    TODO()
+  }
+
+  fun oneshotNodeSetFilterPath() {
+    TODO()
+  }
+
+  fun oneshotNodeStart() {
+    TODO()
+  }
+
+  fun oneshotNodeStop() {
+    TODO()
+  }
+
+  fun recomputeCaches() {
+    TODO()
+  }
+
+  fun removeNode() {
+    TODO()
+  }
+
+  fun reset() {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun setAnimationProcessMode() {
+    TODO()
+  }
+
+  fun setBasePath() {
+    TODO()
+  }
+
+  fun setMasterPlayer() {
+    TODO()
+  }
+
+  fun timescaleNodeGetScale(): Float {
+    TODO()
+  }
+
+  fun timescaleNodeSetScale() {
+    TODO()
+  }
+
+  fun timeseekNodeSeek() {
+    TODO()
+  }
+
+  fun transitionNodeDeleteInput() {
+    TODO()
+  }
+
+  fun transitionNodeGetCurrent(): Int {
+    TODO()
+  }
+
+  fun transitionNodeGetInputCount(): Int {
+    TODO()
+  }
+
+  fun transitionNodeGetXfadeTime(): Float {
+    TODO()
+  }
+
+  fun transitionNodeHasInputAutoAdvance(): Boolean {
+    TODO()
+  }
+
+  fun transitionNodeSetCurrent() {
+    TODO()
+  }
+
+  fun transitionNodeSetInputAutoAdvance() {
+    TODO()
+  }
+
+  fun transitionNodeSetInputCount() {
+    TODO()
+  }
+
+  fun transitionNodeSetXfadeTime() {
+    TODO()
+  }
+
   enum class AnimationProcessMode(
     val value: Int
   ) {

@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,46 @@ import kotlinx.cinterop.reinterpret
 open class Button internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
+  fun getButtonIcon(): Texture {
+    TODO()
+  }
+
+  fun getClipText(): Boolean {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getTextAlign(): Button.TextAlign {
+    TODO()
+  }
+
+  fun isFlat(): Boolean {
+    TODO()
+  }
+
+  fun setButtonIcon() {
+    TODO()
+  }
+
+  fun setClipText() {
+    TODO()
+  }
+
+  fun setFlat() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
+  fun setTextAlign() {
+    TODO()
+  }
+
   enum class TextAlign(
     val value: Int
   ) {

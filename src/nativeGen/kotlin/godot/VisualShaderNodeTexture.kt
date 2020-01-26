@@ -15,6 +15,30 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTexture internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getSource(): VisualShaderNodeTexture.Source {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTextureType(): VisualShaderNodeTexture.TextureType {
+    TODO()
+  }
+
+  fun setSource() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setTextureType() {
+    TODO()
+  }
+
   enum class TextureType(
     val value: Int
   ) {

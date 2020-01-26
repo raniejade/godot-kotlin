@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class PackedScene internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getBundledScene(): Dictionary {
+    TODO()
+  }
+
+  fun setBundledScene() {
+    TODO()
+  }
+
+  fun canInstance(): Boolean {
+    TODO()
+  }
+
+  fun getState(): SceneState {
+    TODO()
+  }
+
+  fun instance(): Node {
+    TODO()
+  }
+
+  fun pack(): Error {
+    TODO()
+  }
+
   enum class GenEditState(
     val value: Int
   ) {

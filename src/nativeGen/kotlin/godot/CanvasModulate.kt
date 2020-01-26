@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class CanvasModulate internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
   companion object {
     fun new(): CanvasModulate = memScoped {
       val fnPtr =

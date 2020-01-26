@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,102 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeGroupBase internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun addInputPort() {
+    TODO()
+  }
+
+  fun addOutputPort() {
+    TODO()
+  }
+
+  fun clearInputPorts() {
+    TODO()
+  }
+
+  fun clearOutputPorts() {
+    TODO()
+  }
+
+  fun getControl(): Control {
+    TODO()
+  }
+
+  fun getFreeInputPortId(): Int {
+    TODO()
+  }
+
+  fun getFreeOutputPortId(): Int {
+    TODO()
+  }
+
+  fun getInputPortCount(): Int {
+    TODO()
+  }
+
+  fun getInputs(): String {
+    TODO()
+  }
+
+  fun getOutputPortCount(): Int {
+    TODO()
+  }
+
+  fun getOutputs(): String {
+    TODO()
+  }
+
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun hasInputPort(): Boolean {
+    TODO()
+  }
+
+  fun hasOutputPort(): Boolean {
+    TODO()
+  }
+
+  fun removeInputPort() {
+    TODO()
+  }
+
+  fun removeOutputPort() {
+    TODO()
+  }
+
+  fun setControl() {
+    TODO()
+  }
+
+  fun setInputPortName() {
+    TODO()
+  }
+
+  fun setInputPortType() {
+    TODO()
+  }
+
+  fun setInputs() {
+    TODO()
+  }
+
+  fun setOutputPortName() {
+    TODO()
+  }
+
+  fun setOutputPortType() {
+    TODO()
+  }
+
+  fun setOutputs() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualShaderNodeGroupBase = memScoped {
       val fnPtr =

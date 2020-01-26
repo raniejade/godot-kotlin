@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,462 @@ import kotlinx.cinterop.reinterpret
 open class SpatialMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  fun getAlbedo(): Color {
+    TODO()
+  }
+
+  fun getAlphaScissorThreshold(): Float {
+    TODO()
+  }
+
+  fun getAnisotropy(): Float {
+    TODO()
+  }
+
+  fun getAoLightAffect(): Float {
+    TODO()
+  }
+
+  fun getAoTextureChannel(): SpatialMaterial.TextureChannel {
+    TODO()
+  }
+
+  fun getBillboardMode(): SpatialMaterial.BillboardMode {
+    TODO()
+  }
+
+  fun getBlendMode(): SpatialMaterial.BlendMode {
+    TODO()
+  }
+
+  fun getClearcoat(): Float {
+    TODO()
+  }
+
+  fun getClearcoatGloss(): Float {
+    TODO()
+  }
+
+  fun getCullMode(): SpatialMaterial.CullMode {
+    TODO()
+  }
+
+  fun getDepthDeepParallaxFlipBinormal(): Boolean {
+    TODO()
+  }
+
+  fun getDepthDeepParallaxFlipTangent(): Boolean {
+    TODO()
+  }
+
+  fun getDepthDeepParallaxMaxLayers(): Int {
+    TODO()
+  }
+
+  fun getDepthDeepParallaxMinLayers(): Int {
+    TODO()
+  }
+
+  fun getDepthDrawMode(): SpatialMaterial.DepthDrawMode {
+    TODO()
+  }
+
+  fun getDepthScale(): Float {
+    TODO()
+  }
+
+  fun getDetailBlendMode(): SpatialMaterial.BlendMode {
+    TODO()
+  }
+
+  fun getDetailUv(): SpatialMaterial.DetailUV {
+    TODO()
+  }
+
+  fun getDiffuseMode(): SpatialMaterial.DiffuseMode {
+    TODO()
+  }
+
+  fun getDistanceFade(): SpatialMaterial.DistanceFadeMode {
+    TODO()
+  }
+
+  fun getDistanceFadeMaxDistance(): Float {
+    TODO()
+  }
+
+  fun getDistanceFadeMinDistance(): Float {
+    TODO()
+  }
+
+  fun getEmission(): Color {
+    TODO()
+  }
+
+  fun getEmissionEnergy(): Float {
+    TODO()
+  }
+
+  fun getEmissionOperator(): SpatialMaterial.EmissionOperator {
+    TODO()
+  }
+
+  fun getFeature(): Boolean {
+    TODO()
+  }
+
+  fun getFlag(): Boolean {
+    TODO()
+  }
+
+  fun getGrow(): Float {
+    TODO()
+  }
+
+  fun getLineWidth(): Float {
+    TODO()
+  }
+
+  fun getMetallic(): Float {
+    TODO()
+  }
+
+  fun getMetallicTextureChannel(): SpatialMaterial.TextureChannel {
+    TODO()
+  }
+
+  fun getNormalScale(): Float {
+    TODO()
+  }
+
+  fun getParticlesAnimHFrames(): Int {
+    TODO()
+  }
+
+  fun getParticlesAnimLoop(): Boolean {
+    TODO()
+  }
+
+  fun getParticlesAnimVFrames(): Int {
+    TODO()
+  }
+
+  fun getPointSize(): Float {
+    TODO()
+  }
+
+  fun getProximityFadeDistance(): Float {
+    TODO()
+  }
+
+  fun getRefraction(): Float {
+    TODO()
+  }
+
+  fun getRefractionTextureChannel(): SpatialMaterial.TextureChannel {
+    TODO()
+  }
+
+  fun getRim(): Float {
+    TODO()
+  }
+
+  fun getRimTint(): Float {
+    TODO()
+  }
+
+  fun getRoughness(): Float {
+    TODO()
+  }
+
+  fun getRoughnessTextureChannel(): SpatialMaterial.TextureChannel {
+    TODO()
+  }
+
+  fun getSpecular(): Float {
+    TODO()
+  }
+
+  fun getSpecularMode(): SpatialMaterial.SpecularMode {
+    TODO()
+  }
+
+  fun getSubsurfaceScatteringStrength(): Float {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTransmission(): Color {
+    TODO()
+  }
+
+  fun getUv1Offset(): Vector3 {
+    TODO()
+  }
+
+  fun getUv1Scale(): Vector3 {
+    TODO()
+  }
+
+  fun getUv1TriplanarBlendSharpness(): Float {
+    TODO()
+  }
+
+  fun getUv2Offset(): Vector3 {
+    TODO()
+  }
+
+  fun getUv2Scale(): Vector3 {
+    TODO()
+  }
+
+  fun getUv2TriplanarBlendSharpness(): Float {
+    TODO()
+  }
+
+  fun isDepthDeepParallaxEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isGrowEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isProximityFadeEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setAlbedo() {
+    TODO()
+  }
+
+  fun setAlphaScissorThreshold() {
+    TODO()
+  }
+
+  fun setAnisotropy() {
+    TODO()
+  }
+
+  fun setAoLightAffect() {
+    TODO()
+  }
+
+  fun setAoTextureChannel() {
+    TODO()
+  }
+
+  fun setBillboardMode() {
+    TODO()
+  }
+
+  fun setBlendMode() {
+    TODO()
+  }
+
+  fun setClearcoat() {
+    TODO()
+  }
+
+  fun setClearcoatGloss() {
+    TODO()
+  }
+
+  fun setCullMode() {
+    TODO()
+  }
+
+  fun setDepthDeepParallax() {
+    TODO()
+  }
+
+  fun setDepthDeepParallaxFlipBinormal() {
+    TODO()
+  }
+
+  fun setDepthDeepParallaxFlipTangent() {
+    TODO()
+  }
+
+  fun setDepthDeepParallaxMaxLayers() {
+    TODO()
+  }
+
+  fun setDepthDeepParallaxMinLayers() {
+    TODO()
+  }
+
+  fun setDepthDrawMode() {
+    TODO()
+  }
+
+  fun setDepthScale() {
+    TODO()
+  }
+
+  fun setDetailBlendMode() {
+    TODO()
+  }
+
+  fun setDetailUv() {
+    TODO()
+  }
+
+  fun setDiffuseMode() {
+    TODO()
+  }
+
+  fun setDistanceFade() {
+    TODO()
+  }
+
+  fun setDistanceFadeMaxDistance() {
+    TODO()
+  }
+
+  fun setDistanceFadeMinDistance() {
+    TODO()
+  }
+
+  fun setEmission() {
+    TODO()
+  }
+
+  fun setEmissionEnergy() {
+    TODO()
+  }
+
+  fun setEmissionOperator() {
+    TODO()
+  }
+
+  fun setFeature() {
+    TODO()
+  }
+
+  fun setFlag() {
+    TODO()
+  }
+
+  fun setGrow() {
+    TODO()
+  }
+
+  fun setGrowEnabled() {
+    TODO()
+  }
+
+  fun setLineWidth() {
+    TODO()
+  }
+
+  fun setMetallic() {
+    TODO()
+  }
+
+  fun setMetallicTextureChannel() {
+    TODO()
+  }
+
+  fun setNormalScale() {
+    TODO()
+  }
+
+  fun setParticlesAnimHFrames() {
+    TODO()
+  }
+
+  fun setParticlesAnimLoop() {
+    TODO()
+  }
+
+  fun setParticlesAnimVFrames() {
+    TODO()
+  }
+
+  fun setPointSize() {
+    TODO()
+  }
+
+  fun setProximityFade() {
+    TODO()
+  }
+
+  fun setProximityFadeDistance() {
+    TODO()
+  }
+
+  fun setRefraction() {
+    TODO()
+  }
+
+  fun setRefractionTextureChannel() {
+    TODO()
+  }
+
+  fun setRim() {
+    TODO()
+  }
+
+  fun setRimTint() {
+    TODO()
+  }
+
+  fun setRoughness() {
+    TODO()
+  }
+
+  fun setRoughnessTextureChannel() {
+    TODO()
+  }
+
+  fun setSpecular() {
+    TODO()
+  }
+
+  fun setSpecularMode() {
+    TODO()
+  }
+
+  fun setSubsurfaceScatteringStrength() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setTransmission() {
+    TODO()
+  }
+
+  fun setUv1Offset() {
+    TODO()
+  }
+
+  fun setUv1Scale() {
+    TODO()
+  }
+
+  fun setUv1TriplanarBlendSharpness() {
+    TODO()
+  }
+
+  fun setUv2Offset() {
+    TODO()
+  }
+
+  fun setUv2Scale() {
+    TODO()
+  }
+
+  fun setUv2TriplanarBlendSharpness() {
+    TODO()
+  }
+
   enum class EmissionOperator(
     val value: Int
   ) {

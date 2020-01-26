@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,54 @@ import kotlinx.cinterop.reinterpret
 open class InputMap internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun actionAddEvent() {
+    TODO()
+  }
+
+  fun actionEraseEvent() {
+    TODO()
+  }
+
+  fun actionEraseEvents() {
+    TODO()
+  }
+
+  fun actionHasEvent(): Boolean {
+    TODO()
+  }
+
+  fun actionSetDeadzone() {
+    TODO()
+  }
+
+  fun addAction() {
+    TODO()
+  }
+
+  fun eraseAction() {
+    TODO()
+  }
+
+  fun eventIsAction(): Boolean {
+    TODO()
+  }
+
+  fun getActionList(): VariantArray {
+    TODO()
+  }
+
+  fun getActions(): VariantArray {
+    TODO()
+  }
+
+  fun hasAction(): Boolean {
+    TODO()
+  }
+
+  fun loadFromGlobals() {
+    TODO()
+  }
+
   companion object {
     val Instance: InputMap = memScoped {
           val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("InputMap".cstr.ptr)

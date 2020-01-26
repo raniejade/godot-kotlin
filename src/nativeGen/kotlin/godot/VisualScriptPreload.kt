@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptPreload internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getPreload(): Resource {
+    TODO()
+  }
+
+  fun setPreload() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptPreload = memScoped {
       val fnPtr =

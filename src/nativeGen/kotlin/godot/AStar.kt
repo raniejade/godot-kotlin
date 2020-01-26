@@ -3,6 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.PoolVector3Array
+import godot.core.VariantArray
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +21,94 @@ import kotlinx.cinterop.reinterpret
 open class AStar internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun computeCost(): Float {
+    TODO()
+  }
+
+  fun estimateCost(): Float {
+    TODO()
+  }
+
+  fun addPoint() {
+    TODO()
+  }
+
+  fun arePointsConnected(): Boolean {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun connectPoints() {
+    TODO()
+  }
+
+  fun disconnectPoints() {
+    TODO()
+  }
+
+  fun getAvailablePointId(): Int {
+    TODO()
+  }
+
+  fun getClosestPoint(): Int {
+    TODO()
+  }
+
+  fun getClosestPositionInSegment(): Vector3 {
+    TODO()
+  }
+
+  fun getIdPath(): PoolIntArray {
+    TODO()
+  }
+
+  fun getPointConnections(): PoolIntArray {
+    TODO()
+  }
+
+  fun getPointPath(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getPointPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getPointWeightScale(): Float {
+    TODO()
+  }
+
+  fun getPoints(): VariantArray {
+    TODO()
+  }
+
+  fun hasPoint(): Boolean {
+    TODO()
+  }
+
+  fun isPointDisabled(): Boolean {
+    TODO()
+  }
+
+  fun removePoint() {
+    TODO()
+  }
+
+  fun setPointDisabled() {
+    TODO()
+  }
+
+  fun setPointPosition() {
+    TODO()
+  }
+
+  fun setPointWeightScale() {
+    TODO()
+  }
+
   companion object {
     fun new(): AStar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AStar".cstr.ptr)

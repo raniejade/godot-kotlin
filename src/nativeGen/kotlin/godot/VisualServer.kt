@@ -2,8 +2,20 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.PoolIntArray
+import godot.core.RID
+import godot.core.Transform
+import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +27,1446 @@ import kotlinx.cinterop.reinterpret
 open class VisualServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun blackBarsSetImages() {
+    TODO()
+  }
+
+  fun blackBarsSetMargins() {
+    TODO()
+  }
+
+  fun cameraCreate(): RID {
+    TODO()
+  }
+
+  fun cameraSetCullMask() {
+    TODO()
+  }
+
+  fun cameraSetEnvironment() {
+    TODO()
+  }
+
+  fun cameraSetFrustum() {
+    TODO()
+  }
+
+  fun cameraSetOrthogonal() {
+    TODO()
+  }
+
+  fun cameraSetPerspective() {
+    TODO()
+  }
+
+  fun cameraSetTransform() {
+    TODO()
+  }
+
+  fun cameraSetUseVerticalAspect() {
+    TODO()
+  }
+
+  fun canvasCreate(): RID {
+    TODO()
+  }
+
+  fun canvasItemAddCircle() {
+    TODO()
+  }
+
+  fun canvasItemAddClipIgnore() {
+    TODO()
+  }
+
+  fun canvasItemAddLine() {
+    TODO()
+  }
+
+  fun canvasItemAddMesh() {
+    TODO()
+  }
+
+  fun canvasItemAddMultimesh() {
+    TODO()
+  }
+
+  fun canvasItemAddNinePatch() {
+    TODO()
+  }
+
+  fun canvasItemAddParticles() {
+    TODO()
+  }
+
+  fun canvasItemAddPolygon() {
+    TODO()
+  }
+
+  fun canvasItemAddPolyline() {
+    TODO()
+  }
+
+  fun canvasItemAddPrimitive() {
+    TODO()
+  }
+
+  fun canvasItemAddRect() {
+    TODO()
+  }
+
+  fun canvasItemAddSetTransform() {
+    TODO()
+  }
+
+  fun canvasItemAddTextureRect() {
+    TODO()
+  }
+
+  fun canvasItemAddTextureRectRegion() {
+    TODO()
+  }
+
+  fun canvasItemAddTriangleArray() {
+    TODO()
+  }
+
+  fun canvasItemClear() {
+    TODO()
+  }
+
+  fun canvasItemCreate(): RID {
+    TODO()
+  }
+
+  fun canvasItemSetClip() {
+    TODO()
+  }
+
+  fun canvasItemSetCopyToBackbuffer() {
+    TODO()
+  }
+
+  fun canvasItemSetCustomRect() {
+    TODO()
+  }
+
+  fun canvasItemSetDistanceFieldMode() {
+    TODO()
+  }
+
+  fun canvasItemSetDrawBehindParent() {
+    TODO()
+  }
+
+  fun canvasItemSetDrawIndex() {
+    TODO()
+  }
+
+  fun canvasItemSetLightMask() {
+    TODO()
+  }
+
+  fun canvasItemSetMaterial() {
+    TODO()
+  }
+
+  fun canvasItemSetModulate() {
+    TODO()
+  }
+
+  fun canvasItemSetParent() {
+    TODO()
+  }
+
+  fun canvasItemSetSelfModulate() {
+    TODO()
+  }
+
+  fun canvasItemSetSortChildrenByY() {
+    TODO()
+  }
+
+  fun canvasItemSetTransform() {
+    TODO()
+  }
+
+  fun canvasItemSetUseParentMaterial() {
+    TODO()
+  }
+
+  fun canvasItemSetVisible() {
+    TODO()
+  }
+
+  fun canvasItemSetZAsRelativeToParent() {
+    TODO()
+  }
+
+  fun canvasItemSetZIndex() {
+    TODO()
+  }
+
+  fun canvasLightAttachToCanvas() {
+    TODO()
+  }
+
+  fun canvasLightCreate(): RID {
+    TODO()
+  }
+
+  fun canvasLightOccluderAttachToCanvas() {
+    TODO()
+  }
+
+  fun canvasLightOccluderCreate(): RID {
+    TODO()
+  }
+
+  fun canvasLightOccluderSetEnabled() {
+    TODO()
+  }
+
+  fun canvasLightOccluderSetLightMask() {
+    TODO()
+  }
+
+  fun canvasLightOccluderSetPolygon() {
+    TODO()
+  }
+
+  fun canvasLightOccluderSetTransform() {
+    TODO()
+  }
+
+  fun canvasLightSetColor() {
+    TODO()
+  }
+
+  fun canvasLightSetEnabled() {
+    TODO()
+  }
+
+  fun canvasLightSetEnergy() {
+    TODO()
+  }
+
+  fun canvasLightSetHeight() {
+    TODO()
+  }
+
+  fun canvasLightSetItemCullMask() {
+    TODO()
+  }
+
+  fun canvasLightSetItemShadowCullMask() {
+    TODO()
+  }
+
+  fun canvasLightSetLayerRange() {
+    TODO()
+  }
+
+  fun canvasLightSetMode() {
+    TODO()
+  }
+
+  fun canvasLightSetScale() {
+    TODO()
+  }
+
+  fun canvasLightSetShadowBufferSize() {
+    TODO()
+  }
+
+  fun canvasLightSetShadowColor() {
+    TODO()
+  }
+
+  fun canvasLightSetShadowEnabled() {
+    TODO()
+  }
+
+  fun canvasLightSetShadowFilter() {
+    TODO()
+  }
+
+  fun canvasLightSetShadowGradientLength() {
+    TODO()
+  }
+
+  fun canvasLightSetShadowSmooth() {
+    TODO()
+  }
+
+  fun canvasLightSetTexture() {
+    TODO()
+  }
+
+  fun canvasLightSetTextureOffset() {
+    TODO()
+  }
+
+  fun canvasLightSetTransform() {
+    TODO()
+  }
+
+  fun canvasLightSetZRange() {
+    TODO()
+  }
+
+  fun canvasOccluderPolygonCreate(): RID {
+    TODO()
+  }
+
+  fun canvasOccluderPolygonSetCullMode() {
+    TODO()
+  }
+
+  fun canvasOccluderPolygonSetShape() {
+    TODO()
+  }
+
+  fun canvasOccluderPolygonSetShapeAsLines() {
+    TODO()
+  }
+
+  fun canvasSetItemMirroring() {
+    TODO()
+  }
+
+  fun canvasSetModulate() {
+    TODO()
+  }
+
+  fun directionalLightCreate(): RID {
+    TODO()
+  }
+
+  fun draw() {
+    TODO()
+  }
+
+  fun environmentCreate(): RID {
+    TODO()
+  }
+
+  fun environmentSetAdjustment() {
+    TODO()
+  }
+
+  fun environmentSetAmbientLight() {
+    TODO()
+  }
+
+  fun environmentSetBackground() {
+    TODO()
+  }
+
+  fun environmentSetBgColor() {
+    TODO()
+  }
+
+  fun environmentSetBgEnergy() {
+    TODO()
+  }
+
+  fun environmentSetCanvasMaxLayer() {
+    TODO()
+  }
+
+  fun environmentSetDofBlurFar() {
+    TODO()
+  }
+
+  fun environmentSetDofBlurNear() {
+    TODO()
+  }
+
+  fun environmentSetFog() {
+    TODO()
+  }
+
+  fun environmentSetFogDepth() {
+    TODO()
+  }
+
+  fun environmentSetFogHeight() {
+    TODO()
+  }
+
+  fun environmentSetGlow() {
+    TODO()
+  }
+
+  fun environmentSetSky() {
+    TODO()
+  }
+
+  fun environmentSetSkyCustomFov() {
+    TODO()
+  }
+
+  fun environmentSetSkyOrientation() {
+    TODO()
+  }
+
+  fun environmentSetSsao() {
+    TODO()
+  }
+
+  fun environmentSetSsr() {
+    TODO()
+  }
+
+  fun environmentSetTonemap() {
+    TODO()
+  }
+
+  fun finish() {
+    TODO()
+  }
+
+  fun forceDraw() {
+    TODO()
+  }
+
+  fun forceSync() {
+    TODO()
+  }
+
+  fun freeRid() {
+    TODO()
+  }
+
+  fun getRenderInfo(): Int {
+    TODO()
+  }
+
+  fun getTestCube(): RID {
+    TODO()
+  }
+
+  fun getTestTexture(): RID {
+    TODO()
+  }
+
+  fun getWhiteTexture(): RID {
+    TODO()
+  }
+
+  fun giProbeCreate(): RID {
+    TODO()
+  }
+
+  fun giProbeGetBias(): Float {
+    TODO()
+  }
+
+  fun giProbeGetBounds(): AABB {
+    TODO()
+  }
+
+  fun giProbeGetCellSize(): Float {
+    TODO()
+  }
+
+  fun giProbeGetDynamicData(): PoolIntArray {
+    TODO()
+  }
+
+  fun giProbeGetDynamicRange(): Int {
+    TODO()
+  }
+
+  fun giProbeGetEnergy(): Float {
+    TODO()
+  }
+
+  fun giProbeGetNormalBias(): Float {
+    TODO()
+  }
+
+  fun giProbeGetPropagation(): Float {
+    TODO()
+  }
+
+  fun giProbeGetToCellXform(): Transform {
+    TODO()
+  }
+
+  fun giProbeIsCompressed(): Boolean {
+    TODO()
+  }
+
+  fun giProbeIsInterior(): Boolean {
+    TODO()
+  }
+
+  fun giProbeSetBias() {
+    TODO()
+  }
+
+  fun giProbeSetBounds() {
+    TODO()
+  }
+
+  fun giProbeSetCellSize() {
+    TODO()
+  }
+
+  fun giProbeSetCompress() {
+    TODO()
+  }
+
+  fun giProbeSetDynamicData() {
+    TODO()
+  }
+
+  fun giProbeSetDynamicRange() {
+    TODO()
+  }
+
+  fun giProbeSetEnergy() {
+    TODO()
+  }
+
+  fun giProbeSetInterior() {
+    TODO()
+  }
+
+  fun giProbeSetNormalBias() {
+    TODO()
+  }
+
+  fun giProbeSetPropagation() {
+    TODO()
+  }
+
+  fun giProbeSetToCellXform() {
+    TODO()
+  }
+
+  fun hasChanged(): Boolean {
+    TODO()
+  }
+
+  fun hasFeature(): Boolean {
+    TODO()
+  }
+
+  fun hasOsFeature(): Boolean {
+    TODO()
+  }
+
+  fun immediateBegin() {
+    TODO()
+  }
+
+  fun immediateClear() {
+    TODO()
+  }
+
+  fun immediateColor() {
+    TODO()
+  }
+
+  fun immediateCreate(): RID {
+    TODO()
+  }
+
+  fun immediateEnd() {
+    TODO()
+  }
+
+  fun immediateGetMaterial(): RID {
+    TODO()
+  }
+
+  fun immediateNormal() {
+    TODO()
+  }
+
+  fun immediateSetMaterial() {
+    TODO()
+  }
+
+  fun immediateTangent() {
+    TODO()
+  }
+
+  fun immediateUv() {
+    TODO()
+  }
+
+  fun immediateUv2() {
+    TODO()
+  }
+
+  fun immediateVertex() {
+    TODO()
+  }
+
+  fun immediateVertex2d() {
+    TODO()
+  }
+
+  fun init() {
+    TODO()
+  }
+
+  fun instanceAttachObjectInstanceId() {
+    TODO()
+  }
+
+  fun instanceAttachSkeleton() {
+    TODO()
+  }
+
+  fun instanceCreate(): RID {
+    TODO()
+  }
+
+  fun instanceCreate2(): RID {
+    TODO()
+  }
+
+  fun instanceGeometrySetAsInstanceLod() {
+    TODO()
+  }
+
+  fun instanceGeometrySetCastShadowsSetting() {
+    TODO()
+  }
+
+  fun instanceGeometrySetDrawRange() {
+    TODO()
+  }
+
+  fun instanceGeometrySetFlag() {
+    TODO()
+  }
+
+  fun instanceGeometrySetMaterialOverride() {
+    TODO()
+  }
+
+  fun instanceSetBase() {
+    TODO()
+  }
+
+  fun instanceSetBlendShapeWeight() {
+    TODO()
+  }
+
+  fun instanceSetCustomAabb() {
+    TODO()
+  }
+
+  fun instanceSetExterior() {
+    TODO()
+  }
+
+  fun instanceSetExtraVisibilityMargin() {
+    TODO()
+  }
+
+  fun instanceSetLayerMask() {
+    TODO()
+  }
+
+  fun instanceSetScenario() {
+    TODO()
+  }
+
+  fun instanceSetSurfaceMaterial() {
+    TODO()
+  }
+
+  fun instanceSetTransform() {
+    TODO()
+  }
+
+  fun instanceSetUseLightmap() {
+    TODO()
+  }
+
+  fun instanceSetVisible() {
+    TODO()
+  }
+
+  fun instancesCullAabb(): VariantArray {
+    TODO()
+  }
+
+  fun instancesCullConvex(): VariantArray {
+    TODO()
+  }
+
+  fun instancesCullRay(): VariantArray {
+    TODO()
+  }
+
+  fun lightDirectionalSetBlendSplits() {
+    TODO()
+  }
+
+  fun lightDirectionalSetShadowDepthRangeMode() {
+    TODO()
+  }
+
+  fun lightDirectionalSetShadowMode() {
+    TODO()
+  }
+
+  fun lightOmniSetShadowDetail() {
+    TODO()
+  }
+
+  fun lightOmniSetShadowMode() {
+    TODO()
+  }
+
+  fun lightSetColor() {
+    TODO()
+  }
+
+  fun lightSetCullMask() {
+    TODO()
+  }
+
+  fun lightSetNegative() {
+    TODO()
+  }
+
+  fun lightSetParam() {
+    TODO()
+  }
+
+  fun lightSetProjector() {
+    TODO()
+  }
+
+  fun lightSetReverseCullFaceMode() {
+    TODO()
+  }
+
+  fun lightSetShadow() {
+    TODO()
+  }
+
+  fun lightSetShadowColor() {
+    TODO()
+  }
+
+  fun lightSetUseGi() {
+    TODO()
+  }
+
+  fun lightmapCaptureCreate(): RID {
+    TODO()
+  }
+
+  fun lightmapCaptureGetBounds(): AABB {
+    TODO()
+  }
+
+  fun lightmapCaptureGetEnergy(): Float {
+    TODO()
+  }
+
+  fun lightmapCaptureGetOctree(): PoolByteArray {
+    TODO()
+  }
+
+  fun lightmapCaptureGetOctreeCellSubdiv(): Int {
+    TODO()
+  }
+
+  fun lightmapCaptureGetOctreeCellTransform(): Transform {
+    TODO()
+  }
+
+  fun lightmapCaptureSetBounds() {
+    TODO()
+  }
+
+  fun lightmapCaptureSetEnergy() {
+    TODO()
+  }
+
+  fun lightmapCaptureSetOctree() {
+    TODO()
+  }
+
+  fun lightmapCaptureSetOctreeCellSubdiv() {
+    TODO()
+  }
+
+  fun lightmapCaptureSetOctreeCellTransform() {
+    TODO()
+  }
+
+  fun makeSphereMesh(): RID {
+    TODO()
+  }
+
+  fun materialCreate(): RID {
+    TODO()
+  }
+
+  fun materialGetParam(): Variant {
+    TODO()
+  }
+
+  fun materialGetParamDefault(): Variant {
+    TODO()
+  }
+
+  fun materialGetShader(): RID {
+    TODO()
+  }
+
+  fun materialSetLineWidth() {
+    TODO()
+  }
+
+  fun materialSetNextPass() {
+    TODO()
+  }
+
+  fun materialSetParam() {
+    TODO()
+  }
+
+  fun materialSetRenderPriority() {
+    TODO()
+  }
+
+  fun materialSetShader() {
+    TODO()
+  }
+
+  fun meshAddSurfaceFromArrays() {
+    TODO()
+  }
+
+  fun meshClear() {
+    TODO()
+  }
+
+  fun meshCreate(): RID {
+    TODO()
+  }
+
+  fun meshGetBlendShapeCount(): Int {
+    TODO()
+  }
+
+  fun meshGetBlendShapeMode(): VisualServer.BlendShapeMode {
+    TODO()
+  }
+
+  fun meshGetCustomAabb(): AABB {
+    TODO()
+  }
+
+  fun meshGetSurfaceCount(): Int {
+    TODO()
+  }
+
+  fun meshRemoveSurface() {
+    TODO()
+  }
+
+  fun meshSetBlendShapeCount() {
+    TODO()
+  }
+
+  fun meshSetBlendShapeMode() {
+    TODO()
+  }
+
+  fun meshSetCustomAabb() {
+    TODO()
+  }
+
+  fun meshSurfaceGetAabb(): AABB {
+    TODO()
+  }
+
+  fun meshSurfaceGetArray(): PoolByteArray {
+    TODO()
+  }
+
+  fun meshSurfaceGetArrayIndexLen(): Int {
+    TODO()
+  }
+
+  fun meshSurfaceGetArrayLen(): Int {
+    TODO()
+  }
+
+  fun meshSurfaceGetArrays(): VariantArray {
+    TODO()
+  }
+
+  fun meshSurfaceGetBlendShapeArrays(): VariantArray {
+    TODO()
+  }
+
+  fun meshSurfaceGetFormat(): Int {
+    TODO()
+  }
+
+  fun meshSurfaceGetFormatOffset(): Int {
+    TODO()
+  }
+
+  fun meshSurfaceGetFormatStride(): Int {
+    TODO()
+  }
+
+  fun meshSurfaceGetIndexArray(): PoolByteArray {
+    TODO()
+  }
+
+  fun meshSurfaceGetMaterial(): RID {
+    TODO()
+  }
+
+  fun meshSurfaceGetPrimitiveType(): VisualServer.PrimitiveType {
+    TODO()
+  }
+
+  fun meshSurfaceGetSkeletonAabb(): VariantArray {
+    TODO()
+  }
+
+  fun meshSurfaceSetMaterial() {
+    TODO()
+  }
+
+  fun meshSurfaceUpdateRegion() {
+    TODO()
+  }
+
+  fun multimeshAllocate() {
+    TODO()
+  }
+
+  fun multimeshGetAabb(): AABB {
+    TODO()
+  }
+
+  fun multimeshGetInstanceCount(): Int {
+    TODO()
+  }
+
+  fun multimeshGetMesh(): RID {
+    TODO()
+  }
+
+  fun multimeshGetVisibleInstances(): Int {
+    TODO()
+  }
+
+  fun multimeshInstanceGetColor(): Color {
+    TODO()
+  }
+
+  fun multimeshInstanceGetCustomData(): Color {
+    TODO()
+  }
+
+  fun multimeshInstanceGetTransform(): Transform {
+    TODO()
+  }
+
+  fun multimeshInstanceGetTransform2d(): Transform2D {
+    TODO()
+  }
+
+  fun multimeshInstanceSetColor() {
+    TODO()
+  }
+
+  fun multimeshInstanceSetCustomData() {
+    TODO()
+  }
+
+  fun multimeshInstanceSetTransform() {
+    TODO()
+  }
+
+  fun multimeshInstanceSetTransform2d() {
+    TODO()
+  }
+
+  fun multimeshSetAsBulkArray() {
+    TODO()
+  }
+
+  fun multimeshSetMesh() {
+    TODO()
+  }
+
+  fun multimeshSetVisibleInstances() {
+    TODO()
+  }
+
+  fun omniLightCreate(): RID {
+    TODO()
+  }
+
+  fun particlesCreate(): RID {
+    TODO()
+  }
+
+  fun particlesGetCurrentAabb(): AABB {
+    TODO()
+  }
+
+  fun particlesGetEmitting(): Boolean {
+    TODO()
+  }
+
+  fun particlesRestart() {
+    TODO()
+  }
+
+  fun particlesSetAmount() {
+    TODO()
+  }
+
+  fun particlesSetCustomAabb() {
+    TODO()
+  }
+
+  fun particlesSetDrawOrder() {
+    TODO()
+  }
+
+  fun particlesSetDrawPassMesh() {
+    TODO()
+  }
+
+  fun particlesSetDrawPasses() {
+    TODO()
+  }
+
+  fun particlesSetEmissionTransform() {
+    TODO()
+  }
+
+  fun particlesSetEmitting() {
+    TODO()
+  }
+
+  fun particlesSetExplosivenessRatio() {
+    TODO()
+  }
+
+  fun particlesSetFixedFps() {
+    TODO()
+  }
+
+  fun particlesSetFractionalDelta() {
+    TODO()
+  }
+
+  fun particlesSetLifetime() {
+    TODO()
+  }
+
+  fun particlesSetOneShot() {
+    TODO()
+  }
+
+  fun particlesSetPreProcessTime() {
+    TODO()
+  }
+
+  fun particlesSetProcessMaterial() {
+    TODO()
+  }
+
+  fun particlesSetRandomnessRatio() {
+    TODO()
+  }
+
+  fun particlesSetSpeedScale() {
+    TODO()
+  }
+
+  fun particlesSetUseLocalCoordinates() {
+    TODO()
+  }
+
+  fun reflectionProbeCreate(): RID {
+    TODO()
+  }
+
+  fun reflectionProbeSetAsInterior() {
+    TODO()
+  }
+
+  fun reflectionProbeSetCullMask() {
+    TODO()
+  }
+
+  fun reflectionProbeSetEnableBoxProjection() {
+    TODO()
+  }
+
+  fun reflectionProbeSetEnableShadows() {
+    TODO()
+  }
+
+  fun reflectionProbeSetExtents() {
+    TODO()
+  }
+
+  fun reflectionProbeSetIntensity() {
+    TODO()
+  }
+
+  fun reflectionProbeSetInteriorAmbient() {
+    TODO()
+  }
+
+  fun reflectionProbeSetInteriorAmbientEnergy() {
+    TODO()
+  }
+
+  fun reflectionProbeSetInteriorAmbientProbeContribution() {
+    TODO()
+  }
+
+  fun reflectionProbeSetMaxDistance() {
+    TODO()
+  }
+
+  fun reflectionProbeSetOriginOffset() {
+    TODO()
+  }
+
+  fun reflectionProbeSetUpdateMode() {
+    TODO()
+  }
+
+  fun requestFrameDrawnCallback() {
+    TODO()
+  }
+
+  fun scenarioCreate(): RID {
+    TODO()
+  }
+
+  fun scenarioSetDebug() {
+    TODO()
+  }
+
+  fun scenarioSetEnvironment() {
+    TODO()
+  }
+
+  fun scenarioSetFallbackEnvironment() {
+    TODO()
+  }
+
+  fun scenarioSetReflectionAtlasSize() {
+    TODO()
+  }
+
+  fun setBootImage() {
+    TODO()
+  }
+
+  fun setDebugGenerateWireframes() {
+    TODO()
+  }
+
+  fun setDefaultClearColor() {
+    TODO()
+  }
+
+  fun shaderCreate(): RID {
+    TODO()
+  }
+
+  fun shaderGetCode(): String {
+    TODO()
+  }
+
+  fun shaderGetDefaultTextureParam(): RID {
+    TODO()
+  }
+
+  fun shaderGetParamList(): VariantArray {
+    TODO()
+  }
+
+  fun shaderSetCode() {
+    TODO()
+  }
+
+  fun shaderSetDefaultTextureParam() {
+    TODO()
+  }
+
+  fun skeletonAllocate() {
+    TODO()
+  }
+
+  fun skeletonBoneGetTransform(): Transform {
+    TODO()
+  }
+
+  fun skeletonBoneGetTransform2d(): Transform2D {
+    TODO()
+  }
+
+  fun skeletonBoneSetTransform() {
+    TODO()
+  }
+
+  fun skeletonBoneSetTransform2d() {
+    TODO()
+  }
+
+  fun skeletonCreate(): RID {
+    TODO()
+  }
+
+  fun skeletonGetBoneCount(): Int {
+    TODO()
+  }
+
+  fun skyCreate(): RID {
+    TODO()
+  }
+
+  fun skySetTexture() {
+    TODO()
+  }
+
+  fun spotLightCreate(): RID {
+    TODO()
+  }
+
+  fun sync() {
+    TODO()
+  }
+
+  fun textureAllocate() {
+    TODO()
+  }
+
+  fun textureBind() {
+    TODO()
+  }
+
+  fun textureCreate(): RID {
+    TODO()
+  }
+
+  fun textureCreateFromImage(): RID {
+    TODO()
+  }
+
+  fun textureDebugUsage(): VariantArray {
+    TODO()
+  }
+
+  fun textureGetData(): Image {
+    TODO()
+  }
+
+  fun textureGetDepth(): Int {
+    TODO()
+  }
+
+  fun textureGetFlags(): Int {
+    TODO()
+  }
+
+  fun textureGetFormat(): Image.Format {
+    TODO()
+  }
+
+  fun textureGetHeight(): Int {
+    TODO()
+  }
+
+  fun textureGetPath(): String {
+    TODO()
+  }
+
+  fun textureGetTexid(): Int {
+    TODO()
+  }
+
+  fun textureGetType(): VisualServer.TextureType {
+    TODO()
+  }
+
+  fun textureGetWidth(): Int {
+    TODO()
+  }
+
+  fun textureSetData() {
+    TODO()
+  }
+
+  fun textureSetDataPartial() {
+    TODO()
+  }
+
+  fun textureSetFlags() {
+    TODO()
+  }
+
+  fun textureSetPath() {
+    TODO()
+  }
+
+  fun textureSetShrinkAllX2OnSetData() {
+    TODO()
+  }
+
+  fun textureSetSizeOverride() {
+    TODO()
+  }
+
+  fun texturesKeepOriginal() {
+    TODO()
+  }
+
+  fun viewportAttachCamera() {
+    TODO()
+  }
+
+  fun viewportAttachCanvas() {
+    TODO()
+  }
+
+  fun viewportAttachToScreen() {
+    TODO()
+  }
+
+  fun viewportCreate(): RID {
+    TODO()
+  }
+
+  fun viewportDetach() {
+    TODO()
+  }
+
+  fun viewportGetRenderInfo(): Int {
+    TODO()
+  }
+
+  fun viewportGetTexture(): RID {
+    TODO()
+  }
+
+  fun viewportRemoveCanvas() {
+    TODO()
+  }
+
+  fun viewportSetActive() {
+    TODO()
+  }
+
+  fun viewportSetCanvasStacking() {
+    TODO()
+  }
+
+  fun viewportSetCanvasTransform() {
+    TODO()
+  }
+
+  fun viewportSetClearMode() {
+    TODO()
+  }
+
+  fun viewportSetDebugDraw() {
+    TODO()
+  }
+
+  fun viewportSetDisable3d() {
+    TODO()
+  }
+
+  fun viewportSetDisableEnvironment() {
+    TODO()
+  }
+
+  fun viewportSetGlobalCanvasTransform() {
+    TODO()
+  }
+
+  fun viewportSetHdr() {
+    TODO()
+  }
+
+  fun viewportSetHideCanvas() {
+    TODO()
+  }
+
+  fun viewportSetHideScenario() {
+    TODO()
+  }
+
+  fun viewportSetMsaa() {
+    TODO()
+  }
+
+  fun viewportSetParentViewport() {
+    TODO()
+  }
+
+  fun viewportSetRenderDirectToScreen() {
+    TODO()
+  }
+
+  fun viewportSetScenario() {
+    TODO()
+  }
+
+  fun viewportSetShadowAtlasQuadrantSubdivision() {
+    TODO()
+  }
+
+  fun viewportSetShadowAtlasSize() {
+    TODO()
+  }
+
+  fun viewportSetSize() {
+    TODO()
+  }
+
+  fun viewportSetTransparentBackground() {
+    TODO()
+  }
+
+  fun viewportSetUpdateMode() {
+    TODO()
+  }
+
+  fun viewportSetUsage() {
+    TODO()
+  }
+
+  fun viewportSetUseArvr() {
+    TODO()
+  }
+
+  fun viewportSetVflip() {
+    TODO()
+  }
+
   enum class ReflectionProbeUpdateMode(
     val value: Int
   ) {

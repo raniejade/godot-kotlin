@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,66 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamSample internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
+  fun getData(): PoolByteArray {
+    TODO()
+  }
+
+  fun getFormat(): AudioStreamSample.Format {
+    TODO()
+  }
+
+  fun getLoopBegin(): Int {
+    TODO()
+  }
+
+  fun getLoopEnd(): Int {
+    TODO()
+  }
+
+  fun getLoopMode(): AudioStreamSample.LoopMode {
+    TODO()
+  }
+
+  fun getMixRate(): Int {
+    TODO()
+  }
+
+  fun isStereo(): Boolean {
+    TODO()
+  }
+
+  fun saveToWav(): Error {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun setFormat() {
+    TODO()
+  }
+
+  fun setLoopBegin() {
+    TODO()
+  }
+
+  fun setLoopEnd() {
+    TODO()
+  }
+
+  fun setLoopMode() {
+    TODO()
+  }
+
+  fun setMixRate() {
+    TODO()
+  }
+
+  fun setStereo() {
+    TODO()
+  }
+
   enum class LoopMode(
     val value: Int
   ) {

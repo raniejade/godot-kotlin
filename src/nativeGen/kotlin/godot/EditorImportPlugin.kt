@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,54 @@ import kotlinx.cinterop.reinterpret
 open class EditorImportPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getImportOptions(): VariantArray {
+    TODO()
+  }
+
+  fun getImportOrder(): Int {
+    TODO()
+  }
+
+  fun getImporterName(): String {
+    TODO()
+  }
+
+  fun getOptionVisibility(): Boolean {
+    TODO()
+  }
+
+  fun getPresetCount(): Int {
+    TODO()
+  }
+
+  fun getPresetName(): String {
+    TODO()
+  }
+
+  fun getPriority(): Float {
+    TODO()
+  }
+
+  fun getRecognizedExtensions(): VariantArray {
+    TODO()
+  }
+
+  fun getResourceType(): String {
+    TODO()
+  }
+
+  fun getSaveExtension(): String {
+    TODO()
+  }
+
+  fun getVisibleName(): String {
+    TODO()
+  }
+
+  fun import(): Int {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorImportPlugin = memScoped {
       val fnPtr =

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,50 @@ import kotlinx.cinterop.reinterpret
 open class StaticBody2D internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
+  fun reloadPhysicsCharacteristics() {
+    TODO()
+  }
+
+  fun getBounce(): Float {
+    TODO()
+  }
+
+  fun getConstantAngularVelocity(): Float {
+    TODO()
+  }
+
+  fun getConstantLinearVelocity(): Vector2 {
+    TODO()
+  }
+
+  fun getFriction(): Float {
+    TODO()
+  }
+
+  fun getPhysicsMaterialOverride(): PhysicsMaterial {
+    TODO()
+  }
+
+  fun setBounce() {
+    TODO()
+  }
+
+  fun setConstantAngularVelocity() {
+    TODO()
+  }
+
+  fun setConstantLinearVelocity() {
+    TODO()
+  }
+
+  fun setFriction() {
+    TODO()
+  }
+
+  fun setPhysicsMaterialOverride() {
+    TODO()
+  }
+
   companion object {
     fun new(): StaticBody2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StaticBody2D".cstr.ptr)

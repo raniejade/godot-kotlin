@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class BackBufferCopy internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getCopyMode(): BackBufferCopy.CopyMode {
+    TODO()
+  }
+
+  fun getRect(): Rect2 {
+    TODO()
+  }
+
+  fun setCopyMode() {
+    TODO()
+  }
+
+  fun setRect() {
+    TODO()
+  }
+
   enum class CopyMode(
     val value: Int
   ) {

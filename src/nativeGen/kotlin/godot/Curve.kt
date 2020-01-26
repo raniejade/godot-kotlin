@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,114 @@ import kotlinx.cinterop.reinterpret
 open class Curve internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): VariantArray {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun addPoint(): Int {
+    TODO()
+  }
+
+  fun bake() {
+    TODO()
+  }
+
+  fun cleanDupes() {
+    TODO()
+  }
+
+  fun clearPoints() {
+    TODO()
+  }
+
+  fun getBakeResolution(): Int {
+    TODO()
+  }
+
+  fun getMaxValue(): Float {
+    TODO()
+  }
+
+  fun getMinValue(): Float {
+    TODO()
+  }
+
+  fun getPointCount(): Int {
+    TODO()
+  }
+
+  fun getPointLeftMode(): Curve.TangentMode {
+    TODO()
+  }
+
+  fun getPointLeftTangent(): Float {
+    TODO()
+  }
+
+  fun getPointPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getPointRightMode(): Curve.TangentMode {
+    TODO()
+  }
+
+  fun getPointRightTangent(): Float {
+    TODO()
+  }
+
+  fun interpolate(): Float {
+    TODO()
+  }
+
+  fun interpolateBaked(): Float {
+    TODO()
+  }
+
+  fun removePoint() {
+    TODO()
+  }
+
+  fun setBakeResolution() {
+    TODO()
+  }
+
+  fun setMaxValue() {
+    TODO()
+  }
+
+  fun setMinValue() {
+    TODO()
+  }
+
+  fun setPointLeftMode() {
+    TODO()
+  }
+
+  fun setPointLeftTangent() {
+    TODO()
+  }
+
+  fun setPointOffset(): Int {
+    TODO()
+  }
+
+  fun setPointRightMode() {
+    TODO()
+  }
+
+  fun setPointRightTangent() {
+    TODO()
+  }
+
+  fun setPointValue() {
+    TODO()
+  }
+
   enum class TangentMode(
     val value: Int
   ) {

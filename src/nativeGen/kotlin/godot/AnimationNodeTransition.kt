@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,38 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeTransition internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
+  fun getCrossFadeTime(): Float {
+    TODO()
+  }
+
+  fun getEnabledInputs(): Int {
+    TODO()
+  }
+
+  fun getInputCaption(): String {
+    TODO()
+  }
+
+  fun isInputSetAsAutoAdvance(): Boolean {
+    TODO()
+  }
+
+  fun setCrossFadeTime() {
+    TODO()
+  }
+
+  fun setEnabledInputs() {
+    TODO()
+  }
+
+  fun setInputAsAutoAdvance() {
+    TODO()
+  }
+
+  fun setInputCaption() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimationNodeTransition = memScoped {
       val fnPtr =

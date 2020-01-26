@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,66 @@ import kotlinx.cinterop.reinterpret
 open class ProjectSettings internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addPropertyInfo() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getOrder(): Int {
+    TODO()
+  }
+
+  fun getSetting(): Variant {
+    TODO()
+  }
+
+  fun globalizePath(): String {
+    TODO()
+  }
+
+  fun hasSetting(): Boolean {
+    TODO()
+  }
+
+  fun loadResourcePack(): Boolean {
+    TODO()
+  }
+
+  fun localizePath(): String {
+    TODO()
+  }
+
+  fun propertyCanRevert(): Boolean {
+    TODO()
+  }
+
+  fun propertyGetRevert(): Variant {
+    TODO()
+  }
+
+  fun save(): Error {
+    TODO()
+  }
+
+  fun saveCustom(): Error {
+    TODO()
+  }
+
+  fun setInitialValue() {
+    TODO()
+  }
+
+  fun setOrder() {
+    TODO()
+  }
+
+  fun setSetting() {
+    TODO()
+  }
+
   companion object {
     val Instance: ProjectSettings = memScoped {
           val handle =

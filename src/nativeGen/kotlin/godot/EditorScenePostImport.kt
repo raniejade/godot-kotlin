@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,18 @@ import kotlinx.cinterop.reinterpret
 open class EditorScenePostImport internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getSourceFile(): String {
+    TODO()
+  }
+
+  fun getSourceFolder(): String {
+    TODO()
+  }
+
+  fun postImport(): Object {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorScenePostImport = memScoped {
       val fnPtr =

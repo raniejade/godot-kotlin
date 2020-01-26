@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,26 @@ import kotlinx.cinterop.reinterpret
 open class ScrollBar internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
+  fun dragNodeExit() {
+    TODO()
+  }
+
+  fun dragNodeInput() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun getCustomStep(): Float {
+    TODO()
+  }
+
+  fun setCustomStep() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for ScrollBar

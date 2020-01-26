@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,10 @@ import kotlinx.cinterop.reinterpret
 open class AudioStream internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getLength(): Float {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for AudioStream

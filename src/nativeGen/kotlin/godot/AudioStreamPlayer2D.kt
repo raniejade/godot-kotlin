@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,114 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamPlayer2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun busLayoutChanged() {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun setPlaying() {
+    TODO()
+  }
+
+  fun getAreaMask(): Int {
+    TODO()
+  }
+
+  fun getAttenuation(): Float {
+    TODO()
+  }
+
+  fun getBus(): String {
+    TODO()
+  }
+
+  fun getMaxDistance(): Float {
+    TODO()
+  }
+
+  fun getPitchScale(): Float {
+    TODO()
+  }
+
+  fun getPlaybackPosition(): Float {
+    TODO()
+  }
+
+  fun getStream(): AudioStream {
+    TODO()
+  }
+
+  fun getStreamPaused(): Boolean {
+    TODO()
+  }
+
+  fun getStreamPlayback(): AudioStreamPlayback {
+    TODO()
+  }
+
+  fun getVolumeDb(): Float {
+    TODO()
+  }
+
+  fun isAutoplayEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun seek() {
+    TODO()
+  }
+
+  fun setAreaMask() {
+    TODO()
+  }
+
+  fun setAttenuation() {
+    TODO()
+  }
+
+  fun setAutoplay() {
+    TODO()
+  }
+
+  fun setBus() {
+    TODO()
+  }
+
+  fun setMaxDistance() {
+    TODO()
+  }
+
+  fun setPitchScale() {
+    TODO()
+  }
+
+  fun setStream() {
+    TODO()
+  }
+
+  fun setStreamPaused() {
+    TODO()
+  }
+
+  fun setVolumeDb() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioStreamPlayer2D = memScoped {
       val fnPtr =

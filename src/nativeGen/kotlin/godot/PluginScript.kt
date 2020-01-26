@@ -14,6 +14,10 @@ import kotlinx.cinterop.reinterpret
 open class PluginScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
+  fun new(): Object {
+    TODO()
+  }
+
   companion object {
     fun new(): PluginScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PluginScript".cstr.ptr)

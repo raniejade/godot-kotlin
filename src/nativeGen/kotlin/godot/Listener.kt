@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class Listener internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun clearCurrent() {
+    TODO()
+  }
+
+  fun getListenerTransform(): Transform {
+    TODO()
+  }
+
+  fun isCurrent(): Boolean {
+    TODO()
+  }
+
+  fun makeCurrent() {
+    TODO()
+  }
+
   companion object {
     fun new(): Listener = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Listener".cstr.ptr)

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,46 @@ import kotlinx.cinterop.reinterpret
 open class Texture internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun draw() {
+    TODO()
+  }
+
+  fun drawRect() {
+    TODO()
+  }
+
+  fun drawRectRegion() {
+    TODO()
+  }
+
+  fun getData(): Image {
+    TODO()
+  }
+
+  fun getFlags(): Int {
+    TODO()
+  }
+
+  fun getHeight(): Int {
+    TODO()
+  }
+
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun getWidth(): Int {
+    TODO()
+  }
+
+  fun hasAlpha(): Boolean {
+    TODO()
+  }
+
+  fun setFlags() {
+    TODO()
+  }
+
   enum class Flags(
     val value: Int
   ) {

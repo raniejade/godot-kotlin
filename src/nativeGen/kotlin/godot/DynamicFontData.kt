@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class DynamicFontData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getFontPath(): String {
+    TODO()
+  }
+
+  fun getHinting(): DynamicFontData.Hinting {
+    TODO()
+  }
+
+  fun isAntialiased(): Boolean {
+    TODO()
+  }
+
+  fun setAntialiased() {
+    TODO()
+  }
+
+  fun setFontPath() {
+    TODO()
+  }
+
+  fun setHinting() {
+    TODO()
+  }
+
   enum class Hinting(
     val value: Int
   ) {

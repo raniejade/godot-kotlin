@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,34 @@ import kotlinx.cinterop.reinterpret
 open class RegExMatch internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getEnd(): Int {
+    TODO()
+  }
+
+  fun getGroupCount(): Int {
+    TODO()
+  }
+
+  fun getNames(): Dictionary {
+    TODO()
+  }
+
+  fun getStart(): Int {
+    TODO()
+  }
+
+  fun getString(): String {
+    TODO()
+  }
+
+  fun getStrings(): VariantArray {
+    TODO()
+  }
+
+  fun getSubject(): String {
+    TODO()
+  }
+
   companion object {
     fun new(): RegExMatch = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RegExMatch".cstr.ptr)

@@ -14,6 +14,22 @@ import kotlinx.cinterop.reinterpret
 open class GradientTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun update() {
+    TODO()
+  }
+
+  fun getGradient(): Gradient {
+    TODO()
+  }
+
+  fun setGradient() {
+    TODO()
+  }
+
+  fun setWidth() {
+    TODO()
+  }
+
   companion object {
     fun new(): GradientTexture = memScoped {
       val fnPtr =

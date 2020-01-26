@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,110 @@ import kotlinx.cinterop.reinterpret
 open class BaseButton internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun pressed() {
+    TODO()
+  }
+
+  fun toggled() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun getActionMode(): BaseButton.ActionMode {
+    TODO()
+  }
+
+  fun getButtonGroup(): ButtonGroup {
+    TODO()
+  }
+
+  fun getButtonMask(): Int {
+    TODO()
+  }
+
+  fun getDrawMode(): BaseButton.DrawMode {
+    TODO()
+  }
+
+  fun getEnabledFocusMode(): Control.FocusMode {
+    TODO()
+  }
+
+  fun getShortcut(): ShortCut {
+    TODO()
+  }
+
+  fun isDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isHovered(): Boolean {
+    TODO()
+  }
+
+  fun isKeepPressedOutside(): Boolean {
+    TODO()
+  }
+
+  fun isPressed(): Boolean {
+    TODO()
+  }
+
+  fun isShortcutInTooltipEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isToggleMode(): Boolean {
+    TODO()
+  }
+
+  fun setActionMode() {
+    TODO()
+  }
+
+  fun setButtonGroup() {
+    TODO()
+  }
+
+  fun setButtonMask() {
+    TODO()
+  }
+
+  fun setDisabled() {
+    TODO()
+  }
+
+  fun setEnabledFocusMode() {
+    TODO()
+  }
+
+  fun setKeepPressedOutside() {
+    TODO()
+  }
+
+  fun setPressed() {
+    TODO()
+  }
+
+  fun setShortcut() {
+    TODO()
+  }
+
+  fun setShortcutInTooltip() {
+    TODO()
+  }
+
+  fun setToggleMode() {
+    TODO()
+  }
+
   enum class ActionMode(
     val value: Int
   ) {

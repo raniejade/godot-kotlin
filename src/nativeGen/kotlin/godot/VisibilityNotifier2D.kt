@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,18 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityNotifier2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getRect(): Rect2 {
+    TODO()
+  }
+
+  fun isOnScreen(): Boolean {
+    TODO()
+  }
+
+  fun setRect() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisibilityNotifier2D = memScoped {
       val fnPtr =

@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,98 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun busLayoutChanged() {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun setPlaying() {
+    TODO()
+  }
+
+  fun getBus(): String {
+    TODO()
+  }
+
+  fun getMixTarget(): AudioStreamPlayer.MixTarget {
+    TODO()
+  }
+
+  fun getPitchScale(): Float {
+    TODO()
+  }
+
+  fun getPlaybackPosition(): Float {
+    TODO()
+  }
+
+  fun getStream(): AudioStream {
+    TODO()
+  }
+
+  fun getStreamPaused(): Boolean {
+    TODO()
+  }
+
+  fun getStreamPlayback(): AudioStreamPlayback {
+    TODO()
+  }
+
+  fun getVolumeDb(): Float {
+    TODO()
+  }
+
+  fun isAutoplayEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun seek() {
+    TODO()
+  }
+
+  fun setAutoplay() {
+    TODO()
+  }
+
+  fun setBus() {
+    TODO()
+  }
+
+  fun setMixTarget() {
+    TODO()
+  }
+
+  fun setPitchScale() {
+    TODO()
+  }
+
+  fun setStream() {
+    TODO()
+  }
+
+  fun setStreamPaused() {
+    TODO()
+  }
+
+  fun setVolumeDb() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   enum class MixTarget(
     val value: Int
   ) {

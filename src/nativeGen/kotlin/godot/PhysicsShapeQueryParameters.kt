@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,66 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsShapeQueryParameters internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getExclude(): VariantArray {
+    TODO()
+  }
+
+  fun getMargin(): Float {
+    TODO()
+  }
+
+  fun getShapeRid(): RID {
+    TODO()
+  }
+
+  fun getTransform(): Transform {
+    TODO()
+  }
+
+  fun isCollideWithAreasEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isCollideWithBodiesEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setCollideWithAreas() {
+    TODO()
+  }
+
+  fun setCollideWithBodies() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setExclude() {
+    TODO()
+  }
+
+  fun setMargin() {
+    TODO()
+  }
+
+  fun setShape() {
+    TODO()
+  }
+
+  fun setShapeRid() {
+    TODO()
+  }
+
+  fun setTransform() {
+    TODO()
+  }
+
   companion object {
     fun new(): PhysicsShapeQueryParameters = memScoped {
       val fnPtr =

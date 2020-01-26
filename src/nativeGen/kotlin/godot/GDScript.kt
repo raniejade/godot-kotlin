@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class GDScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
+  fun getAsByteCode(): PoolByteArray {
+    TODO()
+  }
+
+  fun new(): Object {
+    TODO()
+  }
+
   companion object {
     fun new(): GDScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDScript".cstr.ptr)

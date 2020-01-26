@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,94 @@ import kotlinx.cinterop.reinterpret
 open class Range internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getAsRatio(): Float {
+    TODO()
+  }
+
+  fun getMax(): Float {
+    TODO()
+  }
+
+  fun getMin(): Float {
+    TODO()
+  }
+
+  fun getPage(): Float {
+    TODO()
+  }
+
+  fun getStep(): Float {
+    TODO()
+  }
+
+  fun getValue(): Float {
+    TODO()
+  }
+
+  fun isGreaterAllowed(): Boolean {
+    TODO()
+  }
+
+  fun isLesserAllowed(): Boolean {
+    TODO()
+  }
+
+  fun isRatioExp(): Boolean {
+    TODO()
+  }
+
+  fun isUsingRoundedValues(): Boolean {
+    TODO()
+  }
+
+  fun setAllowGreater() {
+    TODO()
+  }
+
+  fun setAllowLesser() {
+    TODO()
+  }
+
+  fun setAsRatio() {
+    TODO()
+  }
+
+  fun setExpRatio() {
+    TODO()
+  }
+
+  fun setMax() {
+    TODO()
+  }
+
+  fun setMin() {
+    TODO()
+  }
+
+  fun setPage() {
+    TODO()
+  }
+
+  fun setStep() {
+    TODO()
+  }
+
+  fun setUseRoundedValues() {
+    TODO()
+  }
+
+  fun setValue() {
+    TODO()
+  }
+
+  fun share() {
+    TODO()
+  }
+
+  fun unshare() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Range

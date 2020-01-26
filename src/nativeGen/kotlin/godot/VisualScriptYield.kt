@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptYield internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getWaitTime(): Float {
+    TODO()
+  }
+
+  fun getYieldMode(): VisualScriptYield.YieldMode {
+    TODO()
+  }
+
+  fun setWaitTime() {
+    TODO()
+  }
+
+  fun setYieldMode() {
+    TODO()
+  }
+
   enum class YieldMode(
     val value: Int
   ) {

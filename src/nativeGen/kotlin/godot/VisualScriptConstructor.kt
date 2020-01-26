@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptConstructor internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getConstructor(): Dictionary {
+    TODO()
+  }
+
+  fun getConstructorType(): Variant.Type {
+    TODO()
+  }
+
+  fun setConstructor() {
+    TODO()
+  }
+
+  fun setConstructorType() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptConstructor = memScoped {
       val fnPtr =

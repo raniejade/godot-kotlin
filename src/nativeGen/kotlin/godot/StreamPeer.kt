@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,138 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeer internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun get16(): Int {
+    TODO()
+  }
+
+  fun get32(): Int {
+    TODO()
+  }
+
+  fun get64(): Int {
+    TODO()
+  }
+
+  fun get8(): Int {
+    TODO()
+  }
+
+  fun getAvailableBytes(): Int {
+    TODO()
+  }
+
+  fun getData(): VariantArray {
+    TODO()
+  }
+
+  fun getDouble(): Float {
+    TODO()
+  }
+
+  fun getFloat(): Float {
+    TODO()
+  }
+
+  fun getPartialData(): VariantArray {
+    TODO()
+  }
+
+  fun getString(): String {
+    TODO()
+  }
+
+  fun getU16(): Int {
+    TODO()
+  }
+
+  fun getU32(): Int {
+    TODO()
+  }
+
+  fun getU64(): Int {
+    TODO()
+  }
+
+  fun getU8(): Int {
+    TODO()
+  }
+
+  fun getUtf8String(): String {
+    TODO()
+  }
+
+  fun getVar(): Variant {
+    TODO()
+  }
+
+  fun isBigEndianEnabled(): Boolean {
+    TODO()
+  }
+
+  fun put16() {
+    TODO()
+  }
+
+  fun put32() {
+    TODO()
+  }
+
+  fun put64() {
+    TODO()
+  }
+
+  fun put8() {
+    TODO()
+  }
+
+  fun putData(): Error {
+    TODO()
+  }
+
+  fun putDouble() {
+    TODO()
+  }
+
+  fun putFloat() {
+    TODO()
+  }
+
+  fun putPartialData(): VariantArray {
+    TODO()
+  }
+
+  fun putString() {
+    TODO()
+  }
+
+  fun putU16() {
+    TODO()
+  }
+
+  fun putU32() {
+    TODO()
+  }
+
+  fun putU64() {
+    TODO()
+  }
+
+  fun putU8() {
+    TODO()
+  }
+
+  fun putUtf8String() {
+    TODO()
+  }
+
+  fun putVar() {
+    TODO()
+  }
+
+  fun setBigEndian() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for StreamPeer

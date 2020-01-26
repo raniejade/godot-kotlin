@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,142 @@ import kotlinx.cinterop.reinterpret
 open class Particles2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun captureRect(): Rect2 {
+    TODO()
+  }
+
+  fun getAmount(): Int {
+    TODO()
+  }
+
+  fun getDrawOrder(): Particles2D.DrawOrder {
+    TODO()
+  }
+
+  fun getExplosivenessRatio(): Float {
+    TODO()
+  }
+
+  fun getFixedFps(): Int {
+    TODO()
+  }
+
+  fun getFractionalDelta(): Boolean {
+    TODO()
+  }
+
+  fun getLifetime(): Float {
+    TODO()
+  }
+
+  fun getNormalMap(): Texture {
+    TODO()
+  }
+
+  fun getOneShot(): Boolean {
+    TODO()
+  }
+
+  fun getPreProcessTime(): Float {
+    TODO()
+  }
+
+  fun getProcessMaterial(): Material {
+    TODO()
+  }
+
+  fun getRandomnessRatio(): Float {
+    TODO()
+  }
+
+  fun getSpeedScale(): Float {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getUseLocalCoordinates(): Boolean {
+    TODO()
+  }
+
+  fun getVisibilityRect(): Rect2 {
+    TODO()
+  }
+
+  fun isEmitting(): Boolean {
+    TODO()
+  }
+
+  fun restart() {
+    TODO()
+  }
+
+  fun setAmount() {
+    TODO()
+  }
+
+  fun setDrawOrder() {
+    TODO()
+  }
+
+  fun setEmitting() {
+    TODO()
+  }
+
+  fun setExplosivenessRatio() {
+    TODO()
+  }
+
+  fun setFixedFps() {
+    TODO()
+  }
+
+  fun setFractionalDelta() {
+    TODO()
+  }
+
+  fun setLifetime() {
+    TODO()
+  }
+
+  fun setNormalMap() {
+    TODO()
+  }
+
+  fun setOneShot() {
+    TODO()
+  }
+
+  fun setPreProcessTime() {
+    TODO()
+  }
+
+  fun setProcessMaterial() {
+    TODO()
+  }
+
+  fun setRandomnessRatio() {
+    TODO()
+  }
+
+  fun setSpeedScale() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setUseLocalCoordinates() {
+    TODO()
+  }
+
+  fun setVisibilityRect() {
+    TODO()
+  }
+
   enum class DrawOrder(
     val value: Int
   ) {

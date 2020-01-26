@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,26 @@ import kotlinx.cinterop.reinterpret
 open class EditorResourcePreviewGenerator internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun canGenerateSmallPreview(): Boolean {
+    TODO()
+  }
+
+  fun generate(): Texture {
+    TODO()
+  }
+
+  fun generateFromPath(): Texture {
+    TODO()
+  }
+
+  fun generateSmallPreviewAutomatically(): Boolean {
+    TODO()
+  }
+
+  fun handles(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorResourcePreviewGenerator = memScoped {
       val fnPtr =

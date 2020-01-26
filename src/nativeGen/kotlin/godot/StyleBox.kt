@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,42 @@ import kotlinx.cinterop.reinterpret
 open class StyleBox internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun draw() {
+    TODO()
+  }
+
+  fun getCenterSize(): Vector2 {
+    TODO()
+  }
+
+  fun getCurrentItemDrawn(): CanvasItem {
+    TODO()
+  }
+
+  fun getDefaultMargin(): Float {
+    TODO()
+  }
+
+  fun getMargin(): Float {
+    TODO()
+  }
+
+  fun getMinimumSize(): Vector2 {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun setDefaultMargin() {
+    TODO()
+  }
+
+  fun testMask(): Boolean {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for StyleBox

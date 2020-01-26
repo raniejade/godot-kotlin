@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,18 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityNotifier internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getAabb(): AABB {
+    TODO()
+  }
+
+  fun isOnScreen(): Boolean {
+    TODO()
+  }
+
+  fun setAabb() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisibilityNotifier = memScoped {
       val fnPtr =

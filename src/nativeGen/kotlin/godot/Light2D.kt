@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,174 @@ import kotlinx.cinterop.reinterpret
 open class Light2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getEnergy(): Float {
+    TODO()
+  }
+
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getItemCullMask(): Int {
+    TODO()
+  }
+
+  fun getItemShadowCullMask(): Int {
+    TODO()
+  }
+
+  fun getLayerRangeMax(): Int {
+    TODO()
+  }
+
+  fun getLayerRangeMin(): Int {
+    TODO()
+  }
+
+  fun getMode(): Light2D.Mode {
+    TODO()
+  }
+
+  fun getShadowBufferSize(): Int {
+    TODO()
+  }
+
+  fun getShadowColor(): Color {
+    TODO()
+  }
+
+  fun getShadowFilter(): Light2D.ShadowFilter {
+    TODO()
+  }
+
+  fun getShadowGradientLength(): Float {
+    TODO()
+  }
+
+  fun getShadowSmooth(): Float {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTextureOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getTextureScale(): Float {
+    TODO()
+  }
+
+  fun getZRangeMax(): Int {
+    TODO()
+  }
+
+  fun getZRangeMin(): Int {
+    TODO()
+  }
+
+  fun isEditorOnly(): Boolean {
+    TODO()
+  }
+
+  fun isEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isShadowEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setEditorOnly() {
+    TODO()
+  }
+
+  fun setEnabled() {
+    TODO()
+  }
+
+  fun setEnergy() {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setItemCullMask() {
+    TODO()
+  }
+
+  fun setItemShadowCullMask() {
+    TODO()
+  }
+
+  fun setLayerRangeMax() {
+    TODO()
+  }
+
+  fun setLayerRangeMin() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setShadowBufferSize() {
+    TODO()
+  }
+
+  fun setShadowColor() {
+    TODO()
+  }
+
+  fun setShadowEnabled() {
+    TODO()
+  }
+
+  fun setShadowFilter() {
+    TODO()
+  }
+
+  fun setShadowGradientLength() {
+    TODO()
+  }
+
+  fun setShadowSmooth() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setTextureOffset() {
+    TODO()
+  }
+
+  fun setTextureScale() {
+    TODO()
+  }
+
+  fun setZRangeMax() {
+    TODO()
+  }
+
+  fun setZRangeMin() {
+    TODO()
+  }
+
   enum class ShadowFilter(
     val value: Int
   ) {

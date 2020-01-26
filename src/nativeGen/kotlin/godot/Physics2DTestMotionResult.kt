@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,42 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DTestMotionResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getCollider(): Object {
+    TODO()
+  }
+
+  fun getColliderId(): Int {
+    TODO()
+  }
+
+  fun getColliderRid(): RID {
+    TODO()
+  }
+
+  fun getColliderShape(): Int {
+    TODO()
+  }
+
+  fun getColliderVelocity(): Vector2 {
+    TODO()
+  }
+
+  fun getCollisionNormal(): Vector2 {
+    TODO()
+  }
+
+  fun getCollisionPoint(): Vector2 {
+    TODO()
+  }
+
+  fun getMotion(): Vector2 {
+    TODO()
+  }
+
+  fun getMotionRemainder(): Vector2 {
+    TODO()
+  }
+
   companion object {
     fun new(): Physics2DTestMotionResult = memScoped {
       val fnPtr =

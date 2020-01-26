@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,86 @@ import kotlinx.cinterop.reinterpret
 open class TouchScreenButton internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun input() {
+    TODO()
+  }
+
+  fun getAction(): String {
+    TODO()
+  }
+
+  fun getBitmask(): BitMap {
+    TODO()
+  }
+
+  fun getShape(): Shape2D {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTexturePressed(): Texture {
+    TODO()
+  }
+
+  fun getVisibilityMode(): TouchScreenButton.VisibilityMode {
+    TODO()
+  }
+
+  fun isPassbyPressEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isPressed(): Boolean {
+    TODO()
+  }
+
+  fun isShapeCentered(): Boolean {
+    TODO()
+  }
+
+  fun isShapeVisible(): Boolean {
+    TODO()
+  }
+
+  fun setAction() {
+    TODO()
+  }
+
+  fun setBitmask() {
+    TODO()
+  }
+
+  fun setPassbyPress() {
+    TODO()
+  }
+
+  fun setShape() {
+    TODO()
+  }
+
+  fun setShapeCentered() {
+    TODO()
+  }
+
+  fun setShapeVisible() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setTexturePressed() {
+    TODO()
+  }
+
+  fun setVisibilityMode() {
+    TODO()
+  }
+
   enum class VisibilityMode(
     val value: Int
   ) {

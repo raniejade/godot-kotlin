@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolRealArray
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class HeightMapShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  fun getMapData(): PoolRealArray {
+    TODO()
+  }
+
+  fun getMapDepth(): Int {
+    TODO()
+  }
+
+  fun getMapWidth(): Int {
+    TODO()
+  }
+
+  fun setMapData() {
+    TODO()
+  }
+
+  fun setMapDepth() {
+    TODO()
+  }
+
+  fun setMapWidth() {
+    TODO()
+  }
+
   companion object {
     fun new(): HeightMapShape = memScoped {
       val fnPtr =

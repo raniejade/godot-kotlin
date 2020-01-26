@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,70 @@ import kotlinx.cinterop.reinterpret
 open class ARVRServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun centerOnHmd() {
+    TODO()
+  }
+
+  fun findInterface(): ARVRInterface {
+    TODO()
+  }
+
+  fun getHmdTransform(): Transform {
+    TODO()
+  }
+
+  fun getInterface(): ARVRInterface {
+    TODO()
+  }
+
+  fun getInterfaceCount(): Int {
+    TODO()
+  }
+
+  fun getInterfaces(): VariantArray {
+    TODO()
+  }
+
+  fun getLastCommitUsec(): Int {
+    TODO()
+  }
+
+  fun getLastFrameUsec(): Int {
+    TODO()
+  }
+
+  fun getLastProcessUsec(): Int {
+    TODO()
+  }
+
+  fun getPrimaryInterface(): ARVRInterface {
+    TODO()
+  }
+
+  fun getReferenceFrame(): Transform {
+    TODO()
+  }
+
+  fun getTracker(): ARVRPositionalTracker {
+    TODO()
+  }
+
+  fun getTrackerCount(): Int {
+    TODO()
+  }
+
+  fun getWorldScale(): Float {
+    TODO()
+  }
+
+  fun setPrimaryInterface() {
+    TODO()
+  }
+
+  fun setWorldScale() {
+    TODO()
+  }
+
   enum class RotationMode(
     val value: Int
   ) {

@@ -2,8 +2,17 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +24,270 @@ import kotlinx.cinterop.reinterpret
 open class ItemList internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getItems(): VariantArray {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun scrollChanged() {
+    TODO()
+  }
+
+  fun setItems() {
+    TODO()
+  }
+
+  fun addIconItem() {
+    TODO()
+  }
+
+  fun addItem() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun ensureCurrentIsVisible() {
+    TODO()
+  }
+
+  fun getAllowReselect(): Boolean {
+    TODO()
+  }
+
+  fun getAllowRmbSelect(): Boolean {
+    TODO()
+  }
+
+  fun getFixedColumnWidth(): Int {
+    TODO()
+  }
+
+  fun getFixedIconSize(): Vector2 {
+    TODO()
+  }
+
+  fun getIconMode(): ItemList.IconMode {
+    TODO()
+  }
+
+  fun getIconScale(): Float {
+    TODO()
+  }
+
+  fun getItemAtPosition(): Int {
+    TODO()
+  }
+
+  fun getItemCount(): Int {
+    TODO()
+  }
+
+  fun getItemCustomBgColor(): Color {
+    TODO()
+  }
+
+  fun getItemCustomFgColor(): Color {
+    TODO()
+  }
+
+  fun getItemIcon(): Texture {
+    TODO()
+  }
+
+  fun getItemIconModulate(): Color {
+    TODO()
+  }
+
+  fun getItemIconRegion(): Rect2 {
+    TODO()
+  }
+
+  fun getItemMetadata(): Variant {
+    TODO()
+  }
+
+  fun getItemText(): String {
+    TODO()
+  }
+
+  fun getItemTooltip(): String {
+    TODO()
+  }
+
+  fun getMaxColumns(): Int {
+    TODO()
+  }
+
+  fun getMaxTextLines(): Int {
+    TODO()
+  }
+
+  fun getSelectMode(): ItemList.SelectMode {
+    TODO()
+  }
+
+  fun getSelectedItems(): PoolIntArray {
+    TODO()
+  }
+
+  fun getVScroll(): VScrollBar {
+    TODO()
+  }
+
+  fun hasAutoHeight(): Boolean {
+    TODO()
+  }
+
+  fun isAnythingSelected(): Boolean {
+    TODO()
+  }
+
+  fun isItemDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isItemIconTransposed(): Boolean {
+    TODO()
+  }
+
+  fun isItemSelectable(): Boolean {
+    TODO()
+  }
+
+  fun isItemTooltipEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSameColumnWidth(): Boolean {
+    TODO()
+  }
+
+  fun isSelected(): Boolean {
+    TODO()
+  }
+
+  fun moveItem() {
+    TODO()
+  }
+
+  fun removeItem() {
+    TODO()
+  }
+
+  fun select() {
+    TODO()
+  }
+
+  fun setAllowReselect() {
+    TODO()
+  }
+
+  fun setAllowRmbSelect() {
+    TODO()
+  }
+
+  fun setAutoHeight() {
+    TODO()
+  }
+
+  fun setFixedColumnWidth() {
+    TODO()
+  }
+
+  fun setFixedIconSize() {
+    TODO()
+  }
+
+  fun setIconMode() {
+    TODO()
+  }
+
+  fun setIconScale() {
+    TODO()
+  }
+
+  fun setItemCustomBgColor() {
+    TODO()
+  }
+
+  fun setItemCustomFgColor() {
+    TODO()
+  }
+
+  fun setItemDisabled() {
+    TODO()
+  }
+
+  fun setItemIcon() {
+    TODO()
+  }
+
+  fun setItemIconModulate() {
+    TODO()
+  }
+
+  fun setItemIconRegion() {
+    TODO()
+  }
+
+  fun setItemIconTransposed() {
+    TODO()
+  }
+
+  fun setItemMetadata() {
+    TODO()
+  }
+
+  fun setItemSelectable() {
+    TODO()
+  }
+
+  fun setItemText() {
+    TODO()
+  }
+
+  fun setItemTooltip() {
+    TODO()
+  }
+
+  fun setItemTooltipEnabled() {
+    TODO()
+  }
+
+  fun setMaxColumns() {
+    TODO()
+  }
+
+  fun setMaxTextLines() {
+    TODO()
+  }
+
+  fun setSameColumnWidth() {
+    TODO()
+  }
+
+  fun setSelectMode() {
+    TODO()
+  }
+
+  fun sortItemsByText() {
+    TODO()
+  }
+
+  fun unselect() {
+    TODO()
+  }
+
+  fun unselectAll() {
+    TODO()
+  }
+
   enum class SelectMode(
     val value: Int
   ) {

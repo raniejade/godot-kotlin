@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,54 @@ import kotlinx.cinterop.reinterpret
 open class CanvasItemMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  fun getBlendMode(): CanvasItemMaterial.BlendMode {
+    TODO()
+  }
+
+  fun getLightMode(): CanvasItemMaterial.LightMode {
+    TODO()
+  }
+
+  fun getParticlesAnimHFrames(): Int {
+    TODO()
+  }
+
+  fun getParticlesAnimLoop(): Boolean {
+    TODO()
+  }
+
+  fun getParticlesAnimVFrames(): Int {
+    TODO()
+  }
+
+  fun getParticlesAnimation(): Boolean {
+    TODO()
+  }
+
+  fun setBlendMode() {
+    TODO()
+  }
+
+  fun setLightMode() {
+    TODO()
+  }
+
+  fun setParticlesAnimHFrames() {
+    TODO()
+  }
+
+  fun setParticlesAnimLoop() {
+    TODO()
+  }
+
+  fun setParticlesAnimVFrames() {
+    TODO()
+  }
+
+  fun setParticlesAnimation() {
+    TODO()
+  }
+
   enum class LightMode(
     val value: Int
   ) {

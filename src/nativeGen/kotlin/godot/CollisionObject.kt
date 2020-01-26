@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,90 @@ import kotlinx.cinterop.reinterpret
 open class CollisionObject internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun inputEvent() {
+    TODO()
+  }
+
+  fun createShapeOwner(): Int {
+    TODO()
+  }
+
+  fun getCaptureInputOnDrag(): Boolean {
+    TODO()
+  }
+
+  fun getRid(): RID {
+    TODO()
+  }
+
+  fun getShapeOwners(): VariantArray {
+    TODO()
+  }
+
+  fun isRayPickable(): Boolean {
+    TODO()
+  }
+
+  fun isShapeOwnerDisabled(): Boolean {
+    TODO()
+  }
+
+  fun removeShapeOwner() {
+    TODO()
+  }
+
+  fun setCaptureInputOnDrag() {
+    TODO()
+  }
+
+  fun setRayPickable() {
+    TODO()
+  }
+
+  fun shapeFindOwner(): Int {
+    TODO()
+  }
+
+  fun shapeOwnerAddShape() {
+    TODO()
+  }
+
+  fun shapeOwnerClearShapes() {
+    TODO()
+  }
+
+  fun shapeOwnerGetOwner(): Object {
+    TODO()
+  }
+
+  fun shapeOwnerGetShape(): Shape {
+    TODO()
+  }
+
+  fun shapeOwnerGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun shapeOwnerGetShapeIndex(): Int {
+    TODO()
+  }
+
+  fun shapeOwnerGetTransform(): Transform {
+    TODO()
+  }
+
+  fun shapeOwnerRemoveShape() {
+    TODO()
+  }
+
+  fun shapeOwnerSetDisabled() {
+    TODO()
+  }
+
+  fun shapeOwnerSetTransform() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for CollisionObject

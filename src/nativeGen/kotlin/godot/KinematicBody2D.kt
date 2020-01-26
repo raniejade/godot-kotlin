@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,66 @@ import kotlinx.cinterop.reinterpret
 open class KinematicBody2D internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
+  fun directStateChanged() {
+    TODO()
+  }
+
+  fun getFloorVelocity(): Vector2 {
+    TODO()
+  }
+
+  fun getSafeMargin(): Float {
+    TODO()
+  }
+
+  fun getSlideCollision(): KinematicCollision2D {
+    TODO()
+  }
+
+  fun getSlideCount(): Int {
+    TODO()
+  }
+
+  fun isOnCeiling(): Boolean {
+    TODO()
+  }
+
+  fun isOnFloor(): Boolean {
+    TODO()
+  }
+
+  fun isOnWall(): Boolean {
+    TODO()
+  }
+
+  fun isSyncToPhysicsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun moveAndCollide(): KinematicCollision2D {
+    TODO()
+  }
+
+  fun moveAndSlide(): Vector2 {
+    TODO()
+  }
+
+  fun moveAndSlideWithSnap(): Vector2 {
+    TODO()
+  }
+
+  fun setSafeMargin() {
+    TODO()
+  }
+
+  fun setSyncToPhysics() {
+    TODO()
+  }
+
+  fun testMove(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): KinematicBody2D = memScoped {
       val fnPtr =

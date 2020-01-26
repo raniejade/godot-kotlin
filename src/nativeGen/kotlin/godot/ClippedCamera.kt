@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,78 @@ import kotlinx.cinterop.reinterpret
 open class ClippedCamera internal constructor(
   _handle: COpaquePointer
 ) : Camera(_handle) {
+  fun addException() {
+    TODO()
+  }
+
+  fun addExceptionRid() {
+    TODO()
+  }
+
+  fun clearExceptions() {
+    TODO()
+  }
+
+  fun getClipOffset(): Float {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getMargin(): Float {
+    TODO()
+  }
+
+  fun getProcessMode(): ClippedCamera.ProcessMode {
+    TODO()
+  }
+
+  fun isClipToAreasEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isClipToBodiesEnabled(): Boolean {
+    TODO()
+  }
+
+  fun removeException() {
+    TODO()
+  }
+
+  fun removeExceptionRid() {
+    TODO()
+  }
+
+  fun setClipToAreas() {
+    TODO()
+  }
+
+  fun setClipToBodies() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setMargin() {
+    TODO()
+  }
+
+  fun setProcessMode() {
+    TODO()
+  }
+
   enum class ProcessMode(
     val value: Int
   ) {

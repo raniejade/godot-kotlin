@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,70 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMIDI internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  fun getChannel(): Int {
+    TODO()
+  }
+
+  fun getControllerNumber(): Int {
+    TODO()
+  }
+
+  fun getControllerValue(): Int {
+    TODO()
+  }
+
+  fun getInstrument(): Int {
+    TODO()
+  }
+
+  fun getMessage(): Int {
+    TODO()
+  }
+
+  fun getPitch(): Int {
+    TODO()
+  }
+
+  fun getPressure(): Int {
+    TODO()
+  }
+
+  fun getVelocity(): Int {
+    TODO()
+  }
+
+  fun setChannel() {
+    TODO()
+  }
+
+  fun setControllerNumber() {
+    TODO()
+  }
+
+  fun setControllerValue() {
+    TODO()
+  }
+
+  fun setInstrument() {
+    TODO()
+  }
+
+  fun setMessage() {
+    TODO()
+  }
+
+  fun setPitch() {
+    TODO()
+  }
+
+  fun setPressure() {
+    TODO()
+  }
+
+  fun setVelocity() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventMIDI = memScoped {
       val fnPtr =

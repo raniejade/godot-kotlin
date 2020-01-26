@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class ARVROrigin internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getWorldScale(): Float {
+    TODO()
+  }
+
+  fun setWorldScale() {
+    TODO()
+  }
+
   companion object {
     fun new(): ARVROrigin = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVROrigin".cstr.ptr)

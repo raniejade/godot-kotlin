@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class _VisualScriptEditor internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addCustomNode() {
+    TODO()
+  }
+
+  fun removeCustomNode() {
+    TODO()
+  }
+
   companion object {
     val Instance: _VisualScriptEditor = memScoped {
           val handle =

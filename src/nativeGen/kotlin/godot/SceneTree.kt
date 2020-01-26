@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,218 @@ import kotlinx.cinterop.reinterpret
 open class SceneTree internal constructor(
   _handle: COpaquePointer
 ) : MainLoop(_handle) {
+  fun changeScene() {
+    TODO()
+  }
+
+  fun connectedToServer() {
+    TODO()
+  }
+
+  fun connectionFailed() {
+    TODO()
+  }
+
+  fun networkPeerConnected() {
+    TODO()
+  }
+
+  fun networkPeerDisconnected() {
+    TODO()
+  }
+
+  fun serverDisconnected() {
+    TODO()
+  }
+
+  fun callGroup(): Variant {
+    TODO()
+  }
+
+  fun callGroupFlags(): Variant {
+    TODO()
+  }
+
+  fun changeScene(): Error {
+    TODO()
+  }
+
+  fun changeSceneTo(): Error {
+    TODO()
+  }
+
+  fun createTimer(): SceneTreeTimer {
+    TODO()
+  }
+
+  fun getCurrentScene(): Node {
+    TODO()
+  }
+
+  fun getEditedSceneRoot(): Node {
+    TODO()
+  }
+
+  fun getFrame(): Int {
+    TODO()
+  }
+
+  fun getMultiplayer(): MultiplayerAPI {
+    TODO()
+  }
+
+  fun getNetworkConnectedPeers(): PoolIntArray {
+    TODO()
+  }
+
+  fun getNetworkPeer(): NetworkedMultiplayerPeer {
+    TODO()
+  }
+
+  fun getNetworkUniqueId(): Int {
+    TODO()
+  }
+
+  fun getNodeCount(): Int {
+    TODO()
+  }
+
+  fun getNodesInGroup(): VariantArray {
+    TODO()
+  }
+
+  fun getRoot(): Viewport {
+    TODO()
+  }
+
+  fun getRpcSenderId(): Int {
+    TODO()
+  }
+
+  fun hasGroup(): Boolean {
+    TODO()
+  }
+
+  fun hasNetworkPeer(): Boolean {
+    TODO()
+  }
+
+  fun isDebuggingCollisionsHint(): Boolean {
+    TODO()
+  }
+
+  fun isDebuggingNavigationHint(): Boolean {
+    TODO()
+  }
+
+  fun isInputHandled(): Boolean {
+    TODO()
+  }
+
+  fun isMultiplayerPollEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isNetworkServer(): Boolean {
+    TODO()
+  }
+
+  fun isPaused(): Boolean {
+    TODO()
+  }
+
+  fun isRefusingNewNetworkConnections(): Boolean {
+    TODO()
+  }
+
+  fun isUsingFontOversampling(): Boolean {
+    TODO()
+  }
+
+  fun notifyGroup() {
+    TODO()
+  }
+
+  fun notifyGroupFlags() {
+    TODO()
+  }
+
+  fun queueDelete() {
+    TODO()
+  }
+
+  fun quit() {
+    TODO()
+  }
+
+  fun reloadCurrentScene(): Error {
+    TODO()
+  }
+
+  fun setAutoAcceptQuit() {
+    TODO()
+  }
+
+  fun setCurrentScene() {
+    TODO()
+  }
+
+  fun setDebugCollisionsHint() {
+    TODO()
+  }
+
+  fun setDebugNavigationHint() {
+    TODO()
+  }
+
+  fun setEditedSceneRoot() {
+    TODO()
+  }
+
+  fun setGroup() {
+    TODO()
+  }
+
+  fun setGroupFlags() {
+    TODO()
+  }
+
+  fun setInputAsHandled() {
+    TODO()
+  }
+
+  fun setMultiplayer() {
+    TODO()
+  }
+
+  fun setMultiplayerPollEnabled() {
+    TODO()
+  }
+
+  fun setNetworkPeer() {
+    TODO()
+  }
+
+  fun setPause() {
+    TODO()
+  }
+
+  fun setQuitOnGoBack() {
+    TODO()
+  }
+
+  fun setRefuseNewNetworkConnections() {
+    TODO()
+  }
+
+  fun setScreenStretch() {
+    TODO()
+  }
+
+  fun setUseFontOversampling() {
+    TODO()
+  }
+
   enum class StretchAspect(
     val value: Int
   ) {

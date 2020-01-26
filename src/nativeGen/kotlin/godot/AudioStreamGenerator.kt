@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamGenerator internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
+  fun getBufferLength(): Float {
+    TODO()
+  }
+
+  fun getMixRate(): Float {
+    TODO()
+  }
+
+  fun setBufferLength() {
+    TODO()
+  }
+
+  fun setMixRate() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioStreamGenerator = memScoped {
       val fnPtr =

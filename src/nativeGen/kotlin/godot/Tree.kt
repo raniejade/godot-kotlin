@@ -3,7 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,182 @@ import kotlinx.cinterop.reinterpret
 open class Tree internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun popupSelect() {
+    TODO()
+  }
+
+  fun rangeClickTimeout() {
+    TODO()
+  }
+
+  fun scrollMoved() {
+    TODO()
+  }
+
+  fun textEditorEnter() {
+    TODO()
+  }
+
+  fun textEditorModalClose() {
+    TODO()
+  }
+
+  fun valueEditorChanged() {
+    TODO()
+  }
+
+  fun areColumnTitlesVisible(): Boolean {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun createItem(): TreeItem {
+    TODO()
+  }
+
+  fun ensureCursorIsVisible() {
+    TODO()
+  }
+
+  fun getAllowReselect(): Boolean {
+    TODO()
+  }
+
+  fun getAllowRmbSelect(): Boolean {
+    TODO()
+  }
+
+  fun getColumnAtPosition(): Int {
+    TODO()
+  }
+
+  fun getColumnTitle(): String {
+    TODO()
+  }
+
+  fun getColumnWidth(): Int {
+    TODO()
+  }
+
+  fun getColumns(): Int {
+    TODO()
+  }
+
+  fun getCustomPopupRect(): Rect2 {
+    TODO()
+  }
+
+  fun getDropModeFlags(): Int {
+    TODO()
+  }
+
+  fun getDropSectionAtPosition(): Int {
+    TODO()
+  }
+
+  fun getEdited(): TreeItem {
+    TODO()
+  }
+
+  fun getEditedColumn(): Int {
+    TODO()
+  }
+
+  fun getItemAreaRect(): Rect2 {
+    TODO()
+  }
+
+  fun getItemAtPosition(): TreeItem {
+    TODO()
+  }
+
+  fun getNextSelected(): TreeItem {
+    TODO()
+  }
+
+  fun getPressedButton(): Int {
+    TODO()
+  }
+
+  fun getRoot(): TreeItem {
+    TODO()
+  }
+
+  fun getScroll(): Vector2 {
+    TODO()
+  }
+
+  fun getSelectMode(): Tree.SelectMode {
+    TODO()
+  }
+
+  fun getSelected(): TreeItem {
+    TODO()
+  }
+
+  fun getSelectedColumn(): Int {
+    TODO()
+  }
+
+  fun isFoldingHidden(): Boolean {
+    TODO()
+  }
+
+  fun isRootHidden(): Boolean {
+    TODO()
+  }
+
+  fun setAllowReselect() {
+    TODO()
+  }
+
+  fun setAllowRmbSelect() {
+    TODO()
+  }
+
+  fun setColumnExpand() {
+    TODO()
+  }
+
+  fun setColumnMinWidth() {
+    TODO()
+  }
+
+  fun setColumnTitle() {
+    TODO()
+  }
+
+  fun setColumnTitlesVisible() {
+    TODO()
+  }
+
+  fun setColumns() {
+    TODO()
+  }
+
+  fun setDropModeFlags() {
+    TODO()
+  }
+
+  fun setHideFolding() {
+    TODO()
+  }
+
+  fun setHideRoot() {
+    TODO()
+  }
+
+  fun setSelectMode() {
+    TODO()
+  }
+
   enum class SelectMode(
     val value: Int
   ) {

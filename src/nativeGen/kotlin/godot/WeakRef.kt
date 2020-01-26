@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,10 @@ import kotlinx.cinterop.reinterpret
 open class WeakRef internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getRef(): Variant {
+    TODO()
+  }
+
   companion object {
     fun new(): WeakRef = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WeakRef".cstr.ptr)

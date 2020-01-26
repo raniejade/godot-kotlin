@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class ButtonGroup internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getButtons(): VariantArray {
+    TODO()
+  }
+
+  fun getPressedButton(): BaseButton {
+    TODO()
+  }
+
   companion object {
     fun new(): ButtonGroup = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ButtonGroup".cstr.ptr)

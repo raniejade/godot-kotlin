@@ -2,8 +2,16 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Rect2
+import godot.core.Transform2D
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +23,278 @@ import kotlinx.cinterop.reinterpret
 open class TileSet internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun forwardAtlasSubtileSelection(): Vector2 {
+    TODO()
+  }
+
+  fun forwardSubtileSelection(): Vector2 {
+    TODO()
+  }
+
+  fun isTileBound(): Boolean {
+    TODO()
+  }
+
+  fun autotileClearBitmaskMap() {
+    TODO()
+  }
+
+  fun autotileGetBitmask(): Int {
+    TODO()
+  }
+
+  fun autotileGetBitmaskMode(): TileSet.BitmaskMode {
+    TODO()
+  }
+
+  fun autotileGetIconCoordinate(): Vector2 {
+    TODO()
+  }
+
+  fun autotileGetLightOccluder(): OccluderPolygon2D {
+    TODO()
+  }
+
+  fun autotileGetNavigationPolygon(): NavigationPolygon {
+    TODO()
+  }
+
+  fun autotileGetSize(): Vector2 {
+    TODO()
+  }
+
+  fun autotileGetSpacing(): Int {
+    TODO()
+  }
+
+  fun autotileGetSubtilePriority(): Int {
+    TODO()
+  }
+
+  fun autotileGetZIndex(): Int {
+    TODO()
+  }
+
+  fun autotileSetBitmask() {
+    TODO()
+  }
+
+  fun autotileSetBitmaskMode() {
+    TODO()
+  }
+
+  fun autotileSetIconCoordinate() {
+    TODO()
+  }
+
+  fun autotileSetLightOccluder() {
+    TODO()
+  }
+
+  fun autotileSetNavigationPolygon() {
+    TODO()
+  }
+
+  fun autotileSetSize() {
+    TODO()
+  }
+
+  fun autotileSetSpacing() {
+    TODO()
+  }
+
+  fun autotileSetSubtilePriority() {
+    TODO()
+  }
+
+  fun autotileSetZIndex() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun createTile() {
+    TODO()
+  }
+
+  fun findTileByName(): Int {
+    TODO()
+  }
+
+  fun getLastUnusedTileId(): Int {
+    TODO()
+  }
+
+  fun getTilesIds(): VariantArray {
+    TODO()
+  }
+
+  fun removeTile() {
+    TODO()
+  }
+
+  fun tileAddShape() {
+    TODO()
+  }
+
+  fun tileGetLightOccluder(): OccluderPolygon2D {
+    TODO()
+  }
+
+  fun tileGetMaterial(): ShaderMaterial {
+    TODO()
+  }
+
+  fun tileGetModulate(): Color {
+    TODO()
+  }
+
+  fun tileGetName(): String {
+    TODO()
+  }
+
+  fun tileGetNavigationPolygon(): NavigationPolygon {
+    TODO()
+  }
+
+  fun tileGetNavigationPolygonOffset(): Vector2 {
+    TODO()
+  }
+
+  fun tileGetNormalMap(): Texture {
+    TODO()
+  }
+
+  fun tileGetOccluderOffset(): Vector2 {
+    TODO()
+  }
+
+  fun tileGetRegion(): Rect2 {
+    TODO()
+  }
+
+  fun tileGetShape(): Shape2D {
+    TODO()
+  }
+
+  fun tileGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun tileGetShapeOffset(): Vector2 {
+    TODO()
+  }
+
+  fun tileGetShapeOneWay(): Boolean {
+    TODO()
+  }
+
+  fun tileGetShapeOneWayMargin(): Float {
+    TODO()
+  }
+
+  fun tileGetShapeTransform(): Transform2D {
+    TODO()
+  }
+
+  fun tileGetShapes(): VariantArray {
+    TODO()
+  }
+
+  fun tileGetTexture(): Texture {
+    TODO()
+  }
+
+  fun tileGetTextureOffset(): Vector2 {
+    TODO()
+  }
+
+  fun tileGetTileMode(): TileSet.TileMode {
+    TODO()
+  }
+
+  fun tileGetZIndex(): Int {
+    TODO()
+  }
+
+  fun tileSetLightOccluder() {
+    TODO()
+  }
+
+  fun tileSetMaterial() {
+    TODO()
+  }
+
+  fun tileSetModulate() {
+    TODO()
+  }
+
+  fun tileSetName() {
+    TODO()
+  }
+
+  fun tileSetNavigationPolygon() {
+    TODO()
+  }
+
+  fun tileSetNavigationPolygonOffset() {
+    TODO()
+  }
+
+  fun tileSetNormalMap() {
+    TODO()
+  }
+
+  fun tileSetOccluderOffset() {
+    TODO()
+  }
+
+  fun tileSetRegion() {
+    TODO()
+  }
+
+  fun tileSetShape() {
+    TODO()
+  }
+
+  fun tileSetShapeOffset() {
+    TODO()
+  }
+
+  fun tileSetShapeOneWay() {
+    TODO()
+  }
+
+  fun tileSetShapeOneWayMargin() {
+    TODO()
+  }
+
+  fun tileSetShapeTransform() {
+    TODO()
+  }
+
+  fun tileSetShapes() {
+    TODO()
+  }
+
+  fun tileSetTexture() {
+    TODO()
+  }
+
+  fun tileSetTextureOffset() {
+    TODO()
+  }
+
+  fun tileSetTileMode() {
+    TODO()
+  }
+
+  fun tileSetZIndex() {
+    TODO()
+  }
+
   enum class TileMode(
     val value: Int
   ) {

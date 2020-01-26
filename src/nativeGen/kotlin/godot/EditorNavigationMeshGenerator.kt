@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class EditorNavigationMeshGenerator internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun bake() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorNavigationMeshGenerator = memScoped {
       val fnPtr =

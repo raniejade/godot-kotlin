@@ -2,8 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,134 @@ import kotlinx.cinterop.reinterpret
 open class GraphNode internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun clearAllSlots() {
+    TODO()
+  }
+
+  fun clearSlot() {
+    TODO()
+  }
+
+  fun getConnectionInputColor(): Color {
+    TODO()
+  }
+
+  fun getConnectionInputCount(): Int {
+    TODO()
+  }
+
+  fun getConnectionInputPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getConnectionInputType(): Int {
+    TODO()
+  }
+
+  fun getConnectionOutputColor(): Color {
+    TODO()
+  }
+
+  fun getConnectionOutputCount(): Int {
+    TODO()
+  }
+
+  fun getConnectionOutputPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getConnectionOutputType(): Int {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getOverlay(): GraphNode.Overlay {
+    TODO()
+  }
+
+  fun getSlotColorLeft(): Color {
+    TODO()
+  }
+
+  fun getSlotColorRight(): Color {
+    TODO()
+  }
+
+  fun getSlotTypeLeft(): Int {
+    TODO()
+  }
+
+  fun getSlotTypeRight(): Int {
+    TODO()
+  }
+
+  fun getTitle(): String {
+    TODO()
+  }
+
+  fun isCloseButtonVisible(): Boolean {
+    TODO()
+  }
+
+  fun isComment(): Boolean {
+    TODO()
+  }
+
+  fun isResizable(): Boolean {
+    TODO()
+  }
+
+  fun isSelected(): Boolean {
+    TODO()
+  }
+
+  fun isSlotEnabledLeft(): Boolean {
+    TODO()
+  }
+
+  fun isSlotEnabledRight(): Boolean {
+    TODO()
+  }
+
+  fun setComment() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setOverlay() {
+    TODO()
+  }
+
+  fun setResizable() {
+    TODO()
+  }
+
+  fun setSelected() {
+    TODO()
+  }
+
+  fun setShowCloseButton() {
+    TODO()
+  }
+
+  fun setSlot() {
+    TODO()
+  }
+
+  fun setTitle() {
+    TODO()
+  }
+
   enum class Overlay(
     val value: Int
   ) {

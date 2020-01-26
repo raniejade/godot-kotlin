@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,46 @@ import kotlinx.cinterop.reinterpret
 open class CollisionPolygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getBuildMode(): CollisionPolygon2D.BuildMode {
+    TODO()
+  }
+
+  fun getOneWayCollisionMargin(): Float {
+    TODO()
+  }
+
+  fun getPolygon(): PoolVector2Array {
+    TODO()
+  }
+
+  fun isDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isOneWayCollisionEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setBuildMode() {
+    TODO()
+  }
+
+  fun setDisabled() {
+    TODO()
+  }
+
+  fun setOneWayCollision() {
+    TODO()
+  }
+
+  fun setOneWayCollisionMargin() {
+    TODO()
+  }
+
+  fun setPolygon() {
+    TODO()
+  }
+
   enum class BuildMode(
     val value: Int
   ) {

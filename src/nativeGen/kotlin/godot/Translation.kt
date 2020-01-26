@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,42 @@ import kotlinx.cinterop.reinterpret
 open class Translation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getMessages(): PoolStringArray {
+    TODO()
+  }
+
+  fun setMessages() {
+    TODO()
+  }
+
+  fun addMessage() {
+    TODO()
+  }
+
+  fun eraseMessage() {
+    TODO()
+  }
+
+  fun getLocale(): String {
+    TODO()
+  }
+
+  fun getMessage(): String {
+    TODO()
+  }
+
+  fun getMessageCount(): Int {
+    TODO()
+  }
+
+  fun getMessageList(): PoolStringArray {
+    TODO()
+  }
+
+  fun setLocale() {
+    TODO()
+  }
+
   companion object {
     fun new(): Translation = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Translation".cstr.ptr)

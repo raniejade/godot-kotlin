@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,70 @@ import kotlinx.cinterop.reinterpret
 open class PathFollow2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getCubicInterpolation(): Boolean {
+    TODO()
+  }
+
+  fun getHOffset(): Float {
+    TODO()
+  }
+
+  fun getLookahead(): Float {
+    TODO()
+  }
+
+  fun getOffset(): Float {
+    TODO()
+  }
+
+  fun getUnitOffset(): Float {
+    TODO()
+  }
+
+  fun getVOffset(): Float {
+    TODO()
+  }
+
+  fun hasLoop(): Boolean {
+    TODO()
+  }
+
+  fun isRotating(): Boolean {
+    TODO()
+  }
+
+  fun setCubicInterpolation() {
+    TODO()
+  }
+
+  fun setHOffset() {
+    TODO()
+  }
+
+  fun setLookahead() {
+    TODO()
+  }
+
+  fun setLoop() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setRotate() {
+    TODO()
+  }
+
+  fun setUnitOffset() {
+    TODO()
+  }
+
+  fun setVOffset() {
+    TODO()
+  }
+
   companion object {
     fun new(): PathFollow2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow2D".cstr.ptr)

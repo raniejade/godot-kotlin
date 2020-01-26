@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getDefaultInputValues(): VariantArray {
+    TODO()
+  }
+
+  fun setDefaultInputValues() {
+    TODO()
+  }
+
+  fun getInputPortDefaultValue(): Variant {
+    TODO()
+  }
+
+  fun getOutputPortForPreview(): Int {
+    TODO()
+  }
+
+  fun setInputPortDefaultValue() {
+    TODO()
+  }
+
+  fun setOutputPortForPreview() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for VisualShaderNode

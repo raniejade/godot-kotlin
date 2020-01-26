@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class StreamTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun getLoadPath(): String {
+    TODO()
+  }
+
+  fun load(): Error {
+    TODO()
+  }
+
   companion object {
     fun new(): StreamTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamTexture".cstr.ptr)

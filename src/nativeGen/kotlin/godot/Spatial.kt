@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform
+import godot.core.Vector3
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,206 @@ import kotlinx.cinterop.reinterpret
 open class Spatial internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun updateGizmo() {
+    TODO()
+  }
+
+  fun forceUpdateTransform() {
+    TODO()
+  }
+
+  fun getGizmo(): SpatialGizmo {
+    TODO()
+  }
+
+  fun getGlobalTransform(): Transform {
+    TODO()
+  }
+
+  fun getParentSpatial(): Spatial {
+    TODO()
+  }
+
+  fun getRotation(): Vector3 {
+    TODO()
+  }
+
+  fun getRotationDegrees(): Vector3 {
+    TODO()
+  }
+
+  fun getScale(): Vector3 {
+    TODO()
+  }
+
+  fun getTransform(): Transform {
+    TODO()
+  }
+
+  fun getTranslation(): Vector3 {
+    TODO()
+  }
+
+  fun getWorld(): World {
+    TODO()
+  }
+
+  fun globalRotate() {
+    TODO()
+  }
+
+  fun globalScale() {
+    TODO()
+  }
+
+  fun globalTranslate() {
+    TODO()
+  }
+
+  fun hide() {
+    TODO()
+  }
+
+  fun isLocalTransformNotificationEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isScaleDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isSetAsToplevel(): Boolean {
+    TODO()
+  }
+
+  fun isTransformNotificationEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isVisible(): Boolean {
+    TODO()
+  }
+
+  fun isVisibleInTree(): Boolean {
+    TODO()
+  }
+
+  fun lookAt() {
+    TODO()
+  }
+
+  fun lookAtFromPosition() {
+    TODO()
+  }
+
+  fun orthonormalize() {
+    TODO()
+  }
+
+  fun rotate() {
+    TODO()
+  }
+
+  fun rotateObjectLocal() {
+    TODO()
+  }
+
+  fun rotateX() {
+    TODO()
+  }
+
+  fun rotateY() {
+    TODO()
+  }
+
+  fun rotateZ() {
+    TODO()
+  }
+
+  fun scaleObjectLocal() {
+    TODO()
+  }
+
+  fun setAsToplevel() {
+    TODO()
+  }
+
+  fun setDisableScale() {
+    TODO()
+  }
+
+  fun setGizmo() {
+    TODO()
+  }
+
+  fun setGlobalTransform() {
+    TODO()
+  }
+
+  fun setIdentity() {
+    TODO()
+  }
+
+  fun setIgnoreTransformNotification() {
+    TODO()
+  }
+
+  fun setNotifyLocalTransform() {
+    TODO()
+  }
+
+  fun setNotifyTransform() {
+    TODO()
+  }
+
+  fun setRotation() {
+    TODO()
+  }
+
+  fun setRotationDegrees() {
+    TODO()
+  }
+
+  fun setScale() {
+    TODO()
+  }
+
+  fun setTransform() {
+    TODO()
+  }
+
+  fun setTranslation() {
+    TODO()
+  }
+
+  fun setVisible() {
+    TODO()
+  }
+
+  fun show() {
+    TODO()
+  }
+
+  fun toGlobal(): Vector3 {
+    TODO()
+  }
+
+  fun toLocal(): Vector3 {
+    TODO()
+  }
+
+  fun translate() {
+    TODO()
+  }
+
+  fun translateObjectLocal() {
+    TODO()
+  }
+
+  fun updateGizmo() {
+    TODO()
+  }
+
   companion object {
     val NOTIFICATION_ENTER_WORLD: Int = 41
 

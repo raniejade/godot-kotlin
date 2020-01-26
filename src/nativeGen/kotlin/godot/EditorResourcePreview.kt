@@ -14,6 +14,30 @@ import kotlinx.cinterop.reinterpret
 open class EditorResourcePreview internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun previewReady() {
+    TODO()
+  }
+
+  fun addPreviewGenerator() {
+    TODO()
+  }
+
+  fun checkForInvalidation() {
+    TODO()
+  }
+
+  fun queueEditedResourcePreview() {
+    TODO()
+  }
+
+  fun queueResourcePreview() {
+    TODO()
+  }
+
+  fun removePreviewGenerator() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for EditorResourcePreview

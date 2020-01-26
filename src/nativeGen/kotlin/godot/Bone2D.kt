@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform2D
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class Bone2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun applyRest() {
+    TODO()
+  }
+
+  fun getDefaultLength(): Float {
+    TODO()
+  }
+
+  fun getIndexInSkeleton(): Int {
+    TODO()
+  }
+
+  fun getRest(): Transform2D {
+    TODO()
+  }
+
+  fun getSkeletonRest(): Transform2D {
+    TODO()
+  }
+
+  fun setDefaultLength() {
+    TODO()
+  }
+
+  fun setRest() {
+    TODO()
+  }
+
   companion object {
     fun new(): Bone2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Bone2D".cstr.ptr)

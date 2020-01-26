@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,110 @@ import kotlinx.cinterop.reinterpret
 open class Sprite internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getFrame(): Int {
+    TODO()
+  }
+
+  fun getHframes(): Int {
+    TODO()
+  }
+
+  fun getNormalMap(): Texture {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getRect(): Rect2 {
+    TODO()
+  }
+
+  fun getRegionRect(): Rect2 {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getVframes(): Int {
+    TODO()
+  }
+
+  fun isCentered(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedH(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedV(): Boolean {
+    TODO()
+  }
+
+  fun isPixelOpaque(): Boolean {
+    TODO()
+  }
+
+  fun isRegion(): Boolean {
+    TODO()
+  }
+
+  fun isRegionFilterClipEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setCentered() {
+    TODO()
+  }
+
+  fun setFlipH() {
+    TODO()
+  }
+
+  fun setFlipV() {
+    TODO()
+  }
+
+  fun setFrame() {
+    TODO()
+  }
+
+  fun setHframes() {
+    TODO()
+  }
+
+  fun setNormalMap() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setRegion() {
+    TODO()
+  }
+
+  fun setRegionFilterClip() {
+    TODO()
+  }
+
+  fun setRegionRect() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setVframes() {
+    TODO()
+  }
+
   companion object {
     fun new(): Sprite = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite".cstr.ptr)

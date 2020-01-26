@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,66 @@ import kotlinx.cinterop.reinterpret
 open class ScrollContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun scrollMoved() {
+    TODO()
+  }
+
+  fun updateScrollbarPosition() {
+    TODO()
+  }
+
+  fun getDeadzone(): Int {
+    TODO()
+  }
+
+  fun getHScroll(): Int {
+    TODO()
+  }
+
+  fun getHScrollbar(): HScrollBar {
+    TODO()
+  }
+
+  fun getVScroll(): Int {
+    TODO()
+  }
+
+  fun getVScrollbar(): VScrollBar {
+    TODO()
+  }
+
+  fun isHScrollEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isVScrollEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setDeadzone() {
+    TODO()
+  }
+
+  fun setEnableHScroll() {
+    TODO()
+  }
+
+  fun setEnableVScroll() {
+    TODO()
+  }
+
+  fun setHScroll() {
+    TODO()
+  }
+
+  fun setVScroll() {
+    TODO()
+  }
+
   companion object {
     fun new(): ScrollContainer = memScoped {
       val fnPtr =

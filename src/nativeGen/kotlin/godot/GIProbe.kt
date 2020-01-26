@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,94 @@ import kotlinx.cinterop.reinterpret
 open class GIProbe internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  fun bake() {
+    TODO()
+  }
+
+  fun debugBake() {
+    TODO()
+  }
+
+  fun getBias(): Float {
+    TODO()
+  }
+
+  fun getDynamicRange(): Int {
+    TODO()
+  }
+
+  fun getEnergy(): Float {
+    TODO()
+  }
+
+  fun getExtents(): Vector3 {
+    TODO()
+  }
+
+  fun getNormalBias(): Float {
+    TODO()
+  }
+
+  fun getProbeData(): GIProbeData {
+    TODO()
+  }
+
+  fun getPropagation(): Float {
+    TODO()
+  }
+
+  fun getSubdiv(): GIProbe.Subdiv {
+    TODO()
+  }
+
+  fun isCompressed(): Boolean {
+    TODO()
+  }
+
+  fun isInterior(): Boolean {
+    TODO()
+  }
+
+  fun setBias() {
+    TODO()
+  }
+
+  fun setCompress() {
+    TODO()
+  }
+
+  fun setDynamicRange() {
+    TODO()
+  }
+
+  fun setEnergy() {
+    TODO()
+  }
+
+  fun setExtents() {
+    TODO()
+  }
+
+  fun setInterior() {
+    TODO()
+  }
+
+  fun setNormalBias() {
+    TODO()
+  }
+
+  fun setProbeData() {
+    TODO()
+  }
+
+  fun setPropagation() {
+    TODO()
+  }
+
+  fun setSubdiv() {
+    TODO()
+  }
+
   enum class Subdiv(
     val value: Int
   ) {

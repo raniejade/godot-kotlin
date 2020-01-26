@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,58 @@ import kotlinx.cinterop.reinterpret
 open class NativeScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
+  fun getClassDocumentation(): String {
+    TODO()
+  }
+
+  fun getClassName(): String {
+    TODO()
+  }
+
+  fun getLibrary(): GDNativeLibrary {
+    TODO()
+  }
+
+  fun getMethodDocumentation(): String {
+    TODO()
+  }
+
+  fun getPropertyDocumentation(): String {
+    TODO()
+  }
+
+  fun getScriptClassIconPath(): String {
+    TODO()
+  }
+
+  fun getScriptClassName(): String {
+    TODO()
+  }
+
+  fun getSignalDocumentation(): String {
+    TODO()
+  }
+
+  fun new(): Object {
+    TODO()
+  }
+
+  fun setClassName() {
+    TODO()
+  }
+
+  fun setLibrary() {
+    TODO()
+  }
+
+  fun setScriptClassIconPath() {
+    TODO()
+  }
+
+  fun setScriptClassName() {
+    TODO()
+  }
+
   companion object {
     fun new(): NativeScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NativeScript".cstr.ptr)

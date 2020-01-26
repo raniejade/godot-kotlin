@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,122 @@ import kotlinx.cinterop.reinterpret
 open class Tween internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun removeByUid() {
+    TODO()
+  }
+
+  fun followMethod(): Boolean {
+    TODO()
+  }
+
+  fun followProperty(): Boolean {
+    TODO()
+  }
+
+  fun getRuntime(): Float {
+    TODO()
+  }
+
+  fun getSpeedScale(): Float {
+    TODO()
+  }
+
+  fun getTweenProcessMode(): Tween.TweenProcessMode {
+    TODO()
+  }
+
+  fun interpolateCallback(): Boolean {
+    TODO()
+  }
+
+  fun interpolateDeferredCallback(): Boolean {
+    TODO()
+  }
+
+  fun interpolateMethod(): Boolean {
+    TODO()
+  }
+
+  fun interpolateProperty(): Boolean {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun isRepeat(): Boolean {
+    TODO()
+  }
+
+  fun remove(): Boolean {
+    TODO()
+  }
+
+  fun removeAll(): Boolean {
+    TODO()
+  }
+
+  fun reset(): Boolean {
+    TODO()
+  }
+
+  fun resetAll(): Boolean {
+    TODO()
+  }
+
+  fun resume(): Boolean {
+    TODO()
+  }
+
+  fun resumeAll(): Boolean {
+    TODO()
+  }
+
+  fun seek(): Boolean {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun setRepeat() {
+    TODO()
+  }
+
+  fun setSpeedScale() {
+    TODO()
+  }
+
+  fun setTweenProcessMode() {
+    TODO()
+  }
+
+  fun start(): Boolean {
+    TODO()
+  }
+
+  fun stop(): Boolean {
+    TODO()
+  }
+
+  fun stopAll(): Boolean {
+    TODO()
+  }
+
+  fun targetingMethod(): Boolean {
+    TODO()
+  }
+
+  fun targetingProperty(): Boolean {
+    TODO()
+  }
+
+  fun tell(): Float {
+    TODO()
+  }
+
   enum class TransitionType(
     val value: Int
   ) {

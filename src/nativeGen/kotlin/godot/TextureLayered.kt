@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -15,6 +16,54 @@ import kotlinx.cinterop.reinterpret
 open class TextureLayered internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun create() {
+    TODO()
+  }
+
+  fun getDepth(): Int {
+    TODO()
+  }
+
+  fun getFlags(): Int {
+    TODO()
+  }
+
+  fun getFormat(): Image.Format {
+    TODO()
+  }
+
+  fun getHeight(): Int {
+    TODO()
+  }
+
+  fun getLayerData(): Image {
+    TODO()
+  }
+
+  fun getWidth(): Int {
+    TODO()
+  }
+
+  fun setDataPartial() {
+    TODO()
+  }
+
+  fun setFlags() {
+    TODO()
+  }
+
+  fun setLayerData() {
+    TODO()
+  }
+
   enum class Flags(
     val value: Int
   ) {

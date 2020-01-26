@@ -14,6 +14,66 @@ import kotlinx.cinterop.reinterpret
 open class EditorInspector internal constructor(
   _handle: COpaquePointer
 ) : ScrollContainer(_handle) {
+  fun editRequestChange() {
+    TODO()
+  }
+
+  fun featureProfileChanged() {
+    TODO()
+  }
+
+  fun filterChanged() {
+    TODO()
+  }
+
+  fun multiplePropertiesChanged() {
+    TODO()
+  }
+
+  fun nodeRemoved() {
+    TODO()
+  }
+
+  fun objectIdSelected() {
+    TODO()
+  }
+
+  fun propertyChanged() {
+    TODO()
+  }
+
+  fun propertyChangedUpdateAll() {
+    TODO()
+  }
+
+  fun propertyChecked() {
+    TODO()
+  }
+
+  fun propertyKeyed() {
+    TODO()
+  }
+
+  fun propertyKeyedWithValue() {
+    TODO()
+  }
+
+  fun propertySelected() {
+    TODO()
+  }
+
+  fun resourceSelected() {
+    TODO()
+  }
+
+  fun vscrollChanged() {
+    TODO()
+  }
+
+  fun refresh() {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorInspector = memScoped {
       val fnPtr =

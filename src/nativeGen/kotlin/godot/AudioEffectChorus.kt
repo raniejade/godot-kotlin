@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,78 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectChorus internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getDry(): Float {
+    TODO()
+  }
+
+  fun getVoiceCount(): Int {
+    TODO()
+  }
+
+  fun getVoiceCutoffHz(): Float {
+    TODO()
+  }
+
+  fun getVoiceDelayMs(): Float {
+    TODO()
+  }
+
+  fun getVoiceDepthMs(): Float {
+    TODO()
+  }
+
+  fun getVoiceLevelDb(): Float {
+    TODO()
+  }
+
+  fun getVoicePan(): Float {
+    TODO()
+  }
+
+  fun getVoiceRateHz(): Float {
+    TODO()
+  }
+
+  fun getWet(): Float {
+    TODO()
+  }
+
+  fun setDry() {
+    TODO()
+  }
+
+  fun setVoiceCount() {
+    TODO()
+  }
+
+  fun setVoiceCutoffHz() {
+    TODO()
+  }
+
+  fun setVoiceDelayMs() {
+    TODO()
+  }
+
+  fun setVoiceDepthMs() {
+    TODO()
+  }
+
+  fun setVoiceLevelDb() {
+    TODO()
+  }
+
+  fun setVoicePan() {
+    TODO()
+  }
+
+  fun setVoiceRateHz() {
+    TODO()
+  }
+
+  fun setWet() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectChorus = memScoped {
       val fnPtr =

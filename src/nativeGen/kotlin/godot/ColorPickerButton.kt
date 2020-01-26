@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class ColorPickerButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
+  fun colorChanged() {
+    TODO()
+  }
+
+  fun modalClosed() {
+    TODO()
+  }
+
+  fun getPickColor(): Color {
+    TODO()
+  }
+
+  fun getPicker(): ColorPicker {
+    TODO()
+  }
+
+  fun getPopup(): PopupPanel {
+    TODO()
+  }
+
+  fun isEditingAlpha(): Boolean {
+    TODO()
+  }
+
+  fun setEditAlpha() {
+    TODO()
+  }
+
+  fun setPickColor() {
+    TODO()
+  }
+
   companion object {
     fun new(): ColorPickerButton = memScoped {
       val fnPtr =

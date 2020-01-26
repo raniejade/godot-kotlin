@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,114 @@ import kotlinx.cinterop.reinterpret
 open class OptionButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
+  fun focused() {
+    TODO()
+  }
+
+  fun getItems(): VariantArray {
+    TODO()
+  }
+
+  fun selectInt() {
+    TODO()
+  }
+
+  fun selected() {
+    TODO()
+  }
+
+  fun setItems() {
+    TODO()
+  }
+
+  fun addIconItem() {
+    TODO()
+  }
+
+  fun addItem() {
+    TODO()
+  }
+
+  fun addSeparator() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getItemCount(): Int {
+    TODO()
+  }
+
+  fun getItemIcon(): Texture {
+    TODO()
+  }
+
+  fun getItemId(): Int {
+    TODO()
+  }
+
+  fun getItemIndex(): Int {
+    TODO()
+  }
+
+  fun getItemMetadata(): Variant {
+    TODO()
+  }
+
+  fun getItemText(): String {
+    TODO()
+  }
+
+  fun getPopup(): PopupMenu {
+    TODO()
+  }
+
+  fun getSelected(): Int {
+    TODO()
+  }
+
+  fun getSelectedId(): Int {
+    TODO()
+  }
+
+  fun getSelectedMetadata(): Variant {
+    TODO()
+  }
+
+  fun isItemDisabled(): Boolean {
+    TODO()
+  }
+
+  fun removeItem() {
+    TODO()
+  }
+
+  fun select() {
+    TODO()
+  }
+
+  fun setItemDisabled() {
+    TODO()
+  }
+
+  fun setItemIcon() {
+    TODO()
+  }
+
+  fun setItemId() {
+    TODO()
+  }
+
+  fun setItemMetadata() {
+    TODO()
+  }
+
+  fun setItemText() {
+    TODO()
+  }
+
   companion object {
     fun new(): OptionButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OptionButton".cstr.ptr)

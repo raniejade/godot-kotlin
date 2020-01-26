@@ -14,6 +14,26 @@ import kotlinx.cinterop.reinterpret
 open class CSGMesh internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  fun meshChanged() {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setMesh() {
+    TODO()
+  }
+
   companion object {
     fun new(): CSGMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGMesh".cstr.ptr)

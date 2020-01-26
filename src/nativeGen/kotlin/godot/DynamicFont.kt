@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,82 @@ import kotlinx.cinterop.reinterpret
 open class DynamicFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
+  fun addFallback() {
+    TODO()
+  }
+
+  fun getFallback(): DynamicFontData {
+    TODO()
+  }
+
+  fun getFallbackCount(): Int {
+    TODO()
+  }
+
+  fun getFontData(): DynamicFontData {
+    TODO()
+  }
+
+  fun getOutlineColor(): Color {
+    TODO()
+  }
+
+  fun getOutlineSize(): Int {
+    TODO()
+  }
+
+  fun getSize(): Int {
+    TODO()
+  }
+
+  fun getSpacing(): Int {
+    TODO()
+  }
+
+  fun getUseFilter(): Boolean {
+    TODO()
+  }
+
+  fun getUseMipmaps(): Boolean {
+    TODO()
+  }
+
+  fun removeFallback() {
+    TODO()
+  }
+
+  fun setFallback() {
+    TODO()
+  }
+
+  fun setFontData() {
+    TODO()
+  }
+
+  fun setOutlineColor() {
+    TODO()
+  }
+
+  fun setOutlineSize() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
+  fun setSpacing() {
+    TODO()
+  }
+
+  fun setUseFilter() {
+    TODO()
+  }
+
+  fun setUseMipmaps() {
+    TODO()
+  }
+
   enum class SpacingType(
     val value: Int
   ) {

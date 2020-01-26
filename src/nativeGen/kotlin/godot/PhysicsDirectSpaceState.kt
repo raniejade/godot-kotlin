@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsDirectSpaceState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun castMotion(): VariantArray {
+    TODO()
+  }
+
+  fun collideShape(): VariantArray {
+    TODO()
+  }
+
+  fun getRestInfo(): Dictionary {
+    TODO()
+  }
+
+  fun intersectRay(): Dictionary {
+    TODO()
+  }
+
+  fun intersectShape(): VariantArray {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for PhysicsDirectSpaceState

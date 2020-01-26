@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,26 @@ import kotlinx.cinterop.reinterpret
 open class ResourceInteractiveLoader internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getResource(): Resource {
+    TODO()
+  }
+
+  fun getStage(): Int {
+    TODO()
+  }
+
+  fun getStageCount(): Int {
+    TODO()
+  }
+
+  fun poll(): Error {
+    TODO()
+  }
+
+  fun wait(): Error {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for ResourceInteractiveLoader

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector3Array
+import godot.core.VariantArray
+import godot.core.Vector2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,54 @@ import kotlinx.cinterop.reinterpret
 open class Mesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun createConvexShape(): Shape {
+    TODO()
+  }
+
+  fun createOutline(): Mesh {
+    TODO()
+  }
+
+  fun createTrimeshShape(): Shape {
+    TODO()
+  }
+
+  fun generateTriangleMesh(): TriangleMesh {
+    TODO()
+  }
+
+  fun getFaces(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getLightmapSizeHint(): Vector2 {
+    TODO()
+  }
+
+  fun getSurfaceCount(): Int {
+    TODO()
+  }
+
+  fun setLightmapSizeHint() {
+    TODO()
+  }
+
+  fun surfaceGetArrays(): VariantArray {
+    TODO()
+  }
+
+  fun surfaceGetBlendShapeArrays(): VariantArray {
+    TODO()
+  }
+
+  fun surfaceGetMaterial(): Material {
+    TODO()
+  }
+
+  fun surfaceSetMaterial() {
+    TODO()
+  }
+
   enum class BlendShapeMode(
     val value: Int
   ) {

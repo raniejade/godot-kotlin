@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerBuffer internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
+  fun clear() {
+    TODO()
+  }
+
+  fun duplicate(): StreamPeerBuffer {
+    TODO()
+  }
+
+  fun getDataArray(): PoolByteArray {
+    TODO()
+  }
+
+  fun getPosition(): Int {
+    TODO()
+  }
+
+  fun getSize(): Int {
+    TODO()
+  }
+
+  fun resize() {
+    TODO()
+  }
+
+  fun seek() {
+    TODO()
+  }
+
+  fun setDataArray() {
+    TODO()
+  }
+
   companion object {
     fun new(): StreamPeerBuffer = memScoped {
       val fnPtr =

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,34 @@ import kotlinx.cinterop.reinterpret
 open class InputEventKey internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
+  fun getScancode(): Int {
+    TODO()
+  }
+
+  fun getScancodeWithModifiers(): Int {
+    TODO()
+  }
+
+  fun getUnicode(): Int {
+    TODO()
+  }
+
+  fun setEcho() {
+    TODO()
+  }
+
+  fun setPressed() {
+    TODO()
+  }
+
+  fun setScancode() {
+    TODO()
+  }
+
+  fun setUnicode() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventKey = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventKey".cstr.ptr)

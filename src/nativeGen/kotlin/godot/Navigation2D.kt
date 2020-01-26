@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class Navigation2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getClosestPoint(): Vector2 {
+    TODO()
+  }
+
+  fun getClosestPointOwner(): Object {
+    TODO()
+  }
+
+  fun getSimplePath(): PoolVector2Array {
+    TODO()
+  }
+
+  fun navpolyAdd(): Int {
+    TODO()
+  }
+
+  fun navpolyRemove() {
+    TODO()
+  }
+
+  fun navpolySetTransform() {
+    TODO()
+  }
+
   companion object {
     fun new(): Navigation2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Navigation2D".cstr.ptr)

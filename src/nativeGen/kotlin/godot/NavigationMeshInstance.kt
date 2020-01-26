@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class NavigationMeshInstance internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getNavigationMesh(): NavigationMesh {
+    TODO()
+  }
+
+  fun isEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setEnabled() {
+    TODO()
+  }
+
+  fun setNavigationMesh() {
+    TODO()
+  }
+
   companion object {
     fun new(): NavigationMeshInstance = memScoped {
       val fnPtr =

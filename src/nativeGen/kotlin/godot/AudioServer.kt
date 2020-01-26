@@ -3,7 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,182 @@ import kotlinx.cinterop.reinterpret
 open class AudioServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addBus() {
+    TODO()
+  }
+
+  fun addBusEffect() {
+    TODO()
+  }
+
+  fun captureGetDevice(): String {
+    TODO()
+  }
+
+  fun captureGetDeviceList(): VariantArray {
+    TODO()
+  }
+
+  fun captureSetDevice() {
+    TODO()
+  }
+
+  fun generateBusLayout(): AudioBusLayout {
+    TODO()
+  }
+
+  fun getBusChannels(): Int {
+    TODO()
+  }
+
+  fun getBusCount(): Int {
+    TODO()
+  }
+
+  fun getBusEffect(): AudioEffect {
+    TODO()
+  }
+
+  fun getBusEffectCount(): Int {
+    TODO()
+  }
+
+  fun getBusEffectInstance(): AudioEffectInstance {
+    TODO()
+  }
+
+  fun getBusIndex(): Int {
+    TODO()
+  }
+
+  fun getBusName(): String {
+    TODO()
+  }
+
+  fun getBusPeakVolumeLeftDb(): Float {
+    TODO()
+  }
+
+  fun getBusPeakVolumeRightDb(): Float {
+    TODO()
+  }
+
+  fun getBusSend(): String {
+    TODO()
+  }
+
+  fun getBusVolumeDb(): Float {
+    TODO()
+  }
+
+  fun getDevice(): String {
+    TODO()
+  }
+
+  fun getDeviceList(): VariantArray {
+    TODO()
+  }
+
+  fun getMixRate(): Float {
+    TODO()
+  }
+
+  fun getOutputLatency(): Float {
+    TODO()
+  }
+
+  fun getSpeakerMode(): AudioServer.SpeakerMode {
+    TODO()
+  }
+
+  fun getTimeSinceLastMix(): Float {
+    TODO()
+  }
+
+  fun getTimeToNextMix(): Float {
+    TODO()
+  }
+
+  fun isBusBypassingEffects(): Boolean {
+    TODO()
+  }
+
+  fun isBusEffectEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isBusMute(): Boolean {
+    TODO()
+  }
+
+  fun isBusSolo(): Boolean {
+    TODO()
+  }
+
+  fun lock() {
+    TODO()
+  }
+
+  fun moveBus() {
+    TODO()
+  }
+
+  fun removeBus() {
+    TODO()
+  }
+
+  fun removeBusEffect() {
+    TODO()
+  }
+
+  fun setBusBypassEffects() {
+    TODO()
+  }
+
+  fun setBusCount() {
+    TODO()
+  }
+
+  fun setBusEffectEnabled() {
+    TODO()
+  }
+
+  fun setBusLayout() {
+    TODO()
+  }
+
+  fun setBusMute() {
+    TODO()
+  }
+
+  fun setBusName() {
+    TODO()
+  }
+
+  fun setBusSend() {
+    TODO()
+  }
+
+  fun setBusSolo() {
+    TODO()
+  }
+
+  fun setBusVolumeDb() {
+    TODO()
+  }
+
+  fun setDevice() {
+    TODO()
+  }
+
+  fun swapBusEffects() {
+    TODO()
+  }
+
+  fun unlock() {
+    TODO()
+  }
+
   enum class SpeakerMode(
     val value: Int
   ) {

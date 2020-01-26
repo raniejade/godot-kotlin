@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,46 @@ import kotlinx.cinterop.reinterpret
 open class TextureRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getStretchMode(): TextureRect.StretchMode {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun hasExpand(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedH(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedV(): Boolean {
+    TODO()
+  }
+
+  fun setExpand() {
+    TODO()
+  }
+
+  fun setFlipH() {
+    TODO()
+  }
+
+  fun setFlipV() {
+    TODO()
+  }
+
+  fun setStretchMode() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
   enum class StretchMode(
     val value: Int
   ) {

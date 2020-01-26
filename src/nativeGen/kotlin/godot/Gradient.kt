@@ -2,7 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolColorArray
+import godot.core.PoolRealArray
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,54 @@ import kotlinx.cinterop.reinterpret
 open class Gradient internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun addPoint() {
+    TODO()
+  }
+
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getColors(): PoolColorArray {
+    TODO()
+  }
+
+  fun getOffset(): Float {
+    TODO()
+  }
+
+  fun getOffsets(): PoolRealArray {
+    TODO()
+  }
+
+  fun getPointCount(): Int {
+    TODO()
+  }
+
+  fun interpolate(): Color {
+    TODO()
+  }
+
+  fun removePoint() {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setColors() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setOffsets() {
+    TODO()
+  }
+
   companion object {
     fun new(): Gradient = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Gradient".cstr.ptr)

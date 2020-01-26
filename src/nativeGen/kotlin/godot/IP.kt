@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class IP internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun clearCache() {
+    TODO()
+  }
+
+  fun eraseResolveItem() {
+    TODO()
+  }
+
+  fun getLocalAddresses(): VariantArray {
+    TODO()
+  }
+
+  fun getResolveItemAddress(): String {
+    TODO()
+  }
+
+  fun getResolveItemStatus(): IP.ResolverStatus {
+    TODO()
+  }
+
+  fun resolveHostname(): String {
+    TODO()
+  }
+
+  fun resolveHostnameQueueItem(): Int {
+    TODO()
+  }
+
   enum class ResolverStatus(
     val value: Int
   ) {

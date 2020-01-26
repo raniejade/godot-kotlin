@@ -3,6 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform
+import godot.core.VariantArray
+import godot.core.Vector2
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +22,174 @@ import kotlinx.cinterop.reinterpret
 open class Camera internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun clearCurrent() {
+    TODO()
+  }
+
+  fun getCameraRid(): RID {
+    TODO()
+  }
+
+  fun getCameraTransform(): Transform {
+    TODO()
+  }
+
+  fun getCullMask(): Int {
+    TODO()
+  }
+
+  fun getCullMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getDopplerTracking(): Camera.DopplerTracking {
+    TODO()
+  }
+
+  fun getEnvironment(): Environment {
+    TODO()
+  }
+
+  fun getFov(): Float {
+    TODO()
+  }
+
+  fun getFrustum(): VariantArray {
+    TODO()
+  }
+
+  fun getFrustumOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getHOffset(): Float {
+    TODO()
+  }
+
+  fun getKeepAspectMode(): Camera.KeepAspect {
+    TODO()
+  }
+
+  fun getProjection(): Camera.Projection {
+    TODO()
+  }
+
+  fun getSize(): Float {
+    TODO()
+  }
+
+  fun getVOffset(): Float {
+    TODO()
+  }
+
+  fun getZfar(): Float {
+    TODO()
+  }
+
+  fun getZnear(): Float {
+    TODO()
+  }
+
+  fun isCurrent(): Boolean {
+    TODO()
+  }
+
+  fun isPositionBehind(): Boolean {
+    TODO()
+  }
+
+  fun makeCurrent() {
+    TODO()
+  }
+
+  fun projectLocalRayNormal(): Vector3 {
+    TODO()
+  }
+
+  fun projectPosition(): Vector3 {
+    TODO()
+  }
+
+  fun projectRayNormal(): Vector3 {
+    TODO()
+  }
+
+  fun projectRayOrigin(): Vector3 {
+    TODO()
+  }
+
+  fun setCullMask() {
+    TODO()
+  }
+
+  fun setCullMaskBit() {
+    TODO()
+  }
+
+  fun setCurrent() {
+    TODO()
+  }
+
+  fun setDopplerTracking() {
+    TODO()
+  }
+
+  fun setEnvironment() {
+    TODO()
+  }
+
+  fun setFov() {
+    TODO()
+  }
+
+  fun setFrustum() {
+    TODO()
+  }
+
+  fun setFrustumOffset() {
+    TODO()
+  }
+
+  fun setHOffset() {
+    TODO()
+  }
+
+  fun setKeepAspectMode() {
+    TODO()
+  }
+
+  fun setOrthogonal() {
+    TODO()
+  }
+
+  fun setPerspective() {
+    TODO()
+  }
+
+  fun setProjection() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
+  fun setVOffset() {
+    TODO()
+  }
+
+  fun setZfar() {
+    TODO()
+  }
+
+  fun setZnear() {
+    TODO()
+  }
+
+  fun unprojectPosition(): Vector2 {
+    TODO()
+  }
+
   enum class KeepAspect(
     val value: Int
   ) {

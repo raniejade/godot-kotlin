@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,50 @@ import kotlinx.cinterop.reinterpret
 open class KinematicCollision2D internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getCollider(): Object {
+    TODO()
+  }
+
+  fun getColliderId(): Int {
+    TODO()
+  }
+
+  fun getColliderMetadata(): Variant {
+    TODO()
+  }
+
+  fun getColliderShape(): Object {
+    TODO()
+  }
+
+  fun getColliderShapeIndex(): Int {
+    TODO()
+  }
+
+  fun getColliderVelocity(): Vector2 {
+    TODO()
+  }
+
+  fun getLocalShape(): Object {
+    TODO()
+  }
+
+  fun getNormal(): Vector2 {
+    TODO()
+  }
+
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getRemainder(): Vector2 {
+    TODO()
+  }
+
+  fun getTravel(): Vector2 {
+    TODO()
+  }
+
   companion object {
     fun new(): KinematicCollision2D = memScoped {
       val fnPtr =

@@ -2,8 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,94 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getFilters(): VariantArray {
+    TODO()
+  }
+
+  fun setFilters() {
+    TODO()
+  }
+
+  fun addInput() {
+    TODO()
+  }
+
+  fun blendAnimation() {
+    TODO()
+  }
+
+  fun blendInput(): Float {
+    TODO()
+  }
+
+  fun blendNode(): Float {
+    TODO()
+  }
+
+  fun getCaption(): String {
+    TODO()
+  }
+
+  fun getChildByName(): Object {
+    TODO()
+  }
+
+  fun getChildNodes(): Dictionary {
+    TODO()
+  }
+
+  fun getInputCount(): Int {
+    TODO()
+  }
+
+  fun getInputName(): String {
+    TODO()
+  }
+
+  fun getParameter(): Variant {
+    TODO()
+  }
+
+  fun getParameterDefaultValue(): Variant {
+    TODO()
+  }
+
+  fun getParameterList(): VariantArray {
+    TODO()
+  }
+
+  fun hasFilter(): String {
+    TODO()
+  }
+
+  fun isFilterEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isPathFiltered(): Boolean {
+    TODO()
+  }
+
+  fun process() {
+    TODO()
+  }
+
+  fun removeInput() {
+    TODO()
+  }
+
+  fun setFilterEnabled() {
+    TODO()
+  }
+
+  fun setFilterPath() {
+    TODO()
+  }
+
+  fun setParameter() {
+    TODO()
+  }
+
   enum class FilterAction(
     val value: Int
   ) {

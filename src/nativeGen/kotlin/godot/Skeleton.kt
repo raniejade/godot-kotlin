@@ -3,7 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,126 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun addBone() {
+    TODO()
+  }
+
+  fun bindChildNodeToBone() {
+    TODO()
+  }
+
+  fun clearBones() {
+    TODO()
+  }
+
+  fun findBone(): Int {
+    TODO()
+  }
+
+  fun getBoneCount(): Int {
+    TODO()
+  }
+
+  fun getBoneCustomPose(): Transform {
+    TODO()
+  }
+
+  fun getBoneGlobalPose(): Transform {
+    TODO()
+  }
+
+  fun getBoneName(): String {
+    TODO()
+  }
+
+  fun getBoneParent(): Int {
+    TODO()
+  }
+
+  fun getBonePose(): Transform {
+    TODO()
+  }
+
+  fun getBoneRest(): Transform {
+    TODO()
+  }
+
+  fun getBoneTransform(): Transform {
+    TODO()
+  }
+
+  fun getBoundChildNodesToBone(): VariantArray {
+    TODO()
+  }
+
+  fun isBoneRestDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isUsingBonesInWorldTransform(): Boolean {
+    TODO()
+  }
+
+  fun localizeRests() {
+    TODO()
+  }
+
+  fun physicalBonesAddCollisionException() {
+    TODO()
+  }
+
+  fun physicalBonesRemoveCollisionException() {
+    TODO()
+  }
+
+  fun physicalBonesStartSimulation() {
+    TODO()
+  }
+
+  fun physicalBonesStopSimulation() {
+    TODO()
+  }
+
+  fun setBoneCustomPose() {
+    TODO()
+  }
+
+  fun setBoneDisableRest() {
+    TODO()
+  }
+
+  fun setBoneGlobalPose() {
+    TODO()
+  }
+
+  fun setBoneIgnoreAnimation() {
+    TODO()
+  }
+
+  fun setBoneParent() {
+    TODO()
+  }
+
+  fun setBonePose() {
+    TODO()
+  }
+
+  fun setBoneRest() {
+    TODO()
+  }
+
+  fun setUseBonesInWorldTransform() {
+    TODO()
+  }
+
+  fun unbindChildNodeFromBone() {
+    TODO()
+  }
+
+  fun unparentBoneAndRest() {
+    TODO()
+  }
+
   companion object {
     val NOTIFICATION_UPDATE_SKELETON: Int = 50
 

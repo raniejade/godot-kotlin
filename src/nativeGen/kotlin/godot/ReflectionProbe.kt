@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,102 @@ import kotlinx.cinterop.reinterpret
 open class ReflectionProbe internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  fun areShadowsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun getCullMask(): Int {
+    TODO()
+  }
+
+  fun getExtents(): Vector3 {
+    TODO()
+  }
+
+  fun getIntensity(): Float {
+    TODO()
+  }
+
+  fun getInteriorAmbient(): Color {
+    TODO()
+  }
+
+  fun getInteriorAmbientEnergy(): Float {
+    TODO()
+  }
+
+  fun getInteriorAmbientProbeContribution(): Float {
+    TODO()
+  }
+
+  fun getMaxDistance(): Float {
+    TODO()
+  }
+
+  fun getOriginOffset(): Vector3 {
+    TODO()
+  }
+
+  fun getUpdateMode(): ReflectionProbe.UpdateMode {
+    TODO()
+  }
+
+  fun isBoxProjectionEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSetAsInterior(): Boolean {
+    TODO()
+  }
+
+  fun setAsInterior() {
+    TODO()
+  }
+
+  fun setCullMask() {
+    TODO()
+  }
+
+  fun setEnableBoxProjection() {
+    TODO()
+  }
+
+  fun setEnableShadows() {
+    TODO()
+  }
+
+  fun setExtents() {
+    TODO()
+  }
+
+  fun setIntensity() {
+    TODO()
+  }
+
+  fun setInteriorAmbient() {
+    TODO()
+  }
+
+  fun setInteriorAmbientEnergy() {
+    TODO()
+  }
+
+  fun setInteriorAmbientProbeContribution() {
+    TODO()
+  }
+
+  fun setMaxDistance() {
+    TODO()
+  }
+
+  fun setOriginOffset() {
+    TODO()
+  }
+
+  fun setUpdateMode() {
+    TODO()
+  }
+
   enum class UpdateMode(
     val value: Int
   ) {

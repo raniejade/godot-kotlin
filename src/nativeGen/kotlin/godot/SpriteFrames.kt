@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,86 @@ import kotlinx.cinterop.reinterpret
 open class SpriteFrames internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getAnimations(): VariantArray {
+    TODO()
+  }
+
+  fun getFrames(): VariantArray {
+    TODO()
+  }
+
+  fun setAnimations() {
+    TODO()
+  }
+
+  fun setFrames() {
+    TODO()
+  }
+
+  fun addAnimation() {
+    TODO()
+  }
+
+  fun addFrame() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun clearAll() {
+    TODO()
+  }
+
+  fun getAnimationLoop(): Boolean {
+    TODO()
+  }
+
+  fun getAnimationNames(): PoolStringArray {
+    TODO()
+  }
+
+  fun getAnimationSpeed(): Float {
+    TODO()
+  }
+
+  fun getFrame(): Texture {
+    TODO()
+  }
+
+  fun getFrameCount(): Int {
+    TODO()
+  }
+
+  fun hasAnimation(): Boolean {
+    TODO()
+  }
+
+  fun removeAnimation() {
+    TODO()
+  }
+
+  fun removeFrame() {
+    TODO()
+  }
+
+  fun renameAnimation() {
+    TODO()
+  }
+
+  fun setAnimationLoop() {
+    TODO()
+  }
+
+  fun setAnimationSpeed() {
+    TODO()
+  }
+
+  fun setFrame() {
+    TODO()
+  }
+
   companion object {
     fun new(): SpriteFrames = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpriteFrames".cstr.ptr)

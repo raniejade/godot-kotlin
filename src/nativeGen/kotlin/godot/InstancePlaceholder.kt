@@ -2,7 +2,9 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class InstancePlaceholder internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun createInstance(): Node {
+    TODO()
+  }
+
+  fun getInstancePath(): String {
+    TODO()
+  }
+
+  fun getStoredValues(): Dictionary {
+    TODO()
+  }
+
+  fun replaceByInstance() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for InstancePlaceholder

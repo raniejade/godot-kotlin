@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,106 @@ import kotlinx.cinterop.reinterpret
 open class VehicleWheel internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getDampingCompression(): Float {
+    TODO()
+  }
+
+  fun getDampingRelaxation(): Float {
+    TODO()
+  }
+
+  fun getFrictionSlip(): Float {
+    TODO()
+  }
+
+  fun getRadius(): Float {
+    TODO()
+  }
+
+  fun getRollInfluence(): Float {
+    TODO()
+  }
+
+  fun getRpm(): Float {
+    TODO()
+  }
+
+  fun getSkidinfo(): Float {
+    TODO()
+  }
+
+  fun getSuspensionMaxForce(): Float {
+    TODO()
+  }
+
+  fun getSuspensionRestLength(): Float {
+    TODO()
+  }
+
+  fun getSuspensionStiffness(): Float {
+    TODO()
+  }
+
+  fun getSuspensionTravel(): Float {
+    TODO()
+  }
+
+  fun isInContact(): Boolean {
+    TODO()
+  }
+
+  fun isUsedAsSteering(): Boolean {
+    TODO()
+  }
+
+  fun isUsedAsTraction(): Boolean {
+    TODO()
+  }
+
+  fun setDampingCompression() {
+    TODO()
+  }
+
+  fun setDampingRelaxation() {
+    TODO()
+  }
+
+  fun setFrictionSlip() {
+    TODO()
+  }
+
+  fun setRadius() {
+    TODO()
+  }
+
+  fun setRollInfluence() {
+    TODO()
+  }
+
+  fun setSuspensionMaxForce() {
+    TODO()
+  }
+
+  fun setSuspensionRestLength() {
+    TODO()
+  }
+
+  fun setSuspensionStiffness() {
+    TODO()
+  }
+
+  fun setSuspensionTravel() {
+    TODO()
+  }
+
+  fun setUseAsSteering() {
+    TODO()
+  }
+
+  fun setUseAsTraction() {
+    TODO()
+  }
+
   companion object {
     fun new(): VehicleWheel = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleWheel".cstr.ptr)

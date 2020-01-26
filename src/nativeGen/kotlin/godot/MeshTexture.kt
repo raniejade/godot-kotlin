@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,30 @@ import kotlinx.cinterop.reinterpret
 open class MeshTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun getBaseTexture(): Texture {
+    TODO()
+  }
+
+  fun getImageSize(): Vector2 {
+    TODO()
+  }
+
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun setBaseTexture() {
+    TODO()
+  }
+
+  fun setImageSize() {
+    TODO()
+  }
+
+  fun setMesh() {
+    TODO()
+  }
+
   companion object {
     fun new(): MeshTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshTexture".cstr.ptr)

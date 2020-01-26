@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeColorConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getConstant(): Color {
+    TODO()
+  }
+
+  fun setConstant() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualShaderNodeColorConstant = memScoped {
       val fnPtr =

@@ -2,7 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,186 @@ import kotlinx.cinterop.reinterpret
 open class VisualScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun nodePortsChanged() {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun addCustomSignal() {
+    TODO()
+  }
+
+  fun addFunction() {
+    TODO()
+  }
+
+  fun addNode() {
+    TODO()
+  }
+
+  fun addVariable() {
+    TODO()
+  }
+
+  fun customSignalAddArgument() {
+    TODO()
+  }
+
+  fun customSignalGetArgumentCount(): Int {
+    TODO()
+  }
+
+  fun customSignalGetArgumentName(): String {
+    TODO()
+  }
+
+  fun customSignalGetArgumentType(): Variant.Type {
+    TODO()
+  }
+
+  fun customSignalRemoveArgument() {
+    TODO()
+  }
+
+  fun customSignalSetArgumentName() {
+    TODO()
+  }
+
+  fun customSignalSetArgumentType() {
+    TODO()
+  }
+
+  fun customSignalSwapArgument() {
+    TODO()
+  }
+
+  fun dataConnect() {
+    TODO()
+  }
+
+  fun dataDisconnect() {
+    TODO()
+  }
+
+  fun getFunctionNodeId(): Int {
+    TODO()
+  }
+
+  fun getFunctionScroll(): Vector2 {
+    TODO()
+  }
+
+  fun getNode(): VisualScriptNode {
+    TODO()
+  }
+
+  fun getNodePosition(): Vector2 {
+    TODO()
+  }
+
+  fun getVariableDefaultValue(): Variant {
+    TODO()
+  }
+
+  fun getVariableExport(): Boolean {
+    TODO()
+  }
+
+  fun getVariableInfo(): Dictionary {
+    TODO()
+  }
+
+  fun hasCustomSignal(): Boolean {
+    TODO()
+  }
+
+  fun hasDataConnection(): Boolean {
+    TODO()
+  }
+
+  fun hasFunction(): Boolean {
+    TODO()
+  }
+
+  fun hasNode(): Boolean {
+    TODO()
+  }
+
+  fun hasSequenceConnection(): Boolean {
+    TODO()
+  }
+
+  fun hasVariable(): Boolean {
+    TODO()
+  }
+
+  fun removeCustomSignal() {
+    TODO()
+  }
+
+  fun removeFunction() {
+    TODO()
+  }
+
+  fun removeNode() {
+    TODO()
+  }
+
+  fun removeVariable() {
+    TODO()
+  }
+
+  fun renameCustomSignal() {
+    TODO()
+  }
+
+  fun renameFunction() {
+    TODO()
+  }
+
+  fun renameVariable() {
+    TODO()
+  }
+
+  fun sequenceConnect() {
+    TODO()
+  }
+
+  fun sequenceDisconnect() {
+    TODO()
+  }
+
+  fun setFunctionScroll() {
+    TODO()
+  }
+
+  fun setInstanceBaseType() {
+    TODO()
+  }
+
+  fun setNodePosition() {
+    TODO()
+  }
+
+  fun setVariableDefaultValue() {
+    TODO()
+  }
+
+  fun setVariableExport() {
+    TODO()
+  }
+
+  fun setVariableInfo() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScript".cstr.ptr)

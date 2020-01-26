@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.PoolVector2Array
+import godot.core.VariantArray
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,78 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygon internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getOutlines(): VariantArray {
+    TODO()
+  }
+
+  fun getPolygons(): VariantArray {
+    TODO()
+  }
+
+  fun setOutlines() {
+    TODO()
+  }
+
+  fun setPolygons() {
+    TODO()
+  }
+
+  fun addOutline() {
+    TODO()
+  }
+
+  fun addOutlineAtIndex() {
+    TODO()
+  }
+
+  fun addPolygon() {
+    TODO()
+  }
+
+  fun clearOutlines() {
+    TODO()
+  }
+
+  fun clearPolygons() {
+    TODO()
+  }
+
+  fun getOutline(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getOutlineCount(): Int {
+    TODO()
+  }
+
+  fun getPolygon(): PoolIntArray {
+    TODO()
+  }
+
+  fun getPolygonCount(): Int {
+    TODO()
+  }
+
+  fun getVertices(): PoolVector2Array {
+    TODO()
+  }
+
+  fun makePolygonsFromOutlines() {
+    TODO()
+  }
+
+  fun removeOutline() {
+    TODO()
+  }
+
+  fun setOutline() {
+    TODO()
+  }
+
+  fun setVertices() {
+    TODO()
+  }
+
   companion object {
     fun new(): NavigationPolygon = memScoped {
       val fnPtr =

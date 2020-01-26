@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeVec3Constant internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getConstant(): Vector3 {
+    TODO()
+  }
+
+  fun setConstant() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualShaderNodeVec3Constant = memScoped {
       val fnPtr =

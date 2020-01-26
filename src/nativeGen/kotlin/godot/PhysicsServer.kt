@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform
+import godot.core.Variant
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +21,458 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun areaAddShape() {
+    TODO()
+  }
+
+  fun areaAttachObjectInstanceId() {
+    TODO()
+  }
+
+  fun areaClearShapes() {
+    TODO()
+  }
+
+  fun areaCreate(): RID {
+    TODO()
+  }
+
+  fun areaGetObjectInstanceId(): Int {
+    TODO()
+  }
+
+  fun areaGetParam(): Variant {
+    TODO()
+  }
+
+  fun areaGetShape(): RID {
+    TODO()
+  }
+
+  fun areaGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun areaGetShapeTransform(): Transform {
+    TODO()
+  }
+
+  fun areaGetSpace(): RID {
+    TODO()
+  }
+
+  fun areaGetSpaceOverrideMode(): PhysicsServer.AreaSpaceOverrideMode {
+    TODO()
+  }
+
+  fun areaGetTransform(): Transform {
+    TODO()
+  }
+
+  fun areaIsRayPickable(): Boolean {
+    TODO()
+  }
+
+  fun areaRemoveShape() {
+    TODO()
+  }
+
+  fun areaSetAreaMonitorCallback() {
+    TODO()
+  }
+
+  fun areaSetCollisionLayer() {
+    TODO()
+  }
+
+  fun areaSetCollisionMask() {
+    TODO()
+  }
+
+  fun areaSetMonitorCallback() {
+    TODO()
+  }
+
+  fun areaSetMonitorable() {
+    TODO()
+  }
+
+  fun areaSetParam() {
+    TODO()
+  }
+
+  fun areaSetRayPickable() {
+    TODO()
+  }
+
+  fun areaSetShape() {
+    TODO()
+  }
+
+  fun areaSetShapeDisabled() {
+    TODO()
+  }
+
+  fun areaSetShapeTransform() {
+    TODO()
+  }
+
+  fun areaSetSpace() {
+    TODO()
+  }
+
+  fun areaSetSpaceOverrideMode() {
+    TODO()
+  }
+
+  fun areaSetTransform() {
+    TODO()
+  }
+
+  fun bodyAddCentralForce() {
+    TODO()
+  }
+
+  fun bodyAddCollisionException() {
+    TODO()
+  }
+
+  fun bodyAddForce() {
+    TODO()
+  }
+
+  fun bodyAddShape() {
+    TODO()
+  }
+
+  fun bodyAddTorque() {
+    TODO()
+  }
+
+  fun bodyApplyCentralImpulse() {
+    TODO()
+  }
+
+  fun bodyApplyImpulse() {
+    TODO()
+  }
+
+  fun bodyApplyTorqueImpulse() {
+    TODO()
+  }
+
+  fun bodyAttachObjectInstanceId() {
+    TODO()
+  }
+
+  fun bodyClearShapes() {
+    TODO()
+  }
+
+  fun bodyCreate(): RID {
+    TODO()
+  }
+
+  fun bodyGetCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun bodyGetCollisionMask(): Int {
+    TODO()
+  }
+
+  fun bodyGetDirectState(): PhysicsDirectBodyState {
+    TODO()
+  }
+
+  fun bodyGetKinematicSafeMargin(): Float {
+    TODO()
+  }
+
+  fun bodyGetMaxContactsReported(): Int {
+    TODO()
+  }
+
+  fun bodyGetMode(): PhysicsServer.BodyMode {
+    TODO()
+  }
+
+  fun bodyGetObjectInstanceId(): Int {
+    TODO()
+  }
+
+  fun bodyGetParam(): Float {
+    TODO()
+  }
+
+  fun bodyGetShape(): RID {
+    TODO()
+  }
+
+  fun bodyGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun bodyGetShapeTransform(): Transform {
+    TODO()
+  }
+
+  fun bodyGetSpace(): RID {
+    TODO()
+  }
+
+  fun bodyGetState(): Variant {
+    TODO()
+  }
+
+  fun bodyIsAxisLocked(): Boolean {
+    TODO()
+  }
+
+  fun bodyIsContinuousCollisionDetectionEnabled(): Boolean {
+    TODO()
+  }
+
+  fun bodyIsOmittingForceIntegration(): Boolean {
+    TODO()
+  }
+
+  fun bodyIsRayPickable(): Boolean {
+    TODO()
+  }
+
+  fun bodyRemoveCollisionException() {
+    TODO()
+  }
+
+  fun bodyRemoveShape() {
+    TODO()
+  }
+
+  fun bodySetAxisLock() {
+    TODO()
+  }
+
+  fun bodySetAxisVelocity() {
+    TODO()
+  }
+
+  fun bodySetCollisionLayer() {
+    TODO()
+  }
+
+  fun bodySetCollisionMask() {
+    TODO()
+  }
+
+  fun bodySetEnableContinuousCollisionDetection() {
+    TODO()
+  }
+
+  fun bodySetForceIntegrationCallback() {
+    TODO()
+  }
+
+  fun bodySetKinematicSafeMargin() {
+    TODO()
+  }
+
+  fun bodySetMaxContactsReported() {
+    TODO()
+  }
+
+  fun bodySetMode() {
+    TODO()
+  }
+
+  fun bodySetOmitForceIntegration() {
+    TODO()
+  }
+
+  fun bodySetParam() {
+    TODO()
+  }
+
+  fun bodySetRayPickable() {
+    TODO()
+  }
+
+  fun bodySetShape() {
+    TODO()
+  }
+
+  fun bodySetShapeDisabled() {
+    TODO()
+  }
+
+  fun bodySetShapeTransform() {
+    TODO()
+  }
+
+  fun bodySetSpace() {
+    TODO()
+  }
+
+  fun bodySetState() {
+    TODO()
+  }
+
+  fun coneTwistJointGetParam(): Float {
+    TODO()
+  }
+
+  fun coneTwistJointSetParam() {
+    TODO()
+  }
+
+  fun freeRid() {
+    TODO()
+  }
+
+  fun generic6dofJointGetFlag(): Boolean {
+    TODO()
+  }
+
+  fun generic6dofJointGetParam(): Float {
+    TODO()
+  }
+
+  fun generic6dofJointSetFlag() {
+    TODO()
+  }
+
+  fun generic6dofJointSetParam() {
+    TODO()
+  }
+
+  fun getProcessInfo(): Int {
+    TODO()
+  }
+
+  fun hingeJointGetFlag(): Boolean {
+    TODO()
+  }
+
+  fun hingeJointGetParam(): Float {
+    TODO()
+  }
+
+  fun hingeJointSetFlag() {
+    TODO()
+  }
+
+  fun hingeJointSetParam() {
+    TODO()
+  }
+
+  fun jointCreateConeTwist(): RID {
+    TODO()
+  }
+
+  fun jointCreateGeneric6dof(): RID {
+    TODO()
+  }
+
+  fun jointCreateHinge(): RID {
+    TODO()
+  }
+
+  fun jointCreatePin(): RID {
+    TODO()
+  }
+
+  fun jointCreateSlider(): RID {
+    TODO()
+  }
+
+  fun jointGetSolverPriority(): Int {
+    TODO()
+  }
+
+  fun jointGetType(): PhysicsServer.JointType {
+    TODO()
+  }
+
+  fun jointSetSolverPriority() {
+    TODO()
+  }
+
+  fun pinJointGetLocalA(): Vector3 {
+    TODO()
+  }
+
+  fun pinJointGetLocalB(): Vector3 {
+    TODO()
+  }
+
+  fun pinJointGetParam(): Float {
+    TODO()
+  }
+
+  fun pinJointSetLocalA() {
+    TODO()
+  }
+
+  fun pinJointSetLocalB() {
+    TODO()
+  }
+
+  fun pinJointSetParam() {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun shapeCreate(): RID {
+    TODO()
+  }
+
+  fun shapeGetData(): Variant {
+    TODO()
+  }
+
+  fun shapeGetType(): PhysicsServer.ShapeType {
+    TODO()
+  }
+
+  fun shapeSetData() {
+    TODO()
+  }
+
+  fun sliderJointGetParam(): Float {
+    TODO()
+  }
+
+  fun sliderJointSetParam() {
+    TODO()
+  }
+
+  fun spaceCreate(): RID {
+    TODO()
+  }
+
+  fun spaceGetDirectState(): PhysicsDirectSpaceState {
+    TODO()
+  }
+
+  fun spaceGetParam(): Float {
+    TODO()
+  }
+
+  fun spaceIsActive(): Boolean {
+    TODO()
+  }
+
+  fun spaceSetActive() {
+    TODO()
+  }
+
+  fun spaceSetParam() {
+    TODO()
+  }
+
   enum class BodyAxis(
     val value: Int
   ) {

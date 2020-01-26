@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMouseButton internal constructor(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
+  fun getButtonIndex(): Int {
+    TODO()
+  }
+
+  fun getFactor(): Float {
+    TODO()
+  }
+
+  fun isDoubleclick(): Boolean {
+    TODO()
+  }
+
+  fun setButtonIndex() {
+    TODO()
+  }
+
+  fun setDoubleclick() {
+    TODO()
+  }
+
+  fun setFactor() {
+    TODO()
+  }
+
+  fun setPressed() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventMouseButton = memScoped {
       val fnPtr =

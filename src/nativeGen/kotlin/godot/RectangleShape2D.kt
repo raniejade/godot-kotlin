@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class RectangleShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  fun getExtents(): Vector2 {
+    TODO()
+  }
+
+  fun setExtents() {
+    TODO()
+  }
+
   companion object {
     fun new(): RectangleShape2D = memScoped {
       val fnPtr =

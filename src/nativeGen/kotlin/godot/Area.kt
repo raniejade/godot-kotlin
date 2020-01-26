@@ -3,7 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +20,206 @@ import kotlinx.cinterop.reinterpret
 open class Area internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject(_handle) {
+  fun areaEnterTree() {
+    TODO()
+  }
+
+  fun areaExitTree() {
+    TODO()
+  }
+
+  fun areaInout() {
+    TODO()
+  }
+
+  fun bodyEnterTree() {
+    TODO()
+  }
+
+  fun bodyExitTree() {
+    TODO()
+  }
+
+  fun bodyInout() {
+    TODO()
+  }
+
+  fun getAngularDamp(): Float {
+    TODO()
+  }
+
+  fun getAudioBus(): String {
+    TODO()
+  }
+
+  fun getCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun getCollisionLayerBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getGravity(): Float {
+    TODO()
+  }
+
+  fun getGravityDistanceScale(): Float {
+    TODO()
+  }
+
+  fun getGravityVector(): Vector3 {
+    TODO()
+  }
+
+  fun getLinearDamp(): Float {
+    TODO()
+  }
+
+  fun getOverlappingAreas(): VariantArray {
+    TODO()
+  }
+
+  fun getOverlappingBodies(): VariantArray {
+    TODO()
+  }
+
+  fun getPriority(): Float {
+    TODO()
+  }
+
+  fun getReverbAmount(): Float {
+    TODO()
+  }
+
+  fun getReverbBus(): String {
+    TODO()
+  }
+
+  fun getReverbUniformity(): Float {
+    TODO()
+  }
+
+  fun getSpaceOverrideMode(): Area.SpaceOverride {
+    TODO()
+  }
+
+  fun isGravityAPoint(): Boolean {
+    TODO()
+  }
+
+  fun isMonitorable(): Boolean {
+    TODO()
+  }
+
+  fun isMonitoring(): Boolean {
+    TODO()
+  }
+
+  fun isOverridingAudioBus(): Boolean {
+    TODO()
+  }
+
+  fun isUsingReverbBus(): Boolean {
+    TODO()
+  }
+
+  fun overlapsArea(): Boolean {
+    TODO()
+  }
+
+  fun overlapsBody(): Boolean {
+    TODO()
+  }
+
+  fun setAngularDamp() {
+    TODO()
+  }
+
+  fun setAudioBus() {
+    TODO()
+  }
+
+  fun setAudioBusOverride() {
+    TODO()
+  }
+
+  fun setCollisionLayer() {
+    TODO()
+  }
+
+  fun setCollisionLayerBit() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setGravity() {
+    TODO()
+  }
+
+  fun setGravityDistanceScale() {
+    TODO()
+  }
+
+  fun setGravityIsPoint() {
+    TODO()
+  }
+
+  fun setGravityVector() {
+    TODO()
+  }
+
+  fun setLinearDamp() {
+    TODO()
+  }
+
+  fun setMonitorable() {
+    TODO()
+  }
+
+  fun setMonitoring() {
+    TODO()
+  }
+
+  fun setPriority() {
+    TODO()
+  }
+
+  fun setReverbAmount() {
+    TODO()
+  }
+
+  fun setReverbBus() {
+    TODO()
+  }
+
+  fun setReverbUniformity() {
+    TODO()
+  }
+
+  fun setSpaceOverrideMode() {
+    TODO()
+  }
+
+  fun setUseReverbBus() {
+    TODO()
+  }
+
   enum class SpaceOverride(
     val value: Int
   ) {

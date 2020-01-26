@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,26 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectRecord internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getFormat(): AudioStreamSample.Format {
+    TODO()
+  }
+
+  fun getRecording(): AudioStreamSample {
+    TODO()
+  }
+
+  fun isRecordingActive(): Boolean {
+    TODO()
+  }
+
+  fun setFormat() {
+    TODO()
+  }
+
+  fun setRecordingActive() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectRecord = memScoped {
       val fnPtr =

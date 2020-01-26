@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.PoolVector3Array
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +20,202 @@ import kotlinx.cinterop.reinterpret
 open class NavigationMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getPolygons(): VariantArray {
+    TODO()
+  }
+
+  fun setPolygons() {
+    TODO()
+  }
+
+  fun addPolygon() {
+    TODO()
+  }
+
+  fun clearPolygons() {
+    TODO()
+  }
+
+  fun createFromMesh() {
+    TODO()
+  }
+
+  fun getAgentHeight(): Float {
+    TODO()
+  }
+
+  fun getAgentMaxClimb(): Float {
+    TODO()
+  }
+
+  fun getAgentMaxSlope(): Float {
+    TODO()
+  }
+
+  fun getAgentRadius(): Float {
+    TODO()
+  }
+
+  fun getCellHeight(): Float {
+    TODO()
+  }
+
+  fun getCellSize(): Float {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getDetailSampleDistance(): Float {
+    TODO()
+  }
+
+  fun getDetailSampleMaxError(): Float {
+    TODO()
+  }
+
+  fun getEdgeMaxError(): Float {
+    TODO()
+  }
+
+  fun getEdgeMaxLength(): Float {
+    TODO()
+  }
+
+  fun getFilterLedgeSpans(): Boolean {
+    TODO()
+  }
+
+  fun getFilterLowHangingObstacles(): Boolean {
+    TODO()
+  }
+
+  fun getFilterWalkableLowHeightSpans(): Boolean {
+    TODO()
+  }
+
+  fun getParsedGeometryType(): Int {
+    TODO()
+  }
+
+  fun getPolygon(): PoolIntArray {
+    TODO()
+  }
+
+  fun getPolygonCount(): Int {
+    TODO()
+  }
+
+  fun getRegionMergeSize(): Float {
+    TODO()
+  }
+
+  fun getRegionMinSize(): Float {
+    TODO()
+  }
+
+  fun getSamplePartitionType(): Int {
+    TODO()
+  }
+
+  fun getVertices(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getVertsPerPoly(): Float {
+    TODO()
+  }
+
+  fun setAgentHeight() {
+    TODO()
+  }
+
+  fun setAgentMaxClimb() {
+    TODO()
+  }
+
+  fun setAgentMaxSlope() {
+    TODO()
+  }
+
+  fun setAgentRadius() {
+    TODO()
+  }
+
+  fun setCellHeight() {
+    TODO()
+  }
+
+  fun setCellSize() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setDetailSampleDistance() {
+    TODO()
+  }
+
+  fun setDetailSampleMaxError() {
+    TODO()
+  }
+
+  fun setEdgeMaxError() {
+    TODO()
+  }
+
+  fun setEdgeMaxLength() {
+    TODO()
+  }
+
+  fun setFilterLedgeSpans() {
+    TODO()
+  }
+
+  fun setFilterLowHangingObstacles() {
+    TODO()
+  }
+
+  fun setFilterWalkableLowHeightSpans() {
+    TODO()
+  }
+
+  fun setParsedGeometryType() {
+    TODO()
+  }
+
+  fun setRegionMergeSize() {
+    TODO()
+  }
+
+  fun setRegionMinSize() {
+    TODO()
+  }
+
+  fun setSamplePartitionType() {
+    TODO()
+  }
+
+  fun setVertices() {
+    TODO()
+  }
+
+  fun setVertsPerPoly() {
+    TODO()
+  }
+
   companion object {
     val PARSED_GEOMETRY_BOTH: Int = 2
 

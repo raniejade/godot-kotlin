@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  fun close() {
+    TODO()
+  }
+
+  fun getConnectedHost(): String {
+    TODO()
+  }
+
+  fun getConnectedPort(): Int {
+    TODO()
+  }
+
+  fun getWriteMode(): WebSocketPeer.WriteMode {
+    TODO()
+  }
+
+  fun isConnectedToHost(): Boolean {
+    TODO()
+  }
+
+  fun setWriteMode() {
+    TODO()
+  }
+
+  fun wasStringPacket(): Boolean {
+    TODO()
+  }
+
   enum class WriteMode(
     val value: Int
   ) {

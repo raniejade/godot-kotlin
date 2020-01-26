@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class InputEventAction internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  fun getAction(): String {
+    TODO()
+  }
+
+  fun getStrength(): Float {
+    TODO()
+  }
+
+  fun setAction() {
+    TODO()
+  }
+
+  fun setPressed() {
+    TODO()
+  }
+
+  fun setStrength() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventAction = memScoped {
       val fnPtr =

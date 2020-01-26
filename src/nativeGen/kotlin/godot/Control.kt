@@ -2,8 +2,15 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +22,462 @@ import kotlinx.cinterop.reinterpret
 open class Control internal constructor(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
+  fun clipsInput(): Boolean {
+    TODO()
+  }
+
+  fun getMinimumSize(): Vector2 {
+    TODO()
+  }
+
+  fun getTooltip(): String {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun makeCustomTooltip(): Object {
+    TODO()
+  }
+
+  fun overrideChanged() {
+    TODO()
+  }
+
+  fun setAnchor() {
+    TODO()
+  }
+
+  fun setGlobalPosition() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
+  fun sizeChanged() {
+    TODO()
+  }
+
+  fun themeChanged() {
+    TODO()
+  }
+
+  fun updateMinimumSize() {
+    TODO()
+  }
+
+  fun acceptEvent() {
+    TODO()
+  }
+
+  fun addColorOverride() {
+    TODO()
+  }
+
+  fun addConstantOverride() {
+    TODO()
+  }
+
+  fun addFontOverride() {
+    TODO()
+  }
+
+  fun addIconOverride() {
+    TODO()
+  }
+
+  fun addShaderOverride() {
+    TODO()
+  }
+
+  fun addStyleboxOverride() {
+    TODO()
+  }
+
+  fun canDropData(): Boolean {
+    TODO()
+  }
+
+  fun dropData() {
+    TODO()
+  }
+
+  fun forceDrag() {
+    TODO()
+  }
+
+  fun getAnchor(): Float {
+    TODO()
+  }
+
+  fun getBegin(): Vector2 {
+    TODO()
+  }
+
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getCombinedMinimumSize(): Vector2 {
+    TODO()
+  }
+
+  fun getConstant(): Int {
+    TODO()
+  }
+
+  fun getCursorShape(): Control.CursorShape {
+    TODO()
+  }
+
+  fun getCustomMinimumSize(): Vector2 {
+    TODO()
+  }
+
+  fun getDefaultCursorShape(): Control.CursorShape {
+    TODO()
+  }
+
+  fun getDragData(): Object {
+    TODO()
+  }
+
+  fun getEnd(): Vector2 {
+    TODO()
+  }
+
+  fun getFocusMode(): Control.FocusMode {
+    TODO()
+  }
+
+  fun getFocusNeighbour(): NodePath {
+    TODO()
+  }
+
+  fun getFocusNext(): NodePath {
+    TODO()
+  }
+
+  fun getFocusOwner(): Control {
+    TODO()
+  }
+
+  fun getFocusPrevious(): NodePath {
+    TODO()
+  }
+
+  fun getFont(): Font {
+    TODO()
+  }
+
+  fun getGlobalPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getGlobalRect(): Rect2 {
+    TODO()
+  }
+
+  fun getHGrowDirection(): Control.GrowDirection {
+    TODO()
+  }
+
+  fun getHSizeFlags(): Int {
+    TODO()
+  }
+
+  fun getIcon(): Texture {
+    TODO()
+  }
+
+  fun getMargin(): Float {
+    TODO()
+  }
+
+  fun getMinimumSize(): Vector2 {
+    TODO()
+  }
+
+  fun getMouseFilter(): Control.MouseFilter {
+    TODO()
+  }
+
+  fun getParentAreaSize(): Vector2 {
+    TODO()
+  }
+
+  fun getParentControl(): Control {
+    TODO()
+  }
+
+  fun getPivotOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getRect(): Rect2 {
+    TODO()
+  }
+
+  fun getRotation(): Float {
+    TODO()
+  }
+
+  fun getRotationDegrees(): Float {
+    TODO()
+  }
+
+  fun getScale(): Vector2 {
+    TODO()
+  }
+
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun getStretchRatio(): Float {
+    TODO()
+  }
+
+  fun getStylebox(): StyleBox {
+    TODO()
+  }
+
+  fun getTheme(): Theme {
+    TODO()
+  }
+
+  fun getTooltip(): String {
+    TODO()
+  }
+
+  fun getVGrowDirection(): Control.GrowDirection {
+    TODO()
+  }
+
+  fun getVSizeFlags(): Int {
+    TODO()
+  }
+
+  fun grabClickFocus() {
+    TODO()
+  }
+
+  fun grabFocus() {
+    TODO()
+  }
+
+  fun hasColor(): Boolean {
+    TODO()
+  }
+
+  fun hasColorOverride(): Boolean {
+    TODO()
+  }
+
+  fun hasConstant(): Boolean {
+    TODO()
+  }
+
+  fun hasConstantOverride(): Boolean {
+    TODO()
+  }
+
+  fun hasFocus(): Boolean {
+    TODO()
+  }
+
+  fun hasFont(): Boolean {
+    TODO()
+  }
+
+  fun hasFontOverride(): Boolean {
+    TODO()
+  }
+
+  fun hasIcon(): Boolean {
+    TODO()
+  }
+
+  fun hasIconOverride(): Boolean {
+    TODO()
+  }
+
+  fun hasPoint(): Boolean {
+    TODO()
+  }
+
+  fun hasShaderOverride(): Boolean {
+    TODO()
+  }
+
+  fun hasStylebox(): Boolean {
+    TODO()
+  }
+
+  fun hasStyleboxOverride(): Boolean {
+    TODO()
+  }
+
+  fun isClippingContents(): Boolean {
+    TODO()
+  }
+
+  fun minimumSizeChanged() {
+    TODO()
+  }
+
+  fun releaseFocus() {
+    TODO()
+  }
+
+  fun setAnchor() {
+    TODO()
+  }
+
+  fun setAnchorAndMargin() {
+    TODO()
+  }
+
+  fun setAnchorsAndMarginsPreset() {
+    TODO()
+  }
+
+  fun setAnchorsPreset() {
+    TODO()
+  }
+
+  fun setBegin() {
+    TODO()
+  }
+
+  fun setClipContents() {
+    TODO()
+  }
+
+  fun setCustomMinimumSize() {
+    TODO()
+  }
+
+  fun setDefaultCursorShape() {
+    TODO()
+  }
+
+  fun setDragForwarding() {
+    TODO()
+  }
+
+  fun setDragPreview() {
+    TODO()
+  }
+
+  fun setEnd() {
+    TODO()
+  }
+
+  fun setFocusMode() {
+    TODO()
+  }
+
+  fun setFocusNeighbour() {
+    TODO()
+  }
+
+  fun setFocusNext() {
+    TODO()
+  }
+
+  fun setFocusPrevious() {
+    TODO()
+  }
+
+  fun setGlobalPosition() {
+    TODO()
+  }
+
+  fun setHGrowDirection() {
+    TODO()
+  }
+
+  fun setHSizeFlags() {
+    TODO()
+  }
+
+  fun setMargin() {
+    TODO()
+  }
+
+  fun setMarginsPreset() {
+    TODO()
+  }
+
+  fun setMouseFilter() {
+    TODO()
+  }
+
+  fun setPivotOffset() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
+  fun setRotation() {
+    TODO()
+  }
+
+  fun setRotationDegrees() {
+    TODO()
+  }
+
+  fun setScale() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
+  fun setStretchRatio() {
+    TODO()
+  }
+
+  fun setTheme() {
+    TODO()
+  }
+
+  fun setTooltip() {
+    TODO()
+  }
+
+  fun setVGrowDirection() {
+    TODO()
+  }
+
+  fun setVSizeFlags() {
+    TODO()
+  }
+
+  fun showModal() {
+    TODO()
+  }
+
+  fun warpMouse() {
+    TODO()
+  }
+
   enum class Anchor(
     val value: Int
   ) {

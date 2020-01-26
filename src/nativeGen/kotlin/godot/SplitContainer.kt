@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class SplitContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun clampSplitOffset() {
+    TODO()
+  }
+
+  fun getDraggerVisibility(): SplitContainer.DraggerVisibility {
+    TODO()
+  }
+
+  fun getSplitOffset(): Int {
+    TODO()
+  }
+
+  fun isCollapsed(): Boolean {
+    TODO()
+  }
+
+  fun setCollapsed() {
+    TODO()
+  }
+
+  fun setDraggerVisibility() {
+    TODO()
+  }
+
+  fun setSplitOffset() {
+    TODO()
+  }
+
   enum class DraggerVisibility(
     val value: Int
   ) {

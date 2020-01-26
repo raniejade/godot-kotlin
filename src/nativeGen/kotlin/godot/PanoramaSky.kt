@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class PanoramaSky internal constructor(
   _handle: COpaquePointer
 ) : Sky(_handle) {
+  fun getPanorama(): Texture {
+    TODO()
+  }
+
+  fun setPanorama() {
+    TODO()
+  }
+
   companion object {
     fun new(): PanoramaSky = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PanoramaSky".cstr.ptr)

@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,86 @@ import kotlinx.cinterop.reinterpret
 open class BitmapFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
+  fun getChars(): PoolIntArray {
+    TODO()
+  }
+
+  fun getKernings(): PoolIntArray {
+    TODO()
+  }
+
+  fun getTextures(): VariantArray {
+    TODO()
+  }
+
+  fun setChars() {
+    TODO()
+  }
+
+  fun setKernings() {
+    TODO()
+  }
+
+  fun setTextures() {
+    TODO()
+  }
+
+  fun addChar() {
+    TODO()
+  }
+
+  fun addKerningPair() {
+    TODO()
+  }
+
+  fun addTexture() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun createFromFnt(): Error {
+    TODO()
+  }
+
+  fun getCharSize(): Vector2 {
+    TODO()
+  }
+
+  fun getFallback(): BitmapFont {
+    TODO()
+  }
+
+  fun getKerningPair(): Int {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTextureCount(): Int {
+    TODO()
+  }
+
+  fun setAscent() {
+    TODO()
+  }
+
+  fun setDistanceFieldHint() {
+    TODO()
+  }
+
+  fun setFallback() {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
   companion object {
     fun new(): BitmapFont = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitmapFont".cstr.ptr)

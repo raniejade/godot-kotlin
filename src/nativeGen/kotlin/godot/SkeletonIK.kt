@@ -3,6 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.Transform
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +21,102 @@ import kotlinx.cinterop.reinterpret
 open class SkeletonIK internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun getInterpolation(): Float {
+    TODO()
+  }
+
+  fun getMagnetPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getMaxIterations(): Int {
+    TODO()
+  }
+
+  fun getMinDistance(): Float {
+    TODO()
+  }
+
+  fun getParentSkeleton(): Skeleton {
+    TODO()
+  }
+
+  fun getRootBone(): String {
+    TODO()
+  }
+
+  fun getTargetNode(): NodePath {
+    TODO()
+  }
+
+  fun getTargetTransform(): Transform {
+    TODO()
+  }
+
+  fun getTipBone(): String {
+    TODO()
+  }
+
+  fun isOverrideTipBasis(): Boolean {
+    TODO()
+  }
+
+  fun isRunning(): Boolean {
+    TODO()
+  }
+
+  fun isUsingMagnet(): Boolean {
+    TODO()
+  }
+
+  fun setInterpolation() {
+    TODO()
+  }
+
+  fun setMagnetPosition() {
+    TODO()
+  }
+
+  fun setMaxIterations() {
+    TODO()
+  }
+
+  fun setMinDistance() {
+    TODO()
+  }
+
+  fun setOverrideTipBasis() {
+    TODO()
+  }
+
+  fun setRootBone() {
+    TODO()
+  }
+
+  fun setTargetNode() {
+    TODO()
+  }
+
+  fun setTargetTransform() {
+    TODO()
+  }
+
+  fun setTipBone() {
+    TODO()
+  }
+
+  fun setUseMagnet() {
+    TODO()
+  }
+
+  fun start() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   companion object {
     fun new(): SkeletonIK = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SkeletonIK".cstr.ptr)

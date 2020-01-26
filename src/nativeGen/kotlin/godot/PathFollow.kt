@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,62 @@ import kotlinx.cinterop.reinterpret
 open class PathFollow internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getCubicInterpolation(): Boolean {
+    TODO()
+  }
+
+  fun getHOffset(): Float {
+    TODO()
+  }
+
+  fun getOffset(): Float {
+    TODO()
+  }
+
+  fun getRotationMode(): PathFollow.RotationMode {
+    TODO()
+  }
+
+  fun getUnitOffset(): Float {
+    TODO()
+  }
+
+  fun getVOffset(): Float {
+    TODO()
+  }
+
+  fun hasLoop(): Boolean {
+    TODO()
+  }
+
+  fun setCubicInterpolation() {
+    TODO()
+  }
+
+  fun setHOffset() {
+    TODO()
+  }
+
+  fun setLoop() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setRotationMode() {
+    TODO()
+  }
+
+  fun setUnitOffset() {
+    TODO()
+  }
+
+  fun setVOffset() {
+    TODO()
+  }
+
   enum class RotationMode(
     val value: Int
   ) {

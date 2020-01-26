@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeInput internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getInputName(): String {
+    TODO()
+  }
+
+  fun setInputName() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualShaderNodeInput = memScoped {
       val fnPtr =

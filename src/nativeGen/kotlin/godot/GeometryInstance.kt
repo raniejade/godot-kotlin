@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class GeometryInstance internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  fun getCastShadowsSetting(): GeometryInstance.ShadowCastingSetting {
+    TODO()
+  }
+
+  fun getExtraCullMargin(): Float {
+    TODO()
+  }
+
+  fun getFlag(): Boolean {
+    TODO()
+  }
+
+  fun getLodMaxDistance(): Float {
+    TODO()
+  }
+
+  fun getLodMaxHysteresis(): Float {
+    TODO()
+  }
+
+  fun getLodMinDistance(): Float {
+    TODO()
+  }
+
+  fun getLodMinHysteresis(): Float {
+    TODO()
+  }
+
+  fun getMaterialOverride(): Material {
+    TODO()
+  }
+
+  fun setCastShadowsSetting() {
+    TODO()
+  }
+
+  fun setCustomAabb() {
+    TODO()
+  }
+
+  fun setExtraCullMargin() {
+    TODO()
+  }
+
+  fun setFlag() {
+    TODO()
+  }
+
+  fun setLodMaxDistance() {
+    TODO()
+  }
+
+  fun setLodMaxHysteresis() {
+    TODO()
+  }
+
+  fun setLodMinDistance() {
+    TODO()
+  }
+
+  fun setLodMinHysteresis() {
+    TODO()
+  }
+
+  fun setMaterialOverride() {
+    TODO()
+  }
+
   enum class Flags(
     val value: Int
   ) {

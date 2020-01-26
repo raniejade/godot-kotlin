@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,86 @@ import kotlinx.cinterop.reinterpret
 open class VisualShader internal constructor(
   _handle: COpaquePointer
 ) : Shader(_handle) {
+  fun inputTypeChanged() {
+    TODO()
+  }
+
+  fun queueUpdate() {
+    TODO()
+  }
+
+  fun updateShader() {
+    TODO()
+  }
+
+  fun addNode() {
+    TODO()
+  }
+
+  fun canConnectNodes(): Boolean {
+    TODO()
+  }
+
+  fun connectNodes(): Error {
+    TODO()
+  }
+
+  fun connectNodesForced() {
+    TODO()
+  }
+
+  fun disconnectNodes() {
+    TODO()
+  }
+
+  fun getGraphOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getNode(): VisualShaderNode {
+    TODO()
+  }
+
+  fun getNodeConnections(): VariantArray {
+    TODO()
+  }
+
+  fun getNodeList(): PoolIntArray {
+    TODO()
+  }
+
+  fun getNodePosition(): Vector2 {
+    TODO()
+  }
+
+  fun getValidNodeId(): Int {
+    TODO()
+  }
+
+  fun isNodeConnection(): Boolean {
+    TODO()
+  }
+
+  fun rebuild() {
+    TODO()
+  }
+
+  fun removeNode() {
+    TODO()
+  }
+
+  fun setGraphOffset() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setNodePosition() {
+    TODO()
+  }
+
   enum class Type(
     val value: Int
   ) {

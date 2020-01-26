@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,34 @@ import kotlinx.cinterop.reinterpret
 open class MenuButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
+  fun getItems(): VariantArray {
+    TODO()
+  }
+
+  fun setItems() {
+    TODO()
+  }
+
+  fun unhandledKeyInput() {
+    TODO()
+  }
+
+  fun getPopup(): PopupMenu {
+    TODO()
+  }
+
+  fun isSwitchOnHover(): Boolean {
+    TODO()
+  }
+
+  fun setDisableShortcuts() {
+    TODO()
+  }
+
+  fun setSwitchOnHover() {
+    TODO()
+  }
+
   companion object {
     fun new(): MenuButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MenuButton".cstr.ptr)

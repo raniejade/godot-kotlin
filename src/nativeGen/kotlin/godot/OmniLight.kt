@@ -15,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class OmniLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
+  fun getShadowDetail(): OmniLight.ShadowDetail {
+    TODO()
+  }
+
+  fun getShadowMode(): OmniLight.ShadowMode {
+    TODO()
+  }
+
+  fun setShadowDetail() {
+    TODO()
+  }
+
+  fun setShadowMode() {
+    TODO()
+  }
+
   enum class ShadowMode(
     val value: Int
   ) {

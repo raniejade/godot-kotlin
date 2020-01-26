@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class JSONParseResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getError(): Error {
+    TODO()
+  }
+
+  fun getErrorLine(): Int {
+    TODO()
+  }
+
+  fun getErrorString(): String {
+    TODO()
+  }
+
+  fun getResult(): Variant {
+    TODO()
+  }
+
+  fun setError() {
+    TODO()
+  }
+
+  fun setErrorLine() {
+    TODO()
+  }
+
+  fun setErrorString() {
+    TODO()
+  }
+
+  fun setResult() {
+    TODO()
+  }
+
   companion object {
     fun new(): JSONParseResult = memScoped {
       val fnPtr =

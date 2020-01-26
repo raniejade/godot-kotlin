@@ -2,7 +2,17 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolColorArray
+import godot.core.PoolRealArray
+import godot.core.PoolVector2Array
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +24,178 @@ import kotlinx.cinterop.reinterpret
 open class Polygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getBones(): VariantArray {
+    TODO()
+  }
+
+  fun setBones() {
+    TODO()
+  }
+
+  fun skeletonBoneSetupChanged() {
+    TODO()
+  }
+
+  fun addBone() {
+    TODO()
+  }
+
+  fun clearBones() {
+    TODO()
+  }
+
+  fun eraseBone() {
+    TODO()
+  }
+
+  fun getAntialiased(): Boolean {
+    TODO()
+  }
+
+  fun getBoneCount(): Int {
+    TODO()
+  }
+
+  fun getBonePath(): NodePath {
+    TODO()
+  }
+
+  fun getBoneWeights(): PoolRealArray {
+    TODO()
+  }
+
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getInternalVertexCount(): Int {
+    TODO()
+  }
+
+  fun getInvert(): Boolean {
+    TODO()
+  }
+
+  fun getInvertBorder(): Float {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getPolygon(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getPolygons(): VariantArray {
+    TODO()
+  }
+
+  fun getSkeleton(): NodePath {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getTextureOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getTextureRotation(): Float {
+    TODO()
+  }
+
+  fun getTextureRotationDegrees(): Float {
+    TODO()
+  }
+
+  fun getTextureScale(): Vector2 {
+    TODO()
+  }
+
+  fun getUv(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getVertexColors(): PoolColorArray {
+    TODO()
+  }
+
+  fun setAntialiased() {
+    TODO()
+  }
+
+  fun setBonePath() {
+    TODO()
+  }
+
+  fun setBoneWeights() {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setInternalVertexCount() {
+    TODO()
+  }
+
+  fun setInvert() {
+    TODO()
+  }
+
+  fun setInvertBorder() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setPolygon() {
+    TODO()
+  }
+
+  fun setPolygons() {
+    TODO()
+  }
+
+  fun setSkeleton() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setTextureOffset() {
+    TODO()
+  }
+
+  fun setTextureRotation() {
+    TODO()
+  }
+
+  fun setTextureRotationDegrees() {
+    TODO()
+  }
+
+  fun setTextureScale() {
+    TODO()
+  }
+
+  fun setUv() {
+    TODO()
+  }
+
+  fun setVertexColors() {
+    TODO()
+  }
+
   companion object {
     fun new(): Polygon2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Polygon2D".cstr.ptr)

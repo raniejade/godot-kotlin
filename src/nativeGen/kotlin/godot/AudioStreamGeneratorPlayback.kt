@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamGeneratorPlayback internal constructor(
   _handle: COpaquePointer
 ) : AudioStreamPlaybackResampled(_handle) {
+  fun canPushBuffer(): Boolean {
+    TODO()
+  }
+
+  fun clearBuffer() {
+    TODO()
+  }
+
+  fun getFramesAvailable(): Int {
+    TODO()
+  }
+
+  fun getSkips(): Int {
+    TODO()
+  }
+
+  fun pushBuffer(): Boolean {
+    TODO()
+  }
+
+  fun pushFrame(): Boolean {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for AudioStreamGeneratorPlayback

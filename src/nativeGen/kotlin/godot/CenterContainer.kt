@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class CenterContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun isUsingTopLeft(): Boolean {
+    TODO()
+  }
+
+  fun setUseTopLeft() {
+    TODO()
+  }
+
   companion object {
     fun new(): CenterContainer = memScoped {
       val fnPtr =

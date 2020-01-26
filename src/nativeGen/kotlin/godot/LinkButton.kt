@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class LinkButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getUnderlineMode(): LinkButton.UnderlineMode {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
+  fun setUnderlineMode() {
+    TODO()
+  }
+
   enum class UnderlineMode(
     val value: Int
   ) {

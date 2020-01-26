@@ -2,8 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.NodePath
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,78 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptPropertySet internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getTypeCache(): Dictionary {
+    TODO()
+  }
+
+  fun setTypeCache() {
+    TODO()
+  }
+
+  fun getAssignOp(): VisualScriptPropertySet.AssignOp {
+    TODO()
+  }
+
+  fun getBasePath(): NodePath {
+    TODO()
+  }
+
+  fun getBaseScript(): String {
+    TODO()
+  }
+
+  fun getBaseType(): String {
+    TODO()
+  }
+
+  fun getBasicType(): Variant.Type {
+    TODO()
+  }
+
+  fun getCallMode(): VisualScriptPropertySet.CallMode {
+    TODO()
+  }
+
+  fun getIndex(): String {
+    TODO()
+  }
+
+  fun getProperty(): String {
+    TODO()
+  }
+
+  fun setAssignOp() {
+    TODO()
+  }
+
+  fun setBasePath() {
+    TODO()
+  }
+
+  fun setBaseScript() {
+    TODO()
+  }
+
+  fun setBaseType() {
+    TODO()
+  }
+
+  fun setBasicType() {
+    TODO()
+  }
+
+  fun setCallMode() {
+    TODO()
+  }
+
+  fun setIndex() {
+    TODO()
+  }
+
+  fun setProperty() {
+    TODO()
+  }
+
   enum class AssignOp(
     val value: Int
   ) {

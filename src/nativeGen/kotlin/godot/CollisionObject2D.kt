@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform2D
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,98 @@ import kotlinx.cinterop.reinterpret
 open class CollisionObject2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun inputEvent() {
+    TODO()
+  }
+
+  fun createShapeOwner(): Int {
+    TODO()
+  }
+
+  fun getRid(): RID {
+    TODO()
+  }
+
+  fun getShapeOwnerOneWayCollisionMargin(): Float {
+    TODO()
+  }
+
+  fun getShapeOwners(): VariantArray {
+    TODO()
+  }
+
+  fun isPickable(): Boolean {
+    TODO()
+  }
+
+  fun isShapeOwnerDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isShapeOwnerOneWayCollisionEnabled(): Boolean {
+    TODO()
+  }
+
+  fun removeShapeOwner() {
+    TODO()
+  }
+
+  fun setPickable() {
+    TODO()
+  }
+
+  fun shapeFindOwner(): Int {
+    TODO()
+  }
+
+  fun shapeOwnerAddShape() {
+    TODO()
+  }
+
+  fun shapeOwnerClearShapes() {
+    TODO()
+  }
+
+  fun shapeOwnerGetOwner(): Object {
+    TODO()
+  }
+
+  fun shapeOwnerGetShape(): Shape2D {
+    TODO()
+  }
+
+  fun shapeOwnerGetShapeCount(): Int {
+    TODO()
+  }
+
+  fun shapeOwnerGetShapeIndex(): Int {
+    TODO()
+  }
+
+  fun shapeOwnerGetTransform(): Transform2D {
+    TODO()
+  }
+
+  fun shapeOwnerRemoveShape() {
+    TODO()
+  }
+
+  fun shapeOwnerSetDisabled() {
+    TODO()
+  }
+
+  fun shapeOwnerSetOneWayCollision() {
+    TODO()
+  }
+
+  fun shapeOwnerSetOneWayCollisionMargin() {
+    TODO()
+  }
+
+  fun shapeOwnerSetTransform() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for CollisionObject2D

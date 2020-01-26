@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,86 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxTexture internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
+  fun getExpandMarginSize(): Float {
+    TODO()
+  }
+
+  fun getHAxisStretchMode(): StyleBoxTexture.AxisStretchMode {
+    TODO()
+  }
+
+  fun getMarginSize(): Float {
+    TODO()
+  }
+
+  fun getModulate(): Color {
+    TODO()
+  }
+
+  fun getNormalMap(): Texture {
+    TODO()
+  }
+
+  fun getRegionRect(): Rect2 {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getVAxisStretchMode(): StyleBoxTexture.AxisStretchMode {
+    TODO()
+  }
+
+  fun isDrawCenterEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setDrawCenter() {
+    TODO()
+  }
+
+  fun setExpandMarginAll() {
+    TODO()
+  }
+
+  fun setExpandMarginIndividual() {
+    TODO()
+  }
+
+  fun setExpandMarginSize() {
+    TODO()
+  }
+
+  fun setHAxisStretchMode() {
+    TODO()
+  }
+
+  fun setMarginSize() {
+    TODO()
+  }
+
+  fun setModulate() {
+    TODO()
+  }
+
+  fun setNormalMap() {
+    TODO()
+  }
+
+  fun setRegionRect() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setVAxisStretchMode() {
+    TODO()
+  }
+
   enum class AxisStretchMode(
     val value: Int
   ) {

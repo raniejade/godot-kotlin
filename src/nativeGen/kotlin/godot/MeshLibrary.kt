@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.Transform
+import godot.core.VariantArray
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,78 @@ import kotlinx.cinterop.reinterpret
 open class MeshLibrary internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun clear() {
+    TODO()
+  }
+
+  fun createItem() {
+    TODO()
+  }
+
+  fun findItemByName(): Int {
+    TODO()
+  }
+
+  fun getItemList(): PoolIntArray {
+    TODO()
+  }
+
+  fun getItemMesh(): Mesh {
+    TODO()
+  }
+
+  fun getItemName(): String {
+    TODO()
+  }
+
+  fun getItemNavmesh(): NavigationMesh {
+    TODO()
+  }
+
+  fun getItemNavmeshTransform(): Transform {
+    TODO()
+  }
+
+  fun getItemPreview(): Texture {
+    TODO()
+  }
+
+  fun getItemShapes(): VariantArray {
+    TODO()
+  }
+
+  fun getLastUnusedItemId(): Int {
+    TODO()
+  }
+
+  fun removeItem() {
+    TODO()
+  }
+
+  fun setItemMesh() {
+    TODO()
+  }
+
+  fun setItemName() {
+    TODO()
+  }
+
+  fun setItemNavmesh() {
+    TODO()
+  }
+
+  fun setItemNavmeshTransform() {
+    TODO()
+  }
+
+  fun setItemPreview() {
+    TODO()
+  }
+
+  fun setItemShapes() {
+    TODO()
+  }
+
   companion object {
     fun new(): MeshLibrary = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshLibrary".cstr.ptr)

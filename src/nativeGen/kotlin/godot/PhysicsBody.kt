@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,58 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsBody internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject(_handle) {
+  fun getLayers(): Int {
+    TODO()
+  }
+
+  fun setLayers() {
+    TODO()
+  }
+
+  fun addCollisionExceptionWith() {
+    TODO()
+  }
+
+  fun getCollisionExceptions(): VariantArray {
+    TODO()
+  }
+
+  fun getCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun getCollisionLayerBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun removeCollisionExceptionWith() {
+    TODO()
+  }
+
+  fun setCollisionLayer() {
+    TODO()
+  }
+
+  fun setCollisionLayerBit() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for PhysicsBody

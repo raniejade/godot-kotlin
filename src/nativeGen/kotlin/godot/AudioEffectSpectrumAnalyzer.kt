@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectSpectrumAnalyzer internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getBufferLength(): Float {
+    TODO()
+  }
+
+  fun getFftSize(): AudioEffectSpectrumAnalyzer.FFT_Size {
+    TODO()
+  }
+
+  fun getTapBackPos(): Float {
+    TODO()
+  }
+
+  fun setBufferLength() {
+    TODO()
+  }
+
+  fun setFftSize() {
+    TODO()
+  }
+
+  fun setTapBackPos() {
+    TODO()
+  }
+
   enum class FFT_Size(
     val value: Int
   ) {

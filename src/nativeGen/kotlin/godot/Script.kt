@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,46 @@ import kotlinx.cinterop.reinterpret
 open class Script internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun canInstance(): Boolean {
+    TODO()
+  }
+
+  fun getBaseScript(): Script {
+    TODO()
+  }
+
+  fun getInstanceBaseType(): String {
+    TODO()
+  }
+
+  fun getSourceCode(): String {
+    TODO()
+  }
+
+  fun hasScriptSignal(): Boolean {
+    TODO()
+  }
+
+  fun hasSourceCode(): Boolean {
+    TODO()
+  }
+
+  fun instanceHas(): Boolean {
+    TODO()
+  }
+
+  fun isTool(): Boolean {
+    TODO()
+  }
+
+  fun reload(): Error {
+    TODO()
+  }
+
+  fun setSourceCode() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Script

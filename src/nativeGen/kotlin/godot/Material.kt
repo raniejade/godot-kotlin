@@ -15,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class Material internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getNextPass(): Material {
+    TODO()
+  }
+
+  fun getRenderPriority(): Int {
+    TODO()
+  }
+
+  fun setNextPass() {
+    TODO()
+  }
+
+  fun setRenderPriority() {
+    TODO()
+  }
+
   companion object {
     val RENDER_PRIORITY_MAX: Int = 127
 

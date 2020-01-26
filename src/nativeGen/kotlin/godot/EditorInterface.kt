@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,90 @@ import kotlinx.cinterop.reinterpret
 open class EditorInterface internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun editResource() {
+    TODO()
+  }
+
+  fun getBaseControl(): Control {
+    TODO()
+  }
+
+  fun getEditedSceneRoot(): Node {
+    TODO()
+  }
+
+  fun getEditorSettings(): EditorSettings {
+    TODO()
+  }
+
+  fun getEditorViewport(): Control {
+    TODO()
+  }
+
+  fun getInspector(): EditorInspector {
+    TODO()
+  }
+
+  fun getOpenScenes(): VariantArray {
+    TODO()
+  }
+
+  fun getResourceFilesystem(): EditorFileSystem {
+    TODO()
+  }
+
+  fun getResourcePreviewer(): EditorResourcePreview {
+    TODO()
+  }
+
+  fun getScriptEditor(): ScriptEditor {
+    TODO()
+  }
+
+  fun getSelectedPath(): String {
+    TODO()
+  }
+
+  fun getSelection(): EditorSelection {
+    TODO()
+  }
+
+  fun inspectObject() {
+    TODO()
+  }
+
+  fun isPluginEnabled(): Boolean {
+    TODO()
+  }
+
+  fun makeMeshPreviews(): VariantArray {
+    TODO()
+  }
+
+  fun openSceneFromPath() {
+    TODO()
+  }
+
+  fun reloadSceneFromPath() {
+    TODO()
+  }
+
+  fun saveScene(): Error {
+    TODO()
+  }
+
+  fun saveSceneAs() {
+    TODO()
+  }
+
+  fun selectFile() {
+    TODO()
+  }
+
+  fun setPluginEnabled() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for EditorInterface

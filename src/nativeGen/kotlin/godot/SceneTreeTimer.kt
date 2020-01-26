@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class SceneTreeTimer internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getTimeLeft(): Float {
+    TODO()
+  }
+
+  fun setTimeLeft() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for SceneTreeTimer

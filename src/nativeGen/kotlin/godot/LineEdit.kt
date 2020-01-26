@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,162 @@ import kotlinx.cinterop.reinterpret
 open class LineEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun editorSettingsChanged() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun textChanged() {
+    TODO()
+  }
+
+  fun toggleDrawCaret() {
+    TODO()
+  }
+
+  fun appendAtCursor() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun cursorGetBlinkEnabled(): Boolean {
+    TODO()
+  }
+
+  fun cursorGetBlinkSpeed(): Float {
+    TODO()
+  }
+
+  fun cursorSetBlinkEnabled() {
+    TODO()
+  }
+
+  fun cursorSetBlinkSpeed() {
+    TODO()
+  }
+
+  fun deselect() {
+    TODO()
+  }
+
+  fun getAlign(): LineEdit.Align {
+    TODO()
+  }
+
+  fun getCursorPosition(): Int {
+    TODO()
+  }
+
+  fun getExpandToTextLength(): Boolean {
+    TODO()
+  }
+
+  fun getMaxLength(): Int {
+    TODO()
+  }
+
+  fun getMenu(): PopupMenu {
+    TODO()
+  }
+
+  fun getPlaceholder(): String {
+    TODO()
+  }
+
+  fun getPlaceholderAlpha(): Float {
+    TODO()
+  }
+
+  fun getSecretCharacter(): String {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun isClearButtonEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isContextMenuEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isEditable(): Boolean {
+    TODO()
+  }
+
+  fun isSecret(): Boolean {
+    TODO()
+  }
+
+  fun menuOption() {
+    TODO()
+  }
+
+  fun select() {
+    TODO()
+  }
+
+  fun selectAll() {
+    TODO()
+  }
+
+  fun setAlign() {
+    TODO()
+  }
+
+  fun setClearButtonEnabled() {
+    TODO()
+  }
+
+  fun setContextMenuEnabled() {
+    TODO()
+  }
+
+  fun setCursorPosition() {
+    TODO()
+  }
+
+  fun setEditable() {
+    TODO()
+  }
+
+  fun setExpandToTextLength() {
+    TODO()
+  }
+
+  fun setMaxLength() {
+    TODO()
+  }
+
+  fun setPlaceholder() {
+    TODO()
+  }
+
+  fun setPlaceholderAlpha() {
+    TODO()
+  }
+
+  fun setSecret() {
+    TODO()
+  }
+
+  fun setSecretCharacter() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
   enum class Align(
     val value: Int
   ) {

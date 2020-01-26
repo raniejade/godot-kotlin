@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class SpatialVelocityTracker internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getTrackedLinearVelocity(): Vector3 {
+    TODO()
+  }
+
+  fun isTrackingPhysicsStep(): Boolean {
+    TODO()
+  }
+
+  fun reset() {
+    TODO()
+  }
+
+  fun setTrackPhysicsStep() {
+    TODO()
+  }
+
+  fun updatePosition() {
+    TODO()
+  }
+
   companion object {
     fun new(): SpatialVelocityTracker = memScoped {
       val fnPtr =

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,34 @@ import kotlinx.cinterop.reinterpret
 open class Popup internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun isExclusive(): Boolean {
+    TODO()
+  }
+
+  fun popup() {
+    TODO()
+  }
+
+  fun popupCentered() {
+    TODO()
+  }
+
+  fun popupCenteredClamped() {
+    TODO()
+  }
+
+  fun popupCenteredMinsize() {
+    TODO()
+  }
+
+  fun popupCenteredRatio() {
+    TODO()
+  }
+
+  fun setExclusive() {
+    TODO()
+  }
+
   companion object {
     val NOTIFICATION_POPUP_HIDE: Int = 81
 

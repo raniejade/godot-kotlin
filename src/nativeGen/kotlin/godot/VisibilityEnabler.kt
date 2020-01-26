@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,18 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityEnabler internal constructor(
   _handle: COpaquePointer
 ) : VisibilityNotifier(_handle) {
+  fun nodeRemoved() {
+    TODO()
+  }
+
+  fun isEnablerEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setEnabler() {
+    TODO()
+  }
+
   enum class Enabler(
     val value: Int
   ) {

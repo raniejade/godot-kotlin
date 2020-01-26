@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.Variant
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class _Marshalls internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun base64ToRaw(): PoolByteArray {
+    TODO()
+  }
+
+  fun base64ToUtf8(): String {
+    TODO()
+  }
+
+  fun base64ToVariant(): Variant {
+    TODO()
+  }
+
+  fun rawToBase64(): String {
+    TODO()
+  }
+
+  fun utf8ToBase64(): String {
+    TODO()
+  }
+
+  fun variantToBase64(): String {
+    TODO()
+  }
+
   companion object {
     val Instance: _Marshalls = memScoped {
           val handle =

@@ -3,7 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,390 @@ import kotlinx.cinterop.reinterpret
 open class Node internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun enterTree() {
+    TODO()
+  }
+
+  fun exitTree() {
+    TODO()
+  }
+
+  fun getConfigurationWarning(): String {
+    TODO()
+  }
+
+  fun getImportPath(): NodePath {
+    TODO()
+  }
+
+  fun input() {
+    TODO()
+  }
+
+  fun physicsProcess() {
+    TODO()
+  }
+
+  fun process() {
+    TODO()
+  }
+
+  fun ready() {
+    TODO()
+  }
+
+  fun setImportPath() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun unhandledKeyInput() {
+    TODO()
+  }
+
+  fun addChild() {
+    TODO()
+  }
+
+  fun addChildBelowNode() {
+    TODO()
+  }
+
+  fun addToGroup() {
+    TODO()
+  }
+
+  fun canProcess(): Boolean {
+    TODO()
+  }
+
+  fun duplicate(): Node {
+    TODO()
+  }
+
+  fun findNode(): Node {
+    TODO()
+  }
+
+  fun findParent(): Node {
+    TODO()
+  }
+
+  fun getChild(): Node {
+    TODO()
+  }
+
+  fun getChildCount(): Int {
+    TODO()
+  }
+
+  fun getChildren(): VariantArray {
+    TODO()
+  }
+
+  fun getCustomMultiplayer(): MultiplayerAPI {
+    TODO()
+  }
+
+  fun getFilename(): String {
+    TODO()
+  }
+
+  fun getGroups(): VariantArray {
+    TODO()
+  }
+
+  fun getIndex(): Int {
+    TODO()
+  }
+
+  fun getMultiplayer(): MultiplayerAPI {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getNetworkMaster(): Int {
+    TODO()
+  }
+
+  fun getNode(): Node {
+    TODO()
+  }
+
+  fun getNodeAndResource(): VariantArray {
+    TODO()
+  }
+
+  fun getNodeOrNull(): Node {
+    TODO()
+  }
+
+  fun getOwner(): Node {
+    TODO()
+  }
+
+  fun getParent(): Node {
+    TODO()
+  }
+
+  fun getPath(): NodePath {
+    TODO()
+  }
+
+  fun getPathTo(): NodePath {
+    TODO()
+  }
+
+  fun getPauseMode(): Node.PauseMode {
+    TODO()
+  }
+
+  fun getPhysicsProcessDeltaTime(): Float {
+    TODO()
+  }
+
+  fun getPositionInParent(): Int {
+    TODO()
+  }
+
+  fun getProcessDeltaTime(): Float {
+    TODO()
+  }
+
+  fun getSceneInstanceLoadPlaceholder(): Boolean {
+    TODO()
+  }
+
+  fun getTree(): SceneTree {
+    TODO()
+  }
+
+  fun getViewport(): Viewport {
+    TODO()
+  }
+
+  fun hasNode(): Boolean {
+    TODO()
+  }
+
+  fun hasNodeAndResource(): Boolean {
+    TODO()
+  }
+
+  fun isAParentOf(): Boolean {
+    TODO()
+  }
+
+  fun isDisplayedFolded(): Boolean {
+    TODO()
+  }
+
+  fun isGreaterThan(): Boolean {
+    TODO()
+  }
+
+  fun isInGroup(): Boolean {
+    TODO()
+  }
+
+  fun isInsideTree(): Boolean {
+    TODO()
+  }
+
+  fun isNetworkMaster(): Boolean {
+    TODO()
+  }
+
+  fun isPhysicsProcessing(): Boolean {
+    TODO()
+  }
+
+  fun isPhysicsProcessingInternal(): Boolean {
+    TODO()
+  }
+
+  fun isProcessing(): Boolean {
+    TODO()
+  }
+
+  fun isProcessingInput(): Boolean {
+    TODO()
+  }
+
+  fun isProcessingInternal(): Boolean {
+    TODO()
+  }
+
+  fun isProcessingUnhandledInput(): Boolean {
+    TODO()
+  }
+
+  fun isProcessingUnhandledKeyInput(): Boolean {
+    TODO()
+  }
+
+  fun moveChild() {
+    TODO()
+  }
+
+  fun printStrayNodes() {
+    TODO()
+  }
+
+  fun printTree() {
+    TODO()
+  }
+
+  fun printTreePretty() {
+    TODO()
+  }
+
+  fun propagateCall() {
+    TODO()
+  }
+
+  fun propagateNotification() {
+    TODO()
+  }
+
+  fun queueFree() {
+    TODO()
+  }
+
+  fun raise() {
+    TODO()
+  }
+
+  fun removeAndSkip() {
+    TODO()
+  }
+
+  fun removeChild() {
+    TODO()
+  }
+
+  fun removeFromGroup() {
+    TODO()
+  }
+
+  fun replaceBy() {
+    TODO()
+  }
+
+  fun requestReady() {
+    TODO()
+  }
+
+  fun rpc(): Variant {
+    TODO()
+  }
+
+  fun rpcConfig() {
+    TODO()
+  }
+
+  fun rpcId(): Variant {
+    TODO()
+  }
+
+  fun rpcUnreliable(): Variant {
+    TODO()
+  }
+
+  fun rpcUnreliableId(): Variant {
+    TODO()
+  }
+
+  fun rset() {
+    TODO()
+  }
+
+  fun rsetConfig() {
+    TODO()
+  }
+
+  fun rsetId() {
+    TODO()
+  }
+
+  fun rsetUnreliable() {
+    TODO()
+  }
+
+  fun rsetUnreliableId() {
+    TODO()
+  }
+
+  fun setCustomMultiplayer() {
+    TODO()
+  }
+
+  fun setDisplayFolded() {
+    TODO()
+  }
+
+  fun setFilename() {
+    TODO()
+  }
+
+  fun setName() {
+    TODO()
+  }
+
+  fun setNetworkMaster() {
+    TODO()
+  }
+
+  fun setOwner() {
+    TODO()
+  }
+
+  fun setPauseMode() {
+    TODO()
+  }
+
+  fun setPhysicsProcess() {
+    TODO()
+  }
+
+  fun setPhysicsProcessInternal() {
+    TODO()
+  }
+
+  fun setProcess() {
+    TODO()
+  }
+
+  fun setProcessInput() {
+    TODO()
+  }
+
+  fun setProcessInternal() {
+    TODO()
+  }
+
+  fun setProcessPriority() {
+    TODO()
+  }
+
+  fun setProcessUnhandledInput() {
+    TODO()
+  }
+
+  fun setProcessUnhandledKeyInput() {
+    TODO()
+  }
+
+  fun setSceneInstanceLoadPlaceholder() {
+    TODO()
+  }
+
   enum class PauseMode(
     val value: Int
   ) {

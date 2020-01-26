@@ -14,6 +14,30 @@ import kotlinx.cinterop.reinterpret
 open class MultiMeshInstance2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getMultimesh(): MultiMesh {
+    TODO()
+  }
+
+  fun getNormalMap(): Texture {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun setMultimesh() {
+    TODO()
+  }
+
+  fun setNormalMap() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
   companion object {
     fun new(): MultiMeshInstance2D = memScoped {
       val fnPtr =

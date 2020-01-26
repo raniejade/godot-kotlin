@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class CSGCylinder internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getRadius(): Float {
+    TODO()
+  }
+
+  fun getSides(): Int {
+    TODO()
+  }
+
+  fun getSmoothFaces(): Boolean {
+    TODO()
+  }
+
+  fun isCone(): Boolean {
+    TODO()
+  }
+
+  fun setCone() {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setRadius() {
+    TODO()
+  }
+
+  fun setSides() {
+    TODO()
+  }
+
+  fun setSmoothFaces() {
+    TODO()
+  }
+
   companion object {
     fun new(): CSGCylinder = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCylinder".cstr.ptr)

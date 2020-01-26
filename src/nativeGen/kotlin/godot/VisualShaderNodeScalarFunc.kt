@@ -15,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeScalarFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getFunction(): VisualShaderNodeScalarFunc.Function {
+    TODO()
+  }
+
+  fun setFunction() {
+    TODO()
+  }
+
   enum class Function(
     val value: Int
   ) {

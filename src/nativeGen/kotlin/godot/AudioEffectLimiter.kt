@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,38 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectLimiter internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getCeilingDb(): Float {
+    TODO()
+  }
+
+  fun getSoftClipDb(): Float {
+    TODO()
+  }
+
+  fun getSoftClipRatio(): Float {
+    TODO()
+  }
+
+  fun getThresholdDb(): Float {
+    TODO()
+  }
+
+  fun setCeilingDb() {
+    TODO()
+  }
+
+  fun setSoftClipDb() {
+    TODO()
+  }
+
+  fun setSoftClipRatio() {
+    TODO()
+  }
+
+  fun setThresholdDb() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectLimiter = memScoped {
       val fnPtr =

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class RayShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  fun getLength(): Float {
+    TODO()
+  }
+
+  fun getSlipsOnSlope(): Boolean {
+    TODO()
+  }
+
+  fun setLength() {
+    TODO()
+  }
+
+  fun setSlipsOnSlope() {
+    TODO()
+  }
+
   companion object {
     fun new(): RayShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayShape".cstr.ptr)

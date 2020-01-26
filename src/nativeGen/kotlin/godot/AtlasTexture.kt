@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class AtlasTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun getAtlas(): Texture {
+    TODO()
+  }
+
+  fun getMargin(): Rect2 {
+    TODO()
+  }
+
+  fun getRegion(): Rect2 {
+    TODO()
+  }
+
+  fun hasFilterClip(): Boolean {
+    TODO()
+  }
+
+  fun setAtlas() {
+    TODO()
+  }
+
+  fun setFilterClip() {
+    TODO()
+  }
+
+  fun setMargin() {
+    TODO()
+  }
+
+  fun setRegion() {
+    TODO()
+  }
+
   companion object {
     fun new(): AtlasTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AtlasTexture".cstr.ptr)

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class InterpolatedCamera internal constructor(
   _handle: COpaquePointer
 ) : Camera(_handle) {
+  fun getSpeed(): Float {
+    TODO()
+  }
+
+  fun getTargetPath(): NodePath {
+    TODO()
+  }
+
+  fun isInterpolationEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setInterpolationEnabled() {
+    TODO()
+  }
+
+  fun setSpeed() {
+    TODO()
+  }
+
+  fun setTarget() {
+    TODO()
+  }
+
+  fun setTargetPath() {
+    TODO()
+  }
+
   companion object {
     fun new(): InterpolatedCamera = memScoped {
       val fnPtr =

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class Skeleton2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun updateBoneSetup() {
+    TODO()
+  }
+
+  fun updateTransform() {
+    TODO()
+  }
+
+  fun getBone(): Bone2D {
+    TODO()
+  }
+
+  fun getBoneCount(): Int {
+    TODO()
+  }
+
+  fun getSkeleton(): RID {
+    TODO()
+  }
+
   companion object {
     fun new(): Skeleton2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skeleton2D".cstr.ptr)

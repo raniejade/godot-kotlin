@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,26 @@ import kotlinx.cinterop.reinterpret
 open class LightOccluder2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun polyChanged() {
+    TODO()
+  }
+
+  fun getOccluderLightMask(): Int {
+    TODO()
+  }
+
+  fun getOccluderPolygon(): OccluderPolygon2D {
+    TODO()
+  }
+
+  fun setOccluderLightMask() {
+    TODO()
+  }
+
+  fun setOccluderPolygon() {
+    TODO()
+  }
+
   companion object {
     fun new(): LightOccluder2D = memScoped {
       val fnPtr =

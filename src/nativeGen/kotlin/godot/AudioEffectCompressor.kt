@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,62 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectCompressor internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getAttackUs(): Float {
+    TODO()
+  }
+
+  fun getGain(): Float {
+    TODO()
+  }
+
+  fun getMix(): Float {
+    TODO()
+  }
+
+  fun getRatio(): Float {
+    TODO()
+  }
+
+  fun getReleaseMs(): Float {
+    TODO()
+  }
+
+  fun getSidechain(): String {
+    TODO()
+  }
+
+  fun getThreshold(): Float {
+    TODO()
+  }
+
+  fun setAttackUs() {
+    TODO()
+  }
+
+  fun setGain() {
+    TODO()
+  }
+
+  fun setMix() {
+    TODO()
+  }
+
+  fun setRatio() {
+    TODO()
+  }
+
+  fun setReleaseMs() {
+    TODO()
+  }
+
+  fun setSidechain() {
+    TODO()
+  }
+
+  fun setThreshold() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectCompressor = memScoped {
       val fnPtr =

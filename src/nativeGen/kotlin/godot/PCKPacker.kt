@@ -14,6 +14,18 @@ import kotlinx.cinterop.reinterpret
 open class PCKPacker internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addFile(): Error {
+    TODO()
+  }
+
+  fun flush(): Error {
+    TODO()
+  }
+
+  fun pckStart(): Error {
+    TODO()
+  }
+
   companion object {
     fun new(): PCKPacker = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PCKPacker".cstr.ptr)

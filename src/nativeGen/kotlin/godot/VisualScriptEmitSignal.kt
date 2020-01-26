@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptEmitSignal internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getSignal(): String {
+    TODO()
+  }
+
+  fun setSignal() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptEmitSignal = memScoped {
       val fnPtr =

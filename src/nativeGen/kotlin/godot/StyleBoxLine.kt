@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,46 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxLine internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getGrowBegin(): Float {
+    TODO()
+  }
+
+  fun getGrowEnd(): Float {
+    TODO()
+  }
+
+  fun getThickness(): Int {
+    TODO()
+  }
+
+  fun isVertical(): Boolean {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setGrowBegin() {
+    TODO()
+  }
+
+  fun setGrowEnd() {
+    TODO()
+  }
+
+  fun setThickness() {
+    TODO()
+  }
+
+  fun setVertical() {
+    TODO()
+  }
+
   companion object {
     fun new(): StyleBoxLine = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxLine".cstr.ptr)

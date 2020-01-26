@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,138 @@ import kotlinx.cinterop.reinterpret
 open class Theme internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun emitThemeChanged() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun clearColor() {
+    TODO()
+  }
+
+  fun clearConstant() {
+    TODO()
+  }
+
+  fun clearFont() {
+    TODO()
+  }
+
+  fun clearIcon() {
+    TODO()
+  }
+
+  fun clearStylebox() {
+    TODO()
+  }
+
+  fun copyDefaultTheme() {
+    TODO()
+  }
+
+  fun copyTheme() {
+    TODO()
+  }
+
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getColorList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getConstant(): Int {
+    TODO()
+  }
+
+  fun getConstantList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getDefaultFont(): Font {
+    TODO()
+  }
+
+  fun getFont(): Font {
+    TODO()
+  }
+
+  fun getFontList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getIcon(): Texture {
+    TODO()
+  }
+
+  fun getIconList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getStylebox(): StyleBox {
+    TODO()
+  }
+
+  fun getStyleboxList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getStyleboxTypes(): PoolStringArray {
+    TODO()
+  }
+
+  fun getTypeList(): PoolStringArray {
+    TODO()
+  }
+
+  fun hasColor(): Boolean {
+    TODO()
+  }
+
+  fun hasConstant(): Boolean {
+    TODO()
+  }
+
+  fun hasFont(): Boolean {
+    TODO()
+  }
+
+  fun hasIcon(): Boolean {
+    TODO()
+  }
+
+  fun hasStylebox(): Boolean {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setConstant() {
+    TODO()
+  }
+
+  fun setDefaultFont() {
+    TODO()
+  }
+
+  fun setFont() {
+    TODO()
+  }
+
+  fun setIcon() {
+    TODO()
+  }
+
+  fun setStylebox() {
+    TODO()
+  }
+
   companion object {
     fun new(): Theme = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Theme".cstr.ptr)

@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,30 @@ import kotlinx.cinterop.reinterpret
 open class ResourceFormatLoader internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getDependencies() {
+    TODO()
+  }
+
+  fun getRecognizedExtensions(): PoolStringArray {
+    TODO()
+  }
+
+  fun getResourceType(): String {
+    TODO()
+  }
+
+  fun handlesType(): Boolean {
+    TODO()
+  }
+
+  fun load(): Variant {
+    TODO()
+  }
+
+  fun renameDependencies(): Int {
+    TODO()
+  }
+
   companion object {
     fun new(): ResourceFormatLoader = memScoped {
       val fnPtr =

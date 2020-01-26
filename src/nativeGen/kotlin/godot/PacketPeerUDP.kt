@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class PacketPeerUDP internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  fun close() {
+    TODO()
+  }
+
+  fun getPacketIp(): String {
+    TODO()
+  }
+
+  fun getPacketPort(): Int {
+    TODO()
+  }
+
+  fun isListening(): Boolean {
+    TODO()
+  }
+
+  fun listen(): Error {
+    TODO()
+  }
+
+  fun setDestAddress(): Error {
+    TODO()
+  }
+
+  fun wait(): Error {
+    TODO()
+  }
+
   companion object {
     fun new(): PacketPeerUDP = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerUDP".cstr.ptr)

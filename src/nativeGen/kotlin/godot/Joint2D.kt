@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class Joint2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getBias(): Float {
+    TODO()
+  }
+
+  fun getExcludeNodesFromCollision(): Boolean {
+    TODO()
+  }
+
+  fun getNodeA(): NodePath {
+    TODO()
+  }
+
+  fun getNodeB(): NodePath {
+    TODO()
+  }
+
+  fun setBias() {
+    TODO()
+  }
+
+  fun setExcludeNodesFromCollision() {
+    TODO()
+  }
+
+  fun setNodeA() {
+    TODO()
+  }
+
+  fun setNodeB() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Joint2D

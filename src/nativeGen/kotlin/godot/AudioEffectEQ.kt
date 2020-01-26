@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,18 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectEQ internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getBandCount(): Int {
+    TODO()
+  }
+
+  fun getBandGainDb(): Float {
+    TODO()
+  }
+
+  fun setBandGainDb() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectEQ = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectEQ".cstr.ptr)

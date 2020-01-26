@@ -14,6 +14,18 @@ import kotlinx.cinterop.reinterpret
 open class _Mutex internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun lock() {
+    TODO()
+  }
+
+  fun tryLock(): Error {
+    TODO()
+  }
+
+  fun unlock() {
+    TODO()
+  }
+
   companion object {
     fun new(): _Mutex = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Mutex".cstr.ptr)

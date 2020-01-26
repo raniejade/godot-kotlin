@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,42 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  fun getConnectionStatus(): NetworkedMultiplayerPeer.ConnectionStatus {
+    TODO()
+  }
+
+  fun getPacketPeer(): Int {
+    TODO()
+  }
+
+  fun getTransferMode(): NetworkedMultiplayerPeer.TransferMode {
+    TODO()
+  }
+
+  fun getUniqueId(): Int {
+    TODO()
+  }
+
+  fun isRefusingNewConnections(): Boolean {
+    TODO()
+  }
+
+  fun poll() {
+    TODO()
+  }
+
+  fun setRefuseNewConnections() {
+    TODO()
+  }
+
+  fun setTargetPeer() {
+    TODO()
+  }
+
+  fun setTransferMode() {
+    TODO()
+  }
+
   enum class ConnectionStatus(
     val value: Int
   ) {

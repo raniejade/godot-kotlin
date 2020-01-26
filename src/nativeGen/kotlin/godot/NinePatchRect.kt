@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class NinePatchRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getHAxisStretchMode(): NinePatchRect.AxisStretchMode {
+    TODO()
+  }
+
+  fun getPatchMargin(): Int {
+    TODO()
+  }
+
+  fun getRegionRect(): Rect2 {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getVAxisStretchMode(): NinePatchRect.AxisStretchMode {
+    TODO()
+  }
+
+  fun isDrawCenterEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setDrawCenter() {
+    TODO()
+  }
+
+  fun setHAxisStretchMode() {
+    TODO()
+  }
+
+  fun setPatchMargin() {
+    TODO()
+  }
+
+  fun setRegionRect() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setVAxisStretchMode() {
+    TODO()
+  }
+
   enum class AxisStretchMode(
     val value: Int
   ) {

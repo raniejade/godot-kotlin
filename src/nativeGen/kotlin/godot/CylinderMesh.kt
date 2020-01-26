@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,46 @@ import kotlinx.cinterop.reinterpret
 open class CylinderMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  fun getBottomRadius(): Float {
+    TODO()
+  }
+
+  fun getHeight(): Float {
+    TODO()
+  }
+
+  fun getRadialSegments(): Int {
+    TODO()
+  }
+
+  fun getRings(): Int {
+    TODO()
+  }
+
+  fun getTopRadius(): Float {
+    TODO()
+  }
+
+  fun setBottomRadius() {
+    TODO()
+  }
+
+  fun setHeight() {
+    TODO()
+  }
+
+  fun setRadialSegments() {
+    TODO()
+  }
+
+  fun setRings() {
+    TODO()
+  }
+
+  fun setTopRadius() {
+    TODO()
+  }
+
   companion object {
     fun new(): CylinderMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CylinderMesh".cstr.ptr)

@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Plane
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,34 @@ import kotlinx.cinterop.reinterpret
 open class ARVRAnchor internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getAnchorId(): Int {
+    TODO()
+  }
+
+  fun getAnchorName(): String {
+    TODO()
+  }
+
+  fun getIsActive(): Boolean {
+    TODO()
+  }
+
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun getPlane(): Plane {
+    TODO()
+  }
+
+  fun getSize(): Vector3 {
+    TODO()
+  }
+
+  fun setAnchorId() {
+    TODO()
+  }
+
   companion object {
     fun new(): ARVRAnchor = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRAnchor".cstr.ptr)

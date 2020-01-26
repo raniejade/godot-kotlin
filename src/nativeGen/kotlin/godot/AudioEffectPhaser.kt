@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,46 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectPhaser internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getDepth(): Float {
+    TODO()
+  }
+
+  fun getFeedback(): Float {
+    TODO()
+  }
+
+  fun getRangeMaxHz(): Float {
+    TODO()
+  }
+
+  fun getRangeMinHz(): Float {
+    TODO()
+  }
+
+  fun getRateHz(): Float {
+    TODO()
+  }
+
+  fun setDepth() {
+    TODO()
+  }
+
+  fun setFeedback() {
+    TODO()
+  }
+
+  fun setRangeMaxHz() {
+    TODO()
+  }
+
+  fun setRangeMinHz() {
+    TODO()
+  }
+
+  fun setRateHz() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectPhaser = memScoped {
       val fnPtr =

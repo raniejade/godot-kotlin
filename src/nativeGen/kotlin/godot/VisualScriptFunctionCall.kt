@@ -2,8 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.NodePath
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,94 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptFunctionCall internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getArgumentCache(): Dictionary {
+    TODO()
+  }
+
+  fun setArgumentCache() {
+    TODO()
+  }
+
+  fun getBasePath(): NodePath {
+    TODO()
+  }
+
+  fun getBaseScript(): String {
+    TODO()
+  }
+
+  fun getBaseType(): String {
+    TODO()
+  }
+
+  fun getBasicType(): Variant.Type {
+    TODO()
+  }
+
+  fun getCallMode(): VisualScriptFunctionCall.CallMode {
+    TODO()
+  }
+
+  fun getFunction(): String {
+    TODO()
+  }
+
+  fun getRpcCallMode(): VisualScriptFunctionCall.RPCCallMode {
+    TODO()
+  }
+
+  fun getSingleton(): String {
+    TODO()
+  }
+
+  fun getUseDefaultArgs(): Int {
+    TODO()
+  }
+
+  fun getValidate(): Boolean {
+    TODO()
+  }
+
+  fun setBasePath() {
+    TODO()
+  }
+
+  fun setBaseScript() {
+    TODO()
+  }
+
+  fun setBaseType() {
+    TODO()
+  }
+
+  fun setBasicType() {
+    TODO()
+  }
+
+  fun setCallMode() {
+    TODO()
+  }
+
+  fun setFunction() {
+    TODO()
+  }
+
+  fun setRpcCallMode() {
+    TODO()
+  }
+
+  fun setSingleton() {
+    TODO()
+  }
+
+  fun setUseDefaultArgs() {
+    TODO()
+  }
+
+  fun setValidate() {
+    TODO()
+  }
+
   enum class RPCCallMode(
     val value: Int
   ) {

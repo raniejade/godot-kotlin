@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class SegmentShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  fun getA(): Vector2 {
+    TODO()
+  }
+
+  fun getB(): Vector2 {
+    TODO()
+  }
+
+  fun setA() {
+    TODO()
+  }
+
+  fun setB() {
+    TODO()
+  }
+
   companion object {
     fun new(): SegmentShape2D = memScoped {
       val fnPtr =

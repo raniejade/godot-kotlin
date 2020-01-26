@@ -2,8 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,370 @@ import kotlinx.cinterop.reinterpret
 open class TextEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun clickSelectionHeld() {
+    TODO()
+  }
+
+  fun cursorChangedEmit() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun pushCurrentOp() {
+    TODO()
+  }
+
+  fun scrollMoved() {
+    TODO()
+  }
+
+  fun textChangedEmit() {
+    TODO()
+  }
+
+  fun toggleDrawCaret() {
+    TODO()
+  }
+
+  fun updateWrapAt() {
+    TODO()
+  }
+
+  fun vScrollInput() {
+    TODO()
+  }
+
+  fun addColorRegion() {
+    TODO()
+  }
+
+  fun addKeywordColor() {
+    TODO()
+  }
+
+  fun canFold(): Boolean {
+    TODO()
+  }
+
+  fun clearColors() {
+    TODO()
+  }
+
+  fun clearUndoHistory() {
+    TODO()
+  }
+
+  fun copy() {
+    TODO()
+  }
+
+  fun cursorGetBlinkEnabled(): Boolean {
+    TODO()
+  }
+
+  fun cursorGetBlinkSpeed(): Float {
+    TODO()
+  }
+
+  fun cursorGetColumn(): Int {
+    TODO()
+  }
+
+  fun cursorGetLine(): Int {
+    TODO()
+  }
+
+  fun cursorIsBlockMode(): Boolean {
+    TODO()
+  }
+
+  fun cursorSetBlinkEnabled() {
+    TODO()
+  }
+
+  fun cursorSetBlinkSpeed() {
+    TODO()
+  }
+
+  fun cursorSetBlockMode() {
+    TODO()
+  }
+
+  fun cursorSetColumn() {
+    TODO()
+  }
+
+  fun cursorSetLine() {
+    TODO()
+  }
+
+  fun cut() {
+    TODO()
+  }
+
+  fun deselect() {
+    TODO()
+  }
+
+  fun foldAllLines() {
+    TODO()
+  }
+
+  fun foldLine() {
+    TODO()
+  }
+
+  fun getBreakpoints(): VariantArray {
+    TODO()
+  }
+
+  fun getKeywordColor(): Color {
+    TODO()
+  }
+
+  fun getLine(): String {
+    TODO()
+  }
+
+  fun getLineCount(): Int {
+    TODO()
+  }
+
+  fun getMenu(): PopupMenu {
+    TODO()
+  }
+
+  fun getSelectionFromColumn(): Int {
+    TODO()
+  }
+
+  fun getSelectionFromLine(): Int {
+    TODO()
+  }
+
+  fun getSelectionText(): String {
+    TODO()
+  }
+
+  fun getSelectionToColumn(): Int {
+    TODO()
+  }
+
+  fun getSelectionToLine(): Int {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getVScrollSpeed(): Float {
+    TODO()
+  }
+
+  fun getWordUnderCursor(): String {
+    TODO()
+  }
+
+  fun hasKeywordColor(): Boolean {
+    TODO()
+  }
+
+  fun insertTextAtCursor() {
+    TODO()
+  }
+
+  fun isBreakpointGutterEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isContextMenuEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isDrawingFoldGutter(): Boolean {
+    TODO()
+  }
+
+  fun isDrawingSpaces(): Boolean {
+    TODO()
+  }
+
+  fun isDrawingTabs(): Boolean {
+    TODO()
+  }
+
+  fun isFolded(): Boolean {
+    TODO()
+  }
+
+  fun isHidingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isHighlightAllOccurrencesEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isHighlightCurrentLineEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isLineHidden(): Boolean {
+    TODO()
+  }
+
+  fun isOverridingSelectedFontColor(): Boolean {
+    TODO()
+  }
+
+  fun isReadonly(): Boolean {
+    TODO()
+  }
+
+  fun isRightClickMovingCaret(): Boolean {
+    TODO()
+  }
+
+  fun isSelectionActive(): Boolean {
+    TODO()
+  }
+
+  fun isShowLineNumbersEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSmoothScrollEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSyntaxColoringEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isWrapEnabled(): Boolean {
+    TODO()
+  }
+
+  fun menuOption() {
+    TODO()
+  }
+
+  fun paste() {
+    TODO()
+  }
+
+  fun redo() {
+    TODO()
+  }
+
+  fun removeBreakpoints() {
+    TODO()
+  }
+
+  fun search(): PoolIntArray {
+    TODO()
+  }
+
+  fun select() {
+    TODO()
+  }
+
+  fun selectAll() {
+    TODO()
+  }
+
+  fun setBreakpointGutterEnabled() {
+    TODO()
+  }
+
+  fun setContextMenuEnabled() {
+    TODO()
+  }
+
+  fun setDrawFoldGutter() {
+    TODO()
+  }
+
+  fun setDrawSpaces() {
+    TODO()
+  }
+
+  fun setDrawTabs() {
+    TODO()
+  }
+
+  fun setHidingEnabled() {
+    TODO()
+  }
+
+  fun setHighlightAllOccurrences() {
+    TODO()
+  }
+
+  fun setHighlightCurrentLine() {
+    TODO()
+  }
+
+  fun setLineAsHidden() {
+    TODO()
+  }
+
+  fun setOverrideSelectedFontColor() {
+    TODO()
+  }
+
+  fun setReadonly() {
+    TODO()
+  }
+
+  fun setRightClickMovesCaret() {
+    TODO()
+  }
+
+  fun setShowLineNumbers() {
+    TODO()
+  }
+
+  fun setSmoothScrollEnable() {
+    TODO()
+  }
+
+  fun setSyntaxColoring() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
+  fun setVScrollSpeed() {
+    TODO()
+  }
+
+  fun setWrapEnabled() {
+    TODO()
+  }
+
+  fun toggleFoldLine() {
+    TODO()
+  }
+
+  fun undo() {
+    TODO()
+  }
+
+  fun unfoldLine() {
+    TODO()
+  }
+
+  fun unhideAllLines() {
+    TODO()
+  }
+
   enum class SearchFlags(
     val value: Int
   ) {

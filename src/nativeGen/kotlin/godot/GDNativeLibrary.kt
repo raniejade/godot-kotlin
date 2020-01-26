@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class GDNativeLibrary internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getConfigFile(): ConfigFile {
+    TODO()
+  }
+
+  fun getCurrentDependencies(): PoolStringArray {
+    TODO()
+  }
+
+  fun getCurrentLibraryPath(): String {
+    TODO()
+  }
+
+  fun getSymbolPrefix(): String {
+    TODO()
+  }
+
+  fun isReloadable(): Boolean {
+    TODO()
+  }
+
+  fun isSingleton(): Boolean {
+    TODO()
+  }
+
+  fun setConfigFile() {
+    TODO()
+  }
+
+  fun setLoadOnce() {
+    TODO()
+  }
+
+  fun setReloadable() {
+    TODO()
+  }
+
+  fun setSingleton() {
+    TODO()
+  }
+
+  fun setSymbolPrefix() {
+    TODO()
+  }
+
+  fun shouldLoadOnce(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): GDNativeLibrary = memScoped {
       val fnPtr =

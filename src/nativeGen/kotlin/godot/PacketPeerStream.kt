@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,30 @@ import kotlinx.cinterop.reinterpret
 open class PacketPeerStream internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  fun getInputBufferMaxSize(): Int {
+    TODO()
+  }
+
+  fun getOutputBufferMaxSize(): Int {
+    TODO()
+  }
+
+  fun getStreamPeer(): StreamPeer {
+    TODO()
+  }
+
+  fun setInputBufferMaxSize() {
+    TODO()
+  }
+
+  fun setOutputBufferMaxSize() {
+    TODO()
+  }
+
+  fun setStreamPeer() {
+    TODO()
+  }
+
   companion object {
     fun new(): PacketPeerStream = memScoped {
       val fnPtr =

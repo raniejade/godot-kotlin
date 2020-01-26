@@ -15,6 +15,18 @@ import kotlinx.cinterop.reinterpret
 open class BoxContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun addSpacer() {
+    TODO()
+  }
+
+  fun getAlignment(): BoxContainer.AlignMode {
+    TODO()
+  }
+
+  fun setAlignment() {
+    TODO()
+  }
+
   enum class AlignMode(
     val value: Int
   ) {

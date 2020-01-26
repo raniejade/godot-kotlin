@@ -2,7 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +20,102 @@ import kotlinx.cinterop.reinterpret
 open class SpriteBase3D internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  fun imUpdate() {
+    TODO()
+  }
+
+  fun queueUpdate() {
+    TODO()
+  }
+
+  fun generateTriangleMesh(): TriangleMesh {
+    TODO()
+  }
+
+  fun getAlphaCutMode(): SpriteBase3D.AlphaCutMode {
+    TODO()
+  }
+
+  fun getAxis(): Vector3.Axis {
+    TODO()
+  }
+
+  fun getDrawFlag(): Boolean {
+    TODO()
+  }
+
+  fun getItemRect(): Rect2 {
+    TODO()
+  }
+
+  fun getModulate(): Color {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getOpacity(): Float {
+    TODO()
+  }
+
+  fun getPixelSize(): Float {
+    TODO()
+  }
+
+  fun isCentered(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedH(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedV(): Boolean {
+    TODO()
+  }
+
+  fun setAlphaCutMode() {
+    TODO()
+  }
+
+  fun setAxis() {
+    TODO()
+  }
+
+  fun setCentered() {
+    TODO()
+  }
+
+  fun setDrawFlag() {
+    TODO()
+  }
+
+  fun setFlipH() {
+    TODO()
+  }
+
+  fun setFlipV() {
+    TODO()
+  }
+
+  fun setModulate() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setOpacity() {
+    TODO()
+  }
+
+  fun setPixelSize() {
+    TODO()
+  }
+
   enum class DrawFlags(
     val value: Int
   ) {

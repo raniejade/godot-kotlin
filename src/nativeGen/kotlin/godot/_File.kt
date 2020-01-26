@@ -3,7 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.PoolStringArray
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,190 @@ import kotlinx.cinterop.reinterpret
 open class _File internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun close() {
+    TODO()
+  }
+
+  fun eofReached(): Boolean {
+    TODO()
+  }
+
+  fun fileExists(): Boolean {
+    TODO()
+  }
+
+  fun get16(): Int {
+    TODO()
+  }
+
+  fun get32(): Int {
+    TODO()
+  }
+
+  fun get64(): Int {
+    TODO()
+  }
+
+  fun get8(): Int {
+    TODO()
+  }
+
+  fun getAsText(): String {
+    TODO()
+  }
+
+  fun getBuffer(): PoolByteArray {
+    TODO()
+  }
+
+  fun getCsvLine(): PoolStringArray {
+    TODO()
+  }
+
+  fun getDouble(): Float {
+    TODO()
+  }
+
+  fun getEndianSwap(): Boolean {
+    TODO()
+  }
+
+  fun getError(): Error {
+    TODO()
+  }
+
+  fun getFloat(): Float {
+    TODO()
+  }
+
+  fun getLen(): Int {
+    TODO()
+  }
+
+  fun getLine(): String {
+    TODO()
+  }
+
+  fun getMd5(): String {
+    TODO()
+  }
+
+  fun getModifiedTime(): Int {
+    TODO()
+  }
+
+  fun getPascalString(): String {
+    TODO()
+  }
+
+  fun getPath(): String {
+    TODO()
+  }
+
+  fun getPathAbsolute(): String {
+    TODO()
+  }
+
+  fun getPosition(): Int {
+    TODO()
+  }
+
+  fun getReal(): Float {
+    TODO()
+  }
+
+  fun getSha256(): String {
+    TODO()
+  }
+
+  fun getVar(): Variant {
+    TODO()
+  }
+
+  fun isOpen(): Boolean {
+    TODO()
+  }
+
+  fun open(): Error {
+    TODO()
+  }
+
+  fun openCompressed(): Error {
+    TODO()
+  }
+
+  fun openEncrypted(): Error {
+    TODO()
+  }
+
+  fun openEncryptedWithPass(): Error {
+    TODO()
+  }
+
+  fun seek() {
+    TODO()
+  }
+
+  fun seekEnd() {
+    TODO()
+  }
+
+  fun setEndianSwap() {
+    TODO()
+  }
+
+  fun store16() {
+    TODO()
+  }
+
+  fun store32() {
+    TODO()
+  }
+
+  fun store64() {
+    TODO()
+  }
+
+  fun store8() {
+    TODO()
+  }
+
+  fun storeBuffer() {
+    TODO()
+  }
+
+  fun storeCsvLine() {
+    TODO()
+  }
+
+  fun storeDouble() {
+    TODO()
+  }
+
+  fun storeFloat() {
+    TODO()
+  }
+
+  fun storeLine() {
+    TODO()
+  }
+
+  fun storePascalString() {
+    TODO()
+  }
+
+  fun storeReal() {
+    TODO()
+  }
+
+  fun storeString() {
+    TODO()
+  }
+
+  fun storeVar() {
+    TODO()
+  }
+
   enum class CompressionMode(
     val value: Int
   ) {

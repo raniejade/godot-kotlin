@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,186 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamPlayer3D internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun busLayoutChanged() {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun setPlaying() {
+    TODO()
+  }
+
+  fun getAreaMask(): Int {
+    TODO()
+  }
+
+  fun getAttenuationFilterCutoffHz(): Float {
+    TODO()
+  }
+
+  fun getAttenuationFilterDb(): Float {
+    TODO()
+  }
+
+  fun getAttenuationModel(): AudioStreamPlayer3D.AttenuationModel {
+    TODO()
+  }
+
+  fun getBus(): String {
+    TODO()
+  }
+
+  fun getDopplerTracking(): AudioStreamPlayer3D.DopplerTracking {
+    TODO()
+  }
+
+  fun getEmissionAngle(): Float {
+    TODO()
+  }
+
+  fun getEmissionAngleFilterAttenuationDb(): Float {
+    TODO()
+  }
+
+  fun getMaxDb(): Float {
+    TODO()
+  }
+
+  fun getMaxDistance(): Float {
+    TODO()
+  }
+
+  fun getOutOfRangeMode(): AudioStreamPlayer3D.OutOfRangeMode {
+    TODO()
+  }
+
+  fun getPitchScale(): Float {
+    TODO()
+  }
+
+  fun getPlaybackPosition(): Float {
+    TODO()
+  }
+
+  fun getStream(): AudioStream {
+    TODO()
+  }
+
+  fun getStreamPaused(): Boolean {
+    TODO()
+  }
+
+  fun getStreamPlayback(): AudioStreamPlayback {
+    TODO()
+  }
+
+  fun getUnitDb(): Float {
+    TODO()
+  }
+
+  fun getUnitSize(): Float {
+    TODO()
+  }
+
+  fun isAutoplayEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isEmissionAngleEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun seek() {
+    TODO()
+  }
+
+  fun setAreaMask() {
+    TODO()
+  }
+
+  fun setAttenuationFilterCutoffHz() {
+    TODO()
+  }
+
+  fun setAttenuationFilterDb() {
+    TODO()
+  }
+
+  fun setAttenuationModel() {
+    TODO()
+  }
+
+  fun setAutoplay() {
+    TODO()
+  }
+
+  fun setBus() {
+    TODO()
+  }
+
+  fun setDopplerTracking() {
+    TODO()
+  }
+
+  fun setEmissionAngle() {
+    TODO()
+  }
+
+  fun setEmissionAngleEnabled() {
+    TODO()
+  }
+
+  fun setEmissionAngleFilterAttenuationDb() {
+    TODO()
+  }
+
+  fun setMaxDb() {
+    TODO()
+  }
+
+  fun setMaxDistance() {
+    TODO()
+  }
+
+  fun setOutOfRangeMode() {
+    TODO()
+  }
+
+  fun setPitchScale() {
+    TODO()
+  }
+
+  fun setStream() {
+    TODO()
+  }
+
+  fun setStreamPaused() {
+    TODO()
+  }
+
+  fun setUnitDb() {
+    TODO()
+  }
+
+  fun setUnitSize() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   enum class AttenuationModel(
     val value: Int
   ) {

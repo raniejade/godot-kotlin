@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class WorldEnvironment internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun getEnvironment(): Environment {
+    TODO()
+  }
+
+  fun setEnvironment() {
+    TODO()
+  }
+
   companion object {
     fun new(): WorldEnvironment = memScoped {
       val fnPtr =

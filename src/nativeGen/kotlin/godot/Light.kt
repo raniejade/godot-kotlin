@@ -2,7 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,78 @@ import kotlinx.cinterop.reinterpret
 open class Light internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  fun getBakeMode(): Light.BakeMode {
+    TODO()
+  }
+
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getCullMask(): Int {
+    TODO()
+  }
+
+  fun getParam(): Float {
+    TODO()
+  }
+
+  fun getShadowColor(): Color {
+    TODO()
+  }
+
+  fun getShadowReverseCullFace(): Boolean {
+    TODO()
+  }
+
+  fun hasShadow(): Boolean {
+    TODO()
+  }
+
+  fun isEditorOnly(): Boolean {
+    TODO()
+  }
+
+  fun isNegative(): Boolean {
+    TODO()
+  }
+
+  fun setBakeMode() {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setCullMask() {
+    TODO()
+  }
+
+  fun setEditorOnly() {
+    TODO()
+  }
+
+  fun setNegative() {
+    TODO()
+  }
+
+  fun setParam() {
+    TODO()
+  }
+
+  fun setShadow() {
+    TODO()
+  }
+
+  fun setShadowColor() {
+    TODO()
+  }
+
+  fun setShadowReverseCullFace() {
+    TODO()
+  }
+
   enum class BakeMode(
     val value: Int
   ) {

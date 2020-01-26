@@ -14,6 +14,22 @@ import kotlinx.cinterop.reinterpret
 open class CurveTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun update() {
+    TODO()
+  }
+
+  fun getCurve(): Curve {
+    TODO()
+  }
+
+  fun setCurve() {
+    TODO()
+  }
+
+  fun setWidth() {
+    TODO()
+  }
+
   companion object {
     fun new(): CurveTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CurveTexture".cstr.ptr)

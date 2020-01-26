@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectFilter internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getCutoff(): Float {
+    TODO()
+  }
+
+  fun getDb(): AudioEffectFilter.FilterDB {
+    TODO()
+  }
+
+  fun getGain(): Float {
+    TODO()
+  }
+
+  fun getResonance(): Float {
+    TODO()
+  }
+
+  fun setCutoff() {
+    TODO()
+  }
+
+  fun setDb() {
+    TODO()
+  }
+
+  fun setGain() {
+    TODO()
+  }
+
+  fun setResonance() {
+    TODO()
+  }
+
   enum class FilterDB(
     val value: Int
   ) {

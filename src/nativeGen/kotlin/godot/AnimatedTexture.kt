@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,42 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun updateProxy() {
+    TODO()
+  }
+
+  fun getFps(): Float {
+    TODO()
+  }
+
+  fun getFrameDelay(): Float {
+    TODO()
+  }
+
+  fun getFrameTexture(): Texture {
+    TODO()
+  }
+
+  fun getFrames(): Int {
+    TODO()
+  }
+
+  fun setFps() {
+    TODO()
+  }
+
+  fun setFrameDelay() {
+    TODO()
+  }
+
+  fun setFrameTexture() {
+    TODO()
+  }
+
+  fun setFrames() {
+    TODO()
+  }
+
   companion object {
     val MAX_FRAMES: Int = 256
 

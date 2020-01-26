@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,46 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectDistortion internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getDrive(): Float {
+    TODO()
+  }
+
+  fun getKeepHfHz(): Float {
+    TODO()
+  }
+
+  fun getMode(): AudioEffectDistortion.Mode {
+    TODO()
+  }
+
+  fun getPostGain(): Float {
+    TODO()
+  }
+
+  fun getPreGain(): Float {
+    TODO()
+  }
+
+  fun setDrive() {
+    TODO()
+  }
+
+  fun setKeepHfHz() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setPostGain() {
+    TODO()
+  }
+
+  fun setPreGain() {
+    TODO()
+  }
+
   enum class Mode(
     val value: Int
   ) {

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptInputAction internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getActionMode(): VisualScriptInputAction.Mode {
+    TODO()
+  }
+
+  fun getActionName(): String {
+    TODO()
+  }
+
+  fun setActionMode() {
+    TODO()
+  }
+
+  fun setActionName() {
+    TODO()
+  }
+
   enum class Mode(
     val value: Int
   ) {

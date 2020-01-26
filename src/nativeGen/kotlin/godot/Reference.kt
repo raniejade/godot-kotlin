@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,18 @@ import kotlinx.cinterop.reinterpret
 open class Reference internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun initRef(): Boolean {
+    TODO()
+  }
+
+  fun reference(): Boolean {
+    TODO()
+  }
+
+  fun unreference(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): Reference = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Reference".cstr.ptr)

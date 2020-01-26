@@ -5,6 +5,7 @@ enum class GDType(val gdName: String, val mappedName: String? = null, val primit
   INT("int", mappedName = "Int", primitive = true),
   FLOAT("float", mappedName = "Float", primitive = true),
   BOOL("bool", mappedName = "Boolean", primitive = true),
+  VOID("void", primitive = true),
 
   AABB("AABB"),
   BASIS("Basis"),

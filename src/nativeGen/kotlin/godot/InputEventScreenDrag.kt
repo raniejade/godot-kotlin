@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class InputEventScreenDrag internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  fun getIndex(): Int {
+    TODO()
+  }
+
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getRelative(): Vector2 {
+    TODO()
+  }
+
+  fun getSpeed(): Vector2 {
+    TODO()
+  }
+
+  fun setIndex() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
+  fun setRelative() {
+    TODO()
+  }
+
+  fun setSpeed() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventScreenDrag = memScoped {
       val fnPtr =

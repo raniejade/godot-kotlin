@@ -3,7 +3,15 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolIntArray
+import godot.core.Variant
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +23,262 @@ import kotlinx.cinterop.reinterpret
 open class Animation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun addTrack(): Int {
+    TODO()
+  }
+
+  fun animationTrackGetKeyAnimation(): String {
+    TODO()
+  }
+
+  fun animationTrackInsertKey(): Int {
+    TODO()
+  }
+
+  fun animationTrackSetKeyAnimation() {
+    TODO()
+  }
+
+  fun audioTrackGetKeyEndOffset(): Float {
+    TODO()
+  }
+
+  fun audioTrackGetKeyStartOffset(): Float {
+    TODO()
+  }
+
+  fun audioTrackGetKeyStream(): Resource {
+    TODO()
+  }
+
+  fun audioTrackInsertKey(): Int {
+    TODO()
+  }
+
+  fun audioTrackSetKeyEndOffset() {
+    TODO()
+  }
+
+  fun audioTrackSetKeyStartOffset() {
+    TODO()
+  }
+
+  fun audioTrackSetKeyStream() {
+    TODO()
+  }
+
+  fun bezierTrackGetKeyInHandle(): Vector2 {
+    TODO()
+  }
+
+  fun bezierTrackGetKeyOutHandle(): Vector2 {
+    TODO()
+  }
+
+  fun bezierTrackGetKeyValue(): Float {
+    TODO()
+  }
+
+  fun bezierTrackInsertKey(): Int {
+    TODO()
+  }
+
+  fun bezierTrackInterpolate(): Float {
+    TODO()
+  }
+
+  fun bezierTrackSetKeyInHandle() {
+    TODO()
+  }
+
+  fun bezierTrackSetKeyOutHandle() {
+    TODO()
+  }
+
+  fun bezierTrackSetKeyValue() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun copyTrack() {
+    TODO()
+  }
+
+  fun findTrack(): Int {
+    TODO()
+  }
+
+  fun getLength(): Float {
+    TODO()
+  }
+
+  fun getStep(): Float {
+    TODO()
+  }
+
+  fun getTrackCount(): Int {
+    TODO()
+  }
+
+  fun hasLoop(): Boolean {
+    TODO()
+  }
+
+  fun methodTrackGetKeyIndices(): PoolIntArray {
+    TODO()
+  }
+
+  fun methodTrackGetName(): String {
+    TODO()
+  }
+
+  fun methodTrackGetParams(): VariantArray {
+    TODO()
+  }
+
+  fun removeTrack() {
+    TODO()
+  }
+
+  fun setLength() {
+    TODO()
+  }
+
+  fun setLoop() {
+    TODO()
+  }
+
+  fun setStep() {
+    TODO()
+  }
+
+  fun trackFindKey(): Int {
+    TODO()
+  }
+
+  fun trackGetInterpolationLoopWrap(): Boolean {
+    TODO()
+  }
+
+  fun trackGetInterpolationType(): Animation.InterpolationType {
+    TODO()
+  }
+
+  fun trackGetKeyCount(): Int {
+    TODO()
+  }
+
+  fun trackGetKeyTime(): Float {
+    TODO()
+  }
+
+  fun trackGetKeyTransition(): Float {
+    TODO()
+  }
+
+  fun trackGetKeyValue(): Variant {
+    TODO()
+  }
+
+  fun trackGetPath(): NodePath {
+    TODO()
+  }
+
+  fun trackGetType(): Animation.TrackType {
+    TODO()
+  }
+
+  fun trackInsertKey() {
+    TODO()
+  }
+
+  fun trackIsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun trackIsImported(): Boolean {
+    TODO()
+  }
+
+  fun trackMoveDown() {
+    TODO()
+  }
+
+  fun trackMoveTo() {
+    TODO()
+  }
+
+  fun trackMoveUp() {
+    TODO()
+  }
+
+  fun trackRemoveKey() {
+    TODO()
+  }
+
+  fun trackRemoveKeyAtPosition() {
+    TODO()
+  }
+
+  fun trackSetEnabled() {
+    TODO()
+  }
+
+  fun trackSetImported() {
+    TODO()
+  }
+
+  fun trackSetInterpolationLoopWrap() {
+    TODO()
+  }
+
+  fun trackSetInterpolationType() {
+    TODO()
+  }
+
+  fun trackSetKeyTime() {
+    TODO()
+  }
+
+  fun trackSetKeyTransition() {
+    TODO()
+  }
+
+  fun trackSetKeyValue() {
+    TODO()
+  }
+
+  fun trackSetPath() {
+    TODO()
+  }
+
+  fun trackSwap() {
+    TODO()
+  }
+
+  fun transformTrackInsertKey(): Int {
+    TODO()
+  }
+
+  fun transformTrackInterpolate(): VariantArray {
+    TODO()
+  }
+
+  fun valueTrackGetKeyIndices(): PoolIntArray {
+    TODO()
+  }
+
+  fun valueTrackGetUpdateMode(): Animation.UpdateMode {
+    TODO()
+  }
+
+  fun valueTrackSetUpdateMode() {
+    TODO()
+  }
+
   enum class TrackType(
     val value: Int
   ) {

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMouseMotion internal constructor(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
+  fun getRelative(): Vector2 {
+    TODO()
+  }
+
+  fun getSpeed(): Vector2 {
+    TODO()
+  }
+
+  fun setRelative() {
+    TODO()
+  }
+
+  fun setSpeed() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventMouseMotion = memScoped {
       val fnPtr =

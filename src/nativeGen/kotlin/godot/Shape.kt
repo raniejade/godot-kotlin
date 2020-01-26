@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class Shape internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getMargin(): Float {
+    TODO()
+  }
+
+  fun setMargin() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Shape

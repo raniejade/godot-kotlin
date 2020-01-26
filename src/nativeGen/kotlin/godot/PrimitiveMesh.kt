@@ -2,7 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class PrimitiveMesh internal constructor(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
+  fun update() {
+    TODO()
+  }
+
+  fun getCustomAabb(): AABB {
+    TODO()
+  }
+
+  fun getFlipFaces(): Boolean {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getMeshArrays(): VariantArray {
+    TODO()
+  }
+
+  fun setCustomAabb() {
+    TODO()
+  }
+
+  fun setFlipFaces() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for PrimitiveMesh

@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,70 @@ import kotlinx.cinterop.reinterpret
 open class UPNPDevice internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addPortMapping(): Int {
+    TODO()
+  }
+
+  fun deletePortMapping(): Int {
+    TODO()
+  }
+
+  fun getDescriptionUrl(): String {
+    TODO()
+  }
+
+  fun getIgdControlUrl(): String {
+    TODO()
+  }
+
+  fun getIgdOurAddr(): String {
+    TODO()
+  }
+
+  fun getIgdServiceType(): String {
+    TODO()
+  }
+
+  fun getIgdStatus(): UPNPDevice.IGDStatus {
+    TODO()
+  }
+
+  fun getServiceType(): String {
+    TODO()
+  }
+
+  fun isValidGateway(): Boolean {
+    TODO()
+  }
+
+  fun queryExternalAddress(): String {
+    TODO()
+  }
+
+  fun setDescriptionUrl() {
+    TODO()
+  }
+
+  fun setIgdControlUrl() {
+    TODO()
+  }
+
+  fun setIgdOurAddr() {
+    TODO()
+  }
+
+  fun setIgdServiceType() {
+    TODO()
+  }
+
+  fun setIgdStatus() {
+    TODO()
+  }
+
+  fun setServiceType() {
+    TODO()
+  }
+
   enum class IGDStatus(
     val value: Int
   ) {

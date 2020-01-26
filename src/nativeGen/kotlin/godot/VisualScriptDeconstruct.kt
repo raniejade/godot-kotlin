@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptDeconstruct internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getElemCache(): VariantArray {
+    TODO()
+  }
+
+  fun setElemCache() {
+    TODO()
+  }
+
+  fun getDeconstructType(): Variant.Type {
+    TODO()
+  }
+
+  fun setDeconstructType() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptDeconstruct = memScoped {
       val fnPtr =

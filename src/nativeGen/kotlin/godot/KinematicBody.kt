@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,62 @@ import kotlinx.cinterop.reinterpret
 open class KinematicBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
+  fun getAxisLock(): Boolean {
+    TODO()
+  }
+
+  fun getFloorVelocity(): Vector3 {
+    TODO()
+  }
+
+  fun getSafeMargin(): Float {
+    TODO()
+  }
+
+  fun getSlideCollision(): KinematicCollision {
+    TODO()
+  }
+
+  fun getSlideCount(): Int {
+    TODO()
+  }
+
+  fun isOnCeiling(): Boolean {
+    TODO()
+  }
+
+  fun isOnFloor(): Boolean {
+    TODO()
+  }
+
+  fun isOnWall(): Boolean {
+    TODO()
+  }
+
+  fun moveAndCollide(): KinematicCollision {
+    TODO()
+  }
+
+  fun moveAndSlide(): Vector3 {
+    TODO()
+  }
+
+  fun moveAndSlideWithSnap(): Vector3 {
+    TODO()
+  }
+
+  fun setAxisLock() {
+    TODO()
+  }
+
+  fun setSafeMargin() {
+    TODO()
+  }
+
+  fun testMove(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): KinematicBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody".cstr.ptr)

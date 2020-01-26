@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Rect2
+import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +21,342 @@ import kotlinx.cinterop.reinterpret
 open class Viewport internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun guiRemoveFocus() {
+    TODO()
+  }
+
+  fun guiShowTooltip() {
+    TODO()
+  }
+
+  fun postGuiGrabClickFocus() {
+    TODO()
+  }
+
+  fun subwindowVisibilityChanged() {
+    TODO()
+  }
+
+  fun vpInput() {
+    TODO()
+  }
+
+  fun vpInputText() {
+    TODO()
+  }
+
+  fun vpUnhandledInput() {
+    TODO()
+  }
+
+  fun findWorld(): World {
+    TODO()
+  }
+
+  fun findWorld2d(): World2D {
+    TODO()
+  }
+
+  fun getCamera(): Camera {
+    TODO()
+  }
+
+  fun getCanvasTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getClearMode(): Viewport.ClearMode {
+    TODO()
+  }
+
+  fun getDebugDraw(): Viewport.DebugDraw {
+    TODO()
+  }
+
+  fun getFinalTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getGlobalCanvasTransform(): Transform2D {
+    TODO()
+  }
+
+  fun getHdr(): Boolean {
+    TODO()
+  }
+
+  fun getKeep3dLinear(): Boolean {
+    TODO()
+  }
+
+  fun getModalStackTop(): Control {
+    TODO()
+  }
+
+  fun getMousePosition(): Vector2 {
+    TODO()
+  }
+
+  fun getMsaa(): Viewport.MSAA {
+    TODO()
+  }
+
+  fun getPhysicsObjectPicking(): Boolean {
+    TODO()
+  }
+
+  fun getRenderInfo(): Int {
+    TODO()
+  }
+
+  fun getShadowAtlasQuadrantSubdiv(): Viewport.ShadowAtlasQuadrantSubdiv {
+    TODO()
+  }
+
+  fun getShadowAtlasSize(): Int {
+    TODO()
+  }
+
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun getSizeOverride(): Vector2 {
+    TODO()
+  }
+
+  fun getTexture(): ViewportTexture {
+    TODO()
+  }
+
+  fun getUpdateMode(): Viewport.UpdateMode {
+    TODO()
+  }
+
+  fun getUsage(): Viewport.Usage {
+    TODO()
+  }
+
+  fun getVflip(): Boolean {
+    TODO()
+  }
+
+  fun getViewportRid(): RID {
+    TODO()
+  }
+
+  fun getVisibleRect(): Rect2 {
+    TODO()
+  }
+
+  fun getWorld(): World {
+    TODO()
+  }
+
+  fun getWorld2d(): World2D {
+    TODO()
+  }
+
+  fun guiGetDragData(): Variant {
+    TODO()
+  }
+
+  fun guiHasModalStack(): Boolean {
+    TODO()
+  }
+
+  fun guiIsDragging(): Boolean {
+    TODO()
+  }
+
+  fun hasTransparentBackground(): Boolean {
+    TODO()
+  }
+
+  fun input() {
+    TODO()
+  }
+
+  fun is3dDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isAudioListener(): Boolean {
+    TODO()
+  }
+
+  fun isAudioListener2d(): Boolean {
+    TODO()
+  }
+
+  fun isHandlingInputLocally(): Boolean {
+    TODO()
+  }
+
+  fun isInputDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isInputHandled(): Boolean {
+    TODO()
+  }
+
+  fun isSizeOverrideEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSizeOverrideStretchEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSnapControlsToPixelsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isUsingOwnWorld(): Boolean {
+    TODO()
+  }
+
+  fun isUsingRenderDirectToScreen(): Boolean {
+    TODO()
+  }
+
+  fun setAsAudioListener() {
+    TODO()
+  }
+
+  fun setAsAudioListener2d() {
+    TODO()
+  }
+
+  fun setAttachToScreenRect() {
+    TODO()
+  }
+
+  fun setCanvasTransform() {
+    TODO()
+  }
+
+  fun setClearMode() {
+    TODO()
+  }
+
+  fun setDebugDraw() {
+    TODO()
+  }
+
+  fun setDisable3d() {
+    TODO()
+  }
+
+  fun setDisableInput() {
+    TODO()
+  }
+
+  fun setGlobalCanvasTransform() {
+    TODO()
+  }
+
+  fun setHandleInputLocally() {
+    TODO()
+  }
+
+  fun setHdr() {
+    TODO()
+  }
+
+  fun setInputAsHandled() {
+    TODO()
+  }
+
+  fun setKeep3dLinear() {
+    TODO()
+  }
+
+  fun setMsaa() {
+    TODO()
+  }
+
+  fun setPhysicsObjectPicking() {
+    TODO()
+  }
+
+  fun setShadowAtlasQuadrantSubdiv() {
+    TODO()
+  }
+
+  fun setShadowAtlasSize() {
+    TODO()
+  }
+
+  fun setSize() {
+    TODO()
+  }
+
+  fun setSizeOverride() {
+    TODO()
+  }
+
+  fun setSizeOverrideStretch() {
+    TODO()
+  }
+
+  fun setSnapControlsToPixels() {
+    TODO()
+  }
+
+  fun setTransparentBackground() {
+    TODO()
+  }
+
+  fun setUpdateMode() {
+    TODO()
+  }
+
+  fun setUsage() {
+    TODO()
+  }
+
+  fun setUseArvr() {
+    TODO()
+  }
+
+  fun setUseOwnWorld() {
+    TODO()
+  }
+
+  fun setUseRenderDirectToScreen() {
+    TODO()
+  }
+
+  fun setVflip() {
+    TODO()
+  }
+
+  fun setWorld() {
+    TODO()
+  }
+
+  fun setWorld2d() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun updateWorlds() {
+    TODO()
+  }
+
+  fun useArvr(): Boolean {
+    TODO()
+  }
+
+  fun warpMouse() {
+    TODO()
+  }
+
   enum class ClearMode(
     val value: Int
   ) {

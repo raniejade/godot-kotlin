@@ -15,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptBuiltinFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getFunc(): VisualScriptBuiltinFunc.BuiltinFunc {
+    TODO()
+  }
+
+  fun setFunc() {
+    TODO()
+  }
+
   enum class BuiltinFunc(
     val value: Int
   ) {

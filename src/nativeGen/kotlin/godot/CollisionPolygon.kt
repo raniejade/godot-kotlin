@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class CollisionPolygon internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun isEditable3dPolygon(): Boolean {
+    TODO()
+  }
+
+  fun getDepth(): Float {
+    TODO()
+  }
+
+  fun getPolygon(): PoolVector2Array {
+    TODO()
+  }
+
+  fun isDisabled(): Boolean {
+    TODO()
+  }
+
+  fun setDepth() {
+    TODO()
+  }
+
+  fun setDisabled() {
+    TODO()
+  }
+
+  fun setPolygon() {
+    TODO()
+  }
+
   companion object {
     fun new(): CollisionPolygon = memScoped {
       val fnPtr =

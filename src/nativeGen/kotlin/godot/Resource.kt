@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class Resource internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun setupLocalToScene() {
+    TODO()
+  }
+
+  fun duplicate(): Resource {
+    TODO()
+  }
+
+  fun getLocalScene(): Node {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getPath(): String {
+    TODO()
+  }
+
+  fun getRid(): RID {
+    TODO()
+  }
+
+  fun isLocalToScene(): Boolean {
+    TODO()
+  }
+
+  fun setLocalToScene() {
+    TODO()
+  }
+
+  fun setName() {
+    TODO()
+  }
+
+  fun setPath() {
+    TODO()
+  }
+
+  fun setupLocalToScene() {
+    TODO()
+  }
+
+  fun takeOverPath() {
+    TODO()
+  }
+
   companion object {
     fun new(): Resource = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Resource".cstr.ptr)

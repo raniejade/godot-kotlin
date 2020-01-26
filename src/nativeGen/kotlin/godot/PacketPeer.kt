@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,38 @@ import kotlinx.cinterop.reinterpret
 open class PacketPeer internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getAvailablePacketCount(): Int {
+    TODO()
+  }
+
+  fun getPacket(): PoolByteArray {
+    TODO()
+  }
+
+  fun getPacketError(): Error {
+    TODO()
+  }
+
+  fun getVar(): Variant {
+    TODO()
+  }
+
+  fun isObjectDecodingAllowed(): Boolean {
+    TODO()
+  }
+
+  fun putPacket(): Error {
+    TODO()
+  }
+
+  fun putVar(): Error {
+    TODO()
+  }
+
+  fun setAllowObjectDecoding() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for PacketPeer

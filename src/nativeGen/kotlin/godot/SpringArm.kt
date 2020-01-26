@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class SpringArm internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun addExcludedObject() {
+    TODO()
+  }
+
+  fun clearExcludedObjects() {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getHitLength(): Float {
+    TODO()
+  }
+
+  fun getLength(): Float {
+    TODO()
+  }
+
+  fun getMargin(): Float {
+    TODO()
+  }
+
+  fun getShape(): Shape {
+    TODO()
+  }
+
+  fun removeExcludedObject(): Boolean {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setLength() {
+    TODO()
+  }
+
+  fun setMargin() {
+    TODO()
+  }
+
+  fun setShape() {
+    TODO()
+  }
+
   companion object {
     fun new(): SpringArm = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpringArm".cstr.ptr)

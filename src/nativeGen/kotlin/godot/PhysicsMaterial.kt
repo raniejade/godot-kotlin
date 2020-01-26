@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsMaterial internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getBounce(): Float {
+    TODO()
+  }
+
+  fun getFriction(): Float {
+    TODO()
+  }
+
+  fun isAbsorbent(): Boolean {
+    TODO()
+  }
+
+  fun isRough(): Boolean {
+    TODO()
+  }
+
+  fun setAbsorbent() {
+    TODO()
+  }
+
+  fun setBounce() {
+    TODO()
+  }
+
+  fun setFriction() {
+    TODO()
+  }
+
+  fun setRough() {
+    TODO()
+  }
+
   companion object {
     fun new(): PhysicsMaterial = memScoped {
       val fnPtr =

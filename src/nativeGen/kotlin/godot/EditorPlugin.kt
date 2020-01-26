@@ -2,8 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,218 @@ import kotlinx.cinterop.reinterpret
 open class EditorPlugin internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun addAutoloadSingleton() {
+    TODO()
+  }
+
+  fun addControlToBottomPanel(): ToolButton {
+    TODO()
+  }
+
+  fun addControlToContainer() {
+    TODO()
+  }
+
+  fun addControlToDock() {
+    TODO()
+  }
+
+  fun addCustomType() {
+    TODO()
+  }
+
+  fun addExportPlugin() {
+    TODO()
+  }
+
+  fun addImportPlugin() {
+    TODO()
+  }
+
+  fun addInspectorPlugin() {
+    TODO()
+  }
+
+  fun addSceneImportPlugin() {
+    TODO()
+  }
+
+  fun addSpatialGizmoPlugin() {
+    TODO()
+  }
+
+  fun addToolMenuItem() {
+    TODO()
+  }
+
+  fun addToolSubmenuItem() {
+    TODO()
+  }
+
+  fun applyChanges() {
+    TODO()
+  }
+
+  fun build(): Boolean {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun disablePlugin() {
+    TODO()
+  }
+
+  fun edit() {
+    TODO()
+  }
+
+  fun enablePlugin() {
+    TODO()
+  }
+
+  fun forwardCanvasDrawOverViewport() {
+    TODO()
+  }
+
+  fun forwardCanvasForceDrawOverViewport() {
+    TODO()
+  }
+
+  fun forwardCanvasGuiInput(): Boolean {
+    TODO()
+  }
+
+  fun forwardSpatialGuiInput(): Boolean {
+    TODO()
+  }
+
+  fun getBreakpoints(): PoolStringArray {
+    TODO()
+  }
+
+  fun getEditorInterface(): EditorInterface {
+    TODO()
+  }
+
+  fun getPluginIcon(): Object {
+    TODO()
+  }
+
+  fun getPluginName(): String {
+    TODO()
+  }
+
+  fun getScriptCreateDialog(): ScriptCreateDialog {
+    TODO()
+  }
+
+  fun getState(): Dictionary {
+    TODO()
+  }
+
+  fun getUndoRedo(): UndoRedo {
+    TODO()
+  }
+
+  fun getWindowLayout() {
+    TODO()
+  }
+
+  fun handles(): Boolean {
+    TODO()
+  }
+
+  fun hasMainScreen(): Boolean {
+    TODO()
+  }
+
+  fun hideBottomPanel() {
+    TODO()
+  }
+
+  fun makeBottomPanelItemVisible() {
+    TODO()
+  }
+
+  fun makeVisible() {
+    TODO()
+  }
+
+  fun queueSaveLayout() {
+    TODO()
+  }
+
+  fun removeAutoloadSingleton() {
+    TODO()
+  }
+
+  fun removeControlFromBottomPanel() {
+    TODO()
+  }
+
+  fun removeControlFromContainer() {
+    TODO()
+  }
+
+  fun removeControlFromDocks() {
+    TODO()
+  }
+
+  fun removeCustomType() {
+    TODO()
+  }
+
+  fun removeExportPlugin() {
+    TODO()
+  }
+
+  fun removeImportPlugin() {
+    TODO()
+  }
+
+  fun removeInspectorPlugin() {
+    TODO()
+  }
+
+  fun removeSceneImportPlugin() {
+    TODO()
+  }
+
+  fun removeSpatialGizmoPlugin() {
+    TODO()
+  }
+
+  fun removeToolMenuItem() {
+    TODO()
+  }
+
+  fun saveExternalData() {
+    TODO()
+  }
+
+  fun setForceDrawOverForwardingEnabled() {
+    TODO()
+  }
+
+  fun setInputEventForwardingAlwaysEnabled() {
+    TODO()
+  }
+
+  fun setState() {
+    TODO()
+  }
+
+  fun setWindowLayout() {
+    TODO()
+  }
+
+  fun updateOverlays(): Int {
+    TODO()
+  }
+
   enum class DockSlot(
     val value: Int
   ) {

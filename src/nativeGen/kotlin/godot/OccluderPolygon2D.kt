@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class OccluderPolygon2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getCullMode(): OccluderPolygon2D.CullMode {
+    TODO()
+  }
+
+  fun getPolygon(): PoolVector2Array {
+    TODO()
+  }
+
+  fun isClosed(): Boolean {
+    TODO()
+  }
+
+  fun setClosed() {
+    TODO()
+  }
+
+  fun setCullMode() {
+    TODO()
+  }
+
+  fun setPolygon() {
+    TODO()
+  }
+
   enum class CullMode(
     val value: Int
   ) {

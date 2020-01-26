@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolVector2Array
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,18 @@ import kotlinx.cinterop.reinterpret
 open class ConvexPolygonShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  fun getPoints(): PoolVector2Array {
+    TODO()
+  }
+
+  fun setPointCloud() {
+    TODO()
+  }
+
+  fun setPoints() {
+    TODO()
+  }
+
   companion object {
     fun new(): ConvexPolygonShape2D = memScoped {
       val fnPtr =

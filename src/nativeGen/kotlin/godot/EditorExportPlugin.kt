@@ -14,6 +14,50 @@ import kotlinx.cinterop.reinterpret
 open class EditorExportPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun exportBegin() {
+    TODO()
+  }
+
+  fun exportEnd() {
+    TODO()
+  }
+
+  fun exportFile() {
+    TODO()
+  }
+
+  fun addFile() {
+    TODO()
+  }
+
+  fun addIosBundleFile() {
+    TODO()
+  }
+
+  fun addIosCppCode() {
+    TODO()
+  }
+
+  fun addIosFramework() {
+    TODO()
+  }
+
+  fun addIosLinkerFlags() {
+    TODO()
+  }
+
+  fun addIosPlistContent() {
+    TODO()
+  }
+
+  fun addSharedObject() {
+    TODO()
+  }
+
+  fun skip() {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorExportPlugin = memScoped {
       val fnPtr =

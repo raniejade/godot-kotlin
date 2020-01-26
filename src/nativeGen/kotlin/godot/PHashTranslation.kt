@@ -14,6 +14,10 @@ import kotlinx.cinterop.reinterpret
 open class PHashTranslation internal constructor(
   _handle: COpaquePointer
 ) : Translation(_handle) {
+  fun generate() {
+    TODO()
+  }
+
   companion object {
     fun new(): PHashTranslation = memScoped {
       val fnPtr =

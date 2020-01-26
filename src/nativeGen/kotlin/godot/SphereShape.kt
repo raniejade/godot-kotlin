@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class SphereShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  fun getRadius(): Float {
+    TODO()
+  }
+
+  fun setRadius() {
+    TODO()
+  }
+
   companion object {
     fun new(): SphereShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereShape".cstr.ptr)

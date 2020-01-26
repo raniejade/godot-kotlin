@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class InputEventJoypadButton internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  fun getButtonIndex(): Int {
+    TODO()
+  }
+
+  fun getPressure(): Float {
+    TODO()
+  }
+
+  fun setButtonIndex() {
+    TODO()
+  }
+
+  fun setPressed() {
+    TODO()
+  }
+
+  fun setPressure() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventJoypadButton = memScoped {
       val fnPtr =

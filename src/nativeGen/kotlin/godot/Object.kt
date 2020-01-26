@@ -3,7 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +20,190 @@ import kotlinx.cinterop.reinterpret
 open class Object internal constructor(
   internal val _handle: COpaquePointer
 ) {
+  fun get(): Variant {
+    TODO()
+  }
+
+  fun getPropertyList(): VariantArray {
+    TODO()
+  }
+
+  fun init() {
+    TODO()
+  }
+
+  fun notification() {
+    TODO()
+  }
+
+  fun set(): Boolean {
+    TODO()
+  }
+
+  fun toString(): String {
+    TODO()
+  }
+
+  fun addUserSignal() {
+    TODO()
+  }
+
+  fun call(): Variant {
+    TODO()
+  }
+
+  fun callDeferred(): Variant {
+    TODO()
+  }
+
+  fun callv(): Variant {
+    TODO()
+  }
+
+  fun canTranslateMessages(): Boolean {
+    TODO()
+  }
+
+  fun connect(): Error {
+    TODO()
+  }
+
+  fun disconnect() {
+    TODO()
+  }
+
+  fun emitSignal(): Variant {
+    TODO()
+  }
+
+  fun free() {
+    TODO()
+  }
+
+  fun get(): Variant {
+    TODO()
+  }
+
+  fun getClass(): String {
+    TODO()
+  }
+
+  fun getIncomingConnections(): VariantArray {
+    TODO()
+  }
+
+  fun getIndexed(): Variant {
+    TODO()
+  }
+
+  fun getInstanceId(): Int {
+    TODO()
+  }
+
+  fun getMeta(): Variant {
+    TODO()
+  }
+
+  fun getMetaList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getMethodList(): VariantArray {
+    TODO()
+  }
+
+  fun getPropertyList(): VariantArray {
+    TODO()
+  }
+
+  fun getScript(): Reference {
+    TODO()
+  }
+
+  fun getSignalConnectionList(): VariantArray {
+    TODO()
+  }
+
+  fun getSignalList(): VariantArray {
+    TODO()
+  }
+
+  fun hasMeta(): Boolean {
+    TODO()
+  }
+
+  fun hasMethod(): Boolean {
+    TODO()
+  }
+
+  fun hasUserSignal(): Boolean {
+    TODO()
+  }
+
+  fun isBlockingSignals(): Boolean {
+    TODO()
+  }
+
+  fun isClass(): Boolean {
+    TODO()
+  }
+
+  fun isConnected(): Boolean {
+    TODO()
+  }
+
+  fun isQueuedForDeletion(): Boolean {
+    TODO()
+  }
+
+  fun notification() {
+    TODO()
+  }
+
+  fun propertyListChangedNotify() {
+    TODO()
+  }
+
+  fun removeMeta() {
+    TODO()
+  }
+
+  fun set() {
+    TODO()
+  }
+
+  fun setBlockSignals() {
+    TODO()
+  }
+
+  fun setDeferred() {
+    TODO()
+  }
+
+  fun setIndexed() {
+    TODO()
+  }
+
+  fun setMessageTranslation() {
+    TODO()
+  }
+
+  fun setMeta() {
+    TODO()
+  }
+
+  fun setScript() {
+    TODO()
+  }
+
+  fun toString(): String {
+    TODO()
+  }
+
+  fun tr(): String {
+    TODO()
+  }
+
   enum class ConnectFlags(
     val value: Int
   ) {

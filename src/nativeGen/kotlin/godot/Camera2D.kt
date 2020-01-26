@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,198 @@ import kotlinx.cinterop.reinterpret
 open class Camera2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun makeCurrent() {
+    TODO()
+  }
+
+  fun setCurrent() {
+    TODO()
+  }
+
+  fun setOldSmoothing() {
+    TODO()
+  }
+
+  fun updateScroll() {
+    TODO()
+  }
+
+  fun align() {
+    TODO()
+  }
+
+  fun clearCurrent() {
+    TODO()
+  }
+
+  fun forceUpdateScroll() {
+    TODO()
+  }
+
+  fun getAnchorMode(): Camera2D.AnchorMode {
+    TODO()
+  }
+
+  fun getCameraPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getCameraScreenCenter(): Vector2 {
+    TODO()
+  }
+
+  fun getCustomViewport(): Node {
+    TODO()
+  }
+
+  fun getDragMargin(): Float {
+    TODO()
+  }
+
+  fun getFollowSmoothing(): Float {
+    TODO()
+  }
+
+  fun getHOffset(): Float {
+    TODO()
+  }
+
+  fun getLimit(): Int {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getProcessMode(): Camera2D.Camera2DProcessMode {
+    TODO()
+  }
+
+  fun getVOffset(): Float {
+    TODO()
+  }
+
+  fun getZoom(): Vector2 {
+    TODO()
+  }
+
+  fun isCurrent(): Boolean {
+    TODO()
+  }
+
+  fun isFollowSmoothingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isHDragEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isLimitDrawingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isLimitSmoothingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isMarginDrawingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isRotating(): Boolean {
+    TODO()
+  }
+
+  fun isScreenDrawingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isVDragEnabled(): Boolean {
+    TODO()
+  }
+
+  fun makeCurrent() {
+    TODO()
+  }
+
+  fun resetSmoothing() {
+    TODO()
+  }
+
+  fun setAnchorMode() {
+    TODO()
+  }
+
+  fun setCustomViewport() {
+    TODO()
+  }
+
+  fun setDragMargin() {
+    TODO()
+  }
+
+  fun setEnableFollowSmoothing() {
+    TODO()
+  }
+
+  fun setFollowSmoothing() {
+    TODO()
+  }
+
+  fun setHDragEnabled() {
+    TODO()
+  }
+
+  fun setHOffset() {
+    TODO()
+  }
+
+  fun setLimit() {
+    TODO()
+  }
+
+  fun setLimitDrawingEnabled() {
+    TODO()
+  }
+
+  fun setLimitSmoothingEnabled() {
+    TODO()
+  }
+
+  fun setMarginDrawingEnabled() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setProcessMode() {
+    TODO()
+  }
+
+  fun setRotating() {
+    TODO()
+  }
+
+  fun setScreenDrawingEnabled() {
+    TODO()
+  }
+
+  fun setVDragEnabled() {
+    TODO()
+  }
+
+  fun setVOffset() {
+    TODO()
+  }
+
+  fun setZoom() {
+    TODO()
+  }
+
   enum class Camera2DProcessMode(
     val value: Int
   ) {

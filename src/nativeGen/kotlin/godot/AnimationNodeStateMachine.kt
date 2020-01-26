@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,98 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachine internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
+  fun treeChanged() {
+    TODO()
+  }
+
+  fun addNode() {
+    TODO()
+  }
+
+  fun addTransition() {
+    TODO()
+  }
+
+  fun getEndNode(): String {
+    TODO()
+  }
+
+  fun getGraphOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getNode(): AnimationNode {
+    TODO()
+  }
+
+  fun getNodeName(): String {
+    TODO()
+  }
+
+  fun getNodePosition(): Vector2 {
+    TODO()
+  }
+
+  fun getStartNode(): String {
+    TODO()
+  }
+
+  fun getTransition(): AnimationNodeStateMachineTransition {
+    TODO()
+  }
+
+  fun getTransitionCount(): Int {
+    TODO()
+  }
+
+  fun getTransitionFrom(): String {
+    TODO()
+  }
+
+  fun getTransitionTo(): String {
+    TODO()
+  }
+
+  fun hasNode(): Boolean {
+    TODO()
+  }
+
+  fun hasTransition(): Boolean {
+    TODO()
+  }
+
+  fun removeNode() {
+    TODO()
+  }
+
+  fun removeTransition() {
+    TODO()
+  }
+
+  fun removeTransitionByIndex() {
+    TODO()
+  }
+
+  fun renameNode() {
+    TODO()
+  }
+
+  fun setEndNode() {
+    TODO()
+  }
+
+  fun setGraphOffset() {
+    TODO()
+  }
+
+  fun setNodePosition() {
+    TODO()
+  }
+
+  fun setStartNode() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimationNodeStateMachine = memScoped {
       val fnPtr =

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,78 @@ import kotlinx.cinterop.reinterpret
 open class _Directory internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun changeDir(): Error {
+    TODO()
+  }
+
+  fun copy(): Error {
+    TODO()
+  }
+
+  fun currentIsDir(): Boolean {
+    TODO()
+  }
+
+  fun dirExists(): Boolean {
+    TODO()
+  }
+
+  fun fileExists(): Boolean {
+    TODO()
+  }
+
+  fun getCurrentDir(): String {
+    TODO()
+  }
+
+  fun getCurrentDrive(): Int {
+    TODO()
+  }
+
+  fun getDrive(): String {
+    TODO()
+  }
+
+  fun getDriveCount(): Int {
+    TODO()
+  }
+
+  fun getNext(): String {
+    TODO()
+  }
+
+  fun getSpaceLeft(): Int {
+    TODO()
+  }
+
+  fun listDirBegin(): Error {
+    TODO()
+  }
+
+  fun listDirEnd() {
+    TODO()
+  }
+
+  fun makeDir(): Error {
+    TODO()
+  }
+
+  fun makeDirRecursive(): Error {
+    TODO()
+  }
+
+  fun open(): Error {
+    TODO()
+  }
+
+  fun remove(): Error {
+    TODO()
+  }
+
+  fun rename(): Error {
+    TODO()
+  }
+
   companion object {
     fun new(): _Directory = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Directory".cstr.ptr)

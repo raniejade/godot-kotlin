@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,38 @@ import kotlinx.cinterop.reinterpret
 open class DampedSpringJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
+  fun getDamping(): Float {
+    TODO()
+  }
+
+  fun getLength(): Float {
+    TODO()
+  }
+
+  fun getRestLength(): Float {
+    TODO()
+  }
+
+  fun getStiffness(): Float {
+    TODO()
+  }
+
+  fun setDamping() {
+    TODO()
+  }
+
+  fun setLength() {
+    TODO()
+  }
+
+  fun setRestLength() {
+    TODO()
+  }
+
+  fun setStiffness() {
+    TODO()
+  }
+
   companion object {
     fun new(): DampedSpringJoint2D = memScoped {
       val fnPtr =

@@ -2,7 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,46 @@ import kotlinx.cinterop.reinterpret
 open class PolygonPathFinder internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun findPath(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getBounds(): Rect2 {
+    TODO()
+  }
+
+  fun getClosestPoint(): Vector2 {
+    TODO()
+  }
+
+  fun getIntersections(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getPointPenalty(): Float {
+    TODO()
+  }
+
+  fun isPointInside(): Boolean {
+    TODO()
+  }
+
+  fun setPointPenalty() {
+    TODO()
+  }
+
+  fun setup() {
+    TODO()
+  }
+
   companion object {
     fun new(): PolygonPathFinder = memScoped {
       val fnPtr =

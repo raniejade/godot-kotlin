@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class DirectionalLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
+  fun getShadowDepthRange(): DirectionalLight.ShadowDepthRange {
+    TODO()
+  }
+
+  fun getShadowMode(): DirectionalLight.ShadowMode {
+    TODO()
+  }
+
+  fun isBlendSplitsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setBlendSplits() {
+    TODO()
+  }
+
+  fun setShadowDepthRange() {
+    TODO()
+  }
+
+  fun setShadowMode() {
+    TODO()
+  }
+
   enum class ShadowMode(
     val value: Int
   ) {

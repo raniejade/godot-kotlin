@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,62 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileSystemDirectory internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun findDirIndex(): Int {
+    TODO()
+  }
+
+  fun findFileIndex(): Int {
+    TODO()
+  }
+
+  fun getFile(): String {
+    TODO()
+  }
+
+  fun getFileCount(): Int {
+    TODO()
+  }
+
+  fun getFileImportIsValid(): Boolean {
+    TODO()
+  }
+
+  fun getFilePath(): String {
+    TODO()
+  }
+
+  fun getFileScriptClassExtends(): String {
+    TODO()
+  }
+
+  fun getFileScriptClassName(): String {
+    TODO()
+  }
+
+  fun getFileType(): String {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getParent(): EditorFileSystemDirectory {
+    TODO()
+  }
+
+  fun getPath(): String {
+    TODO()
+  }
+
+  fun getSubdir(): EditorFileSystemDirectory {
+    TODO()
+  }
+
+  fun getSubdirCount(): Int {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorFileSystemDirectory = memScoped {
       val fnPtr =

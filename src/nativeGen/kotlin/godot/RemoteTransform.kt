@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,46 @@ import kotlinx.cinterop.reinterpret
 open class RemoteTransform internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getRemoteNode(): NodePath {
+    TODO()
+  }
+
+  fun getUpdatePosition(): Boolean {
+    TODO()
+  }
+
+  fun getUpdateRotation(): Boolean {
+    TODO()
+  }
+
+  fun getUpdateScale(): Boolean {
+    TODO()
+  }
+
+  fun getUseGlobalCoordinates(): Boolean {
+    TODO()
+  }
+
+  fun setRemoteNode() {
+    TODO()
+  }
+
+  fun setUpdatePosition() {
+    TODO()
+  }
+
+  fun setUpdateRotation() {
+    TODO()
+  }
+
+  fun setUpdateScale() {
+    TODO()
+  }
+
+  fun setUseGlobalCoordinates() {
+    TODO()
+  }
+
   companion object {
     fun new(): RemoteTransform = memScoped {
       val fnPtr =

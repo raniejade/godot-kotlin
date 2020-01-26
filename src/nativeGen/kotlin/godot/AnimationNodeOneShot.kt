@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,62 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeOneShot internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
+  fun getAutorestartDelay(): Float {
+    TODO()
+  }
+
+  fun getAutorestartRandomDelay(): Float {
+    TODO()
+  }
+
+  fun getFadeinTime(): Float {
+    TODO()
+  }
+
+  fun getFadeoutTime(): Float {
+    TODO()
+  }
+
+  fun getMixMode(): AnimationNodeOneShot.MixMode {
+    TODO()
+  }
+
+  fun hasAutorestart(): Boolean {
+    TODO()
+  }
+
+  fun isUsingSync(): Boolean {
+    TODO()
+  }
+
+  fun setAutorestart() {
+    TODO()
+  }
+
+  fun setAutorestartDelay() {
+    TODO()
+  }
+
+  fun setAutorestartRandomDelay() {
+    TODO()
+  }
+
+  fun setFadeinTime() {
+    TODO()
+  }
+
+  fun setFadeoutTime() {
+    TODO()
+  }
+
+  fun setMixMode() {
+    TODO()
+  }
+
+  fun setUseSync() {
+    TODO()
+  }
+
   enum class MixMode(
     val value: Int
   ) {

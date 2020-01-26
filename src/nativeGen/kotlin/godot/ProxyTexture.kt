@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class ProxyTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun getBase(): Texture {
+    TODO()
+  }
+
+  fun setBase() {
+    TODO()
+  }
+
   companion object {
     fun new(): ProxyTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProxyTexture".cstr.ptr)

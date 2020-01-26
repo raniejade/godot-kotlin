@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class InputEventScreenTouch internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  fun getIndex(): Int {
+    TODO()
+  }
+
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun setIndex() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
+  fun setPressed() {
+    TODO()
+  }
+
   companion object {
     fun new(): InputEventScreenTouch = memScoped {
       val fnPtr =

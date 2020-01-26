@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class ViewportContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun input() {
+    TODO()
+  }
+
+  fun unhandledInput() {
+    TODO()
+  }
+
+  fun getStretchShrink(): Int {
+    TODO()
+  }
+
+  fun isStretchEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setStretch() {
+    TODO()
+  }
+
+  fun setStretchShrink() {
+    TODO()
+  }
+
   companion object {
     fun new(): ViewportContainer = memScoped {
       val fnPtr =

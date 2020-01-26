@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class Shape2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun collide(): Boolean {
+    TODO()
+  }
+
+  fun collideAndGetContacts(): VariantArray {
+    TODO()
+  }
+
+  fun collideWithMotion(): Boolean {
+    TODO()
+  }
+
+  fun collideWithMotionAndGetContacts(): VariantArray {
+    TODO()
+  }
+
+  fun getCustomSolverBias(): Float {
+    TODO()
+  }
+
+  fun setCustomSolverBias() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Shape2D

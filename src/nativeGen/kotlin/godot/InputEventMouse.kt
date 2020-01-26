@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMouse internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
+  fun getButtonMask(): Int {
+    TODO()
+  }
+
+  fun getGlobalPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun setButtonMask() {
+    TODO()
+  }
+
+  fun setGlobalPosition() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for InputEventMouse

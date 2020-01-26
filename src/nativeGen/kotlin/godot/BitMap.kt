@@ -2,7 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,50 @@ import kotlinx.cinterop.reinterpret
 open class BitMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun create() {
+    TODO()
+  }
+
+  fun createFromImageAlpha() {
+    TODO()
+  }
+
+  fun getBit(): Boolean {
+    TODO()
+  }
+
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun getTrueBitCount(): Int {
+    TODO()
+  }
+
+  fun growMask() {
+    TODO()
+  }
+
+  fun opaqueToPolygons(): VariantArray {
+    TODO()
+  }
+
+  fun setBit() {
+    TODO()
+  }
+
+  fun setBitRect() {
+    TODO()
+  }
+
   companion object {
     fun new(): BitMap = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitMap".cstr.ptr)

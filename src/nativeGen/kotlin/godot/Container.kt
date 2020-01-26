@@ -15,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class Container internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun childMinsizeChanged() {
+    TODO()
+  }
+
+  fun sortChildren() {
+    TODO()
+  }
+
+  fun fitChildInRect() {
+    TODO()
+  }
+
+  fun queueSort() {
+    TODO()
+  }
+
   companion object {
     val NOTIFICATION_SORT_CHILDREN: Int = 50
 

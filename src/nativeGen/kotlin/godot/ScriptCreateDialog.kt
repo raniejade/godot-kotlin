@@ -14,6 +14,58 @@ import kotlinx.cinterop.reinterpret
 open class ScriptCreateDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
+  fun browseClassInTree() {
+    TODO()
+  }
+
+  fun browsePath() {
+    TODO()
+  }
+
+  fun builtInPressed() {
+    TODO()
+  }
+
+  fun classNameChanged() {
+    TODO()
+  }
+
+  fun create() {
+    TODO()
+  }
+
+  fun fileSelected() {
+    TODO()
+  }
+
+  fun langChanged() {
+    TODO()
+  }
+
+  fun parentNameChanged() {
+    TODO()
+  }
+
+  fun pathChanged() {
+    TODO()
+  }
+
+  fun pathEntered() {
+    TODO()
+  }
+
+  fun pathHboxSorted() {
+    TODO()
+  }
+
+  fun templateChanged() {
+    TODO()
+  }
+
+  fun config() {
+    TODO()
+  }
+
   companion object {
     fun new(): ScriptCreateDialog = memScoped {
       val fnPtr =

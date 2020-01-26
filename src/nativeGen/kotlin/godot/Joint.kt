@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class Joint internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getExcludeNodesFromCollision(): Boolean {
+    TODO()
+  }
+
+  fun getNodeA(): NodePath {
+    TODO()
+  }
+
+  fun getNodeB(): NodePath {
+    TODO()
+  }
+
+  fun getSolverPriority(): Int {
+    TODO()
+  }
+
+  fun setExcludeNodesFromCollision() {
+    TODO()
+  }
+
+  fun setNodeA() {
+    TODO()
+  }
+
+  fun setNodeB() {
+    TODO()
+  }
+
+  fun setSolverPriority() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for Joint

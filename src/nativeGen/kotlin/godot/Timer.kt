@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,62 @@ import kotlinx.cinterop.reinterpret
 open class Timer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun getTimeLeft(): Float {
+    TODO()
+  }
+
+  fun getTimerProcessMode(): Timer.TimerProcessMode {
+    TODO()
+  }
+
+  fun getWaitTime(): Float {
+    TODO()
+  }
+
+  fun hasAutostart(): Boolean {
+    TODO()
+  }
+
+  fun isOneShot(): Boolean {
+    TODO()
+  }
+
+  fun isPaused(): Boolean {
+    TODO()
+  }
+
+  fun isStopped(): Boolean {
+    TODO()
+  }
+
+  fun setAutostart() {
+    TODO()
+  }
+
+  fun setOneShot() {
+    TODO()
+  }
+
+  fun setPaused() {
+    TODO()
+  }
+
+  fun setTimerProcessMode() {
+    TODO()
+  }
+
+  fun setWaitTime() {
+    TODO()
+  }
+
+  fun start() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   enum class TimerProcessMode(
     val value: Int
   ) {

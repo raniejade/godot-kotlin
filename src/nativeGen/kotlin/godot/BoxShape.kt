@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class BoxShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  fun getExtents(): Vector3 {
+    TODO()
+  }
+
+  fun setExtents() {
+    TODO()
+  }
+
   companion object {
     fun new(): BoxShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BoxShape".cstr.ptr)

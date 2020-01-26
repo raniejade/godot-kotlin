@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeAdd3 internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
+  fun isUsingSync(): Boolean {
+    TODO()
+  }
+
+  fun setUseSync() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimationNodeAdd3 = memScoped {
       val fnPtr =

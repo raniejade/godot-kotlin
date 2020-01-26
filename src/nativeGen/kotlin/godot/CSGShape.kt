@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,82 @@ import kotlinx.cinterop.reinterpret
 open class CSGShape internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  fun updateShape() {
+    TODO()
+  }
+
+  fun getCollisionLayer(): Int {
+    TODO()
+  }
+
+  fun getCollisionLayerBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getMeshes(): VariantArray {
+    TODO()
+  }
+
+  fun getOperation(): CSGShape.Operation {
+    TODO()
+  }
+
+  fun getSnap(): Float {
+    TODO()
+  }
+
+  fun isCalculatingTangents(): Boolean {
+    TODO()
+  }
+
+  fun isRootShape(): Boolean {
+    TODO()
+  }
+
+  fun isUsingCollision(): Boolean {
+    TODO()
+  }
+
+  fun setCalculateTangents() {
+    TODO()
+  }
+
+  fun setCollisionLayer() {
+    TODO()
+  }
+
+  fun setCollisionLayerBit() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setOperation() {
+    TODO()
+  }
+
+  fun setSnap() {
+    TODO()
+  }
+
+  fun setUseCollision() {
+    TODO()
+  }
+
   enum class Operation(
     val value: Int
   ) {

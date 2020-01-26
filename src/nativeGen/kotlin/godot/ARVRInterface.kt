@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,62 @@ import kotlinx.cinterop.reinterpret
 open class ARVRInterface internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getAnchorDetectionIsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun getCameraFeedId(): Int {
+    TODO()
+  }
+
+  fun getCapabilities(): Int {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getRenderTargetsize(): Vector2 {
+    TODO()
+  }
+
+  fun getTrackingStatus(): ARVRInterface.Tracking_status {
+    TODO()
+  }
+
+  fun initialize(): Boolean {
+    TODO()
+  }
+
+  fun isInitialized(): Boolean {
+    TODO()
+  }
+
+  fun isPrimary(): Boolean {
+    TODO()
+  }
+
+  fun isStereo(): Boolean {
+    TODO()
+  }
+
+  fun setAnchorDetectionIsEnabled() {
+    TODO()
+  }
+
+  fun setIsInitialized() {
+    TODO()
+  }
+
+  fun setIsPrimary() {
+    TODO()
+  }
+
+  fun uninitialize() {
+    TODO()
+  }
+
   enum class Tracking_status(
     val value: Int
   ) {

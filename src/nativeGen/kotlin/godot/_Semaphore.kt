@@ -14,6 +14,14 @@ import kotlinx.cinterop.reinterpret
 open class _Semaphore internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun post(): Error {
+    TODO()
+  }
+
+  fun wait(): Error {
+    TODO()
+  }
+
   companion object {
     fun new(): _Semaphore = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Semaphore".cstr.ptr)

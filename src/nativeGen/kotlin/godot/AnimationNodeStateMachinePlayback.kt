@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolStringArray
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachinePlayback internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getCurrentNode(): String {
+    TODO()
+  }
+
+  fun getTravelPath(): PoolStringArray {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun start() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
+  fun travel() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimationNodeStateMachinePlayback = memScoped {
       val fnPtr =

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,46 @@ import kotlinx.cinterop.reinterpret
 open class CubeMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getFlags(): Int {
+    TODO()
+  }
+
+  fun getHeight(): Int {
+    TODO()
+  }
+
+  fun getLossyStorageQuality(): Float {
+    TODO()
+  }
+
+  fun getSide(): Image {
+    TODO()
+  }
+
+  fun getStorage(): CubeMap.Storage {
+    TODO()
+  }
+
+  fun getWidth(): Int {
+    TODO()
+  }
+
+  fun setFlags() {
+    TODO()
+  }
+
+  fun setLossyStorageQuality() {
+    TODO()
+  }
+
+  fun setSide() {
+    TODO()
+  }
+
+  fun setStorage() {
+    TODO()
+  }
+
   enum class Flags(
     val value: Int
   ) {

@@ -15,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeVectorDerivativeFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  fun getFunction(): VisualShaderNodeVectorDerivativeFunc.Function {
+    TODO()
+  }
+
+  fun setFunction() {
+    TODO()
+  }
+
   enum class Function(
     val value: Int
   ) {

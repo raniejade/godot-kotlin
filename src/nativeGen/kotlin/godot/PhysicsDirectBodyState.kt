@@ -2,7 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Basis
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +21,146 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsDirectBodyState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addCentralForce() {
+    TODO()
+  }
+
+  fun addForce() {
+    TODO()
+  }
+
+  fun addTorque() {
+    TODO()
+  }
+
+  fun applyCentralImpulse() {
+    TODO()
+  }
+
+  fun applyImpulse() {
+    TODO()
+  }
+
+  fun applyTorqueImpulse() {
+    TODO()
+  }
+
+  fun getAngularVelocity(): Vector3 {
+    TODO()
+  }
+
+  fun getCenterOfMass(): Vector3 {
+    TODO()
+  }
+
+  fun getContactCollider(): RID {
+    TODO()
+  }
+
+  fun getContactColliderId(): Int {
+    TODO()
+  }
+
+  fun getContactColliderObject(): Object {
+    TODO()
+  }
+
+  fun getContactColliderPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getContactColliderShape(): Int {
+    TODO()
+  }
+
+  fun getContactColliderVelocityAtPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getContactCount(): Int {
+    TODO()
+  }
+
+  fun getContactImpulse(): Float {
+    TODO()
+  }
+
+  fun getContactLocalNormal(): Vector3 {
+    TODO()
+  }
+
+  fun getContactLocalPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getContactLocalShape(): Int {
+    TODO()
+  }
+
+  fun getInverseInertia(): Vector3 {
+    TODO()
+  }
+
+  fun getInverseMass(): Float {
+    TODO()
+  }
+
+  fun getLinearVelocity(): Vector3 {
+    TODO()
+  }
+
+  fun getPrincipalInertiaAxes(): Basis {
+    TODO()
+  }
+
+  fun getSpaceState(): PhysicsDirectSpaceState {
+    TODO()
+  }
+
+  fun getStep(): Float {
+    TODO()
+  }
+
+  fun getTotalAngularDamp(): Float {
+    TODO()
+  }
+
+  fun getTotalGravity(): Vector3 {
+    TODO()
+  }
+
+  fun getTotalLinearDamp(): Float {
+    TODO()
+  }
+
+  fun getTransform(): Transform {
+    TODO()
+  }
+
+  fun integrateForces() {
+    TODO()
+  }
+
+  fun isSleeping(): Boolean {
+    TODO()
+  }
+
+  fun setAngularVelocity() {
+    TODO()
+  }
+
+  fun setLinearVelocity() {
+    TODO()
+  }
+
+  fun setSleepState() {
+    TODO()
+  }
+
+  fun setTransform() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for PhysicsDirectBodyState

@@ -15,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class Sky internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getRadianceSize(): Sky.RadianceSize {
+    TODO()
+  }
+
+  fun setRadianceSize() {
+    TODO()
+  }
+
   enum class RadianceSize(
     val value: Int
   ) {

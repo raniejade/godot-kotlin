@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform2D
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,138 @@ import kotlinx.cinterop.reinterpret
 open class Node2D internal constructor(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
+  fun applyScale() {
+    TODO()
+  }
+
+  fun getAngleTo(): Float {
+    TODO()
+  }
+
+  fun getGlobalPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getGlobalRotation(): Float {
+    TODO()
+  }
+
+  fun getGlobalRotationDegrees(): Float {
+    TODO()
+  }
+
+  fun getGlobalScale(): Vector2 {
+    TODO()
+  }
+
+  fun getPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getRelativeTransformToParent(): Transform2D {
+    TODO()
+  }
+
+  fun getRotation(): Float {
+    TODO()
+  }
+
+  fun getRotationDegrees(): Float {
+    TODO()
+  }
+
+  fun getScale(): Vector2 {
+    TODO()
+  }
+
+  fun getZIndex(): Int {
+    TODO()
+  }
+
+  fun globalTranslate() {
+    TODO()
+  }
+
+  fun isZRelative(): Boolean {
+    TODO()
+  }
+
+  fun lookAt() {
+    TODO()
+  }
+
+  fun moveLocalX() {
+    TODO()
+  }
+
+  fun moveLocalY() {
+    TODO()
+  }
+
+  fun rotate() {
+    TODO()
+  }
+
+  fun setGlobalPosition() {
+    TODO()
+  }
+
+  fun setGlobalRotation() {
+    TODO()
+  }
+
+  fun setGlobalRotationDegrees() {
+    TODO()
+  }
+
+  fun setGlobalScale() {
+    TODO()
+  }
+
+  fun setGlobalTransform() {
+    TODO()
+  }
+
+  fun setPosition() {
+    TODO()
+  }
+
+  fun setRotation() {
+    TODO()
+  }
+
+  fun setRotationDegrees() {
+    TODO()
+  }
+
+  fun setScale() {
+    TODO()
+  }
+
+  fun setTransform() {
+    TODO()
+  }
+
+  fun setZAsRelative() {
+    TODO()
+  }
+
+  fun setZIndex() {
+    TODO()
+  }
+
+  fun toGlobal(): Vector2 {
+    TODO()
+  }
+
+  fun toLocal(): Vector2 {
+    TODO()
+  }
+
+  fun translate() {
+    TODO()
+  }
+
   companion object {
     fun new(): Node2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node2D".cstr.ptr)

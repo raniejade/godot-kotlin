@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class AudioStreamRandomPitch internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
+  fun getAudioStream(): AudioStream {
+    TODO()
+  }
+
+  fun getRandomPitch(): Float {
+    TODO()
+  }
+
+  fun setAudioStream() {
+    TODO()
+  }
+
+  fun setRandomPitch() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioStreamRandomPitch = memScoped {
       val fnPtr =

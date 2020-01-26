@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,58 @@ import kotlinx.cinterop.reinterpret
 open class ParallaxBackground internal constructor(
   _handle: COpaquePointer
 ) : CanvasLayer(_handle) {
+  fun cameraMoved() {
+    TODO()
+  }
+
+  fun getLimitBegin(): Vector2 {
+    TODO()
+  }
+
+  fun getLimitEnd(): Vector2 {
+    TODO()
+  }
+
+  fun getScrollBaseOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getScrollBaseScale(): Vector2 {
+    TODO()
+  }
+
+  fun getScrollOffset(): Vector2 {
+    TODO()
+  }
+
+  fun isIgnoreCameraZoom(): Boolean {
+    TODO()
+  }
+
+  fun setIgnoreCameraZoom() {
+    TODO()
+  }
+
+  fun setLimitBegin() {
+    TODO()
+  }
+
+  fun setLimitEnd() {
+    TODO()
+  }
+
+  fun setScrollBaseOffset() {
+    TODO()
+  }
+
+  fun setScrollBaseScale() {
+    TODO()
+  }
+
+  fun setScrollOffset() {
+    TODO()
+  }
+
   companion object {
     fun new(): ParallaxBackground = memScoped {
       val fnPtr =

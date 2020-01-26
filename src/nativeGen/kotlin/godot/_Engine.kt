@@ -2,7 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,94 @@ import kotlinx.cinterop.reinterpret
 open class _Engine internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun getAuthorInfo(): Dictionary {
+    TODO()
+  }
+
+  fun getCopyrightInfo(): VariantArray {
+    TODO()
+  }
+
+  fun getDonorInfo(): Dictionary {
+    TODO()
+  }
+
+  fun getFramesDrawn(): Int {
+    TODO()
+  }
+
+  fun getFramesPerSecond(): Float {
+    TODO()
+  }
+
+  fun getIterationsPerSecond(): Int {
+    TODO()
+  }
+
+  fun getLicenseInfo(): Dictionary {
+    TODO()
+  }
+
+  fun getLicenseText(): String {
+    TODO()
+  }
+
+  fun getMainLoop(): MainLoop {
+    TODO()
+  }
+
+  fun getPhysicsJitterFix(): Float {
+    TODO()
+  }
+
+  fun getSingleton(): Object {
+    TODO()
+  }
+
+  fun getTargetFps(): Int {
+    TODO()
+  }
+
+  fun getTimeScale(): Float {
+    TODO()
+  }
+
+  fun getVersionInfo(): Dictionary {
+    TODO()
+  }
+
+  fun hasSingleton(): Boolean {
+    TODO()
+  }
+
+  fun isEditorHint(): Boolean {
+    TODO()
+  }
+
+  fun isInPhysicsFrame(): Boolean {
+    TODO()
+  }
+
+  fun setEditorHint() {
+    TODO()
+  }
+
+  fun setIterationsPerSecond() {
+    TODO()
+  }
+
+  fun setPhysicsJitterFix() {
+    TODO()
+  }
+
+  fun setTargetFps() {
+    TODO()
+  }
+
+  fun setTimeScale() {
+    TODO()
+  }
+
   companion object {
     val Instance: _Engine = memScoped {
           val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("_Engine".cstr.ptr)

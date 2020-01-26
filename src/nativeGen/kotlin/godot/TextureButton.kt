@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,70 @@ import kotlinx.cinterop.reinterpret
 open class TextureButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
+  fun getClickMask(): BitMap {
+    TODO()
+  }
+
+  fun getDisabledTexture(): Texture {
+    TODO()
+  }
+
+  fun getExpand(): Boolean {
+    TODO()
+  }
+
+  fun getFocusedTexture(): Texture {
+    TODO()
+  }
+
+  fun getHoverTexture(): Texture {
+    TODO()
+  }
+
+  fun getNormalTexture(): Texture {
+    TODO()
+  }
+
+  fun getPressedTexture(): Texture {
+    TODO()
+  }
+
+  fun getStretchMode(): TextureButton.StretchMode {
+    TODO()
+  }
+
+  fun setClickMask() {
+    TODO()
+  }
+
+  fun setDisabledTexture() {
+    TODO()
+  }
+
+  fun setExpand() {
+    TODO()
+  }
+
+  fun setFocusedTexture() {
+    TODO()
+  }
+
+  fun setHoverTexture() {
+    TODO()
+  }
+
+  fun setNormalTexture() {
+    TODO()
+  }
+
+  fun setPressedTexture() {
+    TODO()
+  }
+
+  fun setStretchMode() {
+    TODO()
+  }
+
   enum class StretchMode(
     val value: Int
   ) {

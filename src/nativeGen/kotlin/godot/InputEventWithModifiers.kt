@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,46 @@ import kotlinx.cinterop.reinterpret
 open class InputEventWithModifiers internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  fun getAlt(): Boolean {
+    TODO()
+  }
+
+  fun getCommand(): Boolean {
+    TODO()
+  }
+
+  fun getControl(): Boolean {
+    TODO()
+  }
+
+  fun getMetakey(): Boolean {
+    TODO()
+  }
+
+  fun getShift(): Boolean {
+    TODO()
+  }
+
+  fun setAlt() {
+    TODO()
+  }
+
+  fun setCommand() {
+    TODO()
+  }
+
+  fun setControl() {
+    TODO()
+  }
+
+  fun setMetakey() {
+    TODO()
+  }
+
+  fun setShift() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for InputEventWithModifiers

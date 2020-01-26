@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class TCP_Server internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun isConnectionAvailable(): Boolean {
+    TODO()
+  }
+
+  fun listen(): Error {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
+  fun takeConnection(): StreamPeerTCP {
+    TODO()
+  }
+
   companion object {
     fun new(): TCP_Server = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TCP_Server".cstr.ptr)

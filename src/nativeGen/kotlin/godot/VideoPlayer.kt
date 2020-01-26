@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,106 @@ import kotlinx.cinterop.reinterpret
 open class VideoPlayer internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getAudioTrack(): Int {
+    TODO()
+  }
+
+  fun getBufferingMsec(): Int {
+    TODO()
+  }
+
+  fun getBus(): String {
+    TODO()
+  }
+
+  fun getStream(): VideoStream {
+    TODO()
+  }
+
+  fun getStreamName(): String {
+    TODO()
+  }
+
+  fun getStreamPosition(): Float {
+    TODO()
+  }
+
+  fun getVideoTexture(): Texture {
+    TODO()
+  }
+
+  fun getVolume(): Float {
+    TODO()
+  }
+
+  fun getVolumeDb(): Float {
+    TODO()
+  }
+
+  fun hasAutoplay(): Boolean {
+    TODO()
+  }
+
+  fun hasExpand(): Boolean {
+    TODO()
+  }
+
+  fun isPaused(): Boolean {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun setAudioTrack() {
+    TODO()
+  }
+
+  fun setAutoplay() {
+    TODO()
+  }
+
+  fun setBufferingMsec() {
+    TODO()
+  }
+
+  fun setBus() {
+    TODO()
+  }
+
+  fun setExpand() {
+    TODO()
+  }
+
+  fun setPaused() {
+    TODO()
+  }
+
+  fun setStream() {
+    TODO()
+  }
+
+  fun setStreamPosition() {
+    TODO()
+  }
+
+  fun setVolume() {
+    TODO()
+  }
+
+  fun setVolumeDb() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   companion object {
     fun new(): VideoPlayer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoPlayer".cstr.ptr)

@@ -2,7 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolVector2Array
+import godot.core.Vector2
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,94 @@ import kotlinx.cinterop.reinterpret
 open class Curve2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun addPoint() {
+    TODO()
+  }
+
+  fun clearPoints() {
+    TODO()
+  }
+
+  fun getBakeInterval(): Float {
+    TODO()
+  }
+
+  fun getBakedLength(): Float {
+    TODO()
+  }
+
+  fun getBakedPoints(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getClosestOffset(): Float {
+    TODO()
+  }
+
+  fun getClosestPoint(): Vector2 {
+    TODO()
+  }
+
+  fun getPointCount(): Int {
+    TODO()
+  }
+
+  fun getPointIn(): Vector2 {
+    TODO()
+  }
+
+  fun getPointOut(): Vector2 {
+    TODO()
+  }
+
+  fun getPointPosition(): Vector2 {
+    TODO()
+  }
+
+  fun interpolate(): Vector2 {
+    TODO()
+  }
+
+  fun interpolateBaked(): Vector2 {
+    TODO()
+  }
+
+  fun interpolatef(): Vector2 {
+    TODO()
+  }
+
+  fun removePoint() {
+    TODO()
+  }
+
+  fun setBakeInterval() {
+    TODO()
+  }
+
+  fun setPointIn() {
+    TODO()
+  }
+
+  fun setPointOut() {
+    TODO()
+  }
+
+  fun setPointPosition() {
+    TODO()
+  }
+
+  fun tessellate(): PoolVector2Array {
+    TODO()
+  }
+
   companion object {
     fun new(): Curve2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve2D".cstr.ptr)

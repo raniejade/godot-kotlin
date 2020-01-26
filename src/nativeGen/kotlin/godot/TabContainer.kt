@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,110 @@ import kotlinx.cinterop.reinterpret
 open class TabContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  fun childRenamedCallback() {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun onThemeChanged() {
+    TODO()
+  }
+
+  fun updateCurrentTab() {
+    TODO()
+  }
+
+  fun areTabsVisible(): Boolean {
+    TODO()
+  }
+
+  fun getCurrentTab(): Int {
+    TODO()
+  }
+
+  fun getCurrentTabControl(): Control {
+    TODO()
+  }
+
+  fun getDragToRearrangeEnabled(): Boolean {
+    TODO()
+  }
+
+  fun getPopup(): Popup {
+    TODO()
+  }
+
+  fun getPreviousTab(): Int {
+    TODO()
+  }
+
+  fun getTabAlign(): TabContainer.TabAlign {
+    TODO()
+  }
+
+  fun getTabControl(): Control {
+    TODO()
+  }
+
+  fun getTabCount(): Int {
+    TODO()
+  }
+
+  fun getTabDisabled(): Boolean {
+    TODO()
+  }
+
+  fun getTabIcon(): Texture {
+    TODO()
+  }
+
+  fun getTabTitle(): String {
+    TODO()
+  }
+
+  fun getTabsRearrangeGroup(): Int {
+    TODO()
+  }
+
+  fun setCurrentTab() {
+    TODO()
+  }
+
+  fun setDragToRearrangeEnabled() {
+    TODO()
+  }
+
+  fun setPopup() {
+    TODO()
+  }
+
+  fun setTabAlign() {
+    TODO()
+  }
+
+  fun setTabDisabled() {
+    TODO()
+  }
+
+  fun setTabIcon() {
+    TODO()
+  }
+
+  fun setTabTitle() {
+    TODO()
+  }
+
+  fun setTabsRearrangeGroup() {
+    TODO()
+  }
+
+  fun setTabsVisible() {
+    TODO()
+  }
+
   enum class TabAlign(
     val value: Int
   ) {

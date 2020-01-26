@@ -3,7 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,86 @@ import kotlinx.cinterop.reinterpret
 open class SceneState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getConnectionBinds(): VariantArray {
+    TODO()
+  }
+
+  fun getConnectionCount(): Int {
+    TODO()
+  }
+
+  fun getConnectionFlags(): Int {
+    TODO()
+  }
+
+  fun getConnectionMethod(): String {
+    TODO()
+  }
+
+  fun getConnectionSignal(): String {
+    TODO()
+  }
+
+  fun getConnectionSource(): NodePath {
+    TODO()
+  }
+
+  fun getConnectionTarget(): NodePath {
+    TODO()
+  }
+
+  fun getNodeCount(): Int {
+    TODO()
+  }
+
+  fun getNodeGroups(): PoolStringArray {
+    TODO()
+  }
+
+  fun getNodeIndex(): Int {
+    TODO()
+  }
+
+  fun getNodeInstance(): PackedScene {
+    TODO()
+  }
+
+  fun getNodeInstancePlaceholder(): String {
+    TODO()
+  }
+
+  fun getNodeName(): String {
+    TODO()
+  }
+
+  fun getNodeOwnerPath(): NodePath {
+    TODO()
+  }
+
+  fun getNodePath(): NodePath {
+    TODO()
+  }
+
+  fun getNodePropertyCount(): Int {
+    TODO()
+  }
+
+  fun getNodePropertyName(): String {
+    TODO()
+  }
+
+  fun getNodePropertyValue(): Variant {
+    TODO()
+  }
+
+  fun getNodeType(): String {
+    TODO()
+  }
+
+  fun isNodeInstancePlaceholder(): Boolean {
+    TODO()
+  }
+
   enum class GenEditState(
     val value: Int
   ) {

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,106 @@ import kotlinx.cinterop.reinterpret
 open class RayCast2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun addException() {
+    TODO()
+  }
+
+  fun addExceptionRid() {
+    TODO()
+  }
+
+  fun clearExceptions() {
+    TODO()
+  }
+
+  fun forceRaycastUpdate() {
+    TODO()
+  }
+
+  fun getCastTo(): Vector2 {
+    TODO()
+  }
+
+  fun getCollider(): Object {
+    TODO()
+  }
+
+  fun getColliderShape(): Int {
+    TODO()
+  }
+
+  fun getCollisionMask(): Int {
+    TODO()
+  }
+
+  fun getCollisionMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getCollisionNormal(): Vector2 {
+    TODO()
+  }
+
+  fun getCollisionPoint(): Vector2 {
+    TODO()
+  }
+
+  fun getExcludeParentBody(): Boolean {
+    TODO()
+  }
+
+  fun isCollideWithAreasEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isCollideWithBodiesEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isColliding(): Boolean {
+    TODO()
+  }
+
+  fun isEnabled(): Boolean {
+    TODO()
+  }
+
+  fun removeException() {
+    TODO()
+  }
+
+  fun removeExceptionRid() {
+    TODO()
+  }
+
+  fun setCastTo() {
+    TODO()
+  }
+
+  fun setCollideWithAreas() {
+    TODO()
+  }
+
+  fun setCollideWithBodies() {
+    TODO()
+  }
+
+  fun setCollisionMask() {
+    TODO()
+  }
+
+  fun setCollisionMaskBit() {
+    TODO()
+  }
+
+  fun setEnabled() {
+    TODO()
+  }
+
+  fun setExcludeParentBody() {
+    TODO()
+  }
+
   companion object {
     fun new(): RayCast2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayCast2D".cstr.ptr)

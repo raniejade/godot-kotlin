@@ -3,6 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +19,94 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedSprite internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun resChanged() {
+    TODO()
+  }
+
+  fun setPlaying() {
+    TODO()
+  }
+
+  fun getAnimation(): String {
+    TODO()
+  }
+
+  fun getFrame(): Int {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getSpeedScale(): Float {
+    TODO()
+  }
+
+  fun getSpriteFrames(): SpriteFrames {
+    TODO()
+  }
+
+  fun isCentered(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedH(): Boolean {
+    TODO()
+  }
+
+  fun isFlippedV(): Boolean {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun setAnimation() {
+    TODO()
+  }
+
+  fun setCentered() {
+    TODO()
+  }
+
+  fun setFlipH() {
+    TODO()
+  }
+
+  fun setFlipV() {
+    TODO()
+  }
+
+  fun setFrame() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setSpeedScale() {
+    TODO()
+  }
+
+  fun setSpriteFrames() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   companion object {
     fun new(): AnimatedSprite = memScoped {
       val fnPtr =

@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,66 @@ import kotlinx.cinterop.reinterpret
 open class HTTPRequest internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun redirectRequest() {
+    TODO()
+  }
+
+  fun requestDone() {
+    TODO()
+  }
+
+  fun cancelRequest() {
+    TODO()
+  }
+
+  fun getBodySize(): Int {
+    TODO()
+  }
+
+  fun getBodySizeLimit(): Int {
+    TODO()
+  }
+
+  fun getDownloadFile(): String {
+    TODO()
+  }
+
+  fun getDownloadedBytes(): Int {
+    TODO()
+  }
+
+  fun getHttpClientStatus(): HTTPClient.Status {
+    TODO()
+  }
+
+  fun getMaxRedirects(): Int {
+    TODO()
+  }
+
+  fun isUsingThreads(): Boolean {
+    TODO()
+  }
+
+  fun request(): Error {
+    TODO()
+  }
+
+  fun setBodySizeLimit() {
+    TODO()
+  }
+
+  fun setDownloadFile() {
+    TODO()
+  }
+
+  fun setMaxRedirects() {
+    TODO()
+  }
+
+  fun setUseThreads() {
+    TODO()
+  }
+
   enum class Result(
     val value: Int
   ) {

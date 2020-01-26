@@ -14,6 +14,30 @@ import kotlinx.cinterop.reinterpret
 open class MeshInstance2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun getNormalMap(): Texture {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun setMesh() {
+    TODO()
+  }
+
+  fun setNormalMap() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
   companion object {
     fun new(): MeshInstance2D = memScoped {
       val fnPtr =

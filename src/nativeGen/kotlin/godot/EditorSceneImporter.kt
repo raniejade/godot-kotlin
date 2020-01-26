@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class EditorSceneImporter internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun getExtensions(): VariantArray {
+    TODO()
+  }
+
+  fun getImportFlags(): Int {
+    TODO()
+  }
+
+  fun importAnimation(): Animation {
+    TODO()
+  }
+
+  fun importScene(): Node {
+    TODO()
+  }
+
+  fun importAnimationFromOtherImporter(): Animation {
+    TODO()
+  }
+
+  fun importSceneFromOtherImporter(): Node {
+    TODO()
+  }
+
   companion object {
     val IMPORT_ANIMATION: Int = 2
 

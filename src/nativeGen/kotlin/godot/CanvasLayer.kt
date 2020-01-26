@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.RID
+import godot.core.Transform2D
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,82 @@ import kotlinx.cinterop.reinterpret
 open class CanvasLayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun getCanvas(): RID {
+    TODO()
+  }
+
+  fun getCustomViewport(): Node {
+    TODO()
+  }
+
+  fun getFollowViewportScale(): Float {
+    TODO()
+  }
+
+  fun getLayer(): Int {
+    TODO()
+  }
+
+  fun getOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getRotation(): Float {
+    TODO()
+  }
+
+  fun getRotationDegrees(): Float {
+    TODO()
+  }
+
+  fun getScale(): Vector2 {
+    TODO()
+  }
+
+  fun getTransform(): Transform2D {
+    TODO()
+  }
+
+  fun isFollowingViewport(): Boolean {
+    TODO()
+  }
+
+  fun setCustomViewport() {
+    TODO()
+  }
+
+  fun setFollowViewport() {
+    TODO()
+  }
+
+  fun setFollowViewportScale() {
+    TODO()
+  }
+
+  fun setLayer() {
+    TODO()
+  }
+
+  fun setOffset() {
+    TODO()
+  }
+
+  fun setRotation() {
+    TODO()
+  }
+
+  fun setRotationDegrees() {
+    TODO()
+  }
+
+  fun setScale() {
+    TODO()
+  }
+
+  fun setTransform() {
+    TODO()
+  }
+
   companion object {
     fun new(): CanvasLayer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasLayer".cstr.ptr)

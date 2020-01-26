@@ -15,6 +15,42 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCPeerConnection internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addIceCandidate(): Error {
+    TODO()
+  }
+
+  fun close() {
+    TODO()
+  }
+
+  fun createDataChannel(): WebRTCDataChannel {
+    TODO()
+  }
+
+  fun createOffer(): Error {
+    TODO()
+  }
+
+  fun getConnectionState(): WebRTCPeerConnection.ConnectionState {
+    TODO()
+  }
+
+  fun initialize(): Error {
+    TODO()
+  }
+
+  fun poll(): Error {
+    TODO()
+  }
+
+  fun setLocalDescription(): Error {
+    TODO()
+  }
+
+  fun setRemoteDescription(): Error {
+    TODO()
+  }
+
   enum class ConnectionState(
     val value: Int
   ) {

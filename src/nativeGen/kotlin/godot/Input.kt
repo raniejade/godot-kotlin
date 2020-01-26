@@ -3,7 +3,13 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.VariantArray
+import godot.core.Vector2
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,162 @@ import kotlinx.cinterop.reinterpret
 open class Input internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun actionPress() {
+    TODO()
+  }
+
+  fun actionRelease() {
+    TODO()
+  }
+
+  fun addJoyMapping() {
+    TODO()
+  }
+
+  fun getAccelerometer(): Vector3 {
+    TODO()
+  }
+
+  fun getActionStrength(): Float {
+    TODO()
+  }
+
+  fun getConnectedJoypads(): VariantArray {
+    TODO()
+  }
+
+  fun getCurrentCursorShape(): Input.CursorShape {
+    TODO()
+  }
+
+  fun getGravity(): Vector3 {
+    TODO()
+  }
+
+  fun getGyroscope(): Vector3 {
+    TODO()
+  }
+
+  fun getJoyAxis(): Float {
+    TODO()
+  }
+
+  fun getJoyAxisIndexFromString(): Int {
+    TODO()
+  }
+
+  fun getJoyAxisString(): String {
+    TODO()
+  }
+
+  fun getJoyButtonIndexFromString(): Int {
+    TODO()
+  }
+
+  fun getJoyButtonString(): String {
+    TODO()
+  }
+
+  fun getJoyGuid(): String {
+    TODO()
+  }
+
+  fun getJoyName(): String {
+    TODO()
+  }
+
+  fun getJoyVibrationDuration(): Float {
+    TODO()
+  }
+
+  fun getJoyVibrationStrength(): Vector2 {
+    TODO()
+  }
+
+  fun getLastMouseSpeed(): Vector2 {
+    TODO()
+  }
+
+  fun getMagnetometer(): Vector3 {
+    TODO()
+  }
+
+  fun getMouseButtonMask(): Int {
+    TODO()
+  }
+
+  fun getMouseMode(): Input.MouseMode {
+    TODO()
+  }
+
+  fun isActionJustPressed(): Boolean {
+    TODO()
+  }
+
+  fun isActionJustReleased(): Boolean {
+    TODO()
+  }
+
+  fun isActionPressed(): Boolean {
+    TODO()
+  }
+
+  fun isJoyButtonPressed(): Boolean {
+    TODO()
+  }
+
+  fun isJoyKnown(): Boolean {
+    TODO()
+  }
+
+  fun isKeyPressed(): Boolean {
+    TODO()
+  }
+
+  fun isMouseButtonPressed(): Boolean {
+    TODO()
+  }
+
+  fun joyConnectionChanged() {
+    TODO()
+  }
+
+  fun parseInputEvent() {
+    TODO()
+  }
+
+  fun removeJoyMapping() {
+    TODO()
+  }
+
+  fun setCustomMouseCursor() {
+    TODO()
+  }
+
+  fun setDefaultCursorShape() {
+    TODO()
+  }
+
+  fun setMouseMode() {
+    TODO()
+  }
+
+  fun setUseAccumulatedInput() {
+    TODO()
+  }
+
+  fun startJoyVibration() {
+    TODO()
+  }
+
+  fun stopJoyVibration() {
+    TODO()
+  }
+
+  fun warpMousePosition() {
+    TODO()
+  }
+
   enum class MouseMode(
     val value: Int
   ) {

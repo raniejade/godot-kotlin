@@ -2,7 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolRealArray
+import godot.core.PoolVector3Array
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +21,122 @@ import kotlinx.cinterop.reinterpret
 open class Curve3D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun addPoint() {
+    TODO()
+  }
+
+  fun clearPoints() {
+    TODO()
+  }
+
+  fun getBakeInterval(): Float {
+    TODO()
+  }
+
+  fun getBakedLength(): Float {
+    TODO()
+  }
+
+  fun getBakedPoints(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getBakedTilts(): PoolRealArray {
+    TODO()
+  }
+
+  fun getBakedUpVectors(): PoolVector3Array {
+    TODO()
+  }
+
+  fun getClosestOffset(): Float {
+    TODO()
+  }
+
+  fun getClosestPoint(): Vector3 {
+    TODO()
+  }
+
+  fun getPointCount(): Int {
+    TODO()
+  }
+
+  fun getPointIn(): Vector3 {
+    TODO()
+  }
+
+  fun getPointOut(): Vector3 {
+    TODO()
+  }
+
+  fun getPointPosition(): Vector3 {
+    TODO()
+  }
+
+  fun getPointTilt(): Float {
+    TODO()
+  }
+
+  fun interpolate(): Vector3 {
+    TODO()
+  }
+
+  fun interpolateBaked(): Vector3 {
+    TODO()
+  }
+
+  fun interpolateBakedUpVector(): Vector3 {
+    TODO()
+  }
+
+  fun interpolatef(): Vector3 {
+    TODO()
+  }
+
+  fun isUpVectorEnabled(): Boolean {
+    TODO()
+  }
+
+  fun removePoint() {
+    TODO()
+  }
+
+  fun setBakeInterval() {
+    TODO()
+  }
+
+  fun setPointIn() {
+    TODO()
+  }
+
+  fun setPointOut() {
+    TODO()
+  }
+
+  fun setPointPosition() {
+    TODO()
+  }
+
+  fun setPointTilt() {
+    TODO()
+  }
+
+  fun setUpVectorEnabled() {
+    TODO()
+  }
+
+  fun tessellate(): PoolVector3Array {
+    TODO()
+  }
+
   companion object {
     fun new(): Curve3D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve3D".cstr.ptr)

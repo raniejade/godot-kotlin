@@ -2,7 +2,12 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Basis
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +20,630 @@ import kotlinx.cinterop.reinterpret
 open class Environment internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getAdjustmentBrightness(): Float {
+    TODO()
+  }
+
+  fun getAdjustmentColorCorrection(): Texture {
+    TODO()
+  }
+
+  fun getAdjustmentContrast(): Float {
+    TODO()
+  }
+
+  fun getAdjustmentSaturation(): Float {
+    TODO()
+  }
+
+  fun getAmbientLightColor(): Color {
+    TODO()
+  }
+
+  fun getAmbientLightEnergy(): Float {
+    TODO()
+  }
+
+  fun getAmbientLightSkyContribution(): Float {
+    TODO()
+  }
+
+  fun getBackground(): Environment.BGMode {
+    TODO()
+  }
+
+  fun getBgColor(): Color {
+    TODO()
+  }
+
+  fun getBgEnergy(): Float {
+    TODO()
+  }
+
+  fun getCameraFeedId(): Int {
+    TODO()
+  }
+
+  fun getCanvasMaxLayer(): Int {
+    TODO()
+  }
+
+  fun getDofBlurFarAmount(): Float {
+    TODO()
+  }
+
+  fun getDofBlurFarDistance(): Float {
+    TODO()
+  }
+
+  fun getDofBlurFarQuality(): Environment.DOFBlurQuality {
+    TODO()
+  }
+
+  fun getDofBlurFarTransition(): Float {
+    TODO()
+  }
+
+  fun getDofBlurNearAmount(): Float {
+    TODO()
+  }
+
+  fun getDofBlurNearDistance(): Float {
+    TODO()
+  }
+
+  fun getDofBlurNearQuality(): Environment.DOFBlurQuality {
+    TODO()
+  }
+
+  fun getDofBlurNearTransition(): Float {
+    TODO()
+  }
+
+  fun getFogColor(): Color {
+    TODO()
+  }
+
+  fun getFogDepthBegin(): Float {
+    TODO()
+  }
+
+  fun getFogDepthCurve(): Float {
+    TODO()
+  }
+
+  fun getFogDepthEnd(): Float {
+    TODO()
+  }
+
+  fun getFogHeightCurve(): Float {
+    TODO()
+  }
+
+  fun getFogHeightMax(): Float {
+    TODO()
+  }
+
+  fun getFogHeightMin(): Float {
+    TODO()
+  }
+
+  fun getFogSunAmount(): Float {
+    TODO()
+  }
+
+  fun getFogSunColor(): Color {
+    TODO()
+  }
+
+  fun getFogTransmitCurve(): Float {
+    TODO()
+  }
+
+  fun getGlowBlendMode(): Environment.GlowBlendMode {
+    TODO()
+  }
+
+  fun getGlowBloom(): Float {
+    TODO()
+  }
+
+  fun getGlowHdrBleedScale(): Float {
+    TODO()
+  }
+
+  fun getGlowHdrBleedThreshold(): Float {
+    TODO()
+  }
+
+  fun getGlowHdrLuminanceCap(): Float {
+    TODO()
+  }
+
+  fun getGlowIntensity(): Float {
+    TODO()
+  }
+
+  fun getGlowStrength(): Float {
+    TODO()
+  }
+
+  fun getSky(): Sky {
+    TODO()
+  }
+
+  fun getSkyCustomFov(): Float {
+    TODO()
+  }
+
+  fun getSkyOrientation(): Basis {
+    TODO()
+  }
+
+  fun getSkyRotation(): Vector3 {
+    TODO()
+  }
+
+  fun getSkyRotationDegrees(): Vector3 {
+    TODO()
+  }
+
+  fun getSsaoAoChannelAffect(): Float {
+    TODO()
+  }
+
+  fun getSsaoBias(): Float {
+    TODO()
+  }
+
+  fun getSsaoBlur(): Environment.SSAOBlur {
+    TODO()
+  }
+
+  fun getSsaoColor(): Color {
+    TODO()
+  }
+
+  fun getSsaoDirectLightAffect(): Float {
+    TODO()
+  }
+
+  fun getSsaoEdgeSharpness(): Float {
+    TODO()
+  }
+
+  fun getSsaoIntensity(): Float {
+    TODO()
+  }
+
+  fun getSsaoIntensity2(): Float {
+    TODO()
+  }
+
+  fun getSsaoQuality(): Environment.SSAOQuality {
+    TODO()
+  }
+
+  fun getSsaoRadius(): Float {
+    TODO()
+  }
+
+  fun getSsaoRadius2(): Float {
+    TODO()
+  }
+
+  fun getSsrDepthTolerance(): Float {
+    TODO()
+  }
+
+  fun getSsrFadeIn(): Float {
+    TODO()
+  }
+
+  fun getSsrFadeOut(): Float {
+    TODO()
+  }
+
+  fun getSsrMaxSteps(): Int {
+    TODO()
+  }
+
+  fun getTonemapAutoExposure(): Boolean {
+    TODO()
+  }
+
+  fun getTonemapAutoExposureGrey(): Float {
+    TODO()
+  }
+
+  fun getTonemapAutoExposureMax(): Float {
+    TODO()
+  }
+
+  fun getTonemapAutoExposureMin(): Float {
+    TODO()
+  }
+
+  fun getTonemapAutoExposureSpeed(): Float {
+    TODO()
+  }
+
+  fun getTonemapExposure(): Float {
+    TODO()
+  }
+
+  fun getTonemapWhite(): Float {
+    TODO()
+  }
+
+  fun getTonemapper(): Environment.ToneMapper {
+    TODO()
+  }
+
+  fun isAdjustmentEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isDofBlurFarEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isDofBlurNearEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isFogDepthEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isFogEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isFogHeightEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isFogTransmitEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isGlowBicubicUpscaleEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isGlowEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isGlowLevelEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSsaoEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSsrEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isSsrRough(): Boolean {
+    TODO()
+  }
+
+  fun setAdjustmentBrightness() {
+    TODO()
+  }
+
+  fun setAdjustmentColorCorrection() {
+    TODO()
+  }
+
+  fun setAdjustmentContrast() {
+    TODO()
+  }
+
+  fun setAdjustmentEnable() {
+    TODO()
+  }
+
+  fun setAdjustmentSaturation() {
+    TODO()
+  }
+
+  fun setAmbientLightColor() {
+    TODO()
+  }
+
+  fun setAmbientLightEnergy() {
+    TODO()
+  }
+
+  fun setAmbientLightSkyContribution() {
+    TODO()
+  }
+
+  fun setBackground() {
+    TODO()
+  }
+
+  fun setBgColor() {
+    TODO()
+  }
+
+  fun setBgEnergy() {
+    TODO()
+  }
+
+  fun setCameraFeedId() {
+    TODO()
+  }
+
+  fun setCanvasMaxLayer() {
+    TODO()
+  }
+
+  fun setDofBlurFarAmount() {
+    TODO()
+  }
+
+  fun setDofBlurFarDistance() {
+    TODO()
+  }
+
+  fun setDofBlurFarEnabled() {
+    TODO()
+  }
+
+  fun setDofBlurFarQuality() {
+    TODO()
+  }
+
+  fun setDofBlurFarTransition() {
+    TODO()
+  }
+
+  fun setDofBlurNearAmount() {
+    TODO()
+  }
+
+  fun setDofBlurNearDistance() {
+    TODO()
+  }
+
+  fun setDofBlurNearEnabled() {
+    TODO()
+  }
+
+  fun setDofBlurNearQuality() {
+    TODO()
+  }
+
+  fun setDofBlurNearTransition() {
+    TODO()
+  }
+
+  fun setFogColor() {
+    TODO()
+  }
+
+  fun setFogDepthBegin() {
+    TODO()
+  }
+
+  fun setFogDepthCurve() {
+    TODO()
+  }
+
+  fun setFogDepthEnabled() {
+    TODO()
+  }
+
+  fun setFogDepthEnd() {
+    TODO()
+  }
+
+  fun setFogEnabled() {
+    TODO()
+  }
+
+  fun setFogHeightCurve() {
+    TODO()
+  }
+
+  fun setFogHeightEnabled() {
+    TODO()
+  }
+
+  fun setFogHeightMax() {
+    TODO()
+  }
+
+  fun setFogHeightMin() {
+    TODO()
+  }
+
+  fun setFogSunAmount() {
+    TODO()
+  }
+
+  fun setFogSunColor() {
+    TODO()
+  }
+
+  fun setFogTransmitCurve() {
+    TODO()
+  }
+
+  fun setFogTransmitEnabled() {
+    TODO()
+  }
+
+  fun setGlowBicubicUpscale() {
+    TODO()
+  }
+
+  fun setGlowBlendMode() {
+    TODO()
+  }
+
+  fun setGlowBloom() {
+    TODO()
+  }
+
+  fun setGlowEnabled() {
+    TODO()
+  }
+
+  fun setGlowHdrBleedScale() {
+    TODO()
+  }
+
+  fun setGlowHdrBleedThreshold() {
+    TODO()
+  }
+
+  fun setGlowHdrLuminanceCap() {
+    TODO()
+  }
+
+  fun setGlowIntensity() {
+    TODO()
+  }
+
+  fun setGlowLevel() {
+    TODO()
+  }
+
+  fun setGlowStrength() {
+    TODO()
+  }
+
+  fun setSky() {
+    TODO()
+  }
+
+  fun setSkyCustomFov() {
+    TODO()
+  }
+
+  fun setSkyOrientation() {
+    TODO()
+  }
+
+  fun setSkyRotation() {
+    TODO()
+  }
+
+  fun setSkyRotationDegrees() {
+    TODO()
+  }
+
+  fun setSsaoAoChannelAffect() {
+    TODO()
+  }
+
+  fun setSsaoBias() {
+    TODO()
+  }
+
+  fun setSsaoBlur() {
+    TODO()
+  }
+
+  fun setSsaoColor() {
+    TODO()
+  }
+
+  fun setSsaoDirectLightAffect() {
+    TODO()
+  }
+
+  fun setSsaoEdgeSharpness() {
+    TODO()
+  }
+
+  fun setSsaoEnabled() {
+    TODO()
+  }
+
+  fun setSsaoIntensity() {
+    TODO()
+  }
+
+  fun setSsaoIntensity2() {
+    TODO()
+  }
+
+  fun setSsaoQuality() {
+    TODO()
+  }
+
+  fun setSsaoRadius() {
+    TODO()
+  }
+
+  fun setSsaoRadius2() {
+    TODO()
+  }
+
+  fun setSsrDepthTolerance() {
+    TODO()
+  }
+
+  fun setSsrEnabled() {
+    TODO()
+  }
+
+  fun setSsrFadeIn() {
+    TODO()
+  }
+
+  fun setSsrFadeOut() {
+    TODO()
+  }
+
+  fun setSsrMaxSteps() {
+    TODO()
+  }
+
+  fun setSsrRough() {
+    TODO()
+  }
+
+  fun setTonemapAutoExposure() {
+    TODO()
+  }
+
+  fun setTonemapAutoExposureGrey() {
+    TODO()
+  }
+
+  fun setTonemapAutoExposureMax() {
+    TODO()
+  }
+
+  fun setTonemapAutoExposureMin() {
+    TODO()
+  }
+
+  fun setTonemapAutoExposureSpeed() {
+    TODO()
+  }
+
+  fun setTonemapExposure() {
+    TODO()
+  }
+
+  fun setTonemapWhite() {
+    TODO()
+  }
+
+  fun setTonemapper() {
+    TODO()
+  }
+
   enum class SSAOBlur(
     val value: Int
   ) {

@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolVector2Array
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,126 @@ import kotlinx.cinterop.reinterpret
 open class CSGPolygon internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  fun hasEditable3dPolygonNoDepth(): Boolean {
+    TODO()
+  }
+
+  fun isEditable3dPolygon(): Boolean {
+    TODO()
+  }
+
+  fun pathChanged() {
+    TODO()
+  }
+
+  fun pathExited() {
+    TODO()
+  }
+
+  fun getDepth(): Float {
+    TODO()
+  }
+
+  fun getMaterial(): Material {
+    TODO()
+  }
+
+  fun getMode(): CSGPolygon.Mode {
+    TODO()
+  }
+
+  fun getPathInterval(): Float {
+    TODO()
+  }
+
+  fun getPathNode(): NodePath {
+    TODO()
+  }
+
+  fun getPathRotation(): CSGPolygon.PathRotation {
+    TODO()
+  }
+
+  fun getPolygon(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getSmoothFaces(): Boolean {
+    TODO()
+  }
+
+  fun getSpinDegrees(): Float {
+    TODO()
+  }
+
+  fun getSpinSides(): Int {
+    TODO()
+  }
+
+  fun isPathContinuousU(): Boolean {
+    TODO()
+  }
+
+  fun isPathJoined(): Boolean {
+    TODO()
+  }
+
+  fun isPathLocal(): Boolean {
+    TODO()
+  }
+
+  fun setDepth() {
+    TODO()
+  }
+
+  fun setMaterial() {
+    TODO()
+  }
+
+  fun setMode() {
+    TODO()
+  }
+
+  fun setPathContinuousU() {
+    TODO()
+  }
+
+  fun setPathInterval() {
+    TODO()
+  }
+
+  fun setPathJoined() {
+    TODO()
+  }
+
+  fun setPathLocal() {
+    TODO()
+  }
+
+  fun setPathNode() {
+    TODO()
+  }
+
+  fun setPathRotation() {
+    TODO()
+  }
+
+  fun setPolygon() {
+    TODO()
+  }
+
+  fun setSmoothFaces() {
+    TODO()
+  }
+
+  fun setSpinDegrees() {
+    TODO()
+  }
+
+  fun setSpinSides() {
+    TODO()
+  }
+
   enum class PathRotation(
     val value: Int
   ) {

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class YSort internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun isSortEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setSortEnabled() {
+    TODO()
+  }
+
   companion object {
     fun new(): YSort = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("YSort".cstr.ptr)

@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.Variant
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class PackedDataContainer internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): PoolByteArray {
+    TODO()
+  }
+
+  fun iterGet(): Variant {
+    TODO()
+  }
+
+  fun iterInit(): Variant {
+    TODO()
+  }
+
+  fun iterNext(): Variant {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun pack(): Error {
+    TODO()
+  }
+
+  fun size(): Int {
+    TODO()
+  }
+
   companion object {
     fun new(): PackedDataContainer = memScoped {
       val fnPtr =

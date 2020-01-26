@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptReturn internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getReturnType(): Variant.Type {
+    TODO()
+  }
+
+  fun isReturnValueEnabled(): Boolean {
+    TODO()
+  }
+
+  fun setEnableReturnValue() {
+    TODO()
+  }
+
+  fun setReturnType() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptReturn = memScoped {
       val fnPtr =

@@ -2,8 +2,15 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Rect2
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +22,246 @@ import kotlinx.cinterop.reinterpret
 open class TreeItem internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun addButton() {
+    TODO()
+  }
+
+  fun clearCustomBgColor() {
+    TODO()
+  }
+
+  fun clearCustomColor() {
+    TODO()
+  }
+
+  fun deselect() {
+    TODO()
+  }
+
+  fun eraseButton() {
+    TODO()
+  }
+
+  fun getButton(): Texture {
+    TODO()
+  }
+
+  fun getButtonCount(): Int {
+    TODO()
+  }
+
+  fun getCellMode(): TreeItem.TreeCellMode {
+    TODO()
+  }
+
+  fun getChildren(): TreeItem {
+    TODO()
+  }
+
+  fun getCustomBgColor(): Color {
+    TODO()
+  }
+
+  fun getCustomMinimumHeight(): Int {
+    TODO()
+  }
+
+  fun getExpandRight(): Boolean {
+    TODO()
+  }
+
+  fun getIcon(): Texture {
+    TODO()
+  }
+
+  fun getIconMaxWidth(): Int {
+    TODO()
+  }
+
+  fun getIconRegion(): Rect2 {
+    TODO()
+  }
+
+  fun getMetadata(): Variant {
+    TODO()
+  }
+
+  fun getNext(): TreeItem {
+    TODO()
+  }
+
+  fun getNextVisible(): TreeItem {
+    TODO()
+  }
+
+  fun getParent(): TreeItem {
+    TODO()
+  }
+
+  fun getPrev(): TreeItem {
+    TODO()
+  }
+
+  fun getPrevVisible(): TreeItem {
+    TODO()
+  }
+
+  fun getRange(): Float {
+    TODO()
+  }
+
+  fun getRangeConfig(): Dictionary {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getTextAlign(): TreeItem.TextAlign {
+    TODO()
+  }
+
+  fun getTooltip(): String {
+    TODO()
+  }
+
+  fun isButtonDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isChecked(): Boolean {
+    TODO()
+  }
+
+  fun isCollapsed(): Boolean {
+    TODO()
+  }
+
+  fun isCustomSetAsButton(): Boolean {
+    TODO()
+  }
+
+  fun isEditable(): Boolean {
+    TODO()
+  }
+
+  fun isFoldingDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isSelectable(): Boolean {
+    TODO()
+  }
+
+  fun isSelected(): Boolean {
+    TODO()
+  }
+
+  fun moveToBottom() {
+    TODO()
+  }
+
+  fun moveToTop() {
+    TODO()
+  }
+
+  fun removeChild() {
+    TODO()
+  }
+
+  fun select() {
+    TODO()
+  }
+
+  fun setButton() {
+    TODO()
+  }
+
+  fun setCellMode() {
+    TODO()
+  }
+
+  fun setChecked() {
+    TODO()
+  }
+
+  fun setCollapsed() {
+    TODO()
+  }
+
+  fun setCustomAsButton() {
+    TODO()
+  }
+
+  fun setCustomBgColor() {
+    TODO()
+  }
+
+  fun setCustomColor() {
+    TODO()
+  }
+
+  fun setCustomDraw() {
+    TODO()
+  }
+
+  fun setCustomMinimumHeight() {
+    TODO()
+  }
+
+  fun setDisableFolding() {
+    TODO()
+  }
+
+  fun setEditable() {
+    TODO()
+  }
+
+  fun setExpandRight() {
+    TODO()
+  }
+
+  fun setIcon() {
+    TODO()
+  }
+
+  fun setIconMaxWidth() {
+    TODO()
+  }
+
+  fun setIconRegion() {
+    TODO()
+  }
+
+  fun setMetadata() {
+    TODO()
+  }
+
+  fun setRange() {
+    TODO()
+  }
+
+  fun setRangeConfig() {
+    TODO()
+  }
+
+  fun setSelectable() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
+  fun setTextAlign() {
+    TODO()
+  }
+
+  fun setTooltip() {
+    TODO()
+  }
+
   enum class TreeCellMode(
     val value: Int
   ) {

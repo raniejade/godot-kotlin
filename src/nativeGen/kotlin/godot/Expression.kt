@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class Expression internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun execute(): Variant {
+    TODO()
+  }
+
+  fun getErrorText(): String {
+    TODO()
+  }
+
+  fun hasExecuteFailed(): Boolean {
+    TODO()
+  }
+
+  fun parse(): Error {
+    TODO()
+  }
+
   companion object {
     fun new(): Expression = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Expression".cstr.ptr)

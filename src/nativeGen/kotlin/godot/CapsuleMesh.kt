@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class CapsuleMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  fun getMidHeight(): Float {
+    TODO()
+  }
+
+  fun getRadialSegments(): Int {
+    TODO()
+  }
+
+  fun getRadius(): Float {
+    TODO()
+  }
+
+  fun getRings(): Int {
+    TODO()
+  }
+
+  fun setMidHeight() {
+    TODO()
+  }
+
+  fun setRadialSegments() {
+    TODO()
+  }
+
+  fun setRadius() {
+    TODO()
+  }
+
+  fun setRings() {
+    TODO()
+  }
+
   companion object {
     fun new(): CapsuleMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleMesh".cstr.ptr)

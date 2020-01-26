@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,30 @@ import kotlinx.cinterop.reinterpret
 open class SliderJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  fun getLowerLimitAngular(): Float {
+    TODO()
+  }
+
+  fun getUpperLimitAngular(): Float {
+    TODO()
+  }
+
+  fun setLowerLimitAngular() {
+    TODO()
+  }
+
+  fun setUpperLimitAngular() {
+    TODO()
+  }
+
+  fun getParam(): Float {
+    TODO()
+  }
+
+  fun setParam() {
+    TODO()
+  }
+
   enum class Param(
     val value: Int
   ) {

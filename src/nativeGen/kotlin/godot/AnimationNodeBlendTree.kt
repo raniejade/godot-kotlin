@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,58 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeBlendTree internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
+  fun nodeChanged() {
+    TODO()
+  }
+
+  fun treeChanged() {
+    TODO()
+  }
+
+  fun addNode() {
+    TODO()
+  }
+
+  fun connectNode() {
+    TODO()
+  }
+
+  fun disconnectNode() {
+    TODO()
+  }
+
+  fun getGraphOffset(): Vector2 {
+    TODO()
+  }
+
+  fun getNode(): AnimationNode {
+    TODO()
+  }
+
+  fun getNodePosition(): Vector2 {
+    TODO()
+  }
+
+  fun hasNode(): Boolean {
+    TODO()
+  }
+
+  fun removeNode() {
+    TODO()
+  }
+
+  fun renameNode() {
+    TODO()
+  }
+
+  fun setGraphOffset() {
+    TODO()
+  }
+
+  fun setNodePosition() {
+    TODO()
+  }
+
   companion object {
     val CONNECTION_ERROR_CONNECTION_EXISTS: Int = 5
 

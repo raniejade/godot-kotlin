@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -14,6 +15,14 @@ import kotlinx.cinterop.reinterpret
 open class ColorRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun getFrameColor(): Color {
+    TODO()
+  }
+
+  fun setFrameColor() {
+    TODO()
+  }
+
   companion object {
     fun new(): ColorRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorRect".cstr.ptr)

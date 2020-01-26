@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
 import godot.core.Godot
+import godot.core.RID
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,46 @@ import kotlinx.cinterop.reinterpret
 open class VisualInstance internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun getVisualInstanceRid(): RID {
+    TODO()
+  }
+
+  fun getAabb(): AABB {
+    TODO()
+  }
+
+  fun getBase(): RID {
+    TODO()
+  }
+
+  fun getInstance(): RID {
+    TODO()
+  }
+
+  fun getLayerMask(): Int {
+    TODO()
+  }
+
+  fun getLayerMaskBit(): Boolean {
+    TODO()
+  }
+
+  fun getTransformedAabb(): AABB {
+    TODO()
+  }
+
+  fun setBase() {
+    TODO()
+  }
+
+  fun setLayerMask() {
+    TODO()
+  }
+
+  fun setLayerMaskBit() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for VisualInstance

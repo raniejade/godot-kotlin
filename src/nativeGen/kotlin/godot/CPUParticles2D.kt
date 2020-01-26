@@ -2,7 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolColorArray
+import godot.core.PoolVector2Array
+import godot.core.Vector2
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +21,250 @@ import kotlinx.cinterop.reinterpret
 open class CPUParticles2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  fun updateRenderThread() {
+    TODO()
+  }
+
+  fun convertFromParticles() {
+    TODO()
+  }
+
+  fun getAmount(): Int {
+    TODO()
+  }
+
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getColorRamp(): Gradient {
+    TODO()
+  }
+
+  fun getDrawOrder(): CPUParticles2D.DrawOrder {
+    TODO()
+  }
+
+  fun getEmissionColors(): PoolColorArray {
+    TODO()
+  }
+
+  fun getEmissionNormals(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getEmissionPoints(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getEmissionRectExtents(): Vector2 {
+    TODO()
+  }
+
+  fun getEmissionShape(): CPUParticles2D.EmissionShape {
+    TODO()
+  }
+
+  fun getEmissionSphereRadius(): Float {
+    TODO()
+  }
+
+  fun getExplosivenessRatio(): Float {
+    TODO()
+  }
+
+  fun getFixedFps(): Int {
+    TODO()
+  }
+
+  fun getFlatness(): Float {
+    TODO()
+  }
+
+  fun getFractionalDelta(): Boolean {
+    TODO()
+  }
+
+  fun getGravity(): Vector2 {
+    TODO()
+  }
+
+  fun getLifetime(): Float {
+    TODO()
+  }
+
+  fun getNormalmap(): Texture {
+    TODO()
+  }
+
+  fun getOneShot(): Boolean {
+    TODO()
+  }
+
+  fun getParam(): Float {
+    TODO()
+  }
+
+  fun getParamCurve(): Curve {
+    TODO()
+  }
+
+  fun getParamRandomness(): Float {
+    TODO()
+  }
+
+  fun getParticleFlag(): Boolean {
+    TODO()
+  }
+
+  fun getPreProcessTime(): Float {
+    TODO()
+  }
+
+  fun getRandomnessRatio(): Float {
+    TODO()
+  }
+
+  fun getSpeedScale(): Float {
+    TODO()
+  }
+
+  fun getSpread(): Float {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getUseLocalCoordinates(): Boolean {
+    TODO()
+  }
+
+  fun isEmitting(): Boolean {
+    TODO()
+  }
+
+  fun restart() {
+    TODO()
+  }
+
+  fun setAmount() {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setColorRamp() {
+    TODO()
+  }
+
+  fun setDrawOrder() {
+    TODO()
+  }
+
+  fun setEmissionColors() {
+    TODO()
+  }
+
+  fun setEmissionNormals() {
+    TODO()
+  }
+
+  fun setEmissionPoints() {
+    TODO()
+  }
+
+  fun setEmissionRectExtents() {
+    TODO()
+  }
+
+  fun setEmissionShape() {
+    TODO()
+  }
+
+  fun setEmissionSphereRadius() {
+    TODO()
+  }
+
+  fun setEmitting() {
+    TODO()
+  }
+
+  fun setExplosivenessRatio() {
+    TODO()
+  }
+
+  fun setFixedFps() {
+    TODO()
+  }
+
+  fun setFlatness() {
+    TODO()
+  }
+
+  fun setFractionalDelta() {
+    TODO()
+  }
+
+  fun setGravity() {
+    TODO()
+  }
+
+  fun setLifetime() {
+    TODO()
+  }
+
+  fun setNormalmap() {
+    TODO()
+  }
+
+  fun setOneShot() {
+    TODO()
+  }
+
+  fun setParam() {
+    TODO()
+  }
+
+  fun setParamCurve() {
+    TODO()
+  }
+
+  fun setParamRandomness() {
+    TODO()
+  }
+
+  fun setParticleFlag() {
+    TODO()
+  }
+
+  fun setPreProcessTime() {
+    TODO()
+  }
+
+  fun setRandomnessRatio() {
+    TODO()
+  }
+
+  fun setSpeedScale() {
+    TODO()
+  }
+
+  fun setSpread() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setUseLocalCoordinates() {
+    TODO()
+  }
+
   enum class Flags(
     val value: Int
   ) {

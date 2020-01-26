@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class GrooveJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
+  fun getInitialOffset(): Float {
+    TODO()
+  }
+
+  fun getLength(): Float {
+    TODO()
+  }
+
+  fun setInitialOffset() {
+    TODO()
+  }
+
+  fun setLength() {
+    TODO()
+  }
+
   companion object {
     fun new(): GrooveJoint2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GrooveJoint2D".cstr.ptr)

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,26 @@ import kotlinx.cinterop.reinterpret
 open class GDNative internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun callNative(): Variant {
+    TODO()
+  }
+
+  fun getLibrary(): GDNativeLibrary {
+    TODO()
+  }
+
+  fun initialize(): Boolean {
+    TODO()
+  }
+
+  fun setLibrary() {
+    TODO()
+  }
+
+  fun terminate(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): GDNative = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDNative".cstr.ptr)

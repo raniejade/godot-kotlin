@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,38 @@ import kotlinx.cinterop.reinterpret
 open class EditorInspectorPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addCustomControl() {
+    TODO()
+  }
+
+  fun addPropertyEditor() {
+    TODO()
+  }
+
+  fun addPropertyEditorForMultipleProperties() {
+    TODO()
+  }
+
+  fun canHandle(): Boolean {
+    TODO()
+  }
+
+  fun parseBegin() {
+    TODO()
+  }
+
+  fun parseCategory() {
+    TODO()
+  }
+
+  fun parseEnd() {
+    TODO()
+  }
+
+  fun parseProperty(): Boolean {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorInspectorPlugin = memScoped {
       val fnPtr =

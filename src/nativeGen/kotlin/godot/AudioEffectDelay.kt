@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,110 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectDelay internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  fun getDry(): Float {
+    TODO()
+  }
+
+  fun getFeedbackDelayMs(): Float {
+    TODO()
+  }
+
+  fun getFeedbackLevelDb(): Float {
+    TODO()
+  }
+
+  fun getFeedbackLowpass(): Float {
+    TODO()
+  }
+
+  fun getTap1DelayMs(): Float {
+    TODO()
+  }
+
+  fun getTap1LevelDb(): Float {
+    TODO()
+  }
+
+  fun getTap1Pan(): Float {
+    TODO()
+  }
+
+  fun getTap2DelayMs(): Float {
+    TODO()
+  }
+
+  fun getTap2LevelDb(): Float {
+    TODO()
+  }
+
+  fun getTap2Pan(): Float {
+    TODO()
+  }
+
+  fun isFeedbackActive(): Boolean {
+    TODO()
+  }
+
+  fun isTap1Active(): Boolean {
+    TODO()
+  }
+
+  fun isTap2Active(): Boolean {
+    TODO()
+  }
+
+  fun setDry() {
+    TODO()
+  }
+
+  fun setFeedbackActive() {
+    TODO()
+  }
+
+  fun setFeedbackDelayMs() {
+    TODO()
+  }
+
+  fun setFeedbackLevelDb() {
+    TODO()
+  }
+
+  fun setFeedbackLowpass() {
+    TODO()
+  }
+
+  fun setTap1Active() {
+    TODO()
+  }
+
+  fun setTap1DelayMs() {
+    TODO()
+  }
+
+  fun setTap1LevelDb() {
+    TODO()
+  }
+
+  fun setTap1Pan() {
+    TODO()
+  }
+
+  fun setTap2Active() {
+    TODO()
+  }
+
+  fun setTap2DelayMs() {
+    TODO()
+  }
+
+  fun setTap2LevelDb() {
+    TODO()
+  }
+
+  fun setTap2Pan() {
+    TODO()
+  }
+
   companion object {
     fun new(): AudioEffectDelay = memScoped {
       val fnPtr =

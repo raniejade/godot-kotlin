@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,42 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileSystem internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun getFileType(): String {
+    TODO()
+  }
+
+  fun getFilesystem(): EditorFileSystemDirectory {
+    TODO()
+  }
+
+  fun getFilesystemPath(): EditorFileSystemDirectory {
+    TODO()
+  }
+
+  fun getScanningProgress(): Float {
+    TODO()
+  }
+
+  fun isScanning(): Boolean {
+    TODO()
+  }
+
+  fun scan() {
+    TODO()
+  }
+
+  fun scanSources() {
+    TODO()
+  }
+
+  fun updateFile() {
+    TODO()
+  }
+
+  fun updateScriptClasses() {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for EditorFileSystem

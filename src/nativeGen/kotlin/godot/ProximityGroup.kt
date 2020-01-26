@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Vector3
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class ProximityGroup internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  fun proximityGroupBroadcast() {
+    TODO()
+  }
+
+  fun broadcast() {
+    TODO()
+  }
+
+  fun getDispatchMode(): ProximityGroup.DispatchMode {
+    TODO()
+  }
+
+  fun getGridRadius(): Vector3 {
+    TODO()
+  }
+
+  fun getGroupName(): String {
+    TODO()
+  }
+
+  fun setDispatchMode() {
+    TODO()
+  }
+
+  fun setGridRadius() {
+    TODO()
+  }
+
+  fun setGroupName() {
+    TODO()
+  }
+
   enum class DispatchMode(
     val value: Int
   ) {

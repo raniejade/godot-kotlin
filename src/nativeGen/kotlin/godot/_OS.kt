@@ -2,8 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolStringArray
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +21,494 @@ import kotlinx.cinterop.reinterpret
 open class _OS internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun alert() {
+    TODO()
+  }
+
+  fun canDraw(): Boolean {
+    TODO()
+  }
+
+  fun canUseThreads(): Boolean {
+    TODO()
+  }
+
+  fun centerWindow() {
+    TODO()
+  }
+
+  fun closeMidiInputs() {
+    TODO()
+  }
+
+  fun delayMsec() {
+    TODO()
+  }
+
+  fun delayUsec() {
+    TODO()
+  }
+
+  fun dumpMemoryToFile() {
+    TODO()
+  }
+
+  fun dumpResourcesToFile() {
+    TODO()
+  }
+
+  fun execute(): Int {
+    TODO()
+  }
+
+  fun findScancodeFromString(): Int {
+    TODO()
+  }
+
+  fun getAudioDriverCount(): Int {
+    TODO()
+  }
+
+  fun getAudioDriverName(): String {
+    TODO()
+  }
+
+  fun getBorderlessWindow(): Boolean {
+    TODO()
+  }
+
+  fun getClipboard(): String {
+    TODO()
+  }
+
+  fun getCmdlineArgs(): PoolStringArray {
+    TODO()
+  }
+
+  fun getConnectedMidiInputs(): PoolStringArray {
+    TODO()
+  }
+
+  fun getCurrentScreen(): Int {
+    TODO()
+  }
+
+  fun getCurrentVideoDriver(): _OS.VideoDriver {
+    TODO()
+  }
+
+  fun getDate(): Dictionary {
+    TODO()
+  }
+
+  fun getDatetime(): Dictionary {
+    TODO()
+  }
+
+  fun getDatetimeFromUnixTime(): Dictionary {
+    TODO()
+  }
+
+  fun getDynamicMemoryUsage(): Int {
+    TODO()
+  }
+
+  fun getEnvironment(): String {
+    TODO()
+  }
+
+  fun getExecutablePath(): String {
+    TODO()
+  }
+
+  fun getExitCode(): Int {
+    TODO()
+  }
+
+  fun getImeSelection(): Vector2 {
+    TODO()
+  }
+
+  fun getImeText(): String {
+    TODO()
+  }
+
+  fun getLatinKeyboardVariant(): String {
+    TODO()
+  }
+
+  fun getLocale(): String {
+    TODO()
+  }
+
+  fun getModelName(): String {
+    TODO()
+  }
+
+  fun getName(): String {
+    TODO()
+  }
+
+  fun getPowerPercentLeft(): Int {
+    TODO()
+  }
+
+  fun getPowerSecondsLeft(): Int {
+    TODO()
+  }
+
+  fun getPowerState(): _OS.PowerState {
+    TODO()
+  }
+
+  fun getProcessId(): Int {
+    TODO()
+  }
+
+  fun getProcessorCount(): Int {
+    TODO()
+  }
+
+  fun getRealWindowSize(): Vector2 {
+    TODO()
+  }
+
+  fun getScancodeString(): String {
+    TODO()
+  }
+
+  fun getScreenCount(): Int {
+    TODO()
+  }
+
+  fun getScreenDpi(): Int {
+    TODO()
+  }
+
+  fun getScreenOrientation(): _OS.ScreenOrientation {
+    TODO()
+  }
+
+  fun getScreenPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getScreenSize(): Vector2 {
+    TODO()
+  }
+
+  fun getSplashTickMsec(): Int {
+    TODO()
+  }
+
+  fun getStaticMemoryPeakUsage(): Int {
+    TODO()
+  }
+
+  fun getStaticMemoryUsage(): Int {
+    TODO()
+  }
+
+  fun getSystemDir(): String {
+    TODO()
+  }
+
+  fun getSystemTimeMsecs(): Int {
+    TODO()
+  }
+
+  fun getSystemTimeSecs(): Int {
+    TODO()
+  }
+
+  fun getTicksMsec(): Int {
+    TODO()
+  }
+
+  fun getTicksUsec(): Int {
+    TODO()
+  }
+
+  fun getTime(): Dictionary {
+    TODO()
+  }
+
+  fun getTimeZoneInfo(): Dictionary {
+    TODO()
+  }
+
+  fun getUniqueId(): String {
+    TODO()
+  }
+
+  fun getUnixTime(): Int {
+    TODO()
+  }
+
+  fun getUnixTimeFromDatetime(): Int {
+    TODO()
+  }
+
+  fun getUserDataDir(): String {
+    TODO()
+  }
+
+  fun getVideoDriverCount(): Int {
+    TODO()
+  }
+
+  fun getVideoDriverName(): String {
+    TODO()
+  }
+
+  fun getVirtualKeyboardHeight(): Int {
+    TODO()
+  }
+
+  fun getWindowPerPixelTransparencyEnabled(): Boolean {
+    TODO()
+  }
+
+  fun getWindowPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getWindowSafeArea(): Rect2 {
+    TODO()
+  }
+
+  fun getWindowSize(): Vector2 {
+    TODO()
+  }
+
+  fun hasEnvironment(): Boolean {
+    TODO()
+  }
+
+  fun hasFeature(): Boolean {
+    TODO()
+  }
+
+  fun hasTouchscreenUiHint(): Boolean {
+    TODO()
+  }
+
+  fun hasVirtualKeyboard(): Boolean {
+    TODO()
+  }
+
+  fun hideVirtualKeyboard() {
+    TODO()
+  }
+
+  fun isDebugBuild(): Boolean {
+    TODO()
+  }
+
+  fun isInLowProcessorUsageMode(): Boolean {
+    TODO()
+  }
+
+  fun isKeepScreenOn(): Boolean {
+    TODO()
+  }
+
+  fun isOkLeftAndCancelRight(): Boolean {
+    TODO()
+  }
+
+  fun isScancodeUnicode(): Boolean {
+    TODO()
+  }
+
+  fun isStdoutVerbose(): Boolean {
+    TODO()
+  }
+
+  fun isUserfsPersistent(): Boolean {
+    TODO()
+  }
+
+  fun isVsyncEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isWindowAlwaysOnTop(): Boolean {
+    TODO()
+  }
+
+  fun isWindowFullscreen(): Boolean {
+    TODO()
+  }
+
+  fun isWindowMaximized(): Boolean {
+    TODO()
+  }
+
+  fun isWindowMinimized(): Boolean {
+    TODO()
+  }
+
+  fun isWindowResizable(): Boolean {
+    TODO()
+  }
+
+  fun kill(): Error {
+    TODO()
+  }
+
+  fun moveWindowToForeground() {
+    TODO()
+  }
+
+  fun nativeVideoIsPlaying(): Boolean {
+    TODO()
+  }
+
+  fun nativeVideoPause() {
+    TODO()
+  }
+
+  fun nativeVideoPlay(): Error {
+    TODO()
+  }
+
+  fun nativeVideoStop() {
+    TODO()
+  }
+
+  fun nativeVideoUnpause() {
+    TODO()
+  }
+
+  fun openMidiInputs() {
+    TODO()
+  }
+
+  fun printAllResources() {
+    TODO()
+  }
+
+  fun printAllTexturesBySize() {
+    TODO()
+  }
+
+  fun printResourcesByType() {
+    TODO()
+  }
+
+  fun printResourcesInUse() {
+    TODO()
+  }
+
+  fun requestAttention() {
+    TODO()
+  }
+
+  fun requestPermission(): Boolean {
+    TODO()
+  }
+
+  fun setBorderlessWindow() {
+    TODO()
+  }
+
+  fun setClipboard() {
+    TODO()
+  }
+
+  fun setCurrentScreen() {
+    TODO()
+  }
+
+  fun setExitCode() {
+    TODO()
+  }
+
+  fun setIcon() {
+    TODO()
+  }
+
+  fun setImeActive() {
+    TODO()
+  }
+
+  fun setImePosition() {
+    TODO()
+  }
+
+  fun setKeepScreenOn() {
+    TODO()
+  }
+
+  fun setLowProcessorUsageMode() {
+    TODO()
+  }
+
+  fun setNativeIcon() {
+    TODO()
+  }
+
+  fun setScreenOrientation() {
+    TODO()
+  }
+
+  fun setThreadName(): Error {
+    TODO()
+  }
+
+  fun setUseFileAccessSaveAndSwap() {
+    TODO()
+  }
+
+  fun setUseVsync() {
+    TODO()
+  }
+
+  fun setWindowAlwaysOnTop() {
+    TODO()
+  }
+
+  fun setWindowFullscreen() {
+    TODO()
+  }
+
+  fun setWindowMaximized() {
+    TODO()
+  }
+
+  fun setWindowMinimized() {
+    TODO()
+  }
+
+  fun setWindowPerPixelTransparencyEnabled() {
+    TODO()
+  }
+
+  fun setWindowPosition() {
+    TODO()
+  }
+
+  fun setWindowResizable() {
+    TODO()
+  }
+
+  fun setWindowSize() {
+    TODO()
+  }
+
+  fun setWindowTitle() {
+    TODO()
+  }
+
+  fun shellOpen(): Error {
+    TODO()
+  }
+
+  fun showVirtualKeyboard() {
+    TODO()
+  }
+
   enum class VideoDriver(
     val value: Int
   ) {

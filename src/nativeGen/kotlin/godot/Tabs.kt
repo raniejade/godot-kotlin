@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,126 @@ import kotlinx.cinterop.reinterpret
 open class Tabs internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun updateHover() {
+    TODO()
+  }
+
+  fun addTab() {
+    TODO()
+  }
+
+  fun ensureTabVisible() {
+    TODO()
+  }
+
+  fun getCurrentTab(): Int {
+    TODO()
+  }
+
+  fun getDragToRearrangeEnabled(): Boolean {
+    TODO()
+  }
+
+  fun getOffsetButtonsVisible(): Boolean {
+    TODO()
+  }
+
+  fun getScrollingEnabled(): Boolean {
+    TODO()
+  }
+
+  fun getSelectWithRmb(): Boolean {
+    TODO()
+  }
+
+  fun getTabAlign(): Tabs.TabAlign {
+    TODO()
+  }
+
+  fun getTabCloseDisplayPolicy(): Tabs.CloseButtonDisplayPolicy {
+    TODO()
+  }
+
+  fun getTabCount(): Int {
+    TODO()
+  }
+
+  fun getTabDisabled(): Boolean {
+    TODO()
+  }
+
+  fun getTabIcon(): Texture {
+    TODO()
+  }
+
+  fun getTabOffset(): Int {
+    TODO()
+  }
+
+  fun getTabRect(): Rect2 {
+    TODO()
+  }
+
+  fun getTabTitle(): String {
+    TODO()
+  }
+
+  fun getTabsRearrangeGroup(): Int {
+    TODO()
+  }
+
+  fun moveTab() {
+    TODO()
+  }
+
+  fun removeTab() {
+    TODO()
+  }
+
+  fun setCurrentTab() {
+    TODO()
+  }
+
+  fun setDragToRearrangeEnabled() {
+    TODO()
+  }
+
+  fun setScrollingEnabled() {
+    TODO()
+  }
+
+  fun setSelectWithRmb() {
+    TODO()
+  }
+
+  fun setTabAlign() {
+    TODO()
+  }
+
+  fun setTabCloseDisplayPolicy() {
+    TODO()
+  }
+
+  fun setTabDisabled() {
+    TODO()
+  }
+
+  fun setTabIcon() {
+    TODO()
+  }
+
+  fun setTabTitle() {
+    TODO()
+  }
+
+  fun setTabsRearrangeGroup() {
+    TODO()
+  }
+
   enum class CloseButtonDisplayPolicy(
     val value: Int
   ) {

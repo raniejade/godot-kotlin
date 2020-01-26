@@ -2,7 +2,14 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.AABB
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolColorArray
+import godot.core.PoolVector2Array
+import godot.core.PoolVector3Array
+import godot.core.Transform
+import godot.core.Transform2D
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +22,126 @@ import kotlinx.cinterop.reinterpret
 open class MultiMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getColorArray(): PoolColorArray {
+    TODO()
+  }
+
+  fun getCustomDataArray(): PoolColorArray {
+    TODO()
+  }
+
+  fun getTransform2dArray(): PoolVector2Array {
+    TODO()
+  }
+
+  fun getTransformArray(): PoolVector3Array {
+    TODO()
+  }
+
+  fun setColorArray() {
+    TODO()
+  }
+
+  fun setCustomDataArray() {
+    TODO()
+  }
+
+  fun setTransform2dArray() {
+    TODO()
+  }
+
+  fun setTransformArray() {
+    TODO()
+  }
+
+  fun getAabb(): AABB {
+    TODO()
+  }
+
+  fun getColorFormat(): MultiMesh.ColorFormat {
+    TODO()
+  }
+
+  fun getCustomDataFormat(): MultiMesh.CustomDataFormat {
+    TODO()
+  }
+
+  fun getInstanceColor(): Color {
+    TODO()
+  }
+
+  fun getInstanceCount(): Int {
+    TODO()
+  }
+
+  fun getInstanceCustomData(): Color {
+    TODO()
+  }
+
+  fun getInstanceTransform(): Transform {
+    TODO()
+  }
+
+  fun getInstanceTransform2d(): Transform2D {
+    TODO()
+  }
+
+  fun getMesh(): Mesh {
+    TODO()
+  }
+
+  fun getTransformFormat(): MultiMesh.TransformFormat {
+    TODO()
+  }
+
+  fun getVisibleInstanceCount(): Int {
+    TODO()
+  }
+
+  fun setAsBulkArray() {
+    TODO()
+  }
+
+  fun setColorFormat() {
+    TODO()
+  }
+
+  fun setCustomDataFormat() {
+    TODO()
+  }
+
+  fun setInstanceColor() {
+    TODO()
+  }
+
+  fun setInstanceCount() {
+    TODO()
+  }
+
+  fun setInstanceCustomData() {
+    TODO()
+  }
+
+  fun setInstanceTransform() {
+    TODO()
+  }
+
+  fun setInstanceTransform2d() {
+    TODO()
+  }
+
+  fun setMesh() {
+    TODO()
+  }
+
+  fun setTransformFormat() {
+    TODO()
+  }
+
+  fun setVisibleInstanceCount() {
+    TODO()
+  }
+
   enum class TransformFormat(
     val value: Int
   ) {

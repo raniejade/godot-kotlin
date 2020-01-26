@@ -3,7 +3,11 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.PoolIntArray
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +19,126 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeBlendSpace2D internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
+  fun addBlendPoint() {
+    TODO()
+  }
+
+  fun getTriangles(): PoolIntArray {
+    TODO()
+  }
+
+  fun setTriangles() {
+    TODO()
+  }
+
+  fun treeChanged() {
+    TODO()
+  }
+
+  fun updateTriangles() {
+    TODO()
+  }
+
+  fun addBlendPoint() {
+    TODO()
+  }
+
+  fun addTriangle() {
+    TODO()
+  }
+
+  fun getAutoTriangles(): Boolean {
+    TODO()
+  }
+
+  fun getBlendMode(): AnimationNodeBlendSpace2D.BlendMode {
+    TODO()
+  }
+
+  fun getBlendPointCount(): Int {
+    TODO()
+  }
+
+  fun getBlendPointNode(): AnimationRootNode {
+    TODO()
+  }
+
+  fun getBlendPointPosition(): Vector2 {
+    TODO()
+  }
+
+  fun getMaxSpace(): Vector2 {
+    TODO()
+  }
+
+  fun getMinSpace(): Vector2 {
+    TODO()
+  }
+
+  fun getSnap(): Vector2 {
+    TODO()
+  }
+
+  fun getTriangleCount(): Int {
+    TODO()
+  }
+
+  fun getTrianglePoint(): Int {
+    TODO()
+  }
+
+  fun getXLabel(): String {
+    TODO()
+  }
+
+  fun getYLabel(): String {
+    TODO()
+  }
+
+  fun removeBlendPoint() {
+    TODO()
+  }
+
+  fun removeTriangle() {
+    TODO()
+  }
+
+  fun setAutoTriangles() {
+    TODO()
+  }
+
+  fun setBlendMode() {
+    TODO()
+  }
+
+  fun setBlendPointNode() {
+    TODO()
+  }
+
+  fun setBlendPointPosition() {
+    TODO()
+  }
+
+  fun setMaxSpace() {
+    TODO()
+  }
+
+  fun setMinSpace() {
+    TODO()
+  }
+
+  fun setSnap() {
+    TODO()
+  }
+
+  fun setXLabel() {
+    TODO()
+  }
+
+  fun setYLabel() {
+    TODO()
+  }
+
   enum class BlendMode(
     val value: Int
   ) {

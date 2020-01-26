@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,58 @@ import kotlinx.cinterop.reinterpret
 open class MainLoop internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  fun dropFiles() {
+    TODO()
+  }
+
+  fun finalize() {
+    TODO()
+  }
+
+  fun idle() {
+    TODO()
+  }
+
+  fun initialize() {
+    TODO()
+  }
+
+  fun inputEvent() {
+    TODO()
+  }
+
+  fun inputText() {
+    TODO()
+  }
+
+  fun iteration() {
+    TODO()
+  }
+
+  fun finish() {
+    TODO()
+  }
+
+  fun idle(): Boolean {
+    TODO()
+  }
+
+  fun init() {
+    TODO()
+  }
+
+  fun inputEvent() {
+    TODO()
+  }
+
+  fun inputText() {
+    TODO()
+  }
+
+  fun iteration(): Boolean {
+    TODO()
+  }
+
   companion object {
     val NOTIFICATION_CRASH: Int = 1012
 

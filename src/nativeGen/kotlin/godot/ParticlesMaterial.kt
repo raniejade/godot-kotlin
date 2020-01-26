@@ -2,7 +2,11 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.Vector3
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +19,158 @@ import kotlinx.cinterop.reinterpret
 open class ParticlesMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  fun getColor(): Color {
+    TODO()
+  }
+
+  fun getColorRamp(): Texture {
+    TODO()
+  }
+
+  fun getEmissionBoxExtents(): Vector3 {
+    TODO()
+  }
+
+  fun getEmissionColorTexture(): Texture {
+    TODO()
+  }
+
+  fun getEmissionNormalTexture(): Texture {
+    TODO()
+  }
+
+  fun getEmissionPointCount(): Int {
+    TODO()
+  }
+
+  fun getEmissionPointTexture(): Texture {
+    TODO()
+  }
+
+  fun getEmissionShape(): ParticlesMaterial.EmissionShape {
+    TODO()
+  }
+
+  fun getEmissionSphereRadius(): Float {
+    TODO()
+  }
+
+  fun getFlag(): Boolean {
+    TODO()
+  }
+
+  fun getFlatness(): Float {
+    TODO()
+  }
+
+  fun getGravity(): Vector3 {
+    TODO()
+  }
+
+  fun getParam(): Float {
+    TODO()
+  }
+
+  fun getParamRandomness(): Float {
+    TODO()
+  }
+
+  fun getParamTexture(): Texture {
+    TODO()
+  }
+
+  fun getSpread(): Float {
+    TODO()
+  }
+
+  fun getTrailColorModifier(): GradientTexture {
+    TODO()
+  }
+
+  fun getTrailDivisor(): Int {
+    TODO()
+  }
+
+  fun getTrailSizeModifier(): CurveTexture {
+    TODO()
+  }
+
+  fun setColor() {
+    TODO()
+  }
+
+  fun setColorRamp() {
+    TODO()
+  }
+
+  fun setEmissionBoxExtents() {
+    TODO()
+  }
+
+  fun setEmissionColorTexture() {
+    TODO()
+  }
+
+  fun setEmissionNormalTexture() {
+    TODO()
+  }
+
+  fun setEmissionPointCount() {
+    TODO()
+  }
+
+  fun setEmissionPointTexture() {
+    TODO()
+  }
+
+  fun setEmissionShape() {
+    TODO()
+  }
+
+  fun setEmissionSphereRadius() {
+    TODO()
+  }
+
+  fun setFlag() {
+    TODO()
+  }
+
+  fun setFlatness() {
+    TODO()
+  }
+
+  fun setGravity() {
+    TODO()
+  }
+
+  fun setParam() {
+    TODO()
+  }
+
+  fun setParamRandomness() {
+    TODO()
+  }
+
+  fun setParamTexture() {
+    TODO()
+  }
+
+  fun setSpread() {
+    TODO()
+  }
+
+  fun setTrailColorModifier() {
+    TODO()
+  }
+
+  fun setTrailDivisor() {
+    TODO()
+  }
+
+  fun setTrailSizeModifier() {
+    TODO()
+  }
+
   enum class Flags(
     val value: Int
   ) {

@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class Shader internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getCode(): String {
+    TODO()
+  }
+
+  fun getDefaultTextureParam(): Texture {
+    TODO()
+  }
+
+  fun getMode(): Shader.Mode {
+    TODO()
+  }
+
+  fun hasParam(): Boolean {
+    TODO()
+  }
+
+  fun setCode() {
+    TODO()
+  }
+
+  fun setDefaultTextureParam() {
+    TODO()
+  }
+
   enum class Mode(
     val value: Int
   ) {

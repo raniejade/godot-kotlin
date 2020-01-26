@@ -3,7 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,74 @@ import kotlinx.cinterop.reinterpret
 open class UPNP internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun addDevice() {
+    TODO()
+  }
+
+  fun addPortMapping(): Int {
+    TODO()
+  }
+
+  fun clearDevices() {
+    TODO()
+  }
+
+  fun deletePortMapping(): Int {
+    TODO()
+  }
+
+  fun discover(): Int {
+    TODO()
+  }
+
+  fun getDevice(): UPNPDevice {
+    TODO()
+  }
+
+  fun getDeviceCount(): Int {
+    TODO()
+  }
+
+  fun getDiscoverLocalPort(): Int {
+    TODO()
+  }
+
+  fun getDiscoverMulticastIf(): String {
+    TODO()
+  }
+
+  fun getGateway(): UPNPDevice {
+    TODO()
+  }
+
+  fun isDiscoverIpv6(): Boolean {
+    TODO()
+  }
+
+  fun queryExternalAddress(): String {
+    TODO()
+  }
+
+  fun removeDevice() {
+    TODO()
+  }
+
+  fun setDevice() {
+    TODO()
+  }
+
+  fun setDiscoverIpv6() {
+    TODO()
+  }
+
+  fun setDiscoverLocalPort() {
+    TODO()
+  }
+
+  fun setDiscoverMulticastIf() {
+    TODO()
+  }
+
   enum class UPNPResult(
     val value: Int
   ) {

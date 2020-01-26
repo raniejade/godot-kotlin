@@ -3,6 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +20,258 @@ import kotlinx.cinterop.reinterpret
 open class PopupMenu internal constructor(
   _handle: COpaquePointer
 ) : Popup(_handle) {
+  fun getItems(): VariantArray {
+    TODO()
+  }
+
+  fun guiInput() {
+    TODO()
+  }
+
+  fun setItems() {
+    TODO()
+  }
+
+  fun submenuTimeout() {
+    TODO()
+  }
+
+  fun addCheckItem() {
+    TODO()
+  }
+
+  fun addCheckShortcut() {
+    TODO()
+  }
+
+  fun addIconCheckItem() {
+    TODO()
+  }
+
+  fun addIconCheckShortcut() {
+    TODO()
+  }
+
+  fun addIconItem() {
+    TODO()
+  }
+
+  fun addIconShortcut() {
+    TODO()
+  }
+
+  fun addItem() {
+    TODO()
+  }
+
+  fun addRadioCheckItem() {
+    TODO()
+  }
+
+  fun addRadioCheckShortcut() {
+    TODO()
+  }
+
+  fun addSeparator() {
+    TODO()
+  }
+
+  fun addShortcut() {
+    TODO()
+  }
+
+  fun addSubmenuItem() {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getAllowSearch(): Boolean {
+    TODO()
+  }
+
+  fun getItemAccelerator(): Int {
+    TODO()
+  }
+
+  fun getItemCount(): Int {
+    TODO()
+  }
+
+  fun getItemIcon(): Texture {
+    TODO()
+  }
+
+  fun getItemId(): Int {
+    TODO()
+  }
+
+  fun getItemIndex(): Int {
+    TODO()
+  }
+
+  fun getItemMetadata(): Variant {
+    TODO()
+  }
+
+  fun getItemShortcut(): ShortCut {
+    TODO()
+  }
+
+  fun getItemSubmenu(): String {
+    TODO()
+  }
+
+  fun getItemText(): String {
+    TODO()
+  }
+
+  fun getItemTooltip(): String {
+    TODO()
+  }
+
+  fun getSubmenuPopupDelay(): Float {
+    TODO()
+  }
+
+  fun isHideOnCheckableItemSelection(): Boolean {
+    TODO()
+  }
+
+  fun isHideOnItemSelection(): Boolean {
+    TODO()
+  }
+
+  fun isHideOnStateItemSelection(): Boolean {
+    TODO()
+  }
+
+  fun isHideOnWindowLoseFocus(): Boolean {
+    TODO()
+  }
+
+  fun isItemCheckable(): Boolean {
+    TODO()
+  }
+
+  fun isItemChecked(): Boolean {
+    TODO()
+  }
+
+  fun isItemDisabled(): Boolean {
+    TODO()
+  }
+
+  fun isItemRadioCheckable(): Boolean {
+    TODO()
+  }
+
+  fun isItemSeparator(): Boolean {
+    TODO()
+  }
+
+  fun isItemShortcutDisabled(): Boolean {
+    TODO()
+  }
+
+  fun removeItem() {
+    TODO()
+  }
+
+  fun setAllowSearch() {
+    TODO()
+  }
+
+  fun setHideOnCheckableItemSelection() {
+    TODO()
+  }
+
+  fun setHideOnItemSelection() {
+    TODO()
+  }
+
+  fun setHideOnStateItemSelection() {
+    TODO()
+  }
+
+  fun setHideOnWindowLoseFocus() {
+    TODO()
+  }
+
+  fun setItemAccelerator() {
+    TODO()
+  }
+
+  fun setItemAsCheckable() {
+    TODO()
+  }
+
+  fun setItemAsRadioCheckable() {
+    TODO()
+  }
+
+  fun setItemAsSeparator() {
+    TODO()
+  }
+
+  fun setItemChecked() {
+    TODO()
+  }
+
+  fun setItemDisabled() {
+    TODO()
+  }
+
+  fun setItemIcon() {
+    TODO()
+  }
+
+  fun setItemId() {
+    TODO()
+  }
+
+  fun setItemMetadata() {
+    TODO()
+  }
+
+  fun setItemMultistate() {
+    TODO()
+  }
+
+  fun setItemShortcut() {
+    TODO()
+  }
+
+  fun setItemShortcutDisabled() {
+    TODO()
+  }
+
+  fun setItemSubmenu() {
+    TODO()
+  }
+
+  fun setItemText() {
+    TODO()
+  }
+
+  fun setItemTooltip() {
+    TODO()
+  }
+
+  fun setSubmenuPopupDelay() {
+    TODO()
+  }
+
+  fun toggleItemChecked() {
+    TODO()
+  }
+
+  fun toggleItemMultistate() {
+    TODO()
+  }
+
   companion object {
     fun new(): PopupMenu = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupMenu".cstr.ptr)

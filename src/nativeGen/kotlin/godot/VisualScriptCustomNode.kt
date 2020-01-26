@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import kotlin.Boolean
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,66 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptCustomNode internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getCaption(): String {
+    TODO()
+  }
+
+  fun getCategory(): String {
+    TODO()
+  }
+
+  fun getInputValuePortCount(): Int {
+    TODO()
+  }
+
+  fun getInputValuePortName(): String {
+    TODO()
+  }
+
+  fun getInputValuePortType(): Int {
+    TODO()
+  }
+
+  fun getOutputSequencePortCount(): Int {
+    TODO()
+  }
+
+  fun getOutputSequencePortText(): String {
+    TODO()
+  }
+
+  fun getOutputValuePortCount(): Int {
+    TODO()
+  }
+
+  fun getOutputValuePortName(): String {
+    TODO()
+  }
+
+  fun getOutputValuePortType(): Int {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getWorkingMemorySize(): Int {
+    TODO()
+  }
+
+  fun hasInputSequencePort(): Boolean {
+    TODO()
+  }
+
+  fun scriptChanged() {
+    TODO()
+  }
+
+  fun step(): Variant {
+    TODO()
+  }
+
   enum class StartMode(
     val value: Int
   ) {

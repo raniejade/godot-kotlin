@@ -14,6 +14,10 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
+  fun getPeer(): WebSocketPeer {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for WebSocketMultiplayerPeer

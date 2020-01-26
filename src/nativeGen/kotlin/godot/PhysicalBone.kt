@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Transform
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +18,90 @@ import kotlinx.cinterop.reinterpret
 open class PhysicalBone internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
+  fun directStateChanged() {
+    TODO()
+  }
+
+  fun getBodyOffset(): Transform {
+    TODO()
+  }
+
+  fun getBoneId(): Int {
+    TODO()
+  }
+
+  fun getBounce(): Float {
+    TODO()
+  }
+
+  fun getFriction(): Float {
+    TODO()
+  }
+
+  fun getGravityScale(): Float {
+    TODO()
+  }
+
+  fun getJointOffset(): Transform {
+    TODO()
+  }
+
+  fun getJointType(): PhysicalBone.JointType {
+    TODO()
+  }
+
+  fun getMass(): Float {
+    TODO()
+  }
+
+  fun getSimulatePhysics(): Boolean {
+    TODO()
+  }
+
+  fun getWeight(): Float {
+    TODO()
+  }
+
+  fun isSimulatingPhysics(): Boolean {
+    TODO()
+  }
+
+  fun isStaticBody(): Boolean {
+    TODO()
+  }
+
+  fun setBodyOffset() {
+    TODO()
+  }
+
+  fun setBounce() {
+    TODO()
+  }
+
+  fun setFriction() {
+    TODO()
+  }
+
+  fun setGravityScale() {
+    TODO()
+  }
+
+  fun setJointOffset() {
+    TODO()
+  }
+
+  fun setJointType() {
+    TODO()
+  }
+
+  fun setMass() {
+    TODO()
+  }
+
+  fun setWeight() {
+    TODO()
+  }
+
   enum class JointType(
     val value: Int
   ) {

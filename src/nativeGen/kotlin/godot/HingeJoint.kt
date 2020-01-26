@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +17,38 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  fun getLowerLimit(): Float {
+    TODO()
+  }
+
+  fun getUpperLimit(): Float {
+    TODO()
+  }
+
+  fun setLowerLimit() {
+    TODO()
+  }
+
+  fun setUpperLimit() {
+    TODO()
+  }
+
+  fun getFlag(): Boolean {
+    TODO()
+  }
+
+  fun getParam(): Float {
+    TODO()
+  }
+
+  fun setFlag() {
+    TODO()
+  }
+
+  fun setParam() {
+    TODO()
+  }
+
   enum class Param(
     val value: Int
   ) {

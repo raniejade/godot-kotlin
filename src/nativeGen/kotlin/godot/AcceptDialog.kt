@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +16,54 @@ import kotlinx.cinterop.reinterpret
 open class AcceptDialog internal constructor(
   _handle: COpaquePointer
 ) : WindowDialog(_handle) {
+  fun builtinTextEntered() {
+    TODO()
+  }
+
+  fun customAction() {
+    TODO()
+  }
+
+  fun ok() {
+    TODO()
+  }
+
+  fun addButton(): Button {
+    TODO()
+  }
+
+  fun addCancel(): Button {
+    TODO()
+  }
+
+  fun getHideOnOk(): Boolean {
+    TODO()
+  }
+
+  fun getLabel(): Label {
+    TODO()
+  }
+
+  fun getOk(): Button {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun registerTextEnter() {
+    TODO()
+  }
+
+  fun setHideOnOk() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
   companion object {
     fun new(): AcceptDialog = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AcceptDialog".cstr.ptr)

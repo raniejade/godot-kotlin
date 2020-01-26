@@ -2,7 +2,13 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
+import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.PoolByteArray
+import godot.core.Rect2
+import godot.core.Vector2
+import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +21,214 @@ import kotlinx.cinterop.reinterpret
 open class Image internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun getData(): Dictionary {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun blendRect() {
+    TODO()
+  }
+
+  fun blendRectMask() {
+    TODO()
+  }
+
+  fun blitRect() {
+    TODO()
+  }
+
+  fun blitRectMask() {
+    TODO()
+  }
+
+  fun bumpmapToNormalmap() {
+    TODO()
+  }
+
+  fun clearMipmaps() {
+    TODO()
+  }
+
+  fun compress(): Error {
+    TODO()
+  }
+
+  fun convert() {
+    TODO()
+  }
+
+  fun copyFrom() {
+    TODO()
+  }
+
+  fun create() {
+    TODO()
+  }
+
+  fun createFromData() {
+    TODO()
+  }
+
+  fun crop() {
+    TODO()
+  }
+
+  fun decompress(): Error {
+    TODO()
+  }
+
+  fun detectAlpha(): Image.AlphaMode {
+    TODO()
+  }
+
+  fun expandX2Hq2x() {
+    TODO()
+  }
+
+  fun fill() {
+    TODO()
+  }
+
+  fun fixAlphaEdges() {
+    TODO()
+  }
+
+  fun flipX() {
+    TODO()
+  }
+
+  fun flipY() {
+    TODO()
+  }
+
+  fun generateMipmaps(): Error {
+    TODO()
+  }
+
+  fun getData(): PoolByteArray {
+    TODO()
+  }
+
+  fun getFormat(): Image.Format {
+    TODO()
+  }
+
+  fun getHeight(): Int {
+    TODO()
+  }
+
+  fun getMipmapOffset(): Int {
+    TODO()
+  }
+
+  fun getPixel(): Color {
+    TODO()
+  }
+
+  fun getPixelv(): Color {
+    TODO()
+  }
+
+  fun getRect(): Image {
+    TODO()
+  }
+
+  fun getSize(): Vector2 {
+    TODO()
+  }
+
+  fun getUsedRect(): Rect2 {
+    TODO()
+  }
+
+  fun getWidth(): Int {
+    TODO()
+  }
+
+  fun hasMipmaps(): Boolean {
+    TODO()
+  }
+
+  fun isCompressed(): Boolean {
+    TODO()
+  }
+
+  fun isEmpty(): Boolean {
+    TODO()
+  }
+
+  fun isInvisible(): Boolean {
+    TODO()
+  }
+
+  fun load(): Error {
+    TODO()
+  }
+
+  fun loadJpgFromBuffer(): Error {
+    TODO()
+  }
+
+  fun loadPngFromBuffer(): Error {
+    TODO()
+  }
+
+  fun loadWebpFromBuffer(): Error {
+    TODO()
+  }
+
+  fun lock() {
+    TODO()
+  }
+
+  fun normalmapToXy() {
+    TODO()
+  }
+
+  fun premultiplyAlpha() {
+    TODO()
+  }
+
+  fun resize() {
+    TODO()
+  }
+
+  fun resizeToPo2() {
+    TODO()
+  }
+
+  fun rgbeToSrgb(): Image {
+    TODO()
+  }
+
+  fun savePng(): Error {
+    TODO()
+  }
+
+  fun setPixel() {
+    TODO()
+  }
+
+  fun setPixelv() {
+    TODO()
+  }
+
+  fun shrinkX2() {
+    TODO()
+  }
+
+  fun srgbToLinear() {
+    TODO()
+  }
+
+  fun unlock() {
+    TODO()
+  }
+
   enum class AlphaMode(
     val value: Int
   ) {

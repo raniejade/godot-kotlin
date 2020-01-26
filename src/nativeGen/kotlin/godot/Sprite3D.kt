@@ -3,6 +3,9 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Rect2
+import kotlin.Boolean
+import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,54 @@ import kotlinx.cinterop.reinterpret
 open class Sprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
+  fun getFrame(): Int {
+    TODO()
+  }
+
+  fun getHframes(): Int {
+    TODO()
+  }
+
+  fun getRegionRect(): Rect2 {
+    TODO()
+  }
+
+  fun getTexture(): Texture {
+    TODO()
+  }
+
+  fun getVframes(): Int {
+    TODO()
+  }
+
+  fun isRegion(): Boolean {
+    TODO()
+  }
+
+  fun setFrame() {
+    TODO()
+  }
+
+  fun setHframes() {
+    TODO()
+  }
+
+  fun setRegion() {
+    TODO()
+  }
+
+  fun setRegionRect() {
+    TODO()
+  }
+
+  fun setTexture() {
+    TODO()
+  }
+
+  fun setVframes() {
+    TODO()
+  }
+
   companion object {
     fun new(): Sprite3D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite3D".cstr.ptr)

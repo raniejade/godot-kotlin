@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  fun getConstantType(): Variant.Type {
+    TODO()
+  }
+
+  fun getConstantValue(): Variant {
+    TODO()
+  }
+
+  fun setConstantType() {
+    TODO()
+  }
+
+  fun setConstantValue() {
+    TODO()
+  }
+
   companion object {
     fun new(): VisualScriptConstant = memScoped {
       val fnPtr =

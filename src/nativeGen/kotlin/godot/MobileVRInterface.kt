@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +15,62 @@ import kotlinx.cinterop.reinterpret
 open class MobileVRInterface internal constructor(
   _handle: COpaquePointer
 ) : ARVRInterface(_handle) {
+  fun getDisplayToLens(): Float {
+    TODO()
+  }
+
+  fun getDisplayWidth(): Float {
+    TODO()
+  }
+
+  fun getEyeHeight(): Float {
+    TODO()
+  }
+
+  fun getIod(): Float {
+    TODO()
+  }
+
+  fun getK1(): Float {
+    TODO()
+  }
+
+  fun getK2(): Float {
+    TODO()
+  }
+
+  fun getOversample(): Float {
+    TODO()
+  }
+
+  fun setDisplayToLens() {
+    TODO()
+  }
+
+  fun setDisplayWidth() {
+    TODO()
+  }
+
+  fun setEyeHeight() {
+    TODO()
+  }
+
+  fun setIod() {
+    TODO()
+  }
+
+  fun setK1() {
+    TODO()
+  }
+
+  fun setK2() {
+    TODO()
+  }
+
+  fun setOversample() {
+    TODO()
+  }
+
   companion object {
     fun new(): MobileVRInterface = memScoped {
       val fnPtr =

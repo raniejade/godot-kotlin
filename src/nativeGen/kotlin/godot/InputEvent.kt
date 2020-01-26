@@ -3,6 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
+import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +18,58 @@ import kotlinx.cinterop.reinterpret
 open class InputEvent internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  fun accumulate(): Boolean {
+    TODO()
+  }
+
+  fun asText(): String {
+    TODO()
+  }
+
+  fun getActionStrength(): Float {
+    TODO()
+  }
+
+  fun getDevice(): Int {
+    TODO()
+  }
+
+  fun isAction(): Boolean {
+    TODO()
+  }
+
+  fun isActionPressed(): Boolean {
+    TODO()
+  }
+
+  fun isActionReleased(): Boolean {
+    TODO()
+  }
+
+  fun isActionType(): Boolean {
+    TODO()
+  }
+
+  fun isEcho(): Boolean {
+    TODO()
+  }
+
+  fun isPressed(): Boolean {
+    TODO()
+  }
+
+  fun setDevice() {
+    TODO()
+  }
+
+  fun shortcutMatch(): Boolean {
+    TODO()
+  }
+
+  fun xformedBy(): InputEvent {
+    TODO()
+  }
+
   companion object {
     /**
      * Container for method_bind pointers for InputEvent

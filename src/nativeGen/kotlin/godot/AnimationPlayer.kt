@@ -3,7 +3,12 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.NodePath
+import godot.core.PoolStringArray
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +20,174 @@ import kotlinx.cinterop.reinterpret
 open class AnimationPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  fun animationChanged() {
+    TODO()
+  }
+
+  fun nodeRemoved() {
+    TODO()
+  }
+
+  fun addAnimation(): Error {
+    TODO()
+  }
+
+  fun advance() {
+    TODO()
+  }
+
+  fun animationGetNext(): String {
+    TODO()
+  }
+
+  fun animationSetNext() {
+    TODO()
+  }
+
+  fun clearCaches() {
+    TODO()
+  }
+
+  fun clearQueue() {
+    TODO()
+  }
+
+  fun findAnimation(): String {
+    TODO()
+  }
+
+  fun getAnimation(): Animation {
+    TODO()
+  }
+
+  fun getAnimationList(): PoolStringArray {
+    TODO()
+  }
+
+  fun getAnimationProcessMode(): AnimationPlayer.AnimationProcessMode {
+    TODO()
+  }
+
+  fun getAssignedAnimation(): String {
+    TODO()
+  }
+
+  fun getAutoplay(): String {
+    TODO()
+  }
+
+  fun getBlendTime(): Float {
+    TODO()
+  }
+
+  fun getCurrentAnimation(): String {
+    TODO()
+  }
+
+  fun getCurrentAnimationLength(): Float {
+    TODO()
+  }
+
+  fun getCurrentAnimationPosition(): Float {
+    TODO()
+  }
+
+  fun getDefaultBlendTime(): Float {
+    TODO()
+  }
+
+  fun getPlayingSpeed(): Float {
+    TODO()
+  }
+
+  fun getQueue(): PoolStringArray {
+    TODO()
+  }
+
+  fun getRoot(): NodePath {
+    TODO()
+  }
+
+  fun getSpeedScale(): Float {
+    TODO()
+  }
+
+  fun hasAnimation(): Boolean {
+    TODO()
+  }
+
+  fun isActive(): Boolean {
+    TODO()
+  }
+
+  fun isPlaying(): Boolean {
+    TODO()
+  }
+
+  fun play() {
+    TODO()
+  }
+
+  fun playBackwards() {
+    TODO()
+  }
+
+  fun queue() {
+    TODO()
+  }
+
+  fun removeAnimation() {
+    TODO()
+  }
+
+  fun renameAnimation() {
+    TODO()
+  }
+
+  fun seek() {
+    TODO()
+  }
+
+  fun setActive() {
+    TODO()
+  }
+
+  fun setAnimationProcessMode() {
+    TODO()
+  }
+
+  fun setAssignedAnimation() {
+    TODO()
+  }
+
+  fun setAutoplay() {
+    TODO()
+  }
+
+  fun setBlendTime() {
+    TODO()
+  }
+
+  fun setCurrentAnimation() {
+    TODO()
+  }
+
+  fun setDefaultBlendTime() {
+    TODO()
+  }
+
+  fun setRoot() {
+    TODO()
+  }
+
+  fun setSpeedScale() {
+    TODO()
+  }
+
+  fun stop() {
+    TODO()
+  }
+
   enum class AnimationProcessMode(
     val value: Int
   ) {

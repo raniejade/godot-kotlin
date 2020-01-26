@@ -3,7 +3,10 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
+import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +18,202 @@ import kotlinx.cinterop.reinterpret
 open class RichTextLabel internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  fun guiInput() {
+    TODO()
+  }
+
+  fun scrollChanged() {
+    TODO()
+  }
+
+  fun addImage() {
+    TODO()
+  }
+
+  fun addText() {
+    TODO()
+  }
+
+  fun appendBbcode(): Error {
+    TODO()
+  }
+
+  fun clear() {
+    TODO()
+  }
+
+  fun getBbcode(): String {
+    TODO()
+  }
+
+  fun getContentHeight(): Int {
+    TODO()
+  }
+
+  fun getLineCount(): Int {
+    TODO()
+  }
+
+  fun getPercentVisible(): Float {
+    TODO()
+  }
+
+  fun getTabSize(): Int {
+    TODO()
+  }
+
+  fun getText(): String {
+    TODO()
+  }
+
+  fun getTotalCharacterCount(): Int {
+    TODO()
+  }
+
+  fun getVScroll(): VScrollBar {
+    TODO()
+  }
+
+  fun getVisibleCharacters(): Int {
+    TODO()
+  }
+
+  fun getVisibleLineCount(): Int {
+    TODO()
+  }
+
+  fun isMetaUnderlined(): Boolean {
+    TODO()
+  }
+
+  fun isOverridingSelectedFontColor(): Boolean {
+    TODO()
+  }
+
+  fun isScrollActive(): Boolean {
+    TODO()
+  }
+
+  fun isScrollFollowing(): Boolean {
+    TODO()
+  }
+
+  fun isSelectionEnabled(): Boolean {
+    TODO()
+  }
+
+  fun isUsingBbcode(): Boolean {
+    TODO()
+  }
+
+  fun newline() {
+    TODO()
+  }
+
+  fun parseBbcode(): Error {
+    TODO()
+  }
+
+  fun pop() {
+    TODO()
+  }
+
+  fun pushAlign() {
+    TODO()
+  }
+
+  fun pushCell() {
+    TODO()
+  }
+
+  fun pushColor() {
+    TODO()
+  }
+
+  fun pushFont() {
+    TODO()
+  }
+
+  fun pushIndent() {
+    TODO()
+  }
+
+  fun pushList() {
+    TODO()
+  }
+
+  fun pushMeta() {
+    TODO()
+  }
+
+  fun pushStrikethrough() {
+    TODO()
+  }
+
+  fun pushTable() {
+    TODO()
+  }
+
+  fun pushUnderline() {
+    TODO()
+  }
+
+  fun removeLine(): Boolean {
+    TODO()
+  }
+
+  fun scrollToLine() {
+    TODO()
+  }
+
+  fun setBbcode() {
+    TODO()
+  }
+
+  fun setMetaUnderline() {
+    TODO()
+  }
+
+  fun setOverrideSelectedFontColor() {
+    TODO()
+  }
+
+  fun setPercentVisible() {
+    TODO()
+  }
+
+  fun setScrollActive() {
+    TODO()
+  }
+
+  fun setScrollFollow() {
+    TODO()
+  }
+
+  fun setSelectionEnabled() {
+    TODO()
+  }
+
+  fun setTabSize() {
+    TODO()
+  }
+
+  fun setTableColumnExpand() {
+    TODO()
+  }
+
+  fun setText() {
+    TODO()
+  }
+
+  fun setUseBbcode() {
+    TODO()
+  }
+
+  fun setVisibleCharacters() {
+    TODO()
+  }
+
   enum class Align(
     val value: Int
   ) {

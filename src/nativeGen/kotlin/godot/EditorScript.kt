@@ -14,6 +14,22 @@ import kotlinx.cinterop.reinterpret
 open class EditorScript internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  fun run() {
+    TODO()
+  }
+
+  fun addRootNode() {
+    TODO()
+  }
+
+  fun getEditorInterface(): EditorInterface {
+    TODO()
+  }
+
+  fun getScene(): Node {
+    TODO()
+  }
+
   companion object {
     fun new(): EditorScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorScript".cstr.ptr)

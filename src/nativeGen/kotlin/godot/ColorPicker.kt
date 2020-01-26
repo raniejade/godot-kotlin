@@ -2,7 +2,10 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.Color
 import godot.core.Godot
+import godot.core.PoolColorArray
+import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,6 +17,126 @@ import kotlinx.cinterop.reinterpret
 open class ColorPicker internal constructor(
   _handle: COpaquePointer
 ) : BoxContainer(_handle) {
+  fun addPresetPressed() {
+    TODO()
+  }
+
+  fun focusEnter() {
+    TODO()
+  }
+
+  fun focusExit() {
+    TODO()
+  }
+
+  fun hsvDraw() {
+    TODO()
+  }
+
+  fun htmlEntered() {
+    TODO()
+  }
+
+  fun htmlFocusExit() {
+    TODO()
+  }
+
+  fun presetInput() {
+    TODO()
+  }
+
+  fun sampleDraw() {
+    TODO()
+  }
+
+  fun screenInput() {
+    TODO()
+  }
+
+  fun screenPickPressed() {
+    TODO()
+  }
+
+  fun textTypeToggled() {
+    TODO()
+  }
+
+  fun updatePresets() {
+    TODO()
+  }
+
+  fun uvInput() {
+    TODO()
+  }
+
+  fun valueChanged() {
+    TODO()
+  }
+
+  fun wInput() {
+    TODO()
+  }
+
+  fun addPreset() {
+    TODO()
+  }
+
+  fun arePresetsEnabled(): Boolean {
+    TODO()
+  }
+
+  fun arePresetsVisible(): Boolean {
+    TODO()
+  }
+
+  fun erasePreset() {
+    TODO()
+  }
+
+  fun getPickColor(): Color {
+    TODO()
+  }
+
+  fun getPresets(): PoolColorArray {
+    TODO()
+  }
+
+  fun isDeferredMode(): Boolean {
+    TODO()
+  }
+
+  fun isEditingAlpha(): Boolean {
+    TODO()
+  }
+
+  fun isRawMode(): Boolean {
+    TODO()
+  }
+
+  fun setDeferredMode() {
+    TODO()
+  }
+
+  fun setEditAlpha() {
+    TODO()
+  }
+
+  fun setPickColor() {
+    TODO()
+  }
+
+  fun setPresetsEnabled() {
+    TODO()
+  }
+
+  fun setPresetsVisible() {
+    TODO()
+  }
+
+  fun setRawMode() {
+    TODO()
+  }
+
   companion object {
     fun new(): ColorPicker = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorPicker".cstr.ptr)

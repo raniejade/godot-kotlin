@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,6 +16,50 @@ import kotlinx.cinterop.reinterpret
 open class ImageTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  fun reloadHook() {
+    TODO()
+  }
+
+  fun create() {
+    TODO()
+  }
+
+  fun createFromImage() {
+    TODO()
+  }
+
+  fun getFormat(): Image.Format {
+    TODO()
+  }
+
+  fun getLossyStorageQuality(): Float {
+    TODO()
+  }
+
+  fun getStorage(): ImageTexture.Storage {
+    TODO()
+  }
+
+  fun load(): Error {
+    TODO()
+  }
+
+  fun setData() {
+    TODO()
+  }
+
+  fun setLossyStorageQuality() {
+    TODO()
+  }
+
+  fun setSizeOverride() {
+    TODO()
+  }
+
+  fun setStorage() {
+    TODO()
+  }
+
   enum class Storage(
     val value: Int
   ) {

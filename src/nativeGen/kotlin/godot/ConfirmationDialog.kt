@@ -14,6 +14,10 @@ import kotlinx.cinterop.reinterpret
 open class ConfirmationDialog internal constructor(
   _handle: COpaquePointer
 ) : AcceptDialog(_handle) {
+  fun getCancel(): Button {
+    TODO()
+  }
+
   companion object {
     fun new(): ConfirmationDialog = memScoped {
       val fnPtr =
