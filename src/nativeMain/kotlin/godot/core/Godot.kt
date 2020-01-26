@@ -25,10 +25,11 @@ object Godot {
     val extensionCount = gdnative.pointed.num_extensions.toInt()
     val extensions = checkNotNull(gdnative.pointed.extensions)
     lateinit var nativescript: CPointer<godot_gdnative_ext_nativescript_api_struct>
-    (0..extensionCount).forEach { i ->
+    (0 until extensionCount).forEach { i ->
       val extension = checkNotNull(extensions[i])
-      when (extension.pointed.type) {
-        GDNATIVE_API_TYPES.GDNATIVE_EXT_NATIVESCRIPT.value -> {
+      val type = extension.pointed.type
+      when (GDNATIVE_API_TYPES.byValue(type)) {
+        GDNATIVE_API_TYPES.GDNATIVE_EXT_NATIVESCRIPT -> {
           nativescript = extension.reinterpret()
         }
         else -> {
