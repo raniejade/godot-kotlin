@@ -2,6 +2,7 @@ package godot.core
 
 import gdnative.godot_variant
 import gdnative.godot_variant_type
+import godot.Object
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
@@ -16,16 +17,53 @@ class Variant(
       ref.compareAndSet(ref.value, value.freeze())
     }
 
-  enum class Type {
-    VECTOR2
+  enum class Type(internal val value: godot_variant_type) {
+    NIL(godot_variant_type.GODOT_VARIANT_TYPE_NIL),
+    BOOL(godot_variant_type.GODOT_VARIANT_TYPE_BOOL),
+    INT(godot_variant_type.GODOT_VARIANT_TYPE_INT),
+    REAL(godot_variant_type.GODOT_VARIANT_TYPE_REAL),
+    STRING(godot_variant_type.GODOT_VARIANT_TYPE_STRING),
+    VECTOR2(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR2),
+    RECT2(godot_variant_type.GODOT_VARIANT_TYPE_RECT2),
+    VECTOR3(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR3),
+    TRANSFORM2D(godot_variant_type.GODOT_VARIANT_TYPE_TRANSFORM2D),
+    PLANE(godot_variant_type.GODOT_VARIANT_TYPE_PLANE),
+    QUAT(godot_variant_type.GODOT_VARIANT_TYPE_QUAT),
+    AABB(godot_variant_type.GODOT_VARIANT_TYPE_AABB),
+    BASIS(godot_variant_type.GODOT_VARIANT_TYPE_BASIS),
+    TRANSFORM(godot_variant_type.GODOT_VARIANT_TYPE_TRANSFORM),
+    COLOR(godot_variant_type.GODOT_VARIANT_TYPE_COLOR),
+    NODE_PATH(godot_variant_type.GODOT_VARIANT_TYPE_NODE_PATH),
+    RID(godot_variant_type.GODOT_VARIANT_TYPE_RID),
+    OBJECT(godot_variant_type.GODOT_VARIANT_TYPE_OBJECT),
+    DICTIONARY(godot_variant_type.GODOT_VARIANT_TYPE_DICTIONARY),
+    ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_ARRAY),
+    POOL_BYTE_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_BYTE_ARRAY),
+    POOL_INT_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_INT_ARRAY),
+    POOL_REAL_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_REAL_ARRAY),
+    POOL_STRING_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_STRING_ARRAY),
+    POOL_COLOR_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_COLOR_ARRAY),
+    POOL_VECTOR2_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR2_ARRAY),
+    POOL_VECTOR3_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR3_ARRAY);
+
+    companion object {
+      fun fromValue(value: godot_variant_type): Type {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("Unknown value: $value")
+      }
+    }
   }
 
   enum class Operator {}
 
-  internal val type: godot_variant_type
+  val type: Type
     get() {
       return memScoped {
-        checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr)
+        Type.fromValue(checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr))
       }
     }
 
@@ -55,6 +93,12 @@ class Variant(
   fun asReal(): Double {
     return transmute {
       checkNotNull(Godot.gdnative.godot_variant_as_real)(it)
+    }
+  }
+
+  fun asBool(): Boolean {
+    return transmute {
+      checkNotNull(Godot.gdnative.godot_variant_as_bool)(it)
     }
   }
 
@@ -181,6 +225,13 @@ class Variant(
   fun asDictionary(): Dictionary {
     return transmute(::Dictionary) {
       checkNotNull(Godot.gdnative.godot_variant_as_dictionary)(it)
+    }
+  }
+
+  fun asObject(): Object? {
+    return memScoped {
+      val obj = checkNotNull(Godot.gdnative.godot_variant_as_object)(_value.ptr)
+      obj?.let(::Object)
     }
   }
 
@@ -358,6 +409,12 @@ class Variant(
     fun new(dictionary: Dictionary): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_dictionary)(it, dictionary._value.ptr)
+      }
+    }
+
+    fun new(obj: Object): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_object)(it, obj._handle)
       }
     }
 
