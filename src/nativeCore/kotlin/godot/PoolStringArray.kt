@@ -6,11 +6,13 @@ import kotlinx.cinterop.*
 
 class PoolStringArray(
   value: CValue<godot_pool_string_array>
-) : Primitive<godot_pool_string_array>(value), Iterable<GDString> {
-  fun append(string: GDString) {
+) : Primitive<godot_pool_string_array>(value), Iterable<String> {
+  fun append(string: String) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_pool_string_array_append)(ptr, string._value.ptr)
+      GDString.from(string) {
+        checkNotNull(Godot.gdnative.godot_pool_string_array_append)(ptr, it._value.ptr)
+      }
       ptr.pointed.readValue()
     }
   }
@@ -29,11 +31,13 @@ class PoolStringArray(
     }
   }
 
-  fun insert(index: Int, string: GDString): godot_error {
+  fun insert(index: Int, string: String): godot_error {
     lateinit var ret: godot_error
     _value = memScoped {
       val ptr = _value.ptr
-      ret = checkNotNull(Godot.gdnative.godot_pool_string_array_insert)(ptr, index, string._value.ptr)
+      GDString.from(string) {
+        ret = checkNotNull(Godot.gdnative.godot_pool_string_array_insert)(ptr, index, it._value.ptr)
+      }
       ptr.pointed.readValue()
     }
     return ret
@@ -63,19 +67,24 @@ class PoolStringArray(
     }
   }
 
-  operator fun set(index: Int, string: GDString) {
+  operator fun set(index: Int, string: String) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_pool_string_array_set)(ptr, index, string._value.ptr)
+      GDString.from(string) {
+        checkNotNull(Godot.gdnative.godot_pool_string_array_set)(ptr, index, it._value.ptr)
+      }
       ptr.pointed.readValue()
     }
   }
 
-  operator fun get(index: Int): GDString {
+  operator fun get(index: Int): String {
     return memScoped {
-      GDString(
+      val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_pool_string_array_get)(_value.ptr, index)
       )
+      val ret = gdString.toKString()
+      gdString.destroy()
+      ret
     }
   }
 
@@ -93,7 +102,7 @@ class PoolStringArray(
     return GDString.new("PoolStringArray(${size()})")
   }
 
-  override fun iterator(): Iterator<GDString> {
+  override fun iterator(): Iterator<String> {
     return IndexedIterator(size(), this::get)
   }
   

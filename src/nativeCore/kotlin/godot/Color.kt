@@ -87,11 +87,14 @@ class Color(
     }
   }
 
-  fun toHtml(withAlpha: Boolean = true): GDString {
+  fun toHtml(withAlpha: Boolean = true): String {
     return memScoped {
-      GDString(
+      val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_color_to_html)(_value.ptr, withAlpha)
       )
+      val ret = gdString.toKString()
+      gdString.destroy()
+      ret
     }
   }
 

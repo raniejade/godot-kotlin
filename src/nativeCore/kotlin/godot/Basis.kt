@@ -158,14 +158,6 @@ class Basis(
     return _value.hashCode()
   }
 
-  fun asString(): GDString {
-    return memScoped {
-      GDString(
-        checkNotNull(Godot.gdnative.godot_basis_as_string)(_value.ptr)
-      )
-    }
-  }
-
   override fun toVariant(): Variant {
     return Variant.new(this)
   }

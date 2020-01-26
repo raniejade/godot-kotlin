@@ -14,9 +14,12 @@ abstract class Primitive<T: CStructVar>(value: CValue<T>) {
     }
 
   abstract fun toVariant(): Variant
-  abstract fun toGDString(): GDString
+  internal abstract fun toGDString(): GDString
 
   final override fun toString(): String {
-    return toGDString().toKString()
+    val gdString = toGDString()
+    val ret = gdString.toKString()
+    gdString.destroy()
+    return ret
   }
 }

@@ -50,10 +50,12 @@ object Godot {
   }
 
   fun print(msg: Any) {
-    print(GDString.new(msg.toString()))
+    val str = GDString.new(msg.toString())
+    print(str)
+    str.destroy()
   }
 
-  fun print(msg: GDString) {
+  internal fun print(msg: GDString) {
     memScoped {
       checkNotNull(gdnative.godot_print)(msg._value.ptr)
     }

@@ -3,7 +3,7 @@ package godot
 import gdnative.godot_string
 import kotlinx.cinterop.*
 
-class GDString(
+internal class GDString(
   value: CValue<godot_string>
 ): Primitive<godot_string>(value), Iterable<Char> {
   fun beginsWith(str: GDString): Boolean {
@@ -556,7 +556,7 @@ class GDString(
   }
 
   override fun toVariant(): Variant {
-    return Variant.new(this)
+    throw UnsupportedOperationException()
   }
 
   override fun toGDString(): GDString {
@@ -601,6 +601,12 @@ class GDString(
   }
 
   companion object {
+    fun from(str: String, cb: (GDString) -> Unit) {
+      val gdString = new(str)
+      cb(gdString)
+      gdString.destroy()
+    }
+
     fun new(): GDString {
       val value = memScoped {
         val tmp = alloc<godot_string>()

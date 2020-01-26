@@ -19,11 +19,14 @@ class Variant(
       }
     }
 
-  fun asString(): GDString {
+  fun asString(): String {
     return memScoped {
-      GDString(
+      val gdString = GDString(
         checkNotNull(Godot.gdnative.godot_variant_as_string)(_value.ptr)
       )
+      val ret = gdString.toKString()
+      gdString.destroy()
+      ret
     }
   }
 
@@ -161,23 +164,21 @@ class Variant(
     return this
   }
 
-  // TODO: this might be wrong
+  // TODO: this might be wrong, make variant not a primitive type
   override fun toGDString(): GDString {
-    return asString()
+    return GDString.new(asString())
   }
 
   companion object {
-    fun new(str: GDString): Variant {
+    fun new(str: String): Variant {
       val value = memScoped {
         val tmp = alloc<godot_variant>()
-        checkNotNull(Godot.gdnative.godot_variant_new_string)(tmp.ptr, str._value.ptr)
+        GDString.from(str) {
+          checkNotNull(Godot.gdnative.godot_variant_new_string)(tmp.ptr, it._value.ptr)
+        }
         tmp.readValue()
       }
       return Variant(value)
-    }
-
-    fun new(str: String): Variant {
-      return new(GDString.new(str))
     }
 
     fun new(num: UInt64): Variant {
