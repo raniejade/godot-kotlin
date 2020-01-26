@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class VehicleWheel
+open class VehicleWheel internal constructor() : Spatial()

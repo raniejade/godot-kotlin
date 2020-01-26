@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class TextureButton
+open class TextureButton internal constructor() : BaseButton()

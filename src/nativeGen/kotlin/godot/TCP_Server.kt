@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class TCP_Server
+open class TCP_Server internal constructor() : Reference()

@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class GrooveJoint2D
+open class GrooveJoint2D internal constructor() : Joint2D()

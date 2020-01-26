@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class EncodedObjectAsID
+open class EncodedObjectAsID internal constructor() : Reference()

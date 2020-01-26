@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class StyleBoxLine
+open class StyleBoxLine internal constructor() : StyleBox()

@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Joint2D
+open class Joint2D internal constructor() : Node2D()

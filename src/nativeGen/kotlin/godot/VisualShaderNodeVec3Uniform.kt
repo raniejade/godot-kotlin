@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class VisualShaderNodeVec3Uniform
+open class VisualShaderNodeVec3Uniform internal constructor() : VisualShaderNodeUniform()

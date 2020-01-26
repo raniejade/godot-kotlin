@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Physics2DDirectSpaceState
+open class Physics2DDirectSpaceState internal constructor() : Object()

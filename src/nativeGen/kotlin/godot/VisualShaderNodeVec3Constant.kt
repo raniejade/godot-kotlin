@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class VisualShaderNodeVec3Constant
+open class VisualShaderNodeVec3Constant internal constructor() : VisualShaderNode()

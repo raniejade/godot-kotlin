@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class CollisionShape2D
+open class CollisionShape2D internal constructor() : Node2D()

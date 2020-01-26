@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class AnimationNodeBlendTree
+open class AnimationNodeBlendTree internal constructor() : AnimationRootNode()

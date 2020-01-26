@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class VisualScriptFunctionCall
+open class VisualScriptFunctionCall internal constructor() : VisualScriptNode()

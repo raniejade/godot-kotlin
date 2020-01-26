@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class BulletPhysicsDirectBodyState
+open class BulletPhysicsDirectBodyState internal constructor() : PhysicsDirectBodyState()

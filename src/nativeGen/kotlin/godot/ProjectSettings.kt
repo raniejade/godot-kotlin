@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-object ProjectSettings
+open class ProjectSettings internal constructor() : Object()

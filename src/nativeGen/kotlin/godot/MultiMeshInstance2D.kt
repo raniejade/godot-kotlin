@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class MultiMeshInstance2D
+open class MultiMeshInstance2D internal constructor() : Node2D()

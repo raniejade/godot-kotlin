@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class VisualScriptMathConstant
+open class VisualScriptMathConstant internal constructor() : VisualScriptNode()

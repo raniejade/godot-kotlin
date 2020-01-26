@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-object TranslationServer
+open class TranslationServer internal constructor() : Object()

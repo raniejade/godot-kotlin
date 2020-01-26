@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class ResourceFormatPVR
+open class ResourceFormatPVR internal constructor() : ResourceFormatLoader()

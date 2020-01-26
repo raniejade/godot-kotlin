@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class RayCast2D
+open class RayCast2D internal constructor() : Node2D()

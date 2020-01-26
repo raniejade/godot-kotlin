@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class NavigationPolygonInstance
+open class NavigationPolygonInstance internal constructor() : Node2D()

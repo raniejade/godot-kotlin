@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class RigidBody2D
+open class RigidBody2D internal constructor() : PhysicsBody2D()

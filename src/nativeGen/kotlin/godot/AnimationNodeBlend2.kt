@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class AnimationNodeBlend2
+open class AnimationNodeBlend2 internal constructor() : AnimationNode()

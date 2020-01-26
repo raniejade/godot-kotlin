@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class _Semaphore
+open class _Semaphore internal constructor() : Reference()

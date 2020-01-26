@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Physics2DTestMotionResult
+open class Physics2DTestMotionResult internal constructor() : Reference()

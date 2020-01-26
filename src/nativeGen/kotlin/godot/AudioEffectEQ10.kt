@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class AudioEffectEQ10
+open class AudioEffectEQ10 internal constructor() : AudioEffectEQ()

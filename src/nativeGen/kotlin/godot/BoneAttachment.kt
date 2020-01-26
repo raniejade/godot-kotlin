@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class BoneAttachment
+open class BoneAttachment internal constructor() : Spatial()

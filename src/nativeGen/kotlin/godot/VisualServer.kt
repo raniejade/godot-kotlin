@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-object VisualServer
+open class VisualServer internal constructor() : Object()

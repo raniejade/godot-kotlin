@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class VisualShaderNodeVectorScalarSmoothStep
+open class VisualShaderNodeVectorScalarSmoothStep internal constructor() : VisualShaderNode()

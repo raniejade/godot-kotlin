@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class PhysicsBody2D
+open class PhysicsBody2D internal constructor() : CollisionObject2D()

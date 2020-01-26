@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class HSeparator
+open class HSeparator internal constructor() : Separator()

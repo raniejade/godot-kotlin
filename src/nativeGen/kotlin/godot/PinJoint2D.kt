@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class PinJoint2D
+open class PinJoint2D internal constructor() : Joint2D()

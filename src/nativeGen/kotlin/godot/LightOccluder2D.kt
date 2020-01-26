@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class LightOccluder2D
+open class LightOccluder2D internal constructor() : Node2D()

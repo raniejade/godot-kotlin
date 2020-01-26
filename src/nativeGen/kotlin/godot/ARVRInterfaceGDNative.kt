@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class ARVRInterfaceGDNative
+open class ARVRInterfaceGDNative internal constructor() : ARVRInterface()

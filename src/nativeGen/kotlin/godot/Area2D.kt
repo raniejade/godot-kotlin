@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Area2D
+open class Area2D internal constructor() : CollisionObject2D()

@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Particles2D
+open class Particles2D internal constructor() : Node2D()

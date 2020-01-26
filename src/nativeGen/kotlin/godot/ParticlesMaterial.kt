@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class ParticlesMaterial
+open class ParticlesMaterial internal constructor() : Material()

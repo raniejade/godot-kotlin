@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class CapsuleShape2D
+open class CapsuleShape2D internal constructor() : Shape2D()

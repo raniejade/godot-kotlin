@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class AudioStreamMicrophone
+open class AudioStreamMicrophone internal constructor() : AudioStream()

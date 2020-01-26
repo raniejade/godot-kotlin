@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Texture3D
+open class Texture3D internal constructor() : TextureLayered()

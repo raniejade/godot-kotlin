@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class OccluderPolygon2D
+open class OccluderPolygon2D internal constructor() : Resource()

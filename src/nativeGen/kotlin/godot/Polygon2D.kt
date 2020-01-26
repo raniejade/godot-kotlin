@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Polygon2D
+open class Polygon2D internal constructor() : Node2D()

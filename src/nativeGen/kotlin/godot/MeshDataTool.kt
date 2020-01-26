@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class MeshDataTool
+open class MeshDataTool internal constructor() : Reference()

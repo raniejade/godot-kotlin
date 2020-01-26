@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-object AudioServer
+open class AudioServer internal constructor() : Object()

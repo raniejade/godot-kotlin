@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class MeshInstance2D
+open class MeshInstance2D internal constructor() : Node2D()

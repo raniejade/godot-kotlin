@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-object _ResourceLoader
+open class _ResourceLoader internal constructor() : Object()

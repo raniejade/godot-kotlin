@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class PCKPacker
+open class PCKPacker internal constructor() : Reference()

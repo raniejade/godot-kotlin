@@ -1,4 +1,4 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-class Skeleton2D
+open class Skeleton2D internal constructor() : Node2D()
