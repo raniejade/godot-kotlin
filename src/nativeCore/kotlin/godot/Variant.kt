@@ -152,6 +152,12 @@ class Variant(
     }
   }
 
+  fun asPlane(): Plane {
+    return transmute(::Plane) {
+      checkNotNull(Godot.gdnative.godot_variant_as_plane)(it)
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -296,6 +302,12 @@ class Variant(
     fun new(transform: Transform2D): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_transform2d)(it, transform._value.ptr)
+      }
+    }
+
+    fun new(plane: Plane): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_plane)(it, plane._value.ptr)
       }
     }
 
