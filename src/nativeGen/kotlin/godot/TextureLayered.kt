@@ -5,12 +5,12 @@ import kotlin.Int
 
 open class TextureLayered internal constructor() : Resource() {
   companion object {
-    val FLAGS_DEFAULT: Int = 4
+    val FlagsDefault: Int = 4
 
-    val FLAG_FILTER: Int = 4
+    val FlagFilter: Int = 4
 
-    val FLAG_MIPMAPS: Int = 1
+    val FlagMipmaps: Int = 1
 
-    val FLAG_REPEAT: Int = 2
+    val FlagRepeat: Int = 2
   }
 }

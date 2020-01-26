@@ -5,16 +5,16 @@ import kotlin.Int
 
 open class GeometryInstance internal constructor() : VisualInstance() {
   companion object {
-    val FLAG_MAX: Int = 2
+    val FlagMax: Int = 2
 
-    val FLAG_USE_BAKED_LIGHT: Int = 0
+    val FlagUseBakedLight: Int = 0
 
-    val SHADOW_CASTING_SETTING_DOUBLE_SIDED: Int = 2
+    val ShadowCastingSettingDoubleSided: Int = 2
 
-    val SHADOW_CASTING_SETTING_OFF: Int = 0
+    val ShadowCastingSettingOff: Int = 0
 
-    val SHADOW_CASTING_SETTING_ON: Int = 1
+    val ShadowCastingSettingOn: Int = 1
 
-    val SHADOW_CASTING_SETTING_SHADOWS_ONLY: Int = 3
+    val ShadowCastingSettingShadowsOnly: Int = 3
   }
 }

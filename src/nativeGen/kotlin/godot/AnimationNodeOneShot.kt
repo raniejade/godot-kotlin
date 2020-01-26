@@ -5,9 +5,9 @@ import kotlin.Int
 
 open class AnimationNodeOneShot internal constructor() : AnimationNode() {
   companion object {
-    val MIX_MODE_ADD: Int = 1
+    val MixModeAdd: Int = 1
 
-    val MIX_MODE_BLEND: Int = 0
+    val MixModeBlend: Int = 0
 
     fun new(): AnimationNodeOneShot {
       TODO()

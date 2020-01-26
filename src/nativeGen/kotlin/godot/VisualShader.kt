@@ -5,17 +5,17 @@ import kotlin.Int
 
 open class VisualShader internal constructor() : Shader() {
   companion object {
-    val NODE_ID_INVALID: Int = -1
+    val NodeIdInvalid: Int = -1
 
-    val NODE_ID_OUTPUT: Int = 0
+    val NodeIdOutput: Int = 0
 
-    val TYPE_FRAGMENT: Int = 1
+    val TypeFragment: Int = 1
 
-    val TYPE_LIGHT: Int = 2
+    val TypeLight: Int = 2
 
-    val TYPE_MAX: Int = 3
+    val TypeMax: Int = 3
 
-    val TYPE_VERTEX: Int = 0
+    val TypeVertex: Int = 0
 
     fun new(): VisualShader {
       TODO()

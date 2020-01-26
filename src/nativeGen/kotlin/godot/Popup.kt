@@ -5,9 +5,9 @@ import kotlin.Int
 
 open class Popup internal constructor() : Control() {
   companion object {
-    val NOTIFICATION_POPUP_HIDE: Int = 81
+    val NotificationPopupHide: Int = 81
 
-    val NOTIFICATION_POST_POPUP: Int = 80
+    val NotificationPostPopup: Int = 80
 
     fun new(): Popup {
       TODO()

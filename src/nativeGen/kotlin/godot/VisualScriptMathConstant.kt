@@ -5,23 +5,23 @@ import kotlin.Int
 
 open class VisualScriptMathConstant internal constructor() : VisualScriptNode() {
   companion object {
-    val MATH_CONSTANT_E: Int = 4
+    val MathConstantE: Int = 4
 
-    val MATH_CONSTANT_HALF_PI: Int = 2
+    val MathConstantHalfPi: Int = 2
 
-    val MATH_CONSTANT_INF: Int = 6
+    val MathConstantInf: Int = 6
 
-    val MATH_CONSTANT_MAX: Int = 8
+    val MathConstantMax: Int = 8
 
-    val MATH_CONSTANT_NAN: Int = 7
+    val MathConstantNan: Int = 7
 
-    val MATH_CONSTANT_ONE: Int = 0
+    val MathConstantOne: Int = 0
 
-    val MATH_CONSTANT_PI: Int = 1
+    val MathConstantPi: Int = 1
 
-    val MATH_CONSTANT_SQRT2: Int = 5
+    val MathConstantSqrt2: Int = 5
 
-    val MATH_CONSTANT_TAU: Int = 3
+    val MathConstantTau: Int = 3
 
     fun new(): VisualScriptMathConstant {
       TODO()

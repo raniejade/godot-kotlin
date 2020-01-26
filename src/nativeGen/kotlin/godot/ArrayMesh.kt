@@ -5,47 +5,47 @@ import kotlin.Int
 
 open class ArrayMesh internal constructor() : Mesh() {
   companion object {
-    val ARRAY_BONES: Int = 6
+    val ArrayBones: Int = 6
 
-    val ARRAY_COLOR: Int = 3
+    val ArrayColor: Int = 3
 
-    val ARRAY_FORMAT_BONES: Int = 64
+    val ArrayFormatBones: Int = 64
 
-    val ARRAY_FORMAT_COLOR: Int = 8
+    val ArrayFormatColor: Int = 8
 
-    val ARRAY_FORMAT_INDEX: Int = 256
+    val ArrayFormatIndex: Int = 256
 
-    val ARRAY_FORMAT_NORMAL: Int = 2
+    val ArrayFormatNormal: Int = 2
 
-    val ARRAY_FORMAT_TANGENT: Int = 4
+    val ArrayFormatTangent: Int = 4
 
-    val ARRAY_FORMAT_TEX_UV: Int = 16
+    val ArrayFormatTexUv: Int = 16
 
-    val ARRAY_FORMAT_TEX_UV2: Int = 32
+    val ArrayFormatTexUv2: Int = 32
 
-    val ARRAY_FORMAT_VERTEX: Int = 1
+    val ArrayFormatVertex: Int = 1
 
-    val ARRAY_FORMAT_WEIGHTS: Int = 128
+    val ArrayFormatWeights: Int = 128
 
-    val ARRAY_INDEX: Int = 8
+    val ArrayIndex: Int = 8
 
-    val ARRAY_MAX: Int = 9
+    val ArrayMax: Int = 9
 
-    val ARRAY_NORMAL: Int = 1
+    val ArrayNormal: Int = 1
 
-    val ARRAY_TANGENT: Int = 2
+    val ArrayTangent: Int = 2
 
-    val ARRAY_TEX_UV: Int = 4
+    val ArrayTexUv: Int = 4
 
-    val ARRAY_TEX_UV2: Int = 5
+    val ArrayTexUv2: Int = 5
 
-    val ARRAY_VERTEX: Int = 0
+    val ArrayVertex: Int = 0
 
-    val ARRAY_WEIGHTS: Int = 7
+    val ArrayWeights: Int = 7
 
-    val ARRAY_WEIGHTS_SIZE: Int = 4
+    val ArrayWeightsSize: Int = 4
 
-    val NO_INDEX_ARRAY: Int = -1
+    val NoIndexArray: Int = -1
 
     fun new(): ArrayMesh {
       TODO()

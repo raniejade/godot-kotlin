@@ -5,23 +5,23 @@ import kotlin.Int
 
 open class MultiplayerAPI internal constructor() : Reference() {
   companion object {
-    val RPC_MODE_DISABLED: Int = 0
+    val RpcModeDisabled: Int = 0
 
-    val RPC_MODE_MASTER: Int = 2
+    val RpcModeMaster: Int = 2
 
-    val RPC_MODE_MASTERSYNC: Int = 5
+    val RpcModeMastersync: Int = 5
 
-    val RPC_MODE_PUPPET: Int = 3
+    val RpcModePuppet: Int = 3
 
-    val RPC_MODE_PUPPETSYNC: Int = 6
+    val RpcModePuppetsync: Int = 6
 
-    val RPC_MODE_REMOTE: Int = 1
+    val RpcModeRemote: Int = 1
 
-    val RPC_MODE_REMOTESYNC: Int = 4
+    val RpcModeRemotesync: Int = 4
 
-    val RPC_MODE_SLAVE: Int = 3
+    val RpcModeSlave: Int = 3
 
-    val RPC_MODE_SYNC: Int = 4
+    val RpcModeSync: Int = 4
 
     fun new(): MultiplayerAPI {
       TODO()

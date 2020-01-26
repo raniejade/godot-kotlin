@@ -5,8 +5,8 @@ import kotlin.Int
 
 open class AudioEffectSpectrumAnalyzerInstance internal constructor() : AudioEffectInstance() {
   companion object {
-    val MAGNITUDE_AVERAGE: Int = 0
+    val MagnitudeAverage: Int = 0
 
-    val MAGNITUDE_MAX: Int = 1
+    val MagnitudeMax: Int = 1
   }
 }

@@ -5,9 +5,9 @@ import kotlin.Int
 
 open class Particles2D internal constructor() : Node2D() {
   companion object {
-    val DRAW_ORDER_INDEX: Int = 0
+    val DrawOrderIndex: Int = 0
 
-    val DRAW_ORDER_LIFETIME: Int = 1
+    val DrawOrderLifetime: Int = 1
 
     fun new(): Particles2D {
       TODO()

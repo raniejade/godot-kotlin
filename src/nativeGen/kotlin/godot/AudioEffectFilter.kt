@@ -5,13 +5,13 @@ import kotlin.Int
 
 open class AudioEffectFilter internal constructor() : AudioEffect() {
   companion object {
-    val FILTER_12DB: Int = 1
+    val Filter12db: Int = 1
 
-    val FILTER_18DB: Int = 2
+    val Filter18db: Int = 2
 
-    val FILTER_24DB: Int = 3
+    val Filter24db: Int = 3
 
-    val FILTER_6DB: Int = 0
+    val Filter6db: Int = 0
 
     fun new(): AudioEffectFilter {
       TODO()

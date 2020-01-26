@@ -5,22 +5,22 @@ import kotlin.Int
 
 open class ARVRServer internal constructor() : Object() {
   companion object {
-    val DONT_RESET_ROTATION: Int = 2
+    val DontResetRotation: Int = 2
 
-    val RESET_BUT_KEEP_TILT: Int = 1
+    val ResetButKeepTilt: Int = 1
 
-    val RESET_FULL_ROTATION: Int = 0
+    val ResetFullRotation: Int = 0
 
-    val TRACKER_ANCHOR: Int = 4
+    val TrackerAnchor: Int = 4
 
-    val TRACKER_ANY: Int = 255
+    val TrackerAny: Int = 255
 
-    val TRACKER_ANY_KNOWN: Int = 127
+    val TrackerAnyKnown: Int = 127
 
-    val TRACKER_BASESTATION: Int = 2
+    val TrackerBasestation: Int = 2
 
-    val TRACKER_CONTROLLER: Int = 1
+    val TrackerController: Int = 1
 
-    val TRACKER_UNKNOWN: Int = 128
+    val TrackerUnknown: Int = 128
   }
 }

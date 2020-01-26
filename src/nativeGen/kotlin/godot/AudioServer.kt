@@ -5,12 +5,12 @@ import kotlin.Int
 
 open class AudioServer internal constructor() : Object() {
   companion object {
-    val SPEAKER_MODE_STEREO: Int = 0
+    val SpeakerModeStereo: Int = 0
 
-    val SPEAKER_SURROUND_31: Int = 1
+    val SpeakerSurround31: Int = 1
 
-    val SPEAKER_SURROUND_51: Int = 2
+    val SpeakerSurround51: Int = 2
 
-    val SPEAKER_SURROUND_71: Int = 3
+    val SpeakerSurround71: Int = 3
   }
 }

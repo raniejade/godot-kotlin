@@ -5,254 +5,254 @@ import kotlin.Int
 
 open class PhysicsServer internal constructor() : Object() {
   companion object {
-    val AREA_BODY_ADDED: Int = 0
+    val AreaBodyAdded: Int = 0
 
-    val AREA_BODY_REMOVED: Int = 1
+    val AreaBodyRemoved: Int = 1
 
-    val AREA_PARAM_ANGULAR_DAMP: Int = 6
+    val AreaParamAngularDamp: Int = 6
 
-    val AREA_PARAM_GRAVITY: Int = 0
+    val AreaParamGravity: Int = 0
 
-    val AREA_PARAM_GRAVITY_DISTANCE_SCALE: Int = 3
+    val AreaParamGravityDistanceScale: Int = 3
 
-    val AREA_PARAM_GRAVITY_IS_POINT: Int = 2
+    val AreaParamGravityIsPoint: Int = 2
 
-    val AREA_PARAM_GRAVITY_POINT_ATTENUATION: Int = 4
+    val AreaParamGravityPointAttenuation: Int = 4
 
-    val AREA_PARAM_GRAVITY_VECTOR: Int = 1
+    val AreaParamGravityVector: Int = 1
 
-    val AREA_PARAM_LINEAR_DAMP: Int = 5
+    val AreaParamLinearDamp: Int = 5
 
-    val AREA_PARAM_PRIORITY: Int = 7
+    val AreaParamPriority: Int = 7
 
-    val AREA_SPACE_OVERRIDE_COMBINE: Int = 1
+    val AreaSpaceOverrideCombine: Int = 1
 
-    val AREA_SPACE_OVERRIDE_COMBINE_REPLACE: Int = 2
+    val AreaSpaceOverrideCombineReplace: Int = 2
 
-    val AREA_SPACE_OVERRIDE_DISABLED: Int = 0
+    val AreaSpaceOverrideDisabled: Int = 0
 
-    val AREA_SPACE_OVERRIDE_REPLACE: Int = 3
+    val AreaSpaceOverrideReplace: Int = 3
 
-    val AREA_SPACE_OVERRIDE_REPLACE_COMBINE: Int = 4
+    val AreaSpaceOverrideReplaceCombine: Int = 4
 
-    val BODY_AXIS_ANGULAR_X: Int = 8
+    val BodyAxisAngularX: Int = 8
 
-    val BODY_AXIS_ANGULAR_Y: Int = 16
+    val BodyAxisAngularY: Int = 16
 
-    val BODY_AXIS_ANGULAR_Z: Int = 32
+    val BodyAxisAngularZ: Int = 32
 
-    val BODY_AXIS_LINEAR_X: Int = 1
+    val BodyAxisLinearX: Int = 1
 
-    val BODY_AXIS_LINEAR_Y: Int = 2
+    val BodyAxisLinearY: Int = 2
 
-    val BODY_AXIS_LINEAR_Z: Int = 4
+    val BodyAxisLinearZ: Int = 4
 
-    val BODY_MODE_CHARACTER: Int = 3
+    val BodyModeCharacter: Int = 3
 
-    val BODY_MODE_KINEMATIC: Int = 1
+    val BodyModeKinematic: Int = 1
 
-    val BODY_MODE_RIGID: Int = 2
+    val BodyModeRigid: Int = 2
 
-    val BODY_MODE_STATIC: Int = 0
+    val BodyModeStatic: Int = 0
 
-    val BODY_PARAM_ANGULAR_DAMP: Int = 5
+    val BodyParamAngularDamp: Int = 5
 
-    val BODY_PARAM_BOUNCE: Int = 0
+    val BodyParamBounce: Int = 0
 
-    val BODY_PARAM_FRICTION: Int = 1
+    val BodyParamFriction: Int = 1
 
-    val BODY_PARAM_GRAVITY_SCALE: Int = 3
+    val BodyParamGravityScale: Int = 3
 
-    val BODY_PARAM_LINEAR_DAMP: Int = 4
+    val BodyParamLinearDamp: Int = 4
 
-    val BODY_PARAM_MASS: Int = 2
+    val BodyParamMass: Int = 2
 
-    val BODY_PARAM_MAX: Int = 6
+    val BodyParamMax: Int = 6
 
-    val BODY_STATE_ANGULAR_VELOCITY: Int = 2
+    val BodyStateAngularVelocity: Int = 2
 
-    val BODY_STATE_CAN_SLEEP: Int = 4
+    val BodyStateCanSleep: Int = 4
 
-    val BODY_STATE_LINEAR_VELOCITY: Int = 1
+    val BodyStateLinearVelocity: Int = 1
 
-    val BODY_STATE_SLEEPING: Int = 3
+    val BodyStateSleeping: Int = 3
 
-    val BODY_STATE_TRANSFORM: Int = 0
+    val BodyStateTransform: Int = 0
 
-    val CONE_TWIST_JOINT_BIAS: Int = 2
+    val ConeTwistJointBias: Int = 2
 
-    val CONE_TWIST_JOINT_RELAXATION: Int = 4
+    val ConeTwistJointRelaxation: Int = 4
 
-    val CONE_TWIST_JOINT_SOFTNESS: Int = 3
+    val ConeTwistJointSoftness: Int = 3
 
-    val CONE_TWIST_JOINT_SWING_SPAN: Int = 0
+    val ConeTwistJointSwingSpan: Int = 0
 
-    val CONE_TWIST_JOINT_TWIST_SPAN: Int = 1
+    val ConeTwistJointTwistSpan: Int = 1
 
-    val G6DOF_JOINT_ANGULAR_DAMPING: Int = 13
+    val G6dofJointAngularDamping: Int = 13
 
-    val G6DOF_JOINT_ANGULAR_ERP: Int = 16
+    val G6dofJointAngularErp: Int = 16
 
-    val G6DOF_JOINT_ANGULAR_FORCE_LIMIT: Int = 15
+    val G6dofJointAngularForceLimit: Int = 15
 
-    val G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS: Int = 12
+    val G6dofJointAngularLimitSoftness: Int = 12
 
-    val G6DOF_JOINT_ANGULAR_LOWER_LIMIT: Int = 10
+    val G6dofJointAngularLowerLimit: Int = 10
 
-    val G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT: Int = 18
+    val G6dofJointAngularMotorForceLimit: Int = 18
 
-    val G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY: Int = 17
+    val G6dofJointAngularMotorTargetVelocity: Int = 17
 
-    val G6DOF_JOINT_ANGULAR_RESTITUTION: Int = 14
+    val G6dofJointAngularRestitution: Int = 14
 
-    val G6DOF_JOINT_ANGULAR_UPPER_LIMIT: Int = 11
+    val G6dofJointAngularUpperLimit: Int = 11
 
-    val G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT: Int = 1
+    val G6dofJointFlagEnableAngularLimit: Int = 1
 
-    val G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT: Int = 0
+    val G6dofJointFlagEnableLinearLimit: Int = 0
 
-    val G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR: Int = 5
+    val G6dofJointFlagEnableLinearMotor: Int = 5
 
-    val G6DOF_JOINT_FLAG_ENABLE_MOTOR: Int = 4
+    val G6dofJointFlagEnableMotor: Int = 4
 
-    val G6DOF_JOINT_LINEAR_DAMPING: Int = 4
+    val G6dofJointLinearDamping: Int = 4
 
-    val G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS: Int = 2
+    val G6dofJointLinearLimitSoftness: Int = 2
 
-    val G6DOF_JOINT_LINEAR_LOWER_LIMIT: Int = 0
+    val G6dofJointLinearLowerLimit: Int = 0
 
-    val G6DOF_JOINT_LINEAR_MOTOR_FORCE_LIMIT: Int = 6
+    val G6dofJointLinearMotorForceLimit: Int = 6
 
-    val G6DOF_JOINT_LINEAR_MOTOR_TARGET_VELOCITY: Int = 5
+    val G6dofJointLinearMotorTargetVelocity: Int = 5
 
-    val G6DOF_JOINT_LINEAR_RESTITUTION: Int = 3
+    val G6dofJointLinearRestitution: Int = 3
 
-    val G6DOF_JOINT_LINEAR_UPPER_LIMIT: Int = 1
+    val G6dofJointLinearUpperLimit: Int = 1
 
-    val HINGE_JOINT_BIAS: Int = 0
+    val HingeJointBias: Int = 0
 
-    val HINGE_JOINT_FLAG_ENABLE_MOTOR: Int = 1
+    val HingeJointFlagEnableMotor: Int = 1
 
-    val HINGE_JOINT_FLAG_USE_LIMIT: Int = 0
+    val HingeJointFlagUseLimit: Int = 0
 
-    val HINGE_JOINT_LIMIT_BIAS: Int = 3
+    val HingeJointLimitBias: Int = 3
 
-    val HINGE_JOINT_LIMIT_LOWER: Int = 2
+    val HingeJointLimitLower: Int = 2
 
-    val HINGE_JOINT_LIMIT_RELAXATION: Int = 5
+    val HingeJointLimitRelaxation: Int = 5
 
-    val HINGE_JOINT_LIMIT_SOFTNESS: Int = 4
+    val HingeJointLimitSoftness: Int = 4
 
-    val HINGE_JOINT_LIMIT_UPPER: Int = 1
+    val HingeJointLimitUpper: Int = 1
 
-    val HINGE_JOINT_MOTOR_MAX_IMPULSE: Int = 7
+    val HingeJointMotorMaxImpulse: Int = 7
 
-    val HINGE_JOINT_MOTOR_TARGET_VELOCITY: Int = 6
+    val HingeJointMotorTargetVelocity: Int = 6
 
-    val INFO_ACTIVE_OBJECTS: Int = 0
+    val InfoActiveObjects: Int = 0
 
-    val INFO_COLLISION_PAIRS: Int = 1
+    val InfoCollisionPairs: Int = 1
 
-    val INFO_ISLAND_COUNT: Int = 2
+    val InfoIslandCount: Int = 2
 
-    val JOINT_6DOF: Int = 4
+    val Joint6dof: Int = 4
 
-    val JOINT_CONE_TWIST: Int = 3
+    val JointConeTwist: Int = 3
 
-    val JOINT_HINGE: Int = 1
+    val JointHinge: Int = 1
 
-    val JOINT_PIN: Int = 0
+    val JointPin: Int = 0
 
-    val JOINT_SLIDER: Int = 2
+    val JointSlider: Int = 2
 
-    val PIN_JOINT_BIAS: Int = 0
+    val PinJointBias: Int = 0
 
-    val PIN_JOINT_DAMPING: Int = 1
+    val PinJointDamping: Int = 1
 
-    val PIN_JOINT_IMPULSE_CLAMP: Int = 2
+    val PinJointImpulseClamp: Int = 2
 
-    val SHAPE_BOX: Int = 3
+    val ShapeBox: Int = 3
 
-    val SHAPE_CAPSULE: Int = 4
+    val ShapeCapsule: Int = 4
 
-    val SHAPE_CONCAVE_POLYGON: Int = 7
+    val ShapeConcavePolygon: Int = 7
 
-    val SHAPE_CONVEX_POLYGON: Int = 6
+    val ShapeConvexPolygon: Int = 6
 
-    val SHAPE_CUSTOM: Int = 9
+    val ShapeCustom: Int = 9
 
-    val SHAPE_CYLINDER: Int = 5
+    val ShapeCylinder: Int = 5
 
-    val SHAPE_HEIGHTMAP: Int = 8
+    val ShapeHeightmap: Int = 8
 
-    val SHAPE_PLANE: Int = 0
+    val ShapePlane: Int = 0
 
-    val SHAPE_RAY: Int = 1
+    val ShapeRay: Int = 1
 
-    val SHAPE_SPHERE: Int = 2
+    val ShapeSphere: Int = 2
 
-    val SLIDER_JOINT_ANGULAR_LIMIT_DAMPING: Int = 15
+    val SliderJointAngularLimitDamping: Int = 15
 
-    val SLIDER_JOINT_ANGULAR_LIMIT_LOWER: Int = 12
+    val SliderJointAngularLimitLower: Int = 12
 
-    val SLIDER_JOINT_ANGULAR_LIMIT_RESTITUTION: Int = 14
+    val SliderJointAngularLimitRestitution: Int = 14
 
-    val SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS: Int = 13
+    val SliderJointAngularLimitSoftness: Int = 13
 
-    val SLIDER_JOINT_ANGULAR_LIMIT_UPPER: Int = 11
+    val SliderJointAngularLimitUpper: Int = 11
 
-    val SLIDER_JOINT_ANGULAR_MOTION_DAMPING: Int = 18
+    val SliderJointAngularMotionDamping: Int = 18
 
-    val SLIDER_JOINT_ANGULAR_MOTION_RESTITUTION: Int = 17
+    val SliderJointAngularMotionRestitution: Int = 17
 
-    val SLIDER_JOINT_ANGULAR_MOTION_SOFTNESS: Int = 16
+    val SliderJointAngularMotionSoftness: Int = 16
 
-    val SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING: Int = 21
+    val SliderJointAngularOrthogonalDamping: Int = 21
 
-    val SLIDER_JOINT_ANGULAR_ORTHOGONAL_RESTITUTION: Int = 20
+    val SliderJointAngularOrthogonalRestitution: Int = 20
 
-    val SLIDER_JOINT_ANGULAR_ORTHOGONAL_SOFTNESS: Int = 19
+    val SliderJointAngularOrthogonalSoftness: Int = 19
 
-    val SLIDER_JOINT_LINEAR_LIMIT_DAMPING: Int = 4
+    val SliderJointLinearLimitDamping: Int = 4
 
-    val SLIDER_JOINT_LINEAR_LIMIT_LOWER: Int = 1
+    val SliderJointLinearLimitLower: Int = 1
 
-    val SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION: Int = 3
+    val SliderJointLinearLimitRestitution: Int = 3
 
-    val SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS: Int = 2
+    val SliderJointLinearLimitSoftness: Int = 2
 
-    val SLIDER_JOINT_LINEAR_LIMIT_UPPER: Int = 0
+    val SliderJointLinearLimitUpper: Int = 0
 
-    val SLIDER_JOINT_LINEAR_MOTION_DAMPING: Int = 7
+    val SliderJointLinearMotionDamping: Int = 7
 
-    val SLIDER_JOINT_LINEAR_MOTION_RESTITUTION: Int = 6
+    val SliderJointLinearMotionRestitution: Int = 6
 
-    val SLIDER_JOINT_LINEAR_MOTION_SOFTNESS: Int = 5
+    val SliderJointLinearMotionSoftness: Int = 5
 
-    val SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING: Int = 10
+    val SliderJointLinearOrthogonalDamping: Int = 10
 
-    val SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION: Int = 9
+    val SliderJointLinearOrthogonalRestitution: Int = 9
 
-    val SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS: Int = 8
+    val SliderJointLinearOrthogonalSoftness: Int = 8
 
-    val SLIDER_JOINT_MAX: Int = 22
+    val SliderJointMax: Int = 22
 
-    val SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO: Int = 6
+    val SpaceParamBodyAngularVelocityDampRatio: Int = 6
 
-    val SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD: Int = 4
+    val SpaceParamBodyAngularVelocitySleepThreshold: Int = 4
 
-    val SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD: Int = 3
+    val SpaceParamBodyLinearVelocitySleepThreshold: Int = 3
 
-    val SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION: Int = 2
+    val SpaceParamBodyMaxAllowedPenetration: Int = 2
 
-    val SPACE_PARAM_BODY_TIME_TO_SLEEP: Int = 5
+    val SpaceParamBodyTimeToSleep: Int = 5
 
-    val SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS: Int = 7
+    val SpaceParamConstraintDefaultBias: Int = 7
 
-    val SPACE_PARAM_CONTACT_MAX_SEPARATION: Int = 1
+    val SpaceParamContactMaxSeparation: Int = 1
 
-    val SPACE_PARAM_CONTACT_RECYCLE_RADIUS: Int = 0
+    val SpaceParamContactRecycleRadius: Int = 0
 
-    val SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH: Int = 8
+    val SpaceParamTestMotionMinContactDepth: Int = 8
   }
 }

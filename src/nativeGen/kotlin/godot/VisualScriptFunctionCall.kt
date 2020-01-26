@@ -5,25 +5,25 @@ import kotlin.Int
 
 open class VisualScriptFunctionCall internal constructor() : VisualScriptNode() {
   companion object {
-    val CALL_MODE_BASIC_TYPE: Int = 3
+    val CallModeBasicType: Int = 3
 
-    val CALL_MODE_INSTANCE: Int = 2
+    val CallModeInstance: Int = 2
 
-    val CALL_MODE_NODE_PATH: Int = 1
+    val CallModeNodePath: Int = 1
 
-    val CALL_MODE_SELF: Int = 0
+    val CallModeSelf: Int = 0
 
-    val CALL_MODE_SINGLETON: Int = 4
+    val CallModeSingleton: Int = 4
 
-    val RPC_DISABLED: Int = 0
+    val RpcDisabled: Int = 0
 
-    val RPC_RELIABLE: Int = 1
+    val RpcReliable: Int = 1
 
-    val RPC_RELIABLE_TO_ID: Int = 3
+    val RpcReliableToId: Int = 3
 
-    val RPC_UNRELIABLE: Int = 2
+    val RpcUnreliable: Int = 2
 
-    val RPC_UNRELIABLE_TO_ID: Int = 4
+    val RpcUnreliableToId: Int = 4
 
     fun new(): VisualScriptFunctionCall {
       TODO()

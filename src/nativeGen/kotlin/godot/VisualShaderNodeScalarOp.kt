@@ -5,25 +5,25 @@ import kotlin.Int
 
 open class VisualShaderNodeScalarOp internal constructor() : VisualShaderNode() {
   companion object {
-    val OP_ADD: Int = 0
+    val OpAdd: Int = 0
 
-    val OP_ATAN2: Int = 8
+    val OpAtan2: Int = 8
 
-    val OP_DIV: Int = 3
+    val OpDiv: Int = 3
 
-    val OP_MAX: Int = 6
+    val OpMax: Int = 6
 
-    val OP_MIN: Int = 7
+    val OpMin: Int = 7
 
-    val OP_MOD: Int = 4
+    val OpMod: Int = 4
 
-    val OP_MUL: Int = 2
+    val OpMul: Int = 2
 
-    val OP_POW: Int = 5
+    val OpPow: Int = 5
 
-    val OP_STEP: Int = 9
+    val OpStep: Int = 9
 
-    val OP_SUB: Int = 1
+    val OpSub: Int = 1
 
     fun new(): VisualShaderNodeScalarOp {
       TODO()

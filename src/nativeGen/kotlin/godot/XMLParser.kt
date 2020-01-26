@@ -5,19 +5,19 @@ import kotlin.Int
 
 open class XMLParser internal constructor() : Reference() {
   companion object {
-    val NODE_CDATA: Int = 5
+    val NodeCdata: Int = 5
 
-    val NODE_COMMENT: Int = 4
+    val NodeComment: Int = 4
 
-    val NODE_ELEMENT: Int = 1
+    val NodeElement: Int = 1
 
-    val NODE_ELEMENT_END: Int = 2
+    val NodeElementEnd: Int = 2
 
-    val NODE_NONE: Int = 0
+    val NodeNone: Int = 0
 
-    val NODE_TEXT: Int = 3
+    val NodeText: Int = 3
 
-    val NODE_UNKNOWN: Int = 6
+    val NodeUnknown: Int = 6
 
     fun new(): XMLParser {
       TODO()

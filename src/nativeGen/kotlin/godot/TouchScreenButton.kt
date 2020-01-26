@@ -5,9 +5,9 @@ import kotlin.Int
 
 open class TouchScreenButton internal constructor() : Node2D() {
   companion object {
-    val VISIBILITY_ALWAYS: Int = 0
+    val VisibilityAlways: Int = 0
 
-    val VISIBILITY_TOUCHSCREEN_ONLY: Int = 1
+    val VisibilityTouchscreenOnly: Int = 1
 
     fun new(): TouchScreenButton {
       TODO()

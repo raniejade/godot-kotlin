@@ -5,29 +5,29 @@ import kotlin.Int
 
 open class TileMap internal constructor() : Node2D() {
   companion object {
-    val HALF_OFFSET_DISABLED: Int = 2
+    val HalfOffsetDisabled: Int = 2
 
-    val HALF_OFFSET_NEGATIVE_X: Int = 3
+    val HalfOffsetNegativeX: Int = 3
 
-    val HALF_OFFSET_NEGATIVE_Y: Int = 4
+    val HalfOffsetNegativeY: Int = 4
 
-    val HALF_OFFSET_X: Int = 0
+    val HalfOffsetX: Int = 0
 
-    val HALF_OFFSET_Y: Int = 1
+    val HalfOffsetY: Int = 1
 
-    val INVALID_CELL: Int = -1
+    val InvalidCell: Int = -1
 
-    val MODE_CUSTOM: Int = 2
+    val ModeCustom: Int = 2
 
-    val MODE_ISOMETRIC: Int = 1
+    val ModeIsometric: Int = 1
 
-    val MODE_SQUARE: Int = 0
+    val ModeSquare: Int = 0
 
-    val TILE_ORIGIN_BOTTOM_LEFT: Int = 2
+    val TileOriginBottomLeft: Int = 2
 
-    val TILE_ORIGIN_CENTER: Int = 1
+    val TileOriginCenter: Int = 1
 
-    val TILE_ORIGIN_TOP_LEFT: Int = 0
+    val TileOriginTopLeft: Int = 0
 
     fun new(): TileMap {
       TODO()

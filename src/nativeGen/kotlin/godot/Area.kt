@@ -5,15 +5,15 @@ import kotlin.Int
 
 open class Area internal constructor() : CollisionObject() {
   companion object {
-    val SPACE_OVERRIDE_COMBINE: Int = 1
+    val SpaceOverrideCombine: Int = 1
 
-    val SPACE_OVERRIDE_COMBINE_REPLACE: Int = 2
+    val SpaceOverrideCombineReplace: Int = 2
 
-    val SPACE_OVERRIDE_DISABLED: Int = 0
+    val SpaceOverrideDisabled: Int = 0
 
-    val SPACE_OVERRIDE_REPLACE: Int = 3
+    val SpaceOverrideReplace: Int = 3
 
-    val SPACE_OVERRIDE_REPLACE_COMBINE: Int = 4
+    val SpaceOverrideReplaceCombine: Int = 4
 
     fun new(): Area {
       TODO()

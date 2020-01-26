@@ -5,132 +5,132 @@ import kotlin.Int
 
 open class Physics2DServer internal constructor() : Object() {
   companion object {
-    val AREA_BODY_ADDED: Int = 0
+    val AreaBodyAdded: Int = 0
 
-    val AREA_BODY_REMOVED: Int = 1
+    val AreaBodyRemoved: Int = 1
 
-    val AREA_PARAM_ANGULAR_DAMP: Int = 6
+    val AreaParamAngularDamp: Int = 6
 
-    val AREA_PARAM_GRAVITY: Int = 0
+    val AreaParamGravity: Int = 0
 
-    val AREA_PARAM_GRAVITY_DISTANCE_SCALE: Int = 3
+    val AreaParamGravityDistanceScale: Int = 3
 
-    val AREA_PARAM_GRAVITY_IS_POINT: Int = 2
+    val AreaParamGravityIsPoint: Int = 2
 
-    val AREA_PARAM_GRAVITY_POINT_ATTENUATION: Int = 4
+    val AreaParamGravityPointAttenuation: Int = 4
 
-    val AREA_PARAM_GRAVITY_VECTOR: Int = 1
+    val AreaParamGravityVector: Int = 1
 
-    val AREA_PARAM_LINEAR_DAMP: Int = 5
+    val AreaParamLinearDamp: Int = 5
 
-    val AREA_PARAM_PRIORITY: Int = 7
+    val AreaParamPriority: Int = 7
 
-    val AREA_SPACE_OVERRIDE_COMBINE: Int = 1
+    val AreaSpaceOverrideCombine: Int = 1
 
-    val AREA_SPACE_OVERRIDE_COMBINE_REPLACE: Int = 2
+    val AreaSpaceOverrideCombineReplace: Int = 2
 
-    val AREA_SPACE_OVERRIDE_DISABLED: Int = 0
+    val AreaSpaceOverrideDisabled: Int = 0
 
-    val AREA_SPACE_OVERRIDE_REPLACE: Int = 3
+    val AreaSpaceOverrideReplace: Int = 3
 
-    val AREA_SPACE_OVERRIDE_REPLACE_COMBINE: Int = 4
+    val AreaSpaceOverrideReplaceCombine: Int = 4
 
-    val BODY_MODE_CHARACTER: Int = 3
+    val BodyModeCharacter: Int = 3
 
-    val BODY_MODE_KINEMATIC: Int = 1
+    val BodyModeKinematic: Int = 1
 
-    val BODY_MODE_RIGID: Int = 2
+    val BodyModeRigid: Int = 2
 
-    val BODY_MODE_STATIC: Int = 0
+    val BodyModeStatic: Int = 0
 
-    val BODY_PARAM_ANGULAR_DAMP: Int = 6
+    val BodyParamAngularDamp: Int = 6
 
-    val BODY_PARAM_BOUNCE: Int = 0
+    val BodyParamBounce: Int = 0
 
-    val BODY_PARAM_FRICTION: Int = 1
+    val BodyParamFriction: Int = 1
 
-    val BODY_PARAM_GRAVITY_SCALE: Int = 4
+    val BodyParamGravityScale: Int = 4
 
-    val BODY_PARAM_INERTIA: Int = 3
+    val BodyParamInertia: Int = 3
 
-    val BODY_PARAM_LINEAR_DAMP: Int = 5
+    val BodyParamLinearDamp: Int = 5
 
-    val BODY_PARAM_MASS: Int = 2
+    val BodyParamMass: Int = 2
 
-    val BODY_PARAM_MAX: Int = 7
+    val BodyParamMax: Int = 7
 
-    val BODY_STATE_ANGULAR_VELOCITY: Int = 2
+    val BodyStateAngularVelocity: Int = 2
 
-    val BODY_STATE_CAN_SLEEP: Int = 4
+    val BodyStateCanSleep: Int = 4
 
-    val BODY_STATE_LINEAR_VELOCITY: Int = 1
+    val BodyStateLinearVelocity: Int = 1
 
-    val BODY_STATE_SLEEPING: Int = 3
+    val BodyStateSleeping: Int = 3
 
-    val BODY_STATE_TRANSFORM: Int = 0
+    val BodyStateTransform: Int = 0
 
-    val CCD_MODE_CAST_RAY: Int = 1
+    val CcdModeCastRay: Int = 1
 
-    val CCD_MODE_CAST_SHAPE: Int = 2
+    val CcdModeCastShape: Int = 2
 
-    val CCD_MODE_DISABLED: Int = 0
+    val CcdModeDisabled: Int = 0
 
-    val DAMPED_STRING_DAMPING: Int = 2
+    val DampedStringDamping: Int = 2
 
-    val DAMPED_STRING_REST_LENGTH: Int = 0
+    val DampedStringRestLength: Int = 0
 
-    val DAMPED_STRING_STIFFNESS: Int = 1
+    val DampedStringStiffness: Int = 1
 
-    val INFO_ACTIVE_OBJECTS: Int = 0
+    val InfoActiveObjects: Int = 0
 
-    val INFO_COLLISION_PAIRS: Int = 1
+    val InfoCollisionPairs: Int = 1
 
-    val INFO_ISLAND_COUNT: Int = 2
+    val InfoIslandCount: Int = 2
 
-    val JOINT_DAMPED_SPRING: Int = 2
+    val JointDampedSpring: Int = 2
 
-    val JOINT_GROOVE: Int = 1
+    val JointGroove: Int = 1
 
-    val JOINT_PARAM_BIAS: Int = 0
+    val JointParamBias: Int = 0
 
-    val JOINT_PARAM_MAX_BIAS: Int = 1
+    val JointParamMaxBias: Int = 1
 
-    val JOINT_PARAM_MAX_FORCE: Int = 2
+    val JointParamMaxForce: Int = 2
 
-    val JOINT_PIN: Int = 0
+    val JointPin: Int = 0
 
-    val SHAPE_CAPSULE: Int = 5
+    val ShapeCapsule: Int = 5
 
-    val SHAPE_CIRCLE: Int = 3
+    val ShapeCircle: Int = 3
 
-    val SHAPE_CONCAVE_POLYGON: Int = 7
+    val ShapeConcavePolygon: Int = 7
 
-    val SHAPE_CONVEX_POLYGON: Int = 6
+    val ShapeConvexPolygon: Int = 6
 
-    val SHAPE_CUSTOM: Int = 8
+    val ShapeCustom: Int = 8
 
-    val SHAPE_LINE: Int = 0
+    val ShapeLine: Int = 0
 
-    val SHAPE_RAY: Int = 1
+    val ShapeRay: Int = 1
 
-    val SHAPE_RECTANGLE: Int = 4
+    val ShapeRectangle: Int = 4
 
-    val SHAPE_SEGMENT: Int = 2
+    val ShapeSegment: Int = 2
 
-    val SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD: Int = 4
+    val SpaceParamBodyAngularVelocitySleepThreshold: Int = 4
 
-    val SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD: Int = 3
+    val SpaceParamBodyLinearVelocitySleepThreshold: Int = 3
 
-    val SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION: Int = 2
+    val SpaceParamBodyMaxAllowedPenetration: Int = 2
 
-    val SPACE_PARAM_BODY_TIME_TO_SLEEP: Int = 5
+    val SpaceParamBodyTimeToSleep: Int = 5
 
-    val SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS: Int = 6
+    val SpaceParamConstraintDefaultBias: Int = 6
 
-    val SPACE_PARAM_CONTACT_MAX_SEPARATION: Int = 1
+    val SpaceParamContactMaxSeparation: Int = 1
 
-    val SPACE_PARAM_CONTACT_RECYCLE_RADIUS: Int = 0
+    val SpaceParamContactRecycleRadius: Int = 0
 
-    val SPACE_PARAM_TEST_MOTION_MIN_CONTACT_DEPTH: Int = 7
+    val SpaceParamTestMotionMinContactDepth: Int = 7
   }
 }

@@ -5,21 +5,21 @@ import kotlin.Int
 
 open class Label internal constructor() : Control() {
   companion object {
-    val ALIGN_CENTER: Int = 1
+    val AlignCenter: Int = 1
 
-    val ALIGN_FILL: Int = 3
+    val AlignFill: Int = 3
 
-    val ALIGN_LEFT: Int = 0
+    val AlignLeft: Int = 0
 
-    val ALIGN_RIGHT: Int = 2
+    val AlignRight: Int = 2
 
-    val VALIGN_BOTTOM: Int = 2
+    val ValignBottom: Int = 2
 
-    val VALIGN_CENTER: Int = 1
+    val ValignCenter: Int = 1
 
-    val VALIGN_FILL: Int = 3
+    val ValignFill: Int = 3
 
-    val VALIGN_TOP: Int = 0
+    val ValignTop: Int = 0
 
     fun new(): Label {
       TODO()

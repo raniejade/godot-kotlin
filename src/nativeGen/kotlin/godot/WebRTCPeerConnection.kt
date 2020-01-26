@@ -5,17 +5,17 @@ import kotlin.Int
 
 open class WebRTCPeerConnection internal constructor() : Reference() {
   companion object {
-    val STATE_CLOSED: Int = 5
+    val StateClosed: Int = 5
 
-    val STATE_CONNECTED: Int = 2
+    val StateConnected: Int = 2
 
-    val STATE_CONNECTING: Int = 1
+    val StateConnecting: Int = 1
 
-    val STATE_DISCONNECTED: Int = 3
+    val StateDisconnected: Int = 3
 
-    val STATE_FAILED: Int = 4
+    val StateFailed: Int = 4
 
-    val STATE_NEW: Int = 0
+    val StateNew: Int = 0
 
     fun new(): WebRTCPeerConnection {
       TODO()

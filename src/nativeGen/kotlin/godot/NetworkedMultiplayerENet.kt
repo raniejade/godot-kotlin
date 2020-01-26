@@ -5,15 +5,15 @@ import kotlin.Int
 
 open class NetworkedMultiplayerENet internal constructor() : NetworkedMultiplayerPeer() {
   companion object {
-    val COMPRESS_FASTLZ: Int = 2
+    val CompressFastlz: Int = 2
 
-    val COMPRESS_NONE: Int = 0
+    val CompressNone: Int = 0
 
-    val COMPRESS_RANGE_CODER: Int = 1
+    val CompressRangeCoder: Int = 1
 
-    val COMPRESS_ZLIB: Int = 3
+    val CompressZlib: Int = 3
 
-    val COMPRESS_ZSTD: Int = 4
+    val CompressZstd: Int = 4
 
     fun new(): NetworkedMultiplayerENet {
       TODO()

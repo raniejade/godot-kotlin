@@ -5,9 +5,9 @@ import kotlin.Int
 
 open class Timer internal constructor() : Node() {
   companion object {
-    val TIMER_PROCESS_IDLE: Int = 1
+    val TimerProcessIdle: Int = 1
 
-    val TIMER_PROCESS_PHYSICS: Int = 0
+    val TimerProcessPhysics: Int = 0
 
     fun new(): Timer {
       TODO()

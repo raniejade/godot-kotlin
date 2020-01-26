@@ -5,18 +5,18 @@ import kotlin.Int
 
 open class BaseButton internal constructor() : Control() {
   companion object {
-    val ACTION_MODE_BUTTON_PRESS: Int = 0
+    val ActionModeButtonPress: Int = 0
 
-    val ACTION_MODE_BUTTON_RELEASE: Int = 1
+    val ActionModeButtonRelease: Int = 1
 
-    val DRAW_DISABLED: Int = 3
+    val DrawDisabled: Int = 3
 
-    val DRAW_HOVER: Int = 2
+    val DrawHover: Int = 2
 
-    val DRAW_HOVER_PRESSED: Int = 4
+    val DrawHoverPressed: Int = 4
 
-    val DRAW_NORMAL: Int = 0
+    val DrawNormal: Int = 0
 
-    val DRAW_PRESSED: Int = 1
+    val DrawPressed: Int = 1
   }
 }

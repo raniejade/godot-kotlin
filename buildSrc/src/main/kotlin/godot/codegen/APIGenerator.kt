@@ -76,7 +76,7 @@ class APIGenerator {
     if (cls.constants.isNotEmpty()) {
       companionObjectBuilder.addProperties(
         cls.constants.map { (k, v) ->
-          PropertySpec.builder(k, v::class)
+          PropertySpec.builder(formatConstantName(k), v::class)
             .initializer(formatValue(v))
             .build()
         }
@@ -95,6 +95,10 @@ class APIGenerator {
       return "\"$v\""
     }
     return "$v"
+  }
+
+  private fun formatConstantName(name: String): String {
+    return name.split("_").joinToString("") { it.toLowerCase().capitalize() }
   }
 
   private fun parseJson(source: File): List<GDClass> {

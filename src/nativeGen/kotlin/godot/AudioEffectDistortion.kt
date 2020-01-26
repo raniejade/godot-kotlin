@@ -5,15 +5,15 @@ import kotlin.Int
 
 open class AudioEffectDistortion internal constructor() : AudioEffect() {
   companion object {
-    val MODE_ATAN: Int = 1
+    val ModeAtan: Int = 1
 
-    val MODE_CLIP: Int = 0
+    val ModeClip: Int = 0
 
-    val MODE_LOFI: Int = 2
+    val ModeLofi: Int = 2
 
-    val MODE_OVERDRIVE: Int = 3
+    val ModeOverdrive: Int = 3
 
-    val MODE_WAVESHAPE: Int = 4
+    val ModeWaveshape: Int = 4
 
     fun new(): AudioEffectDistortion {
       TODO()

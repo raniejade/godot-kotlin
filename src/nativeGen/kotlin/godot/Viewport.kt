@@ -5,75 +5,75 @@ import kotlin.Int
 
 open class Viewport internal constructor() : Node() {
   companion object {
-    val CLEAR_MODE_ALWAYS: Int = 0
+    val ClearModeAlways: Int = 0
 
-    val CLEAR_MODE_NEVER: Int = 1
+    val ClearModeNever: Int = 1
 
-    val CLEAR_MODE_ONLY_NEXT_FRAME: Int = 2
+    val ClearModeOnlyNextFrame: Int = 2
 
-    val DEBUG_DRAW_DISABLED: Int = 0
+    val DebugDrawDisabled: Int = 0
 
-    val DEBUG_DRAW_OVERDRAW: Int = 2
+    val DebugDrawOverdraw: Int = 2
 
-    val DEBUG_DRAW_UNSHADED: Int = 1
+    val DebugDrawUnshaded: Int = 1
 
-    val DEBUG_DRAW_WIREFRAME: Int = 3
+    val DebugDrawWireframe: Int = 3
 
-    val MSAA_16X: Int = 4
+    val Msaa16x: Int = 4
 
-    val MSAA_2X: Int = 1
+    val Msaa2x: Int = 1
 
-    val MSAA_4X: Int = 2
+    val Msaa4x: Int = 2
 
-    val MSAA_8X: Int = 3
+    val Msaa8x: Int = 3
 
-    val MSAA_DISABLED: Int = 0
+    val MsaaDisabled: Int = 0
 
-    val RENDER_INFO_DRAW_CALLS_IN_FRAME: Int = 5
+    val RenderInfoDrawCallsInFrame: Int = 5
 
-    val RENDER_INFO_MATERIAL_CHANGES_IN_FRAME: Int = 2
+    val RenderInfoMaterialChangesInFrame: Int = 2
 
-    val RENDER_INFO_MAX: Int = 6
+    val RenderInfoMax: Int = 6
 
-    val RENDER_INFO_OBJECTS_IN_FRAME: Int = 0
+    val RenderInfoObjectsInFrame: Int = 0
 
-    val RENDER_INFO_SHADER_CHANGES_IN_FRAME: Int = 3
+    val RenderInfoShaderChangesInFrame: Int = 3
 
-    val RENDER_INFO_SURFACE_CHANGES_IN_FRAME: Int = 4
+    val RenderInfoSurfaceChangesInFrame: Int = 4
 
-    val RENDER_INFO_VERTICES_IN_FRAME: Int = 1
+    val RenderInfoVerticesInFrame: Int = 1
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_1: Int = 1
+    val ShadowAtlasQuadrantSubdiv1: Int = 1
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_1024: Int = 6
+    val ShadowAtlasQuadrantSubdiv1024: Int = 6
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_16: Int = 3
+    val ShadowAtlasQuadrantSubdiv16: Int = 3
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_256: Int = 5
+    val ShadowAtlasQuadrantSubdiv256: Int = 5
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_4: Int = 2
+    val ShadowAtlasQuadrantSubdiv4: Int = 2
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_64: Int = 4
+    val ShadowAtlasQuadrantSubdiv64: Int = 4
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED: Int = 0
+    val ShadowAtlasQuadrantSubdivDisabled: Int = 0
 
-    val SHADOW_ATLAS_QUADRANT_SUBDIV_MAX: Int = 7
+    val ShadowAtlasQuadrantSubdivMax: Int = 7
 
-    val UPDATE_ALWAYS: Int = 3
+    val UpdateAlways: Int = 3
 
-    val UPDATE_DISABLED: Int = 0
+    val UpdateDisabled: Int = 0
 
-    val UPDATE_ONCE: Int = 1
+    val UpdateOnce: Int = 1
 
-    val UPDATE_WHEN_VISIBLE: Int = 2
+    val UpdateWhenVisible: Int = 2
 
-    val USAGE_2D: Int = 0
+    val Usage2d: Int = 0
 
-    val USAGE_2D_NO_SAMPLING: Int = 1
+    val Usage2dNoSampling: Int = 1
 
-    val USAGE_3D: Int = 2
+    val Usage3d: Int = 2
 
-    val USAGE_3D_NO_EFFECTS: Int = 3
+    val Usage3dNoEffects: Int = 3
 
     fun new(): Viewport {
       TODO()

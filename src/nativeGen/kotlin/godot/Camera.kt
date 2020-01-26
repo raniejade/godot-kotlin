@@ -5,21 +5,21 @@ import kotlin.Int
 
 open class Camera internal constructor() : Spatial() {
   companion object {
-    val DOPPLER_TRACKING_DISABLED: Int = 0
+    val DopplerTrackingDisabled: Int = 0
 
-    val DOPPLER_TRACKING_IDLE_STEP: Int = 1
+    val DopplerTrackingIdleStep: Int = 1
 
-    val DOPPLER_TRACKING_PHYSICS_STEP: Int = 2
+    val DopplerTrackingPhysicsStep: Int = 2
 
-    val KEEP_HEIGHT: Int = 1
+    val KeepHeight: Int = 1
 
-    val KEEP_WIDTH: Int = 0
+    val KeepWidth: Int = 0
 
-    val PROJECTION_FRUSTUM: Int = 2
+    val ProjectionFrustum: Int = 2
 
-    val PROJECTION_ORTHOGONAL: Int = 1
+    val ProjectionOrthogonal: Int = 1
 
-    val PROJECTION_PERSPECTIVE: Int = 0
+    val ProjectionPerspective: Int = 0
 
     fun new(): Camera {
       TODO()

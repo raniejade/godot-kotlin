@@ -5,47 +5,47 @@ import kotlin.Int
 
 open class EditorPlugin internal constructor() : Node() {
   companion object {
-    val CONTAINER_CANVAS_EDITOR_BOTTOM: Int = 8
+    val ContainerCanvasEditorBottom: Int = 8
 
-    val CONTAINER_CANVAS_EDITOR_MENU: Int = 5
+    val ContainerCanvasEditorMenu: Int = 5
 
-    val CONTAINER_CANVAS_EDITOR_SIDE_LEFT: Int = 6
+    val ContainerCanvasEditorSideLeft: Int = 6
 
-    val CONTAINER_CANVAS_EDITOR_SIDE_RIGHT: Int = 7
+    val ContainerCanvasEditorSideRight: Int = 7
 
-    val CONTAINER_PROJECT_SETTING_TAB_LEFT: Int = 10
+    val ContainerProjectSettingTabLeft: Int = 10
 
-    val CONTAINER_PROJECT_SETTING_TAB_RIGHT: Int = 11
+    val ContainerProjectSettingTabRight: Int = 11
 
-    val CONTAINER_PROPERTY_EDITOR_BOTTOM: Int = 9
+    val ContainerPropertyEditorBottom: Int = 9
 
-    val CONTAINER_SPATIAL_EDITOR_BOTTOM: Int = 4
+    val ContainerSpatialEditorBottom: Int = 4
 
-    val CONTAINER_SPATIAL_EDITOR_MENU: Int = 1
+    val ContainerSpatialEditorMenu: Int = 1
 
-    val CONTAINER_SPATIAL_EDITOR_SIDE_LEFT: Int = 2
+    val ContainerSpatialEditorSideLeft: Int = 2
 
-    val CONTAINER_SPATIAL_EDITOR_SIDE_RIGHT: Int = 3
+    val ContainerSpatialEditorSideRight: Int = 3
 
-    val CONTAINER_TOOLBAR: Int = 0
+    val ContainerToolbar: Int = 0
 
-    val DOCK_SLOT_LEFT_BL: Int = 1
+    val DockSlotLeftBl: Int = 1
 
-    val DOCK_SLOT_LEFT_BR: Int = 3
+    val DockSlotLeftBr: Int = 3
 
-    val DOCK_SLOT_LEFT_UL: Int = 0
+    val DockSlotLeftUl: Int = 0
 
-    val DOCK_SLOT_LEFT_UR: Int = 2
+    val DockSlotLeftUr: Int = 2
 
-    val DOCK_SLOT_MAX: Int = 8
+    val DockSlotMax: Int = 8
 
-    val DOCK_SLOT_RIGHT_BL: Int = 5
+    val DockSlotRightBl: Int = 5
 
-    val DOCK_SLOT_RIGHT_BR: Int = 7
+    val DockSlotRightBr: Int = 7
 
-    val DOCK_SLOT_RIGHT_UL: Int = 4
+    val DockSlotRightUl: Int = 4
 
-    val DOCK_SLOT_RIGHT_UR: Int = 6
+    val DockSlotRightUr: Int = 6
 
     fun new(): EditorPlugin {
       TODO()

@@ -5,7 +5,7 @@ import kotlin.Int
 
 open class AnimatedTexture internal constructor() : Texture() {
   companion object {
-    val MAX_FRAMES: Int = 256
+    val MaxFrames: Int = 256
 
     fun new(): AnimatedTexture {
       TODO()

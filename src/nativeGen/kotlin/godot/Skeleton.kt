@@ -5,7 +5,7 @@ import kotlin.Int
 
 open class Skeleton internal constructor() : Spatial() {
   companion object {
-    val NOTIFICATION_UPDATE_SKELETON: Int = 50
+    val NotificationUpdateSkeleton: Int = 50
 
     fun new(): Skeleton {
       TODO()

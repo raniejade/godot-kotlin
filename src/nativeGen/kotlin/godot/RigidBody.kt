@@ -5,13 +5,13 @@ import kotlin.Int
 
 open class RigidBody internal constructor() : PhysicsBody() {
   companion object {
-    val MODE_CHARACTER: Int = 2
+    val ModeCharacter: Int = 2
 
-    val MODE_KINEMATIC: Int = 3
+    val ModeKinematic: Int = 3
 
-    val MODE_RIGID: Int = 0
+    val ModeRigid: Int = 0
 
-    val MODE_STATIC: Int = 1
+    val ModeStatic: Int = 1
 
     fun new(): RigidBody {
       TODO()

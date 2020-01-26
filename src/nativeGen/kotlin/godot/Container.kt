@@ -5,7 +5,7 @@ import kotlin.Int
 
 open class Container internal constructor() : Control() {
   companion object {
-    val NOTIFICATION_SORT_CHILDREN: Int = 50
+    val NotificationSortChildren: Int = 50
 
     fun new(): Container {
       TODO()

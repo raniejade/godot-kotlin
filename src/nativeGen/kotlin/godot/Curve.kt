@@ -5,11 +5,11 @@ import kotlin.Int
 
 open class Curve internal constructor() : Resource() {
   companion object {
-    val TANGENT_FREE: Int = 0
+    val TangentFree: Int = 0
 
-    val TANGENT_LINEAR: Int = 1
+    val TangentLinear: Int = 1
 
-    val TANGENT_MODE_COUNT: Int = 2
+    val TangentModeCount: Int = 2
 
     fun new(): Curve {
       TODO()

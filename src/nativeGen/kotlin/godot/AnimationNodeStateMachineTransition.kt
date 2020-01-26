@@ -5,11 +5,11 @@ import kotlin.Int
 
 open class AnimationNodeStateMachineTransition internal constructor() : Resource() {
   companion object {
-    val SWITCH_MODE_AT_END: Int = 2
+    val SwitchModeAtEnd: Int = 2
 
-    val SWITCH_MODE_IMMEDIATE: Int = 0
+    val SwitchModeImmediate: Int = 0
 
-    val SWITCH_MODE_SYNC: Int = 1
+    val SwitchModeSync: Int = 1
 
     fun new(): AnimationNodeStateMachineTransition {
       TODO()

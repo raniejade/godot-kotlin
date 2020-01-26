@@ -5,29 +5,29 @@ import kotlin.Int
 
 open class AnimationTreePlayer internal constructor() : Node() {
   companion object {
-    val ANIMATION_PROCESS_IDLE: Int = 1
+    val AnimationProcessIdle: Int = 1
 
-    val ANIMATION_PROCESS_PHYSICS: Int = 0
+    val AnimationProcessPhysics: Int = 0
 
-    val NODE_ANIMATION: Int = 1
+    val NodeAnimation: Int = 1
 
-    val NODE_BLEND2: Int = 4
+    val NodeBlend2: Int = 4
 
-    val NODE_BLEND3: Int = 5
+    val NodeBlend3: Int = 5
 
-    val NODE_BLEND4: Int = 6
+    val NodeBlend4: Int = 6
 
-    val NODE_MIX: Int = 3
+    val NodeMix: Int = 3
 
-    val NODE_ONESHOT: Int = 2
+    val NodeOneshot: Int = 2
 
-    val NODE_OUTPUT: Int = 0
+    val NodeOutput: Int = 0
 
-    val NODE_TIMESCALE: Int = 7
+    val NodeTimescale: Int = 7
 
-    val NODE_TIMESEEK: Int = 8
+    val NodeTimeseek: Int = 8
 
-    val NODE_TRANSITION: Int = 9
+    val NodeTransition: Int = 9
 
     fun new(): AnimationTreePlayer {
       TODO()

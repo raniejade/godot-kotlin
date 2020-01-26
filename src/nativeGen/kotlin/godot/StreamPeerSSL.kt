@@ -5,15 +5,15 @@ import kotlin.Int
 
 open class StreamPeerSSL internal constructor() : StreamPeer() {
   companion object {
-    val STATUS_CONNECTED: Int = 2
+    val StatusConnected: Int = 2
 
-    val STATUS_DISCONNECTED: Int = 0
+    val StatusDisconnected: Int = 0
 
-    val STATUS_ERROR: Int = 3
+    val StatusError: Int = 3
 
-    val STATUS_ERROR_HOSTNAME_MISMATCH: Int = 4
+    val StatusErrorHostnameMismatch: Int = 4
 
-    val STATUS_HANDSHAKING: Int = 1
+    val StatusHandshaking: Int = 1
 
     fun new(): StreamPeerSSL {
       TODO()

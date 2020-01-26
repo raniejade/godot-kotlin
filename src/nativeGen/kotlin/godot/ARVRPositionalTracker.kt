@@ -5,11 +5,11 @@ import kotlin.Int
 
 open class ARVRPositionalTracker internal constructor() : Object() {
   companion object {
-    val TRACKER_HAND_UNKNOWN: Int = 0
+    val TrackerHandUnknown: Int = 0
 
-    val TRACKER_LEFT_HAND: Int = 1
+    val TrackerLeftHand: Int = 1
 
-    val TRACKER_RIGHT_HAND: Int = 2
+    val TrackerRightHand: Int = 2
 
     fun new(): ARVRPositionalTracker {
       TODO()

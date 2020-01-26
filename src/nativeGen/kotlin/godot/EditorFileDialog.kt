@@ -5,25 +5,25 @@ import kotlin.Int
 
 open class EditorFileDialog internal constructor() : ConfirmationDialog() {
   companion object {
-    val ACCESS_FILESYSTEM: Int = 2
+    val AccessFilesystem: Int = 2
 
-    val ACCESS_RESOURCES: Int = 0
+    val AccessResources: Int = 0
 
-    val ACCESS_USERDATA: Int = 1
+    val AccessUserdata: Int = 1
 
-    val DISPLAY_LIST: Int = 1
+    val DisplayList: Int = 1
 
-    val DISPLAY_THUMBNAILS: Int = 0
+    val DisplayThumbnails: Int = 0
 
-    val MODE_OPEN_ANY: Int = 3
+    val ModeOpenAny: Int = 3
 
-    val MODE_OPEN_DIR: Int = 2
+    val ModeOpenDir: Int = 2
 
-    val MODE_OPEN_FILE: Int = 0
+    val ModeOpenFile: Int = 0
 
-    val MODE_OPEN_FILES: Int = 1
+    val ModeOpenFiles: Int = 1
 
-    val MODE_SAVE_FILE: Int = 4
+    val ModeSaveFile: Int = 4
 
     fun new(): EditorFileDialog {
       TODO()

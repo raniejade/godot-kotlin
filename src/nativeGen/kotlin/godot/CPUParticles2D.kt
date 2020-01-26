@@ -5,53 +5,53 @@ import kotlin.Int
 
 open class CPUParticles2D internal constructor() : Node2D() {
   companion object {
-    val DRAW_ORDER_INDEX: Int = 0
+    val DrawOrderIndex: Int = 0
 
-    val DRAW_ORDER_LIFETIME: Int = 1
+    val DrawOrderLifetime: Int = 1
 
-    val EMISSION_SHAPE_CIRCLE: Int = 1
+    val EmissionShapeCircle: Int = 1
 
-    val EMISSION_SHAPE_DIRECTED_POINTS: Int = 4
+    val EmissionShapeDirectedPoints: Int = 4
 
-    val EMISSION_SHAPE_POINT: Int = 0
+    val EmissionShapePoint: Int = 0
 
-    val EMISSION_SHAPE_POINTS: Int = 3
+    val EmissionShapePoints: Int = 3
 
-    val EMISSION_SHAPE_RECTANGLE: Int = 2
+    val EmissionShapeRectangle: Int = 2
 
-    val FLAG_ALIGN_Y_TO_VELOCITY: Int = 0
+    val FlagAlignYToVelocity: Int = 0
 
-    val FLAG_DISABLE_Z: Int = 2
+    val FlagDisableZ: Int = 2
 
-    val FLAG_MAX: Int = 3
+    val FlagMax: Int = 3
 
-    val FLAG_ROTATE_Y: Int = 1
+    val FlagRotateY: Int = 1
 
-    val PARAM_ANGLE: Int = 7
+    val ParamAngle: Int = 7
 
-    val PARAM_ANGULAR_VELOCITY: Int = 1
+    val ParamAngularVelocity: Int = 1
 
-    val PARAM_ANIM_OFFSET: Int = 11
+    val ParamAnimOffset: Int = 11
 
-    val PARAM_ANIM_SPEED: Int = 10
+    val ParamAnimSpeed: Int = 10
 
-    val PARAM_DAMPING: Int = 6
+    val ParamDamping: Int = 6
 
-    val PARAM_HUE_VARIATION: Int = 9
+    val ParamHueVariation: Int = 9
 
-    val PARAM_INITIAL_LINEAR_VELOCITY: Int = 0
+    val ParamInitialLinearVelocity: Int = 0
 
-    val PARAM_LINEAR_ACCEL: Int = 3
+    val ParamLinearAccel: Int = 3
 
-    val PARAM_MAX: Int = 12
+    val ParamMax: Int = 12
 
-    val PARAM_ORBIT_VELOCITY: Int = 2
+    val ParamOrbitVelocity: Int = 2
 
-    val PARAM_RADIAL_ACCEL: Int = 4
+    val ParamRadialAccel: Int = 4
 
-    val PARAM_SCALE: Int = 8
+    val ParamScale: Int = 8
 
-    val PARAM_TANGENTIAL_ACCEL: Int = 5
+    val ParamTangentialAccel: Int = 5
 
     fun new(): CPUParticles2D {
       TODO()

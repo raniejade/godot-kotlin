@@ -5,11 +5,11 @@ import kotlin.Int
 
 open class TabContainer internal constructor() : Container() {
   companion object {
-    val ALIGN_CENTER: Int = 1
+    val AlignCenter: Int = 1
 
-    val ALIGN_LEFT: Int = 0
+    val AlignLeft: Int = 0
 
-    val ALIGN_RIGHT: Int = 2
+    val AlignRight: Int = 2
 
     fun new(): TabContainer {
       TODO()

@@ -5,20 +5,20 @@ import kotlin.Int
 
 open class NetworkedMultiplayerPeer internal constructor() : PacketPeer() {
   companion object {
-    val CONNECTION_CONNECTED: Int = 2
+    val ConnectionConnected: Int = 2
 
-    val CONNECTION_CONNECTING: Int = 1
+    val ConnectionConnecting: Int = 1
 
-    val CONNECTION_DISCONNECTED: Int = 0
+    val ConnectionDisconnected: Int = 0
 
-    val TARGET_PEER_BROADCAST: Int = 0
+    val TargetPeerBroadcast: Int = 0
 
-    val TARGET_PEER_SERVER: Int = 1
+    val TargetPeerServer: Int = 1
 
-    val TRANSFER_MODE_RELIABLE: Int = 2
+    val TransferModeReliable: Int = 2
 
-    val TRANSFER_MODE_UNRELIABLE: Int = 0
+    val TransferModeUnreliable: Int = 0
 
-    val TRANSFER_MODE_UNRELIABLE_ORDERED: Int = 1
+    val TransferModeUnreliableOrdered: Int = 1
   }
 }

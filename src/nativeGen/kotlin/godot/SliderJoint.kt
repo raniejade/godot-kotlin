@@ -5,51 +5,51 @@ import kotlin.Int
 
 open class SliderJoint internal constructor() : Joint() {
   companion object {
-    val PARAM_ANGULAR_LIMIT_DAMPING: Int = 15
+    val ParamAngularLimitDamping: Int = 15
 
-    val PARAM_ANGULAR_LIMIT_LOWER: Int = 12
+    val ParamAngularLimitLower: Int = 12
 
-    val PARAM_ANGULAR_LIMIT_RESTITUTION: Int = 14
+    val ParamAngularLimitRestitution: Int = 14
 
-    val PARAM_ANGULAR_LIMIT_SOFTNESS: Int = 13
+    val ParamAngularLimitSoftness: Int = 13
 
-    val PARAM_ANGULAR_LIMIT_UPPER: Int = 11
+    val ParamAngularLimitUpper: Int = 11
 
-    val PARAM_ANGULAR_MOTION_DAMPING: Int = 18
+    val ParamAngularMotionDamping: Int = 18
 
-    val PARAM_ANGULAR_MOTION_RESTITUTION: Int = 17
+    val ParamAngularMotionRestitution: Int = 17
 
-    val PARAM_ANGULAR_MOTION_SOFTNESS: Int = 16
+    val ParamAngularMotionSoftness: Int = 16
 
-    val PARAM_ANGULAR_ORTHOGONAL_DAMPING: Int = 21
+    val ParamAngularOrthogonalDamping: Int = 21
 
-    val PARAM_ANGULAR_ORTHOGONAL_RESTITUTION: Int = 20
+    val ParamAngularOrthogonalRestitution: Int = 20
 
-    val PARAM_ANGULAR_ORTHOGONAL_SOFTNESS: Int = 19
+    val ParamAngularOrthogonalSoftness: Int = 19
 
-    val PARAM_LINEAR_LIMIT_DAMPING: Int = 4
+    val ParamLinearLimitDamping: Int = 4
 
-    val PARAM_LINEAR_LIMIT_LOWER: Int = 1
+    val ParamLinearLimitLower: Int = 1
 
-    val PARAM_LINEAR_LIMIT_RESTITUTION: Int = 3
+    val ParamLinearLimitRestitution: Int = 3
 
-    val PARAM_LINEAR_LIMIT_SOFTNESS: Int = 2
+    val ParamLinearLimitSoftness: Int = 2
 
-    val PARAM_LINEAR_LIMIT_UPPER: Int = 0
+    val ParamLinearLimitUpper: Int = 0
 
-    val PARAM_LINEAR_MOTION_DAMPING: Int = 7
+    val ParamLinearMotionDamping: Int = 7
 
-    val PARAM_LINEAR_MOTION_RESTITUTION: Int = 6
+    val ParamLinearMotionRestitution: Int = 6
 
-    val PARAM_LINEAR_MOTION_SOFTNESS: Int = 5
+    val ParamLinearMotionSoftness: Int = 5
 
-    val PARAM_LINEAR_ORTHOGONAL_DAMPING: Int = 10
+    val ParamLinearOrthogonalDamping: Int = 10
 
-    val PARAM_LINEAR_ORTHOGONAL_RESTITUTION: Int = 9
+    val ParamLinearOrthogonalRestitution: Int = 9
 
-    val PARAM_LINEAR_ORTHOGONAL_SOFTNESS: Int = 8
+    val ParamLinearOrthogonalSoftness: Int = 8
 
-    val PARAM_MAX: Int = 22
+    val ParamMax: Int = 22
 
     fun new(): SliderJoint {
       TODO()

@@ -5,11 +5,11 @@ import kotlin.Int
 
 open class PinJoint internal constructor() : Joint() {
   companion object {
-    val PARAM_BIAS: Int = 0
+    val ParamBias: Int = 0
 
-    val PARAM_DAMPING: Int = 1
+    val ParamDamping: Int = 1
 
-    val PARAM_IMPULSE_CLAMP: Int = 2
+    val ParamImpulseClamp: Int = 2
 
     fun new(): PinJoint {
       TODO()

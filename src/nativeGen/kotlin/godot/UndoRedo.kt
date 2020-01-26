@@ -5,11 +5,11 @@ import kotlin.Int
 
 open class UndoRedo internal constructor() : Object() {
   companion object {
-    val MERGE_ALL: Int = 2
+    val MergeAll: Int = 2
 
-    val MERGE_DISABLE: Int = 0
+    val MergeDisable: Int = 0
 
-    val MERGE_ENDS: Int = 1
+    val MergeEnds: Int = 1
 
     fun new(): UndoRedo {
       TODO()

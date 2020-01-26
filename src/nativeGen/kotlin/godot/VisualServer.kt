@@ -5,430 +5,430 @@ import kotlin.Int
 
 open class VisualServer internal constructor() : Object() {
   companion object {
-    val ARRAY_BONES: Int = 6
+    val ArrayBones: Int = 6
 
-    val ARRAY_COLOR: Int = 3
+    val ArrayColor: Int = 3
 
-    val ARRAY_COMPRESS_BONES: Int = 32768
+    val ArrayCompressBones: Int = 32768
 
-    val ARRAY_COMPRESS_COLOR: Int = 4096
+    val ArrayCompressColor: Int = 4096
 
-    val ARRAY_COMPRESS_DEFAULT: Int = 97280
+    val ArrayCompressDefault: Int = 97280
 
-    val ARRAY_COMPRESS_INDEX: Int = 131072
+    val ArrayCompressIndex: Int = 131072
 
-    val ARRAY_COMPRESS_NORMAL: Int = 1024
+    val ArrayCompressNormal: Int = 1024
 
-    val ARRAY_COMPRESS_TANGENT: Int = 2048
+    val ArrayCompressTangent: Int = 2048
 
-    val ARRAY_COMPRESS_TEX_UV: Int = 8192
+    val ArrayCompressTexUv: Int = 8192
 
-    val ARRAY_COMPRESS_TEX_UV2: Int = 16384
+    val ArrayCompressTexUv2: Int = 16384
 
-    val ARRAY_COMPRESS_VERTEX: Int = 512
+    val ArrayCompressVertex: Int = 512
 
-    val ARRAY_COMPRESS_WEIGHTS: Int = 65536
+    val ArrayCompressWeights: Int = 65536
 
-    val ARRAY_FLAG_USE_16_BIT_BONES: Int = 524288
+    val ArrayFlagUse16BitBones: Int = 524288
 
-    val ARRAY_FLAG_USE_2D_VERTICES: Int = 262144
+    val ArrayFlagUse2dVertices: Int = 262144
 
-    val ARRAY_FORMAT_BONES: Int = 64
+    val ArrayFormatBones: Int = 64
 
-    val ARRAY_FORMAT_COLOR: Int = 8
+    val ArrayFormatColor: Int = 8
 
-    val ARRAY_FORMAT_INDEX: Int = 256
+    val ArrayFormatIndex: Int = 256
 
-    val ARRAY_FORMAT_NORMAL: Int = 2
+    val ArrayFormatNormal: Int = 2
 
-    val ARRAY_FORMAT_TANGENT: Int = 4
+    val ArrayFormatTangent: Int = 4
 
-    val ARRAY_FORMAT_TEX_UV: Int = 16
+    val ArrayFormatTexUv: Int = 16
 
-    val ARRAY_FORMAT_TEX_UV2: Int = 32
+    val ArrayFormatTexUv2: Int = 32
 
-    val ARRAY_FORMAT_VERTEX: Int = 1
+    val ArrayFormatVertex: Int = 1
 
-    val ARRAY_FORMAT_WEIGHTS: Int = 128
+    val ArrayFormatWeights: Int = 128
 
-    val ARRAY_INDEX: Int = 8
+    val ArrayIndex: Int = 8
 
-    val ARRAY_MAX: Int = 9
+    val ArrayMax: Int = 9
 
-    val ARRAY_NORMAL: Int = 1
+    val ArrayNormal: Int = 1
 
-    val ARRAY_TANGENT: Int = 2
+    val ArrayTangent: Int = 2
 
-    val ARRAY_TEX_UV: Int = 4
+    val ArrayTexUv: Int = 4
 
-    val ARRAY_TEX_UV2: Int = 5
+    val ArrayTexUv2: Int = 5
 
-    val ARRAY_VERTEX: Int = 0
+    val ArrayVertex: Int = 0
 
-    val ARRAY_WEIGHTS: Int = 7
+    val ArrayWeights: Int = 7
 
-    val ARRAY_WEIGHTS_SIZE: Int = 4
+    val ArrayWeightsSize: Int = 4
 
-    val BLEND_SHAPE_MODE_NORMALIZED: Int = 0
+    val BlendShapeModeNormalized: Int = 0
 
-    val BLEND_SHAPE_MODE_RELATIVE: Int = 1
+    val BlendShapeModeRelative: Int = 1
 
-    val CANVAS_ITEM_Z_MAX: Int = 4096
+    val CanvasItemZMax: Int = 4096
 
-    val CANVAS_ITEM_Z_MIN: Int = -4096
+    val CanvasItemZMin: Int = -4096
 
-    val CANVAS_LIGHT_FILTER_NONE: Int = 0
+    val CanvasLightFilterNone: Int = 0
 
-    val CANVAS_LIGHT_FILTER_PCF13: Int = 5
+    val CanvasLightFilterPcf13: Int = 5
 
-    val CANVAS_LIGHT_FILTER_PCF3: Int = 1
+    val CanvasLightFilterPcf3: Int = 1
 
-    val CANVAS_LIGHT_FILTER_PCF5: Int = 2
+    val CanvasLightFilterPcf5: Int = 2
 
-    val CANVAS_LIGHT_FILTER_PCF7: Int = 3
+    val CanvasLightFilterPcf7: Int = 3
 
-    val CANVAS_LIGHT_FILTER_PCF9: Int = 4
+    val CanvasLightFilterPcf9: Int = 4
 
-    val CANVAS_LIGHT_MODE_ADD: Int = 0
+    val CanvasLightModeAdd: Int = 0
 
-    val CANVAS_LIGHT_MODE_MASK: Int = 3
+    val CanvasLightModeMask: Int = 3
 
-    val CANVAS_LIGHT_MODE_MIX: Int = 2
+    val CanvasLightModeMix: Int = 2
 
-    val CANVAS_LIGHT_MODE_SUB: Int = 1
+    val CanvasLightModeSub: Int = 1
 
-    val CANVAS_OCCLUDER_POLYGON_CULL_CLOCKWISE: Int = 1
+    val CanvasOccluderPolygonCullClockwise: Int = 1
 
-    val CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE: Int = 2
+    val CanvasOccluderPolygonCullCounterClockwise: Int = 2
 
-    val CANVAS_OCCLUDER_POLYGON_CULL_DISABLED: Int = 0
+    val CanvasOccluderPolygonCullDisabled: Int = 0
 
-    val CUBEMAP_BACK: Int = 5
+    val CubemapBack: Int = 5
 
-    val CUBEMAP_BOTTOM: Int = 2
+    val CubemapBottom: Int = 2
 
-    val CUBEMAP_FRONT: Int = 4
+    val CubemapFront: Int = 4
 
-    val CUBEMAP_LEFT: Int = 0
+    val CubemapLeft: Int = 0
 
-    val CUBEMAP_RIGHT: Int = 1
+    val CubemapRight: Int = 1
 
-    val CUBEMAP_TOP: Int = 3
+    val CubemapTop: Int = 3
 
-    val ENV_BG_CANVAS: Int = 4
+    val EnvBgCanvas: Int = 4
 
-    val ENV_BG_CLEAR_COLOR: Int = 0
+    val EnvBgClearColor: Int = 0
 
-    val ENV_BG_COLOR: Int = 1
+    val EnvBgColor: Int = 1
 
-    val ENV_BG_COLOR_SKY: Int = 3
+    val EnvBgColorSky: Int = 3
 
-    val ENV_BG_KEEP: Int = 5
+    val EnvBgKeep: Int = 5
 
-    val ENV_BG_MAX: Int = 7
+    val EnvBgMax: Int = 7
 
-    val ENV_BG_SKY: Int = 2
+    val EnvBgSky: Int = 2
 
-    val ENV_DOF_BLUR_QUALITY_HIGH: Int = 2
+    val EnvDofBlurQualityHigh: Int = 2
 
-    val ENV_DOF_BLUR_QUALITY_LOW: Int = 0
+    val EnvDofBlurQualityLow: Int = 0
 
-    val ENV_DOF_BLUR_QUALITY_MEDIUM: Int = 1
+    val EnvDofBlurQualityMedium: Int = 1
 
-    val ENV_SSAO_BLUR_1x1: Int = 1
+    val EnvSsaoBlur1x1: Int = 1
 
-    val ENV_SSAO_BLUR_2x2: Int = 2
+    val EnvSsaoBlur2x2: Int = 2
 
-    val ENV_SSAO_BLUR_3x3: Int = 3
+    val EnvSsaoBlur3x3: Int = 3
 
-    val ENV_SSAO_BLUR_DISABLED: Int = 0
+    val EnvSsaoBlurDisabled: Int = 0
 
-    val ENV_SSAO_QUALITY_HIGH: Int = 2
+    val EnvSsaoQualityHigh: Int = 2
 
-    val ENV_SSAO_QUALITY_LOW: Int = 0
+    val EnvSsaoQualityLow: Int = 0
 
-    val ENV_SSAO_QUALITY_MEDIUM: Int = 1
+    val EnvSsaoQualityMedium: Int = 1
 
-    val ENV_TONE_MAPPER_ACES: Int = 3
+    val EnvToneMapperAces: Int = 3
 
-    val ENV_TONE_MAPPER_FILMIC: Int = 2
+    val EnvToneMapperFilmic: Int = 2
 
-    val ENV_TONE_MAPPER_LINEAR: Int = 0
+    val EnvToneMapperLinear: Int = 0
 
-    val ENV_TONE_MAPPER_REINHARD: Int = 1
+    val EnvToneMapperReinhard: Int = 1
 
-    val FEATURE_MULTITHREADED: Int = 1
+    val FeatureMultithreaded: Int = 1
 
-    val FEATURE_SHADERS: Int = 0
+    val FeatureShaders: Int = 0
 
-    val GLOW_BLEND_MODE_ADDITIVE: Int = 0
+    val GlowBlendModeAdditive: Int = 0
 
-    val GLOW_BLEND_MODE_REPLACE: Int = 3
+    val GlowBlendModeReplace: Int = 3
 
-    val GLOW_BLEND_MODE_SCREEN: Int = 1
+    val GlowBlendModeScreen: Int = 1
 
-    val GLOW_BLEND_MODE_SOFTLIGHT: Int = 2
+    val GlowBlendModeSoftlight: Int = 2
 
-    val INFO_DRAW_CALLS_IN_FRAME: Int = 5
+    val InfoDrawCallsInFrame: Int = 5
 
-    val INFO_MATERIAL_CHANGES_IN_FRAME: Int = 2
+    val InfoMaterialChangesInFrame: Int = 2
 
-    val INFO_OBJECTS_IN_FRAME: Int = 0
+    val InfoObjectsInFrame: Int = 0
 
-    val INFO_SHADER_CHANGES_IN_FRAME: Int = 3
+    val InfoShaderChangesInFrame: Int = 3
 
-    val INFO_SURFACE_CHANGES_IN_FRAME: Int = 4
+    val InfoSurfaceChangesInFrame: Int = 4
 
-    val INFO_TEXTURE_MEM_USED: Int = 8
+    val InfoTextureMemUsed: Int = 8
 
-    val INFO_USAGE_VIDEO_MEM_TOTAL: Int = 6
+    val InfoUsageVideoMemTotal: Int = 6
 
-    val INFO_VERTEX_MEM_USED: Int = 9
+    val InfoVertexMemUsed: Int = 9
 
-    val INFO_VERTICES_IN_FRAME: Int = 1
+    val InfoVerticesInFrame: Int = 1
 
-    val INFO_VIDEO_MEM_USED: Int = 7
+    val InfoVideoMemUsed: Int = 7
 
-    val INSTANCE_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE: Int = 1
+    val InstanceFlagDrawNextFrameIfVisible: Int = 1
 
-    val INSTANCE_FLAG_MAX: Int = 2
+    val InstanceFlagMax: Int = 2
 
-    val INSTANCE_FLAG_USE_BAKED_LIGHT: Int = 0
+    val InstanceFlagUseBakedLight: Int = 0
 
-    val INSTANCE_GEOMETRY_MASK: Int = 30
+    val InstanceGeometryMask: Int = 30
 
-    val INSTANCE_GI_PROBE: Int = 7
+    val InstanceGiProbe: Int = 7
 
-    val INSTANCE_IMMEDIATE: Int = 3
+    val InstanceImmediate: Int = 3
 
-    val INSTANCE_LIGHT: Int = 5
+    val InstanceLight: Int = 5
 
-    val INSTANCE_LIGHTMAP_CAPTURE: Int = 8
+    val InstanceLightmapCapture: Int = 8
 
-    val INSTANCE_MAX: Int = 9
+    val InstanceMax: Int = 9
 
-    val INSTANCE_MESH: Int = 1
+    val InstanceMesh: Int = 1
 
-    val INSTANCE_MULTIMESH: Int = 2
+    val InstanceMultimesh: Int = 2
 
-    val INSTANCE_NONE: Int = 0
+    val InstanceNone: Int = 0
 
-    val INSTANCE_PARTICLES: Int = 4
+    val InstanceParticles: Int = 4
 
-    val INSTANCE_REFLECTION_PROBE: Int = 6
+    val InstanceReflectionProbe: Int = 6
 
-    val LIGHT_DIRECTIONAL: Int = 0
+    val LightDirectional: Int = 0
 
-    val LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_OPTIMIZED: Int = 1
+    val LightDirectionalShadowDepthRangeOptimized: Int = 1
 
-    val LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_STABLE: Int = 0
+    val LightDirectionalShadowDepthRangeStable: Int = 0
 
-    val LIGHT_DIRECTIONAL_SHADOW_ORTHOGONAL: Int = 0
+    val LightDirectionalShadowOrthogonal: Int = 0
 
-    val LIGHT_DIRECTIONAL_SHADOW_PARALLEL_2_SPLITS: Int = 1
+    val LightDirectionalShadowParallel2Splits: Int = 1
 
-    val LIGHT_DIRECTIONAL_SHADOW_PARALLEL_4_SPLITS: Int = 2
+    val LightDirectionalShadowParallel4Splits: Int = 2
 
-    val LIGHT_OMNI: Int = 1
+    val LightOmni: Int = 1
 
-    val LIGHT_OMNI_SHADOW_CUBE: Int = 1
+    val LightOmniShadowCube: Int = 1
 
-    val LIGHT_OMNI_SHADOW_DETAIL_HORIZONTAL: Int = 1
+    val LightOmniShadowDetailHorizontal: Int = 1
 
-    val LIGHT_OMNI_SHADOW_DETAIL_VERTICAL: Int = 0
+    val LightOmniShadowDetailVertical: Int = 0
 
-    val LIGHT_OMNI_SHADOW_DUAL_PARABOLOID: Int = 0
+    val LightOmniShadowDualParaboloid: Int = 0
 
-    val LIGHT_PARAM_ATTENUATION: Int = 4
+    val LightParamAttenuation: Int = 4
 
-    val LIGHT_PARAM_CONTACT_SHADOW_SIZE: Int = 7
+    val LightParamContactShadowSize: Int = 7
 
-    val LIGHT_PARAM_ENERGY: Int = 0
+    val LightParamEnergy: Int = 0
 
-    val LIGHT_PARAM_MAX: Int = 15
+    val LightParamMax: Int = 15
 
-    val LIGHT_PARAM_RANGE: Int = 3
+    val LightParamRange: Int = 3
 
-    val LIGHT_PARAM_SHADOW_BIAS: Int = 13
+    val LightParamShadowBias: Int = 13
 
-    val LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE: Int = 14
+    val LightParamShadowBiasSplitScale: Int = 14
 
-    val LIGHT_PARAM_SHADOW_MAX_DISTANCE: Int = 8
+    val LightParamShadowMaxDistance: Int = 8
 
-    val LIGHT_PARAM_SHADOW_NORMAL_BIAS: Int = 12
+    val LightParamShadowNormalBias: Int = 12
 
-    val LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET: Int = 9
+    val LightParamShadowSplit1Offset: Int = 9
 
-    val LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET: Int = 10
+    val LightParamShadowSplit2Offset: Int = 10
 
-    val LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET: Int = 11
+    val LightParamShadowSplit3Offset: Int = 11
 
-    val LIGHT_PARAM_SPECULAR: Int = 2
+    val LightParamSpecular: Int = 2
 
-    val LIGHT_PARAM_SPOT_ANGLE: Int = 5
+    val LightParamSpotAngle: Int = 5
 
-    val LIGHT_PARAM_SPOT_ATTENUATION: Int = 6
+    val LightParamSpotAttenuation: Int = 6
 
-    val LIGHT_SPOT: Int = 2
+    val LightSpot: Int = 2
 
-    val MATERIAL_RENDER_PRIORITY_MAX: Int = 127
+    val MaterialRenderPriorityMax: Int = 127
 
-    val MATERIAL_RENDER_PRIORITY_MIN: Int = -128
+    val MaterialRenderPriorityMin: Int = -128
 
-    val MAX_CURSORS: Int = 8
+    val MaxCursors: Int = 8
 
-    val MAX_GLOW_LEVELS: Int = 7
+    val MaxGlowLevels: Int = 7
 
-    val MULTIMESH_COLOR_8BIT: Int = 1
+    val MultimeshColor8bit: Int = 1
 
-    val MULTIMESH_COLOR_FLOAT: Int = 2
+    val MultimeshColorFloat: Int = 2
 
-    val MULTIMESH_COLOR_NONE: Int = 0
+    val MultimeshColorNone: Int = 0
 
-    val MULTIMESH_CUSTOM_DATA_8BIT: Int = 1
+    val MultimeshCustomData8bit: Int = 1
 
-    val MULTIMESH_CUSTOM_DATA_FLOAT: Int = 2
+    val MultimeshCustomDataFloat: Int = 2
 
-    val MULTIMESH_CUSTOM_DATA_NONE: Int = 0
+    val MultimeshCustomDataNone: Int = 0
 
-    val MULTIMESH_TRANSFORM_2D: Int = 0
+    val MultimeshTransform2d: Int = 0
 
-    val MULTIMESH_TRANSFORM_3D: Int = 1
+    val MultimeshTransform3d: Int = 1
 
-    val NINE_PATCH_STRETCH: Int = 0
+    val NinePatchStretch: Int = 0
 
-    val NINE_PATCH_TILE: Int = 1
+    val NinePatchTile: Int = 1
 
-    val NINE_PATCH_TILE_FIT: Int = 2
+    val NinePatchTileFit: Int = 2
 
-    val NO_INDEX_ARRAY: Int = -1
+    val NoIndexArray: Int = -1
 
-    val PARTICLES_DRAW_ORDER_INDEX: Int = 0
+    val ParticlesDrawOrderIndex: Int = 0
 
-    val PARTICLES_DRAW_ORDER_LIFETIME: Int = 1
+    val ParticlesDrawOrderLifetime: Int = 1
 
-    val PARTICLES_DRAW_ORDER_VIEW_DEPTH: Int = 2
+    val ParticlesDrawOrderViewDepth: Int = 2
 
-    val PRIMITIVE_LINES: Int = 1
+    val PrimitiveLines: Int = 1
 
-    val PRIMITIVE_LINE_LOOP: Int = 3
+    val PrimitiveLineLoop: Int = 3
 
-    val PRIMITIVE_LINE_STRIP: Int = 2
+    val PrimitiveLineStrip: Int = 2
 
-    val PRIMITIVE_MAX: Int = 7
+    val PrimitiveMax: Int = 7
 
-    val PRIMITIVE_POINTS: Int = 0
+    val PrimitivePoints: Int = 0
 
-    val PRIMITIVE_TRIANGLES: Int = 4
+    val PrimitiveTriangles: Int = 4
 
-    val PRIMITIVE_TRIANGLE_FAN: Int = 6
+    val PrimitiveTriangleFan: Int = 6
 
-    val PRIMITIVE_TRIANGLE_STRIP: Int = 5
+    val PrimitiveTriangleStrip: Int = 5
 
-    val REFLECTION_PROBE_UPDATE_ALWAYS: Int = 1
+    val ReflectionProbeUpdateAlways: Int = 1
 
-    val REFLECTION_PROBE_UPDATE_ONCE: Int = 0
+    val ReflectionProbeUpdateOnce: Int = 0
 
-    val SCENARIO_DEBUG_DISABLED: Int = 0
+    val ScenarioDebugDisabled: Int = 0
 
-    val SCENARIO_DEBUG_OVERDRAW: Int = 2
+    val ScenarioDebugOverdraw: Int = 2
 
-    val SCENARIO_DEBUG_SHADELESS: Int = 3
+    val ScenarioDebugShadeless: Int = 3
 
-    val SCENARIO_DEBUG_WIREFRAME: Int = 1
+    val ScenarioDebugWireframe: Int = 1
 
-    val SHADER_CANVAS_ITEM: Int = 1
+    val ShaderCanvasItem: Int = 1
 
-    val SHADER_MAX: Int = 3
+    val ShaderMax: Int = 3
 
-    val SHADER_PARTICLES: Int = 2
+    val ShaderParticles: Int = 2
 
-    val SHADER_SPATIAL: Int = 0
+    val ShaderSpatial: Int = 0
 
-    val SHADOW_CASTING_SETTING_DOUBLE_SIDED: Int = 2
+    val ShadowCastingSettingDoubleSided: Int = 2
 
-    val SHADOW_CASTING_SETTING_OFF: Int = 0
+    val ShadowCastingSettingOff: Int = 0
 
-    val SHADOW_CASTING_SETTING_ON: Int = 1
+    val ShadowCastingSettingOn: Int = 1
 
-    val SHADOW_CASTING_SETTING_SHADOWS_ONLY: Int = 3
+    val ShadowCastingSettingShadowsOnly: Int = 3
 
-    val TEXTURE_FLAGS_DEFAULT: Int = 7
+    val TextureFlagsDefault: Int = 7
 
-    val TEXTURE_FLAG_ANISOTROPIC_FILTER: Int = 8
+    val TextureFlagAnisotropicFilter: Int = 8
 
-    val TEXTURE_FLAG_CONVERT_TO_LINEAR: Int = 16
+    val TextureFlagConvertToLinear: Int = 16
 
-    val TEXTURE_FLAG_FILTER: Int = 4
+    val TextureFlagFilter: Int = 4
 
-    val TEXTURE_FLAG_MIPMAPS: Int = 1
+    val TextureFlagMipmaps: Int = 1
 
-    val TEXTURE_FLAG_MIRRORED_REPEAT: Int = 32
+    val TextureFlagMirroredRepeat: Int = 32
 
-    val TEXTURE_FLAG_REPEAT: Int = 2
+    val TextureFlagRepeat: Int = 2
 
-    val TEXTURE_FLAG_USED_FOR_STREAMING: Int = 2048
+    val TextureFlagUsedForStreaming: Int = 2048
 
-    val TEXTURE_TYPE_2D: Int = 0
+    val TextureType2d: Int = 0
 
-    val TEXTURE_TYPE_2D_ARRAY: Int = 2
+    val TextureType2dArray: Int = 2
 
-    val TEXTURE_TYPE_3D: Int = 3
+    val TextureType3d: Int = 3
 
-    val TEXTURE_TYPE_CUBEMAP: Int = 1
+    val TextureTypeCubemap: Int = 1
 
-    val VIEWPORT_CLEAR_ALWAYS: Int = 0
+    val ViewportClearAlways: Int = 0
 
-    val VIEWPORT_CLEAR_NEVER: Int = 1
+    val ViewportClearNever: Int = 1
 
-    val VIEWPORT_CLEAR_ONLY_NEXT_FRAME: Int = 2
+    val ViewportClearOnlyNextFrame: Int = 2
 
-    val VIEWPORT_DEBUG_DRAW_DISABLED: Int = 0
+    val ViewportDebugDrawDisabled: Int = 0
 
-    val VIEWPORT_DEBUG_DRAW_OVERDRAW: Int = 2
+    val ViewportDebugDrawOverdraw: Int = 2
 
-    val VIEWPORT_DEBUG_DRAW_UNSHADED: Int = 1
+    val ViewportDebugDrawUnshaded: Int = 1
 
-    val VIEWPORT_DEBUG_DRAW_WIREFRAME: Int = 3
+    val ViewportDebugDrawWireframe: Int = 3
 
-    val VIEWPORT_MSAA_16X: Int = 4
+    val ViewportMsaa16x: Int = 4
 
-    val VIEWPORT_MSAA_2X: Int = 1
+    val ViewportMsaa2x: Int = 1
 
-    val VIEWPORT_MSAA_4X: Int = 2
+    val ViewportMsaa4x: Int = 2
 
-    val VIEWPORT_MSAA_8X: Int = 3
+    val ViewportMsaa8x: Int = 3
 
-    val VIEWPORT_MSAA_DISABLED: Int = 0
+    val ViewportMsaaDisabled: Int = 0
 
-    val VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME: Int = 5
+    val ViewportRenderInfoDrawCallsInFrame: Int = 5
 
-    val VIEWPORT_RENDER_INFO_MATERIAL_CHANGES_IN_FRAME: Int = 2
+    val ViewportRenderInfoMaterialChangesInFrame: Int = 2
 
-    val VIEWPORT_RENDER_INFO_MAX: Int = 6
+    val ViewportRenderInfoMax: Int = 6
 
-    val VIEWPORT_RENDER_INFO_OBJECTS_IN_FRAME: Int = 0
+    val ViewportRenderInfoObjectsInFrame: Int = 0
 
-    val VIEWPORT_RENDER_INFO_SHADER_CHANGES_IN_FRAME: Int = 3
+    val ViewportRenderInfoShaderChangesInFrame: Int = 3
 
-    val VIEWPORT_RENDER_INFO_SURFACE_CHANGES_IN_FRAME: Int = 4
+    val ViewportRenderInfoSurfaceChangesInFrame: Int = 4
 
-    val VIEWPORT_RENDER_INFO_VERTICES_IN_FRAME: Int = 1
+    val ViewportRenderInfoVerticesInFrame: Int = 1
 
-    val VIEWPORT_UPDATE_ALWAYS: Int = 3
+    val ViewportUpdateAlways: Int = 3
 
-    val VIEWPORT_UPDATE_DISABLED: Int = 0
+    val ViewportUpdateDisabled: Int = 0
 
-    val VIEWPORT_UPDATE_ONCE: Int = 1
+    val ViewportUpdateOnce: Int = 1
 
-    val VIEWPORT_UPDATE_WHEN_VISIBLE: Int = 2
+    val ViewportUpdateWhenVisible: Int = 2
 
-    val VIEWPORT_USAGE_2D: Int = 0
+    val ViewportUsage2d: Int = 0
 
-    val VIEWPORT_USAGE_2D_NO_SAMPLING: Int = 1
+    val ViewportUsage2dNoSampling: Int = 1
 
-    val VIEWPORT_USAGE_3D: Int = 2
+    val ViewportUsage3d: Int = 2
 
-    val VIEWPORT_USAGE_3D_NO_EFFECTS: Int = 3
+    val ViewportUsage3dNoEffects: Int = 3
   }
 }

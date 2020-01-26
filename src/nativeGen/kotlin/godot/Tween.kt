@@ -5,39 +5,39 @@ import kotlin.Int
 
 open class Tween internal constructor() : Node() {
   companion object {
-    val EASE_IN: Int = 0
+    val EaseIn: Int = 0
 
-    val EASE_IN_OUT: Int = 2
+    val EaseInOut: Int = 2
 
-    val EASE_OUT: Int = 1
+    val EaseOut: Int = 1
 
-    val EASE_OUT_IN: Int = 3
+    val EaseOutIn: Int = 3
 
-    val TRANS_BACK: Int = 10
+    val TransBack: Int = 10
 
-    val TRANS_BOUNCE: Int = 9
+    val TransBounce: Int = 9
 
-    val TRANS_CIRC: Int = 8
+    val TransCirc: Int = 8
 
-    val TRANS_CUBIC: Int = 7
+    val TransCubic: Int = 7
 
-    val TRANS_ELASTIC: Int = 6
+    val TransElastic: Int = 6
 
-    val TRANS_EXPO: Int = 5
+    val TransExpo: Int = 5
 
-    val TRANS_LINEAR: Int = 0
+    val TransLinear: Int = 0
 
-    val TRANS_QUAD: Int = 4
+    val TransQuad: Int = 4
 
-    val TRANS_QUART: Int = 3
+    val TransQuart: Int = 3
 
-    val TRANS_QUINT: Int = 2
+    val TransQuint: Int = 2
 
-    val TRANS_SINE: Int = 1
+    val TransSine: Int = 1
 
-    val TWEEN_PROCESS_IDLE: Int = 1
+    val TweenProcessIdle: Int = 1
 
-    val TWEEN_PROCESS_PHYSICS: Int = 0
+    val TweenProcessPhysics: Int = 0
 
     fun new(): Tween {
       TODO()

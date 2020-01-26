@@ -5,19 +5,19 @@ import kotlin.Int
 
 open class CameraFeed internal constructor() : Reference() {
   companion object {
-    val FEED_BACK: Int = 2
+    val FeedBack: Int = 2
 
-    val FEED_FRONT: Int = 1
+    val FeedFront: Int = 1
 
-    val FEED_NOIMAGE: Int = 0
+    val FeedNoimage: Int = 0
 
-    val FEED_RGB: Int = 1
+    val FeedRgb: Int = 1
 
-    val FEED_UNSPECIFIED: Int = 0
+    val FeedUnspecified: Int = 0
 
-    val FEED_YCbCr: Int = 2
+    val FeedYcbcr: Int = 2
 
-    val FEED_YCbCr_Sep: Int = 3
+    val FeedYcbcrSep: Int = 3
 
     fun new(): CameraFeed {
       TODO()

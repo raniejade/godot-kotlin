@@ -5,13 +5,13 @@ import kotlin.Int
 
 open class VisualShaderNodeTransformMult internal constructor() : VisualShaderNode() {
   companion object {
-    val OP_AxB: Int = 0
+    val OpAxb: Int = 0
 
-    val OP_AxB_COMP: Int = 2
+    val OpAxbComp: Int = 2
 
-    val OP_BxA: Int = 1
+    val OpBxa: Int = 1
 
-    val OP_BxA_COMP: Int = 3
+    val OpBxaComp: Int = 3
 
     fun new(): VisualShaderNodeTransformMult {
       TODO()

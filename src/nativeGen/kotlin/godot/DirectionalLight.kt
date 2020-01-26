@@ -5,15 +5,15 @@ import kotlin.Int
 
 open class DirectionalLight internal constructor() : Light() {
   companion object {
-    val SHADOW_DEPTH_RANGE_OPTIMIZED: Int = 1
+    val ShadowDepthRangeOptimized: Int = 1
 
-    val SHADOW_DEPTH_RANGE_STABLE: Int = 0
+    val ShadowDepthRangeStable: Int = 0
 
-    val SHADOW_ORTHOGONAL: Int = 0
+    val ShadowOrthogonal: Int = 0
 
-    val SHADOW_PARALLEL_2_SPLITS: Int = 1
+    val ShadowParallel2Splits: Int = 1
 
-    val SHADOW_PARALLEL_4_SPLITS: Int = 2
+    val ShadowParallel4Splits: Int = 2
 
     fun new(): DirectionalLight {
       TODO()

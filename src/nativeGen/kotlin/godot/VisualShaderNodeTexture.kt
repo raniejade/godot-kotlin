@@ -5,19 +5,19 @@ import kotlin.Int
 
 open class VisualShaderNodeTexture internal constructor() : VisualShaderNode() {
   companion object {
-    val SOURCE_2D_NORMAL: Int = 3
+    val Source2dNormal: Int = 3
 
-    val SOURCE_2D_TEXTURE: Int = 2
+    val Source2dTexture: Int = 2
 
-    val SOURCE_SCREEN: Int = 1
+    val SourceScreen: Int = 1
 
-    val SOURCE_TEXTURE: Int = 0
+    val SourceTexture: Int = 0
 
-    val TYPE_COLOR: Int = 1
+    val TypeColor: Int = 1
 
-    val TYPE_DATA: Int = 0
+    val TypeData: Int = 0
 
-    val TYPE_NORMALMAP: Int = 2
+    val TypeNormalmap: Int = 2
 
     fun new(): VisualShaderNodeTexture {
       TODO()

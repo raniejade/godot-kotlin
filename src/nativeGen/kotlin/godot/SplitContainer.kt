@@ -5,10 +5,10 @@ import kotlin.Int
 
 open class SplitContainer internal constructor() : Container() {
   companion object {
-    val DRAGGER_HIDDEN: Int = 1
+    val DraggerHidden: Int = 1
 
-    val DRAGGER_HIDDEN_COLLAPSED: Int = 2
+    val DraggerHiddenCollapsed: Int = 2
 
-    val DRAGGER_VISIBLE: Int = 0
+    val DraggerVisible: Int = 0
   }
 }

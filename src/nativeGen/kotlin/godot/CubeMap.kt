@@ -5,31 +5,31 @@ import kotlin.Int
 
 open class CubeMap internal constructor() : Resource() {
   companion object {
-    val FLAGS_DEFAULT: Int = 7
+    val FlagsDefault: Int = 7
 
-    val FLAG_FILTER: Int = 4
+    val FlagFilter: Int = 4
 
-    val FLAG_MIPMAPS: Int = 1
+    val FlagMipmaps: Int = 1
 
-    val FLAG_REPEAT: Int = 2
+    val FlagRepeat: Int = 2
 
-    val SIDE_BACK: Int = 5
+    val SideBack: Int = 5
 
-    val SIDE_BOTTOM: Int = 2
+    val SideBottom: Int = 2
 
-    val SIDE_FRONT: Int = 4
+    val SideFront: Int = 4
 
-    val SIDE_LEFT: Int = 0
+    val SideLeft: Int = 0
 
-    val SIDE_RIGHT: Int = 1
+    val SideRight: Int = 1
 
-    val SIDE_TOP: Int = 3
+    val SideTop: Int = 3
 
-    val STORAGE_COMPRESS_LOSSLESS: Int = 2
+    val StorageCompressLossless: Int = 2
 
-    val STORAGE_COMPRESS_LOSSY: Int = 1
+    val StorageCompressLossy: Int = 1
 
-    val STORAGE_RAW: Int = 0
+    val StorageRaw: Int = 0
 
     fun new(): CubeMap {
       TODO()

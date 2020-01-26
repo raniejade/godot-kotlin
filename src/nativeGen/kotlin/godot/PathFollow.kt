@@ -5,15 +5,15 @@ import kotlin.Int
 
 open class PathFollow internal constructor() : Spatial() {
   companion object {
-    val ROTATION_NONE: Int = 0
+    val RotationNone: Int = 0
 
-    val ROTATION_ORIENTED: Int = 4
+    val RotationOriented: Int = 4
 
-    val ROTATION_XY: Int = 2
+    val RotationXy: Int = 2
 
-    val ROTATION_XYZ: Int = 3
+    val RotationXyz: Int = 3
 
-    val ROTATION_Y: Int = 1
+    val RotationY: Int = 1
 
     fun new(): PathFollow {
       TODO()
