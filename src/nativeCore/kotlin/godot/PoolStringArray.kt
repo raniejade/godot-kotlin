@@ -6,7 +6,7 @@ import kotlinx.cinterop.*
 
 class PoolStringArray(
   value: CValue<godot_pool_string_array>
-) : Primitive<godot_pool_string_array>(value), Iterable<String> {
+) : CoreType<godot_pool_string_array>(value), Iterable<String> {
   fun append(string: String) {
     _value = memScoped {
       val ptr = _value.ptr

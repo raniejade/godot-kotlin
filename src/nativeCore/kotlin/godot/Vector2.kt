@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 class Vector2(
   value: CValue<godot_vector2>
-): Primitive<godot_vector2>(value) {
+): CoreType<godot_vector2>(value) {
   enum class Axis(private val value: Int) {
     X(0),
     Y(1);

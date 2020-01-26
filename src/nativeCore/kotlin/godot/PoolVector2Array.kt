@@ -6,7 +6,7 @@ import kotlinx.cinterop.*
 
 class PoolVector2Array(
   value: CValue<godot_pool_vector2_array>
-) : Primitive<godot_pool_vector2_array>(value), Iterable<Vector2> {
+) : CoreType<godot_pool_vector2_array>(value), Iterable<Vector2> {
   fun append(vec: Vector2) {
     _value = memScoped {
       val ptr = _value.ptr

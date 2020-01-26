@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 class RID(
   value: CValue<godot_rid>
-): Primitive<godot_rid>(value) {
+): CoreType<godot_rid>(value) {
   val id: Int
     get() = memScoped {
       checkNotNull(Godot.gdnative.godot_rid_get_id)(_value.ptr)

@@ -6,7 +6,7 @@ import kotlinx.cinterop.*
 
 class PoolColorArray(
   value: CValue<godot_pool_color_array>
-): Primitive<godot_pool_color_array>(value), Iterable<Color> {
+): CoreType<godot_pool_color_array>(value), Iterable<Color> {
   fun append(color: Color) {
     _value = memScoped {
       val ptr = _value.ptr

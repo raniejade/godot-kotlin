@@ -3,10 +3,18 @@ package godot
 import gdnative.godot_variant
 import gdnative.godot_variant_type
 import kotlinx.cinterop.*
+import kotlin.native.concurrent.AtomicReference
+import kotlin.native.concurrent.freeze
 
 class Variant(
   value: CValue<godot_variant>
-): Primitive<godot_variant>(value) {
+) {
+  private val ref = AtomicReference(value.freeze())
+  internal var _value: CValue<godot_variant>
+    get() = ref.value
+    set(value) {
+      ref.compareAndSet(ref.value, value.freeze())
+    }
 
   enum class Type {
     VECTOR2
@@ -160,13 +168,8 @@ class Variant(
     }
   }
 
-  override fun toVariant(): Variant {
-    return this
-  }
-
-  // TODO: this might be wrong, make variant not a primitive type
-  override fun toGDString(): GDString {
-    return GDString.new(asString())
+  override fun toString(): String {
+    return asString()
   }
 
   companion object {

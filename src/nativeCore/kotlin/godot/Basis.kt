@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 class Basis(
   value: CValue<godot_basis>
-) : Primitive<godot_basis>(value) {
+) : CoreType<godot_basis>(value) {
 
   fun determinant(): Float {
     return memScoped {

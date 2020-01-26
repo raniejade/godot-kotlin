@@ -5,12 +5,16 @@ import kotlinx.cinterop.*
 
 class GDArray(
   value: CValue<godot_array>
-): Primitive<godot_array>(value) {
+): CoreType<godot_array>(value) {
 
-  fun <T: Primitive<*>> append(value: T) {
+  fun <T: CoreType<*>> append(value: T) {
+    append(value.toVariant())
+  }
+
+  fun append(value: Variant) {
     _value = memScoped {
       val ptr = _value.ptr
-      checkNotNull(Godot.gdnative.godot_array_append)(_value.ptr, value.toVariant()._value.ptr)
+      checkNotNull(Godot.gdnative.godot_array_append)(_value.ptr, value._value.ptr)
       ptr.pointed.readValue()
     }
   }
@@ -37,7 +41,7 @@ class GDArray(
     }
   }
 
-  fun <T: Primitive<*>> contains(value: T): Boolean {
+  fun <T: CoreType<*>> contains(value: T): Boolean {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_array_has)(_value.ptr, value.toVariant()._value.ptr)
     }
@@ -51,19 +55,19 @@ class GDArray(
     }
   }
 
-  fun <T: Primitive<*>> count(value: T): Int {
+  fun <T: CoreType<*>> count(value: T): Int {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_array_count)(_value.ptr, value.toVariant()._value.ptr)
     }
   }
 
-  fun <T: Primitive<*>> find(value: T, from: Int = 0): Int {
+  fun <T: CoreType<*>> find(value: T, from: Int = 0): Int {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_array_find)(_value.ptr, value.toVariant()._value.ptr, from)
     }
   }
 
-  fun <T: Primitive<*>> findLast(value: T): Int {
+  fun <T: CoreType<*>> findLast(value: T): Int {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_array_find_last)(_value.ptr, value.toVariant()._value.ptr)
     }
@@ -81,7 +85,7 @@ class GDArray(
     }
   }
 
-  fun <T: Primitive<*>> insert(index: Int, value: T) {
+  fun <T: CoreType<*>> insert(index: Int, value: T) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_insert)(_value.ptr, index, value.toVariant()._value.ptr)
@@ -137,7 +141,7 @@ class GDArray(
     return ret
   }
 
-  fun <T: Primitive<*>> pushFront(value: T) {
+  fun <T: CoreType<*>> pushFront(value: T) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_push_front)(_value.ptr, value.toVariant()._value.ptr)
@@ -145,7 +149,7 @@ class GDArray(
     }
   }
 
-  fun <T: Primitive<*>> remove(value: T) {
+  fun <T: CoreType<*>> remove(value: T) {
     _value = memScoped {
       val ptr = _value.ptr
       checkNotNull(Godot.gdnative.godot_array_erase)(_value.ptr, value.toVariant()._value.ptr)
@@ -184,7 +188,7 @@ class GDArray(
     }
   }
 
-  operator fun <T: Primitive<*>> set(index: Int, value: T) {
+  operator fun <T: CoreType<*>> set(index: Int, value: T) {
     set(index, value.toVariant())
   }
 

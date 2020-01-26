@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 class Color(
   value: CValue<godot_color>
-) : Primitive<godot_color>(value) {
+) : CoreType<godot_color>(value) {
   val r: Float
     get() {
       return memScoped { checkNotNull(Godot.gdnative.godot_color_get_r)(_value.ptr) }

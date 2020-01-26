@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 internal class GDString(
   value: CValue<godot_string>
-): Primitive<godot_string>(value), Iterable<Char> {
+): CoreType<godot_string>(value), Iterable<Char> {
   fun beginsWith(str: GDString): Boolean {
     return memScoped {
       checkNotNull(Godot.gdnative.godot_string_begins_with)(_value.ptr, str._value.ptr)

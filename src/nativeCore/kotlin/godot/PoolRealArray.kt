@@ -6,7 +6,7 @@ import kotlinx.cinterop.*
 
 class PoolRealArray(
   value: CValue<godot_pool_real_array>
-) : Primitive<godot_pool_real_array>(value), Iterable<Float> {
+) : CoreType<godot_pool_real_array>(value), Iterable<Float> {
   fun append(real: Float) {
     _value = memScoped {
       val ptr = _value.ptr

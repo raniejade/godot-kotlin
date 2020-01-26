@@ -5,7 +5,7 @@ import kotlinx.cinterop.*
 
 class Quat(
   value: CValue<godot_quat>
-) : Primitive<godot_quat>(value) {
+) : CoreType<godot_quat>(value) {
   var x: Float
     get() {
       return memScoped {

@@ -6,7 +6,7 @@ import kotlinx.cinterop.*
 
 class PoolByteArray(
   value: CValue<godot_pool_byte_array>
-) : Primitive<godot_pool_byte_array>(value), Iterable<UByte> {
+) : CoreType<godot_pool_byte_array>(value), Iterable<UByte> {
 
   fun append(byte: UByte) {
     _value = memScoped {
