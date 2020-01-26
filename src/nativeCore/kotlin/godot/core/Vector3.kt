@@ -1,4 +1,4 @@
-package godot
+package godot.core
 
 import gdnative.godot_vector3
 import gdnative.godot_vector3_axis
@@ -346,15 +346,15 @@ class Vector3(
   }
 
   companion object {
-    val Zero = Vector3.new()
-    val One = Vector3.new(1f, 1f, 0f)
-    val Inf = Vector3.new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
-    val Left = Vector3.new(-1f, 0f, 0f)
-    val Right = Vector3.new(1f, 0f, 0f)
-    val Up = Vector3.new(0f, -1f, 0f)
-    val Down = Vector3.new(0f, 1f, 0f)
-    val Forward = Vector3.new(0f, 0f, -1f)
-    val Back = Vector3.new(0f, 0f, 1f)
+    val Zero = new()
+    val One = new(1f, 1f, 0f)
+    val Inf = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val Left = new(-1f, 0f, 0f)
+    val Right = new(1f, 0f, 0f)
+    val Up = new(0f, -1f, 0f)
+    val Down = new(0f, 1f, 0f)
+    val Forward = new(0f, 0f, -1f)
+    val Back = new(0f, 0f, 1f)
 
     fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f): Vector3 {
       return allocType(::Vector3) {

@@ -1,6 +1,9 @@
 import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
-import godot.*
+import godot.core.GDArray
+import godot.core.Godot
+import godot.core.Variant
+import godot.core.Vector2
 import kotlinx.cinterop.COpaquePointer
 
 @CName("godot_gdnative_init")

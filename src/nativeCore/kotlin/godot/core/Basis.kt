@@ -1,4 +1,4 @@
-package godot
+package godot.core
 
 import gdnative.godot_basis
 import kotlinx.cinterop.*

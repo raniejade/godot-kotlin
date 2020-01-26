@@ -1,13 +1,13 @@
-package godot
+package godot.core
 
-import gdnative.godot_node_path
+import gdnative.godot_aabb
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 
-class NodePath(
-  value: CValue<godot_node_path>
-) : CoreType<godot_node_path>(value) {
+class AABB(
+  value: CValue<godot_aabb>
+) : CoreType<godot_aabb>(value) {
   override fun toVariant(): Variant {
     return Variant.new(this)
   }
@@ -15,7 +15,7 @@ class NodePath(
   override fun toGDString(): GDString {
     return memScoped {
       GDString(
-        checkNotNull(Godot.gdnative.godot_node_path_as_string)(_value.ptr)
+        checkNotNull(Godot.gdnative.godot_aabb_as_string)(_value.ptr)
       )
     }
   }

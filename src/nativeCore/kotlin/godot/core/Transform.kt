@@ -1,13 +1,13 @@
-package godot
+package godot.core
 
-import gdnative.godot_transform2d
+import gdnative.godot_transform
 import kotlinx.cinterop.CValue
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 
-class Transform2D(
-  value: CValue<godot_transform2d>
-) : CoreType<godot_transform2d>(value) {
+class Transform(
+  value: CValue<godot_transform>
+) : CoreType<godot_transform>(value) {
   override fun toVariant(): Variant {
     return Variant.new(this)
   }
@@ -15,7 +15,7 @@ class Transform2D(
   override fun toGDString(): GDString {
     return memScoped {
       GDString(
-        checkNotNull(Godot.gdnative.godot_transform2d_as_string)(_value.ptr)
+        checkNotNull(Godot.gdnative.godot_transform_as_string)(_value.ptr)
       )
     }
   }

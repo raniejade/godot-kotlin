@@ -1,4 +1,4 @@
-package godot
+package godot.core
 
 import gdnative.godot_vector2
 import kotlinx.cinterop.*
@@ -320,13 +320,13 @@ class Vector2(
   }
 
   companion object {
-    val Zero = Vector2.new()
-    val One = Vector2.new(1f, 1f)
-    val Inf = Vector2.new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
-    val Left = Vector2.new(-1f, 0f)
-    val Right = Vector2.new(1f, 0f)
-    val Up = Vector2.new(0f, -1f)
-    val Down = Vector2.new(0f, 1f)
+    val Zero = new()
+    val One = new(1f, 1f)
+    val Inf = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val Left = new(-1f, 0f)
+    val Right = new(1f, 0f)
+    val Up = new(0f, -1f)
+    val Down = new(0f, 1f)
 
     fun new(x: Float = 0f, y: Float = 0f): Vector2 {
       return allocType(::Vector2) {

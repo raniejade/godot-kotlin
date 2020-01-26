@@ -1,4 +1,4 @@
-package godot
+package godot.core
 
 import gdnative.godot_error
 import gdnative.godot_pool_byte_array

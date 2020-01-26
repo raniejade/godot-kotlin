@@ -1,4 +1,4 @@
-package godot
+package godot.core
 
 import gdnative.godot_string
 import kotlinx.cinterop.*
@@ -613,7 +613,7 @@ internal class GDString(
       }
     }
 
-    fun new(str: String): GDString{
+    fun new(str: String): GDString {
       return allocType(::GDString) {
         checkNotNull(Godot.gdnative.godot_string_parse_utf8)(it, str.cstr.ptr)
       }

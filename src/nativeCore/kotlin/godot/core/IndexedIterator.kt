@@ -1,4 +1,4 @@
-package godot
+package godot.core
 
 internal class IndexedIterator<T>(
   private val length: Int,
