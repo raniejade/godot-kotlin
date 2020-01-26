@@ -1,4 +1,4 @@
-import godot.task.GenerateBuiltInTypesTask
+import godot.task.GenerateAPI
 
 plugins {
     kotlin("multiplatform")
@@ -20,6 +20,14 @@ kotlin {
                 compilerOpts("-I$rootDir/godot_headers")
             }
         }
+    }
+}
+
+
+tasks {
+    val generateAPI by creating(GenerateAPI::class) {
+        source.set(project.file("godot_headers/api.json"))
+        outputDir.set(project.file("src/nativeGen/kotlin"))
     }
 }
 

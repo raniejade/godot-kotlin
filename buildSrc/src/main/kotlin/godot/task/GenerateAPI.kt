@@ -1,6 +1,6 @@
 package godot.task
 
-import godot.codegen.builtin.BuiltInTypesGenerator
+import godot.codegen.APIGenerator
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.file.RegularFileProperty
@@ -8,7 +8,7 @@ import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 
-open class GenerateBuiltInTypesTask: DefaultTask() {
+open class GenerateAPI: DefaultTask() {
     @InputFile
     var source: RegularFileProperty = project.objects.fileProperty()
 
@@ -17,7 +17,7 @@ open class GenerateBuiltInTypesTask: DefaultTask() {
 
     @TaskAction
     fun generate() {
-        val generator = BuiltInTypesGenerator()
+        val generator = APIGenerator()
         generator.generate(source.asFile.get(), outputDir.asFile.get())
     }
 }
