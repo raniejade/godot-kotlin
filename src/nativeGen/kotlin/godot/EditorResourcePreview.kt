@@ -1,4 +1,6 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class EditorResourcePreview internal constructor() : Node()
+open class EditorResourcePreview internal constructor() : Node() {
+  companion object
+}

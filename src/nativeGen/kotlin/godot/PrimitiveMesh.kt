@@ -1,4 +1,6 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PrimitiveMesh internal constructor() : Mesh()
+open class PrimitiveMesh internal constructor() : Mesh() {
+  companion object
+}

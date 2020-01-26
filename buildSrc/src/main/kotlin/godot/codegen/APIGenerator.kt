@@ -35,6 +35,7 @@ class APIGenerator {
       .addModifiers(KModifier.OPEN)
       .generatePrimaryConstructor(cls)
       .maybeGenerateInheritance(cls)
+      .generateCompanionObject(cls)
 
     return classBuilder
       .build()
@@ -58,6 +59,43 @@ class APIGenerator {
     return this
   }
 
+  private fun TypeSpec.Builder.generateCompanionObject(cls: GDClass): TypeSpec.Builder {
+    val companionObjectBuilder = TypeSpec.companionObjectBuilder()
+
+    // constructor
+    if (cls.instanciable) {
+      companionObjectBuilder.addFunction(
+        FunSpec.builder("new")
+          .addCode("TODO()")
+          .returns(ClassName(BASE_PACKAGE, cls.name))
+          .build()
+      )
+    }
+
+    // constants
+    if (cls.constants.isNotEmpty()) {
+      companionObjectBuilder.addProperties(
+        cls.constants.map { (k, v) ->
+          PropertySpec.builder(k, v::class)
+            .initializer(formatValue(v))
+            .build()
+        }
+      )
+    }
+
+    addType(
+      companionObjectBuilder
+        .build()
+    )
+    return this
+  }
+
+  private fun formatValue(v: Any): String {
+    if (v is String) {
+      return "\"$v\""
+    }
+    return "$v"
+  }
 
   private fun parseJson(source: File): List<GDClass> {
     return mapper.readValue(source)

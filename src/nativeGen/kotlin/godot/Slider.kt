@@ -1,4 +1,6 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class Slider internal constructor() : Range()
+open class Slider internal constructor() : Range() {
+  companion object
+}

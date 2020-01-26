@@ -1,4 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class EditorImportPlugin internal constructor() : Reference()
+open class EditorImportPlugin internal constructor() : Reference() {
+  companion object {
+    fun new(): EditorImportPlugin {
+      TODO()
+    }
+  }
+}

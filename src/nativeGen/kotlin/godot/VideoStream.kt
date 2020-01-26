@@ -1,4 +1,6 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class VideoStream internal constructor() : Resource()
+open class VideoStream internal constructor() : Resource() {
+  companion object
+}

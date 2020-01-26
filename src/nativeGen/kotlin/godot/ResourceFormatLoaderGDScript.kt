@@ -1,4 +1,6 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class ResourceFormatLoaderGDScript internal constructor() : ResourceFormatLoader()
+open class ResourceFormatLoaderGDScript internal constructor() : ResourceFormatLoader() {
+  companion object
+}

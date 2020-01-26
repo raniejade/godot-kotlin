@@ -1,4 +1,6 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class InputDefault internal constructor() : Input()
+open class InputDefault internal constructor() : Input() {
+  companion object
+}

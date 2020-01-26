@@ -9,5 +9,6 @@ data class GDClass(
   val singleton: Boolean,
   val instanciable: Boolean,
   val is_reference: Boolean,
-  val api_type: String
+  val api_type: String,
+  val constants: Map<String, Any>
 )

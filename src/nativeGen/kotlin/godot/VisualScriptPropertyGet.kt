@@ -1,4 +1,18 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class VisualScriptPropertyGet internal constructor() : VisualScriptNode()
+import kotlin.Int
+
+open class VisualScriptPropertyGet internal constructor() : VisualScriptNode() {
+  companion object {
+    val CALL_MODE_INSTANCE: Int = 2
+
+    val CALL_MODE_NODE_PATH: Int = 1
+
+    val CALL_MODE_SELF: Int = 0
+
+    fun new(): VisualScriptPropertyGet {
+      TODO()
+    }
+  }
+}

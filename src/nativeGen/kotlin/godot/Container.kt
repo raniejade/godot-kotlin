@@ -1,4 +1,14 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class Container internal constructor() : Control()
+import kotlin.Int
+
+open class Container internal constructor() : Control() {
+  companion object {
+    val NOTIFICATION_SORT_CHILDREN: Int = 50
+
+    fun new(): Container {
+      TODO()
+    }
+  }
+}
