@@ -1,4 +1,6 @@
 import godot.task.GenerateAPI
+import org.apache.tools.ant.taskdefs.condition.Os
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
 
 plugins {
     kotlin("multiplatform")
@@ -10,7 +12,7 @@ repositories {
 }
 
 kotlin {
-    linuxX64("native") {
+    fun KotlinNativeTargetWithTests.configure() {
         compilations.getByName("main") {
             defaultSourceSet {
                 kotlin.srcDirs("src/nativeMain/kotlin", "src/nativeCore/kotlin", "src/nativeGen/kotlin")
@@ -21,6 +23,18 @@ kotlin {
             }
         }
     }
+
+    val target = if (Os.isFamily(Os.FAMILY_MAC)) {
+        macosX64("native")
+    } else if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        mingwX64("native")
+    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+        linuxX64("native")
+    } else {
+        throw AssertionError("Unsupported os.")
+    }
+
+    target.configure()
 }
 
 
