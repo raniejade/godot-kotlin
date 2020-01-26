@@ -146,6 +146,12 @@ class Variant(
     }
   }
 
+  fun asTransform2D(): Transform2D {
+    return transmute(::Transform2D) {
+      checkNotNull(Godot.gdnative.godot_variant_as_transform2d)(it)
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -284,6 +290,12 @@ class Variant(
     fun new(rec: Rect2): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_rect2)(it, rec._value.ptr)
+      }
+    }
+
+    fun new(transform: Transform2D): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_transform2d)(it, transform._value.ptr)
       }
     }
 
