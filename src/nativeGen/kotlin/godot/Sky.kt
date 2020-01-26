@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -49,5 +51,26 @@ open class Sky internal constructor(
     val RADIANCE_SIZE_64: Int = 1
 
     val RADIANCE_SIZE_MAX: Int = 7
+
+    /**
+     * Container for method_bind pointers for Sky
+     */
+    private object __method_bind {
+      val get_radiance_size: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
+              "get_radiance_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_radiance_size" }
+            }
+          }
+
+      val set_radiance_size: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
+              "set_radiance_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_radiance_size" }
+            }
+          }
+    }
   }
 }

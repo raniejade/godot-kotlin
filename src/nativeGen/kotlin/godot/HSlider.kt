@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class HSlider internal constructor(
   companion object {
     fun new(): HSlider = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HSlider".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for HSlider" }
+      requireNotNull(fnPtr) { "No instance found for singleton HSlider" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HSlider(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for HSlider
+     */
+    private object __method_bind
+  }
 }

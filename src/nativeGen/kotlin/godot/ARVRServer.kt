@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -66,5 +68,154 @@ open class ARVRServer internal constructor(
     val TRACKER_CONTROLLER: Int = 1
 
     val TRACKER_UNKNOWN: Int = 128
+
+    /**
+     * Container for method_bind pointers for ARVRServer
+     */
+    private object __method_bind {
+      val center_on_hmd: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "center_on_hmd".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method center_on_hmd" }
+            }
+          }
+
+      val find_interface: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "find_interface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method find_interface" }
+            }
+          }
+
+      val get_hmd_transform: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_hmd_transform".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_hmd_transform" }
+            }
+          }
+
+      val get_interface: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_interface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_interface" }
+            }
+          }
+
+      val get_interface_count: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_interface_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_interface_count" }
+            }
+          }
+
+      val get_interfaces: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_interfaces".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_interfaces" }
+            }
+          }
+
+      val get_last_commit_usec: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_last_commit_usec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_last_commit_usec" }
+            }
+          }
+
+      val get_last_frame_usec: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_last_frame_usec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_last_frame_usec" }
+            }
+          }
+
+      val get_last_process_usec: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_last_process_usec".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_last_process_usec" }
+            }
+          }
+
+      val get_primary_interface: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_primary_interface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_primary_interface" }
+            }
+          }
+
+      val get_reference_frame: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_reference_frame".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_reference_frame" }
+            }
+          }
+
+      val get_tracker: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_tracker".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tracker" }
+            }
+          }
+
+      val get_tracker_count: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_tracker_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tracker_count" }
+            }
+          }
+
+      val get_world_scale: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "get_world_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_world_scale" }
+            }
+          }
+
+      val set_primary_interface: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "set_primary_interface".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_primary_interface" }
+            }
+          }
+
+      val set_world_scale: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
+              "set_world_scale".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_world_scale" }
+            }
+          }
+    }
   }
 }

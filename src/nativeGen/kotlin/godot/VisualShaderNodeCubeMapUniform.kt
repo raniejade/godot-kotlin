@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VisualShaderNodeCubeMapUniform internal constructor(
     fun new(): VisualShaderNodeCubeMapUniform = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCubeMapUniform".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeCubeMapUniform" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeCubeMapUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeCubeMapUniform(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualShaderNodeCubeMapUniform
+     */
+    private object __method_bind
+  }
 }

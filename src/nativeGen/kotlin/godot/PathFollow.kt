@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -40,10 +42,141 @@ open class PathFollow internal constructor(
 
     fun new(): PathFollow = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for PathFollow" }
+      requireNotNull(fnPtr) { "No instance found for singleton PathFollow" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PathFollow(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for PathFollow
+     */
+    private object __method_bind {
+      val get_cubic_interpolation: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_cubic_interpolation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_cubic_interpolation" }
+            }
+          }
+
+      val get_h_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_h_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
+            }
+          }
+
+      val get_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            }
+          }
+
+      val get_rotation_mode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_rotation_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rotation_mode" }
+            }
+          }
+
+      val get_unit_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_unit_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_unit_offset" }
+            }
+          }
+
+      val get_v_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "get_v_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
+            }
+          }
+
+      val has_loop: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "has_loop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_loop" }
+            }
+          }
+
+      val set_cubic_interpolation: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_cubic_interpolation".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_cubic_interpolation" }
+            }
+          }
+
+      val set_h_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_h_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
+            }
+          }
+
+      val set_loop: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_loop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_loop" }
+            }
+          }
+
+      val set_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            }
+          }
+
+      val set_rotation_mode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_rotation_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_rotation_mode" }
+            }
+          }
+
+      val set_unit_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_unit_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_unit_offset" }
+            }
+          }
+
+      val set_v_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow".cstr.ptr,
+              "set_v_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
+            }
+          }
+    }
+  }
 }

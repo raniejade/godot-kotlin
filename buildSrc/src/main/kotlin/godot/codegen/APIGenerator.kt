@@ -3,8 +3,10 @@ package godot.codegen
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.squareup.kotlinpoet.*
+import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import godot.codegen.domain.GDClass
 import godot.codegen.domain.GDEnum
+import godot.codegen.domain.GDMethod
 import java.io.File
 
 class APIGenerator {
@@ -114,14 +116,14 @@ class APIGenerator {
         FunSpec.builder("new")
           .addCode("""
             return memScoped {
-              val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("${cls.name}".cstr.ptr)
-              requireNotNull(fnPtr) { "No constructor found for ${cls.name}" }
+              val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)(%S.cstr.ptr)
+              requireNotNull(fnPtr) { %S }
               val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
-              ${cls.name}(
+              %L(
                 fn()
               )
             }
-          """.trimIndent())
+          """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
           .returns(className)
           .build()
       )
@@ -133,13 +135,13 @@ class APIGenerator {
         PropertySpec.builder("Instance", className)
           .initializer("""
             memScoped {
-              val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("${cls.name}".cstr.ptr)
-              requireNotNull(handle) { "No instance found for singleton ${cls.name}" }
-              ${cls.name}(
+              val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
+              requireNotNull(handle) { %S }
+              %L(
                 handle
               )
             }
-          """.trimIndent())
+          """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
           .build()
       )
     }
@@ -157,20 +159,44 @@ class APIGenerator {
 
     addType(
       companionObjectBuilder
+        .generateMethodBindObject(cls.name, cls.methods)
         .build()
     )
     return this
   }
 
+  fun TypeSpec.Builder.generateMethodBindObject(className: String, methods: List<GDMethod>): TypeSpec.Builder {
+    val builder = TypeSpec.objectBuilder("__method_bind")
+      .addKdoc("Container for method_bind pointers for $className")
+      .addModifiers(KModifier.PRIVATE)
+    val methodBindProperties = methods.map { method ->
+      PropertySpec.builder(method.name, METHOD_BIND_TYPE)
+        .delegate("""
+          lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
+              requireNotNull(ptr) { %S }
+            }
+          }
+        """.trimIndent(), className, method.name, "No method_bind found for method ${method.name}")
+        .build()
+    }
+    builder.addProperties(methodBindProperties)
+
+    addType(builder.build())
+    return this
+  }
+
   private fun FileSpec.Builder.addCommonImports(cls: GDClass): FileSpec.Builder {
     addImport("godot.core", "Godot")
+    addImport("gdnative", "godot_method_bind")
     addImport(
       "kotlinx.cinterop",
-      "COpaquePointer",
-      "invoke",
-      "cstr",
-      "memScoped",
       "CFunction",
+      "COpaquePointer",
+      "cstr",
+      "invoke",
+      "memScoped",
       "reinterpret"
     )
     return this
@@ -189,5 +215,7 @@ class APIGenerator {
 
   companion object {
     const val BASE_PACKAGE = "godot"
+    val METHOD_BIND_TYPE = ClassName("kotlinx.cinterop", "CPointer")
+      .parameterizedBy(ClassName("gdnative", "godot_method_bind"))
   }
 }

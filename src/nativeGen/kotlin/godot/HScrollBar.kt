@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class HScrollBar internal constructor(
   companion object {
     fun new(): HScrollBar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HScrollBar".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for HScrollBar" }
+      requireNotNull(fnPtr) { "No instance found for singleton HScrollBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HScrollBar(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for HScrollBar
+     */
+    private object __method_bind
+  }
 }

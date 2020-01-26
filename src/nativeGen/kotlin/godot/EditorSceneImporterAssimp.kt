@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class EditorSceneImporterAssimp internal constructor(
     fun new(): EditorSceneImporterAssimp = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSceneImporterAssimp".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for EditorSceneImporterAssimp" }
+      requireNotNull(fnPtr) { "No instance found for singleton EditorSceneImporterAssimp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorSceneImporterAssimp(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for EditorSceneImporterAssimp
+     */
+    private object __method_bind
+  }
 }

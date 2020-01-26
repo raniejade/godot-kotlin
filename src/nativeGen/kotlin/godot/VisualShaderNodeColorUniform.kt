@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VisualShaderNodeColorUniform internal constructor(
     fun new(): VisualShaderNodeColorUniform = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorUniform".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeColorUniform" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeColorUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeColorUniform(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualShaderNodeColorUniform
+     */
+    private object __method_bind
+  }
 }

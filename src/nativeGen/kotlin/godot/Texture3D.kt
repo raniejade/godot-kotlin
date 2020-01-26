@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class Texture3D internal constructor(
   companion object {
     fun new(): Texture3D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Texture3D".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for Texture3D" }
+      requireNotNull(fnPtr) { "No instance found for singleton Texture3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Texture3D(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for Texture3D
+     */
+    private object __method_bind
+  }
 }

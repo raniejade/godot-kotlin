@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class AnimationNodeTimeSeek internal constructor(
     fun new(): AnimationNodeTimeSeek = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeTimeSeek".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for AnimationNodeTimeSeek" }
+      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeTimeSeek" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeTimeSeek(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for AnimationNodeTimeSeek
+     */
+    private object __method_bind
+  }
 }

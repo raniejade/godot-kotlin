@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VSplitContainer internal constructor(
     fun new(): VSplitContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSplitContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VSplitContainer" }
+      requireNotNull(fnPtr) { "No instance found for singleton VSplitContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VSplitContainer(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VSplitContainer
+     */
+    private object __method_bind
+  }
 }

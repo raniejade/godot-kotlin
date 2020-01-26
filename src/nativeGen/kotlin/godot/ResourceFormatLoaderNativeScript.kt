@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -12,5 +13,10 @@ import kotlinx.cinterop.reinterpret
 open class ResourceFormatLoaderNativeScript internal constructor(
   _handle: COpaquePointer
 ) : ResourceFormatLoader(_handle) {
-  companion object
+  companion object {
+    /**
+     * Container for method_bind pointers for ResourceFormatLoaderNativeScript
+     */
+    private object __method_bind
+  }
 }

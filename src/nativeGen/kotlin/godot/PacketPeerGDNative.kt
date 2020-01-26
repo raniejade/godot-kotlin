@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class PacketPeerGDNative internal constructor(
     fun new(): PacketPeerGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for PacketPeerGDNative" }
+      requireNotNull(fnPtr) { "No instance found for singleton PacketPeerGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PacketPeerGDNative(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for PacketPeerGDNative
+     */
+    private object __method_bind
+  }
 }

@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class AudioEffectEQ6 internal constructor(
     fun new(): AudioEffectEQ6 = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectEQ6".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for AudioEffectEQ6" }
+      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectEQ6" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectEQ6(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for AudioEffectEQ6
+     */
+    private object __method_bind
+  }
 }

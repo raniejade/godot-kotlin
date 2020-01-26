@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class ToolButton internal constructor(
   companion object {
     fun new(): ToolButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ToolButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for ToolButton" }
+      requireNotNull(fnPtr) { "No instance found for singleton ToolButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ToolButton(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for ToolButton
+     */
+    private object __method_bind
+  }
 }

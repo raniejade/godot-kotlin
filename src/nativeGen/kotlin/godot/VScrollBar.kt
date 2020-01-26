@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class VScrollBar internal constructor(
   companion object {
     fun new(): VScrollBar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VScrollBar".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VScrollBar" }
+      requireNotNull(fnPtr) { "No instance found for singleton VScrollBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VScrollBar(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VScrollBar
+     */
+    private object __method_bind
+  }
 }

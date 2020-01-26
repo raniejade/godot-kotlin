@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -32,10 +34,33 @@ open class PinJoint internal constructor(
 
     fun new(): PinJoint = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for PinJoint" }
+      requireNotNull(fnPtr) { "No instance found for singleton PinJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PinJoint(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for PinJoint
+     */
+    private object __method_bind {
+      val get_param: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint".cstr.ptr,
+              "get_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_param" }
+            }
+          }
+
+      val set_param: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint".cstr.ptr,
+              "set_param".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_param" }
+            }
+          }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VisualShaderNodeVectorLen internal constructor(
     fun new(): VisualShaderNodeVectorLen = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorLen".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeVectorLen" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorLen" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorLen(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualShaderNodeVectorLen
+     */
+    private object __method_bind
+  }
 }

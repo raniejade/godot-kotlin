@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -33,10 +35,124 @@ open class AnimationNodeStateMachineTransition internal constructor(
     fun new(): AnimationNodeStateMachineTransition = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachineTransition".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for AnimationNodeStateMachineTransition" }
+      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeStateMachineTransition"
+        }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeStateMachineTransition(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for AnimationNodeStateMachineTransition
+     */
+    private object __method_bind {
+      val get_advance_condition: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "get_advance_condition".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_advance_condition" }
+            }
+          }
+
+      val get_priority: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "get_priority".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_priority" }
+            }
+          }
+
+      val get_switch_mode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "get_switch_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_switch_mode" }
+            }
+          }
+
+      val get_xfade_time: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "get_xfade_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_xfade_time" }
+            }
+          }
+
+      val has_auto_advance: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "has_auto_advance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_auto_advance" }
+            }
+          }
+
+      val is_disabled: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "is_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_disabled" }
+            }
+          }
+
+      val set_advance_condition: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "set_advance_condition".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_advance_condition" }
+            }
+          }
+
+      val set_auto_advance: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "set_auto_advance".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_auto_advance" }
+            }
+          }
+
+      val set_disabled: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "set_disabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_disabled" }
+            }
+          }
+
+      val set_priority: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "set_priority".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_priority" }
+            }
+          }
+
+      val set_switch_mode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "set_switch_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_switch_mode" }
+            }
+          }
+
+      val set_xfade_time: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
+              "set_xfade_time".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_xfade_time" }
+            }
+          }
+    }
+  }
 }

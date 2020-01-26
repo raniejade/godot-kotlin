@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -1018,5 +1019,10 @@ open class GlobalConstants internal constructor(
     val VALIGN_TOP: Int = 0
 
     val VERTICAL: Int = 1
+
+    /**
+     * Container for method_bind pointers for GlobalConstants
+     */
+    private object __method_bind
   }
 }

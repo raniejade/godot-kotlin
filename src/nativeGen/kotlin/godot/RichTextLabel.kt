@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -108,10 +110,458 @@ open class RichTextLabel internal constructor(
 
     fun new(): RichTextLabel = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RichTextLabel".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for RichTextLabel" }
+      requireNotNull(fnPtr) { "No instance found for singleton RichTextLabel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RichTextLabel(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for RichTextLabel
+     */
+    private object __method_bind {
+      val _gui_input: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "_gui_input".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method _gui_input" }
+            }
+          }
+
+      val _scroll_changed: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "_scroll_changed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method _scroll_changed" }
+            }
+          }
+
+      val add_image: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "add_image".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_image" }
+            }
+          }
+
+      val add_text: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "add_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_text" }
+            }
+          }
+
+      val append_bbcode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "append_bbcode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method append_bbcode" }
+            }
+          }
+
+      val clear: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "clear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear" }
+            }
+          }
+
+      val get_bbcode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_bbcode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_bbcode" }
+            }
+          }
+
+      val get_content_height: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_content_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_content_height" }
+            }
+          }
+
+      val get_line_count: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_line_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_line_count" }
+            }
+          }
+
+      val get_percent_visible: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_percent_visible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_percent_visible" }
+            }
+          }
+
+      val get_tab_size: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_tab_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_tab_size" }
+            }
+          }
+
+      val get_text: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_text" }
+            }
+          }
+
+      val get_total_character_count: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_total_character_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_total_character_count" }
+            }
+          }
+
+      val get_v_scroll: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_v_scroll".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
+            }
+          }
+
+      val get_visible_characters: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_visible_characters".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_visible_characters" }
+            }
+          }
+
+      val get_visible_line_count: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "get_visible_line_count".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_visible_line_count" }
+            }
+          }
+
+      val is_meta_underlined: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "is_meta_underlined".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_meta_underlined" }
+            }
+          }
+
+      val is_overriding_selected_font_color: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "is_overriding_selected_font_color".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method is_overriding_selected_font_color" }
+            }
+          }
+
+      val is_scroll_active: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "is_scroll_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_scroll_active" }
+            }
+          }
+
+      val is_scroll_following: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "is_scroll_following".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_scroll_following" }
+            }
+          }
+
+      val is_selection_enabled: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "is_selection_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_selection_enabled" }
+            }
+          }
+
+      val is_using_bbcode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "is_using_bbcode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_using_bbcode" }
+            }
+          }
+
+      val newline: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "newline".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method newline" }
+            }
+          }
+
+      val parse_bbcode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "parse_bbcode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method parse_bbcode" }
+            }
+          }
+
+      val pop: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "pop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method pop" }
+            }
+          }
+
+      val push_align: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_align".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_align" }
+            }
+          }
+
+      val push_cell: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_cell".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_cell" }
+            }
+          }
+
+      val push_color: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_color".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_color" }
+            }
+          }
+
+      val push_font: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_font".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_font" }
+            }
+          }
+
+      val push_indent: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_indent".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_indent" }
+            }
+          }
+
+      val push_list: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_list".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_list" }
+            }
+          }
+
+      val push_meta: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_meta".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_meta" }
+            }
+          }
+
+      val push_strikethrough: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_strikethrough".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_strikethrough" }
+            }
+          }
+
+      val push_table: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_table".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_table" }
+            }
+          }
+
+      val push_underline: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "push_underline".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method push_underline" }
+            }
+          }
+
+      val remove_line: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "remove_line".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method remove_line" }
+            }
+          }
+
+      val scroll_to_line: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "scroll_to_line".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method scroll_to_line" }
+            }
+          }
+
+      val set_bbcode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_bbcode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_bbcode" }
+            }
+          }
+
+      val set_meta_underline: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_meta_underline".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_meta_underline" }
+            }
+          }
+
+      val set_override_selected_font_color: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_override_selected_font_color".cstr.ptr)
+              requireNotNull(ptr) {
+              "No method_bind found for method set_override_selected_font_color" }
+            }
+          }
+
+      val set_percent_visible: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_percent_visible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
+            }
+          }
+
+      val set_scroll_active: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_scroll_active".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scroll_active" }
+            }
+          }
+
+      val set_scroll_follow: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_scroll_follow".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_scroll_follow" }
+            }
+          }
+
+      val set_selection_enabled: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_selection_enabled".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_selection_enabled" }
+            }
+          }
+
+      val set_tab_size: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_tab_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_tab_size" }
+            }
+          }
+
+      val set_table_column_expand: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_table_column_expand".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_table_column_expand" }
+            }
+          }
+
+      val set_text: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_text".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_text" }
+            }
+          }
+
+      val set_use_bbcode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_use_bbcode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_use_bbcode" }
+            }
+          }
+
+      val set_visible_characters: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
+              "set_visible_characters".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_visible_characters" }
+            }
+          }
+    }
+  }
 }

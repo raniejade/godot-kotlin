@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -60,10 +62,159 @@ open class UPNPDevice internal constructor(
 
     fun new(): UPNPDevice = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UPNPDevice".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for UPNPDevice" }
+      requireNotNull(fnPtr) { "No instance found for singleton UPNPDevice" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       UPNPDevice(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for UPNPDevice
+     */
+    private object __method_bind {
+      val add_port_mapping: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "add_port_mapping".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method add_port_mapping" }
+            }
+          }
+
+      val delete_port_mapping: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "delete_port_mapping".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method delete_port_mapping" }
+            }
+          }
+
+      val get_description_url: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "get_description_url".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_description_url" }
+            }
+          }
+
+      val get_igd_control_url: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "get_igd_control_url".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_igd_control_url" }
+            }
+          }
+
+      val get_igd_our_addr: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "get_igd_our_addr".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_igd_our_addr" }
+            }
+          }
+
+      val get_igd_service_type: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "get_igd_service_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_igd_service_type" }
+            }
+          }
+
+      val get_igd_status: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "get_igd_status".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_igd_status" }
+            }
+          }
+
+      val get_service_type: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "get_service_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_service_type" }
+            }
+          }
+
+      val is_valid_gateway: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "is_valid_gateway".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_valid_gateway" }
+            }
+          }
+
+      val query_external_address: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "query_external_address".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method query_external_address" }
+            }
+          }
+
+      val set_description_url: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "set_description_url".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_description_url" }
+            }
+          }
+
+      val set_igd_control_url: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "set_igd_control_url".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_igd_control_url" }
+            }
+          }
+
+      val set_igd_our_addr: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "set_igd_our_addr".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_igd_our_addr" }
+            }
+          }
+
+      val set_igd_service_type: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "set_igd_service_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_igd_service_type" }
+            }
+          }
+
+      val set_igd_status: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "set_igd_status".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_igd_status" }
+            }
+          }
+
+      val set_service_type: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
+              "set_service_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_service_type" }
+            }
+          }
+    }
+  }
 }

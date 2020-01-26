@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class WebRTCPeerConnectionGDNative internal constructor(
     fun new(): WebRTCPeerConnectionGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCPeerConnectionGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for WebRTCPeerConnectionGDNative" }
+      requireNotNull(fnPtr) { "No instance found for singleton WebRTCPeerConnectionGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebRTCPeerConnectionGDNative(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for WebRTCPeerConnectionGDNative
+     */
+    private object __method_bind
+  }
 }

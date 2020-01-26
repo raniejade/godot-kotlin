@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VisualShaderNodeTransformCompose internal constructor(
     fun new(): VisualShaderNodeTransformCompose = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformCompose".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeTransformCompose" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTransformCompose" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTransformCompose(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualShaderNodeTransformCompose
+     */
+    private object __method_bind
+  }
 }

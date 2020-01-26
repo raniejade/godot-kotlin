@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class HSeparator internal constructor(
   companion object {
     fun new(): HSeparator = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HSeparator".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for HSeparator" }
+      requireNotNull(fnPtr) { "No instance found for singleton HSeparator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HSeparator(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for HSeparator
+     */
+    private object __method_bind
+  }
 }

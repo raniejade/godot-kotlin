@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -54,5 +56,28 @@ open class _ResourceSaver internal constructor(
     val FLAG_REPLACE_SUBRESOURCE_PATHS: Int = 64
 
     val FLAG_SAVE_BIG_ENDIAN: Int = 16
+
+    /**
+     * Container for method_bind pointers for _ResourceSaver
+     */
+    private object __method_bind {
+      val get_recognized_extensions: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
+              "get_recognized_extensions".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
+            }
+          }
+
+      val save: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
+              "save".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save" }
+            }
+          }
+    }
   }
 }

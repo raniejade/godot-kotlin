@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -256,10 +258,431 @@ open class Image internal constructor(
 
     fun new(): Image = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Image".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for Image" }
+      requireNotNull(fnPtr) { "No instance found for singleton Image" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Image(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for Image
+     */
+    private object __method_bind {
+      val _get_data: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "_get_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method _get_data" }
+            }
+          }
+
+      val _set_data: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "_set_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method _set_data" }
+            }
+          }
+
+      val blend_rect: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "blend_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method blend_rect" }
+            }
+          }
+
+      val blend_rect_mask: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "blend_rect_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method blend_rect_mask" }
+            }
+          }
+
+      val blit_rect: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "blit_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method blit_rect" }
+            }
+          }
+
+      val blit_rect_mask: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "blit_rect_mask".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method blit_rect_mask" }
+            }
+          }
+
+      val bumpmap_to_normalmap: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "bumpmap_to_normalmap".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method bumpmap_to_normalmap" }
+            }
+          }
+
+      val clear_mipmaps: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "clear_mipmaps".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method clear_mipmaps" }
+            }
+          }
+
+      val compress: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "compress".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method compress" }
+            }
+          }
+
+      val convert: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "convert".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method convert" }
+            }
+          }
+
+      val copy_from: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "copy_from".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method copy_from" }
+            }
+          }
+
+      val create: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "create".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create" }
+            }
+          }
+
+      val create_from_data: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "create_from_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method create_from_data" }
+            }
+          }
+
+      val crop: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "crop".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method crop" }
+            }
+          }
+
+      val decompress: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "decompress".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method decompress" }
+            }
+          }
+
+      val detect_alpha: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "detect_alpha".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method detect_alpha" }
+            }
+          }
+
+      val expand_x2_hq2x: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "expand_x2_hq2x".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method expand_x2_hq2x" }
+            }
+          }
+
+      val fill: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "fill".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method fill" }
+            }
+          }
+
+      val fix_alpha_edges: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "fix_alpha_edges".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method fix_alpha_edges" }
+            }
+          }
+
+      val flip_x: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "flip_x".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method flip_x" }
+            }
+          }
+
+      val flip_y: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "flip_y".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method flip_y" }
+            }
+          }
+
+      val generate_mipmaps: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "generate_mipmaps".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method generate_mipmaps" }
+            }
+          }
+
+      val get_data: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_data".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_data" }
+            }
+          }
+
+      val get_format: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_format".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_format" }
+            }
+          }
+
+      val get_height: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_height".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_height" }
+            }
+          }
+
+      val get_mipmap_offset: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_mipmap_offset".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_mipmap_offset" }
+            }
+          }
+
+      val get_pixel: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_pixel".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pixel" }
+            }
+          }
+
+      val get_pixelv: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_pixelv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_pixelv" }
+            }
+          }
+
+      val get_rect: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_rect" }
+            }
+          }
+
+      val get_size: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_size".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_size" }
+            }
+          }
+
+      val get_used_rect: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_used_rect".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_used_rect" }
+            }
+          }
+
+      val get_width: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "get_width".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_width" }
+            }
+          }
+
+      val has_mipmaps: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "has_mipmaps".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method has_mipmaps" }
+            }
+          }
+
+      val is_compressed: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "is_compressed".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_compressed" }
+            }
+          }
+
+      val is_empty: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "is_empty".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_empty" }
+            }
+          }
+
+      val is_invisible: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "is_invisible".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method is_invisible" }
+            }
+          }
+
+      val load: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "load".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load" }
+            }
+          }
+
+      val load_jpg_from_buffer: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "load_jpg_from_buffer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load_jpg_from_buffer" }
+            }
+          }
+
+      val load_png_from_buffer: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "load_png_from_buffer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load_png_from_buffer" }
+            }
+          }
+
+      val load_webp_from_buffer: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "load_webp_from_buffer".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method load_webp_from_buffer" }
+            }
+          }
+
+      val lock: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "lock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method lock" }
+            }
+          }
+
+      val normalmap_to_xy: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "normalmap_to_xy".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method normalmap_to_xy" }
+            }
+          }
+
+      val premultiply_alpha: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "premultiply_alpha".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method premultiply_alpha" }
+            }
+          }
+
+      val resize: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "resize".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resize" }
+            }
+          }
+
+      val resize_to_po2: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "resize_to_po2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method resize_to_po2" }
+            }
+          }
+
+      val rgbe_to_srgb: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "rgbe_to_srgb".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method rgbe_to_srgb" }
+            }
+          }
+
+      val save_png: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "save_png".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method save_png" }
+            }
+          }
+
+      val set_pixel: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "set_pixel".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pixel" }
+            }
+          }
+
+      val set_pixelv: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "set_pixelv".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_pixelv" }
+            }
+          }
+
+      val shrink_x2: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "shrink_x2".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method shrink_x2" }
+            }
+          }
+
+      val srgb_to_linear: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "srgb_to_linear".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method srgb_to_linear" }
+            }
+          }
+
+      val unlock: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
+              "unlock".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method unlock" }
+            }
+          }
+    }
+  }
 }

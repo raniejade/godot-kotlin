@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VisualScriptIndexSet internal constructor(
     fun new(): VisualScriptIndexSet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptIndexSet".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualScriptIndexSet" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptIndexSet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptIndexSet(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualScriptIndexSet
+     */
+    private object __method_bind
+  }
 }

@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class VisualScriptIterator internal constructor(
     fun new(): VisualScriptIterator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptIterator".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualScriptIterator" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptIterator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptIterator(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualScriptIterator
+     */
+    private object __method_bind
+  }
 }

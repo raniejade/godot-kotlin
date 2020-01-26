@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class AudioEffectLowShelfFilter internal constructor(
     fun new(): AudioEffectLowShelfFilter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectLowShelfFilter".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for AudioEffectLowShelfFilter" }
+      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectLowShelfFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectLowShelfFilter(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for AudioEffectLowShelfFilter
+     */
+    private object __method_bind
+  }
 }

@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -33,10 +35,87 @@ open class VisualScriptYieldSignal internal constructor(
     fun new(): VisualScriptYieldSignal = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYieldSignal".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualScriptYieldSignal" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptYieldSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptYieldSignal(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualScriptYieldSignal
+     */
+    private object __method_bind {
+      val get_base_path: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "get_base_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base_path" }
+            }
+          }
+
+      val get_base_type: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "get_base_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_base_type" }
+            }
+          }
+
+      val get_call_mode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "get_call_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_call_mode" }
+            }
+          }
+
+      val get_signal: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "get_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_signal" }
+            }
+          }
+
+      val set_base_path: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "set_base_path".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_base_path" }
+            }
+          }
+
+      val set_base_type: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "set_base_type".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_base_type" }
+            }
+          }
+
+      val set_call_mode: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "set_call_mode".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_call_mode" }
+            }
+          }
+
+      val set_signal: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+              "set_signal".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_signal" }
+            }
+          }
+    }
+  }
 }

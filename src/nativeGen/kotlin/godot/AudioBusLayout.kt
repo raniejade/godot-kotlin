@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class AudioBusLayout internal constructor(
     fun new(): AudioBusLayout = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioBusLayout".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for AudioBusLayout" }
+      requireNotNull(fnPtr) { "No instance found for singleton AudioBusLayout" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioBusLayout(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for AudioBusLayout
+     */
+    private object __method_bind
+  }
 }

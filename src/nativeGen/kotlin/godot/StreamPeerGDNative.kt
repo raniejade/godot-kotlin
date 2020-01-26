@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,15 @@ open class StreamPeerGDNative internal constructor(
     fun new(): StreamPeerGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for StreamPeerGDNative" }
+      requireNotNull(fnPtr) { "No instance found for singleton StreamPeerGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StreamPeerGDNative(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for StreamPeerGDNative
+     */
+    private object __method_bind
+  }
 }

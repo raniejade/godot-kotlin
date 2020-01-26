@@ -1,9 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -16,10 +18,33 @@ open class ConcavePolygonShape2D internal constructor(
     fun new(): ConcavePolygonShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConcavePolygonShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for ConcavePolygonShape2D" }
+      requireNotNull(fnPtr) { "No instance found for singleton ConcavePolygonShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConcavePolygonShape2D(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for ConcavePolygonShape2D
+     */
+    private object __method_bind {
+      val get_segments: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
+              "get_segments".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_segments" }
+            }
+          }
+
+      val set_segments: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
+              "set_segments".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_segments" }
+            }
+          }
+    }
+  }
 }

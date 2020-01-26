@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class TextFile internal constructor(
   companion object {
     fun new(): TextFile = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextFile".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for TextFile" }
+      requireNotNull(fnPtr) { "No instance found for singleton TextFile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextFile(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for TextFile
+     */
+    private object __method_bind
+  }
 }

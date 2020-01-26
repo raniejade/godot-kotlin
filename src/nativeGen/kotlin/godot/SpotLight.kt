@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class SpotLight internal constructor(
   companion object {
     fun new(): SpotLight = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpotLight".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for SpotLight" }
+      requireNotNull(fnPtr) { "No instance found for singleton SpotLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpotLight(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for SpotLight
+     */
+    private object __method_bind
+  }
 }

@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class TriangleMesh internal constructor(
   companion object {
     fun new(): TriangleMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TriangleMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for TriangleMesh" }
+      requireNotNull(fnPtr) { "No instance found for singleton TriangleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TriangleMesh(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for TriangleMesh
+     */
+    private object __method_bind
+  }
 }

@@ -1,6 +1,7 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,10 +16,15 @@ open class CheckButton internal constructor(
   companion object {
     fun new(): CheckButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CheckButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for CheckButton" }
+      requireNotNull(fnPtr) { "No instance found for singleton CheckButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CheckButton(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for CheckButton
+     */
+    private object __method_bind
+  }
 }

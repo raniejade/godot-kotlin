@@ -1,10 +1,12 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
+import gdnative.godot_method_bind
 import godot.core.Godot
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.CPointer
 import kotlinx.cinterop.cstr
 import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
@@ -57,10 +59,33 @@ open class VisualShaderNodeColorOp internal constructor(
     fun new(): VisualShaderNodeColorOp = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorOp".cstr.ptr)
-      requireNotNull(fnPtr) { "No constructor found for VisualShaderNodeColorOp" }
+      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeColorOp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeColorOp(
         fn()
       )
-    }}
+    }
+    /**
+     * Container for method_bind pointers for VisualShaderNodeColorOp
+     */
+    private object __method_bind {
+      val get_operator: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
+              "get_operator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method get_operator" }
+            }
+          }
+
+      val set_operator: CPointer<godot_method_bind> by lazy {
+            memScoped {
+              val ptr =
+              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
+              "set_operator".cstr.ptr)
+              requireNotNull(ptr) { "No method_bind found for method set_operator" }
+            }
+          }
+    }
+  }
 }
