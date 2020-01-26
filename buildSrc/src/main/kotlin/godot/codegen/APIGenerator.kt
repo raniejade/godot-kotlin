@@ -42,9 +42,21 @@ class APIGenerator {
   }
 
   private fun TypeSpec.Builder.generatePrimaryConstructor(cls: GDClass): TypeSpec.Builder {
+    val handleName = "_handle"
+    val cOpaquePointerType = ClassName("kotlinx.cinterop", "COpaquePointer")
+
+    if (cls.base_class.isEmpty()) {
+      addProperty(
+        PropertySpec.builder(handleName, cOpaquePointerType, KModifier.INTERNAL)
+          .initializer(handleName)
+          .build()
+      )
+    }
+
     primaryConstructor(
       FunSpec.constructorBuilder()
         .addModifiers(KModifier.INTERNAL)
+        .addParameter(handleName, cOpaquePointerType)
         .build()
     )
     return this
@@ -52,9 +64,9 @@ class APIGenerator {
 
   private fun TypeSpec.Builder.maybeGenerateInheritance(cls: GDClass): TypeSpec.Builder {
     if (cls.base_class.isNotBlank()) {
-      this.superclass(
+      superclass(
         ClassName(BASE_PACKAGE, cls.base_class)
-      )
+      ).addSuperclassConstructorParameter("_handle")
     }
     return this
   }

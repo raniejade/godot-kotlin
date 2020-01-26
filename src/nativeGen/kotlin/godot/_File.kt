@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class _File internal constructor() : Reference() {
+open class _File internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val CompressionDeflate: Int = 1
 

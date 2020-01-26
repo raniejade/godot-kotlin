@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Tween internal constructor() : Node() {
+open class Tween internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val EaseIn: Int = 0
 

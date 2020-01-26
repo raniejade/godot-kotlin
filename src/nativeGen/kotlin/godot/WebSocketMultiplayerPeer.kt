@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class WebSocketMultiplayerPeer internal constructor() : NetworkedMultiplayerPeer() {
+import kotlinx.cinterop.COpaquePointer
+
+open class WebSocketMultiplayerPeer internal constructor(
+  _handle: COpaquePointer
+) : NetworkedMultiplayerPeer(_handle) {
   companion object
 }

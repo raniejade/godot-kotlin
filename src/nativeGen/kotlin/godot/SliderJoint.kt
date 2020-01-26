@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class SliderJoint internal constructor() : Joint() {
+open class SliderJoint internal constructor(
+  _handle: COpaquePointer
+) : Joint(_handle) {
   companion object {
     val ParamAngularLimitDamping: Int = 15
 

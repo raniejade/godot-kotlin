@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ReflectionProbe internal constructor() : VisualInstance() {
+open class ReflectionProbe internal constructor(
+  _handle: COpaquePointer
+) : VisualInstance(_handle) {
   companion object {
     val UpdateAlways: Int = 1
 

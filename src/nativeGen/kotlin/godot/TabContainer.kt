@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TabContainer internal constructor() : Container() {
+open class TabContainer internal constructor(
+  _handle: COpaquePointer
+) : Container(_handle) {
   companion object {
     val AlignCenter: Int = 1
 

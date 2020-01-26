@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualScriptYield internal constructor() : VisualScriptNode() {
+open class VisualScriptYield internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     val YieldFrame: Int = 1
 

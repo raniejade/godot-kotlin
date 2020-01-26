@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class MainLoop internal constructor() : Object() {
+open class MainLoop internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val NotificationCrash: Int = 1012
 

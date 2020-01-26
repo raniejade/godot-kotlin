@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TextureButton internal constructor() : BaseButton() {
+open class TextureButton internal constructor(
+  _handle: COpaquePointer
+) : BaseButton(_handle) {
   companion object {
     val StretchKeep: Int = 2
 

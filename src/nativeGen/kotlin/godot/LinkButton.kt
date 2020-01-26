@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class LinkButton internal constructor() : BaseButton() {
+open class LinkButton internal constructor(
+  _handle: COpaquePointer
+) : BaseButton(_handle) {
   companion object {
     val UnderlineModeAlways: Int = 0
 

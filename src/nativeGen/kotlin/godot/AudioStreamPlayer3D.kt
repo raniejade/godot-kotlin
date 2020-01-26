@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AudioStreamPlayer3D internal constructor() : Spatial() {
+open class AudioStreamPlayer3D internal constructor(
+  _handle: COpaquePointer
+) : Spatial(_handle) {
   companion object {
     val AttenuationDisabled: Int = 3
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Light internal constructor() : VisualInstance() {
+open class Light internal constructor(
+  _handle: COpaquePointer
+) : VisualInstance(_handle) {
   companion object {
     val BakeAll: Int = 2
 

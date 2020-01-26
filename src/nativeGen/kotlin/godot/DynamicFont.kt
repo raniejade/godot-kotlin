@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class DynamicFont internal constructor() : Font() {
+open class DynamicFont internal constructor(
+  _handle: COpaquePointer
+) : Font(_handle) {
   companion object {
     val SpacingBottom: Int = 1
 

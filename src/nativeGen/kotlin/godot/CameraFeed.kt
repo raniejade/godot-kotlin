@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class CameraFeed internal constructor() : Reference() {
+open class CameraFeed internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val FeedBack: Int = 2
 

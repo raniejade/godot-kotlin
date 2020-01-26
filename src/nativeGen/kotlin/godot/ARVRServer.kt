@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ARVRServer internal constructor() : Object() {
+open class ARVRServer internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val DontResetRotation: Int = 2
 

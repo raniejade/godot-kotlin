@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Object internal constructor() {
+open class Object internal constructor(
+  internal val _handle: COpaquePointer
+) {
   companion object {
     val ConnectDeferred: Int = 1
 

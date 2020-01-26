@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class ResourceImporterOGGVorbis internal constructor() : ResourceImporter() {
+import kotlinx.cinterop.COpaquePointer
+
+open class ResourceImporterOGGVorbis internal constructor(
+  _handle: COpaquePointer
+) : ResourceImporter(_handle) {
   companion object
 }

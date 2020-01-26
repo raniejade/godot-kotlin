@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class StyleBoxTexture internal constructor() : StyleBox() {
+open class StyleBoxTexture internal constructor(
+  _handle: COpaquePointer
+) : StyleBox(_handle) {
   companion object {
     val AxisStretchModeStretch: Int = 0
 

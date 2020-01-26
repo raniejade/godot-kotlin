@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TileMap internal constructor() : Node2D() {
+open class TileMap internal constructor(
+  _handle: COpaquePointer
+) : Node2D(_handle) {
   companion object {
     val HalfOffsetDisabled: Int = 2
 

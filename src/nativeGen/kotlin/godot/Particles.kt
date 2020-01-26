@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Particles internal constructor() : GeometryInstance() {
+open class Particles internal constructor(
+  _handle: COpaquePointer
+) : GeometryInstance(_handle) {
   companion object {
     val DrawOrderIndex: Int = 0
 

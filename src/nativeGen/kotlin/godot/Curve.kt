@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Curve internal constructor() : Resource() {
+open class Curve internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val TangentFree: Int = 0
 

@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class SkeletonIK internal constructor() : Node() {
+import kotlinx.cinterop.COpaquePointer
+
+open class SkeletonIK internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     fun new(): SkeletonIK {
       TODO()

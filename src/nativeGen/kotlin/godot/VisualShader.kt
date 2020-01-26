@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShader internal constructor() : Shader() {
+open class VisualShader internal constructor(
+  _handle: COpaquePointer
+) : Shader(_handle) {
   companion object {
     val NodeIdInvalid: Int = -1
 

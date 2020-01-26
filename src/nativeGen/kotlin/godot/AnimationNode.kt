@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AnimationNode internal constructor() : Resource() {
+open class AnimationNode internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val FilterBlend: Int = 3
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class OmniLight internal constructor() : Light() {
+open class OmniLight internal constructor(
+  _handle: COpaquePointer
+) : Light(_handle) {
   companion object {
     val ShadowCube: Int = 1
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class PhysicalBone internal constructor() : PhysicsBody() {
+open class PhysicalBone internal constructor(
+  _handle: COpaquePointer
+) : PhysicsBody(_handle) {
   companion object {
     val JointType6dof: Int = 5
 

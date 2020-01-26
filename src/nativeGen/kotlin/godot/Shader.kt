@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Shader internal constructor() : Resource() {
+open class Shader internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val ModeCanvasItem: Int = 1
 

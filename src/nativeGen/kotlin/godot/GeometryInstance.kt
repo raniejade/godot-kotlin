@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class GeometryInstance internal constructor() : VisualInstance() {
+open class GeometryInstance internal constructor(
+  _handle: COpaquePointer
+) : VisualInstance(_handle) {
   companion object {
     val FlagMax: Int = 2
 

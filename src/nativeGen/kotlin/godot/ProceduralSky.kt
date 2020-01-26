@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ProceduralSky internal constructor() : Sky() {
+open class ProceduralSky internal constructor(
+  _handle: COpaquePointer
+) : Sky(_handle) {
   companion object {
     val TextureSize1024: Int = 2
 

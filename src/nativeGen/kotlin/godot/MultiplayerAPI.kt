@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class MultiplayerAPI internal constructor() : Reference() {
+open class MultiplayerAPI internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val RpcModeDisabled: Int = 0
 

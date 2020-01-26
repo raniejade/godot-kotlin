@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ImageTexture internal constructor() : Texture() {
+open class ImageTexture internal constructor(
+  _handle: COpaquePointer
+) : Texture(_handle) {
   companion object {
     val StorageCompressLossless: Int = 2
 

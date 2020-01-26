@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AnimationTreePlayer internal constructor() : Node() {
+open class AnimationTreePlayer internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val AnimationProcessIdle: Int = 1
 

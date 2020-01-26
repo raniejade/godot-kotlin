@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class SplitContainer internal constructor() : Container() {
+open class SplitContainer internal constructor(
+  _handle: COpaquePointer
+) : Container(_handle) {
   companion object {
     val DraggerHidden: Int = 1
 

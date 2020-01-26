@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class Range internal constructor() : Control() {
+import kotlinx.cinterop.COpaquePointer
+
+open class Range internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object
 }

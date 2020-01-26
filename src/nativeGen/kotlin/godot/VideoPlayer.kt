@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class VideoPlayer internal constructor() : Control() {
+import kotlinx.cinterop.COpaquePointer
+
+open class VideoPlayer internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     fun new(): VideoPlayer {
       TODO()

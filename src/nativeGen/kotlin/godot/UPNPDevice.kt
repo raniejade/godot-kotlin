@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class UPNPDevice internal constructor() : Reference() {
+open class UPNPDevice internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val IgdStatusDisconnected: Int = 5
 

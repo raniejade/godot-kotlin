@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class InputEventMIDI internal constructor() : InputEvent() {
+import kotlinx.cinterop.COpaquePointer
+
+open class InputEventMIDI internal constructor(
+  _handle: COpaquePointer
+) : InputEvent(_handle) {
   companion object {
     fun new(): InputEventMIDI {
       TODO()

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class CameraServer internal constructor() : Object() {
+open class CameraServer internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val FeedCbcrImage: Int = 1
 

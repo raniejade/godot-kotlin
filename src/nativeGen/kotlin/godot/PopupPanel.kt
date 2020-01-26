@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PopupPanel internal constructor() : Popup() {
+import kotlinx.cinterop.COpaquePointer
+
+open class PopupPanel internal constructor(
+  _handle: COpaquePointer
+) : Popup(_handle) {
   companion object {
     fun new(): PopupPanel {
       TODO()

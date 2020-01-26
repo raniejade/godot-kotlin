@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class VisualShaderNodeScalarConstant internal constructor() : VisualShaderNode() {
+import kotlinx.cinterop.COpaquePointer
+
+open class VisualShaderNodeScalarConstant internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     fun new(): VisualShaderNodeScalarConstant {
       TODO()

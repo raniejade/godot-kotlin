@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeCubeMap internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeCubeMap internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val TypeColor: Int = 1
 

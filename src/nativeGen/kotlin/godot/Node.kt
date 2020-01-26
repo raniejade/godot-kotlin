@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Node internal constructor() : Object() {
+open class Node internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val DuplicateGroups: Int = 2
 

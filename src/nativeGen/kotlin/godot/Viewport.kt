@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Viewport internal constructor() : Node() {
+open class Viewport internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val ClearModeAlways: Int = 0
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class NetworkedMultiplayerENet internal constructor() : NetworkedMultiplayerPeer() {
+open class NetworkedMultiplayerENet internal constructor(
+  _handle: COpaquePointer
+) : NetworkedMultiplayerPeer(_handle) {
   companion object {
     val CompressFastlz: Int = 2
 

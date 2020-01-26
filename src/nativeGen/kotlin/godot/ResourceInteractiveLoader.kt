@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class ResourceInteractiveLoader internal constructor() : Reference() {
+import kotlinx.cinterop.COpaquePointer
+
+open class ResourceInteractiveLoader internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object
 }

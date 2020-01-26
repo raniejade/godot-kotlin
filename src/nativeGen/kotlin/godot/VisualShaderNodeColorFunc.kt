@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeColorFunc internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeColorFunc internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val FuncGrayscale: Int = 0
 

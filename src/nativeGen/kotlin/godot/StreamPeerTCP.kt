@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class StreamPeerTCP internal constructor() : StreamPeer() {
+open class StreamPeerTCP internal constructor(
+  _handle: COpaquePointer
+) : StreamPeer(_handle) {
   companion object {
     val StatusConnected: Int = 2
 

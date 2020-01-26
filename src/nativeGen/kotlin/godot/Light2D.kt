@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Light2D internal constructor() : Node2D() {
+open class Light2D internal constructor(
+  _handle: COpaquePointer
+) : Node2D(_handle) {
   companion object {
     val ModeAdd: Int = 0
 

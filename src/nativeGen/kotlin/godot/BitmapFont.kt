@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class BitmapFont internal constructor() : Font() {
+import kotlinx.cinterop.COpaquePointer
+
+open class BitmapFont internal constructor(
+  _handle: COpaquePointer
+) : Font(_handle) {
   companion object {
     fun new(): BitmapFont {
       TODO()

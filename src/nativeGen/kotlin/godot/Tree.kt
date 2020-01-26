@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Tree internal constructor() : Control() {
+open class Tree internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val DropModeDisabled: Int = 0
 

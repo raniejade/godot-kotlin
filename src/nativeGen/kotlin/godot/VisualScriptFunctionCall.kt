@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualScriptFunctionCall internal constructor() : VisualScriptNode() {
+open class VisualScriptFunctionCall internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     val CallModeBasicType: Int = 3
 

@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class MeshLibrary internal constructor() : Resource() {
+import kotlinx.cinterop.COpaquePointer
+
+open class MeshLibrary internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     fun new(): MeshLibrary {
       TODO()

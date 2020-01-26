@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AudioStreamPlayer internal constructor() : Node() {
+open class AudioStreamPlayer internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val MixTargetCenter: Int = 2
 

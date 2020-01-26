@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeScalarDerivativeFunc internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeScalarDerivativeFunc internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val FuncSum: Int = 0
 

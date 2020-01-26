@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class HingeJoint internal constructor() : Joint() {
+open class HingeJoint internal constructor(
+  _handle: COpaquePointer
+) : Joint(_handle) {
   companion object {
     val FlagEnableMotor: Int = 1
 

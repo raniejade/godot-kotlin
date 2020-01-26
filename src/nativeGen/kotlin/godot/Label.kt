@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Label internal constructor() : Control() {
+open class Label internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val AlignCenter: Int = 1
 

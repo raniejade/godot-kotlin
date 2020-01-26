@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class GlobalConstants internal constructor() {
+open class GlobalConstants internal constructor(
+  internal val _handle: COpaquePointer
+) {
   companion object {
     val ButtonLeft: Int = 1
 

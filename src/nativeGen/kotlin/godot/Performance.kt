@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Performance internal constructor() : Object() {
+open class Performance internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val AudioOutputLatency: Int = 28
 

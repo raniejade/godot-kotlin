@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class UPNP internal constructor() : Reference() {
+open class UPNP internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val UpnpResultActionFailed: Int = 5
 

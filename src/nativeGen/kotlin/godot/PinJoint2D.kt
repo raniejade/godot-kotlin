@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PinJoint2D internal constructor() : Joint2D() {
+import kotlinx.cinterop.COpaquePointer
+
+open class PinJoint2D internal constructor(
+  _handle: COpaquePointer
+) : Joint2D(_handle) {
   companion object {
     fun new(): PinJoint2D {
       TODO()

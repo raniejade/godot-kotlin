@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeVectorOp internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeVectorOp internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val OpAdd: Int = 0
 

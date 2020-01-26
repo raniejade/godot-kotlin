@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class _Geometry internal constructor() : Object() {
+open class _Geometry internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val EndButt: Int = 2
 

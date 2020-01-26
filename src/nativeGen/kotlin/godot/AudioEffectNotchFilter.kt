@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class AudioEffectNotchFilter internal constructor() : AudioEffectFilter() {
+import kotlinx.cinterop.COpaquePointer
+
+open class AudioEffectNotchFilter internal constructor(
+  _handle: COpaquePointer
+) : AudioEffectFilter(_handle) {
   companion object {
     fun new(): AudioEffectNotchFilter {
       TODO()

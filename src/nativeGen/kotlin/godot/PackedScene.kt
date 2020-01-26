@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class PackedScene internal constructor() : Resource() {
+open class PackedScene internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val GenEditStateDisabled: Int = 0
 

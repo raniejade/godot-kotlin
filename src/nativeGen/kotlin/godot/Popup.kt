@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Popup internal constructor() : Control() {
+open class Popup internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val NotificationPopupHide: Int = 81
 

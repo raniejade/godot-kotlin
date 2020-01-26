@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeTextureUniform internal constructor() : VisualShaderNodeUniform() {
+open class VisualShaderNodeTextureUniform internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNodeUniform(_handle) {
   companion object {
     val ColorDefaultBlack: Int = 1
 

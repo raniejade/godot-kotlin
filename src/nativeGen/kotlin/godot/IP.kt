@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class IP internal constructor() : Object() {
+open class IP internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val ResolverInvalidId: Int = -1
 

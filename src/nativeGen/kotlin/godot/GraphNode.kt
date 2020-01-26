@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class GraphNode internal constructor() : Container() {
+open class GraphNode internal constructor(
+  _handle: COpaquePointer
+) : Container(_handle) {
   companion object {
     val OverlayBreakpoint: Int = 1
 

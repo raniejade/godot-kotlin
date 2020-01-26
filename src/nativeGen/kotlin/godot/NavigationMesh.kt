@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class NavigationMesh internal constructor() : Resource() {
+open class NavigationMesh internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val ParsedGeometryBoth: Int = 2
 

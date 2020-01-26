@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Container internal constructor() : Control() {
+open class Container internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val NotificationSortChildren: Int = 50
 

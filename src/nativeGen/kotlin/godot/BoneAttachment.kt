@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class BoneAttachment internal constructor() : Spatial() {
+import kotlinx.cinterop.COpaquePointer
+
+open class BoneAttachment internal constructor(
+  _handle: COpaquePointer
+) : Spatial(_handle) {
   companion object {
     fun new(): BoneAttachment {
       TODO()

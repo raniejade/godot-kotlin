@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Sky internal constructor() : Resource() {
+open class Sky internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val RadianceSize1024: Int = 5
 

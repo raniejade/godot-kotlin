@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualScriptMathConstant internal constructor() : VisualScriptNode() {
+open class VisualScriptMathConstant internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     val MathConstantE: Int = 4
 

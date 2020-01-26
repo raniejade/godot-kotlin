@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ConeTwistJoint internal constructor() : Joint() {
+open class ConeTwistJoint internal constructor(
+  _handle: COpaquePointer
+) : Joint(_handle) {
   companion object {
     val ParamBias: Int = 2
 

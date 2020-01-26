@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class XMLParser internal constructor() : Reference() {
+open class XMLParser internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val NodeCdata: Int = 5
 

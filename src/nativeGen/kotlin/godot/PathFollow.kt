@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class PathFollow internal constructor() : Spatial() {
+open class PathFollow internal constructor(
+  _handle: COpaquePointer
+) : Spatial(_handle) {
   companion object {
     val RotationNone: Int = 0
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualServer internal constructor() : Object() {
+open class VisualServer internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val ArrayBones: Int = 6
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class RigidBody2D internal constructor() : PhysicsBody2D() {
+open class RigidBody2D internal constructor(
+  _handle: COpaquePointer
+) : PhysicsBody2D(_handle) {
   companion object {
     val CcdModeCastRay: Int = 1
 

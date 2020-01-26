@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class UndoRedo internal constructor() : Object() {
+open class UndoRedo internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val MergeAll: Int = 2
 

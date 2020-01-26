@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualScriptPropertySet internal constructor() : VisualScriptNode() {
+open class VisualScriptPropertySet internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     val AssignOpAdd: Int = 1
 

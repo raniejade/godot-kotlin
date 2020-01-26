@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class BakedLightmap internal constructor() : VisualInstance() {
+open class BakedLightmap internal constructor(
+  _handle: COpaquePointer
+) : VisualInstance(_handle) {
   companion object {
     val BakeErrorCantCreateImage: Int = 3
 

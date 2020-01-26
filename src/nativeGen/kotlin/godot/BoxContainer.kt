@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class BoxContainer internal constructor() : Container() {
+open class BoxContainer internal constructor(
+  _handle: COpaquePointer
+) : Container(_handle) {
   companion object {
     val AlignBegin: Int = 0
 

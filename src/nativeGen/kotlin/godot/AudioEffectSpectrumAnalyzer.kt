@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AudioEffectSpectrumAnalyzer internal constructor() : AudioEffect() {
+open class AudioEffectSpectrumAnalyzer internal constructor(
+  _handle: COpaquePointer
+) : AudioEffect(_handle) {
   companion object {
     val FftSize1024: Int = 2
 

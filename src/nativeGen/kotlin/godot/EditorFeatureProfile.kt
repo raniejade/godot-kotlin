@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class EditorFeatureProfile internal constructor() : Reference() {
+open class EditorFeatureProfile internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val Feature3d: Int = 0
 

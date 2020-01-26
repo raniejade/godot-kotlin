@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Timer internal constructor() : Node() {
+open class Timer internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val TimerProcessIdle: Int = 1
 

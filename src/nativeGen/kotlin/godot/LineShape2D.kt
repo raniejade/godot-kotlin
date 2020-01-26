@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class LineShape2D internal constructor() : Shape2D() {
+import kotlinx.cinterop.COpaquePointer
+
+open class LineShape2D internal constructor(
+  _handle: COpaquePointer
+) : Shape2D(_handle) {
   companion object {
     fun new(): LineShape2D {
       TODO()

@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class HBoxContainer internal constructor() : BoxContainer() {
+import kotlinx.cinterop.COpaquePointer
+
+open class HBoxContainer internal constructor(
+  _handle: COpaquePointer
+) : BoxContainer(_handle) {
   companion object {
     fun new(): HBoxContainer {
       TODO()

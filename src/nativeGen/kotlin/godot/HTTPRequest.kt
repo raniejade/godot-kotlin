@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class HTTPRequest internal constructor() : Node() {
+open class HTTPRequest internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val ResultBodySizeLimitExceeded: Int = 7
 

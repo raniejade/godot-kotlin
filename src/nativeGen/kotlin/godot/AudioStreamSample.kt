@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AudioStreamSample internal constructor() : AudioStream() {
+open class AudioStreamSample internal constructor(
+  _handle: COpaquePointer
+) : AudioStream(_handle) {
   companion object {
     val Format16Bits: Int = 1
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ItemList internal constructor() : Control() {
+open class ItemList internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val IconModeLeft: Int = 1
 

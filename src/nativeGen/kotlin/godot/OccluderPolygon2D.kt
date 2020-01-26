@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class OccluderPolygon2D internal constructor() : Resource() {
+open class OccluderPolygon2D internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val CullClockwise: Int = 1
 

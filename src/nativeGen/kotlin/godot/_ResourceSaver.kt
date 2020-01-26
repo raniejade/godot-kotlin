@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class _ResourceSaver internal constructor() : Object() {
+open class _ResourceSaver internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val FlagBundleResources: Int = 2
 

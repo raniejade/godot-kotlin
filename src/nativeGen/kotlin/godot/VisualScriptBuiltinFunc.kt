@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualScriptBuiltinFunc internal constructor() : VisualScriptNode() {
+open class VisualScriptBuiltinFunc internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     val BytesToVar: Int = 62
 

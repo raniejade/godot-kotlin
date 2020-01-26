@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class EditorPlugin internal constructor() : Node() {
+open class EditorPlugin internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val ContainerCanvasEditorBottom: Int = 8
 

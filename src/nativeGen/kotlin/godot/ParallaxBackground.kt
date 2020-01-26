@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class ParallaxBackground internal constructor() : CanvasLayer() {
+import kotlinx.cinterop.COpaquePointer
+
+open class ParallaxBackground internal constructor(
+  _handle: COpaquePointer
+) : CanvasLayer(_handle) {
   companion object {
     fun new(): ParallaxBackground {
       TODO()

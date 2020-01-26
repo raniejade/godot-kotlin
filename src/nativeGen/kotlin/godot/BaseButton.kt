@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class BaseButton internal constructor() : Control() {
+open class BaseButton internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val ActionModeButtonPress: Int = 0
 

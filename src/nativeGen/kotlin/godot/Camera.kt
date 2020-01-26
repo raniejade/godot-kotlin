@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Camera internal constructor() : Spatial() {
+open class Camera internal constructor(
+  _handle: COpaquePointer
+) : Spatial(_handle) {
   companion object {
     val DopplerTrackingDisabled: Int = 0
 

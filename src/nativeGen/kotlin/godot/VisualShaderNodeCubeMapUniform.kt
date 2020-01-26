@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class VisualShaderNodeCubeMapUniform internal constructor() : VisualShaderNode() {
+import kotlinx.cinterop.COpaquePointer
+
+open class VisualShaderNodeCubeMapUniform internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     fun new(): VisualShaderNodeCubeMapUniform {
       TODO()

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class GIProbe internal constructor() : VisualInstance() {
+open class GIProbe internal constructor(
+  _handle: COpaquePointer
+) : VisualInstance(_handle) {
   companion object {
     val Subdiv128: Int = 1
 

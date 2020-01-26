@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ParticlesMaterial internal constructor() : Material() {
+open class ParticlesMaterial internal constructor(
+  _handle: COpaquePointer
+) : Material(_handle) {
   companion object {
     val EmissionShapeBox: Int = 2
 

@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class ResourceFormatLoaderDynamicFont internal constructor() : ResourceFormatLoader() {
+import kotlinx.cinterop.COpaquePointer
+
+open class ResourceFormatLoaderDynamicFont internal constructor(
+  _handle: COpaquePointer
+) : ResourceFormatLoader(_handle) {
   companion object
 }

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class GridMap internal constructor() : Spatial() {
+open class GridMap internal constructor(
+  _handle: COpaquePointer
+) : Spatial(_handle) {
   companion object {
     val InvalidCellItem: Int = -1
 

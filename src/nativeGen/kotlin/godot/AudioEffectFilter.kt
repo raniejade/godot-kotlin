@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AudioEffectFilter internal constructor() : AudioEffect() {
+open class AudioEffectFilter internal constructor(
+  _handle: COpaquePointer
+) : AudioEffect(_handle) {
   companion object {
     val Filter12db: Int = 1
 

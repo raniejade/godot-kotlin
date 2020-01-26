@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class HTTPClient internal constructor() : Reference() {
+open class HTTPClient internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val MethodConnect: Int = 7
 

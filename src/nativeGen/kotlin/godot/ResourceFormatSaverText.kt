@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class ResourceFormatSaverText internal constructor() : ResourceFormatSaver() {
+import kotlinx.cinterop.COpaquePointer
+
+open class ResourceFormatSaverText internal constructor(
+  _handle: COpaquePointer
+) : ResourceFormatSaver(_handle) {
   companion object
 }

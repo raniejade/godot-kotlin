@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class Font internal constructor() : Resource() {
+import kotlinx.cinterop.COpaquePointer
+
+open class Font internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object
 }

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisibilityEnabler internal constructor() : VisibilityNotifier() {
+open class VisibilityEnabler internal constructor(
+  _handle: COpaquePointer
+) : VisibilityNotifier(_handle) {
   companion object {
     val EnablerFreezeBodies: Int = 1
 

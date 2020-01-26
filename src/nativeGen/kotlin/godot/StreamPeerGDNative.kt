@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class StreamPeerGDNative internal constructor() : StreamPeer() {
+import kotlinx.cinterop.COpaquePointer
+
+open class StreamPeerGDNative internal constructor(
+  _handle: COpaquePointer
+) : StreamPeer(_handle) {
   companion object {
     fun new(): StreamPeerGDNative {
       TODO()

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class SpriteBase3D internal constructor() : GeometryInstance() {
+open class SpriteBase3D internal constructor(
+  _handle: COpaquePointer
+) : GeometryInstance(_handle) {
   companion object {
     val AlphaCutDisabled: Int = 0
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeVectorFunc internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeVectorFunc internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val FuncAbs: Int = 6
 

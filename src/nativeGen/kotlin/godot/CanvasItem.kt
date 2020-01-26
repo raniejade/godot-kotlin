@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class CanvasItem internal constructor() : Node() {
+open class CanvasItem internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val BlendModeAdd: Int = 1
 

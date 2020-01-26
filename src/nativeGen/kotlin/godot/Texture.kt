@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Texture internal constructor() : Resource() {
+open class Texture internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val FlagsDefault: Int = 7
 

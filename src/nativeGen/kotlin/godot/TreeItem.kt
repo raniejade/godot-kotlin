@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TreeItem internal constructor() : Object() {
+open class TreeItem internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val AlignCenter: Int = 1
 

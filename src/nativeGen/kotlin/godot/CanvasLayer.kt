@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class CanvasLayer internal constructor() : Node() {
+import kotlinx.cinterop.COpaquePointer
+
+open class CanvasLayer internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     fun new(): CanvasLayer {
       TODO()

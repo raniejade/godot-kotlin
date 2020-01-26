@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeTexture internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeTexture internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val Source2dNormal: Int = 3
 

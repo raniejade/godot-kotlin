@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Spatial internal constructor() : Node() {
+open class Spatial internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object {
     val NotificationEnterWorld: Int = 41
 

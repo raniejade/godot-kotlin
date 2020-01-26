@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class SceneState internal constructor() : Reference() {
+open class SceneState internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val GenEditStateDisabled: Int = 0
 

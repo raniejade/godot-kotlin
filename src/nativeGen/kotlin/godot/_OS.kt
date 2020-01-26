@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class _OS internal constructor() : Object() {
+open class _OS internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val DayFriday: Int = 5
 

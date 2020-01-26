@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class MultiMesh internal constructor() : Resource() {
+open class MultiMesh internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     val Color8bit: Int = 1
 

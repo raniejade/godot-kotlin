@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AudioServer internal constructor() : Object() {
+open class AudioServer internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val SpeakerModeStereo: Int = 0
 

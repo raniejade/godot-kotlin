@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class SpatialMaterial internal constructor() : Material() {
+open class SpatialMaterial internal constructor(
+  _handle: COpaquePointer
+) : Material(_handle) {
   companion object {
     val BillboardDisabled: Int = 0
 

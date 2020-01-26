@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ProximityGroup internal constructor() : Spatial() {
+open class ProximityGroup internal constructor(
+  _handle: COpaquePointer
+) : Spatial(_handle) {
   companion object {
     val ModeProxy: Int = 0
 

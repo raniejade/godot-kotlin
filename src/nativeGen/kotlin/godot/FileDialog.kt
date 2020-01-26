@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class FileDialog internal constructor() : ConfirmationDialog() {
+open class FileDialog internal constructor(
+  _handle: COpaquePointer
+) : ConfirmationDialog(_handle) {
   companion object {
     val AccessFilesystem: Int = 2
 

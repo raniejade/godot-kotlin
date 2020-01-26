@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class EditorResourceConversionPlugin internal constructor() : Reference() {
+import kotlinx.cinterop.COpaquePointer
+
+open class EditorResourceConversionPlugin internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     fun new(): EditorResourceConversionPlugin {
       TODO()

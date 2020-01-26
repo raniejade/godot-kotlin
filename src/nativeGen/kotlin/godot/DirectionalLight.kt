@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class DirectionalLight internal constructor() : Light() {
+open class DirectionalLight internal constructor(
+  _handle: COpaquePointer
+) : Light(_handle) {
   companion object {
     val ShadowDepthRangeOptimized: Int = 1
 

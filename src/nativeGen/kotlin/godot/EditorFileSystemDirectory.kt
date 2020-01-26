@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class EditorFileSystemDirectory internal constructor() : Object() {
+import kotlinx.cinterop.COpaquePointer
+
+open class EditorFileSystemDirectory internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     fun new(): EditorFileSystemDirectory {
       TODO()

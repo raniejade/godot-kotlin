@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class RandomNumberGenerator internal constructor() : Reference() {
+import kotlinx.cinterop.COpaquePointer
+
+open class RandomNumberGenerator internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     fun new(): RandomNumberGenerator {
       TODO()

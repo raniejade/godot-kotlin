@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class CSGPolygon internal constructor() : CSGPrimitive() {
+open class CSGPolygon internal constructor(
+  _handle: COpaquePointer
+) : CSGPrimitive(_handle) {
   companion object {
     val ModeDepth: Int = 0
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TextureProgress internal constructor() : Range() {
+open class TextureProgress internal constructor(
+  _handle: COpaquePointer
+) : Range(_handle) {
   companion object {
     val FillBilinearLeftAndRight: Int = 6
 

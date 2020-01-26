@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ClippedCamera internal constructor() : Camera() {
+open class ClippedCamera internal constructor(
+  _handle: COpaquePointer
+) : Camera(_handle) {
   companion object {
     val ClipProcessIdle: Int = 1
 

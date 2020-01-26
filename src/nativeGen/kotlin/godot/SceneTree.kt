@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class SceneTree internal constructor() : MainLoop() {
+open class SceneTree internal constructor(
+  _handle: COpaquePointer
+) : MainLoop(_handle) {
   companion object {
     val GroupCallDefault: Int = 0
 

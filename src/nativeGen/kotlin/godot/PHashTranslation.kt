@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PHashTranslation internal constructor() : Translation() {
+import kotlinx.cinterop.COpaquePointer
+
+open class PHashTranslation internal constructor(
+  _handle: COpaquePointer
+) : Translation(_handle) {
   companion object {
     fun new(): PHashTranslation {
       TODO()

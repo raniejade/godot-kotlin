@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class Polygon2D internal constructor() : Node2D() {
+import kotlinx.cinterop.COpaquePointer
+
+open class Polygon2D internal constructor(
+  _handle: COpaquePointer
+) : Node2D(_handle) {
   companion object {
     fun new(): Polygon2D {
       TODO()

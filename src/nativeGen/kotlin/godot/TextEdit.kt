@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TextEdit internal constructor() : Control() {
+open class TextEdit internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val MenuClear: Int = 3
 

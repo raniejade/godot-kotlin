@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class EditorInterface internal constructor() : Node() {
+import kotlinx.cinterop.COpaquePointer
+
+open class EditorInterface internal constructor(
+  _handle: COpaquePointer
+) : Node(_handle) {
   companion object
 }

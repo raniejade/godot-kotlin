@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class NinePatchRect internal constructor() : Control() {
+open class NinePatchRect internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val AxisStretchModeStretch: Int = 0
 

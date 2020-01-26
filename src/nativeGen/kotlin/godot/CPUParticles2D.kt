@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class CPUParticles2D internal constructor() : Node2D() {
+open class CPUParticles2D internal constructor(
+  _handle: COpaquePointer
+) : Node2D(_handle) {
   companion object {
     val DrawOrderIndex: Int = 0
 

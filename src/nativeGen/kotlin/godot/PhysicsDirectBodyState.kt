@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PhysicsDirectBodyState internal constructor() : Object() {
+import kotlinx.cinterop.COpaquePointer
+
+open class PhysicsDirectBodyState internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object
 }

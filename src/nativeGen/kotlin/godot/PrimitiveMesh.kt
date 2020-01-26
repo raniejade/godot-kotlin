@@ -1,6 +1,10 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PrimitiveMesh internal constructor() : Mesh() {
+import kotlinx.cinterop.COpaquePointer
+
+open class PrimitiveMesh internal constructor(
+  _handle: COpaquePointer
+) : Mesh(_handle) {
   companion object
 }

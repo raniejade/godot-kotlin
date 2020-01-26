@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Button internal constructor() : BaseButton() {
+open class Button internal constructor(
+  _handle: COpaquePointer
+) : BaseButton(_handle) {
   companion object {
     val AlignCenter: Int = 1
 

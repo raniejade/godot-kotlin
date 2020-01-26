@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class VisualScriptCondition internal constructor() : VisualScriptNode() {
+import kotlinx.cinterop.COpaquePointer
+
+open class VisualScriptCondition internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     fun new(): VisualScriptCondition {
       TODO()

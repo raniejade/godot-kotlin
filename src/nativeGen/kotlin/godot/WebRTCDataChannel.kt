@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class WebRTCDataChannel internal constructor() : PacketPeer() {
+open class WebRTCDataChannel internal constructor(
+  _handle: COpaquePointer
+) : PacketPeer(_handle) {
   companion object {
     val StateClosed: Int = 3
 

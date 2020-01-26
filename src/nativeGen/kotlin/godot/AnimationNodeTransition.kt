@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class AnimationNodeTransition internal constructor() : AnimationNode() {
+import kotlinx.cinterop.COpaquePointer
+
+open class AnimationNodeTransition internal constructor(
+  _handle: COpaquePointer
+) : AnimationNode(_handle) {
   companion object {
     fun new(): AnimationNodeTransition {
       TODO()

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class NetworkedMultiplayerPeer internal constructor() : PacketPeer() {
+open class NetworkedMultiplayerPeer internal constructor(
+  _handle: COpaquePointer
+) : PacketPeer(_handle) {
   companion object {
     val ConnectionConnected: Int = 2
 

@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class TextureRect internal constructor() : Control() {
+open class TextureRect internal constructor(
+  _handle: COpaquePointer
+) : Control(_handle) {
   companion object {
     val StretchKeep: Int = 3
 

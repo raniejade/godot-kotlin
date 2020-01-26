@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ArrayMesh internal constructor() : Mesh() {
+open class ArrayMesh internal constructor(
+  _handle: COpaquePointer
+) : Mesh(_handle) {
   companion object {
     val ArrayBones: Int = 6
 

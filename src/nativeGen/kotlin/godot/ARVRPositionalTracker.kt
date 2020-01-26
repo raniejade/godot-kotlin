@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class ARVRPositionalTracker internal constructor() : Object() {
+open class ARVRPositionalTracker internal constructor(
+  _handle: COpaquePointer
+) : Object(_handle) {
   companion object {
     val TrackerHandUnknown: Int = 0
 

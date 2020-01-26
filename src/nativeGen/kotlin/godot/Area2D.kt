@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Area2D internal constructor() : CollisionObject2D() {
+open class Area2D internal constructor(
+  _handle: COpaquePointer
+) : CollisionObject2D(_handle) {
   companion object {
     val SpaceOverrideCombine: Int = 1
 

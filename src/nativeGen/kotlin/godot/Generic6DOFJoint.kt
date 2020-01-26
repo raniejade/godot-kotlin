@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Generic6DOFJoint internal constructor() : Joint() {
+open class Generic6DOFJoint internal constructor(
+  _handle: COpaquePointer
+) : Joint(_handle) {
   companion object {
     val FlagEnableAngularLimit: Int = 1
 

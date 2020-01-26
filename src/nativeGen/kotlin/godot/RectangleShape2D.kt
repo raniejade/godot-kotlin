@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class RectangleShape2D internal constructor() : Shape2D() {
+import kotlinx.cinterop.COpaquePointer
+
+open class RectangleShape2D internal constructor(
+  _handle: COpaquePointer
+) : Shape2D(_handle) {
   companion object {
     fun new(): RectangleShape2D {
       TODO()

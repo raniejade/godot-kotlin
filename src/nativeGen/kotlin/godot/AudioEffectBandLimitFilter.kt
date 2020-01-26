@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class AudioEffectBandLimitFilter internal constructor() : AudioEffectFilter() {
+import kotlinx.cinterop.COpaquePointer
+
+open class AudioEffectBandLimitFilter internal constructor(
+  _handle: COpaquePointer
+) : AudioEffectFilter(_handle) {
   companion object {
     fun new(): AudioEffectBandLimitFilter {
       TODO()

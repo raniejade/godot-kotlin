@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Camera2D internal constructor() : Node2D() {
+open class Camera2D internal constructor(
+  _handle: COpaquePointer
+) : Node2D(_handle) {
   companion object {
     val AnchorModeDragCenter: Int = 1
 

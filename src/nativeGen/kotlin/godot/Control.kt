@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class Control internal constructor() : CanvasItem() {
+open class Control internal constructor(
+  _handle: COpaquePointer
+) : CanvasItem(_handle) {
   companion object {
     val AnchorBegin: Int = 0
 

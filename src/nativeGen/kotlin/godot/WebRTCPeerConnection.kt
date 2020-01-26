@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class WebRTCPeerConnection internal constructor() : Reference() {
+open class WebRTCPeerConnection internal constructor(
+  _handle: COpaquePointer
+) : Reference(_handle) {
   companion object {
     val StateClosed: Int = 5
 

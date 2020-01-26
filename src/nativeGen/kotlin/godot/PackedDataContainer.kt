@@ -1,7 +1,11 @@
 // DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
 package godot
 
-open class PackedDataContainer internal constructor() : Resource() {
+import kotlinx.cinterop.COpaquePointer
+
+open class PackedDataContainer internal constructor(
+  _handle: COpaquePointer
+) : Resource(_handle) {
   companion object {
     fun new(): PackedDataContainer {
       TODO()

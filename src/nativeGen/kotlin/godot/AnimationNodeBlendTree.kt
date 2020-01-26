@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AnimationNodeBlendTree internal constructor() : AnimationRootNode() {
+open class AnimationNodeBlendTree internal constructor(
+  _handle: COpaquePointer
+) : AnimationRootNode(_handle) {
   companion object {
     val ConnectionErrorConnectionExists: Int = 5
 

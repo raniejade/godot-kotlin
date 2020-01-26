@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class AnimationNodeBlendSpace2D internal constructor() : AnimationRootNode() {
+open class AnimationNodeBlendSpace2D internal constructor(
+  _handle: COpaquePointer
+) : AnimationRootNode(_handle) {
   companion object {
     val BlendModeDiscrete: Int = 1
 

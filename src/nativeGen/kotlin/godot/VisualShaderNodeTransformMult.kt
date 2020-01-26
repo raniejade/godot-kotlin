@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeTransformMult internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeTransformMult internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val OpAxb: Int = 0
 

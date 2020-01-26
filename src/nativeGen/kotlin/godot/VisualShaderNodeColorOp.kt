@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualShaderNodeColorOp internal constructor() : VisualShaderNode() {
+open class VisualShaderNodeColorOp internal constructor(
+  _handle: COpaquePointer
+) : VisualShaderNode(_handle) {
   companion object {
     val OpBurn: Int = 6
 

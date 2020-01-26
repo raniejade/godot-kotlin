@@ -2,8 +2,11 @@
 package godot
 
 import kotlin.Int
+import kotlinx.cinterop.COpaquePointer
 
-open class VisualScriptCustomNode internal constructor() : VisualScriptNode() {
+open class VisualScriptCustomNode internal constructor(
+  _handle: COpaquePointer
+) : VisualScriptNode(_handle) {
   companion object {
     val StartModeBeginSequence: Int = 0
 
