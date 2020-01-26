@@ -96,7 +96,7 @@ class PoolIntArray(
       }
     }
 
-    fun new(from: GDArray): PoolIntArray {
+    fun new(from: VariantArray): PoolIntArray {
       return allocType(::PoolIntArray) {
         checkNotNull(Godot.gdnative.godot_pool_int_array_new_with_array)(it, from._value.ptr)
       }

@@ -98,7 +98,7 @@ class PoolVector2Array(
       }
     }
 
-    fun new(from: GDArray): PoolVector2Array {
+    fun new(from: VariantArray): PoolVector2Array {
       return allocType(::PoolVector2Array) {
         checkNotNull(Godot.gdnative.godot_pool_vector2_array_new_with_array)(it, from._value.ptr)
       }

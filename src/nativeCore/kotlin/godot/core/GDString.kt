@@ -25,7 +25,7 @@ internal class GDString(
   fun bigrams(): PoolStringArray {
     return memScoped {
       PoolStringArray.new(
-        GDArray(checkNotNull(Godot.gdnative.godot_string_bigrams)(_value.ptr))
+        VariantArray(checkNotNull(Godot.gdnative.godot_string_bigrams)(_value.ptr))
       )
     }
   }

@@ -113,7 +113,7 @@ class PoolStringArray(
       }
     }
 
-    fun new(from: GDArray): PoolStringArray {
+    fun new(from: VariantArray): PoolStringArray {
       return allocType(::PoolStringArray) {
         checkNotNull(Godot.gdnative.godot_pool_string_array_new_with_array)(it, from._value.ptr)
       }

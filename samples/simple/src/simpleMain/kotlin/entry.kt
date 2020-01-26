@@ -2,7 +2,7 @@ import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
 import godot.PhysicsServer
 import godot.Spatial
-import godot.core.GDArray
+import godot.core.VariantArray
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.Vector2
@@ -14,7 +14,7 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     Godot.print("Hello Godot from Kotlin!")
     val vec = Vector2.new()
     val variant = Variant.new(vec)
-    val array = GDArray.new()
+    val array = VariantArray.new()
     array.append(variant)
     array[0] = array[0].run {
         val v = asVector2()

@@ -1,41 +1,35 @@
 package godot.codegen.domain
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+data class GDType(val name: String, val mappedName: String? = null, val primitive: Boolean = false) {
+  companion object {
+    val STRING = GDType("String", mappedName = "String", primitive = true)
+    val INT = GDType("int", mappedName = "Int", primitive = true)
+    val FLOAT = GDType("float", mappedName = "Float", primitive = true)
+    val BOOL = GDType("bool", mappedName = "Boolean", primitive = true)
+
+    val AABB = GDType("AABB")
+    val BASIS = GDType("Basis")
+    val DICTIONARY = GDType("Dictionary")
+    val COLOR = GDType("Color")
+    val ARRAY = GDType("Array", mappedName = "VariantArray")
+    val VARIANT = GDType("Variant")
+  }
+}
 
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class GDArgument(
-  val name: String,
-  val type: String,
-  val has_default_value: Boolean,
-  val default_value: String
-)
+object Types {
+}
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class GDMethod(
-  val name: String,
-  val return_type: String,
-  val is_editor: Boolean,
-  val is_noscript: Boolean,
-  val is_const: Boolean,
-  val is_reverse: Boolean,
-  val is_virtual: Boolean,
-  val has_varargs: Boolean,
-  val is_from_script: Boolean
-)
+object TypeRegistry {
+  private val types: Map<String, GDType>
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class GDEnum(val name: String, val values: Map<String, Int>)
+  init {
+    val tmp = mutableMapOf<String, GDType>()
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class GDClass(
-  val name: String,
-  val base_class: String,
-  val singleton: Boolean,
-  val instanciable: Boolean,
-  val is_reference: Boolean,
-  val api_type: String,
-  val constants: Map<String, Any>,
-  val enums: List<GDEnum>,
-  val methods: List<GDMethod>
-)
+    fun MutableMap<String, GDType>.put(type: GDType) {
+      put(type.name, type)
+    }
+
+    types = tmp.toMap()
+  }
+}

@@ -68,8 +68,8 @@ class Variant(
     }
   }
 
-  fun asArray(): GDArray {
-    return transmute(::GDArray) {
+  fun asArray(): VariantArray {
+    return transmute(::VariantArray) {
       checkNotNull(Godot.gdnative.godot_variant_as_array)(it)
     }
   }
@@ -245,7 +245,7 @@ class Variant(
       }
     }
 
-    fun new(array: GDArray): Variant {
+    fun new(array: VariantArray): Variant {
       return allocateVariant {
         checkNotNull(Godot.gdnative.godot_variant_new_array)(it, array._value.ptr)
       }

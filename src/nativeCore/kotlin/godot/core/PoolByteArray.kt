@@ -97,7 +97,7 @@ class PoolByteArray(
       }
     }
 
-    fun new(from: GDArray): PoolByteArray {
+    fun new(from: VariantArray): PoolByteArray {
       return allocType(::PoolByteArray) {
         checkNotNull(Godot.gdnative.godot_pool_byte_array_new_with_array)(it, from._value.ptr)
       }

@@ -98,7 +98,7 @@ class PoolColorArray(
       }
     }
 
-    fun new(from: GDArray): PoolColorArray {
+    fun new(from: VariantArray): PoolColorArray {
       return allocType(::PoolColorArray) {
         checkNotNull(Godot.gdnative.godot_pool_color_array_new_with_array)(it, from._value.ptr)
       }
