@@ -4,4 +4,3 @@
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
-

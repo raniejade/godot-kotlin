@@ -5,8 +5,7 @@ import godot.Object
 import kotlinx.cinterop.*
 import kotlin.reflect.KCallable
 
-class NativeScriptApi(val handle: COpaquePointer) {
-  // TODO: registerClass, etc...
+class ClassRegistry(val handle: COpaquePointer) {
   inline fun <reified S: Object, reified T: S> registerClass(info: GodotClass<T>) {
     val className = T::class.simpleName!!
     val superClassName = S::class.simpleName!!
@@ -46,10 +45,8 @@ class ClassHandle<T: Object>(
       )
     }
 
-    val registry = ClassRegistry<T>(handle, className)
-    with(info) {
-      registry.init()
-    }
+    val registry = MethodRegistry<T>(handle, className)
+    info.init(registry)
   }
 }
 
@@ -65,7 +62,7 @@ class MethodHandle0<T: Object, R>(val method: (T) -> R, val convert: (R) -> Vari
   }
 }
 
-class ClassRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
+class MethodRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
   inline fun <reified K: (T) -> Unit> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle0(method) { Variant.new() }
@@ -100,21 +97,18 @@ fun createInstance(instance: COpaquePointer?, methodData: COpaquePointer?): COpa
   val classHandle = checkNotNull(methodData).asStableRef<ClassHandle<Object>>()
     .get()
   val kotlinInstance = classHandle.create(checkNotNull(instance))
+  kotlinInstance._onInit()
   val stableRef = StableRef.create(kotlinInstance)
   return stableRef.asCPointer()
 }
 
 fun destroyInstance(instance: COpaquePointer?, methodData: COpaquePointer?, classData: COpaquePointer?) {
   val classHandleRef = checkNotNull(methodData).asStableRef<ClassHandle<Object>>()
-  println("destroying instance classHandleRef: $classHandleRef")
-  val classHandle = classHandleRef.get()
   val kotlinInstanceRef = checkNotNull(classData).asStableRef<Object>()
-  println("destroying instance kotlinInstanceRef: $kotlinInstanceRef")
   val kotlinInstance = kotlinInstanceRef.get()
-  kotlinInstance.free()
+  kotlinInstance._onDestroy()
   classHandleRef.dispose()
   kotlinInstanceRef.dispose()
-  println("destroying instance done")
 }
 
 fun invokeMethod(instance: COpaquePointer?,
@@ -123,13 +117,9 @@ fun invokeMethod(instance: COpaquePointer?,
                  numArgs: Int,
                  args: CPointer<CPointerVar<godot_variant>>?): CValue<godot_variant> {
   val kotlinInstanceRef = checkNotNull(classData).asStableRef<Object>()
-  println("kotlinInstanceRef $kotlinInstanceRef")
   val kotlinInstance = kotlinInstanceRef.get()
-  //println("kotlinInstance $kotlinInstance")
   val methodHandleRef = checkNotNull(methodData).asStableRef<MethodHandle<Object, *>>()
-  println("methodHandleRef $methodHandleRef")
   val methodHandle = methodHandleRef.get()
-  println("methodHandle $methodHandle")
 
   check(methodHandle.paramCount == numArgs) {
     "Invalid number of arguments, $numArgs passed but ${methodHandle.paramCount} expected."
@@ -146,13 +136,11 @@ fun invokeMethod(instance: COpaquePointer?,
     tmp.toList()
   }
 
-  println("calling with args: $variantArgs")
-
   return methodHandle(kotlinInstance, variantArgs)._value
 }
 
 abstract class GodotClass<T: Object>(
   val factory: (COpaquePointer) -> T
 ) {
-  open fun ClassRegistry<T>.init() {}
+  open fun init(registry: MethodRegistry<T>) {}
 }

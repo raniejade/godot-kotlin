@@ -319,6 +319,7 @@ class APIGenerator {
 
     addFunctions(methodSpecs)
     maybeGenerateFreeForObject(className)
+    maybeGenerateLifeCycleForObject(className)
     return this
   }
 
@@ -335,6 +336,26 @@ class APIGenerator {
 
     return this
   }
+
+  private fun TypeSpec.Builder.maybeGenerateLifeCycleForObject(className: String): TypeSpec.Builder {
+    if (className == "Object") {
+      addFunction(
+        FunSpec.builder("_onInit")
+          .addModifiers(KModifier.OPEN)
+          .addCode("")
+          .build()
+      )
+
+      addFunction(
+        FunSpec.builder("_onDestroy")
+          .addModifiers(KModifier.OPEN)
+          .build()
+      )
+    }
+
+    return this
+  }
+
 
   private fun isMethodOverrideRequired(name: String): Boolean {
     if (RESERVED_METHOD_NAMES.contains(name)) {

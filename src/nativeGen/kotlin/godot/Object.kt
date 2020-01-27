@@ -274,6 +274,12 @@ open class Object(
     checkNotNull(Godot.gdnative.godot_object_destroy)(_handle)
   }
 
+  open fun _onInit() {
+  }
+
+  open fun _onDestroy() {
+  }
+
   enum class ConnectFlags(
     val value: Int
   ) {

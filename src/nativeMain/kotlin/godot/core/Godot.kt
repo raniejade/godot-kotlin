@@ -47,8 +47,8 @@ object Godot {
     nativescriptWrapper.compareAndSwap(nativescriptWrapper.value, null)
   }
 
-  fun nativescriptInit(handle: COpaquePointer, setup: NativeScriptApi.() -> Unit) {
-    setup(NativeScriptApi(handle))
+  fun nativescriptInit(handle: COpaquePointer, setup: ClassRegistry.() -> Unit) {
+    setup(ClassRegistry(handle))
   }
 
   fun print(msg: Any) {
