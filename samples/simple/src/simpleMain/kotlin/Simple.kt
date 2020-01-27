@@ -8,6 +8,8 @@ class Simple(value: COpaquePointer): Spatial(value) {
   }
 
   companion object: GodotClass<Simple>(::Simple) {
-
+    override fun init() {
+      registerMethod(Simple::_ready)
+    }
   }
 }

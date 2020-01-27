@@ -30,5 +30,7 @@ fun godot_gdnative_terminate(options: godot_gdnative_terminate_options) {
 
 @CName("godot_nativescript_init")
 fun godot_nativescript_init(handle: COpaquePointer) {
-    Godot.nativescriptInit(handle) {}
+    Godot.nativescriptInit(handle) {
+        registerClass(Simple)
+    }
 }
