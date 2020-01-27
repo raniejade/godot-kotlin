@@ -31,19 +31,19 @@ open class AStar internal constructor(
     _args.append(id)
     _args.append(position)
     _args.append(weightScale)
-    __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_point.call(this._handle, _args.toVariant(), 3)
   }
 
   fun arePointsConnected(id: Int, toId: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(toId)
-    val _ret = __method_bind.are_points_connected.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.are_points_connected.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun connectPoints(
@@ -55,30 +55,30 @@ open class AStar internal constructor(
     _args.append(id)
     _args.append(toId)
     _args.append(bidirectional)
-    __method_bind.connect_points.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.connect_points.call(this._handle, _args.toVariant(), 3)
   }
 
   fun disconnectPoints(id: Int, toId: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(toId)
-    __method_bind.disconnect_points.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.disconnect_points.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getAvailablePointId(): Int {
-    val _ret = __method_bind.get_available_point_id.call(this.toVariant())
+    val _ret = __method_bind.get_available_point_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getClosestPoint(toPosition: Vector3): Int {
     val _arg = Variant.new(toPosition)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_point.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getClosestPositionInSegment(toPosition: Vector3): Vector3 {
     val _arg = Variant.new(toPosition)
-    val _ret = __method_bind.get_closest_position_in_segment.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_position_in_segment.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
@@ -86,13 +86,13 @@ open class AStar internal constructor(
     val _args = VariantArray.new()
     _args.append(fromId)
     _args.append(toId)
-    val _ret = __method_bind.get_id_path.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_id_path.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolIntArray()
   }
 
   fun getPointConnections(id: Int): PoolIntArray {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_point_connections.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_connections.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
@@ -100,63 +100,63 @@ open class AStar internal constructor(
     val _args = VariantArray.new()
     _args.append(fromId)
     _args.append(toId)
-    val _ret = __method_bind.get_point_path.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_point_path.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolVector3Array()
   }
 
   fun getPointPosition(id: Int): Vector3 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_position.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getPointWeightScale(id: Int): Float {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_point_weight_scale.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_weight_scale.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getPoints(): VariantArray {
-    val _ret = __method_bind.get_points.call(this.toVariant())
+    val _ret = __method_bind.get_points.call(this._handle)
     return _ret.asArray()
   }
 
   fun hasPoint(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.has_point.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_point.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isPointDisabled(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.is_point_disabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_point_disabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun removePoint(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_point.call(this._handle, _arg, 1)
   }
 
   fun setPointDisabled(id: Int, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(disabled)
-    __method_bind.set_point_disabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_disabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointPosition(id: Int, position: Vector3) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(position)
-    __method_bind.set_point_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_position.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointWeightScale(id: Int, weightScale: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(weightScale)
-    __method_bind.set_point_weight_scale.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_weight_scale.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

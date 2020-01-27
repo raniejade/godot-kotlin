@@ -20,28 +20,28 @@ open class InputEventScreenTouch internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getIndex(): Int {
-    val _ret = __method_bind.get_index.call(this.toVariant())
+    val _ret = __method_bind.get_index.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.set_index.call(this.toVariant(), _arg, 1)
+    __method_bind.set_index.call(this._handle, _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this.toVariant(), _arg, 1)
+    __method_bind.set_position.call(this._handle, _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pressed.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -40,7 +40,7 @@ open class CanvasItem internal constructor(
     _args.append(char)
     _args.append(next)
     _args.append(modulate)
-    val _ret = __method_bind.draw_char.call(this.toVariant(), _args.toVariant(), 5)
+    val _ret = __method_bind.draw_char.call(this._handle, _args.toVariant(), 5)
     return _ret.asFloat()
   }
 
@@ -53,7 +53,7 @@ open class CanvasItem internal constructor(
     _args.append(position)
     _args.append(radius)
     _args.append(color)
-    __method_bind.draw_circle.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.draw_circle.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawColoredPolygon(
@@ -71,7 +71,7 @@ open class CanvasItem internal constructor(
     _args.append(texture)
     _args.append(normalMap)
     _args.append(antialiased)
-    __method_bind.draw_colored_polygon.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.draw_colored_polygon.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawLine(
@@ -87,7 +87,7 @@ open class CanvasItem internal constructor(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_line.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.draw_line.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawMesh(
@@ -103,7 +103,7 @@ open class CanvasItem internal constructor(
     _args.append(normalMap)
     _args.append(transform)
     _args.append(modulate)
-    __method_bind.draw_mesh.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.draw_mesh.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawMultiline(
@@ -117,7 +117,7 @@ open class CanvasItem internal constructor(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_multiline.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.draw_multiline.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawMultilineColors(
@@ -131,7 +131,7 @@ open class CanvasItem internal constructor(
     _args.append(colors)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_multiline_colors.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.draw_multiline_colors.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawMultimesh(
@@ -143,7 +143,7 @@ open class CanvasItem internal constructor(
     _args.append(multimesh)
     _args.append(texture)
     _args.append(normalMap)
-    __method_bind.draw_multimesh.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.draw_multimesh.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawPolygon(
@@ -161,7 +161,7 @@ open class CanvasItem internal constructor(
     _args.append(texture)
     _args.append(normalMap)
     _args.append(antialiased)
-    __method_bind.draw_polygon.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.draw_polygon.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawPolyline(
@@ -175,7 +175,7 @@ open class CanvasItem internal constructor(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_polyline.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.draw_polyline.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawPolylineColors(
@@ -189,7 +189,7 @@ open class CanvasItem internal constructor(
     _args.append(colors)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_polyline_colors.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.draw_polyline_colors.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawPrimitive(
@@ -207,7 +207,7 @@ open class CanvasItem internal constructor(
     _args.append(texture)
     _args.append(width)
     _args.append(normalMap)
-    __method_bind.draw_primitive.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.draw_primitive.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawRect(
@@ -219,7 +219,7 @@ open class CanvasItem internal constructor(
     _args.append(rect)
     _args.append(color)
     _args.append(filled)
-    __method_bind.draw_rect.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.draw_rect.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawSetTransform(
@@ -231,12 +231,12 @@ open class CanvasItem internal constructor(
     _args.append(position)
     _args.append(rotation)
     _args.append(scale)
-    __method_bind.draw_set_transform.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.draw_set_transform.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
     val _arg = Variant.new(xform)
-    __method_bind.draw_set_transform_matrix.call(this.toVariant(), _arg, 1)
+    __method_bind.draw_set_transform_matrix.call(this._handle, _arg, 1)
   }
 
   fun drawString(
@@ -252,14 +252,14 @@ open class CanvasItem internal constructor(
     _args.append(text)
     _args.append(modulate)
     _args.append(clipW)
-    __method_bind.draw_string.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.draw_string.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawStyleBox(styleBox: StyleBox, rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(styleBox)
     _args.append(rect)
-    __method_bind.draw_style_box.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.draw_style_box.call(this._handle, _args.toVariant(), 2)
   }
 
   fun drawTexture(
@@ -273,7 +273,7 @@ open class CanvasItem internal constructor(
     _args.append(position)
     _args.append(modulate)
     _args.append(normalMap)
-    __method_bind.draw_texture.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.draw_texture.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawTextureRect(
@@ -291,7 +291,7 @@ open class CanvasItem internal constructor(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    __method_bind.draw_texture_rect.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.draw_texture_rect.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawTextureRectRegion(
@@ -311,195 +311,195 @@ open class CanvasItem internal constructor(
     _args.append(transpose)
     _args.append(normalMap)
     _args.append(clipUv)
-    __method_bind.draw_texture_rect_region.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.draw_texture_rect_region.call(this._handle, _args.toVariant(), 7)
   }
 
   fun forceUpdateTransform() {
-    __method_bind.force_update_transform.call(this.toVariant())
+    __method_bind.force_update_transform.call(this._handle)
   }
 
   fun getCanvas(): RID {
-    val _ret = __method_bind.get_canvas.call(this.toVariant())
+    val _ret = __method_bind.get_canvas.call(this._handle)
     return _ret.asRID()
   }
 
   fun getCanvasItem(): RID {
-    val _ret = __method_bind.get_canvas_item.call(this.toVariant())
+    val _ret = __method_bind.get_canvas_item.call(this._handle)
     return _ret.asRID()
   }
 
   fun getCanvasTransform(): Transform2D {
-    val _ret = __method_bind.get_canvas_transform.call(this.toVariant())
+    val _ret = __method_bind.get_canvas_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getGlobalMousePosition(): Vector2 {
-    val _ret = __method_bind.get_global_mouse_position.call(this.toVariant())
+    val _ret = __method_bind.get_global_mouse_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getGlobalTransform(): Transform2D {
-    val _ret = __method_bind.get_global_transform.call(this.toVariant())
+    val _ret = __method_bind.get_global_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getGlobalTransformWithCanvas(): Transform2D {
-    val _ret = __method_bind.get_global_transform_with_canvas.call(this.toVariant())
+    val _ret = __method_bind.get_global_transform_with_canvas.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getLightMask(): Int {
-    val _ret = __method_bind.get_light_mask.call(this.toVariant())
+    val _ret = __method_bind.get_light_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLocalMousePosition(): Vector2 {
-    val _ret = __method_bind.get_local_mouse_position.call(this.toVariant())
+    val _ret = __method_bind.get_local_mouse_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this.toVariant())
+    val _ret = __method_bind.get_material.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.get_modulate.call(this.toVariant())
+    val _ret = __method_bind.get_modulate.call(this._handle)
     return _ret.asColor()
   }
 
   fun getSelfModulate(): Color {
-    val _ret = __method_bind.get_self_modulate.call(this.toVariant())
+    val _ret = __method_bind.get_self_modulate.call(this._handle)
     return _ret.asColor()
   }
 
   fun getTransform(): Transform2D {
-    val _ret = __method_bind.get_transform.call(this.toVariant())
+    val _ret = __method_bind.get_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getUseParentMaterial(): Boolean {
-    val _ret = __method_bind.get_use_parent_material.call(this.toVariant())
+    val _ret = __method_bind.get_use_parent_material.call(this._handle)
     return _ret.asBool()
   }
 
   fun getViewportRect(): Rect2 {
-    val _ret = __method_bind.get_viewport_rect.call(this.toVariant())
+    val _ret = __method_bind.get_viewport_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getViewportTransform(): Transform2D {
-    val _ret = __method_bind.get_viewport_transform.call(this.toVariant())
+    val _ret = __method_bind.get_viewport_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getWorld2d(): World2D {
-    val _ret = __method_bind.get_world_2d.call(this.toVariant())
+    val _ret = __method_bind.get_world_2d.call(this._handle)
     return _ret.asObject(::World2D)!!
   }
 
   fun hide() {
-    __method_bind.hide.call(this.toVariant())
+    __method_bind.hide.call(this._handle)
   }
 
   fun isDrawBehindParentEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_behind_parent_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_draw_behind_parent_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isLocalTransformNotificationEnabled(): Boolean {
-    val _ret = __method_bind.is_local_transform_notification_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_local_transform_notification_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isSetAsToplevel(): Boolean {
-    val _ret = __method_bind.is_set_as_toplevel.call(this.toVariant())
+    val _ret = __method_bind.is_set_as_toplevel.call(this._handle)
     return _ret.asBool()
   }
 
   fun isTransformNotificationEnabled(): Boolean {
-    val _ret = __method_bind.is_transform_notification_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_transform_notification_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isVisible(): Boolean {
-    val _ret = __method_bind.is_visible.call(this.toVariant())
+    val _ret = __method_bind.is_visible.call(this._handle)
     return _ret.asBool()
   }
 
   fun isVisibleInTree(): Boolean {
-    val _ret = __method_bind.is_visible_in_tree.call(this.toVariant())
+    val _ret = __method_bind.is_visible_in_tree.call(this._handle)
     return _ret.asBool()
   }
 
   fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.make_canvas_position_local.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.make_canvas_position_local.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
     val _arg = Variant.new(event)
-    val _ret = __method_bind.make_input_local.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.make_input_local.call(this._handle, _arg, 1)
     return _ret.asObject(::InputEvent)!!
   }
 
   fun setAsToplevel(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_as_toplevel.call(this.toVariant(), _arg, 1)
+    __method_bind.set_as_toplevel.call(this._handle, _arg, 1)
   }
 
   fun setDrawBehindParent(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_draw_behind_parent.call(this.toVariant(), _arg, 1)
+    __method_bind.set_draw_behind_parent.call(this._handle, _arg, 1)
   }
 
   fun setLightMask(lightMask: Int) {
     val _arg = Variant.new(lightMask)
-    __method_bind.set_light_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_light_mask.call(this._handle, _arg, 1)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material.call(this._handle, _arg, 1)
   }
 
   fun setModulate(modulate: Color) {
     val _arg = Variant.new(modulate)
-    __method_bind.set_modulate.call(this.toVariant(), _arg, 1)
+    __method_bind.set_modulate.call(this._handle, _arg, 1)
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_notify_local_transform.call(this.toVariant(), _arg, 1)
+    __method_bind.set_notify_local_transform.call(this._handle, _arg, 1)
   }
 
   fun setNotifyTransform(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_notify_transform.call(this.toVariant(), _arg, 1)
+    __method_bind.set_notify_transform.call(this._handle, _arg, 1)
   }
 
   fun setSelfModulate(selfModulate: Color) {
     val _arg = Variant.new(selfModulate)
-    __method_bind.set_self_modulate.call(this.toVariant(), _arg, 1)
+    __method_bind.set_self_modulate.call(this._handle, _arg, 1)
   }
 
   fun setUseParentMaterial(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_parent_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_parent_material.call(this._handle, _arg, 1)
   }
 
   fun setVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.set_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_visible.call(this._handle, _arg, 1)
   }
 
   fun show() {
-    __method_bind.show.call(this.toVariant())
+    __method_bind.show.call(this._handle)
   }
 
   fun update() {
-    __method_bind.update.call(this.toVariant())
+    __method_bind.update.call(this._handle)
   }
 
   enum class BlendMode(

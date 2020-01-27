@@ -18,73 +18,73 @@ open class MobileVRInterface internal constructor(
   _handle: COpaquePointer
 ) : ARVRInterface(_handle) {
   fun getDisplayToLens(): Float {
-    val _ret = __method_bind.get_display_to_lens.call(this.toVariant())
+    val _ret = __method_bind.get_display_to_lens.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDisplayWidth(): Float {
-    val _ret = __method_bind.get_display_width.call(this.toVariant())
+    val _ret = __method_bind.get_display_width.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getEyeHeight(): Float {
-    val _ret = __method_bind.get_eye_height.call(this.toVariant())
+    val _ret = __method_bind.get_eye_height.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getIod(): Float {
-    val _ret = __method_bind.get_iod.call(this.toVariant())
+    val _ret = __method_bind.get_iod.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getK1(): Float {
-    val _ret = __method_bind.get_k1.call(this.toVariant())
+    val _ret = __method_bind.get_k1.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getK2(): Float {
-    val _ret = __method_bind.get_k2.call(this.toVariant())
+    val _ret = __method_bind.get_k2.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOversample(): Float {
-    val _ret = __method_bind.get_oversample.call(this.toVariant())
+    val _ret = __method_bind.get_oversample.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setDisplayToLens(displayToLens: Float) {
     val _arg = Variant.new(displayToLens)
-    __method_bind.set_display_to_lens.call(this.toVariant(), _arg, 1)
+    __method_bind.set_display_to_lens.call(this._handle, _arg, 1)
   }
 
   fun setDisplayWidth(displayWidth: Float) {
     val _arg = Variant.new(displayWidth)
-    __method_bind.set_display_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_display_width.call(this._handle, _arg, 1)
   }
 
   fun setEyeHeight(eyeHeight: Float) {
     val _arg = Variant.new(eyeHeight)
-    __method_bind.set_eye_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_eye_height.call(this._handle, _arg, 1)
   }
 
   fun setIod(iod: Float) {
     val _arg = Variant.new(iod)
-    __method_bind.set_iod.call(this.toVariant(), _arg, 1)
+    __method_bind.set_iod.call(this._handle, _arg, 1)
   }
 
   fun setK1(k: Float) {
     val _arg = Variant.new(k)
-    __method_bind.set_k1.call(this.toVariant(), _arg, 1)
+    __method_bind.set_k1.call(this._handle, _arg, 1)
   }
 
   fun setK2(k: Float) {
     val _arg = Variant.new(k)
-    __method_bind.set_k2.call(this.toVariant(), _arg, 1)
+    __method_bind.set_k2.call(this._handle, _arg, 1)
   }
 
   fun setOversample(oversample: Float) {
     val _arg = Variant.new(oversample)
-    __method_bind.set_oversample.call(this.toVariant(), _arg, 1)
+    __method_bind.set_oversample.call(this._handle, _arg, 1)
   }
 
   companion object {

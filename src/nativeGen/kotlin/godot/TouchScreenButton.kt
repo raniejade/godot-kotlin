@@ -20,98 +20,98 @@ open class TouchScreenButton internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getAction(): String {
-    val _ret = __method_bind.get_action.call(this.toVariant())
+    val _ret = __method_bind.get_action.call(this._handle)
     return _ret.asString()
   }
 
   fun getBitmask(): BitMap {
-    val _ret = __method_bind.get_bitmask.call(this.toVariant())
+    val _ret = __method_bind.get_bitmask.call(this._handle)
     return _ret.asObject(::BitMap)!!
   }
 
   fun getShape(): Shape2D {
-    val _ret = __method_bind.get_shape.call(this.toVariant())
+    val _ret = __method_bind.get_shape.call(this._handle)
     return _ret.asObject(::Shape2D)!!
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTexturePressed(): Texture {
-    val _ret = __method_bind.get_texture_pressed.call(this.toVariant())
+    val _ret = __method_bind.get_texture_pressed.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getVisibilityMode(): VisibilityMode {
-    val _ret = __method_bind.get_visibility_mode.call(this.toVariant())
+    val _ret = __method_bind.get_visibility_mode.call(this._handle)
     return TouchScreenButton.VisibilityMode.from(_ret.asInt())
   }
 
   fun isPassbyPressEnabled(): Boolean {
-    val _ret = __method_bind.is_passby_press_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_passby_press_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isPressed(): Boolean {
-    val _ret = __method_bind.is_pressed.call(this.toVariant())
+    val _ret = __method_bind.is_pressed.call(this._handle)
     return _ret.asBool()
   }
 
   fun isShapeCentered(): Boolean {
-    val _ret = __method_bind.is_shape_centered.call(this.toVariant())
+    val _ret = __method_bind.is_shape_centered.call(this._handle)
     return _ret.asBool()
   }
 
   fun isShapeVisible(): Boolean {
-    val _ret = __method_bind.is_shape_visible.call(this.toVariant())
+    val _ret = __method_bind.is_shape_visible.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAction(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.set_action.call(this.toVariant(), _arg, 1)
+    __method_bind.set_action.call(this._handle, _arg, 1)
   }
 
   fun setBitmask(bitmask: BitMap) {
     val _arg = Variant.new(bitmask)
-    __method_bind.set_bitmask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bitmask.call(this._handle, _arg, 1)
   }
 
   fun setPassbyPress(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_passby_press.call(this.toVariant(), _arg, 1)
+    __method_bind.set_passby_press.call(this._handle, _arg, 1)
   }
 
   fun setShape(shape: Shape2D) {
     val _arg = Variant.new(shape)
-    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shape.call(this._handle, _arg, 1)
   }
 
   fun setShapeCentered(bool: Boolean) {
     val _arg = Variant.new(bool)
-    __method_bind.set_shape_centered.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shape_centered.call(this._handle, _arg, 1)
   }
 
   fun setShapeVisible(bool: Boolean) {
     val _arg = Variant.new(bool)
-    __method_bind.set_shape_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shape_visible.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   fun setTexturePressed(texturePressed: Texture) {
     val _arg = Variant.new(texturePressed)
-    __method_bind.set_texture_pressed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture_pressed.call(this._handle, _arg, 1)
   }
 
   fun setVisibilityMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_visibility_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_visibility_mode.call(this._handle, _arg, 1)
   }
 
   enum class VisibilityMode(

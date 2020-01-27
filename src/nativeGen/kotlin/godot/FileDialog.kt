@@ -22,109 +22,109 @@ open class FileDialog internal constructor(
 ) : ConfirmationDialog(_handle) {
   fun addFilter(filter: String) {
     val _arg = Variant.new(filter)
-    __method_bind.add_filter.call(this.toVariant(), _arg, 1)
+    __method_bind.add_filter.call(this._handle, _arg, 1)
   }
 
   fun clearFilters() {
-    __method_bind.clear_filters.call(this.toVariant())
+    __method_bind.clear_filters.call(this._handle)
   }
 
   fun deselectItems() {
-    __method_bind.deselect_items.call(this.toVariant())
+    __method_bind.deselect_items.call(this._handle)
   }
 
   fun getAccess(): Access {
-    val _ret = __method_bind.get_access.call(this.toVariant())
+    val _ret = __method_bind.get_access.call(this._handle)
     return FileDialog.Access.from(_ret.asInt())
   }
 
   fun getCurrentDir(): String {
-    val _ret = __method_bind.get_current_dir.call(this.toVariant())
+    val _ret = __method_bind.get_current_dir.call(this._handle)
     return _ret.asString()
   }
 
   fun getCurrentFile(): String {
-    val _ret = __method_bind.get_current_file.call(this.toVariant())
+    val _ret = __method_bind.get_current_file.call(this._handle)
     return _ret.asString()
   }
 
   fun getCurrentPath(): String {
-    val _ret = __method_bind.get_current_path.call(this.toVariant())
+    val _ret = __method_bind.get_current_path.call(this._handle)
     return _ret.asString()
   }
 
   fun getFilters(): PoolStringArray {
-    val _ret = __method_bind.get_filters.call(this.toVariant())
+    val _ret = __method_bind.get_filters.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getLineEdit(): LineEdit {
-    val _ret = __method_bind.get_line_edit.call(this.toVariant())
+    val _ret = __method_bind.get_line_edit.call(this._handle)
     return _ret.asObject(::LineEdit)!!
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.get_mode.call(this.toVariant())
+    val _ret = __method_bind.get_mode.call(this._handle)
     return FileDialog.Mode.from(_ret.asInt())
   }
 
   fun getVbox(): VBoxContainer {
-    val _ret = __method_bind.get_vbox.call(this.toVariant())
+    val _ret = __method_bind.get_vbox.call(this._handle)
     return _ret.asObject(::VBoxContainer)!!
   }
 
   fun invalidate() {
-    __method_bind.invalidate.call(this.toVariant())
+    __method_bind.invalidate.call(this._handle)
   }
 
   fun isModeOverridingTitle(): Boolean {
-    val _ret = __method_bind.is_mode_overriding_title.call(this.toVariant())
+    val _ret = __method_bind.is_mode_overriding_title.call(this._handle)
     return _ret.asBool()
   }
 
   fun isShowingHiddenFiles(): Boolean {
-    val _ret = __method_bind.is_showing_hidden_files.call(this.toVariant())
+    val _ret = __method_bind.is_showing_hidden_files.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAccess(access: Int) {
     val _arg = Variant.new(access)
-    __method_bind.set_access.call(this.toVariant(), _arg, 1)
+    __method_bind.set_access.call(this._handle, _arg, 1)
   }
 
   fun setCurrentDir(dir: String) {
     val _arg = Variant.new(dir)
-    __method_bind.set_current_dir.call(this.toVariant(), _arg, 1)
+    __method_bind.set_current_dir.call(this._handle, _arg, 1)
   }
 
   fun setCurrentFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.set_current_file.call(this.toVariant(), _arg, 1)
+    __method_bind.set_current_file.call(this._handle, _arg, 1)
   }
 
   fun setCurrentPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_current_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_current_path.call(this._handle, _arg, 1)
   }
 
   fun setFilters(filters: PoolStringArray) {
     val _arg = Variant.new(filters)
-    __method_bind.set_filters.call(this.toVariant(), _arg, 1)
+    __method_bind.set_filters.call(this._handle, _arg, 1)
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mode.call(this._handle, _arg, 1)
   }
 
   fun setModeOverridesTitle(override: Boolean) {
     val _arg = Variant.new(override)
-    __method_bind.set_mode_overrides_title.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mode_overrides_title.call(this._handle, _arg, 1)
   }
 
   fun setShowHiddenFiles(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.set_show_hidden_files.call(this.toVariant(), _arg, 1)
+    __method_bind.set_show_hidden_files.call(this._handle, _arg, 1)
   }
 
   enum class Mode(

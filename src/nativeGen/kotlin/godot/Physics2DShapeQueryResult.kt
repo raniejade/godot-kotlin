@@ -19,31 +19,31 @@ open class Physics2DShapeQueryResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResultCount(): Int {
-    val _ret = __method_bind.get_result_count.call(this.toVariant())
+    val _ret = __method_bind.get_result_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getResultObject(idx: Int): Object {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_result_object.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_result_object.call(this._handle, _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
   fun getResultObjectId(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_result_object_id.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_result_object_id.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getResultObjectShape(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_result_object_shape.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_result_object_shape.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getResultRid(idx: Int): RID {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_result_rid.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_result_rid.call(this._handle, _arg, 1)
     return _ret.asRID()
   }
 

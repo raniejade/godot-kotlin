@@ -29,7 +29,7 @@ open class ScriptEditor internal constructor(
     _args.append(point)
     _args.append(data)
     _args.append(from)
-    val _ret = __method_bind.can_drop_data_fw.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.can_drop_data_fw.call(this._handle, _args.toVariant(), 3)
     return _ret.asBool()
   }
 
@@ -42,11 +42,11 @@ open class ScriptEditor internal constructor(
     _args.append(point)
     _args.append(data)
     _args.append(from)
-    __method_bind.drop_data_fw.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.drop_data_fw.call(this._handle, _args.toVariant(), 3)
   }
 
   fun getCurrentScript(): Script {
-    val _ret = __method_bind.get_current_script.call(this.toVariant())
+    val _ret = __method_bind.get_current_script.call(this._handle)
     return _ret.asObject(::Script)!!
   }
 
@@ -54,25 +54,25 @@ open class ScriptEditor internal constructor(
     val _args = VariantArray.new()
     _args.append(point)
     _args.append(from)
-    val _ret = __method_bind.get_drag_data_fw.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_drag_data_fw.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
   fun getOpenScripts(): VariantArray {
-    val _ret = __method_bind.get_open_scripts.call(this.toVariant())
+    val _ret = __method_bind.get_open_scripts.call(this._handle)
     return _ret.asArray()
   }
 
   fun gotoLine(lineNumber: Int) {
     val _arg = Variant.new(lineNumber)
-    __method_bind.goto_line.call(this.toVariant(), _arg, 1)
+    __method_bind.goto_line.call(this._handle, _arg, 1)
   }
 
   fun openScriptCreateDialog(baseName: String, basePath: String) {
     val _args = VariantArray.new()
     _args.append(baseName)
     _args.append(basePath)
-    __method_bind.open_script_create_dialog.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.open_script_create_dialog.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

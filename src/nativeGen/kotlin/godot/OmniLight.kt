@@ -18,23 +18,23 @@ open class OmniLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
   fun getShadowDetail(): ShadowDetail {
-    val _ret = __method_bind.get_shadow_detail.call(this.toVariant())
+    val _ret = __method_bind.get_shadow_detail.call(this._handle)
     return OmniLight.ShadowDetail.from(_ret.asInt())
   }
 
   fun getShadowMode(): ShadowMode {
-    val _ret = __method_bind.get_shadow_mode.call(this.toVariant())
+    val _ret = __method_bind.get_shadow_mode.call(this._handle)
     return OmniLight.ShadowMode.from(_ret.asInt())
   }
 
   fun setShadowDetail(detail: Int) {
     val _arg = Variant.new(detail)
-    __method_bind.set_shadow_detail.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shadow_detail.call(this._handle, _arg, 1)
   }
 
   fun setShadowMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_shadow_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shadow_mode.call(this._handle, _arg, 1)
   }
 
   enum class ShadowMode(

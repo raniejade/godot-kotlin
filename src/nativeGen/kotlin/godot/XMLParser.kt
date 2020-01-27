@@ -22,95 +22,95 @@ open class XMLParser internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAttributeCount(): Int {
-    val _ret = __method_bind.get_attribute_count.call(this.toVariant())
+    val _ret = __method_bind.get_attribute_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAttributeName(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_attribute_name.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_attribute_name.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getAttributeValue(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_attribute_value.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_attribute_value.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getCurrentLine(): Int {
-    val _ret = __method_bind.get_current_line.call(this.toVariant())
+    val _ret = __method_bind.get_current_line.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNamedAttributeValue(name: String): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_named_attribute_value.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_named_attribute_value.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_named_attribute_value_safe.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_named_attribute_value_safe.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getNodeData(): String {
-    val _ret = __method_bind.get_node_data.call(this.toVariant())
+    val _ret = __method_bind.get_node_data.call(this._handle)
     return _ret.asString()
   }
 
   fun getNodeName(): String {
-    val _ret = __method_bind.get_node_name.call(this.toVariant())
+    val _ret = __method_bind.get_node_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getNodeOffset(): Int {
-    val _ret = __method_bind.get_node_offset.call(this.toVariant())
+    val _ret = __method_bind.get_node_offset.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNodeType(): NodeType {
-    val _ret = __method_bind.get_node_type.call(this.toVariant())
+    val _ret = __method_bind.get_node_type.call(this._handle)
     return XMLParser.NodeType.from(_ret.asInt())
   }
 
   fun hasAttribute(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_attribute.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_attribute.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isEmpty(): Boolean {
-    val _ret = __method_bind.is_empty.call(this.toVariant())
+    val _ret = __method_bind.is_empty.call(this._handle)
     return _ret.asBool()
   }
 
   fun open(file: String): GDError {
     val _arg = Variant.new(file)
-    val _ret = __method_bind.open.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.open.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun openBuffer(buffer: PoolByteArray): GDError {
     val _arg = Variant.new(buffer)
-    val _ret = __method_bind.open_buffer.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.open_buffer.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun read(): GDError {
-    val _ret = __method_bind.read.call(this.toVariant())
+    val _ret = __method_bind.read.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun seek(position: Int): GDError {
     val _arg = Variant.new(position)
-    val _ret = __method_bind.seek.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.seek.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun skipSection() {
-    __method_bind.skip_section.call(this.toVariant())
+    __method_bind.skip_section.call(this._handle)
   }
 
   enum class NodeType(

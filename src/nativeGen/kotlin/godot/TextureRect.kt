@@ -19,53 +19,53 @@ open class TextureRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getStretchMode(): StretchMode {
-    val _ret = __method_bind.get_stretch_mode.call(this.toVariant())
+    val _ret = __method_bind.get_stretch_mode.call(this._handle)
     return TextureRect.StretchMode.from(_ret.asInt())
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun hasExpand(): Boolean {
-    val _ret = __method_bind.has_expand.call(this.toVariant())
+    val _ret = __method_bind.has_expand.call(this._handle)
     return _ret.asBool()
   }
 
   fun isFlippedH(): Boolean {
-    val _ret = __method_bind.is_flipped_h.call(this.toVariant())
+    val _ret = __method_bind.is_flipped_h.call(this._handle)
     return _ret.asBool()
   }
 
   fun isFlippedV(): Boolean {
-    val _ret = __method_bind.is_flipped_v.call(this.toVariant())
+    val _ret = __method_bind.is_flipped_v.call(this._handle)
     return _ret.asBool()
   }
 
   fun setExpand(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_expand.call(this.toVariant(), _arg, 1)
+    __method_bind.set_expand.call(this._handle, _arg, 1)
   }
 
   fun setFlipH(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_flip_h.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flip_h.call(this._handle, _arg, 1)
   }
 
   fun setFlipV(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_flip_v.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flip_v.call(this._handle, _arg, 1)
   }
 
   fun setStretchMode(stretchMode: Int) {
     val _arg = Variant.new(stretchMode)
-    __method_bind.set_stretch_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stretch_mode.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   enum class StretchMode(

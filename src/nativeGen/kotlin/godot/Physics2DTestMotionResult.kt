@@ -20,47 +20,47 @@ open class Physics2DTestMotionResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollider(): Object {
-    val _ret = __method_bind.get_collider.call(this.toVariant())
+    val _ret = __method_bind.get_collider.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getColliderId(): Int {
-    val _ret = __method_bind.get_collider_id.call(this.toVariant())
+    val _ret = __method_bind.get_collider_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getColliderRid(): RID {
-    val _ret = __method_bind.get_collider_rid.call(this.toVariant())
+    val _ret = __method_bind.get_collider_rid.call(this._handle)
     return _ret.asRID()
   }
 
   fun getColliderShape(): Int {
-    val _ret = __method_bind.get_collider_shape.call(this.toVariant())
+    val _ret = __method_bind.get_collider_shape.call(this._handle)
     return _ret.asInt()
   }
 
   fun getColliderVelocity(): Vector2 {
-    val _ret = __method_bind.get_collider_velocity.call(this.toVariant())
+    val _ret = __method_bind.get_collider_velocity.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCollisionNormal(): Vector2 {
-    val _ret = __method_bind.get_collision_normal.call(this.toVariant())
+    val _ret = __method_bind.get_collision_normal.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCollisionPoint(): Vector2 {
-    val _ret = __method_bind.get_collision_point.call(this.toVariant())
+    val _ret = __method_bind.get_collision_point.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMotion(): Vector2 {
-    val _ret = __method_bind.get_motion.call(this.toVariant())
+    val _ret = __method_bind.get_motion.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMotionRemainder(): Vector2 {
-    val _ret = __method_bind.get_motion_remainder.call(this.toVariant())
+    val _ret = __method_bind.get_motion_remainder.call(this._handle)
     return _ret.asVector2()
   }
 

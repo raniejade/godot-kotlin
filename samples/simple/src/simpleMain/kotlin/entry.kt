@@ -10,20 +10,15 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     Godot.init(options)
     Godot.print("Hello Godot from Kotlin!")
     val vec = Vector2.new()
+    vec.x = 123f
+    vec.y = 51f
     val variant = Variant.new(vec)
     val array = VariantArray.new()
     array.append(variant)
-    array[0] = array[0].run {
-        val v = asVector2()
-        v.x = 12f
-        v.y = 162f
-        v
-    }
     val spatial = Spatial.new()
     val ps = PhysicsServer.Instance
     println(array[0])
-    val rotation = Vector3.new(x = 16f)
-    spatial.setRotationDegrees(rotation)
+    spatial.setRotationDegrees(Vector3.new(x = 12f))
     println(spatial.getRotationDegrees())
 }
 

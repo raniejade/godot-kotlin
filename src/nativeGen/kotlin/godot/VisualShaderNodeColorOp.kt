@@ -18,13 +18,13 @@ open class VisualShaderNodeColorOp internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getOperator(): Operator {
-    val _ret = __method_bind.get_operator.call(this.toVariant())
+    val _ret = __method_bind.get_operator.call(this._handle)
     return VisualShaderNodeColorOp.Operator.from(_ret.asInt())
   }
 
   fun setOperator(op: Int) {
     val _arg = Variant.new(op)
-    __method_bind.set_operator.call(this.toVariant(), _arg, 1)
+    __method_bind.set_operator.call(this._handle, _arg, 1)
   }
 
   enum class Operator(

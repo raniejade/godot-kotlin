@@ -23,58 +23,56 @@ open class CollisionObject2D internal constructor(
 ) : Node2D(_handle) {
   fun createShapeOwner(owner: Object): Int {
     val _arg = Variant.new(owner)
-    val _ret = __method_bind.create_shape_owner.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.create_shape_owner.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getRid(): RID {
-    val _ret = __method_bind.get_rid.call(this.toVariant())
+    val _ret = __method_bind.get_rid.call(this._handle)
     return _ret.asRID()
   }
 
   fun getShapeOwnerOneWayCollisionMargin(ownerId: Int): Float {
     val _arg = Variant.new(ownerId)
-    val _ret = __method_bind.get_shape_owner_one_way_collision_margin.call(this.toVariant(), _arg,
-        1)
+    val _ret = __method_bind.get_shape_owner_one_way_collision_margin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getShapeOwners(): VariantArray {
-    val _ret = __method_bind.get_shape_owners.call(this.toVariant())
+    val _ret = __method_bind.get_shape_owners.call(this._handle)
     return _ret.asArray()
   }
 
   fun isPickable(): Boolean {
-    val _ret = __method_bind.is_pickable.call(this.toVariant())
+    val _ret = __method_bind.is_pickable.call(this._handle)
     return _ret.asBool()
   }
 
   fun isShapeOwnerDisabled(ownerId: Int): Boolean {
     val _arg = Variant.new(ownerId)
-    val _ret = __method_bind.is_shape_owner_disabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_shape_owner_disabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isShapeOwnerOneWayCollisionEnabled(ownerId: Int): Boolean {
     val _arg = Variant.new(ownerId)
-    val _ret = __method_bind.is_shape_owner_one_way_collision_enabled.call(this.toVariant(), _arg,
-        1)
+    val _ret = __method_bind.is_shape_owner_one_way_collision_enabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun removeShapeOwner(ownerId: Int) {
     val _arg = Variant.new(ownerId)
-    __method_bind.remove_shape_owner.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_shape_owner.call(this._handle, _arg, 1)
   }
 
   fun setPickable(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_pickable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pickable.call(this._handle, _arg, 1)
   }
 
   fun shapeFindOwner(shapeIndex: Int): Int {
     val _arg = Variant.new(shapeIndex)
-    val _ret = __method_bind.shape_find_owner.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shape_find_owner.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -82,17 +80,17 @@ open class CollisionObject2D internal constructor(
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(shape)
-    __method_bind.shape_owner_add_shape.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.shape_owner_add_shape.call(this._handle, _args.toVariant(), 2)
   }
 
   fun shapeOwnerClearShapes(ownerId: Int) {
     val _arg = Variant.new(ownerId)
-    __method_bind.shape_owner_clear_shapes.call(this.toVariant(), _arg, 1)
+    __method_bind.shape_owner_clear_shapes.call(this._handle, _arg, 1)
   }
 
   fun shapeOwnerGetOwner(ownerId: Int): Object {
     val _arg = Variant.new(ownerId)
-    val _ret = __method_bind.shape_owner_get_owner.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shape_owner_get_owner.call(this._handle, _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -100,13 +98,13 @@ open class CollisionObject2D internal constructor(
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(shapeId)
-    val _ret = __method_bind.shape_owner_get_shape.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.shape_owner_get_shape.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Shape2D)!!
   }
 
   fun shapeOwnerGetShapeCount(ownerId: Int): Int {
     val _arg = Variant.new(ownerId)
-    val _ret = __method_bind.shape_owner_get_shape_count.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shape_owner_get_shape_count.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -114,14 +112,13 @@ open class CollisionObject2D internal constructor(
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(shapeId)
-    val _ret = __method_bind.shape_owner_get_shape_index.call(this.toVariant(), _args.toVariant(),
-        2)
+    val _ret = __method_bind.shape_owner_get_shape_index.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun shapeOwnerGetTransform(ownerId: Int): Transform2D {
     val _arg = Variant.new(ownerId)
-    val _ret = __method_bind.shape_owner_get_transform.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shape_owner_get_transform.call(this._handle, _arg, 1)
     return _ret.asTransform2D()
   }
 
@@ -129,36 +126,35 @@ open class CollisionObject2D internal constructor(
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(shapeId)
-    __method_bind.shape_owner_remove_shape.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.shape_owner_remove_shape.call(this._handle, _args.toVariant(), 2)
   }
 
   fun shapeOwnerSetDisabled(ownerId: Int, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(disabled)
-    __method_bind.shape_owner_set_disabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.shape_owner_set_disabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun shapeOwnerSetOneWayCollision(ownerId: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(enable)
-    __method_bind.shape_owner_set_one_way_collision.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.shape_owner_set_one_way_collision.call(this._handle, _args.toVariant(), 2)
   }
 
   fun shapeOwnerSetOneWayCollisionMargin(ownerId: Int, margin: Float) {
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(margin)
-    __method_bind.shape_owner_set_one_way_collision_margin.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.shape_owner_set_one_way_collision_margin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun shapeOwnerSetTransform(ownerId: Int, transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(ownerId)
     _args.append(transform)
-    __method_bind.shape_owner_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.shape_owner_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

@@ -20,28 +20,28 @@ open class IP internal constructor(
 ) : Object(_handle) {
   fun clearCache(hostname: String) {
     val _arg = Variant.new(hostname)
-    __method_bind.clear_cache.call(this.toVariant(), _arg, 1)
+    __method_bind.clear_cache.call(this._handle, _arg, 1)
   }
 
   fun eraseResolveItem(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.erase_resolve_item.call(this.toVariant(), _arg, 1)
+    __method_bind.erase_resolve_item.call(this._handle, _arg, 1)
   }
 
   fun getLocalAddresses(): VariantArray {
-    val _ret = __method_bind.get_local_addresses.call(this.toVariant())
+    val _ret = __method_bind.get_local_addresses.call(this._handle)
     return _ret.asArray()
   }
 
   fun getResolveItemAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_resolve_item_address.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_resolve_item_address.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getResolveItemStatus(id: Int): ResolverStatus {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_resolve_item_status.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_resolve_item_status.call(this._handle, _arg, 1)
     return IP.ResolverStatus.from(_ret.asInt())
   }
 
@@ -49,7 +49,7 @@ open class IP internal constructor(
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(ipType)
-    val _ret = __method_bind.resolve_hostname.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.resolve_hostname.call(this._handle, _args.toVariant(), 2)
     return _ret.asString()
   }
 
@@ -57,8 +57,7 @@ open class IP internal constructor(
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(ipType)
-    val _ret = __method_bind.resolve_hostname_queue_item.call(this.toVariant(), _args.toVariant(),
-        2)
+    val _ret = __method_bind.resolve_hostname_queue_item.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 

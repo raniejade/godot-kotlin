@@ -18,23 +18,23 @@ open class CylinderShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRadius(): Float {
-    val _ret = __method_bind.get_radius.call(this.toVariant())
+    val _ret = __method_bind.get_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_height.call(this._handle, _arg, 1)
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radius.call(this._handle, _arg, 1)
   }
 
   companion object {

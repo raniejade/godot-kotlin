@@ -18,13 +18,13 @@ open class Shape internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getMargin(): Float {
-    val _ret = __method_bind.get_margin.call(this.toVariant())
+    val _ret = __method_bind.get_margin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_margin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_margin.call(this._handle, _arg, 1)
   }
 
   companion object {

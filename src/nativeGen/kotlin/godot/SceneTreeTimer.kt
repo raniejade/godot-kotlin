@@ -18,13 +18,13 @@ open class SceneTreeTimer internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getTimeLeft(): Float {
-    val _ret = __method_bind.get_time_left.call(this.toVariant())
+    val _ret = __method_bind.get_time_left.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setTimeLeft(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.set_time_left.call(this.toVariant(), _arg, 1)
+    __method_bind.set_time_left.call(this._handle, _arg, 1)
   }
 
   companion object {

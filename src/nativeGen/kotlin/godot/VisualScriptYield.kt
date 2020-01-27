@@ -19,23 +19,23 @@ open class VisualScriptYield internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getWaitTime(): Float {
-    val _ret = __method_bind.get_wait_time.call(this.toVariant())
+    val _ret = __method_bind.get_wait_time.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getYieldMode(): YieldMode {
-    val _ret = __method_bind.get_yield_mode.call(this.toVariant())
+    val _ret = __method_bind.get_yield_mode.call(this._handle)
     return VisualScriptYield.YieldMode.from(_ret.asInt())
   }
 
   fun setWaitTime(sec: Float) {
     val _arg = Variant.new(sec)
-    __method_bind.set_wait_time.call(this.toVariant(), _arg, 1)
+    __method_bind.set_wait_time.call(this._handle, _arg, 1)
   }
 
   fun setYieldMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_yield_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_yield_mode.call(this._handle, _arg, 1)
   }
 
   enum class YieldMode(

@@ -24,13 +24,13 @@ open class PCKPacker internal constructor(
     val _args = VariantArray.new()
     _args.append(pckPath)
     _args.append(sourcePath)
-    val _ret = __method_bind.add_file.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.add_file.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun flush(verbose: Boolean): GDError {
     val _arg = Variant.new(verbose)
-    val _ret = __method_bind.flush.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.flush.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -38,7 +38,7 @@ open class PCKPacker internal constructor(
     val _args = VariantArray.new()
     _args.append(pckName)
     _args.append(alignment)
-    val _ret = __method_bind.pck_start.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.pck_start.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 

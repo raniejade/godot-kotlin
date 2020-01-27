@@ -20,7 +20,7 @@ open class VisibilityEnabler internal constructor(
 ) : VisibilityNotifier(_handle) {
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
-    val _ret = __method_bind.is_enabler_enabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_enabler_enabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -28,7 +28,7 @@ open class VisibilityEnabler internal constructor(
     val _args = VariantArray.new()
     _args.append(enabler)
     _args.append(enabled)
-    __method_bind.set_enabler.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_enabler.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Enabler(

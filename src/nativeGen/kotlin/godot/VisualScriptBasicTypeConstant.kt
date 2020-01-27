@@ -19,23 +19,23 @@ open class VisualScriptBasicTypeConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBasicType(): Variant.Type {
-    val _ret = __method_bind.get_basic_type.call(this.toVariant())
+    val _ret = __method_bind.get_basic_type.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun getBasicTypeConstant(): String {
-    val _ret = __method_bind.get_basic_type_constant.call(this.toVariant())
+    val _ret = __method_bind.get_basic_type_constant.call(this._handle)
     return _ret.asString()
   }
 
   fun setBasicType(name: Int) {
     val _arg = Variant.new(name)
-    __method_bind.set_basic_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_basic_type.call(this._handle, _arg, 1)
   }
 
   fun setBasicTypeConstant(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_basic_type_constant.call(this.toVariant(), _arg, 1)
+    __method_bind.set_basic_type_constant.call(this._handle, _arg, 1)
   }
 
   companion object {

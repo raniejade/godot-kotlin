@@ -20,7 +20,7 @@ open class EditorProperty internal constructor(
 ) : Container(_handle) {
   fun addFocusable(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.add_focusable.call(this.toVariant(), _arg, 1)
+    __method_bind.add_focusable.call(this._handle, _arg, 1)
   }
 
   fun emitChanged(
@@ -34,87 +34,87 @@ open class EditorProperty internal constructor(
     _args.append(value)
     _args.append(field)
     _args.append(changing)
-    __method_bind.emit_changed.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.emit_changed.call(this._handle, _args.toVariant(), 4)
   }
 
   fun getEditedObject(): Object {
-    val _ret = __method_bind.get_edited_object.call(this.toVariant())
+    val _ret = __method_bind.get_edited_object.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getEditedProperty(): String {
-    val _ret = __method_bind.get_edited_property.call(this.toVariant())
+    val _ret = __method_bind.get_edited_property.call(this._handle)
     return _ret.asString()
   }
 
   fun getLabel(): String {
-    val _ret = __method_bind.get_label.call(this.toVariant())
+    val _ret = __method_bind.get_label.call(this._handle)
     return _ret.asString()
   }
 
   fun getTooltipText(): String {
-    val _ret = __method_bind.get_tooltip_text.call(this.toVariant())
+    val _ret = __method_bind.get_tooltip_text.call(this._handle)
     return _ret.asString()
   }
 
   fun isCheckable(): Boolean {
-    val _ret = __method_bind.is_checkable.call(this.toVariant())
+    val _ret = __method_bind.is_checkable.call(this._handle)
     return _ret.asBool()
   }
 
   fun isChecked(): Boolean {
-    val _ret = __method_bind.is_checked.call(this.toVariant())
+    val _ret = __method_bind.is_checked.call(this._handle)
     return _ret.asBool()
   }
 
   fun isDrawRed(): Boolean {
-    val _ret = __method_bind.is_draw_red.call(this.toVariant())
+    val _ret = __method_bind.is_draw_red.call(this._handle)
     return _ret.asBool()
   }
 
   fun isKeying(): Boolean {
-    val _ret = __method_bind.is_keying.call(this.toVariant())
+    val _ret = __method_bind.is_keying.call(this._handle)
     return _ret.asBool()
   }
 
   fun isReadOnly(): Boolean {
-    val _ret = __method_bind.is_read_only.call(this.toVariant())
+    val _ret = __method_bind.is_read_only.call(this._handle)
     return _ret.asBool()
   }
 
   fun setBottomEditor(editor: Control) {
     val _arg = Variant.new(editor)
-    __method_bind.set_bottom_editor.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bottom_editor.call(this._handle, _arg, 1)
   }
 
   fun setCheckable(checkable: Boolean) {
     val _arg = Variant.new(checkable)
-    __method_bind.set_checkable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_checkable.call(this._handle, _arg, 1)
   }
 
   fun setChecked(checked: Boolean) {
     val _arg = Variant.new(checked)
-    __method_bind.set_checked.call(this.toVariant(), _arg, 1)
+    __method_bind.set_checked.call(this._handle, _arg, 1)
   }
 
   fun setDrawRed(drawRed: Boolean) {
     val _arg = Variant.new(drawRed)
-    __method_bind.set_draw_red.call(this.toVariant(), _arg, 1)
+    __method_bind.set_draw_red.call(this._handle, _arg, 1)
   }
 
   fun setKeying(keying: Boolean) {
     val _arg = Variant.new(keying)
-    __method_bind.set_keying.call(this.toVariant(), _arg, 1)
+    __method_bind.set_keying.call(this._handle, _arg, 1)
   }
 
   fun setLabel(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_label.call(this.toVariant(), _arg, 1)
+    __method_bind.set_label.call(this._handle, _arg, 1)
   }
 
   fun setReadOnly(readOnly: Boolean) {
     val _arg = Variant.new(readOnly)
-    __method_bind.set_read_only.call(this.toVariant(), _arg, 1)
+    __method_bind.set_read_only.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -25,85 +25,85 @@ open class ARVRServer internal constructor(
     val _args = VariantArray.new()
     _args.append(rotationMode)
     _args.append(keepHeight)
-    __method_bind.center_on_hmd.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.center_on_hmd.call(this._handle, _args.toVariant(), 2)
   }
 
   fun findInterface(name: String): ARVRInterface {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.find_interface.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.find_interface.call(this._handle, _arg, 1)
     return _ret.asObject(::ARVRInterface)!!
   }
 
   fun getHmdTransform(): Transform {
-    val _ret = __method_bind.get_hmd_transform.call(this.toVariant())
+    val _ret = __method_bind.get_hmd_transform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getInterface(idx: Int): ARVRInterface {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_interface.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_interface.call(this._handle, _arg, 1)
     return _ret.asObject(::ARVRInterface)!!
   }
 
   fun getInterfaceCount(): Int {
-    val _ret = __method_bind.get_interface_count.call(this.toVariant())
+    val _ret = __method_bind.get_interface_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInterfaces(): VariantArray {
-    val _ret = __method_bind.get_interfaces.call(this.toVariant())
+    val _ret = __method_bind.get_interfaces.call(this._handle)
     return _ret.asArray()
   }
 
   fun getLastCommitUsec(): Int {
-    val _ret = __method_bind.get_last_commit_usec.call(this.toVariant())
+    val _ret = __method_bind.get_last_commit_usec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLastFrameUsec(): Int {
-    val _ret = __method_bind.get_last_frame_usec.call(this.toVariant())
+    val _ret = __method_bind.get_last_frame_usec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLastProcessUsec(): Int {
-    val _ret = __method_bind.get_last_process_usec.call(this.toVariant())
+    val _ret = __method_bind.get_last_process_usec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPrimaryInterface(): ARVRInterface {
-    val _ret = __method_bind.get_primary_interface.call(this.toVariant())
+    val _ret = __method_bind.get_primary_interface.call(this._handle)
     return _ret.asObject(::ARVRInterface)!!
   }
 
   fun getReferenceFrame(): Transform {
-    val _ret = __method_bind.get_reference_frame.call(this.toVariant())
+    val _ret = __method_bind.get_reference_frame.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_tracker.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_tracker.call(this._handle, _arg, 1)
     return _ret.asObject(::ARVRPositionalTracker)!!
   }
 
   fun getTrackerCount(): Int {
-    val _ret = __method_bind.get_tracker_count.call(this.toVariant())
+    val _ret = __method_bind.get_tracker_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWorldScale(): Float {
-    val _ret = __method_bind.get_world_scale.call(this.toVariant())
+    val _ret = __method_bind.get_world_scale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
     val _arg = Variant.new(`interface`)
-    __method_bind.set_primary_interface.call(this.toVariant(), _arg, 1)
+    __method_bind.set_primary_interface.call(this._handle, _arg, 1)
   }
 
   fun setWorldScale(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_world_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_world_scale.call(this._handle, _arg, 1)
   }
 
   enum class RotationMode(

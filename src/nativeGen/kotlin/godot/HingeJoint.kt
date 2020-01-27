@@ -21,13 +21,13 @@ open class HingeJoint internal constructor(
 ) : Joint(_handle) {
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_flag.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_param.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -35,14 +35,14 @@ open class HingeJoint internal constructor(
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(enabled)
-    __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_flag.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParam(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_param.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Param(

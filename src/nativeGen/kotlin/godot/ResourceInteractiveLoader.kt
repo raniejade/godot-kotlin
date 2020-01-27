@@ -19,27 +19,27 @@ open class ResourceInteractiveLoader internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResource(): Resource {
-    val _ret = __method_bind.get_resource.call(this.toVariant())
+    val _ret = __method_bind.get_resource.call(this._handle)
     return _ret.asObject(::Resource)!!
   }
 
   fun getStage(): Int {
-    val _ret = __method_bind.get_stage.call(this.toVariant())
+    val _ret = __method_bind.get_stage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStageCount(): Int {
-    val _ret = __method_bind.get_stage_count.call(this.toVariant())
+    val _ret = __method_bind.get_stage_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun poll(): GDError {
-    val _ret = __method_bind.poll.call(this.toVariant())
+    val _ret = __method_bind.poll.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun wait(): GDError {
-    val _ret = __method_bind.wait.call(this.toVariant())
+    val _ret = __method_bind.wait.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 

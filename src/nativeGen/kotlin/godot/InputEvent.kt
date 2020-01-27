@@ -24,67 +24,67 @@ open class InputEvent internal constructor(
 ) : Resource(_handle) {
   fun accumulate(withEvent: InputEvent): Boolean {
     val _arg = Variant.new(withEvent)
-    val _ret = __method_bind.accumulate.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.accumulate.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun asText(): String {
-    val _ret = __method_bind.as_text.call(this.toVariant())
+    val _ret = __method_bind.as_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getActionStrength(action: String): Float {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.get_action_strength.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_action_strength.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getDevice(): Int {
-    val _ret = __method_bind.get_device.call(this.toVariant())
+    val _ret = __method_bind.get_device.call(this._handle)
     return _ret.asInt()
   }
 
   fun isAction(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.is_action.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_action.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.is_action_pressed.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_action_pressed.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isActionReleased(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.is_action_released.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_action_released.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isActionType(): Boolean {
-    val _ret = __method_bind.is_action_type.call(this.toVariant())
+    val _ret = __method_bind.is_action_type.call(this._handle)
     return _ret.asBool()
   }
 
   fun isEcho(): Boolean {
-    val _ret = __method_bind.is_echo.call(this.toVariant())
+    val _ret = __method_bind.is_echo.call(this._handle)
     return _ret.asBool()
   }
 
   fun isPressed(): Boolean {
-    val _ret = __method_bind.is_pressed.call(this.toVariant())
+    val _ret = __method_bind.is_pressed.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDevice(device: Int) {
     val _arg = Variant.new(device)
-    __method_bind.set_device.call(this.toVariant(), _arg, 1)
+    __method_bind.set_device.call(this._handle, _arg, 1)
   }
 
   fun shortcutMatch(event: InputEvent): Boolean {
     val _arg = Variant.new(event)
-    val _ret = __method_bind.shortcut_match.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shortcut_match.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -92,7 +92,7 @@ open class InputEvent internal constructor(
     val _args = VariantArray.new()
     _args.append(xform)
     _args.append(localOfs)
-    val _ret = __method_bind.xformed_by.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.xformed_by.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::InputEvent)!!
   }
 

@@ -18,23 +18,23 @@ open class VisualShaderNodeTextureUniform internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeUniform(_handle) {
   fun getColorDefault(): ColorDefault {
-    val _ret = __method_bind.get_color_default.call(this.toVariant())
+    val _ret = __method_bind.get_color_default.call(this._handle)
     return VisualShaderNodeTextureUniform.ColorDefault.from(_ret.asInt())
   }
 
   fun getTextureType(): TextureType {
-    val _ret = __method_bind.get_texture_type.call(this.toVariant())
+    val _ret = __method_bind.get_texture_type.call(this._handle)
     return VisualShaderNodeTextureUniform.TextureType.from(_ret.asInt())
   }
 
   fun setColorDefault(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_color_default.call(this.toVariant(), _arg, 1)
+    __method_bind.set_color_default.call(this._handle, _arg, 1)
   }
 
   fun setTextureType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_texture_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture_type.call(this._handle, _arg, 1)
   }
 
   enum class TextureType(

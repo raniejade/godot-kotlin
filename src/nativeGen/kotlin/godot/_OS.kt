@@ -29,45 +29,45 @@ open class _OS internal constructor(
     val _args = VariantArray.new()
     _args.append(text)
     _args.append(title)
-    __method_bind.alert.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.alert.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canDraw(): Boolean {
-    val _ret = __method_bind.can_draw.call(this.toVariant())
+    val _ret = __method_bind.can_draw.call(this._handle)
     return _ret.asBool()
   }
 
   fun canUseThreads(): Boolean {
-    val _ret = __method_bind.can_use_threads.call(this.toVariant())
+    val _ret = __method_bind.can_use_threads.call(this._handle)
     return _ret.asBool()
   }
 
   fun centerWindow() {
-    __method_bind.center_window.call(this.toVariant())
+    __method_bind.center_window.call(this._handle)
   }
 
   fun closeMidiInputs() {
-    __method_bind.close_midi_inputs.call(this.toVariant())
+    __method_bind.close_midi_inputs.call(this._handle)
   }
 
   fun delayMsec(msec: Int) {
     val _arg = Variant.new(msec)
-    __method_bind.delay_msec.call(this.toVariant(), _arg, 1)
+    __method_bind.delay_msec.call(this._handle, _arg, 1)
   }
 
   fun delayUsec(usec: Int) {
     val _arg = Variant.new(usec)
-    __method_bind.delay_usec.call(this.toVariant(), _arg, 1)
+    __method_bind.delay_usec.call(this._handle, _arg, 1)
   }
 
   fun dumpMemoryToFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.dump_memory_to_file.call(this.toVariant(), _arg, 1)
+    __method_bind.dump_memory_to_file.call(this._handle, _arg, 1)
   }
 
   fun dumpResourcesToFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.dump_resources_to_file.call(this.toVariant(), _arg, 1)
+    __method_bind.dump_resources_to_file.call(this._handle, _arg, 1)
   }
 
   fun execute(
@@ -83,408 +83,408 @@ open class _OS internal constructor(
     _args.append(blocking)
     _args.append(output)
     _args.append(readStderr)
-    val _ret = __method_bind.execute.call(this.toVariant(), _args.toVariant(), 5)
+    val _ret = __method_bind.execute.call(this._handle, _args.toVariant(), 5)
     return _ret.asInt()
   }
 
   fun findScancodeFromString(string: String): Int {
     val _arg = Variant.new(string)
-    val _ret = __method_bind.find_scancode_from_string.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.find_scancode_from_string.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getAudioDriverCount(): Int {
-    val _ret = __method_bind.get_audio_driver_count.call(this.toVariant())
+    val _ret = __method_bind.get_audio_driver_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAudioDriverName(driver: Int): String {
     val _arg = Variant.new(driver)
-    val _ret = __method_bind.get_audio_driver_name.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_audio_driver_name.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getBorderlessWindow(): Boolean {
-    val _ret = __method_bind.get_borderless_window.call(this.toVariant())
+    val _ret = __method_bind.get_borderless_window.call(this._handle)
     return _ret.asBool()
   }
 
   fun getClipboard(): String {
-    val _ret = __method_bind.get_clipboard.call(this.toVariant())
+    val _ret = __method_bind.get_clipboard.call(this._handle)
     return _ret.asString()
   }
 
   fun getCmdlineArgs(): PoolStringArray {
-    val _ret = __method_bind.get_cmdline_args.call(this.toVariant())
+    val _ret = __method_bind.get_cmdline_args.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getConnectedMidiInputs(): PoolStringArray {
-    val _ret = __method_bind.get_connected_midi_inputs.call(this.toVariant())
+    val _ret = __method_bind.get_connected_midi_inputs.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getCurrentScreen(): Int {
-    val _ret = __method_bind.get_current_screen.call(this.toVariant())
+    val _ret = __method_bind.get_current_screen.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCurrentVideoDriver(): VideoDriver {
-    val _ret = __method_bind.get_current_video_driver.call(this.toVariant())
+    val _ret = __method_bind.get_current_video_driver.call(this._handle)
     return _OS.VideoDriver.from(_ret.asInt())
   }
 
   fun getDate(utc: Boolean): Dictionary {
     val _arg = Variant.new(utc)
-    val _ret = __method_bind.get_date.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_date.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getDatetime(utc: Boolean): Dictionary {
     val _arg = Variant.new(utc)
-    val _ret = __method_bind.get_datetime.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_datetime.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getDatetimeFromUnixTime(unixTimeVal: Int): Dictionary {
     val _arg = Variant.new(unixTimeVal)
-    val _ret = __method_bind.get_datetime_from_unix_time.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_datetime_from_unix_time.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getDynamicMemoryUsage(): Int {
-    val _ret = __method_bind.get_dynamic_memory_usage.call(this.toVariant())
+    val _ret = __method_bind.get_dynamic_memory_usage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getEnvironment(environment: String): String {
     val _arg = Variant.new(environment)
-    val _ret = __method_bind.get_environment.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_environment.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getExecutablePath(): String {
-    val _ret = __method_bind.get_executable_path.call(this.toVariant())
+    val _ret = __method_bind.get_executable_path.call(this._handle)
     return _ret.asString()
   }
 
   fun getExitCode(): Int {
-    val _ret = __method_bind.get_exit_code.call(this.toVariant())
+    val _ret = __method_bind.get_exit_code.call(this._handle)
     return _ret.asInt()
   }
 
   fun getImeSelection(): Vector2 {
-    val _ret = __method_bind.get_ime_selection.call(this.toVariant())
+    val _ret = __method_bind.get_ime_selection.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getImeText(): String {
-    val _ret = __method_bind.get_ime_text.call(this.toVariant())
+    val _ret = __method_bind.get_ime_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getLatinKeyboardVariant(): String {
-    val _ret = __method_bind.get_latin_keyboard_variant.call(this.toVariant())
+    val _ret = __method_bind.get_latin_keyboard_variant.call(this._handle)
     return _ret.asString()
   }
 
   fun getLocale(): String {
-    val _ret = __method_bind.get_locale.call(this.toVariant())
+    val _ret = __method_bind.get_locale.call(this._handle)
     return _ret.asString()
   }
 
   fun getModelName(): String {
-    val _ret = __method_bind.get_model_name.call(this.toVariant())
+    val _ret = __method_bind.get_model_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this.toVariant())
+    val _ret = __method_bind.get_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getPowerPercentLeft(): Int {
-    val _ret = __method_bind.get_power_percent_left.call(this.toVariant())
+    val _ret = __method_bind.get_power_percent_left.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPowerSecondsLeft(): Int {
-    val _ret = __method_bind.get_power_seconds_left.call(this.toVariant())
+    val _ret = __method_bind.get_power_seconds_left.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPowerState(): PowerState {
-    val _ret = __method_bind.get_power_state.call(this.toVariant())
+    val _ret = __method_bind.get_power_state.call(this._handle)
     return _OS.PowerState.from(_ret.asInt())
   }
 
   fun getProcessId(): Int {
-    val _ret = __method_bind.get_process_id.call(this.toVariant())
+    val _ret = __method_bind.get_process_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getProcessorCount(): Int {
-    val _ret = __method_bind.get_processor_count.call(this.toVariant())
+    val _ret = __method_bind.get_processor_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRealWindowSize(): Vector2 {
-    val _ret = __method_bind.get_real_window_size.call(this.toVariant())
+    val _ret = __method_bind.get_real_window_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getScancodeString(code: Int): String {
     val _arg = Variant.new(code)
-    val _ret = __method_bind.get_scancode_string.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_scancode_string.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getScreenCount(): Int {
-    val _ret = __method_bind.get_screen_count.call(this.toVariant())
+    val _ret = __method_bind.get_screen_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getScreenDpi(screen: Int): Int {
     val _arg = Variant.new(screen)
-    val _ret = __method_bind.get_screen_dpi.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_screen_dpi.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getScreenOrientation(): ScreenOrientation {
-    val _ret = __method_bind.get_screen_orientation.call(this.toVariant())
+    val _ret = __method_bind.get_screen_orientation.call(this._handle)
     return _OS.ScreenOrientation.from(_ret.asInt())
   }
 
   fun getScreenPosition(screen: Int): Vector2 {
     val _arg = Variant.new(screen)
-    val _ret = __method_bind.get_screen_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_screen_position.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getScreenSize(screen: Int): Vector2 {
     val _arg = Variant.new(screen)
-    val _ret = __method_bind.get_screen_size.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_screen_size.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getSplashTickMsec(): Int {
-    val _ret = __method_bind.get_splash_tick_msec.call(this.toVariant())
+    val _ret = __method_bind.get_splash_tick_msec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStaticMemoryPeakUsage(): Int {
-    val _ret = __method_bind.get_static_memory_peak_usage.call(this.toVariant())
+    val _ret = __method_bind.get_static_memory_peak_usage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStaticMemoryUsage(): Int {
-    val _ret = __method_bind.get_static_memory_usage.call(this.toVariant())
+    val _ret = __method_bind.get_static_memory_usage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSystemDir(dir: Int): String {
     val _arg = Variant.new(dir)
-    val _ret = __method_bind.get_system_dir.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_system_dir.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getSystemTimeMsecs(): Int {
-    val _ret = __method_bind.get_system_time_msecs.call(this.toVariant())
+    val _ret = __method_bind.get_system_time_msecs.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSystemTimeSecs(): Int {
-    val _ret = __method_bind.get_system_time_secs.call(this.toVariant())
+    val _ret = __method_bind.get_system_time_secs.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTicksMsec(): Int {
-    val _ret = __method_bind.get_ticks_msec.call(this.toVariant())
+    val _ret = __method_bind.get_ticks_msec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTicksUsec(): Int {
-    val _ret = __method_bind.get_ticks_usec.call(this.toVariant())
+    val _ret = __method_bind.get_ticks_usec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTime(utc: Boolean): Dictionary {
     val _arg = Variant.new(utc)
-    val _ret = __method_bind.get_time.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_time.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getTimeZoneInfo(): Dictionary {
-    val _ret = __method_bind.get_time_zone_info.call(this.toVariant())
+    val _ret = __method_bind.get_time_zone_info.call(this._handle)
     return _ret.asDictionary()
   }
 
   fun getUniqueId(): String {
-    val _ret = __method_bind.get_unique_id.call(this.toVariant())
+    val _ret = __method_bind.get_unique_id.call(this._handle)
     return _ret.asString()
   }
 
   fun getUnixTime(): Int {
-    val _ret = __method_bind.get_unix_time.call(this.toVariant())
+    val _ret = __method_bind.get_unix_time.call(this._handle)
     return _ret.asInt()
   }
 
   fun getUnixTimeFromDatetime(datetime: Dictionary): Int {
     val _arg = Variant.new(datetime)
-    val _ret = __method_bind.get_unix_time_from_datetime.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_unix_time_from_datetime.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getUserDataDir(): String {
-    val _ret = __method_bind.get_user_data_dir.call(this.toVariant())
+    val _ret = __method_bind.get_user_data_dir.call(this._handle)
     return _ret.asString()
   }
 
   fun getVideoDriverCount(): Int {
-    val _ret = __method_bind.get_video_driver_count.call(this.toVariant())
+    val _ret = __method_bind.get_video_driver_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVideoDriverName(driver: Int): String {
     val _arg = Variant.new(driver)
-    val _ret = __method_bind.get_video_driver_name.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_video_driver_name.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getVirtualKeyboardHeight(): Int {
-    val _ret = __method_bind.get_virtual_keyboard_height.call(this.toVariant())
+    val _ret = __method_bind.get_virtual_keyboard_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWindowPerPixelTransparencyEnabled(): Boolean {
-    val _ret = __method_bind.get_window_per_pixel_transparency_enabled.call(this.toVariant())
+    val _ret = __method_bind.get_window_per_pixel_transparency_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun getWindowPosition(): Vector2 {
-    val _ret = __method_bind.get_window_position.call(this.toVariant())
+    val _ret = __method_bind.get_window_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getWindowSafeArea(): Rect2 {
-    val _ret = __method_bind.get_window_safe_area.call(this.toVariant())
+    val _ret = __method_bind.get_window_safe_area.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getWindowSize(): Vector2 {
-    val _ret = __method_bind.get_window_size.call(this.toVariant())
+    val _ret = __method_bind.get_window_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun hasEnvironment(environment: String): Boolean {
     val _arg = Variant.new(environment)
-    val _ret = __method_bind.has_environment.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_environment.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasFeature(tagName: String): Boolean {
     val _arg = Variant.new(tagName)
-    val _ret = __method_bind.has_feature.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_feature.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasTouchscreenUiHint(): Boolean {
-    val _ret = __method_bind.has_touchscreen_ui_hint.call(this.toVariant())
+    val _ret = __method_bind.has_touchscreen_ui_hint.call(this._handle)
     return _ret.asBool()
   }
 
   fun hasVirtualKeyboard(): Boolean {
-    val _ret = __method_bind.has_virtual_keyboard.call(this.toVariant())
+    val _ret = __method_bind.has_virtual_keyboard.call(this._handle)
     return _ret.asBool()
   }
 
   fun hideVirtualKeyboard() {
-    __method_bind.hide_virtual_keyboard.call(this.toVariant())
+    __method_bind.hide_virtual_keyboard.call(this._handle)
   }
 
   fun isDebugBuild(): Boolean {
-    val _ret = __method_bind.is_debug_build.call(this.toVariant())
+    val _ret = __method_bind.is_debug_build.call(this._handle)
     return _ret.asBool()
   }
 
   fun isInLowProcessorUsageMode(): Boolean {
-    val _ret = __method_bind.is_in_low_processor_usage_mode.call(this.toVariant())
+    val _ret = __method_bind.is_in_low_processor_usage_mode.call(this._handle)
     return _ret.asBool()
   }
 
   fun isKeepScreenOn(): Boolean {
-    val _ret = __method_bind.is_keep_screen_on.call(this.toVariant())
+    val _ret = __method_bind.is_keep_screen_on.call(this._handle)
     return _ret.asBool()
   }
 
   fun isOkLeftAndCancelRight(): Boolean {
-    val _ret = __method_bind.is_ok_left_and_cancel_right.call(this.toVariant())
+    val _ret = __method_bind.is_ok_left_and_cancel_right.call(this._handle)
     return _ret.asBool()
   }
 
   fun isScancodeUnicode(code: Int): Boolean {
     val _arg = Variant.new(code)
-    val _ret = __method_bind.is_scancode_unicode.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_scancode_unicode.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isStdoutVerbose(): Boolean {
-    val _ret = __method_bind.is_stdout_verbose.call(this.toVariant())
+    val _ret = __method_bind.is_stdout_verbose.call(this._handle)
     return _ret.asBool()
   }
 
   fun isUserfsPersistent(): Boolean {
-    val _ret = __method_bind.is_userfs_persistent.call(this.toVariant())
+    val _ret = __method_bind.is_userfs_persistent.call(this._handle)
     return _ret.asBool()
   }
 
   fun isVsyncEnabled(): Boolean {
-    val _ret = __method_bind.is_vsync_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_vsync_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isWindowAlwaysOnTop(): Boolean {
-    val _ret = __method_bind.is_window_always_on_top.call(this.toVariant())
+    val _ret = __method_bind.is_window_always_on_top.call(this._handle)
     return _ret.asBool()
   }
 
   fun isWindowFullscreen(): Boolean {
-    val _ret = __method_bind.is_window_fullscreen.call(this.toVariant())
+    val _ret = __method_bind.is_window_fullscreen.call(this._handle)
     return _ret.asBool()
   }
 
   fun isWindowMaximized(): Boolean {
-    val _ret = __method_bind.is_window_maximized.call(this.toVariant())
+    val _ret = __method_bind.is_window_maximized.call(this._handle)
     return _ret.asBool()
   }
 
   fun isWindowMinimized(): Boolean {
-    val _ret = __method_bind.is_window_minimized.call(this.toVariant())
+    val _ret = __method_bind.is_window_minimized.call(this._handle)
     return _ret.asBool()
   }
 
   fun isWindowResizable(): Boolean {
-    val _ret = __method_bind.is_window_resizable.call(this.toVariant())
+    val _ret = __method_bind.is_window_resizable.call(this._handle)
     return _ret.asBool()
   }
 
   fun kill(pid: Int): GDError {
     val _arg = Variant.new(pid)
-    val _ret = __method_bind.kill.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.kill.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun moveWindowToForeground() {
-    __method_bind.move_window_to_foreground.call(this.toVariant())
+    __method_bind.move_window_to_foreground.call(this._handle)
   }
 
   fun nativeVideoIsPlaying(): Boolean {
-    val _ret = __method_bind.native_video_is_playing.call(this.toVariant())
+    val _ret = __method_bind.native_video_is_playing.call(this._handle)
     return _ret.asBool()
   }
 
   fun nativeVideoPause() {
-    __method_bind.native_video_pause.call(this.toVariant())
+    __method_bind.native_video_pause.call(this._handle)
   }
 
   fun nativeVideoPlay(
@@ -498,176 +498,176 @@ open class _OS internal constructor(
     _args.append(volume)
     _args.append(audioTrack)
     _args.append(subtitleTrack)
-    val _ret = __method_bind.native_video_play.call(this.toVariant(), _args.toVariant(), 4)
+    val _ret = __method_bind.native_video_play.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
   fun nativeVideoStop() {
-    __method_bind.native_video_stop.call(this.toVariant())
+    __method_bind.native_video_stop.call(this._handle)
   }
 
   fun nativeVideoUnpause() {
-    __method_bind.native_video_unpause.call(this.toVariant())
+    __method_bind.native_video_unpause.call(this._handle)
   }
 
   fun openMidiInputs() {
-    __method_bind.open_midi_inputs.call(this.toVariant())
+    __method_bind.open_midi_inputs.call(this._handle)
   }
 
   fun printAllResources(tofile: String) {
     val _arg = Variant.new(tofile)
-    __method_bind.print_all_resources.call(this.toVariant(), _arg, 1)
+    __method_bind.print_all_resources.call(this._handle, _arg, 1)
   }
 
   fun printAllTexturesBySize() {
-    __method_bind.print_all_textures_by_size.call(this.toVariant())
+    __method_bind.print_all_textures_by_size.call(this._handle)
   }
 
   fun printResourcesByType(types: PoolStringArray) {
     val _arg = Variant.new(types)
-    __method_bind.print_resources_by_type.call(this.toVariant(), _arg, 1)
+    __method_bind.print_resources_by_type.call(this._handle, _arg, 1)
   }
 
   fun printResourcesInUse(short: Boolean) {
     val _arg = Variant.new(short)
-    __method_bind.print_resources_in_use.call(this.toVariant(), _arg, 1)
+    __method_bind.print_resources_in_use.call(this._handle, _arg, 1)
   }
 
   fun requestAttention() {
-    __method_bind.request_attention.call(this.toVariant())
+    __method_bind.request_attention.call(this._handle)
   }
 
   fun requestPermission(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.request_permission.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.request_permission.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun setBorderlessWindow(borderless: Boolean) {
     val _arg = Variant.new(borderless)
-    __method_bind.set_borderless_window.call(this.toVariant(), _arg, 1)
+    __method_bind.set_borderless_window.call(this._handle, _arg, 1)
   }
 
   fun setClipboard(clipboard: String) {
     val _arg = Variant.new(clipboard)
-    __method_bind.set_clipboard.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clipboard.call(this._handle, _arg, 1)
   }
 
   fun setCurrentScreen(screen: Int) {
     val _arg = Variant.new(screen)
-    __method_bind.set_current_screen.call(this.toVariant(), _arg, 1)
+    __method_bind.set_current_screen.call(this._handle, _arg, 1)
   }
 
   fun setExitCode(code: Int) {
     val _arg = Variant.new(code)
-    __method_bind.set_exit_code.call(this.toVariant(), _arg, 1)
+    __method_bind.set_exit_code.call(this._handle, _arg, 1)
   }
 
   fun setIcon(icon: Image) {
     val _arg = Variant.new(icon)
-    __method_bind.set_icon.call(this.toVariant(), _arg, 1)
+    __method_bind.set_icon.call(this._handle, _arg, 1)
   }
 
   fun setImeActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_ime_active.call(this.toVariant(), _arg, 1)
+    __method_bind.set_ime_active.call(this._handle, _arg, 1)
   }
 
   fun setImePosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_ime_position.call(this.toVariant(), _arg, 1)
+    __method_bind.set_ime_position.call(this._handle, _arg, 1)
   }
 
   fun setKeepScreenOn(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_keep_screen_on.call(this.toVariant(), _arg, 1)
+    __method_bind.set_keep_screen_on.call(this._handle, _arg, 1)
   }
 
   fun setLowProcessorUsageMode(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_low_processor_usage_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_low_processor_usage_mode.call(this._handle, _arg, 1)
   }
 
   fun setNativeIcon(filename: String) {
     val _arg = Variant.new(filename)
-    __method_bind.set_native_icon.call(this.toVariant(), _arg, 1)
+    __method_bind.set_native_icon.call(this._handle, _arg, 1)
   }
 
   fun setScreenOrientation(orientation: Int) {
     val _arg = Variant.new(orientation)
-    __method_bind.set_screen_orientation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_screen_orientation.call(this._handle, _arg, 1)
   }
 
   fun setThreadName(name: String): GDError {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.set_thread_name.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.set_thread_name.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setUseFileAccessSaveAndSwap(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_use_file_access_save_and_swap.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_file_access_save_and_swap.call(this._handle, _arg, 1)
   }
 
   fun setUseVsync(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_vsync.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_vsync.call(this._handle, _arg, 1)
   }
 
   fun setWindowAlwaysOnTop(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_always_on_top.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_always_on_top.call(this._handle, _arg, 1)
   }
 
   fun setWindowFullscreen(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_fullscreen.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_fullscreen.call(this._handle, _arg, 1)
   }
 
   fun setWindowMaximized(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_maximized.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_maximized.call(this._handle, _arg, 1)
   }
 
   fun setWindowMinimized(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_minimized.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_minimized.call(this._handle, _arg, 1)
   }
 
   fun setWindowPerPixelTransparencyEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_per_pixel_transparency_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_per_pixel_transparency_enabled.call(this._handle, _arg, 1)
   }
 
   fun setWindowPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_window_position.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_position.call(this._handle, _arg, 1)
   }
 
   fun setWindowResizable(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_resizable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_resizable.call(this._handle, _arg, 1)
   }
 
   fun setWindowSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_window_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_size.call(this._handle, _arg, 1)
   }
 
   fun setWindowTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.set_window_title.call(this.toVariant(), _arg, 1)
+    __method_bind.set_window_title.call(this._handle, _arg, 1)
   }
 
   fun shellOpen(uri: String): GDError {
     val _arg = Variant.new(uri)
-    val _ret = __method_bind.shell_open.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shell_open.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun showVirtualKeyboard(existingText: String) {
     val _arg = Variant.new(existingText)
-    __method_bind.show_virtual_keyboard.call(this.toVariant(), _arg, 1)
+    __method_bind.show_virtual_keyboard.call(this._handle, _arg, 1)
   }
 
   enum class VideoDriver(

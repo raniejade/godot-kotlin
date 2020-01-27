@@ -19,28 +19,28 @@ open class CameraServer internal constructor(
 ) : Object(_handle) {
   fun addFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
-    __method_bind.add_feed.call(this.toVariant(), _arg, 1)
+    __method_bind.add_feed.call(this._handle, _arg, 1)
   }
 
   fun feeds(): VariantArray {
-    val _ret = __method_bind.feeds.call(this.toVariant())
+    val _ret = __method_bind.feeds.call(this._handle)
     return _ret.asArray()
   }
 
   fun getFeed(index: Int): CameraFeed {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_feed.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_feed.call(this._handle, _arg, 1)
     return _ret.asObject(::CameraFeed)!!
   }
 
   fun getFeedCount(): Int {
-    val _ret = __method_bind.get_feed_count.call(this.toVariant())
+    val _ret = __method_bind.get_feed_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun removeFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
-    __method_bind.remove_feed.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_feed.call(this._handle, _arg, 1)
   }
 
   enum class FeedImage(

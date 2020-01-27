@@ -18,13 +18,13 @@ open class VisualShaderNodeVectorFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getFunction(): Function {
-    val _ret = __method_bind.get_function.call(this.toVariant())
+    val _ret = __method_bind.get_function.call(this._handle)
     return VisualShaderNodeVectorFunc.Function.from(_ret.asInt())
   }
 
   fun setFunction(func: Int) {
     val _arg = Variant.new(func)
-    __method_bind.set_function.call(this.toVariant(), _arg, 1)
+    __method_bind.set_function.call(this._handle, _arg, 1)
   }
 
   enum class Function(

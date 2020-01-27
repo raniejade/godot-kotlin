@@ -22,7 +22,7 @@ open class JavaScript internal constructor(
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(useGlobalExecutionContext)
-    val _ret = __method_bind.eval.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.eval.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 

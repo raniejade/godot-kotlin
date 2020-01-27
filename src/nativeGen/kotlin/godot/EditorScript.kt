@@ -18,16 +18,16 @@ open class EditorScript internal constructor(
 ) : Reference(_handle) {
   fun addRootNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.add_root_node.call(this.toVariant(), _arg, 1)
+    __method_bind.add_root_node.call(this._handle, _arg, 1)
   }
 
   fun getEditorInterface(): EditorInterface {
-    val _ret = __method_bind.get_editor_interface.call(this.toVariant())
+    val _ret = __method_bind.get_editor_interface.call(this._handle)
     return _ret.asObject(::EditorInterface)!!
   }
 
   fun getScene(): Node {
-    val _ret = __method_bind.get_scene.call(this.toVariant())
+    val _ret = __method_bind.get_scene.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 

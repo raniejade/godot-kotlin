@@ -18,13 +18,13 @@ open class PinJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getSoftness(): Float {
-    val _ret = __method_bind.get_softness.call(this.toVariant())
+    val _ret = __method_bind.get_softness.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setSoftness(softness: Float) {
     val _arg = Variant.new(softness)
-    __method_bind.set_softness.call(this.toVariant(), _arg, 1)
+    __method_bind.set_softness.call(this._handle, _arg, 1)
   }
 
   companion object {

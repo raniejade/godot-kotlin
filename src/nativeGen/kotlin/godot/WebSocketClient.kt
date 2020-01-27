@@ -30,7 +30,7 @@ open class WebSocketClient internal constructor(
     _args.append(url)
     _args.append(protocols)
     _args.append(gdMpApi)
-    val _ret = __method_bind.connect_to_url.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.connect_to_url.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
@@ -38,17 +38,17 @@ open class WebSocketClient internal constructor(
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(reason)
-    __method_bind.disconnect_from_host.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.disconnect_from_host.call(this._handle, _args.toVariant(), 2)
   }
 
   fun isVerifySslEnabled(): Boolean {
-    val _ret = __method_bind.is_verify_ssl_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_verify_ssl_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_verify_ssl_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_verify_ssl_enabled.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,13 +18,13 @@ open class YSort internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun isSortEnabled(): Boolean {
-    val _ret = __method_bind.is_sort_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_sort_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setSortEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_sort_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_sort_enabled.call(this._handle, _arg, 1)
   }
 
   companion object {

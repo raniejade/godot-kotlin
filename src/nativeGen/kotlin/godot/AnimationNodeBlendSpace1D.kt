@@ -28,83 +28,83 @@ open class AnimationNodeBlendSpace1D internal constructor(
     _args.append(node)
     _args.append(pos)
     _args.append(atIndex)
-    __method_bind.add_blend_point.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_blend_point.call(this._handle, _args.toVariant(), 3)
   }
 
   fun getBlendPointCount(): Int {
-    val _ret = __method_bind.get_blend_point_count.call(this.toVariant())
+    val _ret = __method_bind.get_blend_point_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.get_blend_point_node.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_blend_point_node.call(this._handle, _arg, 1)
     return _ret.asObject(::AnimationRootNode)!!
   }
 
   fun getBlendPointPosition(point: Int): Float {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.get_blend_point_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_blend_point_position.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMaxSpace(): Float {
-    val _ret = __method_bind.get_max_space.call(this.toVariant())
+    val _ret = __method_bind.get_max_space.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMinSpace(): Float {
-    val _ret = __method_bind.get_min_space.call(this.toVariant())
+    val _ret = __method_bind.get_min_space.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSnap(): Float {
-    val _ret = __method_bind.get_snap.call(this.toVariant())
+    val _ret = __method_bind.get_snap.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getValueLabel(): String {
-    val _ret = __method_bind.get_value_label.call(this.toVariant())
+    val _ret = __method_bind.get_value_label.call(this._handle)
     return _ret.asString()
   }
 
   fun removeBlendPoint(point: Int) {
     val _arg = Variant.new(point)
-    __method_bind.remove_blend_point.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_blend_point.call(this._handle, _arg, 1)
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
     val _args = VariantArray.new()
     _args.append(point)
     _args.append(node)
-    __method_bind.set_blend_point_node.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_blend_point_node.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setBlendPointPosition(point: Int, pos: Float) {
     val _args = VariantArray.new()
     _args.append(point)
     _args.append(pos)
-    __method_bind.set_blend_point_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_blend_point_position.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setMaxSpace(maxSpace: Float) {
     val _arg = Variant.new(maxSpace)
-    __method_bind.set_max_space.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_space.call(this._handle, _arg, 1)
   }
 
   fun setMinSpace(minSpace: Float) {
     val _arg = Variant.new(minSpace)
-    __method_bind.set_min_space.call(this.toVariant(), _arg, 1)
+    __method_bind.set_min_space.call(this._handle, _arg, 1)
   }
 
   fun setSnap(snap: Float) {
     val _arg = Variant.new(snap)
-    __method_bind.set_snap.call(this.toVariant(), _arg, 1)
+    __method_bind.set_snap.call(this._handle, _arg, 1)
   }
 
   fun setValueLabel(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_value_label.call(this.toVariant(), _arg, 1)
+    __method_bind.set_value_label.call(this._handle, _arg, 1)
   }
 
   companion object {

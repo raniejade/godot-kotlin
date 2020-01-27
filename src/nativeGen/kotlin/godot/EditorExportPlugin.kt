@@ -29,43 +29,43 @@ open class EditorExportPlugin internal constructor(
     _args.append(path)
     _args.append(file)
     _args.append(remap)
-    __method_bind.add_file.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_file.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addIosBundleFile(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.add_ios_bundle_file.call(this.toVariant(), _arg, 1)
+    __method_bind.add_ios_bundle_file.call(this._handle, _arg, 1)
   }
 
   fun addIosCppCode(code: String) {
     val _arg = Variant.new(code)
-    __method_bind.add_ios_cpp_code.call(this.toVariant(), _arg, 1)
+    __method_bind.add_ios_cpp_code.call(this._handle, _arg, 1)
   }
 
   fun addIosFramework(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.add_ios_framework.call(this.toVariant(), _arg, 1)
+    __method_bind.add_ios_framework.call(this._handle, _arg, 1)
   }
 
   fun addIosLinkerFlags(flags: String) {
     val _arg = Variant.new(flags)
-    __method_bind.add_ios_linker_flags.call(this.toVariant(), _arg, 1)
+    __method_bind.add_ios_linker_flags.call(this._handle, _arg, 1)
   }
 
   fun addIosPlistContent(plistContent: String) {
     val _arg = Variant.new(plistContent)
-    __method_bind.add_ios_plist_content.call(this.toVariant(), _arg, 1)
+    __method_bind.add_ios_plist_content.call(this._handle, _arg, 1)
   }
 
   fun addSharedObject(path: String, tags: PoolStringArray) {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(tags)
-    __method_bind.add_shared_object.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_shared_object.call(this._handle, _args.toVariant(), 2)
   }
 
   fun skip() {
-    __method_bind.skip.call(this.toVariant())
+    __method_bind.skip.call(this._handle)
   }
 
   companion object {

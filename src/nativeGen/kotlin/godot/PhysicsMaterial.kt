@@ -19,43 +19,43 @@ open class PhysicsMaterial internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getBounce(): Float {
-    val _ret = __method_bind.get_bounce.call(this.toVariant())
+    val _ret = __method_bind.get_bounce.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.get_friction.call(this.toVariant())
+    val _ret = __method_bind.get_friction.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isAbsorbent(): Boolean {
-    val _ret = __method_bind.is_absorbent.call(this.toVariant())
+    val _ret = __method_bind.is_absorbent.call(this._handle)
     return _ret.asBool()
   }
 
   fun isRough(): Boolean {
-    val _ret = __method_bind.is_rough.call(this.toVariant())
+    val _ret = __method_bind.is_rough.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAbsorbent(absorbent: Boolean) {
     val _arg = Variant.new(absorbent)
-    __method_bind.set_absorbent.call(this.toVariant(), _arg, 1)
+    __method_bind.set_absorbent.call(this._handle, _arg, 1)
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.set_bounce.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bounce.call(this._handle, _arg, 1)
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.set_friction.call(this.toVariant(), _arg, 1)
+    __method_bind.set_friction.call(this._handle, _arg, 1)
   }
 
   fun setRough(rough: Boolean) {
     val _arg = Variant.new(rough)
-    __method_bind.set_rough.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rough.call(this._handle, _arg, 1)
   }
 
   companion object {

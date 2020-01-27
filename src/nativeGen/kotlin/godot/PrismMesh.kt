@@ -20,53 +20,53 @@ open class PrismMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getLeftToRight(): Float {
-    val _ret = __method_bind.get_left_to_right.call(this.toVariant())
+    val _ret = __method_bind.get_left_to_right.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSize(): Vector3 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getSubdivideDepth(): Int {
-    val _ret = __method_bind.get_subdivide_depth.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_depth.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSubdivideHeight(): Int {
-    val _ret = __method_bind.get_subdivide_height.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSubdivideWidth(): Int {
-    val _ret = __method_bind.get_subdivide_width.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun setLeftToRight(leftToRight: Float) {
     val _arg = Variant.new(leftToRight)
-    __method_bind.set_left_to_right.call(this.toVariant(), _arg, 1)
+    __method_bind.set_left_to_right.call(this._handle, _arg, 1)
   }
 
   fun setSize(size: Vector3) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideDepth(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.set_subdivide_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_depth.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideHeight(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.set_subdivide_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_height.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideWidth(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.set_subdivide_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_width.call(this._handle, _arg, 1)
   }
 
   companion object {

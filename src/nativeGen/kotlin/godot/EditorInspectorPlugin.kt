@@ -20,14 +20,14 @@ open class EditorInspectorPlugin internal constructor(
 ) : Reference(_handle) {
   fun addCustomControl(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.add_custom_control.call(this.toVariant(), _arg, 1)
+    __method_bind.add_custom_control.call(this._handle, _arg, 1)
   }
 
   fun addPropertyEditor(property: String, editor: Control) {
     val _args = VariantArray.new()
     _args.append(property)
     _args.append(editor)
-    __method_bind.add_property_editor.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_property_editor.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addPropertyEditorForMultipleProperties(
@@ -39,8 +39,8 @@ open class EditorInspectorPlugin internal constructor(
     _args.append(label)
     _args.append(properties)
     _args.append(editor)
-    __method_bind.add_property_editor_for_multiple_properties.call(this.toVariant(),
-        _args.toVariant(), 3)
+    __method_bind.add_property_editor_for_multiple_properties.call(this._handle, _args.toVariant(),
+        3)
   }
 
   companion object {

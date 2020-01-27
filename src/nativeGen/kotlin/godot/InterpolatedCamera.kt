@@ -20,38 +20,38 @@ open class InterpolatedCamera internal constructor(
   _handle: COpaquePointer
 ) : Camera(_handle) {
   fun getSpeed(): Float {
-    val _ret = __method_bind.get_speed.call(this.toVariant())
+    val _ret = __method_bind.get_speed.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTargetPath(): NodePath {
-    val _ret = __method_bind.get_target_path.call(this.toVariant())
+    val _ret = __method_bind.get_target_path.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun isInterpolationEnabled(): Boolean {
-    val _ret = __method_bind.is_interpolation_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_interpolation_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setInterpolationEnabled(targetPath: Boolean) {
     val _arg = Variant.new(targetPath)
-    __method_bind.set_interpolation_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_interpolation_enabled.call(this._handle, _arg, 1)
   }
 
   fun setSpeed(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_speed.call(this._handle, _arg, 1)
   }
 
   fun setTarget(target: Object) {
     val _arg = Variant.new(target)
-    __method_bind.set_target.call(this.toVariant(), _arg, 1)
+    __method_bind.set_target.call(this._handle, _arg, 1)
   }
 
   fun setTargetPath(targetPath: NodePath) {
     val _arg = Variant.new(targetPath)
-    __method_bind.set_target_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_target_path.call(this._handle, _arg, 1)
   }
 
   companion object {

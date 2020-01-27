@@ -25,66 +25,66 @@ open class Control internal constructor(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
   fun acceptEvent() {
-    __method_bind.accept_event.call(this.toVariant())
+    __method_bind.accept_event.call(this._handle)
   }
 
   fun addColorOverride(name: String, color: Color) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(color)
-    __method_bind.add_color_override.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_color_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addConstantOverride(name: String, constant: Int) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(constant)
-    __method_bind.add_constant_override.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_constant_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addFontOverride(name: String, font: Font) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(font)
-    __method_bind.add_font_override.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_font_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addIconOverride(name: String, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(texture)
-    __method_bind.add_icon_override.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_icon_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addShaderOverride(name: String, shader: Shader) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(shader)
-    __method_bind.add_shader_override.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_shader_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addStyleboxOverride(name: String, stylebox: StyleBox) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(stylebox)
-    __method_bind.add_stylebox_override.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_stylebox_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun forceDrag(data: Variant, preview: Control) {
     val _args = VariantArray.new()
     _args.append(data)
     _args.append(preview)
-    __method_bind.force_drag.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.force_drag.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getAnchor(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_anchor.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_anchor.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getBegin(): Vector2 {
-    val _ret = __method_bind.get_begin.call(this.toVariant())
+    val _ret = __method_bind.get_begin.call(this._handle)
     return _ret.asVector2()
   }
 
@@ -92,12 +92,12 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_color.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_color.call(this._handle, _args.toVariant(), 2)
     return _ret.asColor()
   }
 
   fun getCombinedMinimumSize(): Vector2 {
-    val _ret = __method_bind.get_combined_minimum_size.call(this.toVariant())
+    val _ret = __method_bind.get_combined_minimum_size.call(this._handle)
     return _ret.asVector2()
   }
 
@@ -105,54 +105,54 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_constant.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_constant.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getCursorShape(position: Vector2): CursorShape {
     val _arg = Variant.new(position)
-    val _ret = __method_bind.get_cursor_shape.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_cursor_shape.call(this._handle, _arg, 1)
     return Control.CursorShape.from(_ret.asInt())
   }
 
   fun getCustomMinimumSize(): Vector2 {
-    val _ret = __method_bind.get_custom_minimum_size.call(this.toVariant())
+    val _ret = __method_bind.get_custom_minimum_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getDefaultCursorShape(): CursorShape {
-    val _ret = __method_bind.get_default_cursor_shape.call(this.toVariant())
+    val _ret = __method_bind.get_default_cursor_shape.call(this._handle)
     return Control.CursorShape.from(_ret.asInt())
   }
 
   fun getEnd(): Vector2 {
-    val _ret = __method_bind.get_end.call(this.toVariant())
+    val _ret = __method_bind.get_end.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getFocusMode(): FocusMode {
-    val _ret = __method_bind.get_focus_mode.call(this.toVariant())
+    val _ret = __method_bind.get_focus_mode.call(this._handle)
     return Control.FocusMode.from(_ret.asInt())
   }
 
   fun getFocusNeighbour(margin: Int): NodePath {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_focus_neighbour.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_focus_neighbour.call(this._handle, _arg, 1)
     return _ret.asNodePath()
   }
 
   fun getFocusNext(): NodePath {
-    val _ret = __method_bind.get_focus_next.call(this.toVariant())
+    val _ret = __method_bind.get_focus_next.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getFocusOwner(): Control {
-    val _ret = __method_bind.get_focus_owner.call(this.toVariant())
+    val _ret = __method_bind.get_focus_owner.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getFocusPrevious(): NodePath {
-    val _ret = __method_bind.get_focus_previous.call(this.toVariant())
+    val _ret = __method_bind.get_focus_previous.call(this._handle)
     return _ret.asNodePath()
   }
 
@@ -160,27 +160,27 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_font.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_font.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Font)!!
   }
 
   fun getGlobalPosition(): Vector2 {
-    val _ret = __method_bind.get_global_position.call(this.toVariant())
+    val _ret = __method_bind.get_global_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getGlobalRect(): Rect2 {
-    val _ret = __method_bind.get_global_rect.call(this.toVariant())
+    val _ret = __method_bind.get_global_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getHGrowDirection(): GrowDirection {
-    val _ret = __method_bind.get_h_grow_direction.call(this.toVariant())
+    val _ret = __method_bind.get_h_grow_direction.call(this._handle)
     return Control.GrowDirection.from(_ret.asInt())
   }
 
   fun getHSizeFlags(): Int {
-    val _ret = __method_bind.get_h_size_flags.call(this.toVariant())
+    val _ret = __method_bind.get_h_size_flags.call(this._handle)
     return _ret.asInt()
   }
 
@@ -188,73 +188,73 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_icon.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_icon.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Texture)!!
   }
 
   fun getMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_margin.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_margin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMinimumSize(): Vector2 {
-    val _ret = __method_bind.get_minimum_size.call(this.toVariant())
+    val _ret = __method_bind.get_minimum_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMouseFilter(): MouseFilter {
-    val _ret = __method_bind.get_mouse_filter.call(this.toVariant())
+    val _ret = __method_bind.get_mouse_filter.call(this._handle)
     return Control.MouseFilter.from(_ret.asInt())
   }
 
   fun getParentAreaSize(): Vector2 {
-    val _ret = __method_bind.get_parent_area_size.call(this.toVariant())
+    val _ret = __method_bind.get_parent_area_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getParentControl(): Control {
-    val _ret = __method_bind.get_parent_control.call(this.toVariant())
+    val _ret = __method_bind.get_parent_control.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getPivotOffset(): Vector2 {
-    val _ret = __method_bind.get_pivot_offset.call(this.toVariant())
+    val _ret = __method_bind.get_pivot_offset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getRect(): Rect2 {
-    val _ret = __method_bind.get_rect.call(this.toVariant())
+    val _ret = __method_bind.get_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getRotation(): Float {
-    val _ret = __method_bind.get_rotation.call(this.toVariant())
+    val _ret = __method_bind.get_rotation.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRotationDegrees(): Float {
-    val _ret = __method_bind.get_rotation_degrees.call(this.toVariant())
+    val _ret = __method_bind.get_rotation_degrees.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getScale(): Vector2 {
-    val _ret = __method_bind.get_scale.call(this.toVariant())
+    val _ret = __method_bind.get_scale.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getStretchRatio(): Float {
-    val _ret = __method_bind.get_stretch_ratio.call(this.toVariant())
+    val _ret = __method_bind.get_stretch_ratio.call(this._handle)
     return _ret.asFloat()
   }
 
@@ -262,50 +262,50 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_stylebox.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_stylebox.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::StyleBox)!!
   }
 
   fun getTheme(): Theme {
-    val _ret = __method_bind.get_theme.call(this.toVariant())
+    val _ret = __method_bind.get_theme.call(this._handle)
     return _ret.asObject(::Theme)!!
   }
 
   fun getTooltip(atPosition: Vector2): String {
     val _arg = Variant.new(atPosition)
-    val _ret = __method_bind.get_tooltip.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_tooltip.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getVGrowDirection(): GrowDirection {
-    val _ret = __method_bind.get_v_grow_direction.call(this.toVariant())
+    val _ret = __method_bind.get_v_grow_direction.call(this._handle)
     return Control.GrowDirection.from(_ret.asInt())
   }
 
   fun getVSizeFlags(): Int {
-    val _ret = __method_bind.get_v_size_flags.call(this.toVariant())
+    val _ret = __method_bind.get_v_size_flags.call(this._handle)
     return _ret.asInt()
   }
 
   fun grabClickFocus() {
-    __method_bind.grab_click_focus.call(this.toVariant())
+    __method_bind.grab_click_focus.call(this._handle)
   }
 
   fun grabFocus() {
-    __method_bind.grab_focus.call(this.toVariant())
+    __method_bind.grab_focus.call(this._handle)
   }
 
   fun hasColor(name: String, type: String): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_color.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_color.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun hasColorOverride(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_color_override.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_color_override.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -313,18 +313,18 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_constant.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_constant.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun hasConstantOverride(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_constant_override.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_constant_override.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasFocus(): Boolean {
-    val _ret = __method_bind.has_focus.call(this.toVariant())
+    val _ret = __method_bind.has_focus.call(this._handle)
     return _ret.asBool()
   }
 
@@ -332,13 +332,13 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_font.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_font.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun hasFontOverride(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_font_override.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_font_override.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -346,19 +346,19 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_icon.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_icon.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun hasIconOverride(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_icon_override.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_icon_override.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasShaderOverride(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_shader_override.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_shader_override.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -366,27 +366,27 @@ open class Control internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_stylebox.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_stylebox.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun hasStyleboxOverride(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_stylebox_override.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_stylebox_override.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isClippingContents(): Boolean {
-    val _ret = __method_bind.is_clipping_contents.call(this.toVariant())
+    val _ret = __method_bind.is_clipping_contents.call(this._handle)
     return _ret.asBool()
   }
 
   fun minimumSizeChanged() {
-    __method_bind.minimum_size_changed.call(this.toVariant())
+    __method_bind.minimum_size_changed.call(this._handle)
   }
 
   fun releaseFocus() {
-    __method_bind.release_focus.call(this.toVariant())
+    __method_bind.release_focus.call(this._handle)
   }
 
   fun setAnchor(
@@ -400,7 +400,7 @@ open class Control internal constructor(
     _args.append(anchor)
     _args.append(keepMargin)
     _args.append(pushOppositeAnchor)
-    __method_bind.set_anchor.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.set_anchor.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setAnchorAndMargin(
@@ -414,7 +414,7 @@ open class Control internal constructor(
     _args.append(anchor)
     _args.append(offset)
     _args.append(pushOppositeAnchor)
-    __method_bind.set_anchor_and_margin.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.set_anchor_and_margin.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setAnchorsAndMarginsPreset(
@@ -426,95 +426,95 @@ open class Control internal constructor(
     _args.append(preset)
     _args.append(resizeMode)
     _args.append(margin)
-    __method_bind.set_anchors_and_margins_preset.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_anchors_and_margins_preset.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setAnchorsPreset(preset: Int, keepMargins: Boolean) {
     val _args = VariantArray.new()
     _args.append(preset)
     _args.append(keepMargins)
-    __method_bind.set_anchors_preset.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_anchors_preset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setBegin(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_begin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_begin.call(this._handle, _arg, 1)
   }
 
   fun setClipContents(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_contents.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clip_contents.call(this._handle, _arg, 1)
   }
 
   fun setCustomMinimumSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_custom_minimum_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_custom_minimum_size.call(this._handle, _arg, 1)
   }
 
   fun setDefaultCursorShape(shape: Int) {
     val _arg = Variant.new(shape)
-    __method_bind.set_default_cursor_shape.call(this.toVariant(), _arg, 1)
+    __method_bind.set_default_cursor_shape.call(this._handle, _arg, 1)
   }
 
   fun setDragForwarding(target: Control) {
     val _arg = Variant.new(target)
-    __method_bind.set_drag_forwarding.call(this.toVariant(), _arg, 1)
+    __method_bind.set_drag_forwarding.call(this._handle, _arg, 1)
   }
 
   fun setDragPreview(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.set_drag_preview.call(this.toVariant(), _arg, 1)
+    __method_bind.set_drag_preview.call(this._handle, _arg, 1)
   }
 
   fun setEnd(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_end.call(this.toVariant(), _arg, 1)
+    __method_bind.set_end.call(this._handle, _arg, 1)
   }
 
   fun setFocusMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_focus_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_focus_mode.call(this._handle, _arg, 1)
   }
 
   fun setFocusNeighbour(margin: Int, neighbour: NodePath) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(neighbour)
-    __method_bind.set_focus_neighbour.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_focus_neighbour.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFocusNext(next: NodePath) {
     val _arg = Variant.new(next)
-    __method_bind.set_focus_next.call(this.toVariant(), _arg, 1)
+    __method_bind.set_focus_next.call(this._handle, _arg, 1)
   }
 
   fun setFocusPrevious(previous: NodePath) {
     val _arg = Variant.new(previous)
-    __method_bind.set_focus_previous.call(this.toVariant(), _arg, 1)
+    __method_bind.set_focus_previous.call(this._handle, _arg, 1)
   }
 
   fun setGlobalPosition(position: Vector2, keepMargins: Boolean) {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(keepMargins)
-    __method_bind.set_global_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_global_position.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setHGrowDirection(direction: Int) {
     val _arg = Variant.new(direction)
-    __method_bind.set_h_grow_direction.call(this.toVariant(), _arg, 1)
+    __method_bind.set_h_grow_direction.call(this._handle, _arg, 1)
   }
 
   fun setHSizeFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.set_h_size_flags.call(this.toVariant(), _arg, 1)
+    __method_bind.set_h_size_flags.call(this._handle, _arg, 1)
   }
 
   fun setMargin(margin: Int, offset: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(offset)
-    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_margin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setMarginsPreset(
@@ -526,81 +526,81 @@ open class Control internal constructor(
     _args.append(preset)
     _args.append(resizeMode)
     _args.append(margin)
-    __method_bind.set_margins_preset.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_margins_preset.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setMouseFilter(filter: Int) {
     val _arg = Variant.new(filter)
-    __method_bind.set_mouse_filter.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mouse_filter.call(this._handle, _arg, 1)
   }
 
   fun setPivotOffset(pivotOffset: Vector2) {
     val _arg = Variant.new(pivotOffset)
-    __method_bind.set_pivot_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pivot_offset.call(this._handle, _arg, 1)
   }
 
   fun setPosition(position: Vector2, keepMargins: Boolean) {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(keepMargins)
-    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_position.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setRotation(radians: Float) {
     val _arg = Variant.new(radians)
-    __method_bind.set_rotation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rotation.call(this._handle, _arg, 1)
   }
 
   fun setRotationDegrees(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.set_rotation_degrees.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rotation_degrees.call(this._handle, _arg, 1)
   }
 
   fun setScale(scale: Vector2) {
     val _arg = Variant.new(scale)
-    __method_bind.set_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_scale.call(this._handle, _arg, 1)
   }
 
   fun setSize(size: Vector2, keepMargins: Boolean) {
     val _args = VariantArray.new()
     _args.append(size)
     _args.append(keepMargins)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_size.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setStretchRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.set_stretch_ratio.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stretch_ratio.call(this._handle, _arg, 1)
   }
 
   fun setTheme(theme: Theme) {
     val _arg = Variant.new(theme)
-    __method_bind.set_theme.call(this.toVariant(), _arg, 1)
+    __method_bind.set_theme.call(this._handle, _arg, 1)
   }
 
   fun setTooltip(tooltip: String) {
     val _arg = Variant.new(tooltip)
-    __method_bind.set_tooltip.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tooltip.call(this._handle, _arg, 1)
   }
 
   fun setVGrowDirection(direction: Int) {
     val _arg = Variant.new(direction)
-    __method_bind.set_v_grow_direction.call(this.toVariant(), _arg, 1)
+    __method_bind.set_v_grow_direction.call(this._handle, _arg, 1)
   }
 
   fun setVSizeFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.set_v_size_flags.call(this.toVariant(), _arg, 1)
+    __method_bind.set_v_size_flags.call(this._handle, _arg, 1)
   }
 
   fun showModal(exclusive: Boolean) {
     val _arg = Variant.new(exclusive)
-    __method_bind.show_modal.call(this.toVariant(), _arg, 1)
+    __method_bind.show_modal.call(this._handle, _arg, 1)
   }
 
   fun warpMouse(toPosition: Vector2) {
     val _arg = Variant.new(toPosition)
-    __method_bind.warp_mouse.call(this.toVariant(), _arg, 1)
+    __method_bind.warp_mouse.call(this._handle, _arg, 1)
   }
 
   enum class Anchor(

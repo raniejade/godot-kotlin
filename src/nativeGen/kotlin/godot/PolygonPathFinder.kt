@@ -27,18 +27,18 @@ open class PolygonPathFinder internal constructor(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.find_path.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.find_path.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolVector2Array()
   }
 
   fun getBounds(): Rect2 {
-    val _ret = __method_bind.get_bounds.call(this.toVariant())
+    val _ret = __method_bind.get_bounds.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getClosestPoint(point: Vector2): Vector2 {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_point.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
@@ -46,19 +46,19 @@ open class PolygonPathFinder internal constructor(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.get_intersections.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_intersections.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolVector2Array()
   }
 
   fun getPointPenalty(idx: Int): Float {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_point_penalty.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_penalty.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun isPointInside(point: Vector2): Boolean {
     val _arg = Variant.new(point)
-    val _ret = __method_bind.is_point_inside.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_point_inside.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -66,14 +66,14 @@ open class PolygonPathFinder internal constructor(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(penalty)
-    __method_bind.set_point_penalty.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_penalty.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setup(points: PoolVector2Array, connections: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(points)
     _args.append(connections)
-    __method_bind.setup.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.setup.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

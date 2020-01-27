@@ -18,53 +18,53 @@ open class AudioEffectPhaser internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDepth(): Float {
-    val _ret = __method_bind.get_depth.call(this.toVariant())
+    val _ret = __method_bind.get_depth.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFeedback(): Float {
-    val _ret = __method_bind.get_feedback.call(this.toVariant())
+    val _ret = __method_bind.get_feedback.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRangeMaxHz(): Float {
-    val _ret = __method_bind.get_range_max_hz.call(this.toVariant())
+    val _ret = __method_bind.get_range_max_hz.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRangeMinHz(): Float {
-    val _ret = __method_bind.get_range_min_hz.call(this.toVariant())
+    val _ret = __method_bind.get_range_min_hz.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRateHz(): Float {
-    val _ret = __method_bind.get_rate_hz.call(this.toVariant())
+    val _ret = __method_bind.get_rate_hz.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setDepth(depth: Float) {
     val _arg = Variant.new(depth)
-    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_depth.call(this._handle, _arg, 1)
   }
 
   fun setFeedback(fbk: Float) {
     val _arg = Variant.new(fbk)
-    __method_bind.set_feedback.call(this.toVariant(), _arg, 1)
+    __method_bind.set_feedback.call(this._handle, _arg, 1)
   }
 
   fun setRangeMaxHz(hz: Float) {
     val _arg = Variant.new(hz)
-    __method_bind.set_range_max_hz.call(this.toVariant(), _arg, 1)
+    __method_bind.set_range_max_hz.call(this._handle, _arg, 1)
   }
 
   fun setRangeMinHz(hz: Float) {
     val _arg = Variant.new(hz)
-    __method_bind.set_range_min_hz.call(this.toVariant(), _arg, 1)
+    __method_bind.set_range_min_hz.call(this._handle, _arg, 1)
   }
 
   fun setRateHz(hz: Float) {
     val _arg = Variant.new(hz)
-    __method_bind.set_rate_hz.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rate_hz.call(this._handle, _arg, 1)
   }
 
   companion object {

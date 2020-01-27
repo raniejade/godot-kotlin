@@ -19,43 +19,43 @@ open class Slider internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getTicks(): Int {
-    val _ret = __method_bind.get_ticks.call(this.toVariant())
+    val _ret = __method_bind.get_ticks.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTicksOnBorders(): Boolean {
-    val _ret = __method_bind.get_ticks_on_borders.call(this.toVariant())
+    val _ret = __method_bind.get_ticks_on_borders.call(this._handle)
     return _ret.asBool()
   }
 
   fun isEditable(): Boolean {
-    val _ret = __method_bind.is_editable.call(this.toVariant())
+    val _ret = __method_bind.is_editable.call(this._handle)
     return _ret.asBool()
   }
 
   fun isScrollable(): Boolean {
-    val _ret = __method_bind.is_scrollable.call(this.toVariant())
+    val _ret = __method_bind.is_scrollable.call(this._handle)
     return _ret.asBool()
   }
 
   fun setEditable(editable: Boolean) {
     val _arg = Variant.new(editable)
-    __method_bind.set_editable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_editable.call(this._handle, _arg, 1)
   }
 
   fun setScrollable(scrollable: Boolean) {
     val _arg = Variant.new(scrollable)
-    __method_bind.set_scrollable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_scrollable.call(this._handle, _arg, 1)
   }
 
   fun setTicks(count: Int) {
     val _arg = Variant.new(count)
-    __method_bind.set_ticks.call(this.toVariant(), _arg, 1)
+    __method_bind.set_ticks.call(this._handle, _arg, 1)
   }
 
   fun setTicksOnBorders(ticksOnBorder: Boolean) {
     val _arg = Variant.new(ticksOnBorder)
-    __method_bind.set_ticks_on_borders.call(this.toVariant(), _arg, 1)
+    __method_bind.set_ticks_on_borders.call(this._handle, _arg, 1)
   }
 
   companion object {

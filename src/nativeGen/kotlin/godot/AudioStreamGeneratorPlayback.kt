@@ -22,33 +22,33 @@ open class AudioStreamGeneratorPlayback internal constructor(
 ) : AudioStreamPlaybackResampled(_handle) {
   fun canPushBuffer(amount: Int): Boolean {
     val _arg = Variant.new(amount)
-    val _ret = __method_bind.can_push_buffer.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.can_push_buffer.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun clearBuffer() {
-    __method_bind.clear_buffer.call(this.toVariant())
+    __method_bind.clear_buffer.call(this._handle)
   }
 
   fun getFramesAvailable(): Int {
-    val _ret = __method_bind.get_frames_available.call(this.toVariant())
+    val _ret = __method_bind.get_frames_available.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSkips(): Int {
-    val _ret = __method_bind.get_skips.call(this.toVariant())
+    val _ret = __method_bind.get_skips.call(this._handle)
     return _ret.asInt()
   }
 
   fun pushBuffer(frames: PoolVector2Array): Boolean {
     val _arg = Variant.new(frames)
-    val _ret = __method_bind.push_buffer.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.push_buffer.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun pushFrame(frame: Vector2): Boolean {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.push_frame.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.push_frame.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 

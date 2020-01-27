@@ -20,17 +20,17 @@ open class Skeleton2D internal constructor(
 ) : Node2D(_handle) {
   fun getBone(idx: Int): Bone2D {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_bone.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_bone.call(this._handle, _arg, 1)
     return _ret.asObject(::Bone2D)!!
   }
 
   fun getBoneCount(): Int {
-    val _ret = __method_bind.get_bone_count.call(this.toVariant())
+    val _ret = __method_bind.get_bone_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSkeleton(): RID {
-    val _ret = __method_bind.get_skeleton.call(this.toVariant())
+    val _ret = __method_bind.get_skeleton.call(this._handle)
     return _ret.asRID()
   }
 

@@ -17,13 +17,13 @@ open class ProxyTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBase(): Texture {
-    val _ret = __method_bind.get_base.call(this.toVariant())
+    val _ret = __method_bind.get_base.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setBase(base: Texture) {
     val _arg = Variant.new(base)
-    __method_bind.set_base.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base.call(this._handle, _arg, 1)
   }
 
   companion object {

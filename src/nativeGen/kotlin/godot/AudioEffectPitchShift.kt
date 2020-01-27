@@ -18,13 +18,13 @@ open class AudioEffectPitchShift internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getPitchScale(): Float {
-    val _ret = __method_bind.get_pitch_scale.call(this.toVariant())
+    val _ret = __method_bind.get_pitch_scale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setPitchScale(rate: Float) {
     val _arg = Variant.new(rate)
-    __method_bind.set_pitch_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pitch_scale.call(this._handle, _arg, 1)
   }
 
   companion object {

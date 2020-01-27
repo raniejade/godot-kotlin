@@ -17,33 +17,33 @@ open class MultiMeshInstance2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getMultimesh(): MultiMesh {
-    val _ret = __method_bind.get_multimesh.call(this.toVariant())
+    val _ret = __method_bind.get_multimesh.call(this._handle)
     return _ret.asObject(::MultiMesh)!!
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.get_normal_map.call(this.toVariant())
+    val _ret = __method_bind.get_normal_map.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
     val _arg = Variant.new(multimesh)
-    __method_bind.set_multimesh.call(this.toVariant(), _arg, 1)
+    __method_bind.set_multimesh.call(this._handle, _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
+    __method_bind.set_normal_map.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   companion object {

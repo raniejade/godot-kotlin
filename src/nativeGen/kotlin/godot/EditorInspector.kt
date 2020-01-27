@@ -17,7 +17,7 @@ open class EditorInspector internal constructor(
   _handle: COpaquePointer
 ) : ScrollContainer(_handle) {
   fun refresh() {
-    __method_bind.refresh.call(this.toVariant())
+    __method_bind.refresh.call(this._handle)
   }
 
   companion object {

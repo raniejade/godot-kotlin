@@ -25,144 +25,144 @@ open class Line2D internal constructor(
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(atPosition)
-    __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_point.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearPoints() {
-    __method_bind.clear_points.call(this.toVariant())
+    __method_bind.clear_points.call(this._handle)
   }
 
   fun getBeginCapMode(): LineCapMode {
-    val _ret = __method_bind.get_begin_cap_mode.call(this.toVariant())
+    val _ret = __method_bind.get_begin_cap_mode.call(this._handle)
     return Line2D.LineCapMode.from(_ret.asInt())
   }
 
   fun getDefaultColor(): Color {
-    val _ret = __method_bind.get_default_color.call(this.toVariant())
+    val _ret = __method_bind.get_default_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun getEndCapMode(): LineCapMode {
-    val _ret = __method_bind.get_end_cap_mode.call(this.toVariant())
+    val _ret = __method_bind.get_end_cap_mode.call(this._handle)
     return Line2D.LineCapMode.from(_ret.asInt())
   }
 
   fun getGradient(): Gradient {
-    val _ret = __method_bind.get_gradient.call(this.toVariant())
+    val _ret = __method_bind.get_gradient.call(this._handle)
     return _ret.asObject(::Gradient)!!
   }
 
   fun getJointMode(): LineJointMode {
-    val _ret = __method_bind.get_joint_mode.call(this.toVariant())
+    val _ret = __method_bind.get_joint_mode.call(this._handle)
     return Line2D.LineJointMode.from(_ret.asInt())
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.get_point_count.call(this.toVariant())
+    val _ret = __method_bind.get_point_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPointPosition(i: Int): Vector2 {
     val _arg = Variant.new(i)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_position.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPoints(): PoolVector2Array {
-    val _ret = __method_bind.get_points.call(this.toVariant())
+    val _ret = __method_bind.get_points.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun getRoundPrecision(): Int {
-    val _ret = __method_bind.get_round_precision.call(this.toVariant())
+    val _ret = __method_bind.get_round_precision.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSharpLimit(): Float {
-    val _ret = __method_bind.get_sharp_limit.call(this.toVariant())
+    val _ret = __method_bind.get_sharp_limit.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTextureMode(): LineTextureMode {
-    val _ret = __method_bind.get_texture_mode.call(this.toVariant())
+    val _ret = __method_bind.get_texture_mode.call(this._handle)
     return Line2D.LineTextureMode.from(_ret.asInt())
   }
 
   fun getWidth(): Float {
-    val _ret = __method_bind.get_width.call(this.toVariant())
+    val _ret = __method_bind.get_width.call(this._handle)
     return _ret.asFloat()
   }
 
   fun removePoint(i: Int) {
     val _arg = Variant.new(i)
-    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_point.call(this._handle, _arg, 1)
   }
 
   fun setBeginCapMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_begin_cap_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_begin_cap_mode.call(this._handle, _arg, 1)
   }
 
   fun setDefaultColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_default_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_default_color.call(this._handle, _arg, 1)
   }
 
   fun setEndCapMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_end_cap_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_end_cap_mode.call(this._handle, _arg, 1)
   }
 
   fun setGradient(color: Gradient) {
     val _arg = Variant.new(color)
-    __method_bind.set_gradient.call(this.toVariant(), _arg, 1)
+    __method_bind.set_gradient.call(this._handle, _arg, 1)
   }
 
   fun setJointMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_joint_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_joint_mode.call(this._handle, _arg, 1)
   }
 
   fun setPointPosition(i: Int, position: Vector2) {
     val _args = VariantArray.new()
     _args.append(i)
     _args.append(position)
-    __method_bind.set_point_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_position.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPoints(points: PoolVector2Array) {
     val _arg = Variant.new(points)
-    __method_bind.set_points.call(this.toVariant(), _arg, 1)
+    __method_bind.set_points.call(this._handle, _arg, 1)
   }
 
   fun setRoundPrecision(precision: Int) {
     val _arg = Variant.new(precision)
-    __method_bind.set_round_precision.call(this.toVariant(), _arg, 1)
+    __method_bind.set_round_precision.call(this._handle, _arg, 1)
   }
 
   fun setSharpLimit(limit: Float) {
     val _arg = Variant.new(limit)
-    __method_bind.set_sharp_limit.call(this.toVariant(), _arg, 1)
+    __method_bind.set_sharp_limit.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   fun setTextureMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_texture_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture_mode.call(this._handle, _arg, 1)
   }
 
   fun setWidth(width: Float) {
     val _arg = Variant.new(width)
-    __method_bind.set_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_width.call(this._handle, _arg, 1)
   }
 
   enum class LineTextureMode(

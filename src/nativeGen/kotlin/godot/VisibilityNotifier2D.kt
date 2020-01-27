@@ -19,18 +19,18 @@ open class VisibilityNotifier2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getRect(): Rect2 {
-    val _ret = __method_bind.get_rect.call(this.toVariant())
+    val _ret = __method_bind.get_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun isOnScreen(): Boolean {
-    val _ret = __method_bind.is_on_screen.call(this.toVariant())
+    val _ret = __method_bind.is_on_screen.call(this._handle)
     return _ret.asBool()
   }
 
   fun setRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.set_rect.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rect.call(this._handle, _arg, 1)
   }
 
   companion object {

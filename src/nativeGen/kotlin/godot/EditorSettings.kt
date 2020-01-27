@@ -22,16 +22,16 @@ open class EditorSettings internal constructor(
 ) : Resource(_handle) {
   fun addPropertyInfo(info: Dictionary) {
     val _arg = Variant.new(info)
-    __method_bind.add_property_info.call(this.toVariant(), _arg, 1)
+    __method_bind.add_property_info.call(this._handle, _arg, 1)
   }
 
   fun erase(property: String) {
     val _arg = Variant.new(property)
-    __method_bind.erase.call(this.toVariant(), _arg, 1)
+    __method_bind.erase.call(this._handle, _arg, 1)
   }
 
   fun getFavorites(): PoolStringArray {
-    val _ret = __method_bind.get_favorites.call(this.toVariant())
+    val _ret = __method_bind.get_favorites.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
@@ -44,52 +44,52 @@ open class EditorSettings internal constructor(
     _args.append(section)
     _args.append(key)
     _args.append(default)
-    val _ret = __method_bind.get_project_metadata.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.get_project_metadata.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun getProjectSettingsDir(): String {
-    val _ret = __method_bind.get_project_settings_dir.call(this.toVariant())
+    val _ret = __method_bind.get_project_settings_dir.call(this._handle)
     return _ret.asString()
   }
 
   fun getRecentDirs(): PoolStringArray {
-    val _ret = __method_bind.get_recent_dirs.call(this.toVariant())
+    val _ret = __method_bind.get_recent_dirs.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getSetting(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_setting.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_setting.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getSettingsDir(): String {
-    val _ret = __method_bind.get_settings_dir.call(this.toVariant())
+    val _ret = __method_bind.get_settings_dir.call(this._handle)
     return _ret.asString()
   }
 
   fun hasSetting(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_setting.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_setting.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.property_can_revert.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.property_get_revert.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun setFavorites(dirs: PoolStringArray) {
     val _arg = Variant.new(dirs)
-    __method_bind.set_favorites.call(this.toVariant(), _arg, 1)
+    __method_bind.set_favorites.call(this._handle, _arg, 1)
   }
 
   fun setInitialValue(
@@ -101,7 +101,7 @@ open class EditorSettings internal constructor(
     _args.append(name)
     _args.append(value)
     _args.append(updateCurrent)
-    __method_bind.set_initial_value.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_initial_value.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setProjectMetadata(
@@ -113,19 +113,19 @@ open class EditorSettings internal constructor(
     _args.append(section)
     _args.append(key)
     _args.append(data)
-    __method_bind.set_project_metadata.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_project_metadata.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setRecentDirs(dirs: PoolStringArray) {
     val _arg = Variant.new(dirs)
-    __method_bind.set_recent_dirs.call(this.toVariant(), _arg, 1)
+    __method_bind.set_recent_dirs.call(this._handle, _arg, 1)
   }
 
   fun setSetting(name: String, value: Variant) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(value)
-    __method_bind.set_setting.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_setting.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

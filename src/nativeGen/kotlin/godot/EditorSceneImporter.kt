@@ -27,7 +27,7 @@ open class EditorSceneImporter internal constructor(
     _args.append(path)
     _args.append(flags)
     _args.append(bakeFps)
-    val _ret = __method_bind.import_animation_from_other_importer.call(this.toVariant(),
+    val _ret = __method_bind.import_animation_from_other_importer.call(this._handle,
         _args.toVariant(), 3)
     return _ret.asObject(::Animation)!!
   }
@@ -41,8 +41,8 @@ open class EditorSceneImporter internal constructor(
     _args.append(path)
     _args.append(flags)
     _args.append(bakeFps)
-    val _ret = __method_bind.import_scene_from_other_importer.call(this.toVariant(),
-        _args.toVariant(), 3)
+    val _ret = __method_bind.import_scene_from_other_importer.call(this._handle, _args.toVariant(),
+        3)
     return _ret.asObject(::Node)!!
   }
 

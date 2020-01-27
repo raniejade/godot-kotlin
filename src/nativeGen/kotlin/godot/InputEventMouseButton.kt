@@ -20,38 +20,38 @@ open class InputEventMouseButton internal constructor(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
   fun getButtonIndex(): Int {
-    val _ret = __method_bind.get_button_index.call(this.toVariant())
+    val _ret = __method_bind.get_button_index.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFactor(): Float {
-    val _ret = __method_bind.get_factor.call(this.toVariant())
+    val _ret = __method_bind.get_factor.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isDoubleclick(): Boolean {
-    val _ret = __method_bind.is_doubleclick.call(this.toVariant())
+    val _ret = __method_bind.is_doubleclick.call(this._handle)
     return _ret.asBool()
   }
 
   fun setButtonIndex(buttonIndex: Int) {
     val _arg = Variant.new(buttonIndex)
-    __method_bind.set_button_index.call(this.toVariant(), _arg, 1)
+    __method_bind.set_button_index.call(this._handle, _arg, 1)
   }
 
   fun setDoubleclick(doubleclick: Boolean) {
     val _arg = Variant.new(doubleclick)
-    __method_bind.set_doubleclick.call(this.toVariant(), _arg, 1)
+    __method_bind.set_doubleclick.call(this._handle, _arg, 1)
   }
 
   fun setFactor(factor: Float) {
     val _arg = Variant.new(factor)
-    __method_bind.set_factor.call(this.toVariant(), _arg, 1)
+    __method_bind.set_factor.call(this._handle, _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pressed.call(this._handle, _arg, 1)
   }
 
   companion object {

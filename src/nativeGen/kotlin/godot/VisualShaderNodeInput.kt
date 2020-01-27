@@ -18,13 +18,13 @@ open class VisualShaderNodeInput internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getInputName(): String {
-    val _ret = __method_bind.get_input_name.call(this.toVariant())
+    val _ret = __method_bind.get_input_name.call(this._handle)
     return _ret.asString()
   }
 
   fun setInputName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_input_name.call(this.toVariant(), _arg, 1)
+    __method_bind.set_input_name.call(this._handle, _arg, 1)
   }
 
   companion object {

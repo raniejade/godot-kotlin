@@ -22,7 +22,7 @@ open class StreamPeerSSL internal constructor(
 ) : StreamPeer(_handle) {
   fun acceptStream(base: StreamPeer): GDError {
     val _arg = Variant.new(base)
-    val _ret = __method_bind.accept_stream.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.accept_stream.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -35,31 +35,31 @@ open class StreamPeerSSL internal constructor(
     _args.append(stream)
     _args.append(validateCerts)
     _args.append(forHostname)
-    val _ret = __method_bind.connect_to_stream.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.connect_to_stream.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
   fun disconnectFromStream() {
-    __method_bind.disconnect_from_stream.call(this.toVariant())
+    __method_bind.disconnect_from_stream.call(this._handle)
   }
 
   fun getStatus(): Status {
-    val _ret = __method_bind.get_status.call(this.toVariant())
+    val _ret = __method_bind.get_status.call(this._handle)
     return StreamPeerSSL.Status.from(_ret.asInt())
   }
 
   fun isBlockingHandshakeEnabled(): Boolean {
-    val _ret = __method_bind.is_blocking_handshake_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_blocking_handshake_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun poll() {
-    __method_bind.poll.call(this.toVariant())
+    __method_bind.poll.call(this._handle)
   }
 
   fun setBlockingHandshakeEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_blocking_handshake_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_blocking_handshake_enabled.call(this._handle, _arg, 1)
   }
 
   enum class Status(

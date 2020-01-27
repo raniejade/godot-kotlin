@@ -19,53 +19,53 @@ open class MeshInstance internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun createConvexCollision() {
-    __method_bind.create_convex_collision.call(this.toVariant())
+    __method_bind.create_convex_collision.call(this._handle)
   }
 
   fun createDebugTangents() {
-    __method_bind.create_debug_tangents.call(this.toVariant())
+    __method_bind.create_debug_tangents.call(this._handle)
   }
 
   fun createTrimeshCollision() {
-    __method_bind.create_trimesh_collision.call(this.toVariant())
+    __method_bind.create_trimesh_collision.call(this._handle)
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this.toVariant())
+    val _ret = __method_bind.get_mesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getSkeletonPath(): NodePath {
-    val _ret = __method_bind.get_skeleton_path.call(this.toVariant())
+    val _ret = __method_bind.get_skeleton_path.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
     val _arg = Variant.new(surface)
-    val _ret = __method_bind.get_surface_material.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_surface_material.call(this._handle, _arg, 1)
     return _ret.asObject(::Material)!!
   }
 
   fun getSurfaceMaterialCount(): Int {
-    val _ret = __method_bind.get_surface_material_count.call(this.toVariant())
+    val _ret = __method_bind.get_surface_material_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mesh.call(this._handle, _arg, 1)
   }
 
   fun setSkeletonPath(skeletonPath: NodePath) {
     val _arg = Variant.new(skeletonPath)
-    __method_bind.set_skeleton_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_skeleton_path.call(this._handle, _arg, 1)
   }
 
   fun setSurfaceMaterial(surface: Int, material: Material) {
     val _args = VariantArray.new()
     _args.append(surface)
     _args.append(material)
-    __method_bind.set_surface_material.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_surface_material.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

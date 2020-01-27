@@ -20,24 +20,24 @@ open class PackedScene internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
-    val _ret = __method_bind.can_instance.call(this.toVariant())
+    val _ret = __method_bind.can_instance.call(this._handle)
     return _ret.asBool()
   }
 
   fun getState(): SceneState {
-    val _ret = __method_bind.get_state.call(this.toVariant())
+    val _ret = __method_bind.get_state.call(this._handle)
     return _ret.asObject(::SceneState)!!
   }
 
   fun instance(editState: Int): Node {
     val _arg = Variant.new(editState)
-    val _ret = __method_bind.instance.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.instance.call(this._handle, _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
   fun pack(path: Node): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.pack.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.pack.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 

@@ -19,13 +19,13 @@ open class StreamTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getLoadPath(): String {
-    val _ret = __method_bind.get_load_path.call(this.toVariant())
+    val _ret = __method_bind.get_load_path.call(this._handle)
     return _ret.asString()
   }
 
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 

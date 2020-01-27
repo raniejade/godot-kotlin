@@ -20,33 +20,33 @@ open class CollisionPolygon internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getDepth(): Float {
-    val _ret = __method_bind.get_depth.call(this.toVariant())
+    val _ret = __method_bind.get_depth.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.get_polygon.call(this.toVariant())
+    val _ret = __method_bind.get_polygon.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.is_disabled.call(this.toVariant())
+    val _ret = __method_bind.is_disabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDepth(depth: Float) {
     val _arg = Variant.new(depth)
-    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_depth.call(this._handle, _arg, 1)
   }
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.set_disabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_disabled.call(this._handle, _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.set_polygon.call(this.toVariant(), _arg, 1)
+    __method_bind.set_polygon.call(this._handle, _arg, 1)
   }
 
   companion object {

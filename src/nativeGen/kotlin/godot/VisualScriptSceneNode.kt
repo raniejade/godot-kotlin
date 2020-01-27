@@ -18,13 +18,13 @@ open class VisualScriptSceneNode internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getNodePath(): NodePath {
-    val _ret = __method_bind.get_node_path.call(this.toVariant())
+    val _ret = __method_bind.get_node_path.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun setNodePath(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_node_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_node_path.call(this._handle, _arg, 1)
   }
 
   companion object {

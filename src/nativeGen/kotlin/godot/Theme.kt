@@ -22,64 +22,64 @@ open class Theme internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun clearColor(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.clear_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearConstant(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_constant.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.clear_constant.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearFont(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_font.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.clear_font.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearIcon(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_icon.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.clear_icon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearStylebox(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_stylebox.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.clear_stylebox.call(this._handle, _args.toVariant(), 2)
   }
 
   fun copyDefaultTheme() {
-    __method_bind.copy_default_theme.call(this.toVariant())
+    __method_bind.copy_default_theme.call(this._handle)
   }
 
   fun copyTheme(other: Theme) {
     val _arg = Variant.new(other)
-    __method_bind.copy_theme.call(this.toVariant(), _arg, 1)
+    __method_bind.copy_theme.call(this._handle, _arg, 1)
   }
 
   fun getColor(name: String, type: String): Color {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_color.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_color.call(this._handle, _args.toVariant(), 2)
     return _ret.asColor()
   }
 
   fun getColorList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_color_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_color_list.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -87,18 +87,18 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_constant.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_constant.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getConstantList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_constant_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_constant_list.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getDefaultFont(): Font {
-    val _ret = __method_bind.get_default_font.call(this.toVariant())
+    val _ret = __method_bind.get_default_font.call(this._handle)
     return _ret.asObject(::Font)!!
   }
 
@@ -106,13 +106,13 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_font.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_font.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Font)!!
   }
 
   fun getFontList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_font_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_font_list.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -120,13 +120,13 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_icon.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_icon.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Texture)!!
   }
 
   fun getIconList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_icon_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_icon_list.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -134,24 +134,24 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_stylebox.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_stylebox.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::StyleBox)!!
   }
 
   fun getStyleboxList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_stylebox_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_stylebox_list.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getStyleboxTypes(): PoolStringArray {
-    val _ret = __method_bind.get_stylebox_types.call(this.toVariant())
+    val _ret = __method_bind.get_stylebox_types.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getTypeList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_type_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_type_list.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -159,7 +159,7 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_color.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_color.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -167,7 +167,7 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_constant.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_constant.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -175,7 +175,7 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_font.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_font.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -183,7 +183,7 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_icon.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_icon.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -191,7 +191,7 @@ open class Theme internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_stylebox.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_stylebox.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -204,7 +204,7 @@ open class Theme internal constructor(
     _args.append(name)
     _args.append(type)
     _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_color.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setConstant(
@@ -216,12 +216,12 @@ open class Theme internal constructor(
     _args.append(name)
     _args.append(type)
     _args.append(constant)
-    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_constant.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setDefaultFont(font: Font) {
     val _arg = Variant.new(font)
-    __method_bind.set_default_font.call(this.toVariant(), _arg, 1)
+    __method_bind.set_default_font.call(this._handle, _arg, 1)
   }
 
   fun setFont(
@@ -233,7 +233,7 @@ open class Theme internal constructor(
     _args.append(name)
     _args.append(type)
     _args.append(font)
-    __method_bind.set_font.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_font.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setIcon(
@@ -245,7 +245,7 @@ open class Theme internal constructor(
     _args.append(name)
     _args.append(type)
     _args.append(texture)
-    __method_bind.set_icon.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_icon.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setStylebox(
@@ -257,7 +257,7 @@ open class Theme internal constructor(
     _args.append(name)
     _args.append(type)
     _args.append(texture)
-    __method_bind.set_stylebox.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_stylebox.call(this._handle, _args.toVariant(), 3)
   }
 
   companion object {

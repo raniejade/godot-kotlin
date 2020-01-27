@@ -21,91 +21,91 @@ open class GeometryInstance internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun getCastShadowsSetting(): ShadowCastingSetting {
-    val _ret = __method_bind.get_cast_shadows_setting.call(this.toVariant())
+    val _ret = __method_bind.get_cast_shadows_setting.call(this._handle)
     return GeometryInstance.ShadowCastingSetting.from(_ret.asInt())
   }
 
   fun getExtraCullMargin(): Float {
-    val _ret = __method_bind.get_extra_cull_margin.call(this.toVariant())
+    val _ret = __method_bind.get_extra_cull_margin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_flag.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getLodMaxDistance(): Float {
-    val _ret = __method_bind.get_lod_max_distance.call(this.toVariant())
+    val _ret = __method_bind.get_lod_max_distance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getLodMaxHysteresis(): Float {
-    val _ret = __method_bind.get_lod_max_hysteresis.call(this.toVariant())
+    val _ret = __method_bind.get_lod_max_hysteresis.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getLodMinDistance(): Float {
-    val _ret = __method_bind.get_lod_min_distance.call(this.toVariant())
+    val _ret = __method_bind.get_lod_min_distance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getLodMinHysteresis(): Float {
-    val _ret = __method_bind.get_lod_min_hysteresis.call(this.toVariant())
+    val _ret = __method_bind.get_lod_min_hysteresis.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMaterialOverride(): Material {
-    val _ret = __method_bind.get_material_override.call(this.toVariant())
+    val _ret = __method_bind.get_material_override.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun setCastShadowsSetting(shadowCastingSetting: Int) {
     val _arg = Variant.new(shadowCastingSetting)
-    __method_bind.set_cast_shadows_setting.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cast_shadows_setting.call(this._handle, _arg, 1)
   }
 
   fun setCustomAabb(aabb: AABB) {
     val _arg = Variant.new(aabb)
-    __method_bind.set_custom_aabb.call(this.toVariant(), _arg, 1)
+    __method_bind.set_custom_aabb.call(this._handle, _arg, 1)
   }
 
   fun setExtraCullMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_extra_cull_margin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_extra_cull_margin.call(this._handle, _arg, 1)
   }
 
   fun setFlag(flag: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_flag.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setLodMaxDistance(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.set_lod_max_distance.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lod_max_distance.call(this._handle, _arg, 1)
   }
 
   fun setLodMaxHysteresis(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.set_lod_max_hysteresis.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lod_max_hysteresis.call(this._handle, _arg, 1)
   }
 
   fun setLodMinDistance(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.set_lod_min_distance.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lod_min_distance.call(this._handle, _arg, 1)
   }
 
   fun setLodMinHysteresis(mode: Float) {
     val _arg = Variant.new(mode)
-    __method_bind.set_lod_min_hysteresis.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lod_min_hysteresis.call(this._handle, _arg, 1)
   }
 
   fun setMaterialOverride(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material_override.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material_override.call(this._handle, _arg, 1)
   }
 
   enum class Flags(

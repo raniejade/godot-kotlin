@@ -20,37 +20,37 @@ open class Shader internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCode(): String {
-    val _ret = __method_bind.get_code.call(this.toVariant())
+    val _ret = __method_bind.get_code.call(this._handle)
     return _ret.asString()
   }
 
   fun getDefaultTextureParam(param: String): Texture {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_default_texture_param.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_default_texture_param.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.get_mode.call(this.toVariant())
+    val _ret = __method_bind.get_mode.call(this._handle)
     return Shader.Mode.from(_ret.asInt())
   }
 
   fun hasParam(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_param.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_param.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun setCode(code: String) {
     val _arg = Variant.new(code)
-    __method_bind.set_code.call(this.toVariant(), _arg, 1)
+    __method_bind.set_code.call(this._handle, _arg, 1)
   }
 
   fun setDefaultTextureParam(param: String, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(texture)
-    __method_bind.set_default_texture_param.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_default_texture_param.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Mode(

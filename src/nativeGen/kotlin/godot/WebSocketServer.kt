@@ -30,29 +30,29 @@ open class WebSocketServer internal constructor(
     _args.append(id)
     _args.append(code)
     _args.append(reason)
-    __method_bind.disconnect_peer.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.disconnect_peer.call(this._handle, _args.toVariant(), 3)
   }
 
   fun getPeerAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_peer_address.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_peer_port.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun hasPeer(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.has_peer.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_peer.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isListening(): Boolean {
-    val _ret = __method_bind.is_listening.call(this.toVariant())
+    val _ret = __method_bind.is_listening.call(this._handle)
     return _ret.asBool()
   }
 
@@ -65,12 +65,12 @@ open class WebSocketServer internal constructor(
     _args.append(port)
     _args.append(protocols)
     _args.append(gdMpApi)
-    val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
   fun stop() {
-    __method_bind.stop.call(this.toVariant())
+    __method_bind.stop.call(this._handle)
   }
 
   companion object {

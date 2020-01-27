@@ -18,13 +18,13 @@ open class QuadMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   companion object {

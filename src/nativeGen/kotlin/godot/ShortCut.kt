@@ -19,29 +19,29 @@ open class ShortCut internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAsText(): String {
-    val _ret = __method_bind.get_as_text.call(this.toVariant())
+    val _ret = __method_bind.get_as_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getShortcut(): InputEvent {
-    val _ret = __method_bind.get_shortcut.call(this.toVariant())
+    val _ret = __method_bind.get_shortcut.call(this._handle)
     return _ret.asObject(::InputEvent)!!
   }
 
   fun isShortcut(event: InputEvent): Boolean {
     val _arg = Variant.new(event)
-    val _ret = __method_bind.is_shortcut.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_shortcut.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.is_valid.call(this.toVariant())
+    val _ret = __method_bind.is_valid.call(this._handle)
     return _ret.asBool()
   }
 
   fun setShortcut(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.set_shortcut.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shortcut.call(this._handle, _arg, 1)
   }
 
   companion object {

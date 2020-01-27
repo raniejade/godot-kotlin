@@ -19,56 +19,56 @@ open class CubeMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getFlags(): Int {
-    val _ret = __method_bind.get_flags.call(this.toVariant())
+    val _ret = __method_bind.get_flags.call(this._handle)
     return _ret.asInt()
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLossyStorageQuality(): Float {
-    val _ret = __method_bind.get_lossy_storage_quality.call(this.toVariant())
+    val _ret = __method_bind.get_lossy_storage_quality.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSide(side: Int): Image {
     val _arg = Variant.new(side)
-    val _ret = __method_bind.get_side.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_side.call(this._handle, _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
   fun getStorage(): Storage {
-    val _ret = __method_bind.get_storage.call(this.toVariant())
+    val _ret = __method_bind.get_storage.call(this._handle)
     return CubeMap.Storage.from(_ret.asInt())
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.get_width.call(this.toVariant())
+    val _ret = __method_bind.get_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.set_flags.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flags.call(this._handle, _arg, 1)
   }
 
   fun setLossyStorageQuality(quality: Float) {
     val _arg = Variant.new(quality)
-    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lossy_storage_quality.call(this._handle, _arg, 1)
   }
 
   fun setSide(side: Int, image: Image) {
     val _args = VariantArray.new()
     _args.append(side)
     _args.append(image)
-    __method_bind.set_side.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_side.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setStorage(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_storage.call(this.toVariant(), _arg, 1)
+    __method_bind.set_storage.call(this._handle, _arg, 1)
   }
 
   enum class Flags(

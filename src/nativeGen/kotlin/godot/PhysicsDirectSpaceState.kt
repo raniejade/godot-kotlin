@@ -24,7 +24,7 @@ open class PhysicsDirectSpaceState internal constructor(
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(motion)
-    val _ret = __method_bind.cast_motion.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.cast_motion.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -32,13 +32,13 @@ open class PhysicsDirectSpaceState internal constructor(
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)
-    val _ret = __method_bind.collide_shape.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.collide_shape.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
   fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
     val _arg = Variant.new(shape)
-    val _ret = __method_bind.get_rest_info.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_rest_info.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
@@ -57,7 +57,7 @@ open class PhysicsDirectSpaceState internal constructor(
     _args.append(collisionMask)
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
-    val _ret = __method_bind.intersect_ray.call(this.toVariant(), _args.toVariant(), 6)
+    val _ret = __method_bind.intersect_ray.call(this._handle, _args.toVariant(), 6)
     return _ret.asDictionary()
   }
 
@@ -65,7 +65,7 @@ open class PhysicsDirectSpaceState internal constructor(
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)
-    val _ret = __method_bind.intersect_shape.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.intersect_shape.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 

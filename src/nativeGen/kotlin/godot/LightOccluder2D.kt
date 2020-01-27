@@ -18,23 +18,23 @@ open class LightOccluder2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getOccluderLightMask(): Int {
-    val _ret = __method_bind.get_occluder_light_mask.call(this.toVariant())
+    val _ret = __method_bind.get_occluder_light_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOccluderPolygon(): OccluderPolygon2D {
-    val _ret = __method_bind.get_occluder_polygon.call(this.toVariant())
+    val _ret = __method_bind.get_occluder_polygon.call(this._handle)
     return _ret.asObject(::OccluderPolygon2D)!!
   }
 
   fun setOccluderLightMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_occluder_light_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_occluder_light_mask.call(this._handle, _arg, 1)
   }
 
   fun setOccluderPolygon(polygon: OccluderPolygon2D) {
     val _arg = Variant.new(polygon)
-    __method_bind.set_occluder_polygon.call(this.toVariant(), _arg, 1)
+    __method_bind.set_occluder_polygon.call(this._handle, _arg, 1)
   }
 
   companion object {

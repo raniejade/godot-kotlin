@@ -20,63 +20,63 @@ open class Sprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
   fun getFrame(): Int {
-    val _ret = __method_bind.get_frame.call(this.toVariant())
+    val _ret = __method_bind.get_frame.call(this._handle)
     return _ret.asInt()
   }
 
   fun getHframes(): Int {
-    val _ret = __method_bind.get_hframes.call(this.toVariant())
+    val _ret = __method_bind.get_hframes.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.get_region_rect.call(this.toVariant())
+    val _ret = __method_bind.get_region_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getVframes(): Int {
-    val _ret = __method_bind.get_vframes.call(this.toVariant())
+    val _ret = __method_bind.get_vframes.call(this._handle)
     return _ret.asInt()
   }
 
   fun isRegion(): Boolean {
-    val _ret = __method_bind.is_region.call(this.toVariant())
+    val _ret = __method_bind.is_region.call(this._handle)
     return _ret.asBool()
   }
 
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
-    __method_bind.set_frame.call(this.toVariant(), _arg, 1)
+    __method_bind.set_frame.call(this._handle, _arg, 1)
   }
 
   fun setHframes(hframes: Int) {
     val _arg = Variant.new(hframes)
-    __method_bind.set_hframes.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hframes.call(this._handle, _arg, 1)
   }
 
   fun setRegion(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_region.call(this.toVariant(), _arg, 1)
+    __method_bind.set_region.call(this._handle, _arg, 1)
   }
 
   fun setRegionRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
+    __method_bind.set_region_rect.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   fun setVframes(vframes: Int) {
     val _arg = Variant.new(vframes)
-    __method_bind.set_vframes.call(this.toVariant(), _arg, 1)
+    __method_bind.set_vframes.call(this._handle, _arg, 1)
   }
 
   companion object {

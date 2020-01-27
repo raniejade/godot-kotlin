@@ -18,23 +18,23 @@ open class Material internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getNextPass(): Material {
-    val _ret = __method_bind.get_next_pass.call(this.toVariant())
+    val _ret = __method_bind.get_next_pass.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getRenderPriority(): Int {
-    val _ret = __method_bind.get_render_priority.call(this.toVariant())
+    val _ret = __method_bind.get_render_priority.call(this._handle)
     return _ret.asInt()
   }
 
   fun setNextPass(nextPass: Material) {
     val _arg = Variant.new(nextPass)
-    __method_bind.set_next_pass.call(this.toVariant(), _arg, 1)
+    __method_bind.set_next_pass.call(this._handle, _arg, 1)
   }
 
   fun setRenderPriority(priority: Int) {
     val _arg = Variant.new(priority)
-    __method_bind.set_render_priority.call(this.toVariant(), _arg, 1)
+    __method_bind.set_render_priority.call(this._handle, _arg, 1)
   }
 
   companion object {

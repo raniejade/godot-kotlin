@@ -23,36 +23,36 @@ open class WebSocketPeer internal constructor(
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(reason)
-    __method_bind.close.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.close.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getConnectedHost(): String {
-    val _ret = __method_bind.get_connected_host.call(this.toVariant())
+    val _ret = __method_bind.get_connected_host.call(this._handle)
     return _ret.asString()
   }
 
   fun getConnectedPort(): Int {
-    val _ret = __method_bind.get_connected_port.call(this.toVariant())
+    val _ret = __method_bind.get_connected_port.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWriteMode(): WriteMode {
-    val _ret = __method_bind.get_write_mode.call(this.toVariant())
+    val _ret = __method_bind.get_write_mode.call(this._handle)
     return WebSocketPeer.WriteMode.from(_ret.asInt())
   }
 
   fun isConnectedToHost(): Boolean {
-    val _ret = __method_bind.is_connected_to_host.call(this.toVariant())
+    val _ret = __method_bind.is_connected_to_host.call(this._handle)
     return _ret.asBool()
   }
 
   fun setWriteMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_write_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_write_mode.call(this._handle, _arg, 1)
   }
 
   fun wasStringPacket(): Boolean {
-    val _ret = __method_bind.was_string_packet.call(this.toVariant())
+    val _ret = __method_bind.was_string_packet.call(this._handle)
     return _ret.asBool()
   }
 

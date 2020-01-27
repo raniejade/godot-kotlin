@@ -21,60 +21,60 @@ open class ARVRController internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getControllerId(): Int {
-    val _ret = __method_bind.get_controller_id.call(this.toVariant())
+    val _ret = __method_bind.get_controller_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getControllerName(): String {
-    val _ret = __method_bind.get_controller_name.call(this.toVariant())
+    val _ret = __method_bind.get_controller_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getHand(): ARVRPositionalTracker.TrackerHand {
-    val _ret = __method_bind.get_hand.call(this.toVariant())
+    val _ret = __method_bind.get_hand.call(this._handle)
     return ARVRPositionalTracker.TrackerHand.from(_ret.asInt())
   }
 
   fun getIsActive(): Boolean {
-    val _ret = __method_bind.get_is_active.call(this.toVariant())
+    val _ret = __method_bind.get_is_active.call(this._handle)
     return _ret.asBool()
   }
 
   fun getJoystickAxis(axis: Int): Float {
     val _arg = Variant.new(axis)
-    val _ret = __method_bind.get_joystick_axis.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_joystick_axis.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getJoystickId(): Int {
-    val _ret = __method_bind.get_joystick_id.call(this.toVariant())
+    val _ret = __method_bind.get_joystick_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this.toVariant())
+    val _ret = __method_bind.get_mesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getRumble(): Float {
-    val _ret = __method_bind.get_rumble.call(this.toVariant())
+    val _ret = __method_bind.get_rumble.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isButtonPressed(button: Int): Int {
     val _arg = Variant.new(button)
-    val _ret = __method_bind.is_button_pressed.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_button_pressed.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun setControllerId(controllerId: Int) {
     val _arg = Variant.new(controllerId)
-    __method_bind.set_controller_id.call(this.toVariant(), _arg, 1)
+    __method_bind.set_controller_id.call(this._handle, _arg, 1)
   }
 
   fun setRumble(rumble: Float) {
     val _arg = Variant.new(rumble)
-    __method_bind.set_rumble.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rumble.call(this._handle, _arg, 1)
   }
 
   companion object {

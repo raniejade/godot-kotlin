@@ -18,53 +18,53 @@ open class InputEventWithModifiers internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAlt(): Boolean {
-    val _ret = __method_bind.get_alt.call(this.toVariant())
+    val _ret = __method_bind.get_alt.call(this._handle)
     return _ret.asBool()
   }
 
   fun getCommand(): Boolean {
-    val _ret = __method_bind.get_command.call(this.toVariant())
+    val _ret = __method_bind.get_command.call(this._handle)
     return _ret.asBool()
   }
 
   fun getControl(): Boolean {
-    val _ret = __method_bind.get_control.call(this.toVariant())
+    val _ret = __method_bind.get_control.call(this._handle)
     return _ret.asBool()
   }
 
   fun getMetakey(): Boolean {
-    val _ret = __method_bind.get_metakey.call(this.toVariant())
+    val _ret = __method_bind.get_metakey.call(this._handle)
     return _ret.asBool()
   }
 
   fun getShift(): Boolean {
-    val _ret = __method_bind.get_shift.call(this.toVariant())
+    val _ret = __method_bind.get_shift.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAlt(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_alt.call(this.toVariant(), _arg, 1)
+    __method_bind.set_alt.call(this._handle, _arg, 1)
   }
 
   fun setCommand(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_command.call(this.toVariant(), _arg, 1)
+    __method_bind.set_command.call(this._handle, _arg, 1)
   }
 
   fun setControl(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_control.call(this.toVariant(), _arg, 1)
+    __method_bind.set_control.call(this._handle, _arg, 1)
   }
 
   fun setMetakey(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_metakey.call(this.toVariant(), _arg, 1)
+    __method_bind.set_metakey.call(this._handle, _arg, 1)
   }
 
   fun setShift(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_shift.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shift.call(this._handle, _arg, 1)
   }
 
   companion object {

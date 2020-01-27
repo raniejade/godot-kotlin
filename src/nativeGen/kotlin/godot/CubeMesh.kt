@@ -19,43 +19,43 @@ open class CubeMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector3 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getSubdivideDepth(): Int {
-    val _ret = __method_bind.get_subdivide_depth.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_depth.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSubdivideHeight(): Int {
-    val _ret = __method_bind.get_subdivide_height.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSubdivideWidth(): Int {
-    val _ret = __method_bind.get_subdivide_width.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun setSize(size: Vector3) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideDepth(divisions: Int) {
     val _arg = Variant.new(divisions)
-    __method_bind.set_subdivide_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_depth.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideHeight(divisions: Int) {
     val _arg = Variant.new(divisions)
-    __method_bind.set_subdivide_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_height.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideWidth(subdivide: Int) {
     val _arg = Variant.new(subdivide)
-    __method_bind.set_subdivide_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_width.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,13 +18,13 @@ open class ARVROrigin internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getWorldScale(): Float {
-    val _ret = __method_bind.get_world_scale.call(this.toVariant())
+    val _ret = __method_bind.get_world_scale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setWorldScale(worldScale: Float) {
     val _arg = Variant.new(worldScale)
-    __method_bind.set_world_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_world_scale.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -21,103 +21,103 @@ open class DynamicFont internal constructor(
 ) : Font(_handle) {
   fun addFallback(data: DynamicFontData) {
     val _arg = Variant.new(data)
-    __method_bind.add_fallback.call(this.toVariant(), _arg, 1)
+    __method_bind.add_fallback.call(this._handle, _arg, 1)
   }
 
   fun getFallback(idx: Int): DynamicFontData {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_fallback.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_fallback.call(this._handle, _arg, 1)
     return _ret.asObject(::DynamicFontData)!!
   }
 
   fun getFallbackCount(): Int {
-    val _ret = __method_bind.get_fallback_count.call(this.toVariant())
+    val _ret = __method_bind.get_fallback_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFontData(): DynamicFontData {
-    val _ret = __method_bind.get_font_data.call(this.toVariant())
+    val _ret = __method_bind.get_font_data.call(this._handle)
     return _ret.asObject(::DynamicFontData)!!
   }
 
   fun getOutlineColor(): Color {
-    val _ret = __method_bind.get_outline_color.call(this.toVariant())
+    val _ret = __method_bind.get_outline_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun getOutlineSize(): Int {
-    val _ret = __method_bind.get_outline_size.call(this.toVariant())
+    val _ret = __method_bind.get_outline_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSize(): Int {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSpacing(type: Int): Int {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_spacing.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_spacing.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getUseFilter(): Boolean {
-    val _ret = __method_bind.get_use_filter.call(this.toVariant())
+    val _ret = __method_bind.get_use_filter.call(this._handle)
     return _ret.asBool()
   }
 
   fun getUseMipmaps(): Boolean {
-    val _ret = __method_bind.get_use_mipmaps.call(this.toVariant())
+    val _ret = __method_bind.get_use_mipmaps.call(this._handle)
     return _ret.asBool()
   }
 
   fun removeFallback(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.remove_fallback.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_fallback.call(this._handle, _arg, 1)
   }
 
   fun setFallback(idx: Int, data: DynamicFontData) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(data)
-    __method_bind.set_fallback.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_fallback.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFontData(data: DynamicFontData) {
     val _arg = Variant.new(data)
-    __method_bind.set_font_data.call(this.toVariant(), _arg, 1)
+    __method_bind.set_font_data.call(this._handle, _arg, 1)
   }
 
   fun setOutlineColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_outline_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_outline_color.call(this._handle, _arg, 1)
   }
 
   fun setOutlineSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.set_outline_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_outline_size.call(this._handle, _arg, 1)
   }
 
   fun setSize(data: Int) {
     val _arg = Variant.new(data)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   fun setSpacing(type: Int, value: Int) {
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(value)
-    __method_bind.set_spacing.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_spacing.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setUseFilter(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_filter.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_filter.call(this._handle, _arg, 1)
   }
 
   fun setUseMipmaps(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_mipmaps.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_mipmaps.call(this._handle, _arg, 1)
   }
 
   enum class SpacingType(

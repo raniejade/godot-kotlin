@@ -19,42 +19,42 @@ open class StreamPeerBuffer internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun duplicate(): StreamPeerBuffer {
-    val _ret = __method_bind.duplicate.call(this.toVariant())
+    val _ret = __method_bind.duplicate.call(this._handle)
     return _ret.asObject(::StreamPeerBuffer)!!
   }
 
   fun getDataArray(): PoolByteArray {
-    val _ret = __method_bind.get_data_array.call(this.toVariant())
+    val _ret = __method_bind.get_data_array.call(this._handle)
     return _ret.asPoolByteArray()
   }
 
   fun getPosition(): Int {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSize(): Int {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun resize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.resize.call(this.toVariant(), _arg, 1)
+    __method_bind.resize.call(this._handle, _arg, 1)
   }
 
   fun seek(position: Int) {
     val _arg = Variant.new(position)
-    __method_bind.seek.call(this.toVariant(), _arg, 1)
+    __method_bind.seek.call(this._handle, _arg, 1)
   }
 
   fun setDataArray(data: PoolByteArray) {
     val _arg = Variant.new(data)
-    __method_bind.set_data_array.call(this.toVariant(), _arg, 1)
+    __method_bind.set_data_array.call(this._handle, _arg, 1)
   }
 
   companion object {

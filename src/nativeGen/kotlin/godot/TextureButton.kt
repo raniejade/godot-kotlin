@@ -19,83 +19,83 @@ open class TextureButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getClickMask(): BitMap {
-    val _ret = __method_bind.get_click_mask.call(this.toVariant())
+    val _ret = __method_bind.get_click_mask.call(this._handle)
     return _ret.asObject(::BitMap)!!
   }
 
   fun getDisabledTexture(): Texture {
-    val _ret = __method_bind.get_disabled_texture.call(this.toVariant())
+    val _ret = __method_bind.get_disabled_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getExpand(): Boolean {
-    val _ret = __method_bind.get_expand.call(this.toVariant())
+    val _ret = __method_bind.get_expand.call(this._handle)
     return _ret.asBool()
   }
 
   fun getFocusedTexture(): Texture {
-    val _ret = __method_bind.get_focused_texture.call(this.toVariant())
+    val _ret = __method_bind.get_focused_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getHoverTexture(): Texture {
-    val _ret = __method_bind.get_hover_texture.call(this.toVariant())
+    val _ret = __method_bind.get_hover_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getNormalTexture(): Texture {
-    val _ret = __method_bind.get_normal_texture.call(this.toVariant())
+    val _ret = __method_bind.get_normal_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getPressedTexture(): Texture {
-    val _ret = __method_bind.get_pressed_texture.call(this.toVariant())
+    val _ret = __method_bind.get_pressed_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getStretchMode(): StretchMode {
-    val _ret = __method_bind.get_stretch_mode.call(this.toVariant())
+    val _ret = __method_bind.get_stretch_mode.call(this._handle)
     return TextureButton.StretchMode.from(_ret.asInt())
   }
 
   fun setClickMask(mask: BitMap) {
     val _arg = Variant.new(mask)
-    __method_bind.set_click_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_click_mask.call(this._handle, _arg, 1)
   }
 
   fun setDisabledTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_disabled_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_disabled_texture.call(this._handle, _arg, 1)
   }
 
   fun setExpand(pExpand: Boolean) {
     val _arg = Variant.new(pExpand)
-    __method_bind.set_expand.call(this.toVariant(), _arg, 1)
+    __method_bind.set_expand.call(this._handle, _arg, 1)
   }
 
   fun setFocusedTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_focused_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_focused_texture.call(this._handle, _arg, 1)
   }
 
   fun setHoverTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_hover_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hover_texture.call(this._handle, _arg, 1)
   }
 
   fun setNormalTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_normal_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_normal_texture.call(this._handle, _arg, 1)
   }
 
   fun setPressedTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_pressed_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pressed_texture.call(this._handle, _arg, 1)
   }
 
   fun setStretchMode(pMode: Int) {
     val _arg = Variant.new(pMode)
-    __method_bind.set_stretch_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stretch_mode.call(this._handle, _arg, 1)
   }
 
   enum class StretchMode(

@@ -17,13 +17,13 @@ open class VisualScriptPreload internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getPreload(): Resource {
-    val _ret = __method_bind.get_preload.call(this.toVariant())
+    val _ret = __method_bind.get_preload.call(this._handle)
     return _ret.asObject(::Resource)!!
   }
 
   fun setPreload(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.set_preload.call(this.toVariant(), _arg, 1)
+    __method_bind.set_preload.call(this._handle, _arg, 1)
   }
 
   companion object {

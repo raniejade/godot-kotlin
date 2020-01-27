@@ -34,52 +34,52 @@ open class ImmediateGeometry internal constructor(
     _args.append(lons)
     _args.append(radius)
     _args.append(addUv)
-    __method_bind.add_sphere.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_sphere.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addVertex(position: Vector3) {
     val _arg = Variant.new(position)
-    __method_bind.add_vertex.call(this.toVariant(), _arg, 1)
+    __method_bind.add_vertex.call(this._handle, _arg, 1)
   }
 
   fun begin(primitive: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(primitive)
     _args.append(texture)
-    __method_bind.begin.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.begin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun end() {
-    __method_bind.end.call(this.toVariant())
+    __method_bind.end.call(this._handle)
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_color.call(this._handle, _arg, 1)
   }
 
   fun setNormal(normal: Vector3) {
     val _arg = Variant.new(normal)
-    __method_bind.set_normal.call(this.toVariant(), _arg, 1)
+    __method_bind.set_normal.call(this._handle, _arg, 1)
   }
 
   fun setTangent(tangent: Plane) {
     val _arg = Variant.new(tangent)
-    __method_bind.set_tangent.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tangent.call(this._handle, _arg, 1)
   }
 
   fun setUv(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.set_uv.call(this.toVariant(), _arg, 1)
+    __method_bind.set_uv.call(this._handle, _arg, 1)
   }
 
   fun setUv2(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.set_uv2.call(this.toVariant(), _arg, 1)
+    __method_bind.set_uv2.call(this._handle, _arg, 1)
   }
 
   companion object {

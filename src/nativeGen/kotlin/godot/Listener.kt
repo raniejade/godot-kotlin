@@ -19,21 +19,21 @@ open class Listener internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun clearCurrent() {
-    __method_bind.clear_current.call(this.toVariant())
+    __method_bind.clear_current.call(this._handle)
   }
 
   fun getListenerTransform(): Transform {
-    val _ret = __method_bind.get_listener_transform.call(this.toVariant())
+    val _ret = __method_bind.get_listener_transform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun isCurrent(): Boolean {
-    val _ret = __method_bind.is_current.call(this.toVariant())
+    val _ret = __method_bind.is_current.call(this._handle)
     return _ret.asBool()
   }
 
   fun makeCurrent() {
-    __method_bind.make_current.call(this.toVariant())
+    __method_bind.make_current.call(this._handle)
   }
 
   companion object {

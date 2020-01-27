@@ -20,73 +20,73 @@ open class PathFollow internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getCubicInterpolation(): Boolean {
-    val _ret = __method_bind.get_cubic_interpolation.call(this.toVariant())
+    val _ret = __method_bind.get_cubic_interpolation.call(this._handle)
     return _ret.asBool()
   }
 
   fun getHOffset(): Float {
-    val _ret = __method_bind.get_h_offset.call(this.toVariant())
+    val _ret = __method_bind.get_h_offset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOffset(): Float {
-    val _ret = __method_bind.get_offset.call(this.toVariant())
+    val _ret = __method_bind.get_offset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRotationMode(): RotationMode {
-    val _ret = __method_bind.get_rotation_mode.call(this.toVariant())
+    val _ret = __method_bind.get_rotation_mode.call(this._handle)
     return PathFollow.RotationMode.from(_ret.asInt())
   }
 
   fun getUnitOffset(): Float {
-    val _ret = __method_bind.get_unit_offset.call(this.toVariant())
+    val _ret = __method_bind.get_unit_offset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getVOffset(): Float {
-    val _ret = __method_bind.get_v_offset.call(this.toVariant())
+    val _ret = __method_bind.get_v_offset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun hasLoop(): Boolean {
-    val _ret = __method_bind.has_loop.call(this.toVariant())
+    val _ret = __method_bind.has_loop.call(this._handle)
     return _ret.asBool()
   }
 
   fun setCubicInterpolation(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_cubic_interpolation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cubic_interpolation.call(this._handle, _arg, 1)
   }
 
   fun setHOffset(hOffset: Float) {
     val _arg = Variant.new(hOffset)
-    __method_bind.set_h_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_h_offset.call(this._handle, _arg, 1)
   }
 
   fun setLoop(loop: Boolean) {
     val _arg = Variant.new(loop)
-    __method_bind.set_loop.call(this.toVariant(), _arg, 1)
+    __method_bind.set_loop.call(this._handle, _arg, 1)
   }
 
   fun setOffset(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_offset.call(this._handle, _arg, 1)
   }
 
   fun setRotationMode(rotationMode: Int) {
     val _arg = Variant.new(rotationMode)
-    __method_bind.set_rotation_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rotation_mode.call(this._handle, _arg, 1)
   }
 
   fun setUnitOffset(unitOffset: Float) {
     val _arg = Variant.new(unitOffset)
-    __method_bind.set_unit_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_unit_offset.call(this._handle, _arg, 1)
   }
 
   fun setVOffset(vOffset: Float) {
     val _arg = Variant.new(vOffset)
-    __method_bind.set_v_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_v_offset.call(this._handle, _arg, 1)
   }
 
   enum class RotationMode(

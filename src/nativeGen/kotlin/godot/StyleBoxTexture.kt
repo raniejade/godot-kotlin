@@ -23,59 +23,59 @@ open class StyleBoxTexture internal constructor(
 ) : StyleBox(_handle) {
   fun getExpandMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_expand_margin_size.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_expand_margin_size.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getHAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_h_axis_stretch_mode.call(this.toVariant())
+    val _ret = __method_bind.get_h_axis_stretch_mode.call(this._handle)
     return StyleBoxTexture.AxisStretchMode.from(_ret.asInt())
   }
 
   fun getMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_margin_size.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_margin_size.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.get_modulate.call(this.toVariant())
+    val _ret = __method_bind.get_modulate.call(this._handle)
     return _ret.asColor()
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.get_normal_map.call(this.toVariant())
+    val _ret = __method_bind.get_normal_map.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.get_region_rect.call(this.toVariant())
+    val _ret = __method_bind.get_region_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_v_axis_stretch_mode.call(this.toVariant())
+    val _ret = __method_bind.get_v_axis_stretch_mode.call(this._handle)
     return StyleBoxTexture.AxisStretchMode.from(_ret.asInt())
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_center_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_draw_center_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDrawCenter(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_draw_center.call(this.toVariant(), _arg, 1)
+    __method_bind.set_draw_center.call(this._handle, _arg, 1)
   }
 
   fun setExpandMarginAll(size: Float) {
     val _arg = Variant.new(size)
-    __method_bind.set_expand_margin_all.call(this.toVariant(), _arg, 1)
+    __method_bind.set_expand_margin_all.call(this._handle, _arg, 1)
   }
 
   fun setExpandMarginIndividual(
@@ -89,51 +89,51 @@ open class StyleBoxTexture internal constructor(
     _args.append(sizeTop)
     _args.append(sizeRight)
     _args.append(sizeBottom)
-    __method_bind.set_expand_margin_individual.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.set_expand_margin_individual.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setExpandMarginSize(margin: Int, size: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(size)
-    __method_bind.set_expand_margin_size.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_expand_margin_size.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setHAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_h_axis_stretch_mode.call(this._handle, _arg, 1)
   }
 
   fun setMarginSize(margin: Int, size: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(size)
-    __method_bind.set_margin_size.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_margin_size.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setModulate(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_modulate.call(this.toVariant(), _arg, 1)
+    __method_bind.set_modulate.call(this._handle, _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
+    __method_bind.set_normal_map.call(this._handle, _arg, 1)
   }
 
   fun setRegionRect(region: Rect2) {
     val _arg = Variant.new(region)
-    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
+    __method_bind.set_region_rect.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   fun setVAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_v_axis_stretch_mode.call(this._handle, _arg, 1)
   }
 
   enum class AxisStretchMode(

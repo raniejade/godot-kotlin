@@ -18,13 +18,13 @@ open class VisualScriptBuiltinFunc internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getFunc(): BuiltinFunc {
-    val _ret = __method_bind.get_func.call(this.toVariant())
+    val _ret = __method_bind.get_func.call(this._handle)
     return VisualScriptBuiltinFunc.BuiltinFunc.from(_ret.asInt())
   }
 
   fun setFunc(which: Int) {
     val _arg = Variant.new(which)
-    __method_bind.set_func.call(this.toVariant(), _arg, 1)
+    __method_bind.set_func.call(this._handle, _arg, 1)
   }
 
   enum class BuiltinFunc(

@@ -18,13 +18,13 @@ open class CircleShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getRadius(): Float {
-    val _ret = __method_bind.get_radius.call(this.toVariant())
+    val _ret = __method_bind.get_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radius.call(this._handle, _arg, 1)
   }
 
   companion object {

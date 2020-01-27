@@ -18,13 +18,13 @@ open class VisualScriptSequence internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getSteps(): Int {
-    val _ret = __method_bind.get_steps.call(this.toVariant())
+    val _ret = __method_bind.get_steps.call(this._handle)
     return _ret.asInt()
   }
 
   fun setSteps(steps: Int) {
     val _arg = Variant.new(steps)
-    __method_bind.set_steps.call(this.toVariant(), _arg, 1)
+    __method_bind.set_steps.call(this._handle, _arg, 1)
   }
 
   companion object {

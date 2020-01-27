@@ -27,7 +27,7 @@ open class ScriptCreateDialog internal constructor(
     _args.append(inherits)
     _args.append(path)
     _args.append(builtInEnabled)
-    __method_bind.config.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.config.call(this._handle, _args.toVariant(), 3)
   }
 
   companion object {

@@ -19,23 +19,23 @@ open class RayShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getLength(): Float {
-    val _ret = __method_bind.get_length.call(this.toVariant())
+    val _ret = __method_bind.get_length.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSlipsOnSlope(): Boolean {
-    val _ret = __method_bind.get_slips_on_slope.call(this.toVariant())
+    val _ret = __method_bind.get_slips_on_slope.call(this._handle)
     return _ret.asBool()
   }
 
   fun setLength(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_length.call(this.toVariant(), _arg, 1)
+    __method_bind.set_length.call(this._handle, _arg, 1)
   }
 
   fun setSlipsOnSlope(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_slips_on_slope.call(this.toVariant(), _arg, 1)
+    __method_bind.set_slips_on_slope.call(this._handle, _arg, 1)
   }
 
   companion object {

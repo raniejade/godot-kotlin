@@ -18,12 +18,12 @@ open class _Semaphore internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun post(): GDError {
-    val _ret = __method_bind.post.call(this.toVariant())
+    val _ret = __method_bind.post.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun wait(): GDError {
-    val _ret = __method_bind.wait.call(this.toVariant())
+    val _ret = __method_bind.wait.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 

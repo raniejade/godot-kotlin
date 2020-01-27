@@ -19,53 +19,53 @@ open class CylinderMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getBottomRadius(): Float {
-    val _ret = __method_bind.get_bottom_radius.call(this.toVariant())
+    val _ret = __method_bind.get_bottom_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRadialSegments(): Int {
-    val _ret = __method_bind.get_radial_segments.call(this.toVariant())
+    val _ret = __method_bind.get_radial_segments.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRings(): Int {
-    val _ret = __method_bind.get_rings.call(this.toVariant())
+    val _ret = __method_bind.get_rings.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTopRadius(): Float {
-    val _ret = __method_bind.get_top_radius.call(this.toVariant())
+    val _ret = __method_bind.get_top_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setBottomRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_bottom_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bottom_radius.call(this._handle, _arg, 1)
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_height.call(this._handle, _arg, 1)
   }
 
   fun setRadialSegments(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.set_radial_segments.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radial_segments.call(this._handle, _arg, 1)
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.set_rings.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rings.call(this._handle, _arg, 1)
   }
 
   fun setTopRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_top_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_top_radius.call(this._handle, _arg, 1)
   }
 
   companion object {

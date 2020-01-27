@@ -18,13 +18,13 @@ open class ProgressBar internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun isPercentVisible(): Boolean {
-    val _ret = __method_bind.is_percent_visible.call(this.toVariant())
+    val _ret = __method_bind.is_percent_visible.call(this._handle)
     return _ret.asBool()
   }
 
   fun setPercentVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.set_percent_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_percent_visible.call(this._handle, _arg, 1)
   }
 
   companion object {

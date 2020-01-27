@@ -19,28 +19,28 @@ open class AudioEffectRecord internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getFormat(): AudioStreamSample.Format {
-    val _ret = __method_bind.get_format.call(this.toVariant())
+    val _ret = __method_bind.get_format.call(this._handle)
     return AudioStreamSample.Format.from(_ret.asInt())
   }
 
   fun getRecording(): AudioStreamSample {
-    val _ret = __method_bind.get_recording.call(this.toVariant())
+    val _ret = __method_bind.get_recording.call(this._handle)
     return _ret.asObject(::AudioStreamSample)!!
   }
 
   fun isRecordingActive(): Boolean {
-    val _ret = __method_bind.is_recording_active.call(this.toVariant())
+    val _ret = __method_bind.is_recording_active.call(this._handle)
     return _ret.asBool()
   }
 
   fun setFormat(format: Int) {
     val _arg = Variant.new(format)
-    __method_bind.set_format.call(this.toVariant(), _arg, 1)
+    __method_bind.set_format.call(this._handle, _arg, 1)
   }
 
   fun setRecordingActive(record: Boolean) {
     val _arg = Variant.new(record)
-    __method_bind.set_recording_active.call(this.toVariant(), _arg, 1)
+    __method_bind.set_recording_active.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -22,79 +22,79 @@ open class AudioStreamSample internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getData(): PoolByteArray {
-    val _ret = __method_bind.get_data.call(this.toVariant())
+    val _ret = __method_bind.get_data.call(this._handle)
     return _ret.asPoolByteArray()
   }
 
   fun getFormat(): Format {
-    val _ret = __method_bind.get_format.call(this.toVariant())
+    val _ret = __method_bind.get_format.call(this._handle)
     return AudioStreamSample.Format.from(_ret.asInt())
   }
 
   fun getLoopBegin(): Int {
-    val _ret = __method_bind.get_loop_begin.call(this.toVariant())
+    val _ret = __method_bind.get_loop_begin.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLoopEnd(): Int {
-    val _ret = __method_bind.get_loop_end.call(this.toVariant())
+    val _ret = __method_bind.get_loop_end.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLoopMode(): LoopMode {
-    val _ret = __method_bind.get_loop_mode.call(this.toVariant())
+    val _ret = __method_bind.get_loop_mode.call(this._handle)
     return AudioStreamSample.LoopMode.from(_ret.asInt())
   }
 
   fun getMixRate(): Int {
-    val _ret = __method_bind.get_mix_rate.call(this.toVariant())
+    val _ret = __method_bind.get_mix_rate.call(this._handle)
     return _ret.asInt()
   }
 
   fun isStereo(): Boolean {
-    val _ret = __method_bind.is_stereo.call(this.toVariant())
+    val _ret = __method_bind.is_stereo.call(this._handle)
     return _ret.asBool()
   }
 
   fun saveToWav(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.save_to_wav.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.save_to_wav.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setData(data: PoolByteArray) {
     val _arg = Variant.new(data)
-    __method_bind.set_data.call(this.toVariant(), _arg, 1)
+    __method_bind.set_data.call(this._handle, _arg, 1)
   }
 
   fun setFormat(format: Int) {
     val _arg = Variant.new(format)
-    __method_bind.set_format.call(this.toVariant(), _arg, 1)
+    __method_bind.set_format.call(this._handle, _arg, 1)
   }
 
   fun setLoopBegin(loopBegin: Int) {
     val _arg = Variant.new(loopBegin)
-    __method_bind.set_loop_begin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_loop_begin.call(this._handle, _arg, 1)
   }
 
   fun setLoopEnd(loopEnd: Int) {
     val _arg = Variant.new(loopEnd)
-    __method_bind.set_loop_end.call(this.toVariant(), _arg, 1)
+    __method_bind.set_loop_end.call(this._handle, _arg, 1)
   }
 
   fun setLoopMode(loopMode: Int) {
     val _arg = Variant.new(loopMode)
-    __method_bind.set_loop_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_loop_mode.call(this._handle, _arg, 1)
   }
 
   fun setMixRate(mixRate: Int) {
     val _arg = Variant.new(mixRate)
-    __method_bind.set_mix_rate.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mix_rate.call(this._handle, _arg, 1)
   }
 
   fun setStereo(stereo: Boolean) {
     val _arg = Variant.new(stereo)
-    __method_bind.set_stereo.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stereo.call(this._handle, _arg, 1)
   }
 
   enum class LoopMode(

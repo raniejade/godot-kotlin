@@ -22,7 +22,7 @@ open class _Directory internal constructor(
 ) : Reference(_handle) {
   fun changeDir(todir: String): GDError {
     val _arg = Variant.new(todir)
-    val _ret = __method_bind.change_dir.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.change_dir.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -30,55 +30,55 @@ open class _Directory internal constructor(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.copy.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.copy.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun currentIsDir(): Boolean {
-    val _ret = __method_bind.current_is_dir.call(this.toVariant())
+    val _ret = __method_bind.current_is_dir.call(this._handle)
     return _ret.asBool()
   }
 
   fun dirExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.dir_exists.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.dir_exists.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun fileExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.file_exists.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.file_exists.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getCurrentDir(): String {
-    val _ret = __method_bind.get_current_dir.call(this.toVariant())
+    val _ret = __method_bind.get_current_dir.call(this._handle)
     return _ret.asString()
   }
 
   fun getCurrentDrive(): Int {
-    val _ret = __method_bind.get_current_drive.call(this.toVariant())
+    val _ret = __method_bind.get_current_drive.call(this._handle)
     return _ret.asInt()
   }
 
   fun getDrive(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_drive.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_drive.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getDriveCount(): Int {
-    val _ret = __method_bind.get_drive_count.call(this.toVariant())
+    val _ret = __method_bind.get_drive_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNext(): String {
-    val _ret = __method_bind.get_next.call(this.toVariant())
+    val _ret = __method_bind.get_next.call(this._handle)
     return _ret.asString()
   }
 
   fun getSpaceLeft(): Int {
-    val _ret = __method_bind.get_space_left.call(this.toVariant())
+    val _ret = __method_bind.get_space_left.call(this._handle)
     return _ret.asInt()
   }
 
@@ -86,35 +86,35 @@ open class _Directory internal constructor(
     val _args = VariantArray.new()
     _args.append(skipNavigational)
     _args.append(skipHidden)
-    val _ret = __method_bind.list_dir_begin.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.list_dir_begin.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun listDirEnd() {
-    __method_bind.list_dir_end.call(this.toVariant())
+    __method_bind.list_dir_end.call(this._handle)
   }
 
   fun makeDir(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.make_dir.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.make_dir.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun makeDirRecursive(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.make_dir_recursive.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.make_dir_recursive.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun open(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.open.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.open.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun remove(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.remove.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.remove.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -122,7 +122,7 @@ open class _Directory internal constructor(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.rename.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.rename.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 

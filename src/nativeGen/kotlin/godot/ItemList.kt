@@ -28,7 +28,7 @@ open class ItemList internal constructor(
     val _args = VariantArray.new()
     _args.append(icon)
     _args.append(selectable)
-    __method_bind.add_icon_item.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_icon_item.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addItem(
@@ -40,44 +40,44 @@ open class ItemList internal constructor(
     _args.append(text)
     _args.append(icon)
     _args.append(selectable)
-    __method_bind.add_item.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_item.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun ensureCurrentIsVisible() {
-    __method_bind.ensure_current_is_visible.call(this.toVariant())
+    __method_bind.ensure_current_is_visible.call(this._handle)
   }
 
   fun getAllowReselect(): Boolean {
-    val _ret = __method_bind.get_allow_reselect.call(this.toVariant())
+    val _ret = __method_bind.get_allow_reselect.call(this._handle)
     return _ret.asBool()
   }
 
   fun getAllowRmbSelect(): Boolean {
-    val _ret = __method_bind.get_allow_rmb_select.call(this.toVariant())
+    val _ret = __method_bind.get_allow_rmb_select.call(this._handle)
     return _ret.asBool()
   }
 
   fun getFixedColumnWidth(): Int {
-    val _ret = __method_bind.get_fixed_column_width.call(this.toVariant())
+    val _ret = __method_bind.get_fixed_column_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFixedIconSize(): Vector2 {
-    val _ret = __method_bind.get_fixed_icon_size.call(this.toVariant())
+    val _ret = __method_bind.get_fixed_icon_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getIconMode(): IconMode {
-    val _ret = __method_bind.get_icon_mode.call(this.toVariant())
+    val _ret = __method_bind.get_icon_mode.call(this._handle)
     return ItemList.IconMode.from(_ret.asInt())
   }
 
   fun getIconScale(): Float {
-    val _ret = __method_bind.get_icon_scale.call(this.toVariant())
+    val _ret = __method_bind.get_icon_scale.call(this._handle)
     return _ret.asFloat()
   }
 
@@ -85,130 +85,130 @@ open class ItemList internal constructor(
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(exact)
-    val _ret = __method_bind.get_item_at_position.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_item_at_position.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getItemCount(): Int {
-    val _ret = __method_bind.get_item_count.call(this.toVariant())
+    val _ret = __method_bind.get_item_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getItemCustomBgColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_custom_bg_color.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_custom_bg_color.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getItemCustomFgColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_custom_fg_color.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_custom_fg_color.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_icon.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_icon.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemIconModulate(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_icon_modulate.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_icon_modulate.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getItemIconRegion(idx: Int): Rect2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_icon_region.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_icon_region.call(this._handle, _arg, 1)
     return _ret.asRect2()
   }
 
   fun getItemMetadata(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_metadata.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_metadata.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getItemText(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_text.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_text.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getItemTooltip(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_tooltip.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_tooltip.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getMaxColumns(): Int {
-    val _ret = __method_bind.get_max_columns.call(this.toVariant())
+    val _ret = __method_bind.get_max_columns.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaxTextLines(): Int {
-    val _ret = __method_bind.get_max_text_lines.call(this.toVariant())
+    val _ret = __method_bind.get_max_text_lines.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSelectMode(): SelectMode {
-    val _ret = __method_bind.get_select_mode.call(this.toVariant())
+    val _ret = __method_bind.get_select_mode.call(this._handle)
     return ItemList.SelectMode.from(_ret.asInt())
   }
 
   fun getSelectedItems(): PoolIntArray {
-    val _ret = __method_bind.get_selected_items.call(this.toVariant())
+    val _ret = __method_bind.get_selected_items.call(this._handle)
     return _ret.asPoolIntArray()
   }
 
   fun getVScroll(): VScrollBar {
-    val _ret = __method_bind.get_v_scroll.call(this.toVariant())
+    val _ret = __method_bind.get_v_scroll.call(this._handle)
     return _ret.asObject(::VScrollBar)!!
   }
 
   fun hasAutoHeight(): Boolean {
-    val _ret = __method_bind.has_auto_height.call(this.toVariant())
+    val _ret = __method_bind.has_auto_height.call(this._handle)
     return _ret.asBool()
   }
 
   fun isAnythingSelected(): Boolean {
-    val _ret = __method_bind.is_anything_selected.call(this.toVariant())
+    val _ret = __method_bind.is_anything_selected.call(this._handle)
     return _ret.asBool()
   }
 
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_disabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_disabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemIconTransposed(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_icon_transposed.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_icon_transposed.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemSelectable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_selectable.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_selectable.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemTooltipEnabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_tooltip_enabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_tooltip_enabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isSameColumnWidth(): Boolean {
-    val _ret = __method_bind.is_same_column_width.call(this.toVariant())
+    val _ret = __method_bind.is_same_column_width.call(this._handle)
     return _ret.asBool()
   }
 
   fun isSelected(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_selected.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_selected.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -216,171 +216,171 @@ open class ItemList internal constructor(
     val _args = VariantArray.new()
     _args.append(fromIdx)
     _args.append(toIdx)
-    __method_bind.move_item.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.move_item.call(this._handle, _args.toVariant(), 2)
   }
 
   fun removeItem(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.remove_item.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_item.call(this._handle, _arg, 1)
   }
 
   fun select(idx: Int, single: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(single)
-    __method_bind.select.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.select.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setAllowReselect(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_reselect.call(this.toVariant(), _arg, 1)
+    __method_bind.set_allow_reselect.call(this._handle, _arg, 1)
   }
 
   fun setAllowRmbSelect(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_rmb_select.call(this.toVariant(), _arg, 1)
+    __method_bind.set_allow_rmb_select.call(this._handle, _arg, 1)
   }
 
   fun setAutoHeight(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_auto_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_auto_height.call(this._handle, _arg, 1)
   }
 
   fun setFixedColumnWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_fixed_column_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_fixed_column_width.call(this._handle, _arg, 1)
   }
 
   fun setFixedIconSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_fixed_icon_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_fixed_icon_size.call(this._handle, _arg, 1)
   }
 
   fun setIconMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_icon_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_icon_mode.call(this._handle, _arg, 1)
   }
 
   fun setIconScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.set_icon_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_icon_scale.call(this._handle, _arg, 1)
   }
 
   fun setItemCustomBgColor(idx: Int, customBgColor: Color) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(customBgColor)
-    __method_bind.set_item_custom_bg_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_custom_bg_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemCustomFgColor(idx: Int, customFgColor: Color) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(customFgColor)
-    __method_bind.set_item_custom_fg_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_custom_fg_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(disabled)
-    __method_bind.set_item_disabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_disabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemIcon(idx: Int, icon: Texture) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(icon)
-    __method_bind.set_item_icon.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_icon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemIconModulate(idx: Int, modulate: Color) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(modulate)
-    __method_bind.set_item_icon_modulate.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_icon_modulate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemIconRegion(idx: Int, rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(rect)
-    __method_bind.set_item_icon_region.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_icon_region.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemIconTransposed(idx: Int, rect: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(rect)
-    __method_bind.set_item_icon_transposed.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_icon_transposed.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(metadata)
-    __method_bind.set_item_metadata.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_metadata.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemSelectable(idx: Int, selectable: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(selectable)
-    __method_bind.set_item_selectable.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_selectable.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemText(idx: Int, text: String) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(text)
-    __method_bind.set_item_text.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_text.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemTooltip(idx: Int, tooltip: String) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(tooltip)
-    __method_bind.set_item_tooltip.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_tooltip.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemTooltipEnabled(idx: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(enable)
-    __method_bind.set_item_tooltip_enabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_tooltip_enabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setMaxColumns(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.set_max_columns.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_columns.call(this._handle, _arg, 1)
   }
 
   fun setMaxTextLines(lines: Int) {
     val _arg = Variant.new(lines)
-    __method_bind.set_max_text_lines.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_text_lines.call(this._handle, _arg, 1)
   }
 
   fun setSameColumnWidth(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_same_column_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_same_column_width.call(this._handle, _arg, 1)
   }
 
   fun setSelectMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_select_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_select_mode.call(this._handle, _arg, 1)
   }
 
   fun sortItemsByText() {
-    __method_bind.sort_items_by_text.call(this.toVariant())
+    __method_bind.sort_items_by_text.call(this._handle)
   }
 
   fun unselect(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.unselect.call(this.toVariant(), _arg, 1)
+    __method_bind.unselect.call(this._handle, _arg, 1)
   }
 
   fun unselectAll() {
-    __method_bind.unselect_all.call(this.toVariant())
+    __method_bind.unselect_all.call(this._handle)
   }
 
   enum class SelectMode(

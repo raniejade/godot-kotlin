@@ -19,73 +19,73 @@ open class AudioEffectCompressor internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getAttackUs(): Float {
-    val _ret = __method_bind.get_attack_us.call(this.toVariant())
+    val _ret = __method_bind.get_attack_us.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGain(): Float {
-    val _ret = __method_bind.get_gain.call(this.toVariant())
+    val _ret = __method_bind.get_gain.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMix(): Float {
-    val _ret = __method_bind.get_mix.call(this.toVariant())
+    val _ret = __method_bind.get_mix.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRatio(): Float {
-    val _ret = __method_bind.get_ratio.call(this.toVariant())
+    val _ret = __method_bind.get_ratio.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getReleaseMs(): Float {
-    val _ret = __method_bind.get_release_ms.call(this.toVariant())
+    val _ret = __method_bind.get_release_ms.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSidechain(): String {
-    val _ret = __method_bind.get_sidechain.call(this.toVariant())
+    val _ret = __method_bind.get_sidechain.call(this._handle)
     return _ret.asString()
   }
 
   fun getThreshold(): Float {
-    val _ret = __method_bind.get_threshold.call(this.toVariant())
+    val _ret = __method_bind.get_threshold.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setAttackUs(attackUs: Float) {
     val _arg = Variant.new(attackUs)
-    __method_bind.set_attack_us.call(this.toVariant(), _arg, 1)
+    __method_bind.set_attack_us.call(this._handle, _arg, 1)
   }
 
   fun setGain(gain: Float) {
     val _arg = Variant.new(gain)
-    __method_bind.set_gain.call(this.toVariant(), _arg, 1)
+    __method_bind.set_gain.call(this._handle, _arg, 1)
   }
 
   fun setMix(mix: Float) {
     val _arg = Variant.new(mix)
-    __method_bind.set_mix.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mix.call(this._handle, _arg, 1)
   }
 
   fun setRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.set_ratio.call(this.toVariant(), _arg, 1)
+    __method_bind.set_ratio.call(this._handle, _arg, 1)
   }
 
   fun setReleaseMs(releaseMs: Float) {
     val _arg = Variant.new(releaseMs)
-    __method_bind.set_release_ms.call(this.toVariant(), _arg, 1)
+    __method_bind.set_release_ms.call(this._handle, _arg, 1)
   }
 
   fun setSidechain(sidechain: String) {
     val _arg = Variant.new(sidechain)
-    __method_bind.set_sidechain.call(this.toVariant(), _arg, 1)
+    __method_bind.set_sidechain.call(this._handle, _arg, 1)
   }
 
   fun setThreshold(threshold: Float) {
     val _arg = Variant.new(threshold)
-    __method_bind.set_threshold.call(this.toVariant(), _arg, 1)
+    __method_bind.set_threshold.call(this._handle, _arg, 1)
   }
 
   companion object {

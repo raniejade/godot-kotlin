@@ -19,23 +19,23 @@ open class FuncRef internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun callFunc(): Variant {
-    val _ret = __method_bind.call_func.call(this.toVariant())
+    val _ret = __method_bind.call_func.call(this._handle)
     return _ret
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.is_valid.call(this.toVariant())
+    val _ret = __method_bind.is_valid.call(this._handle)
     return _ret.asBool()
   }
 
   fun setFunction(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_function.call(this.toVariant(), _arg, 1)
+    __method_bind.set_function.call(this._handle, _arg, 1)
   }
 
   fun setInstance(instance: Object) {
     val _arg = Variant.new(instance)
-    __method_bind.set_instance.call(this.toVariant(), _arg, 1)
+    __method_bind.set_instance.call(this._handle, _arg, 1)
   }
 
   companion object {

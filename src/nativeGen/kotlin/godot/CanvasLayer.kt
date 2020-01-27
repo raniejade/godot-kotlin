@@ -23,98 +23,98 @@ open class CanvasLayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getCanvas(): RID {
-    val _ret = __method_bind.get_canvas.call(this.toVariant())
+    val _ret = __method_bind.get_canvas.call(this._handle)
     return _ret.asRID()
   }
 
   fun getCustomViewport(): Node {
-    val _ret = __method_bind.get_custom_viewport.call(this.toVariant())
+    val _ret = __method_bind.get_custom_viewport.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getFollowViewportScale(): Float {
-    val _ret = __method_bind.get_follow_viewport_scale.call(this.toVariant())
+    val _ret = __method_bind.get_follow_viewport_scale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getLayer(): Int {
-    val _ret = __method_bind.get_layer.call(this.toVariant())
+    val _ret = __method_bind.get_layer.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.get_offset.call(this.toVariant())
+    val _ret = __method_bind.get_offset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getRotation(): Float {
-    val _ret = __method_bind.get_rotation.call(this.toVariant())
+    val _ret = __method_bind.get_rotation.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRotationDegrees(): Float {
-    val _ret = __method_bind.get_rotation_degrees.call(this.toVariant())
+    val _ret = __method_bind.get_rotation_degrees.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getScale(): Vector2 {
-    val _ret = __method_bind.get_scale.call(this.toVariant())
+    val _ret = __method_bind.get_scale.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getTransform(): Transform2D {
-    val _ret = __method_bind.get_transform.call(this.toVariant())
+    val _ret = __method_bind.get_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun isFollowingViewport(): Boolean {
-    val _ret = __method_bind.is_following_viewport.call(this.toVariant())
+    val _ret = __method_bind.is_following_viewport.call(this._handle)
     return _ret.asBool()
   }
 
   fun setCustomViewport(viewport: Node) {
     val _arg = Variant.new(viewport)
-    __method_bind.set_custom_viewport.call(this.toVariant(), _arg, 1)
+    __method_bind.set_custom_viewport.call(this._handle, _arg, 1)
   }
 
   fun setFollowViewport(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_follow_viewport.call(this.toVariant(), _arg, 1)
+    __method_bind.set_follow_viewport.call(this._handle, _arg, 1)
   }
 
   fun setFollowViewportScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.set_follow_viewport_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_follow_viewport_scale.call(this._handle, _arg, 1)
   }
 
   fun setLayer(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.set_layer.call(this.toVariant(), _arg, 1)
+    __method_bind.set_layer.call(this._handle, _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_offset.call(this._handle, _arg, 1)
   }
 
   fun setRotation(radians: Float) {
     val _arg = Variant.new(radians)
-    __method_bind.set_rotation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rotation.call(this._handle, _arg, 1)
   }
 
   fun setRotationDegrees(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.set_rotation_degrees.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rotation_degrees.call(this._handle, _arg, 1)
   }
 
   fun setScale(scale: Vector2) {
     val _arg = Variant.new(scale)
-    __method_bind.set_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_scale.call(this._handle, _arg, 1)
   }
 
   fun setTransform(transform: Transform2D) {
     val _arg = Variant.new(transform)
-    __method_bind.set_transform.call(this.toVariant(), _arg, 1)
+    __method_bind.set_transform.call(this._handle, _arg, 1)
   }
 
   companion object {

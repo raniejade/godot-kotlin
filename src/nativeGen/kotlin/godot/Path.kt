@@ -17,13 +17,13 @@ open class Path internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getCurve(): Curve3D {
-    val _ret = __method_bind.get_curve.call(this.toVariant())
+    val _ret = __method_bind.get_curve.call(this._handle)
     return _ret.asObject(::Curve3D)!!
   }
 
   fun setCurve(curve: Curve3D) {
     val _arg = Variant.new(curve)
-    __method_bind.set_curve.call(this.toVariant(), _arg, 1)
+    __method_bind.set_curve.call(this._handle, _arg, 1)
   }
 
   companion object {

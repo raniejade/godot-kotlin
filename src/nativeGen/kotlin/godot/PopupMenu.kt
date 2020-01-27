@@ -29,7 +29,7 @@ open class PopupMenu internal constructor(
     _args.append(label)
     _args.append(id)
     _args.append(accel)
-    __method_bind.add_check_item.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_check_item.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addCheckShortcut(
@@ -41,7 +41,7 @@ open class PopupMenu internal constructor(
     _args.append(shortcut)
     _args.append(id)
     _args.append(global)
-    __method_bind.add_check_shortcut.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_check_shortcut.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addIconCheckItem(
@@ -55,7 +55,7 @@ open class PopupMenu internal constructor(
     _args.append(label)
     _args.append(id)
     _args.append(accel)
-    __method_bind.add_icon_check_item.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_icon_check_item.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addIconCheckShortcut(
@@ -69,7 +69,7 @@ open class PopupMenu internal constructor(
     _args.append(shortcut)
     _args.append(id)
     _args.append(global)
-    __method_bind.add_icon_check_shortcut.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_icon_check_shortcut.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addIconItem(
@@ -83,7 +83,7 @@ open class PopupMenu internal constructor(
     _args.append(label)
     _args.append(id)
     _args.append(accel)
-    __method_bind.add_icon_item.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_icon_item.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addIconShortcut(
@@ -97,7 +97,7 @@ open class PopupMenu internal constructor(
     _args.append(shortcut)
     _args.append(id)
     _args.append(global)
-    __method_bind.add_icon_shortcut.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_icon_shortcut.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addItem(
@@ -109,7 +109,7 @@ open class PopupMenu internal constructor(
     _args.append(label)
     _args.append(id)
     _args.append(accel)
-    __method_bind.add_item.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_item.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addRadioCheckItem(
@@ -121,7 +121,7 @@ open class PopupMenu internal constructor(
     _args.append(label)
     _args.append(id)
     _args.append(accel)
-    __method_bind.add_radio_check_item.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_radio_check_item.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addRadioCheckShortcut(
@@ -133,12 +133,12 @@ open class PopupMenu internal constructor(
     _args.append(shortcut)
     _args.append(id)
     _args.append(global)
-    __method_bind.add_radio_check_shortcut.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_radio_check_shortcut.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addSeparator(label: String) {
     val _arg = Variant.new(label)
-    __method_bind.add_separator.call(this.toVariant(), _arg, 1)
+    __method_bind.add_separator.call(this._handle, _arg, 1)
   }
 
   fun addShortcut(
@@ -150,7 +150,7 @@ open class PopupMenu internal constructor(
     _args.append(shortcut)
     _args.append(id)
     _args.append(global)
-    __method_bind.add_shortcut.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_shortcut.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addSubmenuItem(
@@ -162,236 +162,236 @@ open class PopupMenu internal constructor(
     _args.append(label)
     _args.append(submenu)
     _args.append(id)
-    __method_bind.add_submenu_item.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_submenu_item.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun getAllowSearch(): Boolean {
-    val _ret = __method_bind.get_allow_search.call(this.toVariant())
+    val _ret = __method_bind.get_allow_search.call(this._handle)
     return _ret.asBool()
   }
 
   fun getItemAccelerator(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_accelerator.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_accelerator.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getItemCount(): Int {
-    val _ret = __method_bind.get_item_count.call(this.toVariant())
+    val _ret = __method_bind.get_item_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getItemIcon(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_icon.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_icon.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemId(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_id.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_id.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getItemIndex(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_index.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_index.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getItemMetadata(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_metadata.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_metadata.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getItemShortcut(idx: Int): ShortCut {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_shortcut.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_shortcut.call(this._handle, _arg, 1)
     return _ret.asObject(::ShortCut)!!
   }
 
   fun getItemSubmenu(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_submenu.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_submenu.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getItemText(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_text.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_text.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getItemTooltip(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_item_tooltip.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_item_tooltip.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getSubmenuPopupDelay(): Float {
-    val _ret = __method_bind.get_submenu_popup_delay.call(this.toVariant())
+    val _ret = __method_bind.get_submenu_popup_delay.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isHideOnCheckableItemSelection(): Boolean {
-    val _ret = __method_bind.is_hide_on_checkable_item_selection.call(this.toVariant())
+    val _ret = __method_bind.is_hide_on_checkable_item_selection.call(this._handle)
     return _ret.asBool()
   }
 
   fun isHideOnItemSelection(): Boolean {
-    val _ret = __method_bind.is_hide_on_item_selection.call(this.toVariant())
+    val _ret = __method_bind.is_hide_on_item_selection.call(this._handle)
     return _ret.asBool()
   }
 
   fun isHideOnStateItemSelection(): Boolean {
-    val _ret = __method_bind.is_hide_on_state_item_selection.call(this.toVariant())
+    val _ret = __method_bind.is_hide_on_state_item_selection.call(this._handle)
     return _ret.asBool()
   }
 
   fun isHideOnWindowLoseFocus(): Boolean {
-    val _ret = __method_bind.is_hide_on_window_lose_focus.call(this.toVariant())
+    val _ret = __method_bind.is_hide_on_window_lose_focus.call(this._handle)
     return _ret.asBool()
   }
 
   fun isItemCheckable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_checkable.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_checkable.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemChecked(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_checked.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_checked.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_disabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_disabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemRadioCheckable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_radio_checkable.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_radio_checkable.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemSeparator(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_separator.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_separator.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isItemShortcutDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_item_shortcut_disabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_item_shortcut_disabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun removeItem(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.remove_item.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_item.call(this._handle, _arg, 1)
   }
 
   fun setAllowSearch(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_search.call(this.toVariant(), _arg, 1)
+    __method_bind.set_allow_search.call(this._handle, _arg, 1)
   }
 
   fun setHideOnCheckableItemSelection(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_hide_on_checkable_item_selection.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hide_on_checkable_item_selection.call(this._handle, _arg, 1)
   }
 
   fun setHideOnItemSelection(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_hide_on_item_selection.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hide_on_item_selection.call(this._handle, _arg, 1)
   }
 
   fun setHideOnStateItemSelection(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_hide_on_state_item_selection.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hide_on_state_item_selection.call(this._handle, _arg, 1)
   }
 
   fun setHideOnWindowLoseFocus(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_hide_on_window_lose_focus.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hide_on_window_lose_focus.call(this._handle, _arg, 1)
   }
 
   fun setItemAccelerator(idx: Int, accel: Int) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(accel)
-    __method_bind.set_item_accelerator.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_accelerator.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemAsCheckable(idx: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(enable)
-    __method_bind.set_item_as_checkable.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_as_checkable.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemAsRadioCheckable(idx: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(enable)
-    __method_bind.set_item_as_radio_checkable.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_as_radio_checkable.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemAsSeparator(idx: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(enable)
-    __method_bind.set_item_as_separator.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_as_separator.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemChecked(idx: Int, checked: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(checked)
-    __method_bind.set_item_checked.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_checked.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(disabled)
-    __method_bind.set_item_disabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_disabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemIcon(idx: Int, icon: Texture) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(icon)
-    __method_bind.set_item_icon.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_icon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemId(idx: Int, id: Int) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(id)
-    __method_bind.set_item_id.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_id.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(metadata)
-    __method_bind.set_item_metadata.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_metadata.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemMultistate(idx: Int, state: Int) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(state)
-    __method_bind.set_item_multistate.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_multistate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemShortcut(
@@ -403,50 +403,50 @@ open class PopupMenu internal constructor(
     _args.append(idx)
     _args.append(shortcut)
     _args.append(global)
-    __method_bind.set_item_shortcut.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_item_shortcut.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setItemShortcutDisabled(idx: Int, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(disabled)
-    __method_bind.set_item_shortcut_disabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_shortcut_disabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemSubmenu(idx: Int, submenu: String) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(submenu)
-    __method_bind.set_item_submenu.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_submenu.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemText(idx: Int, text: String) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(text)
-    __method_bind.set_item_text.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_text.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemTooltip(idx: Int, tooltip: String) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(tooltip)
-    __method_bind.set_item_tooltip.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_item_tooltip.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setSubmenuPopupDelay(seconds: Float) {
     val _arg = Variant.new(seconds)
-    __method_bind.set_submenu_popup_delay.call(this.toVariant(), _arg, 1)
+    __method_bind.set_submenu_popup_delay.call(this._handle, _arg, 1)
   }
 
   fun toggleItemChecked(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.toggle_item_checked.call(this.toVariant(), _arg, 1)
+    __method_bind.toggle_item_checked.call(this._handle, _arg, 1)
   }
 
   fun toggleItemMultistate(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.toggle_item_multistate.call(this.toVariant(), _arg, 1)
+    __method_bind.toggle_item_multistate.call(this._handle, _arg, 1)
   }
 
   companion object {

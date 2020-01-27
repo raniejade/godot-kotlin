@@ -35,7 +35,7 @@ open class Texture internal constructor(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    __method_bind.draw.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.draw.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawRect(
@@ -53,7 +53,7 @@ open class Texture internal constructor(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    __method_bind.draw_rect.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.draw_rect.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawRectRegion(
@@ -73,42 +73,42 @@ open class Texture internal constructor(
     _args.append(transpose)
     _args.append(normalMap)
     _args.append(clipUv)
-    __method_bind.draw_rect_region.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.draw_rect_region.call(this._handle, _args.toVariant(), 7)
   }
 
   fun getData(): Image {
-    val _ret = __method_bind.get_data.call(this.toVariant())
+    val _ret = __method_bind.get_data.call(this._handle)
     return _ret.asObject(::Image)!!
   }
 
   fun getFlags(): Int {
-    val _ret = __method_bind.get_flags.call(this.toVariant())
+    val _ret = __method_bind.get_flags.call(this._handle)
     return _ret.asInt()
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.get_width.call(this.toVariant())
+    val _ret = __method_bind.get_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun hasAlpha(): Boolean {
-    val _ret = __method_bind.has_alpha.call(this.toVariant())
+    val _ret = __method_bind.has_alpha.call(this._handle)
     return _ret.asBool()
   }
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.set_flags.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flags.call(this._handle, _arg, 1)
   }
 
   enum class Flags(

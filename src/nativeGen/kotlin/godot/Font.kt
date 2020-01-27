@@ -38,7 +38,7 @@ open class Font internal constructor(
     _args.append(modulate)
     _args.append(clipW)
     _args.append(outlineModulate)
-    __method_bind.draw.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.draw.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawChar(
@@ -56,28 +56,28 @@ open class Font internal constructor(
     _args.append(next)
     _args.append(modulate)
     _args.append(outline)
-    val _ret = __method_bind.draw_char.call(this.toVariant(), _args.toVariant(), 6)
+    val _ret = __method_bind.draw_char.call(this._handle, _args.toVariant(), 6)
     return _ret.asFloat()
   }
 
   fun getAscent(): Float {
-    val _ret = __method_bind.get_ascent.call(this.toVariant())
+    val _ret = __method_bind.get_ascent.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDescent(): Float {
-    val _ret = __method_bind.get_descent.call(this.toVariant())
+    val _ret = __method_bind.get_descent.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getStringSize(string: String): Vector2 {
     val _arg = Variant.new(string)
-    val _ret = __method_bind.get_string_size.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_string_size.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
@@ -85,22 +85,22 @@ open class Font internal constructor(
     val _args = VariantArray.new()
     _args.append(string)
     _args.append(pWidth)
-    val _ret = __method_bind.get_wordwrap_string_size.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_wordwrap_string_size.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
   fun hasOutline(): Boolean {
-    val _ret = __method_bind.has_outline.call(this.toVariant())
+    val _ret = __method_bind.has_outline.call(this._handle)
     return _ret.asBool()
   }
 
   fun isDistanceFieldHint(): Boolean {
-    val _ret = __method_bind.is_distance_field_hint.call(this.toVariant())
+    val _ret = __method_bind.is_distance_field_hint.call(this._handle)
     return _ret.asBool()
   }
 
   fun updateChanges() {
-    __method_bind.update_changes.call(this.toVariant())
+    __method_bind.update_changes.call(this._handle)
   }
 
   companion object {

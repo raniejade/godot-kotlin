@@ -18,23 +18,23 @@ open class NavigationPolygonInstance internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getNavigationPolygon(): NavigationPolygon {
-    val _ret = __method_bind.get_navigation_polygon.call(this.toVariant())
+    val _ret = __method_bind.get_navigation_polygon.call(this._handle)
     return _ret.asObject(::NavigationPolygon)!!
   }
 
   fun isEnabled(): Boolean {
-    val _ret = __method_bind.is_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enabled.call(this._handle, _arg, 1)
   }
 
   fun setNavigationPolygon(navpoly: NavigationPolygon) {
     val _arg = Variant.new(navpoly)
-    __method_bind.set_navigation_polygon.call(this.toVariant(), _arg, 1)
+    __method_bind.set_navigation_polygon.call(this._handle, _arg, 1)
   }
 
   companion object {

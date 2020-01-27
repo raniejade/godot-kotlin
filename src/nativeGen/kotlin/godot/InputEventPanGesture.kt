@@ -18,13 +18,13 @@ open class InputEventPanGesture internal constructor(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
   fun getDelta(): Vector2 {
-    val _ret = __method_bind.get_delta.call(this.toVariant())
+    val _ret = __method_bind.get_delta.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setDelta(delta: Vector2) {
     val _arg = Variant.new(delta)
-    __method_bind.set_delta.call(this.toVariant(), _arg, 1)
+    __method_bind.set_delta.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -20,7 +20,7 @@ open class Performance internal constructor(
 ) : Object(_handle) {
   fun getMonitor(monitor: Int): Float {
     val _arg = Variant.new(monitor)
-    val _ret = __method_bind.get_monitor.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_monitor.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 

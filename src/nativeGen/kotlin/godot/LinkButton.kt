@@ -19,23 +19,23 @@ open class LinkButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getText(): String {
-    val _ret = __method_bind.get_text.call(this.toVariant())
+    val _ret = __method_bind.get_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getUnderlineMode(): UnderlineMode {
-    val _ret = __method_bind.get_underline_mode.call(this.toVariant())
+    val _ret = __method_bind.get_underline_mode.call(this._handle)
     return LinkButton.UnderlineMode.from(_ret.asInt())
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_text.call(this._handle, _arg, 1)
   }
 
   fun setUnderlineMode(underlineMode: Int) {
     val _arg = Variant.new(underlineMode)
-    __method_bind.set_underline_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_underline_mode.call(this._handle, _arg, 1)
   }
 
   enum class UnderlineMode(

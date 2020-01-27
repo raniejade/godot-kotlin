@@ -21,7 +21,7 @@ open class TCP_Server internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun isConnectionAvailable(): Boolean {
-    val _ret = __method_bind.is_connection_available.call(this.toVariant())
+    val _ret = __method_bind.is_connection_available.call(this._handle)
     return _ret.asBool()
   }
 
@@ -29,16 +29,16 @@ open class TCP_Server internal constructor(
     val _args = VariantArray.new()
     _args.append(port)
     _args.append(bindAddress)
-    val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun stop() {
-    __method_bind.stop.call(this.toVariant())
+    __method_bind.stop.call(this._handle)
   }
 
   fun takeConnection(): StreamPeerTCP {
-    val _ret = __method_bind.take_connection.call(this.toVariant())
+    val _ret = __method_bind.take_connection.call(this._handle)
     return _ret.asObject(::StreamPeerTCP)!!
   }
 

@@ -19,13 +19,13 @@ open class AudioEffectEQ internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getBandCount(): Int {
-    val _ret = __method_bind.get_band_count.call(this.toVariant())
+    val _ret = __method_bind.get_band_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getBandGainDb(bandIdx: Int): Float {
     val _arg = Variant.new(bandIdx)
-    val _ret = __method_bind.get_band_gain_db.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_band_gain_db.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -33,7 +33,7 @@ open class AudioEffectEQ internal constructor(
     val _args = VariantArray.new()
     _args.append(bandIdx)
     _args.append(volumeDb)
-    __method_bind.set_band_gain_db.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_band_gain_db.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

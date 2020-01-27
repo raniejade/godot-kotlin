@@ -20,53 +20,53 @@ open class CSGSphere internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this.toVariant())
+    val _ret = __method_bind.get_material.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getRadialSegments(): Int {
-    val _ret = __method_bind.get_radial_segments.call(this.toVariant())
+    val _ret = __method_bind.get_radial_segments.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRadius(): Float {
-    val _ret = __method_bind.get_radius.call(this.toVariant())
+    val _ret = __method_bind.get_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRings(): Int {
-    val _ret = __method_bind.get_rings.call(this.toVariant())
+    val _ret = __method_bind.get_rings.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSmoothFaces(): Boolean {
-    val _ret = __method_bind.get_smooth_faces.call(this.toVariant())
+    val _ret = __method_bind.get_smooth_faces.call(this._handle)
     return _ret.asBool()
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material.call(this._handle, _arg, 1)
   }
 
   fun setRadialSegments(radialSegments: Int) {
     val _arg = Variant.new(radialSegments)
-    __method_bind.set_radial_segments.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radial_segments.call(this._handle, _arg, 1)
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radius.call(this._handle, _arg, 1)
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.set_rings.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rings.call(this._handle, _arg, 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
     val _arg = Variant.new(smoothFaces)
-    __method_bind.set_smooth_faces.call(this.toVariant(), _arg, 1)
+    __method_bind.set_smooth_faces.call(this._handle, _arg, 1)
   }
 
   companion object {

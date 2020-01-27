@@ -22,7 +22,7 @@ open class NetworkedMultiplayerENet internal constructor(
 ) : NetworkedMultiplayerPeer(_handle) {
   fun closeConnection(waitUsec: Int) {
     val _arg = Variant.new(waitUsec)
-    __method_bind.close_connection.call(this.toVariant(), _arg, 1)
+    __method_bind.close_connection.call(this._handle, _arg, 1)
   }
 
   fun createClient(
@@ -38,7 +38,7 @@ open class NetworkedMultiplayerENet internal constructor(
     _args.append(inBandwidth)
     _args.append(outBandwidth)
     _args.append(clientPort)
-    val _ret = __method_bind.create_client.call(this.toVariant(), _args.toVariant(), 5)
+    val _ret = __method_bind.create_client.call(this._handle, _args.toVariant(), 5)
     return GDError.from(_ret.asInt())
   }
 
@@ -53,7 +53,7 @@ open class NetworkedMultiplayerENet internal constructor(
     _args.append(maxClients)
     _args.append(inBandwidth)
     _args.append(outBandwidth)
-    val _ret = __method_bind.create_server.call(this.toVariant(), _args.toVariant(), 4)
+    val _ret = __method_bind.create_server.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
@@ -61,74 +61,74 @@ open class NetworkedMultiplayerENet internal constructor(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(now)
-    __method_bind.disconnect_peer.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.disconnect_peer.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getChannelCount(): Int {
-    val _ret = __method_bind.get_channel_count.call(this.toVariant())
+    val _ret = __method_bind.get_channel_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCompressionMode(): CompressionMode {
-    val _ret = __method_bind.get_compression_mode.call(this.toVariant())
+    val _ret = __method_bind.get_compression_mode.call(this._handle)
     return NetworkedMultiplayerENet.CompressionMode.from(_ret.asInt())
   }
 
   fun getLastPacketChannel(): Int {
-    val _ret = __method_bind.get_last_packet_channel.call(this.toVariant())
+    val _ret = __method_bind.get_last_packet_channel.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPacketChannel(): Int {
-    val _ret = __method_bind.get_packet_channel.call(this.toVariant())
+    val _ret = __method_bind.get_packet_channel.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPeerAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_peer_address.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_peer_port.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getTransferChannel(): Int {
-    val _ret = __method_bind.get_transfer_channel.call(this.toVariant())
+    val _ret = __method_bind.get_transfer_channel.call(this._handle)
     return _ret.asInt()
   }
 
   fun isAlwaysOrdered(): Boolean {
-    val _ret = __method_bind.is_always_ordered.call(this.toVariant())
+    val _ret = __method_bind.is_always_ordered.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {
     val _arg = Variant.new(ordered)
-    __method_bind.set_always_ordered.call(this.toVariant(), _arg, 1)
+    __method_bind.set_always_ordered.call(this._handle, _arg, 1)
   }
 
   fun setBindIp(ip: String) {
     val _arg = Variant.new(ip)
-    __method_bind.set_bind_ip.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bind_ip.call(this._handle, _arg, 1)
   }
 
   fun setChannelCount(channels: Int) {
     val _arg = Variant.new(channels)
-    __method_bind.set_channel_count.call(this.toVariant(), _arg, 1)
+    __method_bind.set_channel_count.call(this._handle, _arg, 1)
   }
 
   fun setCompressionMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_compression_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_compression_mode.call(this._handle, _arg, 1)
   }
 
   fun setTransferChannel(channel: Int) {
     val _arg = Variant.new(channel)
-    __method_bind.set_transfer_channel.call(this.toVariant(), _arg, 1)
+    __method_bind.set_transfer_channel.call(this._handle, _arg, 1)
   }
 
   enum class CompressionMode(

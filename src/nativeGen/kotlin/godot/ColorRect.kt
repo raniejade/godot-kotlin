@@ -18,13 +18,13 @@ open class ColorRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getFrameColor(): Color {
-    val _ret = __method_bind.get_frame_color.call(this.toVariant())
+    val _ret = __method_bind.get_frame_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun setFrameColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_frame_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_frame_color.call(this._handle, _arg, 1)
   }
 
   companion object {

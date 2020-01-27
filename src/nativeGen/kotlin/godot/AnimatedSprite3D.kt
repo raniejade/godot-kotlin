@@ -20,47 +20,47 @@ open class AnimatedSprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
   fun getAnimation(): String {
-    val _ret = __method_bind.get_animation.call(this.toVariant())
+    val _ret = __method_bind.get_animation.call(this._handle)
     return _ret.asString()
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.get_frame.call(this.toVariant())
+    val _ret = __method_bind.get_frame.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSpriteFrames(): SpriteFrames {
-    val _ret = __method_bind.get_sprite_frames.call(this.toVariant())
+    val _ret = __method_bind.get_sprite_frames.call(this._handle)
     return _ret.asObject(::SpriteFrames)!!
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this.toVariant())
+    val _ret = __method_bind.is_playing.call(this._handle)
     return _ret.asBool()
   }
 
   fun play(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.play.call(this.toVariant(), _arg, 1)
+    __method_bind.play.call(this._handle, _arg, 1)
   }
 
   fun setAnimation(animation: String) {
     val _arg = Variant.new(animation)
-    __method_bind.set_animation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_animation.call(this._handle, _arg, 1)
   }
 
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
-    __method_bind.set_frame.call(this.toVariant(), _arg, 1)
+    __method_bind.set_frame.call(this._handle, _arg, 1)
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
     val _arg = Variant.new(spriteFrames)
-    __method_bind.set_sprite_frames.call(this.toVariant(), _arg, 1)
+    __method_bind.set_sprite_frames.call(this._handle, _arg, 1)
   }
 
   fun stop() {
-    __method_bind.stop.call(this.toVariant())
+    __method_bind.stop.call(this._handle)
   }
 
   companion object {

@@ -21,32 +21,32 @@ open class RegEx internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun compile(pattern: String): GDError {
     val _arg = Variant.new(pattern)
-    val _ret = __method_bind.compile.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.compile.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun getGroupCount(): Int {
-    val _ret = __method_bind.get_group_count.call(this.toVariant())
+    val _ret = __method_bind.get_group_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNames(): VariantArray {
-    val _ret = __method_bind.get_names.call(this.toVariant())
+    val _ret = __method_bind.get_names.call(this._handle)
     return _ret.asArray()
   }
 
   fun getPattern(): String {
-    val _ret = __method_bind.get_pattern.call(this.toVariant())
+    val _ret = __method_bind.get_pattern.call(this._handle)
     return _ret.asString()
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.is_valid.call(this.toVariant())
+    val _ret = __method_bind.is_valid.call(this._handle)
     return _ret.asBool()
   }
 
@@ -59,7 +59,7 @@ open class RegEx internal constructor(
     _args.append(subject)
     _args.append(offset)
     _args.append(end)
-    val _ret = __method_bind.search.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.search.call(this._handle, _args.toVariant(), 3)
     return _ret.asObject(::RegExMatch)!!
   }
 
@@ -72,7 +72,7 @@ open class RegEx internal constructor(
     _args.append(subject)
     _args.append(offset)
     _args.append(end)
-    val _ret = __method_bind.search_all.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.search_all.call(this._handle, _args.toVariant(), 3)
     return _ret.asArray()
   }
 
@@ -89,7 +89,7 @@ open class RegEx internal constructor(
     _args.append(all)
     _args.append(offset)
     _args.append(end)
-    val _ret = __method_bind.sub.call(this.toVariant(), _args.toVariant(), 5)
+    val _ret = __method_bind.sub.call(this._handle, _args.toVariant(), 5)
     return _ret.asString()
   }
 

@@ -23,38 +23,38 @@ open class Translation internal constructor(
     val _args = VariantArray.new()
     _args.append(srcMessage)
     _args.append(xlatedMessage)
-    __method_bind.add_message.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_message.call(this._handle, _args.toVariant(), 2)
   }
 
   fun eraseMessage(srcMessage: String) {
     val _arg = Variant.new(srcMessage)
-    __method_bind.erase_message.call(this.toVariant(), _arg, 1)
+    __method_bind.erase_message.call(this._handle, _arg, 1)
   }
 
   fun getLocale(): String {
-    val _ret = __method_bind.get_locale.call(this.toVariant())
+    val _ret = __method_bind.get_locale.call(this._handle)
     return _ret.asString()
   }
 
   fun getMessage(srcMessage: String): String {
     val _arg = Variant.new(srcMessage)
-    val _ret = __method_bind.get_message.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_message.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getMessageCount(): Int {
-    val _ret = __method_bind.get_message_count.call(this.toVariant())
+    val _ret = __method_bind.get_message_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMessageList(): PoolStringArray {
-    val _ret = __method_bind.get_message_list.call(this.toVariant())
+    val _ret = __method_bind.get_message_list.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun setLocale(locale: String) {
     val _arg = Variant.new(locale)
-    __method_bind.set_locale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_locale.call(this._handle, _arg, 1)
   }
 
   companion object {

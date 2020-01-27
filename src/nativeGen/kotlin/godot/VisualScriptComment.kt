@@ -19,33 +19,33 @@ open class VisualScriptComment internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getDescription(): String {
-    val _ret = __method_bind.get_description.call(this.toVariant())
+    val _ret = __method_bind.get_description.call(this._handle)
     return _ret.asString()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getTitle(): String {
-    val _ret = __method_bind.get_title.call(this.toVariant())
+    val _ret = __method_bind.get_title.call(this._handle)
     return _ret.asString()
   }
 
   fun setDescription(description: String) {
     val _arg = Variant.new(description)
-    __method_bind.set_description.call(this.toVariant(), _arg, 1)
+    __method_bind.set_description.call(this._handle, _arg, 1)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.set_title.call(this.toVariant(), _arg, 1)
+    __method_bind.set_title.call(this._handle, _arg, 1)
   }
 
   companion object {

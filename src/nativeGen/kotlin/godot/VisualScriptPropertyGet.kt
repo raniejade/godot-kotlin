@@ -20,73 +20,73 @@ open class VisualScriptPropertyGet internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBasePath(): NodePath {
-    val _ret = __method_bind.get_base_path.call(this.toVariant())
+    val _ret = __method_bind.get_base_path.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getBaseScript(): String {
-    val _ret = __method_bind.get_base_script.call(this.toVariant())
+    val _ret = __method_bind.get_base_script.call(this._handle)
     return _ret.asString()
   }
 
   fun getBaseType(): String {
-    val _ret = __method_bind.get_base_type.call(this.toVariant())
+    val _ret = __method_bind.get_base_type.call(this._handle)
     return _ret.asString()
   }
 
   fun getBasicType(): Variant.Type {
-    val _ret = __method_bind.get_basic_type.call(this.toVariant())
+    val _ret = __method_bind.get_basic_type.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun getCallMode(): CallMode {
-    val _ret = __method_bind.get_call_mode.call(this.toVariant())
+    val _ret = __method_bind.get_call_mode.call(this._handle)
     return VisualScriptPropertyGet.CallMode.from(_ret.asInt())
   }
 
   fun getIndex(): String {
-    val _ret = __method_bind.get_index.call(this.toVariant())
+    val _ret = __method_bind.get_index.call(this._handle)
     return _ret.asString()
   }
 
   fun getProperty(): String {
-    val _ret = __method_bind.get_property.call(this.toVariant())
+    val _ret = __method_bind.get_property.call(this._handle)
     return _ret.asString()
   }
 
   fun setBasePath(basePath: NodePath) {
     val _arg = Variant.new(basePath)
-    __method_bind.set_base_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base_path.call(this._handle, _arg, 1)
   }
 
   fun setBaseScript(baseScript: String) {
     val _arg = Variant.new(baseScript)
-    __method_bind.set_base_script.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base_script.call(this._handle, _arg, 1)
   }
 
   fun setBaseType(baseType: String) {
     val _arg = Variant.new(baseType)
-    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base_type.call(this._handle, _arg, 1)
   }
 
   fun setBasicType(basicType: Int) {
     val _arg = Variant.new(basicType)
-    __method_bind.set_basic_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_basic_type.call(this._handle, _arg, 1)
   }
 
   fun setCallMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_call_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_call_mode.call(this._handle, _arg, 1)
   }
 
   fun setIndex(index: String) {
     val _arg = Variant.new(index)
-    __method_bind.set_index.call(this.toVariant(), _arg, 1)
+    __method_bind.set_index.call(this._handle, _arg, 1)
   }
 
   fun setProperty(property: String) {
     val _arg = Variant.new(property)
-    __method_bind.set_property.call(this.toVariant(), _arg, 1)
+    __method_bind.set_property.call(this._handle, _arg, 1)
   }
 
   enum class CallMode(

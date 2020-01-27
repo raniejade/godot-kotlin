@@ -19,57 +19,57 @@ open class KinematicCollision2D internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollider(): Object {
-    val _ret = __method_bind.get_collider.call(this.toVariant())
+    val _ret = __method_bind.get_collider.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getColliderId(): Int {
-    val _ret = __method_bind.get_collider_id.call(this.toVariant())
+    val _ret = __method_bind.get_collider_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getColliderMetadata(): Variant {
-    val _ret = __method_bind.get_collider_metadata.call(this.toVariant())
+    val _ret = __method_bind.get_collider_metadata.call(this._handle)
     return _ret
   }
 
   fun getColliderShape(): Object {
-    val _ret = __method_bind.get_collider_shape.call(this.toVariant())
+    val _ret = __method_bind.get_collider_shape.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getColliderShapeIndex(): Int {
-    val _ret = __method_bind.get_collider_shape_index.call(this.toVariant())
+    val _ret = __method_bind.get_collider_shape_index.call(this._handle)
     return _ret.asInt()
   }
 
   fun getColliderVelocity(): Vector2 {
-    val _ret = __method_bind.get_collider_velocity.call(this.toVariant())
+    val _ret = __method_bind.get_collider_velocity.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getLocalShape(): Object {
-    val _ret = __method_bind.get_local_shape.call(this.toVariant())
+    val _ret = __method_bind.get_local_shape.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getNormal(): Vector2 {
-    val _ret = __method_bind.get_normal.call(this.toVariant())
+    val _ret = __method_bind.get_normal.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getRemainder(): Vector2 {
-    val _ret = __method_bind.get_remainder.call(this.toVariant())
+    val _ret = __method_bind.get_remainder.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getTravel(): Vector2 {
-    val _ret = __method_bind.get_travel.call(this.toVariant())
+    val _ret = __method_bind.get_travel.call(this._handle)
     return _ret.asVector2()
   }
 

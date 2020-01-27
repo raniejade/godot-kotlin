@@ -20,43 +20,43 @@ open class JSONParseResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getError(): GDError {
-    val _ret = __method_bind.get_error.call(this.toVariant())
+    val _ret = __method_bind.get_error.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun getErrorLine(): Int {
-    val _ret = __method_bind.get_error_line.call(this.toVariant())
+    val _ret = __method_bind.get_error_line.call(this._handle)
     return _ret.asInt()
   }
 
   fun getErrorString(): String {
-    val _ret = __method_bind.get_error_string.call(this.toVariant())
+    val _ret = __method_bind.get_error_string.call(this._handle)
     return _ret.asString()
   }
 
   fun getResult(): Variant {
-    val _ret = __method_bind.get_result.call(this.toVariant())
+    val _ret = __method_bind.get_result.call(this._handle)
     return _ret
   }
 
   fun setError(error: Int) {
     val _arg = Variant.new(error)
-    __method_bind.set_error.call(this.toVariant(), _arg, 1)
+    __method_bind.set_error.call(this._handle, _arg, 1)
   }
 
   fun setErrorLine(errorLine: Int) {
     val _arg = Variant.new(errorLine)
-    __method_bind.set_error_line.call(this.toVariant(), _arg, 1)
+    __method_bind.set_error_line.call(this._handle, _arg, 1)
   }
 
   fun setErrorString(errorString: String) {
     val _arg = Variant.new(errorString)
-    __method_bind.set_error_string.call(this.toVariant(), _arg, 1)
+    __method_bind.set_error_string.call(this._handle, _arg, 1)
   }
 
   fun setResult(result: Variant) {
     val _arg = Variant.new(result)
-    __method_bind.set_result.call(this.toVariant(), _arg, 1)
+    __method_bind.set_result.call(this._handle, _arg, 1)
   }
 
   companion object {

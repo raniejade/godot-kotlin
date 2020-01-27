@@ -18,13 +18,13 @@ open class Sky internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getRadianceSize(): RadianceSize {
-    val _ret = __method_bind.get_radiance_size.call(this.toVariant())
+    val _ret = __method_bind.get_radiance_size.call(this._handle)
     return Sky.RadianceSize.from(_ret.asInt())
   }
 
   fun setRadianceSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.set_radiance_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radiance_size.call(this._handle, _arg, 1)
   }
 
   enum class RadianceSize(

@@ -22,61 +22,61 @@ open class EditorInterface internal constructor(
 ) : Node(_handle) {
   fun editResource(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.edit_resource.call(this.toVariant(), _arg, 1)
+    __method_bind.edit_resource.call(this._handle, _arg, 1)
   }
 
   fun getBaseControl(): Control {
-    val _ret = __method_bind.get_base_control.call(this.toVariant())
+    val _ret = __method_bind.get_base_control.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getEditedSceneRoot(): Node {
-    val _ret = __method_bind.get_edited_scene_root.call(this.toVariant())
+    val _ret = __method_bind.get_edited_scene_root.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getEditorSettings(): EditorSettings {
-    val _ret = __method_bind.get_editor_settings.call(this.toVariant())
+    val _ret = __method_bind.get_editor_settings.call(this._handle)
     return _ret.asObject(::EditorSettings)!!
   }
 
   fun getEditorViewport(): Control {
-    val _ret = __method_bind.get_editor_viewport.call(this.toVariant())
+    val _ret = __method_bind.get_editor_viewport.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getInspector(): EditorInspector {
-    val _ret = __method_bind.get_inspector.call(this.toVariant())
+    val _ret = __method_bind.get_inspector.call(this._handle)
     return _ret.asObject(::EditorInspector)!!
   }
 
   fun getOpenScenes(): VariantArray {
-    val _ret = __method_bind.get_open_scenes.call(this.toVariant())
+    val _ret = __method_bind.get_open_scenes.call(this._handle)
     return _ret.asArray()
   }
 
   fun getResourceFilesystem(): EditorFileSystem {
-    val _ret = __method_bind.get_resource_filesystem.call(this.toVariant())
+    val _ret = __method_bind.get_resource_filesystem.call(this._handle)
     return _ret.asObject(::EditorFileSystem)!!
   }
 
   fun getResourcePreviewer(): EditorResourcePreview {
-    val _ret = __method_bind.get_resource_previewer.call(this.toVariant())
+    val _ret = __method_bind.get_resource_previewer.call(this._handle)
     return _ret.asObject(::EditorResourcePreview)!!
   }
 
   fun getScriptEditor(): ScriptEditor {
-    val _ret = __method_bind.get_script_editor.call(this.toVariant())
+    val _ret = __method_bind.get_script_editor.call(this._handle)
     return _ret.asObject(::ScriptEditor)!!
   }
 
   fun getSelectedPath(): String {
-    val _ret = __method_bind.get_selected_path.call(this.toVariant())
+    val _ret = __method_bind.get_selected_path.call(this._handle)
     return _ret.asString()
   }
 
   fun getSelection(): EditorSelection {
-    val _ret = __method_bind.get_selection.call(this.toVariant())
+    val _ret = __method_bind.get_selection.call(this._handle)
     return _ret.asObject(::EditorSelection)!!
   }
 
@@ -84,12 +84,12 @@ open class EditorInterface internal constructor(
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(forProperty)
-    __method_bind.inspect_object.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.inspect_object.call(this._handle, _args.toVariant(), 2)
   }
 
   fun isPluginEnabled(plugin: String): Boolean {
     val _arg = Variant.new(plugin)
-    val _ret = __method_bind.is_plugin_enabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_plugin_enabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -97,22 +97,22 @@ open class EditorInterface internal constructor(
     val _args = VariantArray.new()
     _args.append(meshes)
     _args.append(previewSize)
-    val _ret = __method_bind.make_mesh_previews.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.make_mesh_previews.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
   fun openSceneFromPath(sceneFilepath: String) {
     val _arg = Variant.new(sceneFilepath)
-    __method_bind.open_scene_from_path.call(this.toVariant(), _arg, 1)
+    __method_bind.open_scene_from_path.call(this._handle, _arg, 1)
   }
 
   fun reloadSceneFromPath(sceneFilepath: String) {
     val _arg = Variant.new(sceneFilepath)
-    __method_bind.reload_scene_from_path.call(this.toVariant(), _arg, 1)
+    __method_bind.reload_scene_from_path.call(this._handle, _arg, 1)
   }
 
   fun saveScene(): GDError {
-    val _ret = __method_bind.save_scene.call(this.toVariant())
+    val _ret = __method_bind.save_scene.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
@@ -120,19 +120,19 @@ open class EditorInterface internal constructor(
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(withPreview)
-    __method_bind.save_scene_as.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.save_scene_as.call(this._handle, _args.toVariant(), 2)
   }
 
   fun selectFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.select_file.call(this.toVariant(), _arg, 1)
+    __method_bind.select_file.call(this._handle, _arg, 1)
   }
 
   fun setPluginEnabled(plugin: String, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(plugin)
     _args.append(enabled)
-    __method_bind.set_plugin_enabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_plugin_enabled.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

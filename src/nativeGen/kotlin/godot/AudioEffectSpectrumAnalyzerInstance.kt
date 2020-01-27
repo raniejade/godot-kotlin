@@ -28,8 +28,8 @@ open class AudioEffectSpectrumAnalyzerInstance internal constructor(
     _args.append(fromHz)
     _args.append(toHz)
     _args.append(mode)
-    val _ret = __method_bind.get_magnitude_for_frequency_range.call(this.toVariant(),
-        _args.toVariant(), 3)
+    val _ret = __method_bind.get_magnitude_for_frequency_range.call(this._handle, _args.toVariant(),
+        3)
     return _ret.asVector2()
   }
 

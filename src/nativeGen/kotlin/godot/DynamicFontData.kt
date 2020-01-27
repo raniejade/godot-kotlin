@@ -20,33 +20,33 @@ open class DynamicFontData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getFontPath(): String {
-    val _ret = __method_bind.get_font_path.call(this.toVariant())
+    val _ret = __method_bind.get_font_path.call(this._handle)
     return _ret.asString()
   }
 
   fun getHinting(): Hinting {
-    val _ret = __method_bind.get_hinting.call(this.toVariant())
+    val _ret = __method_bind.get_hinting.call(this._handle)
     return DynamicFontData.Hinting.from(_ret.asInt())
   }
 
   fun isAntialiased(): Boolean {
-    val _ret = __method_bind.is_antialiased.call(this.toVariant())
+    val _ret = __method_bind.is_antialiased.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAntialiased(antialiased: Boolean) {
     val _arg = Variant.new(antialiased)
-    __method_bind.set_antialiased.call(this.toVariant(), _arg, 1)
+    __method_bind.set_antialiased.call(this._handle, _arg, 1)
   }
 
   fun setFontPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_font_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_font_path.call(this._handle, _arg, 1)
   }
 
   fun setHinting(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_hinting.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hinting.call(this._handle, _arg, 1)
   }
 
   enum class Hinting(

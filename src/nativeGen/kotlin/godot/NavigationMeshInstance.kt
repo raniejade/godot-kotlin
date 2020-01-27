@@ -18,23 +18,23 @@ open class NavigationMeshInstance internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getNavigationMesh(): NavigationMesh {
-    val _ret = __method_bind.get_navigation_mesh.call(this.toVariant())
+    val _ret = __method_bind.get_navigation_mesh.call(this._handle)
     return _ret.asObject(::NavigationMesh)!!
   }
 
   fun isEnabled(): Boolean {
-    val _ret = __method_bind.is_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enabled.call(this._handle, _arg, 1)
   }
 
   fun setNavigationMesh(navmesh: NavigationMesh) {
     val _arg = Variant.new(navmesh)
-    __method_bind.set_navigation_mesh.call(this.toVariant(), _arg, 1)
+    __method_bind.set_navigation_mesh.call(this._handle, _arg, 1)
   }
 
   companion object {

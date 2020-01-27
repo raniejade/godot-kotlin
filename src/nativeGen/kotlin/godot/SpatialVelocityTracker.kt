@@ -19,28 +19,28 @@ open class SpatialVelocityTracker internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getTrackedLinearVelocity(): Vector3 {
-    val _ret = __method_bind.get_tracked_linear_velocity.call(this.toVariant())
+    val _ret = __method_bind.get_tracked_linear_velocity.call(this._handle)
     return _ret.asVector3()
   }
 
   fun isTrackingPhysicsStep(): Boolean {
-    val _ret = __method_bind.is_tracking_physics_step.call(this.toVariant())
+    val _ret = __method_bind.is_tracking_physics_step.call(this._handle)
     return _ret.asBool()
   }
 
   fun reset(position: Vector3) {
     val _arg = Variant.new(position)
-    __method_bind.reset.call(this.toVariant(), _arg, 1)
+    __method_bind.reset.call(this._handle, _arg, 1)
   }
 
   fun setTrackPhysicsStep(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_track_physics_step.call(this.toVariant(), _arg, 1)
+    __method_bind.set_track_physics_step.call(this._handle, _arg, 1)
   }
 
   fun updatePosition(position: Vector3) {
     val _arg = Variant.new(position)
-    __method_bind.update_position.call(this.toVariant(), _arg, 1)
+    __method_bind.update_position.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -33,76 +33,76 @@ open class Curve3D internal constructor(
     _args.append(`in`)
     _args.append(out)
     _args.append(atPosition)
-    __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_point.call(this._handle, _args.toVariant(), 4)
   }
 
   fun clearPoints() {
-    __method_bind.clear_points.call(this.toVariant())
+    __method_bind.clear_points.call(this._handle)
   }
 
   fun getBakeInterval(): Float {
-    val _ret = __method_bind.get_bake_interval.call(this.toVariant())
+    val _ret = __method_bind.get_bake_interval.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getBakedLength(): Float {
-    val _ret = __method_bind.get_baked_length.call(this.toVariant())
+    val _ret = __method_bind.get_baked_length.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getBakedPoints(): PoolVector3Array {
-    val _ret = __method_bind.get_baked_points.call(this.toVariant())
+    val _ret = __method_bind.get_baked_points.call(this._handle)
     return _ret.asPoolVector3Array()
   }
 
   fun getBakedTilts(): PoolRealArray {
-    val _ret = __method_bind.get_baked_tilts.call(this.toVariant())
+    val _ret = __method_bind.get_baked_tilts.call(this._handle)
     return _ret.asPoolRealArray()
   }
 
   fun getBakedUpVectors(): PoolVector3Array {
-    val _ret = __method_bind.get_baked_up_vectors.call(this.toVariant())
+    val _ret = __method_bind.get_baked_up_vectors.call(this._handle)
     return _ret.asPoolVector3Array()
   }
 
   fun getClosestOffset(toPoint: Vector3): Float {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_offset.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_offset.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_point.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.get_point_count.call(this.toVariant())
+    val _ret = __method_bind.get_point_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPointIn(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_point_in.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_in.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getPointOut(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_point_out.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_out.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getPointPosition(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_position.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getPointTilt(idx: Int): Float {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_point_tilt.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_tilt.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -110,7 +110,7 @@ open class Curve3D internal constructor(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(t)
-    val _ret = __method_bind.interpolate.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.interpolate.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector3()
   }
 
@@ -118,7 +118,7 @@ open class Curve3D internal constructor(
     val _args = VariantArray.new()
     _args.append(offset)
     _args.append(cubic)
-    val _ret = __method_bind.interpolate_baked.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.interpolate_baked.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector3()
   }
 
@@ -126,70 +126,69 @@ open class Curve3D internal constructor(
     val _args = VariantArray.new()
     _args.append(offset)
     _args.append(applyTilt)
-    val _ret = __method_bind.interpolate_baked_up_vector.call(this.toVariant(), _args.toVariant(),
-        2)
+    val _ret = __method_bind.interpolate_baked_up_vector.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector3()
   }
 
   fun interpolatef(fofs: Float): Vector3 {
     val _arg = Variant.new(fofs)
-    val _ret = __method_bind.interpolatef.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.interpolatef.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun isUpVectorEnabled(): Boolean {
-    val _ret = __method_bind.is_up_vector_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_up_vector_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun removePoint(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_point.call(this._handle, _arg, 1)
   }
 
   fun setBakeInterval(distance: Float) {
     val _arg = Variant.new(distance)
-    __method_bind.set_bake_interval.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bake_interval.call(this._handle, _arg, 1)
   }
 
   fun setPointIn(idx: Int, position: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(position)
-    __method_bind.set_point_in.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_in.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointOut(idx: Int, position: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(position)
-    __method_bind.set_point_out.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_out.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointPosition(idx: Int, position: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(position)
-    __method_bind.set_point_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_position.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointTilt(idx: Int, tilt: Float) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(tilt)
-    __method_bind.set_point_tilt.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_tilt.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setUpVectorEnabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_up_vector_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_up_vector_enabled.call(this._handle, _arg, 1)
   }
 
   fun tessellate(maxStages: Int, toleranceDegrees: Float): PoolVector3Array {
     val _args = VariantArray.new()
     _args.append(maxStages)
     _args.append(toleranceDegrees)
-    val _ret = __method_bind.tessellate.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.tessellate.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolVector3Array()
   }
 

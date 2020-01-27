@@ -21,57 +21,57 @@ open class Resource internal constructor(
 ) : Reference(_handle) {
   fun duplicate(subresources: Boolean): Resource {
     val _arg = Variant.new(subresources)
-    val _ret = __method_bind.duplicate.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.duplicate.call(this._handle, _arg, 1)
     return _ret.asObject(::Resource)!!
   }
 
   fun getLocalScene(): Node {
-    val _ret = __method_bind.get_local_scene.call(this.toVariant())
+    val _ret = __method_bind.get_local_scene.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this.toVariant())
+    val _ret = __method_bind.get_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getPath(): String {
-    val _ret = __method_bind.get_path.call(this.toVariant())
+    val _ret = __method_bind.get_path.call(this._handle)
     return _ret.asString()
   }
 
   fun getRid(): RID {
-    val _ret = __method_bind.get_rid.call(this.toVariant())
+    val _ret = __method_bind.get_rid.call(this._handle)
     return _ret.asRID()
   }
 
   fun isLocalToScene(): Boolean {
-    val _ret = __method_bind.is_local_to_scene.call(this.toVariant())
+    val _ret = __method_bind.is_local_to_scene.call(this._handle)
     return _ret.asBool()
   }
 
   fun setLocalToScene(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_local_to_scene.call(this.toVariant(), _arg, 1)
+    __method_bind.set_local_to_scene.call(this._handle, _arg, 1)
   }
 
   fun setName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_name.call(this.toVariant(), _arg, 1)
+    __method_bind.set_name.call(this._handle, _arg, 1)
   }
 
   fun setPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_path.call(this.toVariant(), _arg, 1)
+    __method_bind.set_path.call(this._handle, _arg, 1)
   }
 
   fun setupLocalToScene() {
-    __method_bind.setup_local_to_scene.call(this.toVariant())
+    __method_bind.setup_local_to_scene.call(this._handle)
   }
 
   fun takeOverPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.take_over_path.call(this.toVariant(), _arg, 1)
+    __method_bind.take_over_path.call(this._handle, _arg, 1)
   }
 
   companion object {

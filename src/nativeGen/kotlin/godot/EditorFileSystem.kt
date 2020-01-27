@@ -21,46 +21,46 @@ open class EditorFileSystem internal constructor(
 ) : Node(_handle) {
   fun getFileType(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.get_file_type.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_file_type.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getFilesystem(): EditorFileSystemDirectory {
-    val _ret = __method_bind.get_filesystem.call(this.toVariant())
+    val _ret = __method_bind.get_filesystem.call(this._handle)
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.get_filesystem_path.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_filesystem_path.call(this._handle, _arg, 1)
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
   fun getScanningProgress(): Float {
-    val _ret = __method_bind.get_scanning_progress.call(this.toVariant())
+    val _ret = __method_bind.get_scanning_progress.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isScanning(): Boolean {
-    val _ret = __method_bind.is_scanning.call(this.toVariant())
+    val _ret = __method_bind.is_scanning.call(this._handle)
     return _ret.asBool()
   }
 
   fun scan() {
-    __method_bind.scan.call(this.toVariant())
+    __method_bind.scan.call(this._handle)
   }
 
   fun scanSources() {
-    __method_bind.scan_sources.call(this.toVariant())
+    __method_bind.scan_sources.call(this._handle)
   }
 
   fun updateFile(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.update_file.call(this.toVariant(), _arg, 1)
+    __method_bind.update_file.call(this._handle, _arg, 1)
   }
 
   fun updateScriptClasses() {
-    __method_bind.update_script_classes.call(this.toVariant())
+    __method_bind.update_script_classes.call(this._handle)
   }
 
   companion object {

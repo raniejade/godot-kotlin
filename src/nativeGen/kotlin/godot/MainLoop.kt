@@ -21,32 +21,32 @@ open class MainLoop internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun finish() {
-    __method_bind.finish.call(this.toVariant())
+    __method_bind.finish.call(this._handle)
   }
 
   fun idle(delta: Float): Boolean {
     val _arg = Variant.new(delta)
-    val _ret = __method_bind.idle.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.idle.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun init() {
-    __method_bind.init.call(this.toVariant())
+    __method_bind.init.call(this._handle)
   }
 
   fun inputEvent(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.input_event.call(this.toVariant(), _arg, 1)
+    __method_bind.input_event.call(this._handle, _arg, 1)
   }
 
   fun inputText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.input_text.call(this.toVariant(), _arg, 1)
+    __method_bind.input_text.call(this._handle, _arg, 1)
   }
 
   fun iteration(delta: Float): Boolean {
     val _arg = Variant.new(delta)
-    val _ret = __method_bind.iteration.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.iteration.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 

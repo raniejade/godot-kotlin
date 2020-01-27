@@ -18,13 +18,13 @@ open class CenterContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun isUsingTopLeft(): Boolean {
-    val _ret = __method_bind.is_using_top_left.call(this.toVariant())
+    val _ret = __method_bind.is_using_top_left.call(this._handle)
     return _ret.asBool()
   }
 
   fun setUseTopLeft(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_top_left.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_top_left.call(this._handle, _arg, 1)
   }
 
   companion object {

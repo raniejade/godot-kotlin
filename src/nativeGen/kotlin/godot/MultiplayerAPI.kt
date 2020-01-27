@@ -22,51 +22,51 @@ open class MultiplayerAPI internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
-    val _ret = __method_bind.get_network_connected_peers.call(this.toVariant())
+    val _ret = __method_bind.get_network_connected_peers.call(this._handle)
     return _ret.asPoolIntArray()
   }
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
-    val _ret = __method_bind.get_network_peer.call(this.toVariant())
+    val _ret = __method_bind.get_network_peer.call(this._handle)
     return _ret.asObject(::NetworkedMultiplayerPeer)!!
   }
 
   fun getNetworkUniqueId(): Int {
-    val _ret = __method_bind.get_network_unique_id.call(this.toVariant())
+    val _ret = __method_bind.get_network_unique_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRpcSenderId(): Int {
-    val _ret = __method_bind.get_rpc_sender_id.call(this.toVariant())
+    val _ret = __method_bind.get_rpc_sender_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun hasNetworkPeer(): Boolean {
-    val _ret = __method_bind.has_network_peer.call(this.toVariant())
+    val _ret = __method_bind.has_network_peer.call(this._handle)
     return _ret.asBool()
   }
 
   fun isNetworkServer(): Boolean {
-    val _ret = __method_bind.is_network_server.call(this.toVariant())
+    val _ret = __method_bind.is_network_server.call(this._handle)
     return _ret.asBool()
   }
 
   fun isObjectDecodingAllowed(): Boolean {
-    val _ret = __method_bind.is_object_decoding_allowed.call(this.toVariant())
+    val _ret = __method_bind.is_object_decoding_allowed.call(this._handle)
     return _ret.asBool()
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
-    val _ret = __method_bind.is_refusing_new_network_connections.call(this.toVariant())
+    val _ret = __method_bind.is_refusing_new_network_connections.call(this._handle)
     return _ret.asBool()
   }
 
   fun poll() {
-    __method_bind.poll.call(this.toVariant())
+    __method_bind.poll.call(this._handle)
   }
 
   fun sendBytes(
@@ -78,28 +78,28 @@ open class MultiplayerAPI internal constructor(
     _args.append(bytes)
     _args.append(id)
     _args.append(mode)
-    val _ret = __method_bind.send_bytes.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.send_bytes.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_allow_object_decoding.call(this.toVariant(), _arg, 1)
+    __method_bind.set_allow_object_decoding.call(this._handle, _arg, 1)
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     val _arg = Variant.new(peer)
-    __method_bind.set_network_peer.call(this.toVariant(), _arg, 1)
+    __method_bind.set_network_peer.call(this._handle, _arg, 1)
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
     val _arg = Variant.new(refuse)
-    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _arg, 1)
+    __method_bind.set_refuse_new_network_connections.call(this._handle, _arg, 1)
   }
 
   fun setRootNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.set_root_node.call(this.toVariant(), _arg, 1)
+    __method_bind.set_root_node.call(this._handle, _arg, 1)
   }
 
   enum class RPCMode(

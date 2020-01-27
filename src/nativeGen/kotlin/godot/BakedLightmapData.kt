@@ -31,78 +31,78 @@ open class BakedLightmapData internal constructor(
     _args.append(path)
     _args.append(lightmap)
     _args.append(instance)
-    __method_bind.add_user.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_user.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clearUsers() {
-    __method_bind.clear_users.call(this.toVariant())
+    __method_bind.clear_users.call(this._handle)
   }
 
   fun getBounds(): AABB {
-    val _ret = __method_bind.get_bounds.call(this.toVariant())
+    val _ret = __method_bind.get_bounds.call(this._handle)
     return _ret.asAABB()
   }
 
   fun getCellSpaceTransform(): Transform {
-    val _ret = __method_bind.get_cell_space_transform.call(this.toVariant())
+    val _ret = __method_bind.get_cell_space_transform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getCellSubdiv(): Int {
-    val _ret = __method_bind.get_cell_subdiv.call(this.toVariant())
+    val _ret = __method_bind.get_cell_subdiv.call(this._handle)
     return _ret.asInt()
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.get_energy.call(this.toVariant())
+    val _ret = __method_bind.get_energy.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOctree(): PoolByteArray {
-    val _ret = __method_bind.get_octree.call(this.toVariant())
+    val _ret = __method_bind.get_octree.call(this._handle)
     return _ret.asPoolByteArray()
   }
 
   fun getUserCount(): Int {
-    val _ret = __method_bind.get_user_count.call(this.toVariant())
+    val _ret = __method_bind.get_user_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getUserLightmap(userIdx: Int): Texture {
     val _arg = Variant.new(userIdx)
-    val _ret = __method_bind.get_user_lightmap.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_user_lightmap.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getUserPath(userIdx: Int): NodePath {
     val _arg = Variant.new(userIdx)
-    val _ret = __method_bind.get_user_path.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_user_path.call(this._handle, _arg, 1)
     return _ret.asNodePath()
   }
 
   fun setBounds(bounds: AABB) {
     val _arg = Variant.new(bounds)
-    __method_bind.set_bounds.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bounds.call(this._handle, _arg, 1)
   }
 
   fun setCellSpaceTransform(xform: Transform) {
     val _arg = Variant.new(xform)
-    __method_bind.set_cell_space_transform.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cell_space_transform.call(this._handle, _arg, 1)
   }
 
   fun setCellSubdiv(cellSubdiv: Int) {
     val _arg = Variant.new(cellSubdiv)
-    __method_bind.set_cell_subdiv.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cell_subdiv.call(this._handle, _arg, 1)
   }
 
   fun setEnergy(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.set_energy.call(this.toVariant(), _arg, 1)
+    __method_bind.set_energy.call(this._handle, _arg, 1)
   }
 
   fun setOctree(octree: PoolByteArray) {
     val _arg = Variant.new(octree)
-    __method_bind.set_octree.call(this.toVariant(), _arg, 1)
+    __method_bind.set_octree.call(this._handle, _arg, 1)
   }
 
   companion object {

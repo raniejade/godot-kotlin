@@ -18,13 +18,13 @@ open class VideoStreamWebm internal constructor(
   _handle: COpaquePointer
 ) : VideoStream(_handle) {
   fun getFile(): String {
-    val _ret = __method_bind.get_file.call(this.toVariant())
+    val _ret = __method_bind.get_file.call(this._handle)
     return _ret.asString()
   }
 
   fun setFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.set_file.call(this.toVariant(), _arg, 1)
+    __method_bind.set_file.call(this._handle, _arg, 1)
   }
 
   companion object {

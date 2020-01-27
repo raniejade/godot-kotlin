@@ -27,27 +27,27 @@ open class GDNative internal constructor(
     _args.append(callingType)
     _args.append(procedureName)
     _args.append(arguments)
-    val _ret = __method_bind.call_native.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.call_native.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun getLibrary(): GDNativeLibrary {
-    val _ret = __method_bind.get_library.call(this.toVariant())
+    val _ret = __method_bind.get_library.call(this._handle)
     return _ret.asObject(::GDNativeLibrary)!!
   }
 
   fun initialize(): Boolean {
-    val _ret = __method_bind.initialize.call(this.toVariant())
+    val _ret = __method_bind.initialize.call(this._handle)
     return _ret.asBool()
   }
 
   fun setLibrary(library: GDNativeLibrary) {
     val _arg = Variant.new(library)
-    __method_bind.set_library.call(this.toVariant(), _arg, 1)
+    __method_bind.set_library.call(this._handle, _arg, 1)
   }
 
   fun terminate(): Boolean {
-    val _ret = __method_bind.terminate.call(this.toVariant())
+    val _ret = __method_bind.terminate.call(this._handle)
     return _ret.asBool()
   }
 

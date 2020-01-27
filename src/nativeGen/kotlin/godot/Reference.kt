@@ -18,17 +18,17 @@ open class Reference internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun initRef(): Boolean {
-    val _ret = __method_bind.init_ref.call(this.toVariant())
+    val _ret = __method_bind.init_ref.call(this._handle)
     return _ret.asBool()
   }
 
   fun reference(): Boolean {
-    val _ret = __method_bind.reference.call(this.toVariant())
+    val _ret = __method_bind.reference.call(this._handle)
     return _ret.asBool()
   }
 
   fun unreference(): Boolean {
-    val _ret = __method_bind.unreference.call(this.toVariant())
+    val _ret = __method_bind.unreference.call(this._handle)
     return _ret.asBool()
   }
 

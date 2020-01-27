@@ -18,23 +18,23 @@ open class GrooveJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getInitialOffset(): Float {
-    val _ret = __method_bind.get_initial_offset.call(this.toVariant())
+    val _ret = __method_bind.get_initial_offset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getLength(): Float {
-    val _ret = __method_bind.get_length.call(this.toVariant())
+    val _ret = __method_bind.get_length.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setInitialOffset(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_initial_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_initial_offset.call(this._handle, _arg, 1)
   }
 
   fun setLength(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_length.call(this.toVariant(), _arg, 1)
+    __method_bind.set_length.call(this._handle, _arg, 1)
   }
 
   companion object {

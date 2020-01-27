@@ -22,94 +22,94 @@ open class ClippedCamera internal constructor(
 ) : Camera(_handle) {
   fun addException(node: Object) {
     val _arg = Variant.new(node)
-    __method_bind.add_exception.call(this.toVariant(), _arg, 1)
+    __method_bind.add_exception.call(this._handle, _arg, 1)
   }
 
   fun addExceptionRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.add_exception_rid.call(this.toVariant(), _arg, 1)
+    __method_bind.add_exception_rid.call(this._handle, _arg, 1)
   }
 
   fun clearExceptions() {
-    __method_bind.clear_exceptions.call(this.toVariant())
+    __method_bind.clear_exceptions.call(this._handle)
   }
 
   fun getClipOffset(): Float {
-    val _ret = __method_bind.get_clip_offset.call(this.toVariant())
+    val _ret = __method_bind.get_clip_offset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
+    val _ret = __method_bind.get_collision_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getMargin(): Float {
-    val _ret = __method_bind.get_margin.call(this.toVariant())
+    val _ret = __method_bind.get_margin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getProcessMode(): ProcessMode {
-    val _ret = __method_bind.get_process_mode.call(this.toVariant())
+    val _ret = __method_bind.get_process_mode.call(this._handle)
     return ClippedCamera.ProcessMode.from(_ret.asInt())
   }
 
   fun isClipToAreasEnabled(): Boolean {
-    val _ret = __method_bind.is_clip_to_areas_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_clip_to_areas_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isClipToBodiesEnabled(): Boolean {
-    val _ret = __method_bind.is_clip_to_bodies_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_clip_to_bodies_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun removeException(node: Object) {
     val _arg = Variant.new(node)
-    __method_bind.remove_exception.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_exception.call(this._handle, _arg, 1)
   }
 
   fun removeExceptionRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.remove_exception_rid.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_exception_rid.call(this._handle, _arg, 1)
   }
 
   fun setClipToAreas(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_to_areas.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clip_to_areas.call(this._handle, _arg, 1)
   }
 
   fun setClipToBodies(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_to_bodies.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clip_to_bodies.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_collision_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collision_mask.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_collision_mask_bit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_margin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_margin.call(this._handle, _arg, 1)
   }
 
   fun setProcessMode(processMode: Int) {
     val _arg = Variant.new(processMode)
-    __method_bind.set_process_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_process_mode.call(this._handle, _arg, 1)
   }
 
   enum class ProcessMode(

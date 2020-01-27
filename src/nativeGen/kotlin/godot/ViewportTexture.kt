@@ -18,13 +18,13 @@ open class ViewportTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getViewportPathInScene(): NodePath {
-    val _ret = __method_bind.get_viewport_path_in_scene.call(this.toVariant())
+    val _ret = __method_bind.get_viewport_path_in_scene.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun setViewportPathInScene(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_viewport_path_in_scene.call(this.toVariant(), _arg, 1)
+    __method_bind.set_viewport_path_in_scene.call(this._handle, _arg, 1)
   }
 
   companion object {

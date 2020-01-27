@@ -24,19 +24,19 @@ open class _ClassDB internal constructor(
 ) : Object(_handle) {
   fun canInstance(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.can_instance.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.can_instance.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun classExists(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.class_exists.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.class_exists.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun classGetCategory(`class`: String): String {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.class_get_category.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.class_get_category.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
@@ -44,7 +44,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(name)
-    val _ret = __method_bind.class_get_integer_constant.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_integer_constant.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -52,8 +52,8 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_integer_constant_list.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_integer_constant_list.call(this._handle, _args.toVariant(),
+        2)
     return _ret.asPoolStringArray()
   }
 
@@ -61,7 +61,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_method_list.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_method_list.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -69,7 +69,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(property)
-    val _ret = __method_bind.class_get_property.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_property.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
@@ -77,7 +77,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_property_list.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_property_list.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -85,7 +85,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(signal)
-    val _ret = __method_bind.class_get_signal.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_signal.call(this._handle, _args.toVariant(), 2)
     return _ret.asDictionary()
   }
 
@@ -93,7 +93,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_signal_list.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_get_signal_list.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -101,7 +101,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(name)
-    val _ret = __method_bind.class_has_integer_constant.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_has_integer_constant.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -114,7 +114,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(method)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_has_method.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.class_has_method.call(this._handle, _args.toVariant(), 3)
     return _ret.asBool()
   }
 
@@ -122,7 +122,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(signal)
-    val _ret = __method_bind.class_has_signal.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.class_has_signal.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -135,36 +135,36 @@ open class _ClassDB internal constructor(
     _args.append(`object`)
     _args.append(property)
     _args.append(value)
-    val _ret = __method_bind.class_set_property.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.class_set_property.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
   fun getClassList(): PoolStringArray {
-    val _ret = __method_bind.get_class_list.call(this.toVariant())
+    val _ret = __method_bind.get_class_list.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.get_inheriters_from_class.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_inheriters_from_class.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getParentClass(`class`: String): String {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.get_parent_class.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_parent_class.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun instance(`class`: String): Variant {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.instance.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.instance.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun isClassEnabled(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.is_class_enabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_class_enabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -172,7 +172,7 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(inherits)
-    val _ret = __method_bind.is_parent_class.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.is_parent_class.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 

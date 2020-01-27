@@ -19,43 +19,43 @@ open class InputEventScreenDrag internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getIndex(): Int {
-    val _ret = __method_bind.get_index.call(this.toVariant())
+    val _ret = __method_bind.get_index.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getRelative(): Vector2 {
-    val _ret = __method_bind.get_relative.call(this.toVariant())
+    val _ret = __method_bind.get_relative.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getSpeed(): Vector2 {
-    val _ret = __method_bind.get_speed.call(this.toVariant())
+    val _ret = __method_bind.get_speed.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.set_index.call(this.toVariant(), _arg, 1)
+    __method_bind.set_index.call(this._handle, _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this.toVariant(), _arg, 1)
+    __method_bind.set_position.call(this._handle, _arg, 1)
   }
 
   fun setRelative(relative: Vector2) {
     val _arg = Variant.new(relative)
-    __method_bind.set_relative.call(this.toVariant(), _arg, 1)
+    __method_bind.set_relative.call(this._handle, _arg, 1)
   }
 
   fun setSpeed(speed: Vector2) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_speed.call(this._handle, _arg, 1)
   }
 
   companion object {

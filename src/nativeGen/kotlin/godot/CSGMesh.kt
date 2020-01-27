@@ -17,23 +17,23 @@ open class CSGMesh internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this.toVariant())
+    val _ret = __method_bind.get_material.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this.toVariant())
+    val _ret = __method_bind.get_mesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material.call(this._handle, _arg, 1)
   }
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mesh.call(this._handle, _arg, 1)
   }
 
   companion object {

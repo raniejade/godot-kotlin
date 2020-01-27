@@ -18,17 +18,17 @@ open class VisualShaderNodeExpression internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeGroupBase(_handle) {
   fun build() {
-    __method_bind.build.call(this.toVariant())
+    __method_bind.build.call(this._handle)
   }
 
   fun getExpression(): String {
-    val _ret = __method_bind.get_expression.call(this.toVariant())
+    val _ret = __method_bind.get_expression.call(this._handle)
     return _ret.asString()
   }
 
   fun setExpression(expression: String) {
     val _arg = Variant.new(expression)
-    __method_bind.set_expression.call(this.toVariant(), _arg, 1)
+    __method_bind.set_expression.call(this._handle, _arg, 1)
   }
 
   companion object {

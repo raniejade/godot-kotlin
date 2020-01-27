@@ -22,28 +22,28 @@ open class LargeTexture internal constructor(
     val _args = VariantArray.new()
     _args.append(ofs)
     _args.append(texture)
-    val _ret = __method_bind.add_piece.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.add_piece.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun getPieceCount(): Int {
-    val _ret = __method_bind.get_piece_count.call(this.toVariant())
+    val _ret = __method_bind.get_piece_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPieceOffset(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_piece_offset.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_piece_offset.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPieceTexture(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_piece_texture.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_piece_texture.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -51,19 +51,19 @@ open class LargeTexture internal constructor(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(ofs)
-    __method_bind.set_piece_offset.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_piece_offset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPieceTexture(idx: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(texture)
-    __method_bind.set_piece_texture.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_piece_texture.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   companion object {

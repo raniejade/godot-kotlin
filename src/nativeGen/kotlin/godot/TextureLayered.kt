@@ -30,37 +30,37 @@ open class TextureLayered internal constructor(
     _args.append(depth)
     _args.append(format)
     _args.append(flags)
-    __method_bind.create.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.create.call(this._handle, _args.toVariant(), 5)
   }
 
   fun getDepth(): Int {
-    val _ret = __method_bind.get_depth.call(this.toVariant())
+    val _ret = __method_bind.get_depth.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFlags(): Int {
-    val _ret = __method_bind.get_flags.call(this.toVariant())
+    val _ret = __method_bind.get_flags.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFormat(): Image.Format {
-    val _ret = __method_bind.get_format.call(this.toVariant())
+    val _ret = __method_bind.get_format.call(this._handle)
     return Image.Format.from(_ret.asInt())
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLayerData(layer: Int): Image {
     val _arg = Variant.new(layer)
-    val _ret = __method_bind.get_layer_data.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_layer_data.call(this._handle, _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.get_width.call(this.toVariant())
+    val _ret = __method_bind.get_width.call(this._handle)
     return _ret.asInt()
   }
 
@@ -77,19 +77,19 @@ open class TextureLayered internal constructor(
     _args.append(yOffset)
     _args.append(layer)
     _args.append(mipmap)
-    __method_bind.set_data_partial.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.set_data_partial.call(this._handle, _args.toVariant(), 5)
   }
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.set_flags.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flags.call(this._handle, _arg, 1)
   }
 
   fun setLayerData(image: Image, layer: Int) {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(layer)
-    __method_bind.set_layer_data.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_layer_data.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Flags(

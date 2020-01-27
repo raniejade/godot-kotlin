@@ -21,38 +21,38 @@ open class CameraFeed internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getId(): Int {
-    val _ret = __method_bind.get_id.call(this.toVariant())
+    val _ret = __method_bind.get_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this.toVariant())
+    val _ret = __method_bind.get_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getPosition(): FeedPosition {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return CameraFeed.FeedPosition.from(_ret.asInt())
   }
 
   fun getTransform(): Transform2D {
-    val _ret = __method_bind.get_transform.call(this.toVariant())
+    val _ret = __method_bind.get_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.is_active.call(this.toVariant())
+    val _ret = __method_bind.is_active.call(this._handle)
     return _ret.asBool()
   }
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_active.call(this.toVariant(), _arg, 1)
+    __method_bind.set_active.call(this._handle, _arg, 1)
   }
 
   fun setTransform(transform: Transform2D) {
     val _arg = Variant.new(transform)
-    __method_bind.set_transform.call(this.toVariant(), _arg, 1)
+    __method_bind.set_transform.call(this._handle, _arg, 1)
   }
 
   enum class FeedDataType(

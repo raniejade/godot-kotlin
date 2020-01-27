@@ -23,18 +23,18 @@ open class TileMap internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun fixInvalidTiles() {
-    __method_bind.fix_invalid_tiles.call(this.toVariant())
+    __method_bind.fix_invalid_tiles.call(this._handle)
   }
 
   fun getCell(x: Int, y: Int): Int {
     val _args = VariantArray.new()
     _args.append(x)
     _args.append(y)
-    val _ret = __method_bind.get_cell.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_cell.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -42,111 +42,111 @@ open class TileMap internal constructor(
     val _args = VariantArray.new()
     _args.append(x)
     _args.append(y)
-    val _ret = __method_bind.get_cell_autotile_coord.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_cell_autotile_coord.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
   fun getCellSize(): Vector2 {
-    val _ret = __method_bind.get_cell_size.call(this.toVariant())
+    val _ret = __method_bind.get_cell_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCellv(position: Vector2): Int {
     val _arg = Variant.new(position)
-    val _ret = __method_bind.get_cellv.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_cellv.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getClipUv(): Boolean {
-    val _ret = __method_bind.get_clip_uv.call(this.toVariant())
+    val _ret = __method_bind.get_clip_uv.call(this._handle)
     return _ret.asBool()
   }
 
   fun getCollisionBounce(): Float {
-    val _ret = __method_bind.get_collision_bounce.call(this.toVariant())
+    val _ret = __method_bind.get_collision_bounce.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getCollisionFriction(): Float {
-    val _ret = __method_bind.get_collision_friction.call(this.toVariant())
+    val _ret = __method_bind.get_collision_friction.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getCollisionLayer(): Int {
-    val _ret = __method_bind.get_collision_layer.call(this.toVariant())
+    val _ret = __method_bind.get_collision_layer.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_collision_layer_bit.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
+    val _ret = __method_bind.get_collision_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getCollisionUseKinematic(): Boolean {
-    val _ret = __method_bind.get_collision_use_kinematic.call(this.toVariant())
+    val _ret = __method_bind.get_collision_use_kinematic.call(this._handle)
     return _ret.asBool()
   }
 
   fun getCustomTransform(): Transform2D {
-    val _ret = __method_bind.get_custom_transform.call(this.toVariant())
+    val _ret = __method_bind.get_custom_transform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getHalfOffset(): HalfOffset {
-    val _ret = __method_bind.get_half_offset.call(this.toVariant())
+    val _ret = __method_bind.get_half_offset.call(this._handle)
     return TileMap.HalfOffset.from(_ret.asInt())
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.get_mode.call(this.toVariant())
+    val _ret = __method_bind.get_mode.call(this._handle)
     return TileMap.Mode.from(_ret.asInt())
   }
 
   fun getOccluderLightMask(): Int {
-    val _ret = __method_bind.get_occluder_light_mask.call(this.toVariant())
+    val _ret = __method_bind.get_occluder_light_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getQuadrantSize(): Int {
-    val _ret = __method_bind.get_quadrant_size.call(this.toVariant())
+    val _ret = __method_bind.get_quadrant_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTileOrigin(): TileOrigin {
-    val _ret = __method_bind.get_tile_origin.call(this.toVariant())
+    val _ret = __method_bind.get_tile_origin.call(this._handle)
     return TileMap.TileOrigin.from(_ret.asInt())
   }
 
   fun getTileset(): TileSet {
-    val _ret = __method_bind.get_tileset.call(this.toVariant())
+    val _ret = __method_bind.get_tileset.call(this._handle)
     return _ret.asObject(::TileSet)!!
   }
 
   fun getUsedCells(): VariantArray {
-    val _ret = __method_bind.get_used_cells.call(this.toVariant())
+    val _ret = __method_bind.get_used_cells.call(this._handle)
     return _ret.asArray()
   }
 
   fun getUsedCellsById(id: Int): VariantArray {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_used_cells_by_id.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_used_cells_by_id.call(this._handle, _arg, 1)
     return _ret.asArray()
   }
 
   fun getUsedRect(): Rect2 {
-    val _ret = __method_bind.get_used_rect.call(this.toVariant())
+    val _ret = __method_bind.get_used_rect.call(this._handle)
     return _ret.asRect2()
   }
 
@@ -154,7 +154,7 @@ open class TileMap internal constructor(
     val _args = VariantArray.new()
     _args.append(x)
     _args.append(y)
-    val _ret = __method_bind.is_cell_transposed.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.is_cell_transposed.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -162,7 +162,7 @@ open class TileMap internal constructor(
     val _args = VariantArray.new()
     _args.append(x)
     _args.append(y)
-    val _ret = __method_bind.is_cell_x_flipped.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.is_cell_x_flipped.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -170,12 +170,12 @@ open class TileMap internal constructor(
     val _args = VariantArray.new()
     _args.append(x)
     _args.append(y)
-    val _ret = __method_bind.is_cell_y_flipped.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.is_cell_y_flipped.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun isYSortModeEnabled(): Boolean {
-    val _ret = __method_bind.is_y_sort_mode_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_y_sort_mode_enabled.call(this._handle)
     return _ret.asBool()
   }
 
@@ -183,7 +183,7 @@ open class TileMap internal constructor(
     val _args = VariantArray.new()
     _args.append(mapPosition)
     _args.append(ignoreHalfOfs)
-    val _ret = __method_bind.map_to_world.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.map_to_world.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
@@ -204,12 +204,12 @@ open class TileMap internal constructor(
     _args.append(flipY)
     _args.append(transpose)
     _args.append(autotileCoord)
-    __method_bind.set_cell.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.set_cell.call(this._handle, _args.toVariant(), 7)
   }
 
   fun setCellSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_cell_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cell_size.call(this._handle, _arg, 1)
   }
 
   fun setCellv(
@@ -225,112 +225,112 @@ open class TileMap internal constructor(
     _args.append(flipX)
     _args.append(flipY)
     _args.append(transpose)
-    __method_bind.set_cellv.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.set_cellv.call(this._handle, _args.toVariant(), 5)
   }
 
   fun setClipUv(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_uv.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clip_uv.call(this._handle, _arg, 1)
   }
 
   fun setCollisionBounce(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.set_collision_bounce.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collision_bounce.call(this._handle, _arg, 1)
   }
 
   fun setCollisionFriction(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.set_collision_friction.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collision_friction.call(this._handle, _arg, 1)
   }
 
   fun setCollisionLayer(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.set_collision_layer.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collision_layer.call(this._handle, _arg, 1)
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_collision_layer_bit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_collision_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collision_mask.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_collision_mask_bit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setCollisionUseKinematic(useKinematic: Boolean) {
     val _arg = Variant.new(useKinematic)
-    __method_bind.set_collision_use_kinematic.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collision_use_kinematic.call(this._handle, _arg, 1)
   }
 
   fun setCustomTransform(customTransform: Transform2D) {
     val _arg = Variant.new(customTransform)
-    __method_bind.set_custom_transform.call(this.toVariant(), _arg, 1)
+    __method_bind.set_custom_transform.call(this._handle, _arg, 1)
   }
 
   fun setHalfOffset(halfOffset: Int) {
     val _arg = Variant.new(halfOffset)
-    __method_bind.set_half_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_half_offset.call(this._handle, _arg, 1)
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mode.call(this._handle, _arg, 1)
   }
 
   fun setOccluderLightMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_occluder_light_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_occluder_light_mask.call(this._handle, _arg, 1)
   }
 
   fun setQuadrantSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.set_quadrant_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_quadrant_size.call(this._handle, _arg, 1)
   }
 
   fun setTileOrigin(origin: Int) {
     val _arg = Variant.new(origin)
-    __method_bind.set_tile_origin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tile_origin.call(this._handle, _arg, 1)
   }
 
   fun setTileset(tileset: TileSet) {
     val _arg = Variant.new(tileset)
-    __method_bind.set_tileset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tileset.call(this._handle, _arg, 1)
   }
 
   fun setYSortMode(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_y_sort_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_y_sort_mode.call(this._handle, _arg, 1)
   }
 
   fun updateBitmaskArea(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.update_bitmask_area.call(this.toVariant(), _arg, 1)
+    __method_bind.update_bitmask_area.call(this._handle, _arg, 1)
   }
 
   fun updateBitmaskRegion(start: Vector2, end: Vector2) {
     val _args = VariantArray.new()
     _args.append(start)
     _args.append(end)
-    __method_bind.update_bitmask_region.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.update_bitmask_region.call(this._handle, _args.toVariant(), 2)
   }
 
   fun updateDirtyQuadrants() {
-    __method_bind.update_dirty_quadrants.call(this.toVariant())
+    __method_bind.update_dirty_quadrants.call(this._handle)
   }
 
   fun worldToMap(worldPosition: Vector2): Vector2 {
     val _arg = Variant.new(worldPosition)
-    val _ret = __method_bind.world_to_map.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.world_to_map.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 

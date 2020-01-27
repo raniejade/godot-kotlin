@@ -24,64 +24,64 @@ open class ARVRPositionalTracker internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getHand(): TrackerHand {
-    val _ret = __method_bind.get_hand.call(this.toVariant())
+    val _ret = __method_bind.get_hand.call(this._handle)
     return ARVRPositionalTracker.TrackerHand.from(_ret.asInt())
   }
 
   fun getJoyId(): Int {
-    val _ret = __method_bind.get_joy_id.call(this.toVariant())
+    val _ret = __method_bind.get_joy_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this.toVariant())
+    val _ret = __method_bind.get_mesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this.toVariant())
+    val _ret = __method_bind.get_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getOrientation(): Basis {
-    val _ret = __method_bind.get_orientation.call(this.toVariant())
+    val _ret = __method_bind.get_orientation.call(this._handle)
     return _ret.asBasis()
   }
 
   fun getPosition(): Vector3 {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getRumble(): Float {
-    val _ret = __method_bind.get_rumble.call(this.toVariant())
+    val _ret = __method_bind.get_rumble.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTracksOrientation(): Boolean {
-    val _ret = __method_bind.get_tracks_orientation.call(this.toVariant())
+    val _ret = __method_bind.get_tracks_orientation.call(this._handle)
     return _ret.asBool()
   }
 
   fun getTracksPosition(): Boolean {
-    val _ret = __method_bind.get_tracks_position.call(this.toVariant())
+    val _ret = __method_bind.get_tracks_position.call(this._handle)
     return _ret.asBool()
   }
 
   fun getTransform(adjustByReferenceFrame: Boolean): Transform {
     val _arg = Variant.new(adjustByReferenceFrame)
-    val _ret = __method_bind.get_transform.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_transform.call(this._handle, _arg, 1)
     return _ret.asTransform()
   }
 
   fun getType(): ARVRServer.TrackerType {
-    val _ret = __method_bind.get_type.call(this.toVariant())
+    val _ret = __method_bind.get_type.call(this._handle)
     return ARVRServer.TrackerType.from(_ret.asInt())
   }
 
   fun setRumble(rumble: Float) {
     val _arg = Variant.new(rumble)
-    __method_bind.set_rumble.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rumble.call(this._handle, _arg, 1)
   }
 
   enum class TrackerHand(

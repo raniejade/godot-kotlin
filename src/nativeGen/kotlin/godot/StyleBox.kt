@@ -26,38 +26,38 @@ open class StyleBox internal constructor(
     val _args = VariantArray.new()
     _args.append(canvasItem)
     _args.append(rect)
-    __method_bind.draw.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.draw.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getCenterSize(): Vector2 {
-    val _ret = __method_bind.get_center_size.call(this.toVariant())
+    val _ret = __method_bind.get_center_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCurrentItemDrawn(): CanvasItem {
-    val _ret = __method_bind.get_current_item_drawn.call(this.toVariant())
+    val _ret = __method_bind.get_current_item_drawn.call(this._handle)
     return _ret.asObject(::CanvasItem)!!
   }
 
   fun getDefaultMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_default_margin.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_default_margin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_margin.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_margin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMinimumSize(): Vector2 {
-    val _ret = __method_bind.get_minimum_size.call(this.toVariant())
+    val _ret = __method_bind.get_minimum_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.get_offset.call(this.toVariant())
+    val _ret = __method_bind.get_offset.call(this._handle)
     return _ret.asVector2()
   }
 
@@ -65,14 +65,14 @@ open class StyleBox internal constructor(
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(offset)
-    __method_bind.set_default_margin.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_default_margin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun testMask(point: Vector2, rect: Rect2): Boolean {
     val _args = VariantArray.new()
     _args.append(point)
     _args.append(rect)
-    val _ret = __method_bind.test_mask.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.test_mask.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 

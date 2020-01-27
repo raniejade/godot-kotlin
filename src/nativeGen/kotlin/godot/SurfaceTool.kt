@@ -31,32 +31,32 @@ open class SurfaceTool internal constructor(
 ) : Reference(_handle) {
   fun addBones(bones: PoolIntArray) {
     val _arg = Variant.new(bones)
-    __method_bind.add_bones.call(this.toVariant(), _arg, 1)
+    __method_bind.add_bones.call(this._handle, _arg, 1)
   }
 
   fun addColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.add_color.call(this.toVariant(), _arg, 1)
+    __method_bind.add_color.call(this._handle, _arg, 1)
   }
 
   fun addIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.add_index.call(this.toVariant(), _arg, 1)
+    __method_bind.add_index.call(this._handle, _arg, 1)
   }
 
   fun addNormal(normal: Vector3) {
     val _arg = Variant.new(normal)
-    __method_bind.add_normal.call(this.toVariant(), _arg, 1)
+    __method_bind.add_normal.call(this._handle, _arg, 1)
   }
 
   fun addSmoothGroup(smooth: Boolean) {
     val _arg = Variant.new(smooth)
-    __method_bind.add_smooth_group.call(this.toVariant(), _arg, 1)
+    __method_bind.add_smooth_group.call(this._handle, _arg, 1)
   }
 
   fun addTangent(tangent: Plane) {
     val _arg = Variant.new(tangent)
-    __method_bind.add_tangent.call(this.toVariant(), _arg, 1)
+    __method_bind.add_tangent.call(this._handle, _arg, 1)
   }
 
   fun addTriangleFan(
@@ -74,27 +74,27 @@ open class SurfaceTool internal constructor(
     _args.append(uv2s)
     _args.append(normals)
     _args.append(tangents)
-    __method_bind.add_triangle_fan.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.add_triangle_fan.call(this._handle, _args.toVariant(), 6)
   }
 
   fun addUv(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.add_uv.call(this.toVariant(), _arg, 1)
+    __method_bind.add_uv.call(this._handle, _arg, 1)
   }
 
   fun addUv2(uv2: Vector2) {
     val _arg = Variant.new(uv2)
-    __method_bind.add_uv2.call(this.toVariant(), _arg, 1)
+    __method_bind.add_uv2.call(this._handle, _arg, 1)
   }
 
   fun addVertex(vertex: Vector3) {
     val _arg = Variant.new(vertex)
-    __method_bind.add_vertex.call(this.toVariant(), _arg, 1)
+    __method_bind.add_vertex.call(this._handle, _arg, 1)
   }
 
   fun addWeights(weights: PoolRealArray) {
     val _arg = Variant.new(weights)
-    __method_bind.add_weights.call(this.toVariant(), _arg, 1)
+    __method_bind.add_weights.call(this._handle, _arg, 1)
   }
 
   fun appendFrom(
@@ -106,28 +106,28 @@ open class SurfaceTool internal constructor(
     _args.append(existing)
     _args.append(surface)
     _args.append(transform)
-    __method_bind.append_from.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.append_from.call(this._handle, _args.toVariant(), 3)
   }
 
   fun begin(primitive: Int) {
     val _arg = Variant.new(primitive)
-    __method_bind.begin.call(this.toVariant(), _arg, 1)
+    __method_bind.begin.call(this._handle, _arg, 1)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun commit(existing: ArrayMesh, flags: Int): ArrayMesh {
     val _args = VariantArray.new()
     _args.append(existing)
     _args.append(flags)
-    val _ret = __method_bind.commit.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.commit.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::ArrayMesh)!!
   }
 
   fun commitToArrays(): VariantArray {
-    val _ret = __method_bind.commit_to_arrays.call(this.toVariant())
+    val _ret = __method_bind.commit_to_arrays.call(this._handle)
     return _ret.asArray()
   }
 
@@ -135,7 +135,7 @@ open class SurfaceTool internal constructor(
     val _args = VariantArray.new()
     _args.append(existing)
     _args.append(surface)
-    __method_bind.create_from.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.create_from.call(this._handle, _args.toVariant(), 2)
   }
 
   fun createFromBlendShape(
@@ -147,29 +147,29 @@ open class SurfaceTool internal constructor(
     _args.append(existing)
     _args.append(surface)
     _args.append(blendShape)
-    __method_bind.create_from_blend_shape.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.create_from_blend_shape.call(this._handle, _args.toVariant(), 3)
   }
 
   fun deindex() {
-    __method_bind.deindex.call(this.toVariant())
+    __method_bind.deindex.call(this._handle)
   }
 
   fun generateNormals(flip: Boolean) {
     val _arg = Variant.new(flip)
-    __method_bind.generate_normals.call(this.toVariant(), _arg, 1)
+    __method_bind.generate_normals.call(this._handle, _arg, 1)
   }
 
   fun generateTangents() {
-    __method_bind.generate_tangents.call(this.toVariant())
+    __method_bind.generate_tangents.call(this._handle)
   }
 
   fun index() {
-    __method_bind.index.call(this.toVariant())
+    __method_bind.index.call(this._handle)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material.call(this._handle, _arg, 1)
   }
 
   companion object {

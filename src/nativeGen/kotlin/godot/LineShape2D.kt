@@ -19,23 +19,23 @@ open class LineShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getD(): Float {
-    val _ret = __method_bind.get_d.call(this.toVariant())
+    val _ret = __method_bind.get_d.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getNormal(): Vector2 {
-    val _ret = __method_bind.get_normal.call(this.toVariant())
+    val _ret = __method_bind.get_normal.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setD(d: Float) {
     val _arg = Variant.new(d)
-    __method_bind.set_d.call(this.toVariant(), _arg, 1)
+    __method_bind.set_d.call(this._handle, _arg, 1)
   }
 
   fun setNormal(normal: Vector2) {
     val _arg = Variant.new(normal)
-    __method_bind.set_normal.call(this.toVariant(), _arg, 1)
+    __method_bind.set_normal.call(this._handle, _arg, 1)
   }
 
   companion object {

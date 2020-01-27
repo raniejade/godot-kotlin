@@ -21,66 +21,66 @@ open class WebRTCDataChannel internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {
-    __method_bind.close.call(this.toVariant())
+    __method_bind.close.call(this._handle)
   }
 
   fun getId(): Int {
-    val _ret = __method_bind.get_id.call(this.toVariant())
+    val _ret = __method_bind.get_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLabel(): String {
-    val _ret = __method_bind.get_label.call(this.toVariant())
+    val _ret = __method_bind.get_label.call(this._handle)
     return _ret.asString()
   }
 
   fun getMaxPacketLifeTime(): Int {
-    val _ret = __method_bind.get_max_packet_life_time.call(this.toVariant())
+    val _ret = __method_bind.get_max_packet_life_time.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaxRetransmits(): Int {
-    val _ret = __method_bind.get_max_retransmits.call(this.toVariant())
+    val _ret = __method_bind.get_max_retransmits.call(this._handle)
     return _ret.asInt()
   }
 
   fun getProtocol(): String {
-    val _ret = __method_bind.get_protocol.call(this.toVariant())
+    val _ret = __method_bind.get_protocol.call(this._handle)
     return _ret.asString()
   }
 
   fun getReadyState(): ChannelState {
-    val _ret = __method_bind.get_ready_state.call(this.toVariant())
+    val _ret = __method_bind.get_ready_state.call(this._handle)
     return WebRTCDataChannel.ChannelState.from(_ret.asInt())
   }
 
   fun getWriteMode(): WriteMode {
-    val _ret = __method_bind.get_write_mode.call(this.toVariant())
+    val _ret = __method_bind.get_write_mode.call(this._handle)
     return WebRTCDataChannel.WriteMode.from(_ret.asInt())
   }
 
   fun isNegotiated(): Boolean {
-    val _ret = __method_bind.is_negotiated.call(this.toVariant())
+    val _ret = __method_bind.is_negotiated.call(this._handle)
     return _ret.asBool()
   }
 
   fun isOrdered(): Boolean {
-    val _ret = __method_bind.is_ordered.call(this.toVariant())
+    val _ret = __method_bind.is_ordered.call(this._handle)
     return _ret.asBool()
   }
 
   fun poll(): GDError {
-    val _ret = __method_bind.poll.call(this.toVariant())
+    val _ret = __method_bind.poll.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun setWriteMode(writeMode: Int) {
     val _arg = Variant.new(writeMode)
-    __method_bind.set_write_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_write_mode.call(this._handle, _arg, 1)
   }
 
   fun wasStringPacket(): Boolean {
-    val _ret = __method_bind.was_string_packet.call(this.toVariant())
+    val _ret = __method_bind.was_string_packet.call(this._handle)
     return _ret.asBool()
   }
 

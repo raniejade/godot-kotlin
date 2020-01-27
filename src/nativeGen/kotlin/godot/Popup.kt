@@ -22,40 +22,40 @@ open class Popup internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun isExclusive(): Boolean {
-    val _ret = __method_bind.is_exclusive.call(this.toVariant())
+    val _ret = __method_bind.is_exclusive.call(this._handle)
     return _ret.asBool()
   }
 
   fun popup(bounds: Rect2) {
     val _arg = Variant.new(bounds)
-    __method_bind.popup.call(this.toVariant(), _arg, 1)
+    __method_bind.popup.call(this._handle, _arg, 1)
   }
 
   fun popupCentered(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.popup_centered.call(this.toVariant(), _arg, 1)
+    __method_bind.popup_centered.call(this._handle, _arg, 1)
   }
 
   fun popupCenteredClamped(size: Vector2, fallbackRatio: Float) {
     val _args = VariantArray.new()
     _args.append(size)
     _args.append(fallbackRatio)
-    __method_bind.popup_centered_clamped.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.popup_centered_clamped.call(this._handle, _args.toVariant(), 2)
   }
 
   fun popupCenteredMinsize(minsize: Vector2) {
     val _arg = Variant.new(minsize)
-    __method_bind.popup_centered_minsize.call(this.toVariant(), _arg, 1)
+    __method_bind.popup_centered_minsize.call(this._handle, _arg, 1)
   }
 
   fun popupCenteredRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.popup_centered_ratio.call(this.toVariant(), _arg, 1)
+    __method_bind.popup_centered_ratio.call(this._handle, _arg, 1)
   }
 
   fun setExclusive(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_exclusive.call(this.toVariant(), _arg, 1)
+    __method_bind.set_exclusive.call(this._handle, _arg, 1)
   }
 
   companion object {

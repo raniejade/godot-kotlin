@@ -19,23 +19,23 @@ open class VisualScriptConstructor internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getConstructor(): Dictionary {
-    val _ret = __method_bind.get_constructor.call(this.toVariant())
+    val _ret = __method_bind.get_constructor.call(this._handle)
     return _ret.asDictionary()
   }
 
   fun getConstructorType(): Variant.Type {
-    val _ret = __method_bind.get_constructor_type.call(this.toVariant())
+    val _ret = __method_bind.get_constructor_type.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun setConstructor(constructor: Dictionary) {
     val _arg = Variant.new(constructor)
-    __method_bind.set_constructor.call(this.toVariant(), _arg, 1)
+    __method_bind.set_constructor.call(this._handle, _arg, 1)
   }
 
   fun setConstructorType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_constructor_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_constructor_type.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,18 +18,18 @@ open class GradientTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getGradient(): Gradient {
-    val _ret = __method_bind.get_gradient.call(this.toVariant())
+    val _ret = __method_bind.get_gradient.call(this._handle)
     return _ret.asObject(::Gradient)!!
   }
 
   fun setGradient(gradient: Gradient) {
     val _arg = Variant.new(gradient)
-    __method_bind.set_gradient.call(this.toVariant(), _arg, 1)
+    __method_bind.set_gradient.call(this._handle, _arg, 1)
   }
 
   fun setWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_width.call(this._handle, _arg, 1)
   }
 
   companion object {

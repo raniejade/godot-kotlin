@@ -21,123 +21,123 @@ open class Label internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAlign(): Align {
-    val _ret = __method_bind.get_align.call(this.toVariant())
+    val _ret = __method_bind.get_align.call(this._handle)
     return Label.Align.from(_ret.asInt())
   }
 
   fun getLineCount(): Int {
-    val _ret = __method_bind.get_line_count.call(this.toVariant())
+    val _ret = __method_bind.get_line_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLineHeight(): Int {
-    val _ret = __method_bind.get_line_height.call(this.toVariant())
+    val _ret = __method_bind.get_line_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLinesSkipped(): Int {
-    val _ret = __method_bind.get_lines_skipped.call(this.toVariant())
+    val _ret = __method_bind.get_lines_skipped.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaxLinesVisible(): Int {
-    val _ret = __method_bind.get_max_lines_visible.call(this.toVariant())
+    val _ret = __method_bind.get_max_lines_visible.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPercentVisible(): Float {
-    val _ret = __method_bind.get_percent_visible.call(this.toVariant())
+    val _ret = __method_bind.get_percent_visible.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getText(): String {
-    val _ret = __method_bind.get_text.call(this.toVariant())
+    val _ret = __method_bind.get_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getTotalCharacterCount(): Int {
-    val _ret = __method_bind.get_total_character_count.call(this.toVariant())
+    val _ret = __method_bind.get_total_character_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getValign(): VAlign {
-    val _ret = __method_bind.get_valign.call(this.toVariant())
+    val _ret = __method_bind.get_valign.call(this._handle)
     return Label.VAlign.from(_ret.asInt())
   }
 
   fun getVisibleCharacters(): Int {
-    val _ret = __method_bind.get_visible_characters.call(this.toVariant())
+    val _ret = __method_bind.get_visible_characters.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVisibleLineCount(): Int {
-    val _ret = __method_bind.get_visible_line_count.call(this.toVariant())
+    val _ret = __method_bind.get_visible_line_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun hasAutowrap(): Boolean {
-    val _ret = __method_bind.has_autowrap.call(this.toVariant())
+    val _ret = __method_bind.has_autowrap.call(this._handle)
     return _ret.asBool()
   }
 
   fun isClippingText(): Boolean {
-    val _ret = __method_bind.is_clipping_text.call(this.toVariant())
+    val _ret = __method_bind.is_clipping_text.call(this._handle)
     return _ret.asBool()
   }
 
   fun isUppercase(): Boolean {
-    val _ret = __method_bind.is_uppercase.call(this.toVariant())
+    val _ret = __method_bind.is_uppercase.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.set_align.call(this.toVariant(), _arg, 1)
+    __method_bind.set_align.call(this._handle, _arg, 1)
   }
 
   fun setAutowrap(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_autowrap.call(this.toVariant(), _arg, 1)
+    __method_bind.set_autowrap.call(this._handle, _arg, 1)
   }
 
   fun setClipText(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clip_text.call(this._handle, _arg, 1)
   }
 
   fun setLinesSkipped(linesSkipped: Int) {
     val _arg = Variant.new(linesSkipped)
-    __method_bind.set_lines_skipped.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lines_skipped.call(this._handle, _arg, 1)
   }
 
   fun setMaxLinesVisible(linesVisible: Int) {
     val _arg = Variant.new(linesVisible)
-    __method_bind.set_max_lines_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_lines_visible.call(this._handle, _arg, 1)
   }
 
   fun setPercentVisible(percentVisible: Float) {
     val _arg = Variant.new(percentVisible)
-    __method_bind.set_percent_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_percent_visible.call(this._handle, _arg, 1)
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_text.call(this._handle, _arg, 1)
   }
 
   fun setUppercase(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_uppercase.call(this.toVariant(), _arg, 1)
+    __method_bind.set_uppercase.call(this._handle, _arg, 1)
   }
 
   fun setValign(valign: Int) {
     val _arg = Variant.new(valign)
-    __method_bind.set_valign.call(this.toVariant(), _arg, 1)
+    __method_bind.set_valign.call(this._handle, _arg, 1)
   }
 
   fun setVisibleCharacters(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.set_visible_characters.call(this.toVariant(), _arg, 1)
+    __method_bind.set_visible_characters.call(this._handle, _arg, 1)
   }
 
   enum class Align(

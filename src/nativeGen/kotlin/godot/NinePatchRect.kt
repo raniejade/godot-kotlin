@@ -20,66 +20,66 @@ open class NinePatchRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getHAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_h_axis_stretch_mode.call(this.toVariant())
+    val _ret = __method_bind.get_h_axis_stretch_mode.call(this._handle)
     return NinePatchRect.AxisStretchMode.from(_ret.asInt())
   }
 
   fun getPatchMargin(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_patch_margin.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_patch_margin.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.get_region_rect.call(this.toVariant())
+    val _ret = __method_bind.get_region_rect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_v_axis_stretch_mode.call(this.toVariant())
+    val _ret = __method_bind.get_v_axis_stretch_mode.call(this._handle)
     return NinePatchRect.AxisStretchMode.from(_ret.asInt())
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_center_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_draw_center_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
     val _arg = Variant.new(drawCenter)
-    __method_bind.set_draw_center.call(this.toVariant(), _arg, 1)
+    __method_bind.set_draw_center.call(this._handle, _arg, 1)
   }
 
   fun setHAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_h_axis_stretch_mode.call(this._handle, _arg, 1)
   }
 
   fun setPatchMargin(margin: Int, value: Int) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(value)
-    __method_bind.set_patch_margin.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_patch_margin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setRegionRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
+    __method_bind.set_region_rect.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   fun setVAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_v_axis_stretch_mode.call(this._handle, _arg, 1)
   }
 
   enum class AxisStretchMode(

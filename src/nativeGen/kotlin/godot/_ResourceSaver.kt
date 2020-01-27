@@ -22,7 +22,7 @@ open class _ResourceSaver internal constructor(
 ) : Object(_handle) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_recognized_extensions.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_recognized_extensions.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -35,7 +35,7 @@ open class _ResourceSaver internal constructor(
     _args.append(path)
     _args.append(resource)
     _args.append(flags)
-    val _ret = __method_bind.save.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.save.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 

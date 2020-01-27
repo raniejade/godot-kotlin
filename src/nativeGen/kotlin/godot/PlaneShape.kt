@@ -18,13 +18,13 @@ open class PlaneShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getPlane(): Plane {
-    val _ret = __method_bind.get_plane.call(this.toVariant())
+    val _ret = __method_bind.get_plane.call(this._handle)
     return _ret.asPlane()
   }
 
   fun setPlane(plane: Plane) {
     val _arg = Variant.new(plane)
-    __method_bind.set_plane.call(this.toVariant(), _arg, 1)
+    __method_bind.set_plane.call(this._handle, _arg, 1)
   }
 
   companion object {

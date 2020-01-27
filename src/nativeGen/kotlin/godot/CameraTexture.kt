@@ -19,33 +19,33 @@ open class CameraTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getCameraActive(): Boolean {
-    val _ret = __method_bind.get_camera_active.call(this.toVariant())
+    val _ret = __method_bind.get_camera_active.call(this._handle)
     return _ret.asBool()
   }
 
   fun getCameraFeedId(): Int {
-    val _ret = __method_bind.get_camera_feed_id.call(this.toVariant())
+    val _ret = __method_bind.get_camera_feed_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWhichFeed(): CameraServer.FeedImage {
-    val _ret = __method_bind.get_which_feed.call(this.toVariant())
+    val _ret = __method_bind.get_which_feed.call(this._handle)
     return CameraServer.FeedImage.from(_ret.asInt())
   }
 
   fun setCameraActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_camera_active.call(this.toVariant(), _arg, 1)
+    __method_bind.set_camera_active.call(this._handle, _arg, 1)
   }
 
   fun setCameraFeedId(feedId: Int) {
     val _arg = Variant.new(feedId)
-    __method_bind.set_camera_feed_id.call(this.toVariant(), _arg, 1)
+    __method_bind.set_camera_feed_id.call(this._handle, _arg, 1)
   }
 
   fun setWhichFeed(whichFeed: Int) {
     val _arg = Variant.new(whichFeed)
-    __method_bind.set_which_feed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_which_feed.call(this._handle, _arg, 1)
   }
 
   companion object {

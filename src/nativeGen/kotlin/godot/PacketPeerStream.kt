@@ -18,33 +18,33 @@ open class PacketPeerStream internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun getInputBufferMaxSize(): Int {
-    val _ret = __method_bind.get_input_buffer_max_size.call(this.toVariant())
+    val _ret = __method_bind.get_input_buffer_max_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOutputBufferMaxSize(): Int {
-    val _ret = __method_bind.get_output_buffer_max_size.call(this.toVariant())
+    val _ret = __method_bind.get_output_buffer_max_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStreamPeer(): StreamPeer {
-    val _ret = __method_bind.get_stream_peer.call(this.toVariant())
+    val _ret = __method_bind.get_stream_peer.call(this._handle)
     return _ret.asObject(::StreamPeer)!!
   }
 
   fun setInputBufferMaxSize(maxSizeBytes: Int) {
     val _arg = Variant.new(maxSizeBytes)
-    __method_bind.set_input_buffer_max_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_input_buffer_max_size.call(this._handle, _arg, 1)
   }
 
   fun setOutputBufferMaxSize(maxSizeBytes: Int) {
     val _arg = Variant.new(maxSizeBytes)
-    __method_bind.set_output_buffer_max_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_output_buffer_max_size.call(this._handle, _arg, 1)
   }
 
   fun setStreamPeer(peer: StreamPeer) {
     val _arg = Variant.new(peer)
-    __method_bind.set_stream_peer.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stream_peer.call(this._handle, _arg, 1)
   }
 
   companion object {

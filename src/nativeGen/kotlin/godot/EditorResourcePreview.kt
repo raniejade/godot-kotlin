@@ -19,12 +19,12 @@ open class EditorResourcePreview internal constructor(
 ) : Node(_handle) {
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
-    __method_bind.add_preview_generator.call(this.toVariant(), _arg, 1)
+    __method_bind.add_preview_generator.call(this._handle, _arg, 1)
   }
 
   fun checkForInvalidation(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.check_for_invalidation.call(this.toVariant(), _arg, 1)
+    __method_bind.check_for_invalidation.call(this._handle, _arg, 1)
   }
 
   fun queueEditedResourcePreview(
@@ -38,7 +38,7 @@ open class EditorResourcePreview internal constructor(
     _args.append(receiver)
     _args.append(receiverFunc)
     _args.append(userdata)
-    __method_bind.queue_edited_resource_preview.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.queue_edited_resource_preview.call(this._handle, _args.toVariant(), 4)
   }
 
   fun queueResourcePreview(
@@ -52,12 +52,12 @@ open class EditorResourcePreview internal constructor(
     _args.append(receiver)
     _args.append(receiverFunc)
     _args.append(userdata)
-    __method_bind.queue_resource_preview.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.queue_resource_preview.call(this._handle, _args.toVariant(), 4)
   }
 
   fun removePreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
-    __method_bind.remove_preview_generator.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_preview_generator.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -20,53 +20,53 @@ open class SphereMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getIsHemisphere(): Boolean {
-    val _ret = __method_bind.get_is_hemisphere.call(this.toVariant())
+    val _ret = __method_bind.get_is_hemisphere.call(this._handle)
     return _ret.asBool()
   }
 
   fun getRadialSegments(): Int {
-    val _ret = __method_bind.get_radial_segments.call(this.toVariant())
+    val _ret = __method_bind.get_radial_segments.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRadius(): Float {
-    val _ret = __method_bind.get_radius.call(this.toVariant())
+    val _ret = __method_bind.get_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRings(): Int {
-    val _ret = __method_bind.get_rings.call(this.toVariant())
+    val _ret = __method_bind.get_rings.call(this._handle)
     return _ret.asInt()
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_height.call(this._handle, _arg, 1)
   }
 
   fun setIsHemisphere(isHemisphere: Boolean) {
     val _arg = Variant.new(isHemisphere)
-    __method_bind.set_is_hemisphere.call(this.toVariant(), _arg, 1)
+    __method_bind.set_is_hemisphere.call(this._handle, _arg, 1)
   }
 
   fun setRadialSegments(radialSegments: Int) {
     val _arg = Variant.new(radialSegments)
-    __method_bind.set_radial_segments.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radial_segments.call(this._handle, _arg, 1)
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radius.call(this._handle, _arg, 1)
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.set_rings.call(this.toVariant(), _arg, 1)
+    __method_bind.set_rings.call(this._handle, _arg, 1)
   }
 
   companion object {

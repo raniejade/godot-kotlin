@@ -21,77 +21,77 @@ open class ColorPicker internal constructor(
 ) : BoxContainer(_handle) {
   fun addPreset(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.add_preset.call(this.toVariant(), _arg, 1)
+    __method_bind.add_preset.call(this._handle, _arg, 1)
   }
 
   fun arePresetsEnabled(): Boolean {
-    val _ret = __method_bind.are_presets_enabled.call(this.toVariant())
+    val _ret = __method_bind.are_presets_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun arePresetsVisible(): Boolean {
-    val _ret = __method_bind.are_presets_visible.call(this.toVariant())
+    val _ret = __method_bind.are_presets_visible.call(this._handle)
     return _ret.asBool()
   }
 
   fun erasePreset(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.erase_preset.call(this.toVariant(), _arg, 1)
+    __method_bind.erase_preset.call(this._handle, _arg, 1)
   }
 
   fun getPickColor(): Color {
-    val _ret = __method_bind.get_pick_color.call(this.toVariant())
+    val _ret = __method_bind.get_pick_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun getPresets(): PoolColorArray {
-    val _ret = __method_bind.get_presets.call(this.toVariant())
+    val _ret = __method_bind.get_presets.call(this._handle)
     return _ret.asPoolColorArray()
   }
 
   fun isDeferredMode(): Boolean {
-    val _ret = __method_bind.is_deferred_mode.call(this.toVariant())
+    val _ret = __method_bind.is_deferred_mode.call(this._handle)
     return _ret.asBool()
   }
 
   fun isEditingAlpha(): Boolean {
-    val _ret = __method_bind.is_editing_alpha.call(this.toVariant())
+    val _ret = __method_bind.is_editing_alpha.call(this._handle)
     return _ret.asBool()
   }
 
   fun isRawMode(): Boolean {
-    val _ret = __method_bind.is_raw_mode.call(this.toVariant())
+    val _ret = __method_bind.is_raw_mode.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDeferredMode(mode: Boolean) {
     val _arg = Variant.new(mode)
-    __method_bind.set_deferred_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_deferred_mode.call(this._handle, _arg, 1)
   }
 
   fun setEditAlpha(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.set_edit_alpha.call(this.toVariant(), _arg, 1)
+    __method_bind.set_edit_alpha.call(this._handle, _arg, 1)
   }
 
   fun setPickColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_pick_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pick_color.call(this._handle, _arg, 1)
   }
 
   fun setPresetsEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_presets_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_presets_enabled.call(this._handle, _arg, 1)
   }
 
   fun setPresetsVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.set_presets_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_presets_visible.call(this._handle, _arg, 1)
   }
 
   fun setRawMode(mode: Boolean) {
     val _arg = Variant.new(mode)
-    __method_bind.set_raw_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_raw_mode.call(this._handle, _arg, 1)
   }
 
   companion object {

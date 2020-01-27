@@ -17,13 +17,13 @@ open class WorldEnvironment internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getEnvironment(): Environment {
-    val _ret = __method_bind.get_environment.call(this.toVariant())
+    val _ret = __method_bind.get_environment.call(this._handle)
     return _ret.asObject(::Environment)!!
   }
 
   fun setEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.set_environment.call(this.toVariant(), _arg, 1)
+    __method_bind.set_environment.call(this._handle, _arg, 1)
   }
 
   companion object {

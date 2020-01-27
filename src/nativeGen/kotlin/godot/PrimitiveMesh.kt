@@ -19,38 +19,38 @@ open class PrimitiveMesh internal constructor(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
   fun getCustomAabb(): AABB {
-    val _ret = __method_bind.get_custom_aabb.call(this.toVariant())
+    val _ret = __method_bind.get_custom_aabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun getFlipFaces(): Boolean {
-    val _ret = __method_bind.get_flip_faces.call(this.toVariant())
+    val _ret = __method_bind.get_flip_faces.call(this._handle)
     return _ret.asBool()
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this.toVariant())
+    val _ret = __method_bind.get_material.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getMeshArrays(): VariantArray {
-    val _ret = __method_bind.get_mesh_arrays.call(this.toVariant())
+    val _ret = __method_bind.get_mesh_arrays.call(this._handle)
     return _ret.asArray()
   }
 
   fun setCustomAabb(aabb: AABB) {
     val _arg = Variant.new(aabb)
-    __method_bind.set_custom_aabb.call(this.toVariant(), _arg, 1)
+    __method_bind.set_custom_aabb.call(this._handle, _arg, 1)
   }
 
   fun setFlipFaces(flipFaces: Boolean) {
     val _arg = Variant.new(flipFaces)
-    __method_bind.set_flip_faces.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flip_faces.call(this._handle, _arg, 1)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material.call(this._handle, _arg, 1)
   }
 
   companion object {

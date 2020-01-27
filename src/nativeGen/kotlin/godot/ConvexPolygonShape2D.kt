@@ -18,18 +18,18 @@ open class ConvexPolygonShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getPoints(): PoolVector2Array {
-    val _ret = __method_bind.get_points.call(this.toVariant())
+    val _ret = __method_bind.get_points.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun setPointCloud(pointCloud: PoolVector2Array) {
     val _arg = Variant.new(pointCloud)
-    __method_bind.set_point_cloud.call(this.toVariant(), _arg, 1)
+    __method_bind.set_point_cloud.call(this._handle, _arg, 1)
   }
 
   fun setPoints(points: PoolVector2Array) {
     val _arg = Variant.new(points)
-    __method_bind.set_points.call(this.toVariant(), _arg, 1)
+    __method_bind.set_points.call(this._handle, _arg, 1)
   }
 
   companion object {

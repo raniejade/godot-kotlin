@@ -32,123 +32,123 @@ open class Curve internal constructor(
     _args.append(rightTangent)
     _args.append(leftMode)
     _args.append(rightMode)
-    val _ret = __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 5)
+    val _ret = __method_bind.add_point.call(this._handle, _args.toVariant(), 5)
     return _ret.asInt()
   }
 
   fun bake() {
-    __method_bind.bake.call(this.toVariant())
+    __method_bind.bake.call(this._handle)
   }
 
   fun cleanDupes() {
-    __method_bind.clean_dupes.call(this.toVariant())
+    __method_bind.clean_dupes.call(this._handle)
   }
 
   fun clearPoints() {
-    __method_bind.clear_points.call(this.toVariant())
+    __method_bind.clear_points.call(this._handle)
   }
 
   fun getBakeResolution(): Int {
-    val _ret = __method_bind.get_bake_resolution.call(this.toVariant())
+    val _ret = __method_bind.get_bake_resolution.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaxValue(): Float {
-    val _ret = __method_bind.get_max_value.call(this.toVariant())
+    val _ret = __method_bind.get_max_value.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMinValue(): Float {
-    val _ret = __method_bind.get_min_value.call(this.toVariant())
+    val _ret = __method_bind.get_min_value.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.get_point_count.call(this.toVariant())
+    val _ret = __method_bind.get_point_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPointLeftMode(index: Int): TangentMode {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_left_mode.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_left_mode.call(this._handle, _arg, 1)
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointLeftTangent(index: Int): Float {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_left_tangent.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_left_tangent.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getPointPosition(index: Int): Vector2 {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_position.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPointRightMode(index: Int): TangentMode {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_right_mode.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_right_mode.call(this._handle, _arg, 1)
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointRightTangent(index: Int): Float {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_right_tangent.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_point_right_tangent.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun interpolate(offset: Float): Float {
     val _arg = Variant.new(offset)
-    val _ret = __method_bind.interpolate.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.interpolate.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun interpolateBaked(offset: Float): Float {
     val _arg = Variant.new(offset)
-    val _ret = __method_bind.interpolate_baked.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.interpolate_baked.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun removePoint(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_point.call(this._handle, _arg, 1)
   }
 
   fun setBakeResolution(resolution: Int) {
     val _arg = Variant.new(resolution)
-    __method_bind.set_bake_resolution.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bake_resolution.call(this._handle, _arg, 1)
   }
 
   fun setMaxValue(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.set_max_value.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_value.call(this._handle, _arg, 1)
   }
 
   fun setMinValue(min: Float) {
     val _arg = Variant.new(min)
-    __method_bind.set_min_value.call(this.toVariant(), _arg, 1)
+    __method_bind.set_min_value.call(this._handle, _arg, 1)
   }
 
   fun setPointLeftMode(index: Int, mode: Int) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(mode)
-    __method_bind.set_point_left_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_left_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointLeftTangent(index: Int, tangent: Float) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(tangent)
-    __method_bind.set_point_left_tangent.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_left_tangent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointOffset(index: Int, offset: Float): Int {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(offset)
-    val _ret = __method_bind.set_point_offset.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.set_point_offset.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -156,21 +156,21 @@ open class Curve internal constructor(
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(mode)
-    __method_bind.set_point_right_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_right_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointRightTangent(index: Int, tangent: Float) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(tangent)
-    __method_bind.set_point_right_tangent.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_right_tangent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointValue(index: Int, y: Float) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(y)
-    __method_bind.set_point_value.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_point_value.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class TangentMode(

@@ -18,23 +18,23 @@ open class VisualScriptTypeCast internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBaseScript(): String {
-    val _ret = __method_bind.get_base_script.call(this.toVariant())
+    val _ret = __method_bind.get_base_script.call(this._handle)
     return _ret.asString()
   }
 
   fun getBaseType(): String {
-    val _ret = __method_bind.get_base_type.call(this.toVariant())
+    val _ret = __method_bind.get_base_type.call(this._handle)
     return _ret.asString()
   }
 
   fun setBaseScript(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_base_script.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base_script.call(this._handle, _arg, 1)
   }
 
   fun setBaseType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base_type.call(this._handle, _arg, 1)
   }
 
   companion object {

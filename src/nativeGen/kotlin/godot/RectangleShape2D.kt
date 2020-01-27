@@ -18,13 +18,13 @@ open class RectangleShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getExtents(): Vector2 {
-    val _ret = __method_bind.get_extents.call(this.toVariant())
+    val _ret = __method_bind.get_extents.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setExtents(extents: Vector2) {
     val _arg = Variant.new(extents)
-    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
+    __method_bind.set_extents.call(this._handle, _arg, 1)
   }
 
   companion object {

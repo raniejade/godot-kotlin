@@ -19,33 +19,33 @@ open class PlaneMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getSubdivideDepth(): Int {
-    val _ret = __method_bind.get_subdivide_depth.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_depth.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSubdivideWidth(): Int {
-    val _ret = __method_bind.get_subdivide_width.call(this.toVariant())
+    val _ret = __method_bind.get_subdivide_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideDepth(subdivide: Int) {
     val _arg = Variant.new(subdivide)
-    __method_bind.set_subdivide_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_depth.call(this._handle, _arg, 1)
   }
 
   fun setSubdivideWidth(subdivide: Int) {
     val _arg = Variant.new(subdivide)
-    __method_bind.set_subdivide_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_subdivide_width.call(this._handle, _arg, 1)
   }
 
   companion object {

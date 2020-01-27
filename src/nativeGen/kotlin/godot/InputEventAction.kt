@@ -20,28 +20,28 @@ open class InputEventAction internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAction(): String {
-    val _ret = __method_bind.get_action.call(this.toVariant())
+    val _ret = __method_bind.get_action.call(this._handle)
     return _ret.asString()
   }
 
   fun getStrength(): Float {
-    val _ret = __method_bind.get_strength.call(this.toVariant())
+    val _ret = __method_bind.get_strength.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setAction(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.set_action.call(this.toVariant(), _arg, 1)
+    __method_bind.set_action.call(this._handle, _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pressed.call(this._handle, _arg, 1)
   }
 
   fun setStrength(strength: Float) {
     val _arg = Variant.new(strength)
-    __method_bind.set_strength.call(this.toVariant(), _arg, 1)
+    __method_bind.set_strength.call(this._handle, _arg, 1)
   }
 
   companion object {

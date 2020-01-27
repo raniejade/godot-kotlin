@@ -19,53 +19,53 @@ open class RemoteTransform2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getRemoteNode(): NodePath {
-    val _ret = __method_bind.get_remote_node.call(this.toVariant())
+    val _ret = __method_bind.get_remote_node.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getUpdatePosition(): Boolean {
-    val _ret = __method_bind.get_update_position.call(this.toVariant())
+    val _ret = __method_bind.get_update_position.call(this._handle)
     return _ret.asBool()
   }
 
   fun getUpdateRotation(): Boolean {
-    val _ret = __method_bind.get_update_rotation.call(this.toVariant())
+    val _ret = __method_bind.get_update_rotation.call(this._handle)
     return _ret.asBool()
   }
 
   fun getUpdateScale(): Boolean {
-    val _ret = __method_bind.get_update_scale.call(this.toVariant())
+    val _ret = __method_bind.get_update_scale.call(this._handle)
     return _ret.asBool()
   }
 
   fun getUseGlobalCoordinates(): Boolean {
-    val _ret = __method_bind.get_use_global_coordinates.call(this.toVariant())
+    val _ret = __method_bind.get_use_global_coordinates.call(this._handle)
     return _ret.asBool()
   }
 
   fun setRemoteNode(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_remote_node.call(this.toVariant(), _arg, 1)
+    __method_bind.set_remote_node.call(this._handle, _arg, 1)
   }
 
   fun setUpdatePosition(updateRemotePosition: Boolean) {
     val _arg = Variant.new(updateRemotePosition)
-    __method_bind.set_update_position.call(this.toVariant(), _arg, 1)
+    __method_bind.set_update_position.call(this._handle, _arg, 1)
   }
 
   fun setUpdateRotation(updateRemoteRotation: Boolean) {
     val _arg = Variant.new(updateRemoteRotation)
-    __method_bind.set_update_rotation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_update_rotation.call(this._handle, _arg, 1)
   }
 
   fun setUpdateScale(updateRemoteScale: Boolean) {
     val _arg = Variant.new(updateRemoteScale)
-    __method_bind.set_update_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_update_scale.call(this._handle, _arg, 1)
   }
 
   fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
     val _arg = Variant.new(useGlobalCoordinates)
-    __method_bind.set_use_global_coordinates.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_global_coordinates.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -20,43 +20,43 @@ open class Joint2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getBias(): Float {
-    val _ret = __method_bind.get_bias.call(this.toVariant())
+    val _ret = __method_bind.get_bias.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getExcludeNodesFromCollision(): Boolean {
-    val _ret = __method_bind.get_exclude_nodes_from_collision.call(this.toVariant())
+    val _ret = __method_bind.get_exclude_nodes_from_collision.call(this._handle)
     return _ret.asBool()
   }
 
   fun getNodeA(): NodePath {
-    val _ret = __method_bind.get_node_a.call(this.toVariant())
+    val _ret = __method_bind.get_node_a.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getNodeB(): NodePath {
-    val _ret = __method_bind.get_node_b.call(this.toVariant())
+    val _ret = __method_bind.get_node_b.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun setBias(bias: Float) {
     val _arg = Variant.new(bias)
-    __method_bind.set_bias.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bias.call(this._handle, _arg, 1)
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_exclude_nodes_from_collision.call(this.toVariant(), _arg, 1)
+    __method_bind.set_exclude_nodes_from_collision.call(this._handle, _arg, 1)
   }
 
   fun setNodeA(node: NodePath) {
     val _arg = Variant.new(node)
-    __method_bind.set_node_a.call(this.toVariant(), _arg, 1)
+    __method_bind.set_node_a.call(this._handle, _arg, 1)
   }
 
   fun setNodeB(node: NodePath) {
     val _arg = Variant.new(node)
-    __method_bind.set_node_b.call(this.toVariant(), _arg, 1)
+    __method_bind.set_node_b.call(this._handle, _arg, 1)
   }
 
   companion object {

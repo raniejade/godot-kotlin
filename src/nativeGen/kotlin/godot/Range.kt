@@ -19,112 +19,112 @@ open class Range internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAsRatio(): Float {
-    val _ret = __method_bind.get_as_ratio.call(this.toVariant())
+    val _ret = __method_bind.get_as_ratio.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMax(): Float {
-    val _ret = __method_bind.get_max.call(this.toVariant())
+    val _ret = __method_bind.get_max.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMin(): Float {
-    val _ret = __method_bind.get_min.call(this.toVariant())
+    val _ret = __method_bind.get_min.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPage(): Float {
-    val _ret = __method_bind.get_page.call(this.toVariant())
+    val _ret = __method_bind.get_page.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getStep(): Float {
-    val _ret = __method_bind.get_step.call(this.toVariant())
+    val _ret = __method_bind.get_step.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getValue(): Float {
-    val _ret = __method_bind.get_value.call(this.toVariant())
+    val _ret = __method_bind.get_value.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isGreaterAllowed(): Boolean {
-    val _ret = __method_bind.is_greater_allowed.call(this.toVariant())
+    val _ret = __method_bind.is_greater_allowed.call(this._handle)
     return _ret.asBool()
   }
 
   fun isLesserAllowed(): Boolean {
-    val _ret = __method_bind.is_lesser_allowed.call(this.toVariant())
+    val _ret = __method_bind.is_lesser_allowed.call(this._handle)
     return _ret.asBool()
   }
 
   fun isRatioExp(): Boolean {
-    val _ret = __method_bind.is_ratio_exp.call(this.toVariant())
+    val _ret = __method_bind.is_ratio_exp.call(this._handle)
     return _ret.asBool()
   }
 
   fun isUsingRoundedValues(): Boolean {
-    val _ret = __method_bind.is_using_rounded_values.call(this.toVariant())
+    val _ret = __method_bind.is_using_rounded_values.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAllowGreater(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_greater.call(this.toVariant(), _arg, 1)
+    __method_bind.set_allow_greater.call(this._handle, _arg, 1)
   }
 
   fun setAllowLesser(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_lesser.call(this.toVariant(), _arg, 1)
+    __method_bind.set_allow_lesser.call(this._handle, _arg, 1)
   }
 
   fun setAsRatio(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.set_as_ratio.call(this.toVariant(), _arg, 1)
+    __method_bind.set_as_ratio.call(this._handle, _arg, 1)
   }
 
   fun setExpRatio(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_exp_ratio.call(this.toVariant(), _arg, 1)
+    __method_bind.set_exp_ratio.call(this._handle, _arg, 1)
   }
 
   fun setMax(maximum: Float) {
     val _arg = Variant.new(maximum)
-    __method_bind.set_max.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max.call(this._handle, _arg, 1)
   }
 
   fun setMin(minimum: Float) {
     val _arg = Variant.new(minimum)
-    __method_bind.set_min.call(this.toVariant(), _arg, 1)
+    __method_bind.set_min.call(this._handle, _arg, 1)
   }
 
   fun setPage(pagesize: Float) {
     val _arg = Variant.new(pagesize)
-    __method_bind.set_page.call(this.toVariant(), _arg, 1)
+    __method_bind.set_page.call(this._handle, _arg, 1)
   }
 
   fun setStep(step: Float) {
     val _arg = Variant.new(step)
-    __method_bind.set_step.call(this.toVariant(), _arg, 1)
+    __method_bind.set_step.call(this._handle, _arg, 1)
   }
 
   fun setUseRoundedValues(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_use_rounded_values.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_rounded_values.call(this._handle, _arg, 1)
   }
 
   fun setValue(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.set_value.call(this.toVariant(), _arg, 1)
+    __method_bind.set_value.call(this._handle, _arg, 1)
   }
 
   fun share(with: Node) {
     val _arg = Variant.new(with)
-    __method_bind.share.call(this.toVariant(), _arg, 1)
+    __method_bind.share.call(this._handle, _arg, 1)
   }
 
   fun unshare() {
-    __method_bind.unshare.call(this.toVariant())
+    __method_bind.unshare.call(this._handle)
   }
 
   companion object {

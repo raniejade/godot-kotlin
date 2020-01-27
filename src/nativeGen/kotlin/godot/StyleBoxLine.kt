@@ -21,53 +21,53 @@ open class StyleBoxLine internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getColor(): Color {
-    val _ret = __method_bind.get_color.call(this.toVariant())
+    val _ret = __method_bind.get_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun getGrowBegin(): Float {
-    val _ret = __method_bind.get_grow_begin.call(this.toVariant())
+    val _ret = __method_bind.get_grow_begin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGrowEnd(): Float {
-    val _ret = __method_bind.get_grow_end.call(this.toVariant())
+    val _ret = __method_bind.get_grow_end.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getThickness(): Int {
-    val _ret = __method_bind.get_thickness.call(this.toVariant())
+    val _ret = __method_bind.get_thickness.call(this._handle)
     return _ret.asInt()
   }
 
   fun isVertical(): Boolean {
-    val _ret = __method_bind.is_vertical.call(this.toVariant())
+    val _ret = __method_bind.is_vertical.call(this._handle)
     return _ret.asBool()
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_color.call(this._handle, _arg, 1)
   }
 
   fun setGrowBegin(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_grow_begin.call(this.toVariant(), _arg, 1)
+    __method_bind.set_grow_begin.call(this._handle, _arg, 1)
   }
 
   fun setGrowEnd(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_grow_end.call(this.toVariant(), _arg, 1)
+    __method_bind.set_grow_end.call(this._handle, _arg, 1)
   }
 
   fun setThickness(thickness: Int) {
     val _arg = Variant.new(thickness)
-    __method_bind.set_thickness.call(this.toVariant(), _arg, 1)
+    __method_bind.set_thickness.call(this._handle, _arg, 1)
   }
 
   fun setVertical(vertical: Boolean) {
     val _arg = Variant.new(vertical)
-    __method_bind.set_vertical.call(this.toVariant(), _arg, 1)
+    __method_bind.set_vertical.call(this._handle, _arg, 1)
   }
 
   companion object {

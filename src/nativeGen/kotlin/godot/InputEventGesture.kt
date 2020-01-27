@@ -18,13 +18,13 @@ open class InputEventGesture internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this.toVariant())
+    val _ret = __method_bind.get_position.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this.toVariant(), _arg, 1)
+    __method_bind.set_position.call(this._handle, _arg, 1)
   }
 
   companion object {

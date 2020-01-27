@@ -18,32 +18,32 @@ open class CollisionShape internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getShape(): Shape {
-    val _ret = __method_bind.get_shape.call(this.toVariant())
+    val _ret = __method_bind.get_shape.call(this._handle)
     return _ret.asObject(::Shape)!!
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.is_disabled.call(this.toVariant())
+    val _ret = __method_bind.is_disabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun makeConvexFromBrothers() {
-    __method_bind.make_convex_from_brothers.call(this.toVariant())
+    __method_bind.make_convex_from_brothers.call(this._handle)
   }
 
   fun resourceChanged(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.resource_changed.call(this.toVariant(), _arg, 1)
+    __method_bind.resource_changed.call(this._handle, _arg, 1)
   }
 
   fun setDisabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_disabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_disabled.call(this._handle, _arg, 1)
   }
 
   fun setShape(shape: Shape) {
     val _arg = Variant.new(shape)
-    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shape.call(this._handle, _arg, 1)
   }
 
   companion object {

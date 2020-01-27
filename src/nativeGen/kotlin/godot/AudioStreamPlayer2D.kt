@@ -21,122 +21,122 @@ open class AudioStreamPlayer2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getAreaMask(): Int {
-    val _ret = __method_bind.get_area_mask.call(this.toVariant())
+    val _ret = __method_bind.get_area_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAttenuation(): Float {
-    val _ret = __method_bind.get_attenuation.call(this.toVariant())
+    val _ret = __method_bind.get_attenuation.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getBus(): String {
-    val _ret = __method_bind.get_bus.call(this.toVariant())
+    val _ret = __method_bind.get_bus.call(this._handle)
     return _ret.asString()
   }
 
   fun getMaxDistance(): Float {
-    val _ret = __method_bind.get_max_distance.call(this.toVariant())
+    val _ret = __method_bind.get_max_distance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPitchScale(): Float {
-    val _ret = __method_bind.get_pitch_scale.call(this.toVariant())
+    val _ret = __method_bind.get_pitch_scale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPlaybackPosition(): Float {
-    val _ret = __method_bind.get_playback_position.call(this.toVariant())
+    val _ret = __method_bind.get_playback_position.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getStream(): AudioStream {
-    val _ret = __method_bind.get_stream.call(this.toVariant())
+    val _ret = __method_bind.get_stream.call(this._handle)
     return _ret.asObject(::AudioStream)!!
   }
 
   fun getStreamPaused(): Boolean {
-    val _ret = __method_bind.get_stream_paused.call(this.toVariant())
+    val _ret = __method_bind.get_stream_paused.call(this._handle)
     return _ret.asBool()
   }
 
   fun getStreamPlayback(): AudioStreamPlayback {
-    val _ret = __method_bind.get_stream_playback.call(this.toVariant())
+    val _ret = __method_bind.get_stream_playback.call(this._handle)
     return _ret.asObject(::AudioStreamPlayback)!!
   }
 
   fun getVolumeDb(): Float {
-    val _ret = __method_bind.get_volume_db.call(this.toVariant())
+    val _ret = __method_bind.get_volume_db.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isAutoplayEnabled(): Boolean {
-    val _ret = __method_bind.is_autoplay_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_autoplay_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this.toVariant())
+    val _ret = __method_bind.is_playing.call(this._handle)
     return _ret.asBool()
   }
 
   fun play(fromPosition: Float) {
     val _arg = Variant.new(fromPosition)
-    __method_bind.play.call(this.toVariant(), _arg, 1)
+    __method_bind.play.call(this._handle, _arg, 1)
   }
 
   fun seek(toPosition: Float) {
     val _arg = Variant.new(toPosition)
-    __method_bind.seek.call(this.toVariant(), _arg, 1)
+    __method_bind.seek.call(this._handle, _arg, 1)
   }
 
   fun setAreaMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_area_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_area_mask.call(this._handle, _arg, 1)
   }
 
   fun setAttenuation(curve: Float) {
     val _arg = Variant.new(curve)
-    __method_bind.set_attenuation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_attenuation.call(this._handle, _arg, 1)
   }
 
   fun setAutoplay(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_autoplay.call(this.toVariant(), _arg, 1)
+    __method_bind.set_autoplay.call(this._handle, _arg, 1)
   }
 
   fun setBus(bus: String) {
     val _arg = Variant.new(bus)
-    __method_bind.set_bus.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bus.call(this._handle, _arg, 1)
   }
 
   fun setMaxDistance(pixels: Float) {
     val _arg = Variant.new(pixels)
-    __method_bind.set_max_distance.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_distance.call(this._handle, _arg, 1)
   }
 
   fun setPitchScale(pitchScale: Float) {
     val _arg = Variant.new(pitchScale)
-    __method_bind.set_pitch_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pitch_scale.call(this._handle, _arg, 1)
   }
 
   fun setStream(stream: AudioStream) {
     val _arg = Variant.new(stream)
-    __method_bind.set_stream.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stream.call(this._handle, _arg, 1)
   }
 
   fun setStreamPaused(pause: Boolean) {
     val _arg = Variant.new(pause)
-    __method_bind.set_stream_paused.call(this.toVariant(), _arg, 1)
+    __method_bind.set_stream_paused.call(this._handle, _arg, 1)
   }
 
   fun setVolumeDb(volumeDb: Float) {
     val _arg = Variant.new(volumeDb)
-    __method_bind.set_volume_db.call(this.toVariant(), _arg, 1)
+    __method_bind.set_volume_db.call(this._handle, _arg, 1)
   }
 
   fun stop() {
-    __method_bind.stop.call(this.toVariant())
+    __method_bind.stop.call(this._handle)
   }
 
   companion object {

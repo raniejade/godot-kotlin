@@ -32,55 +32,55 @@ open class ImageTexture internal constructor(
     _args.append(height)
     _args.append(format)
     _args.append(flags)
-    __method_bind.create.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.create.call(this._handle, _args.toVariant(), 4)
   }
 
   fun createFromImage(image: Image, flags: Int) {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(flags)
-    __method_bind.create_from_image.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.create_from_image.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getFormat(): Image.Format {
-    val _ret = __method_bind.get_format.call(this.toVariant())
+    val _ret = __method_bind.get_format.call(this._handle)
     return Image.Format.from(_ret.asInt())
   }
 
   fun getLossyStorageQuality(): Float {
-    val _ret = __method_bind.get_lossy_storage_quality.call(this.toVariant())
+    val _ret = __method_bind.get_lossy_storage_quality.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getStorage(): Storage {
-    val _ret = __method_bind.get_storage.call(this.toVariant())
+    val _ret = __method_bind.get_storage.call(this._handle)
     return ImageTexture.Storage.from(_ret.asInt())
   }
 
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setData(image: Image) {
     val _arg = Variant.new(image)
-    __method_bind.set_data.call(this.toVariant(), _arg, 1)
+    __method_bind.set_data.call(this._handle, _arg, 1)
   }
 
   fun setLossyStorageQuality(quality: Float) {
     val _arg = Variant.new(quality)
-    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _arg, 1)
+    __method_bind.set_lossy_storage_quality.call(this._handle, _arg, 1)
   }
 
   fun setSizeOverride(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size_override.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size_override.call(this._handle, _arg, 1)
   }
 
   fun setStorage(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_storage.call(this.toVariant(), _arg, 1)
+    __method_bind.set_storage.call(this._handle, _arg, 1)
   }
 
   enum class Storage(

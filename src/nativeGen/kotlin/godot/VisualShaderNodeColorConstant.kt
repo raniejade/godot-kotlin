@@ -18,13 +18,13 @@ open class VisualShaderNodeColorConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Color {
-    val _ret = __method_bind.get_constant.call(this.toVariant())
+    val _ret = __method_bind.get_constant.call(this._handle)
     return _ret.asColor()
   }
 
   fun setConstant(value: Color) {
     val _arg = Variant.new(value)
-    __method_bind.set_constant.call(this.toVariant(), _arg, 1)
+    __method_bind.set_constant.call(this._handle, _arg, 1)
   }
 
   companion object {

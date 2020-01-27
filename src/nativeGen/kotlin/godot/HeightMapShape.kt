@@ -19,33 +19,33 @@ open class HeightMapShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getMapData(): PoolRealArray {
-    val _ret = __method_bind.get_map_data.call(this.toVariant())
+    val _ret = __method_bind.get_map_data.call(this._handle)
     return _ret.asPoolRealArray()
   }
 
   fun getMapDepth(): Int {
-    val _ret = __method_bind.get_map_depth.call(this.toVariant())
+    val _ret = __method_bind.get_map_depth.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMapWidth(): Int {
-    val _ret = __method_bind.get_map_width.call(this.toVariant())
+    val _ret = __method_bind.get_map_width.call(this._handle)
     return _ret.asInt()
   }
 
   fun setMapData(data: PoolRealArray) {
     val _arg = Variant.new(data)
-    __method_bind.set_map_data.call(this.toVariant(), _arg, 1)
+    __method_bind.set_map_data.call(this._handle, _arg, 1)
   }
 
   fun setMapDepth(height: Int) {
     val _arg = Variant.new(height)
-    __method_bind.set_map_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_map_depth.call(this._handle, _arg, 1)
   }
 
   fun setMapWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_map_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_map_width.call(this._handle, _arg, 1)
   }
 
   companion object {

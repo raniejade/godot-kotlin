@@ -19,63 +19,63 @@ open class ScrollContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getDeadzone(): Int {
-    val _ret = __method_bind.get_deadzone.call(this.toVariant())
+    val _ret = __method_bind.get_deadzone.call(this._handle)
     return _ret.asInt()
   }
 
   fun getHScroll(): Int {
-    val _ret = __method_bind.get_h_scroll.call(this.toVariant())
+    val _ret = __method_bind.get_h_scroll.call(this._handle)
     return _ret.asInt()
   }
 
   fun getHScrollbar(): HScrollBar {
-    val _ret = __method_bind.get_h_scrollbar.call(this.toVariant())
+    val _ret = __method_bind.get_h_scrollbar.call(this._handle)
     return _ret.asObject(::HScrollBar)!!
   }
 
   fun getVScroll(): Int {
-    val _ret = __method_bind.get_v_scroll.call(this.toVariant())
+    val _ret = __method_bind.get_v_scroll.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVScrollbar(): VScrollBar {
-    val _ret = __method_bind.get_v_scrollbar.call(this.toVariant())
+    val _ret = __method_bind.get_v_scrollbar.call(this._handle)
     return _ret.asObject(::VScrollBar)!!
   }
 
   fun isHScrollEnabled(): Boolean {
-    val _ret = __method_bind.is_h_scroll_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_h_scroll_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isVScrollEnabled(): Boolean {
-    val _ret = __method_bind.is_v_scroll_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_v_scroll_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDeadzone(deadzone: Int) {
     val _arg = Variant.new(deadzone)
-    __method_bind.set_deadzone.call(this.toVariant(), _arg, 1)
+    __method_bind.set_deadzone.call(this._handle, _arg, 1)
   }
 
   fun setEnableHScroll(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_h_scroll.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enable_h_scroll.call(this._handle, _arg, 1)
   }
 
   fun setEnableVScroll(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_v_scroll.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enable_v_scroll.call(this._handle, _arg, 1)
   }
 
   fun setHScroll(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.set_h_scroll.call(this.toVariant(), _arg, 1)
+    __method_bind.set_h_scroll.call(this._handle, _arg, 1)
   }
 
   fun setVScroll(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.set_v_scroll.call(this.toVariant(), _arg, 1)
+    __method_bind.set_v_scroll.call(this._handle, _arg, 1)
   }
 
   companion object {

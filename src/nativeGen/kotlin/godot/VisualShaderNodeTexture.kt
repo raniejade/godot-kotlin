@@ -18,33 +18,33 @@ open class VisualShaderNodeTexture internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getSource(): Source {
-    val _ret = __method_bind.get_source.call(this.toVariant())
+    val _ret = __method_bind.get_source.call(this._handle)
     return VisualShaderNodeTexture.Source.from(_ret.asInt())
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTextureType(): TextureType {
-    val _ret = __method_bind.get_texture_type.call(this.toVariant())
+    val _ret = __method_bind.get_texture_type.call(this._handle)
     return VisualShaderNodeTexture.TextureType.from(_ret.asInt())
   }
 
   fun setSource(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.set_source.call(this.toVariant(), _arg, 1)
+    __method_bind.set_source.call(this._handle, _arg, 1)
   }
 
   fun setTexture(value: Texture) {
     val _arg = Variant.new(value)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   fun setTextureType(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.set_texture_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture_type.call(this._handle, _arg, 1)
   }
 
   enum class TextureType(

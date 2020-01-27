@@ -29,7 +29,7 @@ open class VisualShaderNodeGroupBase internal constructor(
     _args.append(id)
     _args.append(type)
     _args.append(name)
-    __method_bind.add_input_port.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_input_port.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addOutputPort(
@@ -41,128 +41,128 @@ open class VisualShaderNodeGroupBase internal constructor(
     _args.append(id)
     _args.append(type)
     _args.append(name)
-    __method_bind.add_output_port.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_output_port.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clearInputPorts() {
-    __method_bind.clear_input_ports.call(this.toVariant())
+    __method_bind.clear_input_ports.call(this._handle)
   }
 
   fun clearOutputPorts() {
-    __method_bind.clear_output_ports.call(this.toVariant())
+    __method_bind.clear_output_ports.call(this._handle)
   }
 
   fun getControl(index: Int): Control {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_control.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_control.call(this._handle, _arg, 1)
     return _ret.asObject(::Control)!!
   }
 
   fun getFreeInputPortId(): Int {
-    val _ret = __method_bind.get_free_input_port_id.call(this.toVariant())
+    val _ret = __method_bind.get_free_input_port_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFreeOutputPortId(): Int {
-    val _ret = __method_bind.get_free_output_port_id.call(this.toVariant())
+    val _ret = __method_bind.get_free_output_port_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInputPortCount(): Int {
-    val _ret = __method_bind.get_input_port_count.call(this.toVariant())
+    val _ret = __method_bind.get_input_port_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInputs(): String {
-    val _ret = __method_bind.get_inputs.call(this.toVariant())
+    val _ret = __method_bind.get_inputs.call(this._handle)
     return _ret.asString()
   }
 
   fun getOutputPortCount(): Int {
-    val _ret = __method_bind.get_output_port_count.call(this.toVariant())
+    val _ret = __method_bind.get_output_port_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOutputs(): String {
-    val _ret = __method_bind.get_outputs.call(this.toVariant())
+    val _ret = __method_bind.get_outputs.call(this._handle)
     return _ret.asString()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun hasInputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.has_input_port.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_input_port.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasOutputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.has_output_port.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_output_port.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun removeInputPort(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_input_port.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_input_port.call(this._handle, _arg, 1)
   }
 
   fun removeOutputPort(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_output_port.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_output_port.call(this._handle, _arg, 1)
   }
 
   fun setControl(control: Control, index: Int) {
     val _args = VariantArray.new()
     _args.append(control)
     _args.append(index)
-    __method_bind.set_control.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_control.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputPortName(arg0: Int, arg1: String) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_input_port_name.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_input_port_name.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputPortType(arg0: Int, arg1: Int) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_input_port_type.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_input_port_type.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputs(inputs: String) {
     val _arg = Variant.new(inputs)
-    __method_bind.set_inputs.call(this.toVariant(), _arg, 1)
+    __method_bind.set_inputs.call(this._handle, _arg, 1)
   }
 
   fun setOutputPortName(arg0: Int, arg1: String) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_output_port_name.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_output_port_name.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setOutputPortType(arg0: Int, arg1: Int) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_output_port_type.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_output_port_type.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setOutputs(outputs: String) {
     val _arg = Variant.new(outputs)
-    __method_bind.set_outputs.call(this.toVariant(), _arg, 1)
+    __method_bind.set_outputs.call(this._handle, _arg, 1)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_size.call(this._handle, _arg, 1)
   }
 
   companion object {

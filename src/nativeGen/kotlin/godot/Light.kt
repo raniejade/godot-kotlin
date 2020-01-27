@@ -21,96 +21,96 @@ open class Light internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun getBakeMode(): BakeMode {
-    val _ret = __method_bind.get_bake_mode.call(this.toVariant())
+    val _ret = __method_bind.get_bake_mode.call(this._handle)
     return Light.BakeMode.from(_ret.asInt())
   }
 
   fun getColor(): Color {
-    val _ret = __method_bind.get_color.call(this.toVariant())
+    val _ret = __method_bind.get_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.get_cull_mask.call(this.toVariant())
+    val _ret = __method_bind.get_cull_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_param.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getShadowColor(): Color {
-    val _ret = __method_bind.get_shadow_color.call(this.toVariant())
+    val _ret = __method_bind.get_shadow_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun getShadowReverseCullFace(): Boolean {
-    val _ret = __method_bind.get_shadow_reverse_cull_face.call(this.toVariant())
+    val _ret = __method_bind.get_shadow_reverse_cull_face.call(this._handle)
     return _ret.asBool()
   }
 
   fun hasShadow(): Boolean {
-    val _ret = __method_bind.has_shadow.call(this.toVariant())
+    val _ret = __method_bind.has_shadow.call(this._handle)
     return _ret.asBool()
   }
 
   fun isEditorOnly(): Boolean {
-    val _ret = __method_bind.is_editor_only.call(this.toVariant())
+    val _ret = __method_bind.is_editor_only.call(this._handle)
     return _ret.asBool()
   }
 
   fun isNegative(): Boolean {
-    val _ret = __method_bind.is_negative.call(this.toVariant())
+    val _ret = __method_bind.is_negative.call(this._handle)
     return _ret.asBool()
   }
 
   fun setBakeMode(bakeMode: Int) {
     val _arg = Variant.new(bakeMode)
-    __method_bind.set_bake_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bake_mode.call(this._handle, _arg, 1)
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_color.call(this._handle, _arg, 1)
   }
 
   fun setCullMask(cullMask: Int) {
     val _arg = Variant.new(cullMask)
-    __method_bind.set_cull_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cull_mask.call(this._handle, _arg, 1)
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
     val _arg = Variant.new(editorOnly)
-    __method_bind.set_editor_only.call(this.toVariant(), _arg, 1)
+    __method_bind.set_editor_only.call(this._handle, _arg, 1)
   }
 
   fun setNegative(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_negative.call(this.toVariant(), _arg, 1)
+    __method_bind.set_negative.call(this._handle, _arg, 1)
   }
 
   fun setParam(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_param.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setShadow(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_shadow.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shadow.call(this._handle, _arg, 1)
   }
 
   fun setShadowColor(shadowColor: Color) {
     val _arg = Variant.new(shadowColor)
-    __method_bind.set_shadow_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shadow_color.call(this._handle, _arg, 1)
   }
 
   fun setShadowReverseCullFace(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_shadow_reverse_cull_face.call(this.toVariant(), _arg, 1)
+    __method_bind.set_shadow_reverse_cull_face.call(this._handle, _arg, 1)
   }
 
   enum class BakeMode(

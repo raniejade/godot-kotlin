@@ -18,23 +18,23 @@ open class VisualShaderNodeCubeMap internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getCubeMap(): CubeMap {
-    val _ret = __method_bind.get_cube_map.call(this.toVariant())
+    val _ret = __method_bind.get_cube_map.call(this._handle)
     return _ret.asObject(::CubeMap)!!
   }
 
   fun getTextureType(): TextureType {
-    val _ret = __method_bind.get_texture_type.call(this.toVariant())
+    val _ret = __method_bind.get_texture_type.call(this._handle)
     return VisualShaderNodeCubeMap.TextureType.from(_ret.asInt())
   }
 
   fun setCubeMap(value: CubeMap) {
     val _arg = Variant.new(value)
-    __method_bind.set_cube_map.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cube_map.call(this._handle, _arg, 1)
   }
 
   fun setTextureType(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.set_texture_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture_type.call(this._handle, _arg, 1)
   }
 
   enum class TextureType(

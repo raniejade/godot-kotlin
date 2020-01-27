@@ -19,37 +19,37 @@ open class SplitContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun clampSplitOffset() {
-    __method_bind.clamp_split_offset.call(this.toVariant())
+    __method_bind.clamp_split_offset.call(this._handle)
   }
 
   fun getDraggerVisibility(): DraggerVisibility {
-    val _ret = __method_bind.get_dragger_visibility.call(this.toVariant())
+    val _ret = __method_bind.get_dragger_visibility.call(this._handle)
     return SplitContainer.DraggerVisibility.from(_ret.asInt())
   }
 
   fun getSplitOffset(): Int {
-    val _ret = __method_bind.get_split_offset.call(this.toVariant())
+    val _ret = __method_bind.get_split_offset.call(this._handle)
     return _ret.asInt()
   }
 
   fun isCollapsed(): Boolean {
-    val _ret = __method_bind.is_collapsed.call(this.toVariant())
+    val _ret = __method_bind.is_collapsed.call(this._handle)
     return _ret.asBool()
   }
 
   fun setCollapsed(collapsed: Boolean) {
     val _arg = Variant.new(collapsed)
-    __method_bind.set_collapsed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_collapsed.call(this._handle, _arg, 1)
   }
 
   fun setDraggerVisibility(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_dragger_visibility.call(this.toVariant(), _arg, 1)
+    __method_bind.set_dragger_visibility.call(this._handle, _arg, 1)
   }
 
   fun setSplitOffset(offset: Int) {
     val _arg = Variant.new(offset)
-    __method_bind.set_split_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_split_offset.call(this._handle, _arg, 1)
   }
 
   enum class DraggerVisibility(

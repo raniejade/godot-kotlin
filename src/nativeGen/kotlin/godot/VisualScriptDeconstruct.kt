@@ -18,13 +18,13 @@ open class VisualScriptDeconstruct internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getDeconstructType(): Variant.Type {
-    val _ret = __method_bind.get_deconstruct_type.call(this.toVariant())
+    val _ret = __method_bind.get_deconstruct_type.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun setDeconstructType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_deconstruct_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_deconstruct_type.call(this._handle, _arg, 1)
   }
 
   companion object {

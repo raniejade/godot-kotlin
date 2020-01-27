@@ -18,13 +18,13 @@ open class ReferenceRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getBorderColor(): Color {
-    val _ret = __method_bind.get_border_color.call(this.toVariant())
+    val _ret = __method_bind.get_border_color.call(this._handle)
     return _ret.asColor()
   }
 
   fun setBorderColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_border_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_border_color.call(this._handle, _arg, 1)
   }
 
   companion object {

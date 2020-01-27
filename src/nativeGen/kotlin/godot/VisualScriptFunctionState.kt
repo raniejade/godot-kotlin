@@ -27,17 +27,17 @@ open class VisualScriptFunctionState internal constructor(
     _args.append(obj)
     _args.append(signals)
     _args.append(args)
-    __method_bind.connect_to_signal.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.connect_to_signal.call(this._handle, _args.toVariant(), 3)
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.is_valid.call(this.toVariant())
+    val _ret = __method_bind.is_valid.call(this._handle)
     return _ret.asBool()
   }
 
   fun resume(args: VariantArray): Variant {
     val _arg = Variant.new(args)
-    val _ret = __method_bind.resume.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.resume.call(this._handle, _arg, 1)
     return _ret
   }
 

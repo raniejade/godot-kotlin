@@ -22,123 +22,123 @@ open class ReflectionProbe internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun areShadowsEnabled(): Boolean {
-    val _ret = __method_bind.are_shadows_enabled.call(this.toVariant())
+    val _ret = __method_bind.are_shadows_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.get_cull_mask.call(this.toVariant())
+    val _ret = __method_bind.get_cull_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.get_extents.call(this.toVariant())
+    val _ret = __method_bind.get_extents.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getIntensity(): Float {
-    val _ret = __method_bind.get_intensity.call(this.toVariant())
+    val _ret = __method_bind.get_intensity.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getInteriorAmbient(): Color {
-    val _ret = __method_bind.get_interior_ambient.call(this.toVariant())
+    val _ret = __method_bind.get_interior_ambient.call(this._handle)
     return _ret.asColor()
   }
 
   fun getInteriorAmbientEnergy(): Float {
-    val _ret = __method_bind.get_interior_ambient_energy.call(this.toVariant())
+    val _ret = __method_bind.get_interior_ambient_energy.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getInteriorAmbientProbeContribution(): Float {
-    val _ret = __method_bind.get_interior_ambient_probe_contribution.call(this.toVariant())
+    val _ret = __method_bind.get_interior_ambient_probe_contribution.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMaxDistance(): Float {
-    val _ret = __method_bind.get_max_distance.call(this.toVariant())
+    val _ret = __method_bind.get_max_distance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOriginOffset(): Vector3 {
-    val _ret = __method_bind.get_origin_offset.call(this.toVariant())
+    val _ret = __method_bind.get_origin_offset.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getUpdateMode(): UpdateMode {
-    val _ret = __method_bind.get_update_mode.call(this.toVariant())
+    val _ret = __method_bind.get_update_mode.call(this._handle)
     return ReflectionProbe.UpdateMode.from(_ret.asInt())
   }
 
   fun isBoxProjectionEnabled(): Boolean {
-    val _ret = __method_bind.is_box_projection_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_box_projection_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isSetAsInterior(): Boolean {
-    val _ret = __method_bind.is_set_as_interior.call(this.toVariant())
+    val _ret = __method_bind.is_set_as_interior.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAsInterior(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_as_interior.call(this.toVariant(), _arg, 1)
+    __method_bind.set_as_interior.call(this._handle, _arg, 1)
   }
 
   fun setCullMask(layers: Int) {
     val _arg = Variant.new(layers)
-    __method_bind.set_cull_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cull_mask.call(this._handle, _arg, 1)
   }
 
   fun setEnableBoxProjection(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_box_projection.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enable_box_projection.call(this._handle, _arg, 1)
   }
 
   fun setEnableShadows(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_shadows.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enable_shadows.call(this._handle, _arg, 1)
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
+    __method_bind.set_extents.call(this._handle, _arg, 1)
   }
 
   fun setIntensity(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_intensity.call(this.toVariant(), _arg, 1)
+    __method_bind.set_intensity.call(this._handle, _arg, 1)
   }
 
   fun setInteriorAmbient(ambient: Color) {
     val _arg = Variant.new(ambient)
-    __method_bind.set_interior_ambient.call(this.toVariant(), _arg, 1)
+    __method_bind.set_interior_ambient.call(this._handle, _arg, 1)
   }
 
   fun setInteriorAmbientEnergy(ambientEnergy: Float) {
     val _arg = Variant.new(ambientEnergy)
-    __method_bind.set_interior_ambient_energy.call(this.toVariant(), _arg, 1)
+    __method_bind.set_interior_ambient_energy.call(this._handle, _arg, 1)
   }
 
   fun setInteriorAmbientProbeContribution(ambientProbeContribution: Float) {
     val _arg = Variant.new(ambientProbeContribution)
-    __method_bind.set_interior_ambient_probe_contribution.call(this.toVariant(), _arg, 1)
+    __method_bind.set_interior_ambient_probe_contribution.call(this._handle, _arg, 1)
   }
 
   fun setMaxDistance(maxDistance: Float) {
     val _arg = Variant.new(maxDistance)
-    __method_bind.set_max_distance.call(this.toVariant(), _arg, 1)
+    __method_bind.set_max_distance.call(this._handle, _arg, 1)
   }
 
   fun setOriginOffset(originOffset: Vector3) {
     val _arg = Variant.new(originOffset)
-    __method_bind.set_origin_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_origin_offset.call(this._handle, _arg, 1)
   }
 
   fun setUpdateMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_update_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_update_mode.call(this._handle, _arg, 1)
   }
 
   enum class UpdateMode(

@@ -20,48 +20,48 @@ open class SpinBox internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getAlign(): LineEdit.Align {
-    val _ret = __method_bind.get_align.call(this.toVariant())
+    val _ret = __method_bind.get_align.call(this._handle)
     return LineEdit.Align.from(_ret.asInt())
   }
 
   fun getLineEdit(): LineEdit {
-    val _ret = __method_bind.get_line_edit.call(this.toVariant())
+    val _ret = __method_bind.get_line_edit.call(this._handle)
     return _ret.asObject(::LineEdit)!!
   }
 
   fun getPrefix(): String {
-    val _ret = __method_bind.get_prefix.call(this.toVariant())
+    val _ret = __method_bind.get_prefix.call(this._handle)
     return _ret.asString()
   }
 
   fun getSuffix(): String {
-    val _ret = __method_bind.get_suffix.call(this.toVariant())
+    val _ret = __method_bind.get_suffix.call(this._handle)
     return _ret.asString()
   }
 
   fun isEditable(): Boolean {
-    val _ret = __method_bind.is_editable.call(this.toVariant())
+    val _ret = __method_bind.is_editable.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.set_align.call(this.toVariant(), _arg, 1)
+    __method_bind.set_align.call(this._handle, _arg, 1)
   }
 
   fun setEditable(editable: Boolean) {
     val _arg = Variant.new(editable)
-    __method_bind.set_editable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_editable.call(this._handle, _arg, 1)
   }
 
   fun setPrefix(prefix: String) {
     val _arg = Variant.new(prefix)
-    __method_bind.set_prefix.call(this.toVariant(), _arg, 1)
+    __method_bind.set_prefix.call(this._handle, _arg, 1)
   }
 
   fun setSuffix(suffix: String) {
     val _arg = Variant.new(suffix)
-    __method_bind.set_suffix.call(this.toVariant(), _arg, 1)
+    __method_bind.set_suffix.call(this._handle, _arg, 1)
   }
 
   companion object {

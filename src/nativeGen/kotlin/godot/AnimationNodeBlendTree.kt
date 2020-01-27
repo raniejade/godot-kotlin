@@ -29,7 +29,7 @@ open class AnimationNodeBlendTree internal constructor(
     _args.append(name)
     _args.append(node)
     _args.append(position)
-    __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_node.call(this._handle, _args.toVariant(), 3)
   }
 
   fun connectNode(
@@ -41,61 +41,61 @@ open class AnimationNodeBlendTree internal constructor(
     _args.append(inputNode)
     _args.append(inputIndex)
     _args.append(outputNode)
-    __method_bind.connect_node.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.connect_node.call(this._handle, _args.toVariant(), 3)
   }
 
   fun disconnectNode(inputNode: String, inputIndex: Int) {
     val _args = VariantArray.new()
     _args.append(inputNode)
     _args.append(inputIndex)
-    __method_bind.disconnect_node.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.disconnect_node.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getGraphOffset(): Vector2 {
-    val _ret = __method_bind.get_graph_offset.call(this.toVariant())
+    val _ret = __method_bind.get_graph_offset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getNode(name: String): AnimationNode {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_node.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_node.call(this._handle, _arg, 1)
     return _ret.asObject(::AnimationNode)!!
   }
 
   fun getNodePosition(name: String): Vector2 {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_node_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_node_position.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun hasNode(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_node.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_node.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun removeNode(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.remove_node.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_node.call(this._handle, _arg, 1)
   }
 
   fun renameNode(name: String, newName: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(newName)
-    __method_bind.rename_node.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.rename_node.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setGraphOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_graph_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_graph_offset.call(this._handle, _arg, 1)
   }
 
   fun setNodePosition(name: String, position: Vector2) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(position)
-    __method_bind.set_node_position.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_node_position.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

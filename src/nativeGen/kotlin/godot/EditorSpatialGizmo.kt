@@ -22,12 +22,12 @@ open class EditorSpatialGizmo internal constructor(
 ) : SpatialGizmo(_handle) {
   fun addCollisionSegments(segments: PoolVector3Array) {
     val _arg = Variant.new(segments)
-    __method_bind.add_collision_segments.call(this.toVariant(), _arg, 1)
+    __method_bind.add_collision_segments.call(this._handle, _arg, 1)
   }
 
   fun addCollisionTriangles(triangles: TriangleMesh) {
     val _arg = Variant.new(triangles)
-    __method_bind.add_collision_triangles.call(this.toVariant(), _arg, 1)
+    __method_bind.add_collision_triangles.call(this._handle, _arg, 1)
   }
 
   fun addHandles(
@@ -41,7 +41,7 @@ open class EditorSpatialGizmo internal constructor(
     _args.append(material)
     _args.append(billboard)
     _args.append(secondary)
-    __method_bind.add_handles.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_handles.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addLines(
@@ -53,7 +53,7 @@ open class EditorSpatialGizmo internal constructor(
     _args.append(lines)
     _args.append(material)
     _args.append(billboard)
-    __method_bind.add_lines.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_lines.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addMesh(
@@ -67,38 +67,38 @@ open class EditorSpatialGizmo internal constructor(
     _args.append(billboard)
     _args.append(skeleton)
     _args.append(material)
-    __method_bind.add_mesh.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.add_mesh.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addUnscaledBillboard(material: Material, defaultScale: Float) {
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(defaultScale)
-    __method_bind.add_unscaled_billboard.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_unscaled_billboard.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun getPlugin(): EditorSpatialGizmoPlugin {
-    val _ret = __method_bind.get_plugin.call(this.toVariant())
+    val _ret = __method_bind.get_plugin.call(this._handle)
     return _ret.asObject(::EditorSpatialGizmoPlugin)!!
   }
 
   fun getSpatialNode(): Spatial {
-    val _ret = __method_bind.get_spatial_node.call(this.toVariant())
+    val _ret = __method_bind.get_spatial_node.call(this._handle)
     return _ret.asObject(::Spatial)!!
   }
 
   fun setHidden(hidden: Boolean) {
     val _arg = Variant.new(hidden)
-    __method_bind.set_hidden.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hidden.call(this._handle, _arg, 1)
   }
 
   fun setSpatialNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.set_spatial_node.call(this.toVariant(), _arg, 1)
+    __method_bind.set_spatial_node.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,7 +18,7 @@ open class PHashTranslation internal constructor(
 ) : Translation(_handle) {
   fun generate(from: Translation) {
     val _arg = Variant.new(from)
-    __method_bind.generate.call(this.toVariant(), _arg, 1)
+    __method_bind.generate.call(this._handle, _arg, 1)
   }
 
   companion object {

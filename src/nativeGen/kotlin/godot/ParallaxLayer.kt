@@ -18,33 +18,33 @@ open class ParallaxLayer internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getMirroring(): Vector2 {
-    val _ret = __method_bind.get_mirroring.call(this.toVariant())
+    val _ret = __method_bind.get_mirroring.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMotionOffset(): Vector2 {
-    val _ret = __method_bind.get_motion_offset.call(this.toVariant())
+    val _ret = __method_bind.get_motion_offset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMotionScale(): Vector2 {
-    val _ret = __method_bind.get_motion_scale.call(this.toVariant())
+    val _ret = __method_bind.get_motion_scale.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setMirroring(mirror: Vector2) {
     val _arg = Variant.new(mirror)
-    __method_bind.set_mirroring.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mirroring.call(this._handle, _arg, 1)
   }
 
   fun setMotionOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_motion_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_motion_offset.call(this._handle, _arg, 1)
   }
 
   fun setMotionScale(scale: Vector2) {
     val _arg = Variant.new(scale)
-    __method_bind.set_motion_scale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_motion_scale.call(this._handle, _arg, 1)
   }
 
   companion object {

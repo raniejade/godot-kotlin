@@ -8,14 +8,14 @@ import godot.core.Godot
 import godot.core.Variant
 import kotlinx.cinterop.*
 
-fun CPointer<godot_method_bind>.call(instance: Variant, args: Variant, count: Int): Variant {
+fun CPointer<godot_method_bind>.call(instance: COpaquePointer, args: Variant, count: Int): Variant {
   return memScoped {
     val error = alloc<godot_variant_call_error>()
     val argumentsPtr = allocPointerTo<godot_variant>()
     argumentsPtr.value = args._value.ptr
     val ret = checkNotNull(Godot.gdnative.godot_method_bind_call)(
       this@call,
-      instance._value.ptr,
+      instance,
       argumentsPtr.ptr,
       count,
       error.ptr
@@ -27,12 +27,12 @@ fun CPointer<godot_method_bind>.call(instance: Variant, args: Variant, count: In
   }
 }
 
-fun CPointer<godot_method_bind>.call(instance: Variant): Variant {
+fun CPointer<godot_method_bind>.call(instance: COpaquePointer): Variant {
   return memScoped {
     val error = alloc<godot_variant_call_error>()
     val ret = checkNotNull(Godot.gdnative.godot_method_bind_call)(
       this@call,
-      instance._value.ptr,
+      instance,
       null,
       0,
       error.ptr

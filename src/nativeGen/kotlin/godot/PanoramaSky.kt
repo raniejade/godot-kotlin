@@ -17,13 +17,13 @@ open class PanoramaSky internal constructor(
   _handle: COpaquePointer
 ) : Sky(_handle) {
   fun getPanorama(): Texture {
-    val _ret = __method_bind.get_panorama.call(this.toVariant())
+    val _ret = __method_bind.get_panorama.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setPanorama(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_panorama.call(this.toVariant(), _arg, 1)
+    __method_bind.set_panorama.call(this._handle, _arg, 1)
   }
 
   companion object {

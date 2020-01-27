@@ -18,13 +18,13 @@ open class AudioEffectPanner internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getPan(): Float {
-    val _ret = __method_bind.get_pan.call(this.toVariant())
+    val _ret = __method_bind.get_pan.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setPan(cpanume: Float) {
     val _arg = Variant.new(cpanume)
-    __method_bind.set_pan.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pan.call(this._handle, _arg, 1)
   }
 
   companion object {

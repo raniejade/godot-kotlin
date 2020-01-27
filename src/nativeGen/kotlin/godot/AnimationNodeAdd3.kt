@@ -18,13 +18,13 @@ open class AnimationNodeAdd3 internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun isUsingSync(): Boolean {
-    val _ret = __method_bind.is_using_sync.call(this.toVariant())
+    val _ret = __method_bind.is_using_sync.call(this._handle)
     return _ret.asBool()
   }
 
   fun setUseSync(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_sync.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_sync.call(this._handle, _arg, 1)
   }
 
   companion object {

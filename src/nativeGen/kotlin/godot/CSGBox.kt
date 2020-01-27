@@ -18,43 +18,43 @@ open class CSGBox internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getDepth(): Float {
-    val _ret = __method_bind.get_depth.call(this.toVariant())
+    val _ret = __method_bind.get_depth.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this.toVariant())
+    val _ret = __method_bind.get_height.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this.toVariant())
+    val _ret = __method_bind.get_material.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getWidth(): Float {
-    val _ret = __method_bind.get_width.call(this.toVariant())
+    val _ret = __method_bind.get_width.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setDepth(depth: Float) {
     val _arg = Variant.new(depth)
-    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
+    __method_bind.set_depth.call(this._handle, _arg, 1)
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_height.call(this._handle, _arg, 1)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this.toVariant(), _arg, 1)
+    __method_bind.set_material.call(this._handle, _arg, 1)
   }
 
   fun setWidth(width: Float) {
     val _arg = Variant.new(width)
-    __method_bind.set_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_width.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,18 +18,18 @@ open class CurveTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getCurve(): Curve {
-    val _ret = __method_bind.get_curve.call(this.toVariant())
+    val _ret = __method_bind.get_curve.call(this._handle)
     return _ret.asObject(::Curve)!!
   }
 
   fun setCurve(curve: Curve) {
     val _arg = Variant.new(curve)
-    __method_bind.set_curve.call(this.toVariant(), _arg, 1)
+    __method_bind.set_curve.call(this._handle, _arg, 1)
   }
 
   fun setWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_width.call(this._handle, _arg, 1)
   }
 
   companion object {

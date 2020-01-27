@@ -36,7 +36,7 @@ open class BitmapFont internal constructor(
     _args.append(rect)
     _args.append(align)
     _args.append(advance)
-    __method_bind.add_char.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.add_char.call(this._handle, _args.toVariant(), 5)
   }
 
   fun addKerningPair(
@@ -48,21 +48,21 @@ open class BitmapFont internal constructor(
     _args.append(charA)
     _args.append(charB)
     _args.append(kerning)
-    __method_bind.add_kerning_pair.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_kerning_pair.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.add_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.add_texture.call(this._handle, _arg, 1)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun createFromFnt(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.create_from_fnt.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.create_from_fnt.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -70,12 +70,12 @@ open class BitmapFont internal constructor(
     val _args = VariantArray.new()
     _args.append(char)
     _args.append(next)
-    val _ret = __method_bind.get_char_size.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_char_size.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
   fun getFallback(): BitmapFont {
-    val _ret = __method_bind.get_fallback.call(this.toVariant())
+    val _ret = __method_bind.get_fallback.call(this._handle)
     return _ret.asObject(::BitmapFont)!!
   }
 
@@ -83,39 +83,39 @@ open class BitmapFont internal constructor(
     val _args = VariantArray.new()
     _args.append(charA)
     _args.append(charB)
-    val _ret = __method_bind.get_kerning_pair.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_kerning_pair.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getTexture(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_texture.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_texture.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTextureCount(): Int {
-    val _ret = __method_bind.get_texture_count.call(this.toVariant())
+    val _ret = __method_bind.get_texture_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun setAscent(px: Float) {
     val _arg = Variant.new(px)
-    __method_bind.set_ascent.call(this.toVariant(), _arg, 1)
+    __method_bind.set_ascent.call(this._handle, _arg, 1)
   }
 
   fun setDistanceFieldHint(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_distance_field_hint.call(this.toVariant(), _arg, 1)
+    __method_bind.set_distance_field_hint.call(this._handle, _arg, 1)
   }
 
   fun setFallback(fallback: BitmapFont) {
     val _arg = Variant.new(fallback)
-    __method_bind.set_fallback.call(this.toVariant(), _arg, 1)
+    __method_bind.set_fallback.call(this._handle, _arg, 1)
   }
 
   fun setHeight(px: Float) {
     val _arg = Variant.new(px)
-    __method_bind.set_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_height.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -24,214 +24,214 @@ open class RichTextLabel internal constructor(
 ) : Control(_handle) {
   fun addImage(image: Texture) {
     val _arg = Variant.new(image)
-    __method_bind.add_image.call(this.toVariant(), _arg, 1)
+    __method_bind.add_image.call(this._handle, _arg, 1)
   }
 
   fun addText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.add_text.call(this.toVariant(), _arg, 1)
+    __method_bind.add_text.call(this._handle, _arg, 1)
   }
 
   fun appendBbcode(bbcode: String): GDError {
     val _arg = Variant.new(bbcode)
-    val _ret = __method_bind.append_bbcode.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.append_bbcode.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun getBbcode(): String {
-    val _ret = __method_bind.get_bbcode.call(this.toVariant())
+    val _ret = __method_bind.get_bbcode.call(this._handle)
     return _ret.asString()
   }
 
   fun getContentHeight(): Int {
-    val _ret = __method_bind.get_content_height.call(this.toVariant())
+    val _ret = __method_bind.get_content_height.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLineCount(): Int {
-    val _ret = __method_bind.get_line_count.call(this.toVariant())
+    val _ret = __method_bind.get_line_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPercentVisible(): Float {
-    val _ret = __method_bind.get_percent_visible.call(this.toVariant())
+    val _ret = __method_bind.get_percent_visible.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTabSize(): Int {
-    val _ret = __method_bind.get_tab_size.call(this.toVariant())
+    val _ret = __method_bind.get_tab_size.call(this._handle)
     return _ret.asInt()
   }
 
   fun getText(): String {
-    val _ret = __method_bind.get_text.call(this.toVariant())
+    val _ret = __method_bind.get_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getTotalCharacterCount(): Int {
-    val _ret = __method_bind.get_total_character_count.call(this.toVariant())
+    val _ret = __method_bind.get_total_character_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVScroll(): VScrollBar {
-    val _ret = __method_bind.get_v_scroll.call(this.toVariant())
+    val _ret = __method_bind.get_v_scroll.call(this._handle)
     return _ret.asObject(::VScrollBar)!!
   }
 
   fun getVisibleCharacters(): Int {
-    val _ret = __method_bind.get_visible_characters.call(this.toVariant())
+    val _ret = __method_bind.get_visible_characters.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVisibleLineCount(): Int {
-    val _ret = __method_bind.get_visible_line_count.call(this.toVariant())
+    val _ret = __method_bind.get_visible_line_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun isMetaUnderlined(): Boolean {
-    val _ret = __method_bind.is_meta_underlined.call(this.toVariant())
+    val _ret = __method_bind.is_meta_underlined.call(this._handle)
     return _ret.asBool()
   }
 
   fun isOverridingSelectedFontColor(): Boolean {
-    val _ret = __method_bind.is_overriding_selected_font_color.call(this.toVariant())
+    val _ret = __method_bind.is_overriding_selected_font_color.call(this._handle)
     return _ret.asBool()
   }
 
   fun isScrollActive(): Boolean {
-    val _ret = __method_bind.is_scroll_active.call(this.toVariant())
+    val _ret = __method_bind.is_scroll_active.call(this._handle)
     return _ret.asBool()
   }
 
   fun isScrollFollowing(): Boolean {
-    val _ret = __method_bind.is_scroll_following.call(this.toVariant())
+    val _ret = __method_bind.is_scroll_following.call(this._handle)
     return _ret.asBool()
   }
 
   fun isSelectionEnabled(): Boolean {
-    val _ret = __method_bind.is_selection_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_selection_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun isUsingBbcode(): Boolean {
-    val _ret = __method_bind.is_using_bbcode.call(this.toVariant())
+    val _ret = __method_bind.is_using_bbcode.call(this._handle)
     return _ret.asBool()
   }
 
   fun newline() {
-    __method_bind.newline.call(this.toVariant())
+    __method_bind.newline.call(this._handle)
   }
 
   fun parseBbcode(bbcode: String): GDError {
     val _arg = Variant.new(bbcode)
-    val _ret = __method_bind.parse_bbcode.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.parse_bbcode.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun pop() {
-    __method_bind.pop.call(this.toVariant())
+    __method_bind.pop.call(this._handle)
   }
 
   fun pushAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.push_align.call(this.toVariant(), _arg, 1)
+    __method_bind.push_align.call(this._handle, _arg, 1)
   }
 
   fun pushCell() {
-    __method_bind.push_cell.call(this.toVariant())
+    __method_bind.push_cell.call(this._handle)
   }
 
   fun pushColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.push_color.call(this.toVariant(), _arg, 1)
+    __method_bind.push_color.call(this._handle, _arg, 1)
   }
 
   fun pushFont(font: Font) {
     val _arg = Variant.new(font)
-    __method_bind.push_font.call(this.toVariant(), _arg, 1)
+    __method_bind.push_font.call(this._handle, _arg, 1)
   }
 
   fun pushIndent(level: Int) {
     val _arg = Variant.new(level)
-    __method_bind.push_indent.call(this.toVariant(), _arg, 1)
+    __method_bind.push_indent.call(this._handle, _arg, 1)
   }
 
   fun pushList(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.push_list.call(this.toVariant(), _arg, 1)
+    __method_bind.push_list.call(this._handle, _arg, 1)
   }
 
   fun pushMeta(data: Variant) {
     val _arg = Variant.new(data)
-    __method_bind.push_meta.call(this.toVariant(), _arg, 1)
+    __method_bind.push_meta.call(this._handle, _arg, 1)
   }
 
   fun pushStrikethrough() {
-    __method_bind.push_strikethrough.call(this.toVariant())
+    __method_bind.push_strikethrough.call(this._handle)
   }
 
   fun pushTable(columns: Int) {
     val _arg = Variant.new(columns)
-    __method_bind.push_table.call(this.toVariant(), _arg, 1)
+    __method_bind.push_table.call(this._handle, _arg, 1)
   }
 
   fun pushUnderline() {
-    __method_bind.push_underline.call(this.toVariant())
+    __method_bind.push_underline.call(this._handle)
   }
 
   fun removeLine(line: Int): Boolean {
     val _arg = Variant.new(line)
-    val _ret = __method_bind.remove_line.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.remove_line.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun scrollToLine(line: Int) {
     val _arg = Variant.new(line)
-    __method_bind.scroll_to_line.call(this.toVariant(), _arg, 1)
+    __method_bind.scroll_to_line.call(this._handle, _arg, 1)
   }
 
   fun setBbcode(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_bbcode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bbcode.call(this._handle, _arg, 1)
   }
 
   fun setMetaUnderline(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_meta_underline.call(this.toVariant(), _arg, 1)
+    __method_bind.set_meta_underline.call(this._handle, _arg, 1)
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
     val _arg = Variant.new(override)
-    __method_bind.set_override_selected_font_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_override_selected_font_color.call(this._handle, _arg, 1)
   }
 
   fun setPercentVisible(percentVisible: Float) {
     val _arg = Variant.new(percentVisible)
-    __method_bind.set_percent_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_percent_visible.call(this._handle, _arg, 1)
   }
 
   fun setScrollActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_scroll_active.call(this.toVariant(), _arg, 1)
+    __method_bind.set_scroll_active.call(this._handle, _arg, 1)
   }
 
   fun setScrollFollow(follow: Boolean) {
     val _arg = Variant.new(follow)
-    __method_bind.set_scroll_follow.call(this.toVariant(), _arg, 1)
+    __method_bind.set_scroll_follow.call(this._handle, _arg, 1)
   }
 
   fun setSelectionEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_selection_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_selection_enabled.call(this._handle, _arg, 1)
   }
 
   fun setTabSize(spaces: Int) {
     val _arg = Variant.new(spaces)
-    __method_bind.set_tab_size.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tab_size.call(this._handle, _arg, 1)
   }
 
   fun setTableColumnExpand(
@@ -243,22 +243,22 @@ open class RichTextLabel internal constructor(
     _args.append(column)
     _args.append(expand)
     _args.append(ratio)
-    __method_bind.set_table_column_expand.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_table_column_expand.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_text.call(this._handle, _arg, 1)
   }
 
   fun setUseBbcode(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_bbcode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_bbcode.call(this._handle, _arg, 1)
   }
 
   fun setVisibleCharacters(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.set_visible_characters.call(this.toVariant(), _arg, 1)
+    __method_bind.set_visible_characters.call(this._handle, _arg, 1)
   }
 
   enum class Align(

@@ -20,56 +20,56 @@ open class Script internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
-    val _ret = __method_bind.can_instance.call(this.toVariant())
+    val _ret = __method_bind.can_instance.call(this._handle)
     return _ret.asBool()
   }
 
   fun getBaseScript(): Script {
-    val _ret = __method_bind.get_base_script.call(this.toVariant())
+    val _ret = __method_bind.get_base_script.call(this._handle)
     return _ret.asObject(::Script)!!
   }
 
   fun getInstanceBaseType(): String {
-    val _ret = __method_bind.get_instance_base_type.call(this.toVariant())
+    val _ret = __method_bind.get_instance_base_type.call(this._handle)
     return _ret.asString()
   }
 
   fun getSourceCode(): String {
-    val _ret = __method_bind.get_source_code.call(this.toVariant())
+    val _ret = __method_bind.get_source_code.call(this._handle)
     return _ret.asString()
   }
 
   fun hasScriptSignal(signalName: String): Boolean {
     val _arg = Variant.new(signalName)
-    val _ret = __method_bind.has_script_signal.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_script_signal.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasSourceCode(): Boolean {
-    val _ret = __method_bind.has_source_code.call(this.toVariant())
+    val _ret = __method_bind.has_source_code.call(this._handle)
     return _ret.asBool()
   }
 
   fun instanceHas(baseObject: Object): Boolean {
     val _arg = Variant.new(baseObject)
-    val _ret = __method_bind.instance_has.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.instance_has.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isTool(): Boolean {
-    val _ret = __method_bind.is_tool.call(this.toVariant())
+    val _ret = __method_bind.is_tool.call(this._handle)
     return _ret.asBool()
   }
 
   fun reload(keepState: Boolean): GDError {
     val _arg = Variant.new(keepState)
-    val _ret = __method_bind.reload.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.reload.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setSourceCode(source: String) {
     val _arg = Variant.new(source)
-    __method_bind.set_source_code.call(this.toVariant(), _arg, 1)
+    __method_bind.set_source_code.call(this._handle, _arg, 1)
   }
 
   companion object {

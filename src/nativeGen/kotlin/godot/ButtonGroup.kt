@@ -17,12 +17,12 @@ open class ButtonGroup internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getButtons(): VariantArray {
-    val _ret = __method_bind.get_buttons.call(this.toVariant())
+    val _ret = __method_bind.get_buttons.call(this._handle)
     return _ret.asArray()
   }
 
   fun getPressedButton(): BaseButton {
-    val _ret = __method_bind.get_pressed_button.call(this.toVariant())
+    val _ret = __method_bind.get_pressed_button.call(this._handle)
     return _ret.asObject(::BaseButton)!!
   }
 

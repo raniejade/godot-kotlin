@@ -27,49 +27,49 @@ open class AcceptDialog internal constructor(
     _args.append(text)
     _args.append(right)
     _args.append(action)
-    val _ret = __method_bind.add_button.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.add_button.call(this._handle, _args.toVariant(), 3)
     return _ret.asObject(::Button)!!
   }
 
   fun addCancel(name: String): Button {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.add_cancel.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.add_cancel.call(this._handle, _arg, 1)
     return _ret.asObject(::Button)!!
   }
 
   fun getHideOnOk(): Boolean {
-    val _ret = __method_bind.get_hide_on_ok.call(this.toVariant())
+    val _ret = __method_bind.get_hide_on_ok.call(this._handle)
     return _ret.asBool()
   }
 
   fun getLabel(): Label {
-    val _ret = __method_bind.get_label.call(this.toVariant())
+    val _ret = __method_bind.get_label.call(this._handle)
     return _ret.asObject(::Label)!!
   }
 
   fun getOk(): Button {
-    val _ret = __method_bind.get_ok.call(this.toVariant())
+    val _ret = __method_bind.get_ok.call(this._handle)
     return _ret.asObject(::Button)!!
   }
 
   fun getText(): String {
-    val _ret = __method_bind.get_text.call(this.toVariant())
+    val _ret = __method_bind.get_text.call(this._handle)
     return _ret.asString()
   }
 
   fun registerTextEnter(lineEdit: Node) {
     val _arg = Variant.new(lineEdit)
-    __method_bind.register_text_enter.call(this.toVariant(), _arg, 1)
+    __method_bind.register_text_enter.call(this._handle, _arg, 1)
   }
 
   fun setHideOnOk(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_hide_on_ok.call(this.toVariant(), _arg, 1)
+    __method_bind.set_hide_on_ok.call(this._handle, _arg, 1)
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_text.call(this._handle, _arg, 1)
   }
 
   companion object {

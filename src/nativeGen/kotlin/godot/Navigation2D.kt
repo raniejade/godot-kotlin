@@ -23,13 +23,13 @@ open class Navigation2D internal constructor(
 ) : Node2D(_handle) {
   fun getClosestPoint(toPoint: Vector2): Vector2 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_point.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getClosestPointOwner(toPoint: Vector2): Object {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_closest_point_owner.call(this._handle, _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -42,7 +42,7 @@ open class Navigation2D internal constructor(
     _args.append(start)
     _args.append(end)
     _args.append(optimize)
-    val _ret = __method_bind.get_simple_path.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.get_simple_path.call(this._handle, _args.toVariant(), 3)
     return _ret.asPoolVector2Array()
   }
 
@@ -55,20 +55,20 @@ open class Navigation2D internal constructor(
     _args.append(mesh)
     _args.append(xform)
     _args.append(owner)
-    val _ret = __method_bind.navpoly_add.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.navpoly_add.call(this._handle, _args.toVariant(), 3)
     return _ret.asInt()
   }
 
   fun navpolyRemove(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.navpoly_remove.call(this.toVariant(), _arg, 1)
+    __method_bind.navpoly_remove.call(this._handle, _arg, 1)
   }
 
   fun navpolySetTransform(id: Int, xform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(xform)
-    __method_bind.navpoly_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.navpoly_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

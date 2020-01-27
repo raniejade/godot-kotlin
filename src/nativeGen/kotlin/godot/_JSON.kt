@@ -20,7 +20,7 @@ open class _JSON internal constructor(
 ) : Object(_handle) {
   fun parse(json: String): JSONParseResult {
     val _arg = Variant.new(json)
-    val _ret = __method_bind.parse.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.parse.call(this._handle, _arg, 1)
     return _ret.asObject(::JSONParseResult)!!
   }
 
@@ -33,7 +33,7 @@ open class _JSON internal constructor(
     _args.append(value)
     _args.append(indent)
     _args.append(sortKeys)
-    val _ret = __method_bind.print.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.print.call(this._handle, _args.toVariant(), 3)
     return _ret.asString()
   }
 

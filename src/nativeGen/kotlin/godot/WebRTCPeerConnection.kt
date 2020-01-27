@@ -29,40 +29,40 @@ open class WebRTCPeerConnection internal constructor(
     _args.append(media)
     _args.append(index)
     _args.append(name)
-    val _ret = __method_bind.add_ice_candidate.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.add_ice_candidate.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
   fun close() {
-    __method_bind.close.call(this.toVariant())
+    __method_bind.close.call(this._handle)
   }
 
   fun createDataChannel(label: String, options: Dictionary): WebRTCDataChannel {
     val _args = VariantArray.new()
     _args.append(label)
     _args.append(options)
-    val _ret = __method_bind.create_data_channel.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.create_data_channel.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::WebRTCDataChannel)!!
   }
 
   fun createOffer(): GDError {
-    val _ret = __method_bind.create_offer.call(this.toVariant())
+    val _ret = __method_bind.create_offer.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun getConnectionState(): ConnectionState {
-    val _ret = __method_bind.get_connection_state.call(this.toVariant())
+    val _ret = __method_bind.get_connection_state.call(this._handle)
     return WebRTCPeerConnection.ConnectionState.from(_ret.asInt())
   }
 
   fun initialize(configuration: Dictionary): GDError {
     val _arg = Variant.new(configuration)
-    val _ret = __method_bind.initialize.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.initialize.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun poll(): GDError {
-    val _ret = __method_bind.poll.call(this.toVariant())
+    val _ret = __method_bind.poll.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
@@ -70,7 +70,7 @@ open class WebRTCPeerConnection internal constructor(
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(sdp)
-    val _ret = __method_bind.set_local_description.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.set_local_description.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
@@ -78,7 +78,7 @@ open class WebRTCPeerConnection internal constructor(
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(sdp)
-    val _ret = __method_bind.set_remote_description.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.set_remote_description.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 

@@ -46,7 +46,7 @@ open class VisualServer internal constructor(
     _args.append(top)
     _args.append(right)
     _args.append(bottom)
-    __method_bind.black_bars_set_images.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.black_bars_set_images.call(this._handle, _args.toVariant(), 4)
   }
 
   fun blackBarsSetMargins(
@@ -60,11 +60,11 @@ open class VisualServer internal constructor(
     _args.append(top)
     _args.append(right)
     _args.append(bottom)
-    __method_bind.black_bars_set_margins.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.black_bars_set_margins.call(this._handle, _args.toVariant(), 4)
   }
 
   fun cameraCreate(): RID {
-    val _ret = __method_bind.camera_create.call(this.toVariant())
+    val _ret = __method_bind.camera_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -72,14 +72,14 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(camera)
     _args.append(layers)
-    __method_bind.camera_set_cull_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.camera_set_cull_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun cameraSetEnvironment(camera: RID, env: RID) {
     val _args = VariantArray.new()
     _args.append(camera)
     _args.append(env)
-    __method_bind.camera_set_environment.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.camera_set_environment.call(this._handle, _args.toVariant(), 2)
   }
 
   fun cameraSetFrustum(
@@ -95,7 +95,7 @@ open class VisualServer internal constructor(
     _args.append(offset)
     _args.append(zNear)
     _args.append(zFar)
-    __method_bind.camera_set_frustum.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.camera_set_frustum.call(this._handle, _args.toVariant(), 5)
   }
 
   fun cameraSetOrthogonal(
@@ -109,7 +109,7 @@ open class VisualServer internal constructor(
     _args.append(size)
     _args.append(zNear)
     _args.append(zFar)
-    __method_bind.camera_set_orthogonal.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.camera_set_orthogonal.call(this._handle, _args.toVariant(), 4)
   }
 
   fun cameraSetPerspective(
@@ -123,25 +123,25 @@ open class VisualServer internal constructor(
     _args.append(fovyDegrees)
     _args.append(zNear)
     _args.append(zFar)
-    __method_bind.camera_set_perspective.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.camera_set_perspective.call(this._handle, _args.toVariant(), 4)
   }
 
   fun cameraSetTransform(camera: RID, transform: Transform) {
     val _args = VariantArray.new()
     _args.append(camera)
     _args.append(transform)
-    __method_bind.camera_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.camera_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun cameraSetUseVerticalAspect(camera: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(camera)
     _args.append(enable)
-    __method_bind.camera_set_use_vertical_aspect.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.camera_set_use_vertical_aspect.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasCreate(): RID {
-    val _ret = __method_bind.canvas_create.call(this.toVariant())
+    val _ret = __method_bind.canvas_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -156,14 +156,14 @@ open class VisualServer internal constructor(
     _args.append(pos)
     _args.append(radius)
     _args.append(color)
-    __method_bind.canvas_item_add_circle.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.canvas_item_add_circle.call(this._handle, _args.toVariant(), 4)
   }
 
   fun canvasItemAddClipIgnore(item: RID, ignore: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(ignore)
-    __method_bind.canvas_item_add_clip_ignore.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_add_clip_ignore.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemAddLine(
@@ -181,7 +181,7 @@ open class VisualServer internal constructor(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.canvas_item_add_line.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.canvas_item_add_line.call(this._handle, _args.toVariant(), 6)
   }
 
   fun canvasItemAddMesh(
@@ -199,7 +199,7 @@ open class VisualServer internal constructor(
     _args.append(normalMap)
     _args.append(arg4)
     _args.append(arg5)
-    __method_bind.canvas_item_add_mesh.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.canvas_item_add_mesh.call(this._handle, _args.toVariant(), 6)
   }
 
   fun canvasItemAddMultimesh(
@@ -213,7 +213,7 @@ open class VisualServer internal constructor(
     _args.append(mesh)
     _args.append(texture)
     _args.append(normalMap)
-    __method_bind.canvas_item_add_multimesh.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.canvas_item_add_multimesh.call(this._handle, _args.toVariant(), 4)
   }
 
   fun canvasItemAddNinePatch(
@@ -241,7 +241,7 @@ open class VisualServer internal constructor(
     _args.append(drawCenter)
     _args.append(modulate)
     _args.append(normalMap)
-    __method_bind.canvas_item_add_nine_patch.call(this.toVariant(), _args.toVariant(), 11)
+    __method_bind.canvas_item_add_nine_patch.call(this._handle, _args.toVariant(), 11)
   }
 
   fun canvasItemAddParticles(
@@ -255,7 +255,7 @@ open class VisualServer internal constructor(
     _args.append(particles)
     _args.append(texture)
     _args.append(normalMap)
-    __method_bind.canvas_item_add_particles.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.canvas_item_add_particles.call(this._handle, _args.toVariant(), 4)
   }
 
   fun canvasItemAddPolygon(
@@ -275,7 +275,7 @@ open class VisualServer internal constructor(
     _args.append(texture)
     _args.append(normalMap)
     _args.append(antialiased)
-    __method_bind.canvas_item_add_polygon.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.canvas_item_add_polygon.call(this._handle, _args.toVariant(), 7)
   }
 
   fun canvasItemAddPolyline(
@@ -291,7 +291,7 @@ open class VisualServer internal constructor(
     _args.append(colors)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.canvas_item_add_polyline.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.canvas_item_add_polyline.call(this._handle, _args.toVariant(), 5)
   }
 
   fun canvasItemAddPrimitive(
@@ -311,7 +311,7 @@ open class VisualServer internal constructor(
     _args.append(texture)
     _args.append(width)
     _args.append(normalMap)
-    __method_bind.canvas_item_add_primitive.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.canvas_item_add_primitive.call(this._handle, _args.toVariant(), 7)
   }
 
   fun canvasItemAddRect(
@@ -323,14 +323,14 @@ open class VisualServer internal constructor(
     _args.append(item)
     _args.append(rect)
     _args.append(color)
-    __method_bind.canvas_item_add_rect.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_item_add_rect.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasItemAddSetTransform(item: RID, transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(transform)
-    __method_bind.canvas_item_add_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_add_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemAddTextureRect(
@@ -350,7 +350,7 @@ open class VisualServer internal constructor(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    __method_bind.canvas_item_add_texture_rect.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.canvas_item_add_texture_rect.call(this._handle, _args.toVariant(), 7)
   }
 
   fun canvasItemAddTextureRectRegion(
@@ -372,7 +372,7 @@ open class VisualServer internal constructor(
     _args.append(transpose)
     _args.append(normalMap)
     _args.append(clipUv)
-    __method_bind.canvas_item_add_texture_rect_region.call(this.toVariant(), _args.toVariant(), 8)
+    __method_bind.canvas_item_add_texture_rect_region.call(this._handle, _args.toVariant(), 8)
   }
 
   fun canvasItemAddTriangleArray(
@@ -398,16 +398,16 @@ open class VisualServer internal constructor(
     _args.append(texture)
     _args.append(count)
     _args.append(normalMap)
-    __method_bind.canvas_item_add_triangle_array.call(this.toVariant(), _args.toVariant(), 10)
+    __method_bind.canvas_item_add_triangle_array.call(this._handle, _args.toVariant(), 10)
   }
 
   fun canvasItemClear(item: RID) {
     val _arg = Variant.new(item)
-    __method_bind.canvas_item_clear.call(this.toVariant(), _arg, 1)
+    __method_bind.canvas_item_clear.call(this._handle, _arg, 1)
   }
 
   fun canvasItemCreate(): RID {
-    val _ret = __method_bind.canvas_item_create.call(this.toVariant())
+    val _ret = __method_bind.canvas_item_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -415,7 +415,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(clip)
-    __method_bind.canvas_item_set_clip.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_clip.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetCopyToBackbuffer(
@@ -427,7 +427,7 @@ open class VisualServer internal constructor(
     _args.append(item)
     _args.append(enabled)
     _args.append(rect)
-    __method_bind.canvas_item_set_copy_to_backbuffer.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_item_set_copy_to_backbuffer.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasItemSetCustomRect(
@@ -439,117 +439,116 @@ open class VisualServer internal constructor(
     _args.append(item)
     _args.append(useCustomRect)
     _args.append(rect)
-    __method_bind.canvas_item_set_custom_rect.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_item_set_custom_rect.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasItemSetDistanceFieldMode(item: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(enabled)
-    __method_bind.canvas_item_set_distance_field_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_distance_field_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetDrawBehindParent(item: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(enabled)
-    __method_bind.canvas_item_set_draw_behind_parent.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_draw_behind_parent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetDrawIndex(item: RID, index: Int) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(index)
-    __method_bind.canvas_item_set_draw_index.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_draw_index.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetLightMask(item: RID, mask: Int) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(mask)
-    __method_bind.canvas_item_set_light_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_light_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetMaterial(item: RID, material: RID) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(material)
-    __method_bind.canvas_item_set_material.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_material.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetModulate(item: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(color)
-    __method_bind.canvas_item_set_modulate.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_modulate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetParent(item: RID, parent: RID) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(parent)
-    __method_bind.canvas_item_set_parent.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_parent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetSelfModulate(item: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(color)
-    __method_bind.canvas_item_set_self_modulate.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_self_modulate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetSortChildrenByY(item: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(enabled)
-    __method_bind.canvas_item_set_sort_children_by_y.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_sort_children_by_y.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetTransform(item: RID, transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(transform)
-    __method_bind.canvas_item_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetUseParentMaterial(item: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(enabled)
-    __method_bind.canvas_item_set_use_parent_material.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_use_parent_material.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetVisible(item: RID, visible: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(visible)
-    __method_bind.canvas_item_set_visible.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_visible.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetZAsRelativeToParent(item: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(enabled)
-    __method_bind.canvas_item_set_z_as_relative_to_parent.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.canvas_item_set_z_as_relative_to_parent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasItemSetZIndex(item: RID, zIndex: Int) {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(zIndex)
-    __method_bind.canvas_item_set_z_index.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_item_set_z_index.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightAttachToCanvas(light: RID, canvas: RID) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(canvas)
-    __method_bind.canvas_light_attach_to_canvas.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_attach_to_canvas.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightCreate(): RID {
-    val _ret = __method_bind.canvas_light_create.call(this.toVariant())
+    val _ret = __method_bind.canvas_light_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -557,12 +556,11 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(occluder)
     _args.append(canvas)
-    __method_bind.canvas_light_occluder_attach_to_canvas.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.canvas_light_occluder_attach_to_canvas.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightOccluderCreate(): RID {
-    val _ret = __method_bind.canvas_light_occluder_create.call(this.toVariant())
+    val _ret = __method_bind.canvas_light_occluder_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -570,71 +568,70 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(occluder)
     _args.append(enabled)
-    __method_bind.canvas_light_occluder_set_enabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_occluder_set_enabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightOccluderSetLightMask(occluder: RID, mask: Int) {
     val _args = VariantArray.new()
     _args.append(occluder)
     _args.append(mask)
-    __method_bind.canvas_light_occluder_set_light_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_occluder_set_light_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightOccluderSetPolygon(occluder: RID, polygon: RID) {
     val _args = VariantArray.new()
     _args.append(occluder)
     _args.append(polygon)
-    __method_bind.canvas_light_occluder_set_polygon.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_occluder_set_polygon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightOccluderSetTransform(occluder: RID, transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(occluder)
     _args.append(transform)
-    __method_bind.canvas_light_occluder_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_occluder_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetColor(light: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(color)
-    __method_bind.canvas_light_set_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetEnabled(light: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enabled)
-    __method_bind.canvas_light_set_enabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_enabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetEnergy(light: RID, energy: Float) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(energy)
-    __method_bind.canvas_light_set_energy.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_energy.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetHeight(light: RID, height: Float) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(height)
-    __method_bind.canvas_light_set_height.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_height.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetItemCullMask(light: RID, mask: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(mask)
-    __method_bind.canvas_light_set_item_cull_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_item_cull_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetItemShadowCullMask(light: RID, mask: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(mask)
-    __method_bind.canvas_light_set_item_shadow_cull_mask.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.canvas_light_set_item_shadow_cull_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetLayerRange(
@@ -646,85 +643,84 @@ open class VisualServer internal constructor(
     _args.append(light)
     _args.append(minLayer)
     _args.append(maxLayer)
-    __method_bind.canvas_light_set_layer_range.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_light_set_layer_range.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasLightSetMode(light: RID, mode: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(mode)
-    __method_bind.canvas_light_set_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetScale(light: RID, scale: Float) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(scale)
-    __method_bind.canvas_light_set_scale.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_scale.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetShadowBufferSize(light: RID, size: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(size)
-    __method_bind.canvas_light_set_shadow_buffer_size.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_shadow_buffer_size.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetShadowColor(light: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(color)
-    __method_bind.canvas_light_set_shadow_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_shadow_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetShadowEnabled(light: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enabled)
-    __method_bind.canvas_light_set_shadow_enabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_shadow_enabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetShadowFilter(light: RID, filter: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(filter)
-    __method_bind.canvas_light_set_shadow_filter.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_shadow_filter.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetShadowGradientLength(light: RID, length: Float) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(length)
-    __method_bind.canvas_light_set_shadow_gradient_length.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.canvas_light_set_shadow_gradient_length.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetShadowSmooth(light: RID, smooth: Float) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(smooth)
-    __method_bind.canvas_light_set_shadow_smooth.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_shadow_smooth.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetTexture(light: RID, texture: RID) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(texture)
-    __method_bind.canvas_light_set_texture.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_texture.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetTextureOffset(light: RID, offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(offset)
-    __method_bind.canvas_light_set_texture_offset.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_texture_offset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetTransform(light: RID, transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(transform)
-    __method_bind.canvas_light_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_light_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasLightSetZRange(
@@ -736,11 +732,11 @@ open class VisualServer internal constructor(
     _args.append(light)
     _args.append(minZ)
     _args.append(maxZ)
-    __method_bind.canvas_light_set_z_range.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_light_set_z_range.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasOccluderPolygonCreate(): RID {
-    val _ret = __method_bind.canvas_occluder_polygon_create.call(this.toVariant())
+    val _ret = __method_bind.canvas_occluder_polygon_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -748,7 +744,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(occluderPolygon)
     _args.append(mode)
-    __method_bind.canvas_occluder_polygon_set_cull_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_occluder_polygon_set_cull_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun canvasOccluderPolygonSetShape(
@@ -760,15 +756,15 @@ open class VisualServer internal constructor(
     _args.append(occluderPolygon)
     _args.append(shape)
     _args.append(closed)
-    __method_bind.canvas_occluder_polygon_set_shape.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_occluder_polygon_set_shape.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasOccluderPolygonSetShapeAsLines(occluderPolygon: RID, shape: PoolVector2Array) {
     val _args = VariantArray.new()
     _args.append(occluderPolygon)
     _args.append(shape)
-    __method_bind.canvas_occluder_polygon_set_shape_as_lines.call(this.toVariant(),
-        _args.toVariant(), 2)
+    __method_bind.canvas_occluder_polygon_set_shape_as_lines.call(this._handle, _args.toVariant(),
+        2)
   }
 
   fun canvasSetItemMirroring(
@@ -780,18 +776,18 @@ open class VisualServer internal constructor(
     _args.append(canvas)
     _args.append(item)
     _args.append(mirroring)
-    __method_bind.canvas_set_item_mirroring.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.canvas_set_item_mirroring.call(this._handle, _args.toVariant(), 3)
   }
 
   fun canvasSetModulate(canvas: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(canvas)
     _args.append(color)
-    __method_bind.canvas_set_modulate.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.canvas_set_modulate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun directionalLightCreate(): RID {
-    val _ret = __method_bind.directional_light_create.call(this.toVariant())
+    val _ret = __method_bind.directional_light_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -799,11 +795,11 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(swapBuffers)
     _args.append(frameStep)
-    __method_bind.draw.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.draw.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentCreate(): RID {
-    val _ret = __method_bind.environment_create.call(this.toVariant())
+    val _ret = __method_bind.environment_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -822,7 +818,7 @@ open class VisualServer internal constructor(
     _args.append(contrast)
     _args.append(saturation)
     _args.append(ramp)
-    __method_bind.environment_set_adjustment.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.environment_set_adjustment.call(this._handle, _args.toVariant(), 6)
   }
 
   fun environmentSetAmbientLight(
@@ -836,35 +832,35 @@ open class VisualServer internal constructor(
     _args.append(color)
     _args.append(energy)
     _args.append(skyContibution)
-    __method_bind.environment_set_ambient_light.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.environment_set_ambient_light.call(this._handle, _args.toVariant(), 4)
   }
 
   fun environmentSetBackground(env: RID, bg: Int) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(bg)
-    __method_bind.environment_set_background.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_background.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetBgColor(env: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(color)
-    __method_bind.environment_set_bg_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_bg_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetBgEnergy(env: RID, energy: Float) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(energy)
-    __method_bind.environment_set_bg_energy.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_bg_energy.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetCanvasMaxLayer(env: RID, maxLayer: Int) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(maxLayer)
-    __method_bind.environment_set_canvas_max_layer.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_canvas_max_layer.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetDofBlurFar(
@@ -882,7 +878,7 @@ open class VisualServer internal constructor(
     _args.append(transition)
     _args.append(farAmount)
     _args.append(quality)
-    __method_bind.environment_set_dof_blur_far.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.environment_set_dof_blur_far.call(this._handle, _args.toVariant(), 6)
   }
 
   fun environmentSetDofBlurNear(
@@ -900,7 +896,7 @@ open class VisualServer internal constructor(
     _args.append(transition)
     _args.append(farAmount)
     _args.append(quality)
-    __method_bind.environment_set_dof_blur_near.call(this.toVariant(), _args.toVariant(), 6)
+    __method_bind.environment_set_dof_blur_near.call(this._handle, _args.toVariant(), 6)
   }
 
   fun environmentSetFog(
@@ -916,7 +912,7 @@ open class VisualServer internal constructor(
     _args.append(color)
     _args.append(sunColor)
     _args.append(sunAmount)
-    __method_bind.environment_set_fog.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.environment_set_fog.call(this._handle, _args.toVariant(), 5)
   }
 
   fun environmentSetFogDepth(
@@ -936,7 +932,7 @@ open class VisualServer internal constructor(
     _args.append(depthCurve)
     _args.append(transmit)
     _args.append(transmitCurve)
-    __method_bind.environment_set_fog_depth.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.environment_set_fog_depth.call(this._handle, _args.toVariant(), 7)
   }
 
   fun environmentSetFogHeight(
@@ -952,7 +948,7 @@ open class VisualServer internal constructor(
     _args.append(minHeight)
     _args.append(maxHeight)
     _args.append(heightCurve)
-    __method_bind.environment_set_fog_height.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.environment_set_fog_height.call(this._handle, _args.toVariant(), 5)
   }
 
   fun environmentSetGlow(
@@ -980,28 +976,28 @@ open class VisualServer internal constructor(
     _args.append(hdrBleedScale)
     _args.append(hdrLuminanceCap)
     _args.append(bicubicUpscale)
-    __method_bind.environment_set_glow.call(this.toVariant(), _args.toVariant(), 11)
+    __method_bind.environment_set_glow.call(this._handle, _args.toVariant(), 11)
   }
 
   fun environmentSetSky(env: RID, sky: RID) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(sky)
-    __method_bind.environment_set_sky.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_sky.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetSkyCustomFov(env: RID, scale: Float) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(scale)
-    __method_bind.environment_set_sky_custom_fov.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_sky_custom_fov.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetSkyOrientation(env: RID, orientation: Basis) {
     val _args = VariantArray.new()
     _args.append(env)
     _args.append(orientation)
-    __method_bind.environment_set_sky_orientation.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.environment_set_sky_orientation.call(this._handle, _args.toVariant(), 2)
   }
 
   fun environmentSetSsao(
@@ -1033,7 +1029,7 @@ open class VisualServer internal constructor(
     _args.append(quality)
     _args.append(blur)
     _args.append(bilateralSharpness)
-    __method_bind.environment_set_ssao.call(this.toVariant(), _args.toVariant(), 13)
+    __method_bind.environment_set_ssao.call(this._handle, _args.toVariant(), 13)
   }
 
   fun environmentSetSsr(
@@ -1053,7 +1049,7 @@ open class VisualServer internal constructor(
     _args.append(fadeOut)
     _args.append(depthTolerance)
     _args.append(roughness)
-    __method_bind.environment_set_ssr.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.environment_set_ssr.call(this._handle, _args.toVariant(), 7)
   }
 
   fun environmentSetTonemap(
@@ -1077,118 +1073,118 @@ open class VisualServer internal constructor(
     _args.append(maxLuminance)
     _args.append(autoExpSpeed)
     _args.append(autoExpGrey)
-    __method_bind.environment_set_tonemap.call(this.toVariant(), _args.toVariant(), 9)
+    __method_bind.environment_set_tonemap.call(this._handle, _args.toVariant(), 9)
   }
 
   fun finish() {
-    __method_bind.finish.call(this.toVariant())
+    __method_bind.finish.call(this._handle)
   }
 
   fun forceDraw(swapBuffers: Boolean, frameStep: Float) {
     val _args = VariantArray.new()
     _args.append(swapBuffers)
     _args.append(frameStep)
-    __method_bind.force_draw.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.force_draw.call(this._handle, _args.toVariant(), 2)
   }
 
   fun forceSync() {
-    __method_bind.force_sync.call(this.toVariant())
+    __method_bind.force_sync.call(this._handle)
   }
 
   fun freeRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.free_rid.call(this.toVariant(), _arg, 1)
+    __method_bind.free_rid.call(this._handle, _arg, 1)
   }
 
   fun getRenderInfo(info: Int): Int {
     val _arg = Variant.new(info)
-    val _ret = __method_bind.get_render_info.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_render_info.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getTestCube(): RID {
-    val _ret = __method_bind.get_test_cube.call(this.toVariant())
+    val _ret = __method_bind.get_test_cube.call(this._handle)
     return _ret.asRID()
   }
 
   fun getTestTexture(): RID {
-    val _ret = __method_bind.get_test_texture.call(this.toVariant())
+    val _ret = __method_bind.get_test_texture.call(this._handle)
     return _ret.asRID()
   }
 
   fun getWhiteTexture(): RID {
-    val _ret = __method_bind.get_white_texture.call(this.toVariant())
+    val _ret = __method_bind.get_white_texture.call(this._handle)
     return _ret.asRID()
   }
 
   fun giProbeCreate(): RID {
-    val _ret = __method_bind.gi_probe_create.call(this.toVariant())
+    val _ret = __method_bind.gi_probe_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun giProbeGetBias(probe: RID): Float {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_bias.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_bias.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun giProbeGetBounds(probe: RID): AABB {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_bounds.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_bounds.call(this._handle, _arg, 1)
     return _ret.asAABB()
   }
 
   fun giProbeGetCellSize(probe: RID): Float {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_cell_size.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_cell_size.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun giProbeGetDynamicData(probe: RID): PoolIntArray {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_dynamic_data.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_dynamic_data.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun giProbeGetDynamicRange(probe: RID): Int {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_dynamic_range.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_dynamic_range.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun giProbeGetEnergy(probe: RID): Float {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_energy.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_energy.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun giProbeGetNormalBias(probe: RID): Float {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_normal_bias.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_normal_bias.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun giProbeGetPropagation(probe: RID): Float {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_propagation.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_propagation.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun giProbeGetToCellXform(probe: RID): Transform {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_get_to_cell_xform.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_get_to_cell_xform.call(this._handle, _arg, 1)
     return _ret.asTransform()
   }
 
   fun giProbeIsCompressed(probe: RID): Boolean {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_is_compressed.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_is_compressed.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun giProbeIsInterior(probe: RID): Boolean {
     val _arg = Variant.new(probe)
-    val _ret = __method_bind.gi_probe_is_interior.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.gi_probe_is_interior.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -1196,93 +1192,93 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(bias)
-    __method_bind.gi_probe_set_bias.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_bias.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetBounds(probe: RID, bounds: AABB) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(bounds)
-    __method_bind.gi_probe_set_bounds.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_bounds.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetCellSize(probe: RID, range: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(range)
-    __method_bind.gi_probe_set_cell_size.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_cell_size.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetCompress(probe: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(enable)
-    __method_bind.gi_probe_set_compress.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_compress.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetDynamicData(probe: RID, data: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(data)
-    __method_bind.gi_probe_set_dynamic_data.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_dynamic_data.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetDynamicRange(probe: RID, range: Int) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(range)
-    __method_bind.gi_probe_set_dynamic_range.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_dynamic_range.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetEnergy(probe: RID, energy: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(energy)
-    __method_bind.gi_probe_set_energy.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_energy.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetInterior(probe: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(enable)
-    __method_bind.gi_probe_set_interior.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_interior.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetNormalBias(probe: RID, bias: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(bias)
-    __method_bind.gi_probe_set_normal_bias.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_normal_bias.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetPropagation(probe: RID, propagation: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(propagation)
-    __method_bind.gi_probe_set_propagation.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_propagation.call(this._handle, _args.toVariant(), 2)
   }
 
   fun giProbeSetToCellXform(probe: RID, xform: Transform) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(xform)
-    __method_bind.gi_probe_set_to_cell_xform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.gi_probe_set_to_cell_xform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun hasChanged(): Boolean {
-    val _ret = __method_bind.has_changed.call(this.toVariant())
+    val _ret = __method_bind.has_changed.call(this._handle)
     return _ret.asBool()
   }
 
   fun hasFeature(feature: Int): Boolean {
     val _arg = Variant.new(feature)
-    val _ret = __method_bind.has_feature.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_feature.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun hasOsFeature(feature: String): Boolean {
     val _arg = Variant.new(feature)
-    val _ret = __method_bind.has_os_feature.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_os_feature.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -1295,34 +1291,34 @@ open class VisualServer internal constructor(
     _args.append(immediate)
     _args.append(primitive)
     _args.append(texture)
-    __method_bind.immediate_begin.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.immediate_begin.call(this._handle, _args.toVariant(), 3)
   }
 
   fun immediateClear(immediate: RID) {
     val _arg = Variant.new(immediate)
-    __method_bind.immediate_clear.call(this.toVariant(), _arg, 1)
+    __method_bind.immediate_clear.call(this._handle, _arg, 1)
   }
 
   fun immediateColor(immediate: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(color)
-    __method_bind.immediate_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateCreate(): RID {
-    val _ret = __method_bind.immediate_create.call(this.toVariant())
+    val _ret = __method_bind.immediate_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun immediateEnd(immediate: RID) {
     val _arg = Variant.new(immediate)
-    __method_bind.immediate_end.call(this.toVariant(), _arg, 1)
+    __method_bind.immediate_end.call(this._handle, _arg, 1)
   }
 
   fun immediateGetMaterial(immediate: RID): RID {
     val _arg = Variant.new(immediate)
-    val _ret = __method_bind.immediate_get_material.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.immediate_get_material.call(this._handle, _arg, 1)
     return _ret.asRID()
   }
 
@@ -1330,71 +1326,71 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(normal)
-    __method_bind.immediate_normal.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_normal.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateSetMaterial(immediate: RID, material: RID) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(material)
-    __method_bind.immediate_set_material.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_set_material.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateTangent(immediate: RID, tangent: Plane) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(tangent)
-    __method_bind.immediate_tangent.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_tangent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateUv(immediate: RID, texUv: Vector2) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(texUv)
-    __method_bind.immediate_uv.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_uv.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateUv2(immediate: RID, texUv: Vector2) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(texUv)
-    __method_bind.immediate_uv2.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_uv2.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateVertex(immediate: RID, vertex: Vector3) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(vertex)
-    __method_bind.immediate_vertex.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_vertex.call(this._handle, _args.toVariant(), 2)
   }
 
   fun immediateVertex2d(immediate: RID, vertex: Vector2) {
     val _args = VariantArray.new()
     _args.append(immediate)
     _args.append(vertex)
-    __method_bind.immediate_vertex_2d.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.immediate_vertex_2d.call(this._handle, _args.toVariant(), 2)
   }
 
   fun init() {
-    __method_bind.init.call(this.toVariant())
+    __method_bind.init.call(this._handle)
   }
 
   fun instanceAttachObjectInstanceId(instance: RID, id: Int) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(id)
-    __method_bind.instance_attach_object_instance_id.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_attach_object_instance_id.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceAttachSkeleton(instance: RID, skeleton: RID) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(skeleton)
-    __method_bind.instance_attach_skeleton.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_attach_skeleton.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceCreate(): RID {
-    val _ret = __method_bind.instance_create.call(this.toVariant())
+    val _ret = __method_bind.instance_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -1402,7 +1398,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(base)
     _args.append(scenario)
-    val _ret = __method_bind.instance_create2.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.instance_create2.call(this._handle, _args.toVariant(), 2)
     return _ret.asRID()
   }
 
@@ -1410,15 +1406,15 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(asLodOfInstance)
-    __method_bind.instance_geometry_set_as_instance_lod.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_geometry_set_as_instance_lod.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceGeometrySetCastShadowsSetting(instance: RID, shadowCastingSetting: Int) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(shadowCastingSetting)
-    __method_bind.instance_geometry_set_cast_shadows_setting.call(this.toVariant(),
-        _args.toVariant(), 2)
+    __method_bind.instance_geometry_set_cast_shadows_setting.call(this._handle, _args.toVariant(),
+        2)
   }
 
   fun instanceGeometrySetDrawRange(
@@ -1434,7 +1430,7 @@ open class VisualServer internal constructor(
     _args.append(max)
     _args.append(minMargin)
     _args.append(maxMargin)
-    __method_bind.instance_geometry_set_draw_range.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.instance_geometry_set_draw_range.call(this._handle, _args.toVariant(), 5)
   }
 
   fun instanceGeometrySetFlag(
@@ -1446,22 +1442,21 @@ open class VisualServer internal constructor(
     _args.append(instance)
     _args.append(flag)
     _args.append(enabled)
-    __method_bind.instance_geometry_set_flag.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.instance_geometry_set_flag.call(this._handle, _args.toVariant(), 3)
   }
 
   fun instanceGeometrySetMaterialOverride(instance: RID, material: RID) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(material)
-    __method_bind.instance_geometry_set_material_override.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.instance_geometry_set_material_override.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetBase(instance: RID, base: RID) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(base)
-    __method_bind.instance_set_base.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_base.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetBlendShapeWeight(
@@ -1473,42 +1468,42 @@ open class VisualServer internal constructor(
     _args.append(instance)
     _args.append(shape)
     _args.append(weight)
-    __method_bind.instance_set_blend_shape_weight.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.instance_set_blend_shape_weight.call(this._handle, _args.toVariant(), 3)
   }
 
   fun instanceSetCustomAabb(instance: RID, aabb: AABB) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(aabb)
-    __method_bind.instance_set_custom_aabb.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_custom_aabb.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetExterior(instance: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(enabled)
-    __method_bind.instance_set_exterior.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_exterior.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetExtraVisibilityMargin(instance: RID, margin: Float) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(margin)
-    __method_bind.instance_set_extra_visibility_margin.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_extra_visibility_margin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetLayerMask(instance: RID, mask: Int) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(mask)
-    __method_bind.instance_set_layer_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_layer_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetScenario(instance: RID, scenario: RID) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(scenario)
-    __method_bind.instance_set_scenario.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_scenario.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetSurfaceMaterial(
@@ -1520,14 +1515,14 @@ open class VisualServer internal constructor(
     _args.append(instance)
     _args.append(surface)
     _args.append(material)
-    __method_bind.instance_set_surface_material.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.instance_set_surface_material.call(this._handle, _args.toVariant(), 3)
   }
 
   fun instanceSetTransform(instance: RID, transform: Transform) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(transform)
-    __method_bind.instance_set_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instanceSetUseLightmap(
@@ -1539,21 +1534,21 @@ open class VisualServer internal constructor(
     _args.append(instance)
     _args.append(lightmapInstance)
     _args.append(lightmap)
-    __method_bind.instance_set_use_lightmap.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.instance_set_use_lightmap.call(this._handle, _args.toVariant(), 3)
   }
 
   fun instanceSetVisible(instance: RID, visible: Boolean) {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(visible)
-    __method_bind.instance_set_visible.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.instance_set_visible.call(this._handle, _args.toVariant(), 2)
   }
 
   fun instancesCullAabb(aabb: AABB, scenario: RID): VariantArray {
     val _args = VariantArray.new()
     _args.append(aabb)
     _args.append(scenario)
-    val _ret = __method_bind.instances_cull_aabb.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.instances_cull_aabb.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -1561,7 +1556,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(convex)
     _args.append(scenario)
-    val _ret = __method_bind.instances_cull_convex.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.instances_cull_convex.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -1574,7 +1569,7 @@ open class VisualServer internal constructor(
     _args.append(from)
     _args.append(to)
     _args.append(scenario)
-    val _ret = __method_bind.instances_cull_ray.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.instances_cull_ray.call(this._handle, _args.toVariant(), 3)
     return _ret.asArray()
   }
 
@@ -1582,14 +1577,14 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enable)
-    __method_bind.light_directional_set_blend_splits.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_directional_set_blend_splits.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightDirectionalSetShadowDepthRangeMode(light: RID, rangeMode: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(rangeMode)
-    __method_bind.light_directional_set_shadow_depth_range_mode.call(this.toVariant(),
+    __method_bind.light_directional_set_shadow_depth_range_mode.call(this._handle,
         _args.toVariant(), 2)
   }
 
@@ -1597,42 +1592,42 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(mode)
-    __method_bind.light_directional_set_shadow_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_directional_set_shadow_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightOmniSetShadowDetail(light: RID, detail: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(detail)
-    __method_bind.light_omni_set_shadow_detail.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_omni_set_shadow_detail.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightOmniSetShadowMode(light: RID, mode: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(mode)
-    __method_bind.light_omni_set_shadow_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_omni_set_shadow_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetColor(light: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(color)
-    __method_bind.light_set_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetCullMask(light: RID, mask: Int) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(mask)
-    __method_bind.light_set_cull_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_cull_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetNegative(light: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enable)
-    __method_bind.light_set_negative.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_negative.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetParam(
@@ -1644,77 +1639,76 @@ open class VisualServer internal constructor(
     _args.append(light)
     _args.append(param)
     _args.append(value)
-    __method_bind.light_set_param.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.light_set_param.call(this._handle, _args.toVariant(), 3)
   }
 
   fun lightSetProjector(light: RID, texture: RID) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(texture)
-    __method_bind.light_set_projector.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_projector.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetReverseCullFaceMode(light: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enabled)
-    __method_bind.light_set_reverse_cull_face_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_reverse_cull_face_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetShadow(light: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enabled)
-    __method_bind.light_set_shadow.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_shadow.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetShadowColor(light: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(color)
-    __method_bind.light_set_shadow_color.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_shadow_color.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightSetUseGi(light: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(light)
     _args.append(enabled)
-    __method_bind.light_set_use_gi.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.light_set_use_gi.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightmapCaptureCreate(): RID {
-    val _ret = __method_bind.lightmap_capture_create.call(this.toVariant())
+    val _ret = __method_bind.lightmap_capture_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun lightmapCaptureGetBounds(capture: RID): AABB {
     val _arg = Variant.new(capture)
-    val _ret = __method_bind.lightmap_capture_get_bounds.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.lightmap_capture_get_bounds.call(this._handle, _arg, 1)
     return _ret.asAABB()
   }
 
   fun lightmapCaptureGetEnergy(capture: RID): Float {
     val _arg = Variant.new(capture)
-    val _ret = __method_bind.lightmap_capture_get_energy.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.lightmap_capture_get_energy.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun lightmapCaptureGetOctree(capture: RID): PoolByteArray {
     val _arg = Variant.new(capture)
-    val _ret = __method_bind.lightmap_capture_get_octree.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.lightmap_capture_get_octree.call(this._handle, _arg, 1)
     return _ret.asPoolByteArray()
   }
 
   fun lightmapCaptureGetOctreeCellSubdiv(capture: RID): Int {
     val _arg = Variant.new(capture)
-    val _ret = __method_bind.lightmap_capture_get_octree_cell_subdiv.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.lightmap_capture_get_octree_cell_subdiv.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun lightmapCaptureGetOctreeCellTransform(capture: RID): Transform {
     val _arg = Variant.new(capture)
-    val _ret = __method_bind.lightmap_capture_get_octree_cell_transform.call(this.toVariant(), _arg,
-        1)
+    val _ret = __method_bind.lightmap_capture_get_octree_cell_transform.call(this._handle, _arg, 1)
     return _ret.asTransform()
   }
 
@@ -1722,37 +1716,36 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(capture)
     _args.append(bounds)
-    __method_bind.lightmap_capture_set_bounds.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.lightmap_capture_set_bounds.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightmapCaptureSetEnergy(capture: RID, energy: Float) {
     val _args = VariantArray.new()
     _args.append(capture)
     _args.append(energy)
-    __method_bind.lightmap_capture_set_energy.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.lightmap_capture_set_energy.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightmapCaptureSetOctree(capture: RID, octree: PoolByteArray) {
     val _args = VariantArray.new()
     _args.append(capture)
     _args.append(octree)
-    __method_bind.lightmap_capture_set_octree.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.lightmap_capture_set_octree.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightmapCaptureSetOctreeCellSubdiv(capture: RID, subdiv: Int) {
     val _args = VariantArray.new()
     _args.append(capture)
     _args.append(subdiv)
-    __method_bind.lightmap_capture_set_octree_cell_subdiv.call(this.toVariant(), _args.toVariant(),
-        2)
+    __method_bind.lightmap_capture_set_octree_cell_subdiv.call(this._handle, _args.toVariant(), 2)
   }
 
   fun lightmapCaptureSetOctreeCellTransform(capture: RID, xform: Transform) {
     val _args = VariantArray.new()
     _args.append(capture)
     _args.append(xform)
-    __method_bind.lightmap_capture_set_octree_cell_transform.call(this.toVariant(),
-        _args.toVariant(), 2)
+    __method_bind.lightmap_capture_set_octree_cell_transform.call(this._handle, _args.toVariant(),
+        2)
   }
 
   fun makeSphereMesh(
@@ -1764,12 +1757,12 @@ open class VisualServer internal constructor(
     _args.append(latitudes)
     _args.append(longitudes)
     _args.append(radius)
-    val _ret = __method_bind.make_sphere_mesh.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.make_sphere_mesh.call(this._handle, _args.toVariant(), 3)
     return _ret.asRID()
   }
 
   fun materialCreate(): RID {
-    val _ret = __method_bind.material_create.call(this.toVariant())
+    val _ret = __method_bind.material_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -1777,7 +1770,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(parameter)
-    val _ret = __method_bind.material_get_param.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.material_get_param.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
@@ -1785,13 +1778,13 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(parameter)
-    val _ret = __method_bind.material_get_param_default.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.material_get_param_default.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
   fun materialGetShader(shaderMaterial: RID): RID {
     val _arg = Variant.new(shaderMaterial)
-    val _ret = __method_bind.material_get_shader.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.material_get_shader.call(this._handle, _arg, 1)
     return _ret.asRID()
   }
 
@@ -1799,14 +1792,14 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(width)
-    __method_bind.material_set_line_width.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.material_set_line_width.call(this._handle, _args.toVariant(), 2)
   }
 
   fun materialSetNextPass(material: RID, nextMaterial: RID) {
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(nextMaterial)
-    __method_bind.material_set_next_pass.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.material_set_next_pass.call(this._handle, _args.toVariant(), 2)
   }
 
   fun materialSetParam(
@@ -1818,21 +1811,21 @@ open class VisualServer internal constructor(
     _args.append(material)
     _args.append(parameter)
     _args.append(value)
-    __method_bind.material_set_param.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.material_set_param.call(this._handle, _args.toVariant(), 3)
   }
 
   fun materialSetRenderPriority(material: RID, priority: Int) {
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(priority)
-    __method_bind.material_set_render_priority.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.material_set_render_priority.call(this._handle, _args.toVariant(), 2)
   }
 
   fun materialSetShader(shaderMaterial: RID, shader: RID) {
     val _args = VariantArray.new()
     _args.append(shaderMaterial)
     _args.append(shader)
-    __method_bind.material_set_shader.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.material_set_shader.call(this._handle, _args.toVariant(), 2)
   }
 
   fun meshAddSurfaceFromArrays(
@@ -1848,40 +1841,40 @@ open class VisualServer internal constructor(
     _args.append(arrays)
     _args.append(blendShapes)
     _args.append(compressFormat)
-    __method_bind.mesh_add_surface_from_arrays.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.mesh_add_surface_from_arrays.call(this._handle, _args.toVariant(), 5)
   }
 
   fun meshClear(mesh: RID) {
     val _arg = Variant.new(mesh)
-    __method_bind.mesh_clear.call(this.toVariant(), _arg, 1)
+    __method_bind.mesh_clear.call(this._handle, _arg, 1)
   }
 
   fun meshCreate(): RID {
-    val _ret = __method_bind.mesh_create.call(this.toVariant())
+    val _ret = __method_bind.mesh_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun meshGetBlendShapeCount(mesh: RID): Int {
     val _arg = Variant.new(mesh)
-    val _ret = __method_bind.mesh_get_blend_shape_count.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.mesh_get_blend_shape_count.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun meshGetBlendShapeMode(mesh: RID): BlendShapeMode {
     val _arg = Variant.new(mesh)
-    val _ret = __method_bind.mesh_get_blend_shape_mode.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.mesh_get_blend_shape_mode.call(this._handle, _arg, 1)
     return VisualServer.BlendShapeMode.from(_ret.asInt())
   }
 
   fun meshGetCustomAabb(mesh: RID): AABB {
     val _arg = Variant.new(mesh)
-    val _ret = __method_bind.mesh_get_custom_aabb.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.mesh_get_custom_aabb.call(this._handle, _arg, 1)
     return _ret.asAABB()
   }
 
   fun meshGetSurfaceCount(mesh: RID): Int {
     val _arg = Variant.new(mesh)
-    val _ret = __method_bind.mesh_get_surface_count.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.mesh_get_surface_count.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -1889,35 +1882,35 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(index)
-    __method_bind.mesh_remove_surface.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.mesh_remove_surface.call(this._handle, _args.toVariant(), 2)
   }
 
   fun meshSetBlendShapeCount(mesh: RID, amount: Int) {
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(amount)
-    __method_bind.mesh_set_blend_shape_count.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.mesh_set_blend_shape_count.call(this._handle, _args.toVariant(), 2)
   }
 
   fun meshSetBlendShapeMode(mesh: RID, mode: Int) {
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(mode)
-    __method_bind.mesh_set_blend_shape_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.mesh_set_blend_shape_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun meshSetCustomAabb(mesh: RID, aabb: AABB) {
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(aabb)
-    __method_bind.mesh_set_custom_aabb.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.mesh_set_custom_aabb.call(this._handle, _args.toVariant(), 2)
   }
 
   fun meshSurfaceGetAabb(mesh: RID, surface: Int): AABB {
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_aabb.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_aabb.call(this._handle, _args.toVariant(), 2)
     return _ret.asAABB()
   }
 
@@ -1925,7 +1918,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_array.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_array.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolByteArray()
   }
 
@@ -1933,8 +1926,8 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_array_index_len.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_array_index_len.call(this._handle, _args.toVariant(),
+        2)
     return _ret.asInt()
   }
 
@@ -1942,7 +1935,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_array_len.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_array_len.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -1950,7 +1943,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_arrays.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_arrays.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -1958,7 +1951,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_blend_shape_arrays.call(this.toVariant(),
+    val _ret = __method_bind.mesh_surface_get_blend_shape_arrays.call(this._handle,
         _args.toVariant(), 2)
     return _ret.asArray()
   }
@@ -1967,7 +1960,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_format.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_format.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -1982,8 +1975,7 @@ open class VisualServer internal constructor(
     _args.append(vertexLen)
     _args.append(indexLen)
     _args.append(arrayIndex)
-    val _ret = __method_bind.mesh_surface_get_format_offset.call(this.toVariant(),
-        _args.toVariant(), 4)
+    val _ret = __method_bind.mesh_surface_get_format_offset.call(this._handle, _args.toVariant(), 4)
     return _ret.asInt()
   }
 
@@ -1996,8 +1988,7 @@ open class VisualServer internal constructor(
     _args.append(format)
     _args.append(vertexLen)
     _args.append(indexLen)
-    val _ret = __method_bind.mesh_surface_get_format_stride.call(this.toVariant(),
-        _args.toVariant(), 3)
+    val _ret = __method_bind.mesh_surface_get_format_stride.call(this._handle, _args.toVariant(), 3)
     return _ret.asInt()
   }
 
@@ -2005,8 +1996,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_index_array.call(this.toVariant(), _args.toVariant(),
-        2)
+    val _ret = __method_bind.mesh_surface_get_index_array.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolByteArray()
   }
 
@@ -2014,7 +2004,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_material.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_material.call(this._handle, _args.toVariant(), 2)
     return _ret.asRID()
   }
 
@@ -2022,8 +2012,8 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_primitive_type.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_primitive_type.call(this._handle, _args.toVariant(),
+        2)
     return VisualServer.PrimitiveType.from(_ret.asInt())
   }
 
@@ -2031,8 +2021,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.mesh_surface_get_skeleton_aabb.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.mesh_surface_get_skeleton_aabb.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -2045,7 +2034,7 @@ open class VisualServer internal constructor(
     _args.append(mesh)
     _args.append(surface)
     _args.append(material)
-    __method_bind.mesh_surface_set_material.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.mesh_surface_set_material.call(this._handle, _args.toVariant(), 3)
   }
 
   fun meshSurfaceUpdateRegion(
@@ -2059,7 +2048,7 @@ open class VisualServer internal constructor(
     _args.append(surface)
     _args.append(offset)
     _args.append(data)
-    __method_bind.mesh_surface_update_region.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.mesh_surface_update_region.call(this._handle, _args.toVariant(), 4)
   }
 
   fun multimeshAllocate(
@@ -2075,30 +2064,30 @@ open class VisualServer internal constructor(
     _args.append(transformFormat)
     _args.append(colorFormat)
     _args.append(customDataFormat)
-    __method_bind.multimesh_allocate.call(this.toVariant(), _args.toVariant(), 5)
+    __method_bind.multimesh_allocate.call(this._handle, _args.toVariant(), 5)
   }
 
   fun multimeshGetAabb(multimesh: RID): AABB {
     val _arg = Variant.new(multimesh)
-    val _ret = __method_bind.multimesh_get_aabb.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.multimesh_get_aabb.call(this._handle, _arg, 1)
     return _ret.asAABB()
   }
 
   fun multimeshGetInstanceCount(multimesh: RID): Int {
     val _arg = Variant.new(multimesh)
-    val _ret = __method_bind.multimesh_get_instance_count.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.multimesh_get_instance_count.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun multimeshGetMesh(multimesh: RID): RID {
     val _arg = Variant.new(multimesh)
-    val _ret = __method_bind.multimesh_get_mesh.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.multimesh_get_mesh.call(this._handle, _arg, 1)
     return _ret.asRID()
   }
 
   fun multimeshGetVisibleInstances(multimesh: RID): Int {
     val _arg = Variant.new(multimesh)
-    val _ret = __method_bind.multimesh_get_visible_instances.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.multimesh_get_visible_instances.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -2106,8 +2095,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(index)
-    val _ret = __method_bind.multimesh_instance_get_color.call(this.toVariant(), _args.toVariant(),
-        2)
+    val _ret = __method_bind.multimesh_instance_get_color.call(this._handle, _args.toVariant(), 2)
     return _ret.asColor()
   }
 
@@ -2115,7 +2103,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(index)
-    val _ret = __method_bind.multimesh_instance_get_custom_data.call(this.toVariant(),
+    val _ret = __method_bind.multimesh_instance_get_custom_data.call(this._handle,
         _args.toVariant(), 2)
     return _ret.asColor()
   }
@@ -2124,8 +2112,8 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(index)
-    val _ret = __method_bind.multimesh_instance_get_transform.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.multimesh_instance_get_transform.call(this._handle, _args.toVariant(),
+        2)
     return _ret.asTransform()
   }
 
@@ -2133,7 +2121,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(index)
-    val _ret = __method_bind.multimesh_instance_get_transform_2d.call(this.toVariant(),
+    val _ret = __method_bind.multimesh_instance_get_transform_2d.call(this._handle,
         _args.toVariant(), 2)
     return _ret.asTransform2D()
   }
@@ -2147,7 +2135,7 @@ open class VisualServer internal constructor(
     _args.append(multimesh)
     _args.append(index)
     _args.append(color)
-    __method_bind.multimesh_instance_set_color.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.multimesh_instance_set_color.call(this._handle, _args.toVariant(), 3)
   }
 
   fun multimeshInstanceSetCustomData(
@@ -2159,7 +2147,7 @@ open class VisualServer internal constructor(
     _args.append(multimesh)
     _args.append(index)
     _args.append(customData)
-    __method_bind.multimesh_instance_set_custom_data.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.multimesh_instance_set_custom_data.call(this._handle, _args.toVariant(), 3)
   }
 
   fun multimeshInstanceSetTransform(
@@ -2171,7 +2159,7 @@ open class VisualServer internal constructor(
     _args.append(multimesh)
     _args.append(index)
     _args.append(transform)
-    __method_bind.multimesh_instance_set_transform.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.multimesh_instance_set_transform.call(this._handle, _args.toVariant(), 3)
   }
 
   fun multimeshInstanceSetTransform2d(
@@ -2183,76 +2171,76 @@ open class VisualServer internal constructor(
     _args.append(multimesh)
     _args.append(index)
     _args.append(transform)
-    __method_bind.multimesh_instance_set_transform_2d.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.multimesh_instance_set_transform_2d.call(this._handle, _args.toVariant(), 3)
   }
 
   fun multimeshSetAsBulkArray(multimesh: RID, array: PoolRealArray) {
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(array)
-    __method_bind.multimesh_set_as_bulk_array.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.multimesh_set_as_bulk_array.call(this._handle, _args.toVariant(), 2)
   }
 
   fun multimeshSetMesh(multimesh: RID, mesh: RID) {
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(mesh)
-    __method_bind.multimesh_set_mesh.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.multimesh_set_mesh.call(this._handle, _args.toVariant(), 2)
   }
 
   fun multimeshSetVisibleInstances(multimesh: RID, visible: Int) {
     val _args = VariantArray.new()
     _args.append(multimesh)
     _args.append(visible)
-    __method_bind.multimesh_set_visible_instances.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.multimesh_set_visible_instances.call(this._handle, _args.toVariant(), 2)
   }
 
   fun omniLightCreate(): RID {
-    val _ret = __method_bind.omni_light_create.call(this.toVariant())
+    val _ret = __method_bind.omni_light_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun particlesCreate(): RID {
-    val _ret = __method_bind.particles_create.call(this.toVariant())
+    val _ret = __method_bind.particles_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun particlesGetCurrentAabb(particles: RID): AABB {
     val _arg = Variant.new(particles)
-    val _ret = __method_bind.particles_get_current_aabb.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.particles_get_current_aabb.call(this._handle, _arg, 1)
     return _ret.asAABB()
   }
 
   fun particlesGetEmitting(particles: RID): Boolean {
     val _arg = Variant.new(particles)
-    val _ret = __method_bind.particles_get_emitting.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.particles_get_emitting.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun particlesRestart(particles: RID) {
     val _arg = Variant.new(particles)
-    __method_bind.particles_restart.call(this.toVariant(), _arg, 1)
+    __method_bind.particles_restart.call(this._handle, _arg, 1)
   }
 
   fun particlesSetAmount(particles: RID, amount: Int) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(amount)
-    __method_bind.particles_set_amount.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_amount.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetCustomAabb(particles: RID, aabb: AABB) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(aabb)
-    __method_bind.particles_set_custom_aabb.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_custom_aabb.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetDrawOrder(particles: RID, order: Int) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(order)
-    __method_bind.particles_set_draw_order.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_draw_order.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetDrawPassMesh(
@@ -2264,102 +2252,102 @@ open class VisualServer internal constructor(
     _args.append(particles)
     _args.append(pass)
     _args.append(mesh)
-    __method_bind.particles_set_draw_pass_mesh.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.particles_set_draw_pass_mesh.call(this._handle, _args.toVariant(), 3)
   }
 
   fun particlesSetDrawPasses(particles: RID, count: Int) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(count)
-    __method_bind.particles_set_draw_passes.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_draw_passes.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetEmissionTransform(particles: RID, transform: Transform) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(transform)
-    __method_bind.particles_set_emission_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_emission_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetEmitting(particles: RID, emitting: Boolean) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(emitting)
-    __method_bind.particles_set_emitting.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_emitting.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetExplosivenessRatio(particles: RID, ratio: Float) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(ratio)
-    __method_bind.particles_set_explosiveness_ratio.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_explosiveness_ratio.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetFixedFps(particles: RID, fps: Int) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(fps)
-    __method_bind.particles_set_fixed_fps.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_fixed_fps.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetFractionalDelta(particles: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(enable)
-    __method_bind.particles_set_fractional_delta.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_fractional_delta.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetLifetime(particles: RID, lifetime: Float) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(lifetime)
-    __method_bind.particles_set_lifetime.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_lifetime.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetOneShot(particles: RID, oneShot: Boolean) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(oneShot)
-    __method_bind.particles_set_one_shot.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_one_shot.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetPreProcessTime(particles: RID, time: Float) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(time)
-    __method_bind.particles_set_pre_process_time.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_pre_process_time.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetProcessMaterial(particles: RID, material: RID) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(material)
-    __method_bind.particles_set_process_material.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_process_material.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetRandomnessRatio(particles: RID, ratio: Float) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(ratio)
-    __method_bind.particles_set_randomness_ratio.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_randomness_ratio.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetSpeedScale(particles: RID, scale: Float) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(scale)
-    __method_bind.particles_set_speed_scale.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_speed_scale.call(this._handle, _args.toVariant(), 2)
   }
 
   fun particlesSetUseLocalCoordinates(particles: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(particles)
     _args.append(enable)
-    __method_bind.particles_set_use_local_coordinates.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.particles_set_use_local_coordinates.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeCreate(): RID {
-    val _ret = __method_bind.reflection_probe_create.call(this.toVariant())
+    val _ret = __method_bind.reflection_probe_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -2367,65 +2355,65 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(enable)
-    __method_bind.reflection_probe_set_as_interior.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_as_interior.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetCullMask(probe: RID, layers: Int) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(layers)
-    __method_bind.reflection_probe_set_cull_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_cull_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetEnableBoxProjection(probe: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(enable)
-    __method_bind.reflection_probe_set_enable_box_projection.call(this.toVariant(),
-        _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_enable_box_projection.call(this._handle, _args.toVariant(),
+        2)
   }
 
   fun reflectionProbeSetEnableShadows(probe: RID, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(enable)
-    __method_bind.reflection_probe_set_enable_shadows.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_enable_shadows.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetExtents(probe: RID, extents: Vector3) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(extents)
-    __method_bind.reflection_probe_set_extents.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_extents.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetIntensity(probe: RID, intensity: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(intensity)
-    __method_bind.reflection_probe_set_intensity.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_intensity.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetInteriorAmbient(probe: RID, color: Color) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(color)
-    __method_bind.reflection_probe_set_interior_ambient.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_interior_ambient.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetInteriorAmbientEnergy(probe: RID, energy: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(energy)
-    __method_bind.reflection_probe_set_interior_ambient_energy.call(this.toVariant(),
-        _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_interior_ambient_energy.call(this._handle, _args.toVariant(),
+        2)
   }
 
   fun reflectionProbeSetInteriorAmbientProbeContribution(probe: RID, contrib: Float) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(contrib)
-    __method_bind.reflection_probe_set_interior_ambient_probe_contribution.call(this.toVariant(),
+    __method_bind.reflection_probe_set_interior_ambient_probe_contribution.call(this._handle,
         _args.toVariant(), 2)
   }
 
@@ -2433,21 +2421,21 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(distance)
-    __method_bind.reflection_probe_set_max_distance.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_max_distance.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetOriginOffset(probe: RID, offset: Vector3) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(offset)
-    __method_bind.reflection_probe_set_origin_offset.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_origin_offset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun reflectionProbeSetUpdateMode(probe: RID, mode: Int) {
     val _args = VariantArray.new()
     _args.append(probe)
     _args.append(mode)
-    __method_bind.reflection_probe_set_update_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.reflection_probe_set_update_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun requestFrameDrawnCallback(
@@ -2459,11 +2447,11 @@ open class VisualServer internal constructor(
     _args.append(where)
     _args.append(method)
     _args.append(userdata)
-    __method_bind.request_frame_drawn_callback.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.request_frame_drawn_callback.call(this._handle, _args.toVariant(), 3)
   }
 
   fun scenarioCreate(): RID {
-    val _ret = __method_bind.scenario_create.call(this.toVariant())
+    val _ret = __method_bind.scenario_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -2471,21 +2459,21 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(scenario)
     _args.append(debugMode)
-    __method_bind.scenario_set_debug.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.scenario_set_debug.call(this._handle, _args.toVariant(), 2)
   }
 
   fun scenarioSetEnvironment(scenario: RID, environment: RID) {
     val _args = VariantArray.new()
     _args.append(scenario)
     _args.append(environment)
-    __method_bind.scenario_set_environment.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.scenario_set_environment.call(this._handle, _args.toVariant(), 2)
   }
 
   fun scenarioSetFallbackEnvironment(scenario: RID, environment: RID) {
     val _args = VariantArray.new()
     _args.append(scenario)
     _args.append(environment)
-    __method_bind.scenario_set_fallback_environment.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.scenario_set_fallback_environment.call(this._handle, _args.toVariant(), 2)
   }
 
   fun scenarioSetReflectionAtlasSize(
@@ -2497,7 +2485,7 @@ open class VisualServer internal constructor(
     _args.append(scenario)
     _args.append(size)
     _args.append(subdiv)
-    __method_bind.scenario_set_reflection_atlas_size.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.scenario_set_reflection_atlas_size.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setBootImage(
@@ -2511,27 +2499,27 @@ open class VisualServer internal constructor(
     _args.append(color)
     _args.append(scale)
     _args.append(useFilter)
-    __method_bind.set_boot_image.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.set_boot_image.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setDebugGenerateWireframes(generate: Boolean) {
     val _arg = Variant.new(generate)
-    __method_bind.set_debug_generate_wireframes.call(this.toVariant(), _arg, 1)
+    __method_bind.set_debug_generate_wireframes.call(this._handle, _arg, 1)
   }
 
   fun setDefaultClearColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_default_clear_color.call(this.toVariant(), _arg, 1)
+    __method_bind.set_default_clear_color.call(this._handle, _arg, 1)
   }
 
   fun shaderCreate(): RID {
-    val _ret = __method_bind.shader_create.call(this.toVariant())
+    val _ret = __method_bind.shader_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun shaderGetCode(shader: RID): String {
     val _arg = Variant.new(shader)
-    val _ret = __method_bind.shader_get_code.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shader_get_code.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
@@ -2539,14 +2527,14 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(shader)
     _args.append(name)
-    val _ret = __method_bind.shader_get_default_texture_param.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.shader_get_default_texture_param.call(this._handle, _args.toVariant(),
+        2)
     return _ret.asRID()
   }
 
   fun shaderGetParamList(shader: RID): VariantArray {
     val _arg = Variant.new(shader)
-    val _ret = __method_bind.shader_get_param_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.shader_get_param_list.call(this._handle, _arg, 1)
     return _ret.asArray()
   }
 
@@ -2554,7 +2542,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(shader)
     _args.append(code)
-    __method_bind.shader_set_code.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.shader_set_code.call(this._handle, _args.toVariant(), 2)
   }
 
   fun shaderSetDefaultTextureParam(
@@ -2566,7 +2554,7 @@ open class VisualServer internal constructor(
     _args.append(shader)
     _args.append(name)
     _args.append(texture)
-    __method_bind.shader_set_default_texture_param.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.shader_set_default_texture_param.call(this._handle, _args.toVariant(), 3)
   }
 
   fun skeletonAllocate(
@@ -2578,15 +2566,14 @@ open class VisualServer internal constructor(
     _args.append(skeleton)
     _args.append(bones)
     _args.append(is2dSkeleton)
-    __method_bind.skeleton_allocate.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.skeleton_allocate.call(this._handle, _args.toVariant(), 3)
   }
 
   fun skeletonBoneGetTransform(skeleton: RID, bone: Int): Transform {
     val _args = VariantArray.new()
     _args.append(skeleton)
     _args.append(bone)
-    val _ret = __method_bind.skeleton_bone_get_transform.call(this.toVariant(), _args.toVariant(),
-        2)
+    val _ret = __method_bind.skeleton_bone_get_transform.call(this._handle, _args.toVariant(), 2)
     return _ret.asTransform()
   }
 
@@ -2594,8 +2581,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(skeleton)
     _args.append(bone)
-    val _ret = __method_bind.skeleton_bone_get_transform_2d.call(this.toVariant(),
-        _args.toVariant(), 2)
+    val _ret = __method_bind.skeleton_bone_get_transform_2d.call(this._handle, _args.toVariant(), 2)
     return _ret.asTransform2D()
   }
 
@@ -2608,7 +2594,7 @@ open class VisualServer internal constructor(
     _args.append(skeleton)
     _args.append(bone)
     _args.append(transform)
-    __method_bind.skeleton_bone_set_transform.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.skeleton_bone_set_transform.call(this._handle, _args.toVariant(), 3)
   }
 
   fun skeletonBoneSetTransform2d(
@@ -2620,22 +2606,22 @@ open class VisualServer internal constructor(
     _args.append(skeleton)
     _args.append(bone)
     _args.append(transform)
-    __method_bind.skeleton_bone_set_transform_2d.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.skeleton_bone_set_transform_2d.call(this._handle, _args.toVariant(), 3)
   }
 
   fun skeletonCreate(): RID {
-    val _ret = __method_bind.skeleton_create.call(this.toVariant())
+    val _ret = __method_bind.skeleton_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun skeletonGetBoneCount(skeleton: RID): Int {
     val _arg = Variant.new(skeleton)
-    val _ret = __method_bind.skeleton_get_bone_count.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.skeleton_get_bone_count.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun skyCreate(): RID {
-    val _ret = __method_bind.sky_create.call(this.toVariant())
+    val _ret = __method_bind.sky_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -2648,16 +2634,16 @@ open class VisualServer internal constructor(
     _args.append(sky)
     _args.append(cubeMap)
     _args.append(radianceSize)
-    __method_bind.sky_set_texture.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.sky_set_texture.call(this._handle, _args.toVariant(), 3)
   }
 
   fun spotLightCreate(): RID {
-    val _ret = __method_bind.spot_light_create.call(this.toVariant())
+    val _ret = __method_bind.spot_light_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun sync() {
-    __method_bind.sync.call(this.toVariant())
+    __method_bind.sync.call(this._handle)
   }
 
   fun textureAllocate(
@@ -2677,18 +2663,18 @@ open class VisualServer internal constructor(
     _args.append(format)
     _args.append(type)
     _args.append(flags)
-    __method_bind.texture_allocate.call(this.toVariant(), _args.toVariant(), 7)
+    __method_bind.texture_allocate.call(this._handle, _args.toVariant(), 7)
   }
 
   fun textureBind(texture: RID, number: Int) {
     val _args = VariantArray.new()
     _args.append(texture)
     _args.append(number)
-    __method_bind.texture_bind.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.texture_bind.call(this._handle, _args.toVariant(), 2)
   }
 
   fun textureCreate(): RID {
-    val _ret = __method_bind.texture_create.call(this.toVariant())
+    val _ret = __method_bind.texture_create.call(this._handle)
     return _ret.asRID()
   }
 
@@ -2696,12 +2682,12 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(flags)
-    val _ret = __method_bind.texture_create_from_image.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.texture_create_from_image.call(this._handle, _args.toVariant(), 2)
     return _ret.asRID()
   }
 
   fun textureDebugUsage(): VariantArray {
-    val _ret = __method_bind.texture_debug_usage.call(this.toVariant())
+    val _ret = __method_bind.texture_debug_usage.call(this._handle)
     return _ret.asArray()
   }
 
@@ -2709,55 +2695,55 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(texture)
     _args.append(cubeSide)
-    val _ret = __method_bind.texture_get_data.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.texture_get_data.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Image)!!
   }
 
   fun textureGetDepth(texture: RID): Int {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_depth.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_depth.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun textureGetFlags(texture: RID): Int {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_flags.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_flags.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun textureGetFormat(texture: RID): Image.Format {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_format.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_format.call(this._handle, _arg, 1)
     return Image.Format.from(_ret.asInt())
   }
 
   fun textureGetHeight(texture: RID): Int {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_height.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_height.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun textureGetPath(texture: RID): String {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_path.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_path.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun textureGetTexid(texture: RID): Int {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_texid.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_texid.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun textureGetType(texture: RID): TextureType {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_type.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_type.call(this._handle, _arg, 1)
     return VisualServer.TextureType.from(_ret.asInt())
   }
 
   fun textureGetWidth(texture: RID): Int {
     val _arg = Variant.new(texture)
-    val _ret = __method_bind.texture_get_width.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.texture_get_width.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -2770,7 +2756,7 @@ open class VisualServer internal constructor(
     _args.append(texture)
     _args.append(image)
     _args.append(layer)
-    __method_bind.texture_set_data.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.texture_set_data.call(this._handle, _args.toVariant(), 3)
   }
 
   fun textureSetDataPartial(
@@ -2796,26 +2782,26 @@ open class VisualServer internal constructor(
     _args.append(dstY)
     _args.append(dstMip)
     _args.append(layer)
-    __method_bind.texture_set_data_partial.call(this.toVariant(), _args.toVariant(), 10)
+    __method_bind.texture_set_data_partial.call(this._handle, _args.toVariant(), 10)
   }
 
   fun textureSetFlags(texture: RID, flags: Int) {
     val _args = VariantArray.new()
     _args.append(texture)
     _args.append(flags)
-    __method_bind.texture_set_flags.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.texture_set_flags.call(this._handle, _args.toVariant(), 2)
   }
 
   fun textureSetPath(texture: RID, path: String) {
     val _args = VariantArray.new()
     _args.append(texture)
     _args.append(path)
-    __method_bind.texture_set_path.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.texture_set_path.call(this._handle, _args.toVariant(), 2)
   }
 
   fun textureSetShrinkAllX2OnSetData(shrink: Boolean) {
     val _arg = Variant.new(shrink)
-    __method_bind.texture_set_shrink_all_x2_on_set_data.call(this.toVariant(), _arg, 1)
+    __method_bind.texture_set_shrink_all_x2_on_set_data.call(this._handle, _arg, 1)
   }
 
   fun textureSetSizeOverride(
@@ -2829,26 +2815,26 @@ open class VisualServer internal constructor(
     _args.append(width)
     _args.append(height)
     _args.append(depth)
-    __method_bind.texture_set_size_override.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.texture_set_size_override.call(this._handle, _args.toVariant(), 4)
   }
 
   fun texturesKeepOriginal(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.textures_keep_original.call(this.toVariant(), _arg, 1)
+    __method_bind.textures_keep_original.call(this._handle, _arg, 1)
   }
 
   fun viewportAttachCamera(viewport: RID, camera: RID) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(camera)
-    __method_bind.viewport_attach_camera.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_attach_camera.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportAttachCanvas(viewport: RID, canvas: RID) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(canvas)
-    __method_bind.viewport_attach_canvas.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_attach_canvas.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportAttachToScreen(
@@ -2860,30 +2846,30 @@ open class VisualServer internal constructor(
     _args.append(viewport)
     _args.append(rect)
     _args.append(screen)
-    __method_bind.viewport_attach_to_screen.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.viewport_attach_to_screen.call(this._handle, _args.toVariant(), 3)
   }
 
   fun viewportCreate(): RID {
-    val _ret = __method_bind.viewport_create.call(this.toVariant())
+    val _ret = __method_bind.viewport_create.call(this._handle)
     return _ret.asRID()
   }
 
   fun viewportDetach(viewport: RID) {
     val _arg = Variant.new(viewport)
-    __method_bind.viewport_detach.call(this.toVariant(), _arg, 1)
+    __method_bind.viewport_detach.call(this._handle, _arg, 1)
   }
 
   fun viewportGetRenderInfo(viewport: RID, info: Int): Int {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(info)
-    val _ret = __method_bind.viewport_get_render_info.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.viewport_get_render_info.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun viewportGetTexture(viewport: RID): RID {
     val _arg = Variant.new(viewport)
-    val _ret = __method_bind.viewport_get_texture.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.viewport_get_texture.call(this._handle, _arg, 1)
     return _ret.asRID()
   }
 
@@ -2891,14 +2877,14 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(canvas)
-    __method_bind.viewport_remove_canvas.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_remove_canvas.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetActive(viewport: RID, active: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(active)
-    __method_bind.viewport_set_active.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_active.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetCanvasStacking(
@@ -2912,7 +2898,7 @@ open class VisualServer internal constructor(
     _args.append(canvas)
     _args.append(layer)
     _args.append(sublayer)
-    __method_bind.viewport_set_canvas_stacking.call(this.toVariant(), _args.toVariant(), 4)
+    __method_bind.viewport_set_canvas_stacking.call(this._handle, _args.toVariant(), 4)
   }
 
   fun viewportSetCanvasTransform(
@@ -2924,91 +2910,91 @@ open class VisualServer internal constructor(
     _args.append(viewport)
     _args.append(canvas)
     _args.append(offset)
-    __method_bind.viewport_set_canvas_transform.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.viewport_set_canvas_transform.call(this._handle, _args.toVariant(), 3)
   }
 
   fun viewportSetClearMode(viewport: RID, clearMode: Int) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(clearMode)
-    __method_bind.viewport_set_clear_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_clear_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetDebugDraw(viewport: RID, draw: Int) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(draw)
-    __method_bind.viewport_set_debug_draw.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_debug_draw.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetDisable3d(viewport: RID, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(disabled)
-    __method_bind.viewport_set_disable_3d.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_disable_3d.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetDisableEnvironment(viewport: RID, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(disabled)
-    __method_bind.viewport_set_disable_environment.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_disable_environment.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetGlobalCanvasTransform(viewport: RID, transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(transform)
-    __method_bind.viewport_set_global_canvas_transform.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_global_canvas_transform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetHdr(viewport: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(enabled)
-    __method_bind.viewport_set_hdr.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_hdr.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetHideCanvas(viewport: RID, hidden: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(hidden)
-    __method_bind.viewport_set_hide_canvas.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_hide_canvas.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetHideScenario(viewport: RID, hidden: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(hidden)
-    __method_bind.viewport_set_hide_scenario.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_hide_scenario.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetMsaa(viewport: RID, msaa: Int) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(msaa)
-    __method_bind.viewport_set_msaa.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_msaa.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetParentViewport(viewport: RID, parentViewport: RID) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(parentViewport)
-    __method_bind.viewport_set_parent_viewport.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_parent_viewport.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetRenderDirectToScreen(viewport: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(enabled)
-    __method_bind.viewport_set_render_direct_to_screen.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_render_direct_to_screen.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetScenario(viewport: RID, scenario: RID) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(scenario)
-    __method_bind.viewport_set_scenario.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_scenario.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetShadowAtlasQuadrantSubdivision(
@@ -3020,7 +3006,7 @@ open class VisualServer internal constructor(
     _args.append(viewport)
     _args.append(quadrant)
     _args.append(subdivision)
-    __method_bind.viewport_set_shadow_atlas_quadrant_subdivision.call(this.toVariant(),
+    __method_bind.viewport_set_shadow_atlas_quadrant_subdivision.call(this._handle,
         _args.toVariant(), 3)
   }
 
@@ -3028,7 +3014,7 @@ open class VisualServer internal constructor(
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(size)
-    __method_bind.viewport_set_shadow_atlas_size.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_shadow_atlas_size.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetSize(
@@ -3040,42 +3026,42 @@ open class VisualServer internal constructor(
     _args.append(viewport)
     _args.append(width)
     _args.append(height)
-    __method_bind.viewport_set_size.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.viewport_set_size.call(this._handle, _args.toVariant(), 3)
   }
 
   fun viewportSetTransparentBackground(viewport: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(enabled)
-    __method_bind.viewport_set_transparent_background.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_transparent_background.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetUpdateMode(viewport: RID, updateMode: Int) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(updateMode)
-    __method_bind.viewport_set_update_mode.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_update_mode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetUsage(viewport: RID, usage: Int) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(usage)
-    __method_bind.viewport_set_usage.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_usage.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetUseArvr(viewport: RID, useArvr: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(useArvr)
-    __method_bind.viewport_set_use_arvr.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_use_arvr.call(this._handle, _args.toVariant(), 2)
   }
 
   fun viewportSetVflip(viewport: RID, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(viewport)
     _args.append(enabled)
-    __method_bind.viewport_set_vflip.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.viewport_set_vflip.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class ReflectionProbeUpdateMode(

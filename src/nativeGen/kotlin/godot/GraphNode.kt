@@ -22,159 +22,159 @@ open class GraphNode internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun clearAllSlots() {
-    __method_bind.clear_all_slots.call(this.toVariant())
+    __method_bind.clear_all_slots.call(this._handle)
   }
 
   fun clearSlot(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.clear_slot.call(this.toVariant(), _arg, 1)
+    __method_bind.clear_slot.call(this._handle, _arg, 1)
   }
 
   fun getConnectionInputColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_input_color.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_connection_input_color.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getConnectionInputCount(): Int {
-    val _ret = __method_bind.get_connection_input_count.call(this.toVariant())
+    val _ret = __method_bind.get_connection_input_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getConnectionInputPosition(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_input_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_connection_input_position.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getConnectionInputType(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_input_type.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_connection_input_type.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getConnectionOutputColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_output_color.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_connection_output_color.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getConnectionOutputCount(): Int {
-    val _ret = __method_bind.get_connection_output_count.call(this.toVariant())
+    val _ret = __method_bind.get_connection_output_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getConnectionOutputPosition(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_output_position.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_connection_output_position.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getConnectionOutputType(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_output_type.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_connection_output_type.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.get_offset.call(this.toVariant())
+    val _ret = __method_bind.get_offset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getOverlay(): Overlay {
-    val _ret = __method_bind.get_overlay.call(this.toVariant())
+    val _ret = __method_bind.get_overlay.call(this._handle)
     return GraphNode.Overlay.from(_ret.asInt())
   }
 
   fun getSlotColorLeft(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_color_left.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_slot_color_left.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getSlotColorRight(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_color_right.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_slot_color_right.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getSlotTypeLeft(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_type_left.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_slot_type_left.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getSlotTypeRight(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_type_right.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_slot_type_right.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getTitle(): String {
-    val _ret = __method_bind.get_title.call(this.toVariant())
+    val _ret = __method_bind.get_title.call(this._handle)
     return _ret.asString()
   }
 
   fun isCloseButtonVisible(): Boolean {
-    val _ret = __method_bind.is_close_button_visible.call(this.toVariant())
+    val _ret = __method_bind.is_close_button_visible.call(this._handle)
     return _ret.asBool()
   }
 
   fun isComment(): Boolean {
-    val _ret = __method_bind.is_comment.call(this.toVariant())
+    val _ret = __method_bind.is_comment.call(this._handle)
     return _ret.asBool()
   }
 
   fun isResizable(): Boolean {
-    val _ret = __method_bind.is_resizable.call(this.toVariant())
+    val _ret = __method_bind.is_resizable.call(this._handle)
     return _ret.asBool()
   }
 
   fun isSelected(): Boolean {
-    val _ret = __method_bind.is_selected.call(this.toVariant())
+    val _ret = __method_bind.is_selected.call(this._handle)
     return _ret.asBool()
   }
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_slot_enabled_left.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_slot_enabled_left.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_slot_enabled_right.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_slot_enabled_right.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun setComment(comment: Boolean) {
     val _arg = Variant.new(comment)
-    __method_bind.set_comment.call(this.toVariant(), _arg, 1)
+    __method_bind.set_comment.call(this._handle, _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
+    __method_bind.set_offset.call(this._handle, _arg, 1)
   }
 
   fun setOverlay(overlay: Int) {
     val _arg = Variant.new(overlay)
-    __method_bind.set_overlay.call(this.toVariant(), _arg, 1)
+    __method_bind.set_overlay.call(this._handle, _arg, 1)
   }
 
   fun setResizable(resizable: Boolean) {
     val _arg = Variant.new(resizable)
-    __method_bind.set_resizable.call(this.toVariant(), _arg, 1)
+    __method_bind.set_resizable.call(this._handle, _arg, 1)
   }
 
   fun setSelected(selected: Boolean) {
     val _arg = Variant.new(selected)
-    __method_bind.set_selected.call(this.toVariant(), _arg, 1)
+    __method_bind.set_selected.call(this._handle, _arg, 1)
   }
 
   fun setShowCloseButton(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.set_show_close_button.call(this.toVariant(), _arg, 1)
+    __method_bind.set_show_close_button.call(this._handle, _arg, 1)
   }
 
   fun setSlot(
@@ -198,12 +198,12 @@ open class GraphNode internal constructor(
     _args.append(colorRight)
     _args.append(customLeft)
     _args.append(customRight)
-    __method_bind.set_slot.call(this.toVariant(), _args.toVariant(), 9)
+    __method_bind.set_slot.call(this._handle, _args.toVariant(), 9)
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.set_title.call(this.toVariant(), _arg, 1)
+    __method_bind.set_title.call(this._handle, _arg, 1)
   }
 
   enum class Overlay(

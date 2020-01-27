@@ -18,13 +18,13 @@ open class VisualShaderNodeUniform internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getUniformName(): String {
-    val _ret = __method_bind.get_uniform_name.call(this.toVariant())
+    val _ret = __method_bind.get_uniform_name.call(this._handle)
     return _ret.asString()
   }
 
   fun setUniformName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_uniform_name.call(this.toVariant(), _arg, 1)
+    __method_bind.set_uniform_name.call(this._handle, _arg, 1)
   }
 
   companion object {

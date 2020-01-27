@@ -19,42 +19,42 @@ open class TranslationServer internal constructor(
 ) : Object(_handle) {
   fun addTranslation(translation: Translation) {
     val _arg = Variant.new(translation)
-    __method_bind.add_translation.call(this.toVariant(), _arg, 1)
+    __method_bind.add_translation.call(this._handle, _arg, 1)
   }
 
   fun clear() {
-    __method_bind.clear.call(this.toVariant())
+    __method_bind.clear.call(this._handle)
   }
 
   fun getLoadedLocales(): VariantArray {
-    val _ret = __method_bind.get_loaded_locales.call(this.toVariant())
+    val _ret = __method_bind.get_loaded_locales.call(this._handle)
     return _ret.asArray()
   }
 
   fun getLocale(): String {
-    val _ret = __method_bind.get_locale.call(this.toVariant())
+    val _ret = __method_bind.get_locale.call(this._handle)
     return _ret.asString()
   }
 
   fun getLocaleName(locale: String): String {
     val _arg = Variant.new(locale)
-    val _ret = __method_bind.get_locale_name.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_locale_name.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun removeTranslation(translation: Translation) {
     val _arg = Variant.new(translation)
-    __method_bind.remove_translation.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_translation.call(this._handle, _arg, 1)
   }
 
   fun setLocale(locale: String) {
     val _arg = Variant.new(locale)
-    __method_bind.set_locale.call(this.toVariant(), _arg, 1)
+    __method_bind.set_locale.call(this._handle, _arg, 1)
   }
 
   fun translate(message: String): String {
     val _arg = Variant.new(message)
-    val _ret = __method_bind.translate.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.translate.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 

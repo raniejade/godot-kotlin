@@ -21,39 +21,39 @@ open class RegExMatch internal constructor(
 ) : Reference(_handle) {
   fun getEnd(name: Variant): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_end.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_end.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getGroupCount(): Int {
-    val _ret = __method_bind.get_group_count.call(this.toVariant())
+    val _ret = __method_bind.get_group_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNames(): Dictionary {
-    val _ret = __method_bind.get_names.call(this.toVariant())
+    val _ret = __method_bind.get_names.call(this._handle)
     return _ret.asDictionary()
   }
 
   fun getStart(name: Variant): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_start.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_start.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getString(name: Variant): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_string.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_string.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getStrings(): VariantArray {
-    val _ret = __method_bind.get_strings.call(this.toVariant())
+    val _ret = __method_bind.get_strings.call(this._handle)
     return _ret.asArray()
   }
 
   fun getSubject(): String {
-    val _ret = __method_bind.get_subject.call(this.toVariant())
+    val _ret = __method_bind.get_subject.call(this._handle)
     return _ret.asString()
   }
 

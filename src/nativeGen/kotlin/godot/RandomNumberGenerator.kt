@@ -19,12 +19,12 @@ open class RandomNumberGenerator internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getSeed(): Int {
-    val _ret = __method_bind.get_seed.call(this.toVariant())
+    val _ret = __method_bind.get_seed.call(this._handle)
     return _ret.asInt()
   }
 
   fun randf(): Float {
-    val _ret = __method_bind.randf.call(this.toVariant())
+    val _ret = __method_bind.randf.call(this._handle)
     return _ret.asFloat()
   }
 
@@ -32,7 +32,7 @@ open class RandomNumberGenerator internal constructor(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.randf_range.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.randf_range.call(this._handle, _args.toVariant(), 2)
     return _ret.asFloat()
   }
 
@@ -40,12 +40,12 @@ open class RandomNumberGenerator internal constructor(
     val _args = VariantArray.new()
     _args.append(mean)
     _args.append(deviation)
-    val _ret = __method_bind.randfn.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.randfn.call(this._handle, _args.toVariant(), 2)
     return _ret.asFloat()
   }
 
   fun randi(): Int {
-    val _ret = __method_bind.randi.call(this.toVariant())
+    val _ret = __method_bind.randi.call(this._handle)
     return _ret.asInt()
   }
 
@@ -53,17 +53,17 @@ open class RandomNumberGenerator internal constructor(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.randi_range.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.randi_range.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun randomize() {
-    __method_bind.randomize.call(this.toVariant())
+    __method_bind.randomize.call(this._handle)
   }
 
   fun setSeed(seed: Int) {
     val _arg = Variant.new(seed)
-    __method_bind.set_seed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_seed.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,13 +18,13 @@ open class VisualScriptMathConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getMathConstant(): MathConstant {
-    val _ret = __method_bind.get_math_constant.call(this.toVariant())
+    val _ret = __method_bind.get_math_constant.call(this._handle)
     return VisualScriptMathConstant.MathConstant.from(_ret.asInt())
   }
 
   fun setMathConstant(which: Int) {
     val _arg = Variant.new(which)
-    __method_bind.set_math_constant.call(this.toVariant(), _arg, 1)
+    __method_bind.set_math_constant.call(this._handle, _arg, 1)
   }
 
   enum class MathConstant(

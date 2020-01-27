@@ -17,7 +17,7 @@ open class WeakRef internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getRef(): Variant {
-    val _ret = __method_bind.get_ref.call(this.toVariant())
+    val _ret = __method_bind.get_ref.call(this._handle)
     return _ret
   }
 

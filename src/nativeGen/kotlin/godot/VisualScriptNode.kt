@@ -19,24 +19,24 @@ open class VisualScriptNode internal constructor(
 ) : Resource(_handle) {
   fun getDefaultInputValue(portIdx: Int): Variant {
     val _arg = Variant.new(portIdx)
-    val _ret = __method_bind.get_default_input_value.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_default_input_value.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getVisualScript(): VisualScript {
-    val _ret = __method_bind.get_visual_script.call(this.toVariant())
+    val _ret = __method_bind.get_visual_script.call(this._handle)
     return _ret.asObject(::VisualScript)!!
   }
 
   fun portsChangedNotify() {
-    __method_bind.ports_changed_notify.call(this.toVariant())
+    __method_bind.ports_changed_notify.call(this._handle)
   }
 
   fun setDefaultInputValue(portIdx: Int, value: Variant) {
     val _args = VariantArray.new()
     _args.append(portIdx)
     _args.append(value)
-    __method_bind.set_default_input_value.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_default_input_value.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

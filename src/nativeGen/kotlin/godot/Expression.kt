@@ -29,17 +29,17 @@ open class Expression internal constructor(
     _args.append(inputs)
     _args.append(baseInstance)
     _args.append(showError)
-    val _ret = __method_bind.execute.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.execute.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun getErrorText(): String {
-    val _ret = __method_bind.get_error_text.call(this.toVariant())
+    val _ret = __method_bind.get_error_text.call(this._handle)
     return _ret.asString()
   }
 
   fun hasExecuteFailed(): Boolean {
-    val _ret = __method_bind.has_execute_failed.call(this.toVariant())
+    val _ret = __method_bind.has_execute_failed.call(this._handle)
     return _ret.asBool()
   }
 
@@ -47,7 +47,7 @@ open class Expression internal constructor(
     val _args = VariantArray.new()
     _args.append(expression)
     _args.append(inputNames)
-    val _ret = __method_bind.parse.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.parse.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 

@@ -21,21 +21,21 @@ open class PacketPeerUDP internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {
-    __method_bind.close.call(this.toVariant())
+    __method_bind.close.call(this._handle)
   }
 
   fun getPacketIp(): String {
-    val _ret = __method_bind.get_packet_ip.call(this.toVariant())
+    val _ret = __method_bind.get_packet_ip.call(this._handle)
     return _ret.asString()
   }
 
   fun getPacketPort(): Int {
-    val _ret = __method_bind.get_packet_port.call(this.toVariant())
+    val _ret = __method_bind.get_packet_port.call(this._handle)
     return _ret.asInt()
   }
 
   fun isListening(): Boolean {
-    val _ret = __method_bind.is_listening.call(this.toVariant())
+    val _ret = __method_bind.is_listening.call(this._handle)
     return _ret.asBool()
   }
 
@@ -48,7 +48,7 @@ open class PacketPeerUDP internal constructor(
     _args.append(port)
     _args.append(bindAddress)
     _args.append(recvBufSize)
-    val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.listen.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
@@ -56,12 +56,12 @@ open class PacketPeerUDP internal constructor(
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(port)
-    val _ret = __method_bind.set_dest_address.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.set_dest_address.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun wait(): GDError {
-    val _ret = __method_bind.wait.call(this.toVariant())
+    val _ret = __method_bind.wait.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 

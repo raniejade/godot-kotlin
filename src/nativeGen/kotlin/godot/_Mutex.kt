@@ -18,16 +18,16 @@ open class _Mutex internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun lock() {
-    __method_bind.lock.call(this.toVariant())
+    __method_bind.lock.call(this._handle)
   }
 
   fun tryLock(): GDError {
-    val _ret = __method_bind.try_lock.call(this.toVariant())
+    val _ret = __method_bind.try_lock.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun unlock() {
-    __method_bind.unlock.call(this.toVariant())
+    __method_bind.unlock.call(this._handle)
   }
 
   companion object {

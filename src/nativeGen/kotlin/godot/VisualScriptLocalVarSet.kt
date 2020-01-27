@@ -19,23 +19,23 @@ open class VisualScriptLocalVarSet internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getVarName(): String {
-    val _ret = __method_bind.get_var_name.call(this.toVariant())
+    val _ret = __method_bind.get_var_name.call(this._handle)
     return _ret.asString()
   }
 
   fun getVarType(): Variant.Type {
-    val _ret = __method_bind.get_var_type.call(this.toVariant())
+    val _ret = __method_bind.get_var_type.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun setVarName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_var_name.call(this.toVariant(), _arg, 1)
+    __method_bind.set_var_name.call(this._handle, _arg, 1)
   }
 
   fun setVarType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_var_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_var_type.call(this._handle, _arg, 1)
   }
 
   companion object {

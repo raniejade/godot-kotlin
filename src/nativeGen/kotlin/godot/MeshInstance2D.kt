@@ -17,33 +17,33 @@ open class MeshInstance2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this.toVariant())
+    val _ret = __method_bind.get_mesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.get_normal_map.call(this.toVariant())
+    val _ret = __method_bind.get_normal_map.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this.toVariant())
+    val _ret = __method_bind.get_texture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mesh.call(this._handle, _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
+    __method_bind.set_normal_map.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
+    __method_bind.set_texture.call(this._handle, _arg, 1)
   }
 
   companion object {

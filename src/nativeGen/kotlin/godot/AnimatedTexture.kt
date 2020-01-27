@@ -19,49 +19,49 @@ open class AnimatedTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getFps(): Float {
-    val _ret = __method_bind.get_fps.call(this.toVariant())
+    val _ret = __method_bind.get_fps.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFrameDelay(frame: Int): Float {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.get_frame_delay.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_frame_delay.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getFrameTexture(frame: Int): Texture {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.get_frame_texture.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_frame_texture.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getFrames(): Int {
-    val _ret = __method_bind.get_frames.call(this.toVariant())
+    val _ret = __method_bind.get_frames.call(this._handle)
     return _ret.asInt()
   }
 
   fun setFps(fps: Float) {
     val _arg = Variant.new(fps)
-    __method_bind.set_fps.call(this.toVariant(), _arg, 1)
+    __method_bind.set_fps.call(this._handle, _arg, 1)
   }
 
   fun setFrameDelay(frame: Int, delay: Float) {
     val _args = VariantArray.new()
     _args.append(frame)
     _args.append(delay)
-    __method_bind.set_frame_delay.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_frame_delay.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFrameTexture(frame: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(frame)
     _args.append(texture)
-    __method_bind.set_frame_texture.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_frame_texture.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.set_frames.call(this.toVariant(), _arg, 1)
+    __method_bind.set_frames.call(this._handle, _arg, 1)
   }
 
   companion object {

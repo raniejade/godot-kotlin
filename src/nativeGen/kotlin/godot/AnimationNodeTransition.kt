@@ -21,49 +21,49 @@ open class AnimationNodeTransition internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun getCrossFadeTime(): Float {
-    val _ret = __method_bind.get_cross_fade_time.call(this.toVariant())
+    val _ret = __method_bind.get_cross_fade_time.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getEnabledInputs(): Int {
-    val _ret = __method_bind.get_enabled_inputs.call(this.toVariant())
+    val _ret = __method_bind.get_enabled_inputs.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInputCaption(input: Int): String {
     val _arg = Variant.new(input)
-    val _ret = __method_bind.get_input_caption.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_input_caption.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun isInputSetAsAutoAdvance(input: Int): Boolean {
     val _arg = Variant.new(input)
-    val _ret = __method_bind.is_input_set_as_auto_advance.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.is_input_set_as_auto_advance.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun setCrossFadeTime(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.set_cross_fade_time.call(this.toVariant(), _arg, 1)
+    __method_bind.set_cross_fade_time.call(this._handle, _arg, 1)
   }
 
   fun setEnabledInputs(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.set_enabled_inputs.call(this.toVariant(), _arg, 1)
+    __method_bind.set_enabled_inputs.call(this._handle, _arg, 1)
   }
 
   fun setInputAsAutoAdvance(input: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(input)
     _args.append(enable)
-    __method_bind.set_input_as_auto_advance.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_input_as_auto_advance.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputCaption(input: Int, caption: String) {
     val _args = VariantArray.new()
     _args.append(input)
     _args.append(caption)
-    __method_bind.set_input_caption.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_input_caption.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

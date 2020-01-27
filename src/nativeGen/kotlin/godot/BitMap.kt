@@ -23,29 +23,29 @@ open class BitMap internal constructor(
 ) : Resource(_handle) {
   fun create(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.create.call(this.toVariant(), _arg, 1)
+    __method_bind.create.call(this._handle, _arg, 1)
   }
 
   fun createFromImageAlpha(image: Image, threshold: Float) {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(threshold)
-    __method_bind.create_from_image_alpha.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.create_from_image_alpha.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getBit(position: Vector2): Boolean {
     val _arg = Variant.new(position)
-    val _ret = __method_bind.get_bit.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_bit.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this.toVariant())
+    val _ret = __method_bind.get_size.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getTrueBitCount(): Int {
-    val _ret = __method_bind.get_true_bit_count.call(this.toVariant())
+    val _ret = __method_bind.get_true_bit_count.call(this._handle)
     return _ret.asInt()
   }
 
@@ -53,14 +53,14 @@ open class BitMap internal constructor(
     val _args = VariantArray.new()
     _args.append(pixels)
     _args.append(rect)
-    __method_bind.grow_mask.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.grow_mask.call(this._handle, _args.toVariant(), 2)
   }
 
   fun opaqueToPolygons(rect: Rect2, epsilon: Float): VariantArray {
     val _args = VariantArray.new()
     _args.append(rect)
     _args.append(epsilon)
-    val _ret = __method_bind.opaque_to_polygons.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.opaque_to_polygons.call(this._handle, _args.toVariant(), 2)
     return _ret.asArray()
   }
 
@@ -68,14 +68,14 @@ open class BitMap internal constructor(
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(bit)
-    __method_bind.set_bit.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_bit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setBitRect(rect: Rect2, bit: Boolean) {
     val _args = VariantArray.new()
     _args.append(rect)
     _args.append(bit)
-    __method_bind.set_bit_rect.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_bit_rect.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

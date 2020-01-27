@@ -19,53 +19,53 @@ open class StaticBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun getBounce(): Float {
-    val _ret = __method_bind.get_bounce.call(this.toVariant())
+    val _ret = __method_bind.get_bounce.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getConstantAngularVelocity(): Vector3 {
-    val _ret = __method_bind.get_constant_angular_velocity.call(this.toVariant())
+    val _ret = __method_bind.get_constant_angular_velocity.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getConstantLinearVelocity(): Vector3 {
-    val _ret = __method_bind.get_constant_linear_velocity.call(this.toVariant())
+    val _ret = __method_bind.get_constant_linear_velocity.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.get_friction.call(this.toVariant())
+    val _ret = __method_bind.get_friction.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
-    val _ret = __method_bind.get_physics_material_override.call(this.toVariant())
+    val _ret = __method_bind.get_physics_material_override.call(this._handle)
     return _ret.asObject(::PhysicsMaterial)!!
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.set_bounce.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bounce.call(this._handle, _arg, 1)
   }
 
   fun setConstantAngularVelocity(vel: Vector3) {
     val _arg = Variant.new(vel)
-    __method_bind.set_constant_angular_velocity.call(this.toVariant(), _arg, 1)
+    __method_bind.set_constant_angular_velocity.call(this._handle, _arg, 1)
   }
 
   fun setConstantLinearVelocity(vel: Vector3) {
     val _arg = Variant.new(vel)
-    __method_bind.set_constant_linear_velocity.call(this.toVariant(), _arg, 1)
+    __method_bind.set_constant_linear_velocity.call(this._handle, _arg, 1)
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.set_friction.call(this.toVariant(), _arg, 1)
+    __method_bind.set_friction.call(this._handle, _arg, 1)
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
     val _arg = Variant.new(physicsMaterialOverride)
-    __method_bind.set_physics_material_override.call(this.toVariant(), _arg, 1)
+    __method_bind.set_physics_material_override.call(this._handle, _arg, 1)
   }
 
   companion object {

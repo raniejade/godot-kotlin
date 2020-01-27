@@ -17,7 +17,7 @@ open class ConfirmationDialog internal constructor(
   _handle: COpaquePointer
 ) : AcceptDialog(_handle) {
   fun getCancel(): Button {
-    val _ret = __method_bind.get_cancel.call(this.toVariant())
+    val _ret = __method_bind.get_cancel.call(this._handle)
     return _ret.asObject(::Button)!!
   }
 

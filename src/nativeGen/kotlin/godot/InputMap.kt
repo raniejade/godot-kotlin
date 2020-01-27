@@ -23,26 +23,26 @@ open class InputMap internal constructor(
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(event)
-    __method_bind.action_add_event.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.action_add_event.call(this._handle, _args.toVariant(), 2)
   }
 
   fun actionEraseEvent(action: String, event: InputEvent) {
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(event)
-    __method_bind.action_erase_event.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.action_erase_event.call(this._handle, _args.toVariant(), 2)
   }
 
   fun actionEraseEvents(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.action_erase_events.call(this.toVariant(), _arg, 1)
+    __method_bind.action_erase_events.call(this._handle, _arg, 1)
   }
 
   fun actionHasEvent(action: String, event: InputEvent): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(event)
-    val _ret = __method_bind.action_has_event.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.action_has_event.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
@@ -50,48 +50,48 @@ open class InputMap internal constructor(
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(deadzone)
-    __method_bind.action_set_deadzone.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.action_set_deadzone.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addAction(action: String, deadzone: Float) {
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(deadzone)
-    __method_bind.add_action.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.add_action.call(this._handle, _args.toVariant(), 2)
   }
 
   fun eraseAction(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.erase_action.call(this.toVariant(), _arg, 1)
+    __method_bind.erase_action.call(this._handle, _arg, 1)
   }
 
   fun eventIsAction(event: InputEvent, action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(event)
     _args.append(action)
-    val _ret = __method_bind.event_is_action.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.event_is_action.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun getActionList(action: String): VariantArray {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.get_action_list.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_action_list.call(this._handle, _arg, 1)
     return _ret.asArray()
   }
 
   fun getActions(): VariantArray {
-    val _ret = __method_bind.get_actions.call(this.toVariant())
+    val _ret = __method_bind.get_actions.call(this._handle)
     return _ret.asArray()
   }
 
   fun hasAction(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.has_action.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_action.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun loadFromGlobals() {
-    __method_bind.load_from_globals.call(this.toVariant())
+    __method_bind.load_from_globals.call(this._handle)
   }
 
   companion object {

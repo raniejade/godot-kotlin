@@ -21,51 +21,51 @@ open class VisualInstance internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAabb(): AABB {
-    val _ret = __method_bind.get_aabb.call(this.toVariant())
+    val _ret = __method_bind.get_aabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun getBase(): RID {
-    val _ret = __method_bind.get_base.call(this.toVariant())
+    val _ret = __method_bind.get_base.call(this._handle)
     return _ret.asRID()
   }
 
   fun getInstance(): RID {
-    val _ret = __method_bind.get_instance.call(this.toVariant())
+    val _ret = __method_bind.get_instance.call(this._handle)
     return _ret.asRID()
   }
 
   fun getLayerMask(): Int {
-    val _ret = __method_bind.get_layer_mask.call(this.toVariant())
+    val _ret = __method_bind.get_layer_mask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLayerMaskBit(layer: Int): Boolean {
     val _arg = Variant.new(layer)
-    val _ret = __method_bind.get_layer_mask_bit.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_layer_mask_bit.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getTransformedAabb(): AABB {
-    val _ret = __method_bind.get_transformed_aabb.call(this.toVariant())
+    val _ret = __method_bind.get_transformed_aabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun setBase(base: RID) {
     val _arg = Variant.new(base)
-    __method_bind.set_base.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base.call(this._handle, _arg, 1)
   }
 
   fun setLayerMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_layer_mask.call(this.toVariant(), _arg, 1)
+    __method_bind.set_layer_mask.call(this._handle, _arg, 1)
   }
 
   fun setLayerMaskBit(layer: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(layer)
     _args.append(enabled)
-    __method_bind.set_layer_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_layer_mask_bit.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

@@ -20,12 +20,12 @@ open class EditorNavigationMeshGenerator internal constructor(
     val _args = VariantArray.new()
     _args.append(navMesh)
     _args.append(rootNode)
-    __method_bind.bake.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.bake.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clear(navMesh: NavigationMesh) {
     val _arg = Variant.new(navMesh)
-    __method_bind.clear.call(this.toVariant(), _arg, 1)
+    __method_bind.clear.call(this._handle, _arg, 1)
   }
 
   companion object {

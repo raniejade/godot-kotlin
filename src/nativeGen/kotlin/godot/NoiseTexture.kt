@@ -20,53 +20,53 @@ open class NoiseTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBumpStrength(): Float {
-    val _ret = __method_bind.get_bump_strength.call(this.toVariant())
+    val _ret = __method_bind.get_bump_strength.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getNoise(): OpenSimplexNoise {
-    val _ret = __method_bind.get_noise.call(this.toVariant())
+    val _ret = __method_bind.get_noise.call(this._handle)
     return _ret.asObject(::OpenSimplexNoise)!!
   }
 
   fun getSeamless(): Boolean {
-    val _ret = __method_bind.get_seamless.call(this.toVariant())
+    val _ret = __method_bind.get_seamless.call(this._handle)
     return _ret.asBool()
   }
 
   fun isNormalmap(): Boolean {
-    val _ret = __method_bind.is_normalmap.call(this.toVariant())
+    val _ret = __method_bind.is_normalmap.call(this._handle)
     return _ret.asBool()
   }
 
   fun setAsNormalmap(asNormalmap: Boolean) {
     val _arg = Variant.new(asNormalmap)
-    __method_bind.set_as_normalmap.call(this.toVariant(), _arg, 1)
+    __method_bind.set_as_normalmap.call(this._handle, _arg, 1)
   }
 
   fun setBumpStrength(bumpStrength: Float) {
     val _arg = Variant.new(bumpStrength)
-    __method_bind.set_bump_strength.call(this.toVariant(), _arg, 1)
+    __method_bind.set_bump_strength.call(this._handle, _arg, 1)
   }
 
   fun setHeight(height: Int) {
     val _arg = Variant.new(height)
-    __method_bind.set_height.call(this.toVariant(), _arg, 1)
+    __method_bind.set_height.call(this._handle, _arg, 1)
   }
 
   fun setNoise(noise: OpenSimplexNoise) {
     val _arg = Variant.new(noise)
-    __method_bind.set_noise.call(this.toVariant(), _arg, 1)
+    __method_bind.set_noise.call(this._handle, _arg, 1)
   }
 
   fun setSeamless(seamless: Boolean) {
     val _arg = Variant.new(seamless)
-    __method_bind.set_seamless.call(this.toVariant(), _arg, 1)
+    __method_bind.set_seamless.call(this._handle, _arg, 1)
   }
 
   fun setWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_width.call(this.toVariant(), _arg, 1)
+    __method_bind.set_width.call(this._handle, _arg, 1)
   }
 
   companion object {

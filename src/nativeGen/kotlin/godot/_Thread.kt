@@ -21,12 +21,12 @@ open class _Thread internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getId(): String {
-    val _ret = __method_bind.get_id.call(this.toVariant())
+    val _ret = __method_bind.get_id.call(this._handle)
     return _ret.asString()
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.is_active.call(this.toVariant())
+    val _ret = __method_bind.is_active.call(this._handle)
     return _ret.asBool()
   }
 
@@ -41,12 +41,12 @@ open class _Thread internal constructor(
     _args.append(method)
     _args.append(userdata)
     _args.append(priority)
-    val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 4)
+    val _ret = __method_bind.start.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
   fun waitToFinish(): Variant {
-    val _ret = __method_bind.wait_to_finish.call(this.toVariant())
+    val _ret = __method_bind.wait_to_finish.call(this._handle)
     return _ret
   }
 

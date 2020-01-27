@@ -21,42 +21,42 @@ open class Generic6DOFJoint internal constructor(
 ) : Joint(_handle) {
   fun getFlagX(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag_x.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_flag_x.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getFlagY(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag_y.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_flag_y.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getFlagZ(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag_z.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_flag_z.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getParamX(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param_x.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_param_x.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getParamY(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param_y.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_param_y.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getParamZ(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param_z.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_param_z.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getPrecision(): Int {
-    val _ret = __method_bind.get_precision.call(this.toVariant())
+    val _ret = __method_bind.get_precision.call(this._handle)
     return _ret.asInt()
   }
 
@@ -64,47 +64,47 @@ open class Generic6DOFJoint internal constructor(
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag_x.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_flag_x.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFlagY(flag: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag_y.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_flag_y.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFlagZ(flag: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag_z.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_flag_z.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParamX(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param_x.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_param_x.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParamY(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param_y.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_param_y.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParamZ(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param_z.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_param_z.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPrecision(precision: Int) {
     val _arg = Variant.new(precision)
-    __method_bind.set_precision.call(this.toVariant(), _arg, 1)
+    __method_bind.set_precision.call(this._handle, _arg, 1)
   }
 
   enum class Param(

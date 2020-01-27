@@ -17,7 +17,7 @@ open class PluginScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun new(): Object {
-    val _ret = __method_bind.new.call(this.toVariant())
+    val _ret = __method_bind.new.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 

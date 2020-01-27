@@ -18,23 +18,23 @@ open class VisualScriptOperator internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getOperator(): Variant.Operator {
-    val _ret = __method_bind.get_operator.call(this.toVariant())
+    val _ret = __method_bind.get_operator.call(this._handle)
     return Variant.Operator.from(_ret.asInt())
   }
 
   fun getTyped(): Variant.Type {
-    val _ret = __method_bind.get_typed.call(this.toVariant())
+    val _ret = __method_bind.get_typed.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun setOperator(op: Int) {
     val _arg = Variant.new(op)
-    __method_bind.set_operator.call(this.toVariant(), _arg, 1)
+    __method_bind.set_operator.call(this._handle, _arg, 1)
   }
 
   fun setTyped(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_typed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_typed.call(this._handle, _arg, 1)
   }
 
   companion object {

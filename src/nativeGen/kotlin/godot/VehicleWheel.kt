@@ -19,128 +19,128 @@ open class VehicleWheel internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getDampingCompression(): Float {
-    val _ret = __method_bind.get_damping_compression.call(this.toVariant())
+    val _ret = __method_bind.get_damping_compression.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDampingRelaxation(): Float {
-    val _ret = __method_bind.get_damping_relaxation.call(this.toVariant())
+    val _ret = __method_bind.get_damping_relaxation.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFrictionSlip(): Float {
-    val _ret = __method_bind.get_friction_slip.call(this.toVariant())
+    val _ret = __method_bind.get_friction_slip.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRadius(): Float {
-    val _ret = __method_bind.get_radius.call(this.toVariant())
+    val _ret = __method_bind.get_radius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRollInfluence(): Float {
-    val _ret = __method_bind.get_roll_influence.call(this.toVariant())
+    val _ret = __method_bind.get_roll_influence.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRpm(): Float {
-    val _ret = __method_bind.get_rpm.call(this.toVariant())
+    val _ret = __method_bind.get_rpm.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSkidinfo(): Float {
-    val _ret = __method_bind.get_skidinfo.call(this.toVariant())
+    val _ret = __method_bind.get_skidinfo.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSuspensionMaxForce(): Float {
-    val _ret = __method_bind.get_suspension_max_force.call(this.toVariant())
+    val _ret = __method_bind.get_suspension_max_force.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSuspensionRestLength(): Float {
-    val _ret = __method_bind.get_suspension_rest_length.call(this.toVariant())
+    val _ret = __method_bind.get_suspension_rest_length.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSuspensionStiffness(): Float {
-    val _ret = __method_bind.get_suspension_stiffness.call(this.toVariant())
+    val _ret = __method_bind.get_suspension_stiffness.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSuspensionTravel(): Float {
-    val _ret = __method_bind.get_suspension_travel.call(this.toVariant())
+    val _ret = __method_bind.get_suspension_travel.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isInContact(): Boolean {
-    val _ret = __method_bind.is_in_contact.call(this.toVariant())
+    val _ret = __method_bind.is_in_contact.call(this._handle)
     return _ret.asBool()
   }
 
   fun isUsedAsSteering(): Boolean {
-    val _ret = __method_bind.is_used_as_steering.call(this.toVariant())
+    val _ret = __method_bind.is_used_as_steering.call(this._handle)
     return _ret.asBool()
   }
 
   fun isUsedAsTraction(): Boolean {
-    val _ret = __method_bind.is_used_as_traction.call(this.toVariant())
+    val _ret = __method_bind.is_used_as_traction.call(this._handle)
     return _ret.asBool()
   }
 
   fun setDampingCompression(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_damping_compression.call(this.toVariant(), _arg, 1)
+    __method_bind.set_damping_compression.call(this._handle, _arg, 1)
   }
 
   fun setDampingRelaxation(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_damping_relaxation.call(this.toVariant(), _arg, 1)
+    __method_bind.set_damping_relaxation.call(this._handle, _arg, 1)
   }
 
   fun setFrictionSlip(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_friction_slip.call(this.toVariant(), _arg, 1)
+    __method_bind.set_friction_slip.call(this._handle, _arg, 1)
   }
 
   fun setRadius(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
+    __method_bind.set_radius.call(this._handle, _arg, 1)
   }
 
   fun setRollInfluence(rollInfluence: Float) {
     val _arg = Variant.new(rollInfluence)
-    __method_bind.set_roll_influence.call(this.toVariant(), _arg, 1)
+    __method_bind.set_roll_influence.call(this._handle, _arg, 1)
   }
 
   fun setSuspensionMaxForce(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_suspension_max_force.call(this.toVariant(), _arg, 1)
+    __method_bind.set_suspension_max_force.call(this._handle, _arg, 1)
   }
 
   fun setSuspensionRestLength(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_suspension_rest_length.call(this.toVariant(), _arg, 1)
+    __method_bind.set_suspension_rest_length.call(this._handle, _arg, 1)
   }
 
   fun setSuspensionStiffness(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_suspension_stiffness.call(this.toVariant(), _arg, 1)
+    __method_bind.set_suspension_stiffness.call(this._handle, _arg, 1)
   }
 
   fun setSuspensionTravel(length: Float) {
     val _arg = Variant.new(length)
-    __method_bind.set_suspension_travel.call(this.toVariant(), _arg, 1)
+    __method_bind.set_suspension_travel.call(this._handle, _arg, 1)
   }
 
   fun setUseAsSteering(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_as_steering.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_as_steering.call(this._handle, _arg, 1)
   }
 
   fun setUseAsTraction(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_as_traction.call(this.toVariant(), _arg, 1)
+    __method_bind.set_use_as_traction.call(this._handle, _arg, 1)
   }
 
   companion object {

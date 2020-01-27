@@ -20,17 +20,17 @@ open class BoxContainer internal constructor(
 ) : Container(_handle) {
   fun addSpacer(begin: Boolean) {
     val _arg = Variant.new(begin)
-    __method_bind.add_spacer.call(this.toVariant(), _arg, 1)
+    __method_bind.add_spacer.call(this._handle, _arg, 1)
   }
 
   fun getAlignment(): AlignMode {
-    val _ret = __method_bind.get_alignment.call(this.toVariant())
+    val _ret = __method_bind.get_alignment.call(this._handle)
     return BoxContainer.AlignMode.from(_ret.asInt())
   }
 
   fun setAlignment(alignment: Int) {
     val _arg = Variant.new(alignment)
-    __method_bind.set_alignment.call(this.toVariant(), _arg, 1)
+    __method_bind.set_alignment.call(this._handle, _arg, 1)
   }
 
   enum class AlignMode(

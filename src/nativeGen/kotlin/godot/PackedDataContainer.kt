@@ -20,12 +20,12 @@ open class PackedDataContainer internal constructor(
 ) : Resource(_handle) {
   fun pack(value: Variant): GDError {
     val _arg = Variant.new(value)
-    val _ret = __method_bind.pack.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.pack.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun size(): Int {
-    val _ret = __method_bind.size.call(this.toVariant())
+    val _ret = __method_bind.size.call(this._handle)
     return _ret.asInt()
   }
 

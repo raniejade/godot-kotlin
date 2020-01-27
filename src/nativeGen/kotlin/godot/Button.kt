@@ -20,53 +20,53 @@ open class Button internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getButtonIcon(): Texture {
-    val _ret = __method_bind.get_button_icon.call(this.toVariant())
+    val _ret = __method_bind.get_button_icon.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getClipText(): Boolean {
-    val _ret = __method_bind.get_clip_text.call(this.toVariant())
+    val _ret = __method_bind.get_clip_text.call(this._handle)
     return _ret.asBool()
   }
 
   fun getText(): String {
-    val _ret = __method_bind.get_text.call(this.toVariant())
+    val _ret = __method_bind.get_text.call(this._handle)
     return _ret.asString()
   }
 
   fun getTextAlign(): TextAlign {
-    val _ret = __method_bind.get_text_align.call(this.toVariant())
+    val _ret = __method_bind.get_text_align.call(this._handle)
     return Button.TextAlign.from(_ret.asInt())
   }
 
   fun isFlat(): Boolean {
-    val _ret = __method_bind.is_flat.call(this.toVariant())
+    val _ret = __method_bind.is_flat.call(this._handle)
     return _ret.asBool()
   }
 
   fun setButtonIcon(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_button_icon.call(this.toVariant(), _arg, 1)
+    __method_bind.set_button_icon.call(this._handle, _arg, 1)
   }
 
   fun setClipText(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_clip_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_clip_text.call(this._handle, _arg, 1)
   }
 
   fun setFlat(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_flat.call(this.toVariant(), _arg, 1)
+    __method_bind.set_flat.call(this._handle, _arg, 1)
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_text.call(this.toVariant(), _arg, 1)
+    __method_bind.set_text.call(this._handle, _arg, 1)
   }
 
   fun setTextAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.set_text_align.call(this.toVariant(), _arg, 1)
+    __method_bind.set_text_align.call(this._handle, _arg, 1)
   }
 
   enum class TextAlign(

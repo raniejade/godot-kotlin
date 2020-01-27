@@ -18,13 +18,13 @@ open class GridContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getColumns(): Int {
-    val _ret = __method_bind.get_columns.call(this.toVariant())
+    val _ret = __method_bind.get_columns.call(this._handle)
     return _ret.asInt()
   }
 
   fun setColumns(columns: Int) {
     val _arg = Variant.new(columns)
-    __method_bind.set_columns.call(this.toVariant(), _arg, 1)
+    __method_bind.set_columns.call(this._handle, _arg, 1)
   }
 
   companion object {

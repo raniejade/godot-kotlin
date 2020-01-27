@@ -273,7 +273,7 @@ class APIGenerator {
           if (parameters.size == 1) {
             val parameter = parameters[0]
             builder.addStatement("val _arg = Variant.new(%N)", parameter.name)
-            builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant(), _arg, 1)", method.name)
+            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _arg, 1)", method.name)
           } else {
             builder.addStatement("val _args = VariantArray.new()")
 
@@ -281,10 +281,10 @@ class APIGenerator {
               builder.addStatement("_args.append(%N)", parameter)
             }
 
-            builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant(), _args.toVariant(), %L)", method.name, parameters.size)
+            builder.addStatement("${returnVar}__method_bind.%L.call(this._handle, _args.toVariant(), %L)", method.name, parameters.size)
           }
         } else {
-          builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant())", method.name)
+          builder.addStatement("${returnVar}__method_bind.%L.call(this._handle)", method.name)
         }
 
         if (returnVar.isNotEmpty()) {

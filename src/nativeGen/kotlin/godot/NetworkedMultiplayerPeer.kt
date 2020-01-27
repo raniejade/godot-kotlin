@@ -19,47 +19,47 @@ open class NetworkedMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun getConnectionStatus(): ConnectionStatus {
-    val _ret = __method_bind.get_connection_status.call(this.toVariant())
+    val _ret = __method_bind.get_connection_status.call(this._handle)
     return NetworkedMultiplayerPeer.ConnectionStatus.from(_ret.asInt())
   }
 
   fun getPacketPeer(): Int {
-    val _ret = __method_bind.get_packet_peer.call(this.toVariant())
+    val _ret = __method_bind.get_packet_peer.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTransferMode(): TransferMode {
-    val _ret = __method_bind.get_transfer_mode.call(this.toVariant())
+    val _ret = __method_bind.get_transfer_mode.call(this._handle)
     return NetworkedMultiplayerPeer.TransferMode.from(_ret.asInt())
   }
 
   fun getUniqueId(): Int {
-    val _ret = __method_bind.get_unique_id.call(this.toVariant())
+    val _ret = __method_bind.get_unique_id.call(this._handle)
     return _ret.asInt()
   }
 
   fun isRefusingNewConnections(): Boolean {
-    val _ret = __method_bind.is_refusing_new_connections.call(this.toVariant())
+    val _ret = __method_bind.is_refusing_new_connections.call(this._handle)
     return _ret.asBool()
   }
 
   fun poll() {
-    __method_bind.poll.call(this.toVariant())
+    __method_bind.poll.call(this._handle)
   }
 
   fun setRefuseNewConnections(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_refuse_new_connections.call(this.toVariant(), _arg, 1)
+    __method_bind.set_refuse_new_connections.call(this._handle, _arg, 1)
   }
 
   fun setTargetPeer(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.set_target_peer.call(this.toVariant(), _arg, 1)
+    __method_bind.set_target_peer.call(this._handle, _arg, 1)
   }
 
   fun setTransferMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_transfer_mode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_transfer_mode.call(this._handle, _arg, 1)
   }
 
   enum class ConnectionStatus(

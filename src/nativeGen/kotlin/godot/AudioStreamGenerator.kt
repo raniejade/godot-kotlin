@@ -18,23 +18,23 @@ open class AudioStreamGenerator internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getBufferLength(): Float {
-    val _ret = __method_bind.get_buffer_length.call(this.toVariant())
+    val _ret = __method_bind.get_buffer_length.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMixRate(): Float {
-    val _ret = __method_bind.get_mix_rate.call(this.toVariant())
+    val _ret = __method_bind.get_mix_rate.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setBufferLength(seconds: Float) {
     val _arg = Variant.new(seconds)
-    __method_bind.set_buffer_length.call(this.toVariant(), _arg, 1)
+    __method_bind.set_buffer_length.call(this._handle, _arg, 1)
   }
 
   fun setMixRate(hz: Float) {
     val _arg = Variant.new(hz)
-    __method_bind.set_mix_rate.call(this.toVariant(), _arg, 1)
+    __method_bind.set_mix_rate.call(this._handle, _arg, 1)
   }
 
   companion object {

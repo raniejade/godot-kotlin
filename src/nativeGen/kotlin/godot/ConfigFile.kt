@@ -22,17 +22,17 @@ open class ConfigFile internal constructor(
 ) : Reference(_handle) {
   fun eraseSection(section: String) {
     val _arg = Variant.new(section)
-    __method_bind.erase_section.call(this.toVariant(), _arg, 1)
+    __method_bind.erase_section.call(this._handle, _arg, 1)
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
     val _arg = Variant.new(section)
-    val _ret = __method_bind.get_section_keys.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_section_keys.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getSections(): PoolStringArray {
-    val _ret = __method_bind.get_sections.call(this.toVariant())
+    val _ret = __method_bind.get_sections.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
@@ -45,13 +45,13 @@ open class ConfigFile internal constructor(
     _args.append(section)
     _args.append(key)
     _args.append(default)
-    val _ret = __method_bind.get_value.call(this.toVariant(), _args.toVariant(), 3)
+    val _ret = __method_bind.get_value.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun hasSection(section: String): Boolean {
     val _arg = Variant.new(section)
-    val _ret = __method_bind.has_section.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_section.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
@@ -59,19 +59,19 @@ open class ConfigFile internal constructor(
     val _args = VariantArray.new()
     _args.append(section)
     _args.append(key)
-    val _ret = __method_bind.has_section_key.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.has_section_key.call(this._handle, _args.toVariant(), 2)
     return _ret.asBool()
   }
 
   fun load(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.load.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun save(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.save.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.save.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -84,7 +84,7 @@ open class ConfigFile internal constructor(
     _args.append(section)
     _args.append(key)
     _args.append(value)
-    __method_bind.set_value.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_value.call(this._handle, _args.toVariant(), 3)
   }
 
   companion object {

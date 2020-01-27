@@ -18,7 +18,7 @@ open class PackedDataContainerRef internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun size(): Int {
-    val _ret = __method_bind.size.call(this.toVariant())
+    val _ret = __method_bind.size.call(this._handle)
     return _ret.asInt()
   }
 

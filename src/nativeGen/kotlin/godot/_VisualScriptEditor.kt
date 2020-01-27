@@ -26,14 +26,14 @@ open class _VisualScriptEditor internal constructor(
     _args.append(name)
     _args.append(category)
     _args.append(script)
-    __method_bind.add_custom_node.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_custom_node.call(this._handle, _args.toVariant(), 3)
   }
 
   fun removeCustomNode(name: String, category: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(category)
-    __method_bind.remove_custom_node.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.remove_custom_node.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

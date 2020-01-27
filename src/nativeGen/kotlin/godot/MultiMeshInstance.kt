@@ -17,13 +17,13 @@ open class MultiMeshInstance internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun getMultimesh(): MultiMesh {
-    val _ret = __method_bind.get_multimesh.call(this.toVariant())
+    val _ret = __method_bind.get_multimesh.call(this._handle)
     return _ret.asObject(::MultiMesh)!!
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
     val _arg = Variant.new(multimesh)
-    __method_bind.set_multimesh.call(this.toVariant(), _arg, 1)
+    __method_bind.set_multimesh.call(this._handle, _arg, 1)
   }
 
   companion object {

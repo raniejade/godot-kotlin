@@ -18,23 +18,23 @@ open class SegmentShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getA(): Vector2 {
-    val _ret = __method_bind.get_a.call(this.toVariant())
+    val _ret = __method_bind.get_a.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getB(): Vector2 {
-    val _ret = __method_bind.get_b.call(this.toVariant())
+    val _ret = __method_bind.get_b.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setA(a: Vector2) {
     val _arg = Variant.new(a)
-    __method_bind.set_a.call(this.toVariant(), _arg, 1)
+    __method_bind.set_a.call(this._handle, _arg, 1)
   }
 
   fun setB(b: Vector2) {
     val _arg = Variant.new(b)
-    __method_bind.set_b.call(this.toVariant(), _arg, 1)
+    __method_bind.set_b.call(this._handle, _arg, 1)
   }
 
   companion object {

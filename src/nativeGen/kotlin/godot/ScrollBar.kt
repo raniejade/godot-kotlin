@@ -18,13 +18,13 @@ open class ScrollBar internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getCustomStep(): Float {
-    val _ret = __method_bind.get_custom_step.call(this.toVariant())
+    val _ret = __method_bind.get_custom_step.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setCustomStep(step: Float) {
     val _arg = Variant.new(step)
-    __method_bind.set_custom_step.call(this.toVariant(), _arg, 1)
+    __method_bind.set_custom_step.call(this._handle, _arg, 1)
   }
 
   companion object {

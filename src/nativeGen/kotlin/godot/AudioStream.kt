@@ -18,7 +18,7 @@ open class AudioStream internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getLength(): Float {
-    val _ret = __method_bind.get_length.call(this.toVariant())
+    val _ret = __method_bind.get_length.call(this._handle)
     return _ret.asFloat()
   }
 

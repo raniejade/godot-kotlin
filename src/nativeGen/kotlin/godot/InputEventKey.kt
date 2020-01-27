@@ -19,38 +19,38 @@ open class InputEventKey internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   fun getScancode(): Int {
-    val _ret = __method_bind.get_scancode.call(this.toVariant())
+    val _ret = __method_bind.get_scancode.call(this._handle)
     return _ret.asInt()
   }
 
   fun getScancodeWithModifiers(): Int {
-    val _ret = __method_bind.get_scancode_with_modifiers.call(this.toVariant())
+    val _ret = __method_bind.get_scancode_with_modifiers.call(this._handle)
     return _ret.asInt()
   }
 
   fun getUnicode(): Int {
-    val _ret = __method_bind.get_unicode.call(this.toVariant())
+    val _ret = __method_bind.get_unicode.call(this._handle)
     return _ret.asInt()
   }
 
   fun setEcho(echo: Boolean) {
     val _arg = Variant.new(echo)
-    __method_bind.set_echo.call(this.toVariant(), _arg, 1)
+    __method_bind.set_echo.call(this._handle, _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pressed.call(this._handle, _arg, 1)
   }
 
   fun setScancode(scancode: Int) {
     val _arg = Variant.new(scancode)
-    __method_bind.set_scancode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_scancode.call(this._handle, _arg, 1)
   }
 
   fun setUnicode(unicode: Int) {
     val _arg = Variant.new(unicode)
-    __method_bind.set_unicode.call(this.toVariant(), _arg, 1)
+    __method_bind.set_unicode.call(this._handle, _arg, 1)
   }
 
   companion object {

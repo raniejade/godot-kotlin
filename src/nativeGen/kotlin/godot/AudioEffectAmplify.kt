@@ -18,13 +18,13 @@ open class AudioEffectAmplify internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getVolumeDb(): Float {
-    val _ret = __method_bind.get_volume_db.call(this.toVariant())
+    val _ret = __method_bind.get_volume_db.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setVolumeDb(volume: Float) {
     val _arg = Variant.new(volume)
-    __method_bind.set_volume_db.call(this.toVariant(), _arg, 1)
+    __method_bind.set_volume_db.call(this._handle, _arg, 1)
   }
 
   companion object {

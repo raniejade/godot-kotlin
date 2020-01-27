@@ -23,7 +23,7 @@ open class SpriteFrames internal constructor(
 ) : Resource(_handle) {
   fun addAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.add_animation.call(this.toVariant(), _arg, 1)
+    __method_bind.add_animation.call(this._handle, _arg, 1)
   }
 
   fun addFrame(
@@ -35,32 +35,32 @@ open class SpriteFrames internal constructor(
     _args.append(anim)
     _args.append(frame)
     _args.append(atPosition)
-    __method_bind.add_frame.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.add_frame.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clear(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.clear.call(this.toVariant(), _arg, 1)
+    __method_bind.clear.call(this._handle, _arg, 1)
   }
 
   fun clearAll() {
-    __method_bind.clear_all.call(this.toVariant())
+    __method_bind.clear_all.call(this._handle)
   }
 
   fun getAnimationLoop(anim: String): Boolean {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.get_animation_loop.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_animation_loop.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getAnimationNames(): PoolStringArray {
-    val _ret = __method_bind.get_animation_names.call(this.toVariant())
+    val _ret = __method_bind.get_animation_names.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getAnimationSpeed(anim: String): Float {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.get_animation_speed.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_animation_speed.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -68,53 +68,53 @@ open class SpriteFrames internal constructor(
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(idx)
-    val _ret = __method_bind.get_frame.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.get_frame.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Texture)!!
   }
 
   fun getFrameCount(anim: String): Int {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.get_frame_count.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_frame_count.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun hasAnimation(anim: String): Boolean {
     val _arg = Variant.new(anim)
-    val _ret = __method_bind.has_animation.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_animation.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun removeAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.remove_animation.call(this.toVariant(), _arg, 1)
+    __method_bind.remove_animation.call(this._handle, _arg, 1)
   }
 
   fun removeFrame(anim: String, idx: Int) {
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(idx)
-    __method_bind.remove_frame.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.remove_frame.call(this._handle, _args.toVariant(), 2)
   }
 
   fun renameAnimation(anim: String, newname: String) {
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(newname)
-    __method_bind.rename_animation.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.rename_animation.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setAnimationLoop(anim: String, loop: Boolean) {
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(loop)
-    __method_bind.set_animation_loop.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_animation_loop.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setAnimationSpeed(anim: String, speed: Float) {
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(speed)
-    __method_bind.set_animation_speed.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_animation_speed.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFrame(
@@ -126,7 +126,7 @@ open class SpriteFrames internal constructor(
     _args.append(anim)
     _args.append(idx)
     _args.append(txt)
-    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 3)
+    __method_bind.set_frame.call(this._handle, _args.toVariant(), 3)
   }
 
   companion object {

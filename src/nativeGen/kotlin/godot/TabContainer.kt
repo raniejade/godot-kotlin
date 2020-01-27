@@ -20,123 +20,123 @@ open class TabContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun areTabsVisible(): Boolean {
-    val _ret = __method_bind.are_tabs_visible.call(this.toVariant())
+    val _ret = __method_bind.are_tabs_visible.call(this._handle)
     return _ret.asBool()
   }
 
   fun getCurrentTab(): Int {
-    val _ret = __method_bind.get_current_tab.call(this.toVariant())
+    val _ret = __method_bind.get_current_tab.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCurrentTabControl(): Control {
-    val _ret = __method_bind.get_current_tab_control.call(this.toVariant())
+    val _ret = __method_bind.get_current_tab_control.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getDragToRearrangeEnabled(): Boolean {
-    val _ret = __method_bind.get_drag_to_rearrange_enabled.call(this.toVariant())
+    val _ret = __method_bind.get_drag_to_rearrange_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun getPopup(): Popup {
-    val _ret = __method_bind.get_popup.call(this.toVariant())
+    val _ret = __method_bind.get_popup.call(this._handle)
     return _ret.asObject(::Popup)!!
   }
 
   fun getPreviousTab(): Int {
-    val _ret = __method_bind.get_previous_tab.call(this.toVariant())
+    val _ret = __method_bind.get_previous_tab.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTabAlign(): TabAlign {
-    val _ret = __method_bind.get_tab_align.call(this.toVariant())
+    val _ret = __method_bind.get_tab_align.call(this._handle)
     return TabContainer.TabAlign.from(_ret.asInt())
   }
 
   fun getTabControl(idx: Int): Control {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_tab_control.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_tab_control.call(this._handle, _arg, 1)
     return _ret.asObject(::Control)!!
   }
 
   fun getTabCount(): Int {
-    val _ret = __method_bind.get_tab_count.call(this.toVariant())
+    val _ret = __method_bind.get_tab_count.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTabDisabled(tabIdx: Int): Boolean {
     val _arg = Variant.new(tabIdx)
-    val _ret = __method_bind.get_tab_disabled.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_tab_disabled.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun getTabIcon(tabIdx: Int): Texture {
     val _arg = Variant.new(tabIdx)
-    val _ret = __method_bind.get_tab_icon.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_tab_icon.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTabTitle(tabIdx: Int): String {
     val _arg = Variant.new(tabIdx)
-    val _ret = __method_bind.get_tab_title.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_tab_title.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getTabsRearrangeGroup(): Int {
-    val _ret = __method_bind.get_tabs_rearrange_group.call(this.toVariant())
+    val _ret = __method_bind.get_tabs_rearrange_group.call(this._handle)
     return _ret.asInt()
   }
 
   fun setCurrentTab(tabIdx: Int) {
     val _arg = Variant.new(tabIdx)
-    __method_bind.set_current_tab.call(this.toVariant(), _arg, 1)
+    __method_bind.set_current_tab.call(this._handle, _arg, 1)
   }
 
   fun setDragToRearrangeEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_drag_to_rearrange_enabled.call(this.toVariant(), _arg, 1)
+    __method_bind.set_drag_to_rearrange_enabled.call(this._handle, _arg, 1)
   }
 
   fun setPopup(popup: Node) {
     val _arg = Variant.new(popup)
-    __method_bind.set_popup.call(this.toVariant(), _arg, 1)
+    __method_bind.set_popup.call(this._handle, _arg, 1)
   }
 
   fun setTabAlign(align: Int) {
     val _arg = Variant.new(align)
-    __method_bind.set_tab_align.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tab_align.call(this._handle, _arg, 1)
   }
 
   fun setTabDisabled(tabIdx: Int, disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(tabIdx)
     _args.append(disabled)
-    __method_bind.set_tab_disabled.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_tab_disabled.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setTabIcon(tabIdx: Int, icon: Texture) {
     val _args = VariantArray.new()
     _args.append(tabIdx)
     _args.append(icon)
-    __method_bind.set_tab_icon.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_tab_icon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setTabTitle(tabIdx: Int, title: String) {
     val _args = VariantArray.new()
     _args.append(tabIdx)
     _args.append(title)
-    __method_bind.set_tab_title.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_tab_title.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setTabsRearrangeGroup(groupId: Int) {
     val _arg = Variant.new(groupId)
-    __method_bind.set_tabs_rearrange_group.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tabs_rearrange_group.call(this._handle, _arg, 1)
   }
 
   fun setTabsVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.set_tabs_visible.call(this.toVariant(), _arg, 1)
+    __method_bind.set_tabs_visible.call(this._handle, _arg, 1)
   }
 
   enum class TabAlign(

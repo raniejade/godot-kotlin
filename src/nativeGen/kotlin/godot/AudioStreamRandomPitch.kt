@@ -18,23 +18,23 @@ open class AudioStreamRandomPitch internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getAudioStream(): AudioStream {
-    val _ret = __method_bind.get_audio_stream.call(this.toVariant())
+    val _ret = __method_bind.get_audio_stream.call(this._handle)
     return _ret.asObject(::AudioStream)!!
   }
 
   fun getRandomPitch(): Float {
-    val _ret = __method_bind.get_random_pitch.call(this.toVariant())
+    val _ret = __method_bind.get_random_pitch.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setAudioStream(stream: AudioStream) {
     val _arg = Variant.new(stream)
-    __method_bind.set_audio_stream.call(this.toVariant(), _arg, 1)
+    __method_bind.set_audio_stream.call(this._handle, _arg, 1)
   }
 
   fun setRandomPitch(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.set_random_pitch.call(this.toVariant(), _arg, 1)
+    __method_bind.set_random_pitch.call(this._handle, _arg, 1)
   }
 
   companion object {

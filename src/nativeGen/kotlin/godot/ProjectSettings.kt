@@ -23,70 +23,70 @@ open class ProjectSettings internal constructor(
 ) : Object(_handle) {
   fun addPropertyInfo(hint: Dictionary) {
     val _arg = Variant.new(hint)
-    __method_bind.add_property_info.call(this.toVariant(), _arg, 1)
+    __method_bind.add_property_info.call(this._handle, _arg, 1)
   }
 
   fun clear(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.clear.call(this.toVariant(), _arg, 1)
+    __method_bind.clear.call(this._handle, _arg, 1)
   }
 
   fun getOrder(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_order.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_order.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getSetting(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_setting.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_setting.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun globalizePath(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.globalize_path.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.globalize_path.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun hasSetting(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_setting.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.has_setting.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun loadResourcePack(pack: String): Boolean {
     val _arg = Variant.new(pack)
-    val _ret = __method_bind.load_resource_pack.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.load_resource_pack.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun localizePath(path: String): String {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.localize_path.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.localize_path.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.property_can_revert.call(this._handle, _arg, 1)
     return _ret.asBool()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.property_get_revert.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun save(): GDError {
-    val _ret = __method_bind.save.call(this.toVariant())
+    val _ret = __method_bind.save.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun saveCustom(file: String): GDError {
     val _arg = Variant.new(file)
-    val _ret = __method_bind.save_custom.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.save_custom.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -94,21 +94,21 @@ open class ProjectSettings internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(value)
-    __method_bind.set_initial_value.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_initial_value.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setOrder(name: String, position: Int) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(position)
-    __method_bind.set_order.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_order.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setSetting(name: String, value: Variant) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(value)
-    __method_bind.set_setting.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.set_setting.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {

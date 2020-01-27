@@ -18,13 +18,13 @@ open class VisualScriptSelect internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getTyped(): Variant.Type {
-    val _ret = __method_bind.get_typed.call(this.toVariant())
+    val _ret = __method_bind.get_typed.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun setTyped(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_typed.call(this.toVariant(), _arg, 1)
+    __method_bind.set_typed.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,83 +18,83 @@ open class InputEventMIDI internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getChannel(): Int {
-    val _ret = __method_bind.get_channel.call(this.toVariant())
+    val _ret = __method_bind.get_channel.call(this._handle)
     return _ret.asInt()
   }
 
   fun getControllerNumber(): Int {
-    val _ret = __method_bind.get_controller_number.call(this.toVariant())
+    val _ret = __method_bind.get_controller_number.call(this._handle)
     return _ret.asInt()
   }
 
   fun getControllerValue(): Int {
-    val _ret = __method_bind.get_controller_value.call(this.toVariant())
+    val _ret = __method_bind.get_controller_value.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInstrument(): Int {
-    val _ret = __method_bind.get_instrument.call(this.toVariant())
+    val _ret = __method_bind.get_instrument.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMessage(): Int {
-    val _ret = __method_bind.get_message.call(this.toVariant())
+    val _ret = __method_bind.get_message.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPitch(): Int {
-    val _ret = __method_bind.get_pitch.call(this.toVariant())
+    val _ret = __method_bind.get_pitch.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPressure(): Int {
-    val _ret = __method_bind.get_pressure.call(this.toVariant())
+    val _ret = __method_bind.get_pressure.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVelocity(): Int {
-    val _ret = __method_bind.get_velocity.call(this.toVariant())
+    val _ret = __method_bind.get_velocity.call(this._handle)
     return _ret.asInt()
   }
 
   fun setChannel(channel: Int) {
     val _arg = Variant.new(channel)
-    __method_bind.set_channel.call(this.toVariant(), _arg, 1)
+    __method_bind.set_channel.call(this._handle, _arg, 1)
   }
 
   fun setControllerNumber(controllerNumber: Int) {
     val _arg = Variant.new(controllerNumber)
-    __method_bind.set_controller_number.call(this.toVariant(), _arg, 1)
+    __method_bind.set_controller_number.call(this._handle, _arg, 1)
   }
 
   fun setControllerValue(controllerValue: Int) {
     val _arg = Variant.new(controllerValue)
-    __method_bind.set_controller_value.call(this.toVariant(), _arg, 1)
+    __method_bind.set_controller_value.call(this._handle, _arg, 1)
   }
 
   fun setInstrument(instrument: Int) {
     val _arg = Variant.new(instrument)
-    __method_bind.set_instrument.call(this.toVariant(), _arg, 1)
+    __method_bind.set_instrument.call(this._handle, _arg, 1)
   }
 
   fun setMessage(message: Int) {
     val _arg = Variant.new(message)
-    __method_bind.set_message.call(this.toVariant(), _arg, 1)
+    __method_bind.set_message.call(this._handle, _arg, 1)
   }
 
   fun setPitch(pitch: Int) {
     val _arg = Variant.new(pitch)
-    __method_bind.set_pitch.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pitch.call(this._handle, _arg, 1)
   }
 
   fun setPressure(pressure: Int) {
     val _arg = Variant.new(pressure)
-    __method_bind.set_pressure.call(this.toVariant(), _arg, 1)
+    __method_bind.set_pressure.call(this._handle, _arg, 1)
   }
 
   fun setVelocity(velocity: Int) {
     val _arg = Variant.new(velocity)
-    __method_bind.set_velocity.call(this.toVariant(), _arg, 1)
+    __method_bind.set_velocity.call(this._handle, _arg, 1)
   }
 
   companion object {

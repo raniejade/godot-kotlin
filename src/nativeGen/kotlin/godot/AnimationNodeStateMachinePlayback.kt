@@ -20,32 +20,32 @@ open class AnimationNodeStateMachinePlayback internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCurrentNode(): String {
-    val _ret = __method_bind.get_current_node.call(this.toVariant())
+    val _ret = __method_bind.get_current_node.call(this._handle)
     return _ret.asString()
   }
 
   fun getTravelPath(): PoolStringArray {
-    val _ret = __method_bind.get_travel_path.call(this.toVariant())
+    val _ret = __method_bind.get_travel_path.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this.toVariant())
+    val _ret = __method_bind.is_playing.call(this._handle)
     return _ret.asBool()
   }
 
   fun start(node: String) {
     val _arg = Variant.new(node)
-    __method_bind.start.call(this.toVariant(), _arg, 1)
+    __method_bind.start.call(this._handle, _arg, 1)
   }
 
   fun stop() {
-    __method_bind.stop.call(this.toVariant())
+    __method_bind.stop.call(this._handle)
   }
 
   fun travel(toNode: String) {
     val _arg = Variant.new(toNode)
-    __method_bind.travel.call(this.toVariant(), _arg, 1)
+    __method_bind.travel.call(this._handle, _arg, 1)
   }
 
   companion object {

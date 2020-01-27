@@ -23,177 +23,177 @@ open class StreamPeer internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun get16(): Int {
-    val _ret = __method_bind.get_16.call(this.toVariant())
+    val _ret = __method_bind.get_16.call(this._handle)
     return _ret.asInt()
   }
 
   fun get32(): Int {
-    val _ret = __method_bind.get_32.call(this.toVariant())
+    val _ret = __method_bind.get_32.call(this._handle)
     return _ret.asInt()
   }
 
   fun get64(): Int {
-    val _ret = __method_bind.get_64.call(this.toVariant())
+    val _ret = __method_bind.get_64.call(this._handle)
     return _ret.asInt()
   }
 
   fun get8(): Int {
-    val _ret = __method_bind.get_8.call(this.toVariant())
+    val _ret = __method_bind.get_8.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAvailableBytes(): Int {
-    val _ret = __method_bind.get_available_bytes.call(this.toVariant())
+    val _ret = __method_bind.get_available_bytes.call(this._handle)
     return _ret.asInt()
   }
 
   fun getData(bytes: Int): VariantArray {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_data.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_data.call(this._handle, _arg, 1)
     return _ret.asArray()
   }
 
   fun getDouble(): Float {
-    val _ret = __method_bind.get_double.call(this.toVariant())
+    val _ret = __method_bind.get_double.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFloat(): Float {
-    val _ret = __method_bind.get_float.call(this.toVariant())
+    val _ret = __method_bind.get_float.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPartialData(bytes: Int): VariantArray {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_partial_data.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_partial_data.call(this._handle, _arg, 1)
     return _ret.asArray()
   }
 
   fun getString(bytes: Int): String {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_string.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_string.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getU16(): Int {
-    val _ret = __method_bind.get_u16.call(this.toVariant())
+    val _ret = __method_bind.get_u16.call(this._handle)
     return _ret.asInt()
   }
 
   fun getU32(): Int {
-    val _ret = __method_bind.get_u32.call(this.toVariant())
+    val _ret = __method_bind.get_u32.call(this._handle)
     return _ret.asInt()
   }
 
   fun getU64(): Int {
-    val _ret = __method_bind.get_u64.call(this.toVariant())
+    val _ret = __method_bind.get_u64.call(this._handle)
     return _ret.asInt()
   }
 
   fun getU8(): Int {
-    val _ret = __method_bind.get_u8.call(this.toVariant())
+    val _ret = __method_bind.get_u8.call(this._handle)
     return _ret.asInt()
   }
 
   fun getUtf8String(bytes: Int): String {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_utf8_string.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_utf8_string.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean): Variant {
     val _arg = Variant.new(allowObjects)
-    val _ret = __method_bind.get_var.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.get_var.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun isBigEndianEnabled(): Boolean {
-    val _ret = __method_bind.is_big_endian_enabled.call(this.toVariant())
+    val _ret = __method_bind.is_big_endian_enabled.call(this._handle)
     return _ret.asBool()
   }
 
   fun put16(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_16.call(this.toVariant(), _arg, 1)
+    __method_bind.put_16.call(this._handle, _arg, 1)
   }
 
   fun put32(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_32.call(this.toVariant(), _arg, 1)
+    __method_bind.put_32.call(this._handle, _arg, 1)
   }
 
   fun put64(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_64.call(this.toVariant(), _arg, 1)
+    __method_bind.put_64.call(this._handle, _arg, 1)
   }
 
   fun put8(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_8.call(this.toVariant(), _arg, 1)
+    __method_bind.put_8.call(this._handle, _arg, 1)
   }
 
   fun putData(data: PoolByteArray): GDError {
     val _arg = Variant.new(data)
-    val _ret = __method_bind.put_data.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.put_data.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun putDouble(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.put_double.call(this.toVariant(), _arg, 1)
+    __method_bind.put_double.call(this._handle, _arg, 1)
   }
 
   fun putFloat(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.put_float.call(this.toVariant(), _arg, 1)
+    __method_bind.put_float.call(this._handle, _arg, 1)
   }
 
   fun putPartialData(data: PoolByteArray): VariantArray {
     val _arg = Variant.new(data)
-    val _ret = __method_bind.put_partial_data.call(this.toVariant(), _arg, 1)
+    val _ret = __method_bind.put_partial_data.call(this._handle, _arg, 1)
     return _ret.asArray()
   }
 
   fun putString(value: String) {
     val _arg = Variant.new(value)
-    __method_bind.put_string.call(this.toVariant(), _arg, 1)
+    __method_bind.put_string.call(this._handle, _arg, 1)
   }
 
   fun putU16(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u16.call(this.toVariant(), _arg, 1)
+    __method_bind.put_u16.call(this._handle, _arg, 1)
   }
 
   fun putU32(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u32.call(this.toVariant(), _arg, 1)
+    __method_bind.put_u32.call(this._handle, _arg, 1)
   }
 
   fun putU64(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u64.call(this.toVariant(), _arg, 1)
+    __method_bind.put_u64.call(this._handle, _arg, 1)
   }
 
   fun putU8(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u8.call(this.toVariant(), _arg, 1)
+    __method_bind.put_u8.call(this._handle, _arg, 1)
   }
 
   fun putUtf8String(value: String) {
     val _arg = Variant.new(value)
-    __method_bind.put_utf8_string.call(this.toVariant(), _arg, 1)
+    __method_bind.put_utf8_string.call(this._handle, _arg, 1)
   }
 
   fun putVar(value: Variant, fullObjects: Boolean) {
     val _args = VariantArray.new()
     _args.append(value)
     _args.append(fullObjects)
-    __method_bind.put_var.call(this.toVariant(), _args.toVariant(), 2)
+    __method_bind.put_var.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setBigEndian(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_big_endian.call(this.toVariant(), _arg, 1)
+    __method_bind.set_big_endian.call(this._handle, _arg, 1)
   }
 
   companion object {

@@ -18,23 +18,23 @@ open class VisualScriptClassConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBaseType(): String {
-    val _ret = __method_bind.get_base_type.call(this.toVariant())
+    val _ret = __method_bind.get_base_type.call(this._handle)
     return _ret.asString()
   }
 
   fun getClassConstant(): String {
-    val _ret = __method_bind.get_class_constant.call(this.toVariant())
+    val _ret = __method_bind.get_class_constant.call(this._handle)
     return _ret.asString()
   }
 
   fun setBaseType(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
+    __method_bind.set_base_type.call(this._handle, _arg, 1)
   }
 
   fun setClassConstant(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_class_constant.call(this.toVariant(), _arg, 1)
+    __method_bind.set_class_constant.call(this._handle, _arg, 1)
   }
 
   companion object {

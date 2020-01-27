@@ -24,37 +24,37 @@ open class StreamPeerTCP internal constructor(
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(port)
-    val _ret = __method_bind.connect_to_host.call(this.toVariant(), _args.toVariant(), 2)
+    val _ret = __method_bind.connect_to_host.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun disconnectFromHost() {
-    __method_bind.disconnect_from_host.call(this.toVariant())
+    __method_bind.disconnect_from_host.call(this._handle)
   }
 
   fun getConnectedHost(): String {
-    val _ret = __method_bind.get_connected_host.call(this.toVariant())
+    val _ret = __method_bind.get_connected_host.call(this._handle)
     return _ret.asString()
   }
 
   fun getConnectedPort(): Int {
-    val _ret = __method_bind.get_connected_port.call(this.toVariant())
+    val _ret = __method_bind.get_connected_port.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStatus(): Status {
-    val _ret = __method_bind.get_status.call(this.toVariant())
+    val _ret = __method_bind.get_status.call(this._handle)
     return StreamPeerTCP.Status.from(_ret.asInt())
   }
 
   fun isConnectedToHost(): Boolean {
-    val _ret = __method_bind.is_connected_to_host.call(this.toVariant())
+    val _ret = __method_bind.is_connected_to_host.call(this._handle)
     return _ret.asBool()
   }
 
   fun setNoDelay(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_no_delay.call(this.toVariant(), _arg, 1)
+    __method_bind.set_no_delay.call(this._handle, _arg, 1)
   }
 
   enum class Status(
