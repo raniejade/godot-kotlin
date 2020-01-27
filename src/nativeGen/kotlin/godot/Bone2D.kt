@@ -67,61 +67,47 @@ open class Bone2D internal constructor(
      * Container for method_bind pointers for Bone2D
      */
     private object __method_bind {
-      val apply_rest: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "apply_rest".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method apply_rest" }
-            }
-          }
-
-      val get_default_length: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "get_default_length".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_default_length" }
-            }
-          }
-
-      val get_index_in_skeleton: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "get_index_in_skeleton".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_index_in_skeleton" }
-            }
-          }
-
-      val get_rest: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "get_rest".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_rest" }
-            }
-          }
-
-      val get_skeleton_rest: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "get_skeleton_rest".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_skeleton_rest" }
-            }
-          }
-
-      val set_default_length: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "set_default_length".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_default_length" }
-            }
-          }
-
-      val set_rest: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
-              "set_rest".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_rest" }
-            }
-          }
-    }
+      val apply_rest: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "apply_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method apply_rest" }
+        }
+      val get_default_length: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "get_default_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_default_length" }
+        }
+      val get_index_in_skeleton: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "get_index_in_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_index_in_skeleton" }
+        }
+      val get_rest: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "get_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rest" }
+        }
+      val get_skeleton_rest: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "get_skeleton_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_skeleton_rest" }
+        }
+      val set_default_length: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "set_default_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_length" }
+        }
+      val set_rest: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Bone2D".cstr.ptr,
+            "set_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rest" }
+        }}
   }
 }

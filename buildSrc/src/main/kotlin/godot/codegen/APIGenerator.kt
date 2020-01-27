@@ -162,16 +162,19 @@ class APIGenerator {
     if (cls.singleton) {
       companionObjectBuilder.addProperty(
         PropertySpec.builder("Instance", className)
-          .initializer("""
-            memScoped {
-              val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
-              requireNotNull(handle) { %S }
-              %L(
-                handle
-              )
-            }
-          """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
-          .build()
+          .getter(
+            FunSpec.getterBuilder()
+              .addCode("""
+                return memScoped {
+                  val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)(%S.cstr.ptr)
+                  requireNotNull(handle) { %S }
+                  %L(
+                    handle
+                  )
+                }
+               """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
+              .build()
+          ).build()
       )
     }
 
@@ -201,15 +204,15 @@ class APIGenerator {
     val methodBindProperties = methods.filter { method -> !method.is_virtual }
       .map { method ->
         PropertySpec.builder(method.name, METHOD_BIND_TYPE)
-          .delegate("""
-            lazy {
-              memScoped {
-                val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
-                requireNotNull(ptr) { %S }
-              }
-            }
-          """.trimIndent(), className, method.name, "No method_bind found for method ${method.name}")
-          .build()
+          .getter(FunSpec.getterBuilder()
+            .addCode("""
+                return memScoped {
+                  val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
+                  requireNotNull(ptr) { %S }
+                }
+              """.trimIndent(), className, method.name, "No method_bind found for method ${method.name}")
+            .build()
+          ).build()
       }
     builder.addProperties(methodBindProperties)
 

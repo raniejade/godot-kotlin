@@ -91,59 +91,47 @@ open class DynamicFontData internal constructor(
      * Container for method_bind pointers for DynamicFontData
      */
     private object __method_bind {
-      val get_font_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
-              "get_font_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_font_path" }
-            }
-          }
-
-      val get_hinting: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
-              "get_hinting".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_hinting" }
-            }
-          }
-
-      val is_antialiased: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
-              "is_antialiased".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_antialiased" }
-            }
-          }
-
-      val set_antialiased: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
-              "set_antialiased".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
-            }
-          }
-
-      val set_font_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
-              "set_font_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_font_path" }
-            }
-          }
-
-      val set_hinting: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
-              "set_hinting".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_hinting" }
-            }
-          }
-    }
+      val get_font_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
+            "get_font_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_font_path" }
+        }
+      val get_hinting: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
+            "get_hinting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_hinting" }
+        }
+      val is_antialiased: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
+            "is_antialiased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_antialiased" }
+        }
+      val set_antialiased: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
+            "set_antialiased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
+        }
+      val set_font_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
+            "set_font_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_font_path" }
+        }
+      val set_hinting: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFontData".cstr.ptr,
+            "set_hinting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hinting" }
+        }}
   }
 }

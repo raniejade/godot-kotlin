@@ -40,21 +40,17 @@ open class Path internal constructor(
      * Container for method_bind pointers for Path
      */
     private object __method_bind {
-      val get_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path".cstr.ptr,
-              "get_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_curve" }
-            }
-          }
-
-      val set_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path".cstr.ptr,
-              "set_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_curve" }
-            }
-          }
-    }
+      val get_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path".cstr.ptr,
+            "get_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_curve" }
+        }
+      val set_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path".cstr.ptr,
+            "set_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_curve" }
+        }}
   }
 }

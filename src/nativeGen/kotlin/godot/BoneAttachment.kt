@@ -42,23 +42,19 @@ open class BoneAttachment internal constructor(
      * Container for method_bind pointers for BoneAttachment
      */
     private object __method_bind {
-      val get_bone_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoneAttachment".cstr.ptr,
-              "get_bone_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bone_name" }
-            }
-          }
-
-      val set_bone_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoneAttachment".cstr.ptr,
-              "set_bone_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_bone_name" }
-            }
-          }
-    }
+      val get_bone_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoneAttachment".cstr.ptr,
+            "get_bone_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_name" }
+        }
+      val set_bone_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoneAttachment".cstr.ptr,
+            "set_bone_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_name" }
+        }}
   }
 }

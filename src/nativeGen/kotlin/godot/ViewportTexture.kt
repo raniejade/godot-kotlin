@@ -42,23 +42,19 @@ open class ViewportTexture internal constructor(
      * Container for method_bind pointers for ViewportTexture
      */
     private object __method_bind {
-      val get_viewport_path_in_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
-              "get_viewport_path_in_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_viewport_path_in_scene" }
-            }
-          }
-
-      val set_viewport_path_in_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
-              "set_viewport_path_in_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_viewport_path_in_scene" }
-            }
-          }
-    }
+      val get_viewport_path_in_scene: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
+            "get_viewport_path_in_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_viewport_path_in_scene" }
+        }
+      val set_viewport_path_in_scene: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
+            "set_viewport_path_in_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_viewport_path_in_scene" }
+        }}
   }
 }

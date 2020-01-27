@@ -85,23 +85,19 @@ open class ConeTwistJoint internal constructor(
      * Container for method_bind pointers for ConeTwistJoint
      */
     private object __method_bind {
-      val get_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-              "get_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_param" }
-            }
-          }
-
-      val set_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-              "set_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_param" }
-            }
-          }
-    }
+      val get_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
+            "get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param" }
+        }
+      val set_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
+            "set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param" }
+        }}
   }
 }

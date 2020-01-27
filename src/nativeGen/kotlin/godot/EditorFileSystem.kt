@@ -68,86 +68,68 @@ open class EditorFileSystem internal constructor(
      * Container for method_bind pointers for EditorFileSystem
      */
     private object __method_bind {
-      val get_file_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "get_file_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_file_type" }
-            }
-          }
-
-      val get_filesystem: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "get_filesystem".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_filesystem" }
-            }
-          }
-
-      val get_filesystem_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "get_filesystem_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_filesystem_path" }
-            }
-          }
-
-      val get_scanning_progress: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "get_scanning_progress".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_scanning_progress" }
-            }
-          }
-
-      val is_scanning: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "is_scanning".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_scanning" }
-            }
-          }
-
-      val scan: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "scan".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method scan" }
-            }
-          }
-
-      val scan_sources: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "scan_sources".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method scan_sources" }
-            }
-          }
-
-      val update_file: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "update_file".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method update_file" }
-            }
-          }
-
-      val update_script_classes: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
-              "update_script_classes".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method update_script_classes" }
-            }
-          }
-    }
+      val get_file_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "get_file_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_file_type" }
+        }
+      val get_filesystem: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "get_filesystem".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_filesystem" }
+        }
+      val get_filesystem_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "get_filesystem_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_filesystem_path" }
+        }
+      val get_scanning_progress: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "get_scanning_progress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scanning_progress" }
+        }
+      val is_scanning: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "is_scanning".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_scanning" }
+        }
+      val scan: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "scan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scan" }
+        }
+      val scan_sources: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "scan_sources".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scan_sources" }
+        }
+      val update_file: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "update_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_file" }
+        }
+      val update_script_classes: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystem".cstr.ptr,
+            "update_script_classes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_script_classes" }
+        }}
   }
 }

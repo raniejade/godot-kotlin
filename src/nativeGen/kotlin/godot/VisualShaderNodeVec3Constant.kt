@@ -42,23 +42,19 @@ open class VisualShaderNodeVec3Constant internal constructor(
      * Container for method_bind pointers for VisualShaderNodeVec3Constant
      */
     private object __method_bind {
-      val get_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVec3Constant".cstr.ptr,
-              "get_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_constant" }
-            }
-          }
-
-      val set_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVec3Constant".cstr.ptr,
-              "set_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_constant" }
-            }
-          }
-    }
+      val get_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVec3Constant".cstr.ptr,
+            "get_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constant" }
+        }
+      val set_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVec3Constant".cstr.ptr,
+            "set_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constant" }
+        }}
   }
 }

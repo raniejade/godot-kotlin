@@ -41,23 +41,17 @@ open class ARVROrigin internal constructor(
      * Container for method_bind pointers for ARVROrigin
      */
     private object __method_bind {
-      val get_world_scale: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
-              "get_world_scale".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_world_scale" }
-            }
-          }
-
-      val set_world_scale: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
-              "set_world_scale".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_world_scale" }
-            }
-          }
-    }
+      val get_world_scale: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
+            "get_world_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_world_scale" }
+        }
+      val set_world_scale: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
+            "set_world_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_world_scale" }
+        }}
   }
 }

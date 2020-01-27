@@ -179,122 +179,96 @@ open class AnimationNode internal constructor(
      * Container for method_bind pointers for AnimationNode
      */
     private object __method_bind {
-      val add_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "add_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_input" }
-            }
-          }
-
-      val blend_animation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "blend_animation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method blend_animation" }
-            }
-          }
-
-      val blend_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "blend_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method blend_input" }
-            }
-          }
-
-      val blend_node: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "blend_node".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method blend_node" }
-            }
-          }
-
-      val get_input_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "get_input_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_input_count" }
-            }
-          }
-
-      val get_input_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "get_input_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_input_name" }
-            }
-          }
-
-      val get_parameter: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "get_parameter".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_parameter" }
-            }
-          }
-
-      val is_filter_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "is_filter_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_filter_enabled" }
-            }
-          }
-
-      val is_path_filtered: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "is_path_filtered".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_path_filtered" }
-            }
-          }
-
-      val remove_input: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "remove_input".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method remove_input" }
-            }
-          }
-
-      val set_filter_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "set_filter_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_filter_enabled" }
-            }
-          }
-
-      val set_filter_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "set_filter_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_filter_path" }
-            }
-          }
-
-      val set_parameter: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-              "set_parameter".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_parameter" }
-            }
-          }
-    }
+      val add_input: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "add_input".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_input" }
+        }
+      val blend_animation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "blend_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_animation" }
+        }
+      val blend_input: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "blend_input".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_input" }
+        }
+      val blend_node: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "blend_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_node" }
+        }
+      val get_input_count: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "get_input_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_count" }
+        }
+      val get_input_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "get_input_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_name" }
+        }
+      val get_parameter: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "get_parameter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_parameter" }
+        }
+      val is_filter_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "is_filter_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_filter_enabled" }
+        }
+      val is_path_filtered: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "is_path_filtered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_path_filtered" }
+        }
+      val remove_input: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "remove_input".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_input" }
+        }
+      val set_filter_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "set_filter_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_filter_enabled" }
+        }
+      val set_filter_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "set_filter_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_filter_path" }
+        }
+      val set_parameter: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
+            "set_parameter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_parameter" }
+        }}
   }
 }

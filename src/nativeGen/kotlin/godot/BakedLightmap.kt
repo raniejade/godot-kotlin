@@ -232,203 +232,159 @@ open class BakedLightmap internal constructor(
      * Container for method_bind pointers for BakedLightmap
      */
     private object __method_bind {
-      val bake: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "bake".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method bake" }
-            }
-          }
-
-      val debug_bake: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "debug_bake".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method debug_bake" }
-            }
-          }
-
-      val get_bake_cell_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_bake_cell_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bake_cell_size" }
-            }
-          }
-
-      val get_bake_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_bake_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bake_mode" }
-            }
-          }
-
-      val get_bake_quality: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_bake_quality".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bake_quality" }
-            }
-          }
-
-      val get_capture_cell_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_capture_cell_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_capture_cell_size" }
-            }
-          }
-
-      val get_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_energy" }
-            }
-          }
-
-      val get_extents: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_extents".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_extents" }
-            }
-          }
-
-      val get_image_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_image_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_image_path" }
-            }
-          }
-
-      val get_light_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_light_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_light_data" }
-            }
-          }
-
-      val get_propagation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "get_propagation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_propagation" }
-            }
-          }
-
-      val is_hdr: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "is_hdr".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_hdr" }
-            }
-          }
-
-      val set_bake_cell_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_bake_cell_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_bake_cell_size" }
-            }
-          }
-
-      val set_bake_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_bake_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_bake_mode" }
-            }
-          }
-
-      val set_bake_quality: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_bake_quality".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_bake_quality" }
-            }
-          }
-
-      val set_capture_cell_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_capture_cell_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_capture_cell_size" }
-            }
-          }
-
-      val set_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_energy" }
-            }
-          }
-
-      val set_extents: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_extents".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_extents" }
-            }
-          }
-
-      val set_hdr: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_hdr".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_hdr" }
-            }
-          }
-
-      val set_image_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_image_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_image_path" }
-            }
-          }
-
-      val set_light_data: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_light_data".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_light_data" }
-            }
-          }
-
-      val set_propagation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
-              "set_propagation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_propagation" }
-            }
-          }
-    }
+      val bake: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "bake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bake" }
+        }
+      val debug_bake: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "debug_bake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method debug_bake" }
+        }
+      val get_bake_cell_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_bake_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bake_cell_size" }
+        }
+      val get_bake_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_bake_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bake_mode" }
+        }
+      val get_bake_quality: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_bake_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bake_quality" }
+        }
+      val get_capture_cell_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_capture_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_capture_cell_size" }
+        }
+      val get_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_energy" }
+        }
+      val get_extents: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_extents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_extents" }
+        }
+      val get_image_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_image_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_image_path" }
+        }
+      val get_light_data: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_light_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_light_data" }
+        }
+      val get_propagation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "get_propagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_propagation" }
+        }
+      val is_hdr: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "is_hdr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_hdr" }
+        }
+      val set_bake_cell_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_bake_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bake_cell_size" }
+        }
+      val set_bake_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_bake_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bake_mode" }
+        }
+      val set_bake_quality: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_bake_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bake_quality" }
+        }
+      val set_capture_cell_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_capture_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_capture_cell_size" }
+        }
+      val set_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_energy" }
+        }
+      val set_extents: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_extents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_extents" }
+        }
+      val set_hdr: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_hdr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hdr" }
+        }
+      val set_image_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_image_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_image_path" }
+        }
+      val set_light_data: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_light_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_light_data" }
+        }
+      val set_propagation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmap".cstr.ptr,
+            "set_propagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_propagation" }
+        }}
   }
 }

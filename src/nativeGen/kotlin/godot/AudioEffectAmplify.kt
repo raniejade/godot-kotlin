@@ -42,23 +42,19 @@ open class AudioEffectAmplify internal constructor(
      * Container for method_bind pointers for AudioEffectAmplify
      */
     private object __method_bind {
-      val get_volume_db: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectAmplify".cstr.ptr,
-              "get_volume_db".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_volume_db" }
-            }
-          }
-
-      val set_volume_db: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectAmplify".cstr.ptr,
-              "set_volume_db".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_volume_db" }
-            }
-          }
-    }
+      val get_volume_db: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectAmplify".cstr.ptr,
+            "get_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_volume_db" }
+        }
+      val set_volume_db: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectAmplify".cstr.ptr,
+            "set_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_volume_db" }
+        }}
   }
 }

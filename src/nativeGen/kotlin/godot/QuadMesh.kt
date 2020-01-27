@@ -41,23 +41,17 @@ open class QuadMesh internal constructor(
      * Container for method_bind pointers for QuadMesh
      */
     private object __method_bind {
-      val get_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("QuadMesh".cstr.ptr,
-              "get_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_size" }
-            }
-          }
-
-      val set_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("QuadMesh".cstr.ptr,
-              "set_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_size" }
-            }
-          }
-    }
+      val get_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("QuadMesh".cstr.ptr,
+            "get_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_size" }
+        }
+      val set_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("QuadMesh".cstr.ptr,
+            "set_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_size" }
+        }}
   }
 }

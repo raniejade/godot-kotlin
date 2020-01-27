@@ -61,15 +61,13 @@ open class AudioEffectSpectrumAnalyzerInstance internal constructor(
      * Container for method_bind pointers for AudioEffectSpectrumAnalyzerInstance
      */
     private object __method_bind {
-      val get_magnitude_for_frequency_range: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzerInstance".cstr.ptr,
-              "get_magnitude_for_frequency_range".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method get_magnitude_for_frequency_range" }
+      val get_magnitude_for_frequency_range: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzerInstance".cstr.ptr,
+            "get_magnitude_for_frequency_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_magnitude_for_frequency_range"
             }
-          }
-    }
+        }}
   }
 }

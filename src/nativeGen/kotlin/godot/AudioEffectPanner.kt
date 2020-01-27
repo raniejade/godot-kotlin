@@ -42,23 +42,19 @@ open class AudioEffectPanner internal constructor(
      * Container for method_bind pointers for AudioEffectPanner
      */
     private object __method_bind {
-      val get_pan: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
-              "get_pan".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_pan" }
-            }
-          }
-
-      val set_pan: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
-              "set_pan".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_pan" }
-            }
-          }
-    }
+      val get_pan: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
+            "get_pan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pan" }
+        }
+      val set_pan: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
+            "set_pan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pan" }
+        }}
   }
 }

@@ -48,32 +48,23 @@ open class Skeleton2D internal constructor(
      * Container for method_bind pointers for Skeleton2D
      */
     private object __method_bind {
-      val get_bone: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-              "get_bone".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bone" }
-            }
-          }
-
-      val get_bone_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-              "get_bone_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
-            }
-          }
-
-      val get_skeleton: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-              "get_skeleton".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
-            }
-          }
-    }
+      val get_bone: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
+            "get_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone" }
+        }
+      val get_bone_count: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
+            "get_bone_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
+        }
+      val get_skeleton: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
+            "get_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
+        }}
   }
 }

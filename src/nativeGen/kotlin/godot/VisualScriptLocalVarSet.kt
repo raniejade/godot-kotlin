@@ -53,41 +53,33 @@ open class VisualScriptLocalVarSet internal constructor(
      * Container for method_bind pointers for VisualScriptLocalVarSet
      */
     private object __method_bind {
-      val get_var_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-              "get_var_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_var_name" }
-            }
-          }
-
-      val get_var_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-              "get_var_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_var_type" }
-            }
-          }
-
-      val set_var_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-              "set_var_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_var_name" }
-            }
-          }
-
-      val set_var_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-              "set_var_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_var_type" }
-            }
-          }
-    }
+      val get_var_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+            "get_var_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_var_name" }
+        }
+      val get_var_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+            "get_var_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_var_type" }
+        }
+      val set_var_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+            "set_var_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_var_name" }
+        }
+      val set_var_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
+            "set_var_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_var_type" }
+        }}
   }
 }

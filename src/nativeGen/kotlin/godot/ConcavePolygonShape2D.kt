@@ -42,23 +42,19 @@ open class ConcavePolygonShape2D internal constructor(
      * Container for method_bind pointers for ConcavePolygonShape2D
      */
     private object __method_bind {
-      val get_segments: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
-              "get_segments".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_segments" }
-            }
-          }
-
-      val set_segments: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
-              "set_segments".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_segments" }
-            }
-          }
-    }
+      val get_segments: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
+            "get_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_segments" }
+        }
+      val set_segments: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
+            "set_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_segments" }
+        }}
   }
 }

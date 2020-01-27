@@ -42,23 +42,19 @@ open class VisualScriptSelect internal constructor(
      * Container for method_bind pointers for VisualScriptSelect
      */
     private object __method_bind {
-      val get_typed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSelect".cstr.ptr,
-              "get_typed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_typed" }
-            }
-          }
-
-      val set_typed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSelect".cstr.ptr,
-              "set_typed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_typed" }
-            }
-          }
-    }
+      val get_typed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSelect".cstr.ptr,
+            "get_typed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_typed" }
+        }
+      val set_typed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSelect".cstr.ptr,
+            "set_typed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_typed" }
+        }}
   }
 }

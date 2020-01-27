@@ -56,32 +56,26 @@ open class VisualScriptFunctionState internal constructor(
      * Container for method_bind pointers for VisualScriptFunctionState
      */
     private object __method_bind {
-      val connect_to_signal: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-              "connect_to_signal".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method connect_to_signal" }
-            }
-          }
-
-      val is_valid: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-              "is_valid".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_valid" }
-            }
-          }
-
-      val resume: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-              "resume".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method resume" }
-            }
-          }
-    }
+      val connect_to_signal: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
+            "connect_to_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method connect_to_signal" }
+        }
+      val is_valid: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
+            "is_valid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid" }
+        }
+      val resume: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
+            "resume".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resume" }
+        }}
   }
 }

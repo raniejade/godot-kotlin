@@ -248,131 +248,103 @@ open class Generic6DOFJoint internal constructor(
      * Container for method_bind pointers for Generic6DOFJoint
      */
     private object __method_bind {
-      val get_flag_x: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_flag_x".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_flag_x" }
-            }
-          }
-
-      val get_flag_y: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_flag_y".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_flag_y" }
-            }
-          }
-
-      val get_flag_z: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_flag_z".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_flag_z" }
-            }
-          }
-
-      val get_param_x: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_param_x".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_param_x" }
-            }
-          }
-
-      val get_param_y: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_param_y".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_param_y" }
-            }
-          }
-
-      val get_param_z: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_param_z".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_param_z" }
-            }
-          }
-
-      val get_precision: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "get_precision".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_precision" }
-            }
-          }
-
-      val set_flag_x: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_flag_x".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_flag_x" }
-            }
-          }
-
-      val set_flag_y: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_flag_y".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_flag_y" }
-            }
-          }
-
-      val set_flag_z: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_flag_z".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_flag_z" }
-            }
-          }
-
-      val set_param_x: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_param_x".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_param_x" }
-            }
-          }
-
-      val set_param_y: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_param_y".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_param_y" }
-            }
-          }
-
-      val set_param_z: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_param_z".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_param_z" }
-            }
-          }
-
-      val set_precision: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-              "set_precision".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_precision" }
-            }
-          }
-    }
+      val get_flag_x: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_flag_x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_flag_x" }
+        }
+      val get_flag_y: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_flag_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_flag_y" }
+        }
+      val get_flag_z: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_flag_z".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_flag_z" }
+        }
+      val get_param_x: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_param_x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param_x" }
+        }
+      val get_param_y: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_param_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param_y" }
+        }
+      val get_param_z: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_param_z".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param_z" }
+        }
+      val get_precision: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "get_precision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_precision" }
+        }
+      val set_flag_x: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_flag_x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flag_x" }
+        }
+      val set_flag_y: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_flag_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flag_y" }
+        }
+      val set_flag_z: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_flag_z".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flag_z" }
+        }
+      val set_param_x: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_param_x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param_x" }
+        }
+      val set_param_y: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_param_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param_y" }
+        }
+      val set_param_z: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_param_z".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param_z" }
+        }
+      val set_precision: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
+            "set_precision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_precision" }
+        }}
   }
 }

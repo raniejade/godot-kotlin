@@ -78,86 +78,59 @@ open class SpinBox internal constructor(
      * Container for method_bind pointers for SpinBox
      */
     private object __method_bind {
-      val get_align: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "get_align".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_align" }
-            }
-          }
-
-      val get_line_edit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "get_line_edit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_line_edit" }
-            }
-          }
-
-      val get_prefix: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "get_prefix".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_prefix" }
-            }
-          }
-
-      val get_suffix: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "get_suffix".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_suffix" }
-            }
-          }
-
-      val is_editable: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "is_editable".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_editable" }
-            }
-          }
-
-      val set_align: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "set_align".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_align" }
-            }
-          }
-
-      val set_editable: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "set_editable".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_editable" }
-            }
-          }
-
-      val set_prefix: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "set_prefix".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_prefix" }
-            }
-          }
-
-      val set_suffix: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-              "set_suffix".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_suffix" }
-            }
-          }
-    }
+      val get_align: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "get_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_align" }
+        }
+      val get_line_edit: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "get_line_edit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_line_edit" }
+        }
+      val get_prefix: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "get_prefix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_prefix" }
+        }
+      val get_suffix: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "get_suffix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_suffix" }
+        }
+      val is_editable: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "is_editable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_editable" }
+        }
+      val set_align: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "set_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_align" }
+        }
+      val set_editable: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "set_editable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_editable" }
+        }
+      val set_prefix: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "set_prefix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_prefix" }
+        }
+      val set_suffix: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
+            "set_suffix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_suffix" }
+        }}
   }
 }

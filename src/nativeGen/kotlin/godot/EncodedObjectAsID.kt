@@ -42,23 +42,19 @@ open class EncodedObjectAsID internal constructor(
      * Container for method_bind pointers for EncodedObjectAsID
      */
     private object __method_bind {
-      val get_object_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
-              "get_object_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_object_id" }
-            }
-          }
-
-      val set_object_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
-              "set_object_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_object_id" }
-            }
-          }
-    }
+      val get_object_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
+            "get_object_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_object_id" }
+        }
+      val set_object_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
+            "set_object_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_object_id" }
+        }}
   }
 }

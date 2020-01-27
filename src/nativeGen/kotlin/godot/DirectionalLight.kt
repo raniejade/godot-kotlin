@@ -113,59 +113,47 @@ open class DirectionalLight internal constructor(
      * Container for method_bind pointers for DirectionalLight
      */
     private object __method_bind {
-      val get_shadow_depth_range: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
-              "get_shadow_depth_range".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_shadow_depth_range" }
-            }
-          }
-
-      val get_shadow_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
-              "get_shadow_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_shadow_mode" }
-            }
-          }
-
-      val is_blend_splits_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
-              "is_blend_splits_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_blend_splits_enabled" }
-            }
-          }
-
-      val set_blend_splits: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
-              "set_blend_splits".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_blend_splits" }
-            }
-          }
-
-      val set_shadow_depth_range: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
-              "set_shadow_depth_range".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow_depth_range" }
-            }
-          }
-
-      val set_shadow_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
-              "set_shadow_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow_mode" }
-            }
-          }
-    }
+      val get_shadow_depth_range: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
+            "get_shadow_depth_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shadow_depth_range" }
+        }
+      val get_shadow_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
+            "get_shadow_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shadow_mode" }
+        }
+      val is_blend_splits_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
+            "is_blend_splits_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_blend_splits_enabled" }
+        }
+      val set_blend_splits: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
+            "set_blend_splits".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_blend_splits" }
+        }
+      val set_shadow_depth_range: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
+            "set_shadow_depth_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow_depth_range" }
+        }
+      val set_shadow_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DirectionalLight".cstr.ptr,
+            "set_shadow_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow_mode" }
+        }}
   }
 }

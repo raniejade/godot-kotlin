@@ -69,15 +69,15 @@ open class _ResourceSaver internal constructor(
   }
 
   companion object {
-    val Instance: _ResourceSaver = memScoped {
-          val handle =
-            checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceSaver".cstr.ptr)
-          requireNotNull(handle) { "No instance found for singleton _ResourceSaver" }
-          _ResourceSaver(
-            handle
-          )
-        }
-
+    val Instance: _ResourceSaver
+      get() = memScoped {
+        val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_ResourceSaver".cstr.ptr)
+        requireNotNull(handle) { "No instance found for singleton _ResourceSaver" }
+        _ResourceSaver(
+          handle
+        )
+      }
     val FLAG_BUNDLE_RESOURCES: Int = 2
 
     val FLAG_CHANGE_PATH: Int = 4
@@ -96,23 +96,19 @@ open class _ResourceSaver internal constructor(
      * Container for method_bind pointers for _ResourceSaver
      */
     private object __method_bind {
-      val get_recognized_extensions: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
-              "get_recognized_extensions".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
-            }
-          }
-
-      val save: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
-              "save".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method save" }
-            }
-          }
-    }
+      val get_recognized_extensions: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
+            "get_recognized_extensions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
+        }
+      val save: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
+            "save".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save" }
+        }}
   }
 }

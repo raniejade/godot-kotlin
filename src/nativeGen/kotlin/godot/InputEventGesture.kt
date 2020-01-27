@@ -32,23 +32,19 @@ open class InputEventGesture internal constructor(
      * Container for method_bind pointers for InputEventGesture
      */
     private object __method_bind {
-      val get_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
-              "get_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_position" }
-            }
-          }
-
-      val set_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
-              "set_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_position" }
-            }
-          }
-    }
+      val get_position: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
+        }
+      val set_position: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
+            "set_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_position" }
+        }}
   }
 }

@@ -66,23 +66,19 @@ open class VisualShaderNodeTransformFunc internal constructor(
      * Container for method_bind pointers for VisualShaderNodeTransformFunc
      */
     private object __method_bind {
-      val get_function: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformFunc".cstr.ptr,
-              "get_function".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_function" }
-            }
-          }
-
-      val set_function: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformFunc".cstr.ptr,
-              "set_function".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_function" }
-            }
-          }
-    }
+      val get_function: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformFunc".cstr.ptr,
+            "get_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_function" }
+        }
+      val set_function: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformFunc".cstr.ptr,
+            "set_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_function" }
+        }}
   }
 }

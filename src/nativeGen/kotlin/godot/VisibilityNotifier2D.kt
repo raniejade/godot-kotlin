@@ -48,32 +48,26 @@ open class VisibilityNotifier2D internal constructor(
      * Container for method_bind pointers for VisibilityNotifier2D
      */
     private object __method_bind {
-      val get_rect: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
-              "get_rect".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_rect" }
-            }
-          }
-
-      val is_on_screen: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
-              "is_on_screen".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
-            }
-          }
-
-      val set_rect: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
-              "set_rect".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_rect" }
-            }
-          }
-    }
+      val get_rect: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
+            "get_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rect" }
+        }
+      val is_on_screen: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
+            "is_on_screen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
+        }
+      val set_rect: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
+            "set_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rect" }
+        }}
   }
 }

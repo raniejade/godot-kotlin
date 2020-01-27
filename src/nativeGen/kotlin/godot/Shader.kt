@@ -94,53 +94,41 @@ open class Shader internal constructor(
      * Container for method_bind pointers for Shader
      */
     private object __method_bind {
-      val get_code: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-              "get_code".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_code" }
-            }
-          }
-
-      val get_default_texture_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-              "get_default_texture_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_default_texture_param" }
-            }
-          }
-
-      val get_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-              "get_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_mode" }
-            }
-          }
-
-      val has_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-              "has_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_param" }
-            }
-          }
-
-      val set_code: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-              "set_code".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_code" }
-            }
-          }
-
-      val set_default_texture_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-              "set_default_texture_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_default_texture_param" }
-            }
-          }
-    }
+      val get_code: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
+            "get_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_code" }
+        }
+      val get_default_texture_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
+            "get_default_texture_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_default_texture_param" }
+        }
+      val get_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
+            "get_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mode" }
+        }
+      val has_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
+            "has_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_param" }
+        }
+      val set_code: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
+            "set_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_code" }
+        }
+      val set_default_texture_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
+            "set_default_texture_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_texture_param" }
+        }}
   }
 }

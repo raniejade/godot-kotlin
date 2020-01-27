@@ -62,59 +62,47 @@ open class CameraTexture internal constructor(
      * Container for method_bind pointers for CameraTexture
      */
     private object __method_bind {
-      val get_camera_active: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-              "get_camera_active".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_camera_active" }
-            }
-          }
-
-      val get_camera_feed_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-              "get_camera_feed_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
-            }
-          }
-
-      val get_which_feed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-              "get_which_feed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_which_feed" }
-            }
-          }
-
-      val set_camera_active: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-              "set_camera_active".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_camera_active" }
-            }
-          }
-
-      val set_camera_feed_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-              "set_camera_feed_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
-            }
-          }
-
-      val set_which_feed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-              "set_which_feed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_which_feed" }
-            }
-          }
-    }
+      val get_camera_active: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
+            "get_camera_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_camera_active" }
+        }
+      val get_camera_feed_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
+            "get_camera_feed_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
+        }
+      val get_which_feed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
+            "get_which_feed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_which_feed" }
+        }
+      val set_camera_active: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
+            "set_camera_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_camera_active" }
+        }
+      val set_camera_feed_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
+            "set_camera_feed_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
+        }
+      val set_which_feed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
+            "set_which_feed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_which_feed" }
+        }}
   }
 }

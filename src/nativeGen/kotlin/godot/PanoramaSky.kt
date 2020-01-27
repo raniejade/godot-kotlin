@@ -40,23 +40,19 @@ open class PanoramaSky internal constructor(
      * Container for method_bind pointers for PanoramaSky
      */
     private object __method_bind {
-      val get_panorama: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
-              "get_panorama".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_panorama" }
-            }
-          }
-
-      val set_panorama: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
-              "set_panorama".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_panorama" }
-            }
-          }
-    }
+      val get_panorama: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
+            "get_panorama".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_panorama" }
+        }
+      val set_panorama: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
+            "set_panorama".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_panorama" }
+        }}
   }
 }

@@ -28,14 +28,12 @@ open class WebSocketMultiplayerPeer internal constructor(
      * Container for method_bind pointers for WebSocketMultiplayerPeer
      */
     private object __method_bind {
-      val get_peer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
-              "get_peer".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_peer" }
-            }
-          }
-    }
+      val get_peer: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketMultiplayerPeer".cstr.ptr,
+            "get_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peer" }
+        }}
   }
 }

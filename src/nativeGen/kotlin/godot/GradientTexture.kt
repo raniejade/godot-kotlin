@@ -47,32 +47,26 @@ open class GradientTexture internal constructor(
      * Container for method_bind pointers for GradientTexture
      */
     private object __method_bind {
-      val get_gradient: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-              "get_gradient".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_gradient" }
-            }
-          }
-
-      val set_gradient: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-              "set_gradient".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_gradient" }
-            }
-          }
-
-      val set_width: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-              "set_width".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_width" }
-            }
-          }
-    }
+      val get_gradient: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
+            "get_gradient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gradient" }
+        }
+      val set_gradient: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
+            "set_gradient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gradient" }
+        }
+      val set_width: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
+            "set_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_width" }
+        }}
   }
 }

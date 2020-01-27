@@ -91,77 +91,61 @@ open class PolygonPathFinder internal constructor(
      * Container for method_bind pointers for PolygonPathFinder
      */
     private object __method_bind {
-      val find_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "find_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method find_path" }
-            }
-          }
-
-      val get_bounds: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "get_bounds".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bounds" }
-            }
-          }
-
-      val get_closest_point: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "get_closest_point".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
-            }
-          }
-
-      val get_intersections: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "get_intersections".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_intersections" }
-            }
-          }
-
-      val get_point_penalty: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "get_point_penalty".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_point_penalty" }
-            }
-          }
-
-      val is_point_inside: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "is_point_inside".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_point_inside" }
-            }
-          }
-
-      val set_point_penalty: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "set_point_penalty".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_point_penalty" }
-            }
-          }
-
-      val setup: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
-              "setup".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method setup" }
-            }
-          }
-    }
+      val find_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "find_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method find_path" }
+        }
+      val get_bounds: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "get_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bounds" }
+        }
+      val get_closest_point: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "get_closest_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
+        }
+      val get_intersections: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "get_intersections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_intersections" }
+        }
+      val get_point_penalty: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "get_point_penalty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_point_penalty" }
+        }
+      val is_point_inside: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "is_point_inside".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_point_inside" }
+        }
+      val set_point_penalty: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "set_point_penalty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_point_penalty" }
+        }
+      val setup: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PolygonPathFinder".cstr.ptr,
+            "setup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setup" }
+        }}
   }
 }

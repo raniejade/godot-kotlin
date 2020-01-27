@@ -52,41 +52,33 @@ open class VisualScriptClassConstant internal constructor(
      * Container for method_bind pointers for VisualScriptClassConstant
      */
     private object __method_bind {
-      val get_base_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-              "get_base_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_base_type" }
-            }
-          }
-
-      val get_class_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-              "get_class_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_class_constant" }
-            }
-          }
-
-      val set_base_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-              "set_base_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_base_type" }
-            }
-          }
-
-      val set_class_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-              "set_class_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_class_constant" }
-            }
-          }
-    }
+      val get_base_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
+            "get_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
+        }
+      val get_class_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
+            "get_class_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_class_constant" }
+        }
+      val set_base_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
+            "set_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
+        }
+      val set_class_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
+            "set_class_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_class_constant" }
+        }}
   }
 }

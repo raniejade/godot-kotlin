@@ -32,23 +32,19 @@ open class CSGPrimitive internal constructor(
      * Container for method_bind pointers for CSGPrimitive
      */
     private object __method_bind {
-      val is_inverting_faces: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
-              "is_inverting_faces".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_inverting_faces" }
-            }
-          }
-
-      val set_invert_faces: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
-              "set_invert_faces".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_invert_faces" }
-            }
-          }
-    }
+      val is_inverting_faces: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
+            "is_inverting_faces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_inverting_faces" }
+        }
+      val set_invert_faces: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
+            "set_invert_faces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_invert_faces" }
+        }}
   }
 }

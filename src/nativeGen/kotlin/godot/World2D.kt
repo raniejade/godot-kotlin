@@ -46,32 +46,23 @@ open class World2D internal constructor(
      * Container for method_bind pointers for World2D
      */
     private object __method_bind {
-      val get_canvas: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-              "get_canvas".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_canvas" }
-            }
-          }
-
-      val get_direct_space_state: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-              "get_direct_space_state".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
-            }
-          }
-
-      val get_space: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-              "get_space".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_space" }
-            }
-          }
-    }
+      val get_canvas: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
+            "get_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
+        }
+      val get_direct_space_state: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
+            "get_direct_space_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
+        }
+      val get_space: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
+            "get_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_space" }
+        }}
   }
 }

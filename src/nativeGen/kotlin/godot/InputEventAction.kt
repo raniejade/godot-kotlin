@@ -59,50 +59,40 @@ open class InputEventAction internal constructor(
      * Container for method_bind pointers for InputEventAction
      */
     private object __method_bind {
-      val get_action: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-              "get_action".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_action" }
-            }
-          }
-
-      val get_strength: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-              "get_strength".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_strength" }
-            }
-          }
-
-      val set_action: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-              "set_action".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_action" }
-            }
-          }
-
-      val set_pressed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-              "set_pressed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_pressed" }
-            }
-          }
-
-      val set_strength: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-              "set_strength".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_strength" }
-            }
-          }
-    }
+      val get_action: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
+            "get_action".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_action" }
+        }
+      val get_strength: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
+            "get_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_strength" }
+        }
+      val set_action: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
+            "set_action".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_action" }
+        }
+      val set_pressed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
+            "set_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
+        }
+      val set_strength: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
+            "set_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_strength" }
+        }}
   }
 }

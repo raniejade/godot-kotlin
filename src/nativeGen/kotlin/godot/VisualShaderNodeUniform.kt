@@ -32,23 +32,19 @@ open class VisualShaderNodeUniform internal constructor(
      * Container for method_bind pointers for VisualShaderNodeUniform
      */
     private object __method_bind {
-      val get_uniform_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
-              "get_uniform_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_uniform_name" }
-            }
-          }
-
-      val set_uniform_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
-              "set_uniform_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_uniform_name" }
-            }
-          }
-    }
+      val get_uniform_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
+            "get_uniform_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_uniform_name" }
+        }
+      val set_uniform_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
+            "set_uniform_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_uniform_name" }
+        }}
   }
 }

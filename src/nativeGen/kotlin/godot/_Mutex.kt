@@ -44,29 +44,23 @@ open class _Mutex internal constructor(
      * Container for method_bind pointers for _Mutex
      */
     private object __method_bind {
-      val lock: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-              "lock".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method lock" }
-            }
-          }
-
-      val try_lock: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-              "try_lock".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method try_lock" }
-            }
-          }
-
-      val unlock: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-              "unlock".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method unlock" }
-            }
-          }
-    }
+      val lock: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
+            "lock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lock" }
+        }
+      val try_lock: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
+            "try_lock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method try_lock" }
+        }
+      val unlock: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
+            "unlock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method unlock" }
+        }}
   }
 }

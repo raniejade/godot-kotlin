@@ -321,23 +321,19 @@ open class VisualScriptBuiltinFunc internal constructor(
      * Container for method_bind pointers for VisualScriptBuiltinFunc
      */
     private object __method_bind {
-      val get_func: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
-              "get_func".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_func" }
-            }
-          }
-
-      val set_func: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
-              "set_func".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_func" }
-            }
-          }
-    }
+      val get_func: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
+            "get_func".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_func" }
+        }
+      val set_func: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
+            "set_func".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_func" }
+        }}
   }
 }

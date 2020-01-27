@@ -46,32 +46,23 @@ open class Reference internal constructor(
      * Container for method_bind pointers for Reference
      */
     private object __method_bind {
-      val init_ref: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
-              "init_ref".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method init_ref" }
-            }
-          }
-
-      val reference: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
-              "reference".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method reference" }
-            }
-          }
-
-      val unreference: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
-              "unreference".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method unreference" }
-            }
-          }
-    }
+      val init_ref: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
+            "init_ref".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method init_ref" }
+        }
+      val reference: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
+            "reference".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reference" }
+        }
+      val unreference: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
+            "unreference".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method unreference" }
+        }}
   }
 }

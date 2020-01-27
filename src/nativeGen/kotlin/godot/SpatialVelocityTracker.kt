@@ -58,50 +58,40 @@ open class SpatialVelocityTracker internal constructor(
      * Container for method_bind pointers for SpatialVelocityTracker
      */
     private object __method_bind {
-      val get_tracked_linear_velocity: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-              "get_tracked_linear_velocity".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_tracked_linear_velocity" }
-            }
-          }
-
-      val is_tracking_physics_step: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-              "is_tracking_physics_step".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_tracking_physics_step" }
-            }
-          }
-
-      val reset: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-              "reset".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method reset" }
-            }
-          }
-
-      val set_track_physics_step: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-              "set_track_physics_step".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_track_physics_step" }
-            }
-          }
-
-      val update_position: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-              "update_position".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method update_position" }
-            }
-          }
-    }
+      val get_tracked_linear_velocity: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+            "get_tracked_linear_velocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tracked_linear_velocity" }
+        }
+      val is_tracking_physics_step: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+            "is_tracking_physics_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_tracking_physics_step" }
+        }
+      val reset: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+            "reset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reset" }
+        }
+      val set_track_physics_step: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+            "set_track_physics_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_track_physics_step" }
+        }
+      val update_position: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
+            "update_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_position" }
+        }}
   }
 }

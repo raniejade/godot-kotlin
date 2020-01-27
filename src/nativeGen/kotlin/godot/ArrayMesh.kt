@@ -273,185 +273,125 @@ open class ArrayMesh internal constructor(
      * Container for method_bind pointers for ArrayMesh
      */
     private object __method_bind {
-      val add_blend_shape: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "add_blend_shape".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_blend_shape" }
-            }
-          }
-
-      val add_surface_from_arrays: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "add_surface_from_arrays".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_surface_from_arrays" }
-            }
-          }
-
-      val clear_blend_shapes: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "clear_blend_shapes".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method clear_blend_shapes" }
-            }
-          }
-
-      val get_blend_shape_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "get_blend_shape_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_blend_shape_count" }
-            }
-          }
-
-      val get_blend_shape_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "get_blend_shape_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_blend_shape_mode" }
-            }
-          }
-
-      val get_blend_shape_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "get_blend_shape_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_blend_shape_name" }
-            }
-          }
-
-      val get_custom_aabb: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "get_custom_aabb".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_custom_aabb" }
-            }
-          }
-
-      val lightmap_unwrap: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "lightmap_unwrap".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method lightmap_unwrap" }
-            }
-          }
-
-      val regen_normalmaps: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "regen_normalmaps".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method regen_normalmaps" }
-            }
-          }
-
-      val set_blend_shape_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "set_blend_shape_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_blend_shape_mode" }
-            }
-          }
-
-      val set_custom_aabb: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "set_custom_aabb".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_custom_aabb" }
-            }
-          }
-
-      val surface_find_by_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_find_by_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_find_by_name" }
-            }
-          }
-
-      val surface_get_array_index_len: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_get_array_index_len".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_get_array_index_len" }
-            }
-          }
-
-      val surface_get_array_len: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_get_array_len".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_get_array_len" }
-            }
-          }
-
-      val surface_get_format: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_get_format".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_get_format" }
-            }
-          }
-
-      val surface_get_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_get_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_get_name" }
-            }
-          }
-
-      val surface_get_primitive_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_get_primitive_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_get_primitive_type" }
-            }
-          }
-
-      val surface_remove: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_remove".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_remove" }
-            }
-          }
-
-      val surface_set_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_set_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_set_name" }
-            }
-          }
-
-      val surface_update_region: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
-              "surface_update_region".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method surface_update_region" }
-            }
-          }
-    }
+      val add_blend_shape: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "add_blend_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_blend_shape" }
+        }
+      val add_surface_from_arrays: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "add_surface_from_arrays".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_surface_from_arrays" }
+        }
+      val clear_blend_shapes: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "clear_blend_shapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_blend_shapes" }
+        }
+      val get_blend_shape_count: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "get_blend_shape_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_blend_shape_count" }
+        }
+      val get_blend_shape_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "get_blend_shape_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_blend_shape_mode" }
+        }
+      val get_blend_shape_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "get_blend_shape_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_blend_shape_name" }
+        }
+      val get_custom_aabb: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "get_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_aabb" }
+        }
+      val lightmap_unwrap: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "lightmap_unwrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_unwrap" }
+        }
+      val regen_normalmaps: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "regen_normalmaps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method regen_normalmaps" }
+        }
+      val set_blend_shape_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "set_blend_shape_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_blend_shape_mode" }
+        }
+      val set_custom_aabb: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "set_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_aabb" }
+        }
+      val surface_find_by_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_find_by_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_find_by_name" }
+        }
+      val surface_get_array_index_len: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_get_array_index_len".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_get_array_index_len" }
+        }
+      val surface_get_array_len: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_get_array_len".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_get_array_len" }
+        }
+      val surface_get_format: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_get_format" }
+        }
+      val surface_get_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_get_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_get_name" }
+        }
+      val surface_get_primitive_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_get_primitive_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_get_primitive_type" }
+        }
+      val surface_remove: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_remove".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_remove" }
+        }
+      val surface_set_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_set_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_set_name" }
+        }
+      val surface_update_region: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ArrayMesh".cstr.ptr,
+            "surface_update_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method surface_update_region" }
+        }}
   }
 }

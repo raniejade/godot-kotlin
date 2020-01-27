@@ -88,68 +88,54 @@ open class WebSocketServer internal constructor(
      * Container for method_bind pointers for WebSocketServer
      */
     private object __method_bind {
-      val disconnect_peer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "disconnect_peer".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method disconnect_peer" }
-            }
-          }
-
-      val get_peer_address: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "get_peer_address".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_peer_address" }
-            }
-          }
-
-      val get_peer_port: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "get_peer_port".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_peer_port" }
-            }
-          }
-
-      val has_peer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "has_peer".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_peer" }
-            }
-          }
-
-      val is_listening: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "is_listening".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_listening" }
-            }
-          }
-
-      val listen: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "listen".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method listen" }
-            }
-          }
-
-      val stop: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-              "stop".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method stop" }
-            }
-          }
-    }
+      val disconnect_peer: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "disconnect_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method disconnect_peer" }
+        }
+      val get_peer_address: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "get_peer_address".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peer_address" }
+        }
+      val get_peer_port: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "get_peer_port".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peer_port" }
+        }
+      val has_peer: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "has_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_peer" }
+        }
+      val is_listening: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "is_listening".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_listening" }
+        }
+      val listen: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "listen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method listen" }
+        }
+      val stop: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
+            "stop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method stop" }
+        }}
   }
 }

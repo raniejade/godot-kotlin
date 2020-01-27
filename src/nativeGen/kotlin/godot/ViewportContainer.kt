@@ -53,41 +53,33 @@ open class ViewportContainer internal constructor(
      * Container for method_bind pointers for ViewportContainer
      */
     private object __method_bind {
-      val get_stretch_shrink: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-              "get_stretch_shrink".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_stretch_shrink" }
-            }
-          }
-
-      val is_stretch_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-              "is_stretch_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_stretch_enabled" }
-            }
-          }
-
-      val set_stretch: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-              "set_stretch".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_stretch" }
-            }
-          }
-
-      val set_stretch_shrink: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-              "set_stretch_shrink".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_stretch_shrink" }
-            }
-          }
-    }
+      val get_stretch_shrink: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
+            "get_stretch_shrink".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stretch_shrink" }
+        }
+      val is_stretch_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
+            "is_stretch_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_stretch_enabled" }
+        }
+      val set_stretch: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
+            "set_stretch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stretch" }
+        }
+      val set_stretch_shrink: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
+            "set_stretch_shrink".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stretch_shrink" }
+        }}
   }
 }

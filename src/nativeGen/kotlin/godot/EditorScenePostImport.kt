@@ -42,23 +42,19 @@ open class EditorScenePostImport internal constructor(
      * Container for method_bind pointers for EditorScenePostImport
      */
     private object __method_bind {
-      val get_source_file: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
-              "get_source_file".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_source_file" }
-            }
-          }
-
-      val get_source_folder: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
-              "get_source_folder".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_source_folder" }
-            }
-          }
-    }
+      val get_source_file: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
+            "get_source_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_file" }
+        }
+      val get_source_folder: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
+            "get_source_folder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_folder" }
+        }}
   }
 }

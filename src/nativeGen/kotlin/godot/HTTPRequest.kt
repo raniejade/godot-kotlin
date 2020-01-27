@@ -174,122 +174,96 @@ open class HTTPRequest internal constructor(
      * Container for method_bind pointers for HTTPRequest
      */
     private object __method_bind {
-      val cancel_request: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "cancel_request".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method cancel_request" }
-            }
-          }
-
-      val get_body_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "get_body_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_body_size" }
-            }
-          }
-
-      val get_body_size_limit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "get_body_size_limit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_body_size_limit" }
-            }
-          }
-
-      val get_download_file: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "get_download_file".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_download_file" }
-            }
-          }
-
-      val get_downloaded_bytes: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "get_downloaded_bytes".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_downloaded_bytes" }
-            }
-          }
-
-      val get_http_client_status: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "get_http_client_status".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_http_client_status" }
-            }
-          }
-
-      val get_max_redirects: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "get_max_redirects".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_max_redirects" }
-            }
-          }
-
-      val is_using_threads: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "is_using_threads".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_using_threads" }
-            }
-          }
-
-      val request: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "request".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method request" }
-            }
-          }
-
-      val set_body_size_limit: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "set_body_size_limit".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_body_size_limit" }
-            }
-          }
-
-      val set_download_file: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "set_download_file".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_download_file" }
-            }
-          }
-
-      val set_max_redirects: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "set_max_redirects".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_max_redirects" }
-            }
-          }
-
-      val set_use_threads: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
-              "set_use_threads".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_use_threads" }
-            }
-          }
-    }
+      val cancel_request: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "cancel_request".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method cancel_request" }
+        }
+      val get_body_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_body_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_body_size" }
+        }
+      val get_body_size_limit: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_body_size_limit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_body_size_limit" }
+        }
+      val get_download_file: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_download_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_download_file" }
+        }
+      val get_downloaded_bytes: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_downloaded_bytes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_downloaded_bytes" }
+        }
+      val get_http_client_status: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_http_client_status".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_http_client_status" }
+        }
+      val get_max_redirects: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "get_max_redirects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_redirects" }
+        }
+      val is_using_threads: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "is_using_threads".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_threads" }
+        }
+      val request: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "request".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method request" }
+        }
+      val set_body_size_limit: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "set_body_size_limit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_body_size_limit" }
+        }
+      val set_download_file: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "set_download_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_download_file" }
+        }
+      val set_max_redirects: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "set_max_redirects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_redirects" }
+        }
+      val set_use_threads: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HTTPRequest".cstr.ptr,
+            "set_use_threads".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_threads" }
+        }}
   }
 }

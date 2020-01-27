@@ -99,122 +99,96 @@ open class NativeScript internal constructor(
      * Container for method_bind pointers for NativeScript
      */
     private object __method_bind {
-      val get_class_documentation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_class_documentation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_class_documentation" }
-            }
-          }
-
-      val get_class_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_class_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_class_name" }
-            }
-          }
-
-      val get_library: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_library".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_library" }
-            }
-          }
-
-      val get_method_documentation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_method_documentation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_method_documentation" }
-            }
-          }
-
-      val get_property_documentation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_property_documentation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_property_documentation" }
-            }
-          }
-
-      val get_script_class_icon_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_script_class_icon_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_script_class_icon_path" }
-            }
-          }
-
-      val get_script_class_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_script_class_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_script_class_name" }
-            }
-          }
-
-      val get_signal_documentation: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "get_signal_documentation".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_signal_documentation" }
-            }
-          }
-
-      val new: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "new".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method new" }
-            }
-          }
-
-      val set_class_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "set_class_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_class_name" }
-            }
-          }
-
-      val set_library: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "set_library".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_library" }
-            }
-          }
-
-      val set_script_class_icon_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "set_script_class_icon_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_script_class_icon_path" }
-            }
-          }
-
-      val set_script_class_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
-              "set_script_class_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_script_class_name" }
-            }
-          }
-    }
+      val get_class_documentation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_class_documentation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_class_documentation" }
+        }
+      val get_class_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_class_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_class_name" }
+        }
+      val get_library: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_library".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_library" }
+        }
+      val get_method_documentation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_method_documentation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_method_documentation" }
+        }
+      val get_property_documentation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_property_documentation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_property_documentation" }
+        }
+      val get_script_class_icon_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_script_class_icon_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_class_icon_path" }
+        }
+      val get_script_class_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_script_class_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_class_name" }
+        }
+      val get_signal_documentation: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "get_signal_documentation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_signal_documentation" }
+        }
+      val new: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "new".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method new" }
+        }
+      val set_class_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "set_class_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_class_name" }
+        }
+      val set_library: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "set_library".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_library" }
+        }
+      val set_script_class_icon_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "set_script_class_icon_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_script_class_icon_path" }
+        }
+      val set_script_class_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NativeScript".cstr.ptr,
+            "set_script_class_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_script_class_name" }
+        }}
   }
 }

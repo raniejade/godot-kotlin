@@ -41,23 +41,19 @@ open class SphereShape internal constructor(
      * Container for method_bind pointers for SphereShape
      */
     private object __method_bind {
-      val get_radius: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereShape".cstr.ptr,
-              "get_radius".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_radius" }
-            }
-          }
-
-      val set_radius: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereShape".cstr.ptr,
-              "set_radius".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_radius" }
-            }
-          }
-    }
+      val get_radius: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereShape".cstr.ptr,
+            "get_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_radius" }
+        }
+      val set_radius: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereShape".cstr.ptr,
+            "set_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_radius" }
+        }}
   }
 }

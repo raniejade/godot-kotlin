@@ -151,131 +151,89 @@ open class UndoRedo internal constructor(
      * Container for method_bind pointers for UndoRedo
      */
     private object __method_bind {
-      val add_do_method: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "add_do_method".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_do_method" }
-            }
-          }
-
-      val add_do_property: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "add_do_property".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_do_property" }
-            }
-          }
-
-      val add_do_reference: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "add_do_reference".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_do_reference" }
-            }
-          }
-
-      val add_undo_method: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "add_undo_method".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_undo_method" }
-            }
-          }
-
-      val add_undo_property: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "add_undo_property".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_undo_property" }
-            }
-          }
-
-      val add_undo_reference: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "add_undo_reference".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_undo_reference" }
-            }
-          }
-
-      val clear_history: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "clear_history".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method clear_history" }
-            }
-          }
-
-      val commit_action: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "commit_action".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method commit_action" }
-            }
-          }
-
-      val create_action: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "create_action".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method create_action" }
-            }
-          }
-
-      val get_current_action_name: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "get_current_action_name".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_current_action_name" }
-            }
-          }
-
-      val get_version: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "get_version".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_version" }
-            }
-          }
-
-      val is_commiting_action: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "is_commiting_action".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_commiting_action" }
-            }
-          }
-
-      val redo: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "redo".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method redo" }
-            }
-          }
-
-      val undo: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
-              "undo".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method undo" }
-            }
-          }
-    }
+      val add_do_method: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "add_do_method".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_do_method" }
+        }
+      val add_do_property: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "add_do_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_do_property" }
+        }
+      val add_do_reference: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "add_do_reference".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_do_reference" }
+        }
+      val add_undo_method: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "add_undo_method".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_undo_method" }
+        }
+      val add_undo_property: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "add_undo_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_undo_property" }
+        }
+      val add_undo_reference: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "add_undo_reference".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_undo_reference" }
+        }
+      val clear_history: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "clear_history".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_history" }
+        }
+      val commit_action: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "commit_action".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method commit_action" }
+        }
+      val create_action: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "create_action".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_action" }
+        }
+      val get_current_action_name: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "get_current_action_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_action_name" }
+        }
+      val get_version: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "get_version".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_version" }
+        }
+      val is_commiting_action: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "is_commiting_action".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_commiting_action" }
+        }
+      val redo: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "redo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method redo" }
+        }
+      val undo: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UndoRedo".cstr.ptr,
+            "undo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method undo" }
+        }}
   }
 }

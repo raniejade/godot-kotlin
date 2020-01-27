@@ -104,77 +104,61 @@ open class AudioEffectFilter internal constructor(
      * Container for method_bind pointers for AudioEffectFilter
      */
     private object __method_bind {
-      val get_cutoff: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "get_cutoff".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_cutoff" }
-            }
-          }
-
-      val get_db: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "get_db".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_db" }
-            }
-          }
-
-      val get_gain: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "get_gain".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_gain" }
-            }
-          }
-
-      val get_resonance: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "get_resonance".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_resonance" }
-            }
-          }
-
-      val set_cutoff: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "set_cutoff".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_cutoff" }
-            }
-          }
-
-      val set_db: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "set_db".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_db" }
-            }
-          }
-
-      val set_gain: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "set_gain".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_gain" }
-            }
-          }
-
-      val set_resonance: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
-              "set_resonance".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_resonance" }
-            }
-          }
-    }
+      val get_cutoff: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "get_cutoff".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cutoff" }
+        }
+      val get_db: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "get_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_db" }
+        }
+      val get_gain: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "get_gain".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gain" }
+        }
+      val get_resonance: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "get_resonance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resonance" }
+        }
+      val set_cutoff: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "set_cutoff".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cutoff" }
+        }
+      val set_db: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "set_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_db" }
+        }
+      val set_gain: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "set_gain".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gain" }
+        }
+      val set_resonance: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectFilter".cstr.ptr,
+            "set_resonance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_resonance" }
+        }}
   }
 }

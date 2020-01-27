@@ -43,23 +43,19 @@ open class StreamTexture internal constructor(
      * Container for method_bind pointers for StreamTexture
      */
     private object __method_bind {
-      val get_load_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamTexture".cstr.ptr,
-              "get_load_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_load_path" }
-            }
-          }
-
-      val load: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamTexture".cstr.ptr,
-              "load".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method load" }
-            }
-          }
-    }
+      val get_load_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamTexture".cstr.ptr,
+            "get_load_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_load_path" }
+        }
+      val load: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamTexture".cstr.ptr,
+            "load".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load" }
+        }}
   }
 }

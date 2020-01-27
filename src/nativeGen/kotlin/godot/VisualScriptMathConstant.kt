@@ -93,23 +93,19 @@ open class VisualScriptMathConstant internal constructor(
      * Container for method_bind pointers for VisualScriptMathConstant
      */
     private object __method_bind {
-      val get_math_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
-              "get_math_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_math_constant" }
-            }
-          }
-
-      val set_math_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
-              "set_math_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_math_constant" }
-            }
-          }
-    }
+      val get_math_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
+            "get_math_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_math_constant" }
+        }
+      val set_math_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
+            "set_math_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_math_constant" }
+        }}
   }
 }

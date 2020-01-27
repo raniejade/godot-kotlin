@@ -52,41 +52,33 @@ open class AudioStreamRandomPitch internal constructor(
      * Container for method_bind pointers for AudioStreamRandomPitch
      */
     private object __method_bind {
-      val get_audio_stream: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
-              "get_audio_stream".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_audio_stream" }
-            }
-          }
-
-      val get_random_pitch: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
-              "get_random_pitch".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_random_pitch" }
-            }
-          }
-
-      val set_audio_stream: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
-              "set_audio_stream".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_audio_stream" }
-            }
-          }
-
-      val set_random_pitch: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
-              "set_random_pitch".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_random_pitch" }
-            }
-          }
-    }
+      val get_audio_stream: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
+            "get_audio_stream".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_audio_stream" }
+        }
+      val get_random_pitch: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
+            "get_random_pitch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_random_pitch" }
+        }
+      val set_audio_stream: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
+            "set_audio_stream".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_audio_stream" }
+        }
+      val set_random_pitch: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamRandomPitch".cstr.ptr,
+            "set_random_pitch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_random_pitch" }
+        }}
   }
 }

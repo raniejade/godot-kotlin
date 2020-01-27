@@ -232,293 +232,229 @@ open class ProceduralSky internal constructor(
      * Container for method_bind pointers for ProceduralSky
      */
     private object __method_bind {
-      val get_ground_bottom_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_ground_bottom_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_ground_bottom_color" }
-            }
-          }
-
-      val get_ground_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_ground_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_ground_curve" }
-            }
-          }
-
-      val get_ground_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_ground_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_ground_energy" }
-            }
-          }
-
-      val get_ground_horizon_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_ground_horizon_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_ground_horizon_color" }
-            }
-          }
-
-      val get_sky_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sky_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sky_curve" }
-            }
-          }
-
-      val get_sky_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sky_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sky_energy" }
-            }
-          }
-
-      val get_sky_horizon_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sky_horizon_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sky_horizon_color" }
-            }
-          }
-
-      val get_sky_top_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sky_top_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sky_top_color" }
-            }
-          }
-
-      val get_sun_angle_max: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_angle_max".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_angle_max" }
-            }
-          }
-
-      val get_sun_angle_min: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_angle_min".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_angle_min" }
-            }
-          }
-
-      val get_sun_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_color" }
-            }
-          }
-
-      val get_sun_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_curve" }
-            }
-          }
-
-      val get_sun_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_energy" }
-            }
-          }
-
-      val get_sun_latitude: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_latitude".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_latitude" }
-            }
-          }
-
-      val get_sun_longitude: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_sun_longitude".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sun_longitude" }
-            }
-          }
-
-      val get_texture_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "get_texture_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_texture_size" }
-            }
-          }
-
-      val set_ground_bottom_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_ground_bottom_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_ground_bottom_color" }
-            }
-          }
-
-      val set_ground_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_ground_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_ground_curve" }
-            }
-          }
-
-      val set_ground_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_ground_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_ground_energy" }
-            }
-          }
-
-      val set_ground_horizon_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_ground_horizon_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_ground_horizon_color" }
-            }
-          }
-
-      val set_sky_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sky_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sky_curve" }
-            }
-          }
-
-      val set_sky_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sky_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sky_energy" }
-            }
-          }
-
-      val set_sky_horizon_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sky_horizon_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sky_horizon_color" }
-            }
-          }
-
-      val set_sky_top_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sky_top_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sky_top_color" }
-            }
-          }
-
-      val set_sun_angle_max: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_angle_max".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_angle_max" }
-            }
-          }
-
-      val set_sun_angle_min: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_angle_min".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_angle_min" }
-            }
-          }
-
-      val set_sun_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_color" }
-            }
-          }
-
-      val set_sun_curve: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_curve".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_curve" }
-            }
-          }
-
-      val set_sun_energy: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_energy".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_energy" }
-            }
-          }
-
-      val set_sun_latitude: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_latitude".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_latitude" }
-            }
-          }
-
-      val set_sun_longitude: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_sun_longitude".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_sun_longitude" }
-            }
-          }
-
-      val set_texture_size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
-              "set_texture_size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_texture_size" }
-            }
-          }
-    }
+      val get_ground_bottom_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_ground_bottom_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ground_bottom_color" }
+        }
+      val get_ground_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_ground_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ground_curve" }
+        }
+      val get_ground_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_ground_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ground_energy" }
+        }
+      val get_ground_horizon_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_ground_horizon_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ground_horizon_color" }
+        }
+      val get_sky_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sky_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_curve" }
+        }
+      val get_sky_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sky_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_energy" }
+        }
+      val get_sky_horizon_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sky_horizon_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_horizon_color" }
+        }
+      val get_sky_top_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sky_top_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_top_color" }
+        }
+      val get_sun_angle_max: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_angle_max".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_angle_max" }
+        }
+      val get_sun_angle_min: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_angle_min".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_angle_min" }
+        }
+      val get_sun_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_color" }
+        }
+      val get_sun_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_curve" }
+        }
+      val get_sun_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_energy" }
+        }
+      val get_sun_latitude: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_latitude".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_latitude" }
+        }
+      val get_sun_longitude: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_sun_longitude".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sun_longitude" }
+        }
+      val get_texture_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "get_texture_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_size" }
+        }
+      val set_ground_bottom_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_ground_bottom_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ground_bottom_color" }
+        }
+      val set_ground_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_ground_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ground_curve" }
+        }
+      val set_ground_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_ground_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ground_energy" }
+        }
+      val set_ground_horizon_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_ground_horizon_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ground_horizon_color" }
+        }
+      val set_sky_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sky_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_curve" }
+        }
+      val set_sky_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sky_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_energy" }
+        }
+      val set_sky_horizon_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sky_horizon_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_horizon_color" }
+        }
+      val set_sky_top_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sky_top_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_top_color" }
+        }
+      val set_sun_angle_max: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_angle_max".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_angle_max" }
+        }
+      val set_sun_angle_min: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_angle_min".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_angle_min" }
+        }
+      val set_sun_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_color" }
+        }
+      val set_sun_curve: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_curve" }
+        }
+      val set_sun_energy: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_energy" }
+        }
+      val set_sun_latitude: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_latitude".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_latitude" }
+        }
+      val set_sun_longitude: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_sun_longitude".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sun_longitude" }
+        }
+      val set_texture_size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProceduralSky".cstr.ptr,
+            "set_texture_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_size" }
+        }}
   }
 }

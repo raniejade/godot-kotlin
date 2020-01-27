@@ -42,23 +42,19 @@ open class InputEventPanGesture internal constructor(
      * Container for method_bind pointers for InputEventPanGesture
      */
     private object __method_bind {
-      val get_delta: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
-              "get_delta".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_delta" }
-            }
-          }
-
-      val set_delta: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
-              "set_delta".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_delta" }
-            }
-          }
-    }
+      val get_delta: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
+            "get_delta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_delta" }
+        }
+      val set_delta: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
+            "set_delta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_delta" }
+        }}
   }
 }

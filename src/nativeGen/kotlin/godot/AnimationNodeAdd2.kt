@@ -42,23 +42,19 @@ open class AnimationNodeAdd2 internal constructor(
      * Container for method_bind pointers for AnimationNodeAdd2
      */
     private object __method_bind {
-      val is_using_sync: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd2".cstr.ptr,
-              "is_using_sync".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
-            }
-          }
-
-      val set_use_sync: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd2".cstr.ptr,
-              "set_use_sync".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_use_sync" }
-            }
-          }
-    }
+      val is_using_sync: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd2".cstr.ptr,
+            "is_using_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
+        }
+      val set_use_sync: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd2".cstr.ptr,
+            "set_use_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_sync" }
+        }}
   }
 }

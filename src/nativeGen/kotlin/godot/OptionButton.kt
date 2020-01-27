@@ -166,203 +166,159 @@ open class OptionButton internal constructor(
      * Container for method_bind pointers for OptionButton
      */
     private object __method_bind {
-      val add_icon_item: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "add_icon_item".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_icon_item" }
-            }
-          }
-
-      val add_item: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "add_item".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_item" }
-            }
-          }
-
-      val add_separator: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "add_separator".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_separator" }
-            }
-          }
-
-      val clear: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "clear".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method clear" }
-            }
-          }
-
-      val get_item_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_item_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_item_count" }
-            }
-          }
-
-      val get_item_icon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_item_icon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_item_icon" }
-            }
-          }
-
-      val get_item_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_item_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_item_id" }
-            }
-          }
-
-      val get_item_index: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_item_index".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_item_index" }
-            }
-          }
-
-      val get_item_metadata: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_item_metadata".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_item_metadata" }
-            }
-          }
-
-      val get_item_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_item_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_item_text" }
-            }
-          }
-
-      val get_popup: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_popup".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_popup" }
-            }
-          }
-
-      val get_selected: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_selected".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_selected" }
-            }
-          }
-
-      val get_selected_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_selected_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_selected_id" }
-            }
-          }
-
-      val get_selected_metadata: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "get_selected_metadata".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_selected_metadata" }
-            }
-          }
-
-      val is_item_disabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "is_item_disabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_item_disabled" }
-            }
-          }
-
-      val remove_item: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "remove_item".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method remove_item" }
-            }
-          }
-
-      val select: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "select".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method select" }
-            }
-          }
-
-      val set_item_disabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "set_item_disabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_item_disabled" }
-            }
-          }
-
-      val set_item_icon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "set_item_icon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_item_icon" }
-            }
-          }
-
-      val set_item_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "set_item_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_item_id" }
-            }
-          }
-
-      val set_item_metadata: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "set_item_metadata".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_item_metadata" }
-            }
-          }
-
-      val set_item_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
-              "set_item_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_item_text" }
-            }
-          }
-    }
+      val add_icon_item: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "add_icon_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_item" }
+        }
+      val add_item: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "add_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_item" }
+        }
+      val add_separator: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "add_separator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_separator" }
+        }
+      val clear: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "clear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear" }
+        }
+      val get_item_count: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_item_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_count" }
+        }
+      val get_item_icon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_item_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_icon" }
+        }
+      val get_item_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_item_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_id" }
+        }
+      val get_item_index: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_item_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_index" }
+        }
+      val get_item_metadata: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_item_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_metadata" }
+        }
+      val get_item_text: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_item_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_text" }
+        }
+      val get_popup: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_popup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_popup" }
+        }
+      val get_selected: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_selected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_selected" }
+        }
+      val get_selected_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_selected_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_selected_id" }
+        }
+      val get_selected_metadata: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "get_selected_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_selected_metadata" }
+        }
+      val is_item_disabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "is_item_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_disabled" }
+        }
+      val remove_item: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "remove_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_item" }
+        }
+      val select: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "select".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method select" }
+        }
+      val set_item_disabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "set_item_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_disabled" }
+        }
+      val set_item_icon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "set_item_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_icon" }
+        }
+      val set_item_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "set_item_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_id" }
+        }
+      val set_item_metadata: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "set_item_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_metadata" }
+        }
+      val set_item_text: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OptionButton".cstr.ptr,
+            "set_item_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_text" }
+        }}
   }
 }

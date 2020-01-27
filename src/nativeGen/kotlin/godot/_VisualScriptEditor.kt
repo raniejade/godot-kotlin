@@ -37,36 +37,32 @@ open class _VisualScriptEditor internal constructor(
   }
 
   companion object {
-    val Instance: _VisualScriptEditor = memScoped {
-          val handle =
-            checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
-          requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
-          _VisualScriptEditor(
-            handle
-          )
-        }
-
+    val Instance: _VisualScriptEditor
+      get() = memScoped {
+        val handle =
+          checkNotNull(Godot.gdnative.godot_global_get_singleton)("_VisualScriptEditor".cstr.ptr)
+        requireNotNull(handle) { "No instance found for singleton _VisualScriptEditor" }
+        _VisualScriptEditor(
+          handle
+        )
+      }
     /**
      * Container for method_bind pointers for _VisualScriptEditor
      */
     private object __method_bind {
-      val add_custom_node: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-              "add_custom_node".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
-            }
-          }
-
-      val remove_custom_node: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-              "remove_custom_node".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
-            }
-          }
-    }
+      val add_custom_node: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
+            "add_custom_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
+        }
+      val remove_custom_node: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
+            "remove_custom_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
+        }}
   }
 }

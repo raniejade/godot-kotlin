@@ -45,32 +45,26 @@ open class EditorScript internal constructor(
      * Container for method_bind pointers for EditorScript
      */
     private object __method_bind {
-      val add_root_node: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-              "add_root_node".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_root_node" }
-            }
-          }
-
-      val get_editor_interface: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-              "get_editor_interface".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
-            }
-          }
-
-      val get_scene: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-              "get_scene".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_scene" }
-            }
-          }
-    }
+      val add_root_node: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
+            "add_root_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_root_node" }
+        }
+      val get_editor_interface: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
+            "get_editor_interface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
+        }
+      val get_scene: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
+            "get_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scene" }
+        }}
   }
 }

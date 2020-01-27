@@ -100,15 +100,14 @@ open class Performance internal constructor(
   }
 
   companion object {
-    val Instance: Performance = memScoped {
-          val handle =
-            checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
-          requireNotNull(handle) { "No instance found for singleton Performance" }
-          Performance(
-            handle
-          )
-        }
-
+    val Instance: Performance
+      get() = memScoped {
+        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("Performance".cstr.ptr)
+        requireNotNull(handle) { "No instance found for singleton Performance" }
+        Performance(
+          handle
+        )
+      }
     val AUDIO_OUTPUT_LATENCY: Int = 28
 
     val MEMORY_DYNAMIC: Int = 4
@@ -173,14 +172,12 @@ open class Performance internal constructor(
      * Container for method_bind pointers for Performance
      */
     private object __method_bind {
-      val get_monitor: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Performance".cstr.ptr,
-              "get_monitor".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_monitor" }
-            }
-          }
-    }
+      val get_monitor: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Performance".cstr.ptr,
+            "get_monitor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_monitor" }
+        }}
   }
 }

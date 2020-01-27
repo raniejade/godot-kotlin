@@ -42,23 +42,19 @@ open class CanvasModulate internal constructor(
      * Container for method_bind pointers for CanvasModulate
      */
     private object __method_bind {
-      val get_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
-              "get_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_color" }
-            }
-          }
-
-      val set_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
-              "set_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_color" }
-            }
-          }
-    }
+      val get_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
+            "get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color" }
+        }
+      val set_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
+        }}
   }
 }

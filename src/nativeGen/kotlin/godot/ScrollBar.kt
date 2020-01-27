@@ -32,23 +32,17 @@ open class ScrollBar internal constructor(
      * Container for method_bind pointers for ScrollBar
      */
     private object __method_bind {
-      val get_custom_step: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollBar".cstr.ptr,
-              "get_custom_step".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_custom_step" }
-            }
-          }
-
-      val set_custom_step: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollBar".cstr.ptr,
-              "set_custom_step".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_custom_step" }
-            }
-          }
-    }
+      val get_custom_step: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollBar".cstr.ptr,
+            "get_custom_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_step" }
+        }
+      val set_custom_step: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollBar".cstr.ptr,
+            "set_custom_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_step" }
+        }}
   }
 }

@@ -224,149 +224,113 @@ open class Light internal constructor(
      * Container for method_bind pointers for Light
      */
     private object __method_bind {
-      val get_bake_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "get_bake_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_bake_mode" }
-            }
-          }
-
-      val get_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "get_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_color" }
-            }
-          }
-
-      val get_cull_mask: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "get_cull_mask".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
-            }
-          }
-
-      val get_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "get_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_param" }
-            }
-          }
-
-      val get_shadow_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "get_shadow_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_shadow_color" }
-            }
-          }
-
-      val get_shadow_reverse_cull_face: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "get_shadow_reverse_cull_face".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_shadow_reverse_cull_face" }
-            }
-          }
-
-      val has_shadow: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "has_shadow".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_shadow" }
-            }
-          }
-
-      val is_editor_only: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "is_editor_only".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_editor_only" }
-            }
-          }
-
-      val is_negative: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "is_negative".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_negative" }
-            }
-          }
-
-      val set_bake_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_bake_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_bake_mode" }
-            }
-          }
-
-      val set_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_color" }
-            }
-          }
-
-      val set_cull_mask: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_cull_mask".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
-            }
-          }
-
-      val set_editor_only: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_editor_only".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
-            }
-          }
-
-      val set_negative: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_negative".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_negative" }
-            }
-          }
-
-      val set_param: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_param".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_param" }
-            }
-          }
-
-      val set_shadow: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_shadow".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow" }
-            }
-          }
-
-      val set_shadow_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_shadow_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow_color" }
-            }
-          }
-
-      val set_shadow_reverse_cull_face: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
-              "set_shadow_reverse_cull_face".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow_reverse_cull_face" }
-            }
-          }
-    }
+      val get_bake_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "get_bake_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bake_mode" }
+        }
+      val get_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color" }
+        }
+      val get_cull_mask: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "get_cull_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
+        }
+      val get_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param" }
+        }
+      val get_shadow_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "get_shadow_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shadow_color" }
+        }
+      val get_shadow_reverse_cull_face: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "get_shadow_reverse_cull_face".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shadow_reverse_cull_face" }
+        }
+      val has_shadow: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "has_shadow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_shadow" }
+        }
+      val is_editor_only: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "is_editor_only".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_editor_only" }
+        }
+      val is_negative: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "is_negative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_negative" }
+        }
+      val set_bake_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_bake_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bake_mode" }
+        }
+      val set_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
+        }
+      val set_cull_mask: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_cull_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
+        }
+      val set_editor_only: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_editor_only".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_editor_only" }
+        }
+      val set_negative: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_negative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_negative" }
+        }
+      val set_param: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param" }
+        }
+      val set_shadow: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_shadow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow" }
+        }
+      val set_shadow_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_shadow_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow_color" }
+        }
+      val set_shadow_reverse_cull_face: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Light".cstr.ptr,
+            "set_shadow_reverse_cull_face".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow_reverse_cull_face" }
+        }}
   }
 }

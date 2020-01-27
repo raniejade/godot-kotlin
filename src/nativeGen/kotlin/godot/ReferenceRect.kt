@@ -41,23 +41,19 @@ open class ReferenceRect internal constructor(
      * Container for method_bind pointers for ReferenceRect
      */
     private object __method_bind {
-      val get_border_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-              "get_border_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_border_color" }
-            }
-          }
-
-      val set_border_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-              "set_border_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_border_color" }
-            }
-          }
-    }
+      val get_border_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+            "get_border_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_border_color" }
+        }
+      val set_border_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
+            "set_border_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_border_color" }
+        }}
   }
 }

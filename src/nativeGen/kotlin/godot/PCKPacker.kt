@@ -56,32 +56,23 @@ open class PCKPacker internal constructor(
      * Container for method_bind pointers for PCKPacker
      */
     private object __method_bind {
-      val add_file: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-              "add_file".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_file" }
-            }
-          }
-
-      val flush: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-              "flush".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method flush" }
-            }
-          }
-
-      val pck_start: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-              "pck_start".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method pck_start" }
-            }
-          }
-    }
+      val add_file: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
+            "add_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_file" }
+        }
+      val flush: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
+            "flush".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method flush" }
+        }
+      val pck_start: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
+            "pck_start".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pck_start" }
+        }}
   }
 }

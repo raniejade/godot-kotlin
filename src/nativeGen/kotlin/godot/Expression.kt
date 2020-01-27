@@ -65,41 +65,29 @@ open class Expression internal constructor(
      * Container for method_bind pointers for Expression
      */
     private object __method_bind {
-      val execute: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-              "execute".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method execute" }
-            }
-          }
-
-      val get_error_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-              "get_error_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_error_text" }
-            }
-          }
-
-      val has_execute_failed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-              "has_execute_failed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
-            }
-          }
-
-      val parse: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-              "parse".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method parse" }
-            }
-          }
-    }
+      val execute: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+            "execute".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method execute" }
+        }
+      val get_error_text: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+            "get_error_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_error_text" }
+        }
+      val has_execute_failed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+            "has_execute_failed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
+        }
+      val parse: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
+            "parse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method parse" }
+        }}
   }
 }

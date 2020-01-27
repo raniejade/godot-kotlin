@@ -101,86 +101,59 @@ open class ConfigFile internal constructor(
      * Container for method_bind pointers for ConfigFile
      */
     private object __method_bind {
-      val erase_section: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "erase_section".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method erase_section" }
-            }
-          }
-
-      val get_section_keys: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "get_section_keys".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_section_keys" }
-            }
-          }
-
-      val get_sections: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "get_sections".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_sections" }
-            }
-          }
-
-      val get_value: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "get_value".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_value" }
-            }
-          }
-
-      val has_section: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "has_section".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_section" }
-            }
-          }
-
-      val has_section_key: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "has_section_key".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method has_section_key" }
-            }
-          }
-
-      val load: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "load".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method load" }
-            }
-          }
-
-      val save: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "save".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method save" }
-            }
-          }
-
-      val set_value: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-              "set_value".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_value" }
-            }
-          }
-    }
+      val erase_section: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "erase_section".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_section" }
+        }
+      val get_section_keys: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "get_section_keys".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_section_keys" }
+        }
+      val get_sections: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "get_sections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sections" }
+        }
+      val get_value: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "get_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_value" }
+        }
+      val has_section: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "has_section".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_section" }
+        }
+      val has_section_key: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "has_section_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_section_key" }
+        }
+      val load: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "load".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load" }
+        }
+      val save: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "save".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save" }
+        }
+      val set_value: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
+            "set_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_value" }
+        }}
   }
 }

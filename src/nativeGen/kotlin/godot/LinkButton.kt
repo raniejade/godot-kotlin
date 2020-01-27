@@ -79,41 +79,29 @@ open class LinkButton internal constructor(
      * Container for method_bind pointers for LinkButton
      */
     private object __method_bind {
-      val get_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-              "get_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_text" }
-            }
-          }
-
-      val get_underline_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-              "get_underline_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_underline_mode" }
-            }
-          }
-
-      val set_text: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-              "set_text".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_text" }
-            }
-          }
-
-      val set_underline_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-              "set_underline_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_underline_mode" }
-            }
-          }
-    }
+      val get_text: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
+            "get_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text" }
+        }
+      val get_underline_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
+            "get_underline_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_underline_mode" }
+        }
+      val set_text: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
+            "set_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text" }
+        }
+      val set_underline_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
+            "set_underline_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_underline_mode" }
+        }}
   }
 }

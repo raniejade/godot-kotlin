@@ -42,23 +42,19 @@ open class VisualScriptGlobalConstant internal constructor(
      * Container for method_bind pointers for VisualScriptGlobalConstant
      */
     private object __method_bind {
-      val get_global_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
-              "get_global_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_global_constant" }
-            }
-          }
-
-      val set_global_constant: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
-              "set_global_constant".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_global_constant" }
-            }
-          }
-    }
+      val get_global_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
+            "get_global_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_global_constant" }
+        }
+      val set_global_constant: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
+            "set_global_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_global_constant" }
+        }}
   }
 }

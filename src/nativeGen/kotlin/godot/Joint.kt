@@ -64,71 +64,53 @@ open class Joint internal constructor(
      * Container for method_bind pointers for Joint
      */
     private object __method_bind {
-      val get_exclude_nodes_from_collision: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "get_exclude_nodes_from_collision".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method get_exclude_nodes_from_collision" }
-            }
-          }
-
-      val get_node_a: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "get_node_a".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_node_a" }
-            }
-          }
-
-      val get_node_b: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "get_node_b".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_node_b" }
-            }
-          }
-
-      val get_solver_priority: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "get_solver_priority".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_solver_priority" }
-            }
-          }
-
-      val set_exclude_nodes_from_collision: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "set_exclude_nodes_from_collision".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method set_exclude_nodes_from_collision" }
-            }
-          }
-
-      val set_node_a: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "set_node_a".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_node_a" }
-            }
-          }
-
-      val set_node_b: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "set_node_b".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_node_b" }
-            }
-          }
-
-      val set_solver_priority: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
-              "set_solver_priority".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_solver_priority" }
-            }
-          }
-    }
+      val get_exclude_nodes_from_collision: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "get_exclude_nodes_from_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_exclude_nodes_from_collision" }
+        }
+      val get_node_a: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "get_node_a".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_a" }
+        }
+      val get_node_b: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "get_node_b".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_b" }
+        }
+      val get_solver_priority: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "get_solver_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_solver_priority" }
+        }
+      val set_exclude_nodes_from_collision: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "set_exclude_nodes_from_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_exclude_nodes_from_collision" }
+        }
+      val set_node_a: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "set_node_a".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_a" }
+        }
+      val set_node_b: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "set_node_b".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_b" }
+        }
+      val set_solver_priority: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint".cstr.ptr,
+            "set_solver_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_solver_priority" }
+        }}
   }
 }

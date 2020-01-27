@@ -24,7 +24,7 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     println(array[0])
     val rotation = Vector3.new(x = 16f)
     spatial.setRotationDegrees(rotation)
-    println(spatial.getRotation())
+    println(spatial.getRotationDegrees())
 }
 
 @CName("godot_gdnative_terminate")

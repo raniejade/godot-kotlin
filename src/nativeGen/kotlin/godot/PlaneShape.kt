@@ -41,23 +41,17 @@ open class PlaneShape internal constructor(
      * Container for method_bind pointers for PlaneShape
      */
     private object __method_bind {
-      val get_plane: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
-              "get_plane".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_plane" }
-            }
-          }
-
-      val set_plane: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
-              "set_plane".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_plane" }
-            }
-          }
-    }
+      val get_plane: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
+            "get_plane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_plane" }
+        }
+      val set_plane: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
+            "set_plane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_plane" }
+        }}
   }
 }

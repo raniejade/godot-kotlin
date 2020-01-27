@@ -42,23 +42,19 @@ open class VisualScriptResourcePath internal constructor(
      * Container for method_bind pointers for VisualScriptResourcePath
      */
     private object __method_bind {
-      val get_resource_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
-              "get_resource_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_resource_path" }
-            }
-          }
-
-      val set_resource_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
-              "set_resource_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_resource_path" }
-            }
-          }
-    }
+      val get_resource_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
+            "get_resource_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resource_path" }
+        }
+      val set_resource_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
+            "set_resource_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_resource_path" }
+        }}
   }
 }

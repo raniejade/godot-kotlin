@@ -42,23 +42,19 @@ open class VisualScriptSequence internal constructor(
      * Container for method_bind pointers for VisualScriptSequence
      */
     private object __method_bind {
-      val get_steps: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
-              "get_steps".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_steps" }
-            }
-          }
-
-      val set_steps: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
-              "set_steps".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_steps" }
-            }
-          }
-    }
+      val get_steps: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
+            "get_steps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_steps" }
+        }
+      val set_steps: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
+            "set_steps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_steps" }
+        }}
   }
 }

@@ -27,27 +27,23 @@ open class JavaScript internal constructor(
   }
 
   companion object {
-    val Instance: JavaScript = memScoped {
-          val handle =
-            checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaScript".cstr.ptr)
-          requireNotNull(handle) { "No instance found for singleton JavaScript" }
-          JavaScript(
-            handle
-          )
-        }
-
+    val Instance: JavaScript
+      get() = memScoped {
+        val handle = checkNotNull(Godot.gdnative.godot_global_get_singleton)("JavaScript".cstr.ptr)
+        requireNotNull(handle) { "No instance found for singleton JavaScript" }
+        JavaScript(
+          handle
+        )
+      }
     /**
      * Container for method_bind pointers for JavaScript
      */
     private object __method_bind {
-      val eval: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JavaScript".cstr.ptr,
-              "eval".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method eval" }
-            }
-          }
-    }
+      val eval: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("JavaScript".cstr.ptr,
+            "eval".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method eval" }
+        }}
   }
 }

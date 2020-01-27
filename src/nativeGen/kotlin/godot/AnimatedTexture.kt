@@ -81,77 +81,61 @@ open class AnimatedTexture internal constructor(
      * Container for method_bind pointers for AnimatedTexture
      */
     private object __method_bind {
-      val get_fps: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "get_fps".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_fps" }
-            }
-          }
-
-      val get_frame_delay: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "get_frame_delay".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_frame_delay" }
-            }
-          }
-
-      val get_frame_texture: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "get_frame_texture".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_frame_texture" }
-            }
-          }
-
-      val get_frames: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "get_frames".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_frames" }
-            }
-          }
-
-      val set_fps: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "set_fps".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_fps" }
-            }
-          }
-
-      val set_frame_delay: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "set_frame_delay".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_frame_delay" }
-            }
-          }
-
-      val set_frame_texture: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "set_frame_texture".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_frame_texture" }
-            }
-          }
-
-      val set_frames: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-              "set_frames".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_frames" }
-            }
-          }
-    }
+      val get_fps: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "get_fps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fps" }
+        }
+      val get_frame_delay: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "get_frame_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame_delay" }
+        }
+      val get_frame_texture: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "get_frame_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame_texture" }
+        }
+      val get_frames: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "get_frames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frames" }
+        }
+      val set_fps: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "set_fps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fps" }
+        }
+      val set_frame_delay: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "set_frame_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frame_delay" }
+        }
+      val set_frame_texture: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "set_frame_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frame_texture" }
+        }
+      val set_frames: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
+            "set_frames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frames" }
+        }}
   }
 }

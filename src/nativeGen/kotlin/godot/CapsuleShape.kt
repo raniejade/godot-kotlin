@@ -51,41 +51,33 @@ open class CapsuleShape internal constructor(
      * Container for method_bind pointers for CapsuleShape
      */
     private object __method_bind {
-      val get_height: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
-              "get_height".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_height" }
-            }
-          }
-
-      val get_radius: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
-              "get_radius".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_radius" }
-            }
-          }
-
-      val set_height: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
-              "set_height".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_height" }
-            }
-          }
-
-      val set_radius: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
-              "set_radius".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_radius" }
-            }
-          }
-    }
+      val get_height: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
+            "get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_height" }
+        }
+      val get_radius: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
+            "get_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_radius" }
+        }
+      val set_height: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
+            "set_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_height" }
+        }
+      val set_radius: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleShape".cstr.ptr,
+            "set_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_radius" }
+        }}
   }
 }

@@ -35,14 +35,12 @@ open class EditorInspector internal constructor(
      * Container for method_bind pointers for EditorInspector
      */
     private object __method_bind {
-      val refresh: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspector".cstr.ptr,
-              "refresh".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method refresh" }
-            }
-          }
-    }
+      val refresh: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspector".cstr.ptr,
+            "refresh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method refresh" }
+        }}
   }
 }

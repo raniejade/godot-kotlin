@@ -81,25 +81,20 @@ open class EditorSceneImporter internal constructor(
      * Container for method_bind pointers for EditorSceneImporter
      */
     private object __method_bind {
-      val import_animation_from_other_importer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-              "import_animation_from_other_importer".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method import_animation_from_other_importer" }
-            }
-          }
-
-      val import_scene_from_other_importer: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-              "import_scene_from_other_importer".cstr.ptr)
-              requireNotNull(ptr) {
-              "No method_bind found for method import_scene_from_other_importer" }
-            }
-          }
-    }
+      val import_animation_from_other_importer: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
+            "import_animation_from_other_importer".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method import_animation_from_other_importer" }
+        }
+      val import_scene_from_other_importer: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
+            "import_scene_from_other_importer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method import_scene_from_other_importer" }
+        }}
   }
 }

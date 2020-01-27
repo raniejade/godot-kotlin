@@ -101,77 +101,61 @@ open class VisualScriptYieldSignal internal constructor(
      * Container for method_bind pointers for VisualScriptYieldSignal
      */
     private object __method_bind {
-      val get_base_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "get_base_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_base_path" }
-            }
-          }
-
-      val get_base_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "get_base_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_base_type" }
-            }
-          }
-
-      val get_call_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "get_call_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_call_mode" }
-            }
-          }
-
-      val get_signal: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "get_signal".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_signal" }
-            }
-          }
-
-      val set_base_path: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "set_base_path".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_base_path" }
-            }
-          }
-
-      val set_base_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "set_base_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_base_type" }
-            }
-          }
-
-      val set_call_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "set_call_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_call_mode" }
-            }
-          }
-
-      val set_signal: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
-              "set_signal".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_signal" }
-            }
-          }
-    }
+      val get_base_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "get_base_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_path" }
+        }
+      val get_base_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "get_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
+        }
+      val get_call_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "get_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_call_mode" }
+        }
+      val get_signal: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "get_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_signal" }
+        }
+      val set_base_path: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "set_base_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_path" }
+        }
+      val set_base_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "set_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
+        }
+      val set_call_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "set_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_call_mode" }
+        }
+      val set_signal: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYieldSignal".cstr.ptr,
+            "set_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_signal" }
+        }}
   }
 }

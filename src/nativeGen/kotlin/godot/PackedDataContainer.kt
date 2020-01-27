@@ -44,23 +44,19 @@ open class PackedDataContainer internal constructor(
      * Container for method_bind pointers for PackedDataContainer
      */
     private object __method_bind {
-      val pack: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedDataContainer".cstr.ptr,
-              "pack".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method pack" }
-            }
-          }
-
-      val size: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedDataContainer".cstr.ptr,
-              "size".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method size" }
-            }
-          }
-    }
+      val pack: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedDataContainer".cstr.ptr,
+            "pack".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pack" }
+        }
+      val size: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedDataContainer".cstr.ptr,
+            "size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method size" }
+        }}
   }
 }

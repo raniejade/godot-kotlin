@@ -32,21 +32,17 @@ open class Shape internal constructor(
      * Container for method_bind pointers for Shape
      */
     private object __method_bind {
-      val get_margin: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
-              "get_margin".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_margin" }
-            }
-          }
-
-      val set_margin: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
-              "set_margin".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_margin" }
-            }
-          }
-    }
+      val get_margin: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
+            "get_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_margin" }
+        }
+      val set_margin: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
+            "set_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_margin" }
+        }}
   }
 }

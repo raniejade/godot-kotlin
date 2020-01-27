@@ -48,32 +48,26 @@ open class VisibilityNotifier internal constructor(
      * Container for method_bind pointers for VisibilityNotifier
      */
     private object __method_bind {
-      val get_aabb: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
-              "get_aabb".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_aabb" }
-            }
-          }
-
-      val is_on_screen: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
-              "is_on_screen".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
-            }
-          }
-
-      val set_aabb: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
-              "set_aabb".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_aabb" }
-            }
-          }
-    }
+      val get_aabb: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
+            "get_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_aabb" }
+        }
+      val is_on_screen: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
+            "is_on_screen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
+        }
+      val set_aabb: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
+            "set_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_aabb" }
+        }}
   }
 }

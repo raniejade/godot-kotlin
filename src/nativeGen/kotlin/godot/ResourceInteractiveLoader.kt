@@ -48,50 +48,40 @@ open class ResourceInteractiveLoader internal constructor(
      * Container for method_bind pointers for ResourceInteractiveLoader
      */
     private object __method_bind {
-      val get_resource: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-              "get_resource".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_resource" }
-            }
-          }
-
-      val get_stage: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-              "get_stage".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_stage" }
-            }
-          }
-
-      val get_stage_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-              "get_stage_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_stage_count" }
-            }
-          }
-
-      val poll: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-              "poll".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method poll" }
-            }
-          }
-
-      val wait: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-              "wait".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method wait" }
-            }
-          }
-    }
+      val get_resource: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
+            "get_resource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resource" }
+        }
+      val get_stage: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
+            "get_stage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stage" }
+        }
+      val get_stage_count: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
+            "get_stage_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stage_count" }
+        }
+      val poll: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
+            "poll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method poll" }
+        }
+      val wait: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
+            "wait".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method wait" }
+        }}
   }
 }

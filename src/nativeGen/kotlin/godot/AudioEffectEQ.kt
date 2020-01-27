@@ -50,32 +50,26 @@ open class AudioEffectEQ internal constructor(
      * Container for method_bind pointers for AudioEffectEQ
      */
     private object __method_bind {
-      val get_band_count: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
-              "get_band_count".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_band_count" }
-            }
-          }
-
-      val get_band_gain_db: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
-              "get_band_gain_db".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_band_gain_db" }
-            }
-          }
-
-      val set_band_gain_db: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
-              "set_band_gain_db".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_band_gain_db" }
-            }
-          }
-    }
+      val get_band_count: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
+            "get_band_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_band_count" }
+        }
+      val get_band_gain_db: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
+            "get_band_gain_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_band_gain_db" }
+        }
+      val set_band_gain_db: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectEQ".cstr.ptr,
+            "set_band_gain_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_band_gain_db" }
+        }}
   }
 }

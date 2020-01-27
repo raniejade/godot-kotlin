@@ -41,23 +41,19 @@ open class ProgressBar internal constructor(
      * Container for method_bind pointers for ProgressBar
      */
     private object __method_bind {
-      val is_percent_visible: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
-              "is_percent_visible".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_percent_visible" }
-            }
-          }
-
-      val set_percent_visible: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
-              "set_percent_visible".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
-            }
-          }
-    }
+      val is_percent_visible: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
+            "is_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_percent_visible" }
+        }
+      val set_percent_visible: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
+            "set_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
+        }}
   }
 }

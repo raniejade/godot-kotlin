@@ -45,23 +45,17 @@ open class Container internal constructor(
      * Container for method_bind pointers for Container
      */
     private object __method_bind {
-      val fit_child_in_rect: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-              "fit_child_in_rect".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
-            }
-          }
-
-      val queue_sort: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-              "queue_sort".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method queue_sort" }
-            }
-          }
-    }
+      val fit_child_in_rect: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
+            "fit_child_in_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
+        }
+      val queue_sort: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
+            "queue_sort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queue_sort" }
+        }}
   }
 }

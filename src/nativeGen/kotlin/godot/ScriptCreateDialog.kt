@@ -45,14 +45,12 @@ open class ScriptCreateDialog internal constructor(
      * Container for method_bind pointers for ScriptCreateDialog
      */
     private object __method_bind {
-      val config: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptCreateDialog".cstr.ptr,
-              "config".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method config" }
-            }
-          }
-    }
+      val config: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptCreateDialog".cstr.ptr,
+            "config".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method config" }
+        }}
   }
 }

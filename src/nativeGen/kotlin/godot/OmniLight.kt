@@ -97,41 +97,29 @@ open class OmniLight internal constructor(
      * Container for method_bind pointers for OmniLight
      */
     private object __method_bind {
-      val get_shadow_detail: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
-              "get_shadow_detail".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_shadow_detail" }
-            }
-          }
-
-      val get_shadow_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
-              "get_shadow_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_shadow_mode" }
-            }
-          }
-
-      val set_shadow_detail: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
-              "set_shadow_detail".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow_detail" }
-            }
-          }
-
-      val set_shadow_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
-              "set_shadow_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_shadow_mode" }
-            }
-          }
-    }
+      val get_shadow_detail: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
+            "get_shadow_detail".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shadow_detail" }
+        }
+      val get_shadow_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
+            "get_shadow_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shadow_mode" }
+        }
+      val set_shadow_detail: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
+            "set_shadow_detail".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow_detail" }
+        }
+      val set_shadow_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OmniLight".cstr.ptr,
+            "set_shadow_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shadow_mode" }
+        }}
   }
 }

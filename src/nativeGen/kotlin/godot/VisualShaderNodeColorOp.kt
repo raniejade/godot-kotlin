@@ -93,23 +93,19 @@ open class VisualShaderNodeColorOp internal constructor(
      * Container for method_bind pointers for VisualShaderNodeColorOp
      */
     private object __method_bind {
-      val get_operator: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
-              "get_operator".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_operator" }
-            }
-          }
-
-      val set_operator: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
-              "set_operator".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_operator" }
-            }
-          }
-    }
+      val get_operator: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
+            "get_operator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_operator" }
+        }
+      val set_operator: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
+            "set_operator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_operator" }
+        }}
   }
 }

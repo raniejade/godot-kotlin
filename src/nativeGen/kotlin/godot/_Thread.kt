@@ -91,41 +91,29 @@ open class _Thread internal constructor(
      * Container for method_bind pointers for _Thread
      */
     private object __method_bind {
-      val get_id: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
-              "get_id".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_id" }
-            }
-          }
-
-      val is_active: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
-              "is_active".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_active" }
-            }
-          }
-
-      val start: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
-              "start".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method start" }
-            }
-          }
-
-      val wait_to_finish: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
-              "wait_to_finish".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method wait_to_finish" }
-            }
-          }
-    }
+      val get_id: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
+            "get_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_id" }
+        }
+      val is_active: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
+            "is_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_active" }
+        }
+      val start: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
+            "start".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method start" }
+        }
+      val wait_to_finish: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Thread".cstr.ptr,
+            "wait_to_finish".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method wait_to_finish" }
+        }}
   }
 }

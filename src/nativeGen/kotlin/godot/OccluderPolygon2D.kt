@@ -91,59 +91,47 @@ open class OccluderPolygon2D internal constructor(
      * Container for method_bind pointers for OccluderPolygon2D
      */
     private object __method_bind {
-      val get_cull_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-              "get_cull_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_cull_mode" }
-            }
-          }
-
-      val get_polygon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-              "get_polygon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_polygon" }
-            }
-          }
-
-      val is_closed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-              "is_closed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_closed" }
-            }
-          }
-
-      val set_closed: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-              "set_closed".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_closed" }
-            }
-          }
-
-      val set_cull_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-              "set_cull_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_cull_mode" }
-            }
-          }
-
-      val set_polygon: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-              "set_polygon".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_polygon" }
-            }
-          }
-    }
+      val get_cull_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
+            "get_cull_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cull_mode" }
+        }
+      val get_polygon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
+            "get_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+        }
+      val is_closed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
+            "is_closed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_closed" }
+        }
+      val set_closed: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
+            "set_closed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_closed" }
+        }
+      val set_cull_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
+            "set_cull_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cull_mode" }
+        }
+      val set_polygon: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
+            "set_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
+        }}
   }
 }

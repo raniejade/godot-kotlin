@@ -108,140 +108,110 @@ open class ColorPicker internal constructor(
      * Container for method_bind pointers for ColorPicker
      */
     private object __method_bind {
-      val add_preset: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "add_preset".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method add_preset" }
-            }
-          }
-
-      val are_presets_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "are_presets_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method are_presets_enabled" }
-            }
-          }
-
-      val are_presets_visible: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "are_presets_visible".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method are_presets_visible" }
-            }
-          }
-
-      val erase_preset: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "erase_preset".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method erase_preset" }
-            }
-          }
-
-      val get_pick_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "get_pick_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_pick_color" }
-            }
-          }
-
-      val get_presets: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "get_presets".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_presets" }
-            }
-          }
-
-      val is_deferred_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "is_deferred_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_deferred_mode" }
-            }
-          }
-
-      val is_editing_alpha: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "is_editing_alpha".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_editing_alpha" }
-            }
-          }
-
-      val is_raw_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "is_raw_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_raw_mode" }
-            }
-          }
-
-      val set_deferred_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "set_deferred_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_deferred_mode" }
-            }
-          }
-
-      val set_edit_alpha: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "set_edit_alpha".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_edit_alpha" }
-            }
-          }
-
-      val set_pick_color: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "set_pick_color".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_pick_color" }
-            }
-          }
-
-      val set_presets_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "set_presets_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_presets_enabled" }
-            }
-          }
-
-      val set_presets_visible: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "set_presets_visible".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_presets_visible" }
-            }
-          }
-
-      val set_raw_mode: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
-              "set_raw_mode".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_raw_mode" }
-            }
-          }
-    }
+      val add_preset: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "add_preset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_preset" }
+        }
+      val are_presets_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "are_presets_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method are_presets_enabled" }
+        }
+      val are_presets_visible: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "are_presets_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method are_presets_visible" }
+        }
+      val erase_preset: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "erase_preset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_preset" }
+        }
+      val get_pick_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "get_pick_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pick_color" }
+        }
+      val get_presets: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "get_presets".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_presets" }
+        }
+      val is_deferred_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "is_deferred_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_deferred_mode" }
+        }
+      val is_editing_alpha: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "is_editing_alpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_editing_alpha" }
+        }
+      val is_raw_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "is_raw_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_raw_mode" }
+        }
+      val set_deferred_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_deferred_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_deferred_mode" }
+        }
+      val set_edit_alpha: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_edit_alpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_edit_alpha" }
+        }
+      val set_pick_color: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_pick_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pick_color" }
+        }
+      val set_presets_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_presets_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_presets_enabled" }
+        }
+      val set_presets_visible: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_presets_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_presets_visible" }
+        }
+      val set_raw_mode: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPicker".cstr.ptr,
+            "set_raw_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_raw_mode" }
+        }}
   }
 }

@@ -73,23 +73,19 @@ open class VisibilityEnabler internal constructor(
      * Container for method_bind pointers for VisibilityEnabler
      */
     private object __method_bind {
-      val is_enabler_enabled: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
-              "is_enabler_enabled".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_enabler_enabled" }
-            }
-          }
-
-      val set_enabler: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
-              "set_enabler".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_enabler" }
-            }
-          }
-    }
+      val is_enabler_enabled: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
+            "is_enabler_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_enabler_enabled" }
+        }
+      val set_enabler: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
+            "set_enabler".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabler" }
+        }}
   }
 }

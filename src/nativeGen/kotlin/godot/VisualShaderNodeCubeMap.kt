@@ -79,41 +79,33 @@ open class VisualShaderNodeCubeMap internal constructor(
      * Container for method_bind pointers for VisualShaderNodeCubeMap
      */
     private object __method_bind {
-      val get_cube_map: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-              "get_cube_map".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_cube_map" }
-            }
-          }
-
-      val get_texture_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-              "get_texture_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
-            }
-          }
-
-      val set_cube_map: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-              "set_cube_map".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_cube_map" }
-            }
-          }
-
-      val set_texture_type: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-              "set_texture_type".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_texture_type" }
-            }
-          }
-    }
+      val get_cube_map: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
+            "get_cube_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cube_map" }
+        }
+      val get_texture_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
+            "get_texture_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
+        }
+      val set_cube_map: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
+            "set_cube_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cube_map" }
+        }
+      val set_texture_type: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
+            "set_texture_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_type" }
+        }}
   }
 }

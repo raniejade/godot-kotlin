@@ -76,61 +76,47 @@ open class Popup internal constructor(
      * Container for method_bind pointers for Popup
      */
     private object __method_bind {
-      val is_exclusive: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "is_exclusive".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method is_exclusive" }
-            }
-          }
-
-      val popup: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "popup".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method popup" }
-            }
-          }
-
-      val popup_centered: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "popup_centered".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method popup_centered" }
-            }
-          }
-
-      val popup_centered_clamped: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "popup_centered_clamped".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method popup_centered_clamped" }
-            }
-          }
-
-      val popup_centered_minsize: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "popup_centered_minsize".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method popup_centered_minsize" }
-            }
-          }
-
-      val popup_centered_ratio: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "popup_centered_ratio".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method popup_centered_ratio" }
-            }
-          }
-
-      val set_exclusive: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
-              "set_exclusive".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_exclusive" }
-            }
-          }
-    }
+      val is_exclusive: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "is_exclusive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_exclusive" }
+        }
+      val popup: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "popup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method popup" }
+        }
+      val popup_centered: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "popup_centered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method popup_centered" }
+        }
+      val popup_centered_clamped: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "popup_centered_clamped".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method popup_centered_clamped" }
+        }
+      val popup_centered_minsize: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "popup_centered_minsize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method popup_centered_minsize" }
+        }
+      val popup_centered_ratio: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "popup_centered_ratio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method popup_centered_ratio" }
+        }
+      val set_exclusive: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Popup".cstr.ptr,
+            "set_exclusive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_exclusive" }
+        }}
   }
 }

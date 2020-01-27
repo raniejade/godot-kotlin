@@ -46,32 +46,26 @@ open class VisualShaderNodeExpression internal constructor(
      * Container for method_bind pointers for VisualShaderNodeExpression
      */
     private object __method_bind {
-      val build: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-              "build".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method build" }
-            }
-          }
-
-      val get_expression: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-              "get_expression".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method get_expression" }
-            }
-          }
-
-      val set_expression: CPointer<godot_method_bind> by lazy {
-            memScoped {
-              val ptr =
-              checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-              "set_expression".cstr.ptr)
-              requireNotNull(ptr) { "No method_bind found for method set_expression" }
-            }
-          }
-    }
+      val build: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
+            "build".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method build" }
+        }
+      val get_expression: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
+            "get_expression".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_expression" }
+        }
+      val set_expression: CPointer<godot_method_bind>
+        get() = memScoped {
+          val ptr =
+            checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
+            "set_expression".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_expression" }
+        }}
   }
 }
