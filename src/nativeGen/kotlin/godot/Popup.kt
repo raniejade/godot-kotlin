@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -20,30 +22,50 @@ open class Popup internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun isExclusive(): Boolean {
+    val _ret = __method_bind.is_exclusive.call(this.toVariant())
     TODO()
   }
 
   fun popup(bounds: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(bounds)
+    val _ret = __method_bind.popup.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun popupCentered(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.popup_centered.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun popupCenteredClamped(size: Vector2, fallback_ratio: Float) {
+  fun popupCenteredClamped(size: Vector2, fallbackRatio: Float) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    _args.append(fallbackRatio)
+    val _ret = __method_bind.popup_centered_clamped.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun popupCenteredMinsize(minsize: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(minsize)
+    val _ret = __method_bind.popup_centered_minsize.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun popupCenteredRatio(ratio: Float) {
+    val _args = VariantArray.new()
+    _args.append(ratio)
+    val _ret = __method_bind.popup_centered_ratio.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExclusive(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_exclusive.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,7 @@ open class ConfirmationDialog internal constructor(
   _handle: COpaquePointer
 ) : AcceptDialog(_handle) {
   fun getCancel(): Button {
+    val _ret = __method_bind.get_cancel.call(this.toVariant())
     TODO()
   }
 

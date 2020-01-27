@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector3Array
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
@@ -24,88 +25,154 @@ open class AStar internal constructor(
   fun addPoint(
     id: Int,
     position: Vector3,
-    weight_scale: Float
+    weightScale: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(position)
+    _args.append(weightScale)
+    val _ret = __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun arePointsConnected(id: Int, to_id: Int): Boolean {
+  fun arePointsConnected(id: Int, toId: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(toId)
+    val _ret = __method_bind.are_points_connected.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun connectPoints(
     id: Int,
-    to_id: Int,
+    toId: Int,
     bidirectional: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(toId)
+    _args.append(bidirectional)
+    val _ret = __method_bind.connect_points.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun disconnectPoints(id: Int, to_id: Int) {
+  fun disconnectPoints(id: Int, toId: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(toId)
+    val _ret = __method_bind.disconnect_points.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getAvailablePointId(): Int {
+    val _ret = __method_bind.get_available_point_id.call(this.toVariant())
     TODO()
   }
 
-  fun getClosestPoint(to_position: Vector3): Int {
+  fun getClosestPoint(toPosition: Vector3): Int {
+    val _args = VariantArray.new()
+    _args.append(toPosition)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getClosestPositionInSegment(to_position: Vector3): Vector3 {
+  fun getClosestPositionInSegment(toPosition: Vector3): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(toPosition)
+    val _ret = __method_bind.get_closest_position_in_segment.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun getIdPath(from_id: Int, to_id: Int): PoolIntArray {
+  fun getIdPath(fromId: Int, toId: Int): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(fromId)
+    _args.append(toId)
+    val _ret = __method_bind.get_id_path.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getPointConnections(id: Int): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_point_connections.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getPointPath(from_id: Int, to_id: Int): PoolVector3Array {
+  fun getPointPath(fromId: Int, toId: Int): PoolVector3Array {
+    val _args = VariantArray.new()
+    _args.append(fromId)
+    _args.append(toId)
+    val _ret = __method_bind.get_point_path.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getPointPosition(id: Int): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPointWeightScale(id: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_point_weight_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPoints(): VariantArray {
+    val _ret = __method_bind.get_points.call(this.toVariant())
     TODO()
   }
 
   fun hasPoint(id: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.has_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isPointDisabled(id: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.is_point_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removePoint(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPointDisabled(id: Int, disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(disabled)
+    val _ret = __method_bind.set_point_disabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPointPosition(id: Int, position: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(position)
+    val _ret = __method_bind.set_point_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setPointWeightScale(id: Int, weight_scale: Float) {
+  fun setPointWeightScale(id: Int, weightScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(weightScale)
+    val _ret = __method_bind.set_point_weight_scale.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

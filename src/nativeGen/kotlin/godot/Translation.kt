@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,31 +19,47 @@ import kotlinx.cinterop.reinterpret
 open class Translation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addMessage(src_message: String, xlated_message: String) {
+  fun addMessage(srcMessage: String, xlatedMessage: String) {
+    val _args = VariantArray.new()
+    _args.append(srcMessage)
+    _args.append(xlatedMessage)
+    val _ret = __method_bind.add_message.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun eraseMessage(src_message: String) {
+  fun eraseMessage(srcMessage: String) {
+    val _args = VariantArray.new()
+    _args.append(srcMessage)
+    val _ret = __method_bind.erase_message.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLocale(): String {
+    val _ret = __method_bind.get_locale.call(this.toVariant())
     TODO()
   }
 
-  fun getMessage(src_message: String): String {
+  fun getMessage(srcMessage: String): String {
+    val _args = VariantArray.new()
+    _args.append(srcMessage)
+    val _ret = __method_bind.get_message.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMessageCount(): Int {
+    val _ret = __method_bind.get_message_count.call(this.toVariant())
     TODO()
   }
 
   fun getMessageList(): PoolStringArray {
+    val _ret = __method_bind.get_message_list.call(this.toVariant())
     TODO()
   }
 
   fun setLocale(locale: String) {
+    val _args = VariantArray.new()
+    _args.append(locale)
+    val _ret = __method_bind.set_locale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

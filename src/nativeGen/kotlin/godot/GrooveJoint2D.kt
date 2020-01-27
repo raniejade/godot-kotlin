@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class GrooveJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getInitialOffset(): Float {
+    val _ret = __method_bind.get_initial_offset.call(this.toVariant())
     TODO()
   }
 
   fun getLength(): Float {
+    val _ret = __method_bind.get_length.call(this.toVariant())
     TODO()
   }
 
   fun setInitialOffset(offset: Float) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_initial_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLength(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

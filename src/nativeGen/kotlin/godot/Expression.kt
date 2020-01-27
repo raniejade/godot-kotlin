@@ -21,21 +21,32 @@ open class Expression internal constructor(
 ) : Reference(_handle) {
   fun execute(
     inputs: VariantArray,
-    base_instance: Object,
-    show_error: Boolean
+    baseInstance: Object,
+    showError: Boolean
   ): Variant {
+    val _args = VariantArray.new()
+    _args.append(inputs)
+    _args.append(baseInstance)
+    _args.append(showError)
+    val _ret = __method_bind.execute.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getErrorText(): String {
+    val _ret = __method_bind.get_error_text.call(this.toVariant())
     TODO()
   }
 
   fun hasExecuteFailed(): Boolean {
+    val _ret = __method_bind.has_execute_failed.call(this.toVariant())
     TODO()
   }
 
-  fun parse(expression: String, input_names: PoolStringArray): Error {
+  fun parse(expression: String, inputNames: PoolStringArray): Error {
+    val _args = VariantArray.new()
+    _args.append(expression)
+    _args.append(inputNames)
+    val _ret = __method_bind.parse.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

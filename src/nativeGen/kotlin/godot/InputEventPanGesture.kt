@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class InputEventPanGesture internal constructor(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
   fun getDelta(): Vector2 {
+    val _ret = __method_bind.get_delta.call(this.toVariant())
     TODO()
   }
 
   fun setDelta(delta: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(delta)
+    val _ret = __method_bind.set_delta.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

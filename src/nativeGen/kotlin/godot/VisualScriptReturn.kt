@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,18 +19,26 @@ open class VisualScriptReturn internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getReturnType(): Variant.Type {
+    val _ret = __method_bind.get_return_type.call(this.toVariant())
     TODO()
   }
 
   fun isReturnValueEnabled(): Boolean {
+    val _ret = __method_bind.is_return_value_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setEnableReturnValue(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_enable_return_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setReturnType(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_return_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

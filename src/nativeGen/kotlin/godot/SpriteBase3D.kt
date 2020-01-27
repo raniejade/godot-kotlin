@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import godot.core.Vector3
 import kotlin.Boolean
@@ -22,90 +24,135 @@ open class SpriteBase3D internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun generateTriangleMesh(): TriangleMesh {
+    val _ret = __method_bind.generate_triangle_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getAlphaCutMode(): AlphaCutMode {
+    val _ret = __method_bind.get_alpha_cut_mode.call(this.toVariant())
     TODO()
   }
 
   fun getAxis(): Vector3.Axis {
+    val _ret = __method_bind.get_axis.call(this.toVariant())
     TODO()
   }
 
   fun getDrawFlag(flag: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    val _ret = __method_bind.get_draw_flag.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemRect(): Rect2 {
+    val _ret = __method_bind.get_item_rect.call(this.toVariant())
     TODO()
   }
 
   fun getModulate(): Color {
+    val _ret = __method_bind.get_modulate.call(this.toVariant())
     TODO()
   }
 
   fun getOffset(): Vector2 {
+    val _ret = __method_bind.get_offset.call(this.toVariant())
     TODO()
   }
 
   fun getOpacity(): Float {
+    val _ret = __method_bind.get_opacity.call(this.toVariant())
     TODO()
   }
 
   fun getPixelSize(): Float {
+    val _ret = __method_bind.get_pixel_size.call(this.toVariant())
     TODO()
   }
 
   fun isCentered(): Boolean {
+    val _ret = __method_bind.is_centered.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedH(): Boolean {
+    val _ret = __method_bind.is_flipped_h.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedV(): Boolean {
+    val _ret = __method_bind.is_flipped_v.call(this.toVariant())
     TODO()
   }
 
   fun setAlphaCutMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_alpha_cut_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAxis(axis: Int) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    val _ret = __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCentered(centered: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(centered)
+    val _ret = __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawFlag(flag: Int, enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    _args.append(enabled)
+    val _ret = __method_bind.set_draw_flag.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setFlipH(flip_h: Boolean) {
+  fun setFlipH(flipH: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipH)
+    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFlipV(flip_v: Boolean) {
+  fun setFlipV(flipV: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipV)
+    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setModulate(modulate: Color) {
+    val _args = VariantArray.new()
+    _args.append(modulate)
+    val _ret = __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOpacity(opacity: Float) {
+    val _args = VariantArray.new()
+    _args.append(opacity)
+    val _ret = __method_bind.set_opacity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPixelSize(pixel_size: Float) {
+  fun setPixelSize(pixelSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(pixelSize)
+    val _ret = __method_bind.set_pixel_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

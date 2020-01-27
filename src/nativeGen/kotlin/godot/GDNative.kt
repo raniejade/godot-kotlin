@@ -19,26 +19,37 @@ open class GDNative internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun callNative(
-    calling_type: String,
-    procedure_name: String,
+    callingType: String,
+    procedureName: String,
     arguments: VariantArray
   ): Variant {
+    val _args = VariantArray.new()
+    _args.append(callingType)
+    _args.append(procedureName)
+    _args.append(arguments)
+    val _ret = __method_bind.call_native.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getLibrary(): GDNativeLibrary {
+    val _ret = __method_bind.get_library.call(this.toVariant())
     TODO()
   }
 
   fun initialize(): Boolean {
+    val _ret = __method_bind.initialize.call(this.toVariant())
     TODO()
   }
 
   fun setLibrary(library: GDNativeLibrary) {
+    val _args = VariantArray.new()
+    _args.append(library)
+    val _ret = __method_bind.set_library.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun terminate(): Boolean {
+    val _ret = __method_bind.terminate.call(this.toVariant())
     TODO()
   }
 

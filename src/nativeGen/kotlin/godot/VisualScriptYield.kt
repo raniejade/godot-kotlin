@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class VisualScriptYield internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getWaitTime(): Float {
+    val _ret = __method_bind.get_wait_time.call(this.toVariant())
     TODO()
   }
 
   fun getYieldMode(): YieldMode {
+    val _ret = __method_bind.get_yield_mode.call(this.toVariant())
     TODO()
   }
 
   fun setWaitTime(sec: Float) {
+    val _args = VariantArray.new()
+    _args.append(sec)
+    val _ret = __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setYieldMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_yield_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

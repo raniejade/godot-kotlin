@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
@@ -19,23 +21,38 @@ import kotlinx.cinterop.reinterpret
 open class Navigation internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun getClosestPoint(to_point: Vector3): Vector3 {
+  fun getClosestPoint(toPoint: Vector3): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(toPoint)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getClosestPointNormal(to_point: Vector3): Vector3 {
+  fun getClosestPointNormal(toPoint: Vector3): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(toPoint)
+    val _ret = __method_bind.get_closest_point_normal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getClosestPointOwner(to_point: Vector3): Object {
+  fun getClosestPointOwner(toPoint: Vector3): Object {
+    val _args = VariantArray.new()
+    _args.append(toPoint)
+    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getClosestPointToSegment(
     start: Vector3,
     end: Vector3,
-    use_collision: Boolean
+    useCollision: Boolean
   ): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(start)
+    _args.append(end)
+    _args.append(useCollision)
+    val _ret = __method_bind.get_closest_point_to_segment.call(this.toVariant(), _args.toVariant(),
+        3)
     TODO()
   }
 
@@ -44,10 +61,16 @@ open class Navigation internal constructor(
     end: Vector3,
     optimize: Boolean
   ): PoolVector3Array {
+    val _args = VariantArray.new()
+    _args.append(start)
+    _args.append(end)
+    _args.append(optimize)
+    val _ret = __method_bind.get_simple_path.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getUpVector(): Vector3 {
+    val _ret = __method_bind.get_up_vector.call(this.toVariant())
     TODO()
   }
 
@@ -56,18 +79,33 @@ open class Navigation internal constructor(
     xform: Transform,
     owner: Object
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    _args.append(xform)
+    _args.append(owner)
+    val _ret = __method_bind.navmesh_add.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun navmeshRemove(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.navmesh_remove.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun navmeshSetTransform(id: Int, xform: Transform) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(xform)
+    val _ret = __method_bind.navmesh_set_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setUpVector(up: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(up)
+    val _ret = __method_bind.set_up_vector.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

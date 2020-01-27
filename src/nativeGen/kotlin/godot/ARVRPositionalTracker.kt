@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Basis
 import godot.core.Godot
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
@@ -22,50 +24,66 @@ open class ARVRPositionalTracker internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getHand(): TrackerHand {
+    val _ret = __method_bind.get_hand.call(this.toVariant())
     TODO()
   }
 
   fun getJoyId(): Int {
+    val _ret = __method_bind.get_joy_id.call(this.toVariant())
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getName(): String {
+    val _ret = __method_bind.get_name.call(this.toVariant())
     TODO()
   }
 
   fun getOrientation(): Basis {
+    val _ret = __method_bind.get_orientation.call(this.toVariant())
     TODO()
   }
 
   fun getPosition(): Vector3 {
+    val _ret = __method_bind.get_position.call(this.toVariant())
     TODO()
   }
 
   fun getRumble(): Float {
+    val _ret = __method_bind.get_rumble.call(this.toVariant())
     TODO()
   }
 
   fun getTracksOrientation(): Boolean {
+    val _ret = __method_bind.get_tracks_orientation.call(this.toVariant())
     TODO()
   }
 
   fun getTracksPosition(): Boolean {
+    val _ret = __method_bind.get_tracks_position.call(this.toVariant())
     TODO()
   }
 
-  fun getTransform(adjust_by_reference_frame: Boolean): Transform {
+  fun getTransform(adjustByReferenceFrame: Boolean): Transform {
+    val _args = VariantArray.new()
+    _args.append(adjustByReferenceFrame)
+    val _ret = __method_bind.get_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getType(): ARVRServer.TrackerType {
+    val _ret = __method_bind.get_type.call(this.toVariant())
     TODO()
   }
 
   fun setRumble(rumble: Float) {
+    val _args = VariantArray.new()
+    _args.append(rumble)
+    val _ret = __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

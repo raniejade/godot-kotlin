@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,74 +21,114 @@ open class Light internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun getBakeMode(): BakeMode {
+    val _ret = __method_bind.get_bake_mode.call(this.toVariant())
     TODO()
   }
 
   fun getColor(): Color {
+    val _ret = __method_bind.get_color.call(this.toVariant())
     TODO()
   }
 
   fun getCullMask(): Int {
+    val _ret = __method_bind.get_cull_mask.call(this.toVariant())
     TODO()
   }
 
   fun getParam(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getShadowColor(): Color {
+    val _ret = __method_bind.get_shadow_color.call(this.toVariant())
     TODO()
   }
 
   fun getShadowReverseCullFace(): Boolean {
+    val _ret = __method_bind.get_shadow_reverse_cull_face.call(this.toVariant())
     TODO()
   }
 
   fun hasShadow(): Boolean {
+    val _ret = __method_bind.has_shadow.call(this.toVariant())
     TODO()
   }
 
   fun isEditorOnly(): Boolean {
+    val _ret = __method_bind.is_editor_only.call(this.toVariant())
     TODO()
   }
 
   fun isNegative(): Boolean {
+    val _ret = __method_bind.is_negative.call(this.toVariant())
     TODO()
   }
 
-  fun setBakeMode(bake_mode: Int) {
+  fun setBakeMode(bakeMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(bakeMode)
+    val _ret = __method_bind.set_bake_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCullMask(cull_mask: Int) {
+  fun setCullMask(cullMask: Int) {
+    val _args = VariantArray.new()
+    _args.append(cullMask)
+    val _ret = __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setEditorOnly(editor_only: Boolean) {
+  fun setEditorOnly(editorOnly: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(editorOnly)
+    val _ret = __method_bind.set_editor_only.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNegative(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_negative.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setParam(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setShadow(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_shadow.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setShadowColor(shadow_color: Color) {
+  fun setShadowColor(shadowColor: Color) {
+    val _args = VariantArray.new()
+    _args.append(shadowColor)
+    val _ret = __method_bind.set_shadow_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShadowReverseCullFace(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_shadow_reverse_cull_face.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 

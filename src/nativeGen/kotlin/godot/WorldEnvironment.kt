@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,10 +17,14 @@ open class WorldEnvironment internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getEnvironment(): Environment {
+    val _ret = __method_bind.get_environment.call(this.toVariant())
     TODO()
   }
 
   fun setEnvironment(env: Environment) {
+    val _args = VariantArray.new()
+    _args.append(env)
+    val _ret = __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

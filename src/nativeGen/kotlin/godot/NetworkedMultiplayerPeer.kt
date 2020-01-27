@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,38 +19,53 @@ open class NetworkedMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun getConnectionStatus(): ConnectionStatus {
+    val _ret = __method_bind.get_connection_status.call(this.toVariant())
     TODO()
   }
 
   fun getPacketPeer(): Int {
+    val _ret = __method_bind.get_packet_peer.call(this.toVariant())
     TODO()
   }
 
   fun getTransferMode(): TransferMode {
+    val _ret = __method_bind.get_transfer_mode.call(this.toVariant())
     TODO()
   }
 
   fun getUniqueId(): Int {
+    val _ret = __method_bind.get_unique_id.call(this.toVariant())
     TODO()
   }
 
   fun isRefusingNewConnections(): Boolean {
+    val _ret = __method_bind.is_refusing_new_connections.call(this.toVariant())
     TODO()
   }
 
   fun poll() {
+    val _ret = __method_bind.poll.call(this.toVariant())
     TODO()
   }
 
   fun setRefuseNewConnections(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_refuse_new_connections.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTargetPeer(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.set_target_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTransferMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_transfer_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

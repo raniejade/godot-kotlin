@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,10 +18,14 @@ open class ColorRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getFrameColor(): Color {
+    val _ret = __method_bind.get_frame_color.call(this.toVariant())
     TODO()
   }
 
   fun setFrameColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_frame_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

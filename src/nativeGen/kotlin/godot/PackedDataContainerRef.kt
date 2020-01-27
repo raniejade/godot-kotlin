@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,6 +18,7 @@ open class PackedDataContainerRef internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun size(): Int {
+    val _ret = __method_bind.size.call(this.toVariant())
     TODO()
   }
 

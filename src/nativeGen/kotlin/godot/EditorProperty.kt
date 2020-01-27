@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,6 +19,9 @@ open class EditorProperty internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun addFocusable(control: Control) {
+    val _args = VariantArray.new()
+    _args.append(control)
+    val _ret = __method_bind.add_focusable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -27,70 +31,106 @@ open class EditorProperty internal constructor(
     field: String,
     changing: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(value)
+    _args.append(field)
+    _args.append(changing)
+    val _ret = __method_bind.emit_changed.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun getEditedObject(): Object {
+    val _ret = __method_bind.get_edited_object.call(this.toVariant())
     TODO()
   }
 
   fun getEditedProperty(): String {
+    val _ret = __method_bind.get_edited_property.call(this.toVariant())
     TODO()
   }
 
   fun getLabel(): String {
+    val _ret = __method_bind.get_label.call(this.toVariant())
     TODO()
   }
 
   fun getTooltipText(): String {
+    val _ret = __method_bind.get_tooltip_text.call(this.toVariant())
     TODO()
   }
 
   fun isCheckable(): Boolean {
+    val _ret = __method_bind.is_checkable.call(this.toVariant())
     TODO()
   }
 
   fun isChecked(): Boolean {
+    val _ret = __method_bind.is_checked.call(this.toVariant())
     TODO()
   }
 
   fun isDrawRed(): Boolean {
+    val _ret = __method_bind.is_draw_red.call(this.toVariant())
     TODO()
   }
 
   fun isKeying(): Boolean {
+    val _ret = __method_bind.is_keying.call(this.toVariant())
     TODO()
   }
 
   fun isReadOnly(): Boolean {
+    val _ret = __method_bind.is_read_only.call(this.toVariant())
     TODO()
   }
 
   fun setBottomEditor(editor: Control) {
+    val _args = VariantArray.new()
+    _args.append(editor)
+    val _ret = __method_bind.set_bottom_editor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCheckable(checkable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(checkable)
+    val _ret = __method_bind.set_checkable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setChecked(checked: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(checked)
+    val _ret = __method_bind.set_checked.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setDrawRed(draw_red: Boolean) {
+  fun setDrawRed(drawRed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(drawRed)
+    val _ret = __method_bind.set_draw_red.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setKeying(keying: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(keying)
+    val _ret = __method_bind.set_keying.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLabel(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_label.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setReadOnly(read_only: Boolean) {
+  fun setReadOnly(readOnly: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(readOnly)
+    val _ret = __method_bind.set_read_only.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

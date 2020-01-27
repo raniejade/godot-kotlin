@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolColorArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,62 +20,93 @@ open class ColorPicker internal constructor(
   _handle: COpaquePointer
 ) : BoxContainer(_handle) {
   fun addPreset(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.add_preset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun arePresetsEnabled(): Boolean {
+    val _ret = __method_bind.are_presets_enabled.call(this.toVariant())
     TODO()
   }
 
   fun arePresetsVisible(): Boolean {
+    val _ret = __method_bind.are_presets_visible.call(this.toVariant())
     TODO()
   }
 
   fun erasePreset(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.erase_preset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPickColor(): Color {
+    val _ret = __method_bind.get_pick_color.call(this.toVariant())
     TODO()
   }
 
   fun getPresets(): PoolColorArray {
+    val _ret = __method_bind.get_presets.call(this.toVariant())
     TODO()
   }
 
   fun isDeferredMode(): Boolean {
+    val _ret = __method_bind.is_deferred_mode.call(this.toVariant())
     TODO()
   }
 
   fun isEditingAlpha(): Boolean {
+    val _ret = __method_bind.is_editing_alpha.call(this.toVariant())
     TODO()
   }
 
   fun isRawMode(): Boolean {
+    val _ret = __method_bind.is_raw_mode.call(this.toVariant())
     TODO()
   }
 
   fun setDeferredMode(mode: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_deferred_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEditAlpha(show: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(show)
+    val _ret = __method_bind.set_edit_alpha.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPickColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_pick_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPresetsEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_presets_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPresetsVisible(visible: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(visible)
+    val _ret = __method_bind.set_presets_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRawMode(mode: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_raw_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

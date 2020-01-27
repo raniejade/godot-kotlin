@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,18 +19,26 @@ open class FuncRef internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun callFunc(): Variant {
+    val _ret = __method_bind.call_func.call(this.toVariant())
     TODO()
   }
 
   fun isValid(): Boolean {
+    val _ret = __method_bind.is_valid.call(this.toVariant())
     TODO()
   }
 
   fun setFunction(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInstance(instance: Object) {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    val _ret = __method_bind.set_instance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class VisualShaderNodeScalarConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Float {
+    val _ret = __method_bind.get_constant.call(this.toVariant())
     TODO()
   }
 
   fun setConstant(value: Float) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

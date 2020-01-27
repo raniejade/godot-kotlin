@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform2D
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
@@ -20,46 +21,75 @@ open class Shape2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun collide(
-    local_xform: Transform2D,
-    with_shape: Shape2D,
-    shape_xform: Transform2D
+    localXform: Transform2D,
+    withShape: Shape2D,
+    shapeXform: Transform2D
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(localXform)
+    _args.append(withShape)
+    _args.append(shapeXform)
+    val _ret = __method_bind.collide.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun collideAndGetContacts(
-    local_xform: Transform2D,
-    with_shape: Shape2D,
-    shape_xform: Transform2D
+    localXform: Transform2D,
+    withShape: Shape2D,
+    shapeXform: Transform2D
   ): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(localXform)
+    _args.append(withShape)
+    _args.append(shapeXform)
+    val _ret = __method_bind.collide_and_get_contacts.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun collideWithMotion(
-    local_xform: Transform2D,
-    local_motion: Vector2,
-    with_shape: Shape2D,
-    shape_xform: Transform2D,
-    shape_motion: Vector2
+    localXform: Transform2D,
+    localMotion: Vector2,
+    withShape: Shape2D,
+    shapeXform: Transform2D,
+    shapeMotion: Vector2
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(localXform)
+    _args.append(localMotion)
+    _args.append(withShape)
+    _args.append(shapeXform)
+    _args.append(shapeMotion)
+    val _ret = __method_bind.collide_with_motion.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun collideWithMotionAndGetContacts(
-    local_xform: Transform2D,
-    local_motion: Vector2,
-    with_shape: Shape2D,
-    shape_xform: Transform2D,
-    shape_motion: Vector2
+    localXform: Transform2D,
+    localMotion: Vector2,
+    withShape: Shape2D,
+    shapeXform: Transform2D,
+    shapeMotion: Vector2
   ): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(localXform)
+    _args.append(localMotion)
+    _args.append(withShape)
+    _args.append(shapeXform)
+    _args.append(shapeMotion)
+    val _ret = __method_bind.collide_with_motion_and_get_contacts.call(this.toVariant(),
+        _args.toVariant(), 5)
     TODO()
   }
 
   fun getCustomSolverBias(): Float {
+    val _ret = __method_bind.get_custom_solver_bias.call(this.toVariant())
     TODO()
   }
 
   fun setCustomSolverBias(bias: Float) {
+    val _args = VariantArray.new()
+    _args.append(bias)
+    val _ret = __method_bind.set_custom_solver_bias.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

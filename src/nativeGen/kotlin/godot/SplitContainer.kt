@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,30 +19,43 @@ open class SplitContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun clampSplitOffset() {
+    val _ret = __method_bind.clamp_split_offset.call(this.toVariant())
     TODO()
   }
 
   fun getDraggerVisibility(): DraggerVisibility {
+    val _ret = __method_bind.get_dragger_visibility.call(this.toVariant())
     TODO()
   }
 
   fun getSplitOffset(): Int {
+    val _ret = __method_bind.get_split_offset.call(this.toVariant())
     TODO()
   }
 
   fun isCollapsed(): Boolean {
+    val _ret = __method_bind.is_collapsed.call(this.toVariant())
     TODO()
   }
 
   fun setCollapsed(collapsed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(collapsed)
+    val _ret = __method_bind.set_collapsed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDraggerVisibility(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_dragger_visibility.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSplitOffset(offset: Int) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_split_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

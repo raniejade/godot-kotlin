@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -23,40 +24,65 @@ open class Tween internal constructor(
   fun followMethod(
     `object`: Object,
     method: String,
-    initial_val: Variant,
+    initialVal: Variant,
     target: Object,
-    target_method: String,
+    targetMethod: String,
     duration: Float,
-    trans_type: Int,
-    ease_type: Int,
+    transType: Int,
+    easeType: Int,
     delay: Float
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(method)
+    _args.append(initialVal)
+    _args.append(target)
+    _args.append(targetMethod)
+    _args.append(duration)
+    _args.append(transType)
+    _args.append(easeType)
+    _args.append(delay)
+    val _ret = __method_bind.follow_method.call(this.toVariant(), _args.toVariant(), 9)
     TODO()
   }
 
   fun followProperty(
     `object`: Object,
     property: NodePath,
-    initial_val: Variant,
+    initialVal: Variant,
     target: Object,
-    target_property: NodePath,
+    targetProperty: NodePath,
     duration: Float,
-    trans_type: Int,
-    ease_type: Int,
+    transType: Int,
+    easeType: Int,
     delay: Float
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(property)
+    _args.append(initialVal)
+    _args.append(target)
+    _args.append(targetProperty)
+    _args.append(duration)
+    _args.append(transType)
+    _args.append(easeType)
+    _args.append(delay)
+    val _ret = __method_bind.follow_property.call(this.toVariant(), _args.toVariant(), 9)
     TODO()
   }
 
   fun getRuntime(): Float {
+    val _ret = __method_bind.get_runtime.call(this.toVariant())
     TODO()
   }
 
   fun getSpeedScale(): Float {
+    val _ret = __method_bind.get_speed_scale.call(this.toVariant())
     TODO()
   }
 
   fun getTweenProcessMode(): TweenProcessMode {
+    val _ret = __method_bind.get_tween_process_mode.call(this.toVariant())
     TODO()
   }
 
@@ -70,6 +96,16 @@ open class Tween internal constructor(
     arg4: Variant,
     arg5: Variant
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(duration)
+    _args.append(callback)
+    _args.append(arg1)
+    _args.append(arg2)
+    _args.append(arg3)
+    _args.append(arg4)
+    _args.append(arg5)
+    val _ret = __method_bind.interpolate_callback.call(this.toVariant(), _args.toVariant(), 8)
     TODO()
   }
 
@@ -83,96 +119,165 @@ open class Tween internal constructor(
     arg4: Variant,
     arg5: Variant
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(duration)
+    _args.append(callback)
+    _args.append(arg1)
+    _args.append(arg2)
+    _args.append(arg3)
+    _args.append(arg4)
+    _args.append(arg5)
+    val _ret = __method_bind.interpolate_deferred_callback.call(this.toVariant(), _args.toVariant(),
+        8)
     TODO()
   }
 
   fun interpolateMethod(
     `object`: Object,
     method: String,
-    initial_val: Variant,
-    final_val: Variant,
+    initialVal: Variant,
+    finalVal: Variant,
     duration: Float,
-    trans_type: Int,
-    ease_type: Int,
+    transType: Int,
+    easeType: Int,
     delay: Float
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(method)
+    _args.append(initialVal)
+    _args.append(finalVal)
+    _args.append(duration)
+    _args.append(transType)
+    _args.append(easeType)
+    _args.append(delay)
+    val _ret = __method_bind.interpolate_method.call(this.toVariant(), _args.toVariant(), 8)
     TODO()
   }
 
   fun interpolateProperty(
     `object`: Object,
     property: NodePath,
-    initial_val: Variant,
-    final_val: Variant,
+    initialVal: Variant,
+    finalVal: Variant,
     duration: Float,
-    trans_type: Int,
-    ease_type: Int,
+    transType: Int,
+    easeType: Int,
     delay: Float
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(property)
+    _args.append(initialVal)
+    _args.append(finalVal)
+    _args.append(duration)
+    _args.append(transType)
+    _args.append(easeType)
+    _args.append(delay)
+    val _ret = __method_bind.interpolate_property.call(this.toVariant(), _args.toVariant(), 8)
     TODO()
   }
 
   fun isActive(): Boolean {
+    val _ret = __method_bind.is_active.call(this.toVariant())
     TODO()
   }
 
   fun isRepeat(): Boolean {
+    val _ret = __method_bind.is_repeat.call(this.toVariant())
     TODO()
   }
 
   fun remove(`object`: Object, key: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(key)
+    val _ret = __method_bind.remove.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun removeAll(): Boolean {
+    val _ret = __method_bind.remove_all.call(this.toVariant())
     TODO()
   }
 
   fun reset(`object`: Object, key: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(key)
+    val _ret = __method_bind.reset.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun resetAll(): Boolean {
+    val _ret = __method_bind.reset_all.call(this.toVariant())
     TODO()
   }
 
   fun resume(`object`: Object, key: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(key)
+    val _ret = __method_bind.resume.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun resumeAll(): Boolean {
+    val _ret = __method_bind.resume_all.call(this.toVariant())
     TODO()
   }
 
   fun seek(time: Float): Boolean {
+    val _args = VariantArray.new()
+    _args.append(time)
+    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setActive(active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(active)
+    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRepeat(repeat: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(repeat)
+    val _ret = __method_bind.set_repeat.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpeedScale(speed: Float) {
+    val _args = VariantArray.new()
+    _args.append(speed)
+    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTweenProcessMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_tween_process_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun start(): Boolean {
+    val _ret = __method_bind.start.call(this.toVariant())
     TODO()
   }
 
   fun stop(`object`: Object, key: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(key)
+    val _ret = __method_bind.stop.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun stopAll(): Boolean {
+    val _ret = __method_bind.stop_all.call(this.toVariant())
     TODO()
   }
 
@@ -180,13 +285,24 @@ open class Tween internal constructor(
     `object`: Object,
     method: String,
     initial: Object,
-    initial_method: String,
-    final_val: Variant,
+    initialMethod: String,
+    finalVal: Variant,
     duration: Float,
-    trans_type: Int,
-    ease_type: Int,
+    transType: Int,
+    easeType: Int,
     delay: Float
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(method)
+    _args.append(initial)
+    _args.append(initialMethod)
+    _args.append(finalVal)
+    _args.append(duration)
+    _args.append(transType)
+    _args.append(easeType)
+    _args.append(delay)
+    val _ret = __method_bind.targeting_method.call(this.toVariant(), _args.toVariant(), 9)
     TODO()
   }
 
@@ -194,17 +310,29 @@ open class Tween internal constructor(
     `object`: Object,
     property: NodePath,
     initial: Object,
-    initial_val: NodePath,
-    final_val: Variant,
+    initialVal: NodePath,
+    finalVal: Variant,
     duration: Float,
-    trans_type: Int,
-    ease_type: Int,
+    transType: Int,
+    easeType: Int,
     delay: Float
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(property)
+    _args.append(initial)
+    _args.append(initialVal)
+    _args.append(finalVal)
+    _args.append(duration)
+    _args.append(transType)
+    _args.append(easeType)
+    _args.append(delay)
+    val _ret = __method_bind.targeting_property.call(this.toVariant(), _args.toVariant(), 9)
     TODO()
   }
 
   fun tell(): Float {
+    val _ret = __method_bind.tell.call(this.toVariant())
     TODO()
   }
 

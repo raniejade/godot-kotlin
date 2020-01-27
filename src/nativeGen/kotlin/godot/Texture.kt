@@ -6,6 +6,8 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -21,63 +23,96 @@ open class Texture internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun draw(
-    canvas_item: RID,
+    canvasItem: RID,
     position: Vector2,
     modulate: Color,
     transpose: Boolean,
-    normal_map: Texture
+    normalMap: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(canvasItem)
+    _args.append(position)
+    _args.append(modulate)
+    _args.append(transpose)
+    _args.append(normalMap)
+    val _ret = __method_bind.draw.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun drawRect(
-    canvas_item: RID,
+    canvasItem: RID,
     rect: Rect2,
     tile: Boolean,
     modulate: Color,
     transpose: Boolean,
-    normal_map: Texture
+    normalMap: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(canvasItem)
+    _args.append(rect)
+    _args.append(tile)
+    _args.append(modulate)
+    _args.append(transpose)
+    _args.append(normalMap)
+    val _ret = __method_bind.draw_rect.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun drawRectRegion(
-    canvas_item: RID,
+    canvasItem: RID,
     rect: Rect2,
-    src_rect: Rect2,
+    srcRect: Rect2,
     modulate: Color,
     transpose: Boolean,
-    normal_map: Texture,
-    clip_uv: Boolean
+    normalMap: Texture,
+    clipUv: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(canvasItem)
+    _args.append(rect)
+    _args.append(srcRect)
+    _args.append(modulate)
+    _args.append(transpose)
+    _args.append(normalMap)
+    _args.append(clipUv)
+    val _ret = __method_bind.draw_rect_region.call(this.toVariant(), _args.toVariant(), 7)
     TODO()
   }
 
   fun getData(): Image {
+    val _ret = __method_bind.get_data.call(this.toVariant())
     TODO()
   }
 
   fun getFlags(): Int {
+    val _ret = __method_bind.get_flags.call(this.toVariant())
     TODO()
   }
 
   fun getHeight(): Int {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getSize(): Vector2 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getWidth(): Int {
+    val _ret = __method_bind.get_width.call(this.toVariant())
     TODO()
   }
 
   fun hasAlpha(): Boolean {
+    val _ret = __method_bind.has_alpha.call(this.toVariant())
     TODO()
   }
 
   fun setFlags(flags: Int) {
+    val _args = VariantArray.new()
+    _args.append(flags)
+    val _ret = __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

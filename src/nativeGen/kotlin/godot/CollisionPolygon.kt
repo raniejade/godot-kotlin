@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector2Array
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -18,26 +20,38 @@ open class CollisionPolygon internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getDepth(): Float {
+    val _ret = __method_bind.get_depth.call(this.toVariant())
     TODO()
   }
 
   fun getPolygon(): PoolVector2Array {
+    val _ret = __method_bind.get_polygon.call(this.toVariant())
     TODO()
   }
 
   fun isDisabled(): Boolean {
+    val _ret = __method_bind.is_disabled.call(this.toVariant())
     TODO()
   }
 
   fun setDepth(depth: Float) {
+    val _args = VariantArray.new()
+    _args.append(depth)
+    val _ret = __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisabled(disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disabled)
+    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(polygon)
+    val _ret = __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

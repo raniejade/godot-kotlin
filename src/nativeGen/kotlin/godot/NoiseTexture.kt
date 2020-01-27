@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,42 +20,64 @@ open class NoiseTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBumpStrength(): Float {
+    val _ret = __method_bind.get_bump_strength.call(this.toVariant())
     TODO()
   }
 
   fun getNoise(): OpenSimplexNoise {
+    val _ret = __method_bind.get_noise.call(this.toVariant())
     TODO()
   }
 
   fun getSeamless(): Boolean {
+    val _ret = __method_bind.get_seamless.call(this.toVariant())
     TODO()
   }
 
   fun isNormalmap(): Boolean {
+    val _ret = __method_bind.is_normalmap.call(this.toVariant())
     TODO()
   }
 
-  fun setAsNormalmap(as_normalmap: Boolean) {
+  fun setAsNormalmap(asNormalmap: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(asNormalmap)
+    val _ret = __method_bind.set_as_normalmap.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBumpStrength(bump_strength: Float) {
+  fun setBumpStrength(bumpStrength: Float) {
+    val _args = VariantArray.new()
+    _args.append(bumpStrength)
+    val _ret = __method_bind.set_bump_strength.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHeight(height: Int) {
+    val _args = VariantArray.new()
+    _args.append(height)
+    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNoise(noise: OpenSimplexNoise) {
+    val _args = VariantArray.new()
+    _args.append(noise)
+    val _ret = __method_bind.set_noise.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSeamless(seamless: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(seamless)
+    val _ret = __method_bind.set_seamless.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWidth(width: Int) {
+    val _args = VariantArray.new()
+    _args.append(width)
+    val _ret = __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

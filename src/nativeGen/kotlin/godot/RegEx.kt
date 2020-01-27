@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
@@ -19,26 +20,34 @@ open class RegEx internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun compile(pattern: String): Error {
+    val _args = VariantArray.new()
+    _args.append(pattern)
+    val _ret = __method_bind.compile.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getGroupCount(): Int {
+    val _ret = __method_bind.get_group_count.call(this.toVariant())
     TODO()
   }
 
   fun getNames(): VariantArray {
+    val _ret = __method_bind.get_names.call(this.toVariant())
     TODO()
   }
 
   fun getPattern(): String {
+    val _ret = __method_bind.get_pattern.call(this.toVariant())
     TODO()
   }
 
   fun isValid(): Boolean {
+    val _ret = __method_bind.is_valid.call(this.toVariant())
     TODO()
   }
 
@@ -47,6 +56,11 @@ open class RegEx internal constructor(
     offset: Int,
     end: Int
   ): RegExMatch {
+    val _args = VariantArray.new()
+    _args.append(subject)
+    _args.append(offset)
+    _args.append(end)
+    val _ret = __method_bind.search.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -55,6 +69,11 @@ open class RegEx internal constructor(
     offset: Int,
     end: Int
   ): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(subject)
+    _args.append(offset)
+    _args.append(end)
+    val _ret = __method_bind.search_all.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -65,6 +84,13 @@ open class RegEx internal constructor(
     offset: Int,
     end: Int
   ): String {
+    val _args = VariantArray.new()
+    _args.append(subject)
+    _args.append(replacement)
+    _args.append(all)
+    _args.append(offset)
+    _args.append(end)
+    val _ret = __method_bind.sub.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 

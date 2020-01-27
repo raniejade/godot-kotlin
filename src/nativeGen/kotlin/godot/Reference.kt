@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,14 +18,17 @@ open class Reference internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun initRef(): Boolean {
+    val _ret = __method_bind.init_ref.call(this.toVariant())
     TODO()
   }
 
   fun reference(): Boolean {
+    val _ret = __method_bind.reference.call(this.toVariant())
     TODO()
   }
 
   fun unreference(): Boolean {
+    val _ret = __method_bind.unreference.call(this.toVariant())
     TODO()
   }
 

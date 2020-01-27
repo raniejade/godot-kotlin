@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,42 +19,65 @@ open class StaticBody2D internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
   fun getBounce(): Float {
+    val _ret = __method_bind.get_bounce.call(this.toVariant())
     TODO()
   }
 
   fun getConstantAngularVelocity(): Float {
+    val _ret = __method_bind.get_constant_angular_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getConstantLinearVelocity(): Vector2 {
+    val _ret = __method_bind.get_constant_linear_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getFriction(): Float {
+    val _ret = __method_bind.get_friction.call(this.toVariant())
     TODO()
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
+    val _ret = __method_bind.get_physics_material_override.call(this.toVariant())
     TODO()
   }
 
   fun setBounce(bounce: Float) {
+    val _args = VariantArray.new()
+    _args.append(bounce)
+    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setConstantAngularVelocity(vel: Float) {
+    val _args = VariantArray.new()
+    _args.append(vel)
+    val _ret = __method_bind.set_constant_angular_velocity.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setConstantLinearVelocity(vel: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(vel)
+    val _ret = __method_bind.set_constant_linear_velocity.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setFriction(friction: Float) {
+    val _args = VariantArray.new()
+    _args.append(friction)
+    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPhysicsMaterialOverride(physics_material_override: PhysicsMaterial) {
+  fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
+    val _args = VariantArray.new()
+    _args.append(physicsMaterialOverride)
+    val _ret = __method_bind.set_physics_material_override.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 

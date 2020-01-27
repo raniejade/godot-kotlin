@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -21,6 +22,9 @@ open class AnimationNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addInput(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.add_input.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -31,17 +35,32 @@ open class AnimationNode internal constructor(
     seeked: Boolean,
     blend: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(animation)
+    _args.append(time)
+    _args.append(delta)
+    _args.append(seeked)
+    _args.append(blend)
+    val _ret = __method_bind.blend_animation.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun blendInput(
-    input_index: Int,
+    inputIndex: Int,
     time: Float,
     seek: Boolean,
     blend: Float,
     filter: Int,
     optimize: Boolean
   ): Float {
+    val _args = VariantArray.new()
+    _args.append(inputIndex)
+    _args.append(time)
+    _args.append(seek)
+    _args.append(blend)
+    _args.append(filter)
+    _args.append(optimize)
+    val _ret = __method_bind.blend_input.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
@@ -54,42 +73,76 @@ open class AnimationNode internal constructor(
     filter: Int,
     optimize: Boolean
   ): Float {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(node)
+    _args.append(time)
+    _args.append(seek)
+    _args.append(blend)
+    _args.append(filter)
+    _args.append(optimize)
+    val _ret = __method_bind.blend_node.call(this.toVariant(), _args.toVariant(), 7)
     TODO()
   }
 
   fun getInputCount(): Int {
+    val _ret = __method_bind.get_input_count.call(this.toVariant())
     TODO()
   }
 
   fun getInputName(input: Int): String {
+    val _args = VariantArray.new()
+    _args.append(input)
+    val _ret = __method_bind.get_input_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParameter(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_parameter.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isFilterEnabled(): Boolean {
+    val _ret = __method_bind.is_filter_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isPathFiltered(path: NodePath): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.is_path_filtered.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeInput(index: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.remove_input.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFilterEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_filter_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFilterPath(path: NodePath, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(enable)
+    val _ret = __method_bind.set_filter_path.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParameter(name: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_parameter.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -20,10 +22,19 @@ open class _VisualScriptEditor internal constructor(
     category: String,
     script: Script
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(category)
+    _args.append(script)
+    val _ret = __method_bind.add_custom_node.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun removeCustomNode(name: String, category: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(category)
+    val _ret = __method_bind.remove_custom_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

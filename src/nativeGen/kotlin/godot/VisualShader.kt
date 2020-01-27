@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
@@ -25,96 +26,166 @@ open class VisualShader internal constructor(
     position: Vector2,
     id: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(node)
+    _args.append(position)
+    _args.append(id)
+    val _ret = __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun canConnectNodes(
     type: Int,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.can_connect_nodes.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun connectNodes(
     type: Int,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.connect_nodes.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun connectNodesForced(
     type: Int,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.connect_nodes_forced.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun disconnectNodes(
     type: Int,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.disconnect_nodes.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun getGraphOffset(): Vector2 {
+    val _ret = __method_bind.get_graph_offset.call(this.toVariant())
     TODO()
   }
 
   fun getNode(type: Int, id: Int): VisualShaderNode {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(id)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getNodeConnections(type: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_node_connections.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNodeList(type: Int): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_node_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNodePosition(type: Int, id: Int): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(id)
+    val _ret = __method_bind.get_node_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getValidNodeId(type: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_valid_node_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isNodeConnection(
     type: Int,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.is_node_connection.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun rebuild() {
+    val _ret = __method_bind.rebuild.call(this.toVariant())
     TODO()
   }
 
   fun removeNode(type: Int, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(id)
+    val _ret = __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setGraphOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_graph_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -123,6 +194,11 @@ open class VisualShader internal constructor(
     id: Int,
     position: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(id)
+    _args.append(position)
+    val _ret = __method_bind.set_node_position.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

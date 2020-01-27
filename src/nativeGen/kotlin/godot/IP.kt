@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
@@ -18,30 +19,52 @@ open class IP internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun clearCache(hostname: String) {
+    val _args = VariantArray.new()
+    _args.append(hostname)
+    val _ret = __method_bind.clear_cache.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun eraseResolveItem(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.erase_resolve_item.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLocalAddresses(): VariantArray {
+    val _ret = __method_bind.get_local_addresses.call(this.toVariant())
     TODO()
   }
 
   fun getResolveItemAddress(id: Int): String {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_resolve_item_address.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getResolveItemStatus(id: Int): ResolverStatus {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_resolve_item_status.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun resolveHostname(host: String, ip_type: Int): String {
+  fun resolveHostname(host: String, ipType: Int): String {
+    val _args = VariantArray.new()
+    _args.append(host)
+    _args.append(ipType)
+    val _ret = __method_bind.resolve_hostname.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun resolveHostnameQueueItem(host: String, ip_type: Int): Int {
+  fun resolveHostnameQueueItem(host: String, ipType: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(host)
+    _args.append(ipType)
+    val _ret = __method_bind.resolve_hostname_queue_item.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 

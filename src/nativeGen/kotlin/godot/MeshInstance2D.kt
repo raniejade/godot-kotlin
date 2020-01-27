@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,26 +17,38 @@ open class MeshInstance2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getNormalMap(): Texture {
+    val _ret = __method_bind.get_normal_map.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun setMesh(mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    val _ret = __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setNormalMap(normal_map: Texture) {
+  fun setNormalMap(normalMap: Texture) {
+    val _args = VariantArray.new()
+    _args.append(normalMap)
+    val _ret = __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

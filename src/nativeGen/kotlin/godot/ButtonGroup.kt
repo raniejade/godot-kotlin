@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +17,12 @@ open class ButtonGroup internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getButtons(): VariantArray {
+    val _ret = __method_bind.get_buttons.call(this.toVariant())
     TODO()
   }
 
   fun getPressedButton(): BaseButton {
+    val _ret = __method_bind.get_pressed_button.call(this.toVariant())
     TODO()
   }
 

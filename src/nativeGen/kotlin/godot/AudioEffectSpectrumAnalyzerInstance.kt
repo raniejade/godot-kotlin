@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
@@ -18,10 +20,16 @@ open class AudioEffectSpectrumAnalyzerInstance internal constructor(
   _handle: COpaquePointer
 ) : AudioEffectInstance(_handle) {
   fun getMagnitudeForFrequencyRange(
-    from_hz: Float,
-    to_hz: Float,
+    fromHz: Float,
+    toHz: Float,
     mode: Int
   ): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(fromHz)
+    _args.append(toHz)
+    _args.append(mode)
+    val _ret = __method_bind.get_magnitude_for_frequency_range.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 

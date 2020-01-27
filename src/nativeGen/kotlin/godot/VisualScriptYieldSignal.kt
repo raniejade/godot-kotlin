@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,34 +20,50 @@ open class VisualScriptYieldSignal internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBasePath(): NodePath {
+    val _ret = __method_bind.get_base_path.call(this.toVariant())
     TODO()
   }
 
   fun getBaseType(): String {
+    val _ret = __method_bind.get_base_type.call(this.toVariant())
     TODO()
   }
 
   fun getCallMode(): CallMode {
+    val _ret = __method_bind.get_call_mode.call(this.toVariant())
     TODO()
   }
 
   fun getSignal(): String {
+    val _ret = __method_bind.get_signal.call(this.toVariant())
     TODO()
   }
 
-  fun setBasePath(base_path: NodePath) {
+  fun setBasePath(basePath: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(basePath)
+    val _ret = __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBaseType(base_type: String) {
+  fun setBaseType(baseType: String) {
+    val _args = VariantArray.new()
+    _args.append(baseType)
+    val _ret = __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCallMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSignal(signal: String) {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    val _ret = __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

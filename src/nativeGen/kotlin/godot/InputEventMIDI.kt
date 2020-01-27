@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,66 +18,98 @@ open class InputEventMIDI internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getChannel(): Int {
+    val _ret = __method_bind.get_channel.call(this.toVariant())
     TODO()
   }
 
   fun getControllerNumber(): Int {
+    val _ret = __method_bind.get_controller_number.call(this.toVariant())
     TODO()
   }
 
   fun getControllerValue(): Int {
+    val _ret = __method_bind.get_controller_value.call(this.toVariant())
     TODO()
   }
 
   fun getInstrument(): Int {
+    val _ret = __method_bind.get_instrument.call(this.toVariant())
     TODO()
   }
 
   fun getMessage(): Int {
+    val _ret = __method_bind.get_message.call(this.toVariant())
     TODO()
   }
 
   fun getPitch(): Int {
+    val _ret = __method_bind.get_pitch.call(this.toVariant())
     TODO()
   }
 
   fun getPressure(): Int {
+    val _ret = __method_bind.get_pressure.call(this.toVariant())
     TODO()
   }
 
   fun getVelocity(): Int {
+    val _ret = __method_bind.get_velocity.call(this.toVariant())
     TODO()
   }
 
   fun setChannel(channel: Int) {
+    val _args = VariantArray.new()
+    _args.append(channel)
+    val _ret = __method_bind.set_channel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setControllerNumber(controller_number: Int) {
+  fun setControllerNumber(controllerNumber: Int) {
+    val _args = VariantArray.new()
+    _args.append(controllerNumber)
+    val _ret = __method_bind.set_controller_number.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setControllerValue(controller_value: Int) {
+  fun setControllerValue(controllerValue: Int) {
+    val _args = VariantArray.new()
+    _args.append(controllerValue)
+    val _ret = __method_bind.set_controller_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInstrument(instrument: Int) {
+    val _args = VariantArray.new()
+    _args.append(instrument)
+    val _ret = __method_bind.set_instrument.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMessage(message: Int) {
+    val _args = VariantArray.new()
+    _args.append(message)
+    val _ret = __method_bind.set_message.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPitch(pitch: Int) {
+    val _args = VariantArray.new()
+    _args.append(pitch)
+    val _ret = __method_bind.set_pitch.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressure(pressure: Int) {
+    val _args = VariantArray.new()
+    _args.append(pressure)
+    val _ret = __method_bind.set_pressure.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVelocity(velocity: Int) {
+    val _args = VariantArray.new()
+    _args.append(velocity)
+    val _ret = __method_bind.set_velocity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

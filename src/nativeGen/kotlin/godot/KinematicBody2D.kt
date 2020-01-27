@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -20,82 +22,126 @@ open class KinematicBody2D internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
   fun getFloorVelocity(): Vector2 {
+    val _ret = __method_bind.get_floor_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getSafeMargin(): Float {
+    val _ret = __method_bind.get_safe_margin.call(this.toVariant())
     TODO()
   }
 
-  fun getSlideCollision(slide_idx: Int): KinematicCollision2D {
+  fun getSlideCollision(slideIdx: Int): KinematicCollision2D {
+    val _args = VariantArray.new()
+    _args.append(slideIdx)
+    val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSlideCount(): Int {
+    val _ret = __method_bind.get_slide_count.call(this.toVariant())
     TODO()
   }
 
   fun isOnCeiling(): Boolean {
+    val _ret = __method_bind.is_on_ceiling.call(this.toVariant())
     TODO()
   }
 
   fun isOnFloor(): Boolean {
+    val _ret = __method_bind.is_on_floor.call(this.toVariant())
     TODO()
   }
 
   fun isOnWall(): Boolean {
+    val _ret = __method_bind.is_on_wall.call(this.toVariant())
     TODO()
   }
 
   fun isSyncToPhysicsEnabled(): Boolean {
+    val _ret = __method_bind.is_sync_to_physics_enabled.call(this.toVariant())
     TODO()
   }
 
   fun moveAndCollide(
-    rel_vec: Vector2,
-    infinite_inertia: Boolean,
-    exclude_raycast_shapes: Boolean,
-    test_only: Boolean
+    relVec: Vector2,
+    infiniteInertia: Boolean,
+    excludeRaycastShapes: Boolean,
+    testOnly: Boolean
   ): KinematicCollision2D {
+    val _args = VariantArray.new()
+    _args.append(relVec)
+    _args.append(infiniteInertia)
+    _args.append(excludeRaycastShapes)
+    _args.append(testOnly)
+    val _ret = __method_bind.move_and_collide.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun moveAndSlide(
-    linear_velocity: Vector2,
-    floor_normal: Vector2,
-    stop_on_slope: Boolean,
-    max_slides: Int,
-    floor_max_angle: Float,
-    infinite_inertia: Boolean
+    linearVelocity: Vector2,
+    floorNormal: Vector2,
+    stopOnSlope: Boolean,
+    maxSlides: Int,
+    floorMaxAngle: Float,
+    infiniteInertia: Boolean
   ): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(linearVelocity)
+    _args.append(floorNormal)
+    _args.append(stopOnSlope)
+    _args.append(maxSlides)
+    _args.append(floorMaxAngle)
+    _args.append(infiniteInertia)
+    val _ret = __method_bind.move_and_slide.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun moveAndSlideWithSnap(
-    linear_velocity: Vector2,
+    linearVelocity: Vector2,
     snap: Vector2,
-    floor_normal: Vector2,
-    stop_on_slope: Boolean,
-    max_slides: Int,
-    floor_max_angle: Float,
-    infinite_inertia: Boolean
+    floorNormal: Vector2,
+    stopOnSlope: Boolean,
+    maxSlides: Int,
+    floorMaxAngle: Float,
+    infiniteInertia: Boolean
   ): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(linearVelocity)
+    _args.append(snap)
+    _args.append(floorNormal)
+    _args.append(stopOnSlope)
+    _args.append(maxSlides)
+    _args.append(floorMaxAngle)
+    _args.append(infiniteInertia)
+    val _ret = __method_bind.move_and_slide_with_snap.call(this.toVariant(), _args.toVariant(), 7)
     TODO()
   }
 
   fun setSafeMargin(pixels: Float) {
+    val _args = VariantArray.new()
+    _args.append(pixels)
+    val _ret = __method_bind.set_safe_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSyncToPhysics(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_sync_to_physics.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun testMove(
     from: Transform2D,
-    rel_vec: Vector2,
-    infinite_inertia: Boolean
+    relVec: Vector2,
+    infiniteInertia: Boolean
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(relVec)
+    _args.append(infiniteInertia)
+    val _ret = __method_bind.test_move.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class InputEventJoypadMotion internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAxis(): Int {
+    val _ret = __method_bind.get_axis.call(this.toVariant())
     TODO()
   }
 
   fun getAxisValue(): Float {
+    val _ret = __method_bind.get_axis_value.call(this.toVariant())
     TODO()
   }
 
   fun setAxis(axis: Int) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    val _ret = __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAxisValue(axis_value: Float) {
+  fun setAxisValue(axisValue: Float) {
+    val _args = VariantArray.new()
+    _args.append(axisValue)
+    val _ret = __method_bind.set_axis_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

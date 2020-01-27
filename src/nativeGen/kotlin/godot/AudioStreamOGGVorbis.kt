@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolByteArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -18,26 +20,38 @@ open class AudioStreamOGGVorbis internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getData(): PoolByteArray {
+    val _ret = __method_bind.get_data.call(this.toVariant())
     TODO()
   }
 
   fun getLoopOffset(): Float {
+    val _ret = __method_bind.get_loop_offset.call(this.toVariant())
     TODO()
   }
 
   fun hasLoop(): Boolean {
+    val _ret = __method_bind.has_loop.call(this.toVariant())
     TODO()
   }
 
   fun setData(data: PoolByteArray) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLoop(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLoopOffset(seconds: Float) {
+    val _args = VariantArray.new()
+    _args.append(seconds)
+    val _ret = __method_bind.set_loop_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

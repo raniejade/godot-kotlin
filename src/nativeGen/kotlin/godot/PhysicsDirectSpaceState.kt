@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
@@ -20,14 +21,25 @@ open class PhysicsDirectSpaceState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun castMotion(shape: PhysicsShapeQueryParameters, motion: Vector3): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    _args.append(motion)
+    val _ret = __method_bind.cast_motion.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun collideShape(shape: PhysicsShapeQueryParameters, max_results: Int): VariantArray {
+  fun collideShape(shape: PhysicsShapeQueryParameters, maxResults: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    _args.append(maxResults)
+    val _ret = __method_bind.collide_shape.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.get_rest_info.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -35,14 +47,26 @@ open class PhysicsDirectSpaceState internal constructor(
     from: Vector3,
     to: Vector3,
     exclude: VariantArray,
-    collision_mask: Int,
-    collide_with_bodies: Boolean,
-    collide_with_areas: Boolean
+    collisionMask: Int,
+    collideWithBodies: Boolean,
+    collideWithAreas: Boolean
   ): Dictionary {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    _args.append(exclude)
+    _args.append(collisionMask)
+    _args.append(collideWithBodies)
+    _args.append(collideWithAreas)
+    val _ret = __method_bind.intersect_ray.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
-  fun intersectShape(shape: PhysicsShapeQueryParameters, max_results: Int): VariantArray {
+  fun intersectShape(shape: PhysicsShapeQueryParameters, maxResults: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    _args.append(maxResults)
+    val _ret = __method_bind.intersect_shape.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

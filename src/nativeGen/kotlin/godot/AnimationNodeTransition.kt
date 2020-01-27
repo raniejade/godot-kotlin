@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,34 +21,57 @@ open class AnimationNodeTransition internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun getCrossFadeTime(): Float {
+    val _ret = __method_bind.get_cross_fade_time.call(this.toVariant())
     TODO()
   }
 
   fun getEnabledInputs(): Int {
+    val _ret = __method_bind.get_enabled_inputs.call(this.toVariant())
     TODO()
   }
 
   fun getInputCaption(input: Int): String {
+    val _args = VariantArray.new()
+    _args.append(input)
+    val _ret = __method_bind.get_input_caption.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isInputSetAsAutoAdvance(input: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(input)
+    val _ret = __method_bind.is_input_set_as_auto_advance.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setCrossFadeTime(time: Float) {
+    val _args = VariantArray.new()
+    _args.append(time)
+    val _ret = __method_bind.set_cross_fade_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEnabledInputs(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_enabled_inputs.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInputAsAutoAdvance(input: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(input)
+    _args.append(enable)
+    val _ret = __method_bind.set_input_as_auto_advance.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setInputCaption(input: Int, caption: String) {
+    val _args = VariantArray.new()
+    _args.append(input)
+    _args.append(caption)
+    val _ret = __method_bind.set_input_caption.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

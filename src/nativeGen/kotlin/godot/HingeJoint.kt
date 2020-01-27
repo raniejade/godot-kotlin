@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,18 +20,32 @@ open class HingeJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getFlag(flag: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    val _ret = __method_bind.get_flag.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParam(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFlag(flag: Int, enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    _args.append(enabled)
+    val _ret = __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParam(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

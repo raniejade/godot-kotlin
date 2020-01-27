@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,42 +19,62 @@ open class RemoteTransform internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getRemoteNode(): NodePath {
+    val _ret = __method_bind.get_remote_node.call(this.toVariant())
     TODO()
   }
 
   fun getUpdatePosition(): Boolean {
+    val _ret = __method_bind.get_update_position.call(this.toVariant())
     TODO()
   }
 
   fun getUpdateRotation(): Boolean {
+    val _ret = __method_bind.get_update_rotation.call(this.toVariant())
     TODO()
   }
 
   fun getUpdateScale(): Boolean {
+    val _ret = __method_bind.get_update_scale.call(this.toVariant())
     TODO()
   }
 
   fun getUseGlobalCoordinates(): Boolean {
+    val _ret = __method_bind.get_use_global_coordinates.call(this.toVariant())
     TODO()
   }
 
   fun setRemoteNode(path: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_remote_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUpdatePosition(update_remote_position: Boolean) {
+  fun setUpdatePosition(updateRemotePosition: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(updateRemotePosition)
+    val _ret = __method_bind.set_update_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUpdateRotation(update_remote_rotation: Boolean) {
+  fun setUpdateRotation(updateRemoteRotation: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(updateRemoteRotation)
+    val _ret = __method_bind.set_update_rotation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUpdateScale(update_remote_scale: Boolean) {
+  fun setUpdateScale(updateRemoteScale: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(updateRemoteScale)
+    val _ret = __method_bind.set_update_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUseGlobalCoordinates(use_global_coordinates: Boolean) {
+  fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(useGlobalCoordinates)
+    val _ret = __method_bind.set_use_global_coordinates.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

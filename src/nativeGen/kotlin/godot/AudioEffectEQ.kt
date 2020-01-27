@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,14 +19,22 @@ open class AudioEffectEQ internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getBandCount(): Int {
+    val _ret = __method_bind.get_band_count.call(this.toVariant())
     TODO()
   }
 
-  fun getBandGainDb(band_idx: Int): Float {
+  fun getBandGainDb(bandIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(bandIdx)
+    val _ret = __method_bind.get_band_gain_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBandGainDb(band_idx: Int, volume_db: Float) {
+  fun setBandGainDb(bandIdx: Int, volumeDb: Float) {
+    val _args = VariantArray.new()
+    _args.append(bandIdx)
+    _args.append(volumeDb)
+    val _ret = __method_bind.set_band_gain_db.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

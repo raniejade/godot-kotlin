@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Rect2
 import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -24,263 +25,405 @@ open class Control internal constructor(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
   fun acceptEvent() {
+    val _ret = __method_bind.accept_event.call(this.toVariant())
     TODO()
   }
 
   fun addColorOverride(name: String, color: Color) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(color)
+    val _ret = __method_bind.add_color_override.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addConstantOverride(name: String, constant: Int) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(constant)
+    val _ret = __method_bind.add_constant_override.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addFontOverride(name: String, font: Font) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(font)
+    val _ret = __method_bind.add_font_override.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addIconOverride(name: String, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(texture)
+    val _ret = __method_bind.add_icon_override.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addShaderOverride(name: String, shader: Shader) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(shader)
+    val _ret = __method_bind.add_shader_override.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addStyleboxOverride(name: String, stylebox: StyleBox) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(stylebox)
+    val _ret = __method_bind.add_stylebox_override.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun forceDrag(data: Variant, preview: Control) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    _args.append(preview)
+    val _ret = __method_bind.force_drag.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getAnchor(margin: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_anchor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBegin(): Vector2 {
+    val _ret = __method_bind.get_begin.call(this.toVariant())
     TODO()
   }
 
   fun getColor(name: String, type: String): Color {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getCombinedMinimumSize(): Vector2 {
+    val _ret = __method_bind.get_combined_minimum_size.call(this.toVariant())
     TODO()
   }
 
   fun getConstant(name: String, type: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_constant.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getCursorShape(position: Vector2): CursorShape {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.get_cursor_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCustomMinimumSize(): Vector2 {
+    val _ret = __method_bind.get_custom_minimum_size.call(this.toVariant())
     TODO()
   }
 
   fun getDefaultCursorShape(): CursorShape {
+    val _ret = __method_bind.get_default_cursor_shape.call(this.toVariant())
     TODO()
   }
 
   fun getEnd(): Vector2 {
+    val _ret = __method_bind.get_end.call(this.toVariant())
     TODO()
   }
 
   fun getFocusMode(): FocusMode {
+    val _ret = __method_bind.get_focus_mode.call(this.toVariant())
     TODO()
   }
 
   fun getFocusNeighbour(margin: Int): NodePath {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_focus_neighbour.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFocusNext(): NodePath {
+    val _ret = __method_bind.get_focus_next.call(this.toVariant())
     TODO()
   }
 
   fun getFocusOwner(): Control {
+    val _ret = __method_bind.get_focus_owner.call(this.toVariant())
     TODO()
   }
 
   fun getFocusPrevious(): NodePath {
+    val _ret = __method_bind.get_focus_previous.call(this.toVariant())
     TODO()
   }
 
   fun getFont(name: String, type: String): Font {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_font.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getGlobalPosition(): Vector2 {
+    val _ret = __method_bind.get_global_position.call(this.toVariant())
     TODO()
   }
 
   fun getGlobalRect(): Rect2 {
+    val _ret = __method_bind.get_global_rect.call(this.toVariant())
     TODO()
   }
 
   fun getHGrowDirection(): GrowDirection {
+    val _ret = __method_bind.get_h_grow_direction.call(this.toVariant())
     TODO()
   }
 
   fun getHSizeFlags(): Int {
+    val _ret = __method_bind.get_h_size_flags.call(this.toVariant())
     TODO()
   }
 
   fun getIcon(name: String, type: String): Texture {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getMargin(margin: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMinimumSize(): Vector2 {
+    val _ret = __method_bind.get_minimum_size.call(this.toVariant())
     TODO()
   }
 
   fun getMouseFilter(): MouseFilter {
+    val _ret = __method_bind.get_mouse_filter.call(this.toVariant())
     TODO()
   }
 
   fun getParentAreaSize(): Vector2 {
+    val _ret = __method_bind.get_parent_area_size.call(this.toVariant())
     TODO()
   }
 
   fun getParentControl(): Control {
+    val _ret = __method_bind.get_parent_control.call(this.toVariant())
     TODO()
   }
 
   fun getPivotOffset(): Vector2 {
+    val _ret = __method_bind.get_pivot_offset.call(this.toVariant())
     TODO()
   }
 
   fun getPosition(): Vector2 {
+    val _ret = __method_bind.get_position.call(this.toVariant())
     TODO()
   }
 
   fun getRect(): Rect2 {
+    val _ret = __method_bind.get_rect.call(this.toVariant())
     TODO()
   }
 
   fun getRotation(): Float {
+    val _ret = __method_bind.get_rotation.call(this.toVariant())
     TODO()
   }
 
   fun getRotationDegrees(): Float {
+    val _ret = __method_bind.get_rotation_degrees.call(this.toVariant())
     TODO()
   }
 
   fun getScale(): Vector2 {
+    val _ret = __method_bind.get_scale.call(this.toVariant())
     TODO()
   }
 
   fun getSize(): Vector2 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getStretchRatio(): Float {
+    val _ret = __method_bind.get_stretch_ratio.call(this.toVariant())
     TODO()
   }
 
   fun getStylebox(name: String, type: String): StyleBox {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_stylebox.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getTheme(): Theme {
+    val _ret = __method_bind.get_theme.call(this.toVariant())
     TODO()
   }
 
-  fun getTooltip(at_position: Vector2): String {
+  fun getTooltip(atPosition: Vector2): String {
+    val _args = VariantArray.new()
+    _args.append(atPosition)
+    val _ret = __method_bind.get_tooltip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getVGrowDirection(): GrowDirection {
+    val _ret = __method_bind.get_v_grow_direction.call(this.toVariant())
     TODO()
   }
 
   fun getVSizeFlags(): Int {
+    val _ret = __method_bind.get_v_size_flags.call(this.toVariant())
     TODO()
   }
 
   fun grabClickFocus() {
+    val _ret = __method_bind.grab_click_focus.call(this.toVariant())
     TODO()
   }
 
   fun grabFocus() {
+    val _ret = __method_bind.grab_focus.call(this.toVariant())
     TODO()
   }
 
   fun hasColor(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasColorOverride(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_color_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasConstant(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_constant.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasConstantOverride(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_constant_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasFocus(): Boolean {
+    val _ret = __method_bind.has_focus.call(this.toVariant())
     TODO()
   }
 
   fun hasFont(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_font.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasFontOverride(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_font_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasIcon(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasIconOverride(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_icon_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasShaderOverride(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_shader_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasStylebox(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_stylebox.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasStyleboxOverride(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_stylebox_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isClippingContents(): Boolean {
+    val _ret = __method_bind.is_clipping_contents.call(this.toVariant())
     TODO()
   }
 
   fun minimumSizeChanged() {
+    val _ret = __method_bind.minimum_size_changed.call(this.toVariant())
     TODO()
   }
 
   fun releaseFocus() {
+    val _ret = __method_bind.release_focus.call(this.toVariant())
     TODO()
   }
 
   fun setAnchor(
     margin: Int,
     anchor: Float,
-    keep_margin: Boolean,
-    push_opposite_anchor: Boolean
+    keepMargin: Boolean,
+    pushOppositeAnchor: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(anchor)
+    _args.append(keepMargin)
+    _args.append(pushOppositeAnchor)
+    val _ret = __method_bind.set_anchor.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
@@ -288,144 +431,257 @@ open class Control internal constructor(
     margin: Int,
     anchor: Float,
     offset: Float,
-    push_opposite_anchor: Boolean
+    pushOppositeAnchor: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(anchor)
+    _args.append(offset)
+    _args.append(pushOppositeAnchor)
+    val _ret = __method_bind.set_anchor_and_margin.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun setAnchorsAndMarginsPreset(
     preset: Int,
-    resize_mode: Int,
+    resizeMode: Int,
     margin: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(preset)
+    _args.append(resizeMode)
+    _args.append(margin)
+    val _ret = __method_bind.set_anchors_and_margins_preset.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
-  fun setAnchorsPreset(preset: Int, keep_margins: Boolean) {
+  fun setAnchorsPreset(preset: Int, keepMargins: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(preset)
+    _args.append(keepMargins)
+    val _ret = __method_bind.set_anchors_preset.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBegin(position: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.set_begin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setClipContents(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_clip_contents.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCustomMinimumSize(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_custom_minimum_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDefaultCursorShape(shape: Int) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.set_default_cursor_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDragForwarding(target: Control) {
+    val _args = VariantArray.new()
+    _args.append(target)
+    val _ret = __method_bind.set_drag_forwarding.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDragPreview(control: Control) {
+    val _args = VariantArray.new()
+    _args.append(control)
+    val _ret = __method_bind.set_drag_preview.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEnd(position: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.set_end.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFocusMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_focus_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFocusNeighbour(margin: Int, neighbour: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(neighbour)
+    val _ret = __method_bind.set_focus_neighbour.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFocusNext(next: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(next)
+    val _ret = __method_bind.set_focus_next.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFocusPrevious(previous: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(previous)
+    val _ret = __method_bind.set_focus_previous.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setGlobalPosition(position: Vector2, keep_margins: Boolean) {
+  fun setGlobalPosition(position: Vector2, keepMargins: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(keepMargins)
+    val _ret = __method_bind.set_global_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setHGrowDirection(direction: Int) {
+    val _args = VariantArray.new()
+    _args.append(direction)
+    val _ret = __method_bind.set_h_grow_direction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHSizeFlags(flags: Int) {
+    val _args = VariantArray.new()
+    _args.append(flags)
+    val _ret = __method_bind.set_h_size_flags.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMargin(margin: Int, offset: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(offset)
+    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setMarginsPreset(
     preset: Int,
-    resize_mode: Int,
+    resizeMode: Int,
     margin: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(preset)
+    _args.append(resizeMode)
+    _args.append(margin)
+    val _ret = __method_bind.set_margins_preset.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setMouseFilter(filter: Int) {
+    val _args = VariantArray.new()
+    _args.append(filter)
+    val _ret = __method_bind.set_mouse_filter.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPivotOffset(pivot_offset: Vector2) {
+  fun setPivotOffset(pivotOffset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(pivotOffset)
+    val _ret = __method_bind.set_pivot_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPosition(position: Vector2, keep_margins: Boolean) {
+  fun setPosition(position: Vector2, keepMargins: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(keepMargins)
+    val _ret = __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setRotation(radians: Float) {
+    val _args = VariantArray.new()
+    _args.append(radians)
+    val _ret = __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRotationDegrees(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setScale(scale: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSize(size: Vector2, keep_margins: Boolean) {
+  fun setSize(size: Vector2, keepMargins: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    _args.append(keepMargins)
+    val _ret = __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setStretchRatio(ratio: Float) {
+    val _args = VariantArray.new()
+    _args.append(ratio)
+    val _ret = __method_bind.set_stretch_ratio.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTheme(theme: Theme) {
+    val _args = VariantArray.new()
+    _args.append(theme)
+    val _ret = __method_bind.set_theme.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTooltip(tooltip: String) {
+    val _args = VariantArray.new()
+    _args.append(tooltip)
+    val _ret = __method_bind.set_tooltip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVGrowDirection(direction: Int) {
+    val _args = VariantArray.new()
+    _args.append(direction)
+    val _ret = __method_bind.set_v_grow_direction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVSizeFlags(flags: Int) {
+    val _args = VariantArray.new()
+    _args.append(flags)
+    val _ret = __method_bind.set_v_size_flags.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun showModal(exclusive: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(exclusive)
+    val _ret = __method_bind.show_modal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun warpMouse(to_position: Vector2) {
+  fun warpMouse(toPosition: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(toPosition)
+    val _ret = __method_bind.warp_mouse.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

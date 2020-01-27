@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,50 +20,74 @@ open class CSGTorus internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getInnerRadius(): Float {
+    val _ret = __method_bind.get_inner_radius.call(this.toVariant())
     TODO()
   }
 
   fun getMaterial(): Material {
+    val _ret = __method_bind.get_material.call(this.toVariant())
     TODO()
   }
 
   fun getOuterRadius(): Float {
+    val _ret = __method_bind.get_outer_radius.call(this.toVariant())
     TODO()
   }
 
   fun getRingSides(): Int {
+    val _ret = __method_bind.get_ring_sides.call(this.toVariant())
     TODO()
   }
 
   fun getSides(): Int {
+    val _ret = __method_bind.get_sides.call(this.toVariant())
     TODO()
   }
 
   fun getSmoothFaces(): Boolean {
+    val _ret = __method_bind.get_smooth_faces.call(this.toVariant())
     TODO()
   }
 
   fun setInnerRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_inner_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOuterRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_outer_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRingSides(sides: Int) {
+    val _args = VariantArray.new()
+    _args.append(sides)
+    val _ret = __method_bind.set_ring_sides.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSides(sides: Int) {
+    val _args = VariantArray.new()
+    _args.append(sides)
+    val _ret = __method_bind.set_sides.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSmoothFaces(smooth_faces: Boolean) {
+  fun setSmoothFaces(smoothFaces: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(smoothFaces)
+    val _ret = __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

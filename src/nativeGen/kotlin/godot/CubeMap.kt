@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,42 +19,63 @@ open class CubeMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getFlags(): Int {
+    val _ret = __method_bind.get_flags.call(this.toVariant())
     TODO()
   }
 
   fun getHeight(): Int {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getLossyStorageQuality(): Float {
+    val _ret = __method_bind.get_lossy_storage_quality.call(this.toVariant())
     TODO()
   }
 
   fun getSide(side: Int): Image {
+    val _args = VariantArray.new()
+    _args.append(side)
+    val _ret = __method_bind.get_side.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getStorage(): Storage {
+    val _ret = __method_bind.get_storage.call(this.toVariant())
     TODO()
   }
 
   fun getWidth(): Int {
+    val _ret = __method_bind.get_width.call(this.toVariant())
     TODO()
   }
 
   fun setFlags(flags: Int) {
+    val _args = VariantArray.new()
+    _args.append(flags)
+    val _ret = __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLossyStorageQuality(quality: Float) {
+    val _args = VariantArray.new()
+    _args.append(quality)
+    val _ret = __method_bind.set_lossy_storage_quality.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSide(side: Int, image: Image) {
+    val _args = VariantArray.new()
+    _args.append(side)
+    _args.append(image)
+    val _ret = __method_bind.set_side.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setStorage(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_storage.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

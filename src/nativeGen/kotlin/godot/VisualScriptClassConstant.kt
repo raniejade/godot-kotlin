@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class VisualScriptClassConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBaseType(): String {
+    val _ret = __method_bind.get_base_type.call(this.toVariant())
     TODO()
   }
 
   fun getClassConstant(): String {
+    val _ret = __method_bind.get_class_constant.call(this.toVariant())
     TODO()
   }
 
   fun setBaseType(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setClassConstant(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_class_constant.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

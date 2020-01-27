@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,22 +17,31 @@ open class EditorSelection internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addNode(node: Node) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun getSelectedNodes(): VariantArray {
+    val _ret = __method_bind.get_selected_nodes.call(this.toVariant())
     TODO()
   }
 
   fun getTransformableSelectedNodes(): VariantArray {
+    val _ret = __method_bind.get_transformable_selected_nodes.call(this.toVariant())
     TODO()
   }
 
   fun removeNode(node: Node) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

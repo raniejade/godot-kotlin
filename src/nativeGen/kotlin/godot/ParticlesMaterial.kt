@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
@@ -20,154 +22,243 @@ open class ParticlesMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getColor(): Color {
+    val _ret = __method_bind.get_color.call(this.toVariant())
     TODO()
   }
 
   fun getColorRamp(): Texture {
+    val _ret = __method_bind.get_color_ramp.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionBoxExtents(): Vector3 {
+    val _ret = __method_bind.get_emission_box_extents.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionColorTexture(): Texture {
+    val _ret = __method_bind.get_emission_color_texture.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionNormalTexture(): Texture {
+    val _ret = __method_bind.get_emission_normal_texture.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionPointCount(): Int {
+    val _ret = __method_bind.get_emission_point_count.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionPointTexture(): Texture {
+    val _ret = __method_bind.get_emission_point_texture.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionShape(): EmissionShape {
+    val _ret = __method_bind.get_emission_shape.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionSphereRadius(): Float {
+    val _ret = __method_bind.get_emission_sphere_radius.call(this.toVariant())
     TODO()
   }
 
   fun getFlag(flag: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    val _ret = __method_bind.get_flag.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFlatness(): Float {
+    val _ret = __method_bind.get_flatness.call(this.toVariant())
     TODO()
   }
 
   fun getGravity(): Vector3 {
+    val _ret = __method_bind.get_gravity.call(this.toVariant())
     TODO()
   }
 
   fun getParam(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParamRandomness(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param_randomness.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParamTexture(param: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSpread(): Float {
+    val _ret = __method_bind.get_spread.call(this.toVariant())
     TODO()
   }
 
   fun getTrailColorModifier(): GradientTexture {
+    val _ret = __method_bind.get_trail_color_modifier.call(this.toVariant())
     TODO()
   }
 
   fun getTrailDivisor(): Int {
+    val _ret = __method_bind.get_trail_divisor.call(this.toVariant())
     TODO()
   }
 
   fun getTrailSizeModifier(): CurveTexture {
+    val _ret = __method_bind.get_trail_size_modifier.call(this.toVariant())
     TODO()
   }
 
   fun setColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setColorRamp(ramp: Texture) {
+    val _args = VariantArray.new()
+    _args.append(ramp)
+    val _ret = __method_bind.set_color_ramp.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionBoxExtents(extents: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(extents)
+    val _ret = __method_bind.set_emission_box_extents.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionColorTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_emission_color_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionNormalTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_emission_normal_texture.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setEmissionPointCount(point_count: Int) {
+  fun setEmissionPointCount(pointCount: Int) {
+    val _args = VariantArray.new()
+    _args.append(pointCount)
+    val _ret = __method_bind.set_emission_point_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionPointTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_emission_point_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionShape(shape: Int) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.set_emission_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionSphereRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_emission_sphere_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFlag(flag: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    _args.append(enable)
+    val _ret = __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFlatness(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_flatness.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setGravity(accel_vec: Vector3) {
+  fun setGravity(accelVec: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(accelVec)
+    val _ret = __method_bind.set_gravity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setParam(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParamRandomness(param: Int, randomness: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(randomness)
+    val _ret = __method_bind.set_param_randomness.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParamTexture(param: Int, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(texture)
+    val _ret = __method_bind.set_param_texture.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setSpread(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_spread.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTrailColorModifier(texture: GradientTexture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_trail_color_modifier.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTrailDivisor(divisor: Int) {
+    val _args = VariantArray.new()
+    _args.append(divisor)
+    val _ret = __method_bind.set_trail_divisor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTrailSizeModifier(texture: CurveTexture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_trail_size_modifier.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

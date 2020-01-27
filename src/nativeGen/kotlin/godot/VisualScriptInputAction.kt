@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class VisualScriptInputAction internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getActionMode(): Mode {
+    val _ret = __method_bind.get_action_mode.call(this.toVariant())
     TODO()
   }
 
   fun getActionName(): String {
+    val _ret = __method_bind.get_action_name.call(this.toVariant())
     TODO()
   }
 
   fun setActionMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setActionName(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_action_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

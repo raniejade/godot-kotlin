@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolRealArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,26 +19,38 @@ open class HeightMapShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getMapData(): PoolRealArray {
+    val _ret = __method_bind.get_map_data.call(this.toVariant())
     TODO()
   }
 
   fun getMapDepth(): Int {
+    val _ret = __method_bind.get_map_depth.call(this.toVariant())
     TODO()
   }
 
   fun getMapWidth(): Int {
+    val _ret = __method_bind.get_map_width.call(this.toVariant())
     TODO()
   }
 
   fun setMapData(data: PoolRealArray) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.set_map_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMapDepth(height: Int) {
+    val _args = VariantArray.new()
+    _args.append(height)
+    val _ret = __method_bind.set_map_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMapWidth(width: Int) {
+    val _args = VariantArray.new()
+    _args.append(width)
+    val _ret = __method_bind.set_map_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

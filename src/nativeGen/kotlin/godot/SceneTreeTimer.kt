@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class SceneTreeTimer internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getTimeLeft(): Float {
+    val _ret = __method_bind.get_time_left.call(this.toVariant())
     TODO()
   }
 
   fun setTimeLeft(time: Float) {
+    val _args = VariantArray.new()
+    _args.append(time)
+    val _ret = __method_bind.set_time_left.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

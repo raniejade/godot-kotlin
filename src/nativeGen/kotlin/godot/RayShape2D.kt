@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class RayShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getLength(): Float {
+    val _ret = __method_bind.get_length.call(this.toVariant())
     TODO()
   }
 
   fun getSlipsOnSlope(): Boolean {
+    val _ret = __method_bind.get_slips_on_slope.call(this.toVariant())
     TODO()
   }
 
   fun setLength(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSlipsOnSlope(active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(active)
+    val _ret = __method_bind.set_slips_on_slope.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

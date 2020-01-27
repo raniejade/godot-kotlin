@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,80 +20,125 @@ open class UPNP internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addDevice(device: UPNPDevice) {
+    val _args = VariantArray.new()
+    _args.append(device)
+    val _ret = __method_bind.add_device.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addPortMapping(
     port: Int,
-    port_internal: Int,
+    portInternal: Int,
     desc: String,
     proto: String,
     duration: Int
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(portInternal)
+    _args.append(desc)
+    _args.append(proto)
+    _args.append(duration)
+    val _ret = __method_bind.add_port_mapping.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun clearDevices() {
+    val _ret = __method_bind.clear_devices.call(this.toVariant())
     TODO()
   }
 
   fun deletePortMapping(port: Int, proto: String): Int {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(proto)
+    val _ret = __method_bind.delete_port_mapping.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun discover(
     timeout: Int,
     ttl: Int,
-    device_filter: String
+    deviceFilter: String
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(timeout)
+    _args.append(ttl)
+    _args.append(deviceFilter)
+    val _ret = __method_bind.discover.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getDevice(index: Int): UPNPDevice {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_device.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDeviceCount(): Int {
+    val _ret = __method_bind.get_device_count.call(this.toVariant())
     TODO()
   }
 
   fun getDiscoverLocalPort(): Int {
+    val _ret = __method_bind.get_discover_local_port.call(this.toVariant())
     TODO()
   }
 
   fun getDiscoverMulticastIf(): String {
+    val _ret = __method_bind.get_discover_multicast_if.call(this.toVariant())
     TODO()
   }
 
   fun getGateway(): UPNPDevice {
+    val _ret = __method_bind.get_gateway.call(this.toVariant())
     TODO()
   }
 
   fun isDiscoverIpv6(): Boolean {
+    val _ret = __method_bind.is_discover_ipv6.call(this.toVariant())
     TODO()
   }
 
   fun queryExternalAddress(): String {
+    val _ret = __method_bind.query_external_address.call(this.toVariant())
     TODO()
   }
 
   fun removeDevice(index: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.remove_device.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDevice(index: Int, device: UPNPDevice) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(device)
+    val _ret = __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setDiscoverIpv6(ipv6: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(ipv6)
+    val _ret = __method_bind.set_discover_ipv6.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDiscoverLocalPort(port: Int) {
+    val _args = VariantArray.new()
+    _args.append(port)
+    val _ret = __method_bind.set_discover_local_port.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setDiscoverMulticastIf(m_if: String) {
+  fun setDiscoverMulticastIf(mIf: String) {
+    val _args = VariantArray.new()
+    _args.append(mIf)
+    val _ret = __method_bind.set_discover_multicast_if.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

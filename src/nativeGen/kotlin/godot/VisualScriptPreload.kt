@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,10 +17,14 @@ open class VisualScriptPreload internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getPreload(): Resource {
+    val _ret = __method_bind.get_preload.call(this.toVariant())
     TODO()
   }
 
   fun setPreload(resource: Resource) {
+    val _args = VariantArray.new()
+    _args.append(resource)
+    val _ret = __method_bind.set_preload.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
@@ -19,74 +20,114 @@ open class CSGShape internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun getCollisionLayer(): Int {
+    val _ret = __method_bind.get_collision_layer.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCollisionMask(): Int {
+    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMeshes(): VariantArray {
+    val _ret = __method_bind.get_meshes.call(this.toVariant())
     TODO()
   }
 
   fun getOperation(): Operation {
+    val _ret = __method_bind.get_operation.call(this.toVariant())
     TODO()
   }
 
   fun getSnap(): Float {
+    val _ret = __method_bind.get_snap.call(this.toVariant())
     TODO()
   }
 
   fun isCalculatingTangents(): Boolean {
+    val _ret = __method_bind.is_calculating_tangents.call(this.toVariant())
     TODO()
   }
 
   fun isRootShape(): Boolean {
+    val _ret = __method_bind.is_root_shape.call(this.toVariant())
     TODO()
   }
 
   fun isUsingCollision(): Boolean {
+    val _ret = __method_bind.is_using_collision.call(this.toVariant())
     TODO()
   }
 
   fun setCalculateTangents(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_calculate_tangents.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionLayer(layer: Int) {
+    val _args = VariantArray.new()
+    _args.append(layer)
+    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setCollisionMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setOperation(operation: Int) {
+    val _args = VariantArray.new()
+    _args.append(operation)
+    val _ret = __method_bind.set_operation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSnap(snap: Float) {
+    val _args = VariantArray.new()
+    _args.append(snap)
+    val _ret = __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseCollision(operation: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(operation)
+    val _ret = __method_bind.set_use_collision.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

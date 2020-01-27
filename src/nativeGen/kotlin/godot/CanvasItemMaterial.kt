@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,50 +19,76 @@ open class CanvasItemMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getBlendMode(): BlendMode {
+    val _ret = __method_bind.get_blend_mode.call(this.toVariant())
     TODO()
   }
 
   fun getLightMode(): LightMode {
+    val _ret = __method_bind.get_light_mode.call(this.toVariant())
     TODO()
   }
 
   fun getParticlesAnimHFrames(): Int {
+    val _ret = __method_bind.get_particles_anim_h_frames.call(this.toVariant())
     TODO()
   }
 
   fun getParticlesAnimLoop(): Boolean {
+    val _ret = __method_bind.get_particles_anim_loop.call(this.toVariant())
     TODO()
   }
 
   fun getParticlesAnimVFrames(): Int {
+    val _ret = __method_bind.get_particles_anim_v_frames.call(this.toVariant())
     TODO()
   }
 
   fun getParticlesAnimation(): Boolean {
+    val _ret = __method_bind.get_particles_animation.call(this.toVariant())
     TODO()
   }
 
-  fun setBlendMode(blend_mode: Int) {
+  fun setBlendMode(blendMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(blendMode)
+    val _ret = __method_bind.set_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLightMode(light_mode: Int) {
+  fun setLightMode(lightMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(lightMode)
+    val _ret = __method_bind.set_light_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
+    val _args = VariantArray.new()
+    _args.append(frames)
+    val _ret = __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(loop)
+    val _ret = __method_bind.set_particles_anim_loop.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
+    val _args = VariantArray.new()
+    _args.append(frames)
+    val _ret = __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setParticlesAnimation(particles_anim: Boolean) {
+  fun setParticlesAnimation(particlesAnim: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(particlesAnim)
+    val _ret = __method_bind.set_particles_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

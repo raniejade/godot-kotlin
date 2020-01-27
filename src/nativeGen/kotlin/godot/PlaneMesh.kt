@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,26 +19,38 @@ open class PlaneMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector2 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getSubdivideDepth(): Int {
+    val _ret = __method_bind.get_subdivide_depth.call(this.toVariant())
     TODO()
   }
 
   fun getSubdivideWidth(): Int {
+    val _ret = __method_bind.get_subdivide_width.call(this.toVariant())
     TODO()
   }
 
   fun setSize(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSubdivideDepth(subdivide: Int) {
+    val _args = VariantArray.new()
+    _args.append(subdivide)
+    val _ret = __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSubdivideWidth(subdivide: Int) {
+    val _args = VariantArray.new()
+    _args.append(subdivide)
+    val _ret = __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

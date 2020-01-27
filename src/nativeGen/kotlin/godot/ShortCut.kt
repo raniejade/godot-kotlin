@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,22 +19,31 @@ open class ShortCut internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAsText(): String {
+    val _ret = __method_bind.get_as_text.call(this.toVariant())
     TODO()
   }
 
   fun getShortcut(): InputEvent {
+    val _ret = __method_bind.get_shortcut.call(this.toVariant())
     TODO()
   }
 
   fun isShortcut(event: InputEvent): Boolean {
+    val _args = VariantArray.new()
+    _args.append(event)
+    val _ret = __method_bind.is_shortcut.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isValid(): Boolean {
+    val _ret = __method_bind.is_valid.call(this.toVariant())
     TODO()
   }
 
   fun setShortcut(event: InputEvent) {
+    val _args = VariantArray.new()
+    _args.append(event)
+    val _ret = __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

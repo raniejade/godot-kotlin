@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,14 +18,21 @@ open class GradientTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getGradient(): Gradient {
+    val _ret = __method_bind.get_gradient.call(this.toVariant())
     TODO()
   }
 
   fun setGradient(gradient: Gradient) {
+    val _args = VariantArray.new()
+    _args.append(gradient)
+    val _ret = __method_bind.set_gradient.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWidth(width: Int) {
+    val _args = VariantArray.new()
+    _args.append(width)
+    val _ret = __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

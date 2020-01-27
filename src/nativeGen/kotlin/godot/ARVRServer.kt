@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
@@ -20,67 +21,96 @@ import kotlinx.cinterop.reinterpret
 open class ARVRServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun centerOnHmd(rotation_mode: Int, keep_height: Boolean) {
+  fun centerOnHmd(rotationMode: Int, keepHeight: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(rotationMode)
+    _args.append(keepHeight)
+    val _ret = __method_bind.center_on_hmd.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun findInterface(name: String): ARVRInterface {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.find_interface.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getHmdTransform(): Transform {
+    val _ret = __method_bind.get_hmd_transform.call(this.toVariant())
     TODO()
   }
 
   fun getInterface(idx: Int): ARVRInterface {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_interface.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getInterfaceCount(): Int {
+    val _ret = __method_bind.get_interface_count.call(this.toVariant())
     TODO()
   }
 
   fun getInterfaces(): VariantArray {
+    val _ret = __method_bind.get_interfaces.call(this.toVariant())
     TODO()
   }
 
   fun getLastCommitUsec(): Int {
+    val _ret = __method_bind.get_last_commit_usec.call(this.toVariant())
     TODO()
   }
 
   fun getLastFrameUsec(): Int {
+    val _ret = __method_bind.get_last_frame_usec.call(this.toVariant())
     TODO()
   }
 
   fun getLastProcessUsec(): Int {
+    val _ret = __method_bind.get_last_process_usec.call(this.toVariant())
     TODO()
   }
 
   fun getPrimaryInterface(): ARVRInterface {
+    val _ret = __method_bind.get_primary_interface.call(this.toVariant())
     TODO()
   }
 
   fun getReferenceFrame(): Transform {
+    val _ret = __method_bind.get_reference_frame.call(this.toVariant())
     TODO()
   }
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_tracker.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTrackerCount(): Int {
+    val _ret = __method_bind.get_tracker_count.call(this.toVariant())
     TODO()
   }
 
   fun getWorldScale(): Float {
+    val _ret = __method_bind.get_world_scale.call(this.toVariant())
     TODO()
   }
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
+    val _args = VariantArray.new()
+    _args.append(`interface`)
+    val _ret = __method_bind.set_primary_interface.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWorldScale(arg0: Float) {
+    val _args = VariantArray.new()
+    _args.append(arg0)
+    val _ret = __method_bind.set_world_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

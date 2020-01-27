@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,30 +20,41 @@ open class Bone2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun applyRest() {
+    val _ret = __method_bind.apply_rest.call(this.toVariant())
     TODO()
   }
 
   fun getDefaultLength(): Float {
+    val _ret = __method_bind.get_default_length.call(this.toVariant())
     TODO()
   }
 
   fun getIndexInSkeleton(): Int {
+    val _ret = __method_bind.get_index_in_skeleton.call(this.toVariant())
     TODO()
   }
 
   fun getRest(): Transform2D {
+    val _ret = __method_bind.get_rest.call(this.toVariant())
     TODO()
   }
 
   fun getSkeletonRest(): Transform2D {
+    val _ret = __method_bind.get_skeleton_rest.call(this.toVariant())
     TODO()
   }
 
-  fun setDefaultLength(default_length: Float) {
+  fun setDefaultLength(defaultLength: Float) {
+    val _args = VariantArray.new()
+    _args.append(defaultLength)
+    val _ret = __method_bind.set_default_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRest(rest: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(rest)
+    val _ret = __method_bind.set_rest.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

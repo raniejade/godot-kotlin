@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
@@ -19,107 +21,178 @@ open class Curve internal constructor(
 ) : Resource(_handle) {
   fun addPoint(
     position: Vector2,
-    left_tangent: Float,
-    right_tangent: Float,
-    left_mode: Int,
-    right_mode: Int
+    leftTangent: Float,
+    rightTangent: Float,
+    leftMode: Int,
+    rightMode: Int
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(leftTangent)
+    _args.append(rightTangent)
+    _args.append(leftMode)
+    _args.append(rightMode)
+    val _ret = __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun bake() {
+    val _ret = __method_bind.bake.call(this.toVariant())
     TODO()
   }
 
   fun cleanDupes() {
+    val _ret = __method_bind.clean_dupes.call(this.toVariant())
     TODO()
   }
 
   fun clearPoints() {
+    val _ret = __method_bind.clear_points.call(this.toVariant())
     TODO()
   }
 
   fun getBakeResolution(): Int {
+    val _ret = __method_bind.get_bake_resolution.call(this.toVariant())
     TODO()
   }
 
   fun getMaxValue(): Float {
+    val _ret = __method_bind.get_max_value.call(this.toVariant())
     TODO()
   }
 
   fun getMinValue(): Float {
+    val _ret = __method_bind.get_min_value.call(this.toVariant())
     TODO()
   }
 
   fun getPointCount(): Int {
+    val _ret = __method_bind.get_point_count.call(this.toVariant())
     TODO()
   }
 
   fun getPointLeftMode(index: Int): TangentMode {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_point_left_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPointLeftTangent(index: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_point_left_tangent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPointPosition(index: Int): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPointRightMode(index: Int): TangentMode {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_point_right_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPointRightTangent(index: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_point_right_tangent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun interpolate(offset: Float): Float {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.interpolate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun interpolateBaked(offset: Float): Float {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.interpolate_baked.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removePoint(index: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBakeResolution(resolution: Int) {
+    val _args = VariantArray.new()
+    _args.append(resolution)
+    val _ret = __method_bind.set_bake_resolution.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaxValue(max: Float) {
+    val _args = VariantArray.new()
+    _args.append(max)
+    val _ret = __method_bind.set_max_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMinValue(min: Float) {
+    val _args = VariantArray.new()
+    _args.append(min)
+    val _ret = __method_bind.set_min_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPointLeftMode(index: Int, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(mode)
+    val _ret = __method_bind.set_point_left_mode.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPointLeftTangent(index: Int, tangent: Float) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(tangent)
+    val _ret = __method_bind.set_point_left_tangent.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPointOffset(index: Int, offset: Float): Int {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(offset)
+    val _ret = __method_bind.set_point_offset.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPointRightMode(index: Int, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(mode)
+    val _ret = __method_bind.set_point_right_mode.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPointRightTangent(index: Int, tangent: Float) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(tangent)
+    val _ret = __method_bind.set_point_right_tangent.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPointValue(index: Int, y: Float) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(y)
+    val _ret = __method_bind.set_point_value.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

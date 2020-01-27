@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -17,15 +19,26 @@ import kotlinx.cinterop.reinterpret
 open class PCKPacker internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addFile(pck_path: String, source_path: String): Error {
+  fun addFile(pckPath: String, sourcePath: String): Error {
+    val _args = VariantArray.new()
+    _args.append(pckPath)
+    _args.append(sourcePath)
+    val _ret = __method_bind.add_file.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun flush(verbose: Boolean): Error {
+    val _args = VariantArray.new()
+    _args.append(verbose)
+    val _ret = __method_bind.flush.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun pckStart(pck_name: String, alignment: Int): Error {
+  fun pckStart(pckName: String, alignment: Int): Error {
+    val _args = VariantArray.new()
+    _args.append(pckName)
+    _args.append(alignment)
+    val _ret = __method_bind.pck_start.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

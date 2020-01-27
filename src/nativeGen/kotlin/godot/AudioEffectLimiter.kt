@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,34 +18,50 @@ open class AudioEffectLimiter internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getCeilingDb(): Float {
+    val _ret = __method_bind.get_ceiling_db.call(this.toVariant())
     TODO()
   }
 
   fun getSoftClipDb(): Float {
+    val _ret = __method_bind.get_soft_clip_db.call(this.toVariant())
     TODO()
   }
 
   fun getSoftClipRatio(): Float {
+    val _ret = __method_bind.get_soft_clip_ratio.call(this.toVariant())
     TODO()
   }
 
   fun getThresholdDb(): Float {
+    val _ret = __method_bind.get_threshold_db.call(this.toVariant())
     TODO()
   }
 
   fun setCeilingDb(ceiling: Float) {
+    val _args = VariantArray.new()
+    _args.append(ceiling)
+    val _ret = __method_bind.set_ceiling_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSoftClipDb(soft_clip: Float) {
+  fun setSoftClipDb(softClip: Float) {
+    val _args = VariantArray.new()
+    _args.append(softClip)
+    val _ret = __method_bind.set_soft_clip_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSoftClipRatio(soft_clip: Float) {
+  fun setSoftClipRatio(softClip: Float) {
+    val _args = VariantArray.new()
+    _args.append(softClip)
+    val _ret = __method_bind.set_soft_clip_ratio.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setThresholdDb(threshold: Float) {
+    val _args = VariantArray.new()
+    _args.append(threshold)
+    val _ret = __method_bind.set_threshold_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

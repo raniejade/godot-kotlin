@@ -21,27 +21,44 @@ import kotlinx.cinterop.reinterpret
 open class Node internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addChild(node: Node, legible_unique_name: Boolean) {
+  fun addChild(node: Node, legibleUniqueName: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    _args.append(legibleUniqueName)
+    val _ret = __method_bind.add_child.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addChildBelowNode(
     node: Node,
-    child_node: Node,
-    legible_unique_name: Boolean
+    childNode: Node,
+    legibleUniqueName: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    _args.append(childNode)
+    _args.append(legibleUniqueName)
+    val _ret = __method_bind.add_child_below_node.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun addToGroup(group: String, persistent: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(group)
+    _args.append(persistent)
+    val _ret = __method_bind.add_to_group.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun canProcess(): Boolean {
+    val _ret = __method_bind.can_process.call(this.toVariant())
     TODO()
   }
 
   fun duplicate(flags: Int): Node {
+    val _args = VariantArray.new()
+    _args.append(flags)
+    val _ret = __method_bind.duplicate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -50,334 +67,523 @@ open class Node internal constructor(
     recursive: Boolean,
     owned: Boolean
   ): Node {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    _args.append(recursive)
+    _args.append(owned)
+    val _ret = __method_bind.find_node.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun findParent(mask: String): Node {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.find_parent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getChild(idx: Int): Node {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_child.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getChildCount(): Int {
+    val _ret = __method_bind.get_child_count.call(this.toVariant())
     TODO()
   }
 
   fun getChildren(): VariantArray {
+    val _ret = __method_bind.get_children.call(this.toVariant())
     TODO()
   }
 
   fun getCustomMultiplayer(): MultiplayerAPI {
+    val _ret = __method_bind.get_custom_multiplayer.call(this.toVariant())
     TODO()
   }
 
   fun getFilename(): String {
+    val _ret = __method_bind.get_filename.call(this.toVariant())
     TODO()
   }
 
   fun getGroups(): VariantArray {
+    val _ret = __method_bind.get_groups.call(this.toVariant())
     TODO()
   }
 
   fun getIndex(): Int {
+    val _ret = __method_bind.get_index.call(this.toVariant())
     TODO()
   }
 
   fun getMultiplayer(): MultiplayerAPI {
+    val _ret = __method_bind.get_multiplayer.call(this.toVariant())
     TODO()
   }
 
   fun getName(): String {
+    val _ret = __method_bind.get_name.call(this.toVariant())
     TODO()
   }
 
   fun getNetworkMaster(): Int {
+    val _ret = __method_bind.get_network_master.call(this.toVariant())
     TODO()
   }
 
   fun getNode(path: NodePath): Node {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_node_and_resource.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNodeOrNull(path: NodePath): Node {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_node_or_null.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getOwner(): Node {
+    val _ret = __method_bind.get_owner.call(this.toVariant())
     TODO()
   }
 
   fun getParent(): Node {
+    val _ret = __method_bind.get_parent.call(this.toVariant())
     TODO()
   }
 
   fun getPath(): NodePath {
+    val _ret = __method_bind.get_path.call(this.toVariant())
     TODO()
   }
 
   fun getPathTo(node: Node): NodePath {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.get_path_to.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPauseMode(): PauseMode {
+    val _ret = __method_bind.get_pause_mode.call(this.toVariant())
     TODO()
   }
 
   fun getPhysicsProcessDeltaTime(): Float {
+    val _ret = __method_bind.get_physics_process_delta_time.call(this.toVariant())
     TODO()
   }
 
   fun getPositionInParent(): Int {
+    val _ret = __method_bind.get_position_in_parent.call(this.toVariant())
     TODO()
   }
 
   fun getProcessDeltaTime(): Float {
+    val _ret = __method_bind.get_process_delta_time.call(this.toVariant())
     TODO()
   }
 
   fun getSceneInstanceLoadPlaceholder(): Boolean {
+    val _ret = __method_bind.get_scene_instance_load_placeholder.call(this.toVariant())
     TODO()
   }
 
   fun getTree(): SceneTree {
+    val _ret = __method_bind.get_tree.call(this.toVariant())
     TODO()
   }
 
   fun getViewport(): Viewport {
+    val _ret = __method_bind.get_viewport.call(this.toVariant())
     TODO()
   }
 
   fun hasNode(path: NodePath): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.has_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasNodeAndResource(path: NodePath): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.has_node_and_resource.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isAParentOf(node: Node): Boolean {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.is_a_parent_of.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isDisplayedFolded(): Boolean {
+    val _ret = __method_bind.is_displayed_folded.call(this.toVariant())
     TODO()
   }
 
   fun isGreaterThan(node: Node): Boolean {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.is_greater_than.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isInGroup(group: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(group)
+    val _ret = __method_bind.is_in_group.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isInsideTree(): Boolean {
+    val _ret = __method_bind.is_inside_tree.call(this.toVariant())
     TODO()
   }
 
   fun isNetworkMaster(): Boolean {
+    val _ret = __method_bind.is_network_master.call(this.toVariant())
     TODO()
   }
 
   fun isPhysicsProcessing(): Boolean {
+    val _ret = __method_bind.is_physics_processing.call(this.toVariant())
     TODO()
   }
 
   fun isPhysicsProcessingInternal(): Boolean {
+    val _ret = __method_bind.is_physics_processing_internal.call(this.toVariant())
     TODO()
   }
 
   fun isProcessing(): Boolean {
+    val _ret = __method_bind.is_processing.call(this.toVariant())
     TODO()
   }
 
   fun isProcessingInput(): Boolean {
+    val _ret = __method_bind.is_processing_input.call(this.toVariant())
     TODO()
   }
 
   fun isProcessingInternal(): Boolean {
+    val _ret = __method_bind.is_processing_internal.call(this.toVariant())
     TODO()
   }
 
   fun isProcessingUnhandledInput(): Boolean {
+    val _ret = __method_bind.is_processing_unhandled_input.call(this.toVariant())
     TODO()
   }
 
   fun isProcessingUnhandledKeyInput(): Boolean {
+    val _ret = __method_bind.is_processing_unhandled_key_input.call(this.toVariant())
     TODO()
   }
 
-  fun moveChild(child_node: Node, to_position: Int) {
+  fun moveChild(childNode: Node, toPosition: Int) {
+    val _args = VariantArray.new()
+    _args.append(childNode)
+    _args.append(toPosition)
+    val _ret = __method_bind.move_child.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun printStrayNodes() {
+    val _ret = __method_bind.print_stray_nodes.call(this.toVariant())
     TODO()
   }
 
   fun printTree() {
+    val _ret = __method_bind.print_tree.call(this.toVariant())
     TODO()
   }
 
   fun printTreePretty() {
+    val _ret = __method_bind.print_tree_pretty.call(this.toVariant())
     TODO()
   }
 
   fun propagateCall(
     method: String,
     args: VariantArray,
-    parent_first: Boolean
+    parentFirst: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(method)
+    _args.append(args)
+    _args.append(parentFirst)
+    val _ret = __method_bind.propagate_call.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun propagateNotification(what: Int) {
+    val _args = VariantArray.new()
+    _args.append(what)
+    val _ret = __method_bind.propagate_notification.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun queueFree() {
+    val _ret = __method_bind.queue_free.call(this.toVariant())
     TODO()
   }
 
   fun raise() {
+    val _ret = __method_bind.raise.call(this.toVariant())
     TODO()
   }
 
   fun removeAndSkip() {
+    val _ret = __method_bind.remove_and_skip.call(this.toVariant())
     TODO()
   }
 
   fun removeChild(node: Node) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.remove_child.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeFromGroup(group: String) {
+    val _args = VariantArray.new()
+    _args.append(group)
+    val _ret = __method_bind.remove_from_group.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun replaceBy(node: Node, keep_data: Boolean) {
+  fun replaceBy(node: Node, keepData: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    _args.append(keepData)
+    val _ret = __method_bind.replace_by.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun requestReady() {
+    val _ret = __method_bind.request_ready.call(this.toVariant())
     TODO()
   }
 
   fun rpc(method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    val _ret = __method_bind.rpc.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun rpcConfig(method: String, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(method)
+    _args.append(mode)
+    val _ret = __method_bind.rpc_config.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun rpcId(peer_id: Int, method: String): Variant {
+  fun rpcId(peerId: Int, method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    _args.append(method)
+    val _ret = __method_bind.rpc_id.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rpcUnreliable(method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    val _ret = __method_bind.rpc_unreliable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun rpcUnreliableId(peer_id: Int, method: String): Variant {
+  fun rpcUnreliableId(peerId: Int, method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    _args.append(method)
+    val _ret = __method_bind.rpc_unreliable_id.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rset(property: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.rset.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rsetConfig(property: String, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(mode)
+    val _ret = __method_bind.rset_config.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rsetId(
-    peer_id: Int,
+    peerId: Int,
     property: String,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.rset_id.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun rsetUnreliable(property: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.rset_unreliable.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rsetUnreliableId(
-    peer_id: Int,
+    peerId: Int,
     property: String,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.rset_unreliable_id.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setCustomMultiplayer(api: MultiplayerAPI) {
+    val _args = VariantArray.new()
+    _args.append(api)
+    val _ret = __method_bind.set_custom_multiplayer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisplayFolded(fold: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(fold)
+    val _ret = __method_bind.set_display_folded.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFilename(filename: String) {
+    val _args = VariantArray.new()
+    _args.append(filename)
+    val _ret = __method_bind.set_filename.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setName(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNetworkMaster(id: Int, recursive: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(recursive)
+    val _ret = __method_bind.set_network_master.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setOwner(owner: Node) {
+    val _args = VariantArray.new()
+    _args.append(owner)
+    val _ret = __method_bind.set_owner.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPauseMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_pause_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPhysicsProcess(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_physics_process.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPhysicsProcessInternal(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_physics_process_internal.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setProcess(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_process.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setProcessInput(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_process_input.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setProcessInternal(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_process_internal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setProcessPriority(priority: Int) {
+    val _args = VariantArray.new()
+    _args.append(priority)
+    val _ret = __method_bind.set_process_priority.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setProcessUnhandledInput(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_process_unhandled_input.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setProcessUnhandledKeyInput(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_process_unhandled_key_input.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSceneInstanceLoadPlaceholder(load_placeholder: Boolean) {
+  fun setSceneInstanceLoadPlaceholder(loadPlaceholder: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(loadPlaceholder)
+    val _ret = __method_bind.set_scene_instance_load_placeholder.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 

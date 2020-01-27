@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,34 +19,50 @@ open class AtlasTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getAtlas(): Texture {
+    val _ret = __method_bind.get_atlas.call(this.toVariant())
     TODO()
   }
 
   fun getMargin(): Rect2 {
+    val _ret = __method_bind.get_margin.call(this.toVariant())
     TODO()
   }
 
   fun getRegion(): Rect2 {
+    val _ret = __method_bind.get_region.call(this.toVariant())
     TODO()
   }
 
   fun hasFilterClip(): Boolean {
+    val _ret = __method_bind.has_filter_clip.call(this.toVariant())
     TODO()
   }
 
   fun setAtlas(atlas: Texture) {
+    val _args = VariantArray.new()
+    _args.append(atlas)
+    val _ret = __method_bind.set_atlas.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFilterClip(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMargin(margin: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegion(region: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(region)
+    val _ret = __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,38 +20,55 @@ open class AnimatedSprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
   fun getAnimation(): String {
+    val _ret = __method_bind.get_animation.call(this.toVariant())
     TODO()
   }
 
   fun getFrame(): Int {
+    val _ret = __method_bind.get_frame.call(this.toVariant())
     TODO()
   }
 
   fun getSpriteFrames(): SpriteFrames {
+    val _ret = __method_bind.get_sprite_frames.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
   fun play(anim: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAnimation(animation: String) {
+    val _args = VariantArray.new()
+    _args.append(animation)
+    val _ret = __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFrame(frame: Int) {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSpriteFrames(sprite_frames: SpriteFrames) {
+  fun setSpriteFrames(spriteFrames: SpriteFrames) {
+    val _args = VariantArray.new()
+    _args.append(spriteFrames)
+    val _ret = __method_bind.set_sprite_frames.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

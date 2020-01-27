@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,6 +20,9 @@ open class _ResourceSaver internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_recognized_extensions.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -26,6 +31,11 @@ open class _ResourceSaver internal constructor(
     resource: Resource,
     flags: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(resource)
+    _args.append(flags)
+    val _ret = __method_bind.save.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

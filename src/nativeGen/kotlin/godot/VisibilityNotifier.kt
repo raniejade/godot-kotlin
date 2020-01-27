@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,14 +19,19 @@ open class VisibilityNotifier internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAabb(): AABB {
+    val _ret = __method_bind.get_aabb.call(this.toVariant())
     TODO()
   }
 
   fun isOnScreen(): Boolean {
+    val _ret = __method_bind.is_on_screen.call(this.toVariant())
     TODO()
   }
 
   fun setAabb(rect: AABB) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    val _ret = __method_bind.set_aabb.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,14 +19,22 @@ open class _JSON internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun parse(json: String): JSONParseResult {
+    val _args = VariantArray.new()
+    _args.append(json)
+    val _ret = __method_bind.parse.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun print(
     value: Variant,
     indent: String,
-    sort_keys: Boolean
+    sortKeys: Boolean
   ): String {
+    val _args = VariantArray.new()
+    _args.append(value)
+    _args.append(indent)
+    _args.append(sortKeys)
+    val _ret = __method_bind.print.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

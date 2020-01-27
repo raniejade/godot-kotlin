@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class CSGPrimitive internal constructor(
   _handle: COpaquePointer
 ) : CSGShape(_handle) {
   fun isInvertingFaces(): Boolean {
+    val _ret = __method_bind.is_inverting_faces.call(this.toVariant())
     TODO()
   }
 
-  fun setInvertFaces(invert_faces: Boolean) {
+  fun setInvertFaces(invertFaces: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(invertFaces)
+    val _ret = __method_bind.set_invert_faces.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

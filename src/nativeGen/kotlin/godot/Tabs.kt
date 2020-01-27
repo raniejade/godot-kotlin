@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,114 +21,185 @@ open class Tabs internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addTab(title: String, icon: Texture) {
+    val _args = VariantArray.new()
+    _args.append(title)
+    _args.append(icon)
+    val _ret = __method_bind.add_tab.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun ensureTabVisible(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.ensure_tab_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCurrentTab(): Int {
+    val _ret = __method_bind.get_current_tab.call(this.toVariant())
     TODO()
   }
 
   fun getDragToRearrangeEnabled(): Boolean {
+    val _ret = __method_bind.get_drag_to_rearrange_enabled.call(this.toVariant())
     TODO()
   }
 
   fun getOffsetButtonsVisible(): Boolean {
+    val _ret = __method_bind.get_offset_buttons_visible.call(this.toVariant())
     TODO()
   }
 
   fun getScrollingEnabled(): Boolean {
+    val _ret = __method_bind.get_scrolling_enabled.call(this.toVariant())
     TODO()
   }
 
   fun getSelectWithRmb(): Boolean {
+    val _ret = __method_bind.get_select_with_rmb.call(this.toVariant())
     TODO()
   }
 
   fun getTabAlign(): TabAlign {
+    val _ret = __method_bind.get_tab_align.call(this.toVariant())
     TODO()
   }
 
   fun getTabCloseDisplayPolicy(): CloseButtonDisplayPolicy {
+    val _ret = __method_bind.get_tab_close_display_policy.call(this.toVariant())
     TODO()
   }
 
   fun getTabCount(): Int {
+    val _ret = __method_bind.get_tab_count.call(this.toVariant())
     TODO()
   }
 
-  fun getTabDisabled(tab_idx: Int): Boolean {
+  fun getTabDisabled(tabIdx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    val _ret = __method_bind.get_tab_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getTabIcon(tab_idx: Int): Texture {
+  fun getTabIcon(tabIdx: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    val _ret = __method_bind.get_tab_icon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTabOffset(): Int {
+    val _ret = __method_bind.get_tab_offset.call(this.toVariant())
     TODO()
   }
 
-  fun getTabRect(tab_idx: Int): Rect2 {
+  fun getTabRect(tabIdx: Int): Rect2 {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    val _ret = __method_bind.get_tab_rect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getTabTitle(tab_idx: Int): String {
+  fun getTabTitle(tabIdx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    val _ret = __method_bind.get_tab_title.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTabsRearrangeGroup(): Int {
+    val _ret = __method_bind.get_tabs_rearrange_group.call(this.toVariant())
     TODO()
   }
 
   fun moveTab(from: Int, to: Int) {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    val _ret = __method_bind.move_tab.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun removeTab(tab_idx: Int) {
+  fun removeTab(tabIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    val _ret = __method_bind.remove_tab.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCurrentTab(tab_idx: Int) {
+  fun setCurrentTab(tabIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    val _ret = __method_bind.set_current_tab.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDragToRearrangeEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_drag_to_rearrange_enabled.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setScrollingEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_scrolling_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSelectWithRmb(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_select_with_rmb.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTabAlign(align: Int) {
+    val _args = VariantArray.new()
+    _args.append(align)
+    val _ret = __method_bind.set_tab_align.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTabCloseDisplayPolicy(policy: Int) {
+    val _args = VariantArray.new()
+    _args.append(policy)
+    val _ret = __method_bind.set_tab_close_display_policy.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setTabDisabled(tab_idx: Int, disabled: Boolean) {
+  fun setTabDisabled(tabIdx: Int, disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    _args.append(disabled)
+    val _ret = __method_bind.set_tab_disabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setTabIcon(tab_idx: Int, icon: Texture) {
+  fun setTabIcon(tabIdx: Int, icon: Texture) {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    _args.append(icon)
+    val _ret = __method_bind.set_tab_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setTabTitle(tab_idx: Int, title: String) {
+  fun setTabTitle(tabIdx: Int, title: String) {
+    val _args = VariantArray.new()
+    _args.append(tabIdx)
+    _args.append(title)
+    val _ret = __method_bind.set_tab_title.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setTabsRearrangeGroup(group_id: Int) {
+  fun setTabsRearrangeGroup(groupId: Int) {
+    val _args = VariantArray.new()
+    _args.append(groupId)
+    val _ret = __method_bind.set_tabs_rearrange_group.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

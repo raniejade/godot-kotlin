@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,10 +18,14 @@ open class VisualScriptDeconstruct internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getDeconstructType(): Variant.Type {
+    val _ret = __method_bind.get_deconstruct_type.call(this.toVariant())
     TODO()
   }
 
   fun setDeconstructType(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_deconstruct_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

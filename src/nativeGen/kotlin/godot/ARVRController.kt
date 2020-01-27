@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,46 +21,65 @@ open class ARVRController internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getControllerId(): Int {
+    val _ret = __method_bind.get_controller_id.call(this.toVariant())
     TODO()
   }
 
   fun getControllerName(): String {
+    val _ret = __method_bind.get_controller_name.call(this.toVariant())
     TODO()
   }
 
   fun getHand(): ARVRPositionalTracker.TrackerHand {
+    val _ret = __method_bind.get_hand.call(this.toVariant())
     TODO()
   }
 
   fun getIsActive(): Boolean {
+    val _ret = __method_bind.get_is_active.call(this.toVariant())
     TODO()
   }
 
   fun getJoystickAxis(axis: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    val _ret = __method_bind.get_joystick_axis.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getJoystickId(): Int {
+    val _ret = __method_bind.get_joystick_id.call(this.toVariant())
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getRumble(): Float {
+    val _ret = __method_bind.get_rumble.call(this.toVariant())
     TODO()
   }
 
   fun isButtonPressed(button: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(button)
+    val _ret = __method_bind.is_button_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setControllerId(controller_id: Int) {
+  fun setControllerId(controllerId: Int) {
+    val _args = VariantArray.new()
+    _args.append(controllerId)
+    val _ret = __method_bind.set_controller_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRumble(rumble: Float) {
+    val _args = VariantArray.new()
+    _args.append(rumble)
+    val _ret = __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

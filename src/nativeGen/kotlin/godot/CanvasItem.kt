@@ -9,6 +9,8 @@ import godot.core.PoolVector2Array
 import godot.core.RID
 import godot.core.Rect2
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -32,6 +34,13 @@ open class CanvasItem internal constructor(
     next: String,
     modulate: Color
   ): Float {
+    val _args = VariantArray.new()
+    _args.append(font)
+    _args.append(position)
+    _args.append(char)
+    _args.append(next)
+    _args.append(modulate)
+    val _ret = __method_bind.draw_char.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
@@ -40,6 +49,11 @@ open class CanvasItem internal constructor(
     radius: Float,
     color: Color
   ) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(radius)
+    _args.append(color)
+    val _ret = __method_bind.draw_circle.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -48,9 +62,17 @@ open class CanvasItem internal constructor(
     color: Color,
     uvs: PoolVector2Array,
     texture: Texture,
-    normal_map: Texture,
+    normalMap: Texture,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(color)
+    _args.append(uvs)
+    _args.append(texture)
+    _args.append(normalMap)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_colored_polygon.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
@@ -61,16 +83,30 @@ open class CanvasItem internal constructor(
     width: Float,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    _args.append(color)
+    _args.append(width)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_line.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun drawMesh(
     mesh: Mesh,
     texture: Texture,
-    normal_map: Texture,
+    normalMap: Texture,
     transform: Transform2D,
     modulate: Color
   ) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    _args.append(texture)
+    _args.append(normalMap)
+    _args.append(transform)
+    _args.append(modulate)
+    val _ret = __method_bind.draw_mesh.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
@@ -80,6 +116,12 @@ open class CanvasItem internal constructor(
     width: Float,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(color)
+    _args.append(width)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_multiline.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
@@ -89,14 +131,25 @@ open class CanvasItem internal constructor(
     width: Float,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(colors)
+    _args.append(width)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_multiline_colors.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun drawMultimesh(
     multimesh: MultiMesh,
     texture: Texture,
-    normal_map: Texture
+    normalMap: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(multimesh)
+    _args.append(texture)
+    _args.append(normalMap)
+    val _ret = __method_bind.draw_multimesh.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -105,9 +158,17 @@ open class CanvasItem internal constructor(
     colors: PoolColorArray,
     uvs: PoolVector2Array,
     texture: Texture,
-    normal_map: Texture,
+    normalMap: Texture,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(colors)
+    _args.append(uvs)
+    _args.append(texture)
+    _args.append(normalMap)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_polygon.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
@@ -117,6 +178,12 @@ open class CanvasItem internal constructor(
     width: Float,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(color)
+    _args.append(width)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_polyline.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
@@ -126,6 +193,12 @@ open class CanvasItem internal constructor(
     width: Float,
     antialiased: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(colors)
+    _args.append(width)
+    _args.append(antialiased)
+    val _ret = __method_bind.draw_polyline_colors.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
@@ -135,8 +208,16 @@ open class CanvasItem internal constructor(
     uvs: PoolVector2Array,
     texture: Texture,
     width: Float,
-    normal_map: Texture
+    normalMap: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(colors)
+    _args.append(uvs)
+    _args.append(texture)
+    _args.append(width)
+    _args.append(normalMap)
+    val _ret = __method_bind.draw_primitive.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
@@ -145,6 +226,11 @@ open class CanvasItem internal constructor(
     color: Color,
     filled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    _args.append(color)
+    _args.append(filled)
+    val _ret = __method_bind.draw_rect.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -153,10 +239,18 @@ open class CanvasItem internal constructor(
     rotation: Float,
     scale: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(rotation)
+    _args.append(scale)
+    val _ret = __method_bind.draw_set_transform.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(xform)
+    val _ret = __method_bind.draw_set_transform_matrix.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -165,12 +259,23 @@ open class CanvasItem internal constructor(
     position: Vector2,
     text: String,
     modulate: Color,
-    clip_w: Int
+    clipW: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(font)
+    _args.append(position)
+    _args.append(text)
+    _args.append(modulate)
+    _args.append(clipW)
+    val _ret = __method_bind.draw_string.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
-  fun drawStyleBox(style_box: StyleBox, rect: Rect2) {
+  fun drawStyleBox(styleBox: StyleBox, rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(styleBox)
+    _args.append(rect)
+    val _ret = __method_bind.draw_style_box.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -178,8 +283,14 @@ open class CanvasItem internal constructor(
     texture: Texture,
     position: Vector2,
     modulate: Color,
-    normal_map: Texture
+    normalMap: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    _args.append(position)
+    _args.append(modulate)
+    _args.append(normalMap)
+    val _ret = __method_bind.draw_texture.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
@@ -189,172 +300,251 @@ open class CanvasItem internal constructor(
     tile: Boolean,
     modulate: Color,
     transpose: Boolean,
-    normal_map: Texture
+    normalMap: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    _args.append(rect)
+    _args.append(tile)
+    _args.append(modulate)
+    _args.append(transpose)
+    _args.append(normalMap)
+    val _ret = __method_bind.draw_texture_rect.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun drawTextureRectRegion(
     texture: Texture,
     rect: Rect2,
-    src_rect: Rect2,
+    srcRect: Rect2,
     modulate: Color,
     transpose: Boolean,
-    normal_map: Texture,
-    clip_uv: Boolean
+    normalMap: Texture,
+    clipUv: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    _args.append(rect)
+    _args.append(srcRect)
+    _args.append(modulate)
+    _args.append(transpose)
+    _args.append(normalMap)
+    _args.append(clipUv)
+    val _ret = __method_bind.draw_texture_rect_region.call(this.toVariant(), _args.toVariant(), 7)
     TODO()
   }
 
   fun forceUpdateTransform() {
+    val _ret = __method_bind.force_update_transform.call(this.toVariant())
     TODO()
   }
 
   fun getCanvas(): RID {
+    val _ret = __method_bind.get_canvas.call(this.toVariant())
     TODO()
   }
 
   fun getCanvasItem(): RID {
+    val _ret = __method_bind.get_canvas_item.call(this.toVariant())
     TODO()
   }
 
   fun getCanvasTransform(): Transform2D {
+    val _ret = __method_bind.get_canvas_transform.call(this.toVariant())
     TODO()
   }
 
   fun getGlobalMousePosition(): Vector2 {
+    val _ret = __method_bind.get_global_mouse_position.call(this.toVariant())
     TODO()
   }
 
   fun getGlobalTransform(): Transform2D {
+    val _ret = __method_bind.get_global_transform.call(this.toVariant())
     TODO()
   }
 
   fun getGlobalTransformWithCanvas(): Transform2D {
+    val _ret = __method_bind.get_global_transform_with_canvas.call(this.toVariant())
     TODO()
   }
 
   fun getLightMask(): Int {
+    val _ret = __method_bind.get_light_mask.call(this.toVariant())
     TODO()
   }
 
   fun getLocalMousePosition(): Vector2 {
+    val _ret = __method_bind.get_local_mouse_position.call(this.toVariant())
     TODO()
   }
 
   fun getMaterial(): Material {
+    val _ret = __method_bind.get_material.call(this.toVariant())
     TODO()
   }
 
   fun getModulate(): Color {
+    val _ret = __method_bind.get_modulate.call(this.toVariant())
     TODO()
   }
 
   fun getSelfModulate(): Color {
+    val _ret = __method_bind.get_self_modulate.call(this.toVariant())
     TODO()
   }
 
   fun getTransform(): Transform2D {
+    val _ret = __method_bind.get_transform.call(this.toVariant())
     TODO()
   }
 
   fun getUseParentMaterial(): Boolean {
+    val _ret = __method_bind.get_use_parent_material.call(this.toVariant())
     TODO()
   }
 
   fun getViewportRect(): Rect2 {
+    val _ret = __method_bind.get_viewport_rect.call(this.toVariant())
     TODO()
   }
 
   fun getViewportTransform(): Transform2D {
+    val _ret = __method_bind.get_viewport_transform.call(this.toVariant())
     TODO()
   }
 
   fun getWorld2d(): World2D {
+    val _ret = __method_bind.get_world_2d.call(this.toVariant())
     TODO()
   }
 
   fun hide() {
+    val _ret = __method_bind.hide.call(this.toVariant())
     TODO()
   }
 
   fun isDrawBehindParentEnabled(): Boolean {
+    val _ret = __method_bind.is_draw_behind_parent_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isLocalTransformNotificationEnabled(): Boolean {
+    val _ret = __method_bind.is_local_transform_notification_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isSetAsToplevel(): Boolean {
+    val _ret = __method_bind.is_set_as_toplevel.call(this.toVariant())
     TODO()
   }
 
   fun isTransformNotificationEnabled(): Boolean {
+    val _ret = __method_bind.is_transform_notification_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isVisible(): Boolean {
+    val _ret = __method_bind.is_visible.call(this.toVariant())
     TODO()
   }
 
   fun isVisibleInTree(): Boolean {
+    val _ret = __method_bind.is_visible_in_tree.call(this.toVariant())
     TODO()
   }
 
-  fun makeCanvasPositionLocal(screen_point: Vector2): Vector2 {
+  fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(screenPoint)
+    val _ret = __method_bind.make_canvas_position_local.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
+    val _args = VariantArray.new()
+    _args.append(event)
+    val _ret = __method_bind.make_input_local.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAsToplevel(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_as_toplevel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawBehindParent(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_draw_behind_parent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLightMask(light_mask: Int) {
+  fun setLightMask(lightMask: Int) {
+    val _args = VariantArray.new()
+    _args.append(lightMask)
+    val _ret = __method_bind.set_light_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setModulate(modulate: Color) {
+    val _args = VariantArray.new()
+    _args.append(modulate)
+    val _ret = __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_notify_local_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNotifyTransform(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_notify_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSelfModulate(self_modulate: Color) {
+  fun setSelfModulate(selfModulate: Color) {
+    val _args = VariantArray.new()
+    _args.append(selfModulate)
+    val _ret = __method_bind.set_self_modulate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseParentMaterial(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_parent_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVisible(visible: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(visible)
+    val _ret = __method_bind.set_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun show() {
+    val _ret = __method_bind.show.call(this.toVariant())
     TODO()
   }
 
   fun update() {
+    val _ret = __method_bind.update.call(this.toVariant())
     TODO()
   }
 

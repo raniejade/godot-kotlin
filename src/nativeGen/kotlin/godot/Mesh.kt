@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector3Array
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
@@ -20,50 +21,76 @@ open class Mesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun createConvexShape(): Shape {
+    val _ret = __method_bind.create_convex_shape.call(this.toVariant())
     TODO()
   }
 
   fun createOutline(margin: Float): Mesh {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.create_outline.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun createTrimeshShape(): Shape {
+    val _ret = __method_bind.create_trimesh_shape.call(this.toVariant())
     TODO()
   }
 
   fun generateTriangleMesh(): TriangleMesh {
+    val _ret = __method_bind.generate_triangle_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getFaces(): PoolVector3Array {
+    val _ret = __method_bind.get_faces.call(this.toVariant())
     TODO()
   }
 
   fun getLightmapSizeHint(): Vector2 {
+    val _ret = __method_bind.get_lightmap_size_hint.call(this.toVariant())
     TODO()
   }
 
   fun getSurfaceCount(): Int {
+    val _ret = __method_bind.get_surface_count.call(this.toVariant())
     TODO()
   }
 
   fun setLightmapSizeHint(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_lightmap_size_hint.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun surfaceGetArrays(surf_idx: Int): VariantArray {
+  fun surfaceGetArrays(surfIdx: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(surfIdx)
+    val _ret = __method_bind.surface_get_arrays.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun surfaceGetBlendShapeArrays(surf_idx: Int): VariantArray {
+  fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(surfIdx)
+    val _ret = __method_bind.surface_get_blend_shape_arrays.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun surfaceGetMaterial(surf_idx: Int): Material {
+  fun surfaceGetMaterial(surfIdx: Int): Material {
+    val _args = VariantArray.new()
+    _args.append(surfIdx)
+    val _ret = __method_bind.surface_get_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun surfaceSetMaterial(surf_idx: Int, material: Material) {
+  fun surfaceSetMaterial(surfIdx: Int, material: Material) {
+    val _args = VariantArray.new()
+    _args.append(surfIdx)
+    _args.append(material)
+    val _ret = __method_bind.surface_set_material.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

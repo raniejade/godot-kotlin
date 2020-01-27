@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class AudioEffectStereoEnhance internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getPanPullout(): Float {
+    val _ret = __method_bind.get_pan_pullout.call(this.toVariant())
     TODO()
   }
 
   fun getSurround(): Float {
+    val _ret = __method_bind.get_surround.call(this.toVariant())
     TODO()
   }
 
   fun getTimePullout(): Float {
+    val _ret = __method_bind.get_time_pullout.call(this.toVariant())
     TODO()
   }
 
   fun setPanPullout(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_pan_pullout.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSurround(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_surround.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTimePullout(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_time_pullout.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

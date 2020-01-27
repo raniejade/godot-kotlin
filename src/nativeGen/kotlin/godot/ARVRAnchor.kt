@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Plane
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
@@ -20,30 +22,39 @@ open class ARVRAnchor internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAnchorId(): Int {
+    val _ret = __method_bind.get_anchor_id.call(this.toVariant())
     TODO()
   }
 
   fun getAnchorName(): String {
+    val _ret = __method_bind.get_anchor_name.call(this.toVariant())
     TODO()
   }
 
   fun getIsActive(): Boolean {
+    val _ret = __method_bind.get_is_active.call(this.toVariant())
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getPlane(): Plane {
+    val _ret = __method_bind.get_plane.call(this.toVariant())
     TODO()
   }
 
   fun getSize(): Vector3 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
-  fun setAnchorId(anchor_id: Int) {
+  fun setAnchorId(anchorId: Int) {
+    val _args = VariantArray.new()
+    _args.append(anchorId)
+    val _ret = __method_bind.set_anchor_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

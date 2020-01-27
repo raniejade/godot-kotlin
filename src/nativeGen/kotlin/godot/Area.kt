@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
@@ -21,178 +22,272 @@ open class Area internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject(_handle) {
   fun getAngularDamp(): Float {
+    val _ret = __method_bind.get_angular_damp.call(this.toVariant())
     TODO()
   }
 
   fun getAudioBus(): String {
+    val _ret = __method_bind.get_audio_bus.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionLayer(): Int {
+    val _ret = __method_bind.get_collision_layer.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCollisionMask(): Int {
+    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getGravity(): Float {
+    val _ret = __method_bind.get_gravity.call(this.toVariant())
     TODO()
   }
 
   fun getGravityDistanceScale(): Float {
+    val _ret = __method_bind.get_gravity_distance_scale.call(this.toVariant())
     TODO()
   }
 
   fun getGravityVector(): Vector3 {
+    val _ret = __method_bind.get_gravity_vector.call(this.toVariant())
     TODO()
   }
 
   fun getLinearDamp(): Float {
+    val _ret = __method_bind.get_linear_damp.call(this.toVariant())
     TODO()
   }
 
   fun getOverlappingAreas(): VariantArray {
+    val _ret = __method_bind.get_overlapping_areas.call(this.toVariant())
     TODO()
   }
 
   fun getOverlappingBodies(): VariantArray {
+    val _ret = __method_bind.get_overlapping_bodies.call(this.toVariant())
     TODO()
   }
 
   fun getPriority(): Float {
+    val _ret = __method_bind.get_priority.call(this.toVariant())
     TODO()
   }
 
   fun getReverbAmount(): Float {
+    val _ret = __method_bind.get_reverb_amount.call(this.toVariant())
     TODO()
   }
 
   fun getReverbBus(): String {
+    val _ret = __method_bind.get_reverb_bus.call(this.toVariant())
     TODO()
   }
 
   fun getReverbUniformity(): Float {
+    val _ret = __method_bind.get_reverb_uniformity.call(this.toVariant())
     TODO()
   }
 
   fun getSpaceOverrideMode(): SpaceOverride {
+    val _ret = __method_bind.get_space_override_mode.call(this.toVariant())
     TODO()
   }
 
   fun isGravityAPoint(): Boolean {
+    val _ret = __method_bind.is_gravity_a_point.call(this.toVariant())
     TODO()
   }
 
   fun isMonitorable(): Boolean {
+    val _ret = __method_bind.is_monitorable.call(this.toVariant())
     TODO()
   }
 
   fun isMonitoring(): Boolean {
+    val _ret = __method_bind.is_monitoring.call(this.toVariant())
     TODO()
   }
 
   fun isOverridingAudioBus(): Boolean {
+    val _ret = __method_bind.is_overriding_audio_bus.call(this.toVariant())
     TODO()
   }
 
   fun isUsingReverbBus(): Boolean {
+    val _ret = __method_bind.is_using_reverb_bus.call(this.toVariant())
     TODO()
   }
 
   fun overlapsArea(area: Node): Boolean {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.overlaps_area.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun overlapsBody(body: Node): Boolean {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.overlaps_body.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAngularDamp(angular_damp: Float) {
+  fun setAngularDamp(angularDamp: Float) {
+    val _args = VariantArray.new()
+    _args.append(angularDamp)
+    val _ret = __method_bind.set_angular_damp.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAudioBus(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_audio_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAudioBusOverride(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_audio_bus_override.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCollisionLayer(collision_layer: Int) {
+  fun setCollisionLayer(collisionLayer: Int) {
+    val _args = VariantArray.new()
+    _args.append(collisionLayer)
+    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setCollisionMask(collision_mask: Int) {
+  fun setCollisionMask(collisionMask: Int) {
+    val _args = VariantArray.new()
+    _args.append(collisionMask)
+    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setGravity(gravity: Float) {
+    val _args = VariantArray.new()
+    _args.append(gravity)
+    val _ret = __method_bind.set_gravity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setGravityDistanceScale(distance_scale: Float) {
+  fun setGravityDistanceScale(distanceScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(distanceScale)
+    val _ret = __method_bind.set_gravity_distance_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGravityIsPoint(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_gravity_is_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGravityVector(vector: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(vector)
+    val _ret = __method_bind.set_gravity_vector.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLinearDamp(linear_damp: Float) {
+  fun setLinearDamp(linearDamp: Float) {
+    val _args = VariantArray.new()
+    _args.append(linearDamp)
+    val _ret = __method_bind.set_linear_damp.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMonitorable(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_monitorable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMonitoring(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_monitoring.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPriority(priority: Float) {
+    val _args = VariantArray.new()
+    _args.append(priority)
+    val _ret = __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setReverbAmount(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_reverb_amount.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setReverbBus(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_reverb_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setReverbUniformity(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_reverb_uniformity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpaceOverrideMode(enable: Int) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_space_override_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseReverbBus(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_reverb_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

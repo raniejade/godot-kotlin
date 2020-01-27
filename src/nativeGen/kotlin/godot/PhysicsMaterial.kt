@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,34 +19,50 @@ open class PhysicsMaterial internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getBounce(): Float {
+    val _ret = __method_bind.get_bounce.call(this.toVariant())
     TODO()
   }
 
   fun getFriction(): Float {
+    val _ret = __method_bind.get_friction.call(this.toVariant())
     TODO()
   }
 
   fun isAbsorbent(): Boolean {
+    val _ret = __method_bind.is_absorbent.call(this.toVariant())
     TODO()
   }
 
   fun isRough(): Boolean {
+    val _ret = __method_bind.is_rough.call(this.toVariant())
     TODO()
   }
 
   fun setAbsorbent(absorbent: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(absorbent)
+    val _ret = __method_bind.set_absorbent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBounce(bounce: Float) {
+    val _args = VariantArray.new()
+    _args.append(bounce)
+    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFriction(friction: Float) {
+    val _args = VariantArray.new()
+    _args.append(friction)
+    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRough(rough: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(rough)
+    val _ret = __method_bind.set_rough.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

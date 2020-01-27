@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class MeshTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBaseTexture(): Texture {
+    val _ret = __method_bind.get_base_texture.call(this.toVariant())
     TODO()
   }
 
   fun getImageSize(): Vector2 {
+    val _ret = __method_bind.get_image_size.call(this.toVariant())
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun setBaseTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_base_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setImageSize(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_image_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMesh(mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    val _ret = __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

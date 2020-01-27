@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,14 +19,19 @@ open class VisibilityNotifier2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getRect(): Rect2 {
+    val _ret = __method_bind.get_rect.call(this.toVariant())
     TODO()
   }
 
   fun isOnScreen(): Boolean {
+    val _ret = __method_bind.is_on_screen.call(this.toVariant())
     TODO()
   }
 
   fun setRect(rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    val _ret = __method_bind.set_rect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

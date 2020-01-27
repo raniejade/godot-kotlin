@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -19,178 +21,266 @@ open class Camera2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun align() {
+    val _ret = __method_bind.align.call(this.toVariant())
     TODO()
   }
 
   fun clearCurrent() {
+    val _ret = __method_bind.clear_current.call(this.toVariant())
     TODO()
   }
 
   fun forceUpdateScroll() {
+    val _ret = __method_bind.force_update_scroll.call(this.toVariant())
     TODO()
   }
 
   fun getAnchorMode(): AnchorMode {
+    val _ret = __method_bind.get_anchor_mode.call(this.toVariant())
     TODO()
   }
 
   fun getCameraPosition(): Vector2 {
+    val _ret = __method_bind.get_camera_position.call(this.toVariant())
     TODO()
   }
 
   fun getCameraScreenCenter(): Vector2 {
+    val _ret = __method_bind.get_camera_screen_center.call(this.toVariant())
     TODO()
   }
 
   fun getCustomViewport(): Node {
+    val _ret = __method_bind.get_custom_viewport.call(this.toVariant())
     TODO()
   }
 
   fun getDragMargin(margin: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_drag_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFollowSmoothing(): Float {
+    val _ret = __method_bind.get_follow_smoothing.call(this.toVariant())
     TODO()
   }
 
   fun getHOffset(): Float {
+    val _ret = __method_bind.get_h_offset.call(this.toVariant())
     TODO()
   }
 
   fun getLimit(margin: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_limit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getOffset(): Vector2 {
+    val _ret = __method_bind.get_offset.call(this.toVariant())
     TODO()
   }
 
   fun getProcessMode(): Camera2DProcessMode {
+    val _ret = __method_bind.get_process_mode.call(this.toVariant())
     TODO()
   }
 
   fun getVOffset(): Float {
+    val _ret = __method_bind.get_v_offset.call(this.toVariant())
     TODO()
   }
 
   fun getZoom(): Vector2 {
+    val _ret = __method_bind.get_zoom.call(this.toVariant())
     TODO()
   }
 
   fun isCurrent(): Boolean {
+    val _ret = __method_bind.is_current.call(this.toVariant())
     TODO()
   }
 
   fun isFollowSmoothingEnabled(): Boolean {
+    val _ret = __method_bind.is_follow_smoothing_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isHDragEnabled(): Boolean {
+    val _ret = __method_bind.is_h_drag_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isLimitDrawingEnabled(): Boolean {
+    val _ret = __method_bind.is_limit_drawing_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isLimitSmoothingEnabled(): Boolean {
+    val _ret = __method_bind.is_limit_smoothing_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isMarginDrawingEnabled(): Boolean {
+    val _ret = __method_bind.is_margin_drawing_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isRotating(): Boolean {
+    val _ret = __method_bind.is_rotating.call(this.toVariant())
     TODO()
   }
 
   fun isScreenDrawingEnabled(): Boolean {
+    val _ret = __method_bind.is_screen_drawing_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isVDragEnabled(): Boolean {
+    val _ret = __method_bind.is_v_drag_enabled.call(this.toVariant())
     TODO()
   }
 
   fun makeCurrent() {
+    val _ret = __method_bind.make_current.call(this.toVariant())
     TODO()
   }
 
   fun resetSmoothing() {
+    val _ret = __method_bind.reset_smoothing.call(this.toVariant())
     TODO()
   }
 
-  fun setAnchorMode(anchor_mode: Int) {
+  fun setAnchorMode(anchorMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(anchorMode)
+    val _ret = __method_bind.set_anchor_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCustomViewport(viewport: Node) {
+    val _args = VariantArray.new()
+    _args.append(viewport)
+    val _ret = __method_bind.set_custom_viewport.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setDragMargin(margin: Int, drag_margin: Float) {
+  fun setDragMargin(margin: Int, dragMargin: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(dragMargin)
+    val _ret = __method_bind.set_drag_margin.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setEnableFollowSmoothing(follow_smoothing: Boolean) {
+  fun setEnableFollowSmoothing(followSmoothing: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(followSmoothing)
+    val _ret = __method_bind.set_enable_follow_smoothing.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setFollowSmoothing(follow_smoothing: Float) {
+  fun setFollowSmoothing(followSmoothing: Float) {
+    val _args = VariantArray.new()
+    _args.append(followSmoothing)
+    val _ret = __method_bind.set_follow_smoothing.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHDragEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_h_drag_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHOffset(ofs: Float) {
+    val _args = VariantArray.new()
+    _args.append(ofs)
+    val _ret = __method_bind.set_h_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLimit(margin: Int, limit: Int) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(limit)
+    val _ret = __method_bind.set_limit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setLimitDrawingEnabled(limit_drawing_enabled: Boolean) {
+  fun setLimitDrawingEnabled(limitDrawingEnabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(limitDrawingEnabled)
+    val _ret = __method_bind.set_limit_drawing_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLimitSmoothingEnabled(limit_smoothing_enabled: Boolean) {
+  fun setLimitSmoothingEnabled(limitSmoothingEnabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(limitSmoothingEnabled)
+    val _ret = __method_bind.set_limit_smoothing_enabled.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setMarginDrawingEnabled(margin_drawing_enabled: Boolean) {
+  fun setMarginDrawingEnabled(marginDrawingEnabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(marginDrawingEnabled)
+    val _ret = __method_bind.set_margin_drawing_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setProcessMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_process_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRotating(rotating: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(rotating)
+    val _ret = __method_bind.set_rotating.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setScreenDrawingEnabled(screen_drawing_enabled: Boolean) {
+  fun setScreenDrawingEnabled(screenDrawingEnabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(screenDrawingEnabled)
+    val _ret = __method_bind.set_screen_drawing_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVDragEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_v_drag_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVOffset(ofs: Float) {
+    val _args = VariantArray.new()
+    _args.append(ofs)
+    val _ret = __method_bind.set_v_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setZoom(zoom: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(zoom)
+    val _ret = __method_bind.set_zoom.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
@@ -20,86 +22,117 @@ open class Spatial internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun forceUpdateTransform() {
+    val _ret = __method_bind.force_update_transform.call(this.toVariant())
     TODO()
   }
 
   fun getGizmo(): SpatialGizmo {
+    val _ret = __method_bind.get_gizmo.call(this.toVariant())
     TODO()
   }
 
   fun getGlobalTransform(): Transform {
+    val _ret = __method_bind.get_global_transform.call(this.toVariant())
     TODO()
   }
 
   fun getParentSpatial(): Spatial {
+    val _ret = __method_bind.get_parent_spatial.call(this.toVariant())
     TODO()
   }
 
   fun getRotation(): Vector3 {
+    val _ret = __method_bind.get_rotation.call(this.toVariant())
     TODO()
   }
 
   fun getRotationDegrees(): Vector3 {
+    val _ret = __method_bind.get_rotation_degrees.call(this.toVariant())
     TODO()
   }
 
   fun getScale(): Vector3 {
+    val _ret = __method_bind.get_scale.call(this.toVariant())
     TODO()
   }
 
   fun getTransform(): Transform {
+    val _ret = __method_bind.get_transform.call(this.toVariant())
     TODO()
   }
 
   fun getTranslation(): Vector3 {
+    val _ret = __method_bind.get_translation.call(this.toVariant())
     TODO()
   }
 
   fun getWorld(): World {
+    val _ret = __method_bind.get_world.call(this.toVariant())
     TODO()
   }
 
   fun globalRotate(axis: Vector3, angle: Float) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    _args.append(angle)
+    val _ret = __method_bind.global_rotate.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun globalScale(scale: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.global_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun globalTranslate(offset: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.global_translate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hide() {
+    val _ret = __method_bind.hide.call(this.toVariant())
     TODO()
   }
 
   fun isLocalTransformNotificationEnabled(): Boolean {
+    val _ret = __method_bind.is_local_transform_notification_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isScaleDisabled(): Boolean {
+    val _ret = __method_bind.is_scale_disabled.call(this.toVariant())
     TODO()
   }
 
   fun isSetAsToplevel(): Boolean {
+    val _ret = __method_bind.is_set_as_toplevel.call(this.toVariant())
     TODO()
   }
 
   fun isTransformNotificationEnabled(): Boolean {
+    val _ret = __method_bind.is_transform_notification_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isVisible(): Boolean {
+    val _ret = __method_bind.is_visible.call(this.toVariant())
     TODO()
   }
 
   fun isVisibleInTree(): Boolean {
+    val _ret = __method_bind.is_visible_in_tree.call(this.toVariant())
     TODO()
   }
 
   fun lookAt(target: Vector3, up: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(target)
+    _args.append(up)
+    val _ret = __method_bind.look_at.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -108,114 +141,195 @@ open class Spatial internal constructor(
     target: Vector3,
     up: Vector3
   ) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(target)
+    _args.append(up)
+    val _ret = __method_bind.look_at_from_position.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun orthonormalize() {
+    val _ret = __method_bind.orthonormalize.call(this.toVariant())
     TODO()
   }
 
   fun rotate(axis: Vector3, angle: Float) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    _args.append(angle)
+    val _ret = __method_bind.rotate.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rotateObjectLocal(axis: Vector3, angle: Float) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    _args.append(angle)
+    val _ret = __method_bind.rotate_object_local.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rotateX(angle: Float) {
+    val _args = VariantArray.new()
+    _args.append(angle)
+    val _ret = __method_bind.rotate_x.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun rotateY(angle: Float) {
+    val _args = VariantArray.new()
+    _args.append(angle)
+    val _ret = __method_bind.rotate_y.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun rotateZ(angle: Float) {
+    val _args = VariantArray.new()
+    _args.append(angle)
+    val _ret = __method_bind.rotate_z.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun scaleObjectLocal(scale: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.scale_object_local.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAsToplevel(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_as_toplevel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisableScale(disable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disable)
+    val _ret = __method_bind.set_disable_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGizmo(gizmo: SpatialGizmo) {
+    val _args = VariantArray.new()
+    _args.append(gizmo)
+    val _ret = __method_bind.set_gizmo.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGlobalTransform(global: Transform) {
+    val _args = VariantArray.new()
+    _args.append(global)
+    val _ret = __method_bind.set_global_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIdentity() {
+    val _ret = __method_bind.set_identity.call(this.toVariant())
     TODO()
   }
 
   fun setIgnoreTransformNotification(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_ignore_transform_notification.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_notify_local_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNotifyTransform(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_notify_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRotation(euler: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(euler)
+    val _ret = __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setRotationDegrees(euler_degrees: Vector3) {
+  fun setRotationDegrees(eulerDegrees: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(eulerDegrees)
+    val _ret = __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setScale(scale: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTransform(local: Transform) {
+    val _args = VariantArray.new()
+    _args.append(local)
+    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTranslation(translation: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(translation)
+    val _ret = __method_bind.set_translation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVisible(visible: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(visible)
+    val _ret = __method_bind.set_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun show() {
+    val _ret = __method_bind.show.call(this.toVariant())
     TODO()
   }
 
-  fun toGlobal(local_point: Vector3): Vector3 {
+  fun toGlobal(localPoint: Vector3): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(localPoint)
+    val _ret = __method_bind.to_global.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun toLocal(global_point: Vector3): Vector3 {
+  fun toLocal(globalPoint: Vector3): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(globalPoint)
+    val _ret = __method_bind.to_local.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun translate(offset: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.translate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun translateObjectLocal(offset: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.translate_object_local.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun updateGizmo() {
+    val _ret = __method_bind.update_gizmo.call(this.toVariant())
     TODO()
   }
 

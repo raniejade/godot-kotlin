@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class VisualScriptTypeCast internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBaseScript(): String {
+    val _ret = __method_bind.get_base_script.call(this.toVariant())
     TODO()
   }
 
   fun getBaseType(): String {
+    val _ret = __method_bind.get_base_type.call(this.toVariant())
     TODO()
   }
 
   fun setBaseScript(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_base_script.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBaseType(type: String) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

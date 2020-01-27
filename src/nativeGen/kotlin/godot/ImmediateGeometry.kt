@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.Plane
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import godot.core.Vector3
 import kotlin.Boolean
@@ -25,44 +27,74 @@ open class ImmediateGeometry internal constructor(
     lats: Int,
     lons: Int,
     radius: Float,
-    add_uv: Boolean
+    addUv: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(lats)
+    _args.append(lons)
+    _args.append(radius)
+    _args.append(addUv)
+    val _ret = __method_bind.add_sphere.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun addVertex(position: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.add_vertex.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun begin(primitive: Int, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(primitive)
+    _args.append(texture)
+    val _ret = __method_bind.begin.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun end() {
+    val _ret = __method_bind.end.call(this.toVariant())
     TODO()
   }
 
   fun setColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNormal(normal: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(normal)
+    val _ret = __method_bind.set_normal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTangent(tangent: Plane) {
+    val _args = VariantArray.new()
+    _args.append(tangent)
+    val _ret = __method_bind.set_tangent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUv(uv: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(uv)
+    val _ret = __method_bind.set_uv.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUv2(uv: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(uv)
+    val _ret = __method_bind.set_uv2.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

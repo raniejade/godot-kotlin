@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,54 +18,81 @@ open class NativeScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun getClassDocumentation(): String {
+    val _ret = __method_bind.get_class_documentation.call(this.toVariant())
     TODO()
   }
 
   fun getClassName(): String {
+    val _ret = __method_bind.get_class_name.call(this.toVariant())
     TODO()
   }
 
   fun getLibrary(): GDNativeLibrary {
+    val _ret = __method_bind.get_library.call(this.toVariant())
     TODO()
   }
 
   fun getMethodDocumentation(method: String): String {
+    val _args = VariantArray.new()
+    _args.append(method)
+    val _ret = __method_bind.get_method_documentation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPropertyDocumentation(path: String): String {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_property_documentation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getScriptClassIconPath(): String {
+    val _ret = __method_bind.get_script_class_icon_path.call(this.toVariant())
     TODO()
   }
 
   fun getScriptClassName(): String {
+    val _ret = __method_bind.get_script_class_name.call(this.toVariant())
     TODO()
   }
 
-  fun getSignalDocumentation(signal_name: String): String {
+  fun getSignalDocumentation(signalName: String): String {
+    val _args = VariantArray.new()
+    _args.append(signalName)
+    val _ret = __method_bind.get_signal_documentation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun new(): Object {
+    val _ret = __method_bind.new.call(this.toVariant())
     TODO()
   }
 
-  fun setClassName(class_name: String) {
+  fun setClassName(className: String) {
+    val _args = VariantArray.new()
+    _args.append(className)
+    val _ret = __method_bind.set_class_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLibrary(library: GDNativeLibrary) {
+    val _args = VariantArray.new()
+    _args.append(library)
+    val _ret = __method_bind.set_library.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setScriptClassIconPath(icon_path: String) {
+  fun setScriptClassIconPath(iconPath: String) {
+    val _args = VariantArray.new()
+    _args.append(iconPath)
+    val _ret = __method_bind.set_script_class_icon_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setScriptClassName(class_name: String) {
+  fun setScriptClassName(className: String) {
+    val _args = VariantArray.new()
+    _args.append(className)
+    val _ret = __method_bind.set_script_class_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

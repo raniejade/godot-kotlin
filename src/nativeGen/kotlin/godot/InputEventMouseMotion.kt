@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class InputEventMouseMotion internal constructor(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
   fun getRelative(): Vector2 {
+    val _ret = __method_bind.get_relative.call(this.toVariant())
     TODO()
   }
 
   fun getSpeed(): Vector2 {
+    val _ret = __method_bind.get_speed.call(this.toVariant())
     TODO()
   }
 
   fun setRelative(relative: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(relative)
+    val _ret = __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpeed(speed: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(speed)
+    val _ret = __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

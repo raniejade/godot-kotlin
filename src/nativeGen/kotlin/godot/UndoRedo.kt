@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,6 +20,10 @@ open class UndoRedo internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addDoMethod(`object`: Object, method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(method)
+    val _ret = __method_bind.add_do_method.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -27,14 +32,26 @@ open class UndoRedo internal constructor(
     property: String,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.add_do_property.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun addDoReference(`object`: Object) {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    val _ret = __method_bind.add_do_reference.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addUndoMethod(`object`: Object, method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(method)
+    val _ret = __method_bind.add_undo_method.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -43,42 +60,63 @@ open class UndoRedo internal constructor(
     property: String,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.add_undo_property.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun addUndoReference(`object`: Object) {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    val _ret = __method_bind.add_undo_reference.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun clearHistory(increase_version: Boolean) {
+  fun clearHistory(increaseVersion: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(increaseVersion)
+    val _ret = __method_bind.clear_history.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun commitAction() {
+    val _ret = __method_bind.commit_action.call(this.toVariant())
     TODO()
   }
 
-  fun createAction(name: String, merge_mode: Int) {
+  fun createAction(name: String, mergeMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(mergeMode)
+    val _ret = __method_bind.create_action.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getCurrentActionName(): String {
+    val _ret = __method_bind.get_current_action_name.call(this.toVariant())
     TODO()
   }
 
   fun getVersion(): Int {
+    val _ret = __method_bind.get_version.call(this.toVariant())
     TODO()
   }
 
   fun isCommitingAction(): Boolean {
+    val _ret = __method_bind.is_commiting_action.call(this.toVariant())
     TODO()
   }
 
   fun redo(): Boolean {
+    val _ret = __method_bind.redo.call(this.toVariant())
     TODO()
   }
 
   fun undo(): Boolean {
+    val _ret = __method_bind.undo.call(this.toVariant())
     TODO()
   }
 

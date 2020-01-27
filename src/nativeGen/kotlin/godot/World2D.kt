@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,14 +18,17 @@ open class World2D internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCanvas(): RID {
+    val _ret = __method_bind.get_canvas.call(this.toVariant())
     TODO()
   }
 
   fun getDirectSpaceState(): Physics2DDirectSpaceState {
+    val _ret = __method_bind.get_direct_space_state.call(this.toVariant())
     TODO()
   }
 
   fun getSpace(): RID {
+    val _ret = __method_bind.get_space.call(this.toVariant())
     TODO()
   }
 

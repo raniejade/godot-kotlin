@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.PoolStringArray
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -22,198 +23,307 @@ open class _File internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun close() {
+    val _ret = __method_bind.close.call(this.toVariant())
     TODO()
   }
 
   fun eofReached(): Boolean {
+    val _ret = __method_bind.eof_reached.call(this.toVariant())
     TODO()
   }
 
   fun fileExists(path: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.file_exists.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun get16(): Int {
+    val _ret = __method_bind.get_16.call(this.toVariant())
     TODO()
   }
 
   fun get32(): Int {
+    val _ret = __method_bind.get_32.call(this.toVariant())
     TODO()
   }
 
   fun get64(): Int {
+    val _ret = __method_bind.get_64.call(this.toVariant())
     TODO()
   }
 
   fun get8(): Int {
+    val _ret = __method_bind.get_8.call(this.toVariant())
     TODO()
   }
 
   fun getAsText(): String {
+    val _ret = __method_bind.get_as_text.call(this.toVariant())
     TODO()
   }
 
   fun getBuffer(len: Int): PoolByteArray {
+    val _args = VariantArray.new()
+    _args.append(len)
+    val _ret = __method_bind.get_buffer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCsvLine(delim: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(delim)
+    val _ret = __method_bind.get_csv_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDouble(): Float {
+    val _ret = __method_bind.get_double.call(this.toVariant())
     TODO()
   }
 
   fun getEndianSwap(): Boolean {
+    val _ret = __method_bind.get_endian_swap.call(this.toVariant())
     TODO()
   }
 
   fun getError(): Error {
+    val _ret = __method_bind.get_error.call(this.toVariant())
     TODO()
   }
 
   fun getFloat(): Float {
+    val _ret = __method_bind.get_float.call(this.toVariant())
     TODO()
   }
 
   fun getLen(): Int {
+    val _ret = __method_bind.get_len.call(this.toVariant())
     TODO()
   }
 
   fun getLine(): String {
+    val _ret = __method_bind.get_line.call(this.toVariant())
     TODO()
   }
 
   fun getMd5(path: String): String {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_md5.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getModifiedTime(file: String): Int {
+    val _args = VariantArray.new()
+    _args.append(file)
+    val _ret = __method_bind.get_modified_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPascalString(): String {
+    val _ret = __method_bind.get_pascal_string.call(this.toVariant())
     TODO()
   }
 
   fun getPath(): String {
+    val _ret = __method_bind.get_path.call(this.toVariant())
     TODO()
   }
 
   fun getPathAbsolute(): String {
+    val _ret = __method_bind.get_path_absolute.call(this.toVariant())
     TODO()
   }
 
   fun getPosition(): Int {
+    val _ret = __method_bind.get_position.call(this.toVariant())
     TODO()
   }
 
   fun getReal(): Float {
+    val _ret = __method_bind.get_real.call(this.toVariant())
     TODO()
   }
 
   fun getSha256(path: String): String {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_sha256.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getVar(allow_objects: Boolean): Variant {
+  fun getVar(allowObjects: Boolean): Variant {
+    val _args = VariantArray.new()
+    _args.append(allowObjects)
+    val _ret = __method_bind.get_var.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isOpen(): Boolean {
+    val _ret = __method_bind.is_open.call(this.toVariant())
     TODO()
   }
 
   fun open(path: String, flags: Int): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(flags)
+    val _ret = __method_bind.open.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun openCompressed(
     path: String,
-    mode_flags: Int,
-    compression_mode: Int
+    modeFlags: Int,
+    compressionMode: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(modeFlags)
+    _args.append(compressionMode)
+    val _ret = __method_bind.open_compressed.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun openEncrypted(
     path: String,
-    mode_flags: Int,
+    modeFlags: Int,
     key: PoolByteArray
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(modeFlags)
+    _args.append(key)
+    val _ret = __method_bind.open_encrypted.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun openEncryptedWithPass(
     path: String,
-    mode_flags: Int,
+    modeFlags: Int,
     pass: String
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(modeFlags)
+    _args.append(pass)
+    val _ret = __method_bind.open_encrypted_with_pass.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun seek(position: Int) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun seekEnd(position: Int) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.seek_end.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEndianSwap(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_endian_swap.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun store16(value: Int) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_16.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun store32(value: Int) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_32.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun store64(value: Int) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_64.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun store8(value: Int) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_8.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storeBuffer(buffer: PoolByteArray) {
+    val _args = VariantArray.new()
+    _args.append(buffer)
+    val _ret = __method_bind.store_buffer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storeCsvLine(values: PoolStringArray, delim: String) {
+    val _args = VariantArray.new()
+    _args.append(values)
+    _args.append(delim)
+    val _ret = __method_bind.store_csv_line.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun storeDouble(value: Float) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_double.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storeFloat(value: Float) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_float.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storeLine(line: String) {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.store_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storePascalString(string: String) {
+    val _args = VariantArray.new()
+    _args.append(string)
+    val _ret = __method_bind.store_pascal_string.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storeReal(value: Float) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.store_real.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun storeString(string: String) {
+    val _args = VariantArray.new()
+    _args.append(string)
+    val _ret = __method_bind.store_string.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun storeVar(value: Variant, full_objects: Boolean) {
+  fun storeVar(value: Variant, fullObjects: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    _args.append(fullObjects)
+    val _ret = __method_bind.store_var.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

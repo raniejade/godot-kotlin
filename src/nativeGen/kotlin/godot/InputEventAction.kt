@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.String
@@ -18,22 +20,33 @@ open class InputEventAction internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAction(): String {
+    val _ret = __method_bind.get_action.call(this.toVariant())
     TODO()
   }
 
   fun getStrength(): Float {
+    val _ret = __method_bind.get_strength.call(this.toVariant())
     TODO()
   }
 
   fun setAction(action: String) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressed(pressed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pressed)
+    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStrength(strength: Float) {
+    val _args = VariantArray.new()
+    _args.append(strength)
+    val _ret = __method_bind.set_strength.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

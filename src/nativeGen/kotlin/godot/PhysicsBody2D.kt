@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
@@ -18,46 +19,77 @@ open class PhysicsBody2D internal constructor(
   _handle: COpaquePointer
 ) : CollisionObject2D(_handle) {
   fun addCollisionExceptionWith(body: Node) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.add_collision_exception_with.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun getCollisionExceptions(): VariantArray {
+    val _ret = __method_bind.get_collision_exceptions.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionLayer(): Int {
+    val _ret = __method_bind.get_collision_layer.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCollisionMask(): Int {
+    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeCollisionExceptionWith(body: Node) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.remove_collision_exception_with.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionLayer(layer: Int) {
+    val _args = VariantArray.new()
+    _args.append(layer)
+    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setCollisionMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

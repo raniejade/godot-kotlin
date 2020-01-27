@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class LinkButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getText(): String {
+    val _ret = __method_bind.get_text.call(this.toVariant())
     TODO()
   }
 
   fun getUnderlineMode(): UnderlineMode {
+    val _ret = __method_bind.get_underline_mode.call(this.toVariant())
     TODO()
   }
 
   fun setText(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUnderlineMode(underline_mode: Int) {
+  fun setUnderlineMode(underlineMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(underlineMode)
+    val _ret = __method_bind.set_underline_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

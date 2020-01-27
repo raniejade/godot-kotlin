@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -19,11 +21,17 @@ import kotlinx.cinterop.reinterpret
 open class Navigation2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  fun getClosestPoint(to_point: Vector2): Vector2 {
+  fun getClosestPoint(toPoint: Vector2): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(toPoint)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getClosestPointOwner(to_point: Vector2): Object {
+  fun getClosestPointOwner(toPoint: Vector2): Object {
+    val _args = VariantArray.new()
+    _args.append(toPoint)
+    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -32,6 +40,11 @@ open class Navigation2D internal constructor(
     end: Vector2,
     optimize: Boolean
   ): PoolVector2Array {
+    val _args = VariantArray.new()
+    _args.append(start)
+    _args.append(end)
+    _args.append(optimize)
+    val _ret = __method_bind.get_simple_path.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -40,14 +53,26 @@ open class Navigation2D internal constructor(
     xform: Transform2D,
     owner: Object
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    _args.append(xform)
+    _args.append(owner)
+    val _ret = __method_bind.navpoly_add.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun navpolyRemove(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.navpoly_remove.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun navpolySetTransform(id: Int, xform: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(xform)
+    val _ret = __method_bind.navpoly_set_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,66 +19,98 @@ open class PathFollow2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getCubicInterpolation(): Boolean {
+    val _ret = __method_bind.get_cubic_interpolation.call(this.toVariant())
     TODO()
   }
 
   fun getHOffset(): Float {
+    val _ret = __method_bind.get_h_offset.call(this.toVariant())
     TODO()
   }
 
   fun getLookahead(): Float {
+    val _ret = __method_bind.get_lookahead.call(this.toVariant())
     TODO()
   }
 
   fun getOffset(): Float {
+    val _ret = __method_bind.get_offset.call(this.toVariant())
     TODO()
   }
 
   fun getUnitOffset(): Float {
+    val _ret = __method_bind.get_unit_offset.call(this.toVariant())
     TODO()
   }
 
   fun getVOffset(): Float {
+    val _ret = __method_bind.get_v_offset.call(this.toVariant())
     TODO()
   }
 
   fun hasLoop(): Boolean {
+    val _ret = __method_bind.has_loop.call(this.toVariant())
     TODO()
   }
 
   fun isRotating(): Boolean {
+    val _ret = __method_bind.is_rotating.call(this.toVariant())
     TODO()
   }
 
   fun setCubicInterpolation(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_cubic_interpolation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setHOffset(h_offset: Float) {
+  fun setHOffset(hOffset: Float) {
+    val _args = VariantArray.new()
+    _args.append(hOffset)
+    val _ret = __method_bind.set_h_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLookahead(lookahead: Float) {
+    val _args = VariantArray.new()
+    _args.append(lookahead)
+    val _ret = __method_bind.set_lookahead.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLoop(loop: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(loop)
+    val _ret = __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOffset(offset: Float) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRotate(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_rotate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUnitOffset(unit_offset: Float) {
+  fun setUnitOffset(unitOffset: Float) {
+    val _args = VariantArray.new()
+    _args.append(unitOffset)
+    val _ret = __method_bind.set_unit_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setVOffset(v_offset: Float) {
+  fun setVOffset(vOffset: Float) {
+    val _args = VariantArray.new()
+    _args.append(vOffset)
+    val _ret = __method_bind.set_v_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

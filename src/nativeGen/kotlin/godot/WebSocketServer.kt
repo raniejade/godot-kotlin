@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -23,34 +25,55 @@ open class WebSocketServer internal constructor(
     code: Int,
     reason: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(code)
+    _args.append(reason)
+    val _ret = __method_bind.disconnect_peer.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getPeerAddress(id: Int): String {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPeerPort(id: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasPeer(id: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.has_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isListening(): Boolean {
+    val _ret = __method_bind.is_listening.call(this.toVariant())
     TODO()
   }
 
   fun listen(
     port: Int,
     protocols: PoolStringArray,
-    gd_mp_api: Boolean
+    gdMpApi: Boolean
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(protocols)
+    _args.append(gdMpApi)
+    val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

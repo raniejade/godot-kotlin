@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
@@ -20,178 +21,279 @@ open class RigidBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun addCentralForce(force: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(force)
+    val _ret = __method_bind.add_central_force.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addForce(force: Vector3, position: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(force)
+    _args.append(position)
+    val _ret = __method_bind.add_force.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addTorque(torque: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(torque)
+    val _ret = __method_bind.add_torque.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun applyCentralImpulse(impulse: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(impulse)
+    val _ret = __method_bind.apply_central_impulse.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun applyImpulse(position: Vector3, impulse: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(impulse)
+    val _ret = __method_bind.apply_impulse.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun applyTorqueImpulse(impulse: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(impulse)
+    val _ret = __method_bind.apply_torque_impulse.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAngularDamp(): Float {
+    val _ret = __method_bind.get_angular_damp.call(this.toVariant())
     TODO()
   }
 
   fun getAngularVelocity(): Vector3 {
+    val _ret = __method_bind.get_angular_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getAxisLock(axis: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    val _ret = __method_bind.get_axis_lock.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBounce(): Float {
+    val _ret = __method_bind.get_bounce.call(this.toVariant())
     TODO()
   }
 
   fun getCollidingBodies(): VariantArray {
+    val _ret = __method_bind.get_colliding_bodies.call(this.toVariant())
     TODO()
   }
 
   fun getFriction(): Float {
+    val _ret = __method_bind.get_friction.call(this.toVariant())
     TODO()
   }
 
   fun getGravityScale(): Float {
+    val _ret = __method_bind.get_gravity_scale.call(this.toVariant())
     TODO()
   }
 
   fun getLinearDamp(): Float {
+    val _ret = __method_bind.get_linear_damp.call(this.toVariant())
     TODO()
   }
 
   fun getLinearVelocity(): Vector3 {
+    val _ret = __method_bind.get_linear_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getMass(): Float {
+    val _ret = __method_bind.get_mass.call(this.toVariant())
     TODO()
   }
 
   fun getMaxContactsReported(): Int {
+    val _ret = __method_bind.get_max_contacts_reported.call(this.toVariant())
     TODO()
   }
 
   fun getMode(): Mode {
+    val _ret = __method_bind.get_mode.call(this.toVariant())
     TODO()
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
+    val _ret = __method_bind.get_physics_material_override.call(this.toVariant())
     TODO()
   }
 
   fun getWeight(): Float {
+    val _ret = __method_bind.get_weight.call(this.toVariant())
     TODO()
   }
 
   fun isAbleToSleep(): Boolean {
+    val _ret = __method_bind.is_able_to_sleep.call(this.toVariant())
     TODO()
   }
 
   fun isContactMonitorEnabled(): Boolean {
+    val _ret = __method_bind.is_contact_monitor_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isSleeping(): Boolean {
+    val _ret = __method_bind.is_sleeping.call(this.toVariant())
     TODO()
   }
 
   fun isUsingContinuousCollisionDetection(): Boolean {
+    val _ret = __method_bind.is_using_continuous_collision_detection.call(this.toVariant())
     TODO()
   }
 
   fun isUsingCustomIntegrator(): Boolean {
+    val _ret = __method_bind.is_using_custom_integrator.call(this.toVariant())
     TODO()
   }
 
-  fun setAngularDamp(angular_damp: Float) {
+  fun setAngularDamp(angularDamp: Float) {
+    val _args = VariantArray.new()
+    _args.append(angularDamp)
+    val _ret = __method_bind.set_angular_damp.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAngularVelocity(angular_velocity: Vector3) {
+  fun setAngularVelocity(angularVelocity: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(angularVelocity)
+    val _ret = __method_bind.set_angular_velocity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAxisLock(axis: Int, lock: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    _args.append(lock)
+    val _ret = __method_bind.set_axis_lock.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setAxisVelocity(axis_velocity: Vector3) {
+  fun setAxisVelocity(axisVelocity: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(axisVelocity)
+    val _ret = __method_bind.set_axis_velocity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBounce(bounce: Float) {
+    val _args = VariantArray.new()
+    _args.append(bounce)
+    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCanSleep(able_to_sleep: Boolean) {
+  fun setCanSleep(ableToSleep: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(ableToSleep)
+    val _ret = __method_bind.set_can_sleep.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setContactMonitor(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_contact_monitor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFriction(friction: Float) {
+    val _args = VariantArray.new()
+    _args.append(friction)
+    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setGravityScale(gravity_scale: Float) {
+  fun setGravityScale(gravityScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(gravityScale)
+    val _ret = __method_bind.set_gravity_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLinearDamp(linear_damp: Float) {
+  fun setLinearDamp(linearDamp: Float) {
+    val _args = VariantArray.new()
+    _args.append(linearDamp)
+    val _ret = __method_bind.set_linear_damp.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLinearVelocity(linear_velocity: Vector3) {
+  fun setLinearVelocity(linearVelocity: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(linearVelocity)
+    val _ret = __method_bind.set_linear_velocity.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMass(mass: Float) {
+    val _args = VariantArray.new()
+    _args.append(mass)
+    val _ret = __method_bind.set_mass.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaxContactsReported(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_max_contacts_reported.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPhysicsMaterialOverride(physics_material_override: PhysicsMaterial) {
+  fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
+    val _args = VariantArray.new()
+    _args.append(physicsMaterialOverride)
+    val _ret = __method_bind.set_physics_material_override.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setSleeping(sleeping: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(sleeping)
+    val _ret = __method_bind.set_sleeping.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseContinuousCollisionDetection(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_continuous_collision_detection.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseCustomIntegrator(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_custom_integrator.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWeight(weight: Float) {
+    val _args = VariantArray.new()
+    _args.append(weight)
+    val _ret = __method_bind.set_weight.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

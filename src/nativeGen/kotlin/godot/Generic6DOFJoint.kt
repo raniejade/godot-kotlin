@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,58 +20,104 @@ open class Generic6DOFJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getFlagX(flag: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    val _ret = __method_bind.get_flag_x.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFlagY(flag: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    val _ret = __method_bind.get_flag_y.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFlagZ(flag: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    val _ret = __method_bind.get_flag_z.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParamX(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param_x.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParamY(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param_y.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParamZ(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param_z.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPrecision(): Int {
+    val _ret = __method_bind.get_precision.call(this.toVariant())
     TODO()
   }
 
   fun setFlagX(flag: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    _args.append(value)
+    val _ret = __method_bind.set_flag_x.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFlagY(flag: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    _args.append(value)
+    val _ret = __method_bind.set_flag_y.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFlagZ(flag: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flag)
+    _args.append(value)
+    val _ret = __method_bind.set_flag_z.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParamX(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param_x.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParamY(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param_y.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setParamZ(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param_z.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setPrecision(precision: Int) {
+    val _args = VariantArray.new()
+    _args.append(precision)
+    val _ret = __method_bind.set_precision.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,18 +19,26 @@ open class VisualScriptBasicTypeConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBasicType(): Variant.Type {
+    val _ret = __method_bind.get_basic_type.call(this.toVariant())
     TODO()
   }
 
   fun getBasicTypeConstant(): String {
+    val _ret = __method_bind.get_basic_type_constant.call(this.toVariant())
     TODO()
   }
 
   fun setBasicType(name: Int) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_basic_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBasicTypeConstant(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_basic_type_constant.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

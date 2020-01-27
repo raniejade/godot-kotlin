@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -27,62 +29,106 @@ open class BitmapFont internal constructor(
     align: Vector2,
     advance: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(character)
+    _args.append(texture)
+    _args.append(rect)
+    _args.append(align)
+    _args.append(advance)
+    val _ret = __method_bind.add_char.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun addKerningPair(
-    char_a: Int,
-    char_b: Int,
+    charA: Int,
+    charB: Int,
     kerning: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(charA)
+    _args.append(charB)
+    _args.append(kerning)
+    val _ret = __method_bind.add_kerning_pair.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun addTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.add_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun createFromFnt(path: String): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.create_from_fnt.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCharSize(char: Int, next: Int): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(char)
+    _args.append(next)
+    val _ret = __method_bind.get_char_size.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getFallback(): BitmapFont {
+    val _ret = __method_bind.get_fallback.call(this.toVariant())
     TODO()
   }
 
-  fun getKerningPair(char_a: Int, char_b: Int): Int {
+  fun getKerningPair(charA: Int, charB: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(charA)
+    _args.append(charB)
+    val _ret = __method_bind.get_kerning_pair.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getTexture(idx: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTextureCount(): Int {
+    val _ret = __method_bind.get_texture_count.call(this.toVariant())
     TODO()
   }
 
   fun setAscent(px: Float) {
+    val _args = VariantArray.new()
+    _args.append(px)
+    val _ret = __method_bind.set_ascent.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDistanceFieldHint(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_distance_field_hint.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFallback(fallback: BitmapFont) {
+    val _args = VariantArray.new()
+    _args.append(fallback)
+    val _ret = __method_bind.set_fallback.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHeight(px: Float) {
+    val _args = VariantArray.new()
+    _args.append(px)
+    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

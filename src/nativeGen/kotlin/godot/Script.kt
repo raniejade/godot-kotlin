@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,42 +19,60 @@ open class Script internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
+    val _ret = __method_bind.can_instance.call(this.toVariant())
     TODO()
   }
 
   fun getBaseScript(): Script {
+    val _ret = __method_bind.get_base_script.call(this.toVariant())
     TODO()
   }
 
   fun getInstanceBaseType(): String {
+    val _ret = __method_bind.get_instance_base_type.call(this.toVariant())
     TODO()
   }
 
   fun getSourceCode(): String {
+    val _ret = __method_bind.get_source_code.call(this.toVariant())
     TODO()
   }
 
-  fun hasScriptSignal(signal_name: String): Boolean {
+  fun hasScriptSignal(signalName: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(signalName)
+    val _ret = __method_bind.has_script_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasSourceCode(): Boolean {
+    val _ret = __method_bind.has_source_code.call(this.toVariant())
     TODO()
   }
 
-  fun instanceHas(base_object: Object): Boolean {
+  fun instanceHas(baseObject: Object): Boolean {
+    val _args = VariantArray.new()
+    _args.append(baseObject)
+    val _ret = __method_bind.instance_has.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isTool(): Boolean {
+    val _ret = __method_bind.is_tool.call(this.toVariant())
     TODO()
   }
 
-  fun reload(keep_state: Boolean): Error {
+  fun reload(keepState: Boolean): Error {
+    val _args = VariantArray.new()
+    _args.append(keepState)
+    val _ret = __method_bind.reload.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSourceCode(source: String) {
+    val _args = VariantArray.new()
+    _args.append(source)
+    val _ret = __method_bind.set_source_code.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

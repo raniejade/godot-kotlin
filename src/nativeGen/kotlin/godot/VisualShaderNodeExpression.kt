@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,14 +18,19 @@ open class VisualShaderNodeExpression internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeGroupBase(_handle) {
   fun build() {
+    val _ret = __method_bind.build.call(this.toVariant())
     TODO()
   }
 
   fun getExpression(): String {
+    val _ret = __method_bind.get_expression.call(this.toVariant())
     TODO()
   }
 
   fun setExpression(expression: String) {
+    val _args = VariantArray.new()
+    _args.append(expression)
+    val _ret = __method_bind.set_expression.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

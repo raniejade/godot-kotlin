@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -19,16 +21,28 @@ open class EditorSceneImporter internal constructor(
   fun importAnimationFromOtherImporter(
     path: String,
     flags: Int,
-    bake_fps: Int
+    bakeFps: Int
   ): Animation {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(flags)
+    _args.append(bakeFps)
+    val _ret = __method_bind.import_animation_from_other_importer.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
   fun importSceneFromOtherImporter(
     path: String,
     flags: Int,
-    bake_fps: Int
+    bakeFps: Int
   ): Node {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(flags)
+    _args.append(bakeFps)
+    val _ret = __method_bind.import_scene_from_other_importer.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 

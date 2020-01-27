@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,30 +21,41 @@ open class CameraFeed internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getId(): Int {
+    val _ret = __method_bind.get_id.call(this.toVariant())
     TODO()
   }
 
   fun getName(): String {
+    val _ret = __method_bind.get_name.call(this.toVariant())
     TODO()
   }
 
   fun getPosition(): FeedPosition {
+    val _ret = __method_bind.get_position.call(this.toVariant())
     TODO()
   }
 
   fun getTransform(): Transform2D {
+    val _ret = __method_bind.get_transform.call(this.toVariant())
     TODO()
   }
 
   fun isActive(): Boolean {
+    val _ret = __method_bind.is_active.call(this.toVariant())
     TODO()
   }
 
   fun setActive(active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(active)
+    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTransform(transform: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(transform)
+    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class AudioStreamGenerator internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getBufferLength(): Float {
+    val _ret = __method_bind.get_buffer_length.call(this.toVariant())
     TODO()
   }
 
   fun getMixRate(): Float {
+    val _ret = __method_bind.get_mix_rate.call(this.toVariant())
     TODO()
   }
 
   fun setBufferLength(seconds: Float) {
+    val _args = VariantArray.new()
+    _args.append(seconds)
+    val _ret = __method_bind.set_buffer_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMixRate(hz: Float) {
+    val _args = VariantArray.new()
+    _args.append(hz)
+    val _ret = __method_bind.set_mix_rate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,42 +19,62 @@ open class TextureRect internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getStretchMode(): StretchMode {
+    val _ret = __method_bind.get_stretch_mode.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun hasExpand(): Boolean {
+    val _ret = __method_bind.has_expand.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedH(): Boolean {
+    val _ret = __method_bind.is_flipped_h.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedV(): Boolean {
+    val _ret = __method_bind.is_flipped_v.call(this.toVariant())
     TODO()
   }
 
   fun setExpand(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFlipH(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFlipV(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setStretchMode(stretch_mode: Int) {
+  fun setStretchMode(stretchMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(stretchMode)
+    val _ret = __method_bind.set_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

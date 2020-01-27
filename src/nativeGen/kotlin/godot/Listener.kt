@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,18 +19,22 @@ open class Listener internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun clearCurrent() {
+    val _ret = __method_bind.clear_current.call(this.toVariant())
     TODO()
   }
 
   fun getListenerTransform(): Transform {
+    val _ret = __method_bind.get_listener_transform.call(this.toVariant())
     TODO()
   }
 
   fun isCurrent(): Boolean {
+    val _ret = __method_bind.is_current.call(this.toVariant())
     TODO()
   }
 
   fun makeCurrent() {
+    val _ret = __method_bind.make_current.call(this.toVariant())
     TODO()
   }
 

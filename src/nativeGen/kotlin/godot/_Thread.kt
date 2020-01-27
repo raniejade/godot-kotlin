@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,10 +20,12 @@ open class _Thread internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getId(): String {
+    val _ret = __method_bind.get_id.call(this.toVariant())
     TODO()
   }
 
   fun isActive(): Boolean {
+    val _ret = __method_bind.is_active.call(this.toVariant())
     TODO()
   }
 
@@ -32,10 +35,17 @@ open class _Thread internal constructor(
     userdata: Variant,
     priority: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    _args.append(method)
+    _args.append(userdata)
+    _args.append(priority)
+    val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun waitToFinish(): Variant {
+    val _ret = __method_bind.wait_to_finish.call(this.toVariant())
     TODO()
   }
 

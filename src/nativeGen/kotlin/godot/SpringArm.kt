@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,51 +20,75 @@ import kotlinx.cinterop.reinterpret
 open class SpringArm internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
-  fun addExcludedObject(RID: RID) {
+  fun addExcludedObject(rID: RID) {
+    val _args = VariantArray.new()
+    _args.append(rID)
+    val _ret = __method_bind.add_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearExcludedObjects() {
+    val _ret = __method_bind.clear_excluded_objects.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionMask(): Int {
+    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
     TODO()
   }
 
   fun getHitLength(): Float {
+    val _ret = __method_bind.get_hit_length.call(this.toVariant())
     TODO()
   }
 
   fun getLength(): Float {
+    val _ret = __method_bind.get_length.call(this.toVariant())
     TODO()
   }
 
   fun getMargin(): Float {
+    val _ret = __method_bind.get_margin.call(this.toVariant())
     TODO()
   }
 
   fun getShape(): Shape {
+    val _ret = __method_bind.get_shape.call(this.toVariant())
     TODO()
   }
 
-  fun removeExcludedObject(RID: RID): Boolean {
+  fun removeExcludedObject(rID: RID): Boolean {
+    val _args = VariantArray.new()
+    _args.append(rID)
+    val _ret = __method_bind.remove_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLength(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMargin(margin: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShape(shape: Shape) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

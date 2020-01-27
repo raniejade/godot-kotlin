@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,30 +20,45 @@ open class InputEventMouseButton internal constructor(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
   fun getButtonIndex(): Int {
+    val _ret = __method_bind.get_button_index.call(this.toVariant())
     TODO()
   }
 
   fun getFactor(): Float {
+    val _ret = __method_bind.get_factor.call(this.toVariant())
     TODO()
   }
 
   fun isDoubleclick(): Boolean {
+    val _ret = __method_bind.is_doubleclick.call(this.toVariant())
     TODO()
   }
 
-  fun setButtonIndex(button_index: Int) {
+  fun setButtonIndex(buttonIndex: Int) {
+    val _args = VariantArray.new()
+    _args.append(buttonIndex)
+    val _ret = __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDoubleclick(doubleclick: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(doubleclick)
+    val _ret = __method_bind.set_doubleclick.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFactor(factor: Float) {
+    val _args = VariantArray.new()
+    _args.append(factor)
+    val _ret = __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressed(pressed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pressed)
+    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,26 +19,38 @@ open class DirectionalLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
   fun getShadowDepthRange(): ShadowDepthRange {
+    val _ret = __method_bind.get_shadow_depth_range.call(this.toVariant())
     TODO()
   }
 
   fun getShadowMode(): ShadowMode {
+    val _ret = __method_bind.get_shadow_mode.call(this.toVariant())
     TODO()
   }
 
   fun isBlendSplitsEnabled(): Boolean {
+    val _ret = __method_bind.is_blend_splits_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setBlendSplits(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_blend_splits.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShadowDepthRange(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_shadow_depth_range.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShadowMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_shadow_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

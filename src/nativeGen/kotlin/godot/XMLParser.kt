@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolByteArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,70 +21,104 @@ open class XMLParser internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAttributeCount(): Int {
+    val _ret = __method_bind.get_attribute_count.call(this.toVariant())
     TODO()
   }
 
   fun getAttributeName(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_attribute_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAttributeValue(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_attribute_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCurrentLine(): Int {
+    val _ret = __method_bind.get_current_line.call(this.toVariant())
     TODO()
   }
 
   fun getNamedAttributeValue(name: String): String {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_named_attribute_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_named_attribute_value_safe.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun getNodeData(): String {
+    val _ret = __method_bind.get_node_data.call(this.toVariant())
     TODO()
   }
 
   fun getNodeName(): String {
+    val _ret = __method_bind.get_node_name.call(this.toVariant())
     TODO()
   }
 
   fun getNodeOffset(): Int {
+    val _ret = __method_bind.get_node_offset.call(this.toVariant())
     TODO()
   }
 
   fun getNodeType(): NodeType {
+    val _ret = __method_bind.get_node_type.call(this.toVariant())
     TODO()
   }
 
   fun hasAttribute(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_attribute.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isEmpty(): Boolean {
+    val _ret = __method_bind.is_empty.call(this.toVariant())
     TODO()
   }
 
   fun open(file: String): Error {
+    val _args = VariantArray.new()
+    _args.append(file)
+    val _ret = __method_bind.open.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun openBuffer(buffer: PoolByteArray): Error {
+    val _args = VariantArray.new()
+    _args.append(buffer)
+    val _ret = __method_bind.open_buffer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun read(): Error {
+    val _ret = __method_bind.read.call(this.toVariant())
     TODO()
   }
 
   fun seek(position: Int): Error {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun skipSection() {
+    val _ret = __method_bind.skip_section.call(this.toVariant())
     TODO()
   }
 

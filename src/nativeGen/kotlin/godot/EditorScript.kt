@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,14 +17,19 @@ open class EditorScript internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addRootNode(node: Node) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.add_root_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getEditorInterface(): EditorInterface {
+    val _ret = __method_bind.get_editor_interface.call(this.toVariant())
     TODO()
   }
 
   fun getScene(): Node {
+    val _ret = __method_bind.get_scene.call(this.toVariant())
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,22 +18,27 @@ open class ResourceInteractiveLoader internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResource(): Resource {
+    val _ret = __method_bind.get_resource.call(this.toVariant())
     TODO()
   }
 
   fun getStage(): Int {
+    val _ret = __method_bind.get_stage.call(this.toVariant())
     TODO()
   }
 
   fun getStageCount(): Int {
+    val _ret = __method_bind.get_stage_count.call(this.toVariant())
     TODO()
   }
 
   fun poll(): Error {
+    val _ret = __method_bind.poll.call(this.toVariant())
     TODO()
   }
 
   fun wait(): Error {
+    val _ret = __method_bind.wait.call(this.toVariant())
     TODO()
   }
 

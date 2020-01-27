@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,170 +21,254 @@ open class AudioStreamPlayer3D internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAreaMask(): Int {
+    val _ret = __method_bind.get_area_mask.call(this.toVariant())
     TODO()
   }
 
   fun getAttenuationFilterCutoffHz(): Float {
+    val _ret = __method_bind.get_attenuation_filter_cutoff_hz.call(this.toVariant())
     TODO()
   }
 
   fun getAttenuationFilterDb(): Float {
+    val _ret = __method_bind.get_attenuation_filter_db.call(this.toVariant())
     TODO()
   }
 
   fun getAttenuationModel(): AttenuationModel {
+    val _ret = __method_bind.get_attenuation_model.call(this.toVariant())
     TODO()
   }
 
   fun getBus(): String {
+    val _ret = __method_bind.get_bus.call(this.toVariant())
     TODO()
   }
 
   fun getDopplerTracking(): DopplerTracking {
+    val _ret = __method_bind.get_doppler_tracking.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionAngle(): Float {
+    val _ret = __method_bind.get_emission_angle.call(this.toVariant())
     TODO()
   }
 
   fun getEmissionAngleFilterAttenuationDb(): Float {
+    val _ret = __method_bind.get_emission_angle_filter_attenuation_db.call(this.toVariant())
     TODO()
   }
 
   fun getMaxDb(): Float {
+    val _ret = __method_bind.get_max_db.call(this.toVariant())
     TODO()
   }
 
   fun getMaxDistance(): Float {
+    val _ret = __method_bind.get_max_distance.call(this.toVariant())
     TODO()
   }
 
   fun getOutOfRangeMode(): OutOfRangeMode {
+    val _ret = __method_bind.get_out_of_range_mode.call(this.toVariant())
     TODO()
   }
 
   fun getPitchScale(): Float {
+    val _ret = __method_bind.get_pitch_scale.call(this.toVariant())
     TODO()
   }
 
   fun getPlaybackPosition(): Float {
+    val _ret = __method_bind.get_playback_position.call(this.toVariant())
     TODO()
   }
 
   fun getStream(): AudioStream {
+    val _ret = __method_bind.get_stream.call(this.toVariant())
     TODO()
   }
 
   fun getStreamPaused(): Boolean {
+    val _ret = __method_bind.get_stream_paused.call(this.toVariant())
     TODO()
   }
 
   fun getStreamPlayback(): AudioStreamPlayback {
+    val _ret = __method_bind.get_stream_playback.call(this.toVariant())
     TODO()
   }
 
   fun getUnitDb(): Float {
+    val _ret = __method_bind.get_unit_db.call(this.toVariant())
     TODO()
   }
 
   fun getUnitSize(): Float {
+    val _ret = __method_bind.get_unit_size.call(this.toVariant())
     TODO()
   }
 
   fun isAutoplayEnabled(): Boolean {
+    val _ret = __method_bind.is_autoplay_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isEmissionAngleEnabled(): Boolean {
+    val _ret = __method_bind.is_emission_angle_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
-  fun play(from_position: Float) {
+  fun play(fromPosition: Float) {
+    val _args = VariantArray.new()
+    _args.append(fromPosition)
+    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun seek(to_position: Float) {
+  fun seek(toPosition: Float) {
+    val _args = VariantArray.new()
+    _args.append(toPosition)
+    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAreaMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_area_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAttenuationFilterCutoffHz(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_attenuation_filter_cutoff_hz.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setAttenuationFilterDb(db: Float) {
+    val _args = VariantArray.new()
+    _args.append(db)
+    val _ret = __method_bind.set_attenuation_filter_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAttenuationModel(model: Int) {
+    val _args = VariantArray.new()
+    _args.append(model)
+    val _ret = __method_bind.set_attenuation_model.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutoplay(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBus(bus: String) {
+    val _args = VariantArray.new()
+    _args.append(bus)
+    val _ret = __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDopplerTracking(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_doppler_tracking.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionAngle(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_emission_angle.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionAngleEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_emission_angle_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmissionAngleFilterAttenuationDb(db: Float) {
+    val _args = VariantArray.new()
+    _args.append(db)
+    val _ret = __method_bind.set_emission_angle_filter_attenuation_db.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun setMaxDb(max_db: Float) {
+  fun setMaxDb(maxDb: Float) {
+    val _args = VariantArray.new()
+    _args.append(maxDb)
+    val _ret = __method_bind.set_max_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaxDistance(metres: Float) {
+    val _args = VariantArray.new()
+    _args.append(metres)
+    val _ret = __method_bind.set_max_distance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOutOfRangeMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_out_of_range_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPitchScale(pitch_scale: Float) {
+  fun setPitchScale(pitchScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(pitchScale)
+    val _ret = __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStream(stream: AudioStream) {
+    val _args = VariantArray.new()
+    _args.append(stream)
+    val _ret = __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStreamPaused(pause: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pause)
+    val _ret = __method_bind.set_stream_paused.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUnitDb(unit_db: Float) {
+  fun setUnitDb(unitDb: Float) {
+    val _args = VariantArray.new()
+    _args.append(unitDb)
+    val _ret = __method_bind.set_unit_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setUnitSize(unit_size: Float) {
+  fun setUnitSize(unitSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(unitSize)
+    val _ret = __method_bind.set_unit_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

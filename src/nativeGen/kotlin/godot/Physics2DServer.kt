@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.RID
 import godot.core.Transform2D
 import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -28,62 +29,119 @@ open class Physics2DServer internal constructor(
     transform: Transform2D,
     disabled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shape)
+    _args.append(transform)
+    _args.append(disabled)
+    val _ret = __method_bind.area_add_shape.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun areaAttachCanvasInstanceId(area: RID, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(id)
+    val _ret = __method_bind.area_attach_canvas_instance_id.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun areaAttachObjectInstanceId(area: RID, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(id)
+    val _ret = __method_bind.area_attach_object_instance_id.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun areaClearShapes(area: RID) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_clear_shapes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun areaCreate(): RID {
+    val _ret = __method_bind.area_create.call(this.toVariant())
     TODO()
   }
 
   fun areaGetCanvasInstanceId(area: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_get_canvas_instance_id.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun areaGetObjectInstanceId(area: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_get_object_instance_id.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun areaGetParam(area: RID, param: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(param)
+    val _ret = __method_bind.area_get_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun areaGetShape(area: RID, shape_idx: Int): RID {
+  fun areaGetShape(area: RID, shapeIdx: Int): RID {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.area_get_shape.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun areaGetShapeCount(area: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_get_shape_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun areaGetShapeTransform(area: RID, shape_idx: Int): Transform2D {
+  fun areaGetShapeTransform(area: RID, shapeIdx: Int): Transform2D {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.area_get_shape_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun areaGetSpace(area: RID): RID {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_get_space.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun areaGetSpaceOverrideMode(area: RID): AreaSpaceOverrideMode {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_get_space_override_mode.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun areaGetTransform(area: RID): Transform2D {
+    val _args = VariantArray.new()
+    _args.append(area)
+    val _ret = __method_bind.area_get_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun areaRemoveShape(area: RID, shape_idx: Int) {
+  fun areaRemoveShape(area: RID, shapeIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.area_remove_shape.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -92,14 +150,28 @@ open class Physics2DServer internal constructor(
     receiver: Object,
     method: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(receiver)
+    _args.append(method)
+    val _ret = __method_bind.area_set_area_monitor_callback.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
   fun areaSetCollisionLayer(area: RID, layer: Int) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(layer)
+    val _ret = __method_bind.area_set_collision_layer.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun areaSetCollisionMask(area: RID, mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(mask)
+    val _ret = __method_bind.area_set_collision_mask.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -108,10 +180,19 @@ open class Physics2DServer internal constructor(
     receiver: Object,
     method: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(receiver)
+    _args.append(method)
+    val _ret = __method_bind.area_set_monitor_callback.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun areaSetMonitorable(area: RID, monitorable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(monitorable)
+    val _ret = __method_bind.area_set_monitorable.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -120,50 +201,92 @@ open class Physics2DServer internal constructor(
     param: Int,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.area_set_param.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun areaSetShape(
     area: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     shape: RID
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shapeIdx)
+    _args.append(shape)
+    val _ret = __method_bind.area_set_shape.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun areaSetShapeDisabled(
     area: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     disabled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shapeIdx)
+    _args.append(disabled)
+    val _ret = __method_bind.area_set_shape_disabled.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun areaSetShapeTransform(
     area: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     transform: Transform2D
   ) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(shapeIdx)
+    _args.append(transform)
+    val _ret = __method_bind.area_set_shape_transform.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun areaSetSpace(area: RID, space: RID) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(space)
+    val _ret = __method_bind.area_set_space.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun areaSetSpaceOverrideMode(area: RID, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(mode)
+    val _ret = __method_bind.area_set_space_override_mode.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun areaSetTransform(area: RID, transform: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(area)
+    _args.append(transform)
+    val _ret = __method_bind.area_set_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyAddCentralForce(body: RID, force: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(force)
+    val _ret = __method_bind.body_add_central_force.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun bodyAddCollisionException(body: RID, excepted_body: RID) {
+  fun bodyAddCollisionException(body: RID, exceptedBody: RID) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(exceptedBody)
+    val _ret = __method_bind.body_add_collision_exception.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
@@ -172,6 +295,11 @@ open class Physics2DServer internal constructor(
     offset: Vector2,
     force: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(offset)
+    _args.append(force)
+    val _ret = __method_bind.body_add_force.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -181,14 +309,28 @@ open class Physics2DServer internal constructor(
     transform: Transform2D,
     disabled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shape)
+    _args.append(transform)
+    _args.append(disabled)
+    val _ret = __method_bind.body_add_shape.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun bodyAddTorque(body: RID, torque: Float) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(torque)
+    val _ret = __method_bind.body_add_torque.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyApplyCentralImpulse(body: RID, impulse: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(impulse)
+    val _ret = __method_bind.body_apply_central_impulse.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -197,114 +339,221 @@ open class Physics2DServer internal constructor(
     position: Vector2,
     impulse: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(position)
+    _args.append(impulse)
+    val _ret = __method_bind.body_apply_impulse.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun bodyApplyTorqueImpulse(body: RID, impulse: Float) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(impulse)
+    val _ret = __method_bind.body_apply_torque_impulse.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyAttachCanvasInstanceId(body: RID, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(id)
+    val _ret = __method_bind.body_attach_canvas_instance_id.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyAttachObjectInstanceId(body: RID, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(id)
+    val _ret = __method_bind.body_attach_object_instance_id.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyClearShapes(body: RID) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_clear_shapes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyCreate(): RID {
+    val _ret = __method_bind.body_create.call(this.toVariant())
     TODO()
   }
 
   fun bodyGetCanvasInstanceId(body: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_canvas_instance_id.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun bodyGetCollisionLayer(body: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetCollisionMask(body: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetContinuousCollisionDetectionMode(body: RID): CCDMode {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_continuous_collision_detection_mode.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetDirectState(body: RID): Physics2DDirectBodyState {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_direct_state.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetMaxContactsReported(body: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_max_contacts_reported.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetMode(body: RID): BodyMode {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetObjectInstanceId(body: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_object_instance_id.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun bodyGetParam(body: RID, param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(param)
+    val _ret = __method_bind.body_get_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun bodyGetShape(body: RID, shape_idx: Int): RID {
+  fun bodyGetShape(body: RID, shapeIdx: Int): RID {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.body_get_shape.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyGetShapeCount(body: RID): Int {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_shape_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun bodyGetShapeMetadata(body: RID, shape_idx: Int): Variant {
+  fun bodyGetShapeMetadata(body: RID, shapeIdx: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.body_get_shape_metadata.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun bodyGetShapeTransform(body: RID, shape_idx: Int): Transform2D {
+  fun bodyGetShapeTransform(body: RID, shapeIdx: Int): Transform2D {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.body_get_shape_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyGetSpace(body: RID): RID {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_get_space.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun bodyGetState(body: RID, state: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(state)
+    val _ret = __method_bind.body_get_state.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodyIsOmittingForceIntegration(body: RID): Boolean {
+    val _args = VariantArray.new()
+    _args.append(body)
+    val _ret = __method_bind.body_is_omitting_force_integration.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun bodyRemoveCollisionException(body: RID, excepted_body: RID) {
+  fun bodyRemoveCollisionException(body: RID, exceptedBody: RID) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(exceptedBody)
+    val _ret = __method_bind.body_remove_collision_exception.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
-  fun bodyRemoveShape(body: RID, shape_idx: Int) {
+  fun bodyRemoveShape(body: RID, shapeIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    val _ret = __method_bind.body_remove_shape.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun bodySetAxisVelocity(body: RID, axis_velocity: Vector2) {
+  fun bodySetAxisVelocity(body: RID, axisVelocity: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(axisVelocity)
+    val _ret = __method_bind.body_set_axis_velocity.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodySetCollisionLayer(body: RID, layer: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(layer)
+    val _ret = __method_bind.body_set_collision_layer.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodySetCollisionMask(body: RID, mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(mask)
+    val _ret = __method_bind.body_set_collision_mask.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodySetContinuousCollisionDetectionMode(body: RID, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(mode)
+    val _ret = __method_bind.body_set_continuous_collision_detection_mode.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
@@ -314,18 +563,39 @@ open class Physics2DServer internal constructor(
     method: String,
     userdata: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(receiver)
+    _args.append(method)
+    _args.append(userdata)
+    val _ret = __method_bind.body_set_force_integration_callback.call(this.toVariant(),
+        _args.toVariant(), 4)
     TODO()
   }
 
   fun bodySetMaxContactsReported(body: RID, amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(amount)
+    val _ret = __method_bind.body_set_max_contacts_reported.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun bodySetMode(body: RID, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(mode)
+    val _ret = __method_bind.body_set_mode.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bodySetOmitForceIntegration(body: RID, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(enable)
+    val _ret = __method_bind.body_set_omit_force_integration.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
@@ -334,51 +604,87 @@ open class Physics2DServer internal constructor(
     param: Int,
     value: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.body_set_param.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun bodySetShape(
     body: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     shape: RID
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    _args.append(shape)
+    val _ret = __method_bind.body_set_shape.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun bodySetShapeAsOneWayCollision(
     body: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     enable: Boolean,
     margin: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    _args.append(enable)
+    _args.append(margin)
+    val _ret = __method_bind.body_set_shape_as_one_way_collision.call(this.toVariant(),
+        _args.toVariant(), 4)
     TODO()
   }
 
   fun bodySetShapeDisabled(
     body: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     disabled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    _args.append(disabled)
+    val _ret = __method_bind.body_set_shape_disabled.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun bodySetShapeMetadata(
     body: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     metadata: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    _args.append(metadata)
+    val _ret = __method_bind.body_set_shape_metadata.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun bodySetShapeTransform(
     body: RID,
-    shape_idx: Int,
+    shapeIdx: Int,
     transform: Transform2D
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(shapeIdx)
+    _args.append(transform)
+    val _ret = __method_bind.body_set_shape_transform.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun bodySetSpace(body: RID, space: RID) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(space)
+    val _ret = __method_bind.body_set_space.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -387,6 +693,11 @@ open class Physics2DServer internal constructor(
     state: Int,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(state)
+    _args.append(value)
+    val _ret = __method_bind.body_set_state.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -394,39 +705,62 @@ open class Physics2DServer internal constructor(
     body: RID,
     from: Transform2D,
     motion: Vector2,
-    infinite_inertia: Boolean,
+    infiniteInertia: Boolean,
     margin: Float,
     result: Physics2DTestMotionResult
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(body)
+    _args.append(from)
+    _args.append(motion)
+    _args.append(infiniteInertia)
+    _args.append(margin)
+    _args.append(result)
+    val _ret = __method_bind.body_test_motion.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun capsuleShapeCreate(): RID {
+    val _ret = __method_bind.capsule_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun circleShapeCreate(): RID {
+    val _ret = __method_bind.circle_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun concavePolygonShapeCreate(): RID {
+    val _ret = __method_bind.concave_polygon_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun convexPolygonShapeCreate(): RID {
+    val _ret = __method_bind.convex_polygon_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun dampedSpringJointCreate(
-    anchor_a: Vector2,
-    anchor_b: Vector2,
-    body_a: RID,
-    body_b: RID
+    anchorA: Vector2,
+    anchorB: Vector2,
+    bodyA: RID,
+    bodyB: RID
   ): RID {
+    val _args = VariantArray.new()
+    _args.append(anchorA)
+    _args.append(anchorB)
+    _args.append(bodyA)
+    _args.append(bodyB)
+    val _ret = __method_bind.damped_spring_joint_create.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun dampedStringJointGetParam(joint: RID, param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(joint)
+    _args.append(param)
+    val _ret = __method_bind.damped_string_joint_get_param.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
@@ -435,32 +769,58 @@ open class Physics2DServer internal constructor(
     param: Int,
     value: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(joint)
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.damped_string_joint_set_param.call(this.toVariant(), _args.toVariant(),
+        3)
     TODO()
   }
 
   fun freeRid(rid: RID) {
+    val _args = VariantArray.new()
+    _args.append(rid)
+    val _ret = __method_bind.free_rid.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getProcessInfo(process_info: Int): Int {
+  fun getProcessInfo(processInfo: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(processInfo)
+    val _ret = __method_bind.get_process_info.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun grooveJointCreate(
-    groove1_a: Vector2,
-    groove2_a: Vector2,
-    anchor_b: Vector2,
-    body_a: RID,
-    body_b: RID
+    groove1A: Vector2,
+    groove2A: Vector2,
+    anchorB: Vector2,
+    bodyA: RID,
+    bodyB: RID
   ): RID {
+    val _args = VariantArray.new()
+    _args.append(groove1A)
+    _args.append(groove2A)
+    _args.append(anchorB)
+    _args.append(bodyA)
+    _args.append(bodyB)
+    val _ret = __method_bind.groove_joint_create.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun jointGetParam(joint: RID, param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(joint)
+    _args.append(param)
+    val _ret = __method_bind.joint_get_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun jointGetType(joint: RID): JointType {
+    val _args = VariantArray.new()
+    _args.append(joint)
+    val _ret = __method_bind.joint_get_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -469,66 +829,108 @@ open class Physics2DServer internal constructor(
     param: Int,
     value: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(joint)
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.joint_set_param.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun lineShapeCreate(): RID {
+    val _ret = __method_bind.line_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun pinJointCreate(
     anchor: Vector2,
-    body_a: RID,
-    body_b: RID
+    bodyA: RID,
+    bodyB: RID
   ): RID {
+    val _args = VariantArray.new()
+    _args.append(anchor)
+    _args.append(bodyA)
+    _args.append(bodyB)
+    val _ret = __method_bind.pin_joint_create.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun rayShapeCreate(): RID {
+    val _ret = __method_bind.ray_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun rectangleShapeCreate(): RID {
+    val _ret = __method_bind.rectangle_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun segmentShapeCreate(): RID {
+    val _ret = __method_bind.segment_shape_create.call(this.toVariant())
     TODO()
   }
 
   fun setActive(active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(active)
+    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun shapeGetData(shape: RID): Variant {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.shape_get_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun shapeGetType(shape: RID): ShapeType {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.shape_get_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun shapeSetData(shape: RID, data: Variant) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    _args.append(data)
+    val _ret = __method_bind.shape_set_data.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun spaceCreate(): RID {
+    val _ret = __method_bind.space_create.call(this.toVariant())
     TODO()
   }
 
   fun spaceGetDirectState(space: RID): Physics2DDirectSpaceState {
+    val _args = VariantArray.new()
+    _args.append(space)
+    val _ret = __method_bind.space_get_direct_state.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun spaceGetParam(space: RID, param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(space)
+    _args.append(param)
+    val _ret = __method_bind.space_get_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun spaceIsActive(space: RID): Boolean {
+    val _args = VariantArray.new()
+    _args.append(space)
+    val _ret = __method_bind.space_is_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun spaceSetActive(space: RID, active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(space)
+    _args.append(active)
+    val _ret = __method_bind.space_set_active.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -537,6 +939,11 @@ open class Physics2DServer internal constructor(
     param: Int,
     value: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(space)
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.space_set_param.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

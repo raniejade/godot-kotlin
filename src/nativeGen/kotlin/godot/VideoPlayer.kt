@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,102 +21,147 @@ open class VideoPlayer internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAudioTrack(): Int {
+    val _ret = __method_bind.get_audio_track.call(this.toVariant())
     TODO()
   }
 
   fun getBufferingMsec(): Int {
+    val _ret = __method_bind.get_buffering_msec.call(this.toVariant())
     TODO()
   }
 
   fun getBus(): String {
+    val _ret = __method_bind.get_bus.call(this.toVariant())
     TODO()
   }
 
   fun getStream(): VideoStream {
+    val _ret = __method_bind.get_stream.call(this.toVariant())
     TODO()
   }
 
   fun getStreamName(): String {
+    val _ret = __method_bind.get_stream_name.call(this.toVariant())
     TODO()
   }
 
   fun getStreamPosition(): Float {
+    val _ret = __method_bind.get_stream_position.call(this.toVariant())
     TODO()
   }
 
   fun getVideoTexture(): Texture {
+    val _ret = __method_bind.get_video_texture.call(this.toVariant())
     TODO()
   }
 
   fun getVolume(): Float {
+    val _ret = __method_bind.get_volume.call(this.toVariant())
     TODO()
   }
 
   fun getVolumeDb(): Float {
+    val _ret = __method_bind.get_volume_db.call(this.toVariant())
     TODO()
   }
 
   fun hasAutoplay(): Boolean {
+    val _ret = __method_bind.has_autoplay.call(this.toVariant())
     TODO()
   }
 
   fun hasExpand(): Boolean {
+    val _ret = __method_bind.has_expand.call(this.toVariant())
     TODO()
   }
 
   fun isPaused(): Boolean {
+    val _ret = __method_bind.is_paused.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
   fun play() {
+    val _ret = __method_bind.play.call(this.toVariant())
     TODO()
   }
 
   fun setAudioTrack(track: Int) {
+    val _args = VariantArray.new()
+    _args.append(track)
+    val _ret = __method_bind.set_audio_track.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutoplay(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBufferingMsec(msec: Int) {
+    val _args = VariantArray.new()
+    _args.append(msec)
+    val _ret = __method_bind.set_buffering_msec.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBus(bus: String) {
+    val _args = VariantArray.new()
+    _args.append(bus)
+    val _ret = __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExpand(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPaused(paused: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(paused)
+    val _ret = __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStream(stream: VideoStream) {
+    val _args = VariantArray.new()
+    _args.append(stream)
+    val _ret = __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStreamPosition(position: Float) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.set_stream_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVolume(volume: Float) {
+    val _args = VariantArray.new()
+    _args.append(volume)
+    val _ret = __method_bind.set_volume.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVolumeDb(db: Float) {
+    val _args = VariantArray.new()
+    _args.append(db)
+    val _ret = __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

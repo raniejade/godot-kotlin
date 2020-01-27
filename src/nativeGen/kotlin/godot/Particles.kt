@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,138 +21,207 @@ open class Particles internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun captureAabb(): AABB {
+    val _ret = __method_bind.capture_aabb.call(this.toVariant())
     TODO()
   }
 
   fun getAmount(): Int {
+    val _ret = __method_bind.get_amount.call(this.toVariant())
     TODO()
   }
 
   fun getDrawOrder(): DrawOrder {
+    val _ret = __method_bind.get_draw_order.call(this.toVariant())
     TODO()
   }
 
   fun getDrawPassMesh(pass: Int): Mesh {
+    val _args = VariantArray.new()
+    _args.append(pass)
+    val _ret = __method_bind.get_draw_pass_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDrawPasses(): Int {
+    val _ret = __method_bind.get_draw_passes.call(this.toVariant())
     TODO()
   }
 
   fun getExplosivenessRatio(): Float {
+    val _ret = __method_bind.get_explosiveness_ratio.call(this.toVariant())
     TODO()
   }
 
   fun getFixedFps(): Int {
+    val _ret = __method_bind.get_fixed_fps.call(this.toVariant())
     TODO()
   }
 
   fun getFractionalDelta(): Boolean {
+    val _ret = __method_bind.get_fractional_delta.call(this.toVariant())
     TODO()
   }
 
   fun getLifetime(): Float {
+    val _ret = __method_bind.get_lifetime.call(this.toVariant())
     TODO()
   }
 
   fun getOneShot(): Boolean {
+    val _ret = __method_bind.get_one_shot.call(this.toVariant())
     TODO()
   }
 
   fun getPreProcessTime(): Float {
+    val _ret = __method_bind.get_pre_process_time.call(this.toVariant())
     TODO()
   }
 
   fun getProcessMaterial(): Material {
+    val _ret = __method_bind.get_process_material.call(this.toVariant())
     TODO()
   }
 
   fun getRandomnessRatio(): Float {
+    val _ret = __method_bind.get_randomness_ratio.call(this.toVariant())
     TODO()
   }
 
   fun getSpeedScale(): Float {
+    val _ret = __method_bind.get_speed_scale.call(this.toVariant())
     TODO()
   }
 
   fun getUseLocalCoordinates(): Boolean {
+    val _ret = __method_bind.get_use_local_coordinates.call(this.toVariant())
     TODO()
   }
 
   fun getVisibilityAabb(): AABB {
+    val _ret = __method_bind.get_visibility_aabb.call(this.toVariant())
     TODO()
   }
 
   fun isEmitting(): Boolean {
+    val _ret = __method_bind.is_emitting.call(this.toVariant())
     TODO()
   }
 
   fun restart() {
+    val _ret = __method_bind.restart.call(this.toVariant())
     TODO()
   }
 
   fun setAmount(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_amount.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawOrder(order: Int) {
+    val _args = VariantArray.new()
+    _args.append(order)
+    val _ret = __method_bind.set_draw_order.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawPassMesh(pass: Int, mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(pass)
+    _args.append(mesh)
+    val _ret = __method_bind.set_draw_pass_mesh.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setDrawPasses(passes: Int) {
+    val _args = VariantArray.new()
+    _args.append(passes)
+    val _ret = __method_bind.set_draw_passes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEmitting(emitting: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(emitting)
+    val _ret = __method_bind.set_emitting.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExplosivenessRatio(ratio: Float) {
+    val _args = VariantArray.new()
+    _args.append(ratio)
+    val _ret = __method_bind.set_explosiveness_ratio.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFixedFps(fps: Int) {
+    val _args = VariantArray.new()
+    _args.append(fps)
+    val _ret = __method_bind.set_fixed_fps.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFractionalDelta(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_fractional_delta.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLifetime(secs: Float) {
+    val _args = VariantArray.new()
+    _args.append(secs)
+    val _ret = __method_bind.set_lifetime.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOneShot(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPreProcessTime(secs: Float) {
+    val _args = VariantArray.new()
+    _args.append(secs)
+    val _ret = __method_bind.set_pre_process_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setProcessMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_process_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRandomnessRatio(ratio: Float) {
+    val _args = VariantArray.new()
+    _args.append(ratio)
+    val _ret = __method_bind.set_randomness_ratio.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpeedScale(scale: Float) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_local_coordinates.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVisibilityAabb(aabb: AABB) {
+    val _args = VariantArray.new()
+    _args.append(aabb)
+    val _ret = __method_bind.set_visibility_aabb.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

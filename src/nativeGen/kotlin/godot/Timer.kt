@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,58 +20,84 @@ open class Timer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getTimeLeft(): Float {
+    val _ret = __method_bind.get_time_left.call(this.toVariant())
     TODO()
   }
 
   fun getTimerProcessMode(): TimerProcessMode {
+    val _ret = __method_bind.get_timer_process_mode.call(this.toVariant())
     TODO()
   }
 
   fun getWaitTime(): Float {
+    val _ret = __method_bind.get_wait_time.call(this.toVariant())
     TODO()
   }
 
   fun hasAutostart(): Boolean {
+    val _ret = __method_bind.has_autostart.call(this.toVariant())
     TODO()
   }
 
   fun isOneShot(): Boolean {
+    val _ret = __method_bind.is_one_shot.call(this.toVariant())
     TODO()
   }
 
   fun isPaused(): Boolean {
+    val _ret = __method_bind.is_paused.call(this.toVariant())
     TODO()
   }
 
   fun isStopped(): Boolean {
+    val _ret = __method_bind.is_stopped.call(this.toVariant())
     TODO()
   }
 
   fun setAutostart(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autostart.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOneShot(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPaused(paused: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(paused)
+    val _ret = __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTimerProcessMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_timer_process_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setWaitTime(time_sec: Float) {
+  fun setWaitTime(timeSec: Float) {
+    val _args = VariantArray.new()
+    _args.append(timeSec)
+    val _ret = __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun start(time_sec: Float) {
+  fun start(timeSec: Float) {
+    val _args = VariantArray.new()
+    _args.append(timeSec)
+    val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

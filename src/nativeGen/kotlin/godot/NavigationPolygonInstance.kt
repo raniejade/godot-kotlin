@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class NavigationPolygonInstance internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getNavigationPolygon(): NavigationPolygon {
+    val _ret = __method_bind.get_navigation_polygon.call(this.toVariant())
     TODO()
   }
 
   fun isEnabled(): Boolean {
+    val _ret = __method_bind.is_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNavigationPolygon(navpoly: NavigationPolygon) {
+    val _args = VariantArray.new()
+    _args.append(navpoly)
+    val _ret = __method_bind.set_navigation_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

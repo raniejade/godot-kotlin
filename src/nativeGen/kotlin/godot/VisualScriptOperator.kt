@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,18 +18,26 @@ open class VisualScriptOperator internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getOperator(): Variant.Operator {
+    val _ret = __method_bind.get_operator.call(this.toVariant())
     TODO()
   }
 
   fun getTyped(): Variant.Type {
+    val _ret = __method_bind.get_typed.call(this.toVariant())
     TODO()
   }
 
   fun setOperator(op: Int) {
+    val _args = VariantArray.new()
+    _args.append(op)
+    val _ret = __method_bind.set_operator.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTyped(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_typed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

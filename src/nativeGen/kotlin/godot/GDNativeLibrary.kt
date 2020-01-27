@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,50 +20,72 @@ open class GDNativeLibrary internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getConfigFile(): ConfigFile {
+    val _ret = __method_bind.get_config_file.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentDependencies(): PoolStringArray {
+    val _ret = __method_bind.get_current_dependencies.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentLibraryPath(): String {
+    val _ret = __method_bind.get_current_library_path.call(this.toVariant())
     TODO()
   }
 
   fun getSymbolPrefix(): String {
+    val _ret = __method_bind.get_symbol_prefix.call(this.toVariant())
     TODO()
   }
 
   fun isReloadable(): Boolean {
+    val _ret = __method_bind.is_reloadable.call(this.toVariant())
     TODO()
   }
 
   fun isSingleton(): Boolean {
+    val _ret = __method_bind.is_singleton.call(this.toVariant())
     TODO()
   }
 
-  fun setConfigFile(config_file: ConfigFile) {
+  fun setConfigFile(configFile: ConfigFile) {
+    val _args = VariantArray.new()
+    _args.append(configFile)
+    val _ret = __method_bind.set_config_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLoadOnce(load_once: Boolean) {
+  fun setLoadOnce(loadOnce: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(loadOnce)
+    val _ret = __method_bind.set_load_once.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setReloadable(reloadable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(reloadable)
+    val _ret = __method_bind.set_reloadable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSingleton(singleton: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(singleton)
+    val _ret = __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSymbolPrefix(symbol_prefix: String) {
+  fun setSymbolPrefix(symbolPrefix: String) {
+    val _args = VariantArray.new()
+    _args.append(symbolPrefix)
+    val _ret = __method_bind.set_symbol_prefix.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun shouldLoadOnce(): Boolean {
+    val _ret = __method_bind.should_load_once.call(this.toVariant())
     TODO()
   }
 

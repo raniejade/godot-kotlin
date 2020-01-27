@@ -7,6 +7,7 @@ import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -25,194 +26,326 @@ open class TreeItem internal constructor(
   fun addButton(
     column: Int,
     button: Texture,
-    button_idx: Int,
+    buttonIdx: Int,
     disabled: Boolean,
     tooltip: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(button)
+    _args.append(buttonIdx)
+    _args.append(disabled)
+    _args.append(tooltip)
+    val _ret = __method_bind.add_button.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun clearCustomBgColor(column: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.clear_custom_bg_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearCustomColor(column: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.clear_custom_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun deselect(column: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.deselect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun eraseButton(column: Int, button_idx: Int) {
+  fun eraseButton(column: Int, buttonIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(buttonIdx)
+    val _ret = __method_bind.erase_button.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun getButton(column: Int, button_idx: Int): Texture {
+  fun getButton(column: Int, buttonIdx: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(buttonIdx)
+    val _ret = __method_bind.get_button.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getButtonCount(column: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_button_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCellMode(column: Int): TreeCellMode {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_cell_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getChildren(): TreeItem {
+    val _ret = __method_bind.get_children.call(this.toVariant())
     TODO()
   }
 
   fun getCustomBgColor(column: Int): Color {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_custom_bg_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getCustomMinimumHeight(): Int {
+    val _ret = __method_bind.get_custom_minimum_height.call(this.toVariant())
     TODO()
   }
 
   fun getExpandRight(column: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_expand_right.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getIcon(column: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_icon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getIconMaxWidth(column: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_icon_max_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getIconRegion(column: Int): Rect2 {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_icon_region.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMetadata(column: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_metadata.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNext(): TreeItem {
+    val _ret = __method_bind.get_next.call(this.toVariant())
     TODO()
   }
 
   fun getNextVisible(wrap: Boolean): TreeItem {
+    val _args = VariantArray.new()
+    _args.append(wrap)
+    val _ret = __method_bind.get_next_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getParent(): TreeItem {
+    val _ret = __method_bind.get_parent.call(this.toVariant())
     TODO()
   }
 
   fun getPrev(): TreeItem {
+    val _ret = __method_bind.get_prev.call(this.toVariant())
     TODO()
   }
 
   fun getPrevVisible(wrap: Boolean): TreeItem {
+    val _args = VariantArray.new()
+    _args.append(wrap)
+    val _ret = __method_bind.get_prev_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getRange(column: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_range.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getRangeConfig(column: Int): Dictionary {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_range_config.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getText(column: Int): String {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTextAlign(column: Int): TextAlign {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_text_align.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTooltip(column: Int): String {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.get_tooltip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun isButtonDisabled(column: Int, button_idx: Int): Boolean {
+  fun isButtonDisabled(column: Int, buttonIdx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(buttonIdx)
+    val _ret = __method_bind.is_button_disabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun isChecked(column: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.is_checked.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isCollapsed(): Boolean {
+    val _ret = __method_bind.is_collapsed.call(this.toVariant())
     TODO()
   }
 
   fun isCustomSetAsButton(column: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.is_custom_set_as_button.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isEditable(column: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.is_editable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isFoldingDisabled(): Boolean {
+    val _ret = __method_bind.is_folding_disabled.call(this.toVariant())
     TODO()
   }
 
   fun isSelectable(column: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.is_selectable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isSelected(column: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.is_selected.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun moveToBottom() {
+    val _ret = __method_bind.move_to_bottom.call(this.toVariant())
     TODO()
   }
 
   fun moveToTop() {
+    val _ret = __method_bind.move_to_top.call(this.toVariant())
     TODO()
   }
 
   fun removeChild(child: Object) {
+    val _args = VariantArray.new()
+    _args.append(child)
+    val _ret = __method_bind.remove_child.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun select(column: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    val _ret = __method_bind.select.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setButton(
     column: Int,
-    button_idx: Int,
+    buttonIdx: Int,
     button: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(buttonIdx)
+    _args.append(button)
+    val _ret = __method_bind.set_button.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setCellMode(column: Int, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(mode)
+    val _ret = __method_bind.set_cell_mode.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setChecked(column: Int, checked: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(checked)
+    val _ret = __method_bind.set_checked.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setCollapsed(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_collapsed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCustomAsButton(column: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(enable)
+    val _ret = __method_bind.set_custom_as_button.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setCustomBgColor(
     column: Int,
     color: Color,
-    just_outline: Boolean
+    justOutline: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(color)
+    _args.append(justOutline)
+    val _ret = __method_bind.set_custom_bg_color.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setCustomColor(column: Int, color: Color) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(color)
+    val _ret = __method_bind.set_custom_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -221,42 +354,81 @@ open class TreeItem internal constructor(
     `object`: Object,
     callback: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(`object`)
+    _args.append(callback)
+    val _ret = __method_bind.set_custom_draw.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setCustomMinimumHeight(height: Int) {
+    val _args = VariantArray.new()
+    _args.append(height)
+    val _ret = __method_bind.set_custom_minimum_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisableFolding(disable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disable)
+    val _ret = __method_bind.set_disable_folding.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEditable(column: Int, enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(enabled)
+    val _ret = __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setExpandRight(column: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(enable)
+    val _ret = __method_bind.set_expand_right.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setIcon(column: Int, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(texture)
+    val _ret = __method_bind.set_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setIconMaxWidth(column: Int, width: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(width)
+    val _ret = __method_bind.set_icon_max_width.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setIconRegion(column: Int, region: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(region)
+    val _ret = __method_bind.set_icon_region.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setMetadata(column: Int, meta: Variant) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(meta)
+    val _ret = __method_bind.set_metadata.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setRange(column: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(value)
+    val _ret = __method_bind.set_range.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -267,22 +439,45 @@ open class TreeItem internal constructor(
     step: Float,
     expr: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(min)
+    _args.append(max)
+    _args.append(step)
+    _args.append(expr)
+    val _ret = __method_bind.set_range_config.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun setSelectable(column: Int, selectable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(selectable)
+    val _ret = __method_bind.set_selectable.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setText(column: Int, text: String) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(text)
+    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setTextAlign(column: Int, text_align: Int) {
+  fun setTextAlign(column: Int, textAlign: Int) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(textAlign)
+    val _ret = __method_bind.set_text_align.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setTooltip(column: Int, tooltip: String) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(tooltip)
+    val _ret = __method_bind.set_tooltip.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

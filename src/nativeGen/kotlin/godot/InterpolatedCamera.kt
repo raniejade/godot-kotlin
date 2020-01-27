@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -18,30 +20,45 @@ open class InterpolatedCamera internal constructor(
   _handle: COpaquePointer
 ) : Camera(_handle) {
   fun getSpeed(): Float {
+    val _ret = __method_bind.get_speed.call(this.toVariant())
     TODO()
   }
 
   fun getTargetPath(): NodePath {
+    val _ret = __method_bind.get_target_path.call(this.toVariant())
     TODO()
   }
 
   fun isInterpolationEnabled(): Boolean {
+    val _ret = __method_bind.is_interpolation_enabled.call(this.toVariant())
     TODO()
   }
 
-  fun setInterpolationEnabled(target_path: Boolean) {
+  fun setInterpolationEnabled(targetPath: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(targetPath)
+    val _ret = __method_bind.set_interpolation_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpeed(speed: Float) {
+    val _args = VariantArray.new()
+    _args.append(speed)
+    val _ret = __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTarget(target: Object) {
+    val _args = VariantArray.new()
+    _args.append(target)
+    val _ret = __method_bind.set_target.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTargetPath(target_path: NodePath) {
+  fun setTargetPath(targetPath: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(targetPath)
+    val _ret = __method_bind.set_target_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

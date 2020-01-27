@@ -22,22 +22,37 @@ open class Object internal constructor(
   internal val _handle: COpaquePointer
 ) {
   fun addUserSignal(signal: String, arguments: VariantArray) {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    _args.append(arguments)
+    val _ret = __method_bind.add_user_signal.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun call(method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    val _ret = __method_bind.call.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun callDeferred(method: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    val _ret = __method_bind.call_deferred.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun callv(method: String, arg_array: VariantArray): Variant {
+  fun callv(method: String, argArray: VariantArray): Variant {
+    val _args = VariantArray.new()
+    _args.append(method)
+    _args.append(argArray)
+    val _ret = __method_bind.callv.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun canTranslateMessages(): Boolean {
+    val _ret = __method_bind.can_translate_messages.call(this.toVariant())
     TODO()
   }
 
@@ -48,6 +63,13 @@ open class Object internal constructor(
     binds: VariantArray,
     flags: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    _args.append(target)
+    _args.append(method)
+    _args.append(binds)
+    _args.append(flags)
+    val _ret = __method_bind.connect.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
@@ -56,82 +78,124 @@ open class Object internal constructor(
     target: Object,
     method: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    _args.append(target)
+    _args.append(method)
+    val _ret = __method_bind.disconnect.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun emitSignal(signal: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    val _ret = __method_bind.emit_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun free() {
+    val _ret = __method_bind.free.call(this.toVariant())
     TODO()
   }
 
   fun get(property: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(property)
+    val _ret = __method_bind.get.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getClass(): String {
+    val _ret = __method_bind.get_class.call(this.toVariant())
     TODO()
   }
 
   fun getIncomingConnections(): VariantArray {
+    val _ret = __method_bind.get_incoming_connections.call(this.toVariant())
     TODO()
   }
 
   fun getIndexed(property: NodePath): Variant {
+    val _args = VariantArray.new()
+    _args.append(property)
+    val _ret = __method_bind.get_indexed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getInstanceId(): Int {
+    val _ret = __method_bind.get_instance_id.call(this.toVariant())
     TODO()
   }
 
   fun getMeta(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_meta.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMetaList(): PoolStringArray {
+    val _ret = __method_bind.get_meta_list.call(this.toVariant())
     TODO()
   }
 
   fun getMethodList(): VariantArray {
+    val _ret = __method_bind.get_method_list.call(this.toVariant())
     TODO()
   }
 
   fun getPropertyList(): VariantArray {
+    val _ret = __method_bind.get_property_list.call(this.toVariant())
     TODO()
   }
 
   fun getScript(): Reference {
+    val _ret = __method_bind.get_script.call(this.toVariant())
     TODO()
   }
 
   fun getSignalConnectionList(signal: String): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    val _ret = __method_bind.get_signal_connection_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSignalList(): VariantArray {
+    val _ret = __method_bind.get_signal_list.call(this.toVariant())
     TODO()
   }
 
   fun hasMeta(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_meta.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasMethod(method: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(method)
+    val _ret = __method_bind.has_method.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasUserSignal(signal: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    val _ret = __method_bind.has_user_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isBlockingSignals(): Boolean {
+    val _ret = __method_bind.is_blocking_signals.call(this.toVariant())
     TODO()
   }
 
   fun isClass(type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.is_class.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -140,58 +204,101 @@ open class Object internal constructor(
     target: Object,
     method: String
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(signal)
+    _args.append(target)
+    _args.append(method)
+    val _ret = __method_bind.is_connected.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun isQueuedForDeletion(): Boolean {
+    val _ret = __method_bind.is_queued_for_deletion.call(this.toVariant())
     TODO()
   }
 
   fun notification(what: Int, reversed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(what)
+    _args.append(reversed)
+    val _ret = __method_bind.notification.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun propertyListChangedNotify() {
+    val _ret = __method_bind.property_list_changed_notify.call(this.toVariant())
     TODO()
   }
 
   fun removeMeta(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_meta.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun set(property: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.set.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBlockSignals(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_block_signals.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDeferred(property: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.set_deferred.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setIndexed(property: NodePath, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    _args.append(value)
+    val _ret = __method_bind.set_indexed.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setMessageTranslation(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_message_translation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMeta(name: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_meta.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setScript(script: Reference) {
+    val _args = VariantArray.new()
+    _args.append(script)
+    val _ret = __method_bind.set_script.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   override fun toString(): String {
+    val _ret = __method_bind.to_string.call(this.toVariant())
     TODO()
   }
 
   fun tr(message: String): String {
+    val _args = VariantArray.new()
+    _args.append(message)
+    val _ret = __method_bind.tr.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

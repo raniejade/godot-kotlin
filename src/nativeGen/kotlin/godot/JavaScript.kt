@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,7 +18,11 @@ import kotlinx.cinterop.reinterpret
 open class JavaScript internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun eval(code: String, use_global_execution_context: Boolean): Variant {
+  fun eval(code: String, useGlobalExecutionContext: Boolean): Variant {
+    val _args = VariantArray.new()
+    _args.append(code)
+    _args.append(useGlobalExecutionContext)
+    val _ret = __method_bind.eval.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

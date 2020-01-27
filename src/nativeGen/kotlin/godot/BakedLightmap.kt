@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
@@ -19,91 +21,136 @@ import kotlinx.cinterop.reinterpret
 open class BakedLightmap internal constructor(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  fun bake(from_node: Node, create_visual_debug: Boolean): BakeError {
+  fun bake(fromNode: Node, createVisualDebug: Boolean): BakeError {
+    val _args = VariantArray.new()
+    _args.append(fromNode)
+    _args.append(createVisualDebug)
+    val _ret = __method_bind.bake.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun debugBake() {
+    val _ret = __method_bind.debug_bake.call(this.toVariant())
     TODO()
   }
 
   fun getBakeCellSize(): Float {
+    val _ret = __method_bind.get_bake_cell_size.call(this.toVariant())
     TODO()
   }
 
   fun getBakeMode(): BakeMode {
+    val _ret = __method_bind.get_bake_mode.call(this.toVariant())
     TODO()
   }
 
   fun getBakeQuality(): BakeQuality {
+    val _ret = __method_bind.get_bake_quality.call(this.toVariant())
     TODO()
   }
 
   fun getCaptureCellSize(): Float {
+    val _ret = __method_bind.get_capture_cell_size.call(this.toVariant())
     TODO()
   }
 
   fun getEnergy(): Float {
+    val _ret = __method_bind.get_energy.call(this.toVariant())
     TODO()
   }
 
   fun getExtents(): Vector3 {
+    val _ret = __method_bind.get_extents.call(this.toVariant())
     TODO()
   }
 
   fun getImagePath(): String {
+    val _ret = __method_bind.get_image_path.call(this.toVariant())
     TODO()
   }
 
   fun getLightData(): BakedLightmapData {
+    val _ret = __method_bind.get_light_data.call(this.toVariant())
     TODO()
   }
 
   fun getPropagation(): Float {
+    val _ret = __method_bind.get_propagation.call(this.toVariant())
     TODO()
   }
 
   fun isHdr(): Boolean {
+    val _ret = __method_bind.is_hdr.call(this.toVariant())
     TODO()
   }
 
-  fun setBakeCellSize(bake_cell_size: Float) {
+  fun setBakeCellSize(bakeCellSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(bakeCellSize)
+    val _ret = __method_bind.set_bake_cell_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBakeMode(bake_mode: Int) {
+  fun setBakeMode(bakeMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(bakeMode)
+    val _ret = __method_bind.set_bake_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBakeQuality(bake_quality: Int) {
+  fun setBakeQuality(bakeQuality: Int) {
+    val _args = VariantArray.new()
+    _args.append(bakeQuality)
+    val _ret = __method_bind.set_bake_quality.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCaptureCellSize(capture_cell_size: Float) {
+  fun setCaptureCellSize(captureCellSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(captureCellSize)
+    val _ret = __method_bind.set_capture_cell_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEnergy(energy: Float) {
+    val _args = VariantArray.new()
+    _args.append(energy)
+    val _ret = __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExtents(extents: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(extents)
+    val _ret = __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHdr(hdr: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(hdr)
+    val _ret = __method_bind.set_hdr.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setImagePath(image_path: String) {
+  fun setImagePath(imagePath: String) {
+    val _args = VariantArray.new()
+    _args.append(imagePath)
+    val _ret = __method_bind.set_image_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLightData(data: BakedLightmapData) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.set_light_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPropagation(propagation: Float) {
+    val _args = VariantArray.new()
+    _args.append(propagation)
+    val _ret = __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

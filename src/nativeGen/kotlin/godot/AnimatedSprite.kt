@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -20,78 +22,116 @@ open class AnimatedSprite internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getAnimation(): String {
+    val _ret = __method_bind.get_animation.call(this.toVariant())
     TODO()
   }
 
   fun getFrame(): Int {
+    val _ret = __method_bind.get_frame.call(this.toVariant())
     TODO()
   }
 
   fun getOffset(): Vector2 {
+    val _ret = __method_bind.get_offset.call(this.toVariant())
     TODO()
   }
 
   fun getSpeedScale(): Float {
+    val _ret = __method_bind.get_speed_scale.call(this.toVariant())
     TODO()
   }
 
   fun getSpriteFrames(): SpriteFrames {
+    val _ret = __method_bind.get_sprite_frames.call(this.toVariant())
     TODO()
   }
 
   fun isCentered(): Boolean {
+    val _ret = __method_bind.is_centered.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedH(): Boolean {
+    val _ret = __method_bind.is_flipped_h.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedV(): Boolean {
+    val _ret = __method_bind.is_flipped_v.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
   fun play(anim: String, backwards: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(backwards)
+    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setAnimation(animation: String) {
+    val _args = VariantArray.new()
+    _args.append(animation)
+    val _ret = __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCentered(centered: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(centered)
+    val _ret = __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFlipH(flip_h: Boolean) {
+  fun setFlipH(flipH: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipH)
+    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFlipV(flip_v: Boolean) {
+  fun setFlipV(flipV: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipV)
+    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFrame(frame: Int) {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSpeedScale(speed_scale: Float) {
+  fun setSpeedScale(speedScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(speedScale)
+    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSpriteFrames(sprite_frames: SpriteFrames) {
+  fun setSpriteFrames(spriteFrames: SpriteFrames) {
+    val _args = VariantArray.new()
+    _args.append(spriteFrames)
+    val _ret = __method_bind.set_sprite_frames.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

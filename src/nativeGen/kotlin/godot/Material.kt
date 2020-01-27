@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class Material internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getNextPass(): Material {
+    val _ret = __method_bind.get_next_pass.call(this.toVariant())
     TODO()
   }
 
   fun getRenderPriority(): Int {
+    val _ret = __method_bind.get_render_priority.call(this.toVariant())
     TODO()
   }
 
-  fun setNextPass(next_pass: Material) {
+  fun setNextPass(nextPass: Material) {
+    val _args = VariantArray.new()
+    _args.append(nextPass)
+    val _ret = __method_bind.set_next_pass.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRenderPriority(priority: Int) {
+    val _args = VariantArray.new()
+    _args.append(priority)
+    val _ret = __method_bind.set_render_priority.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

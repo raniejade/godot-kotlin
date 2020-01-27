@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,38 +20,55 @@ open class SpinBox internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getAlign(): LineEdit.Align {
+    val _ret = __method_bind.get_align.call(this.toVariant())
     TODO()
   }
 
   fun getLineEdit(): LineEdit {
+    val _ret = __method_bind.get_line_edit.call(this.toVariant())
     TODO()
   }
 
   fun getPrefix(): String {
+    val _ret = __method_bind.get_prefix.call(this.toVariant())
     TODO()
   }
 
   fun getSuffix(): String {
+    val _ret = __method_bind.get_suffix.call(this.toVariant())
     TODO()
   }
 
   fun isEditable(): Boolean {
+    val _ret = __method_bind.is_editable.call(this.toVariant())
     TODO()
   }
 
   fun setAlign(align: Int) {
+    val _args = VariantArray.new()
+    _args.append(align)
+    val _ret = __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEditable(editable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(editable)
+    val _ret = __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPrefix(prefix: String) {
+    val _args = VariantArray.new()
+    _args.append(prefix)
+    val _ret = __method_bind.set_prefix.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSuffix(suffix: String) {
+    val _args = VariantArray.new()
+    _args.append(suffix)
+    val _ret = __method_bind.set_suffix.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

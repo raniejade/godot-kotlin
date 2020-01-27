@@ -7,6 +7,8 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolByteArray
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -25,62 +27,95 @@ open class BakedLightmapData internal constructor(
     lightmap: Texture,
     instance: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(lightmap)
+    _args.append(instance)
+    val _ret = __method_bind.add_user.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun clearUsers() {
+    val _ret = __method_bind.clear_users.call(this.toVariant())
     TODO()
   }
 
   fun getBounds(): AABB {
+    val _ret = __method_bind.get_bounds.call(this.toVariant())
     TODO()
   }
 
   fun getCellSpaceTransform(): Transform {
+    val _ret = __method_bind.get_cell_space_transform.call(this.toVariant())
     TODO()
   }
 
   fun getCellSubdiv(): Int {
+    val _ret = __method_bind.get_cell_subdiv.call(this.toVariant())
     TODO()
   }
 
   fun getEnergy(): Float {
+    val _ret = __method_bind.get_energy.call(this.toVariant())
     TODO()
   }
 
   fun getOctree(): PoolByteArray {
+    val _ret = __method_bind.get_octree.call(this.toVariant())
     TODO()
   }
 
   fun getUserCount(): Int {
+    val _ret = __method_bind.get_user_count.call(this.toVariant())
     TODO()
   }
 
-  fun getUserLightmap(user_idx: Int): Texture {
+  fun getUserLightmap(userIdx: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(userIdx)
+    val _ret = __method_bind.get_user_lightmap.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getUserPath(user_idx: Int): NodePath {
+  fun getUserPath(userIdx: Int): NodePath {
+    val _args = VariantArray.new()
+    _args.append(userIdx)
+    val _ret = __method_bind.get_user_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBounds(bounds: AABB) {
+    val _args = VariantArray.new()
+    _args.append(bounds)
+    val _ret = __method_bind.set_bounds.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCellSpaceTransform(xform: Transform) {
+    val _args = VariantArray.new()
+    _args.append(xform)
+    val _ret = __method_bind.set_cell_space_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCellSubdiv(cell_subdiv: Int) {
+  fun setCellSubdiv(cellSubdiv: Int) {
+    val _args = VariantArray.new()
+    _args.append(cellSubdiv)
+    val _ret = __method_bind.set_cell_subdiv.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEnergy(energy: Float) {
+    val _args = VariantArray.new()
+    _args.append(energy)
+    val _ret = __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOctree(octree: PoolByteArray) {
+    val _args = VariantArray.new()
+    _args.append(octree)
+    val _ret = __method_bind.set_octree.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

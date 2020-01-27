@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,18 +19,26 @@ open class BackBufferCopy internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getCopyMode(): CopyMode {
+    val _ret = __method_bind.get_copy_mode.call(this.toVariant())
     TODO()
   }
 
   fun getRect(): Rect2 {
+    val _ret = __method_bind.get_rect.call(this.toVariant())
     TODO()
   }
 
-  fun setCopyMode(copy_mode: Int) {
+  fun setCopyMode(copyMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(copyMode)
+    val _ret = __method_bind.set_copy_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRect(rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    val _ret = __method_bind.set_rect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

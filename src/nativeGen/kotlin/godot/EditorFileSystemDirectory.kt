@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,58 +20,91 @@ open class EditorFileSystemDirectory internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun findDirIndex(name: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.find_dir_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun findFileIndex(name: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.find_file_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFile(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFileCount(): Int {
+    val _ret = __method_bind.get_file_count.call(this.toVariant())
     TODO()
   }
 
   fun getFileImportIsValid(idx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_file_import_is_valid.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFilePath(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_file_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFileScriptClassExtends(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_file_script_class_extends.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun getFileScriptClassName(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_file_script_class_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFileType(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_file_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getName(): String {
+    val _ret = __method_bind.get_name.call(this.toVariant())
     TODO()
   }
 
   fun getParent(): EditorFileSystemDirectory {
+    val _ret = __method_bind.get_parent.call(this.toVariant())
     TODO()
   }
 
   fun getPath(): String {
+    val _ret = __method_bind.get_path.call(this.toVariant())
     TODO()
   }
 
   fun getSubdir(idx: Int): EditorFileSystemDirectory {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_subdir.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSubdirCount(): Int {
+    val _ret = __method_bind.get_subdir_count.call(this.toVariant())
     TODO()
   }
 

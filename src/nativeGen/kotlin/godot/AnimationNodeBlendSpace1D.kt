@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
@@ -20,64 +22,103 @@ open class AnimationNodeBlendSpace1D internal constructor(
   fun addBlendPoint(
     node: AnimationRootNode,
     pos: Float,
-    at_index: Int
+    atIndex: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    _args.append(pos)
+    _args.append(atIndex)
+    val _ret = __method_bind.add_blend_point.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getBlendPointCount(): Int {
+    val _ret = __method_bind.get_blend_point_count.call(this.toVariant())
     TODO()
   }
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
+    val _args = VariantArray.new()
+    _args.append(point)
+    val _ret = __method_bind.get_blend_point_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBlendPointPosition(point: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(point)
+    val _ret = __method_bind.get_blend_point_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMaxSpace(): Float {
+    val _ret = __method_bind.get_max_space.call(this.toVariant())
     TODO()
   }
 
   fun getMinSpace(): Float {
+    val _ret = __method_bind.get_min_space.call(this.toVariant())
     TODO()
   }
 
   fun getSnap(): Float {
+    val _ret = __method_bind.get_snap.call(this.toVariant())
     TODO()
   }
 
   fun getValueLabel(): String {
+    val _ret = __method_bind.get_value_label.call(this.toVariant())
     TODO()
   }
 
   fun removeBlendPoint(point: Int) {
+    val _args = VariantArray.new()
+    _args.append(point)
+    val _ret = __method_bind.remove_blend_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
+    val _args = VariantArray.new()
+    _args.append(point)
+    _args.append(node)
+    val _ret = __method_bind.set_blend_point_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBlendPointPosition(point: Int, pos: Float) {
+    val _args = VariantArray.new()
+    _args.append(point)
+    _args.append(pos)
+    val _ret = __method_bind.set_blend_point_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setMaxSpace(max_space: Float) {
+  fun setMaxSpace(maxSpace: Float) {
+    val _args = VariantArray.new()
+    _args.append(maxSpace)
+    val _ret = __method_bind.set_max_space.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setMinSpace(min_space: Float) {
+  fun setMinSpace(minSpace: Float) {
+    val _args = VariantArray.new()
+    _args.append(minSpace)
+    val _ret = __method_bind.set_min_space.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSnap(snap: Float) {
+    val _args = VariantArray.new()
+    _args.append(snap)
+    val _ret = __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setValueLabel(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_value_label.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

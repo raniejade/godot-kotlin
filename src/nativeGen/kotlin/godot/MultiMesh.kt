@@ -8,6 +8,8 @@ import godot.core.Godot
 import godot.core.PoolRealArray
 import godot.core.Transform
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -21,90 +23,146 @@ open class MultiMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAabb(): AABB {
+    val _ret = __method_bind.get_aabb.call(this.toVariant())
     TODO()
   }
 
   fun getColorFormat(): ColorFormat {
+    val _ret = __method_bind.get_color_format.call(this.toVariant())
     TODO()
   }
 
   fun getCustomDataFormat(): CustomDataFormat {
+    val _ret = __method_bind.get_custom_data_format.call(this.toVariant())
     TODO()
   }
 
   fun getInstanceColor(instance: Int): Color {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    val _ret = __method_bind.get_instance_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getInstanceCount(): Int {
+    val _ret = __method_bind.get_instance_count.call(this.toVariant())
     TODO()
   }
 
   fun getInstanceCustomData(instance: Int): Color {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    val _ret = __method_bind.get_instance_custom_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getInstanceTransform(instance: Int): Transform {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    val _ret = __method_bind.get_instance_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getInstanceTransform2d(instance: Int): Transform2D {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    val _ret = __method_bind.get_instance_transform_2d.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getTransformFormat(): TransformFormat {
+    val _ret = __method_bind.get_transform_format.call(this.toVariant())
     TODO()
   }
 
   fun getVisibleInstanceCount(): Int {
+    val _ret = __method_bind.get_visible_instance_count.call(this.toVariant())
     TODO()
   }
 
   fun setAsBulkArray(array: PoolRealArray) {
+    val _args = VariantArray.new()
+    _args.append(array)
+    val _ret = __method_bind.set_as_bulk_array.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setColorFormat(format: Int) {
+    val _args = VariantArray.new()
+    _args.append(format)
+    val _ret = __method_bind.set_color_format.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCustomDataFormat(format: Int) {
+    val _args = VariantArray.new()
+    _args.append(format)
+    val _ret = __method_bind.set_custom_data_format.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInstanceColor(instance: Int, color: Color) {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    _args.append(color)
+    val _ret = __method_bind.set_instance_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setInstanceCount(count: Int) {
+    val _args = VariantArray.new()
+    _args.append(count)
+    val _ret = __method_bind.set_instance_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setInstanceCustomData(instance: Int, custom_data: Color) {
+  fun setInstanceCustomData(instance: Int, customData: Color) {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    _args.append(customData)
+    val _ret = __method_bind.set_instance_custom_data.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setInstanceTransform(instance: Int, transform: Transform) {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    _args.append(transform)
+    val _ret = __method_bind.set_instance_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setInstanceTransform2d(instance: Int, transform: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(instance)
+    _args.append(transform)
+    val _ret = __method_bind.set_instance_transform_2d.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setMesh(mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    val _ret = __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTransformFormat(format: Int) {
+    val _args = VariantArray.new()
+    _args.append(format)
+    val _ret = __method_bind.set_transform_format.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVisibleInstanceCount(count: Int) {
+    val _args = VariantArray.new()
+    _args.append(count)
+    val _ret = __method_bind.set_visible_instance_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

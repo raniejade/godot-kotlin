@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class VisualScriptResourcePath internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getResourcePath(): String {
+    val _ret = __method_bind.get_resource_path.call(this.toVariant())
     TODO()
   }
 
   fun setResourcePath(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_resource_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

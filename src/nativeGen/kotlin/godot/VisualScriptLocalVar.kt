@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,18 +19,26 @@ open class VisualScriptLocalVar internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getVarName(): String {
+    val _ret = __method_bind.get_var_name.call(this.toVariant())
     TODO()
   }
 
   fun getVarType(): Variant.Type {
+    val _ret = __method_bind.get_var_type.call(this.toVariant())
     TODO()
   }
 
   fun setVarName(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_var_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVarType(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_var_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

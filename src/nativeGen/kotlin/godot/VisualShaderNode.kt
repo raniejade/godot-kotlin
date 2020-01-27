@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,18 +18,32 @@ open class VisualShaderNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getInputPortDefaultValue(port: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(port)
+    val _ret = __method_bind.get_input_port_default_value.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun getOutputPortForPreview(): Int {
+    val _ret = __method_bind.get_output_port_for_preview.call(this.toVariant())
     TODO()
   }
 
   fun setInputPortDefaultValue(port: Int, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(value)
+    val _ret = __method_bind.set_input_port_default_value.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun setOutputPortForPreview(port: Int) {
+    val _args = VariantArray.new()
+    _args.append(port)
+    val _ret = __method_bind.set_output_port_for_preview.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 

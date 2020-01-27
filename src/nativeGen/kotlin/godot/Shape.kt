@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class Shape internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getMargin(): Float {
+    val _ret = __method_bind.get_margin.call(this.toVariant())
     TODO()
   }
 
   fun setMargin(margin: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

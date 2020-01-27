@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,34 +19,50 @@ open class InputEventScreenDrag internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getIndex(): Int {
+    val _ret = __method_bind.get_index.call(this.toVariant())
     TODO()
   }
 
   fun getPosition(): Vector2 {
+    val _ret = __method_bind.get_position.call(this.toVariant())
     TODO()
   }
 
   fun getRelative(): Vector2 {
+    val _ret = __method_bind.get_relative.call(this.toVariant())
     TODO()
   }
 
   fun getSpeed(): Vector2 {
+    val _ret = __method_bind.get_speed.call(this.toVariant())
     TODO()
   }
 
   fun setIndex(index: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.set_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPosition(position: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRelative(relative: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(relative)
+    val _ret = __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpeed(speed: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(speed)
+    val _ret = __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

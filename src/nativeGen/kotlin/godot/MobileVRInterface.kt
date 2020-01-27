@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,58 +18,86 @@ open class MobileVRInterface internal constructor(
   _handle: COpaquePointer
 ) : ARVRInterface(_handle) {
   fun getDisplayToLens(): Float {
+    val _ret = __method_bind.get_display_to_lens.call(this.toVariant())
     TODO()
   }
 
   fun getDisplayWidth(): Float {
+    val _ret = __method_bind.get_display_width.call(this.toVariant())
     TODO()
   }
 
   fun getEyeHeight(): Float {
+    val _ret = __method_bind.get_eye_height.call(this.toVariant())
     TODO()
   }
 
   fun getIod(): Float {
+    val _ret = __method_bind.get_iod.call(this.toVariant())
     TODO()
   }
 
   fun getK1(): Float {
+    val _ret = __method_bind.get_k1.call(this.toVariant())
     TODO()
   }
 
   fun getK2(): Float {
+    val _ret = __method_bind.get_k2.call(this.toVariant())
     TODO()
   }
 
   fun getOversample(): Float {
+    val _ret = __method_bind.get_oversample.call(this.toVariant())
     TODO()
   }
 
-  fun setDisplayToLens(display_to_lens: Float) {
+  fun setDisplayToLens(displayToLens: Float) {
+    val _args = VariantArray.new()
+    _args.append(displayToLens)
+    val _ret = __method_bind.set_display_to_lens.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setDisplayWidth(display_width: Float) {
+  fun setDisplayWidth(displayWidth: Float) {
+    val _args = VariantArray.new()
+    _args.append(displayWidth)
+    val _ret = __method_bind.set_display_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setEyeHeight(eye_height: Float) {
+  fun setEyeHeight(eyeHeight: Float) {
+    val _args = VariantArray.new()
+    _args.append(eyeHeight)
+    val _ret = __method_bind.set_eye_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIod(iod: Float) {
+    val _args = VariantArray.new()
+    _args.append(iod)
+    val _ret = __method_bind.set_iod.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setK1(k: Float) {
+    val _args = VariantArray.new()
+    _args.append(k)
+    val _ret = __method_bind.set_k1.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setK2(k: Float) {
+    val _args = VariantArray.new()
+    _args.append(k)
+    val _ret = __method_bind.set_k2.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOversample(oversample: Float) {
+    val _args = VariantArray.new()
+    _args.append(oversample)
+    val _ret = __method_bind.set_oversample.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

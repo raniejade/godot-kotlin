@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class PacketPeerStream internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun getInputBufferMaxSize(): Int {
+    val _ret = __method_bind.get_input_buffer_max_size.call(this.toVariant())
     TODO()
   }
 
   fun getOutputBufferMaxSize(): Int {
+    val _ret = __method_bind.get_output_buffer_max_size.call(this.toVariant())
     TODO()
   }
 
   fun getStreamPeer(): StreamPeer {
+    val _ret = __method_bind.get_stream_peer.call(this.toVariant())
     TODO()
   }
 
-  fun setInputBufferMaxSize(max_size_bytes: Int) {
+  fun setInputBufferMaxSize(maxSizeBytes: Int) {
+    val _args = VariantArray.new()
+    _args.append(maxSizeBytes)
+    val _ret = __method_bind.set_input_buffer_max_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setOutputBufferMaxSize(max_size_bytes: Int) {
+  fun setOutputBufferMaxSize(maxSizeBytes: Int) {
+    val _args = VariantArray.new()
+    _args.append(maxSizeBytes)
+    val _ret = __method_bind.set_output_buffer_max_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStreamPeer(peer: StreamPeer) {
+    val _args = VariantArray.new()
+    _args.append(peer)
+    val _ret = __method_bind.set_stream_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class PinJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getSoftness(): Float {
+    val _ret = __method_bind.get_softness.call(this.toVariant())
     TODO()
   }
 
   fun setSoftness(softness: Float) {
+    val _args = VariantArray.new()
+    _args.append(softness)
+    val _ret = __method_bind.set_softness.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

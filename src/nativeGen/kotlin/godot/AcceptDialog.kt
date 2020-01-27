@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -21,38 +23,59 @@ open class AcceptDialog internal constructor(
     right: Boolean,
     action: String
   ): Button {
+    val _args = VariantArray.new()
+    _args.append(text)
+    _args.append(right)
+    _args.append(action)
+    val _ret = __method_bind.add_button.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun addCancel(name: String): Button {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.add_cancel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getHideOnOk(): Boolean {
+    val _ret = __method_bind.get_hide_on_ok.call(this.toVariant())
     TODO()
   }
 
   fun getLabel(): Label {
+    val _ret = __method_bind.get_label.call(this.toVariant())
     TODO()
   }
 
   fun getOk(): Button {
+    val _ret = __method_bind.get_ok.call(this.toVariant())
     TODO()
   }
 
   fun getText(): String {
+    val _ret = __method_bind.get_text.call(this.toVariant())
     TODO()
   }
 
-  fun registerTextEnter(line_edit: Node) {
+  fun registerTextEnter(lineEdit: Node) {
+    val _args = VariantArray.new()
+    _args.append(lineEdit)
+    val _ret = __method_bind.register_text_enter.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHideOnOk(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_hide_on_ok.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setText(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

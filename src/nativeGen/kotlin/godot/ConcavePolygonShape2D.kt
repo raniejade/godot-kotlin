@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector2Array
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,10 +18,14 @@ open class ConcavePolygonShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getSegments(): PoolVector2Array {
+    val _ret = __method_bind.get_segments.call(this.toVariant())
     TODO()
   }
 
   fun setSegments(segments: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(segments)
+    val _ret = __method_bind.set_segments.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

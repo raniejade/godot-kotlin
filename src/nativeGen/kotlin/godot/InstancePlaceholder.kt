@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,19 +19,30 @@ import kotlinx.cinterop.reinterpret
 open class InstancePlaceholder internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun createInstance(replace: Boolean, custom_scene: PackedScene): Node {
+  fun createInstance(replace: Boolean, customScene: PackedScene): Node {
+    val _args = VariantArray.new()
+    _args.append(replace)
+    _args.append(customScene)
+    val _ret = __method_bind.create_instance.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getInstancePath(): String {
+    val _ret = __method_bind.get_instance_path.call(this.toVariant())
     TODO()
   }
 
-  fun getStoredValues(with_order: Boolean): Dictionary {
+  fun getStoredValues(withOrder: Boolean): Dictionary {
+    val _args = VariantArray.new()
+    _args.append(withOrder)
+    val _ret = __method_bind.get_stored_values.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun replaceByInstance(custom_scene: PackedScene) {
+  fun replaceByInstance(customScene: PackedScene) {
+    val _args = VariantArray.new()
+    _args.append(customScene)
+    val _ret = __method_bind.replace_by_instance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

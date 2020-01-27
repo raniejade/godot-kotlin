@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolVector2Array
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -19,26 +21,38 @@ open class AudioStreamGeneratorPlayback internal constructor(
   _handle: COpaquePointer
 ) : AudioStreamPlaybackResampled(_handle) {
   fun canPushBuffer(amount: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.can_push_buffer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearBuffer() {
+    val _ret = __method_bind.clear_buffer.call(this.toVariant())
     TODO()
   }
 
   fun getFramesAvailable(): Int {
+    val _ret = __method_bind.get_frames_available.call(this.toVariant())
     TODO()
   }
 
   fun getSkips(): Int {
+    val _ret = __method_bind.get_skips.call(this.toVariant())
     TODO()
   }
 
   fun pushBuffer(frames: PoolVector2Array): Boolean {
+    val _args = VariantArray.new()
+    _args.append(frames)
+    val _ret = __method_bind.push_buffer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun pushFrame(frame: Vector2): Boolean {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.push_frame.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

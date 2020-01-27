@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
 import godot.core.Transform2D
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
@@ -22,70 +23,105 @@ open class Physics2DShapeQueryParameters internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollisionLayer(): Int {
+    val _ret = __method_bind.get_collision_layer.call(this.toVariant())
     TODO()
   }
 
   fun getExclude(): VariantArray {
+    val _ret = __method_bind.get_exclude.call(this.toVariant())
     TODO()
   }
 
   fun getMargin(): Float {
+    val _ret = __method_bind.get_margin.call(this.toVariant())
     TODO()
   }
 
   fun getMotion(): Vector2 {
+    val _ret = __method_bind.get_motion.call(this.toVariant())
     TODO()
   }
 
   fun getShapeRid(): RID {
+    val _ret = __method_bind.get_shape_rid.call(this.toVariant())
     TODO()
   }
 
   fun getTransform(): Transform2D {
+    val _ret = __method_bind.get_transform.call(this.toVariant())
     TODO()
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
+    val _ret = __method_bind.is_collide_with_areas_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
+    val _ret = __method_bind.is_collide_with_bodies_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setCollideWithAreas(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollideWithBodies(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCollisionLayer(collision_layer: Int) {
+  fun setCollisionLayer(collisionLayer: Int) {
+    val _args = VariantArray.new()
+    _args.append(collisionLayer)
+    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExclude(exclude: VariantArray) {
+    val _args = VariantArray.new()
+    _args.append(exclude)
+    val _ret = __method_bind.set_exclude.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMargin(margin: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMotion(motion: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(motion)
+    val _ret = __method_bind.set_motion.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShape(shape: Resource) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShapeRid(shape: RID) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.set_shape_rid.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTransform(transform: Transform2D) {
+    val _args = VariantArray.new()
+    _args.append(transform)
+    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

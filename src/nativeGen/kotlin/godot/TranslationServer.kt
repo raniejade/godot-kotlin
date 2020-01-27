@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,34 +18,52 @@ open class TranslationServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addTranslation(translation: Translation) {
+    val _args = VariantArray.new()
+    _args.append(translation)
+    val _ret = __method_bind.add_translation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun getLoadedLocales(): VariantArray {
+    val _ret = __method_bind.get_loaded_locales.call(this.toVariant())
     TODO()
   }
 
   fun getLocale(): String {
+    val _ret = __method_bind.get_locale.call(this.toVariant())
     TODO()
   }
 
   fun getLocaleName(locale: String): String {
+    val _args = VariantArray.new()
+    _args.append(locale)
+    val _ret = __method_bind.get_locale_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeTranslation(translation: Translation) {
+    val _args = VariantArray.new()
+    _args.append(translation)
+    val _ret = __method_bind.remove_translation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLocale(locale: String) {
+    val _args = VariantArray.new()
+    _args.append(locale)
+    val _ret = __method_bind.set_locale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun translate(message: String): String {
+    val _args = VariantArray.new()
+    _args.append(message)
+    val _ret = __method_bind.translate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,11 +17,17 @@ import kotlinx.cinterop.reinterpret
 open class GDScriptFunctionState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun isValid(extended_check: Boolean): Boolean {
+  fun isValid(extendedCheck: Boolean): Boolean {
+    val _args = VariantArray.new()
+    _args.append(extendedCheck)
+    val _ret = __method_bind.is_valid.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun resume(arg: Variant): Variant {
+    val _args = VariantArray.new()
+    _args.append(arg)
+    val _ret = __method_bind.resume.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

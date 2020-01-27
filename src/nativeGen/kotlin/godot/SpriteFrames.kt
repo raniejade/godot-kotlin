@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,66 +22,114 @@ open class SpriteFrames internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addAnimation(anim: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.add_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addFrame(
     anim: String,
     frame: Texture,
-    at_position: Int
+    atPosition: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(frame)
+    _args.append(atPosition)
+    val _ret = __method_bind.add_frame.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun clear(anim: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.clear.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearAll() {
+    val _ret = __method_bind.clear_all.call(this.toVariant())
     TODO()
   }
 
   fun getAnimationLoop(anim: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.get_animation_loop.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAnimationNames(): PoolStringArray {
+    val _ret = __method_bind.get_animation_names.call(this.toVariant())
     TODO()
   }
 
   fun getAnimationSpeed(anim: String): Float {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.get_animation_speed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFrame(anim: String, idx: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(idx)
+    val _ret = __method_bind.get_frame.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getFrameCount(anim: String): Int {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.get_frame_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasAnimation(anim: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.has_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeAnimation(anim: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.remove_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeFrame(anim: String, idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(idx)
+    val _ret = __method_bind.remove_frame.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun renameAnimation(anim: String, newname: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(newname)
+    val _ret = __method_bind.rename_animation.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setAnimationLoop(anim: String, loop: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(loop)
+    val _ret = __method_bind.set_animation_loop.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setAnimationSpeed(anim: String, speed: Float) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(speed)
+    val _ret = __method_bind.set_animation_speed.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -88,6 +138,11 @@ open class SpriteFrames internal constructor(
     idx: Int,
     txt: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    _args.append(idx)
+    _args.append(txt)
+    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,26 +19,43 @@ open class ShaderMaterial internal constructor(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getShader(): Shader {
+    val _ret = __method_bind.get_shader.call(this.toVariant())
     TODO()
   }
 
   fun getShaderParam(param: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_shader_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun propertyCanRevert(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun propertyGetRevert(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShader(shader: Shader) {
+    val _args = VariantArray.new()
+    _args.append(shader)
+    val _ret = __method_bind.set_shader.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShaderParam(param: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_shader_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

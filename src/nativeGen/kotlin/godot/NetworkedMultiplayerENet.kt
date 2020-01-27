@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -17,82 +19,129 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerENet internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
-  fun closeConnection(wait_usec: Int) {
+  fun closeConnection(waitUsec: Int) {
+    val _args = VariantArray.new()
+    _args.append(waitUsec)
+    val _ret = __method_bind.close_connection.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun createClient(
     address: String,
     port: Int,
-    in_bandwidth: Int,
-    out_bandwidth: Int,
-    client_port: Int
+    inBandwidth: Int,
+    outBandwidth: Int,
+    clientPort: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(address)
+    _args.append(port)
+    _args.append(inBandwidth)
+    _args.append(outBandwidth)
+    _args.append(clientPort)
+    val _ret = __method_bind.create_client.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun createServer(
     port: Int,
-    max_clients: Int,
-    in_bandwidth: Int,
-    out_bandwidth: Int
+    maxClients: Int,
+    inBandwidth: Int,
+    outBandwidth: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(maxClients)
+    _args.append(inBandwidth)
+    _args.append(outBandwidth)
+    val _ret = __method_bind.create_server.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun disconnectPeer(id: Int, now: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(now)
+    val _ret = __method_bind.disconnect_peer.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getChannelCount(): Int {
+    val _ret = __method_bind.get_channel_count.call(this.toVariant())
     TODO()
   }
 
   fun getCompressionMode(): CompressionMode {
+    val _ret = __method_bind.get_compression_mode.call(this.toVariant())
     TODO()
   }
 
   fun getLastPacketChannel(): Int {
+    val _ret = __method_bind.get_last_packet_channel.call(this.toVariant())
     TODO()
   }
 
   fun getPacketChannel(): Int {
+    val _ret = __method_bind.get_packet_channel.call(this.toVariant())
     TODO()
   }
 
   fun getPeerAddress(id: Int): String {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPeerPort(id: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTransferChannel(): Int {
+    val _ret = __method_bind.get_transfer_channel.call(this.toVariant())
     TODO()
   }
 
   fun isAlwaysOrdered(): Boolean {
+    val _ret = __method_bind.is_always_ordered.call(this.toVariant())
     TODO()
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(ordered)
+    val _ret = __method_bind.set_always_ordered.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBindIp(ip: String) {
+    val _args = VariantArray.new()
+    _args.append(ip)
+    val _ret = __method_bind.set_bind_ip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setChannelCount(channels: Int) {
+    val _args = VariantArray.new()
+    _args.append(channels)
+    val _ret = __method_bind.set_channel_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCompressionMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_compression_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTransferChannel(channel: Int) {
+    val _args = VariantArray.new()
+    _args.append(channel)
+    val _ret = __method_bind.set_transfer_channel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

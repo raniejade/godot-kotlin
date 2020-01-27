@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -23,50 +25,88 @@ open class AnimationNodeBlendTree internal constructor(
     node: AnimationNode,
     position: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(node)
+    _args.append(position)
+    val _ret = __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun connectNode(
-    input_node: String,
-    input_index: Int,
-    output_node: String
+    inputNode: String,
+    inputIndex: Int,
+    outputNode: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(inputNode)
+    _args.append(inputIndex)
+    _args.append(outputNode)
+    val _ret = __method_bind.connect_node.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun disconnectNode(input_node: String, input_index: Int) {
+  fun disconnectNode(inputNode: String, inputIndex: Int) {
+    val _args = VariantArray.new()
+    _args.append(inputNode)
+    _args.append(inputIndex)
+    val _ret = __method_bind.disconnect_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getGraphOffset(): Vector2 {
+    val _ret = __method_bind.get_graph_offset.call(this.toVariant())
     TODO()
   }
 
   fun getNode(name: String): AnimationNode {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNodePosition(name: String): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_node_position.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasNode(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeNode(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun renameNode(name: String, new_name: String) {
+  fun renameNode(name: String, newName: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(newName)
+    val _ret = __method_bind.rename_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setGraphOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_graph_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNodePosition(name: String, position: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(position)
+    val _ret = __method_bind.set_node_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

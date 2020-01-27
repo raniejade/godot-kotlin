@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -22,38 +24,62 @@ open class WebRTCPeerConnection internal constructor(
     index: Int,
     name: String
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(media)
+    _args.append(index)
+    _args.append(name)
+    val _ret = __method_bind.add_ice_candidate.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun close() {
+    val _ret = __method_bind.close.call(this.toVariant())
     TODO()
   }
 
   fun createDataChannel(label: String, options: Dictionary): WebRTCDataChannel {
+    val _args = VariantArray.new()
+    _args.append(label)
+    _args.append(options)
+    val _ret = __method_bind.create_data_channel.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun createOffer(): Error {
+    val _ret = __method_bind.create_offer.call(this.toVariant())
     TODO()
   }
 
   fun getConnectionState(): ConnectionState {
+    val _ret = __method_bind.get_connection_state.call(this.toVariant())
     TODO()
   }
 
   fun initialize(configuration: Dictionary): Error {
+    val _args = VariantArray.new()
+    _args.append(configuration)
+    val _ret = __method_bind.initialize.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun poll(): Error {
+    val _ret = __method_bind.poll.call(this.toVariant())
     TODO()
   }
 
   fun setLocalDescription(type: String, sdp: String): Error {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(sdp)
+    val _ret = __method_bind.set_local_description.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setRemoteDescription(type: String, sdp: String): Error {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(sdp)
+    val _ret = __method_bind.set_remote_description.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

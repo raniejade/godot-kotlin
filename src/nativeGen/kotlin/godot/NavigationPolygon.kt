@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,58 +20,90 @@ open class NavigationPolygon internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addOutline(outline: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(outline)
+    val _ret = __method_bind.add_outline.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addOutlineAtIndex(outline: PoolVector2Array, index: Int) {
+    val _args = VariantArray.new()
+    _args.append(outline)
+    _args.append(index)
+    val _ret = __method_bind.add_outline_at_index.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addPolygon(polygon: PoolIntArray) {
+    val _args = VariantArray.new()
+    _args.append(polygon)
+    val _ret = __method_bind.add_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearOutlines() {
+    val _ret = __method_bind.clear_outlines.call(this.toVariant())
     TODO()
   }
 
   fun clearPolygons() {
+    val _ret = __method_bind.clear_polygons.call(this.toVariant())
     TODO()
   }
 
   fun getOutline(idx: Int): PoolVector2Array {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_outline.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getOutlineCount(): Int {
+    val _ret = __method_bind.get_outline_count.call(this.toVariant())
     TODO()
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPolygonCount(): Int {
+    val _ret = __method_bind.get_polygon_count.call(this.toVariant())
     TODO()
   }
 
   fun getVertices(): PoolVector2Array {
+    val _ret = __method_bind.get_vertices.call(this.toVariant())
     TODO()
   }
 
   fun makePolygonsFromOutlines() {
+    val _ret = __method_bind.make_polygons_from_outlines.call(this.toVariant())
     TODO()
   }
 
   fun removeOutline(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.remove_outline.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOutline(idx: Int, outline: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(outline)
+    val _ret = __method_bind.set_outline.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setVertices(vertices: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(vertices)
+    val _ret = __method_bind.set_vertices.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,50 +20,74 @@ open class Sprite3D internal constructor(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
   fun getFrame(): Int {
+    val _ret = __method_bind.get_frame.call(this.toVariant())
     TODO()
   }
 
   fun getHframes(): Int {
+    val _ret = __method_bind.get_hframes.call(this.toVariant())
     TODO()
   }
 
   fun getRegionRect(): Rect2 {
+    val _ret = __method_bind.get_region_rect.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun getVframes(): Int {
+    val _ret = __method_bind.get_vframes.call(this.toVariant())
     TODO()
   }
 
   fun isRegion(): Boolean {
+    val _ret = __method_bind.is_region.call(this.toVariant())
     TODO()
   }
 
   fun setFrame(frame: Int) {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHframes(hframes: Int) {
+    val _args = VariantArray.new()
+    _args.append(hframes)
+    val _ret = __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegion(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegionRect(rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    val _ret = __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVframes(vframes: Int) {
+    val _args = VariantArray.new()
+    _args.append(vframes)
+    val _ret = __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

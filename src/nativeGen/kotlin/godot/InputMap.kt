@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
@@ -19,50 +20,88 @@ open class InputMap internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun actionAddEvent(action: String, event: InputEvent) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    _args.append(event)
+    val _ret = __method_bind.action_add_event.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun actionEraseEvent(action: String, event: InputEvent) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    _args.append(event)
+    val _ret = __method_bind.action_erase_event.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun actionEraseEvents(action: String) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.action_erase_events.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun actionHasEvent(action: String, event: InputEvent): Boolean {
+    val _args = VariantArray.new()
+    _args.append(action)
+    _args.append(event)
+    val _ret = __method_bind.action_has_event.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun actionSetDeadzone(action: String, deadzone: Float) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    _args.append(deadzone)
+    val _ret = __method_bind.action_set_deadzone.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addAction(action: String, deadzone: Float) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    _args.append(deadzone)
+    val _ret = __method_bind.add_action.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun eraseAction(action: String) {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.erase_action.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun eventIsAction(event: InputEvent, action: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(event)
+    _args.append(action)
+    val _ret = __method_bind.event_is_action.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getActionList(action: String): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.get_action_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getActions(): VariantArray {
+    val _ret = __method_bind.get_actions.call(this.toVariant())
     TODO()
   }
 
   fun hasAction(action: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.has_action.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun loadFromGlobals() {
+    val _ret = __method_bind.load_from_globals.call(this.toVariant())
     TODO()
   }
 

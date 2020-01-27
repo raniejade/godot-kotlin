@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -20,62 +21,108 @@ open class ProjectSettings internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addPropertyInfo(hint: Dictionary) {
+    val _args = VariantArray.new()
+    _args.append(hint)
+    val _ret = __method_bind.add_property_info.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clear(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.clear.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getOrder(name: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_order.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSetting(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_setting.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun globalizePath(path: String): String {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.globalize_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasSetting(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_setting.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun loadResourcePack(pack: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(pack)
+    val _ret = __method_bind.load_resource_pack.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun localizePath(path: String): String {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.localize_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun propertyCanRevert(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun propertyGetRevert(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun save(): Error {
+    val _ret = __method_bind.save.call(this.toVariant())
     TODO()
   }
 
   fun saveCustom(file: String): Error {
+    val _args = VariantArray.new()
+    _args.append(file)
+    val _ret = __method_bind.save_custom.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInitialValue(name: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_initial_value.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setOrder(name: String, position: Int) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(position)
+    val _ret = __method_bind.set_order.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setSetting(name: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_setting.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

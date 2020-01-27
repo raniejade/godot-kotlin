@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class CapsuleShape internal constructor(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getHeight(): Float {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getRadius(): Float {
+    val _ret = __method_bind.get_radius.call(this.toVariant())
     TODO()
   }
 
   fun setHeight(height: Float) {
+    val _args = VariantArray.new()
+    _args.append(height)
+    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

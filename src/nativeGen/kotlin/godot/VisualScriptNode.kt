@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,19 +17,28 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun getDefaultInputValue(port_idx: Int): Variant {
+  fun getDefaultInputValue(portIdx: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(portIdx)
+    val _ret = __method_bind.get_default_input_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getVisualScript(): VisualScript {
+    val _ret = __method_bind.get_visual_script.call(this.toVariant())
     TODO()
   }
 
   fun portsChangedNotify() {
+    val _ret = __method_bind.ports_changed_notify.call(this.toVariant())
     TODO()
   }
 
-  fun setDefaultInputValue(port_idx: Int, value: Variant) {
+  fun setDefaultInputValue(portIdx: Int, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(portIdx)
+    _args.append(value)
+    val _ret = __method_bind.set_default_input_value.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

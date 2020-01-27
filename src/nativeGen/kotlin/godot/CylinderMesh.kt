@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,42 +19,62 @@ open class CylinderMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getBottomRadius(): Float {
+    val _ret = __method_bind.get_bottom_radius.call(this.toVariant())
     TODO()
   }
 
   fun getHeight(): Float {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getRadialSegments(): Int {
+    val _ret = __method_bind.get_radial_segments.call(this.toVariant())
     TODO()
   }
 
   fun getRings(): Int {
+    val _ret = __method_bind.get_rings.call(this.toVariant())
     TODO()
   }
 
   fun getTopRadius(): Float {
+    val _ret = __method_bind.get_top_radius.call(this.toVariant())
     TODO()
   }
 
   fun setBottomRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_bottom_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHeight(height: Float) {
+    val _args = VariantArray.new()
+    _args.append(height)
+    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRadialSegments(segments: Int) {
+    val _args = VariantArray.new()
+    _args.append(segments)
+    val _ret = __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRings(rings: Int) {
+    val _args = VariantArray.new()
+    _args.append(rings)
+    val _ret = __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTopRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_top_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

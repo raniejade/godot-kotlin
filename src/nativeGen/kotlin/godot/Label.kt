@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,98 +21,142 @@ open class Label internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAlign(): Align {
+    val _ret = __method_bind.get_align.call(this.toVariant())
     TODO()
   }
 
   fun getLineCount(): Int {
+    val _ret = __method_bind.get_line_count.call(this.toVariant())
     TODO()
   }
 
   fun getLineHeight(): Int {
+    val _ret = __method_bind.get_line_height.call(this.toVariant())
     TODO()
   }
 
   fun getLinesSkipped(): Int {
+    val _ret = __method_bind.get_lines_skipped.call(this.toVariant())
     TODO()
   }
 
   fun getMaxLinesVisible(): Int {
+    val _ret = __method_bind.get_max_lines_visible.call(this.toVariant())
     TODO()
   }
 
   fun getPercentVisible(): Float {
+    val _ret = __method_bind.get_percent_visible.call(this.toVariant())
     TODO()
   }
 
   fun getText(): String {
+    val _ret = __method_bind.get_text.call(this.toVariant())
     TODO()
   }
 
   fun getTotalCharacterCount(): Int {
+    val _ret = __method_bind.get_total_character_count.call(this.toVariant())
     TODO()
   }
 
   fun getValign(): VAlign {
+    val _ret = __method_bind.get_valign.call(this.toVariant())
     TODO()
   }
 
   fun getVisibleCharacters(): Int {
+    val _ret = __method_bind.get_visible_characters.call(this.toVariant())
     TODO()
   }
 
   fun getVisibleLineCount(): Int {
+    val _ret = __method_bind.get_visible_line_count.call(this.toVariant())
     TODO()
   }
 
   fun hasAutowrap(): Boolean {
+    val _ret = __method_bind.has_autowrap.call(this.toVariant())
     TODO()
   }
 
   fun isClippingText(): Boolean {
+    val _ret = __method_bind.is_clipping_text.call(this.toVariant())
     TODO()
   }
 
   fun isUppercase(): Boolean {
+    val _ret = __method_bind.is_uppercase.call(this.toVariant())
     TODO()
   }
 
   fun setAlign(align: Int) {
+    val _args = VariantArray.new()
+    _args.append(align)
+    val _ret = __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutowrap(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autowrap.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setClipText(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_clip_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLinesSkipped(lines_skipped: Int) {
+  fun setLinesSkipped(linesSkipped: Int) {
+    val _args = VariantArray.new()
+    _args.append(linesSkipped)
+    val _ret = __method_bind.set_lines_skipped.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setMaxLinesVisible(lines_visible: Int) {
+  fun setMaxLinesVisible(linesVisible: Int) {
+    val _args = VariantArray.new()
+    _args.append(linesVisible)
+    val _ret = __method_bind.set_max_lines_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPercentVisible(percent_visible: Float) {
+  fun setPercentVisible(percentVisible: Float) {
+    val _args = VariantArray.new()
+    _args.append(percentVisible)
+    val _ret = __method_bind.set_percent_visible.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setText(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUppercase(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_uppercase.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setValign(valign: Int) {
+    val _args = VariantArray.new()
+    _args.append(valign)
+    val _ret = __method_bind.set_valign.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVisibleCharacters(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_visible_characters.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class OmniLight internal constructor(
   _handle: COpaquePointer
 ) : Light(_handle) {
   fun getShadowDetail(): ShadowDetail {
+    val _ret = __method_bind.get_shadow_detail.call(this.toVariant())
     TODO()
   }
 
   fun getShadowMode(): ShadowMode {
+    val _ret = __method_bind.get_shadow_mode.call(this.toVariant())
     TODO()
   }
 
   fun setShadowDetail(detail: Int) {
+    val _args = VariantArray.new()
+    _args.append(detail)
+    val _ret = __method_bind.set_shadow_detail.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShadowMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_shadow_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

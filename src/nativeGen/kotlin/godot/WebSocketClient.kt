@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -21,20 +23,33 @@ open class WebSocketClient internal constructor(
   fun connectToUrl(
     url: String,
     protocols: PoolStringArray,
-    gd_mp_api: Boolean
+    gdMpApi: Boolean
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(url)
+    _args.append(protocols)
+    _args.append(gdMpApi)
+    val _ret = __method_bind.connect_to_url.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun disconnectFromHost(code: Int, reason: String) {
+    val _args = VariantArray.new()
+    _args.append(code)
+    _args.append(reason)
+    val _ret = __method_bind.disconnect_from_host.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun isVerifySslEnabled(): Boolean {
+    val _ret = __method_bind.is_verify_ssl_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_verify_ssl_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

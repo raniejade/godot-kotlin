@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class VisualShaderNodeTexture internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getSource(): Source {
+    val _ret = __method_bind.get_source.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun getTextureType(): TextureType {
+    val _ret = __method_bind.get_texture_type.call(this.toVariant())
     TODO()
   }
 
   fun setSource(value: Int) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.set_source.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(value: Texture) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTextureType(value: Int) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

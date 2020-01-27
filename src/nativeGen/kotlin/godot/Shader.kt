@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,26 +20,41 @@ open class Shader internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCode(): String {
+    val _ret = __method_bind.get_code.call(this.toVariant())
     TODO()
   }
 
   fun getDefaultTextureParam(param: String): Texture {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_default_texture_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getMode(): Mode {
+    val _ret = __method_bind.get_mode.call(this.toVariant())
     TODO()
   }
 
   fun hasParam(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCode(code: String) {
+    val _args = VariantArray.new()
+    _args.append(code)
+    val _ret = __method_bind.set_code.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDefaultTextureParam(param: String, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(texture)
+    val _ret = __method_bind.set_default_texture_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

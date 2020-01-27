@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class ViewportContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getStretchShrink(): Int {
+    val _ret = __method_bind.get_stretch_shrink.call(this.toVariant())
     TODO()
   }
 
   fun isStretchEnabled(): Boolean {
+    val _ret = __method_bind.is_stretch_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setStretch(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_stretch.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStretchShrink(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_stretch_shrink.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -22,48 +24,77 @@ open class TextureLayered internal constructor(
     format: Int,
     flags: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(width)
+    _args.append(height)
+    _args.append(depth)
+    _args.append(format)
+    _args.append(flags)
+    val _ret = __method_bind.create.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun getDepth(): Int {
+    val _ret = __method_bind.get_depth.call(this.toVariant())
     TODO()
   }
 
   fun getFlags(): Int {
+    val _ret = __method_bind.get_flags.call(this.toVariant())
     TODO()
   }
 
   fun getFormat(): Image.Format {
+    val _ret = __method_bind.get_format.call(this.toVariant())
     TODO()
   }
 
   fun getHeight(): Int {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getLayerData(layer: Int): Image {
+    val _args = VariantArray.new()
+    _args.append(layer)
+    val _ret = __method_bind.get_layer_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getWidth(): Int {
+    val _ret = __method_bind.get_width.call(this.toVariant())
     TODO()
   }
 
   fun setDataPartial(
     image: Image,
-    x_offset: Int,
-    y_offset: Int,
+    xOffset: Int,
+    yOffset: Int,
     layer: Int,
     mipmap: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(image)
+    _args.append(xOffset)
+    _args.append(yOffset)
+    _args.append(layer)
+    _args.append(mipmap)
+    val _ret = __method_bind.set_data_partial.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun setFlags(flags: Int) {
+    val _args = VariantArray.new()
+    _args.append(flags)
+    val _ret = __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLayerData(image: Image, layer: Int) {
+    val _args = VariantArray.new()
+    _args.append(image)
+    _args.append(layer)
+    val _ret = __method_bind.set_layer_data.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

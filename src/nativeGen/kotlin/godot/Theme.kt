@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -20,106 +22,191 @@ open class Theme internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun clearColor(name: String, type: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.clear_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clearConstant(name: String, type: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.clear_constant.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clearFont(name: String, type: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.clear_font.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clearIcon(name: String, type: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.clear_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clearStylebox(name: String, type: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.clear_stylebox.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun copyDefaultTheme() {
+    val _ret = __method_bind.copy_default_theme.call(this.toVariant())
     TODO()
   }
 
   fun copyTheme(other: Theme) {
+    val _args = VariantArray.new()
+    _args.append(other)
+    val _ret = __method_bind.copy_theme.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getColor(name: String, type: String): Color {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getColorList(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_color_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getConstant(name: String, type: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_constant.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getConstantList(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_constant_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDefaultFont(): Font {
+    val _ret = __method_bind.get_default_font.call(this.toVariant())
     TODO()
   }
 
   fun getFont(name: String, type: String): Font {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_font.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getFontList(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_font_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getIcon(name: String, type: String): Texture {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getIconList(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_icon_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getStylebox(name: String, type: String): StyleBox {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.get_stylebox.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getStyleboxList(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_stylebox_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getStyleboxTypes(): PoolStringArray {
+    val _ret = __method_bind.get_stylebox_types.call(this.toVariant())
     TODO()
   }
 
   fun getTypeList(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_type_list.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasColor(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasConstant(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_constant.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasFont(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_font.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasIcon(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasStylebox(name: String, type: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    val _ret = __method_bind.has_stylebox.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -128,6 +215,11 @@ open class Theme internal constructor(
     type: String,
     color: Color
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    _args.append(color)
+    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -136,10 +228,18 @@ open class Theme internal constructor(
     type: String,
     constant: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    _args.append(constant)
+    val _ret = __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setDefaultFont(font: Font) {
+    val _args = VariantArray.new()
+    _args.append(font)
+    val _ret = __method_bind.set_default_font.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -148,6 +248,11 @@ open class Theme internal constructor(
     type: String,
     font: Font
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    _args.append(font)
+    val _ret = __method_bind.set_font.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -156,6 +261,11 @@ open class Theme internal constructor(
     type: String,
     texture: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    _args.append(texture)
+    val _ret = __method_bind.set_icon.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -164,6 +274,11 @@ open class Theme internal constructor(
     type: String,
     texture: StyleBox
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    _args.append(texture)
+    val _ret = __method_bind.set_stylebox.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

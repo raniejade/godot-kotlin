@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
@@ -21,38 +22,66 @@ open class BitMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun create(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.create.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun createFromImageAlpha(image: Image, threshold: Float) {
+    val _args = VariantArray.new()
+    _args.append(image)
+    _args.append(threshold)
+    val _ret = __method_bind.create_from_image_alpha.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getBit(position: Vector2): Boolean {
+    val _args = VariantArray.new()
+    _args.append(position)
+    val _ret = __method_bind.get_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSize(): Vector2 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getTrueBitCount(): Int {
+    val _ret = __method_bind.get_true_bit_count.call(this.toVariant())
     TODO()
   }
 
   fun growMask(pixels: Int, rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(pixels)
+    _args.append(rect)
+    val _ret = __method_bind.grow_mask.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun opaqueToPolygons(rect: Rect2, epsilon: Float): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    _args.append(epsilon)
+    val _ret = __method_bind.opaque_to_polygons.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBit(position: Vector2, bit: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(position)
+    _args.append(bit)
+    val _ret = __method_bind.set_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBitRect(rect: Rect2, bit: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    _args.append(bit)
+    val _ret = __method_bind.set_bit_rect.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

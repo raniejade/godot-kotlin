@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
@@ -20,82 +22,129 @@ open class KinematicBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun getAxisLock(axis: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    val _ret = __method_bind.get_axis_lock.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFloorVelocity(): Vector3 {
+    val _ret = __method_bind.get_floor_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getSafeMargin(): Float {
+    val _ret = __method_bind.get_safe_margin.call(this.toVariant())
     TODO()
   }
 
-  fun getSlideCollision(slide_idx: Int): KinematicCollision {
+  fun getSlideCollision(slideIdx: Int): KinematicCollision {
+    val _args = VariantArray.new()
+    _args.append(slideIdx)
+    val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSlideCount(): Int {
+    val _ret = __method_bind.get_slide_count.call(this.toVariant())
     TODO()
   }
 
   fun isOnCeiling(): Boolean {
+    val _ret = __method_bind.is_on_ceiling.call(this.toVariant())
     TODO()
   }
 
   fun isOnFloor(): Boolean {
+    val _ret = __method_bind.is_on_floor.call(this.toVariant())
     TODO()
   }
 
   fun isOnWall(): Boolean {
+    val _ret = __method_bind.is_on_wall.call(this.toVariant())
     TODO()
   }
 
   fun moveAndCollide(
-    rel_vec: Vector3,
-    infinite_inertia: Boolean,
-    exclude_raycast_shapes: Boolean,
-    test_only: Boolean
+    relVec: Vector3,
+    infiniteInertia: Boolean,
+    excludeRaycastShapes: Boolean,
+    testOnly: Boolean
   ): KinematicCollision {
+    val _args = VariantArray.new()
+    _args.append(relVec)
+    _args.append(infiniteInertia)
+    _args.append(excludeRaycastShapes)
+    _args.append(testOnly)
+    val _ret = __method_bind.move_and_collide.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun moveAndSlide(
-    linear_velocity: Vector3,
-    floor_normal: Vector3,
-    stop_on_slope: Boolean,
-    max_slides: Int,
-    floor_max_angle: Float,
-    infinite_inertia: Boolean
+    linearVelocity: Vector3,
+    floorNormal: Vector3,
+    stopOnSlope: Boolean,
+    maxSlides: Int,
+    floorMaxAngle: Float,
+    infiniteInertia: Boolean
   ): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(linearVelocity)
+    _args.append(floorNormal)
+    _args.append(stopOnSlope)
+    _args.append(maxSlides)
+    _args.append(floorMaxAngle)
+    _args.append(infiniteInertia)
+    val _ret = __method_bind.move_and_slide.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun moveAndSlideWithSnap(
-    linear_velocity: Vector3,
+    linearVelocity: Vector3,
     snap: Vector3,
-    floor_normal: Vector3,
-    stop_on_slope: Boolean,
-    max_slides: Int,
-    floor_max_angle: Float,
-    infinite_inertia: Boolean
+    floorNormal: Vector3,
+    stopOnSlope: Boolean,
+    maxSlides: Int,
+    floorMaxAngle: Float,
+    infiniteInertia: Boolean
   ): Vector3 {
+    val _args = VariantArray.new()
+    _args.append(linearVelocity)
+    _args.append(snap)
+    _args.append(floorNormal)
+    _args.append(stopOnSlope)
+    _args.append(maxSlides)
+    _args.append(floorMaxAngle)
+    _args.append(infiniteInertia)
+    val _ret = __method_bind.move_and_slide_with_snap.call(this.toVariant(), _args.toVariant(), 7)
     TODO()
   }
 
   fun setAxisLock(axis: Int, lock: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(axis)
+    _args.append(lock)
+    val _ret = __method_bind.set_axis_lock.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setSafeMargin(pixels: Float) {
+    val _args = VariantArray.new()
+    _args.append(pixels)
+    val _ret = __method_bind.set_safe_margin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun testMove(
     from: Transform,
-    rel_vec: Vector3,
-    infinite_inertia: Boolean
+    relVec: Vector3,
+    infiniteInertia: Boolean
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(relVec)
+    _args.append(infiniteInertia)
+    val _ret = __method_bind.test_move.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

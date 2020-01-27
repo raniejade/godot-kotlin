@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,18 +19,35 @@ open class EditorPlugin internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addAutoloadSingleton(name: String, path: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(path)
+    val _ret = __method_bind.add_autoload_singleton.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addControlToBottomPanel(control: Control, title: String): ToolButton {
+    val _args = VariantArray.new()
+    _args.append(control)
+    _args.append(title)
+    val _ret = __method_bind.add_control_to_bottom_panel.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun addControlToContainer(container: Int, control: Control) {
+    val _args = VariantArray.new()
+    _args.append(container)
+    _args.append(control)
+    val _ret = __method_bind.add_control_to_container.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addControlToDock(slot: Int, control: Control) {
+    val _args = VariantArray.new()
+    _args.append(slot)
+    _args.append(control)
+    val _ret = __method_bind.add_control_to_dock.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -39,26 +57,47 @@ open class EditorPlugin internal constructor(
     script: Script,
     icon: Texture
   ) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(base)
+    _args.append(script)
+    _args.append(icon)
+    val _ret = __method_bind.add_custom_type.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun addExportPlugin(plugin: EditorExportPlugin) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.add_export_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addImportPlugin(importer: EditorImportPlugin) {
+    val _args = VariantArray.new()
+    _args.append(importer)
+    val _ret = __method_bind.add_import_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addInspectorPlugin(plugin: EditorInspectorPlugin) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.add_inspector_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun addSceneImportPlugin(scene_importer: EditorSceneImporter) {
+  fun addSceneImportPlugin(sceneImporter: EditorSceneImporter) {
+    val _args = VariantArray.new()
+    _args.append(sceneImporter)
+    val _ret = __method_bind.add_scene_import_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.add_spatial_gizmo_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -68,90 +107,149 @@ open class EditorPlugin internal constructor(
     callback: String,
     ud: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(handler)
+    _args.append(callback)
+    _args.append(ud)
+    val _ret = __method_bind.add_tool_menu_item.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun addToolSubmenuItem(name: String, submenu: Object) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(submenu)
+    val _ret = __method_bind.add_tool_submenu_item.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getEditorInterface(): EditorInterface {
+    val _ret = __method_bind.get_editor_interface.call(this.toVariant())
     TODO()
   }
 
   fun getScriptCreateDialog(): ScriptCreateDialog {
+    val _ret = __method_bind.get_script_create_dialog.call(this.toVariant())
     TODO()
   }
 
   fun getUndoRedo(): UndoRedo {
+    val _ret = __method_bind.get_undo_redo.call(this.toVariant())
     TODO()
   }
 
   fun hideBottomPanel() {
+    val _ret = __method_bind.hide_bottom_panel.call(this.toVariant())
     TODO()
   }
 
   fun makeBottomPanelItemVisible(item: Control) {
+    val _args = VariantArray.new()
+    _args.append(item)
+    val _ret = __method_bind.make_bottom_panel_item_visible.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun queueSaveLayout() {
+    val _ret = __method_bind.queue_save_layout.call(this.toVariant())
     TODO()
   }
 
   fun removeAutoloadSingleton(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_autoload_singleton.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeControlFromBottomPanel(control: Control) {
+    val _args = VariantArray.new()
+    _args.append(control)
+    val _ret = __method_bind.remove_control_from_bottom_panel.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun removeControlFromContainer(container: Int, control: Control) {
+    val _args = VariantArray.new()
+    _args.append(container)
+    _args.append(control)
+    val _ret = __method_bind.remove_control_from_container.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun removeControlFromDocks(control: Control) {
+    val _args = VariantArray.new()
+    _args.append(control)
+    val _ret = __method_bind.remove_control_from_docks.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeCustomType(type: String) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.remove_custom_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeExportPlugin(plugin: EditorExportPlugin) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.remove_export_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeImportPlugin(importer: EditorImportPlugin) {
+    val _args = VariantArray.new()
+    _args.append(importer)
+    val _ret = __method_bind.remove_import_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeInspectorPlugin(plugin: EditorInspectorPlugin) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.remove_inspector_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun removeSceneImportPlugin(scene_importer: EditorSceneImporter) {
+  fun removeSceneImportPlugin(sceneImporter: EditorSceneImporter) {
+    val _args = VariantArray.new()
+    _args.append(sceneImporter)
+    val _ret = __method_bind.remove_scene_import_plugin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeSpatialGizmoPlugin(plugin: EditorSpatialGizmoPlugin) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.remove_spatial_gizmo_plugin.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun removeToolMenuItem(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_tool_menu_item.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setForceDrawOverForwardingEnabled() {
+    val _ret = __method_bind.set_force_draw_over_forwarding_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setInputEventForwardingAlwaysEnabled() {
+    val _ret = __method_bind.set_input_event_forwarding_always_enabled.call(this.toVariant())
     TODO()
   }
 
   fun updateOverlays(): Int {
+    val _ret = __method_bind.update_overlays.call(this.toVariant())
     TODO()
   }
 

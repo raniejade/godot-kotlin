@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,27 +19,47 @@ import kotlinx.cinterop.reinterpret
 open class _Marshalls internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun base64ToRaw(base64_str: String): PoolByteArray {
+  fun base64ToRaw(base64Str: String): PoolByteArray {
+    val _args = VariantArray.new()
+    _args.append(base64Str)
+    val _ret = __method_bind.base64_to_raw.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun base64ToUtf8(base64_str: String): String {
+  fun base64ToUtf8(base64Str: String): String {
+    val _args = VariantArray.new()
+    _args.append(base64Str)
+    val _ret = __method_bind.base64_to_utf8.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun base64ToVariant(base64_str: String, allow_objects: Boolean): Variant {
+  fun base64ToVariant(base64Str: String, allowObjects: Boolean): Variant {
+    val _args = VariantArray.new()
+    _args.append(base64Str)
+    _args.append(allowObjects)
+    val _ret = __method_bind.base64_to_variant.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun rawToBase64(array: PoolByteArray): String {
+    val _args = VariantArray.new()
+    _args.append(array)
+    val _ret = __method_bind.raw_to_base64.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun utf8ToBase64(utf8_str: String): String {
+  fun utf8ToBase64(utf8Str: String): String {
+    val _args = VariantArray.new()
+    _args.append(utf8Str)
+    val _ret = __method_bind.utf8_to_base64.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun variantToBase64(variant: Variant, full_objects: Boolean): String {
+  fun variantToBase64(variant: Variant, fullObjects: Boolean): String {
+    val _args = VariantArray.new()
+    _args.append(variant)
+    _args.append(fullObjects)
+    val _ret = __method_bind.variant_to_base64.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

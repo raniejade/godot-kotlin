@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,26 +19,36 @@ open class ColorPickerButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
   fun getPickColor(): Color {
+    val _ret = __method_bind.get_pick_color.call(this.toVariant())
     TODO()
   }
 
   fun getPicker(): ColorPicker {
+    val _ret = __method_bind.get_picker.call(this.toVariant())
     TODO()
   }
 
   fun getPopup(): PopupPanel {
+    val _ret = __method_bind.get_popup.call(this.toVariant())
     TODO()
   }
 
   fun isEditingAlpha(): Boolean {
+    val _ret = __method_bind.is_editing_alpha.call(this.toVariant())
     TODO()
   }
 
   fun setEditAlpha(show: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(show)
+    val _ret = __method_bind.set_edit_alpha.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPickColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_pick_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,26 +19,38 @@ open class CameraTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getCameraActive(): Boolean {
+    val _ret = __method_bind.get_camera_active.call(this.toVariant())
     TODO()
   }
 
   fun getCameraFeedId(): Int {
+    val _ret = __method_bind.get_camera_feed_id.call(this.toVariant())
     TODO()
   }
 
   fun getWhichFeed(): CameraServer.FeedImage {
+    val _ret = __method_bind.get_which_feed.call(this.toVariant())
     TODO()
   }
 
   fun setCameraActive(active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(active)
+    val _ret = __method_bind.set_camera_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCameraFeedId(feed_id: Int) {
+  fun setCameraFeedId(feedId: Int) {
+    val _args = VariantArray.new()
+    _args.append(feedId)
+    val _ret = __method_bind.set_camera_feed_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setWhichFeed(which_feed: Int) {
+  fun setWhichFeed(whichFeed: Int) {
+    val _args = VariantArray.new()
+    _args.append(whichFeed)
+    val _ret = __method_bind.set_which_feed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

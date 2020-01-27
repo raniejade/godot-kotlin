@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,10 +17,12 @@ open class _Semaphore internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun post(): Error {
+    val _ret = __method_bind.post.call(this.toVariant())
     TODO()
   }
 
   fun wait(): Error {
+    val _ret = __method_bind.wait.call(this.toVariant())
     TODO()
   }
 

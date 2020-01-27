@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,38 +20,47 @@ open class Physics2DTestMotionResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollider(): Object {
+    val _ret = __method_bind.get_collider.call(this.toVariant())
     TODO()
   }
 
   fun getColliderId(): Int {
+    val _ret = __method_bind.get_collider_id.call(this.toVariant())
     TODO()
   }
 
   fun getColliderRid(): RID {
+    val _ret = __method_bind.get_collider_rid.call(this.toVariant())
     TODO()
   }
 
   fun getColliderShape(): Int {
+    val _ret = __method_bind.get_collider_shape.call(this.toVariant())
     TODO()
   }
 
   fun getColliderVelocity(): Vector2 {
+    val _ret = __method_bind.get_collider_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionNormal(): Vector2 {
+    val _ret = __method_bind.get_collision_normal.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionPoint(): Vector2 {
+    val _ret = __method_bind.get_collision_point.call(this.toVariant())
     TODO()
   }
 
   fun getMotion(): Vector2 {
+    val _ret = __method_bind.get_motion.call(this.toVariant())
     TODO()
   }
 
   fun getMotionRemainder(): Vector2 {
+    val _ret = __method_bind.get_motion_remainder.call(this.toVariant())
     TODO()
   }
 

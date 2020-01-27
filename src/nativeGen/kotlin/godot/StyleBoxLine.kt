@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,42 +21,62 @@ open class StyleBoxLine internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getColor(): Color {
+    val _ret = __method_bind.get_color.call(this.toVariant())
     TODO()
   }
 
   fun getGrowBegin(): Float {
+    val _ret = __method_bind.get_grow_begin.call(this.toVariant())
     TODO()
   }
 
   fun getGrowEnd(): Float {
+    val _ret = __method_bind.get_grow_end.call(this.toVariant())
     TODO()
   }
 
   fun getThickness(): Int {
+    val _ret = __method_bind.get_thickness.call(this.toVariant())
     TODO()
   }
 
   fun isVertical(): Boolean {
+    val _ret = __method_bind.is_vertical.call(this.toVariant())
     TODO()
   }
 
   fun setColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGrowBegin(offset: Float) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_grow_begin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGrowEnd(offset: Float) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_grow_end.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setThickness(thickness: Int) {
+    val _args = VariantArray.new()
+    _args.append(thickness)
+    val _ret = __method_bind.set_thickness.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVertical(vertical: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(vertical)
+    val _ret = __method_bind.set_vertical.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,90 +19,132 @@ open class BaseButton internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getActionMode(): ActionMode {
+    val _ret = __method_bind.get_action_mode.call(this.toVariant())
     TODO()
   }
 
   fun getButtonGroup(): ButtonGroup {
+    val _ret = __method_bind.get_button_group.call(this.toVariant())
     TODO()
   }
 
   fun getButtonMask(): Int {
+    val _ret = __method_bind.get_button_mask.call(this.toVariant())
     TODO()
   }
 
   fun getDrawMode(): DrawMode {
+    val _ret = __method_bind.get_draw_mode.call(this.toVariant())
     TODO()
   }
 
   fun getEnabledFocusMode(): Control.FocusMode {
+    val _ret = __method_bind.get_enabled_focus_mode.call(this.toVariant())
     TODO()
   }
 
   fun getShortcut(): ShortCut {
+    val _ret = __method_bind.get_shortcut.call(this.toVariant())
     TODO()
   }
 
   fun isDisabled(): Boolean {
+    val _ret = __method_bind.is_disabled.call(this.toVariant())
     TODO()
   }
 
   fun isHovered(): Boolean {
+    val _ret = __method_bind.is_hovered.call(this.toVariant())
     TODO()
   }
 
   fun isKeepPressedOutside(): Boolean {
+    val _ret = __method_bind.is_keep_pressed_outside.call(this.toVariant())
     TODO()
   }
 
   fun isPressed(): Boolean {
+    val _ret = __method_bind.is_pressed.call(this.toVariant())
     TODO()
   }
 
   fun isShortcutInTooltipEnabled(): Boolean {
+    val _ret = __method_bind.is_shortcut_in_tooltip_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isToggleMode(): Boolean {
+    val _ret = __method_bind.is_toggle_mode.call(this.toVariant())
     TODO()
   }
 
   fun setActionMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setButtonGroup(button_group: ButtonGroup) {
+  fun setButtonGroup(buttonGroup: ButtonGroup) {
+    val _args = VariantArray.new()
+    _args.append(buttonGroup)
+    val _ret = __method_bind.set_button_group.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setButtonMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_button_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisabled(disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disabled)
+    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEnabledFocusMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_enabled_focus_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setKeepPressedOutside(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_keep_pressed_outside.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressed(pressed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pressed)
+    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShortcut(shortcut: ShortCut) {
+    val _args = VariantArray.new()
+    _args.append(shortcut)
+    val _ret = __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShortcutInTooltip(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_shortcut_in_tooltip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setToggleMode(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_toggle_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

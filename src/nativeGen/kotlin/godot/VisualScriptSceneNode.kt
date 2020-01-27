@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,10 +18,14 @@ open class VisualScriptSceneNode internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getNodePath(): NodePath {
+    val _ret = __method_bind.get_node_path.call(this.toVariant())
     TODO()
   }
 
   fun setNodePath(path: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_node_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

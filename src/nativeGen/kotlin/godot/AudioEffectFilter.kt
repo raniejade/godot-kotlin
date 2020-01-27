@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,34 +19,50 @@ open class AudioEffectFilter internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getCutoff(): Float {
+    val _ret = __method_bind.get_cutoff.call(this.toVariant())
     TODO()
   }
 
   fun getDb(): FilterDB {
+    val _ret = __method_bind.get_db.call(this.toVariant())
     TODO()
   }
 
   fun getGain(): Float {
+    val _ret = __method_bind.get_gain.call(this.toVariant())
     TODO()
   }
 
   fun getResonance(): Float {
+    val _ret = __method_bind.get_resonance.call(this.toVariant())
     TODO()
   }
 
   fun setCutoff(freq: Float) {
+    val _args = VariantArray.new()
+    _args.append(freq)
+    val _ret = __method_bind.set_cutoff.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDb(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGain(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setResonance(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_resonance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

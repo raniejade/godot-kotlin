@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,19 +20,33 @@ open class EditorSpatialGizmoPlugin internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addMaterial(name: String, material: SpatialMaterial) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(material)
+    val _ret = __method_bind.add_material.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun createHandleMaterial(name: String, billboard: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(billboard)
+    val _ret = __method_bind.create_handle_material.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun createIconMaterial(
     name: String,
     texture: Texture,
-    on_top: Boolean,
+    onTop: Boolean,
     color: Color
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(texture)
+    _args.append(onTop)
+    _args.append(color)
+    val _ret = __method_bind.create_icon_material.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
@@ -38,13 +54,24 @@ open class EditorSpatialGizmoPlugin internal constructor(
     name: String,
     color: Color,
     billboard: Boolean,
-    on_top: Boolean,
-    use_vertex_color: Boolean
+    onTop: Boolean,
+    useVertexColor: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(color)
+    _args.append(billboard)
+    _args.append(onTop)
+    _args.append(useVertexColor)
+    val _ret = __method_bind.create_material.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(gizmo)
+    val _ret = __method_bind.get_material.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

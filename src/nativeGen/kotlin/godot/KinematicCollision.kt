@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,46 +19,57 @@ open class KinematicCollision internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollider(): Object {
+    val _ret = __method_bind.get_collider.call(this.toVariant())
     TODO()
   }
 
   fun getColliderId(): Int {
+    val _ret = __method_bind.get_collider_id.call(this.toVariant())
     TODO()
   }
 
   fun getColliderMetadata(): Variant {
+    val _ret = __method_bind.get_collider_metadata.call(this.toVariant())
     TODO()
   }
 
   fun getColliderShape(): Object {
+    val _ret = __method_bind.get_collider_shape.call(this.toVariant())
     TODO()
   }
 
   fun getColliderShapeIndex(): Int {
+    val _ret = __method_bind.get_collider_shape_index.call(this.toVariant())
     TODO()
   }
 
   fun getColliderVelocity(): Vector3 {
+    val _ret = __method_bind.get_collider_velocity.call(this.toVariant())
     TODO()
   }
 
   fun getLocalShape(): Object {
+    val _ret = __method_bind.get_local_shape.call(this.toVariant())
     TODO()
   }
 
   fun getNormal(): Vector3 {
+    val _ret = __method_bind.get_normal.call(this.toVariant())
     TODO()
   }
 
   fun getPosition(): Vector3 {
+    val _ret = __method_bind.get_position.call(this.toVariant())
     TODO()
   }
 
   fun getRemainder(): Vector3 {
+    val _ret = __method_bind.get_remainder.call(this.toVariant())
     TODO()
   }
 
   fun getTravel(): Vector3 {
+    val _ret = __method_bind.get_travel.call(this.toVariant())
     TODO()
   }
 

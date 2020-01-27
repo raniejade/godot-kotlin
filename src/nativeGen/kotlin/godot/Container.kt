@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,10 +19,15 @@ open class Container internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun fitChildInRect(child: Control, rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(child)
+    _args.append(rect)
+    val _ret = __method_bind.fit_child_in_rect.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun queueSort() {
+    val _ret = __method_bind.queue_sort.call(this.toVariant())
     TODO()
   }
 

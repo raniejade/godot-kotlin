@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -18,34 +20,51 @@ open class Joint2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getBias(): Float {
+    val _ret = __method_bind.get_bias.call(this.toVariant())
     TODO()
   }
 
   fun getExcludeNodesFromCollision(): Boolean {
+    val _ret = __method_bind.get_exclude_nodes_from_collision.call(this.toVariant())
     TODO()
   }
 
   fun getNodeA(): NodePath {
+    val _ret = __method_bind.get_node_a.call(this.toVariant())
     TODO()
   }
 
   fun getNodeB(): NodePath {
+    val _ret = __method_bind.get_node_b.call(this.toVariant())
     TODO()
   }
 
   fun setBias(bias: Float) {
+    val _args = VariantArray.new()
+    _args.append(bias)
+    val _ret = __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_exclude_nodes_from_collision.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setNodeA(node: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.set_node_a.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNodeB(node: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.set_node_b.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class LineShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getD(): Float {
+    val _ret = __method_bind.get_d.call(this.toVariant())
     TODO()
   }
 
   fun getNormal(): Vector2 {
+    val _ret = __method_bind.get_normal.call(this.toVariant())
     TODO()
   }
 
   fun setD(d: Float) {
+    val _args = VariantArray.new()
+    _args.append(d)
+    val _ret = __method_bind.set_d.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNormal(normal: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(normal)
+    val _ret = __method_bind.set_normal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

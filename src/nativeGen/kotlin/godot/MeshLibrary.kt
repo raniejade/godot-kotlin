@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.Transform
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
@@ -20,74 +21,128 @@ open class MeshLibrary internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun createItem(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.create_item.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun findItemByName(name: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.find_item_by_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemList(): PoolIntArray {
+    val _ret = __method_bind.get_item_list.call(this.toVariant())
     TODO()
   }
 
   fun getItemMesh(id: Int): Mesh {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemName(id: Int): String {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemNavmesh(id: Int): NavigationMesh {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_navmesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemNavmeshTransform(id: Int): Transform {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_navmesh_transform.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemPreview(id: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_preview.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemShapes(id: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_shapes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLastUnusedItemId(): Int {
+    val _ret = __method_bind.get_last_unused_item_id.call(this.toVariant())
     TODO()
   }
 
   fun removeItem(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.remove_item.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setItemMesh(id: Int, mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(mesh)
+    val _ret = __method_bind.set_item_mesh.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemName(id: Int, name: String) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(name)
+    val _ret = __method_bind.set_item_name.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemNavmesh(id: Int, navmesh: NavigationMesh) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(navmesh)
+    val _ret = __method_bind.set_item_navmesh.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemNavmeshTransform(id: Int, navmesh: Transform) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(navmesh)
+    val _ret = __method_bind.set_item_navmesh_transform.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemPreview(id: Int, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(texture)
+    val _ret = __method_bind.set_item_preview.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemShapes(id: Int, shapes: VariantArray) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    _args.append(shapes)
+    val _ret = __method_bind.set_item_shapes.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

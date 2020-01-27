@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -19,14 +20,21 @@ open class ConfigFile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun eraseSection(section: String) {
+    val _args = VariantArray.new()
+    _args.append(section)
+    val _ret = __method_bind.erase_section.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(section)
+    val _ret = __method_bind.get_section_keys.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSections(): PoolStringArray {
+    val _ret = __method_bind.get_sections.call(this.toVariant())
     TODO()
   }
 
@@ -35,22 +43,40 @@ open class ConfigFile internal constructor(
     key: String,
     default: Variant
   ): Variant {
+    val _args = VariantArray.new()
+    _args.append(section)
+    _args.append(key)
+    _args.append(default)
+    val _ret = __method_bind.get_value.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun hasSection(section: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(section)
+    val _ret = __method_bind.has_section.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasSectionKey(section: String, key: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(section)
+    _args.append(key)
+    val _ret = __method_bind.has_section_key.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun load(path: String): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun save(path: String): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.save.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -59,6 +85,11 @@ open class ConfigFile internal constructor(
     key: String,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(section)
+    _args.append(key)
+    _args.append(value)
+    val _ret = __method_bind.set_value.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

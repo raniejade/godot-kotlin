@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,87 +22,139 @@ open class StyleBoxTexture internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getExpandMarginSize(margin: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_expand_margin_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getHAxisStretchMode(): AxisStretchMode {
+    val _ret = __method_bind.get_h_axis_stretch_mode.call(this.toVariant())
     TODO()
   }
 
   fun getMarginSize(margin: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    val _ret = __method_bind.get_margin_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getModulate(): Color {
+    val _ret = __method_bind.get_modulate.call(this.toVariant())
     TODO()
   }
 
   fun getNormalMap(): Texture {
+    val _ret = __method_bind.get_normal_map.call(this.toVariant())
     TODO()
   }
 
   fun getRegionRect(): Rect2 {
+    val _ret = __method_bind.get_region_rect.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
+    val _ret = __method_bind.get_v_axis_stretch_mode.call(this.toVariant())
     TODO()
   }
 
   fun isDrawCenterEnabled(): Boolean {
+    val _ret = __method_bind.is_draw_center_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setDrawCenter(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_draw_center.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExpandMarginAll(size: Float) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_expand_margin_all.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setExpandMarginIndividual(
-    size_left: Float,
-    size_top: Float,
-    size_right: Float,
-    size_bottom: Float
+    sizeLeft: Float,
+    sizeTop: Float,
+    sizeRight: Float,
+    sizeBottom: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(sizeLeft)
+    _args.append(sizeTop)
+    _args.append(sizeRight)
+    _args.append(sizeBottom)
+    val _ret = __method_bind.set_expand_margin_individual.call(this.toVariant(), _args.toVariant(),
+        4)
     TODO()
   }
 
   fun setExpandMarginSize(margin: Int, size: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(size)
+    val _ret = __method_bind.set_expand_margin_size.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setHAxisStretchMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMarginSize(margin: Int, size: Float) {
+    val _args = VariantArray.new()
+    _args.append(margin)
+    _args.append(size)
+    val _ret = __method_bind.set_margin_size.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setModulate(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setNormalMap(normal_map: Texture) {
+  fun setNormalMap(normalMap: Texture) {
+    val _args = VariantArray.new()
+    _args.append(normalMap)
+    val _ret = __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegionRect(region: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(region)
+    val _ret = __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVAxisStretchMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

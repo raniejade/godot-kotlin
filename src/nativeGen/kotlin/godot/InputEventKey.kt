@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,30 +19,45 @@ open class InputEventKey internal constructor(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   fun getScancode(): Int {
+    val _ret = __method_bind.get_scancode.call(this.toVariant())
     TODO()
   }
 
   fun getScancodeWithModifiers(): Int {
+    val _ret = __method_bind.get_scancode_with_modifiers.call(this.toVariant())
     TODO()
   }
 
   fun getUnicode(): Int {
+    val _ret = __method_bind.get_unicode.call(this.toVariant())
     TODO()
   }
 
   fun setEcho(echo: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(echo)
+    val _ret = __method_bind.set_echo.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressed(pressed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pressed)
+    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setScancode(scancode: Int) {
+    val _args = VariantArray.new()
+    _args.append(scancode)
+    val _ret = __method_bind.set_scancode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUnicode(unicode: Int) {
+    val _args = VariantArray.new()
+    _args.append(unicode)
+    val _ret = __method_bind.set_unicode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

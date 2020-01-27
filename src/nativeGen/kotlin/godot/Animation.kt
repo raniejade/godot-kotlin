@@ -25,11 +25,20 @@ import kotlinx.cinterop.reinterpret
 open class Animation internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun addTrack(type: Int, at_position: Int): Int {
+  fun addTrack(type: Int, atPosition: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(atPosition)
+    val _ret = __method_bind.add_track.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun animationTrackGetKeyAnimation(idx: Int, key_idx: Int): String {
+  fun animationTrackGetKeyAnimation(idx: Int, keyIdx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.animation_track_get_key_animation.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
@@ -38,26 +47,51 @@ open class Animation internal constructor(
     time: Float,
     animation: String
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(track)
+    _args.append(time)
+    _args.append(animation)
+    val _ret = __method_bind.animation_track_insert_key.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun animationTrackSetKeyAnimation(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     animation: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(animation)
+    val _ret = __method_bind.animation_track_set_key_animation.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
-  fun audioTrackGetKeyEndOffset(idx: Int, key_idx: Int): Float {
+  fun audioTrackGetKeyEndOffset(idx: Int, keyIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.audio_track_get_key_end_offset.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
-  fun audioTrackGetKeyStartOffset(idx: Int, key_idx: Int): Float {
+  fun audioTrackGetKeyStartOffset(idx: Int, keyIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.audio_track_get_key_start_offset.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
-  fun audioTrackGetKeyStream(idx: Int, key_idx: Int): Resource {
+  fun audioTrackGetKeyStream(idx: Int, keyIdx: Int): Resource {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.audio_track_get_key_stream.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -65,45 +99,83 @@ open class Animation internal constructor(
     track: Int,
     time: Float,
     stream: Resource,
-    start_offset: Float,
-    end_offset: Float
+    startOffset: Float,
+    endOffset: Float
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(track)
+    _args.append(time)
+    _args.append(stream)
+    _args.append(startOffset)
+    _args.append(endOffset)
+    val _ret = __method_bind.audio_track_insert_key.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun audioTrackSetKeyEndOffset(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     offset: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(offset)
+    val _ret = __method_bind.audio_track_set_key_end_offset.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
   fun audioTrackSetKeyStartOffset(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     offset: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(offset)
+    val _ret = __method_bind.audio_track_set_key_start_offset.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
   fun audioTrackSetKeyStream(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     stream: Resource
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(stream)
+    val _ret = __method_bind.audio_track_set_key_stream.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun bezierTrackGetKeyInHandle(idx: Int, key_idx: Int): Vector2 {
+  fun bezierTrackGetKeyInHandle(idx: Int, keyIdx: Int): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.bezier_track_get_key_in_handle.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
-  fun bezierTrackGetKeyOutHandle(idx: Int, key_idx: Int): Vector2 {
+  fun bezierTrackGetKeyOutHandle(idx: Int, keyIdx: Int): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.bezier_track_get_key_out_handle.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
-  fun bezierTrackGetKeyValue(idx: Int, key_idx: Int): Float {
+  fun bezierTrackGetKeyValue(idx: Int, keyIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.bezier_track_get_key_value.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -111,97 +183,163 @@ open class Animation internal constructor(
     track: Int,
     time: Float,
     value: Float,
-    in_handle: Vector2,
-    out_handle: Vector2
+    inHandle: Vector2,
+    outHandle: Vector2
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(track)
+    _args.append(time)
+    _args.append(value)
+    _args.append(inHandle)
+    _args.append(outHandle)
+    val _ret = __method_bind.bezier_track_insert_key.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun bezierTrackInterpolate(track: Int, time: Float): Float {
+    val _args = VariantArray.new()
+    _args.append(track)
+    _args.append(time)
+    val _ret = __method_bind.bezier_track_interpolate.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun bezierTrackSetKeyInHandle(
     idx: Int,
-    key_idx: Int,
-    in_handle: Vector2
+    keyIdx: Int,
+    inHandle: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(inHandle)
+    val _ret = __method_bind.bezier_track_set_key_in_handle.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
   fun bezierTrackSetKeyOutHandle(
     idx: Int,
-    key_idx: Int,
-    out_handle: Vector2
+    keyIdx: Int,
+    outHandle: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(outHandle)
+    val _ret = __method_bind.bezier_track_set_key_out_handle.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
   fun bezierTrackSetKeyValue(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     value: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(value)
+    val _ret = __method_bind.bezier_track_set_key_value.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
-  fun copyTrack(track: Int, to_animation: Animation) {
+  fun copyTrack(track: Int, toAnimation: Animation) {
+    val _args = VariantArray.new()
+    _args.append(track)
+    _args.append(toAnimation)
+    val _ret = __method_bind.copy_track.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun findTrack(path: NodePath): Int {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.find_track.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLength(): Float {
+    val _ret = __method_bind.get_length.call(this.toVariant())
     TODO()
   }
 
   fun getStep(): Float {
+    val _ret = __method_bind.get_step.call(this.toVariant())
     TODO()
   }
 
   fun getTrackCount(): Int {
+    val _ret = __method_bind.get_track_count.call(this.toVariant())
     TODO()
   }
 
   fun hasLoop(): Boolean {
+    val _ret = __method_bind.has_loop.call(this.toVariant())
     TODO()
   }
 
   fun methodTrackGetKeyIndices(
     idx: Int,
-    time_sec: Float,
+    timeSec: Float,
     delta: Float
   ): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(timeSec)
+    _args.append(delta)
+    val _ret = __method_bind.method_track_get_key_indices.call(this.toVariant(), _args.toVariant(),
+        3)
     TODO()
   }
 
-  fun methodTrackGetName(idx: Int, key_idx: Int): String {
+  fun methodTrackGetName(idx: Int, keyIdx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.method_track_get_name.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun methodTrackGetParams(idx: Int, key_idx: Int): VariantArray {
+  fun methodTrackGetParams(idx: Int, keyIdx: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.method_track_get_params.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun removeTrack(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.remove_track.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLength(time_sec: Float) {
+  fun setLength(timeSec: Float) {
+    val _args = VariantArray.new()
+    _args.append(timeSec)
+    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLoop(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setStep(size_sec: Float) {
+  fun setStep(sizeSec: Float) {
+    val _args = VariantArray.new()
+    _args.append(sizeSec)
+    val _ret = __method_bind.set_step.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -210,38 +348,72 @@ open class Animation internal constructor(
     time: Float,
     exact: Boolean
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(time)
+    _args.append(exact)
+    val _ret = __method_bind.track_find_key.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun trackGetInterpolationLoopWrap(idx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_get_interpolation_loop_wrap.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun trackGetInterpolationType(idx: Int): InterpolationType {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_get_interpolation_type.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun trackGetKeyCount(idx: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_get_key_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun trackGetKeyTime(idx: Int, key_idx: Int): Float {
+  fun trackGetKeyTime(idx: Int, keyIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.track_get_key_time.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun trackGetKeyTransition(idx: Int, key_idx: Int): Float {
+  fun trackGetKeyTransition(idx: Int, keyIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.track_get_key_transition.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun trackGetKeyValue(idx: Int, key_idx: Int): Variant {
+  fun trackGetKeyValue(idx: Int, keyIdx: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.track_get_key_value.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun trackGetPath(idx: Int): NodePath {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_get_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun trackGetType(idx: Int): TrackType {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_get_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -251,66 +423,125 @@ open class Animation internal constructor(
     key: Variant,
     transition: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(time)
+    _args.append(key)
+    _args.append(transition)
+    val _ret = __method_bind.track_insert_key.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun trackIsEnabled(idx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_is_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun trackIsImported(idx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_is_imported.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun trackMoveDown(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_move_down.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun trackMoveTo(idx: Int, to_idx: Int) {
+  fun trackMoveTo(idx: Int, toIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(toIdx)
+    val _ret = __method_bind.track_move_to.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun trackMoveUp(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.track_move_up.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun trackRemoveKey(idx: Int, key_idx: Int) {
+  fun trackRemoveKey(idx: Int, keyIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    val _ret = __method_bind.track_remove_key.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun trackRemoveKeyAtPosition(idx: Int, position: Float) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(position)
+    val _ret = __method_bind.track_remove_key_at_position.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun trackSetEnabled(idx: Int, enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(enabled)
+    val _ret = __method_bind.track_set_enabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun trackSetImported(idx: Int, imported: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(imported)
+    val _ret = __method_bind.track_set_imported.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun trackSetInterpolationLoopWrap(idx: Int, interpolation: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(interpolation)
+    val _ret = __method_bind.track_set_interpolation_loop_wrap.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun trackSetInterpolationType(idx: Int, interpolation: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(interpolation)
+    val _ret = __method_bind.track_set_interpolation_type.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun trackSetKeyTime(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     time: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(time)
+    val _ret = __method_bind.track_set_key_time.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun trackSetKeyTransition(
     idx: Int,
-    key_idx: Int,
+    keyIdx: Int,
     transition: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(keyIdx)
+    _args.append(transition)
+    val _ret = __method_bind.track_set_key_transition.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -319,14 +550,27 @@ open class Animation internal constructor(
     key: Int,
     value: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(key)
+    _args.append(value)
+    val _ret = __method_bind.track_set_key_value.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun trackSetPath(idx: Int, path: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(path)
+    val _ret = __method_bind.track_set_path.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun trackSwap(idx: Int, with_idx: Int) {
+  fun trackSwap(idx: Int, withIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(withIdx)
+    val _ret = __method_bind.track_swap.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
@@ -337,26 +581,53 @@ open class Animation internal constructor(
     rotation: Quat,
     scale: Vector3
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(time)
+    _args.append(location)
+    _args.append(rotation)
+    _args.append(scale)
+    val _ret = __method_bind.transform_track_insert_key.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
-  fun transformTrackInterpolate(idx: Int, time_sec: Float): VariantArray {
+  fun transformTrackInterpolate(idx: Int, timeSec: Float): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(timeSec)
+    val _ret = __method_bind.transform_track_interpolate.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
   fun valueTrackGetKeyIndices(
     idx: Int,
-    time_sec: Float,
+    timeSec: Float,
     delta: Float
   ): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(timeSec)
+    _args.append(delta)
+    val _ret = __method_bind.value_track_get_key_indices.call(this.toVariant(), _args.toVariant(),
+        3)
     TODO()
   }
 
   fun valueTrackGetUpdateMode(idx: Int): UpdateMode {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.value_track_get_update_mode.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun valueTrackSetUpdateMode(idx: Int, mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(mode)
+    val _ret = __method_bind.value_track_set_update_mode.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 

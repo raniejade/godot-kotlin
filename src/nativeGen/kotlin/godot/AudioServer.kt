@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
@@ -19,195 +20,323 @@ import kotlinx.cinterop.reinterpret
 open class AudioServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addBus(at_position: Int) {
+  fun addBus(atPosition: Int) {
+    val _args = VariantArray.new()
+    _args.append(atPosition)
+    val _ret = __method_bind.add_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addBusEffect(
-    bus_idx: Int,
+    busIdx: Int,
     effect: AudioEffect,
-    at_position: Int
+    atPosition: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effect)
+    _args.append(atPosition)
+    val _ret = __method_bind.add_bus_effect.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun captureGetDevice(): String {
+    val _ret = __method_bind.capture_get_device.call(this.toVariant())
     TODO()
   }
 
   fun captureGetDeviceList(): VariantArray {
+    val _ret = __method_bind.capture_get_device_list.call(this.toVariant())
     TODO()
   }
 
   fun captureSetDevice(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.capture_set_device.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun generateBusLayout(): AudioBusLayout {
+    val _ret = __method_bind.generate_bus_layout.call(this.toVariant())
     TODO()
   }
 
-  fun getBusChannels(bus_idx: Int): Int {
+  fun getBusChannels(busIdx: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.get_bus_channels.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBusCount(): Int {
+    val _ret = __method_bind.get_bus_count.call(this.toVariant())
     TODO()
   }
 
-  fun getBusEffect(bus_idx: Int, effect_idx: Int): AudioEffect {
+  fun getBusEffect(busIdx: Int, effectIdx: Int): AudioEffect {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effectIdx)
+    val _ret = __method_bind.get_bus_effect.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun getBusEffectCount(bus_idx: Int): Int {
+  fun getBusEffectCount(busIdx: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.get_bus_effect_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBusEffectInstance(
-    bus_idx: Int,
-    effect_idx: Int,
+    busIdx: Int,
+    effectIdx: Int,
     channel: Int
   ): AudioEffectInstance {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effectIdx)
+    _args.append(channel)
+    val _ret = __method_bind.get_bus_effect_instance.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun getBusIndex(bus_name: String): Int {
+  fun getBusIndex(busName: String): Int {
+    val _args = VariantArray.new()
+    _args.append(busName)
+    val _ret = __method_bind.get_bus_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getBusName(bus_idx: Int): String {
+  fun getBusName(busIdx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.get_bus_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getBusPeakVolumeLeftDb(bus_idx: Int, channel: Int): Float {
+  fun getBusPeakVolumeLeftDb(busIdx: Int, channel: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(channel)
+    val _ret = __method_bind.get_bus_peak_volume_left_db.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
-  fun getBusPeakVolumeRightDb(bus_idx: Int, channel: Int): Float {
+  fun getBusPeakVolumeRightDb(busIdx: Int, channel: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(channel)
+    val _ret = __method_bind.get_bus_peak_volume_right_db.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
-  fun getBusSend(bus_idx: Int): String {
+  fun getBusSend(busIdx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.get_bus_send.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getBusVolumeDb(bus_idx: Int): Float {
+  fun getBusVolumeDb(busIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.get_bus_volume_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDevice(): String {
+    val _ret = __method_bind.get_device.call(this.toVariant())
     TODO()
   }
 
   fun getDeviceList(): VariantArray {
+    val _ret = __method_bind.get_device_list.call(this.toVariant())
     TODO()
   }
 
   fun getMixRate(): Float {
+    val _ret = __method_bind.get_mix_rate.call(this.toVariant())
     TODO()
   }
 
   fun getOutputLatency(): Float {
+    val _ret = __method_bind.get_output_latency.call(this.toVariant())
     TODO()
   }
 
   fun getSpeakerMode(): SpeakerMode {
+    val _ret = __method_bind.get_speaker_mode.call(this.toVariant())
     TODO()
   }
 
   fun getTimeSinceLastMix(): Float {
+    val _ret = __method_bind.get_time_since_last_mix.call(this.toVariant())
     TODO()
   }
 
   fun getTimeToNextMix(): Float {
+    val _ret = __method_bind.get_time_to_next_mix.call(this.toVariant())
     TODO()
   }
 
-  fun isBusBypassingEffects(bus_idx: Int): Boolean {
+  fun isBusBypassingEffects(busIdx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.is_bus_bypassing_effects.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun isBusEffectEnabled(bus_idx: Int, effect_idx: Int): Boolean {
+  fun isBusEffectEnabled(busIdx: Int, effectIdx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effectIdx)
+    val _ret = __method_bind.is_bus_effect_enabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun isBusMute(bus_idx: Int): Boolean {
+  fun isBusMute(busIdx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.is_bus_mute.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun isBusSolo(bus_idx: Int): Boolean {
+  fun isBusSolo(busIdx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    val _ret = __method_bind.is_bus_solo.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun lock() {
+    val _ret = __method_bind.lock.call(this.toVariant())
     TODO()
   }
 
-  fun moveBus(index: Int, to_index: Int) {
+  fun moveBus(index: Int, toIndex: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(toIndex)
+    val _ret = __method_bind.move_bus.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun removeBus(index: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.remove_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun removeBusEffect(bus_idx: Int, effect_idx: Int) {
+  fun removeBusEffect(busIdx: Int, effectIdx: Int) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effectIdx)
+    val _ret = __method_bind.remove_bus_effect.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setBusBypassEffects(bus_idx: Int, enable: Boolean) {
+  fun setBusBypassEffects(busIdx: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(enable)
+    val _ret = __method_bind.set_bus_bypass_effects.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBusCount(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_bus_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBusEffectEnabled(
-    bus_idx: Int,
-    effect_idx: Int,
+    busIdx: Int,
+    effectIdx: Int,
     enabled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effectIdx)
+    _args.append(enabled)
+    val _ret = __method_bind.set_bus_effect_enabled.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun setBusLayout(bus_layout: AudioBusLayout) {
+  fun setBusLayout(busLayout: AudioBusLayout) {
+    val _args = VariantArray.new()
+    _args.append(busLayout)
+    val _ret = __method_bind.set_bus_layout.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBusMute(bus_idx: Int, enable: Boolean) {
+  fun setBusMute(busIdx: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(enable)
+    val _ret = __method_bind.set_bus_mute.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setBusName(bus_idx: Int, name: String) {
+  fun setBusName(busIdx: Int, name: String) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(name)
+    val _ret = __method_bind.set_bus_name.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setBusSend(bus_idx: Int, send: String) {
+  fun setBusSend(busIdx: Int, send: String) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(send)
+    val _ret = __method_bind.set_bus_send.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setBusSolo(bus_idx: Int, enable: Boolean) {
+  fun setBusSolo(busIdx: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(enable)
+    val _ret = __method_bind.set_bus_solo.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setBusVolumeDb(bus_idx: Int, volume_db: Float) {
+  fun setBusVolumeDb(busIdx: Int, volumeDb: Float) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(volumeDb)
+    val _ret = __method_bind.set_bus_volume_db.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setDevice(device: String) {
+    val _args = VariantArray.new()
+    _args.append(device)
+    val _ret = __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun swapBusEffects(
-    bus_idx: Int,
-    effect_idx: Int,
-    by_effect_idx: Int
+    busIdx: Int,
+    effectIdx: Int,
+    byEffectIdx: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(busIdx)
+    _args.append(effectIdx)
+    _args.append(byEffectIdx)
+    val _ret = __method_bind.swap_bus_effects.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun unlock() {
+    val _ret = __method_bind.unlock.call(this.toVariant())
     TODO()
   }
 

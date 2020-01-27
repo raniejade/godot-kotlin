@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,18 +19,26 @@ open class VisualScriptConstructor internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getConstructor(): Dictionary {
+    val _ret = __method_bind.get_constructor.call(this.toVariant())
     TODO()
   }
 
   fun getConstructorType(): Variant.Type {
+    val _ret = __method_bind.get_constructor_type.call(this.toVariant())
     TODO()
   }
 
   fun setConstructor(constructor: Dictionary) {
+    val _args = VariantArray.new()
+    _args.append(constructor)
+    val _ret = __method_bind.set_constructor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setConstructorType(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_constructor_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

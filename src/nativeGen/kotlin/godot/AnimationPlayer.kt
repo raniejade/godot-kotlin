@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -21,171 +23,270 @@ open class AnimationPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addAnimation(name: String, animation: Animation): Error {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(animation)
+    val _ret = __method_bind.add_animation.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun advance(delta: Float) {
+    val _args = VariantArray.new()
+    _args.append(delta)
+    val _ret = __method_bind.advance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun animationGetNext(anim_from: String): String {
+  fun animationGetNext(animFrom: String): String {
+    val _args = VariantArray.new()
+    _args.append(animFrom)
+    val _ret = __method_bind.animation_get_next.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun animationSetNext(anim_from: String, anim_to: String) {
+  fun animationSetNext(animFrom: String, animTo: String) {
+    val _args = VariantArray.new()
+    _args.append(animFrom)
+    _args.append(animTo)
+    val _ret = __method_bind.animation_set_next.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clearCaches() {
+    val _ret = __method_bind.clear_caches.call(this.toVariant())
     TODO()
   }
 
   fun clearQueue() {
+    val _ret = __method_bind.clear_queue.call(this.toVariant())
     TODO()
   }
 
   fun findAnimation(animation: Animation): String {
+    val _args = VariantArray.new()
+    _args.append(animation)
+    val _ret = __method_bind.find_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAnimation(name: String): Animation {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAnimationList(): PoolStringArray {
+    val _ret = __method_bind.get_animation_list.call(this.toVariant())
     TODO()
   }
 
   fun getAnimationProcessMode(): AnimationProcessMode {
+    val _ret = __method_bind.get_animation_process_mode.call(this.toVariant())
     TODO()
   }
 
   fun getAssignedAnimation(): String {
+    val _ret = __method_bind.get_assigned_animation.call(this.toVariant())
     TODO()
   }
 
   fun getAutoplay(): String {
+    val _ret = __method_bind.get_autoplay.call(this.toVariant())
     TODO()
   }
 
-  fun getBlendTime(anim_from: String, anim_to: String): Float {
+  fun getBlendTime(animFrom: String, animTo: String): Float {
+    val _args = VariantArray.new()
+    _args.append(animFrom)
+    _args.append(animTo)
+    val _ret = __method_bind.get_blend_time.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getCurrentAnimation(): String {
+    val _ret = __method_bind.get_current_animation.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentAnimationLength(): Float {
+    val _ret = __method_bind.get_current_animation_length.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentAnimationPosition(): Float {
+    val _ret = __method_bind.get_current_animation_position.call(this.toVariant())
     TODO()
   }
 
   fun getDefaultBlendTime(): Float {
+    val _ret = __method_bind.get_default_blend_time.call(this.toVariant())
     TODO()
   }
 
   fun getPlayingSpeed(): Float {
+    val _ret = __method_bind.get_playing_speed.call(this.toVariant())
     TODO()
   }
 
   fun getQueue(): PoolStringArray {
+    val _ret = __method_bind.get_queue.call(this.toVariant())
     TODO()
   }
 
   fun getRoot(): NodePath {
+    val _ret = __method_bind.get_root.call(this.toVariant())
     TODO()
   }
 
   fun getSpeedScale(): Float {
+    val _ret = __method_bind.get_speed_scale.call(this.toVariant())
     TODO()
   }
 
   fun hasAnimation(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isActive(): Boolean {
+    val _ret = __method_bind.is_active.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
   fun play(
     name: String,
-    custom_blend: Float,
-    custom_speed: Float,
-    from_end: Boolean
+    customBlend: Float,
+    customSpeed: Float,
+    fromEnd: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(customBlend)
+    _args.append(customSpeed)
+    _args.append(fromEnd)
+    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
-  fun playBackwards(name: String, custom_blend: Float) {
+  fun playBackwards(name: String, customBlend: Float) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(customBlend)
+    val _ret = __method_bind.play_backwards.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun queue(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.queue.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeAnimation(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun renameAnimation(name: String, newname: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(newname)
+    val _ret = __method_bind.rename_animation.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun seek(seconds: Float, update: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(seconds)
+    _args.append(update)
+    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setActive(active: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(active)
+    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAnimationProcessMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_animation_process_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAssignedAnimation(anim: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.set_assigned_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutoplay(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBlendTime(
-    anim_from: String,
-    anim_to: String,
+    animFrom: String,
+    animTo: String,
     sec: Float
   ) {
+    val _args = VariantArray.new()
+    _args.append(animFrom)
+    _args.append(animTo)
+    _args.append(sec)
+    val _ret = __method_bind.set_blend_time.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setCurrentAnimation(anim: String) {
+    val _args = VariantArray.new()
+    _args.append(anim)
+    val _ret = __method_bind.set_current_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDefaultBlendTime(sec: Float) {
+    val _args = VariantArray.new()
+    _args.append(sec)
+    val _ret = __method_bind.set_default_blend_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRoot(path: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_root.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpeedScale(speed: Float) {
+    val _args = VariantArray.new()
+    _args.append(speed)
+    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop(reset: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(reset)
+    val _ret = __method_bind.stop.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

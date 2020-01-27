@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class AudioEffectPitchShift internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getPitchScale(): Float {
+    val _ret = __method_bind.get_pitch_scale.call(this.toVariant())
     TODO()
   }
 
   fun setPitchScale(rate: Float) {
+    val _args = VariantArray.new()
+    _args.append(rate)
+    val _ret = __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

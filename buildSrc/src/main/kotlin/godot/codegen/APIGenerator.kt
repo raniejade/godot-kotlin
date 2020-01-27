@@ -218,7 +218,7 @@ class APIGenerator {
   }
 
   private fun FileSpec.Builder.addCommonImports(cls: GDClass): FileSpec.Builder {
-    addImport("godot.core", "Godot")
+    addImport("godot.core", "Godot", "Variant", "VariantArray")
     addImport("gdnative", "godot_method_bind")
     addImport(
       "kotlinx.cinterop",
@@ -235,8 +235,8 @@ class APIGenerator {
   private fun TypeSpec.Builder.generateMethods(methods: List<GDMethod>): TypeSpec.Builder {
     val methodSpecs = methods.filter { method -> !method.is_virtual }
       .map { method ->
-        val returnTypeName = normalizeTypeName(method.return_type)
-        val returnType = toClassName(returnTypeName, TypeRegistry.get(returnTypeName[0]))
+        val returnTypeName = parseTypeName(method.return_type)
+        val returnType = toClassName(returnTypeName.fqName, TypeRegistry.get(returnTypeName.fqName[0]))
 
         val methodName = normalizeMethodName(method.name)
         val builder = FunSpec.builder(methodName)
@@ -250,18 +250,28 @@ class APIGenerator {
         }
 
         val parameters = method.arguments.map { argument ->
-          val argumentName = argument.name
-          val argumentTypeName = normalizeTypeName(argument.type)
-          val argumentType = checkNotNull(toClassName(argumentTypeName, TypeRegistry.get(argumentTypeName[0])))
+          val argumentName = normalizeArgName(argument.name)
+          val argumentTypeName = parseTypeName(argument.type)
+          val argumentType = checkNotNull(toClassName(argumentTypeName.fqName, TypeRegistry.get(argumentTypeName.fqName[0])))
           ParameterSpec.builder(argumentName, argumentType)
             .build()
         }
 
         builder.addParameters(parameters)
 
-        builder.addCode("""
-          TODO()
-        """.trimIndent())
+        if (parameters.isNotEmpty()) {
+          builder.addStatement("val _args = VariantArray.new()")
+
+          parameters.forEach { parameter ->
+            builder.addStatement("_args.append(%N)", parameter)
+          }
+
+          builder.addStatement("val _ret = __method_bind.%L.call(this.toVariant(), _args.toVariant(), %L)", method.name, parameters.size)
+        } else {
+          builder.addStatement("val _ret = __method_bind.%L.call(this.toVariant())", method.name)
+        }
+
+        builder.addStatement("TODO()")
 
         builder.build()
       }
@@ -277,13 +287,21 @@ class APIGenerator {
     return false
   }
 
-  private fun normalizeTypeName(name: String): List<String> {
+  private data class TypeInfo(
+    val fqName: List<String>,
+    val isEnum: Boolean
+  )
+
+  private fun parseTypeName(name: String): TypeInfo {
     if (name.startsWith("enum")) {
-      return name.replace("enum.", "")
-        .split("::")
+      return TypeInfo(
+        name.replace("enum.", "")
+          .split("::"),
+        true
+      )
     }
 
-    return listOf(name)
+    return TypeInfo(listOf(name), false)
   }
 
   private fun normalizeMethodName(name: String): String {
@@ -297,6 +315,12 @@ class APIGenerator {
     }
 
     return ret
+  }
+
+  private fun normalizeArgName(name: String): String {
+    return name.split("_")
+      .joinToString("") { it.capitalize() }
+      .decapitalize()
   }
 
   private fun getFormatFromConstantValue(v: Any): String {

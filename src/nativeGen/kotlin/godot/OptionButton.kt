@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -23,90 +24,150 @@ open class OptionButton internal constructor(
     label: String,
     id: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    _args.append(label)
+    _args.append(id)
+    val _ret = __method_bind.add_icon_item.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun addItem(label: String, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(label)
+    _args.append(id)
+    val _ret = __method_bind.add_item.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun addSeparator() {
+    val _ret = __method_bind.add_separator.call(this.toVariant())
     TODO()
   }
 
   fun clear() {
+    val _ret = __method_bind.clear.call(this.toVariant())
     TODO()
   }
 
   fun getItemCount(): Int {
+    val _ret = __method_bind.get_item_count.call(this.toVariant())
     TODO()
   }
 
   fun getItemIcon(idx: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_item_icon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemId(idx: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_item_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemIndex(id: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.get_item_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemMetadata(idx: Int): Variant {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_item_metadata.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getItemText(idx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_item_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPopup(): PopupMenu {
+    val _ret = __method_bind.get_popup.call(this.toVariant())
     TODO()
   }
 
   fun getSelected(): Int {
+    val _ret = __method_bind.get_selected.call(this.toVariant())
     TODO()
   }
 
   fun getSelectedId(): Int {
+    val _ret = __method_bind.get_selected_id.call(this.toVariant())
     TODO()
   }
 
   fun getSelectedMetadata(): Variant {
+    val _ret = __method_bind.get_selected_metadata.call(this.toVariant())
     TODO()
   }
 
   fun isItemDisabled(idx: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.is_item_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeItem(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.remove_item.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun select(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.select.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(disabled)
+    val _ret = __method_bind.set_item_disabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemIcon(idx: Int, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(texture)
+    val _ret = __method_bind.set_item_icon.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemId(idx: Int, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(id)
+    val _ret = __method_bind.set_item_id.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemMetadata(idx: Int, metadata: Variant) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(metadata)
+    val _ret = __method_bind.set_item_metadata.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setItemText(idx: Int, text: String) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(text)
+    val _ret = __method_bind.set_item_text.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

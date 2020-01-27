@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,22 +19,31 @@ open class WindowDialog internal constructor(
   _handle: COpaquePointer
 ) : Popup(_handle) {
   fun getCloseButton(): TextureButton {
+    val _ret = __method_bind.get_close_button.call(this.toVariant())
     TODO()
   }
 
   fun getResizable(): Boolean {
+    val _ret = __method_bind.get_resizable.call(this.toVariant())
     TODO()
   }
 
   fun getTitle(): String {
+    val _ret = __method_bind.get_title.call(this.toVariant())
     TODO()
   }
 
   fun setResizable(resizable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(resizable)
+    val _ret = __method_bind.set_resizable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTitle(title: String) {
+    val _args = VariantArray.new()
+    _args.append(title)
+    val _ret = __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

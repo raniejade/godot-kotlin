@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,18 +18,26 @@ open class VisualScriptConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getConstantType(): Variant.Type {
+    val _ret = __method_bind.get_constant_type.call(this.toVariant())
     TODO()
   }
 
   fun getConstantValue(): Variant {
+    val _ret = __method_bind.get_constant_value.call(this.toVariant())
     TODO()
   }
 
   fun setConstantType(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_constant_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setConstantValue(value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.set_constant_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

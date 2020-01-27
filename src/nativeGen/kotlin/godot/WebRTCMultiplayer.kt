@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -19,33 +21,53 @@ open class WebRTCMultiplayer internal constructor(
 ) : NetworkedMultiplayerPeer(_handle) {
   fun addPeer(
     peer: WebRTCPeerConnection,
-    peer_id: Int,
-    unreliable_lifetime: Int
+    peerId: Int,
+    unreliableLifetime: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(peer)
+    _args.append(peerId)
+    _args.append(unreliableLifetime)
+    val _ret = __method_bind.add_peer.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun close() {
+    val _ret = __method_bind.close.call(this.toVariant())
     TODO()
   }
 
-  fun getPeer(peer_id: Int): Dictionary {
+  fun getPeer(peerId: Int): Dictionary {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    val _ret = __method_bind.get_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPeers(): Dictionary {
+    val _ret = __method_bind.get_peers.call(this.toVariant())
     TODO()
   }
 
-  fun hasPeer(peer_id: Int): Boolean {
+  fun hasPeer(peerId: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    val _ret = __method_bind.has_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun initialize(peer_id: Int, server_compatibility: Boolean): Error {
+  fun initialize(peerId: Int, serverCompatibility: Boolean): Error {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    _args.append(serverCompatibility)
+    val _ret = __method_bind.initialize.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun removePeer(peer_id: Int) {
+  fun removePeer(peerId: Int) {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    val _ret = __method_bind.remove_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

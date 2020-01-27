@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -19,58 +21,79 @@ open class ARVRInterface internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAnchorDetectionIsEnabled(): Boolean {
+    val _ret = __method_bind.get_anchor_detection_is_enabled.call(this.toVariant())
     TODO()
   }
 
   fun getCameraFeedId(): Int {
+    val _ret = __method_bind.get_camera_feed_id.call(this.toVariant())
     TODO()
   }
 
   fun getCapabilities(): Int {
+    val _ret = __method_bind.get_capabilities.call(this.toVariant())
     TODO()
   }
 
   fun getName(): String {
+    val _ret = __method_bind.get_name.call(this.toVariant())
     TODO()
   }
 
   fun getRenderTargetsize(): Vector2 {
+    val _ret = __method_bind.get_render_targetsize.call(this.toVariant())
     TODO()
   }
 
   fun getTrackingStatus(): Tracking_status {
+    val _ret = __method_bind.get_tracking_status.call(this.toVariant())
     TODO()
   }
 
   fun initialize(): Boolean {
+    val _ret = __method_bind.initialize.call(this.toVariant())
     TODO()
   }
 
   fun isInitialized(): Boolean {
+    val _ret = __method_bind.is_initialized.call(this.toVariant())
     TODO()
   }
 
   fun isPrimary(): Boolean {
+    val _ret = __method_bind.is_primary.call(this.toVariant())
     TODO()
   }
 
   fun isStereo(): Boolean {
+    val _ret = __method_bind.is_stereo.call(this.toVariant())
     TODO()
   }
 
   fun setAnchorDetectionIsEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_anchor_detection_is_enabled.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setIsInitialized(initialized: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(initialized)
+    val _ret = __method_bind.set_is_initialized.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIsPrimary(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_is_primary.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun uninitialize() {
+    val _ret = __method_bind.uninitialize.call(this.toVariant())
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,10 +17,14 @@ open class MultiMeshInstance internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun getMultimesh(): MultiMesh {
+    val _ret = __method_bind.get_multimesh.call(this.toVariant())
     TODO()
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
+    val _args = VariantArray.new()
+    _args.append(multimesh)
+    val _ret = __method_bind.set_multimesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

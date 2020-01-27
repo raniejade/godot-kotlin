@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,58 +20,87 @@ open class AnimationNodeOneShot internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun getAutorestartDelay(): Float {
+    val _ret = __method_bind.get_autorestart_delay.call(this.toVariant())
     TODO()
   }
 
   fun getAutorestartRandomDelay(): Float {
+    val _ret = __method_bind.get_autorestart_random_delay.call(this.toVariant())
     TODO()
   }
 
   fun getFadeinTime(): Float {
+    val _ret = __method_bind.get_fadein_time.call(this.toVariant())
     TODO()
   }
 
   fun getFadeoutTime(): Float {
+    val _ret = __method_bind.get_fadeout_time.call(this.toVariant())
     TODO()
   }
 
   fun getMixMode(): MixMode {
+    val _ret = __method_bind.get_mix_mode.call(this.toVariant())
     TODO()
   }
 
   fun hasAutorestart(): Boolean {
+    val _ret = __method_bind.has_autorestart.call(this.toVariant())
     TODO()
   }
 
   fun isUsingSync(): Boolean {
+    val _ret = __method_bind.is_using_sync.call(this.toVariant())
     TODO()
   }
 
   fun setAutorestart(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autorestart.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutorestartDelay(enable: Float) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autorestart_delay.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutorestartRandomDelay(enable: Float) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autorestart_random_delay.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setFadeinTime(time: Float) {
+    val _args = VariantArray.new()
+    _args.append(time)
+    val _ret = __method_bind.set_fadein_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFadeoutTime(time: Float) {
+    val _args = VariantArray.new()
+    _args.append(time)
+    val _ret = __method_bind.set_fadeout_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMixMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_mix_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseSync(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_sync.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class LightOccluder2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getOccluderLightMask(): Int {
+    val _ret = __method_bind.get_occluder_light_mask.call(this.toVariant())
     TODO()
   }
 
   fun getOccluderPolygon(): OccluderPolygon2D {
+    val _ret = __method_bind.get_occluder_polygon.call(this.toVariant())
     TODO()
   }
 
   fun setOccluderLightMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_occluder_light_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOccluderPolygon(polygon: OccluderPolygon2D) {
+    val _args = VariantArray.new()
+    _args.append(polygon)
+    val _ret = __method_bind.set_occluder_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

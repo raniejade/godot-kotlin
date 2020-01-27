@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class ARVROrigin internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getWorldScale(): Float {
+    val _ret = __method_bind.get_world_scale.call(this.toVariant())
     TODO()
   }
 
-  fun setWorldScale(world_scale: Float) {
+  fun setWorldScale(worldScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(worldScale)
+    val _ret = __method_bind.set_world_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

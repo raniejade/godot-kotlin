@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class SegmentShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getA(): Vector2 {
+    val _ret = __method_bind.get_a.call(this.toVariant())
     TODO()
   }
 
   fun getB(): Vector2 {
+    val _ret = __method_bind.get_b.call(this.toVariant())
     TODO()
   }
 
   fun setA(a: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(a)
+    val _ret = __method_bind.set_a.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setB(b: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(b)
+    val _ret = __method_bind.set_b.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

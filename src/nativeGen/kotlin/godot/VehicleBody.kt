@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class VehicleBody internal constructor(
   _handle: COpaquePointer
 ) : RigidBody(_handle) {
   fun getBrake(): Float {
+    val _ret = __method_bind.get_brake.call(this.toVariant())
     TODO()
   }
 
   fun getEngineForce(): Float {
+    val _ret = __method_bind.get_engine_force.call(this.toVariant())
     TODO()
   }
 
   fun getSteering(): Float {
+    val _ret = __method_bind.get_steering.call(this.toVariant())
     TODO()
   }
 
   fun setBrake(brake: Float) {
+    val _args = VariantArray.new()
+    _args.append(brake)
+    val _ret = __method_bind.set_brake.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setEngineForce(engine_force: Float) {
+  fun setEngineForce(engineForce: Float) {
+    val _args = VariantArray.new()
+    _args.append(engineForce)
+    val _ret = __method_bind.set_engine_force.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSteering(steering: Float) {
+    val _args = VariantArray.new()
+    _args.append(steering)
+    val _ret = __method_bind.set_steering.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,6 +19,9 @@ open class Performance internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getMonitor(monitor: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(monitor)
+    val _ret = __method_bind.get_monitor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

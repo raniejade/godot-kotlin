@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,10 +17,14 @@ open class ProxyTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBase(): Texture {
+    val _ret = __method_bind.get_base.call(this.toVariant())
     TODO()
   }
 
   fun setBase(base: Texture) {
+    val _args = VariantArray.new()
+    _args.append(base)
+    val _ret = __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

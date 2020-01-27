@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,14 +19,19 @@ open class Skeleton2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getBone(idx: Int): Bone2D {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_bone.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBoneCount(): Int {
+    val _ret = __method_bind.get_bone_count.call(this.toVariant())
     TODO()
   }
 
   fun getSkeleton(): RID {
+    val _ret = __method_bind.get_skeleton.call(this.toVariant())
     TODO()
   }
 

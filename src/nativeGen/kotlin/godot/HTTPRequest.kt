@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,60 +21,87 @@ open class HTTPRequest internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun cancelRequest() {
+    val _ret = __method_bind.cancel_request.call(this.toVariant())
     TODO()
   }
 
   fun getBodySize(): Int {
+    val _ret = __method_bind.get_body_size.call(this.toVariant())
     TODO()
   }
 
   fun getBodySizeLimit(): Int {
+    val _ret = __method_bind.get_body_size_limit.call(this.toVariant())
     TODO()
   }
 
   fun getDownloadFile(): String {
+    val _ret = __method_bind.get_download_file.call(this.toVariant())
     TODO()
   }
 
   fun getDownloadedBytes(): Int {
+    val _ret = __method_bind.get_downloaded_bytes.call(this.toVariant())
     TODO()
   }
 
   fun getHttpClientStatus(): HTTPClient.Status {
+    val _ret = __method_bind.get_http_client_status.call(this.toVariant())
     TODO()
   }
 
   fun getMaxRedirects(): Int {
+    val _ret = __method_bind.get_max_redirects.call(this.toVariant())
     TODO()
   }
 
   fun isUsingThreads(): Boolean {
+    val _ret = __method_bind.is_using_threads.call(this.toVariant())
     TODO()
   }
 
   fun request(
     url: String,
-    custom_headers: PoolStringArray,
-    ssl_validate_domain: Boolean,
+    customHeaders: PoolStringArray,
+    sslValidateDomain: Boolean,
     method: Int,
-    request_data: String
+    requestData: String
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(url)
+    _args.append(customHeaders)
+    _args.append(sslValidateDomain)
+    _args.append(method)
+    _args.append(requestData)
+    val _ret = __method_bind.request.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun setBodySizeLimit(bytes: Int) {
+    val _args = VariantArray.new()
+    _args.append(bytes)
+    val _ret = __method_bind.set_body_size_limit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDownloadFile(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_download_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaxRedirects(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_max_redirects.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseThreads(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_threads.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
@@ -19,86 +20,129 @@ open class EditorInterface internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun editResource(resource: Resource) {
+    val _args = VariantArray.new()
+    _args.append(resource)
+    val _ret = __method_bind.edit_resource.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBaseControl(): Control {
+    val _ret = __method_bind.get_base_control.call(this.toVariant())
     TODO()
   }
 
   fun getEditedSceneRoot(): Node {
+    val _ret = __method_bind.get_edited_scene_root.call(this.toVariant())
     TODO()
   }
 
   fun getEditorSettings(): EditorSettings {
+    val _ret = __method_bind.get_editor_settings.call(this.toVariant())
     TODO()
   }
 
   fun getEditorViewport(): Control {
+    val _ret = __method_bind.get_editor_viewport.call(this.toVariant())
     TODO()
   }
 
   fun getInspector(): EditorInspector {
+    val _ret = __method_bind.get_inspector.call(this.toVariant())
     TODO()
   }
 
   fun getOpenScenes(): VariantArray {
+    val _ret = __method_bind.get_open_scenes.call(this.toVariant())
     TODO()
   }
 
   fun getResourceFilesystem(): EditorFileSystem {
+    val _ret = __method_bind.get_resource_filesystem.call(this.toVariant())
     TODO()
   }
 
   fun getResourcePreviewer(): EditorResourcePreview {
+    val _ret = __method_bind.get_resource_previewer.call(this.toVariant())
     TODO()
   }
 
   fun getScriptEditor(): ScriptEditor {
+    val _ret = __method_bind.get_script_editor.call(this.toVariant())
     TODO()
   }
 
   fun getSelectedPath(): String {
+    val _ret = __method_bind.get_selected_path.call(this.toVariant())
     TODO()
   }
 
   fun getSelection(): EditorSelection {
+    val _ret = __method_bind.get_selection.call(this.toVariant())
     TODO()
   }
 
-  fun inspectObject(`object`: Object, for_property: String) {
+  fun inspectObject(`object`: Object, forProperty: String) {
+    val _args = VariantArray.new()
+    _args.append(`object`)
+    _args.append(forProperty)
+    val _ret = __method_bind.inspect_object.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun isPluginEnabled(plugin: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    val _ret = __method_bind.is_plugin_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun makeMeshPreviews(meshes: VariantArray, preview_size: Int): VariantArray {
+  fun makeMeshPreviews(meshes: VariantArray, previewSize: Int): VariantArray {
+    val _args = VariantArray.new()
+    _args.append(meshes)
+    _args.append(previewSize)
+    val _ret = __method_bind.make_mesh_previews.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun openSceneFromPath(scene_filepath: String) {
+  fun openSceneFromPath(sceneFilepath: String) {
+    val _args = VariantArray.new()
+    _args.append(sceneFilepath)
+    val _ret = __method_bind.open_scene_from_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun reloadSceneFromPath(scene_filepath: String) {
+  fun reloadSceneFromPath(sceneFilepath: String) {
+    val _args = VariantArray.new()
+    _args.append(sceneFilepath)
+    val _ret = __method_bind.reload_scene_from_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun saveScene(): Error {
+    val _ret = __method_bind.save_scene.call(this.toVariant())
     TODO()
   }
 
-  fun saveSceneAs(path: String, with_preview: Boolean) {
+  fun saveSceneAs(path: String, withPreview: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(withPreview)
+    val _ret = __method_bind.save_scene_as.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun selectFile(file: String) {
+    val _args = VariantArray.new()
+    _args.append(file)
+    val _ret = __method_bind.select_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPluginEnabled(plugin: String, enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(plugin)
+    _args.append(enabled)
+    val _ret = __method_bind.set_plugin_enabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,10 +19,17 @@ open class PinJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getParam(param: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setParam(param: Int, value: Float) {
+    val _args = VariantArray.new()
+    _args.append(param)
+    _args.append(value)
+    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

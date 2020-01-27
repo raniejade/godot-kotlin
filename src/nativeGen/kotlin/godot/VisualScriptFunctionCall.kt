@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -20,82 +21,122 @@ open class VisualScriptFunctionCall internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBasePath(): NodePath {
+    val _ret = __method_bind.get_base_path.call(this.toVariant())
     TODO()
   }
 
   fun getBaseScript(): String {
+    val _ret = __method_bind.get_base_script.call(this.toVariant())
     TODO()
   }
 
   fun getBaseType(): String {
+    val _ret = __method_bind.get_base_type.call(this.toVariant())
     TODO()
   }
 
   fun getBasicType(): Variant.Type {
+    val _ret = __method_bind.get_basic_type.call(this.toVariant())
     TODO()
   }
 
   fun getCallMode(): CallMode {
+    val _ret = __method_bind.get_call_mode.call(this.toVariant())
     TODO()
   }
 
   fun getFunction(): String {
+    val _ret = __method_bind.get_function.call(this.toVariant())
     TODO()
   }
 
   fun getRpcCallMode(): RPCCallMode {
+    val _ret = __method_bind.get_rpc_call_mode.call(this.toVariant())
     TODO()
   }
 
   fun getSingleton(): String {
+    val _ret = __method_bind.get_singleton.call(this.toVariant())
     TODO()
   }
 
   fun getUseDefaultArgs(): Int {
+    val _ret = __method_bind.get_use_default_args.call(this.toVariant())
     TODO()
   }
 
   fun getValidate(): Boolean {
+    val _ret = __method_bind.get_validate.call(this.toVariant())
     TODO()
   }
 
-  fun setBasePath(base_path: NodePath) {
+  fun setBasePath(basePath: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(basePath)
+    val _ret = __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBaseScript(base_script: String) {
+  fun setBaseScript(baseScript: String) {
+    val _args = VariantArray.new()
+    _args.append(baseScript)
+    val _ret = __method_bind.set_base_script.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBaseType(base_type: String) {
+  fun setBaseType(baseType: String) {
+    val _args = VariantArray.new()
+    _args.append(baseType)
+    val _ret = __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setBasicType(basic_type: Int) {
+  fun setBasicType(basicType: Int) {
+    val _args = VariantArray.new()
+    _args.append(basicType)
+    val _ret = __method_bind.set_basic_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCallMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFunction(function: String) {
+    val _args = VariantArray.new()
+    _args.append(function)
+    val _ret = __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRpcCallMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_rpc_call_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSingleton(singleton: String) {
+    val _args = VariantArray.new()
+    _args.append(singleton)
+    val _ret = __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseDefaultArgs(amount: Int) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_use_default_args.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setValidate(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_validate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

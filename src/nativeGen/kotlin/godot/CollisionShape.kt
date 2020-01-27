@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class CollisionShape internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getShape(): Shape {
+    val _ret = __method_bind.get_shape.call(this.toVariant())
     TODO()
   }
 
   fun isDisabled(): Boolean {
+    val _ret = __method_bind.is_disabled.call(this.toVariant())
     TODO()
   }
 
   fun makeConvexFromBrothers() {
+    val _ret = __method_bind.make_convex_from_brothers.call(this.toVariant())
     TODO()
   }
 
   fun resourceChanged(resource: Resource) {
+    val _args = VariantArray.new()
+    _args.append(resource)
+    val _ret = __method_bind.resource_changed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShape(shape: Shape) {
+    val _args = VariantArray.new()
+    _args.append(shape)
+    val _ret = __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

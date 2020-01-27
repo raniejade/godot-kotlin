@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,102 +19,149 @@ open class VehicleWheel internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getDampingCompression(): Float {
+    val _ret = __method_bind.get_damping_compression.call(this.toVariant())
     TODO()
   }
 
   fun getDampingRelaxation(): Float {
+    val _ret = __method_bind.get_damping_relaxation.call(this.toVariant())
     TODO()
   }
 
   fun getFrictionSlip(): Float {
+    val _ret = __method_bind.get_friction_slip.call(this.toVariant())
     TODO()
   }
 
   fun getRadius(): Float {
+    val _ret = __method_bind.get_radius.call(this.toVariant())
     TODO()
   }
 
   fun getRollInfluence(): Float {
+    val _ret = __method_bind.get_roll_influence.call(this.toVariant())
     TODO()
   }
 
   fun getRpm(): Float {
+    val _ret = __method_bind.get_rpm.call(this.toVariant())
     TODO()
   }
 
   fun getSkidinfo(): Float {
+    val _ret = __method_bind.get_skidinfo.call(this.toVariant())
     TODO()
   }
 
   fun getSuspensionMaxForce(): Float {
+    val _ret = __method_bind.get_suspension_max_force.call(this.toVariant())
     TODO()
   }
 
   fun getSuspensionRestLength(): Float {
+    val _ret = __method_bind.get_suspension_rest_length.call(this.toVariant())
     TODO()
   }
 
   fun getSuspensionStiffness(): Float {
+    val _ret = __method_bind.get_suspension_stiffness.call(this.toVariant())
     TODO()
   }
 
   fun getSuspensionTravel(): Float {
+    val _ret = __method_bind.get_suspension_travel.call(this.toVariant())
     TODO()
   }
 
   fun isInContact(): Boolean {
+    val _ret = __method_bind.is_in_contact.call(this.toVariant())
     TODO()
   }
 
   fun isUsedAsSteering(): Boolean {
+    val _ret = __method_bind.is_used_as_steering.call(this.toVariant())
     TODO()
   }
 
   fun isUsedAsTraction(): Boolean {
+    val _ret = __method_bind.is_used_as_traction.call(this.toVariant())
     TODO()
   }
 
   fun setDampingCompression(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_damping_compression.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDampingRelaxation(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_damping_relaxation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFrictionSlip(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_friction_slip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRadius(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setRollInfluence(roll_influence: Float) {
+  fun setRollInfluence(rollInfluence: Float) {
+    val _args = VariantArray.new()
+    _args.append(rollInfluence)
+    val _ret = __method_bind.set_roll_influence.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSuspensionMaxForce(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_suspension_max_force.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSuspensionRestLength(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_suspension_rest_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSuspensionStiffness(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_suspension_stiffness.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSuspensionTravel(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_suspension_travel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseAsSteering(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_as_steering.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseAsTraction(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_as_traction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

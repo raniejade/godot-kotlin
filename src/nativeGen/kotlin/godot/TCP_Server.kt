@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,18 +20,25 @@ open class TCP_Server internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun isConnectionAvailable(): Boolean {
+    val _ret = __method_bind.is_connection_available.call(this.toVariant())
     TODO()
   }
 
-  fun listen(port: Int, bind_address: String): Error {
+  fun listen(port: Int, bindAddress: String): Error {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(bindAddress)
+    val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 
   fun takeConnection(): StreamPeerTCP {
+    val _ret = __method_bind.take_connection.call(this.toVariant())
     TODO()
   }
 

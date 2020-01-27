@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,50 +21,74 @@ open class AnimationNodeStateMachineTransition internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAdvanceCondition(): String {
+    val _ret = __method_bind.get_advance_condition.call(this.toVariant())
     TODO()
   }
 
   fun getPriority(): Int {
+    val _ret = __method_bind.get_priority.call(this.toVariant())
     TODO()
   }
 
   fun getSwitchMode(): SwitchMode {
+    val _ret = __method_bind.get_switch_mode.call(this.toVariant())
     TODO()
   }
 
   fun getXfadeTime(): Float {
+    val _ret = __method_bind.get_xfade_time.call(this.toVariant())
     TODO()
   }
 
   fun hasAutoAdvance(): Boolean {
+    val _ret = __method_bind.has_auto_advance.call(this.toVariant())
     TODO()
   }
 
   fun isDisabled(): Boolean {
+    val _ret = __method_bind.is_disabled.call(this.toVariant())
     TODO()
   }
 
   fun setAdvanceCondition(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_advance_condition.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAutoAdvance(auto_advance: Boolean) {
+  fun setAutoAdvance(autoAdvance: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(autoAdvance)
+    val _ret = __method_bind.set_auto_advance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisabled(disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disabled)
+    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPriority(priority: Int) {
+    val _args = VariantArray.new()
+    _args.append(priority)
+    val _ret = __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSwitchMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_switch_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setXfadeTime(secs: Float) {
+    val _args = VariantArray.new()
+    _args.append(secs)
+    val _ret = __method_bind.set_xfade_time.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

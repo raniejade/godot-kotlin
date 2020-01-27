@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.String
@@ -18,38 +20,53 @@ open class EditorFileSystem internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getFileType(path: String): String {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_file_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFilesystem(): EditorFileSystemDirectory {
+    val _ret = __method_bind.get_filesystem.call(this.toVariant())
     TODO()
   }
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_filesystem_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getScanningProgress(): Float {
+    val _ret = __method_bind.get_scanning_progress.call(this.toVariant())
     TODO()
   }
 
   fun isScanning(): Boolean {
+    val _ret = __method_bind.is_scanning.call(this.toVariant())
     TODO()
   }
 
   fun scan() {
+    val _ret = __method_bind.scan.call(this.toVariant())
     TODO()
   }
 
   fun scanSources() {
+    val _ret = __method_bind.scan_sources.call(this.toVariant())
     TODO()
   }
 
   fun updateFile(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.update_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun updateScriptClasses() {
+    val _ret = __method_bind.update_script_classes.call(this.toVariant())
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -18,22 +20,33 @@ open class InputEventJoypadButton internal constructor(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getButtonIndex(): Int {
+    val _ret = __method_bind.get_button_index.call(this.toVariant())
     TODO()
   }
 
   fun getPressure(): Float {
+    val _ret = __method_bind.get_pressure.call(this.toVariant())
     TODO()
   }
 
-  fun setButtonIndex(button_index: Int) {
+  fun setButtonIndex(buttonIndex: Int) {
+    val _args = VariantArray.new()
+    _args.append(buttonIndex)
+    val _ret = __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressed(pressed: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pressed)
+    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressure(pressure: Float) {
+    val _args = VariantArray.new()
+    _args.append(pressure)
+    val _ret = __method_bind.set_pressure.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

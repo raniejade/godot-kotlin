@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,18 +17,26 @@ open class CSGMesh internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getMaterial(): Material {
+    val _ret = __method_bind.get_material.call(this.toVariant())
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun setMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMesh(mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    val _ret = __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

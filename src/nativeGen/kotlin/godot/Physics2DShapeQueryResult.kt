@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,22 +19,35 @@ open class Physics2DShapeQueryResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResultCount(): Int {
+    val _ret = __method_bind.get_result_count.call(this.toVariant())
     TODO()
   }
 
   fun getResultObject(idx: Int): Object {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_result_object.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getResultObjectId(idx: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_result_object_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getResultObjectShape(idx: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_result_object_shape.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getResultRid(idx: Int): RID {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_result_rid.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,42 +19,61 @@ open class MeshInstance internal constructor(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun createConvexCollision() {
+    val _ret = __method_bind.create_convex_collision.call(this.toVariant())
     TODO()
   }
 
   fun createDebugTangents() {
+    val _ret = __method_bind.create_debug_tangents.call(this.toVariant())
     TODO()
   }
 
   fun createTrimeshCollision() {
+    val _ret = __method_bind.create_trimesh_collision.call(this.toVariant())
     TODO()
   }
 
   fun getMesh(): Mesh {
+    val _ret = __method_bind.get_mesh.call(this.toVariant())
     TODO()
   }
 
   fun getSkeletonPath(): NodePath {
+    val _ret = __method_bind.get_skeleton_path.call(this.toVariant())
     TODO()
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
+    val _args = VariantArray.new()
+    _args.append(surface)
+    val _ret = __method_bind.get_surface_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSurfaceMaterialCount(): Int {
+    val _ret = __method_bind.get_surface_material_count.call(this.toVariant())
     TODO()
   }
 
   fun setMesh(mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    val _ret = __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSkeletonPath(skeleton_path: NodePath) {
+  fun setSkeletonPath(skeletonPath: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(skeletonPath)
+    val _ret = __method_bind.set_skeleton_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSurfaceMaterial(surface: Int, material: Material) {
+    val _args = VariantArray.new()
+    _args.append(surface)
+    _args.append(material)
+    val _ret = __method_bind.set_surface_material.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

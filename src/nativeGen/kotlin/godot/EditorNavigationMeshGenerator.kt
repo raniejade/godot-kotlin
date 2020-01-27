@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -14,11 +16,18 @@ import kotlinx.cinterop.reinterpret
 open class EditorNavigationMeshGenerator internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun bake(nav_mesh: NavigationMesh, root_node: Node) {
+  fun bake(navMesh: NavigationMesh, rootNode: Node) {
+    val _args = VariantArray.new()
+    _args.append(navMesh)
+    _args.append(rootNode)
+    val _ret = __method_bind.bake.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun clear(nav_mesh: NavigationMesh) {
+  fun clear(navMesh: NavigationMesh) {
+    val _args = VariantArray.new()
+    _args.append(navMesh)
+    val _ret = __method_bind.clear.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

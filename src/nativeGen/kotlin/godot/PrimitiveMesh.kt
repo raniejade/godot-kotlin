@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
@@ -18,30 +19,43 @@ open class PrimitiveMesh internal constructor(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
   fun getCustomAabb(): AABB {
+    val _ret = __method_bind.get_custom_aabb.call(this.toVariant())
     TODO()
   }
 
   fun getFlipFaces(): Boolean {
+    val _ret = __method_bind.get_flip_faces.call(this.toVariant())
     TODO()
   }
 
   fun getMaterial(): Material {
+    val _ret = __method_bind.get_material.call(this.toVariant())
     TODO()
   }
 
   fun getMeshArrays(): VariantArray {
+    val _ret = __method_bind.get_mesh_arrays.call(this.toVariant())
     TODO()
   }
 
   fun setCustomAabb(aabb: AABB) {
+    val _args = VariantArray.new()
+    _args.append(aabb)
+    val _ret = __method_bind.set_custom_aabb.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFlipFaces(flip_faces: Boolean) {
+  fun setFlipFaces(flipFaces: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipFaces)
+    val _ret = __method_bind.set_flip_faces.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

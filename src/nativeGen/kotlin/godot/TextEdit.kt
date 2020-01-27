@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.PoolIntArray
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
@@ -22,350 +23,527 @@ open class TextEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addColorRegion(
-    begin_key: String,
-    end_key: String,
+    beginKey: String,
+    endKey: String,
     color: Color,
-    line_only: Boolean
+    lineOnly: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(beginKey)
+    _args.append(endKey)
+    _args.append(color)
+    _args.append(lineOnly)
+    val _ret = __method_bind.add_color_region.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun addKeywordColor(keyword: String, color: Color) {
+    val _args = VariantArray.new()
+    _args.append(keyword)
+    _args.append(color)
+    val _ret = __method_bind.add_keyword_color.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun canFold(line: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.can_fold.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearColors() {
+    val _ret = __method_bind.clear_colors.call(this.toVariant())
     TODO()
   }
 
   fun clearUndoHistory() {
+    val _ret = __method_bind.clear_undo_history.call(this.toVariant())
     TODO()
   }
 
   fun copy() {
+    val _ret = __method_bind.copy.call(this.toVariant())
     TODO()
   }
 
   fun cursorGetBlinkEnabled(): Boolean {
+    val _ret = __method_bind.cursor_get_blink_enabled.call(this.toVariant())
     TODO()
   }
 
   fun cursorGetBlinkSpeed(): Float {
+    val _ret = __method_bind.cursor_get_blink_speed.call(this.toVariant())
     TODO()
   }
 
   fun cursorGetColumn(): Int {
+    val _ret = __method_bind.cursor_get_column.call(this.toVariant())
     TODO()
   }
 
   fun cursorGetLine(): Int {
+    val _ret = __method_bind.cursor_get_line.call(this.toVariant())
     TODO()
   }
 
   fun cursorIsBlockMode(): Boolean {
+    val _ret = __method_bind.cursor_is_block_mode.call(this.toVariant())
     TODO()
   }
 
   fun cursorSetBlinkEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun cursorSetBlinkSpeed(blink_speed: Float) {
+  fun cursorSetBlinkSpeed(blinkSpeed: Float) {
+    val _args = VariantArray.new()
+    _args.append(blinkSpeed)
+    val _ret = __method_bind.cursor_set_blink_speed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun cursorSetBlockMode(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.cursor_set_block_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun cursorSetColumn(column: Int, adjust_viewport: Boolean) {
+  fun cursorSetColumn(column: Int, adjustViewport: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(column)
+    _args.append(adjustViewport)
+    val _ret = __method_bind.cursor_set_column.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun cursorSetLine(
     line: Int,
-    adjust_viewport: Boolean,
-    can_be_hidden: Boolean,
-    wrap_index: Int
+    adjustViewport: Boolean,
+    canBeHidden: Boolean,
+    wrapIndex: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(line)
+    _args.append(adjustViewport)
+    _args.append(canBeHidden)
+    _args.append(wrapIndex)
+    val _ret = __method_bind.cursor_set_line.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun cut() {
+    val _ret = __method_bind.cut.call(this.toVariant())
     TODO()
   }
 
   fun deselect() {
+    val _ret = __method_bind.deselect.call(this.toVariant())
     TODO()
   }
 
   fun foldAllLines() {
+    val _ret = __method_bind.fold_all_lines.call(this.toVariant())
     TODO()
   }
 
   fun foldLine(line: Int) {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.fold_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBreakpoints(): VariantArray {
+    val _ret = __method_bind.get_breakpoints.call(this.toVariant())
     TODO()
   }
 
   fun getKeywordColor(keyword: String): Color {
+    val _args = VariantArray.new()
+    _args.append(keyword)
+    val _ret = __method_bind.get_keyword_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLine(line: Int): String {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.get_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLineCount(): Int {
+    val _ret = __method_bind.get_line_count.call(this.toVariant())
     TODO()
   }
 
   fun getMenu(): PopupMenu {
+    val _ret = __method_bind.get_menu.call(this.toVariant())
     TODO()
   }
 
   fun getSelectionFromColumn(): Int {
+    val _ret = __method_bind.get_selection_from_column.call(this.toVariant())
     TODO()
   }
 
   fun getSelectionFromLine(): Int {
+    val _ret = __method_bind.get_selection_from_line.call(this.toVariant())
     TODO()
   }
 
   fun getSelectionText(): String {
+    val _ret = __method_bind.get_selection_text.call(this.toVariant())
     TODO()
   }
 
   fun getSelectionToColumn(): Int {
+    val _ret = __method_bind.get_selection_to_column.call(this.toVariant())
     TODO()
   }
 
   fun getSelectionToLine(): Int {
+    val _ret = __method_bind.get_selection_to_line.call(this.toVariant())
     TODO()
   }
 
   fun getText(): String {
+    val _ret = __method_bind.get_text.call(this.toVariant())
     TODO()
   }
 
   fun getVScrollSpeed(): Float {
+    val _ret = __method_bind.get_v_scroll_speed.call(this.toVariant())
     TODO()
   }
 
   fun getWordUnderCursor(): String {
+    val _ret = __method_bind.get_word_under_cursor.call(this.toVariant())
     TODO()
   }
 
   fun hasKeywordColor(keyword: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(keyword)
+    val _ret = __method_bind.has_keyword_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun insertTextAtCursor(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.insert_text_at_cursor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isBreakpointGutterEnabled(): Boolean {
+    val _ret = __method_bind.is_breakpoint_gutter_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isContextMenuEnabled(): Boolean {
+    val _ret = __method_bind.is_context_menu_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isDrawingFoldGutter(): Boolean {
+    val _ret = __method_bind.is_drawing_fold_gutter.call(this.toVariant())
     TODO()
   }
 
   fun isDrawingSpaces(): Boolean {
+    val _ret = __method_bind.is_drawing_spaces.call(this.toVariant())
     TODO()
   }
 
   fun isDrawingTabs(): Boolean {
+    val _ret = __method_bind.is_drawing_tabs.call(this.toVariant())
     TODO()
   }
 
   fun isFolded(line: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.is_folded.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isHidingEnabled(): Boolean {
+    val _ret = __method_bind.is_hiding_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isHighlightAllOccurrencesEnabled(): Boolean {
+    val _ret = __method_bind.is_highlight_all_occurrences_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isHighlightCurrentLineEnabled(): Boolean {
+    val _ret = __method_bind.is_highlight_current_line_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isLineHidden(line: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.is_line_hidden.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isOverridingSelectedFontColor(): Boolean {
+    val _ret = __method_bind.is_overriding_selected_font_color.call(this.toVariant())
     TODO()
   }
 
   fun isReadonly(): Boolean {
+    val _ret = __method_bind.is_readonly.call(this.toVariant())
     TODO()
   }
 
   fun isRightClickMovingCaret(): Boolean {
+    val _ret = __method_bind.is_right_click_moving_caret.call(this.toVariant())
     TODO()
   }
 
   fun isSelectionActive(): Boolean {
+    val _ret = __method_bind.is_selection_active.call(this.toVariant())
     TODO()
   }
 
   fun isShowLineNumbersEnabled(): Boolean {
+    val _ret = __method_bind.is_show_line_numbers_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isSmoothScrollEnabled(): Boolean {
+    val _ret = __method_bind.is_smooth_scroll_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isSyntaxColoringEnabled(): Boolean {
+    val _ret = __method_bind.is_syntax_coloring_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isWrapEnabled(): Boolean {
+    val _ret = __method_bind.is_wrap_enabled.call(this.toVariant())
     TODO()
   }
 
   fun menuOption(option: Int) {
+    val _args = VariantArray.new()
+    _args.append(option)
+    val _ret = __method_bind.menu_option.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun paste() {
+    val _ret = __method_bind.paste.call(this.toVariant())
     TODO()
   }
 
   fun redo() {
+    val _ret = __method_bind.redo.call(this.toVariant())
     TODO()
   }
 
   fun removeBreakpoints() {
+    val _ret = __method_bind.remove_breakpoints.call(this.toVariant())
     TODO()
   }
 
   fun search(
     key: String,
     flags: Int,
-    from_line: Int,
-    from_column: Int
+    fromLine: Int,
+    fromColumn: Int
   ): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(key)
+    _args.append(flags)
+    _args.append(fromLine)
+    _args.append(fromColumn)
+    val _ret = __method_bind.search.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun select(
-    from_line: Int,
-    from_column: Int,
-    to_line: Int,
-    to_column: Int
+    fromLine: Int,
+    fromColumn: Int,
+    toLine: Int,
+    toColumn: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(fromLine)
+    _args.append(fromColumn)
+    _args.append(toLine)
+    _args.append(toColumn)
+    val _ret = __method_bind.select.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun selectAll() {
+    val _ret = __method_bind.select_all.call(this.toVariant())
     TODO()
   }
 
   fun setBreakpointGutterEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_breakpoint_gutter_enabled.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_context_menu_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawFoldGutter(arg0: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(arg0)
+    val _ret = __method_bind.set_draw_fold_gutter.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawSpaces(arg0: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(arg0)
+    val _ret = __method_bind.set_draw_spaces.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDrawTabs(arg0: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(arg0)
+    val _ret = __method_bind.set_draw_tabs.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHidingEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_hiding_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHighlightAllOccurrences(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_highlight_all_occurrences.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setHighlightCurrentLine(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_highlight_current_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLineAsHidden(line: Int, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(line)
+    _args.append(enable)
+    val _ret = __method_bind.set_line_as_hidden.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(override)
+    val _ret = __method_bind.set_override_selected_font_color.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun setReadonly(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_readonly.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRightClickMovesCaret(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_right_click_moves_caret.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setShowLineNumbers(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_show_line_numbers.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSmoothScrollEnable(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_smooth_scroll_enable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSyntaxColoring(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_syntax_coloring.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setText(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVScrollSpeed(speed: Float) {
+    val _args = VariantArray.new()
+    _args.append(speed)
+    val _ret = __method_bind.set_v_scroll_speed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWrapEnabled(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_wrap_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun toggleFoldLine(line: Int) {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.toggle_fold_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun undo() {
+    val _ret = __method_bind.undo.call(this.toVariant())
     TODO()
   }
 
   fun unfoldLine(line: Int) {
+    val _args = VariantArray.new()
+    _args.append(line)
+    val _ret = __method_bind.unfold_line.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun unhideAllLines() {
+    val _ret = __method_bind.unhide_all_lines.call(this.toVariant())
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class InputEventMagnifyGesture internal constructor(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
   fun getFactor(): Float {
+    val _ret = __method_bind.get_factor.call(this.toVariant())
     TODO()
   }
 
   fun setFactor(factor: Float) {
+    val _args = VariantArray.new()
+    _args.append(factor)
+    val _ret = __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

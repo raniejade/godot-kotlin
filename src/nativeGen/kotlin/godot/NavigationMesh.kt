@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector3Array
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,190 +22,291 @@ open class NavigationMesh internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPolygon(polygon: PoolIntArray) {
+    val _args = VariantArray.new()
+    _args.append(polygon)
+    val _ret = __method_bind.add_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearPolygons() {
+    val _ret = __method_bind.clear_polygons.call(this.toVariant())
     TODO()
   }
 
   fun createFromMesh(mesh: Mesh) {
+    val _args = VariantArray.new()
+    _args.append(mesh)
+    val _ret = __method_bind.create_from_mesh.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAgentHeight(): Float {
+    val _ret = __method_bind.get_agent_height.call(this.toVariant())
     TODO()
   }
 
   fun getAgentMaxClimb(): Float {
+    val _ret = __method_bind.get_agent_max_climb.call(this.toVariant())
     TODO()
   }
 
   fun getAgentMaxSlope(): Float {
+    val _ret = __method_bind.get_agent_max_slope.call(this.toVariant())
     TODO()
   }
 
   fun getAgentRadius(): Float {
+    val _ret = __method_bind.get_agent_radius.call(this.toVariant())
     TODO()
   }
 
   fun getCellHeight(): Float {
+    val _ret = __method_bind.get_cell_height.call(this.toVariant())
     TODO()
   }
 
   fun getCellSize(): Float {
+    val _ret = __method_bind.get_cell_size.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionMask(): Int {
+    val _ret = __method_bind.get_collision_mask.call(this.toVariant())
     TODO()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDetailSampleDistance(): Float {
+    val _ret = __method_bind.get_detail_sample_distance.call(this.toVariant())
     TODO()
   }
 
   fun getDetailSampleMaxError(): Float {
+    val _ret = __method_bind.get_detail_sample_max_error.call(this.toVariant())
     TODO()
   }
 
   fun getEdgeMaxError(): Float {
+    val _ret = __method_bind.get_edge_max_error.call(this.toVariant())
     TODO()
   }
 
   fun getEdgeMaxLength(): Float {
+    val _ret = __method_bind.get_edge_max_length.call(this.toVariant())
     TODO()
   }
 
   fun getFilterLedgeSpans(): Boolean {
+    val _ret = __method_bind.get_filter_ledge_spans.call(this.toVariant())
     TODO()
   }
 
   fun getFilterLowHangingObstacles(): Boolean {
+    val _ret = __method_bind.get_filter_low_hanging_obstacles.call(this.toVariant())
     TODO()
   }
 
   fun getFilterWalkableLowHeightSpans(): Boolean {
+    val _ret = __method_bind.get_filter_walkable_low_height_spans.call(this.toVariant())
     TODO()
   }
 
   fun getParsedGeometryType(): Int {
+    val _ret = __method_bind.get_parsed_geometry_type.call(this.toVariant())
     TODO()
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getPolygonCount(): Int {
+    val _ret = __method_bind.get_polygon_count.call(this.toVariant())
     TODO()
   }
 
   fun getRegionMergeSize(): Float {
+    val _ret = __method_bind.get_region_merge_size.call(this.toVariant())
     TODO()
   }
 
   fun getRegionMinSize(): Float {
+    val _ret = __method_bind.get_region_min_size.call(this.toVariant())
     TODO()
   }
 
   fun getSamplePartitionType(): Int {
+    val _ret = __method_bind.get_sample_partition_type.call(this.toVariant())
     TODO()
   }
 
   fun getVertices(): PoolVector3Array {
+    val _ret = __method_bind.get_vertices.call(this.toVariant())
     TODO()
   }
 
   fun getVertsPerPoly(): Float {
+    val _ret = __method_bind.get_verts_per_poly.call(this.toVariant())
     TODO()
   }
 
-  fun setAgentHeight(agent_height: Float) {
+  fun setAgentHeight(agentHeight: Float) {
+    val _args = VariantArray.new()
+    _args.append(agentHeight)
+    val _ret = __method_bind.set_agent_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAgentMaxClimb(agent_max_climb: Float) {
+  fun setAgentMaxClimb(agentMaxClimb: Float) {
+    val _args = VariantArray.new()
+    _args.append(agentMaxClimb)
+    val _ret = __method_bind.set_agent_max_climb.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAgentMaxSlope(agent_max_slope: Float) {
+  fun setAgentMaxSlope(agentMaxSlope: Float) {
+    val _args = VariantArray.new()
+    _args.append(agentMaxSlope)
+    val _ret = __method_bind.set_agent_max_slope.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setAgentRadius(agent_radius: Float) {
+  fun setAgentRadius(agentRadius: Float) {
+    val _args = VariantArray.new()
+    _args.append(agentRadius)
+    val _ret = __method_bind.set_agent_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCellHeight(cell_height: Float) {
+  fun setCellHeight(cellHeight: Float) {
+    val _args = VariantArray.new()
+    _args.append(cellHeight)
+    val _ret = __method_bind.set_cell_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setCellSize(cell_size: Float) {
+  fun setCellSize(cellSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(cellSize)
+    val _ret = __method_bind.set_cell_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionMask(mask: Int) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(bit)
+    _args.append(value)
+    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setDetailSampleDistance(detail_sample_dist: Float) {
+  fun setDetailSampleDistance(detailSampleDist: Float) {
+    val _args = VariantArray.new()
+    _args.append(detailSampleDist)
+    val _ret = __method_bind.set_detail_sample_distance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setDetailSampleMaxError(detail_sample_max_error: Float) {
+  fun setDetailSampleMaxError(detailSampleMaxError: Float) {
+    val _args = VariantArray.new()
+    _args.append(detailSampleMaxError)
+    val _ret = __method_bind.set_detail_sample_max_error.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setEdgeMaxError(edge_max_error: Float) {
+  fun setEdgeMaxError(edgeMaxError: Float) {
+    val _args = VariantArray.new()
+    _args.append(edgeMaxError)
+    val _ret = __method_bind.set_edge_max_error.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setEdgeMaxLength(edge_max_length: Float) {
+  fun setEdgeMaxLength(edgeMaxLength: Float) {
+    val _args = VariantArray.new()
+    _args.append(edgeMaxLength)
+    val _ret = __method_bind.set_edge_max_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFilterLedgeSpans(filter_ledge_spans: Boolean) {
+  fun setFilterLedgeSpans(filterLedgeSpans: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(filterLedgeSpans)
+    val _ret = __method_bind.set_filter_ledge_spans.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFilterLowHangingObstacles(filter_low_hanging_obstacles: Boolean) {
+  fun setFilterLowHangingObstacles(filterLowHangingObstacles: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(filterLowHangingObstacles)
+    val _ret = __method_bind.set_filter_low_hanging_obstacles.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFilterWalkableLowHeightSpans(filter_walkable_low_height_spans: Boolean) {
+  fun setFilterWalkableLowHeightSpans(filterWalkableLowHeightSpans: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(filterWalkableLowHeightSpans)
+    val _ret = __method_bind.set_filter_walkable_low_height_spans.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
-  fun setParsedGeometryType(geometry_type: Int) {
+  fun setParsedGeometryType(geometryType: Int) {
+    val _args = VariantArray.new()
+    _args.append(geometryType)
+    val _ret = __method_bind.set_parsed_geometry_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setRegionMergeSize(region_merge_size: Float) {
+  fun setRegionMergeSize(regionMergeSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(regionMergeSize)
+    val _ret = __method_bind.set_region_merge_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setRegionMinSize(region_min_size: Float) {
+  fun setRegionMinSize(regionMinSize: Float) {
+    val _args = VariantArray.new()
+    _args.append(regionMinSize)
+    val _ret = __method_bind.set_region_min_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSamplePartitionType(sample_partition_type: Int) {
+  fun setSamplePartitionType(samplePartitionType: Int) {
+    val _args = VariantArray.new()
+    _args.append(samplePartitionType)
+    val _ret = __method_bind.set_sample_partition_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVertices(vertices: PoolVector3Array) {
+    val _args = VariantArray.new()
+    _args.append(vertices)
+    val _ret = __method_bind.set_vertices.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setVertsPerPoly(verts_per_poly: Float) {
+  fun setVertsPerPoly(vertsPerPoly: Float) {
+    val _args = VariantArray.new()
+    _args.append(vertsPerPoly)
+    val _ret = __method_bind.set_verts_per_poly.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

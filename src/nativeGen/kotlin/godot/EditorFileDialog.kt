@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,82 +20,121 @@ open class EditorFileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
   fun addFilter(filter: String) {
+    val _args = VariantArray.new()
+    _args.append(filter)
+    val _ret = __method_bind.add_filter.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun clearFilters() {
+    val _ret = __method_bind.clear_filters.call(this.toVariant())
     TODO()
   }
 
   fun getAccess(): Access {
+    val _ret = __method_bind.get_access.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentDir(): String {
+    val _ret = __method_bind.get_current_dir.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentFile(): String {
+    val _ret = __method_bind.get_current_file.call(this.toVariant())
     TODO()
   }
 
   fun getCurrentPath(): String {
+    val _ret = __method_bind.get_current_path.call(this.toVariant())
     TODO()
   }
 
   fun getDisplayMode(): DisplayMode {
+    val _ret = __method_bind.get_display_mode.call(this.toVariant())
     TODO()
   }
 
   fun getMode(): Mode {
+    val _ret = __method_bind.get_mode.call(this.toVariant())
     TODO()
   }
 
   fun getVbox(): VBoxContainer {
+    val _ret = __method_bind.get_vbox.call(this.toVariant())
     TODO()
   }
 
   fun invalidate() {
+    val _ret = __method_bind.invalidate.call(this.toVariant())
     TODO()
   }
 
   fun isOverwriteWarningDisabled(): Boolean {
+    val _ret = __method_bind.is_overwrite_warning_disabled.call(this.toVariant())
     TODO()
   }
 
   fun isShowingHiddenFiles(): Boolean {
+    val _ret = __method_bind.is_showing_hidden_files.call(this.toVariant())
     TODO()
   }
 
   fun setAccess(access: Int) {
+    val _args = VariantArray.new()
+    _args.append(access)
+    val _ret = __method_bind.set_access.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCurrentDir(dir: String) {
+    val _args = VariantArray.new()
+    _args.append(dir)
+    val _ret = __method_bind.set_current_dir.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCurrentFile(file: String) {
+    val _args = VariantArray.new()
+    _args.append(file)
+    val _ret = __method_bind.set_current_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setCurrentPath(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_current_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisableOverwriteWarning(disable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disable)
+    val _ret = __method_bind.set_disable_overwrite_warning.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
   fun setDisplayMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_display_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setShowHiddenFiles(show: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(show)
+    val _ret = __method_bind.set_show_hidden_files.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

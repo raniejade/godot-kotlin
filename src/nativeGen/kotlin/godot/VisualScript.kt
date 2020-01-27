@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -21,10 +22,16 @@ open class VisualScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun addCustomSignal(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.add_custom_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun addFunction(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.add_function.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -34,14 +41,25 @@ open class VisualScript internal constructor(
     node: VisualScriptNode,
     position: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(id)
+    _args.append(node)
+    _args.append(position)
+    val _ret = __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun addVariable(
     name: String,
-    default_value: Variant,
+    defaultValue: Variant,
     export: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(defaultValue)
+    _args.append(export)
+    val _ret = __method_bind.add_variable.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -51,22 +69,47 @@ open class VisualScript internal constructor(
     argname: String,
     index: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(type)
+    _args.append(argname)
+    _args.append(index)
+    val _ret = __method_bind.custom_signal_add_argument.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun customSignalGetArgumentCount(name: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.custom_signal_get_argument_count.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun customSignalGetArgumentName(name: String, argidx: Int): String {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(argidx)
+    val _ret = __method_bind.custom_signal_get_argument_name.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun customSignalGetArgumentType(name: String, argidx: Int): Variant.Type {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(argidx)
+    val _ret = __method_bind.custom_signal_get_argument_type.call(this.toVariant(),
+        _args.toVariant(), 2)
     TODO()
   }
 
   fun customSignalRemoveArgument(name: String, argidx: Int) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(argidx)
+    val _ret = __method_bind.custom_signal_remove_argument.call(this.toVariant(), _args.toVariant(),
+        2)
     TODO()
   }
 
@@ -75,6 +118,12 @@ open class VisualScript internal constructor(
     argidx: Int,
     argname: String
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(argidx)
+    _args.append(argname)
+    val _ret = __method_bind.custom_signal_set_argument_name.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
@@ -83,6 +132,12 @@ open class VisualScript internal constructor(
     argidx: Int,
     type: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(argidx)
+    _args.append(type)
+    val _ret = __method_bind.custom_signal_set_argument_type.call(this.toVariant(),
+        _args.toVariant(), 3)
     TODO()
   }
 
@@ -91,143 +146,256 @@ open class VisualScript internal constructor(
     argidx: Int,
     withidx: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(argidx)
+    _args.append(withidx)
+    val _ret = __method_bind.custom_signal_swap_argument.call(this.toVariant(), _args.toVariant(),
+        3)
     TODO()
   }
 
   fun dataConnect(
     func: String,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.data_connect.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun dataDisconnect(
     func: String,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.data_disconnect.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun getFunctionNodeId(name: String): Int {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_function_node_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFunctionScroll(name: String): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_function_scroll.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getNode(func: String, id: Int): VisualScriptNode {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(id)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getNodePosition(func: String, id: Int): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(id)
+    val _ret = __method_bind.get_node_position.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getVariableDefaultValue(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_variable_default_value.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getVariableExport(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_variable_export.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getVariableInfo(name: String): Dictionary {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_variable_info.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasCustomSignal(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_custom_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasDataConnection(
     func: String,
-    from_node: Int,
-    from_port: Int,
-    to_node: Int,
-    to_port: Int
+    fromNode: Int,
+    fromPort: Int,
+    toNode: Int,
+    toPort: Int
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(fromNode)
+    _args.append(fromPort)
+    _args.append(toNode)
+    _args.append(toPort)
+    val _ret = __method_bind.has_data_connection.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun hasFunction(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_function.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasNode(func: String, id: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(id)
+    val _ret = __method_bind.has_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasSequenceConnection(
     func: String,
-    from_node: Int,
-    from_output: Int,
-    to_node: Int
+    fromNode: Int,
+    fromOutput: Int,
+    toNode: Int
   ): Boolean {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(fromNode)
+    _args.append(fromOutput)
+    _args.append(toNode)
+    val _ret = __method_bind.has_sequence_connection.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun hasVariable(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_variable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeCustomSignal(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_custom_signal.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeFunction(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_function.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeNode(func: String, id: Int) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(id)
+    val _ret = __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun removeVariable(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_variable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun renameCustomSignal(name: String, new_name: String) {
+  fun renameCustomSignal(name: String, newName: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(newName)
+    val _ret = __method_bind.rename_custom_signal.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun renameFunction(name: String, new_name: String) {
+  fun renameFunction(name: String, newName: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(newName)
+    val _ret = __method_bind.rename_function.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun renameVariable(name: String, new_name: String) {
+  fun renameVariable(name: String, newName: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(newName)
+    val _ret = __method_bind.rename_variable.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun sequenceConnect(
     func: String,
-    from_node: Int,
-    from_output: Int,
-    to_node: Int
+    fromNode: Int,
+    fromOutput: Int,
+    toNode: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(fromNode)
+    _args.append(fromOutput)
+    _args.append(toNode)
+    val _ret = __method_bind.sequence_connect.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun sequenceDisconnect(
     func: String,
-    from_node: Int,
-    from_output: Int,
-    to_node: Int
+    fromNode: Int,
+    fromOutput: Int,
+    toNode: Int
   ) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(fromNode)
+    _args.append(fromOutput)
+    _args.append(toNode)
+    val _ret = __method_bind.sequence_disconnect.call(this.toVariant(), _args.toVariant(), 4)
     TODO()
   }
 
   fun setFunctionScroll(name: String, ofs: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(ofs)
+    val _ret = __method_bind.set_function_scroll.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setInstanceBaseType(type: String) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_instance_base_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
@@ -236,18 +404,35 @@ open class VisualScript internal constructor(
     id: Int,
     position: Vector2
   ) {
+    val _args = VariantArray.new()
+    _args.append(func)
+    _args.append(id)
+    _args.append(position)
+    val _ret = __method_bind.set_node_position.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setVariableDefaultValue(name: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_variable_default_value.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setVariableExport(name: String, enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(enable)
+    val _ret = __method_bind.set_variable_export.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setVariableInfo(name: String, value: Dictionary) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_variable_info.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

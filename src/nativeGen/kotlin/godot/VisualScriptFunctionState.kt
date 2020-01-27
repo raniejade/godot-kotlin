@@ -23,14 +23,23 @@ open class VisualScriptFunctionState internal constructor(
     signals: String,
     args: VariantArray
   ) {
+    val _args = VariantArray.new()
+    _args.append(obj)
+    _args.append(signals)
+    _args.append(args)
+    val _ret = __method_bind.connect_to_signal.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun isValid(): Boolean {
+    val _ret = __method_bind.is_valid.call(this.toVariant())
     TODO()
   }
 
   fun resume(args: VariantArray): Variant {
+    val _args = VariantArray.new()
+    _args.append(args)
+    val _ret = __method_bind.resume.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

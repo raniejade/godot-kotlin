@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class MenuButton internal constructor(
   _handle: COpaquePointer
 ) : Button(_handle) {
   fun getPopup(): PopupMenu {
+    val _ret = __method_bind.get_popup.call(this.toVariant())
     TODO()
   }
 
   fun isSwitchOnHover(): Boolean {
+    val _ret = __method_bind.is_switch_on_hover.call(this.toVariant())
     TODO()
   }
 
   fun setDisableShortcuts(disabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(disabled)
+    val _ret = __method_bind.set_disable_shortcuts.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSwitchOnHover(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_switch_on_hover.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

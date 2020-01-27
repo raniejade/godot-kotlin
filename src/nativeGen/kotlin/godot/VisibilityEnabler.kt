@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,10 +19,17 @@ open class VisibilityEnabler internal constructor(
   _handle: COpaquePointer
 ) : VisibilityNotifier(_handle) {
   fun isEnablerEnabled(enabler: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(enabler)
+    val _ret = __method_bind.is_enabler_enabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setEnabler(enabler: Int, enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabler)
+    _args.append(enabled)
+    val _ret = __method_bind.set_enabler.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

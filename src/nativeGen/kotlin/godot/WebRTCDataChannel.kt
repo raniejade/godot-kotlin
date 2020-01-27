@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,54 +20,69 @@ open class WebRTCDataChannel internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {
+    val _ret = __method_bind.close.call(this.toVariant())
     TODO()
   }
 
   fun getId(): Int {
+    val _ret = __method_bind.get_id.call(this.toVariant())
     TODO()
   }
 
   fun getLabel(): String {
+    val _ret = __method_bind.get_label.call(this.toVariant())
     TODO()
   }
 
   fun getMaxPacketLifeTime(): Int {
+    val _ret = __method_bind.get_max_packet_life_time.call(this.toVariant())
     TODO()
   }
 
   fun getMaxRetransmits(): Int {
+    val _ret = __method_bind.get_max_retransmits.call(this.toVariant())
     TODO()
   }
 
   fun getProtocol(): String {
+    val _ret = __method_bind.get_protocol.call(this.toVariant())
     TODO()
   }
 
   fun getReadyState(): ChannelState {
+    val _ret = __method_bind.get_ready_state.call(this.toVariant())
     TODO()
   }
 
   fun getWriteMode(): WriteMode {
+    val _ret = __method_bind.get_write_mode.call(this.toVariant())
     TODO()
   }
 
   fun isNegotiated(): Boolean {
+    val _ret = __method_bind.is_negotiated.call(this.toVariant())
     TODO()
   }
 
   fun isOrdered(): Boolean {
+    val _ret = __method_bind.is_ordered.call(this.toVariant())
     TODO()
   }
 
   fun poll(): Error {
+    val _ret = __method_bind.poll.call(this.toVariant())
     TODO()
   }
 
-  fun setWriteMode(write_mode: Int) {
+  fun setWriteMode(writeMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(writeMode)
+    val _ret = __method_bind.set_write_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun wasStringPacket(): Boolean {
+    val _ret = __method_bind.was_string_packet.call(this.toVariant())
     TODO()
   }
 

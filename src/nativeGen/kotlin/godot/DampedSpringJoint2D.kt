@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,34 +18,50 @@ open class DampedSpringJoint2D internal constructor(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getDamping(): Float {
+    val _ret = __method_bind.get_damping.call(this.toVariant())
     TODO()
   }
 
   fun getLength(): Float {
+    val _ret = __method_bind.get_length.call(this.toVariant())
     TODO()
   }
 
   fun getRestLength(): Float {
+    val _ret = __method_bind.get_rest_length.call(this.toVariant())
     TODO()
   }
 
   fun getStiffness(): Float {
+    val _ret = __method_bind.get_stiffness.call(this.toVariant())
     TODO()
   }
 
   fun setDamping(damping: Float) {
+    val _args = VariantArray.new()
+    _args.append(damping)
+    val _ret = __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setLength(length: Float) {
+    val _args = VariantArray.new()
+    _args.append(length)
+    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setRestLength(rest_length: Float) {
+  fun setRestLength(restLength: Float) {
+    val _args = VariantArray.new()
+    _args.append(restLength)
+    val _ret = __method_bind.set_rest_length.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStiffness(stiffness: Float) {
+    val _args = VariantArray.new()
+    _args.append(stiffness)
+    val _ret = __method_bind.set_stiffness.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

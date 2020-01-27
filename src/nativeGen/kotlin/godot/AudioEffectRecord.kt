@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,22 +19,31 @@ open class AudioEffectRecord internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getFormat(): AudioStreamSample.Format {
+    val _ret = __method_bind.get_format.call(this.toVariant())
     TODO()
   }
 
   fun getRecording(): AudioStreamSample {
+    val _ret = __method_bind.get_recording.call(this.toVariant())
     TODO()
   }
 
   fun isRecordingActive(): Boolean {
+    val _ret = __method_bind.is_recording_active.call(this.toVariant())
     TODO()
   }
 
   fun setFormat(format: Int) {
+    val _args = VariantArray.new()
+    _args.append(format)
+    val _ret = __method_bind.set_format.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRecordingActive(record: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(record)
+    val _ret = __method_bind.set_recording_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

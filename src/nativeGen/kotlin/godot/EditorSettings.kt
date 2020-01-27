@@ -6,6 +6,7 @@ import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -20,14 +21,21 @@ open class EditorSettings internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPropertyInfo(info: Dictionary) {
+    val _args = VariantArray.new()
+    _args.append(info)
+    val _ret = __method_bind.add_property_info.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun erase(property: String) {
+    val _args = VariantArray.new()
+    _args.append(property)
+    val _ret = __method_bind.erase.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFavorites(): PoolStringArray {
+    val _ret = __method_bind.get_favorites.call(this.toVariant())
     TODO()
   }
 
@@ -36,46 +44,74 @@ open class EditorSettings internal constructor(
     key: String,
     default: Variant
   ): Variant {
+    val _args = VariantArray.new()
+    _args.append(section)
+    _args.append(key)
+    _args.append(default)
+    val _ret = __method_bind.get_project_metadata.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun getProjectSettingsDir(): String {
+    val _ret = __method_bind.get_project_settings_dir.call(this.toVariant())
     TODO()
   }
 
   fun getRecentDirs(): PoolStringArray {
+    val _ret = __method_bind.get_recent_dirs.call(this.toVariant())
     TODO()
   }
 
   fun getSetting(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_setting.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getSettingsDir(): String {
+    val _ret = __method_bind.get_settings_dir.call(this.toVariant())
     TODO()
   }
 
   fun hasSetting(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_setting.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun propertyCanRevert(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun propertyGetRevert(name: String): Variant {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFavorites(dirs: PoolStringArray) {
+    val _args = VariantArray.new()
+    _args.append(dirs)
+    val _ret = __method_bind.set_favorites.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInitialValue(
     name: String,
     value: Variant,
-    update_current: Boolean
+    updateCurrent: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    _args.append(updateCurrent)
+    val _ret = __method_bind.set_initial_value.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
@@ -84,14 +120,26 @@ open class EditorSettings internal constructor(
     key: String,
     data: Variant
   ) {
+    val _args = VariantArray.new()
+    _args.append(section)
+    _args.append(key)
+    _args.append(data)
+    val _ret = __method_bind.set_project_metadata.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setRecentDirs(dirs: PoolStringArray) {
+    val _args = VariantArray.new()
+    _args.append(dirs)
+    val _ret = __method_bind.set_recent_dirs.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSetting(name: String, value: Variant) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(value)
+    val _ret = __method_bind.set_setting.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

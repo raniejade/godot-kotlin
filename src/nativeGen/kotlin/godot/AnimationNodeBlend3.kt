@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class AnimationNodeBlend3 internal constructor(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun isUsingSync(): Boolean {
+    val _ret = __method_bind.is_using_sync.call(this.toVariant())
     TODO()
   }
 
   fun setUseSync(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_sync.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

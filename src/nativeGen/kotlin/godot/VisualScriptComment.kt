@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,26 +19,38 @@ open class VisualScriptComment internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getDescription(): String {
+    val _ret = __method_bind.get_description.call(this.toVariant())
     TODO()
   }
 
   fun getSize(): Vector2 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getTitle(): String {
+    val _ret = __method_bind.get_title.call(this.toVariant())
     TODO()
   }
 
   fun setDescription(description: String) {
+    val _args = VariantArray.new()
+    _args.append(description)
+    val _ret = __method_bind.set_description.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSize(size: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTitle(title: String) {
+    val _args = VariantArray.new()
+    _args.append(title)
+    val _ret = __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

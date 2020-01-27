@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,34 +19,56 @@ open class AnimatedTexture internal constructor(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getFps(): Float {
+    val _ret = __method_bind.get_fps.call(this.toVariant())
     TODO()
   }
 
   fun getFrameDelay(frame: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.get_frame_delay.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFrameTexture(frame: Int): Texture {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.get_frame_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFrames(): Int {
+    val _ret = __method_bind.get_frames.call(this.toVariant())
     TODO()
   }
 
   fun setFps(fps: Float) {
+    val _args = VariantArray.new()
+    _args.append(fps)
+    val _ret = __method_bind.set_fps.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFrameDelay(frame: Int, delay: Float) {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    _args.append(delay)
+    val _ret = __method_bind.set_frame_delay.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFrameTexture(frame: Int, texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    _args.append(texture)
+    val _ret = __method_bind.set_frame_texture.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFrames(frames: Int) {
+    val _args = VariantArray.new()
+    _args.append(frames)
+    val _ret = __method_bind.set_frames.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

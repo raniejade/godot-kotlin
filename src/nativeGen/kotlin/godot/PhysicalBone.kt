@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,82 +21,118 @@ open class PhysicalBone internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun getBodyOffset(): Transform {
+    val _ret = __method_bind.get_body_offset.call(this.toVariant())
     TODO()
   }
 
   fun getBoneId(): Int {
+    val _ret = __method_bind.get_bone_id.call(this.toVariant())
     TODO()
   }
 
   fun getBounce(): Float {
+    val _ret = __method_bind.get_bounce.call(this.toVariant())
     TODO()
   }
 
   fun getFriction(): Float {
+    val _ret = __method_bind.get_friction.call(this.toVariant())
     TODO()
   }
 
   fun getGravityScale(): Float {
+    val _ret = __method_bind.get_gravity_scale.call(this.toVariant())
     TODO()
   }
 
   fun getJointOffset(): Transform {
+    val _ret = __method_bind.get_joint_offset.call(this.toVariant())
     TODO()
   }
 
   fun getJointType(): JointType {
+    val _ret = __method_bind.get_joint_type.call(this.toVariant())
     TODO()
   }
 
   fun getMass(): Float {
+    val _ret = __method_bind.get_mass.call(this.toVariant())
     TODO()
   }
 
   fun getSimulatePhysics(): Boolean {
+    val _ret = __method_bind.get_simulate_physics.call(this.toVariant())
     TODO()
   }
 
   fun getWeight(): Float {
+    val _ret = __method_bind.get_weight.call(this.toVariant())
     TODO()
   }
 
   fun isSimulatingPhysics(): Boolean {
+    val _ret = __method_bind.is_simulating_physics.call(this.toVariant())
     TODO()
   }
 
   fun isStaticBody(): Boolean {
+    val _ret = __method_bind.is_static_body.call(this.toVariant())
     TODO()
   }
 
   fun setBodyOffset(offset: Transform) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_body_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBounce(bounce: Float) {
+    val _args = VariantArray.new()
+    _args.append(bounce)
+    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFriction(friction: Float) {
+    val _args = VariantArray.new()
+    _args.append(friction)
+    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setGravityScale(gravity_scale: Float) {
+  fun setGravityScale(gravityScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(gravityScale)
+    val _ret = __method_bind.set_gravity_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setJointOffset(offset: Transform) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_joint_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setJointType(joint_type: Int) {
+  fun setJointType(jointType: Int) {
+    val _args = VariantArray.new()
+    _args.append(jointType)
+    val _ret = __method_bind.set_joint_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMass(mass: Float) {
+    val _args = VariantArray.new()
+    _args.append(mass)
+    val _ret = __method_bind.set_mass.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWeight(weight: Float) {
+    val _args = VariantArray.new()
+    _args.append(weight)
+    val _ret = __method_bind.set_weight.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

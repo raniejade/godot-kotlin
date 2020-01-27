@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,34 +19,53 @@ open class RandomNumberGenerator internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getSeed(): Int {
+    val _ret = __method_bind.get_seed.call(this.toVariant())
     TODO()
   }
 
   fun randf(): Float {
+    val _ret = __method_bind.randf.call(this.toVariant())
     TODO()
   }
 
   fun randfRange(from: Float, to: Float): Float {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    val _ret = __method_bind.randf_range.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun randfn(mean: Float, deviation: Float): Float {
+    val _args = VariantArray.new()
+    _args.append(mean)
+    _args.append(deviation)
+    val _ret = __method_bind.randfn.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun randi(): Int {
+    val _ret = __method_bind.randi.call(this.toVariant())
     TODO()
   }
 
   fun randiRange(from: Int, to: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    val _ret = __method_bind.randi_range.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun randomize() {
+    val _ret = __method_bind.randomize.call(this.toVariant())
     TODO()
   }
 
   fun setSeed(seed: Int) {
+    val _args = VariantArray.new()
+    _args.append(seed)
+    val _ret = __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

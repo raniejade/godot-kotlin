@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class VisualScriptSequence internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getSteps(): Int {
+    val _ret = __method_bind.get_steps.call(this.toVariant())
     TODO()
   }
 
   fun setSteps(steps: Int) {
+    val _args = VariantArray.new()
+    _args.append(steps)
+    val _ret = __method_bind.set_steps.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

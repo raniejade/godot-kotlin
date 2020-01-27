@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,82 +21,120 @@ open class AudioStreamPlayer internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getBus(): String {
+    val _ret = __method_bind.get_bus.call(this.toVariant())
     TODO()
   }
 
   fun getMixTarget(): MixTarget {
+    val _ret = __method_bind.get_mix_target.call(this.toVariant())
     TODO()
   }
 
   fun getPitchScale(): Float {
+    val _ret = __method_bind.get_pitch_scale.call(this.toVariant())
     TODO()
   }
 
   fun getPlaybackPosition(): Float {
+    val _ret = __method_bind.get_playback_position.call(this.toVariant())
     TODO()
   }
 
   fun getStream(): AudioStream {
+    val _ret = __method_bind.get_stream.call(this.toVariant())
     TODO()
   }
 
   fun getStreamPaused(): Boolean {
+    val _ret = __method_bind.get_stream_paused.call(this.toVariant())
     TODO()
   }
 
   fun getStreamPlayback(): AudioStreamPlayback {
+    val _ret = __method_bind.get_stream_playback.call(this.toVariant())
     TODO()
   }
 
   fun getVolumeDb(): Float {
+    val _ret = __method_bind.get_volume_db.call(this.toVariant())
     TODO()
   }
 
   fun isAutoplayEnabled(): Boolean {
+    val _ret = __method_bind.is_autoplay_enabled.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
-  fun play(from_position: Float) {
+  fun play(fromPosition: Float) {
+    val _args = VariantArray.new()
+    _args.append(fromPosition)
+    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun seek(to_position: Float) {
+  fun seek(toPosition: Float) {
+    val _args = VariantArray.new()
+    _args.append(toPosition)
+    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setAutoplay(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBus(bus: String) {
+    val _args = VariantArray.new()
+    _args.append(bus)
+    val _ret = __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setMixTarget(mix_target: Int) {
+  fun setMixTarget(mixTarget: Int) {
+    val _args = VariantArray.new()
+    _args.append(mixTarget)
+    val _ret = __method_bind.set_mix_target.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPitchScale(pitch_scale: Float) {
+  fun setPitchScale(pitchScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(pitchScale)
+    val _ret = __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStream(stream: AudioStream) {
+    val _args = VariantArray.new()
+    _args.append(stream)
+    val _ret = __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStreamPaused(pause: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pause)
+    val _ret = __method_bind.set_stream_paused.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setVolumeDb(volume_db: Float) {
+  fun setVolumeDb(volumeDb: Float) {
+    val _args = VariantArray.new()
+    _args.append(volumeDb)
+    val _ret = __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 

@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,42 +18,62 @@ open class AudioEffectPhaser internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDepth(): Float {
+    val _ret = __method_bind.get_depth.call(this.toVariant())
     TODO()
   }
 
   fun getFeedback(): Float {
+    val _ret = __method_bind.get_feedback.call(this.toVariant())
     TODO()
   }
 
   fun getRangeMaxHz(): Float {
+    val _ret = __method_bind.get_range_max_hz.call(this.toVariant())
     TODO()
   }
 
   fun getRangeMinHz(): Float {
+    val _ret = __method_bind.get_range_min_hz.call(this.toVariant())
     TODO()
   }
 
   fun getRateHz(): Float {
+    val _ret = __method_bind.get_rate_hz.call(this.toVariant())
     TODO()
   }
 
   fun setDepth(depth: Float) {
+    val _args = VariantArray.new()
+    _args.append(depth)
+    val _ret = __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFeedback(fbk: Float) {
+    val _args = VariantArray.new()
+    _args.append(fbk)
+    val _ret = __method_bind.set_feedback.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRangeMaxHz(hz: Float) {
+    val _args = VariantArray.new()
+    _args.append(hz)
+    val _ret = __method_bind.set_range_max_hz.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRangeMinHz(hz: Float) {
+    val _args = VariantArray.new()
+    _args.append(hz)
+    val _ret = __method_bind.set_range_min_hz.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRateHz(hz: Float) {
+    val _args = VariantArray.new()
+    _args.append(hz)
+    val _ret = __method_bind.set_rate_hz.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

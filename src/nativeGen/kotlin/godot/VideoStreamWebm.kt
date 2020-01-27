@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class VideoStreamWebm internal constructor(
   _handle: COpaquePointer
 ) : VideoStream(_handle) {
   fun getFile(): String {
+    val _ret = __method_bind.get_file.call(this.toVariant())
     TODO()
   }
 
   fun setFile(file: String) {
+    val _args = VariantArray.new()
+    _args.append(file)
+    val _ret = __method_bind.set_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

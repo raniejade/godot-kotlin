@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,42 +19,62 @@ open class AudioEffectDistortion internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDrive(): Float {
+    val _ret = __method_bind.get_drive.call(this.toVariant())
     TODO()
   }
 
   fun getKeepHfHz(): Float {
+    val _ret = __method_bind.get_keep_hf_hz.call(this.toVariant())
     TODO()
   }
 
   fun getMode(): Mode {
+    val _ret = __method_bind.get_mode.call(this.toVariant())
     TODO()
   }
 
   fun getPostGain(): Float {
+    val _ret = __method_bind.get_post_gain.call(this.toVariant())
     TODO()
   }
 
   fun getPreGain(): Float {
+    val _ret = __method_bind.get_pre_gain.call(this.toVariant())
     TODO()
   }
 
   fun setDrive(drive: Float) {
+    val _args = VariantArray.new()
+    _args.append(drive)
+    val _ret = __method_bind.set_drive.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setKeepHfHz(keep_hf_hz: Float) {
+  fun setKeepHfHz(keepHfHz: Float) {
+    val _args = VariantArray.new()
+    _args.append(keepHfHz)
+    val _ret = __method_bind.set_keep_hf_hz.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPostGain(post_gain: Float) {
+  fun setPostGain(postGain: Float) {
+    val _args = VariantArray.new()
+    _args.append(postGain)
+    val _ret = __method_bind.set_post_gain.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPreGain(pre_gain: Float) {
+  fun setPreGain(preGain: Float) {
+    val _args = VariantArray.new()
+    _args.append(preGain)
+    val _ret = __method_bind.set_pre_gain.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

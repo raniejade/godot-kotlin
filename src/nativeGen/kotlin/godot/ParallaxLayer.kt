@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,26 +18,38 @@ open class ParallaxLayer internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getMirroring(): Vector2 {
+    val _ret = __method_bind.get_mirroring.call(this.toVariant())
     TODO()
   }
 
   fun getMotionOffset(): Vector2 {
+    val _ret = __method_bind.get_motion_offset.call(this.toVariant())
     TODO()
   }
 
   fun getMotionScale(): Vector2 {
+    val _ret = __method_bind.get_motion_scale.call(this.toVariant())
     TODO()
   }
 
   fun setMirroring(mirror: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(mirror)
+    val _ret = __method_bind.set_mirroring.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMotionOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_motion_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMotionScale(scale: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.set_motion_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

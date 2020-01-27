@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,66 +19,98 @@ open class TextureButton internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getClickMask(): BitMap {
+    val _ret = __method_bind.get_click_mask.call(this.toVariant())
     TODO()
   }
 
   fun getDisabledTexture(): Texture {
+    val _ret = __method_bind.get_disabled_texture.call(this.toVariant())
     TODO()
   }
 
   fun getExpand(): Boolean {
+    val _ret = __method_bind.get_expand.call(this.toVariant())
     TODO()
   }
 
   fun getFocusedTexture(): Texture {
+    val _ret = __method_bind.get_focused_texture.call(this.toVariant())
     TODO()
   }
 
   fun getHoverTexture(): Texture {
+    val _ret = __method_bind.get_hover_texture.call(this.toVariant())
     TODO()
   }
 
   fun getNormalTexture(): Texture {
+    val _ret = __method_bind.get_normal_texture.call(this.toVariant())
     TODO()
   }
 
   fun getPressedTexture(): Texture {
+    val _ret = __method_bind.get_pressed_texture.call(this.toVariant())
     TODO()
   }
 
   fun getStretchMode(): StretchMode {
+    val _ret = __method_bind.get_stretch_mode.call(this.toVariant())
     TODO()
   }
 
   fun setClickMask(mask: BitMap) {
+    val _args = VariantArray.new()
+    _args.append(mask)
+    val _ret = __method_bind.set_click_mask.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDisabledTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_disabled_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setExpand(p_expand: Boolean) {
+  fun setExpand(pExpand: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(pExpand)
+    val _ret = __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFocusedTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_focused_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHoverTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_hover_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setNormalTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_normal_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPressedTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_pressed_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setStretchMode(p_mode: Int) {
+  fun setStretchMode(pMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(pMode)
+    val _ret = __method_bind.set_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

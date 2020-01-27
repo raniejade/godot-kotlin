@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,46 +20,67 @@ open class Resource internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun duplicate(subresources: Boolean): Resource {
+    val _args = VariantArray.new()
+    _args.append(subresources)
+    val _ret = __method_bind.duplicate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getLocalScene(): Node {
+    val _ret = __method_bind.get_local_scene.call(this.toVariant())
     TODO()
   }
 
   fun getName(): String {
+    val _ret = __method_bind.get_name.call(this.toVariant())
     TODO()
   }
 
   fun getPath(): String {
+    val _ret = __method_bind.get_path.call(this.toVariant())
     TODO()
   }
 
   fun getRid(): RID {
+    val _ret = __method_bind.get_rid.call(this.toVariant())
     TODO()
   }
 
   fun isLocalToScene(): Boolean {
+    val _ret = __method_bind.is_local_to_scene.call(this.toVariant())
     TODO()
   }
 
   fun setLocalToScene(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_local_to_scene.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setName(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPath(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setupLocalToScene() {
+    val _ret = __method_bind.setup_local_to_scene.call(this.toVariant())
     TODO()
   }
 
   fun takeOverPath(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.take_over_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

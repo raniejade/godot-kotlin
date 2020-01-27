@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
 import godot.core.RID
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -22,56 +24,85 @@ open class Font internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun draw(
-    canvas_item: RID,
+    canvasItem: RID,
     position: Vector2,
     string: String,
     modulate: Color,
-    clip_w: Int,
-    outline_modulate: Color
+    clipW: Int,
+    outlineModulate: Color
   ) {
+    val _args = VariantArray.new()
+    _args.append(canvasItem)
+    _args.append(position)
+    _args.append(string)
+    _args.append(modulate)
+    _args.append(clipW)
+    _args.append(outlineModulate)
+    val _ret = __method_bind.draw.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun drawChar(
-    canvas_item: RID,
+    canvasItem: RID,
     position: Vector2,
     char: Int,
     next: Int,
     modulate: Color,
     outline: Boolean
   ): Float {
+    val _args = VariantArray.new()
+    _args.append(canvasItem)
+    _args.append(position)
+    _args.append(char)
+    _args.append(next)
+    _args.append(modulate)
+    _args.append(outline)
+    val _ret = __method_bind.draw_char.call(this.toVariant(), _args.toVariant(), 6)
     TODO()
   }
 
   fun getAscent(): Float {
+    val _ret = __method_bind.get_ascent.call(this.toVariant())
     TODO()
   }
 
   fun getDescent(): Float {
+    val _ret = __method_bind.get_descent.call(this.toVariant())
     TODO()
   }
 
   fun getHeight(): Float {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getStringSize(string: String): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(string)
+    val _ret = __method_bind.get_string_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getWordwrapStringSize(string: String, p_width: Float): Vector2 {
+  fun getWordwrapStringSize(string: String, pWidth: Float): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(string)
+    _args.append(pWidth)
+    val _ret = __method_bind.get_wordwrap_string_size.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun hasOutline(): Boolean {
+    val _ret = __method_bind.has_outline.call(this.toVariant())
     TODO()
   }
 
   fun isDistanceFieldHint(): Boolean {
+    val _ret = __method_bind.is_distance_field_hint.call(this.toVariant())
     TODO()
   }
 
   fun updateChanges() {
+    val _ret = __method_bind.update_changes.call(this.toVariant())
     TODO()
   }
 

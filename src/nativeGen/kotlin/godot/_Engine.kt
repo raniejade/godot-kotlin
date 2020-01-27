@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Dictionary
 import godot.core.Godot
+import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
@@ -21,90 +22,126 @@ open class _Engine internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getAuthorInfo(): Dictionary {
+    val _ret = __method_bind.get_author_info.call(this.toVariant())
     TODO()
   }
 
   fun getCopyrightInfo(): VariantArray {
+    val _ret = __method_bind.get_copyright_info.call(this.toVariant())
     TODO()
   }
 
   fun getDonorInfo(): Dictionary {
+    val _ret = __method_bind.get_donor_info.call(this.toVariant())
     TODO()
   }
 
   fun getFramesDrawn(): Int {
+    val _ret = __method_bind.get_frames_drawn.call(this.toVariant())
     TODO()
   }
 
   fun getFramesPerSecond(): Float {
+    val _ret = __method_bind.get_frames_per_second.call(this.toVariant())
     TODO()
   }
 
   fun getIterationsPerSecond(): Int {
+    val _ret = __method_bind.get_iterations_per_second.call(this.toVariant())
     TODO()
   }
 
   fun getLicenseInfo(): Dictionary {
+    val _ret = __method_bind.get_license_info.call(this.toVariant())
     TODO()
   }
 
   fun getLicenseText(): String {
+    val _ret = __method_bind.get_license_text.call(this.toVariant())
     TODO()
   }
 
   fun getMainLoop(): MainLoop {
+    val _ret = __method_bind.get_main_loop.call(this.toVariant())
     TODO()
   }
 
   fun getPhysicsJitterFix(): Float {
+    val _ret = __method_bind.get_physics_jitter_fix.call(this.toVariant())
     TODO()
   }
 
   fun getSingleton(name: String): Object {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_singleton.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getTargetFps(): Int {
+    val _ret = __method_bind.get_target_fps.call(this.toVariant())
     TODO()
   }
 
   fun getTimeScale(): Float {
+    val _ret = __method_bind.get_time_scale.call(this.toVariant())
     TODO()
   }
 
   fun getVersionInfo(): Dictionary {
+    val _ret = __method_bind.get_version_info.call(this.toVariant())
     TODO()
   }
 
   fun hasSingleton(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_singleton.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isEditorHint(): Boolean {
+    val _ret = __method_bind.is_editor_hint.call(this.toVariant())
     TODO()
   }
 
   fun isInPhysicsFrame(): Boolean {
+    val _ret = __method_bind.is_in_physics_frame.call(this.toVariant())
     TODO()
   }
 
   fun setEditorHint(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_editor_hint.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setIterationsPerSecond(iterations_per_second: Int) {
+  fun setIterationsPerSecond(iterationsPerSecond: Int) {
+    val _args = VariantArray.new()
+    _args.append(iterationsPerSecond)
+    val _ret = __method_bind.set_iterations_per_second.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setPhysicsJitterFix(physics_jitter_fix: Float) {
+  fun setPhysicsJitterFix(physicsJitterFix: Float) {
+    val _args = VariantArray.new()
+    _args.append(physicsJitterFix)
+    val _ret = __method_bind.set_physics_jitter_fix.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTargetFps(target_fps: Int) {
+  fun setTargetFps(targetFps: Int) {
+    val _args = VariantArray.new()
+    _args.append(targetFps)
+    val _ret = __method_bind.set_target_fps.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTimeScale(time_scale: Float) {
+  fun setTimeScale(timeScale: Float) {
+    val _args = VariantArray.new()
+    _args.append(timeScale)
+    val _ret = __method_bind.set_time_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

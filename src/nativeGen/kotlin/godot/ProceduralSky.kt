@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,130 +20,194 @@ open class ProceduralSky internal constructor(
   _handle: COpaquePointer
 ) : Sky(_handle) {
   fun getGroundBottomColor(): Color {
+    val _ret = __method_bind.get_ground_bottom_color.call(this.toVariant())
     TODO()
   }
 
   fun getGroundCurve(): Float {
+    val _ret = __method_bind.get_ground_curve.call(this.toVariant())
     TODO()
   }
 
   fun getGroundEnergy(): Float {
+    val _ret = __method_bind.get_ground_energy.call(this.toVariant())
     TODO()
   }
 
   fun getGroundHorizonColor(): Color {
+    val _ret = __method_bind.get_ground_horizon_color.call(this.toVariant())
     TODO()
   }
 
   fun getSkyCurve(): Float {
+    val _ret = __method_bind.get_sky_curve.call(this.toVariant())
     TODO()
   }
 
   fun getSkyEnergy(): Float {
+    val _ret = __method_bind.get_sky_energy.call(this.toVariant())
     TODO()
   }
 
   fun getSkyHorizonColor(): Color {
+    val _ret = __method_bind.get_sky_horizon_color.call(this.toVariant())
     TODO()
   }
 
   fun getSkyTopColor(): Color {
+    val _ret = __method_bind.get_sky_top_color.call(this.toVariant())
     TODO()
   }
 
   fun getSunAngleMax(): Float {
+    val _ret = __method_bind.get_sun_angle_max.call(this.toVariant())
     TODO()
   }
 
   fun getSunAngleMin(): Float {
+    val _ret = __method_bind.get_sun_angle_min.call(this.toVariant())
     TODO()
   }
 
   fun getSunColor(): Color {
+    val _ret = __method_bind.get_sun_color.call(this.toVariant())
     TODO()
   }
 
   fun getSunCurve(): Float {
+    val _ret = __method_bind.get_sun_curve.call(this.toVariant())
     TODO()
   }
 
   fun getSunEnergy(): Float {
+    val _ret = __method_bind.get_sun_energy.call(this.toVariant())
     TODO()
   }
 
   fun getSunLatitude(): Float {
+    val _ret = __method_bind.get_sun_latitude.call(this.toVariant())
     TODO()
   }
 
   fun getSunLongitude(): Float {
+    val _ret = __method_bind.get_sun_longitude.call(this.toVariant())
     TODO()
   }
 
   fun getTextureSize(): TextureSize {
+    val _ret = __method_bind.get_texture_size.call(this.toVariant())
     TODO()
   }
 
   fun setGroundBottomColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_ground_bottom_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGroundCurve(curve: Float) {
+    val _args = VariantArray.new()
+    _args.append(curve)
+    val _ret = __method_bind.set_ground_curve.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGroundEnergy(energy: Float) {
+    val _args = VariantArray.new()
+    _args.append(energy)
+    val _ret = __method_bind.set_ground_energy.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setGroundHorizonColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_ground_horizon_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSkyCurve(curve: Float) {
+    val _args = VariantArray.new()
+    _args.append(curve)
+    val _ret = __method_bind.set_sky_curve.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSkyEnergy(energy: Float) {
+    val _args = VariantArray.new()
+    _args.append(energy)
+    val _ret = __method_bind.set_sky_energy.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSkyHorizonColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_sky_horizon_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSkyTopColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_sky_top_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunAngleMax(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_sun_angle_max.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunAngleMin(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_sun_angle_min.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_sun_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunCurve(curve: Float) {
+    val _args = VariantArray.new()
+    _args.append(curve)
+    val _ret = __method_bind.set_sun_curve.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunEnergy(energy: Float) {
+    val _args = VariantArray.new()
+    _args.append(energy)
+    val _ret = __method_bind.set_sun_energy.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunLatitude(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_sun_latitude.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSunLongitude(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_sun_longitude.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTextureSize(size: Int) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_texture_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

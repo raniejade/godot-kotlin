@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,42 +20,62 @@ open class Button internal constructor(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getButtonIcon(): Texture {
+    val _ret = __method_bind.get_button_icon.call(this.toVariant())
     TODO()
   }
 
   fun getClipText(): Boolean {
+    val _ret = __method_bind.get_clip_text.call(this.toVariant())
     TODO()
   }
 
   fun getText(): String {
+    val _ret = __method_bind.get_text.call(this.toVariant())
     TODO()
   }
 
   fun getTextAlign(): TextAlign {
+    val _ret = __method_bind.get_text_align.call(this.toVariant())
     TODO()
   }
 
   fun isFlat(): Boolean {
+    val _ret = __method_bind.is_flat.call(this.toVariant())
     TODO()
   }
 
   fun setButtonIcon(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_button_icon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setClipText(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_clip_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFlat(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_flat.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setText(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTextAlign(align: Int) {
+    val _args = VariantArray.new()
+    _args.append(align)
+    val _ret = __method_bind.set_text_align.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

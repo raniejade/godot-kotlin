@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,34 +19,50 @@ open class Slider internal constructor(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getTicks(): Int {
+    val _ret = __method_bind.get_ticks.call(this.toVariant())
     TODO()
   }
 
   fun getTicksOnBorders(): Boolean {
+    val _ret = __method_bind.get_ticks_on_borders.call(this.toVariant())
     TODO()
   }
 
   fun isEditable(): Boolean {
+    val _ret = __method_bind.is_editable.call(this.toVariant())
     TODO()
   }
 
   fun isScrollable(): Boolean {
+    val _ret = __method_bind.is_scrollable.call(this.toVariant())
     TODO()
   }
 
   fun setEditable(editable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(editable)
+    val _ret = __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setScrollable(scrollable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(scrollable)
+    val _ret = __method_bind.set_scrollable.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTicks(count: Int) {
+    val _args = VariantArray.new()
+    _args.append(count)
+    val _ret = __method_bind.set_ticks.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTicksOnBorders(ticks_on_border: Boolean) {
+  fun setTicksOnBorders(ticksOnBorder: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(ticksOnBorder)
+    val _ret = __method_bind.set_ticks_on_borders.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

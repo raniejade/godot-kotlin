@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,14 +19,21 @@ open class BoxContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun addSpacer(begin: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(begin)
+    val _ret = __method_bind.add_spacer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAlignment(): AlignMode {
+    val _ret = __method_bind.get_alignment.call(this.toVariant())
     TODO()
   }
 
   fun setAlignment(alignment: Int) {
+    val _args = VariantArray.new()
+    _args.append(alignment)
+    val _ret = __method_bind.set_alignment.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

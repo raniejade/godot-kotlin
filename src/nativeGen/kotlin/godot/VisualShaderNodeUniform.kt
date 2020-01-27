@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class VisualShaderNodeUniform internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getUniformName(): String {
+    val _ret = __method_bind.get_uniform_name.call(this.toVariant())
     TODO()
   }
 
   fun setUniformName(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_uniform_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

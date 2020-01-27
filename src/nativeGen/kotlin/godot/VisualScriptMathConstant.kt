@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class VisualScriptMathConstant internal constructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getMathConstant(): MathConstant {
+    val _ret = __method_bind.get_math_constant.call(this.toVariant())
     TODO()
   }
 
   fun setMathConstant(which: Int) {
+    val _args = VariantArray.new()
+    _args.append(which)
+    val _ret = __method_bind.set_math_constant.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

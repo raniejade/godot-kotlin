@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Float
 import kotlin.Int
@@ -18,42 +20,62 @@ open class PrismMesh internal constructor(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getLeftToRight(): Float {
+    val _ret = __method_bind.get_left_to_right.call(this.toVariant())
     TODO()
   }
 
   fun getSize(): Vector3 {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getSubdivideDepth(): Int {
+    val _ret = __method_bind.get_subdivide_depth.call(this.toVariant())
     TODO()
   }
 
   fun getSubdivideHeight(): Int {
+    val _ret = __method_bind.get_subdivide_height.call(this.toVariant())
     TODO()
   }
 
   fun getSubdivideWidth(): Int {
+    val _ret = __method_bind.get_subdivide_width.call(this.toVariant())
     TODO()
   }
 
-  fun setLeftToRight(left_to_right: Float) {
+  fun setLeftToRight(leftToRight: Float) {
+    val _args = VariantArray.new()
+    _args.append(leftToRight)
+    val _ret = __method_bind.set_left_to_right.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSize(size: Vector3) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSubdivideDepth(segments: Int) {
+    val _args = VariantArray.new()
+    _args.append(segments)
+    val _ret = __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSubdivideHeight(segments: Int) {
+    val _args = VariantArray.new()
+    _args.append(segments)
+    val _ret = __method_bind.set_subdivide_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSubdivideWidth(segments: Int) {
+    val _args = VariantArray.new()
+    _args.append(segments)
+    val _ret = __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

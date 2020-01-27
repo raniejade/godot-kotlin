@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Color
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -18,78 +20,123 @@ open class DynamicFont internal constructor(
   _handle: COpaquePointer
 ) : Font(_handle) {
   fun addFallback(data: DynamicFontData) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.add_fallback.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFallback(idx: Int): DynamicFontData {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_fallback.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getFallbackCount(): Int {
+    val _ret = __method_bind.get_fallback_count.call(this.toVariant())
     TODO()
   }
 
   fun getFontData(): DynamicFontData {
+    val _ret = __method_bind.get_font_data.call(this.toVariant())
     TODO()
   }
 
   fun getOutlineColor(): Color {
+    val _ret = __method_bind.get_outline_color.call(this.toVariant())
     TODO()
   }
 
   fun getOutlineSize(): Int {
+    val _ret = __method_bind.get_outline_size.call(this.toVariant())
     TODO()
   }
 
   fun getSize(): Int {
+    val _ret = __method_bind.get_size.call(this.toVariant())
     TODO()
   }
 
   fun getSpacing(type: Int): Int {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_spacing.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getUseFilter(): Boolean {
+    val _ret = __method_bind.get_use_filter.call(this.toVariant())
     TODO()
   }
 
   fun getUseMipmaps(): Boolean {
+    val _ret = __method_bind.get_use_mipmaps.call(this.toVariant())
     TODO()
   }
 
   fun removeFallback(idx: Int) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.remove_fallback.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFallback(idx: Int, data: DynamicFontData) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(data)
+    val _ret = __method_bind.set_fallback.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setFontData(data: DynamicFontData) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.set_font_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOutlineColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_outline_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOutlineSize(size: Int) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_outline_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSize(data: Int) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpacing(type: Int, value: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    _args.append(value)
+    val _ret = __method_bind.set_spacing.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setUseFilter(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_filter.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUseMipmaps(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_use_mipmaps.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

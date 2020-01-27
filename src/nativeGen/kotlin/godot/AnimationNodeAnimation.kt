@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class AnimationNodeAnimation internal constructor(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
   fun getAnimation(): String {
+    val _ret = __method_bind.get_animation.call(this.toVariant())
     TODO()
   }
 
   fun setAnimation(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

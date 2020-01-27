@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.String
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class BoneAttachment internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getBoneName(): String {
+    val _ret = __method_bind.get_bone_name.call(this.toVariant())
     TODO()
   }
 
-  fun setBoneName(bone_name: String) {
+  fun setBoneName(boneName: String) {
+    val _args = VariantArray.new()
+    _args.append(boneName)
+    val _ret = __method_bind.set_bone_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

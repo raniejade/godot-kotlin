@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,10 +17,14 @@ open class Path2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getCurve(): Curve2D {
+    val _ret = __method_bind.get_curve.call(this.toVariant())
     TODO()
   }
 
   fun setCurve(curve: Curve2D) {
+    val _args = VariantArray.new()
+    _args.append(curve)
+    val _ret = __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

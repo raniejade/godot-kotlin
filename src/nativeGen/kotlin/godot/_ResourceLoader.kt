@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -17,39 +19,69 @@ import kotlinx.cinterop.reinterpret
 open class _ResourceLoader internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun exists(path: String, type_hint: String): Boolean {
+  fun exists(path: String, typeHint: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(typeHint)
+    val _ret = __method_bind.exists.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getDependencies(path: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.get_dependencies.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getRecognizedExtensionsForType(type: String): PoolStringArray {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.get_recognized_extensions_for_type.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 
   fun has(path: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.has.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun hasCached(path: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.has_cached.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun load(
     path: String,
-    type_hint: String,
-    no_cache: Boolean
+    typeHint: String,
+    noCache: Boolean
   ): Resource {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(typeHint)
+    _args.append(noCache)
+    val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
-  fun loadInteractive(path: String, type_hint: String): ResourceInteractiveLoader {
+  fun loadInteractive(path: String, typeHint: String): ResourceInteractiveLoader {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(typeHint)
+    val _ret = __method_bind.load_interactive.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setAbortOnMissingResources(abort: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(abort)
+    val _ret = __method_bind.set_abort_on_missing_resources.call(this.toVariant(),
+        _args.toVariant(), 1)
     TODO()
   }
 

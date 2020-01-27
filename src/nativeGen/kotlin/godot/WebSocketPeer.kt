@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,30 +20,42 @@ open class WebSocketPeer internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close(code: Int, reason: String) {
+    val _args = VariantArray.new()
+    _args.append(code)
+    _args.append(reason)
+    val _ret = __method_bind.close.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getConnectedHost(): String {
+    val _ret = __method_bind.get_connected_host.call(this.toVariant())
     TODO()
   }
 
   fun getConnectedPort(): Int {
+    val _ret = __method_bind.get_connected_port.call(this.toVariant())
     TODO()
   }
 
   fun getWriteMode(): WriteMode {
+    val _ret = __method_bind.get_write_mode.call(this.toVariant())
     TODO()
   }
 
   fun isConnectedToHost(): Boolean {
+    val _ret = __method_bind.is_connected_to_host.call(this.toVariant())
     TODO()
   }
 
   fun setWriteMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_write_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun wasStringPacket(): Boolean {
+    val _ret = __method_bind.was_string_packet.call(this.toVariant())
     TODO()
   }
 

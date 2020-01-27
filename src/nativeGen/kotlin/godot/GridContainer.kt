@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class GridContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getColumns(): Int {
+    val _ret = __method_bind.get_columns.call(this.toVariant())
     TODO()
   }
 
   fun setColumns(columns: Int) {
+    val _args = VariantArray.new()
+    _args.append(columns)
+    val _ret = __method_bind.set_columns.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

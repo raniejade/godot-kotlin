@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,18 +19,26 @@ open class PackedScene internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
+    val _ret = __method_bind.can_instance.call(this.toVariant())
     TODO()
   }
 
   fun getState(): SceneState {
+    val _ret = __method_bind.get_state.call(this.toVariant())
     TODO()
   }
 
-  fun instance(edit_state: Int): Node {
+  fun instance(editState: Int): Node {
+    val _args = VariantArray.new()
+    _args.append(editState)
+    val _ret = __method_bind.instance.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun pack(path: Node): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.pack.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

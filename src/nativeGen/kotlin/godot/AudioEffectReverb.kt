@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,66 +18,98 @@ open class AudioEffectReverb internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDamping(): Float {
+    val _ret = __method_bind.get_damping.call(this.toVariant())
     TODO()
   }
 
   fun getDry(): Float {
+    val _ret = __method_bind.get_dry.call(this.toVariant())
     TODO()
   }
 
   fun getHpf(): Float {
+    val _ret = __method_bind.get_hpf.call(this.toVariant())
     TODO()
   }
 
   fun getPredelayFeedback(): Float {
+    val _ret = __method_bind.get_predelay_feedback.call(this.toVariant())
     TODO()
   }
 
   fun getPredelayMsec(): Float {
+    val _ret = __method_bind.get_predelay_msec.call(this.toVariant())
     TODO()
   }
 
   fun getRoomSize(): Float {
+    val _ret = __method_bind.get_room_size.call(this.toVariant())
     TODO()
   }
 
   fun getSpread(): Float {
+    val _ret = __method_bind.get_spread.call(this.toVariant())
     TODO()
   }
 
   fun getWet(): Float {
+    val _ret = __method_bind.get_wet.call(this.toVariant())
     TODO()
   }
 
   fun setDamping(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setDry(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHpf(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_hpf.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPredelayFeedback(feedback: Float) {
+    val _args = VariantArray.new()
+    _args.append(feedback)
+    val _ret = __method_bind.set_predelay_feedback.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPredelayMsec(msec: Float) {
+    val _args = VariantArray.new()
+    _args.append(msec)
+    val _ret = __method_bind.set_predelay_msec.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRoomSize(size: Float) {
+    val _args = VariantArray.new()
+    _args.append(size)
+    val _ret = __method_bind.set_room_size.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpread(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_spread.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWet(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_wet.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

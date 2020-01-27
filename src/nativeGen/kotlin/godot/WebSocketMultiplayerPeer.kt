@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -15,7 +17,10 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
-  fun getPeer(peer_id: Int): WebSocketPeer {
+  fun getPeer(peerId: Int): WebSocketPeer {
+    val _args = VariantArray.new()
+    _args.append(peerId)
+    val _ret = __method_bind.get_peer.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
@@ -19,106 +21,158 @@ open class Sprite internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getFrame(): Int {
+    val _ret = __method_bind.get_frame.call(this.toVariant())
     TODO()
   }
 
   fun getHframes(): Int {
+    val _ret = __method_bind.get_hframes.call(this.toVariant())
     TODO()
   }
 
   fun getNormalMap(): Texture {
+    val _ret = __method_bind.get_normal_map.call(this.toVariant())
     TODO()
   }
 
   fun getOffset(): Vector2 {
+    val _ret = __method_bind.get_offset.call(this.toVariant())
     TODO()
   }
 
   fun getRect(): Rect2 {
+    val _ret = __method_bind.get_rect.call(this.toVariant())
     TODO()
   }
 
   fun getRegionRect(): Rect2 {
+    val _ret = __method_bind.get_region_rect.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun getVframes(): Int {
+    val _ret = __method_bind.get_vframes.call(this.toVariant())
     TODO()
   }
 
   fun isCentered(): Boolean {
+    val _ret = __method_bind.is_centered.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedH(): Boolean {
+    val _ret = __method_bind.is_flipped_h.call(this.toVariant())
     TODO()
   }
 
   fun isFlippedV(): Boolean {
+    val _ret = __method_bind.is_flipped_v.call(this.toVariant())
     TODO()
   }
 
   fun isPixelOpaque(pos: Vector2): Boolean {
+    val _args = VariantArray.new()
+    _args.append(pos)
+    val _ret = __method_bind.is_pixel_opaque.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isRegion(): Boolean {
+    val _ret = __method_bind.is_region.call(this.toVariant())
     TODO()
   }
 
   fun isRegionFilterClipEnabled(): Boolean {
+    val _ret = __method_bind.is_region_filter_clip_enabled.call(this.toVariant())
     TODO()
   }
 
   fun setCentered(centered: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(centered)
+    val _ret = __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFlipH(flip_h: Boolean) {
+  fun setFlipH(flipH: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipH)
+    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setFlipV(flip_v: Boolean) {
+  fun setFlipV(flipV: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(flipV)
+    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFrame(frame: Int) {
+    val _args = VariantArray.new()
+    _args.append(frame)
+    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHframes(hframes: Int) {
+    val _args = VariantArray.new()
+    _args.append(hframes)
+    val _ret = __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setNormalMap(normal_map: Texture) {
+  fun setNormalMap(normalMap: Texture) {
+    val _args = VariantArray.new()
+    _args.append(normalMap)
+    val _ret = __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegion(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegionFilterClip(enabled: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enabled)
+    val _ret = __method_bind.set_region_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRegionRect(rect: Rect2) {
+    val _args = VariantArray.new()
+    _args.append(rect)
+    val _ret = __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVframes(vframes: Int) {
+    val _args = VariantArray.new()
+    _args.append(vframes)
+    val _ret = __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

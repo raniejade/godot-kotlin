@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -19,26 +21,40 @@ open class MainLoop internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun finish() {
+    val _ret = __method_bind.finish.call(this.toVariant())
     TODO()
   }
 
   fun idle(delta: Float): Boolean {
+    val _args = VariantArray.new()
+    _args.append(delta)
+    val _ret = __method_bind.idle.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun init() {
+    val _ret = __method_bind.init.call(this.toVariant())
     TODO()
   }
 
   fun inputEvent(event: InputEvent) {
+    val _args = VariantArray.new()
+    _args.append(event)
+    val _ret = __method_bind.input_event.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun inputText(text: String) {
+    val _args = VariantArray.new()
+    _args.append(text)
+    val _ret = __method_bind.input_text.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun iteration(delta: Float): Boolean {
+    val _args = VariantArray.new()
+    _args.append(delta)
+    val _ret = __method_bind.iteration.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

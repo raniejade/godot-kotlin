@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class CircleShape2D internal constructor(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getRadius(): Float {
+    val _ret = __method_bind.get_radius.call(this.toVariant())
     TODO()
   }
 
   fun setRadius(radius: Float) {
+    val _args = VariantArray.new()
+    _args.append(radius)
+    val _ret = __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

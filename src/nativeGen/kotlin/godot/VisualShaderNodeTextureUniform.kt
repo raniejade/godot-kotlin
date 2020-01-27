@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class VisualShaderNodeTextureUniform internal constructor(
   _handle: COpaquePointer
 ) : VisualShaderNodeUniform(_handle) {
   fun getColorDefault(): ColorDefault {
+    val _ret = __method_bind.get_color_default.call(this.toVariant())
     TODO()
   }
 
   fun getTextureType(): TextureType {
+    val _ret = __method_bind.get_texture_type.call(this.toVariant())
     TODO()
   }
 
   fun setColorDefault(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_color_default.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTextureType(type: Int) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

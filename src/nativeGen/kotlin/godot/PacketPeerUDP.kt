@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,34 +20,48 @@ open class PacketPeerUDP internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {
+    val _ret = __method_bind.close.call(this.toVariant())
     TODO()
   }
 
   fun getPacketIp(): String {
+    val _ret = __method_bind.get_packet_ip.call(this.toVariant())
     TODO()
   }
 
   fun getPacketPort(): Int {
+    val _ret = __method_bind.get_packet_port.call(this.toVariant())
     TODO()
   }
 
   fun isListening(): Boolean {
+    val _ret = __method_bind.is_listening.call(this.toVariant())
     TODO()
   }
 
   fun listen(
     port: Int,
-    bind_address: String,
-    recv_buf_size: Int
+    bindAddress: String,
+    recvBufSize: Int
   ): Error {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(bindAddress)
+    _args.append(recvBufSize)
+    val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setDestAddress(host: String, port: Int): Error {
+    val _args = VariantArray.new()
+    _args.append(host)
+    _args.append(port)
+    val _ret = __method_bind.set_dest_address.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun wait(): Error {
+    val _ret = __method_bind.wait.call(this.toVariant())
     TODO()
   }
 

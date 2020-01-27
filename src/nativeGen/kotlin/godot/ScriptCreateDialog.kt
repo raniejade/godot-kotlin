@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -19,8 +21,13 @@ open class ScriptCreateDialog internal constructor(
   fun config(
     inherits: String,
     path: String,
-    built_in_enabled: Boolean
+    builtInEnabled: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(inherits)
+    _args.append(path)
+    _args.append(builtInEnabled)
+    val _ret = __method_bind.config.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 

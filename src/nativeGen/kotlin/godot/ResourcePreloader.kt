@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,26 +20,44 @@ open class ResourcePreloader internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addResource(name: String, resource: Resource) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(resource)
+    val _ret = __method_bind.add_resource.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getResource(name: String): Resource {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.get_resource.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getResourceList(): PoolStringArray {
+    val _ret = __method_bind.get_resource_list.call(this.toVariant())
     TODO()
   }
 
   fun hasResource(name: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.has_resource.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun removeResource(name: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    val _ret = __method_bind.remove_resource.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun renameResource(name: String, newname: String) {
+    val _args = VariantArray.new()
+    _args.append(name)
+    _args.append(newname)
+    val _ret = __method_bind.rename_resource.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolByteArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -16,10 +18,12 @@ open class GDScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun getAsByteCode(): PoolByteArray {
+    val _ret = __method_bind.get_as_byte_code.call(this.toVariant())
     TODO()
   }
 
   fun new(): Object {
+    val _ret = __method_bind.new.call(this.toVariant())
     TODO()
   }
 

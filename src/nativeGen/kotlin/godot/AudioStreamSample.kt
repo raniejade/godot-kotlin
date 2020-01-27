@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolByteArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,62 +21,93 @@ open class AudioStreamSample internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getData(): PoolByteArray {
+    val _ret = __method_bind.get_data.call(this.toVariant())
     TODO()
   }
 
   fun getFormat(): Format {
+    val _ret = __method_bind.get_format.call(this.toVariant())
     TODO()
   }
 
   fun getLoopBegin(): Int {
+    val _ret = __method_bind.get_loop_begin.call(this.toVariant())
     TODO()
   }
 
   fun getLoopEnd(): Int {
+    val _ret = __method_bind.get_loop_end.call(this.toVariant())
     TODO()
   }
 
   fun getLoopMode(): LoopMode {
+    val _ret = __method_bind.get_loop_mode.call(this.toVariant())
     TODO()
   }
 
   fun getMixRate(): Int {
+    val _ret = __method_bind.get_mix_rate.call(this.toVariant())
     TODO()
   }
 
   fun isStereo(): Boolean {
+    val _ret = __method_bind.is_stereo.call(this.toVariant())
     TODO()
   }
 
   fun saveToWav(path: String): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.save_to_wav.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setData(data: PoolByteArray) {
+    val _args = VariantArray.new()
+    _args.append(data)
+    val _ret = __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFormat(format: Int) {
+    val _args = VariantArray.new()
+    _args.append(format)
+    val _ret = __method_bind.set_format.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLoopBegin(loop_begin: Int) {
+  fun setLoopBegin(loopBegin: Int) {
+    val _args = VariantArray.new()
+    _args.append(loopBegin)
+    val _ret = __method_bind.set_loop_begin.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLoopEnd(loop_end: Int) {
+  fun setLoopEnd(loopEnd: Int) {
+    val _args = VariantArray.new()
+    _args.append(loopEnd)
+    val _ret = __method_bind.set_loop_end.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setLoopMode(loop_mode: Int) {
+  fun setLoopMode(loopMode: Int) {
+    val _args = VariantArray.new()
+    _args.append(loopMode)
+    val _ret = __method_bind.set_loop_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setMixRate(mix_rate: Int) {
+  fun setMixRate(mixRate: Int) {
+    val _args = VariantArray.new()
+    _args.append(mixRate)
+    val _ret = __method_bind.set_mix_rate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setStereo(stereo: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(stereo)
+    val _ret = __method_bind.set_stereo.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

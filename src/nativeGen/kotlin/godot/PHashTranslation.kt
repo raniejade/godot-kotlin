@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -15,6 +17,9 @@ open class PHashTranslation internal constructor(
   _handle: COpaquePointer
 ) : Translation(_handle) {
   fun generate(from: Translation) {
+    val _args = VariantArray.new()
+    _args.append(from)
+    val _ret = __method_bind.generate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

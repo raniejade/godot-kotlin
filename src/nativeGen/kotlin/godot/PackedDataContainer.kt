@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,10 +18,14 @@ open class PackedDataContainer internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun pack(value: Variant): Error {
+    val _args = VariantArray.new()
+    _args.append(value)
+    val _ret = __method_bind.pack.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun size(): Int {
+    val _ret = __method_bind.size.call(this.toVariant())
     TODO()
   }
 

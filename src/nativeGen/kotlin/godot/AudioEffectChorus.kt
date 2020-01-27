@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
@@ -17,74 +19,128 @@ open class AudioEffectChorus internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDry(): Float {
+    val _ret = __method_bind.get_dry.call(this.toVariant())
     TODO()
   }
 
   fun getVoiceCount(): Int {
+    val _ret = __method_bind.get_voice_count.call(this.toVariant())
     TODO()
   }
 
-  fun getVoiceCutoffHz(voice_idx: Int): Float {
+  fun getVoiceCutoffHz(voiceIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    val _ret = __method_bind.get_voice_cutoff_hz.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getVoiceDelayMs(voice_idx: Int): Float {
+  fun getVoiceDelayMs(voiceIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    val _ret = __method_bind.get_voice_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getVoiceDepthMs(voice_idx: Int): Float {
+  fun getVoiceDepthMs(voiceIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    val _ret = __method_bind.get_voice_depth_ms.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getVoiceLevelDb(voice_idx: Int): Float {
+  fun getVoiceLevelDb(voiceIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    val _ret = __method_bind.get_voice_level_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getVoicePan(voice_idx: Int): Float {
+  fun getVoicePan(voiceIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    val _ret = __method_bind.get_voice_pan.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun getVoiceRateHz(voice_idx: Int): Float {
+  fun getVoiceRateHz(voiceIdx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    val _ret = __method_bind.get_voice_rate_hz.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getWet(): Float {
+    val _ret = __method_bind.get_wet.call(this.toVariant())
     TODO()
   }
 
   fun setDry(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setVoiceCount(voices: Int) {
+    val _args = VariantArray.new()
+    _args.append(voices)
+    val _ret = __method_bind.set_voice_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setVoiceCutoffHz(voice_idx: Int, cutoff_hz: Float) {
+  fun setVoiceCutoffHz(voiceIdx: Int, cutoffHz: Float) {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    _args.append(cutoffHz)
+    val _ret = __method_bind.set_voice_cutoff_hz.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setVoiceDelayMs(voice_idx: Int, delay_ms: Float) {
+  fun setVoiceDelayMs(voiceIdx: Int, delayMs: Float) {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    _args.append(delayMs)
+    val _ret = __method_bind.set_voice_delay_ms.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setVoiceDepthMs(voice_idx: Int, depth_ms: Float) {
+  fun setVoiceDepthMs(voiceIdx: Int, depthMs: Float) {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    _args.append(depthMs)
+    val _ret = __method_bind.set_voice_depth_ms.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setVoiceLevelDb(voice_idx: Int, level_db: Float) {
+  fun setVoiceLevelDb(voiceIdx: Int, levelDb: Float) {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    _args.append(levelDb)
+    val _ret = __method_bind.set_voice_level_db.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setVoicePan(voice_idx: Int, pan: Float) {
+  fun setVoicePan(voiceIdx: Int, pan: Float) {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    _args.append(pan)
+    val _ret = __method_bind.set_voice_pan.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setVoiceRateHz(voice_idx: Int, rate_hz: Float) {
+  fun setVoiceRateHz(voiceIdx: Int, rateHz: Float) {
+    val _args = VariantArray.new()
+    _args.append(voiceIdx)
+    _args.append(rateHz)
+    val _ret = __method_bind.set_voice_rate_hz.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setWet(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_wet.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

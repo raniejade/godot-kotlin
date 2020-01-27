@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,26 +20,38 @@ open class DynamicFontData internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getFontPath(): String {
+    val _ret = __method_bind.get_font_path.call(this.toVariant())
     TODO()
   }
 
   fun getHinting(): Hinting {
+    val _ret = __method_bind.get_hinting.call(this.toVariant())
     TODO()
   }
 
   fun isAntialiased(): Boolean {
+    val _ret = __method_bind.is_antialiased.call(this.toVariant())
     TODO()
   }
 
   fun setAntialiased(antialiased: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(antialiased)
+    val _ret = __method_bind.set_antialiased.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFontPath(path: String) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_font_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHinting(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_hinting.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

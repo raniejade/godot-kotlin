@@ -6,6 +6,8 @@ import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.PoolVector2Array
 import godot.core.Rect2
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -22,34 +24,60 @@ open class PolygonPathFinder internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun findPath(from: Vector2, to: Vector2): PoolVector2Array {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    val _ret = __method_bind.find_path.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getBounds(): Rect2 {
+    val _ret = __method_bind.get_bounds.call(this.toVariant())
     TODO()
   }
 
   fun getClosestPoint(point: Vector2): Vector2 {
+    val _args = VariantArray.new()
+    _args.append(point)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getIntersections(from: Vector2, to: Vector2): PoolVector2Array {
+    val _args = VariantArray.new()
+    _args.append(from)
+    _args.append(to)
+    val _ret = __method_bind.get_intersections.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getPointPenalty(idx: Int): Float {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    val _ret = __method_bind.get_point_penalty.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isPointInside(point: Vector2): Boolean {
+    val _args = VariantArray.new()
+    _args.append(point)
+    val _ret = __method_bind.is_point_inside.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPointPenalty(idx: Int, penalty: Float) {
+    val _args = VariantArray.new()
+    _args.append(idx)
+    _args.append(penalty)
+    val _ret = __method_bind.set_point_penalty.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setup(points: PoolVector2Array, connections: PoolIntArray) {
+    val _args = VariantArray.new()
+    _args.append(points)
+    _args.append(connections)
+    val _ret = __method_bind.setup.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

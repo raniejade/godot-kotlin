@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,18 +18,26 @@ open class AudioStreamRandomPitch internal constructor(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getAudioStream(): AudioStream {
+    val _ret = __method_bind.get_audio_stream.call(this.toVariant())
     TODO()
   }
 
   fun getRandomPitch(): Float {
+    val _ret = __method_bind.get_random_pitch.call(this.toVariant())
     TODO()
   }
 
   fun setAudioStream(stream: AudioStream) {
+    val _args = VariantArray.new()
+    _args.append(stream)
+    val _ret = __method_bind.set_audio_stream.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setRandomPitch(scale: Float) {
+    val _args = VariantArray.new()
+    _args.append(scale)
+    val _ret = __method_bind.set_random_pitch.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

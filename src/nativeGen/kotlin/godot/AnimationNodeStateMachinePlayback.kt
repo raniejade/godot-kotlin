@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.PoolStringArray
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.String
 import kotlinx.cinterop.CFunction
@@ -18,26 +20,36 @@ open class AnimationNodeStateMachinePlayback internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCurrentNode(): String {
+    val _ret = __method_bind.get_current_node.call(this.toVariant())
     TODO()
   }
 
   fun getTravelPath(): PoolStringArray {
+    val _ret = __method_bind.get_travel_path.call(this.toVariant())
     TODO()
   }
 
   fun isPlaying(): Boolean {
+    val _ret = __method_bind.is_playing.call(this.toVariant())
     TODO()
   }
 
   fun start(node: String) {
+    val _args = VariantArray.new()
+    _args.append(node)
+    val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun stop() {
+    val _ret = __method_bind.stop.call(this.toVariant())
     TODO()
   }
 
-  fun travel(to_node: String) {
+  fun travel(toNode: String) {
+    val _args = VariantArray.new()
+    _args.append(toNode)
+    val _ret = __method_bind.travel.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

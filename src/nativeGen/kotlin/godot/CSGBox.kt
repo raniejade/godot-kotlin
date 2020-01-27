@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,34 +18,50 @@ open class CSGBox internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getDepth(): Float {
+    val _ret = __method_bind.get_depth.call(this.toVariant())
     TODO()
   }
 
   fun getHeight(): Float {
+    val _ret = __method_bind.get_height.call(this.toVariant())
     TODO()
   }
 
   fun getMaterial(): Material {
+    val _ret = __method_bind.get_material.call(this.toVariant())
     TODO()
   }
 
   fun getWidth(): Float {
+    val _ret = __method_bind.get_width.call(this.toVariant())
     TODO()
   }
 
   fun setDepth(depth: Float) {
+    val _args = VariantArray.new()
+    _args.append(depth)
+    val _ret = __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setHeight(height: Float) {
+    val _args = VariantArray.new()
+    _args.append(height)
+    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setWidth(width: Float) {
+    val _args = VariantArray.new()
+    _args.append(width)
+    val _ret = __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

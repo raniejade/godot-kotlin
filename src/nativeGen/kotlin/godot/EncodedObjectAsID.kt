@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class EncodedObjectAsID internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getObjectId(): Int {
+    val _ret = __method_bind.get_object_id.call(this.toVariant())
     TODO()
   }
 
   fun setObjectId(id: Int) {
+    val _args = VariantArray.new()
+    _args.append(id)
+    val _ret = __method_bind.set_object_id.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

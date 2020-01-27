@@ -4,6 +4,8 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Transform2D
+import godot.core.Variant
+import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
@@ -20,55 +22,85 @@ import kotlinx.cinterop.reinterpret
 open class InputEvent internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun accumulate(with_event: InputEvent): Boolean {
+  fun accumulate(withEvent: InputEvent): Boolean {
+    val _args = VariantArray.new()
+    _args.append(withEvent)
+    val _ret = __method_bind.accumulate.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun asText(): String {
+    val _ret = __method_bind.as_text.call(this.toVariant())
     TODO()
   }
 
   fun getActionStrength(action: String): Float {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.get_action_strength.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getDevice(): Int {
+    val _ret = __method_bind.get_device.call(this.toVariant())
     TODO()
   }
 
   fun isAction(action: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.is_action.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isActionPressed(action: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.is_action_pressed.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isActionReleased(action: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(action)
+    val _ret = __method_bind.is_action_released.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun isActionType(): Boolean {
+    val _ret = __method_bind.is_action_type.call(this.toVariant())
     TODO()
   }
 
   fun isEcho(): Boolean {
+    val _ret = __method_bind.is_echo.call(this.toVariant())
     TODO()
   }
 
   fun isPressed(): Boolean {
+    val _ret = __method_bind.is_pressed.call(this.toVariant())
     TODO()
   }
 
   fun setDevice(device: Int) {
+    val _args = VariantArray.new()
+    _args.append(device)
+    val _ret = __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun shortcutMatch(event: InputEvent): Boolean {
+    val _args = VariantArray.new()
+    _args.append(event)
+    val _ret = __method_bind.shortcut_match.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun xformedBy(xform: Transform2D, local_ofs: Vector2): InputEvent {
+  fun xformedBy(xform: Transform2D, localOfs: Vector2): InputEvent {
+    val _args = VariantArray.new()
+    _args.append(xform)
+    _args.append(localOfs)
+    val _ret = __method_bind.xformed_by.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

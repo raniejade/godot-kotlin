@@ -1,6 +1,8 @@
 package godot.core
 
 import gdnative.godot_array
+import godot.Object
+import godot.toVariant
 import kotlinx.cinterop.*
 
 class VariantArray(
@@ -23,7 +25,11 @@ class VariantArray(
     append(Variant.new(value))
   }
 
-  fun <T: CoreType<*>> append(value: T) {
+  fun  append(value: Object) {
+    append(value.toVariant())
+  }
+
+  fun append(value: CoreType<*>) {
     append(value.toVariant())
   }
 

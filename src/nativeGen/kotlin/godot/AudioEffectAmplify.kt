@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -16,10 +18,14 @@ open class AudioEffectAmplify internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getVolumeDb(): Float {
+    val _ret = __method_bind.get_volume_db.call(this.toVariant())
     TODO()
   }
 
   fun setVolumeDb(volume: Float) {
+    val _args = VariantArray.new()
+    _args.append(volume)
+    val _ret = __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

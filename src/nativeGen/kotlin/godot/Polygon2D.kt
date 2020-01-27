@@ -8,6 +8,7 @@ import godot.core.NodePath
 import godot.core.PoolColorArray
 import godot.core.PoolRealArray
 import godot.core.PoolVector2Array
+import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
@@ -25,162 +26,250 @@ open class Polygon2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun addBone(path: NodePath, weights: PoolRealArray) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    _args.append(weights)
+    val _ret = __method_bind.add_bone.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun clearBones() {
+    val _ret = __method_bind.clear_bones.call(this.toVariant())
     TODO()
   }
 
   fun eraseBone(index: Int) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.erase_bone.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getAntialiased(): Boolean {
+    val _ret = __method_bind.get_antialiased.call(this.toVariant())
     TODO()
   }
 
   fun getBoneCount(): Int {
+    val _ret = __method_bind.get_bone_count.call(this.toVariant())
     TODO()
   }
 
   fun getBonePath(index: Int): NodePath {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_bone_path.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getBoneWeights(index: Int): PoolRealArray {
+    val _args = VariantArray.new()
+    _args.append(index)
+    val _ret = __method_bind.get_bone_weights.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun getColor(): Color {
+    val _ret = __method_bind.get_color.call(this.toVariant())
     TODO()
   }
 
   fun getInternalVertexCount(): Int {
+    val _ret = __method_bind.get_internal_vertex_count.call(this.toVariant())
     TODO()
   }
 
   fun getInvert(): Boolean {
+    val _ret = __method_bind.get_invert.call(this.toVariant())
     TODO()
   }
 
   fun getInvertBorder(): Float {
+    val _ret = __method_bind.get_invert_border.call(this.toVariant())
     TODO()
   }
 
   fun getOffset(): Vector2 {
+    val _ret = __method_bind.get_offset.call(this.toVariant())
     TODO()
   }
 
   fun getPolygon(): PoolVector2Array {
+    val _ret = __method_bind.get_polygon.call(this.toVariant())
     TODO()
   }
 
   fun getPolygons(): VariantArray {
+    val _ret = __method_bind.get_polygons.call(this.toVariant())
     TODO()
   }
 
   fun getSkeleton(): NodePath {
+    val _ret = __method_bind.get_skeleton.call(this.toVariant())
     TODO()
   }
 
   fun getTexture(): Texture {
+    val _ret = __method_bind.get_texture.call(this.toVariant())
     TODO()
   }
 
   fun getTextureOffset(): Vector2 {
+    val _ret = __method_bind.get_texture_offset.call(this.toVariant())
     TODO()
   }
 
   fun getTextureRotation(): Float {
+    val _ret = __method_bind.get_texture_rotation.call(this.toVariant())
     TODO()
   }
 
   fun getTextureRotationDegrees(): Float {
+    val _ret = __method_bind.get_texture_rotation_degrees.call(this.toVariant())
     TODO()
   }
 
   fun getTextureScale(): Vector2 {
+    val _ret = __method_bind.get_texture_scale.call(this.toVariant())
     TODO()
   }
 
   fun getUv(): PoolVector2Array {
+    val _ret = __method_bind.get_uv.call(this.toVariant())
     TODO()
   }
 
   fun getVertexColors(): PoolColorArray {
+    val _ret = __method_bind.get_vertex_colors.call(this.toVariant())
     TODO()
   }
 
   fun setAntialiased(antialiased: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(antialiased)
+    val _ret = __method_bind.set_antialiased.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setBonePath(index: Int, path: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(path)
+    val _ret = __method_bind.set_bone_path.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setBoneWeights(index: Int, weights: PoolRealArray) {
+    val _args = VariantArray.new()
+    _args.append(index)
+    _args.append(weights)
+    val _ret = __method_bind.set_bone_weights.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setColor(color: Color) {
+    val _args = VariantArray.new()
+    _args.append(color)
+    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setInternalVertexCount(internal_vertex_count: Int) {
+  fun setInternalVertexCount(internalVertexCount: Int) {
+    val _args = VariantArray.new()
+    _args.append(internalVertexCount)
+    val _ret = __method_bind.set_internal_vertex_count.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setInvert(invert: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(invert)
+    val _ret = __method_bind.set_invert.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setInvertBorder(invert_border: Float) {
+  fun setInvertBorder(invertBorder: Float) {
+    val _args = VariantArray.new()
+    _args.append(invertBorder)
+    val _ret = __method_bind.set_invert_border.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setOffset(offset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(offset)
+    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(polygon)
+    val _ret = __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPolygons(polygons: VariantArray) {
+    val _args = VariantArray.new()
+    _args.append(polygons)
+    val _ret = __method_bind.set_polygons.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSkeleton(skeleton: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(skeleton)
+    val _ret = __method_bind.set_skeleton.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTexture(texture: Texture) {
+    val _args = VariantArray.new()
+    _args.append(texture)
+    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTextureOffset(texture_offset: Vector2) {
+  fun setTextureOffset(textureOffset: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(textureOffset)
+    val _ret = __method_bind.set_texture_offset.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTextureRotation(texture_rotation: Float) {
+  fun setTextureRotation(textureRotation: Float) {
+    val _args = VariantArray.new()
+    _args.append(textureRotation)
+    val _ret = __method_bind.set_texture_rotation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setTextureRotationDegrees(texture_rotation: Float) {
+  fun setTextureRotationDegrees(textureRotation: Float) {
+    val _args = VariantArray.new()
+    _args.append(textureRotation)
+    val _ret = __method_bind.set_texture_rotation_degrees.call(this.toVariant(), _args.toVariant(),
+        1)
     TODO()
   }
 
-  fun setTextureScale(texture_scale: Vector2) {
+  fun setTextureScale(textureScale: Vector2) {
+    val _args = VariantArray.new()
+    _args.append(textureScale)
+    val _ret = __method_bind.set_texture_scale.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setUv(uv: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(uv)
+    val _ret = __method_bind.set_uv.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setVertexColors(vertex_colors: PoolColorArray) {
+  fun setVertexColors(vertexColors: PoolColorArray) {
+    val _args = VariantArray.new()
+    _args.append(vertexColors)
+    val _ret = __method_bind.set_vertex_colors.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

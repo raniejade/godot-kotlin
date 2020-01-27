@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -18,50 +20,89 @@ open class EditorFeatureProfile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getFeatureName(feature: Int): String {
+    val _args = VariantArray.new()
+    _args.append(feature)
+    val _ret = __method_bind.get_feature_name.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun isClassDisabled(class_name: String): Boolean {
+  fun isClassDisabled(className: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(className)
+    val _ret = __method_bind.is_class_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun isClassEditorDisabled(class_name: String): Boolean {
+  fun isClassEditorDisabled(className: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(className)
+    val _ret = __method_bind.is_class_editor_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun isClassPropertyDisabled(class_name: String, arg1: String): Boolean {
+  fun isClassPropertyDisabled(className: String, arg1: String): Boolean {
+    val _args = VariantArray.new()
+    _args.append(className)
+    _args.append(arg1)
+    val _ret = __method_bind.is_class_property_disabled.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun isFeatureDisabled(feature: Int): Boolean {
+    val _args = VariantArray.new()
+    _args.append(feature)
+    val _ret = __method_bind.is_feature_disabled.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun loadFromFile(path: String): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.load_from_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun saveToFile(path: String): Error {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.save_to_file.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setDisableClass(class_name: String, disable: Boolean) {
+  fun setDisableClass(className: String, disable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(className)
+    _args.append(disable)
+    val _ret = __method_bind.set_disable_class.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
-  fun setDisableClassEditor(class_name: String, disable: Boolean) {
+  fun setDisableClassEditor(className: String, disable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(className)
+    _args.append(disable)
+    val _ret = __method_bind.set_disable_class_editor.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun setDisableClassProperty(
-    class_name: String,
+    className: String,
     property: String,
     arg2: Boolean
   ) {
+    val _args = VariantArray.new()
+    _args.append(className)
+    _args.append(property)
+    _args.append(arg2)
+    val _ret = __method_bind.set_disable_class_property.call(this.toVariant(), _args.toVariant(), 3)
     TODO()
   }
 
   fun setDisableFeature(feature: Int, disable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(feature)
+    _args.append(disable)
+    val _ret = __method_bind.set_disable_feature.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 

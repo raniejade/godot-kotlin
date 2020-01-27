@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
@@ -19,71 +21,108 @@ open class UPNPDevice internal constructor(
 ) : Reference(_handle) {
   fun addPortMapping(
     port: Int,
-    port_internal: Int,
+    portInternal: Int,
     desc: String,
     proto: String,
     duration: Int
   ): Int {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(portInternal)
+    _args.append(desc)
+    _args.append(proto)
+    _args.append(duration)
+    val _ret = __method_bind.add_port_mapping.call(this.toVariant(), _args.toVariant(), 5)
     TODO()
   }
 
   fun deletePortMapping(port: Int, proto: String): Int {
+    val _args = VariantArray.new()
+    _args.append(port)
+    _args.append(proto)
+    val _ret = __method_bind.delete_port_mapping.call(this.toVariant(), _args.toVariant(), 2)
     TODO()
   }
 
   fun getDescriptionUrl(): String {
+    val _ret = __method_bind.get_description_url.call(this.toVariant())
     TODO()
   }
 
   fun getIgdControlUrl(): String {
+    val _ret = __method_bind.get_igd_control_url.call(this.toVariant())
     TODO()
   }
 
   fun getIgdOurAddr(): String {
+    val _ret = __method_bind.get_igd_our_addr.call(this.toVariant())
     TODO()
   }
 
   fun getIgdServiceType(): String {
+    val _ret = __method_bind.get_igd_service_type.call(this.toVariant())
     TODO()
   }
 
   fun getIgdStatus(): IGDStatus {
+    val _ret = __method_bind.get_igd_status.call(this.toVariant())
     TODO()
   }
 
   fun getServiceType(): String {
+    val _ret = __method_bind.get_service_type.call(this.toVariant())
     TODO()
   }
 
   fun isValidGateway(): Boolean {
+    val _ret = __method_bind.is_valid_gateway.call(this.toVariant())
     TODO()
   }
 
   fun queryExternalAddress(): String {
+    val _ret = __method_bind.query_external_address.call(this.toVariant())
     TODO()
   }
 
   fun setDescriptionUrl(url: String) {
+    val _args = VariantArray.new()
+    _args.append(url)
+    val _ret = __method_bind.set_description_url.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIgdControlUrl(url: String) {
+    val _args = VariantArray.new()
+    _args.append(url)
+    val _ret = __method_bind.set_igd_control_url.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIgdOurAddr(addr: String) {
+    val _args = VariantArray.new()
+    _args.append(addr)
+    val _ret = __method_bind.set_igd_our_addr.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIgdServiceType(type: String) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_igd_service_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setIgdStatus(status: Int) {
+    val _args = VariantArray.new()
+    _args.append(status)
+    val _ret = __method_bind.set_igd_status.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setServiceType(type: String) {
+    val _args = VariantArray.new()
+    _args.append(type)
+    val _ret = __method_bind.set_service_type.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

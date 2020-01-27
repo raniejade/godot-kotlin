@@ -5,6 +5,8 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolVector2Array
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
@@ -20,106 +22,158 @@ open class CSGPolygon internal constructor(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getDepth(): Float {
+    val _ret = __method_bind.get_depth.call(this.toVariant())
     TODO()
   }
 
   fun getMaterial(): Material {
+    val _ret = __method_bind.get_material.call(this.toVariant())
     TODO()
   }
 
   fun getMode(): Mode {
+    val _ret = __method_bind.get_mode.call(this.toVariant())
     TODO()
   }
 
   fun getPathInterval(): Float {
+    val _ret = __method_bind.get_path_interval.call(this.toVariant())
     TODO()
   }
 
   fun getPathNode(): NodePath {
+    val _ret = __method_bind.get_path_node.call(this.toVariant())
     TODO()
   }
 
   fun getPathRotation(): PathRotation {
+    val _ret = __method_bind.get_path_rotation.call(this.toVariant())
     TODO()
   }
 
   fun getPolygon(): PoolVector2Array {
+    val _ret = __method_bind.get_polygon.call(this.toVariant())
     TODO()
   }
 
   fun getSmoothFaces(): Boolean {
+    val _ret = __method_bind.get_smooth_faces.call(this.toVariant())
     TODO()
   }
 
   fun getSpinDegrees(): Float {
+    val _ret = __method_bind.get_spin_degrees.call(this.toVariant())
     TODO()
   }
 
   fun getSpinSides(): Int {
+    val _ret = __method_bind.get_spin_sides.call(this.toVariant())
     TODO()
   }
 
   fun isPathContinuousU(): Boolean {
+    val _ret = __method_bind.is_path_continuous_u.call(this.toVariant())
     TODO()
   }
 
   fun isPathJoined(): Boolean {
+    val _ret = __method_bind.is_path_joined.call(this.toVariant())
     TODO()
   }
 
   fun isPathLocal(): Boolean {
+    val _ret = __method_bind.is_path_local.call(this.toVariant())
     TODO()
   }
 
   fun setDepth(depth: Float) {
+    val _args = VariantArray.new()
+    _args.append(depth)
+    val _ret = __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMaterial(material: Material) {
+    val _args = VariantArray.new()
+    _args.append(material)
+    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setMode(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPathContinuousU(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_path_continuous_u.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPathInterval(distance: Float) {
+    val _args = VariantArray.new()
+    _args.append(distance)
+    val _ret = __method_bind.set_path_interval.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPathJoined(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_path_joined.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPathLocal(enable: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(enable)
+    val _ret = __method_bind.set_path_local.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPathNode(path: NodePath) {
+    val _args = VariantArray.new()
+    _args.append(path)
+    val _ret = __method_bind.set_path_node.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPathRotation(mode: Int) {
+    val _args = VariantArray.new()
+    _args.append(mode)
+    val _ret = __method_bind.set_path_rotation.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
+    val _args = VariantArray.new()
+    _args.append(polygon)
+    val _ret = __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSmoothFaces(smooth_faces: Boolean) {
+  fun setSmoothFaces(smoothFaces: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(smoothFaces)
+    val _ret = __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setSpinDegrees(degrees: Float) {
+    val _args = VariantArray.new()
+    _args.append(degrees)
+    val _ret = __method_bind.set_spin_degrees.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
-  fun setSpinSides(spin_sides: Int) {
+  fun setSpinSides(spinSides: Int) {
+    val _args = VariantArray.new()
+    _args.append(spinSides)
+    val _ret = __method_bind.set_spin_sides.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 

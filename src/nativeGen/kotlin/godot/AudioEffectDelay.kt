@@ -3,6 +3,8 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Godot
+import godot.core.Variant
+import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlinx.cinterop.CFunction
@@ -17,106 +19,158 @@ open class AudioEffectDelay internal constructor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDry(): Float {
+    val _ret = __method_bind.get_dry.call(this.toVariant())
     TODO()
   }
 
   fun getFeedbackDelayMs(): Float {
+    val _ret = __method_bind.get_feedback_delay_ms.call(this.toVariant())
     TODO()
   }
 
   fun getFeedbackLevelDb(): Float {
+    val _ret = __method_bind.get_feedback_level_db.call(this.toVariant())
     TODO()
   }
 
   fun getFeedbackLowpass(): Float {
+    val _ret = __method_bind.get_feedback_lowpass.call(this.toVariant())
     TODO()
   }
 
   fun getTap1DelayMs(): Float {
+    val _ret = __method_bind.get_tap1_delay_ms.call(this.toVariant())
     TODO()
   }
 
   fun getTap1LevelDb(): Float {
+    val _ret = __method_bind.get_tap1_level_db.call(this.toVariant())
     TODO()
   }
 
   fun getTap1Pan(): Float {
+    val _ret = __method_bind.get_tap1_pan.call(this.toVariant())
     TODO()
   }
 
   fun getTap2DelayMs(): Float {
+    val _ret = __method_bind.get_tap2_delay_ms.call(this.toVariant())
     TODO()
   }
 
   fun getTap2LevelDb(): Float {
+    val _ret = __method_bind.get_tap2_level_db.call(this.toVariant())
     TODO()
   }
 
   fun getTap2Pan(): Float {
+    val _ret = __method_bind.get_tap2_pan.call(this.toVariant())
     TODO()
   }
 
   fun isFeedbackActive(): Boolean {
+    val _ret = __method_bind.is_feedback_active.call(this.toVariant())
     TODO()
   }
 
   fun isTap1Active(): Boolean {
+    val _ret = __method_bind.is_tap1_active.call(this.toVariant())
     TODO()
   }
 
   fun isTap2Active(): Boolean {
+    val _ret = __method_bind.is_tap2_active.call(this.toVariant())
     TODO()
   }
 
   fun setDry(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFeedbackActive(amount: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_feedback_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFeedbackDelayMs(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_feedback_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFeedbackLevelDb(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_feedback_level_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setFeedbackLowpass(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_feedback_lowpass.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap1Active(amount: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap1_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap1DelayMs(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap1_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap1LevelDb(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap1_level_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap1Pan(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap1_pan.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap2Active(amount: Boolean) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap2_active.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap2DelayMs(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap2_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap2LevelDb(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap2_level_db.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
   fun setTap2Pan(amount: Float) {
+    val _args = VariantArray.new()
+    _args.append(amount)
+    val _ret = __method_bind.set_tap2_pan.call(this.toVariant(), _args.toVariant(), 1)
     TODO()
   }
 
