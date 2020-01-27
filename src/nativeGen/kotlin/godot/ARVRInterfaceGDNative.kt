@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRInterfaceGDNative internal constructor(
+open class ARVRInterfaceGDNative(
   _handle: COpaquePointer
 ) : ARVRInterface(_handle) {
   companion object {

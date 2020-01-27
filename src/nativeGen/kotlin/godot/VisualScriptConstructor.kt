@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptConstructor internal constructor(
+open class VisualScriptConstructor(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getConstructor(): Dictionary {

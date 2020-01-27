@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ColorRect internal constructor(
+open class ColorRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getFrameColor(): Color {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CapsuleShape internal constructor(
+open class CapsuleShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getHeight(): Float {

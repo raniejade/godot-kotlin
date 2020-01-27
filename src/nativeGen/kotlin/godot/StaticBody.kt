@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StaticBody internal constructor(
+open class StaticBody(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun getBounce(): Float {

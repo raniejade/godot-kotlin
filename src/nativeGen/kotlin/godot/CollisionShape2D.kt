@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CollisionShape2D internal constructor(
+open class CollisionShape2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getOneWayCollisionMargin(): Float {

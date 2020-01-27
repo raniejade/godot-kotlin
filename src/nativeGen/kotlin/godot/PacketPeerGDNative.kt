@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PacketPeerGDNative internal constructor(
+open class PacketPeerGDNative(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   companion object {

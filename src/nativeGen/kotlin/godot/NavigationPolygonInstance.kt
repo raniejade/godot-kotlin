@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NavigationPolygonInstance internal constructor(
+open class NavigationPolygonInstance(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getNavigationPolygon(): NavigationPolygon {

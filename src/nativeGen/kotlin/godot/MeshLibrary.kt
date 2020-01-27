@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MeshLibrary internal constructor(
+open class MeshLibrary(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun clear() {

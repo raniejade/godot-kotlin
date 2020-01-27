@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Font internal constructor(
+open class Font(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun draw(

@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorSceneImporterAssimp internal constructor(
+open class EditorSceneImporterAssimp(
   _handle: COpaquePointer
 ) : EditorSceneImporter(_handle) {
   companion object {

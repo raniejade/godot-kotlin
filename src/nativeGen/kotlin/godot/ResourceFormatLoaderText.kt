@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatLoaderText internal constructor(
+open class ResourceFormatLoaderText(
   _handle: COpaquePointer
 ) : ResourceFormatLoader(_handle) {
   companion object {

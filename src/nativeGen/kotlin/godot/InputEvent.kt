@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEvent internal constructor(
+open class InputEvent(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun accumulate(withEvent: InputEvent): Boolean {

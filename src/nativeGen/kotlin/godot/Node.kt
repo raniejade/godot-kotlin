@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Node internal constructor(
+open class Node(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addChild(node: Node, legibleUniqueName: Boolean) {

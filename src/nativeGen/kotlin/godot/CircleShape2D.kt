@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CircleShape2D internal constructor(
+open class CircleShape2D(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
   fun getRadius(): Float {

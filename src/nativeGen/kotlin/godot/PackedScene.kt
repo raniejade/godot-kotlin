@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PackedScene internal constructor(
+open class PackedScene(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun canInstance(): Boolean {

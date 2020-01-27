@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamMicrophone internal constructor(
+open class AudioStreamMicrophone(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   companion object {

@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StyleBoxFlat internal constructor(
+open class StyleBoxFlat(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getAaSize(): Int {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Material internal constructor(
+open class Material(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getNextPass(): Material {

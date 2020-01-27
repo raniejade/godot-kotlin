@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Navigation2D internal constructor(
+open class Navigation2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getClosestPoint(toPoint: Vector2): Vector2 {

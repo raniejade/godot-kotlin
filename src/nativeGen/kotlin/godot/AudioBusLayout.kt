@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioBusLayout internal constructor(
+open class AudioBusLayout(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   companion object {

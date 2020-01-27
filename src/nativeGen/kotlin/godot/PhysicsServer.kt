@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PhysicsServer internal constructor(
+open class PhysicsServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun areaAddShape(

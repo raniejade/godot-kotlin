@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeScalarConstant internal constructor(
+open class VisualShaderNodeScalarConstant(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Float {

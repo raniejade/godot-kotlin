@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PhysicsMaterial internal constructor(
+open class PhysicsMaterial(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getBounce(): Float {

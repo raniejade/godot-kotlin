@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CenterContainer internal constructor(
+open class CenterContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun isUsingTopLeft(): Boolean {

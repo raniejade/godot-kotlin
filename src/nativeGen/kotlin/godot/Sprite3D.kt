@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Sprite3D internal constructor(
+open class Sprite3D(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
   fun getFrame(): Int {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectAmplify internal constructor(
+open class AudioEffectAmplify(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getVolumeDb(): Float {

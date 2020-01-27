@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ClassDB internal constructor(
+open class _ClassDB(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun canInstance(`class`: String): Boolean {

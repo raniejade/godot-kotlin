@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Translation internal constructor(
+open class Translation(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addMessage(srcMessage: String, xlatedMessage: String) {

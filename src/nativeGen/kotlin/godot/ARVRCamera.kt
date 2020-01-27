@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRCamera internal constructor(
+open class ARVRCamera(
   _handle: COpaquePointer
 ) : Camera(_handle) {
   companion object {

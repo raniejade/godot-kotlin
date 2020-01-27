@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebRTCMultiplayer internal constructor(
+open class WebRTCMultiplayer(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
   fun addPeer(

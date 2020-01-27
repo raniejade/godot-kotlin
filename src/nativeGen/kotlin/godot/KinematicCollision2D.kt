@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class KinematicCollision2D internal constructor(
+open class KinematicCollision2D(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollider(): Object {

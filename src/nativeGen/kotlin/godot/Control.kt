@@ -21,7 +21,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Control internal constructor(
+open class Control(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
   fun acceptEvent() {

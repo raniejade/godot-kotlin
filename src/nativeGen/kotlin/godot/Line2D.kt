@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Line2D internal constructor(
+open class Line2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun addPoint(position: Vector2, atPosition: Int) {

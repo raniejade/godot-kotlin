@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TextureLayered internal constructor(
+open class TextureLayered(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun create(

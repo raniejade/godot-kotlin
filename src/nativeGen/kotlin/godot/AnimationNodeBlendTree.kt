@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeBlendTree internal constructor(
+open class AnimationNodeBlendTree(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
   fun addNode(

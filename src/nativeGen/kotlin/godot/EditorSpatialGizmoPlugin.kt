@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorSpatialGizmoPlugin internal constructor(
+open class EditorSpatialGizmoPlugin(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addMaterial(name: String, material: SpatialMaterial) {

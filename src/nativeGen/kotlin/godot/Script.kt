@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Script internal constructor(
+open class Script(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun canInstance(): Boolean {

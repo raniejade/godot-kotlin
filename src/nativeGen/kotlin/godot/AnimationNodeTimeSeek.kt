@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeTimeSeek internal constructor(
+open class AnimationNodeTimeSeek(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   companion object {

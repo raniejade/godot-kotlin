@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StyleBoxEmpty internal constructor(
+open class StyleBoxEmpty(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   companion object {

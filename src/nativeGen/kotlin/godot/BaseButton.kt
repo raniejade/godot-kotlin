@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BaseButton internal constructor(
+open class BaseButton(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getActionMode(): ActionMode {

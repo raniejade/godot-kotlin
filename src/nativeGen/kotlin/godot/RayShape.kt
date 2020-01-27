@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RayShape internal constructor(
+open class RayShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getLength(): Float {

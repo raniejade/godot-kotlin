@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NavigationMesh internal constructor(
+open class NavigationMesh(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPolygon(polygon: PoolIntArray) {

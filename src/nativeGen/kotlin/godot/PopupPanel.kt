@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PopupPanel internal constructor(
+open class PopupPanel(
   _handle: COpaquePointer
 ) : Popup(_handle) {
   companion object {

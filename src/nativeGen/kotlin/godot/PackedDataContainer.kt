@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PackedDataContainer internal constructor(
+open class PackedDataContainer(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun pack(value: Variant): GDError {

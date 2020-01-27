@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PhysicsBody internal constructor(
+open class PhysicsBody(
   _handle: COpaquePointer
 ) : CollisionObject(_handle) {
   fun addCollisionExceptionWith(body: Node) {

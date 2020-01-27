@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventScreenTouch internal constructor(
+open class InputEventScreenTouch(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getIndex(): Int {

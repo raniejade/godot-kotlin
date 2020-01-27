@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StreamTexture internal constructor(
+open class StreamTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getLoadPath(): String {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptDeconstruct internal constructor(
+open class VisualScriptDeconstruct(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getDeconstructType(): Variant.Type {

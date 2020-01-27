@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RootMotionView internal constructor(
+open class RootMotionView(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   companion object {

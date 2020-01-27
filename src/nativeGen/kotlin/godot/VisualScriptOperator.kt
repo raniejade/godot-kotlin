@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptOperator internal constructor(
+open class VisualScriptOperator(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getOperator(): Variant.Operator {

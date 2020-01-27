@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptSelect internal constructor(
+open class VisualScriptSelect(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getTyped(): Variant.Type {

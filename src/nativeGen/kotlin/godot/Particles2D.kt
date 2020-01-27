@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Particles2D internal constructor(
+open class Particles2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun captureRect(): Rect2 {

@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebSocketServer internal constructor(
+open class WebSocketServer(
   _handle: COpaquePointer
 ) : WebSocketMultiplayerPeer(_handle) {
   fun disconnectPeer(

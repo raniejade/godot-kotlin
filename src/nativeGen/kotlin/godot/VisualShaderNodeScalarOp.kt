@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeScalarOp internal constructor(
+open class VisualShaderNodeScalarOp(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getOperator(): Operator {

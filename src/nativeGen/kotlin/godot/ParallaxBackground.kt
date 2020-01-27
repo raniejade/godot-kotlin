@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ParallaxBackground internal constructor(
+open class ParallaxBackground(
   _handle: COpaquePointer
 ) : CanvasLayer(_handle) {
   fun getLimitBegin(): Vector2 {

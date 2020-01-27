@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CPUParticles internal constructor(
+open class CPUParticles(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun convertFromParticles(particles: Node) {

@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WeakRef internal constructor(
+open class WeakRef(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getRef(): Variant {

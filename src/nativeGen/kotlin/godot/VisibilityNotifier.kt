@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisibilityNotifier internal constructor(
+open class VisibilityNotifier(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAabb(): AABB {

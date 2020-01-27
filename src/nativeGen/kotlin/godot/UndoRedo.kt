@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class UndoRedo internal constructor(
+open class UndoRedo(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addDoMethod(`object`: Object, method: String): Variant {

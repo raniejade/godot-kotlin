@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Semaphore internal constructor(
+open class _Semaphore(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun post(): GDError {

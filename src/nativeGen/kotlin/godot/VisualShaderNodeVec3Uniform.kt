@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeVec3Uniform internal constructor(
+open class VisualShaderNodeVec3Uniform(
   _handle: COpaquePointer
 ) : VisualShaderNodeUniform(_handle) {
   companion object {

@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SceneTree internal constructor(
+open class SceneTree(
   _handle: COpaquePointer
 ) : MainLoop(_handle) {
   fun callGroup(group: String, method: String): Variant {

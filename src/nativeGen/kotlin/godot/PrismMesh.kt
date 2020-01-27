@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PrismMesh internal constructor(
+open class PrismMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getLeftToRight(): Float {

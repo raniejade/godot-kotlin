@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CameraTexture internal constructor(
+open class CameraTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getCameraActive(): Boolean {

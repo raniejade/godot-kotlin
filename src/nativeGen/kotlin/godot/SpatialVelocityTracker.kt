@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpatialVelocityTracker internal constructor(
+open class SpatialVelocityTracker(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getTrackedLinearVelocity(): Vector3 {

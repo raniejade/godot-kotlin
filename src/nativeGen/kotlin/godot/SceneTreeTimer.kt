@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SceneTreeTimer internal constructor(
+open class SceneTreeTimer(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getTimeLeft(): Float {

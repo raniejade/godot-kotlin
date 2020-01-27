@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Marshalls internal constructor(
+open class _Marshalls(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun base64ToRaw(base64Str: String): PoolByteArray {

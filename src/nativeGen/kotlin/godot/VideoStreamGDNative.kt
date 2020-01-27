@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VideoStreamGDNative internal constructor(
+open class VideoStreamGDNative(
   _handle: COpaquePointer
 ) : VideoStream(_handle) {
   fun getFile(): String {

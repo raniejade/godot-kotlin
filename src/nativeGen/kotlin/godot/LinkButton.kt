@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class LinkButton internal constructor(
+open class LinkButton(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getText(): String {

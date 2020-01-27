@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptFunctionCall internal constructor(
+open class VisualScriptFunctionCall(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBasePath(): NodePath {

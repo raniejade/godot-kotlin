@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Mutex internal constructor(
+open class _Mutex(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun lock() {

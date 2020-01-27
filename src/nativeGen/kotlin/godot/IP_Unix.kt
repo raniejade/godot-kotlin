@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class IP_Unix internal constructor(
+open class IP_Unix(
   _handle: COpaquePointer
 ) : IP(_handle) {
   companion object {

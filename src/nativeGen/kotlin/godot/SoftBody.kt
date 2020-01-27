@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SoftBody internal constructor(
+open class SoftBody(
   _handle: COpaquePointer
 ) : MeshInstance(_handle) {
   fun addCollisionExceptionWith(body: Node) {

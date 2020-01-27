@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SceneState internal constructor(
+open class SceneState(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getConnectionBinds(idx: Int): VariantArray {

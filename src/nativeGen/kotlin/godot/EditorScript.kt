@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorScript internal constructor(
+open class EditorScript(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addRootNode(node: Node) {

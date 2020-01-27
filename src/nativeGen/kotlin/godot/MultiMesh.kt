@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MultiMesh internal constructor(
+open class MultiMesh(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAabb(): AABB {

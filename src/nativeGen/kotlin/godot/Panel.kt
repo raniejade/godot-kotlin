@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Panel internal constructor(
+open class Panel(
   _handle: COpaquePointer
 ) : Control(_handle) {
   companion object {

@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MarginContainer internal constructor(
+open class MarginContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   companion object {

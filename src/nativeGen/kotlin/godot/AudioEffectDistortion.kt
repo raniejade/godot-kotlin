@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectDistortion internal constructor(
+open class AudioEffectDistortion(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDrive(): Float {

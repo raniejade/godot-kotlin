@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Physics2DDirectBodyState internal constructor(
+open class Physics2DDirectBodyState(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addCentralForce(force: Vector2) {

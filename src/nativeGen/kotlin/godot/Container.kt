@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Container internal constructor(
+open class Container(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun fitChildInRect(child: Control, rect: Rect2) {

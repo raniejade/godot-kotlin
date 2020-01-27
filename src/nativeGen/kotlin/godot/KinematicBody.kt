@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class KinematicBody internal constructor(
+open class KinematicBody(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun getAxisLock(axis: Int): Boolean {

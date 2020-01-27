@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BakedLightmap internal constructor(
+open class BakedLightmap(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun bake(fromNode: Node, createVisualDebug: Boolean): BakeError {

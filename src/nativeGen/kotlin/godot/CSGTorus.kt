@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGTorus internal constructor(
+open class CSGTorus(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getInnerRadius(): Float {

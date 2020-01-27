@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventMouseButton internal constructor(
+open class InputEventMouseButton(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
   fun getButtonIndex(): Int {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceInteractiveLoader internal constructor(
+open class ResourceInteractiveLoader(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResource(): Resource {

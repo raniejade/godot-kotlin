@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeBlend3 internal constructor(
+open class AnimationNodeBlend3(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun isUsingSync(): Boolean {

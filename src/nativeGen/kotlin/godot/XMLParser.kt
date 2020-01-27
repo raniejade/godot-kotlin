@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class XMLParser internal constructor(
+open class XMLParser(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAttributeCount(): Int {

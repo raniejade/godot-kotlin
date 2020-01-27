@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BitMap internal constructor(
+open class BitMap(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun create(size: Vector2) {

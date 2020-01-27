@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CubeMesh internal constructor(
+open class CubeMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector3 {

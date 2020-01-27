@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeOneShot internal constructor(
+open class AnimationNodeOneShot(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun getAutorestartDelay(): Float {

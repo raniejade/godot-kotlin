@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GraphNode internal constructor(
+open class GraphNode(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun clearAllSlots() {

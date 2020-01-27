@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class HTTPRequest internal constructor(
+open class HTTPRequest(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun cancelRequest() {

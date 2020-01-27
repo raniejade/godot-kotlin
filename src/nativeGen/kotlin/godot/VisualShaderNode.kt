@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNode internal constructor(
+open class VisualShaderNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getInputPortDefaultValue(port: Int): Variant {

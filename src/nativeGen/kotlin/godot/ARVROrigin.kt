@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVROrigin internal constructor(
+open class ARVROrigin(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getWorldScale(): Float {

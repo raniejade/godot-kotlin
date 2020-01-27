@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Physics2DShapeQueryParameters internal constructor(
+open class Physics2DShapeQueryParameters(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getCollisionLayer(): Int {

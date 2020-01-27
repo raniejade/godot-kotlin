@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptNode internal constructor(
+open class VisualScriptNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getDefaultInputValue(portIdx: Int): Variant {

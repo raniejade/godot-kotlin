@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ClippedCamera internal constructor(
+open class ClippedCamera(
   _handle: COpaquePointer
 ) : Camera(_handle) {
   fun addException(node: Object) {

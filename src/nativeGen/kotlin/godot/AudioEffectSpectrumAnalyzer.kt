@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectSpectrumAnalyzer internal constructor(
+open class AudioEffectSpectrumAnalyzer(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getBufferLength(): Float {

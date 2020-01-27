@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Object internal constructor(
+open class Object(
   internal val _handle: COpaquePointer
 ) {
   fun addUserSignal(signal: String, arguments: VariantArray) {
@@ -87,10 +87,6 @@ open class Object internal constructor(
     val _arg = Variant.new(signal)
     val _ret = __method_bind.emit_signal.call(this._handle, _arg, 1)
     return _ret
-  }
-
-  fun free() {
-    __method_bind.free.call(this._handle)
   }
 
   fun get(property: String): Variant {
@@ -274,6 +270,10 @@ open class Object internal constructor(
     return _ret.asString()
   }
 
+  fun free() {
+    checkNotNull(Godot.gdnative.godot_object_destroy)(_handle)
+  }
+
   enum class ConnectFlags(
     val value: Int
   ) {
@@ -370,12 +370,6 @@ open class Object internal constructor(
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
             "emit_signal".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method emit_signal" }
-        }
-      val free: CPointer<godot_method_bind>
-        get() = memScoped {
-          val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Object".cstr.ptr,
-            "free".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method free" }
         }
       val get: CPointer<godot_method_bind>
         get() = memScoped {

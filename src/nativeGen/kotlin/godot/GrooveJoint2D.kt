@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GrooveJoint2D internal constructor(
+open class GrooveJoint2D(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getInitialOffset(): Float {

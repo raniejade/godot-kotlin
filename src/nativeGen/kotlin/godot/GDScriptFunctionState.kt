@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GDScriptFunctionState internal constructor(
+open class GDScriptFunctionState(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun isValid(extendedCheck: Boolean): Boolean {

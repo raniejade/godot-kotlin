@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ReflectionProbe internal constructor(
+open class ReflectionProbe(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun areShadowsEnabled(): Boolean {

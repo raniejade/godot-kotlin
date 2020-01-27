@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ProjectSettings internal constructor(
+open class ProjectSettings(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addPropertyInfo(hint: Dictionary) {

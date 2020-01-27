@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpringArm internal constructor(
+open class SpringArm(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun addExcludedObject(rID: RID) {

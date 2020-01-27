@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BitmapFont internal constructor(
+open class BitmapFont(
   _handle: COpaquePointer
 ) : Font(_handle) {
   fun addChar(

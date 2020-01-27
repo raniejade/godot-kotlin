@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class OmniLight internal constructor(
+open class OmniLight(
   _handle: COpaquePointer
 ) : Light(_handle) {
   fun getShadowDetail(): ShadowDetail {

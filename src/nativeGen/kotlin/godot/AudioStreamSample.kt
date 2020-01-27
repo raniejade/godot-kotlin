@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamSample internal constructor(
+open class AudioStreamSample(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getData(): PoolByteArray {

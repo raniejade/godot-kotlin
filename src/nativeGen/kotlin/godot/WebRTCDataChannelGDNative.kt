@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebRTCDataChannelGDNative internal constructor(
+open class WebRTCDataChannelGDNative(
   _handle: COpaquePointer
 ) : WebRTCDataChannel(_handle) {
   companion object {

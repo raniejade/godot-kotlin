@@ -22,7 +22,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Image internal constructor(
+open class Image(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun blendRect(

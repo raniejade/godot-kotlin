@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MultiplayerAPI internal constructor(
+open class MultiplayerAPI(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {

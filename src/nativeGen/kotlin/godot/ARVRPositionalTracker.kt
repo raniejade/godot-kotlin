@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRPositionalTracker internal constructor(
+open class ARVRPositionalTracker(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getHand(): TrackerHand {

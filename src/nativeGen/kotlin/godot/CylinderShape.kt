@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CylinderShape internal constructor(
+open class CylinderShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getHeight(): Float {

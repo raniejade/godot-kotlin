@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGCylinder internal constructor(
+open class CSGCylinder(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getHeight(): Float {

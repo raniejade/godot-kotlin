@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNode internal constructor(
+open class AnimationNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addInput(name: String) {

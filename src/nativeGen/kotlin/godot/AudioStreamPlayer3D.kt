@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamPlayer3D internal constructor(
+open class AudioStreamPlayer3D(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAreaMask(): Int {

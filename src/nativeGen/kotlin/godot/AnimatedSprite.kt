@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimatedSprite internal constructor(
+open class AnimatedSprite(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getAnimation(): String {

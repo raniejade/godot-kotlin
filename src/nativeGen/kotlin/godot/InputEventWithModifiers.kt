@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventWithModifiers internal constructor(
+open class InputEventWithModifiers(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAlt(): Boolean {

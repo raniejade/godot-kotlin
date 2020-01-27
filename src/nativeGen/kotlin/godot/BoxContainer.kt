@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BoxContainer internal constructor(
+open class BoxContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun addSpacer(begin: Boolean) {

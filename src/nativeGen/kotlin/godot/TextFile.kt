@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TextFile internal constructor(
+open class TextFile(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   companion object {

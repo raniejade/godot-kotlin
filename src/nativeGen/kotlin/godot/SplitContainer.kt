@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SplitContainer internal constructor(
+open class SplitContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun clampSplitOffset() {

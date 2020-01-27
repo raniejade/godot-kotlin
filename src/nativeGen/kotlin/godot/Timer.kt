@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Timer internal constructor(
+open class Timer(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getTimeLeft(): Float {

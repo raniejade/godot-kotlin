@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GDNative internal constructor(
+open class GDNative(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun callNative(

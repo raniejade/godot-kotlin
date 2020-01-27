@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Generic6DOFJoint internal constructor(
+open class Generic6DOFJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getFlagX(flag: Int): Boolean {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptVariableSet internal constructor(
+open class VisualScriptVariableSet(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getVariable(): String {

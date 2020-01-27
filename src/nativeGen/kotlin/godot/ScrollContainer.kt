@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ScrollContainer internal constructor(
+open class ScrollContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getDeadzone(): Int {

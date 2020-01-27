@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeAdd2 internal constructor(
+open class AnimationNodeAdd2(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun isUsingSync(): Boolean {

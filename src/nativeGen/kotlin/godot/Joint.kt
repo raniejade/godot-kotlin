@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Joint internal constructor(
+open class Joint(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getExcludeNodesFromCollision(): Boolean {

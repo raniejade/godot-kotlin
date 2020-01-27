@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Range internal constructor(
+open class Range(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAsRatio(): Float {

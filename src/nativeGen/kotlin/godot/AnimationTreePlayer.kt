@@ -21,7 +21,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationTreePlayer internal constructor(
+open class AnimationTreePlayer(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addNode(type: Int, id: String) {

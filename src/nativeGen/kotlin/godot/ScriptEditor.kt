@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ScriptEditor internal constructor(
+open class ScriptEditor(
   _handle: COpaquePointer
 ) : PanelContainer(_handle) {
   fun canDropDataFw(

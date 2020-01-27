@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GlobalConstants internal constructor(
+open class GlobalConstants(
   internal val _handle: COpaquePointer
 ) {
   companion object {

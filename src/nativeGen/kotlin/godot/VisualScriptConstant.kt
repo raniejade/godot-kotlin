@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptConstant internal constructor(
+open class VisualScriptConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getConstantType(): Variant.Type {

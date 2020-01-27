@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Area2D internal constructor(
+open class Area2D(
   _handle: COpaquePointer
 ) : CollisionObject2D(_handle) {
   fun getAngularDamp(): Float {

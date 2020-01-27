@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Resource internal constructor(
+open class Resource(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun duplicate(subresources: Boolean): Resource {

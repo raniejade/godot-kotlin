@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptFunctionState internal constructor(
+open class VisualScriptFunctionState(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun connectToSignal(

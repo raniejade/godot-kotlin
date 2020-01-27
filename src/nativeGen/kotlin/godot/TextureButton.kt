@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TextureButton internal constructor(
+open class TextureButton(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getClickMask(): BitMap {

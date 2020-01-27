@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorSpatialGizmo internal constructor(
+open class EditorSpatialGizmo(
   _handle: COpaquePointer
 ) : SpatialGizmo(_handle) {
   fun addCollisionSegments(segments: PoolVector3Array) {

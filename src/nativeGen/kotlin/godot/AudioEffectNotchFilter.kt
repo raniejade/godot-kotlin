@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectNotchFilter internal constructor(
+open class AudioEffectNotchFilter(
   _handle: COpaquePointer
 ) : AudioEffectFilter(_handle) {
   companion object {

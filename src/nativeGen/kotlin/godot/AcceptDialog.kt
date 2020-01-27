@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AcceptDialog internal constructor(
+open class AcceptDialog(
   _handle: COpaquePointer
 ) : WindowDialog(_handle) {
   fun addButton(

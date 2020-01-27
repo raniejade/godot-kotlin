@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _VisualScriptEditor internal constructor(
+open class _VisualScriptEditor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addCustomNode(

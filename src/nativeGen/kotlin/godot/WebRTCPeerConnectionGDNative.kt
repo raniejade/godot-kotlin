@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebRTCPeerConnectionGDNative internal constructor(
+open class WebRTCPeerConnectionGDNative(
   _handle: COpaquePointer
 ) : WebRTCPeerConnection(_handle) {
   companion object {

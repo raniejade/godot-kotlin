@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpotLight internal constructor(
+open class SpotLight(
   _handle: COpaquePointer
 ) : Light(_handle) {
   companion object {

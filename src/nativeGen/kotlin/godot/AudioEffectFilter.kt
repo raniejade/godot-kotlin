@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectFilter internal constructor(
+open class AudioEffectFilter(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getCutoff(): Float {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventJoypadMotion internal constructor(
+open class InputEventJoypadMotion(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAxis(): Int {

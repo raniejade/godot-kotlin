@@ -32,7 +32,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualServer internal constructor(
+open class VisualServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun blackBarsSetImages(

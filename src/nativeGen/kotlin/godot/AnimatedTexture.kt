@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimatedTexture internal constructor(
+open class AnimatedTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getFps(): Float {

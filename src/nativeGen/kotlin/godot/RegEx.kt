@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RegEx internal constructor(
+open class RegEx(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {

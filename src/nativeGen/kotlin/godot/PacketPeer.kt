@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PacketPeer internal constructor(
+open class PacketPeer(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAvailablePacketCount(): Int {

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorSettings internal constructor(
+open class EditorSettings(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPropertyInfo(info: Dictionary) {

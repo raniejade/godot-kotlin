@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeBlendSpace2D internal constructor(
+open class AnimationNodeBlendSpace2D(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
   fun addBlendPoint(

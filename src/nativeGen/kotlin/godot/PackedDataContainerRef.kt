@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PackedDataContainerRef internal constructor(
+open class PackedDataContainerRef(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun size(): Int {

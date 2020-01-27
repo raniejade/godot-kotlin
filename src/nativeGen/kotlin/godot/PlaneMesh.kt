@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PlaneMesh internal constructor(
+open class PlaneMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector2 {

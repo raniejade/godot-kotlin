@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ImageTexture internal constructor(
+open class ImageTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun create(

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Directory internal constructor(
+open class _Directory(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun changeDir(todir: String): GDError {

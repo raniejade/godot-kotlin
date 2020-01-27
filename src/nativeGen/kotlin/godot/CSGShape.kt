@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGShape internal constructor(
+open class CSGShape(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun getCollisionLayer(): Int {

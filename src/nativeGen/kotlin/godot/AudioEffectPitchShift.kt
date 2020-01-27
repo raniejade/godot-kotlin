@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectPitchShift internal constructor(
+open class AudioEffectPitchShift(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getPitchScale(): Float {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectEQ internal constructor(
+open class AudioEffectEQ(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getBandCount(): Int {

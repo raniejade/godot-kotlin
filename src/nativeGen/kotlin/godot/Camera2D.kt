@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Camera2D internal constructor(
+open class Camera2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun align() {

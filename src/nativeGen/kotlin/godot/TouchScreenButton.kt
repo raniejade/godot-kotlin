@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TouchScreenButton internal constructor(
+open class TouchScreenButton(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getAction(): String {

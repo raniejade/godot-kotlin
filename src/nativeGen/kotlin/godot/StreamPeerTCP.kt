@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StreamPeerTCP internal constructor(
+open class StreamPeerTCP(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   fun connectToHost(host: String, port: Int): GDError {

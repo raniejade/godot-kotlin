@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PopupMenu internal constructor(
+open class PopupMenu(
   _handle: COpaquePointer
 ) : Popup(_handle) {
   fun addCheckItem(

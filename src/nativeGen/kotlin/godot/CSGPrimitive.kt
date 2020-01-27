@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGPrimitive internal constructor(
+open class CSGPrimitive(
   _handle: COpaquePointer
 ) : CSGShape(_handle) {
   fun isInvertingFaces(): Boolean {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class UPNPDevice internal constructor(
+open class UPNPDevice(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addPortMapping(

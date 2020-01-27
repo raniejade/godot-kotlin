@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Tree internal constructor(
+open class Tree(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun areColumnTitlesVisible(): Boolean {

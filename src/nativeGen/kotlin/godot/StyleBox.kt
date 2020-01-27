@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StyleBox internal constructor(
+open class StyleBox(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun draw(canvasItem: RID, rect: Rect2) {

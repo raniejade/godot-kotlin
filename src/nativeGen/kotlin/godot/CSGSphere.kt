@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGSphere internal constructor(
+open class CSGSphere(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getMaterial(): Material {

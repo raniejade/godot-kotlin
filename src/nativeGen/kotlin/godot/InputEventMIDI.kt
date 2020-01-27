@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventMIDI internal constructor(
+open class InputEventMIDI(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getChannel(): Int {

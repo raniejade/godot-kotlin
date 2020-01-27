@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorFileSystemDirectory internal constructor(
+open class EditorFileSystemDirectory(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun findDirIndex(name: String): Int {

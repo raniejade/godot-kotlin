@@ -21,7 +21,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ItemList internal constructor(
+open class ItemList(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addIconItem(icon: Texture, selectable: Boolean) {

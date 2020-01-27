@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptCustomNode internal constructor(
+open class VisualScriptCustomNode(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   enum class StartMode(

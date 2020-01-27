@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptPreload internal constructor(
+open class VisualScriptPreload(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getPreload(): Resource {

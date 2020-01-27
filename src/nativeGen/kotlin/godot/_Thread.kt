@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Thread internal constructor(
+open class _Thread(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getId(): String {

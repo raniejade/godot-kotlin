@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeUniform internal constructor(
+open class VisualShaderNodeUniform(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getUniformName(): String {

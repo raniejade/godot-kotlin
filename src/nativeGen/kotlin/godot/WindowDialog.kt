@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WindowDialog internal constructor(
+open class WindowDialog(
   _handle: COpaquePointer
 ) : Popup(_handle) {
   fun getCloseButton(): TextureButton {

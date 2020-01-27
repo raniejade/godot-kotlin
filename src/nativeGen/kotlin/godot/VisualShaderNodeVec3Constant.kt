@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeVec3Constant internal constructor(
+open class VisualShaderNodeVec3Constant(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Vector3 {

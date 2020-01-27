@@ -22,7 +22,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _OS internal constructor(
+open class _OS(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun alert(text: String, title: String) {

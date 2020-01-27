@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Listener internal constructor(
+open class Listener(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun clearCurrent() {

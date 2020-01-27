@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VSplitContainer internal constructor(
+open class VSplitContainer(
   _handle: COpaquePointer
 ) : SplitContainer(_handle) {
   companion object {

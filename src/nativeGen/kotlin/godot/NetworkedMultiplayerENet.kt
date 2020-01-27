@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NetworkedMultiplayerENet internal constructor(
+open class NetworkedMultiplayerENet(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
   fun closeConnection(waitUsec: Int) {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourcePreloader internal constructor(
+open class ResourcePreloader(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addResource(name: String, resource: Resource) {

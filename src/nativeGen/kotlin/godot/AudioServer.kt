@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioServer internal constructor(
+open class AudioServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addBus(atPosition: Int) {

@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BulletPhysicsServer internal constructor(
+open class BulletPhysicsServer(
   _handle: COpaquePointer
 ) : PhysicsServer(_handle) {
   companion object {

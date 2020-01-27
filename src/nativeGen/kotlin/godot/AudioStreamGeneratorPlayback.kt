@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamGeneratorPlayback internal constructor(
+open class AudioStreamGeneratorPlayback(
   _handle: COpaquePointer
 ) : AudioStreamPlaybackResampled(_handle) {
   fun canPushBuffer(amount: Int): Boolean {

@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Camera internal constructor(
+open class Camera(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun clearCurrent(enableNext: Boolean) {

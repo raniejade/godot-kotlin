@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class HingeJoint internal constructor(
+open class HingeJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getFlag(flag: Int): Boolean {

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRController internal constructor(
+open class ARVRController(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getControllerId(): Int {

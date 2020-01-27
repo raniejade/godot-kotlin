@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GDNativeLibrary internal constructor(
+open class GDNativeLibrary(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getConfigFile(): ConfigFile {

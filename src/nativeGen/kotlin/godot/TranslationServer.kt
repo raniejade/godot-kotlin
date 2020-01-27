@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TranslationServer internal constructor(
+open class TranslationServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addTranslation(translation: Translation) {

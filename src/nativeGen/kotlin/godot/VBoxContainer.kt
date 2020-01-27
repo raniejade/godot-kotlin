@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VBoxContainer internal constructor(
+open class VBoxContainer(
   _handle: COpaquePointer
 ) : BoxContainer(_handle) {
   companion object {

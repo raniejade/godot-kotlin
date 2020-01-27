@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ResourceLoader internal constructor(
+open class _ResourceLoader(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun exists(path: String, typeHint: String): Boolean {

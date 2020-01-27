@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputDefault internal constructor(
+open class InputDefault(
   _handle: COpaquePointer
 ) : Input(_handle) {
   companion object {

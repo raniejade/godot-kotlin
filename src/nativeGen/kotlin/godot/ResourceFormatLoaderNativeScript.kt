@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatLoaderNativeScript internal constructor(
+open class ResourceFormatLoaderNativeScript(
   _handle: COpaquePointer
 ) : ResourceFormatLoader(_handle) {
   companion object {

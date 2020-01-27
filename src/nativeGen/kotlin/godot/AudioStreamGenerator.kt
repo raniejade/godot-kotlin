@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamGenerator internal constructor(
+open class AudioStreamGenerator(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getBufferLength(): Float {

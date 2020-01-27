@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectCompressor internal constructor(
+open class AudioEffectCompressor(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getAttackUs(): Float {

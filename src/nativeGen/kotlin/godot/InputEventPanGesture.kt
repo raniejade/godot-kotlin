@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventPanGesture internal constructor(
+open class InputEventPanGesture(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
   fun getDelta(): Vector2 {

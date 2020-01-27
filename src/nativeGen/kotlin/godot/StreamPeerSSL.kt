@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StreamPeerSSL internal constructor(
+open class StreamPeerSSL(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   fun acceptStream(base: StreamPeer): GDError {

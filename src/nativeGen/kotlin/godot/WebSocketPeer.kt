@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebSocketPeer internal constructor(
+open class WebSocketPeer(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close(code: Int, reason: String) {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NavigationMeshInstance internal constructor(
+open class NavigationMeshInstance(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getNavigationMesh(): NavigationMesh {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptPropertySet internal constructor(
+open class VisualScriptPropertySet(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getAssignOp(): AssignOp {

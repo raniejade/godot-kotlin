@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorInspector internal constructor(
+open class EditorInspector(
   _handle: COpaquePointer
 ) : ScrollContainer(_handle) {
   fun refresh() {

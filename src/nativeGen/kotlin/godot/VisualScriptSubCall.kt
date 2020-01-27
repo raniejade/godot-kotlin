@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptSubCall internal constructor(
+open class VisualScriptSubCall(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   companion object {

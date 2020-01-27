@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BulletPhysicsDirectBodyState internal constructor(
+open class BulletPhysicsDirectBodyState(
   _handle: COpaquePointer
 ) : PhysicsDirectBodyState(_handle) {
   companion object {

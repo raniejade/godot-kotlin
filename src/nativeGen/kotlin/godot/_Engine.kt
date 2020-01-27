@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Engine internal constructor(
+open class _Engine(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getAuthorInfo(): Dictionary {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeAnimation internal constructor(
+open class AnimationNodeAnimation(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
   fun getAnimation(): String {

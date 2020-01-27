@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GDScript internal constructor(
+open class GDScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun getAsByteCode(): PoolByteArray {

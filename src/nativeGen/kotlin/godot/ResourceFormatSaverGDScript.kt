@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatSaverGDScript internal constructor(
+open class ResourceFormatSaverGDScript(
   _handle: COpaquePointer
 ) : ResourceFormatSaver(_handle) {
   companion object {

@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeOutput internal constructor(
+open class AnimationNodeOutput(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   companion object {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AtlasTexture internal constructor(
+open class AtlasTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getAtlas(): Texture {

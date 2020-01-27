@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGCombiner internal constructor(
+open class CSGCombiner(
   _handle: COpaquePointer
 ) : CSGShape(_handle) {
   companion object {

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PCKPacker internal constructor(
+open class PCKPacker(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addFile(pckPath: String, sourcePath: String): GDError {

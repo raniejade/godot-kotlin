@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorInterface internal constructor(
+open class EditorInterface(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun editResource(resource: Resource) {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CanvasItemMaterial internal constructor(
+open class CanvasItemMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getBlendMode(): BlendMode {

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeGroupBase internal constructor(
+open class VisualShaderNodeGroupBase(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun addInputPort(

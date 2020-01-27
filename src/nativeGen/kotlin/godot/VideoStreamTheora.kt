@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VideoStreamTheora internal constructor(
+open class VideoStreamTheora(
   _handle: COpaquePointer
 ) : VideoStream(_handle) {
   fun getFile(): String {

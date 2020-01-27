@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeInput internal constructor(
+open class VisualShaderNodeInput(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getInputName(): String {

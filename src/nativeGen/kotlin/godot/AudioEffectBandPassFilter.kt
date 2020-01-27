@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectBandPassFilter internal constructor(
+open class AudioEffectBandPassFilter(
   _handle: COpaquePointer
 ) : AudioEffectFilter(_handle) {
   companion object {

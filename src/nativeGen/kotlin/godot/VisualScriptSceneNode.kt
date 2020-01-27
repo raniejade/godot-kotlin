@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptSceneNode internal constructor(
+open class VisualScriptSceneNode(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getNodePath(): NodePath {

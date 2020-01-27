@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NativeScript internal constructor(
+open class NativeScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun getClassDocumentation(): String {

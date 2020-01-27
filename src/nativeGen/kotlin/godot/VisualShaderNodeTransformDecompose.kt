@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeTransformDecompose internal constructor(
+open class VisualShaderNodeTransformDecompose(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   companion object {

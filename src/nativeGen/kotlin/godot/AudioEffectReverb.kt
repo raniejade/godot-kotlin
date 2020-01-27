@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectReverb internal constructor(
+open class AudioEffectReverb(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDamping(): Float {

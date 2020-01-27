@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PHashTranslation internal constructor(
+open class PHashTranslation(
   _handle: COpaquePointer
 ) : Translation(_handle) {
   fun generate(from: Translation) {

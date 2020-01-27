@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PlaneShape internal constructor(
+open class PlaneShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getPlane(): Plane {

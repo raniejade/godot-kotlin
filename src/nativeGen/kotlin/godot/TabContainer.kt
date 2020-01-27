@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TabContainer internal constructor(
+open class TabContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun areTabsVisible(): Boolean {

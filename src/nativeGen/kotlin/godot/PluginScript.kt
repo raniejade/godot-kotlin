@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PluginScript internal constructor(
+open class PluginScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun new(): Object {

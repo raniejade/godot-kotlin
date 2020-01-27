@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ArrayMesh internal constructor(
+open class ArrayMesh(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
   fun addBlendShape(name: String) {

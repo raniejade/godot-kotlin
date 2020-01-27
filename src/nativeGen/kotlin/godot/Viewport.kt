@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Viewport internal constructor(
+open class Viewport(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun findWorld(): World {

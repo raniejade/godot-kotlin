@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VideoPlayer internal constructor(
+open class VideoPlayer(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAudioTrack(): Int {

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeTransition internal constructor(
+open class AnimationNodeTransition(
   _handle: COpaquePointer
 ) : AnimationNode(_handle) {
   fun getCrossFadeTime(): Float {

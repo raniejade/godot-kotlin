@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGMesh internal constructor(
+open class CSGMesh(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getMaterial(): Material {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeColorConstant internal constructor(
+open class VisualShaderNodeColorConstant(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Color {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorResourcePreview internal constructor(
+open class EditorResourcePreview(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {

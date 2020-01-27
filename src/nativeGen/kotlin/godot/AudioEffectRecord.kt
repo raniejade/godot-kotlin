@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectRecord internal constructor(
+open class AudioEffectRecord(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getFormat(): AudioStreamSample.Format {

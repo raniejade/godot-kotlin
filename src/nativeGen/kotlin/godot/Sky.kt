@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Sky internal constructor(
+open class Sky(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getRadianceSize(): RadianceSize {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ReferenceRect internal constructor(
+open class ReferenceRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getBorderColor(): Color {

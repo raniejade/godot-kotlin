@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeExpression internal constructor(
+open class VisualShaderNodeExpression(
   _handle: COpaquePointer
 ) : VisualShaderNodeGroupBase(_handle) {
   fun build() {

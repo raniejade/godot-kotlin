@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Input internal constructor(
+open class Input(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun actionPress(action: String, strength: Float) {

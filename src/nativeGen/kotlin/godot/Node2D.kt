@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Node2D internal constructor(
+open class Node2D(
   _handle: COpaquePointer
 ) : CanvasItem(_handle) {
   fun applyScale(ratio: Vector2) {

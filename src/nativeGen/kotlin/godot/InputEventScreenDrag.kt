@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventScreenDrag internal constructor(
+open class InputEventScreenDrag(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getIndex(): Int {

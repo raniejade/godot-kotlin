@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Spatial internal constructor(
+open class Spatial(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun forceUpdateTransform() {

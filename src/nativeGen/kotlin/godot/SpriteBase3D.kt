@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpriteBase3D internal constructor(
+open class SpriteBase3D(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun generateTriangleMesh(): TriangleMesh {

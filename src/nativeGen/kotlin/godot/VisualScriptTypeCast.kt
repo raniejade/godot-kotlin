@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptTypeCast internal constructor(
+open class VisualScriptTypeCast(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBaseScript(): String {

@@ -38,7 +38,7 @@ class APIGenerator {
       .generatePrimaryConstructor(cls)
       .maybeGenerateInheritance(cls)
       .generateEnums(cls.name, cls.enums)
-      .generateMethods(cls.methods)
+      .generateMethods(cls.name, cls.methods)
       .generateCompanionObject(cls)
 
     return classBuilder
@@ -109,7 +109,6 @@ class APIGenerator {
 
     primaryConstructor(
       FunSpec.constructorBuilder()
-        .addModifiers(KModifier.INTERNAL)
         .addParameter(handleName, cOpaquePointerType)
         .build()
     )
@@ -201,7 +200,7 @@ class APIGenerator {
     val builder = TypeSpec.objectBuilder("__method_bind")
       .addKdoc("Container for method_bind pointers for $className")
       .addModifiers(KModifier.PRIVATE)
-    val methodBindProperties = methods.filter { method -> !method.is_virtual }
+    val methodBindProperties = methods.filter { method -> isMethodImplGeneratable(method) }
       .map { method ->
         PropertySpec.builder(method.name, METHOD_BIND_TYPE)
           .getter(FunSpec.getterBuilder()
@@ -235,8 +234,12 @@ class APIGenerator {
     return this
   }
 
-  private fun TypeSpec.Builder.generateMethods(methods: List<GDMethod>): TypeSpec.Builder {
-    val methodSpecs = methods.filter { method -> !method.is_virtual }
+  private fun isMethodImplGeneratable(method: GDMethod): Boolean {
+    return !method.is_virtual && method.name != "free"
+  }
+
+  private fun TypeSpec.Builder.generateMethods(className: String, methods: List<GDMethod>): TypeSpec.Builder {
+    val methodSpecs = methods.filter { method -> isMethodImplGeneratable(method) }
       .map { method ->
         val returnTypeName = parseTypeName(method.return_type)
         val returnGDType = TypeRegistry.get(returnTypeName.fullName)
@@ -315,6 +318,21 @@ class APIGenerator {
       }
 
     addFunctions(methodSpecs)
+    maybeGenerateFreeForObject(className)
+    return this
+  }
+
+  private fun TypeSpec.Builder.maybeGenerateFreeForObject(className: String): TypeSpec.Builder {
+    if (className == "Object") {
+      addFunction(
+        FunSpec.builder("free")
+          .addCode("""
+            checkNotNull(Godot.gdnative.godot_object_destroy)(_handle)
+          """.trimIndent())
+          .build()
+      )
+    }
+
     return this
   }
 

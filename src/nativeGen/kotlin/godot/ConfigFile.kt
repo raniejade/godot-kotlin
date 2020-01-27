@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ConfigFile internal constructor(
+open class ConfigFile(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun eraseSection(section: String) {

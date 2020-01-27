@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Label internal constructor(
+open class Label(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getAlign(): Align {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptEngineSingleton internal constructor(
+open class VisualScriptEngineSingleton(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getSingleton(): String {

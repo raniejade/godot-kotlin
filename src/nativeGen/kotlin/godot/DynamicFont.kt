@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class DynamicFont internal constructor(
+open class DynamicFont(
   _handle: COpaquePointer
 ) : Font(_handle) {
   fun addFallback(data: DynamicFontData) {

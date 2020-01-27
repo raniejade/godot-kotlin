@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PhysicsShapeQueryResult internal constructor(
+open class PhysicsShapeQueryResult(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResultCount(): Int {

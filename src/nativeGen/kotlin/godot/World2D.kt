@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class World2D internal constructor(
+open class World2D(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCanvas(): RID {

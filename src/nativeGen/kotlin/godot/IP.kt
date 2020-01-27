@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class IP internal constructor(
+open class IP(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun clearCache(hostname: String) {

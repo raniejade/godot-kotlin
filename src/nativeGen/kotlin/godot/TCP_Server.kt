@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TCP_Server internal constructor(
+open class TCP_Server(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun isConnectionAvailable(): Boolean {

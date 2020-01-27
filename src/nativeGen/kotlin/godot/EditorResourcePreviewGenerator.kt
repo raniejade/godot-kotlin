@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorResourcePreviewGenerator internal constructor(
+open class EditorResourcePreviewGenerator(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   companion object {

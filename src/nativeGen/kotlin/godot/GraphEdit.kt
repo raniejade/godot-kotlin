@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GraphEdit internal constructor(
+open class GraphEdit(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addValidConnectionType(fromType: Int, toType: Int) {

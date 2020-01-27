@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CapsuleMesh internal constructor(
+open class CapsuleMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getMidHeight(): Float {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptYield internal constructor(
+open class VisualScriptYield(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getWaitTime(): Float {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ViewportTexture internal constructor(
+open class ViewportTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getViewportPathInScene(): NodePath {

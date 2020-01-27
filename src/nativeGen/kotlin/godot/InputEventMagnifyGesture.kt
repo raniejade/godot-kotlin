@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventMagnifyGesture internal constructor(
+open class InputEventMagnifyGesture(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
   fun getFactor(): Float {

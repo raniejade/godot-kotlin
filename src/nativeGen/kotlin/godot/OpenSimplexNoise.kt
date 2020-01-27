@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class OpenSimplexNoise internal constructor(
+open class OpenSimplexNoise(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getImage(width: Int, height: Int): Image {

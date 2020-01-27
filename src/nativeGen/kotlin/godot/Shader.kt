@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Shader internal constructor(
+open class Shader(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCode(): String {

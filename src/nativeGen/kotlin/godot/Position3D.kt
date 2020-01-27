@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Position3D internal constructor(
+open class Position3D(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   companion object {

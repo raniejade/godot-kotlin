@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GIProbe internal constructor(
+open class GIProbe(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun bake(fromNode: Node, createVisualDebug: Boolean) {

@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CanvasLayer internal constructor(
+open class CanvasLayer(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getCanvas(): RID {

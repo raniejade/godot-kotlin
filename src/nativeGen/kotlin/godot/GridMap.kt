@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GridMap internal constructor(
+open class GridMap(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun clear() {

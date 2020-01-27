@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectPanner internal constructor(
+open class AudioEffectPanner(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getPan(): Float {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Skeleton2D internal constructor(
+open class Skeleton2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getBone(idx: Int): Bone2D {

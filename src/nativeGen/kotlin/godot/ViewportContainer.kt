@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ViewportContainer internal constructor(
+open class ViewportContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getStretchShrink(): Int {

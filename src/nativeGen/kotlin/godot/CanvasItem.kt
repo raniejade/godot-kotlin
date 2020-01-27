@@ -24,7 +24,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CanvasItem internal constructor(
+open class CanvasItem(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun drawChar(

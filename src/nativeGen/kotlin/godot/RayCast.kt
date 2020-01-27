@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RayCast internal constructor(
+open class RayCast(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun addException(node: Object) {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectPhaser internal constructor(
+open class AudioEffectPhaser(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDepth(): Float {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Shape internal constructor(
+open class Shape(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getMargin(): Float {

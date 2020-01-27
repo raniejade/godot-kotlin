@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StreamPeerGDNative internal constructor(
+open class StreamPeerGDNative(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   companion object {

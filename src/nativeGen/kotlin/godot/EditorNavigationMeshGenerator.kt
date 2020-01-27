@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorNavigationMeshGenerator internal constructor(
+open class EditorNavigationMeshGenerator(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun bake(navMesh: NavigationMesh, rootNode: Node) {

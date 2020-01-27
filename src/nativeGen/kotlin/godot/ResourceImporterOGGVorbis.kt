@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceImporterOGGVorbis internal constructor(
+open class ResourceImporterOGGVorbis(
   _handle: COpaquePointer
 ) : ResourceImporter(_handle) {
   companion object {

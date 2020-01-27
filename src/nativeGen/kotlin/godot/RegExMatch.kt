@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RegExMatch internal constructor(
+open class RegExMatch(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getEnd(name: Variant): Int {

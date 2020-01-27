@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ScriptCreateDialog internal constructor(
+open class ScriptCreateDialog(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
   fun config(

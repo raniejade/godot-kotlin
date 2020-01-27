@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SkeletonIK internal constructor(
+open class SkeletonIK(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getInterpolation(): Float {

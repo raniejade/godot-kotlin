@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ConfirmationDialog internal constructor(
+open class ConfirmationDialog(
   _handle: COpaquePointer
 ) : AcceptDialog(_handle) {
   fun getCancel(): Button {

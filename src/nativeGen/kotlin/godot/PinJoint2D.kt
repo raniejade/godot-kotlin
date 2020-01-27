@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PinJoint2D internal constructor(
+open class PinJoint2D(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getSoftness(): Float {

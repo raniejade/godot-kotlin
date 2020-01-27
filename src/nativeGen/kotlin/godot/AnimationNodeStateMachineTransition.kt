@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeStateMachineTransition internal constructor(
+open class AnimationNodeStateMachineTransition(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAdvanceCondition(): String {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorFileDialog internal constructor(
+open class EditorFileDialog(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
   fun addFilter(filter: String) {

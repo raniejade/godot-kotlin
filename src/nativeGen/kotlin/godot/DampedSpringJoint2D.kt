@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class DampedSpringJoint2D internal constructor(
+open class DampedSpringJoint2D(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
   fun getDamping(): Float {

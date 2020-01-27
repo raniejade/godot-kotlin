@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpriteFrames internal constructor(
+open class SpriteFrames(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addAnimation(anim: String) {

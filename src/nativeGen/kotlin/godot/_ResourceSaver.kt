@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _ResourceSaver internal constructor(
+open class _ResourceSaver(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {

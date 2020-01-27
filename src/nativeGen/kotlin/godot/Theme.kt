@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Theme internal constructor(
+open class Theme(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun clear() {

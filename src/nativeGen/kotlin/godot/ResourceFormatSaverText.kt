@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatSaverText internal constructor(
+open class ResourceFormatSaverText(
   _handle: COpaquePointer
 ) : ResourceFormatSaver(_handle) {
   companion object {

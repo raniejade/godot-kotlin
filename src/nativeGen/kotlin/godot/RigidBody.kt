@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RigidBody internal constructor(
+open class RigidBody(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun addCentralForce(force: Vector3) {

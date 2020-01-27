@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SliderJoint internal constructor(
+open class SliderJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getParam(param: Int): Float {

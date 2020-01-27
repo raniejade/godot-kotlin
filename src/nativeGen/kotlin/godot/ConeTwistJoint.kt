@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ConeTwistJoint internal constructor(
+open class ConeTwistJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getParam(param: Int): Float {

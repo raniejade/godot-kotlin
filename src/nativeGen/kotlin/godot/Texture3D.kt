@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Texture3D internal constructor(
+open class Texture3D(
   _handle: COpaquePointer
 ) : TextureLayered(_handle) {
   companion object {

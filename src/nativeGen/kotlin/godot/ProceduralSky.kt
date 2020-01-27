@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ProceduralSky internal constructor(
+open class ProceduralSky(
   _handle: COpaquePointer
 ) : Sky(_handle) {
   fun getGroundBottomColor(): Color {

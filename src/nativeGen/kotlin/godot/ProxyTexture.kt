@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ProxyTexture internal constructor(
+open class ProxyTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBase(): Texture {

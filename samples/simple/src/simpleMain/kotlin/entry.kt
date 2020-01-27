@@ -20,6 +20,7 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     println(array[0])
     spatial.setRotationDegrees(Vector3.new(x = 12f))
     println(spatial.getRotationDegrees())
+    spatial.free()
 }
 
 @CName("godot_gdnative_terminate")

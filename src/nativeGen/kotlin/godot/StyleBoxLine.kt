@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StyleBoxLine internal constructor(
+open class StyleBoxLine(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getColor(): Color {

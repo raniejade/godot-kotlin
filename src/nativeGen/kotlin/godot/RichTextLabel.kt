@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RichTextLabel internal constructor(
+open class RichTextLabel(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addImage(image: Texture) {

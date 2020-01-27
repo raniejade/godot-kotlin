@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorPlugin internal constructor(
+open class EditorPlugin(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addAutoloadSingleton(name: String, path: String) {

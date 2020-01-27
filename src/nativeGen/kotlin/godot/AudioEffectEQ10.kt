@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectEQ10 internal constructor(
+open class AudioEffectEQ10(
   _handle: COpaquePointer
 ) : AudioEffectEQ(_handle) {
   companion object {

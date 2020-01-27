@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CSGBox internal constructor(
+open class CSGBox(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
   fun getDepth(): Float {

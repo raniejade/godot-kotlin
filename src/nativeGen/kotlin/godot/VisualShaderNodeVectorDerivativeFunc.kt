@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeVectorDerivativeFunc internal constructor(
+open class VisualShaderNodeVectorDerivativeFunc(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getFunction(): Function {

@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WorldEnvironment internal constructor(
+open class WorldEnvironment(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getEnvironment(): Environment {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CylinderMesh internal constructor(
+open class CylinderMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getBottomRadius(): Float {

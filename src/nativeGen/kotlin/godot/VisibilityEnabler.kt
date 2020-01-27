@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisibilityEnabler internal constructor(
+open class VisibilityEnabler(
   _handle: COpaquePointer
 ) : VisibilityNotifier(_handle) {
   fun isEnablerEnabled(enabler: Int): Boolean {

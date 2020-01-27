@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ConcavePolygonShape internal constructor(
+open class ConcavePolygonShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getFaces(): PoolVector3Array {

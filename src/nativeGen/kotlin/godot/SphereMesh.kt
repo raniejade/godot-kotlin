@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SphereMesh internal constructor(
+open class SphereMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
   fun getHeight(): Float {

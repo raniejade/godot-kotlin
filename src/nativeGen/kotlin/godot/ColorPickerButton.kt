@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ColorPickerButton internal constructor(
+open class ColorPickerButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
   fun getPickColor(): Color {

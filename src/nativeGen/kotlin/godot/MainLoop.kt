@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MainLoop internal constructor(
+open class MainLoop(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun finish() {

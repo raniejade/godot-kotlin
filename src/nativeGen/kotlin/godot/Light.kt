@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Light internal constructor(
+open class Light(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
   fun getBakeMode(): BakeMode {

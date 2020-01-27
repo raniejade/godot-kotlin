@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BoneAttachment internal constructor(
+open class BoneAttachment(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getBoneName(): String {

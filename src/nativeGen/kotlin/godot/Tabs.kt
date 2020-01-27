@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Tabs internal constructor(
+open class Tabs(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addTab(title: String, icon: Texture) {

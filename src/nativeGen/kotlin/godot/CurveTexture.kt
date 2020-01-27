@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CurveTexture internal constructor(
+open class CurveTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getCurve(): Curve {

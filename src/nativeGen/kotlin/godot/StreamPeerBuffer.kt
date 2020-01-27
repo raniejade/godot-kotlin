@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StreamPeerBuffer internal constructor(
+open class StreamPeerBuffer(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   fun clear() {

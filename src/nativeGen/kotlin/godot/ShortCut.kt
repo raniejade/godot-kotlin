@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ShortCut internal constructor(
+open class ShortCut(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAsText(): String {

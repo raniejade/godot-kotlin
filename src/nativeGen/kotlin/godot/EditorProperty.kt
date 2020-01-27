@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorProperty internal constructor(
+open class EditorProperty(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun addFocusable(control: Control) {

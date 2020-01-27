@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptReturn internal constructor(
+open class VisualScriptReturn(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getReturnType(): Variant.Type {

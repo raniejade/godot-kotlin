@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Popup internal constructor(
+open class Popup(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun isExclusive(): Boolean {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NoiseTexture internal constructor(
+open class NoiseTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBumpStrength(): Float {

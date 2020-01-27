@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EncodedObjectAsID internal constructor(
+open class EncodedObjectAsID(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getObjectId(): Int {

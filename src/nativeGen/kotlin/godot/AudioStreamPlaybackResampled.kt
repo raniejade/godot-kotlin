@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamPlaybackResampled internal constructor(
+open class AudioStreamPlaybackResampled(
   _handle: COpaquePointer
 ) : AudioStreamPlayback(_handle) {
   companion object {

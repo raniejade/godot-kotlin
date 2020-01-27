@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Curve internal constructor(
+open class Curve(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPoint(

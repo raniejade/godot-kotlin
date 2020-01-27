@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventMouseMotion internal constructor(
+open class InputEventMouseMotion(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
   fun getRelative(): Vector2 {

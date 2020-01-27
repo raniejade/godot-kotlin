@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebRTCPeerConnection internal constructor(
+open class WebRTCPeerConnection(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addIceCandidate(

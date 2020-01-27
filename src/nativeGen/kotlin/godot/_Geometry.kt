@@ -24,7 +24,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _Geometry internal constructor(
+open class _Geometry(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun buildBoxPlanes(extents: Vector3): VariantArray {

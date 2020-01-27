@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VSeparator internal constructor(
+open class VSeparator(
   _handle: COpaquePointer
 ) : Separator(_handle) {
   companion object {

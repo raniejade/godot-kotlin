@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CollisionPolygon internal constructor(
+open class CollisionPolygon(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getDepth(): Float {

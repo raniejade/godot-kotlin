@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorInspectorPlugin internal constructor(
+open class EditorInspectorPlugin(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addCustomControl(control: Control) {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ScrollBar internal constructor(
+open class ScrollBar(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getCustomStep(): Float {

@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TextEdit internal constructor(
+open class TextEdit(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addColorRegion(

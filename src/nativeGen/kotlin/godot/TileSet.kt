@@ -21,7 +21,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TileSet internal constructor(
+open class TileSet(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun autotileClearBitmaskMap(id: Int) {

@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Gradient internal constructor(
+open class Gradient(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPoint(offset: Float, color: Color) {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _JSON internal constructor(
+open class _JSON(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun parse(json: String): JSONParseResult {

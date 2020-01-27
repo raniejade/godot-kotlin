@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class _File internal constructor(
+open class _File(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun close() {

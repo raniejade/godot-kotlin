@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PacketPeerUDP internal constructor(
+open class PacketPeerUDP(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {

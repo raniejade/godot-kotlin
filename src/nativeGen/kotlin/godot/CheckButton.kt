@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CheckButton internal constructor(
+open class CheckButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
   companion object {

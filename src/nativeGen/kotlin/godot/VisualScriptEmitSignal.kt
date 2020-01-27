@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptEmitSignal internal constructor(
+open class VisualScriptEmitSignal(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getSignal(): String {

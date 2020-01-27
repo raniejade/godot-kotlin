@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Slider internal constructor(
+open class Slider(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getTicks(): Int {

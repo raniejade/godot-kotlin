@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamPlayer internal constructor(
+open class AudioStreamPlayer(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getBus(): String {

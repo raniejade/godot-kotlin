@@ -26,7 +26,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SurfaceTool internal constructor(
+open class SurfaceTool(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addBones(bones: PoolIntArray) {

@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Physics2DShapeQueryResult internal constructor(
+open class Physics2DShapeQueryResult(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResultCount(): Int {

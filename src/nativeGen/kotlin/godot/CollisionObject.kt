@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CollisionObject internal constructor(
+open class CollisionObject(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun createShapeOwner(owner: Object): Int {

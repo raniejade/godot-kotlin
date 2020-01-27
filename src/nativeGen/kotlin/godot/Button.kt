@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Button internal constructor(
+open class Button(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
   fun getButtonIcon(): Texture {

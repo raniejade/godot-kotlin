@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Environment internal constructor(
+open class Environment(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getAdjustmentBrightness(): Float {

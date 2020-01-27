@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InstancePlaceholder internal constructor(
+open class InstancePlaceholder(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun createInstance(replace: Boolean, customScene: PackedScene): Node {

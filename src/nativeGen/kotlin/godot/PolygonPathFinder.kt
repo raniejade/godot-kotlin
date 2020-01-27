@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PolygonPathFinder internal constructor(
+open class PolygonPathFinder(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun findPath(from: Vector2, to: Vector2): PoolVector2Array {

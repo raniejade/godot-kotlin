@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NetworkedMultiplayerPeer internal constructor(
+open class NetworkedMultiplayerPeer(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun getConnectionStatus(): ConnectionStatus {

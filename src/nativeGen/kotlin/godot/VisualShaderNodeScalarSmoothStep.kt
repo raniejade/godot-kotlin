@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeScalarSmoothStep internal constructor(
+open class VisualShaderNodeScalarSmoothStep(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   companion object {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InterpolatedCamera internal constructor(
+open class InterpolatedCamera(
   _handle: COpaquePointer
 ) : Camera(_handle) {
   fun getSpeed(): Float {

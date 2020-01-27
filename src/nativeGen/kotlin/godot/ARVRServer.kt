@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRServer internal constructor(
+open class ARVRServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun centerOnHmd(rotationMode: Int, keepHeight: Boolean) {

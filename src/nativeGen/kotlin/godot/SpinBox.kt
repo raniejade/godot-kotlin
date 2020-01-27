@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpinBox internal constructor(
+open class SpinBox(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getAlign(): LineEdit.Align {

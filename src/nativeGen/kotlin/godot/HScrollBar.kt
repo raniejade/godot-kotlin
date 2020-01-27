@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class HScrollBar internal constructor(
+open class HScrollBar(
   _handle: COpaquePointer
 ) : ScrollBar(_handle) {
   companion object {

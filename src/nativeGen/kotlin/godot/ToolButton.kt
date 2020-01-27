@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ToolButton internal constructor(
+open class ToolButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
   companion object {

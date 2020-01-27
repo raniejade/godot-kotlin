@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class RemoteTransform2D internal constructor(
+open class RemoteTransform2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getRemoteNode(): NodePath {

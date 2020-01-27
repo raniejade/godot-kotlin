@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectHighShelfFilter internal constructor(
+open class AudioEffectHighShelfFilter(
   _handle: COpaquePointer
 ) : AudioEffectFilter(_handle) {
   companion object {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ProgressBar internal constructor(
+open class ProgressBar(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun isPercentVisible(): Boolean {

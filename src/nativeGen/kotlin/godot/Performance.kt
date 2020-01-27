@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Performance internal constructor(
+open class Performance(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getMonitor(monitor: Int): Float {

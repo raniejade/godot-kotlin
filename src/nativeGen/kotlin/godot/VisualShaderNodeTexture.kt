@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeTexture internal constructor(
+open class VisualShaderNodeTexture(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getSource(): Source {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ColorPicker internal constructor(
+open class ColorPicker(
   _handle: COpaquePointer
 ) : BoxContainer(_handle) {
   fun addPreset(color: Color) {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectLimiter internal constructor(
+open class AudioEffectLimiter(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getCeilingDb(): Float {

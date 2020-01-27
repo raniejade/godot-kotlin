@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MenuButton internal constructor(
+open class MenuButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
   fun getPopup(): PopupMenu {

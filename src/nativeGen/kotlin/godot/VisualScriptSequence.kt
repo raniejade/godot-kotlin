@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptSequence internal constructor(
+open class VisualScriptSequence(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getSteps(): Int {

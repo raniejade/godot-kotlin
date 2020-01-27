@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class LargeTexture internal constructor(
+open class LargeTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun addPiece(ofs: Vector2, texture: Texture): Int {

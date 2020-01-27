@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShader internal constructor(
+open class VisualShader(
   _handle: COpaquePointer
 ) : Shader(_handle) {
   fun addNode(

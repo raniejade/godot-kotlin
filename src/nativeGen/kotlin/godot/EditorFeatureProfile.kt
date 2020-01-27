@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorFeatureProfile internal constructor(
+open class EditorFeatureProfile(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getFeatureName(feature: Int): String {

@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TextureProgress internal constructor(
+open class TextureProgress(
   _handle: COpaquePointer
 ) : Range(_handle) {
   fun getFillDegrees(): Float {

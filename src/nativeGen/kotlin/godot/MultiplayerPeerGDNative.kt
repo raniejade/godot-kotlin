@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MultiplayerPeerGDNative internal constructor(
+open class MultiplayerPeerGDNative(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
   companion object {

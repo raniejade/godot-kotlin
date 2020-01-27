@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Expression internal constructor(
+open class Expression(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun execute(

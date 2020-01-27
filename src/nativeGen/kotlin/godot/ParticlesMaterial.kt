@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ParticlesMaterial internal constructor(
+open class ParticlesMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getColor(): Color {

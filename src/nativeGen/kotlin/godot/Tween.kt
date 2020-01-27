@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Tween internal constructor(
+open class Tween(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun followMethod(

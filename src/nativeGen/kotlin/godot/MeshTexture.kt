@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MeshTexture internal constructor(
+open class MeshTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
   fun getBaseTexture(): Texture {

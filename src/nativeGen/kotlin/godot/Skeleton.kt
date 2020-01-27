@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Skeleton internal constructor(
+open class Skeleton(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun addBone(name: String) {

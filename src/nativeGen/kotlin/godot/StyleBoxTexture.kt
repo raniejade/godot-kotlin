@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class StyleBoxTexture internal constructor(
+open class StyleBoxTexture(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getExpandMarginSize(margin: Int): Float {

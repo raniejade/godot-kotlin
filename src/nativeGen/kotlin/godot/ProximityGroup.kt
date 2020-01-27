@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ProximityGroup internal constructor(
+open class ProximityGroup(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun broadcast(name: String, parameters: Variant) {

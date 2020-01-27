@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GridContainer internal constructor(
+open class GridContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun getColumns(): Int {

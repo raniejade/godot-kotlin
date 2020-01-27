@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SpatialMaterial internal constructor(
+open class SpatialMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getAlbedo(): Color {

@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class HSlider internal constructor(
+open class HSlider(
   _handle: COpaquePointer
 ) : Slider(_handle) {
   companion object {

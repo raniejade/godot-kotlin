@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PhysicsDirectSpaceState internal constructor(
+open class PhysicsDirectSpaceState(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun castMotion(shape: PhysicsShapeQueryParameters, motion: Vector3): VariantArray {

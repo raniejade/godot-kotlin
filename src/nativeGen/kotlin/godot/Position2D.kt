@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Position2D internal constructor(
+open class Position2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   companion object {

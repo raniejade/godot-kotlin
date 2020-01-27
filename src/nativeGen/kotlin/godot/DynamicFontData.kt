@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class DynamicFontData internal constructor(
+open class DynamicFontData(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getFontPath(): String {

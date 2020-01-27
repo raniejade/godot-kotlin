@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CameraServer internal constructor(
+open class CameraServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addFeed(feed: CameraFeed) {

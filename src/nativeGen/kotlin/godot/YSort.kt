@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class YSort internal constructor(
+open class YSort(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun isSortEnabled(): Boolean {

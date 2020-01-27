@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationTree internal constructor(
+open class AnimationTree(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun advance(delta: Float) {

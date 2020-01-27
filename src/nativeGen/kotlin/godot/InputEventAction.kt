@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventAction internal constructor(
+open class InputEventAction(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
   fun getAction(): String {

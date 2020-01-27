@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NinePatchRect internal constructor(
+open class NinePatchRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun getHAxisStretchMode(): AxisStretchMode {

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebRTCDataChannel internal constructor(
+open class WebRTCDataChannel(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {

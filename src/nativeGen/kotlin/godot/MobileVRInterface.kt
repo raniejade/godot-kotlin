@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class MobileVRInterface internal constructor(
+open class MobileVRInterface(
   _handle: COpaquePointer
 ) : ARVRInterface(_handle) {
   fun getDisplayToLens(): Float {

@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class NavigationPolygon internal constructor(
+open class NavigationPolygon(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addOutline(outline: PoolVector2Array) {

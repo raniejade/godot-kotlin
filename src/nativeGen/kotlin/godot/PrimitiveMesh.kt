@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PrimitiveMesh internal constructor(
+open class PrimitiveMesh(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
   fun getCustomAabb(): AABB {

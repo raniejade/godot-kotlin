@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class World internal constructor(
+open class World(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getDirectSpaceState(): PhysicsDirectSpaceState {

@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationPlayer internal constructor(
+open class AnimationPlayer(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addAnimation(name: String, animation: Animation): GDError {

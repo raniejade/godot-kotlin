@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRAnchor internal constructor(
+open class ARVRAnchor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAnchorId(): Int {

@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BakedLightmapData internal constructor(
+open class BakedLightmapData(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addUser(

@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualInstance internal constructor(
+open class VisualInstance(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getAabb(): AABB {

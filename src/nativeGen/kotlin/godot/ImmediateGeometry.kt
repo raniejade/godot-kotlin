@@ -20,7 +20,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ImmediateGeometry internal constructor(
+open class ImmediateGeometry(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun addSphere(

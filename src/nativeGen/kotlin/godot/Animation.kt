@@ -22,7 +22,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Animation internal constructor(
+open class Animation(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addTrack(type: Int, atPosition: Int): Int {

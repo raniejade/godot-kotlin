@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VehicleWheel internal constructor(
+open class VehicleWheel(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getDampingCompression(): Float {

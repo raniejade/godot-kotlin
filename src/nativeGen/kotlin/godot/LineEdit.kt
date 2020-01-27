@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class LineEdit internal constructor(
+open class LineEdit(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun appendAtCursor(text: String) {

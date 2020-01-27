@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventMouse internal constructor(
+open class InputEventMouse(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   fun getButtonMask(): Int {

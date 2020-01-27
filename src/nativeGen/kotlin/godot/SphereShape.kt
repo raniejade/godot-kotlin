@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class SphereShape internal constructor(
+open class SphereShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getRadius(): Float {

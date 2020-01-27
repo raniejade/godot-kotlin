@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CubeMap internal constructor(
+open class CubeMap(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getFlags(): Int {

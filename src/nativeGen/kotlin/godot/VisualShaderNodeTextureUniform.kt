@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeTextureUniform internal constructor(
+open class VisualShaderNodeTextureUniform(
   _handle: COpaquePointer
 ) : VisualShaderNodeUniform(_handle) {
   fun getColorDefault(): ColorDefault {

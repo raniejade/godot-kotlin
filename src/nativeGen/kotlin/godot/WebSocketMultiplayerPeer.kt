@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class WebSocketMultiplayerPeer internal constructor(
+open class WebSocketMultiplayerPeer(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
   fun getPeer(peerId: Int): WebSocketPeer {

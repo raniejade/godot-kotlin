@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectChorus internal constructor(
+open class AudioEffectChorus(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDry(): Float {

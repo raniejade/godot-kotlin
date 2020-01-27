@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Sprite internal constructor(
+open class Sprite(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getFrame(): Int {

@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorSelection internal constructor(
+open class EditorSelection(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addNode(node: Node) {

@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class KinematicBody2D internal constructor(
+open class KinematicBody2D(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
   fun getFloorVelocity(): Vector2 {

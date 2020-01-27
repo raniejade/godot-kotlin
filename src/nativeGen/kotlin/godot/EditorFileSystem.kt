@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class EditorFileSystem internal constructor(
+open class EditorFileSystem(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getFileType(path: String): String {

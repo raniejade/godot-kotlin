@@ -18,7 +18,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScript internal constructor(
+open class VisualScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun addCustomSignal(name: String) {

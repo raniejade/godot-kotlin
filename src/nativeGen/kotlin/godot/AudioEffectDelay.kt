@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioEffectDelay internal constructor(
+open class AudioEffectDelay(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
   fun getDry(): Float {

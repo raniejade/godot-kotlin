@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class TileMap internal constructor(
+open class TileMap(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun clear() {

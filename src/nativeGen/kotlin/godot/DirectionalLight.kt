@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class DirectionalLight internal constructor(
+open class DirectionalLight(
   _handle: COpaquePointer
 ) : Light(_handle) {
   fun getShadowDepthRange(): ShadowDepthRange {

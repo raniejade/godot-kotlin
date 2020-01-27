@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Shape2D internal constructor(
+open class Shape2D(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun collide(

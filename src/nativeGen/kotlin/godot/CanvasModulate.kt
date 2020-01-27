@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class CanvasModulate internal constructor(
+open class CanvasModulate(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getColor(): Color {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AudioStreamRandomPitch internal constructor(
+open class AudioStreamRandomPitch(
   _handle: COpaquePointer
 ) : AudioStream(_handle) {
   fun getAudioStream(): AudioStream {

@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptCondition internal constructor(
+open class VisualScriptCondition(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   companion object {

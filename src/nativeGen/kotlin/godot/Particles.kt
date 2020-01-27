@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class Particles internal constructor(
+open class Particles(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
   fun captureAabb(): AABB {

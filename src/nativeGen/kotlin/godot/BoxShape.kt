@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class BoxShape internal constructor(
+open class BoxShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getExtents(): Vector3 {

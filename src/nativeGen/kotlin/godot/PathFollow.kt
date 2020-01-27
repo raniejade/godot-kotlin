@@ -16,7 +16,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PathFollow internal constructor(
+open class PathFollow(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getCubicInterpolation(): Boolean {

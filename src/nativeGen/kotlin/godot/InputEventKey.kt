@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventKey internal constructor(
+open class InputEventKey(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   fun getScancode(): Int {

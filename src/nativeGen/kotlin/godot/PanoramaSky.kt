@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PanoramaSky internal constructor(
+open class PanoramaSky(
   _handle: COpaquePointer
 ) : Sky(_handle) {
   fun getPanorama(): Texture {

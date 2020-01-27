@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualShaderNodeCubeMap internal constructor(
+open class VisualShaderNodeCubeMap(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
   fun getCubeMap(): CubeMap {

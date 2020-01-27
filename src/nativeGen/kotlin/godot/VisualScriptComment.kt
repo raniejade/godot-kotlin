@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptComment internal constructor(
+open class VisualScriptComment(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getDescription(): String {

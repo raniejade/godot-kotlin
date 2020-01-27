@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class PacketPeerStream internal constructor(
+open class PacketPeerStream(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun getInputBufferMaxSize(): Int {

@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptClassConstant internal constructor(
+open class VisualScriptClassConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getBaseType(): String {

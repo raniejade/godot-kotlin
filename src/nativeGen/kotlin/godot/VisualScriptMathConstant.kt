@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VisualScriptMathConstant internal constructor(
+open class VisualScriptMathConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
   fun getMathConstant(): MathConstant {

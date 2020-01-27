@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ARVRInterface internal constructor(
+open class ARVRInterface(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAnchorDetectionIsEnabled(): Boolean {

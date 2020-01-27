@@ -12,7 +12,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ResourceFormatLoaderVideoStreamGDNative internal constructor(
+open class ResourceFormatLoaderVideoStreamGDNative(
   _handle: COpaquePointer
 ) : ResourceFormatLoader(_handle) {
   companion object {

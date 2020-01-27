@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class InputEventGesture internal constructor(
+open class InputEventGesture(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
   fun getPosition(): Vector2 {

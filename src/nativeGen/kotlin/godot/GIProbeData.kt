@@ -19,7 +19,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class GIProbeData internal constructor(
+open class GIProbeData(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getBias(): Float {

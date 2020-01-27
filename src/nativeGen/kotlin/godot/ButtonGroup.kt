@@ -13,7 +13,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ButtonGroup internal constructor(
+open class ButtonGroup(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getButtons(): VariantArray {

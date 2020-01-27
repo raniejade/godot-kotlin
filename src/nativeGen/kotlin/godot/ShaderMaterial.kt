@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class ShaderMaterial internal constructor(
+open class ShaderMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
   fun getShader(): Shader {

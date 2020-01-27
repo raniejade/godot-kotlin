@@ -17,7 +17,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class AnimationNodeStateMachine internal constructor(
+open class AnimationNodeStateMachine(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
   fun addNode(

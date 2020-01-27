@@ -15,7 +15,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class HeightMapShape internal constructor(
+open class HeightMapShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
   fun getMapData(): PoolRealArray {

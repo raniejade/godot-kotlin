@@ -14,7 +14,7 @@ import kotlinx.cinterop.invoke
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.reinterpret
 
-open class VehicleBody internal constructor(
+open class VehicleBody(
   _handle: COpaquePointer
 ) : RigidBody(_handle) {
   fun getBrake(): Float {
