@@ -319,6 +319,12 @@ class Variant(
   }
 
   companion object {
+    fun new(): Variant {
+      return allocateVariant {
+        checkNotNull(Godot.gdnative.godot_variant_new_nil)(it)
+      }
+    }
+
     fun new(str: String): Variant {
       return allocateVariant {
         GDString.from(str) { str ->
