@@ -300,6 +300,38 @@ class Variant(
     }
   }
 
+  fun toAny(): Any {
+    return when (type) {
+      Type.NIL, Type.OBJECT -> throw UnsupportedOperationException("Can't convert to Any type")
+      Type.BOOL -> asBool()
+      Type.FLOAT -> asFloat()
+      Type.INT -> asInt()
+      Type.STRING -> asString()
+      Type.AABB -> asAABB()
+      Type.ARRAY -> asArray()
+      Type.BASIS -> asBasis()
+      Type.COLOR -> asColor()
+      Type.DICTIONARY -> asDictionary()
+      Type.NODE_PATH -> asNodePath()
+      Type.PLANE -> asPlane()
+      Type.POOL_BYTE_ARRAY -> asPoolByteArray()
+      Type.POOL_COLOR_ARRAY -> asPoolColorArray()
+      Type.POOL_INT_ARRAY -> asPoolIntArray()
+      Type.POOL_REAL_ARRAY -> asPoolRealArray()
+      Type.POOL_STRING_ARRAY -> asPoolStringArray()
+      Type.POOL_VECTOR2_ARRAY -> asPoolVector2Array()
+      Type.POOL_VECTOR3_ARRAY -> asPoolVector3Array()
+      Type.QUAT -> asQuat()
+      Type.RECT2 -> asRect2()
+      Type.RID -> asRID()
+      Type.TRANSFORM -> asTransform()
+      Type.TRANSFORM2D -> asTransform2D()
+      Type.VECTOR2 -> asVector2()
+      Type.VECTOR3 -> asVector3()
+      else -> throw UnsupportedOperationException("Unknown type $type")
+    }
+  }
+
   override fun toString(): String {
     return asString()
   }
@@ -496,6 +528,15 @@ class Variant(
     // I'm lazy to fix API generation
     fun new(variant: Variant): Variant {
       return variant
+    }
+
+    fun fromAny(value: Any): Variant {
+      return when (value) {
+        is Unit -> new()
+        is CoreType<*> -> value.toVariant()
+        is Variant -> value
+        else -> throw UnsupportedOperationException("Can't convert type ${value::class} to Variant")
+      }
     }
 
     private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {

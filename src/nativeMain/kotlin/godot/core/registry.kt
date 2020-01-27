@@ -54,10 +54,18 @@ abstract class MethodHandle<T: Object, R>(val paramCount: Int) {
   abstract operator fun invoke(instance: T, args: List<Variant>): Variant
 }
 
-class MethodHandle0<T: Object, R>(val method: (T) -> R, val convert: (R) -> Variant): MethodHandle<T, R>(0) {
+class MethodHandle0<T: Object, R>(val method: (T) -> R): MethodHandle<T, R>(0) {
   override fun invoke(instance: T, args: List<Variant>): Variant {
-    return convert(
-      method(instance)
+    return Variant.fromAny(
+      method(instance) as Any
+    )
+  }
+}
+
+class MethodHandle1<T: Object, A1, R>(val method: (T, A1) -> R): MethodHandle<T, R>(1) {
+  override fun invoke(instance: T, args: List<Variant>): Variant {
+    return Variant.fromAny(
+      method(instance, args[0].toAny() as A1) as Any
     )
   }
 }
@@ -65,10 +73,18 @@ class MethodHandle0<T: Object, R>(val method: (T) -> R, val convert: (R) -> Vari
 class MethodRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
   inline fun <reified K: (T) -> Unit> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
-    val methodHandle = MethodHandle0(method) { Variant.new() }
+    val methodHandle = MethodHandle0(method)
     val methodHandleRef = StableRef.create(methodHandle).asCPointer()
     registerMethod(className, methodName, methodHandleRef)
   }
+
+  inline fun <A1, reified K: (T, A1) -> Unit> registerMethod(method: K) {
+    val methodName = (method as KCallable<Unit>).name
+    val methodHandle = MethodHandle1(method)
+    val methodHandleRef = StableRef.create(methodHandle).asCPointer()
+    registerMethod(className, methodName, methodHandleRef)
+  }
+
 
   @PublishedApi
   internal fun registerMethod(className: String, methodName: String, methodHandleRef: COpaquePointer) {
