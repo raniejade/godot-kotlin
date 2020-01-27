@@ -17,6 +17,7 @@ object Godot {
   internal val gdnative12: godot_gdnative_core_1_2_api_struct
     get() = checkNotNull(gdnative11.next).reinterpret<godot_gdnative_core_1_2_api_struct>().pointed
 
+  @PublishedApi
   internal val nativescript: godot_gdnative_ext_nativescript_api_struct
     get() = checkNotNull(nativescriptWrapper.value).pointed
 
