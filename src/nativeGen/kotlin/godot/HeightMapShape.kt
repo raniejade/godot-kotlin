@@ -20,38 +20,35 @@ open class HeightMapShape internal constructor(
 ) : Shape(_handle) {
   fun getMapData(): PoolRealArray {
     val _ret = __method_bind.get_map_data.call(this.toVariant())
-    TODO()
+    return _ret.asPoolRealArray()
   }
 
   fun getMapDepth(): Int {
     val _ret = __method_bind.get_map_depth.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMapWidth(): Int {
     val _ret = __method_bind.get_map_width.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setMapData(data: PoolRealArray) {
     val _args = VariantArray.new()
     _args.append(data)
-    val _ret = __method_bind.set_map_data.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_map_data.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMapDepth(height: Int) {
     val _args = VariantArray.new()
     _args.append(height)
-    val _ret = __method_bind.set_map_depth.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_map_depth.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMapWidth(width: Int) {
     val _args = VariantArray.new()
     _args.append(width)
-    val _ret = __method_bind.set_map_width.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_map_width.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

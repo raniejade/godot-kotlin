@@ -19,50 +19,46 @@ open class DampedSpringJoint2D internal constructor(
 ) : Joint2D(_handle) {
   fun getDamping(): Float {
     val _ret = __method_bind.get_damping.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLength(): Float {
     val _ret = __method_bind.get_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRestLength(): Float {
     val _ret = __method_bind.get_rest_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getStiffness(): Float {
     val _ret = __method_bind.get_stiffness.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setDamping(damping: Float) {
     val _args = VariantArray.new()
     _args.append(damping)
-    val _ret = __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLength(length: Float) {
     val _args = VariantArray.new()
     _args.append(length)
-    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRestLength(restLength: Float) {
     val _args = VariantArray.new()
     _args.append(restLength)
-    val _ret = __method_bind.set_rest_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rest_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStiffness(stiffness: Float) {
     val _args = VariantArray.new()
     _args.append(stiffness)
-    val _ret = __method_bind.set_stiffness.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stiffness.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

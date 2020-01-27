@@ -25,81 +25,74 @@ open class AnimationTree internal constructor(
   fun advance(delta: Float) {
     val _args = VariantArray.new()
     _args.append(delta)
-    val _ret = __method_bind.advance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.advance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun getAnimationPlayer(): NodePath {
     val _ret = __method_bind.get_animation_player.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun getProcessMode(): AnimationProcessMode {
     val _ret = __method_bind.get_process_mode.call(this.toVariant())
-    TODO()
+    return AnimationTree.AnimationProcessMode.from(_ret.asInt())
   }
 
   fun getRootMotionTrack(): NodePath {
     val _ret = __method_bind.get_root_motion_track.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun getRootMotionTransform(): Transform {
     val _ret = __method_bind.get_root_motion_transform.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun getTreeRoot(): AnimationNode {
     val _ret = __method_bind.get_tree_root.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::AnimationNode)!!
   }
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun renameParameter(oldName: String, newName: String) {
     val _args = VariantArray.new()
     _args.append(oldName)
     _args.append(newName)
-    val _ret = __method_bind.rename_parameter.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.rename_parameter.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setActive(active: Boolean) {
     val _args = VariantArray.new()
     _args.append(active)
-    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAnimationPlayer(root: NodePath) {
     val _args = VariantArray.new()
     _args.append(root)
-    val _ret = __method_bind.set_animation_player.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_animation_player.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setProcessMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_process_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_process_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRootMotionTrack(path: NodePath) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_root_motion_track.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_root_motion_track.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTreeRoot(root: AnimationNode) {
     val _args = VariantArray.new()
     _args.append(root)
-    val _ret = __method_bind.set_tree_root.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tree_root.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class AnimationProcessMode(

@@ -19,26 +19,24 @@ open class CapsuleShape internal constructor(
 ) : Shape(_handle) {
   fun getHeight(): Float {
     val _ret = __method_bind.get_height.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRadius(): Float {
     val _ret = __method_bind.get_radius.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setHeight(height: Float) {
     val _args = VariantArray.new()
     _args.append(height)
-    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRadius(radius: Float) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

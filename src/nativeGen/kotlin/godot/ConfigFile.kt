@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -22,20 +23,19 @@ open class ConfigFile internal constructor(
   fun eraseSection(section: String) {
     val _args = VariantArray.new()
     _args.append(section)
-    val _ret = __method_bind.erase_section.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.erase_section.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
     val _args = VariantArray.new()
     _args.append(section)
     val _ret = __method_bind.get_section_keys.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getSections(): PoolStringArray {
     val _ret = __method_bind.get_sections.call(this.toVariant())
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getValue(
@@ -48,14 +48,14 @@ open class ConfigFile internal constructor(
     _args.append(key)
     _args.append(default)
     val _ret = __method_bind.get_value.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret
   }
 
   fun hasSection(section: String): Boolean {
     val _args = VariantArray.new()
     _args.append(section)
     val _ret = __method_bind.has_section.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun hasSectionKey(section: String, key: String): Boolean {
@@ -63,21 +63,21 @@ open class ConfigFile internal constructor(
     _args.append(section)
     _args.append(key)
     val _ret = __method_bind.has_section_key.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
-  fun load(path: String): Error {
+  fun load(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun save(path: String): Error {
+  fun save(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.save.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setValue(
@@ -89,8 +89,7 @@ open class ConfigFile internal constructor(
     _args.append(section)
     _args.append(key)
     _args.append(value)
-    val _ret = __method_bind.set_value.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.set_value.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   companion object {

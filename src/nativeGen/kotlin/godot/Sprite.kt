@@ -22,158 +22,146 @@ open class Sprite internal constructor(
 ) : Node2D(_handle) {
   fun getFrame(): Int {
     val _ret = __method_bind.get_frame.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getHframes(): Int {
     val _ret = __method_bind.get_hframes.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNormalMap(): Texture {
     val _ret = __method_bind.get_normal_map.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getOffset(): Vector2 {
     val _ret = __method_bind.get_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getRect(): Rect2 {
     val _ret = __method_bind.get_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getRegionRect(): Rect2 {
     val _ret = __method_bind.get_region_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.get_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getVframes(): Int {
     val _ret = __method_bind.get_vframes.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isCentered(): Boolean {
     val _ret = __method_bind.is_centered.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPixelOpaque(pos: Vector2): Boolean {
     val _args = VariantArray.new()
     _args.append(pos)
     val _ret = __method_bind.is_pixel_opaque.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRegion(): Boolean {
     val _ret = __method_bind.is_region.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRegionFilterClipEnabled(): Boolean {
     val _ret = __method_bind.is_region_filter_clip_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setCentered(centered: Boolean) {
     val _args = VariantArray.new()
     _args.append(centered)
-    val _ret = __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlipH(flipH: Boolean) {
     val _args = VariantArray.new()
     _args.append(flipH)
-    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlipV(flipV: Boolean) {
     val _args = VariantArray.new()
     _args.append(flipV)
-    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFrame(frame: Int) {
     val _args = VariantArray.new()
     _args.append(frame)
-    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHframes(hframes: Int) {
     val _args = VariantArray.new()
     _args.append(hframes)
-    val _ret = __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _args = VariantArray.new()
     _args.append(normalMap)
-    val _ret = __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRegion(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRegionFilterClip(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_region_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_region_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRegionRect(rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(rect)
-    val _ret = __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTexture(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVframes(vframes: Int) {
     val _args = VariantArray.new()
     _args.append(vframes)
-    val _ret = __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

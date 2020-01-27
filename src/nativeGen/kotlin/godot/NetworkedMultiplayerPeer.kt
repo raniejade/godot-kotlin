@@ -20,53 +20,49 @@ open class NetworkedMultiplayerPeer internal constructor(
 ) : PacketPeer(_handle) {
   fun getConnectionStatus(): ConnectionStatus {
     val _ret = __method_bind.get_connection_status.call(this.toVariant())
-    TODO()
+    return NetworkedMultiplayerPeer.ConnectionStatus.from(_ret.asInt())
   }
 
   fun getPacketPeer(): Int {
     val _ret = __method_bind.get_packet_peer.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getTransferMode(): TransferMode {
     val _ret = __method_bind.get_transfer_mode.call(this.toVariant())
-    TODO()
+    return NetworkedMultiplayerPeer.TransferMode.from(_ret.asInt())
   }
 
   fun getUniqueId(): Int {
     val _ret = __method_bind.get_unique_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isRefusingNewConnections(): Boolean {
     val _ret = __method_bind.is_refusing_new_connections.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun poll() {
-    val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    __method_bind.poll.call(this.toVariant())
   }
 
   fun setRefuseNewConnections(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_refuse_new_connections.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_refuse_new_connections.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTargetPeer(id: Int) {
     val _args = VariantArray.new()
     _args.append(id)
-    val _ret = __method_bind.set_target_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_target_peer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTransferMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_transfer_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_transfer_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class ConnectionStatus(

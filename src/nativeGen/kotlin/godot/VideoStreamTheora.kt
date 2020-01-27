@@ -19,14 +19,13 @@ open class VideoStreamTheora internal constructor(
 ) : VideoStream(_handle) {
   fun getFile(): String {
     val _ret = __method_bind.get_file.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setFile(file: String) {
     val _args = VariantArray.new()
     _args.append(file)
-    val _ret = __method_bind.set_file.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_file.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

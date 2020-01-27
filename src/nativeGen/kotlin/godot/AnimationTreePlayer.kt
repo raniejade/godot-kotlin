@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.PoolStringArray
@@ -27,15 +28,13 @@ open class AnimationTreePlayer internal constructor(
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(id)
-    val _ret = __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun advance(delta: Float) {
     val _args = VariantArray.new()
     _args.append(delta)
-    val _ret = __method_bind.advance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.advance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun animationNodeGetAnimation(id: String): Animation {
@@ -43,7 +42,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.animation_node_get_animation.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asObject(::Animation)!!
   }
 
   fun animationNodeGetMasterAnimation(id: String): String {
@@ -51,7 +50,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.animation_node_get_master_animation.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun animationNodeGetPosition(id: String): Float {
@@ -59,16 +58,14 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.animation_node_get_position.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun animationNodeSetAnimation(id: String, animation: Animation) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(animation)
-    val _ret = __method_bind.animation_node_set_animation.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.animation_node_set_animation.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun animationNodeSetFilterPath(
@@ -80,18 +77,14 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     _args.append(path)
     _args.append(enable)
-    val _ret = __method_bind.animation_node_set_filter_path.call(this.toVariant(),
-        _args.toVariant(), 3)
-    TODO()
+    __method_bind.animation_node_set_filter_path.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun animationNodeSetMasterAnimation(id: String, source: String) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(source)
-    val _ret = __method_bind.animation_node_set_master_animation.call(this.toVariant(),
-        _args.toVariant(), 2)
-    TODO()
+    __method_bind.animation_node_set_master_animation.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun areNodesConnected(
@@ -104,22 +97,21 @@ open class AnimationTreePlayer internal constructor(
     _args.append(dstId)
     _args.append(dstInputIdx)
     val _ret = __method_bind.are_nodes_connected.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asBool()
   }
 
   fun blend2NodeGetAmount(id: String): Float {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.blend2_node_get_amount.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun blend2NodeSetAmount(id: String, blend: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(blend)
-    val _ret = __method_bind.blend2_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.blend2_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun blend2NodeSetFilterPath(
@@ -131,114 +123,108 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     _args.append(path)
     _args.append(enable)
-    val _ret = __method_bind.blend2_node_set_filter_path.call(this.toVariant(), _args.toVariant(),
-        3)
-    TODO()
+    __method_bind.blend2_node_set_filter_path.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun blend3NodeGetAmount(id: String): Float {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.blend3_node_get_amount.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun blend3NodeSetAmount(id: String, blend: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(blend)
-    val _ret = __method_bind.blend3_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.blend3_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun blend4NodeGetAmount(id: String): Vector2 {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.blend4_node_get_amount.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun blend4NodeSetAmount(id: String, blend: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(blend)
-    val _ret = __method_bind.blend4_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.blend4_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun connectNodes(
     id: String,
     dstId: String,
     dstInputIdx: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(dstId)
     _args.append(dstInputIdx)
     val _ret = __method_bind.connect_nodes.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun disconnectNodes(id: String, dstInputIdx: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(dstInputIdx)
-    val _ret = __method_bind.disconnect_nodes.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.disconnect_nodes.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun getAnimationProcessMode(): AnimationProcessMode {
     val _ret = __method_bind.get_animation_process_mode.call(this.toVariant())
-    TODO()
+    return AnimationTreePlayer.AnimationProcessMode.from(_ret.asInt())
   }
 
   fun getBasePath(): NodePath {
     val _ret = __method_bind.get_base_path.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun getMasterPlayer(): NodePath {
     val _ret = __method_bind.get_master_player.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun getNodeList(): PoolStringArray {
     val _ret = __method_bind.get_node_list.call(this.toVariant())
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun mixNodeGetAmount(id: String): Float {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.mix_node_get_amount.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun mixNodeSetAmount(id: String, ratio: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(ratio)
-    val _ret = __method_bind.mix_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.mix_node_set_amount.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun nodeExists(node: String): Boolean {
     val _args = VariantArray.new()
     _args.append(node)
     val _ret = __method_bind.node_exists.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun nodeGetInputCount(id: String): Int {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.node_get_input_count.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun nodeGetInputSource(id: String, idx: Int): String {
@@ -246,37 +232,36 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     _args.append(idx)
     val _ret = __method_bind.node_get_input_source.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asString()
   }
 
   fun nodeGetPosition(id: String): Vector2 {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.node_get_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun nodeGetType(id: String): NodeType {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.node_get_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return AnimationTreePlayer.NodeType.from(_ret.asInt())
   }
 
-  fun nodeRename(node: String, newName: String): Error {
+  fun nodeRename(node: String, newName: String): GDError {
     val _args = VariantArray.new()
     _args.append(node)
     _args.append(newName)
     val _ret = __method_bind.node_rename.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun nodeSetPosition(id: String, screenPosition: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(screenPosition)
-    val _ret = __method_bind.node_set_position.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.node_set_position.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun oneshotNodeGetAutorestartDelay(id: String): Float {
@@ -284,7 +269,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.oneshot_node_get_autorestart_delay.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun oneshotNodeGetAutorestartRandomDelay(id: String): Float {
@@ -292,7 +277,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.oneshot_node_get_autorestart_random_delay.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun oneshotNodeGetFadeinTime(id: String): Float {
@@ -300,7 +285,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.oneshot_node_get_fadein_time.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun oneshotNodeGetFadeoutTime(id: String): Float {
@@ -308,7 +293,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.oneshot_node_get_fadeout_time.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun oneshotNodeHasAutorestart(id: String): Boolean {
@@ -316,59 +301,50 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.oneshot_node_has_autorestart.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun oneshotNodeIsActive(id: String): Boolean {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.oneshot_node_is_active.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun oneshotNodeSetAutorestart(id: String, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(enable)
-    val _ret = __method_bind.oneshot_node_set_autorestart.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.oneshot_node_set_autorestart.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun oneshotNodeSetAutorestartDelay(id: String, delaySec: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(delaySec)
-    val _ret = __method_bind.oneshot_node_set_autorestart_delay.call(this.toVariant(),
-        _args.toVariant(), 2)
-    TODO()
+    __method_bind.oneshot_node_set_autorestart_delay.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun oneshotNodeSetAutorestartRandomDelay(id: String, randSec: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(randSec)
-    val _ret = __method_bind.oneshot_node_set_autorestart_random_delay.call(this.toVariant(),
+    __method_bind.oneshot_node_set_autorestart_random_delay.call(this.toVariant(),
         _args.toVariant(), 2)
-    TODO()
   }
 
   fun oneshotNodeSetFadeinTime(id: String, timeSec: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(timeSec)
-    val _ret = __method_bind.oneshot_node_set_fadein_time.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.oneshot_node_set_fadein_time.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun oneshotNodeSetFadeoutTime(id: String, timeSec: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(timeSec)
-    val _ret = __method_bind.oneshot_node_set_fadeout_time.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.oneshot_node_set_fadeout_time.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun oneshotNodeSetFilterPath(
@@ -380,100 +356,85 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     _args.append(path)
     _args.append(enable)
-    val _ret = __method_bind.oneshot_node_set_filter_path.call(this.toVariant(), _args.toVariant(),
-        3)
-    TODO()
+    __method_bind.oneshot_node_set_filter_path.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun oneshotNodeStart(id: String) {
     val _args = VariantArray.new()
     _args.append(id)
-    val _ret = __method_bind.oneshot_node_start.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.oneshot_node_start.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun oneshotNodeStop(id: String) {
     val _args = VariantArray.new()
     _args.append(id)
-    val _ret = __method_bind.oneshot_node_stop.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.oneshot_node_stop.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun recomputeCaches() {
-    val _ret = __method_bind.recompute_caches.call(this.toVariant())
-    TODO()
+    __method_bind.recompute_caches.call(this.toVariant())
   }
 
   fun removeNode(id: String) {
     val _args = VariantArray.new()
     _args.append(id)
-    val _ret = __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun reset() {
-    val _ret = __method_bind.reset.call(this.toVariant())
-    TODO()
+    __method_bind.reset.call(this.toVariant())
   }
 
   fun setActive(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAnimationProcessMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_animation_process_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_animation_process_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBasePath(path: NodePath) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMasterPlayer(nodepath: NodePath) {
     val _args = VariantArray.new()
     _args.append(nodepath)
-    val _ret = __method_bind.set_master_player.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_master_player.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun timescaleNodeGetScale(id: String): Float {
     val _args = VariantArray.new()
     _args.append(id)
     val _ret = __method_bind.timescale_node_get_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun timescaleNodeSetScale(id: String, scale: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(scale)
-    val _ret = __method_bind.timescale_node_set_scale.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.timescale_node_set_scale.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun timeseekNodeSeek(id: String, seconds: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(seconds)
-    val _ret = __method_bind.timeseek_node_seek.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.timeseek_node_seek.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun transitionNodeDeleteInput(id: String, inputIdx: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(inputIdx)
-    val _ret = __method_bind.transition_node_delete_input.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.transition_node_delete_input.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun transitionNodeGetCurrent(id: String): Int {
@@ -481,7 +442,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.transition_node_get_current.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun transitionNodeGetInputCount(id: String): Int {
@@ -489,7 +450,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.transition_node_get_input_count.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun transitionNodeGetXfadeTime(id: String): Float {
@@ -497,7 +458,7 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     val _ret = __method_bind.transition_node_get_xfade_time.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun transitionNodeHasInputAutoAdvance(id: String, inputIdx: Int): Boolean {
@@ -506,16 +467,14 @@ open class AnimationTreePlayer internal constructor(
     _args.append(inputIdx)
     val _ret = __method_bind.transition_node_has_input_auto_advance.call(this.toVariant(),
         _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun transitionNodeSetCurrent(id: String, inputIdx: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(inputIdx)
-    val _ret = __method_bind.transition_node_set_current.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.transition_node_set_current.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun transitionNodeSetInputAutoAdvance(
@@ -527,27 +486,22 @@ open class AnimationTreePlayer internal constructor(
     _args.append(id)
     _args.append(inputIdx)
     _args.append(enable)
-    val _ret = __method_bind.transition_node_set_input_auto_advance.call(this.toVariant(),
-        _args.toVariant(), 3)
-    TODO()
+    __method_bind.transition_node_set_input_auto_advance.call(this.toVariant(), _args.toVariant(),
+        3)
   }
 
   fun transitionNodeSetInputCount(id: String, count: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(count)
-    val _ret = __method_bind.transition_node_set_input_count.call(this.toVariant(),
-        _args.toVariant(), 2)
-    TODO()
+    __method_bind.transition_node_set_input_count.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun transitionNodeSetXfadeTime(id: String, timeSec: Float) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(timeSec)
-    val _ret = __method_bind.transition_node_set_xfade_time.call(this.toVariant(),
-        _args.toVariant(), 2)
-    TODO()
+    __method_bind.transition_node_set_xfade_time.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   enum class AnimationProcessMode(

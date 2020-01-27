@@ -21,76 +21,68 @@ open class PhysicsBody internal constructor(
   fun addCollisionExceptionWith(body: Node) {
     val _args = VariantArray.new()
     _args.append(body)
-    val _ret = __method_bind.add_collision_exception_with.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.add_collision_exception_with.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun getCollisionExceptions(): VariantArray {
     val _ret = __method_bind.get_collision_exceptions.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getCollisionLayer(): Int {
     val _ret = __method_bind.get_collision_layer.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCollisionMask(): Int {
     val _ret = __method_bind.get_collision_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun removeCollisionExceptionWith(body: Node) {
     val _args = VariantArray.new()
     _args.append(body)
-    val _ret = __method_bind.remove_collision_exception_with.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_collision_exception_with.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionLayer(layer: Int) {
     val _args = VariantArray.new()
     _args.append(layer)
-    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setCollisionMask(mask: Int) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   companion object {

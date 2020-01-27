@@ -236,7 +236,8 @@ class APIGenerator {
     val methodSpecs = methods.filter { method -> !method.is_virtual }
       .map { method ->
         val returnTypeName = parseTypeName(method.return_type)
-        val returnType = toClassName(returnTypeName.fqName, TypeRegistry.get(returnTypeName.fqName[0]))
+        val returnGDType = TypeRegistry.get(returnTypeName.fullName)
+        val returnType = toClassName(returnTypeName.fqName, returnGDType)
 
         val methodName = normalizeMethodName(method.name)
         val builder = FunSpec.builder(methodName)
@@ -259,6 +260,12 @@ class APIGenerator {
 
         builder.addParameters(parameters)
 
+        val returnVar = if (method.return_type == "void") {
+          ""
+        } else {
+          "val _ret = "
+        }
+
         if (parameters.isNotEmpty()) {
           builder.addStatement("val _args = VariantArray.new()")
 
@@ -266,12 +273,34 @@ class APIGenerator {
             builder.addStatement("_args.append(%N)", parameter)
           }
 
-          builder.addStatement("val _ret = __method_bind.%L.call(this.toVariant(), _args.toVariant(), %L)", method.name, parameters.size)
+          builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant(), _args.toVariant(), %L)", method.name, parameters.size)
         } else {
-          builder.addStatement("val _ret = __method_bind.%L.call(this.toVariant())", method.name)
+          builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant())", method.name)
         }
 
-        builder.addStatement("TODO()")
+        if (returnVar.isNotEmpty()) {
+          if (returnGDType !=  null) {
+            when {
+              returnGDType.isEnum -> {
+                builder.addStatement("return ${returnGDType.kotlinName}.from(_ret.asInt())")
+              }
+              returnGDType != GDType.VARIANT -> {
+                builder.addStatement("return _ret.as${returnGDType.gdName.capitalize()}()")
+              }
+              else -> {
+                builder.addStatement("return _ret")
+              }
+            }
+          } else {
+            if (returnTypeName.isEnum) {
+              builder.addStatement("return ${returnTypeName.fqName.joinToString(".")}.from(_ret.asInt())")
+            } else {
+              // TODO: what to do with nullability, at the moment assume nothing can be null
+              builder.addStatement("return _ret.asObject(::${returnTypeName.fqName.first()})!!")
+            }
+
+          }
+        }
 
         builder.build()
       }
@@ -290,7 +319,9 @@ class APIGenerator {
   private data class TypeInfo(
     val fqName: List<String>,
     val isEnum: Boolean
-  )
+  ) {
+    val fullName = fqName.joinToString(".")
+  }
 
   private fun parseTypeName(name: String): TypeInfo {
     if (name.startsWith("enum")) {
@@ -340,11 +371,12 @@ class APIGenerator {
         } else {
           "godot.core"
         }
-        val classNames = mutableListOf(type.mappedName ?: type.gdName)
+        val classNames = mutableListOf<String>()
 
-        // inner type
-        if (fqName.size > 1) {
-          classNames.addAll(fqName.drop(1))
+        if (type.isEnum) {
+          classNames.addAll(type.kotlinName.split("."))
+        } else {
+          classNames.add(type.kotlinName)
         }
         ClassName(packageName, classNames)
       }

@@ -23,7 +23,7 @@ open class JavaScript internal constructor(
     _args.append(code)
     _args.append(useGlobalExecutionContext)
     val _ret = __method_bind.eval.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret
   }
 
   companion object {

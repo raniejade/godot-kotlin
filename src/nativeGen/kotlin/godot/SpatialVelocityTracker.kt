@@ -20,33 +20,30 @@ open class SpatialVelocityTracker internal constructor(
 ) : Reference(_handle) {
   fun getTrackedLinearVelocity(): Vector3 {
     val _ret = __method_bind.get_tracked_linear_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun isTrackingPhysicsStep(): Boolean {
     val _ret = __method_bind.is_tracking_physics_step.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun reset(position: Vector3) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.reset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.reset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTrackPhysicsStep(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_track_physics_step.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_track_physics_step.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun updatePosition(position: Vector3) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.update_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.update_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

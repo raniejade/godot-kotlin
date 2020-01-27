@@ -20,132 +20,122 @@ open class BaseButton internal constructor(
 ) : Control(_handle) {
   fun getActionMode(): ActionMode {
     val _ret = __method_bind.get_action_mode.call(this.toVariant())
-    TODO()
+    return BaseButton.ActionMode.from(_ret.asInt())
   }
 
   fun getButtonGroup(): ButtonGroup {
     val _ret = __method_bind.get_button_group.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::ButtonGroup)!!
   }
 
   fun getButtonMask(): Int {
     val _ret = __method_bind.get_button_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDrawMode(): DrawMode {
     val _ret = __method_bind.get_draw_mode.call(this.toVariant())
-    TODO()
+    return BaseButton.DrawMode.from(_ret.asInt())
   }
 
   fun getEnabledFocusMode(): Control.FocusMode {
     val _ret = __method_bind.get_enabled_focus_mode.call(this.toVariant())
-    TODO()
+    return Control.FocusMode.from(_ret.asInt())
   }
 
   fun getShortcut(): ShortCut {
     val _ret = __method_bind.get_shortcut.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::ShortCut)!!
   }
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isHovered(): Boolean {
     val _ret = __method_bind.is_hovered.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isKeepPressedOutside(): Boolean {
     val _ret = __method_bind.is_keep_pressed_outside.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPressed(): Boolean {
     val _ret = __method_bind.is_pressed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isShortcutInTooltipEnabled(): Boolean {
     val _ret = __method_bind.is_shortcut_in_tooltip_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isToggleMode(): Boolean {
     val _ret = __method_bind.is_toggle_mode.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setActionMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setButtonGroup(buttonGroup: ButtonGroup) {
     val _args = VariantArray.new()
     _args.append(buttonGroup)
-    val _ret = __method_bind.set_button_group.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_button_group.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setButtonMask(mask: Int) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_button_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_button_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDisabled(disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(disabled)
-    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEnabledFocusMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_enabled_focus_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_enabled_focus_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setKeepPressedOutside(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_keep_pressed_outside.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_keep_pressed_outside.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _args = VariantArray.new()
     _args.append(pressed)
-    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShortcut(shortcut: ShortCut) {
     val _args = VariantArray.new()
     _args.append(shortcut)
-    val _ret = __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShortcutInTooltip(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_shortcut_in_tooltip.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shortcut_in_tooltip.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setToggleMode(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_toggle_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_toggle_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class ActionMode(

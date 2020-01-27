@@ -20,31 +20,29 @@ open class WindowDialog internal constructor(
 ) : Popup(_handle) {
   fun getCloseButton(): TextureButton {
     val _ret = __method_bind.get_close_button.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::TextureButton)!!
   }
 
   fun getResizable(): Boolean {
     val _ret = __method_bind.get_resizable.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getTitle(): String {
     val _ret = __method_bind.get_title.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setResizable(resizable: Boolean) {
     val _args = VariantArray.new()
     _args.append(resizable)
-    val _ret = __method_bind.set_resizable.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_resizable.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTitle(title: String) {
     val _args = VariantArray.new()
     _args.append(title)
-    val _ret = __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

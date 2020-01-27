@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Dictionary
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -23,52 +24,50 @@ open class WebRTCMultiplayer internal constructor(
     peer: WebRTCPeerConnection,
     peerId: Int,
     unreliableLifetime: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(peer)
     _args.append(peerId)
     _args.append(unreliableLifetime)
     val _ret = __method_bind.add_peer.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun close() {
-    val _ret = __method_bind.close.call(this.toVariant())
-    TODO()
+    __method_bind.close.call(this.toVariant())
   }
 
   fun getPeer(peerId: Int): Dictionary {
     val _args = VariantArray.new()
     _args.append(peerId)
     val _ret = __method_bind.get_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun getPeers(): Dictionary {
     val _ret = __method_bind.get_peers.call(this.toVariant())
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun hasPeer(peerId: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(peerId)
     val _ret = __method_bind.has_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
-  fun initialize(peerId: Int, serverCompatibility: Boolean): Error {
+  fun initialize(peerId: Int, serverCompatibility: Boolean): GDError {
     val _args = VariantArray.new()
     _args.append(peerId)
     _args.append(serverCompatibility)
     val _ret = __method_bind.initialize.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun removePeer(peerId: Int) {
     val _args = VariantArray.new()
     _args.append(peerId)
-    val _ret = __method_bind.remove_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_peer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

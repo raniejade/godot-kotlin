@@ -21,38 +21,35 @@ open class DynamicFontData internal constructor(
 ) : Resource(_handle) {
   fun getFontPath(): String {
     val _ret = __method_bind.get_font_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getHinting(): Hinting {
     val _ret = __method_bind.get_hinting.call(this.toVariant())
-    TODO()
+    return DynamicFontData.Hinting.from(_ret.asInt())
   }
 
   fun isAntialiased(): Boolean {
     val _ret = __method_bind.is_antialiased.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAntialiased(antialiased: Boolean) {
     val _args = VariantArray.new()
     _args.append(antialiased)
-    val _ret = __method_bind.set_antialiased.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_antialiased.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFontPath(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_font_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_font_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHinting(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_hinting.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_hinting.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Hinting(

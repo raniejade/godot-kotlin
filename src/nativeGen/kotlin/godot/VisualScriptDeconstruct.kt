@@ -19,14 +19,13 @@ open class VisualScriptDeconstruct internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getDeconstructType(): Variant.Type {
     val _ret = __method_bind.get_deconstruct_type.call(this.toVariant())
-    TODO()
+    return Variant.Type.from(_ret.asInt())
   }
 
   fun setDeconstructType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_deconstruct_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_deconstruct_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

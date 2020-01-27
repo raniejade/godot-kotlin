@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
@@ -21,51 +22,50 @@ open class PacketPeer internal constructor(
 ) : Reference(_handle) {
   fun getAvailablePacketCount(): Int {
     val _ret = __method_bind.get_available_packet_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getPacket(): PoolByteArray {
     val _ret = __method_bind.get_packet.call(this.toVariant())
-    TODO()
+    return _ret.asPoolByteArray()
   }
 
-  fun getPacketError(): Error {
+  fun getPacketError(): GDError {
     val _ret = __method_bind.get_packet_error.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getVar(allowObjects: Boolean): Variant {
     val _args = VariantArray.new()
     _args.append(allowObjects)
     val _ret = __method_bind.get_var.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret
   }
 
   fun isObjectDecodingAllowed(): Boolean {
     val _ret = __method_bind.is_object_decoding_allowed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
-  fun putPacket(buffer: PoolByteArray): Error {
+  fun putPacket(buffer: PoolByteArray): GDError {
     val _args = VariantArray.new()
     _args.append(buffer)
     val _ret = __method_bind.put_packet.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun putVar(`var`: Variant, fullObjects: Boolean): Error {
+  fun putVar(`var`: Variant, fullObjects: Boolean): GDError {
     val _args = VariantArray.new()
     _args.append(`var`)
     _args.append(fullObjects)
     val _ret = __method_bind.put_var.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_allow_object_decoding.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_allow_object_decoding.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

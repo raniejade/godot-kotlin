@@ -22,118 +22,110 @@ open class PhysicalBone internal constructor(
 ) : PhysicsBody(_handle) {
   fun getBodyOffset(): Transform {
     val _ret = __method_bind.get_body_offset.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun getBoneId(): Int {
     val _ret = __method_bind.get_bone_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getBounce(): Float {
     val _ret = __method_bind.get_bounce.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFriction(): Float {
     val _ret = __method_bind.get_friction.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGravityScale(): Float {
     val _ret = __method_bind.get_gravity_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getJointOffset(): Transform {
     val _ret = __method_bind.get_joint_offset.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun getJointType(): JointType {
     val _ret = __method_bind.get_joint_type.call(this.toVariant())
-    TODO()
+    return PhysicalBone.JointType.from(_ret.asInt())
   }
 
   fun getMass(): Float {
     val _ret = __method_bind.get_mass.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSimulatePhysics(): Boolean {
     val _ret = __method_bind.get_simulate_physics.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getWeight(): Float {
     val _ret = __method_bind.get_weight.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isSimulatingPhysics(): Boolean {
     val _ret = __method_bind.is_simulating_physics.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isStaticBody(): Boolean {
     val _ret = __method_bind.is_static_body.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBodyOffset(offset: Transform) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_body_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_body_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBounce(bounce: Float) {
     val _args = VariantArray.new()
     _args.append(bounce)
-    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFriction(friction: Float) {
     val _args = VariantArray.new()
     _args.append(friction)
-    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGravityScale(gravityScale: Float) {
     val _args = VariantArray.new()
     _args.append(gravityScale)
-    val _ret = __method_bind.set_gravity_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gravity_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setJointOffset(offset: Transform) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_joint_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_joint_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setJointType(jointType: Int) {
     val _args = VariantArray.new()
     _args.append(jointType)
-    val _ret = __method_bind.set_joint_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_joint_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMass(mass: Float) {
     val _args = VariantArray.new()
     _args.append(mass)
-    val _ret = __method_bind.set_mass.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mass.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWeight(weight: Float) {
     val _args = VariantArray.new()
     _args.append(weight)
-    val _ret = __method_bind.set_weight.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_weight.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class JointType(

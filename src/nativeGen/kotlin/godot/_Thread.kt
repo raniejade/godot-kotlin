@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,12 +22,12 @@ open class _Thread internal constructor(
 ) : Reference(_handle) {
   fun getId(): String {
     val _ret = __method_bind.get_id.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun start(
@@ -34,19 +35,19 @@ open class _Thread internal constructor(
     method: String,
     userdata: Variant,
     priority: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(instance)
     _args.append(method)
     _args.append(userdata)
     _args.append(priority)
     val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun waitToFinish(): Variant {
     val _ret = __method_bind.wait_to_finish.call(this.toVariant())
-    TODO()
+    return _ret
   }
 
   enum class Priority(

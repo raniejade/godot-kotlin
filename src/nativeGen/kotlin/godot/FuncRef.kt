@@ -20,26 +20,24 @@ open class FuncRef internal constructor(
 ) : Reference(_handle) {
   fun callFunc(): Variant {
     val _ret = __method_bind.call_func.call(this.toVariant())
-    TODO()
+    return _ret
   }
 
   fun isValid(): Boolean {
     val _ret = __method_bind.is_valid.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setFunction(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setInstance(instance: Object) {
     val _args = VariantArray.new()
     _args.append(instance)
-    val _ret = __method_bind.set_instance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_instance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

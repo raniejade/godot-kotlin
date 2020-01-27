@@ -22,63 +22,57 @@ open class CollisionPolygon2D internal constructor(
 ) : Node2D(_handle) {
   fun getBuildMode(): BuildMode {
     val _ret = __method_bind.get_build_mode.call(this.toVariant())
-    TODO()
+    return CollisionPolygon2D.BuildMode.from(_ret.asInt())
   }
 
   fun getOneWayCollisionMargin(): Float {
     val _ret = __method_bind.get_one_way_collision_margin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPolygon(): PoolVector2Array {
     val _ret = __method_bind.get_polygon.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isOneWayCollisionEnabled(): Boolean {
     val _ret = __method_bind.is_one_way_collision_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBuildMode(buildMode: Int) {
     val _args = VariantArray.new()
     _args.append(buildMode)
-    val _ret = __method_bind.set_build_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_build_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDisabled(disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(disabled)
-    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOneWayCollision(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_one_way_collision.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_one_way_collision.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
-    val _ret = __method_bind.set_one_way_collision_margin.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_one_way_collision_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _args = VariantArray.new()
     _args.append(polygon)
-    val _ret = __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class BuildMode(

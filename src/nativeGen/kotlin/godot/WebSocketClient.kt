@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -24,33 +25,31 @@ open class WebSocketClient internal constructor(
     url: String,
     protocols: PoolStringArray,
     gdMpApi: Boolean
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(url)
     _args.append(protocols)
     _args.append(gdMpApi)
     val _ret = __method_bind.connect_to_url.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun disconnectFromHost(code: Int, reason: String) {
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(reason)
-    val _ret = __method_bind.disconnect_from_host.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.disconnect_from_host.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun isVerifySslEnabled(): Boolean {
     val _ret = __method_bind.is_verify_ssl_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_verify_ssl_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_verify_ssl_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

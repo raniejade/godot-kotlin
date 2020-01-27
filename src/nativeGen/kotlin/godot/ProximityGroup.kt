@@ -23,44 +23,40 @@ open class ProximityGroup internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(parameters)
-    val _ret = __method_bind.broadcast.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.broadcast.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun getDispatchMode(): DispatchMode {
     val _ret = __method_bind.get_dispatch_mode.call(this.toVariant())
-    TODO()
+    return ProximityGroup.DispatchMode.from(_ret.asInt())
   }
 
   fun getGridRadius(): Vector3 {
     val _ret = __method_bind.get_grid_radius.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getGroupName(): String {
     val _ret = __method_bind.get_group_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setDispatchMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_dispatch_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_dispatch_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGridRadius(radius: Vector3) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_grid_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_grid_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGroupName(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_group_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_group_name.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class DispatchMode(

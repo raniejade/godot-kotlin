@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Dictionary
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.PoolStringArray
@@ -23,8 +24,7 @@ open class HTTPClient internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun close() {
-    val _ret = __method_bind.close.call(this.toVariant())
-    TODO()
+    __method_bind.close.call(this.toVariant())
   }
 
   fun connectToHost(
@@ -32,76 +32,76 @@ open class HTTPClient internal constructor(
     port: Int,
     useSsl: Boolean,
     verifyHost: Boolean
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(port)
     _args.append(useSsl)
     _args.append(verifyHost)
     val _ret = __method_bind.connect_to_host.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getConnection(): StreamPeer {
     val _ret = __method_bind.get_connection.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::StreamPeer)!!
   }
 
   fun getResponseBodyLength(): Int {
     val _ret = __method_bind.get_response_body_length.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getResponseCode(): Int {
     val _ret = __method_bind.get_response_code.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getResponseHeaders(): PoolStringArray {
     val _ret = __method_bind.get_response_headers.call(this.toVariant())
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getResponseHeadersAsDictionary(): Dictionary {
     val _ret = __method_bind.get_response_headers_as_dictionary.call(this.toVariant())
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun getStatus(): Status {
     val _ret = __method_bind.get_status.call(this.toVariant())
-    TODO()
+    return HTTPClient.Status.from(_ret.asInt())
   }
 
   fun hasResponse(): Boolean {
     val _ret = __method_bind.has_response.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isBlockingModeEnabled(): Boolean {
     val _ret = __method_bind.is_blocking_mode_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isResponseChunked(): Boolean {
     val _ret = __method_bind.is_response_chunked.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
-  fun poll(): Error {
+  fun poll(): GDError {
     val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun queryStringFromDict(fields: Dictionary): String {
     val _args = VariantArray.new()
     _args.append(fields)
     val _ret = __method_bind.query_string_from_dict.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun readResponseBodyChunk(): PoolByteArray {
     val _ret = __method_bind.read_response_body_chunk.call(this.toVariant())
-    TODO()
+    return _ret.asPoolByteArray()
   }
 
   fun request(
@@ -109,14 +109,14 @@ open class HTTPClient internal constructor(
     url: String,
     headers: PoolStringArray,
     body: String
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(method)
     _args.append(url)
     _args.append(headers)
     _args.append(body)
     val _ret = __method_bind.request.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun requestRaw(
@@ -124,35 +124,32 @@ open class HTTPClient internal constructor(
     url: String,
     headers: PoolStringArray,
     body: PoolByteArray
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(method)
     _args.append(url)
     _args.append(headers)
     _args.append(body)
     val _ret = __method_bind.request_raw.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setBlockingMode(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_blocking_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_blocking_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setConnection(connection: StreamPeer) {
     val _args = VariantArray.new()
     _args.append(connection)
-    val _ret = __method_bind.set_connection.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_connection.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setReadChunkSize(bytes: Int) {
     val _args = VariantArray.new()
     _args.append(bytes)
-    val _ret = __method_bind.set_read_chunk_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_read_chunk_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Status(

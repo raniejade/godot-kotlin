@@ -23,65 +23,60 @@ open class Resource internal constructor(
     val _args = VariantArray.new()
     _args.append(subresources)
     val _ret = __method_bind.duplicate.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Resource)!!
   }
 
   fun getLocalScene(): Node {
     val _ret = __method_bind.get_local_scene.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Node)!!
   }
 
   fun getName(): String {
     val _ret = __method_bind.get_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getPath(): String {
     val _ret = __method_bind.get_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getRid(): RID {
     val _ret = __method_bind.get_rid.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun isLocalToScene(): Boolean {
     val _ret = __method_bind.is_local_to_scene.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setLocalToScene(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_local_to_scene.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_local_to_scene.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setName(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_name.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPath(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setupLocalToScene() {
-    val _ret = __method_bind.setup_local_to_scene.call(this.toVariant())
-    TODO()
+    __method_bind.setup_local_to_scene.call(this.toVariant())
   }
 
   fun takeOverPath(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.take_over_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.take_over_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

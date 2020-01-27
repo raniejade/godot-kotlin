@@ -21,62 +21,57 @@ open class Button internal constructor(
 ) : BaseButton(_handle) {
   fun getButtonIcon(): Texture {
     val _ret = __method_bind.get_button_icon.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getClipText(): Boolean {
     val _ret = __method_bind.get_clip_text.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getText(): String {
     val _ret = __method_bind.get_text.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getTextAlign(): TextAlign {
     val _ret = __method_bind.get_text_align.call(this.toVariant())
-    TODO()
+    return Button.TextAlign.from(_ret.asInt())
   }
 
   fun isFlat(): Boolean {
     val _ret = __method_bind.is_flat.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setButtonIcon(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_button_icon.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_button_icon.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setClipText(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_clip_text.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_clip_text.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlat(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_flat.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flat.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setText(text: String) {
     val _args = VariantArray.new()
     _args.append(text)
-    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTextAlign(align: Int) {
     val _args = VariantArray.new()
     _args.append(align)
-    val _ret = __method_bind.set_text_align.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_text_align.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class TextAlign(

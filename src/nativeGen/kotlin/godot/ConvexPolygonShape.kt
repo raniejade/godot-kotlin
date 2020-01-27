@@ -19,14 +19,13 @@ open class ConvexPolygonShape internal constructor(
 ) : Shape(_handle) {
   fun getPoints(): PoolVector3Array {
     val _ret = __method_bind.get_points.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun setPoints(points: PoolVector3Array) {
     val _args = VariantArray.new()
     _args.append(points)
-    val _ret = __method_bind.set_points.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_points.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

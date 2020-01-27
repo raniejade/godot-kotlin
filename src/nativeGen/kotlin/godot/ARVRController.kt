@@ -22,65 +22,63 @@ open class ARVRController internal constructor(
 ) : Spatial(_handle) {
   fun getControllerId(): Int {
     val _ret = __method_bind.get_controller_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getControllerName(): String {
     val _ret = __method_bind.get_controller_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getHand(): ARVRPositionalTracker.TrackerHand {
     val _ret = __method_bind.get_hand.call(this.toVariant())
-    TODO()
+    return ARVRPositionalTracker.TrackerHand.from(_ret.asInt())
   }
 
   fun getIsActive(): Boolean {
     val _ret = __method_bind.get_is_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getJoystickAxis(axis: Int): Float {
     val _args = VariantArray.new()
     _args.append(axis)
     val _ret = __method_bind.get_joystick_axis.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getJoystickId(): Int {
     val _ret = __method_bind.get_joystick_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.get_mesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Mesh)!!
   }
 
   fun getRumble(): Float {
     val _ret = __method_bind.get_rumble.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isButtonPressed(button: Int): Int {
     val _args = VariantArray.new()
     _args.append(button)
     val _ret = __method_bind.is_button_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun setControllerId(controllerId: Int) {
     val _args = VariantArray.new()
     _args.append(controllerId)
-    val _ret = __method_bind.set_controller_id.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_controller_id.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRumble(rumble: Float) {
     val _args = VariantArray.new()
     _args.append(rumble)
-    val _ret = __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -23,73 +23,67 @@ open class SpringArm internal constructor(
   fun addExcludedObject(rID: RID) {
     val _args = VariantArray.new()
     _args.append(rID)
-    val _ret = __method_bind.add_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clearExcludedObjects() {
-    val _ret = __method_bind.clear_excluded_objects.call(this.toVariant())
-    TODO()
+    __method_bind.clear_excluded_objects.call(this.toVariant())
   }
 
   fun getCollisionMask(): Int {
     val _ret = __method_bind.get_collision_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getHitLength(): Float {
     val _ret = __method_bind.get_hit_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLength(): Float {
     val _ret = __method_bind.get_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMargin(): Float {
     val _ret = __method_bind.get_margin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getShape(): Shape {
     val _ret = __method_bind.get_shape.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Shape)!!
   }
 
   fun removeExcludedObject(rID: RID): Boolean {
     val _args = VariantArray.new()
     _args.append(rID)
     val _ret = __method_bind.remove_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun setCollisionMask(mask: Int) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLength(length: Float) {
     val _args = VariantArray.new()
     _args.append(length)
-    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMargin(margin: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
-    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShape(shape: Shape) {
     val _args = VariantArray.new()
     _args.append(shape)
-    val _ret = __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

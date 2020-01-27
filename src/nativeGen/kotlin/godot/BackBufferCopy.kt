@@ -20,26 +20,24 @@ open class BackBufferCopy internal constructor(
 ) : Node2D(_handle) {
   fun getCopyMode(): CopyMode {
     val _ret = __method_bind.get_copy_mode.call(this.toVariant())
-    TODO()
+    return BackBufferCopy.CopyMode.from(_ret.asInt())
   }
 
   fun getRect(): Rect2 {
     val _ret = __method_bind.get_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun setCopyMode(copyMode: Int) {
     val _args = VariantArray.new()
     _args.append(copyMode)
-    val _ret = __method_bind.set_copy_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_copy_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRect(rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(rect)
-    val _ret = __method_bind.set_rect.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rect.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class CopyMode(

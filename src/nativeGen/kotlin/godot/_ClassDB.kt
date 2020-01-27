@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Dictionary
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -25,21 +26,21 @@ open class _ClassDB internal constructor(
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.can_instance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun classExists(`class`: String): Boolean {
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.class_exists.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun classGetCategory(`class`: String): String {
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.class_get_category.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun classGetIntegerConstant(`class`: String, name: String): Int {
@@ -47,7 +48,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(name)
     val _ret = __method_bind.class_get_integer_constant.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun classGetIntegerConstantList(`class`: String, noInheritance: Boolean): PoolStringArray {
@@ -56,7 +57,7 @@ open class _ClassDB internal constructor(
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_integer_constant_list.call(this.toVariant(),
         _args.toVariant(), 2)
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun classGetMethodList(`class`: String, noInheritance: Boolean): VariantArray {
@@ -64,7 +65,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_method_list.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun classGetProperty(`object`: Object, property: String): Variant {
@@ -72,7 +73,7 @@ open class _ClassDB internal constructor(
     _args.append(`object`)
     _args.append(property)
     val _ret = __method_bind.class_get_property.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret
   }
 
   fun classGetPropertyList(`class`: String, noInheritance: Boolean): VariantArray {
@@ -80,7 +81,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_property_list.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun classGetSignal(`class`: String, signal: String): Dictionary {
@@ -88,7 +89,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(signal)
     val _ret = __method_bind.class_get_signal.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun classGetSignalList(`class`: String, noInheritance: Boolean): VariantArray {
@@ -96,7 +97,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_signal_list.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun classHasIntegerConstant(`class`: String, name: String): Boolean {
@@ -104,7 +105,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(name)
     val _ret = __method_bind.class_has_integer_constant.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun classHasMethod(
@@ -117,7 +118,7 @@ open class _ClassDB internal constructor(
     _args.append(method)
     _args.append(noInheritance)
     val _ret = __method_bind.class_has_method.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asBool()
   }
 
   fun classHasSignal(`class`: String, signal: String): Boolean {
@@ -125,53 +126,53 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(signal)
     val _ret = __method_bind.class_has_signal.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun classSetProperty(
     `object`: Object,
     property: String,
     value: Variant
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(property)
     _args.append(value)
     val _ret = __method_bind.class_set_property.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getClassList(): PoolStringArray {
     val _ret = __method_bind.get_class_list.call(this.toVariant())
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.get_inheriters_from_class.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getParentClass(`class`: String): String {
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.get_parent_class.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun instance(`class`: String): Variant {
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.instance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret
   }
 
   fun isClassEnabled(`class`: String): Boolean {
     val _args = VariantArray.new()
     _args.append(`class`)
     val _ret = __method_bind.is_class_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isParentClass(`class`: String, inherits: String): Boolean {
@@ -179,7 +180,7 @@ open class _ClassDB internal constructor(
     _args.append(`class`)
     _args.append(inherits)
     val _ret = __method_bind.is_parent_class.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   companion object {

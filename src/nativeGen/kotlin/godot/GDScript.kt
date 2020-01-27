@@ -19,12 +19,12 @@ open class GDScript internal constructor(
 ) : Script(_handle) {
   fun getAsByteCode(): PoolByteArray {
     val _ret = __method_bind.get_as_byte_code.call(this.toVariant())
-    TODO()
+    return _ret.asPoolByteArray()
   }
 
   fun new(): Object {
     val _ret = __method_bind.new.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   companion object {

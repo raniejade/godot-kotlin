@@ -22,13 +22,11 @@ open class Container internal constructor(
     val _args = VariantArray.new()
     _args.append(child)
     _args.append(rect)
-    val _ret = __method_bind.fit_child_in_rect.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.fit_child_in_rect.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun queueSort() {
-    val _ret = __method_bind.queue_sort.call(this.toVariant())
-    TODO()
+    __method_bind.queue_sort.call(this.toVariant())
   }
 
   companion object {

@@ -22,15 +22,14 @@ open class SliderJoint internal constructor(
     val _args = VariantArray.new()
     _args.append(param)
     val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setParam(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   enum class Param(

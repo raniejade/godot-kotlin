@@ -19,14 +19,13 @@ open class VisualShaderNodeTransformVecMult internal constructor(
 ) : VisualShaderNode(_handle) {
   fun getOperator(): Operator {
     val _ret = __method_bind.get_operator.call(this.toVariant())
-    TODO()
+    return VisualShaderNodeTransformVecMult.Operator.from(_ret.asInt())
   }
 
   fun setOperator(op: Int) {
     val _args = VariantArray.new()
     _args.append(op)
-    val _ret = __method_bind.set_operator.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_operator.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Operator(

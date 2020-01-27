@@ -19,14 +19,13 @@ open class VisualScriptEngineSingleton internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getSingleton(): String {
     val _ret = __method_bind.get_singleton.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setSingleton(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

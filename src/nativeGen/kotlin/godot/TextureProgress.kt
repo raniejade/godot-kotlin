@@ -23,149 +23,137 @@ open class TextureProgress internal constructor(
 ) : Range(_handle) {
   fun getFillDegrees(): Float {
     val _ret = __method_bind.get_fill_degrees.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFillMode(): Int {
     val _ret = __method_bind.get_fill_mode.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNinePatchStretch(): Boolean {
     val _ret = __method_bind.get_nine_patch_stretch.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getOverTexture(): Texture {
     val _ret = __method_bind.get_over_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getProgressTexture(): Texture {
     val _ret = __method_bind.get_progress_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getRadialCenterOffset(): Vector2 {
     val _ret = __method_bind.get_radial_center_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getRadialInitialAngle(): Float {
     val _ret = __method_bind.get_radial_initial_angle.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getStretchMargin(margin: Int): Int {
     val _args = VariantArray.new()
     _args.append(margin)
     val _ret = __method_bind.get_stretch_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getTintOver(): Color {
     val _ret = __method_bind.get_tint_over.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getTintProgress(): Color {
     val _ret = __method_bind.get_tint_progress.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getTintUnder(): Color {
     val _ret = __method_bind.get_tint_under.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getUnderTexture(): Texture {
     val _ret = __method_bind.get_under_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun setFillDegrees(mode: Float) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_fill_degrees.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_fill_degrees.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFillMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_fill_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_fill_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNinePatchStretch(stretch: Boolean) {
     val _args = VariantArray.new()
     _args.append(stretch)
-    val _ret = __method_bind.set_nine_patch_stretch.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_nine_patch_stretch.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOverTexture(tex: Texture) {
     val _args = VariantArray.new()
     _args.append(tex)
-    val _ret = __method_bind.set_over_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_over_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setProgressTexture(tex: Texture) {
     val _args = VariantArray.new()
     _args.append(tex)
-    val _ret = __method_bind.set_progress_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_progress_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRadialCenterOffset(mode: Vector2) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_radial_center_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radial_center_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRadialInitialAngle(mode: Float) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_radial_initial_angle.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radial_initial_angle.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStretchMargin(margin: Int, value: Int) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(value)
-    val _ret = __method_bind.set_stretch_margin.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_stretch_margin.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setTintOver(tint: Color) {
     val _args = VariantArray.new()
     _args.append(tint)
-    val _ret = __method_bind.set_tint_over.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tint_over.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTintProgress(tint: Color) {
     val _args = VariantArray.new()
     _args.append(tint)
-    val _ret = __method_bind.set_tint_progress.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tint_progress.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTintUnder(tint: Color) {
     val _args = VariantArray.new()
     _args.append(tint)
-    val _ret = __method_bind.set_tint_under.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tint_under.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUnderTexture(tex: Texture) {
     val _args = VariantArray.new()
     _args.append(tex)
-    val _ret = __method_bind.set_under_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_under_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class FillMode(

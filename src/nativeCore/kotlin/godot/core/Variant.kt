@@ -1,6 +1,7 @@
 package godot.core
 
 import gdnative.godot_variant
+import gdnative.godot_variant_operator
 import gdnative.godot_variant_type
 import godot.Object
 import kotlinx.cinterop.*
@@ -21,7 +22,7 @@ class Variant(
     NIL(godot_variant_type.GODOT_VARIANT_TYPE_NIL),
     BOOL(godot_variant_type.GODOT_VARIANT_TYPE_BOOL),
     INT(godot_variant_type.GODOT_VARIANT_TYPE_INT),
-    REAL(godot_variant_type.GODOT_VARIANT_TYPE_REAL),
+    FLOAT(godot_variant_type.GODOT_VARIANT_TYPE_REAL),
     STRING(godot_variant_type.GODOT_VARIANT_TYPE_STRING),
     VECTOR2(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR2),
     RECT2(godot_variant_type.GODOT_VARIANT_TYPE_RECT2),
@@ -56,9 +57,9 @@ class Variant(
         throw AssertionError("Unknown value: $value")
       }
 
-      fun from(value: UInt): Type {
+      fun from(value: Int): Type {
         for (enumValue in values()) {
-          if (enumValue.value.value == value) {
+          if (enumValue.value.value == value.toUInt()) {
             return enumValue
           }
         }
@@ -67,7 +68,54 @@ class Variant(
     }
   }
 
-  enum class Operator {}
+  enum class Operator(private val value: godot_variant_operator) {
+    EQUAL(godot_variant_operator.GODOT_VARIANT_OP_EQUAL),
+    NOT_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_NOT_EQUAL),
+    LESS(godot_variant_operator.GODOT_VARIANT_OP_LESS),
+    LESS_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_LESS_EQUAL),
+    GREATER(godot_variant_operator.GODOT_VARIANT_OP_GREATER),
+    GREATER_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_GREATER_EQUAL),
+    ADD(godot_variant_operator.GODOT_VARIANT_OP_ADD),
+    SUBTRACT(godot_variant_operator.GODOT_VARIANT_OP_SUBTRACT),
+    MULTIPLY(godot_variant_operator.GODOT_VARIANT_OP_MULTIPLY),
+    DIVIDE(godot_variant_operator.GODOT_VARIANT_OP_DIVIDE),
+    NEGATE(godot_variant_operator.GODOT_VARIANT_OP_NEGATE),
+    POSITIVE(godot_variant_operator.GODOT_VARIANT_OP_POSITIVE),
+    MODULE(godot_variant_operator.GODOT_VARIANT_OP_MODULE),
+    STRING_CONCAT(godot_variant_operator.GODOT_VARIANT_OP_STRING_CONCAT),
+    SHIFT_LEFT(godot_variant_operator.GODOT_VARIANT_OP_SHIFT_LEFT),
+    SHIFT_RIGHT(godot_variant_operator.GODOT_VARIANT_OP_SHIFT_RIGHT),
+    BIT_AND(godot_variant_operator.GODOT_VARIANT_OP_BIT_AND),
+    BIT_OR(godot_variant_operator.GODOT_VARIANT_OP_BIT_OR),
+    BIT_XOR(godot_variant_operator.GODOT_VARIANT_OP_BIT_XOR),
+    BIT_NEGATE(godot_variant_operator.GODOT_VARIANT_OP_BIT_NEGATE),
+    AND(godot_variant_operator.GODOT_VARIANT_OP_AND),
+    OR(godot_variant_operator.GODOT_VARIANT_OP_OR),
+    XOR(godot_variant_operator.GODOT_VARIANT_OP_XOR),
+    NOT(godot_variant_operator.GODOT_VARIANT_OP_NOT),
+    IN(godot_variant_operator.GODOT_VARIANT_OP_IN),
+    MAX(godot_variant_operator.GODOT_VARIANT_OP_MAX);
+
+    companion object {
+      fun from(value: godot_variant_operator): Operator {
+        for (enumValue in values()) {
+          if (enumValue.value == value) {
+            return enumValue
+          }
+        }
+        throw AssertionError("Unknown value: $value")
+      }
+
+      fun from(value: Int): Operator {
+        for (enumValue in values()) {
+          if (enumValue.value.value == value.toUInt()) {
+            return enumValue
+          }
+        }
+        throw AssertionError("Unknown value: $value")
+      }
+    }
+  }
 
   val type: Type
     get() {
@@ -87,22 +135,30 @@ class Variant(
     }
   }
 
-  fun asUInt(): UInt64 {
+  fun asULong(): UInt64 {
     return transmute {
       checkNotNull(Godot.gdnative.godot_variant_as_uint)(it)
     }
   }
 
-  fun asInt(): Int64 {
+  fun asInt(): Int {
+    return asLong().toInt()
+  }
+
+  fun asLong(): Int64 {
     return transmute {
       checkNotNull(Godot.gdnative.godot_variant_as_int)(it)
     }
   }
 
-  fun asReal(): Double {
+  fun asDouble(): Double {
     return transmute {
       checkNotNull(Godot.gdnative.godot_variant_as_real)(it)
     }
+  }
+
+  fun asFloat(): Float {
+    return asDouble().toFloat()
   }
 
   fun asBool(): Boolean {

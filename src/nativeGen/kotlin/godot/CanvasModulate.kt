@@ -19,14 +19,13 @@ open class CanvasModulate internal constructor(
 ) : Node2D(_handle) {
   fun getColor(): Color {
     val _ret = __method_bind.get_color.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun setColor(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

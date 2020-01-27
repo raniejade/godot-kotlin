@@ -19,26 +19,24 @@ open class VisualScriptConstant internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getConstantType(): Variant.Type {
     val _ret = __method_bind.get_constant_type.call(this.toVariant())
-    TODO()
+    return Variant.Type.from(_ret.asInt())
   }
 
   fun getConstantValue(): Variant {
     val _ret = __method_bind.get_constant_value.call(this.toVariant())
-    TODO()
+    return _ret
   }
 
   fun setConstantType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_constant_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_constant_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setConstantValue(value: Variant) {
     val _args = VariantArray.new()
     _args.append(value)
-    val _ret = __method_bind.set_constant_value.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_constant_value.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

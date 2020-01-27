@@ -23,93 +23,85 @@ open class PhysicsShapeQueryParameters internal constructor(
 ) : Reference(_handle) {
   fun getCollisionMask(): Int {
     val _ret = __method_bind.get_collision_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getExclude(): VariantArray {
     val _ret = __method_bind.get_exclude.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getMargin(): Float {
     val _ret = __method_bind.get_margin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getShapeRid(): RID {
     val _ret = __method_bind.get_shape_rid.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun getTransform(): Transform {
     val _ret = __method_bind.get_transform.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_areas_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_bodies_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setCollideWithAreas(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollideWithBodies(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionMask(collisionMask: Int) {
     val _args = VariantArray.new()
     _args.append(collisionMask)
-    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExclude(exclude: VariantArray) {
     val _args = VariantArray.new()
     _args.append(exclude)
-    val _ret = __method_bind.set_exclude.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_exclude.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMargin(margin: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
-    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShape(shape: Resource) {
     val _args = VariantArray.new()
     _args.append(shape)
-    val _ret = __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShapeRid(shape: RID) {
     val _args = VariantArray.new()
     _args.append(shape)
-    val _ret = __method_bind.set_shape_rid.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shape_rid.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTransform(transform: Transform) {
     val _args = VariantArray.new()
     _args.append(transform)
-    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

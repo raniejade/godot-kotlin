@@ -20,26 +20,24 @@ open class RayShape internal constructor(
 ) : Shape(_handle) {
   fun getLength(): Float {
     val _ret = __method_bind.get_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSlipsOnSlope(): Boolean {
     val _ret = __method_bind.get_slips_on_slope.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setLength(length: Float) {
     val _args = VariantArray.new()
     _args.append(length)
-    val _ret = __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSlipsOnSlope(active: Boolean) {
     val _args = VariantArray.new()
     _args.append(active)
-    val _ret = __method_bind.set_slips_on_slope.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_slips_on_slope.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

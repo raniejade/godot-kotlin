@@ -19,14 +19,13 @@ open class EncodedObjectAsID internal constructor(
 ) : Reference(_handle) {
   fun getObjectId(): Int {
     val _ret = __method_bind.get_object_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setObjectId(id: Int) {
     val _args = VariantArray.new()
     _args.append(id)
-    val _ret = __method_bind.set_object_id.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_object_id.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

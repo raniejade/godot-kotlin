@@ -22,17 +22,17 @@ open class Skeleton2D internal constructor(
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_bone.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Bone2D)!!
   }
 
   fun getBoneCount(): Int {
     val _ret = __method_bind.get_bone_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSkeleton(): RID {
     val _ret = __method_bind.get_skeleton.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class Shape internal constructor(
 ) : Resource(_handle) {
   fun getMargin(): Float {
     val _ret = __method_bind.get_margin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setMargin(margin: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
-    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

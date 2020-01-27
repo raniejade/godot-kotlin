@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -21,43 +22,42 @@ open class HTTPRequest internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun cancelRequest() {
-    val _ret = __method_bind.cancel_request.call(this.toVariant())
-    TODO()
+    __method_bind.cancel_request.call(this.toVariant())
   }
 
   fun getBodySize(): Int {
     val _ret = __method_bind.get_body_size.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getBodySizeLimit(): Int {
     val _ret = __method_bind.get_body_size_limit.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDownloadFile(): String {
     val _ret = __method_bind.get_download_file.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getDownloadedBytes(): Int {
     val _ret = __method_bind.get_downloaded_bytes.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getHttpClientStatus(): HTTPClient.Status {
     val _ret = __method_bind.get_http_client_status.call(this.toVariant())
-    TODO()
+    return HTTPClient.Status.from(_ret.asInt())
   }
 
   fun getMaxRedirects(): Int {
     val _ret = __method_bind.get_max_redirects.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isUsingThreads(): Boolean {
     val _ret = __method_bind.is_using_threads.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun request(
@@ -66,7 +66,7 @@ open class HTTPRequest internal constructor(
     sslValidateDomain: Boolean,
     method: Int,
     requestData: String
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(url)
     _args.append(customHeaders)
@@ -74,35 +74,31 @@ open class HTTPRequest internal constructor(
     _args.append(method)
     _args.append(requestData)
     val _ret = __method_bind.request.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setBodySizeLimit(bytes: Int) {
     val _args = VariantArray.new()
     _args.append(bytes)
-    val _ret = __method_bind.set_body_size_limit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_body_size_limit.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDownloadFile(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_download_file.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_download_file.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMaxRedirects(amount: Int) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_max_redirects.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_max_redirects.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUseThreads(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_use_threads.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_threads.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Result(

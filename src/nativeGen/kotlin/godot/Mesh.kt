@@ -22,53 +22,52 @@ open class Mesh internal constructor(
 ) : Resource(_handle) {
   fun createConvexShape(): Shape {
     val _ret = __method_bind.create_convex_shape.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Shape)!!
   }
 
   fun createOutline(margin: Float): Mesh {
     val _args = VariantArray.new()
     _args.append(margin)
     val _ret = __method_bind.create_outline.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Mesh)!!
   }
 
   fun createTrimeshShape(): Shape {
     val _ret = __method_bind.create_trimesh_shape.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Shape)!!
   }
 
   fun generateTriangleMesh(): TriangleMesh {
     val _ret = __method_bind.generate_triangle_mesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::TriangleMesh)!!
   }
 
   fun getFaces(): PoolVector3Array {
     val _ret = __method_bind.get_faces.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun getLightmapSizeHint(): Vector2 {
     val _ret = __method_bind.get_lightmap_size_hint.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSurfaceCount(): Int {
     val _ret = __method_bind.get_surface_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setLightmapSizeHint(size: Vector2) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_lightmap_size_hint.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lightmap_size_hint.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun surfaceGetArrays(surfIdx: Int): VariantArray {
     val _args = VariantArray.new()
     _args.append(surfIdx)
     val _ret = __method_bind.surface_get_arrays.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asArray()
   }
 
   fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
@@ -76,22 +75,21 @@ open class Mesh internal constructor(
     _args.append(surfIdx)
     val _ret = __method_bind.surface_get_blend_shape_arrays.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asArray()
   }
 
   fun surfaceGetMaterial(surfIdx: Int): Material {
     val _args = VariantArray.new()
     _args.append(surfIdx)
     val _ret = __method_bind.surface_get_material.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun surfaceSetMaterial(surfIdx: Int, material: Material) {
     val _args = VariantArray.new()
     _args.append(surfIdx)
     _args.append(material)
-    val _ret = __method_bind.surface_set_material.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.surface_set_material.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   enum class BlendShapeMode(

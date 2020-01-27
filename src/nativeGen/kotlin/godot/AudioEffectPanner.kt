@@ -19,14 +19,13 @@ open class AudioEffectPanner internal constructor(
 ) : AudioEffect(_handle) {
   fun getPan(): Float {
     val _ret = __method_bind.get_pan.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setPan(cpanume: Float) {
     val _args = VariantArray.new()
     _args.append(cpanume)
-    val _ret = __method_bind.set_pan.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pan.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

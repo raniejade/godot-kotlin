@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -21,25 +22,24 @@ open class TCP_Server internal constructor(
 ) : Reference(_handle) {
   fun isConnectionAvailable(): Boolean {
     val _ret = __method_bind.is_connection_available.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
-  fun listen(port: Int, bindAddress: String): Error {
+  fun listen(port: Int, bindAddress: String): GDError {
     val _args = VariantArray.new()
     _args.append(port)
     _args.append(bindAddress)
     val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun stop() {
-    val _ret = __method_bind.stop.call(this.toVariant())
-    TODO()
+    __method_bind.stop.call(this.toVariant())
   }
 
   fun takeConnection(): StreamPeerTCP {
     val _ret = __method_bind.take_connection.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::StreamPeerTCP)!!
   }
 
   companion object {

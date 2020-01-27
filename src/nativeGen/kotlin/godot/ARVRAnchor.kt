@@ -23,39 +23,38 @@ open class ARVRAnchor internal constructor(
 ) : Spatial(_handle) {
   fun getAnchorId(): Int {
     val _ret = __method_bind.get_anchor_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getAnchorName(): String {
     val _ret = __method_bind.get_anchor_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getIsActive(): Boolean {
     val _ret = __method_bind.get_is_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.get_mesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Mesh)!!
   }
 
   fun getPlane(): Plane {
     val _ret = __method_bind.get_plane.call(this.toVariant())
-    TODO()
+    return _ret.asPlane()
   }
 
   fun getSize(): Vector3 {
     val _ret = __method_bind.get_size.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun setAnchorId(anchorId: Int) {
     val _args = VariantArray.new()
     _args.append(anchorId)
-    val _ret = __method_bind.set_anchor_id.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_anchor_id.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

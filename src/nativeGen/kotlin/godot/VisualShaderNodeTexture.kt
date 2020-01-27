@@ -19,38 +19,35 @@ open class VisualShaderNodeTexture internal constructor(
 ) : VisualShaderNode(_handle) {
   fun getSource(): Source {
     val _ret = __method_bind.get_source.call(this.toVariant())
-    TODO()
+    return VisualShaderNodeTexture.Source.from(_ret.asInt())
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.get_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getTextureType(): TextureType {
     val _ret = __method_bind.get_texture_type.call(this.toVariant())
-    TODO()
+    return VisualShaderNodeTexture.TextureType.from(_ret.asInt())
   }
 
   fun setSource(value: Int) {
     val _args = VariantArray.new()
     _args.append(value)
-    val _ret = __method_bind.set_source.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_source.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTexture(value: Texture) {
     val _args = VariantArray.new()
     _args.append(value)
-    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTextureType(value: Int) {
     val _args = VariantArray.new()
     _args.append(value)
-    val _ret = __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class TextureType(

@@ -18,14 +18,13 @@ open class Path2D internal constructor(
 ) : Node2D(_handle) {
   fun getCurve(): Curve2D {
     val _ret = __method_bind.get_curve.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Curve2D)!!
   }
 
   fun setCurve(curve: Curve2D) {
     val _args = VariantArray.new()
     _args.append(curve)
-    val _ret = __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

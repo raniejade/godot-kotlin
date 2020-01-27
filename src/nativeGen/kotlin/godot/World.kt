@@ -19,41 +19,39 @@ open class World internal constructor(
 ) : Resource(_handle) {
   fun getDirectSpaceState(): PhysicsDirectSpaceState {
     val _ret = __method_bind.get_direct_space_state.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::PhysicsDirectSpaceState)!!
   }
 
   fun getEnvironment(): Environment {
     val _ret = __method_bind.get_environment.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Environment)!!
   }
 
   fun getFallbackEnvironment(): Environment {
     val _ret = __method_bind.get_fallback_environment.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Environment)!!
   }
 
   fun getScenario(): RID {
     val _ret = __method_bind.get_scenario.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun getSpace(): RID {
     val _ret = __method_bind.get_space.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun setEnvironment(env: Environment) {
     val _args = VariantArray.new()
     _args.append(env)
-    val _ret = __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFallbackEnvironment(env: Environment) {
     val _args = VariantArray.new()
     _args.append(env)
-    val _ret = __method_bind.set_fallback_environment.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_fallback_environment.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

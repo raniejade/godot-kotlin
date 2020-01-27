@@ -23,30 +23,28 @@ open class HingeJoint internal constructor(
     val _args = VariantArray.new()
     _args.append(flag)
     val _ret = __method_bind.get_flag.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getParam(param: Int): Float {
     val _args = VariantArray.new()
     _args.append(param)
     val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setFlag(flag: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(enabled)
-    val _ret = __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setParam(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   enum class Param(

@@ -23,51 +23,47 @@ open class EditorFileSystem internal constructor(
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.get_file_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getFilesystem(): EditorFileSystemDirectory {
     val _ret = __method_bind.get_filesystem.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.get_filesystem_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
   fun getScanningProgress(): Float {
     val _ret = __method_bind.get_scanning_progress.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isScanning(): Boolean {
     val _ret = __method_bind.is_scanning.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun scan() {
-    val _ret = __method_bind.scan.call(this.toVariant())
-    TODO()
+    __method_bind.scan.call(this.toVariant())
   }
 
   fun scanSources() {
-    val _ret = __method_bind.scan_sources.call(this.toVariant())
-    TODO()
+    __method_bind.scan_sources.call(this.toVariant())
   }
 
   fun updateFile(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.update_file.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.update_file.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun updateScriptClasses() {
-    val _ret = __method_bind.update_script_classes.call(this.toVariant())
-    TODO()
+    __method_bind.update_script_classes.call(this.toVariant())
   }
 
   companion object {

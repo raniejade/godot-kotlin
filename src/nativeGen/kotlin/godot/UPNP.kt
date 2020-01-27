@@ -22,8 +22,7 @@ open class UPNP internal constructor(
   fun addDevice(device: UPNPDevice) {
     val _args = VariantArray.new()
     _args.append(device)
-    val _ret = __method_bind.add_device.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_device.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addPortMapping(
@@ -40,12 +39,11 @@ open class UPNP internal constructor(
     _args.append(proto)
     _args.append(duration)
     val _ret = __method_bind.add_port_mapping.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return _ret.asInt()
   }
 
   fun clearDevices() {
-    val _ret = __method_bind.clear_devices.call(this.toVariant())
-    TODO()
+    __method_bind.clear_devices.call(this.toVariant())
   }
 
   fun deletePortMapping(port: Int, proto: String): Int {
@@ -53,7 +51,7 @@ open class UPNP internal constructor(
     _args.append(port)
     _args.append(proto)
     val _ret = __method_bind.delete_port_mapping.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun discover(
@@ -66,80 +64,75 @@ open class UPNP internal constructor(
     _args.append(ttl)
     _args.append(deviceFilter)
     val _ret = __method_bind.discover.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDevice(index: Int): UPNPDevice {
     val _args = VariantArray.new()
     _args.append(index)
     val _ret = __method_bind.get_device.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::UPNPDevice)!!
   }
 
   fun getDeviceCount(): Int {
     val _ret = __method_bind.get_device_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDiscoverLocalPort(): Int {
     val _ret = __method_bind.get_discover_local_port.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDiscoverMulticastIf(): String {
     val _ret = __method_bind.get_discover_multicast_if.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getGateway(): UPNPDevice {
     val _ret = __method_bind.get_gateway.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::UPNPDevice)!!
   }
 
   fun isDiscoverIpv6(): Boolean {
     val _ret = __method_bind.is_discover_ipv6.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun queryExternalAddress(): String {
     val _ret = __method_bind.query_external_address.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun removeDevice(index: Int) {
     val _args = VariantArray.new()
     _args.append(index)
-    val _ret = __method_bind.remove_device.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_device.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDevice(index: Int, device: UPNPDevice) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(device)
-    val _ret = __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setDiscoverIpv6(ipv6: Boolean) {
     val _args = VariantArray.new()
     _args.append(ipv6)
-    val _ret = __method_bind.set_discover_ipv6.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_discover_ipv6.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDiscoverLocalPort(port: Int) {
     val _args = VariantArray.new()
     _args.append(port)
-    val _ret = __method_bind.set_discover_local_port.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_discover_local_port.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDiscoverMulticastIf(mIf: String) {
     val _args = VariantArray.new()
     _args.append(mIf)
-    val _ret = __method_bind.set_discover_multicast_if.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_discover_multicast_if.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class UPNPResult(

@@ -32,68 +32,66 @@ open class Curve2D internal constructor(
     _args.append(`in`)
     _args.append(out)
     _args.append(atPosition)
-    val _ret = __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.add_point.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun clearPoints() {
-    val _ret = __method_bind.clear_points.call(this.toVariant())
-    TODO()
+    __method_bind.clear_points.call(this.toVariant())
   }
 
   fun getBakeInterval(): Float {
     val _ret = __method_bind.get_bake_interval.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getBakedLength(): Float {
     val _ret = __method_bind.get_baked_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getBakedPoints(): PoolVector2Array {
     val _ret = __method_bind.get_baked_points.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun getClosestOffset(toPoint: Vector2): Float {
     val _args = VariantArray.new()
     _args.append(toPoint)
     val _ret = __method_bind.get_closest_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getClosestPoint(toPoint: Vector2): Vector2 {
     val _args = VariantArray.new()
     _args.append(toPoint)
     val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getPointCount(): Int {
     val _ret = __method_bind.get_point_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getPointIn(idx: Int): Vector2 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_point_in.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getPointOut(idx: Int): Vector2 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_point_out.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getPointPosition(idx: Int): Vector2 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun interpolate(idx: Int, t: Float): Vector2 {
@@ -101,7 +99,7 @@ open class Curve2D internal constructor(
     _args.append(idx)
     _args.append(t)
     val _ret = __method_bind.interpolate.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun interpolateBaked(offset: Float, cubic: Boolean): Vector2 {
@@ -109,52 +107,47 @@ open class Curve2D internal constructor(
     _args.append(offset)
     _args.append(cubic)
     val _ret = __method_bind.interpolate_baked.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun interpolatef(fofs: Float): Vector2 {
     val _args = VariantArray.new()
     _args.append(fofs)
     val _ret = __method_bind.interpolatef.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun removePoint(idx: Int) {
     val _args = VariantArray.new()
     _args.append(idx)
-    val _ret = __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBakeInterval(distance: Float) {
     val _args = VariantArray.new()
     _args.append(distance)
-    val _ret = __method_bind.set_bake_interval.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bake_interval.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPointIn(idx: Int, position: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(position)
-    val _ret = __method_bind.set_point_in.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_point_in.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setPointOut(idx: Int, position: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(position)
-    val _ret = __method_bind.set_point_out.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_point_out.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setPointPosition(idx: Int, position: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(position)
-    val _ret = __method_bind.set_point_position.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_point_position.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun tessellate(maxStages: Int, toleranceDegrees: Float): PoolVector2Array {
@@ -162,7 +155,7 @@ open class Curve2D internal constructor(
     _args.append(maxStages)
     _args.append(toleranceDegrees)
     val _ret = __method_bind.tessellate.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class PlaneShape internal constructor(
 ) : Shape(_handle) {
   fun getPlane(): Plane {
     val _ret = __method_bind.get_plane.call(this.toVariant())
-    TODO()
+    return _ret.asPlane()
   }
 
   fun setPlane(plane: Plane) {
     val _args = VariantArray.new()
     _args.append(plane)
-    val _ret = __method_bind.set_plane.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_plane.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

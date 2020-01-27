@@ -19,38 +19,35 @@ open class MeshTexture internal constructor(
 ) : Texture(_handle) {
   fun getBaseTexture(): Texture {
     val _ret = __method_bind.get_base_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getImageSize(): Vector2 {
     val _ret = __method_bind.get_image_size.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.get_mesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Mesh)!!
   }
 
   fun setBaseTexture(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_base_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_base_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setImageSize(size: Vector2) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_image_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_image_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMesh(mesh: Mesh) {
     val _args = VariantArray.new()
     _args.append(mesh)
-    val _ret = __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

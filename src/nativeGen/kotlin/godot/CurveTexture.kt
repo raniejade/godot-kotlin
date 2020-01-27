@@ -19,21 +19,19 @@ open class CurveTexture internal constructor(
 ) : Texture(_handle) {
   fun getCurve(): Curve {
     val _ret = __method_bind.get_curve.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Curve)!!
   }
 
   fun setCurve(curve: Curve) {
     val _args = VariantArray.new()
     _args.append(curve)
-    val _ret = __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWidth(width: Int) {
     val _args = VariantArray.new()
     _args.append(width)
-    val _ret = __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

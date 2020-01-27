@@ -18,7 +18,7 @@ open class WeakRef internal constructor(
 ) : Reference(_handle) {
   fun getRef(): Variant {
     val _ret = __method_bind.get_ref.call(this.toVariant())
-    TODO()
+    return _ret
   }
 
   companion object {

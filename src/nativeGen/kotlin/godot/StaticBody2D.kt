@@ -20,65 +20,57 @@ open class StaticBody2D internal constructor(
 ) : PhysicsBody2D(_handle) {
   fun getBounce(): Float {
     val _ret = __method_bind.get_bounce.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getConstantAngularVelocity(): Float {
     val _ret = __method_bind.get_constant_angular_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getConstantLinearVelocity(): Vector2 {
     val _ret = __method_bind.get_constant_linear_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getFriction(): Float {
     val _ret = __method_bind.get_friction.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
     val _ret = __method_bind.get_physics_material_override.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::PhysicsMaterial)!!
   }
 
   fun setBounce(bounce: Float) {
     val _args = VariantArray.new()
     _args.append(bounce)
-    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setConstantAngularVelocity(vel: Float) {
     val _args = VariantArray.new()
     _args.append(vel)
-    val _ret = __method_bind.set_constant_angular_velocity.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_constant_angular_velocity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setConstantLinearVelocity(vel: Vector2) {
     val _args = VariantArray.new()
     _args.append(vel)
-    val _ret = __method_bind.set_constant_linear_velocity.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_constant_linear_velocity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFriction(friction: Float) {
     val _args = VariantArray.new()
     _args.append(friction)
-    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
     val _args = VariantArray.new()
     _args.append(physicsMaterialOverride)
-    val _ret = __method_bind.set_physics_material_override.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_physics_material_override.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

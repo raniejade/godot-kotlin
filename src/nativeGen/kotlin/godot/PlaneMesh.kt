@@ -20,38 +20,35 @@ open class PlaneMesh internal constructor(
 ) : PrimitiveMesh(_handle) {
   fun getSize(): Vector2 {
     val _ret = __method_bind.get_size.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSubdivideDepth(): Int {
     val _ret = __method_bind.get_subdivide_depth.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSubdivideWidth(): Int {
     val _ret = __method_bind.get_subdivide_width.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setSize(size: Vector2) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSubdivideDepth(subdivide: Int) {
     val _args = VariantArray.new()
     _args.append(subdivide)
-    val _ret = __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSubdivideWidth(subdivide: Int) {
     val _args = VariantArray.new()
     _args.append(subdivide)
-    val _ret = __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

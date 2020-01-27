@@ -19,14 +19,13 @@ open class GridContainer internal constructor(
 ) : Container(_handle) {
   fun getColumns(): Int {
     val _ret = __method_bind.get_columns.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setColumns(columns: Int) {
     val _args = VariantArray.new()
     _args.append(columns)
-    val _ret = __method_bind.set_columns.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_columns.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

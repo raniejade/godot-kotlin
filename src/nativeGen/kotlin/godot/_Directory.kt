@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,119 +20,118 @@ import kotlinx.cinterop.reinterpret
 open class _Directory internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun changeDir(todir: String): Error {
+  fun changeDir(todir: String): GDError {
     val _args = VariantArray.new()
     _args.append(todir)
     val _ret = __method_bind.change_dir.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun copy(from: String, to: String): Error {
+  fun copy(from: String, to: String): GDError {
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.copy.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun currentIsDir(): Boolean {
     val _ret = __method_bind.current_is_dir.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun dirExists(path: String): Boolean {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.dir_exists.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun fileExists(path: String): Boolean {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.file_exists.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCurrentDir(): String {
     val _ret = __method_bind.get_current_dir.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getCurrentDrive(): Int {
     val _ret = __method_bind.get_current_drive.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDrive(idx: Int): String {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_drive.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getDriveCount(): Int {
     val _ret = __method_bind.get_drive_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNext(): String {
     val _ret = __method_bind.get_next.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getSpaceLeft(): Int {
     val _ret = __method_bind.get_space_left.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
-  fun listDirBegin(skipNavigational: Boolean, skipHidden: Boolean): Error {
+  fun listDirBegin(skipNavigational: Boolean, skipHidden: Boolean): GDError {
     val _args = VariantArray.new()
     _args.append(skipNavigational)
     _args.append(skipHidden)
     val _ret = __method_bind.list_dir_begin.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun listDirEnd() {
-    val _ret = __method_bind.list_dir_end.call(this.toVariant())
-    TODO()
+    __method_bind.list_dir_end.call(this.toVariant())
   }
 
-  fun makeDir(path: String): Error {
+  fun makeDir(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.make_dir.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun makeDirRecursive(path: String): Error {
+  fun makeDirRecursive(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.make_dir_recursive.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun open(path: String): Error {
+  fun open(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.open.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun remove(path: String): Error {
+  fun remove(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.remove.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun rename(from: String, to: String): Error {
+  fun rename(from: String, to: String): GDError {
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.rename.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   companion object {

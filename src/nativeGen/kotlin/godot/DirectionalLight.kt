@@ -20,38 +20,35 @@ open class DirectionalLight internal constructor(
 ) : Light(_handle) {
   fun getShadowDepthRange(): ShadowDepthRange {
     val _ret = __method_bind.get_shadow_depth_range.call(this.toVariant())
-    TODO()
+    return DirectionalLight.ShadowDepthRange.from(_ret.asInt())
   }
 
   fun getShadowMode(): ShadowMode {
     val _ret = __method_bind.get_shadow_mode.call(this.toVariant())
-    TODO()
+    return DirectionalLight.ShadowMode.from(_ret.asInt())
   }
 
   fun isBlendSplitsEnabled(): Boolean {
     val _ret = __method_bind.is_blend_splits_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBlendSplits(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_blend_splits.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_blend_splits.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShadowDepthRange(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_shadow_depth_range.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shadow_depth_range.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShadowMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_shadow_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shadow_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class ShadowMode(

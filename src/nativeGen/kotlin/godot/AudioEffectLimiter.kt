@@ -19,50 +19,46 @@ open class AudioEffectLimiter internal constructor(
 ) : AudioEffect(_handle) {
   fun getCeilingDb(): Float {
     val _ret = __method_bind.get_ceiling_db.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSoftClipDb(): Float {
     val _ret = __method_bind.get_soft_clip_db.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSoftClipRatio(): Float {
     val _ret = __method_bind.get_soft_clip_ratio.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getThresholdDb(): Float {
     val _ret = __method_bind.get_threshold_db.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setCeilingDb(ceiling: Float) {
     val _args = VariantArray.new()
     _args.append(ceiling)
-    val _ret = __method_bind.set_ceiling_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_ceiling_db.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSoftClipDb(softClip: Float) {
     val _args = VariantArray.new()
     _args.append(softClip)
-    val _ret = __method_bind.set_soft_clip_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_soft_clip_db.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSoftClipRatio(softClip: Float) {
     val _args = VariantArray.new()
     _args.append(softClip)
-    val _ret = __method_bind.set_soft_clip_ratio.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_soft_clip_ratio.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setThresholdDb(threshold: Float) {
     val _args = VariantArray.new()
     _args.append(threshold)
-    val _ret = __method_bind.set_threshold_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_threshold_db.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -22,120 +22,108 @@ open class EditorFileDialog internal constructor(
   fun addFilter(filter: String) {
     val _args = VariantArray.new()
     _args.append(filter)
-    val _ret = __method_bind.add_filter.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_filter.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clearFilters() {
-    val _ret = __method_bind.clear_filters.call(this.toVariant())
-    TODO()
+    __method_bind.clear_filters.call(this.toVariant())
   }
 
   fun getAccess(): Access {
     val _ret = __method_bind.get_access.call(this.toVariant())
-    TODO()
+    return EditorFileDialog.Access.from(_ret.asInt())
   }
 
   fun getCurrentDir(): String {
     val _ret = __method_bind.get_current_dir.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getCurrentFile(): String {
     val _ret = __method_bind.get_current_file.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getCurrentPath(): String {
     val _ret = __method_bind.get_current_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getDisplayMode(): DisplayMode {
     val _ret = __method_bind.get_display_mode.call(this.toVariant())
-    TODO()
+    return EditorFileDialog.DisplayMode.from(_ret.asInt())
   }
 
   fun getMode(): Mode {
     val _ret = __method_bind.get_mode.call(this.toVariant())
-    TODO()
+    return EditorFileDialog.Mode.from(_ret.asInt())
   }
 
   fun getVbox(): VBoxContainer {
     val _ret = __method_bind.get_vbox.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::VBoxContainer)!!
   }
 
   fun invalidate() {
-    val _ret = __method_bind.invalidate.call(this.toVariant())
-    TODO()
+    __method_bind.invalidate.call(this.toVariant())
   }
 
   fun isOverwriteWarningDisabled(): Boolean {
     val _ret = __method_bind.is_overwrite_warning_disabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isShowingHiddenFiles(): Boolean {
     val _ret = __method_bind.is_showing_hidden_files.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAccess(access: Int) {
     val _args = VariantArray.new()
     _args.append(access)
-    val _ret = __method_bind.set_access.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_access.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCurrentDir(dir: String) {
     val _args = VariantArray.new()
     _args.append(dir)
-    val _ret = __method_bind.set_current_dir.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_current_dir.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCurrentFile(file: String) {
     val _args = VariantArray.new()
     _args.append(file)
-    val _ret = __method_bind.set_current_file.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_current_file.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCurrentPath(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_current_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_current_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDisableOverwriteWarning(disable: Boolean) {
     val _args = VariantArray.new()
     _args.append(disable)
-    val _ret = __method_bind.set_disable_overwrite_warning.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_disable_overwrite_warning.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDisplayMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_display_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_display_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShowHiddenFiles(show: Boolean) {
     val _args = VariantArray.new()
     _args.append(show)
-    val _ret = __method_bind.set_show_hidden_files.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_show_hidden_files.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class DisplayMode(

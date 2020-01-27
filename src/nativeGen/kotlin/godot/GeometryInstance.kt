@@ -22,108 +22,99 @@ open class GeometryInstance internal constructor(
 ) : VisualInstance(_handle) {
   fun getCastShadowsSetting(): ShadowCastingSetting {
     val _ret = __method_bind.get_cast_shadows_setting.call(this.toVariant())
-    TODO()
+    return GeometryInstance.ShadowCastingSetting.from(_ret.asInt())
   }
 
   fun getExtraCullMargin(): Float {
     val _ret = __method_bind.get_extra_cull_margin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFlag(flag: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(flag)
     val _ret = __method_bind.get_flag.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getLodMaxDistance(): Float {
     val _ret = __method_bind.get_lod_max_distance.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLodMaxHysteresis(): Float {
     val _ret = __method_bind.get_lod_max_hysteresis.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLodMinDistance(): Float {
     val _ret = __method_bind.get_lod_min_distance.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLodMinHysteresis(): Float {
     val _ret = __method_bind.get_lod_min_hysteresis.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMaterialOverride(): Material {
     val _ret = __method_bind.get_material_override.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun setCastShadowsSetting(shadowCastingSetting: Int) {
     val _args = VariantArray.new()
     _args.append(shadowCastingSetting)
-    val _ret = __method_bind.set_cast_shadows_setting.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cast_shadows_setting.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCustomAabb(aabb: AABB) {
     val _args = VariantArray.new()
     _args.append(aabb)
-    val _ret = __method_bind.set_custom_aabb.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_custom_aabb.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExtraCullMargin(margin: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
-    val _ret = __method_bind.set_extra_cull_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_extra_cull_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlag(flag: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    val _ret = __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_flag.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setLodMaxDistance(mode: Float) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_lod_max_distance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lod_max_distance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLodMaxHysteresis(mode: Float) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_lod_max_hysteresis.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lod_max_hysteresis.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLodMinDistance(mode: Float) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_lod_min_distance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lod_min_distance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLodMinHysteresis(mode: Float) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_lod_min_hysteresis.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lod_min_hysteresis.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMaterialOverride(material: Material) {
     val _args = VariantArray.new()
     _args.append(material)
-    val _ret = __method_bind.set_material_override.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_material_override.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Flags(

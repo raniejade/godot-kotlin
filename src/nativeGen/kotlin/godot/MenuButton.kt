@@ -19,26 +19,24 @@ open class MenuButton internal constructor(
 ) : Button(_handle) {
   fun getPopup(): PopupMenu {
     val _ret = __method_bind.get_popup.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::PopupMenu)!!
   }
 
   fun isSwitchOnHover(): Boolean {
     val _ret = __method_bind.is_switch_on_hover.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setDisableShortcuts(disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(disabled)
-    val _ret = __method_bind.set_disable_shortcuts.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_disable_shortcuts.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSwitchOnHover(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_switch_on_hover.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_switch_on_hover.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

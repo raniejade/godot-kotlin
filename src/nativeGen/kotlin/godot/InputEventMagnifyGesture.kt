@@ -19,14 +19,13 @@ open class InputEventMagnifyGesture internal constructor(
 ) : InputEventGesture(_handle) {
   fun getFactor(): Float {
     val _ret = __method_bind.get_factor.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setFactor(factor: Float) {
     val _args = VariantArray.new()
     _args.append(factor)
-    val _ret = __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

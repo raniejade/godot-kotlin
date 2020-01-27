@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,27 +20,27 @@ open class ResourceInteractiveLoader internal constructor(
 ) : Reference(_handle) {
   fun getResource(): Resource {
     val _ret = __method_bind.get_resource.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Resource)!!
   }
 
   fun getStage(): Int {
     val _ret = __method_bind.get_stage.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getStageCount(): Int {
     val _ret = __method_bind.get_stage_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
-  fun poll(): Error {
+  fun poll(): GDError {
     val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun wait(): Error {
+  fun wait(): GDError {
     val _ret = __method_bind.wait.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   companion object {

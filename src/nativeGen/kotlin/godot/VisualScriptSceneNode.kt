@@ -19,14 +19,13 @@ open class VisualScriptSceneNode internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getNodePath(): NodePath {
     val _ret = __method_bind.get_node_path.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun setNodePath(path: NodePath) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_node_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_node_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

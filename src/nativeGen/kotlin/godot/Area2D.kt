@@ -23,224 +23,208 @@ open class Area2D internal constructor(
 ) : CollisionObject2D(_handle) {
   fun getAngularDamp(): Float {
     val _ret = __method_bind.get_angular_damp.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getAudioBusName(): String {
     val _ret = __method_bind.get_audio_bus_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getCollisionLayer(): Int {
     val _ret = __method_bind.get_collision_layer.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCollisionMask(): Int {
     val _ret = __method_bind.get_collision_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getGravity(): Float {
     val _ret = __method_bind.get_gravity.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGravityDistanceScale(): Float {
     val _ret = __method_bind.get_gravity_distance_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGravityVector(): Vector2 {
     val _ret = __method_bind.get_gravity_vector.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getLinearDamp(): Float {
     val _ret = __method_bind.get_linear_damp.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getOverlappingAreas(): VariantArray {
     val _ret = __method_bind.get_overlapping_areas.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getOverlappingBodies(): VariantArray {
     val _ret = __method_bind.get_overlapping_bodies.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getPriority(): Float {
     val _ret = __method_bind.get_priority.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSpaceOverrideMode(): SpaceOverride {
     val _ret = __method_bind.get_space_override_mode.call(this.toVariant())
-    TODO()
+    return Area2D.SpaceOverride.from(_ret.asInt())
   }
 
   fun isGravityAPoint(): Boolean {
     val _ret = __method_bind.is_gravity_a_point.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isMonitorable(): Boolean {
     val _ret = __method_bind.is_monitorable.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isMonitoring(): Boolean {
     val _ret = __method_bind.is_monitoring.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isOverridingAudioBus(): Boolean {
     val _ret = __method_bind.is_overriding_audio_bus.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun overlapsArea(area: Node): Boolean {
     val _args = VariantArray.new()
     _args.append(area)
     val _ret = __method_bind.overlaps_area.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun overlapsBody(body: Node): Boolean {
     val _args = VariantArray.new()
     _args.append(body)
     val _ret = __method_bind.overlaps_body.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAngularDamp(angularDamp: Float) {
     val _args = VariantArray.new()
     _args.append(angularDamp)
-    val _ret = __method_bind.set_angular_damp.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_angular_damp.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAudioBusName(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_audio_bus_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_audio_bus_name.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAudioBusOverride(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_audio_bus_override.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_audio_bus_override.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionLayer(collisionLayer: Int) {
     val _args = VariantArray.new()
     _args.append(collisionLayer)
-    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setCollisionMask(collisionMask: Int) {
     val _args = VariantArray.new()
     _args.append(collisionMask)
-    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setGravity(gravity: Float) {
     val _args = VariantArray.new()
     _args.append(gravity)
-    val _ret = __method_bind.set_gravity.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gravity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGravityDistanceScale(distanceScale: Float) {
     val _args = VariantArray.new()
     _args.append(distanceScale)
-    val _ret = __method_bind.set_gravity_distance_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gravity_distance_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGravityIsPoint(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_gravity_is_point.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gravity_is_point.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGravityVector(vector: Vector2) {
     val _args = VariantArray.new()
     _args.append(vector)
-    val _ret = __method_bind.set_gravity_vector.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gravity_vector.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLinearDamp(linearDamp: Float) {
     val _args = VariantArray.new()
     _args.append(linearDamp)
-    val _ret = __method_bind.set_linear_damp.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_linear_damp.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMonitorable(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_monitorable.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_monitorable.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMonitoring(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_monitoring.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_monitoring.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPriority(priority: Float) {
     val _args = VariantArray.new()
     _args.append(priority)
-    val _ret = __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpaceOverrideMode(spaceOverrideMode: Int) {
     val _args = VariantArray.new()
     _args.append(spaceOverrideMode)
-    val _ret = __method_bind.set_space_override_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_space_override_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class SpaceOverride(

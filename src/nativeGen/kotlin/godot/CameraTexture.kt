@@ -20,38 +20,35 @@ open class CameraTexture internal constructor(
 ) : Texture(_handle) {
   fun getCameraActive(): Boolean {
     val _ret = __method_bind.get_camera_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCameraFeedId(): Int {
     val _ret = __method_bind.get_camera_feed_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getWhichFeed(): CameraServer.FeedImage {
     val _ret = __method_bind.get_which_feed.call(this.toVariant())
-    TODO()
+    return CameraServer.FeedImage.from(_ret.asInt())
   }
 
   fun setCameraActive(active: Boolean) {
     val _args = VariantArray.new()
     _args.append(active)
-    val _ret = __method_bind.set_camera_active.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_camera_active.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCameraFeedId(feedId: Int) {
     val _args = VariantArray.new()
     _args.append(feedId)
-    val _ret = __method_bind.set_camera_feed_id.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_camera_feed_id.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWhichFeed(whichFeed: Int) {
     val _args = VariantArray.new()
     _args.append(whichFeed)
-    val _ret = __method_bind.set_which_feed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_which_feed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -18,14 +18,13 @@ open class WorldEnvironment internal constructor(
 ) : Node(_handle) {
   fun getEnvironment(): Environment {
     val _ret = __method_bind.get_environment.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Environment)!!
   }
 
   fun setEnvironment(env: Environment) {
     val _args = VariantArray.new()
     _args.append(env)
-    val _ret = __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

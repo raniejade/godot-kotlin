@@ -24,14 +24,14 @@ open class _ResourceLoader internal constructor(
     _args.append(path)
     _args.append(typeHint)
     val _ret = __method_bind.exists.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getDependencies(path: String): PoolStringArray {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.get_dependencies.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getRecognizedExtensionsForType(type: String): PoolStringArray {
@@ -39,21 +39,21 @@ open class _ResourceLoader internal constructor(
     _args.append(type)
     val _ret = __method_bind.get_recognized_extensions_for_type.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun has(path: String): Boolean {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.has.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun hasCached(path: String): Boolean {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.has_cached.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun load(
@@ -66,7 +66,7 @@ open class _ResourceLoader internal constructor(
     _args.append(typeHint)
     _args.append(noCache)
     val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asObject(::Resource)!!
   }
 
   fun loadInteractive(path: String, typeHint: String): ResourceInteractiveLoader {
@@ -74,15 +74,13 @@ open class _ResourceLoader internal constructor(
     _args.append(path)
     _args.append(typeHint)
     val _ret = __method_bind.load_interactive.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::ResourceInteractiveLoader)!!
   }
 
   fun setAbortOnMissingResources(abort: Boolean) {
     val _args = VariantArray.new()
     _args.append(abort)
-    val _ret = __method_bind.set_abort_on_missing_resources.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_abort_on_missing_resources.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

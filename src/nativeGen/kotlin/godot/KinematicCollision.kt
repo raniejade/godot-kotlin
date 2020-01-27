@@ -20,57 +20,57 @@ open class KinematicCollision internal constructor(
 ) : Reference(_handle) {
   fun getCollider(): Object {
     val _ret = __method_bind.get_collider.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getColliderId(): Int {
     val _ret = __method_bind.get_collider_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getColliderMetadata(): Variant {
     val _ret = __method_bind.get_collider_metadata.call(this.toVariant())
-    TODO()
+    return _ret
   }
 
   fun getColliderShape(): Object {
     val _ret = __method_bind.get_collider_shape.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getColliderShapeIndex(): Int {
     val _ret = __method_bind.get_collider_shape_index.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getColliderVelocity(): Vector3 {
     val _ret = __method_bind.get_collider_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getLocalShape(): Object {
     val _ret = __method_bind.get_local_shape.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getNormal(): Vector3 {
     val _ret = __method_bind.get_normal.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getPosition(): Vector3 {
     val _ret = __method_bind.get_position.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getRemainder(): Vector3 {
     val _ret = __method_bind.get_remainder.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getTravel(): Vector3 {
     val _ret = __method_bind.get_travel.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   companion object {

@@ -20,62 +20,57 @@ open class AudioEffectDistortion internal constructor(
 ) : AudioEffect(_handle) {
   fun getDrive(): Float {
     val _ret = __method_bind.get_drive.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getKeepHfHz(): Float {
     val _ret = __method_bind.get_keep_hf_hz.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMode(): Mode {
     val _ret = __method_bind.get_mode.call(this.toVariant())
-    TODO()
+    return AudioEffectDistortion.Mode.from(_ret.asInt())
   }
 
   fun getPostGain(): Float {
     val _ret = __method_bind.get_post_gain.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPreGain(): Float {
     val _ret = __method_bind.get_pre_gain.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setDrive(drive: Float) {
     val _args = VariantArray.new()
     _args.append(drive)
-    val _ret = __method_bind.set_drive.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_drive.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setKeepHfHz(keepHfHz: Float) {
     val _args = VariantArray.new()
     _args.append(keepHfHz)
-    val _ret = __method_bind.set_keep_hf_hz.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_keep_hf_hz.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPostGain(postGain: Float) {
     val _args = VariantArray.new()
     _args.append(postGain)
-    val _ret = __method_bind.set_post_gain.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_post_gain.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPreGain(preGain: Float) {
     val _args = VariantArray.new()
     _args.append(preGain)
-    val _ret = __method_bind.set_pre_gain.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pre_gain.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Mode(

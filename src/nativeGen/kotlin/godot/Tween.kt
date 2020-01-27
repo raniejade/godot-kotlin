@@ -43,7 +43,7 @@ open class Tween internal constructor(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.follow_method.call(this.toVariant(), _args.toVariant(), 9)
-    TODO()
+    return _ret.asBool()
   }
 
   fun followProperty(
@@ -68,22 +68,22 @@ open class Tween internal constructor(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.follow_property.call(this.toVariant(), _args.toVariant(), 9)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getRuntime(): Float {
     val _ret = __method_bind.get_runtime.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSpeedScale(): Float {
     val _ret = __method_bind.get_speed_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTweenProcessMode(): TweenProcessMode {
     val _ret = __method_bind.get_tween_process_mode.call(this.toVariant())
-    TODO()
+    return Tween.TweenProcessMode.from(_ret.asInt())
   }
 
   fun interpolateCallback(
@@ -106,7 +106,7 @@ open class Tween internal constructor(
     _args.append(arg4)
     _args.append(arg5)
     val _ret = __method_bind.interpolate_callback.call(this.toVariant(), _args.toVariant(), 8)
-    TODO()
+    return _ret.asBool()
   }
 
   fun interpolateDeferredCallback(
@@ -130,7 +130,7 @@ open class Tween internal constructor(
     _args.append(arg5)
     val _ret = __method_bind.interpolate_deferred_callback.call(this.toVariant(), _args.toVariant(),
         8)
-    TODO()
+    return _ret.asBool()
   }
 
   fun interpolateMethod(
@@ -153,7 +153,7 @@ open class Tween internal constructor(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.interpolate_method.call(this.toVariant(), _args.toVariant(), 8)
-    TODO()
+    return _ret.asBool()
   }
 
   fun interpolateProperty(
@@ -176,17 +176,17 @@ open class Tween internal constructor(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.interpolate_property.call(this.toVariant(), _args.toVariant(), 8)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRepeat(): Boolean {
     val _ret = __method_bind.is_repeat.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun remove(`object`: Object, key: String): Boolean {
@@ -194,12 +194,12 @@ open class Tween internal constructor(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.remove.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun removeAll(): Boolean {
     val _ret = __method_bind.remove_all.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun reset(`object`: Object, key: String): Boolean {
@@ -207,12 +207,12 @@ open class Tween internal constructor(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.reset.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun resetAll(): Boolean {
     val _ret = __method_bind.reset_all.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun resume(`object`: Object, key: String): Boolean {
@@ -220,52 +220,48 @@ open class Tween internal constructor(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.resume.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun resumeAll(): Boolean {
     val _ret = __method_bind.resume_all.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun seek(time: Float): Boolean {
     val _args = VariantArray.new()
     _args.append(time)
     val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun setActive(active: Boolean) {
     val _args = VariantArray.new()
     _args.append(active)
-    val _ret = __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRepeat(repeat: Boolean) {
     val _args = VariantArray.new()
     _args.append(repeat)
-    val _ret = __method_bind.set_repeat.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_repeat.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpeedScale(speed: Float) {
     val _args = VariantArray.new()
     _args.append(speed)
-    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTweenProcessMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_tween_process_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tween_process_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun start(): Boolean {
     val _ret = __method_bind.start.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun stop(`object`: Object, key: String): Boolean {
@@ -273,12 +269,12 @@ open class Tween internal constructor(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.stop.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun stopAll(): Boolean {
     val _ret = __method_bind.stop_all.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun targetingMethod(
@@ -303,7 +299,7 @@ open class Tween internal constructor(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.targeting_method.call(this.toVariant(), _args.toVariant(), 9)
-    TODO()
+    return _ret.asBool()
   }
 
   fun targetingProperty(
@@ -328,12 +324,12 @@ open class Tween internal constructor(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.targeting_property.call(this.toVariant(), _args.toVariant(), 9)
-    TODO()
+    return _ret.asBool()
   }
 
   fun tell(): Float {
     val _ret = __method_bind.tell.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   enum class TransitionType(

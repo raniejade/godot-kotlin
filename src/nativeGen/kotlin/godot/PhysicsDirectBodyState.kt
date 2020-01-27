@@ -26,69 +26,63 @@ open class PhysicsDirectBodyState internal constructor(
   fun addCentralForce(force: Vector3) {
     val _args = VariantArray.new()
     _args.append(force)
-    val _ret = __method_bind.add_central_force.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_central_force.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addForce(force: Vector3, position: Vector3) {
     val _args = VariantArray.new()
     _args.append(force)
     _args.append(position)
-    val _ret = __method_bind.add_force.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_force.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun addTorque(torque: Vector3) {
     val _args = VariantArray.new()
     _args.append(torque)
-    val _ret = __method_bind.add_torque.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_torque.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun applyCentralImpulse(j: Vector3) {
     val _args = VariantArray.new()
     _args.append(j)
-    val _ret = __method_bind.apply_central_impulse.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.apply_central_impulse.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun applyImpulse(position: Vector3, j: Vector3) {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(j)
-    val _ret = __method_bind.apply_impulse.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.apply_impulse.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun applyTorqueImpulse(j: Vector3) {
     val _args = VariantArray.new()
     _args.append(j)
-    val _ret = __method_bind.apply_torque_impulse.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.apply_torque_impulse.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun getAngularVelocity(): Vector3 {
     val _ret = __method_bind.get_angular_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getCenterOfMass(): Vector3 {
     val _ret = __method_bind.get_center_of_mass.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getContactCollider(contactIdx: Int): RID {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_collider.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asRID()
   }
 
   fun getContactColliderId(contactIdx: Int): Int {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_collider_id.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getContactColliderObject(contactIdx: Int): Object {
@@ -96,7 +90,7 @@ open class PhysicsDirectBodyState internal constructor(
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_collider_object.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getContactColliderPosition(contactIdx: Int): Vector3 {
@@ -104,14 +98,14 @@ open class PhysicsDirectBodyState internal constructor(
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_collider_position.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getContactColliderShape(contactIdx: Int): Int {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_collider_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getContactColliderVelocityAtPosition(contactIdx: Int): Vector3 {
@@ -119,128 +113,123 @@ open class PhysicsDirectBodyState internal constructor(
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_collider_velocity_at_position.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getContactCount(): Int {
     val _ret = __method_bind.get_contact_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getContactImpulse(contactIdx: Int): Float {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_impulse.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getContactLocalNormal(contactIdx: Int): Vector3 {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_local_normal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getContactLocalPosition(contactIdx: Int): Vector3 {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_local_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getContactLocalShape(contactIdx: Int): Int {
     val _args = VariantArray.new()
     _args.append(contactIdx)
     val _ret = __method_bind.get_contact_local_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getInverseInertia(): Vector3 {
     val _ret = __method_bind.get_inverse_inertia.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getInverseMass(): Float {
     val _ret = __method_bind.get_inverse_mass.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLinearVelocity(): Vector3 {
     val _ret = __method_bind.get_linear_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getPrincipalInertiaAxes(): Basis {
     val _ret = __method_bind.get_principal_inertia_axes.call(this.toVariant())
-    TODO()
+    return _ret.asBasis()
   }
 
   fun getSpaceState(): PhysicsDirectSpaceState {
     val _ret = __method_bind.get_space_state.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::PhysicsDirectSpaceState)!!
   }
 
   fun getStep(): Float {
     val _ret = __method_bind.get_step.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTotalAngularDamp(): Float {
     val _ret = __method_bind.get_total_angular_damp.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTotalGravity(): Vector3 {
     val _ret = __method_bind.get_total_gravity.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getTotalLinearDamp(): Float {
     val _ret = __method_bind.get_total_linear_damp.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTransform(): Transform {
     val _ret = __method_bind.get_transform.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun integrateForces() {
-    val _ret = __method_bind.integrate_forces.call(this.toVariant())
-    TODO()
+    __method_bind.integrate_forces.call(this.toVariant())
   }
 
   fun isSleeping(): Boolean {
     val _ret = __method_bind.is_sleeping.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAngularVelocity(velocity: Vector3) {
     val _args = VariantArray.new()
     _args.append(velocity)
-    val _ret = __method_bind.set_angular_velocity.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_angular_velocity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLinearVelocity(velocity: Vector3) {
     val _args = VariantArray.new()
     _args.append(velocity)
-    val _ret = __method_bind.set_linear_velocity.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_linear_velocity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSleepState(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_sleep_state.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_sleep_state.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTransform(transform: Transform) {
     val _args = VariantArray.new()
     _args.append(transform)
-    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

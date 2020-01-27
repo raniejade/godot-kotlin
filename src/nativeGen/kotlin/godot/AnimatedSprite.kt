@@ -23,116 +23,106 @@ open class AnimatedSprite internal constructor(
 ) : Node2D(_handle) {
   fun getAnimation(): String {
     val _ret = __method_bind.get_animation.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getFrame(): Int {
     val _ret = __method_bind.get_frame.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getOffset(): Vector2 {
     val _ret = __method_bind.get_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSpeedScale(): Float {
     val _ret = __method_bind.get_speed_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSpriteFrames(): SpriteFrames {
     val _ret = __method_bind.get_sprite_frames.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::SpriteFrames)!!
   }
 
   fun isCentered(): Boolean {
     val _ret = __method_bind.is_centered.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun play(anim: String, backwards: Boolean) {
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(backwards)
-    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.play.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setAnimation(animation: String) {
     val _args = VariantArray.new()
     _args.append(animation)
-    val _ret = __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCentered(centered: Boolean) {
     val _args = VariantArray.new()
     _args.append(centered)
-    val _ret = __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlipH(flipH: Boolean) {
     val _args = VariantArray.new()
     _args.append(flipH)
-    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlipV(flipV: Boolean) {
     val _args = VariantArray.new()
     _args.append(flipV)
-    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFrame(frame: Int) {
     val _args = VariantArray.new()
     _args.append(frame)
-    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpeedScale(speedScale: Float) {
     val _args = VariantArray.new()
     _args.append(speedScale)
-    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
     val _args = VariantArray.new()
     _args.append(spriteFrames)
-    val _ret = __method_bind.set_sprite_frames.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_sprite_frames.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun stop() {
-    val _ret = __method_bind.stop.call(this.toVariant())
-    TODO()
+    __method_bind.stop.call(this.toVariant())
   }
 
   companion object {

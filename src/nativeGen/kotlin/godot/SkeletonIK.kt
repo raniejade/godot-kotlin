@@ -25,144 +25,132 @@ open class SkeletonIK internal constructor(
 ) : Node(_handle) {
   fun getInterpolation(): Float {
     val _ret = __method_bind.get_interpolation.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMagnetPosition(): Vector3 {
     val _ret = __method_bind.get_magnet_position.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getMaxIterations(): Int {
     val _ret = __method_bind.get_max_iterations.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMinDistance(): Float {
     val _ret = __method_bind.get_min_distance.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getParentSkeleton(): Skeleton {
     val _ret = __method_bind.get_parent_skeleton.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Skeleton)!!
   }
 
   fun getRootBone(): String {
     val _ret = __method_bind.get_root_bone.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getTargetNode(): NodePath {
     val _ret = __method_bind.get_target_node.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun getTargetTransform(): Transform {
     val _ret = __method_bind.get_target_transform.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun getTipBone(): String {
     val _ret = __method_bind.get_tip_bone.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isOverrideTipBasis(): Boolean {
     val _ret = __method_bind.is_override_tip_basis.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRunning(): Boolean {
     val _ret = __method_bind.is_running.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isUsingMagnet(): Boolean {
     val _ret = __method_bind.is_using_magnet.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setInterpolation(interpolation: Float) {
     val _args = VariantArray.new()
     _args.append(interpolation)
-    val _ret = __method_bind.set_interpolation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_interpolation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMagnetPosition(localPosition: Vector3) {
     val _args = VariantArray.new()
     _args.append(localPosition)
-    val _ret = __method_bind.set_magnet_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_magnet_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMaxIterations(iterations: Int) {
     val _args = VariantArray.new()
     _args.append(iterations)
-    val _ret = __method_bind.set_max_iterations.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_max_iterations.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMinDistance(minDistance: Float) {
     val _args = VariantArray.new()
     _args.append(minDistance)
-    val _ret = __method_bind.set_min_distance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_min_distance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOverrideTipBasis(override: Boolean) {
     val _args = VariantArray.new()
     _args.append(override)
-    val _ret = __method_bind.set_override_tip_basis.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_override_tip_basis.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRootBone(rootBone: String) {
     val _args = VariantArray.new()
     _args.append(rootBone)
-    val _ret = __method_bind.set_root_bone.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_root_bone.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTargetNode(node: NodePath) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.set_target_node.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_target_node.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTargetTransform(target: Transform) {
     val _args = VariantArray.new()
     _args.append(target)
-    val _ret = __method_bind.set_target_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_target_transform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTipBone(tipBone: String) {
     val _args = VariantArray.new()
     _args.append(tipBone)
-    val _ret = __method_bind.set_tip_bone.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tip_bone.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUseMagnet(use: Boolean) {
     val _args = VariantArray.new()
     _args.append(use)
-    val _ret = __method_bind.set_use_magnet.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_magnet.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun start(oneTime: Boolean) {
     val _args = VariantArray.new()
     _args.append(oneTime)
-    val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun stop() {
-    val _ret = __method_bind.stop.call(this.toVariant())
-    TODO()
+    __method_bind.stop.call(this.toVariant())
   }
 
   companion object {

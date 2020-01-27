@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -18,52 +19,48 @@ import kotlinx.cinterop.reinterpret
 open class JSONParseResult internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun getError(): Error {
+  fun getError(): GDError {
     val _ret = __method_bind.get_error.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getErrorLine(): Int {
     val _ret = __method_bind.get_error_line.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getErrorString(): String {
     val _ret = __method_bind.get_error_string.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getResult(): Variant {
     val _ret = __method_bind.get_result.call(this.toVariant())
-    TODO()
+    return _ret
   }
 
   fun setError(error: Int) {
     val _args = VariantArray.new()
     _args.append(error)
-    val _ret = __method_bind.set_error.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_error.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setErrorLine(errorLine: Int) {
     val _args = VariantArray.new()
     _args.append(errorLine)
-    val _ret = __method_bind.set_error_line.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_error_line.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setErrorString(errorString: String) {
     val _args = VariantArray.new()
     _args.append(errorString)
-    val _ret = __method_bind.set_error_string.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_error_string.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setResult(result: Variant) {
     val _args = VariantArray.new()
     _args.append(result)
-    val _ret = __method_bind.set_result.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_result.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

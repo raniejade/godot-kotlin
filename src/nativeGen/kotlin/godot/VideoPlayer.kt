@@ -22,147 +22,135 @@ open class VideoPlayer internal constructor(
 ) : Control(_handle) {
   fun getAudioTrack(): Int {
     val _ret = __method_bind.get_audio_track.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getBufferingMsec(): Int {
     val _ret = __method_bind.get_buffering_msec.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getBus(): String {
     val _ret = __method_bind.get_bus.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getStream(): VideoStream {
     val _ret = __method_bind.get_stream.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::VideoStream)!!
   }
 
   fun getStreamName(): String {
     val _ret = __method_bind.get_stream_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getStreamPosition(): Float {
     val _ret = __method_bind.get_stream_position.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getVideoTexture(): Texture {
     val _ret = __method_bind.get_video_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getVolume(): Float {
     val _ret = __method_bind.get_volume.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getVolumeDb(): Float {
     val _ret = __method_bind.get_volume_db.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun hasAutoplay(): Boolean {
     val _ret = __method_bind.has_autoplay.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun hasExpand(): Boolean {
     val _ret = __method_bind.has_expand.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPaused(): Boolean {
     val _ret = __method_bind.is_paused.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun play() {
-    val _ret = __method_bind.play.call(this.toVariant())
-    TODO()
+    __method_bind.play.call(this.toVariant())
   }
 
   fun setAudioTrack(track: Int) {
     val _args = VariantArray.new()
     _args.append(track)
-    val _ret = __method_bind.set_audio_track.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_audio_track.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAutoplay(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBufferingMsec(msec: Int) {
     val _args = VariantArray.new()
     _args.append(msec)
-    val _ret = __method_bind.set_buffering_msec.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_buffering_msec.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBus(bus: String) {
     val _args = VariantArray.new()
     _args.append(bus)
-    val _ret = __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExpand(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPaused(paused: Boolean) {
     val _args = VariantArray.new()
     _args.append(paused)
-    val _ret = __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStream(stream: VideoStream) {
     val _args = VariantArray.new()
     _args.append(stream)
-    val _ret = __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStreamPosition(position: Float) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.set_stream_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stream_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVolume(volume: Float) {
     val _args = VariantArray.new()
     _args.append(volume)
-    val _ret = __method_bind.set_volume.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_volume.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVolumeDb(db: Float) {
     val _args = VariantArray.new()
     _args.append(db)
-    val _ret = __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun stop() {
-    val _ret = __method_bind.stop.call(this.toVariant())
-    TODO()
+    __method_bind.stop.call(this.toVariant())
   }
 
   companion object {

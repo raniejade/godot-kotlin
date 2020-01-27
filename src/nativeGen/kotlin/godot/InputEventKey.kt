@@ -20,45 +20,41 @@ open class InputEventKey internal constructor(
 ) : InputEventWithModifiers(_handle) {
   fun getScancode(): Int {
     val _ret = __method_bind.get_scancode.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getScancodeWithModifiers(): Int {
     val _ret = __method_bind.get_scancode_with_modifiers.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getUnicode(): Int {
     val _ret = __method_bind.get_unicode.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setEcho(echo: Boolean) {
     val _args = VariantArray.new()
     _args.append(echo)
-    val _ret = __method_bind.set_echo.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_echo.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _args = VariantArray.new()
     _args.append(pressed)
-    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScancode(scancode: Int) {
     val _args = VariantArray.new()
     _args.append(scancode)
-    val _ret = __method_bind.set_scancode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scancode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUnicode(unicode: Int) {
     val _args = VariantArray.new()
     _args.append(unicode)
-    val _ret = __method_bind.set_unicode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_unicode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

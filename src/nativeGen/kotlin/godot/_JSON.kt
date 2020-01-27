@@ -22,7 +22,7 @@ open class _JSON internal constructor(
     val _args = VariantArray.new()
     _args.append(json)
     val _ret = __method_bind.parse.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::JSONParseResult)!!
   }
 
   fun print(
@@ -35,7 +35,7 @@ open class _JSON internal constructor(
     _args.append(indent)
     _args.append(sortKeys)
     val _ret = __method_bind.print.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asString()
   }
 
   companion object {

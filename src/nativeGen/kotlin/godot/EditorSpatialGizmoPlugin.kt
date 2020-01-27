@@ -23,16 +23,14 @@ open class EditorSpatialGizmoPlugin internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(material)
-    val _ret = __method_bind.add_material.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_material.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun createHandleMaterial(name: String, billboard: Boolean) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(billboard)
-    val _ret = __method_bind.create_handle_material.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.create_handle_material.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun createIconMaterial(
@@ -46,8 +44,7 @@ open class EditorSpatialGizmoPlugin internal constructor(
     _args.append(texture)
     _args.append(onTop)
     _args.append(color)
-    val _ret = __method_bind.create_icon_material.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.create_icon_material.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun createMaterial(
@@ -63,8 +60,7 @@ open class EditorSpatialGizmoPlugin internal constructor(
     _args.append(billboard)
     _args.append(onTop)
     _args.append(useVertexColor)
-    val _ret = __method_bind.create_material.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    __method_bind.create_material.call(this.toVariant(), _args.toVariant(), 5)
   }
 
   fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
@@ -72,7 +68,7 @@ open class EditorSpatialGizmoPlugin internal constructor(
     _args.append(name)
     _args.append(gizmo)
     val _ret = __method_bind.get_material.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::SpatialMaterial)!!
   }
 
   companion object {

@@ -21,74 +21,68 @@ open class Sprite3D internal constructor(
 ) : SpriteBase3D(_handle) {
   fun getFrame(): Int {
     val _ret = __method_bind.get_frame.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getHframes(): Int {
     val _ret = __method_bind.get_hframes.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getRegionRect(): Rect2 {
     val _ret = __method_bind.get_region_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.get_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getVframes(): Int {
     val _ret = __method_bind.get_vframes.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isRegion(): Boolean {
     val _ret = __method_bind.is_region.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setFrame(frame: Int) {
     val _args = VariantArray.new()
     _args.append(frame)
-    val _ret = __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHframes(hframes: Int) {
     val _args = VariantArray.new()
     _args.append(hframes)
-    val _ret = __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRegion(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRegionRect(rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(rect)
-    val _ret = __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTexture(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVframes(vframes: Int) {
     val _args = VariantArray.new()
     _args.append(vframes)
-    val _ret = __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

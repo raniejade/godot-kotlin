@@ -19,21 +19,19 @@ open class GradientTexture internal constructor(
 ) : Texture(_handle) {
   fun getGradient(): Gradient {
     val _ret = __method_bind.get_gradient.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Gradient)!!
   }
 
   fun setGradient(gradient: Gradient) {
     val _args = VariantArray.new()
     _args.append(gradient)
-    val _ret = __method_bind.set_gradient.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gradient.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWidth(width: Int) {
     val _args = VariantArray.new()
     _args.append(width)
-    val _ret = __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,44 +20,42 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerTCP internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
-  fun connectToHost(host: String, port: Int): Error {
+  fun connectToHost(host: String, port: Int): GDError {
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(port)
     val _ret = __method_bind.connect_to_host.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun disconnectFromHost() {
-    val _ret = __method_bind.disconnect_from_host.call(this.toVariant())
-    TODO()
+    __method_bind.disconnect_from_host.call(this.toVariant())
   }
 
   fun getConnectedHost(): String {
     val _ret = __method_bind.get_connected_host.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getConnectedPort(): Int {
     val _ret = __method_bind.get_connected_port.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getStatus(): Status {
     val _ret = __method_bind.get_status.call(this.toVariant())
-    TODO()
+    return StreamPeerTCP.Status.from(_ret.asInt())
   }
 
   fun isConnectedToHost(): Boolean {
     val _ret = __method_bind.is_connected_to_host.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setNoDelay(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_no_delay.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_no_delay.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Status(

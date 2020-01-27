@@ -19,12 +19,12 @@ open class EditorScenePostImport internal constructor(
 ) : Reference(_handle) {
   fun getSourceFile(): String {
     val _ret = __method_bind.get_source_file.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getSourceFolder(): String {
     val _ret = __method_bind.get_source_folder.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   companion object {

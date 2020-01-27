@@ -18,12 +18,12 @@ open class ButtonGroup internal constructor(
 ) : Resource(_handle) {
   fun getButtons(): VariantArray {
     val _ret = __method_bind.get_buttons.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getPressedButton(): BaseButton {
     val _ret = __method_bind.get_pressed_button.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::BaseButton)!!
   }
 
   companion object {

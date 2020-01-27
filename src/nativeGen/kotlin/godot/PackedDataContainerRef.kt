@@ -19,7 +19,7 @@ open class PackedDataContainerRef internal constructor(
 ) : Reference(_handle) {
   fun size(): Int {
     val _ret = __method_bind.size.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   companion object {

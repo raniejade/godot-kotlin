@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,26 +21,26 @@ open class PackedScene internal constructor(
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
     val _ret = __method_bind.can_instance.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getState(): SceneState {
     val _ret = __method_bind.get_state.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::SceneState)!!
   }
 
   fun instance(editState: Int): Node {
     val _args = VariantArray.new()
     _args.append(editState)
     val _ret = __method_bind.instance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Node)!!
   }
 
-  fun pack(path: Node): Error {
+  fun pack(path: Node): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.pack.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   enum class GenEditState(

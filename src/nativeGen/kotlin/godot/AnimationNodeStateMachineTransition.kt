@@ -22,74 +22,68 @@ open class AnimationNodeStateMachineTransition internal constructor(
 ) : Resource(_handle) {
   fun getAdvanceCondition(): String {
     val _ret = __method_bind.get_advance_condition.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getPriority(): Int {
     val _ret = __method_bind.get_priority.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSwitchMode(): SwitchMode {
     val _ret = __method_bind.get_switch_mode.call(this.toVariant())
-    TODO()
+    return AnimationNodeStateMachineTransition.SwitchMode.from(_ret.asInt())
   }
 
   fun getXfadeTime(): Float {
     val _ret = __method_bind.get_xfade_time.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun hasAutoAdvance(): Boolean {
     val _ret = __method_bind.has_auto_advance.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAdvanceCondition(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_advance_condition.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_advance_condition.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAutoAdvance(autoAdvance: Boolean) {
     val _args = VariantArray.new()
     _args.append(autoAdvance)
-    val _ret = __method_bind.set_auto_advance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_auto_advance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDisabled(disabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(disabled)
-    val _ret = __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPriority(priority: Int) {
     val _args = VariantArray.new()
     _args.append(priority)
-    val _ret = __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSwitchMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_switch_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_switch_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setXfadeTime(secs: Float) {
     val _args = VariantArray.new()
     _args.append(secs)
-    val _ret = __method_bind.set_xfade_time.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_xfade_time.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class SwitchMode(

@@ -20,50 +20,46 @@ open class InputEventScreenDrag internal constructor(
 ) : InputEvent(_handle) {
   fun getIndex(): Int {
     val _ret = __method_bind.get_index.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getPosition(): Vector2 {
     val _ret = __method_bind.get_position.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getRelative(): Vector2 {
     val _ret = __method_bind.get_relative.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSpeed(): Vector2 {
     val _ret = __method_bind.get_speed.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setIndex(index: Int) {
     val _args = VariantArray.new()
     _args.append(index)
-    val _ret = __method_bind.set_index.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_index.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPosition(position: Vector2) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRelative(relative: Vector2) {
     val _args = VariantArray.new()
     _args.append(relative)
-    val _ret = __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpeed(speed: Vector2) {
     val _args = VariantArray.new()
     _args.append(speed)
-    val _ret = __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

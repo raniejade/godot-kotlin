@@ -22,15 +22,14 @@ open class VisibilityEnabler internal constructor(
     val _args = VariantArray.new()
     _args.append(enabler)
     val _ret = __method_bind.is_enabler_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun setEnabler(enabler: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabler)
     _args.append(enabled)
-    val _ret = __method_bind.set_enabler.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_enabler.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   enum class Enabler(

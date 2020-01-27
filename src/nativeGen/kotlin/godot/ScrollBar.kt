@@ -19,14 +19,13 @@ open class ScrollBar internal constructor(
 ) : Range(_handle) {
   fun getCustomStep(): Float {
     val _ret = __method_bind.get_custom_step.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setCustomStep(step: Float) {
     val _args = VariantArray.new()
     _args.append(step)
-    val _ret = __method_bind.set_custom_step.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_custom_step.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

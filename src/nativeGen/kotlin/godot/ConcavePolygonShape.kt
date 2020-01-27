@@ -19,14 +19,13 @@ open class ConcavePolygonShape internal constructor(
 ) : Shape(_handle) {
   fun getFaces(): PoolVector3Array {
     val _ret = __method_bind.get_faces.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun setFaces(faces: PoolVector3Array) {
     val _args = VariantArray.new()
     _args.append(faces)
-    val _ret = __method_bind.set_faces.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_faces.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

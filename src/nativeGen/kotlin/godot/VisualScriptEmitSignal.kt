@@ -19,14 +19,13 @@ open class VisualScriptEmitSignal internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getSignal(): String {
     val _ret = __method_bind.get_signal.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setSignal(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

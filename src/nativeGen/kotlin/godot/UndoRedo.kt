@@ -24,7 +24,7 @@ open class UndoRedo internal constructor(
     _args.append(`object`)
     _args.append(method)
     val _ret = __method_bind.add_do_method.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret
   }
 
   fun addDoProperty(
@@ -36,15 +36,13 @@ open class UndoRedo internal constructor(
     _args.append(`object`)
     _args.append(property)
     _args.append(value)
-    val _ret = __method_bind.add_do_property.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.add_do_property.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun addDoReference(`object`: Object) {
     val _args = VariantArray.new()
     _args.append(`object`)
-    val _ret = __method_bind.add_do_reference.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_do_reference.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addUndoMethod(`object`: Object, method: String): Variant {
@@ -52,7 +50,7 @@ open class UndoRedo internal constructor(
     _args.append(`object`)
     _args.append(method)
     val _ret = __method_bind.add_undo_method.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret
   }
 
   fun addUndoProperty(
@@ -64,60 +62,55 @@ open class UndoRedo internal constructor(
     _args.append(`object`)
     _args.append(property)
     _args.append(value)
-    val _ret = __method_bind.add_undo_property.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.add_undo_property.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun addUndoReference(`object`: Object) {
     val _args = VariantArray.new()
     _args.append(`object`)
-    val _ret = __method_bind.add_undo_reference.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_undo_reference.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clearHistory(increaseVersion: Boolean) {
     val _args = VariantArray.new()
     _args.append(increaseVersion)
-    val _ret = __method_bind.clear_history.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.clear_history.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun commitAction() {
-    val _ret = __method_bind.commit_action.call(this.toVariant())
-    TODO()
+    __method_bind.commit_action.call(this.toVariant())
   }
 
   fun createAction(name: String, mergeMode: Int) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(mergeMode)
-    val _ret = __method_bind.create_action.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.create_action.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun getCurrentActionName(): String {
     val _ret = __method_bind.get_current_action_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getVersion(): Int {
     val _ret = __method_bind.get_version.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isCommitingAction(): Boolean {
     val _ret = __method_bind.is_commiting_action.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun redo(): Boolean {
     val _ret = __method_bind.redo.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun undo(): Boolean {
     val _ret = __method_bind.undo.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   enum class MergeMode(

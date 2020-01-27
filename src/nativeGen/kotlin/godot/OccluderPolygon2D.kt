@@ -21,38 +21,35 @@ open class OccluderPolygon2D internal constructor(
 ) : Resource(_handle) {
   fun getCullMode(): CullMode {
     val _ret = __method_bind.get_cull_mode.call(this.toVariant())
-    TODO()
+    return OccluderPolygon2D.CullMode.from(_ret.asInt())
   }
 
   fun getPolygon(): PoolVector2Array {
     val _ret = __method_bind.get_polygon.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun isClosed(): Boolean {
     val _ret = __method_bind.is_closed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setClosed(closed: Boolean) {
     val _args = VariantArray.new()
     _args.append(closed)
-    val _ret = __method_bind.set_closed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_closed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCullMode(cullMode: Int) {
     val _args = VariantArray.new()
     _args.append(cullMode)
-    val _ret = __method_bind.set_cull_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cull_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _args = VariantArray.new()
     _args.append(polygon)
-    val _ret = __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class CullMode(

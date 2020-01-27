@@ -24,26 +24,25 @@ open class InstancePlaceholder internal constructor(
     _args.append(replace)
     _args.append(customScene)
     val _ret = __method_bind.create_instance.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::Node)!!
   }
 
   fun getInstancePath(): String {
     val _ret = __method_bind.get_instance_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getStoredValues(withOrder: Boolean): Dictionary {
     val _args = VariantArray.new()
     _args.append(withOrder)
     val _ret = __method_bind.get_stored_values.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun replaceByInstance(customScene: PackedScene) {
     val _args = VariantArray.new()
     _args.append(customScene)
-    val _ret = __method_bind.replace_by_instance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.replace_by_instance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

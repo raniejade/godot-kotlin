@@ -19,38 +19,35 @@ open class ParallaxLayer internal constructor(
 ) : Node2D(_handle) {
   fun getMirroring(): Vector2 {
     val _ret = __method_bind.get_mirroring.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getMotionOffset(): Vector2 {
     val _ret = __method_bind.get_motion_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getMotionScale(): Vector2 {
     val _ret = __method_bind.get_motion_scale.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setMirroring(mirror: Vector2) {
     val _args = VariantArray.new()
     _args.append(mirror)
-    val _ret = __method_bind.set_mirroring.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mirroring.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMotionOffset(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_motion_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_motion_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMotionScale(scale: Vector2) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_motion_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_motion_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

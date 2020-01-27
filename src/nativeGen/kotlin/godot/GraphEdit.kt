@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -25,29 +26,23 @@ open class GraphEdit internal constructor(
     val _args = VariantArray.new()
     _args.append(fromType)
     _args.append(toType)
-    val _ret = __method_bind.add_valid_connection_type.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_valid_connection_type.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun addValidLeftDisconnectType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.add_valid_left_disconnect_type.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_valid_left_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addValidRightDisconnectType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.add_valid_right_disconnect_type.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_valid_right_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clearConnections() {
-    val _ret = __method_bind.clear_connections.call(this.toVariant())
-    TODO()
+    __method_bind.clear_connections.call(this.toVariant())
   }
 
   fun connectNode(
@@ -55,14 +50,14 @@ open class GraphEdit internal constructor(
     fromPort: Int,
     to: String,
     toPort: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(fromPort)
     _args.append(to)
     _args.append(toPort)
     val _ret = __method_bind.connect_node.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun disconnectNode(
@@ -76,33 +71,32 @@ open class GraphEdit internal constructor(
     _args.append(fromPort)
     _args.append(to)
     _args.append(toPort)
-    val _ret = __method_bind.disconnect_node.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.disconnect_node.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun getConnectionList(): VariantArray {
     val _ret = __method_bind.get_connection_list.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getScrollOfs(): Vector2 {
     val _ret = __method_bind.get_scroll_ofs.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSnap(): Int {
     val _ret = __method_bind.get_snap.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getZoom(): Float {
     val _ret = __method_bind.get_zoom.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getZoomHbox(): HBoxContainer {
     val _ret = __method_bind.get_zoom_hbox.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::HBoxContainer)!!
   }
 
   fun isNodeConnected(
@@ -117,17 +111,17 @@ open class GraphEdit internal constructor(
     _args.append(to)
     _args.append(toPort)
     val _ret = __method_bind.is_node_connected.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRightDisconnectsEnabled(): Boolean {
     val _ret = __method_bind.is_right_disconnects_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isUsingSnap(): Boolean {
     val _ret = __method_bind.is_using_snap.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isValidConnectionType(fromType: Int, toType: Int): Boolean {
@@ -135,32 +129,26 @@ open class GraphEdit internal constructor(
     _args.append(fromType)
     _args.append(toType)
     val _ret = __method_bind.is_valid_connection_type.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun removeValidConnectionType(fromType: Int, toType: Int) {
     val _args = VariantArray.new()
     _args.append(fromType)
     _args.append(toType)
-    val _ret = __method_bind.remove_valid_connection_type.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.remove_valid_connection_type.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun removeValidLeftDisconnectType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.remove_valid_left_disconnect_type.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_valid_left_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun removeValidRightDisconnectType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.remove_valid_right_disconnect_type.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_valid_right_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setConnectionActivity(
@@ -176,50 +164,43 @@ open class GraphEdit internal constructor(
     _args.append(to)
     _args.append(toPort)
     _args.append(amount)
-    val _ret = __method_bind.set_connection_activity.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    __method_bind.set_connection_activity.call(this.toVariant(), _args.toVariant(), 5)
   }
 
   fun setRightDisconnects(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_right_disconnects.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_right_disconnects.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScrollOfs(ofs: Vector2) {
     val _args = VariantArray.new()
     _args.append(ofs)
-    val _ret = __method_bind.set_scroll_ofs.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scroll_ofs.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSelected(node: Node) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.set_selected.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_selected.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSnap(pixels: Int) {
     val _args = VariantArray.new()
     _args.append(pixels)
-    val _ret = __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUseSnap(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_use_snap.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_snap.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setZoom(pZoom: Float) {
     val _args = VariantArray.new()
     _args.append(pZoom)
-    val _ret = __method_bind.set_zoom.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_zoom.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

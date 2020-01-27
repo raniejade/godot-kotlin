@@ -23,151 +23,138 @@ open class RayCast2D internal constructor(
   fun addException(node: Object) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.add_exception.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_exception.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addExceptionRid(rid: RID) {
     val _args = VariantArray.new()
     _args.append(rid)
-    val _ret = __method_bind.add_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clearExceptions() {
-    val _ret = __method_bind.clear_exceptions.call(this.toVariant())
-    TODO()
+    __method_bind.clear_exceptions.call(this.toVariant())
   }
 
   fun forceRaycastUpdate() {
-    val _ret = __method_bind.force_raycast_update.call(this.toVariant())
-    TODO()
+    __method_bind.force_raycast_update.call(this.toVariant())
   }
 
   fun getCastTo(): Vector2 {
     val _ret = __method_bind.get_cast_to.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getCollider(): Object {
     val _ret = __method_bind.get_collider.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getColliderShape(): Int {
     val _ret = __method_bind.get_collider_shape.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionMask(): Int {
     val _ret = __method_bind.get_collision_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCollisionNormal(): Vector2 {
     val _ret = __method_bind.get_collision_normal.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getCollisionPoint(): Vector2 {
     val _ret = __method_bind.get_collision_point.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getExcludeParentBody(): Boolean {
     val _ret = __method_bind.get_exclude_parent_body.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_areas_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_bodies_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isColliding(): Boolean {
     val _ret = __method_bind.is_colliding.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isEnabled(): Boolean {
     val _ret = __method_bind.is_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun removeException(node: Object) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.remove_exception.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_exception.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun removeExceptionRid(rid: RID) {
     val _args = VariantArray.new()
     _args.append(rid)
-    val _ret = __method_bind.remove_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCastTo(localPoint: Vector2) {
     val _args = VariantArray.new()
     _args.append(localPoint)
-    val _ret = __method_bind.set_cast_to.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cast_to.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollideWithAreas(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollideWithBodies(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionMask(mask: Int) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setEnabled(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExcludeParentBody(mask: Boolean) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_exclude_parent_body.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_exclude_parent_body.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class YSort internal constructor(
 ) : Node2D(_handle) {
   fun isSortEnabled(): Boolean {
     val _ret = __method_bind.is_sort_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setSortEnabled(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_sort_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_sort_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

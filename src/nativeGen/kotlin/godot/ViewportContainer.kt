@@ -20,26 +20,24 @@ open class ViewportContainer internal constructor(
 ) : Container(_handle) {
   fun getStretchShrink(): Int {
     val _ret = __method_bind.get_stretch_shrink.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isStretchEnabled(): Boolean {
     val _ret = __method_bind.is_stretch_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setStretch(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_stretch.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stretch.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStretchShrink(amount: Int) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_stretch_shrink.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stretch_shrink.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

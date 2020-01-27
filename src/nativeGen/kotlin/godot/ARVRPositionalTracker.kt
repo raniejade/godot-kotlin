@@ -25,66 +25,65 @@ open class ARVRPositionalTracker internal constructor(
 ) : Object(_handle) {
   fun getHand(): TrackerHand {
     val _ret = __method_bind.get_hand.call(this.toVariant())
-    TODO()
+    return ARVRPositionalTracker.TrackerHand.from(_ret.asInt())
   }
 
   fun getJoyId(): Int {
     val _ret = __method_bind.get_joy_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMesh(): Mesh {
     val _ret = __method_bind.get_mesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Mesh)!!
   }
 
   fun getName(): String {
     val _ret = __method_bind.get_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getOrientation(): Basis {
     val _ret = __method_bind.get_orientation.call(this.toVariant())
-    TODO()
+    return _ret.asBasis()
   }
 
   fun getPosition(): Vector3 {
     val _ret = __method_bind.get_position.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getRumble(): Float {
     val _ret = __method_bind.get_rumble.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTracksOrientation(): Boolean {
     val _ret = __method_bind.get_tracks_orientation.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getTracksPosition(): Boolean {
     val _ret = __method_bind.get_tracks_position.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getTransform(adjustByReferenceFrame: Boolean): Transform {
     val _args = VariantArray.new()
     _args.append(adjustByReferenceFrame)
     val _ret = __method_bind.get_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asTransform()
   }
 
   fun getType(): ARVRServer.TrackerType {
     val _ret = __method_bind.get_type.call(this.toVariant())
-    TODO()
+    return ARVRServer.TrackerType.from(_ret.asInt())
   }
 
   fun setRumble(rumble: Float) {
     val _args = VariantArray.new()
     _args.append(rumble)
-    val _ret = __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class TrackerHand(

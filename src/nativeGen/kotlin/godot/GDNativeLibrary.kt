@@ -21,72 +21,67 @@ open class GDNativeLibrary internal constructor(
 ) : Resource(_handle) {
   fun getConfigFile(): ConfigFile {
     val _ret = __method_bind.get_config_file.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::ConfigFile)!!
   }
 
   fun getCurrentDependencies(): PoolStringArray {
     val _ret = __method_bind.get_current_dependencies.call(this.toVariant())
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun getCurrentLibraryPath(): String {
     val _ret = __method_bind.get_current_library_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getSymbolPrefix(): String {
     val _ret = __method_bind.get_symbol_prefix.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isReloadable(): Boolean {
     val _ret = __method_bind.is_reloadable.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isSingleton(): Boolean {
     val _ret = __method_bind.is_singleton.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setConfigFile(configFile: ConfigFile) {
     val _args = VariantArray.new()
     _args.append(configFile)
-    val _ret = __method_bind.set_config_file.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_config_file.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLoadOnce(loadOnce: Boolean) {
     val _args = VariantArray.new()
     _args.append(loadOnce)
-    val _ret = __method_bind.set_load_once.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_load_once.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setReloadable(reloadable: Boolean) {
     val _args = VariantArray.new()
     _args.append(reloadable)
-    val _ret = __method_bind.set_reloadable.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_reloadable.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSingleton(singleton: Boolean) {
     val _args = VariantArray.new()
     _args.append(singleton)
-    val _ret = __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSymbolPrefix(symbolPrefix: String) {
     val _args = VariantArray.new()
     _args.append(symbolPrefix)
-    val _ret = __method_bind.set_symbol_prefix.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_symbol_prefix.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun shouldLoadOnce(): Boolean {
     val _ret = __method_bind.should_load_once.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   companion object {

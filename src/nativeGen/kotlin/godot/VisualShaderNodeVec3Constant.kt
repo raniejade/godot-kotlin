@@ -19,14 +19,13 @@ open class VisualShaderNodeVec3Constant internal constructor(
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Vector3 {
     val _ret = __method_bind.get_constant.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun setConstant(value: Vector3) {
     val _args = VariantArray.new()
     _args.append(value)
-    val _ret = __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

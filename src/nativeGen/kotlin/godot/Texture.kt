@@ -35,8 +35,7 @@ open class Texture internal constructor(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    val _ret = __method_bind.draw.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    __method_bind.draw.call(this.toVariant(), _args.toVariant(), 5)
   }
 
   fun drawRect(
@@ -54,8 +53,7 @@ open class Texture internal constructor(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    val _ret = __method_bind.draw_rect.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    __method_bind.draw_rect.call(this.toVariant(), _args.toVariant(), 6)
   }
 
   fun drawRectRegion(
@@ -75,45 +73,43 @@ open class Texture internal constructor(
     _args.append(transpose)
     _args.append(normalMap)
     _args.append(clipUv)
-    val _ret = __method_bind.draw_rect_region.call(this.toVariant(), _args.toVariant(), 7)
-    TODO()
+    __method_bind.draw_rect_region.call(this.toVariant(), _args.toVariant(), 7)
   }
 
   fun getData(): Image {
     val _ret = __method_bind.get_data.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Image)!!
   }
 
   fun getFlags(): Int {
     val _ret = __method_bind.get_flags.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getHeight(): Int {
     val _ret = __method_bind.get_height.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSize(): Vector2 {
     val _ret = __method_bind.get_size.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getWidth(): Int {
     val _ret = __method_bind.get_width.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun hasAlpha(): Boolean {
     val _ret = __method_bind.has_alpha.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setFlags(flags: Int) {
     val _args = VariantArray.new()
     _args.append(flags)
-    val _ret = __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Flags(

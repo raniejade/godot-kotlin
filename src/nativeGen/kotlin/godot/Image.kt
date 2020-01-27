@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Color
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Rect2
@@ -33,8 +34,7 @@ open class Image internal constructor(
     _args.append(src)
     _args.append(srcRect)
     _args.append(dst)
-    val _ret = __method_bind.blend_rect.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.blend_rect.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun blendRectMask(
@@ -48,8 +48,7 @@ open class Image internal constructor(
     _args.append(mask)
     _args.append(srcRect)
     _args.append(dst)
-    val _ret = __method_bind.blend_rect_mask.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.blend_rect_mask.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun blitRect(
@@ -61,8 +60,7 @@ open class Image internal constructor(
     _args.append(src)
     _args.append(srcRect)
     _args.append(dst)
-    val _ret = __method_bind.blit_rect.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.blit_rect.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun blitRectMask(
@@ -76,47 +74,42 @@ open class Image internal constructor(
     _args.append(mask)
     _args.append(srcRect)
     _args.append(dst)
-    val _ret = __method_bind.blit_rect_mask.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.blit_rect_mask.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun bumpmapToNormalmap(bumpScale: Float) {
     val _args = VariantArray.new()
     _args.append(bumpScale)
-    val _ret = __method_bind.bumpmap_to_normalmap.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.bumpmap_to_normalmap.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clearMipmaps() {
-    val _ret = __method_bind.clear_mipmaps.call(this.toVariant())
-    TODO()
+    __method_bind.clear_mipmaps.call(this.toVariant())
   }
 
   fun compress(
     mode: Int,
     source: Int,
     lossyQuality: Float
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(mode)
     _args.append(source)
     _args.append(lossyQuality)
     val _ret = __method_bind.compress.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun convert(format: Int) {
     val _args = VariantArray.new()
     _args.append(format)
-    val _ret = __method_bind.convert.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.convert.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun copyFrom(src: Image) {
     val _args = VariantArray.new()
     _args.append(src)
-    val _ret = __method_bind.copy_from.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.copy_from.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun create(
@@ -130,8 +123,7 @@ open class Image internal constructor(
     _args.append(height)
     _args.append(useMipmaps)
     _args.append(format)
-    val _ret = __method_bind.create.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.create.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun createFromData(
@@ -147,82 +139,75 @@ open class Image internal constructor(
     _args.append(useMipmaps)
     _args.append(format)
     _args.append(data)
-    val _ret = __method_bind.create_from_data.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    __method_bind.create_from_data.call(this.toVariant(), _args.toVariant(), 5)
   }
 
   fun crop(width: Int, height: Int) {
     val _args = VariantArray.new()
     _args.append(width)
     _args.append(height)
-    val _ret = __method_bind.crop.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.crop.call(this.toVariant(), _args.toVariant(), 2)
   }
 
-  fun decompress(): Error {
+  fun decompress(): GDError {
     val _ret = __method_bind.decompress.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun detectAlpha(): AlphaMode {
     val _ret = __method_bind.detect_alpha.call(this.toVariant())
-    TODO()
+    return Image.AlphaMode.from(_ret.asInt())
   }
 
   fun expandX2Hq2x() {
-    val _ret = __method_bind.expand_x2_hq2x.call(this.toVariant())
-    TODO()
+    __method_bind.expand_x2_hq2x.call(this.toVariant())
   }
 
   fun fill(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.fill.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.fill.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun fixAlphaEdges() {
-    val _ret = __method_bind.fix_alpha_edges.call(this.toVariant())
-    TODO()
+    __method_bind.fix_alpha_edges.call(this.toVariant())
   }
 
   fun flipX() {
-    val _ret = __method_bind.flip_x.call(this.toVariant())
-    TODO()
+    __method_bind.flip_x.call(this.toVariant())
   }
 
   fun flipY() {
-    val _ret = __method_bind.flip_y.call(this.toVariant())
-    TODO()
+    __method_bind.flip_y.call(this.toVariant())
   }
 
-  fun generateMipmaps(renormalize: Boolean): Error {
+  fun generateMipmaps(renormalize: Boolean): GDError {
     val _args = VariantArray.new()
     _args.append(renormalize)
     val _ret = __method_bind.generate_mipmaps.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getData(): PoolByteArray {
     val _ret = __method_bind.get_data.call(this.toVariant())
-    TODO()
+    return _ret.asPoolByteArray()
   }
 
   fun getFormat(): Format {
     val _ret = __method_bind.get_format.call(this.toVariant())
-    TODO()
+    return Image.Format.from(_ret.asInt())
   }
 
   fun getHeight(): Int {
     val _ret = __method_bind.get_height.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMipmapOffset(mipmap: Int): Int {
     val _args = VariantArray.new()
     _args.append(mipmap)
     val _ret = __method_bind.get_mipmap_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getPixel(x: Int, y: Int): Color {
@@ -230,99 +215,96 @@ open class Image internal constructor(
     _args.append(x)
     _args.append(y)
     val _ret = __method_bind.get_pixel.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asColor()
   }
 
   fun getPixelv(src: Vector2): Color {
     val _args = VariantArray.new()
     _args.append(src)
     val _ret = __method_bind.get_pixelv.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asColor()
   }
 
   fun getRect(rect: Rect2): Image {
     val _args = VariantArray.new()
     _args.append(rect)
     val _ret = __method_bind.get_rect.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Image)!!
   }
 
   fun getSize(): Vector2 {
     val _ret = __method_bind.get_size.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getUsedRect(): Rect2 {
     val _ret = __method_bind.get_used_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getWidth(): Int {
     val _ret = __method_bind.get_width.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun hasMipmaps(): Boolean {
     val _ret = __method_bind.has_mipmaps.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isCompressed(): Boolean {
     val _ret = __method_bind.is_compressed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isEmpty(): Boolean {
     val _ret = __method_bind.is_empty.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isInvisible(): Boolean {
     val _ret = __method_bind.is_invisible.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
-  fun load(path: String): Error {
+  fun load(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun loadJpgFromBuffer(buffer: PoolByteArray): Error {
+  fun loadJpgFromBuffer(buffer: PoolByteArray): GDError {
     val _args = VariantArray.new()
     _args.append(buffer)
     val _ret = __method_bind.load_jpg_from_buffer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun loadPngFromBuffer(buffer: PoolByteArray): Error {
+  fun loadPngFromBuffer(buffer: PoolByteArray): GDError {
     val _args = VariantArray.new()
     _args.append(buffer)
     val _ret = __method_bind.load_png_from_buffer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun loadWebpFromBuffer(buffer: PoolByteArray): Error {
+  fun loadWebpFromBuffer(buffer: PoolByteArray): GDError {
     val _args = VariantArray.new()
     _args.append(buffer)
     val _ret = __method_bind.load_webp_from_buffer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun lock() {
-    val _ret = __method_bind.lock.call(this.toVariant())
-    TODO()
+    __method_bind.lock.call(this.toVariant())
   }
 
   fun normalmapToXy() {
-    val _ret = __method_bind.normalmap_to_xy.call(this.toVariant())
-    TODO()
+    __method_bind.normalmap_to_xy.call(this.toVariant())
   }
 
   fun premultiplyAlpha() {
-    val _ret = __method_bind.premultiply_alpha.call(this.toVariant())
-    TODO()
+    __method_bind.premultiply_alpha.call(this.toVariant())
   }
 
   fun resize(
@@ -334,27 +316,25 @@ open class Image internal constructor(
     _args.append(width)
     _args.append(height)
     _args.append(interpolation)
-    val _ret = __method_bind.resize.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.resize.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun resizeToPo2(square: Boolean) {
     val _args = VariantArray.new()
     _args.append(square)
-    val _ret = __method_bind.resize_to_po2.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.resize_to_po2.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun rgbeToSrgb(): Image {
     val _ret = __method_bind.rgbe_to_srgb.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Image)!!
   }
 
-  fun savePng(path: String): Error {
+  fun savePng(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.save_png.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setPixel(
@@ -366,31 +346,26 @@ open class Image internal constructor(
     _args.append(x)
     _args.append(y)
     _args.append(color)
-    val _ret = __method_bind.set_pixel.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.set_pixel.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun setPixelv(dst: Vector2, color: Color) {
     val _args = VariantArray.new()
     _args.append(dst)
     _args.append(color)
-    val _ret = __method_bind.set_pixelv.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_pixelv.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun shrinkX2() {
-    val _ret = __method_bind.shrink_x2.call(this.toVariant())
-    TODO()
+    __method_bind.shrink_x2.call(this.toVariant())
   }
 
   fun srgbToLinear() {
-    val _ret = __method_bind.srgb_to_linear.call(this.toVariant())
-    TODO()
+    __method_bind.srgb_to_linear.call(this.toVariant())
   }
 
   fun unlock() {
-    val _ret = __method_bind.unlock.call(this.toVariant())
-    TODO()
+    __method_bind.unlock.call(this.toVariant())
   }
 
   enum class AlphaMode(

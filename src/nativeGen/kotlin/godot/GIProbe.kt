@@ -24,133 +24,121 @@ open class GIProbe internal constructor(
     val _args = VariantArray.new()
     _args.append(fromNode)
     _args.append(createVisualDebug)
-    val _ret = __method_bind.bake.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.bake.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun debugBake() {
-    val _ret = __method_bind.debug_bake.call(this.toVariant())
-    TODO()
+    __method_bind.debug_bake.call(this.toVariant())
   }
 
   fun getBias(): Float {
     val _ret = __method_bind.get_bias.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getDynamicRange(): Int {
     val _ret = __method_bind.get_dynamic_range.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getEnergy(): Float {
     val _ret = __method_bind.get_energy.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getExtents(): Vector3 {
     val _ret = __method_bind.get_extents.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getNormalBias(): Float {
     val _ret = __method_bind.get_normal_bias.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getProbeData(): GIProbeData {
     val _ret = __method_bind.get_probe_data.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::GIProbeData)!!
   }
 
   fun getPropagation(): Float {
     val _ret = __method_bind.get_propagation.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSubdiv(): Subdiv {
     val _ret = __method_bind.get_subdiv.call(this.toVariant())
-    TODO()
+    return GIProbe.Subdiv.from(_ret.asInt())
   }
 
   fun isCompressed(): Boolean {
     val _ret = __method_bind.is_compressed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isInterior(): Boolean {
     val _ret = __method_bind.is_interior.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBias(max: Float) {
     val _args = VariantArray.new()
     _args.append(max)
-    val _ret = __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCompress(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_compress.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_compress.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDynamicRange(max: Int) {
     val _args = VariantArray.new()
     _args.append(max)
-    val _ret = __method_bind.set_dynamic_range.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_dynamic_range.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEnergy(max: Float) {
     val _args = VariantArray.new()
     _args.append(max)
-    val _ret = __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExtents(extents: Vector3) {
     val _args = VariantArray.new()
     _args.append(extents)
-    val _ret = __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setInterior(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_interior.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_interior.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNormalBias(max: Float) {
     val _args = VariantArray.new()
     _args.append(max)
-    val _ret = __method_bind.set_normal_bias.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_normal_bias.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setProbeData(data: GIProbeData) {
     val _args = VariantArray.new()
     _args.append(data)
-    val _ret = __method_bind.set_probe_data.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_probe_data.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPropagation(max: Float) {
     val _args = VariantArray.new()
     _args.append(max)
-    val _ret = __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSubdiv(subdiv: Int) {
     val _args = VariantArray.new()
     _args.append(subdiv)
-    val _ret = __method_bind.set_subdiv.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_subdiv.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Subdiv(

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,70 +21,68 @@ open class WebRTCDataChannel internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {
-    val _ret = __method_bind.close.call(this.toVariant())
-    TODO()
+    __method_bind.close.call(this.toVariant())
   }
 
   fun getId(): Int {
     val _ret = __method_bind.get_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getLabel(): String {
     val _ret = __method_bind.get_label.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getMaxPacketLifeTime(): Int {
     val _ret = __method_bind.get_max_packet_life_time.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMaxRetransmits(): Int {
     val _ret = __method_bind.get_max_retransmits.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getProtocol(): String {
     val _ret = __method_bind.get_protocol.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getReadyState(): ChannelState {
     val _ret = __method_bind.get_ready_state.call(this.toVariant())
-    TODO()
+    return WebRTCDataChannel.ChannelState.from(_ret.asInt())
   }
 
   fun getWriteMode(): WriteMode {
     val _ret = __method_bind.get_write_mode.call(this.toVariant())
-    TODO()
+    return WebRTCDataChannel.WriteMode.from(_ret.asInt())
   }
 
   fun isNegotiated(): Boolean {
     val _ret = __method_bind.is_negotiated.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isOrdered(): Boolean {
     val _ret = __method_bind.is_ordered.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
-  fun poll(): Error {
+  fun poll(): GDError {
     val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setWriteMode(writeMode: Int) {
     val _args = VariantArray.new()
     _args.append(writeMode)
-    val _ret = __method_bind.set_write_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_write_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun wasStringPacket(): Boolean {
     val _ret = __method_bind.was_string_packet.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   enum class WriteMode(

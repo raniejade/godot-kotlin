@@ -19,14 +19,13 @@ open class ReferenceRect internal constructor(
 ) : Control(_handle) {
   fun getBorderColor(): Color {
     val _ret = __method_bind.get_border_color.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun setBorderColor(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.set_border_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_border_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

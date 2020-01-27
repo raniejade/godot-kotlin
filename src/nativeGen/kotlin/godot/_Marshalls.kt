@@ -23,14 +23,14 @@ open class _Marshalls internal constructor(
     val _args = VariantArray.new()
     _args.append(base64Str)
     val _ret = __method_bind.base64_to_raw.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolByteArray()
   }
 
   fun base64ToUtf8(base64Str: String): String {
     val _args = VariantArray.new()
     _args.append(base64Str)
     val _ret = __method_bind.base64_to_utf8.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun base64ToVariant(base64Str: String, allowObjects: Boolean): Variant {
@@ -38,21 +38,21 @@ open class _Marshalls internal constructor(
     _args.append(base64Str)
     _args.append(allowObjects)
     val _ret = __method_bind.base64_to_variant.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret
   }
 
   fun rawToBase64(array: PoolByteArray): String {
     val _args = VariantArray.new()
     _args.append(array)
     val _ret = __method_bind.raw_to_base64.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun utf8ToBase64(utf8Str: String): String {
     val _args = VariantArray.new()
     _args.append(utf8Str)
     val _ret = __method_bind.utf8_to_base64.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun variantToBase64(variant: Variant, fullObjects: Boolean): String {
@@ -60,7 +60,7 @@ open class _Marshalls internal constructor(
     _args.append(variant)
     _args.append(fullObjects)
     val _ret = __method_bind.variant_to_base64.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asString()
   }
 
   companion object {

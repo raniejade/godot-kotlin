@@ -26,55 +26,52 @@ open class Input internal constructor(
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(strength)
-    val _ret = __method_bind.action_press.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.action_press.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun actionRelease(action: String) {
     val _args = VariantArray.new()
     _args.append(action)
-    val _ret = __method_bind.action_release.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.action_release.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addJoyMapping(mapping: String, updateExisting: Boolean) {
     val _args = VariantArray.new()
     _args.append(mapping)
     _args.append(updateExisting)
-    val _ret = __method_bind.add_joy_mapping.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_joy_mapping.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun getAccelerometer(): Vector3 {
     val _ret = __method_bind.get_accelerometer.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getActionStrength(action: String): Float {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.get_action_strength.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getConnectedJoypads(): VariantArray {
     val _ret = __method_bind.get_connected_joypads.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getCurrentCursorShape(): CursorShape {
     val _ret = __method_bind.get_current_cursor_shape.call(this.toVariant())
-    TODO()
+    return Input.CursorShape.from(_ret.asInt())
   }
 
   fun getGravity(): Vector3 {
     val _ret = __method_bind.get_gravity.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getGyroscope(): Vector3 {
     val _ret = __method_bind.get_gyroscope.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getJoyAxis(device: Int, axis: Int): Float {
@@ -82,7 +79,7 @@ open class Input internal constructor(
     _args.append(device)
     _args.append(axis)
     val _ret = __method_bind.get_joy_axis.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getJoyAxisIndexFromString(axis: String): Int {
@@ -90,14 +87,14 @@ open class Input internal constructor(
     _args.append(axis)
     val _ret = __method_bind.get_joy_axis_index_from_string.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getJoyAxisString(axisIndex: Int): String {
     val _args = VariantArray.new()
     _args.append(axisIndex)
     val _ret = __method_bind.get_joy_axis_string.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getJoyButtonIndexFromString(button: String): Int {
@@ -105,83 +102,83 @@ open class Input internal constructor(
     _args.append(button)
     val _ret = __method_bind.get_joy_button_index_from_string.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getJoyButtonString(buttonIndex: Int): String {
     val _args = VariantArray.new()
     _args.append(buttonIndex)
     val _ret = __method_bind.get_joy_button_string.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getJoyGuid(device: Int): String {
     val _args = VariantArray.new()
     _args.append(device)
     val _ret = __method_bind.get_joy_guid.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getJoyName(device: Int): String {
     val _args = VariantArray.new()
     _args.append(device)
     val _ret = __method_bind.get_joy_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getJoyVibrationDuration(device: Int): Float {
     val _args = VariantArray.new()
     _args.append(device)
     val _ret = __method_bind.get_joy_vibration_duration.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getJoyVibrationStrength(device: Int): Vector2 {
     val _args = VariantArray.new()
     _args.append(device)
     val _ret = __method_bind.get_joy_vibration_strength.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getLastMouseSpeed(): Vector2 {
     val _ret = __method_bind.get_last_mouse_speed.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getMagnetometer(): Vector3 {
     val _ret = __method_bind.get_magnetometer.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getMouseButtonMask(): Int {
     val _ret = __method_bind.get_mouse_button_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMouseMode(): MouseMode {
     val _ret = __method_bind.get_mouse_mode.call(this.toVariant())
-    TODO()
+    return Input.MouseMode.from(_ret.asInt())
   }
 
   fun isActionJustPressed(action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.is_action_just_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isActionJustReleased(action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.is_action_just_released.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.is_action_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isJoyButtonPressed(device: Int, button: Int): Boolean {
@@ -189,28 +186,28 @@ open class Input internal constructor(
     _args.append(device)
     _args.append(button)
     val _ret = __method_bind.is_joy_button_pressed.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isJoyKnown(device: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(device)
     val _ret = __method_bind.is_joy_known.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isKeyPressed(scancode: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(scancode)
     val _ret = __method_bind.is_key_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isMouseButtonPressed(button: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(button)
     val _ret = __method_bind.is_mouse_button_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun joyConnectionChanged(
@@ -224,22 +221,19 @@ open class Input internal constructor(
     _args.append(connected)
     _args.append(name)
     _args.append(guid)
-    val _ret = __method_bind.joy_connection_changed.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.joy_connection_changed.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun parseInputEvent(event: InputEvent) {
     val _args = VariantArray.new()
     _args.append(event)
-    val _ret = __method_bind.parse_input_event.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.parse_input_event.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun removeJoyMapping(guid: String) {
     val _args = VariantArray.new()
     _args.append(guid)
-    val _ret = __method_bind.remove_joy_mapping.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_joy_mapping.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCustomMouseCursor(
@@ -251,29 +245,25 @@ open class Input internal constructor(
     _args.append(image)
     _args.append(shape)
     _args.append(hotspot)
-    val _ret = __method_bind.set_custom_mouse_cursor.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.set_custom_mouse_cursor.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun setDefaultCursorShape(shape: Int) {
     val _args = VariantArray.new()
     _args.append(shape)
-    val _ret = __method_bind.set_default_cursor_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_default_cursor_shape.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMouseMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_mouse_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mouse_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUseAccumulatedInput(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_use_accumulated_input.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_accumulated_input.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun startJoyVibration(
@@ -287,22 +277,19 @@ open class Input internal constructor(
     _args.append(weakMagnitude)
     _args.append(strongMagnitude)
     _args.append(duration)
-    val _ret = __method_bind.start_joy_vibration.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.start_joy_vibration.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun stopJoyVibration(device: Int) {
     val _args = VariantArray.new()
     _args.append(device)
-    val _ret = __method_bind.stop_joy_vibration.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.stop_joy_vibration.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun warpMousePosition(to: Vector2) {
     val _args = VariantArray.new()
     _args.append(to)
-    val _ret = __method_bind.warp_mouse_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.warp_mouse_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class MouseMode(

@@ -28,19 +28,19 @@ open class PolygonPathFinder internal constructor(
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.find_path.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun getBounds(): Rect2 {
     val _ret = __method_bind.get_bounds.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getClosestPoint(point: Vector2): Vector2 {
     val _args = VariantArray.new()
     _args.append(point)
     val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getIntersections(from: Vector2, to: Vector2): PoolVector2Array {
@@ -48,37 +48,35 @@ open class PolygonPathFinder internal constructor(
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.get_intersections.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun getPointPenalty(idx: Int): Float {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_point_penalty.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isPointInside(point: Vector2): Boolean {
     val _args = VariantArray.new()
     _args.append(point)
     val _ret = __method_bind.is_point_inside.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun setPointPenalty(idx: Int, penalty: Float) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(penalty)
-    val _ret = __method_bind.set_point_penalty.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_point_penalty.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setup(points: PoolVector2Array, connections: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(points)
     _args.append(connections)
-    val _ret = __method_bind.setup.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.setup.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   companion object {

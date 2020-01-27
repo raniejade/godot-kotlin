@@ -19,14 +19,13 @@ open class Sky internal constructor(
 ) : Resource(_handle) {
   fun getRadianceSize(): RadianceSize {
     val _ret = __method_bind.get_radiance_size.call(this.toVariant())
-    TODO()
+    return Sky.RadianceSize.from(_ret.asInt())
   }
 
   fun setRadianceSize(size: Int) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_radiance_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radiance_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class RadianceSize(

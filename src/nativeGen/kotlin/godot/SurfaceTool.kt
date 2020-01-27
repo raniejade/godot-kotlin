@@ -32,43 +32,37 @@ open class SurfaceTool internal constructor(
   fun addBones(bones: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(bones)
-    val _ret = __method_bind.add_bones.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_bones.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addColor(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.add_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addIndex(index: Int) {
     val _args = VariantArray.new()
     _args.append(index)
-    val _ret = __method_bind.add_index.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_index.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addNormal(normal: Vector3) {
     val _args = VariantArray.new()
     _args.append(normal)
-    val _ret = __method_bind.add_normal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_normal.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addSmoothGroup(smooth: Boolean) {
     val _args = VariantArray.new()
     _args.append(smooth)
-    val _ret = __method_bind.add_smooth_group.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_smooth_group.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addTangent(tangent: Plane) {
     val _args = VariantArray.new()
     _args.append(tangent)
-    val _ret = __method_bind.add_tangent.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_tangent.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addTriangleFan(
@@ -86,36 +80,31 @@ open class SurfaceTool internal constructor(
     _args.append(uv2s)
     _args.append(normals)
     _args.append(tangents)
-    val _ret = __method_bind.add_triangle_fan.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    __method_bind.add_triangle_fan.call(this.toVariant(), _args.toVariant(), 6)
   }
 
   fun addUv(uv: Vector2) {
     val _args = VariantArray.new()
     _args.append(uv)
-    val _ret = __method_bind.add_uv.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_uv.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addUv2(uv2: Vector2) {
     val _args = VariantArray.new()
     _args.append(uv2)
-    val _ret = __method_bind.add_uv2.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_uv2.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addVertex(vertex: Vector3) {
     val _args = VariantArray.new()
     _args.append(vertex)
-    val _ret = __method_bind.add_vertex.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_vertex.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addWeights(weights: PoolRealArray) {
     val _args = VariantArray.new()
     _args.append(weights)
-    val _ret = __method_bind.add_weights.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_weights.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun appendFrom(
@@ -127,20 +116,17 @@ open class SurfaceTool internal constructor(
     _args.append(existing)
     _args.append(surface)
     _args.append(transform)
-    val _ret = __method_bind.append_from.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.append_from.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun begin(primitive: Int) {
     val _args = VariantArray.new()
     _args.append(primitive)
-    val _ret = __method_bind.begin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.begin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clear() {
-    val _ret = __method_bind.clear.call(this.toVariant())
-    TODO()
+    __method_bind.clear.call(this.toVariant())
   }
 
   fun commit(existing: ArrayMesh, flags: Int): ArrayMesh {
@@ -148,20 +134,19 @@ open class SurfaceTool internal constructor(
     _args.append(existing)
     _args.append(flags)
     val _ret = __method_bind.commit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::ArrayMesh)!!
   }
 
   fun commitToArrays(): VariantArray {
     val _ret = __method_bind.commit_to_arrays.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun createFrom(existing: Mesh, surface: Int) {
     val _args = VariantArray.new()
     _args.append(existing)
     _args.append(surface)
-    val _ret = __method_bind.create_from.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.create_from.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun createFromBlendShape(
@@ -173,37 +158,31 @@ open class SurfaceTool internal constructor(
     _args.append(existing)
     _args.append(surface)
     _args.append(blendShape)
-    val _ret = __method_bind.create_from_blend_shape.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.create_from_blend_shape.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun deindex() {
-    val _ret = __method_bind.deindex.call(this.toVariant())
-    TODO()
+    __method_bind.deindex.call(this.toVariant())
   }
 
   fun generateNormals(flip: Boolean) {
     val _args = VariantArray.new()
     _args.append(flip)
-    val _ret = __method_bind.generate_normals.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.generate_normals.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun generateTangents() {
-    val _ret = __method_bind.generate_tangents.call(this.toVariant())
-    TODO()
+    __method_bind.generate_tangents.call(this.toVariant())
   }
 
   fun index() {
-    val _ret = __method_bind.index.call(this.toVariant())
-    TODO()
+    __method_bind.index.call(this.toVariant())
   }
 
   fun setMaterial(material: Material) {
     val _args = VariantArray.new()
     _args.append(material)
-    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

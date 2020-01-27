@@ -20,76 +20,68 @@ open class CanvasItemMaterial internal constructor(
 ) : Material(_handle) {
   fun getBlendMode(): BlendMode {
     val _ret = __method_bind.get_blend_mode.call(this.toVariant())
-    TODO()
+    return CanvasItemMaterial.BlendMode.from(_ret.asInt())
   }
 
   fun getLightMode(): LightMode {
     val _ret = __method_bind.get_light_mode.call(this.toVariant())
-    TODO()
+    return CanvasItemMaterial.LightMode.from(_ret.asInt())
   }
 
   fun getParticlesAnimHFrames(): Int {
     val _ret = __method_bind.get_particles_anim_h_frames.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getParticlesAnimLoop(): Boolean {
     val _ret = __method_bind.get_particles_anim_loop.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getParticlesAnimVFrames(): Int {
     val _ret = __method_bind.get_particles_anim_v_frames.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getParticlesAnimation(): Boolean {
     val _ret = __method_bind.get_particles_animation.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBlendMode(blendMode: Int) {
     val _args = VariantArray.new()
     _args.append(blendMode)
-    val _ret = __method_bind.set_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLightMode(lightMode: Int) {
     val _args = VariantArray.new()
     _args.append(lightMode)
-    val _ret = __method_bind.set_light_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_light_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
     val _args = VariantArray.new()
     _args.append(frames)
-    val _ret = __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
     val _args = VariantArray.new()
     _args.append(loop)
-    val _ret = __method_bind.set_particles_anim_loop.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_particles_anim_loop.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
     val _args = VariantArray.new()
     _args.append(frames)
-    val _ret = __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setParticlesAnimation(particlesAnim: Boolean) {
     val _args = VariantArray.new()
     _args.append(particlesAnim)
-    val _ret = __method_bind.set_particles_animation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_particles_animation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class LightMode(

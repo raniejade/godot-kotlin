@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,49 +21,48 @@ open class PacketPeerUDP internal constructor(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
   fun close() {
-    val _ret = __method_bind.close.call(this.toVariant())
-    TODO()
+    __method_bind.close.call(this.toVariant())
   }
 
   fun getPacketIp(): String {
     val _ret = __method_bind.get_packet_ip.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getPacketPort(): Int {
     val _ret = __method_bind.get_packet_port.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isListening(): Boolean {
     val _ret = __method_bind.is_listening.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun listen(
     port: Int,
     bindAddress: String,
     recvBufSize: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(port)
     _args.append(bindAddress)
     _args.append(recvBufSize)
     val _ret = __method_bind.listen.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun setDestAddress(host: String, port: Int): Error {
+  fun setDestAddress(host: String, port: Int): GDError {
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(port)
     val _ret = __method_bind.set_dest_address.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun wait(): Error {
+  fun wait(): GDError {
     val _ret = __method_bind.wait.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   companion object {

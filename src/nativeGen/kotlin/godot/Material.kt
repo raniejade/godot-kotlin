@@ -19,26 +19,24 @@ open class Material internal constructor(
 ) : Resource(_handle) {
   fun getNextPass(): Material {
     val _ret = __method_bind.get_next_pass.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun getRenderPriority(): Int {
     val _ret = __method_bind.get_render_priority.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setNextPass(nextPass: Material) {
     val _args = VariantArray.new()
     _args.append(nextPass)
-    val _ret = __method_bind.set_next_pass.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_next_pass.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRenderPriority(priority: Int) {
     val _args = VariantArray.new()
     _args.append(priority)
-    val _ret = __method_bind.set_render_priority.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_render_priority.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

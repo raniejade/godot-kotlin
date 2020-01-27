@@ -1,12 +1,13 @@
 package godot.codegen.domain
 
-enum class GDType(val gdName: String, val mappedName: String? = null, val primitive: Boolean = false) {
+enum class GDType(val gdName: String, val mappedName: String? = null, val primitive: Boolean = false, val isEnum: Boolean = false) {
   STRING("String", mappedName = "String", primitive = true),
   INT("int", mappedName = "Int", primitive = true),
   FLOAT("float", mappedName = "Float", primitive = true),
   BOOL("bool", mappedName = "Boolean", primitive = true),
   VOID("void", primitive = true),
 
+  ERROR("Error", mappedName = "GDError", isEnum = true),
   AABB("AABB"),
   BASIS("Basis"),
   COLOR("Color"),
@@ -26,9 +27,15 @@ enum class GDType(val gdName: String, val mappedName: String? = null, val primit
   TRANSFORM("Transform"),
   TRANSFORM2D("Transform2D"),
   VARIANT("Variant"),
+  VARIANT_TYPE("Variant.Type", isEnum = true),
+  VARIANT_OPERATOR("Variant.Operator", isEnum = true),
   VARIANT_ARRAY("Array", mappedName = "VariantArray"),
   VECTOR2("Vector2"),
-  VECTOR3("Vector3")
+  VECTOR3("Vector3"),
+  VECTOR3_AXIS("Vector3.Axis", isEnum = true);
+
+
+  val kotlinName = mappedName ?: gdName
 }
 
 object TypeRegistry {

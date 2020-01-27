@@ -31,7 +31,7 @@ open class _Geometry internal constructor(
     val _args = VariantArray.new()
     _args.append(extents)
     val _ret = __method_bind.build_box_planes.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asArray()
   }
 
   fun buildCapsulePlanes(
@@ -48,7 +48,7 @@ open class _Geometry internal constructor(
     _args.append(lats)
     _args.append(axis)
     val _ret = __method_bind.build_capsule_planes.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return _ret.asArray()
   }
 
   fun buildCylinderPlanes(
@@ -63,7 +63,7 @@ open class _Geometry internal constructor(
     _args.append(sides)
     _args.append(axis)
     val _ret = __method_bind.build_cylinder_planes.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asArray()
   }
 
   fun clipPolygon(points: PoolVector3Array, plane: Plane): PoolVector3Array {
@@ -71,7 +71,7 @@ open class _Geometry internal constructor(
     _args.append(points)
     _args.append(plane)
     val _ret = __method_bind.clip_polygon.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun clipPolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
@@ -79,7 +79,7 @@ open class _Geometry internal constructor(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.clip_polygons_2d.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun clipPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
@@ -89,14 +89,14 @@ open class _Geometry internal constructor(
     _args.append(polygon)
     val _ret = __method_bind.clip_polyline_with_polygon_2d.call(this.toVariant(), _args.toVariant(),
         2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun convexHull2d(points: PoolVector2Array): PoolVector2Array {
     val _args = VariantArray.new()
     _args.append(points)
     val _ret = __method_bind.convex_hull_2d.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun excludePolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
@@ -104,7 +104,7 @@ open class _Geometry internal constructor(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.exclude_polygons_2d.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun getClosestPointToSegment(
@@ -118,7 +118,7 @@ open class _Geometry internal constructor(
     _args.append(s2)
     val _ret = __method_bind.get_closest_point_to_segment.call(this.toVariant(), _args.toVariant(),
         3)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getClosestPointToSegment2d(
@@ -132,7 +132,7 @@ open class _Geometry internal constructor(
     _args.append(s2)
     val _ret = __method_bind.get_closest_point_to_segment_2d.call(this.toVariant(),
         _args.toVariant(), 3)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getClosestPointToSegmentUncapped(
@@ -146,7 +146,7 @@ open class _Geometry internal constructor(
     _args.append(s2)
     val _ret = __method_bind.get_closest_point_to_segment_uncapped.call(this.toVariant(),
         _args.toVariant(), 3)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getClosestPointToSegmentUncapped2d(
@@ -160,7 +160,7 @@ open class _Geometry internal constructor(
     _args.append(s2)
     val _ret = __method_bind.get_closest_point_to_segment_uncapped_2d.call(this.toVariant(),
         _args.toVariant(), 3)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getClosestPointsBetweenSegments(
@@ -176,7 +176,7 @@ open class _Geometry internal constructor(
     _args.append(q2)
     val _ret = __method_bind.get_closest_points_between_segments.call(this.toVariant(),
         _args.toVariant(), 4)
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun getClosestPointsBetweenSegments2d(
@@ -192,14 +192,14 @@ open class _Geometry internal constructor(
     _args.append(q2)
     val _ret = __method_bind.get_closest_points_between_segments_2d.call(this.toVariant(),
         _args.toVariant(), 4)
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun getUv84NormalBit(normal: Vector3): Int {
     val _args = VariantArray.new()
     _args.append(normal)
     val _ret = __method_bind.get_uv84_normal_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun intersectPolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
@@ -207,7 +207,7 @@ open class _Geometry internal constructor(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.intersect_polygons_2d.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun intersectPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
@@ -217,14 +217,14 @@ open class _Geometry internal constructor(
     _args.append(polygon)
     val _ret = __method_bind.intersect_polyline_with_polygon_2d.call(this.toVariant(),
         _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
     val _args = VariantArray.new()
     _args.append(polygon)
     val _ret = __method_bind.is_polygon_clockwise.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun lineIntersectsLine2d(
@@ -239,14 +239,14 @@ open class _Geometry internal constructor(
     _args.append(fromB)
     _args.append(dirB)
     val _ret = __method_bind.line_intersects_line_2d.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret
   }
 
   fun makeAtlas(sizes: PoolVector2Array): Dictionary {
     val _args = VariantArray.new()
     _args.append(sizes)
     val _ret = __method_bind.make_atlas.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun mergePolygons2d(polygonA: PoolVector2Array, polygonB: PoolVector2Array): VariantArray {
@@ -254,7 +254,7 @@ open class _Geometry internal constructor(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.merge_polygons_2d.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun offsetPolygon2d(
@@ -267,7 +267,7 @@ open class _Geometry internal constructor(
     _args.append(delta)
     _args.append(joinType)
     val _ret = __method_bind.offset_polygon_2d.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asArray()
   }
 
   fun offsetPolyline2d(
@@ -282,7 +282,7 @@ open class _Geometry internal constructor(
     _args.append(joinType)
     _args.append(endType)
     val _ret = __method_bind.offset_polyline_2d.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asArray()
   }
 
   fun pointIsInsideTriangle(
@@ -297,7 +297,7 @@ open class _Geometry internal constructor(
     _args.append(b)
     _args.append(c)
     val _ret = __method_bind.point_is_inside_triangle.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asBool()
   }
 
   fun rayIntersectsTriangle(
@@ -314,7 +314,7 @@ open class _Geometry internal constructor(
     _args.append(b)
     _args.append(c)
     val _ret = __method_bind.ray_intersects_triangle.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return _ret
   }
 
   fun segmentIntersectsCircle(
@@ -329,7 +329,7 @@ open class _Geometry internal constructor(
     _args.append(circlePosition)
     _args.append(circleRadius)
     val _ret = __method_bind.segment_intersects_circle.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun segmentIntersectsConvex(
@@ -342,7 +342,7 @@ open class _Geometry internal constructor(
     _args.append(to)
     _args.append(planes)
     val _ret = __method_bind.segment_intersects_convex.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun segmentIntersectsCylinder(
@@ -358,7 +358,7 @@ open class _Geometry internal constructor(
     _args.append(radius)
     val _ret = __method_bind.segment_intersects_cylinder.call(this.toVariant(), _args.toVariant(),
         4)
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun segmentIntersectsSegment2d(
@@ -374,7 +374,7 @@ open class _Geometry internal constructor(
     _args.append(toB)
     val _ret = __method_bind.segment_intersects_segment_2d.call(this.toVariant(), _args.toVariant(),
         4)
-    TODO()
+    return _ret
   }
 
   fun segmentIntersectsSphere(
@@ -389,7 +389,7 @@ open class _Geometry internal constructor(
     _args.append(spherePosition)
     _args.append(sphereRadius)
     val _ret = __method_bind.segment_intersects_sphere.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun segmentIntersectsTriangle(
@@ -407,7 +407,7 @@ open class _Geometry internal constructor(
     _args.append(c)
     val _ret = __method_bind.segment_intersects_triangle.call(this.toVariant(), _args.toVariant(),
         5)
-    TODO()
+    return _ret
   }
 
   fun transformPoints2d(points: PoolVector2Array, transform: Transform2D): PoolVector2Array {
@@ -415,21 +415,21 @@ open class _Geometry internal constructor(
     _args.append(points)
     _args.append(transform)
     val _ret = __method_bind.transform_points_2d.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun triangulateDelaunay2d(points: PoolVector2Array): PoolIntArray {
     val _args = VariantArray.new()
     _args.append(points)
     val _ret = __method_bind.triangulate_delaunay_2d.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun triangulatePolygon(polygon: PoolVector2Array): PoolIntArray {
     val _args = VariantArray.new()
     _args.append(polygon)
     val _ret = __method_bind.triangulate_polygon.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   enum class PolyEndType(

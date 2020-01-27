@@ -19,98 +19,90 @@ open class AudioEffectReverb internal constructor(
 ) : AudioEffect(_handle) {
   fun getDamping(): Float {
     val _ret = __method_bind.get_damping.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getDry(): Float {
     val _ret = __method_bind.get_dry.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getHpf(): Float {
     val _ret = __method_bind.get_hpf.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPredelayFeedback(): Float {
     val _ret = __method_bind.get_predelay_feedback.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPredelayMsec(): Float {
     val _ret = __method_bind.get_predelay_msec.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRoomSize(): Float {
     val _ret = __method_bind.get_room_size.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSpread(): Float {
     val _ret = __method_bind.get_spread.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getWet(): Float {
     val _ret = __method_bind.get_wet.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setDamping(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDry(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHpf(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_hpf.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_hpf.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPredelayFeedback(feedback: Float) {
     val _args = VariantArray.new()
     _args.append(feedback)
-    val _ret = __method_bind.set_predelay_feedback.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_predelay_feedback.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPredelayMsec(msec: Float) {
     val _args = VariantArray.new()
     _args.append(msec)
-    val _ret = __method_bind.set_predelay_msec.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_predelay_msec.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRoomSize(size: Float) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_room_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_room_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpread(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_spread.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_spread.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWet(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_wet.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_wet.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

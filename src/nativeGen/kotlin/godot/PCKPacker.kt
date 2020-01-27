@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,27 +20,27 @@ import kotlinx.cinterop.reinterpret
 open class PCKPacker internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun addFile(pckPath: String, sourcePath: String): Error {
+  fun addFile(pckPath: String, sourcePath: String): GDError {
     val _args = VariantArray.new()
     _args.append(pckPath)
     _args.append(sourcePath)
     val _ret = __method_bind.add_file.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun flush(verbose: Boolean): Error {
+  fun flush(verbose: Boolean): GDError {
     val _args = VariantArray.new()
     _args.append(verbose)
     val _ret = __method_bind.flush.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun pckStart(pckName: String, alignment: Int): Error {
+  fun pckStart(pckName: String, alignment: Int): GDError {
     val _args = VariantArray.new()
     _args.append(pckName)
     _args.append(alignment)
     val _ret = __method_bind.pck_start.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class VisualShaderNodeScalarDerivativeFunc internal constructor(
 ) : VisualShaderNode(_handle) {
   fun getFunction(): Function {
     val _ret = __method_bind.get_function.call(this.toVariant())
-    TODO()
+    return VisualShaderNodeScalarDerivativeFunc.Function.from(_ret.asInt())
   }
 
   fun setFunction(func: Int) {
     val _args = VariantArray.new()
     _args.append(func)
-    val _ret = __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Function(

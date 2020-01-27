@@ -20,35 +20,35 @@ open class Physics2DShapeQueryResult internal constructor(
 ) : Reference(_handle) {
   fun getResultCount(): Int {
     val _ret = __method_bind.get_result_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getResultObject(idx: Int): Object {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_result_object.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getResultObjectId(idx: Int): Int {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_result_object_id.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getResultObjectShape(idx: Int): Int {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_result_object_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getResultRid(idx: Int): RID {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_result_rid.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asRID()
   }
 
   companion object {

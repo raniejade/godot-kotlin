@@ -19,14 +19,13 @@ open class PinJoint2D internal constructor(
 ) : Joint2D(_handle) {
   fun getSoftness(): Float {
     val _ret = __method_bind.get_softness.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setSoftness(softness: Float) {
     val _args = VariantArray.new()
     _args.append(softness)
-    val _ret = __method_bind.set_softness.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_softness.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -19,62 +19,57 @@ open class AudioEffectPhaser internal constructor(
 ) : AudioEffect(_handle) {
   fun getDepth(): Float {
     val _ret = __method_bind.get_depth.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFeedback(): Float {
     val _ret = __method_bind.get_feedback.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRangeMaxHz(): Float {
     val _ret = __method_bind.get_range_max_hz.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRangeMinHz(): Float {
     val _ret = __method_bind.get_range_min_hz.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRateHz(): Float {
     val _ret = __method_bind.get_rate_hz.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setDepth(depth: Float) {
     val _args = VariantArray.new()
     _args.append(depth)
-    val _ret = __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFeedback(fbk: Float) {
     val _args = VariantArray.new()
     _args.append(fbk)
-    val _ret = __method_bind.set_feedback.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_feedback.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRangeMaxHz(hz: Float) {
     val _args = VariantArray.new()
     _args.append(hz)
-    val _ret = __method_bind.set_range_max_hz.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_range_max_hz.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRangeMinHz(hz: Float) {
     val _args = VariantArray.new()
     _args.append(hz)
-    val _ret = __method_bind.set_range_min_hz.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_range_min_hz.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRateHz(hz: Float) {
     val _args = VariantArray.new()
     _args.append(hz)
-    val _ret = __method_bind.set_rate_hz.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rate_hz.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

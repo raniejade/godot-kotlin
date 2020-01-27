@@ -20,31 +20,30 @@ open class ShortCut internal constructor(
 ) : Resource(_handle) {
   fun getAsText(): String {
     val _ret = __method_bind.get_as_text.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getShortcut(): InputEvent {
     val _ret = __method_bind.get_shortcut.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::InputEvent)!!
   }
 
   fun isShortcut(event: InputEvent): Boolean {
     val _args = VariantArray.new()
     _args.append(event)
     val _ret = __method_bind.is_shortcut.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isValid(): Boolean {
     val _ret = __method_bind.is_valid.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setShortcut(event: InputEvent) {
     val _args = VariantArray.new()
     _args.append(event)
-    val _ret = __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

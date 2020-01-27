@@ -20,26 +20,24 @@ open class VisualScriptYield internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getWaitTime(): Float {
     val _ret = __method_bind.get_wait_time.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getYieldMode(): YieldMode {
     val _ret = __method_bind.get_yield_mode.call(this.toVariant())
-    TODO()
+    return VisualScriptYield.YieldMode.from(_ret.asInt())
   }
 
   fun setWaitTime(sec: Float) {
     val _args = VariantArray.new()
     _args.append(sec)
-    val _ret = __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setYieldMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_yield_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_yield_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class YieldMode(

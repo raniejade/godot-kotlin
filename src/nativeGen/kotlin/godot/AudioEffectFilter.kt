@@ -20,50 +20,46 @@ open class AudioEffectFilter internal constructor(
 ) : AudioEffect(_handle) {
   fun getCutoff(): Float {
     val _ret = __method_bind.get_cutoff.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getDb(): FilterDB {
     val _ret = __method_bind.get_db.call(this.toVariant())
-    TODO()
+    return AudioEffectFilter.FilterDB.from(_ret.asInt())
   }
 
   fun getGain(): Float {
     val _ret = __method_bind.get_gain.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getResonance(): Float {
     val _ret = __method_bind.get_resonance.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setCutoff(freq: Float) {
     val _args = VariantArray.new()
     _args.append(freq)
-    val _ret = __method_bind.set_cutoff.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cutoff.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDb(amount: Int) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_db.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGain(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setResonance(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_resonance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_resonance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class FilterDB(

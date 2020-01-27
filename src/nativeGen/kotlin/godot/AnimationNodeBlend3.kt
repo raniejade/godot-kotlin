@@ -19,14 +19,13 @@ open class AnimationNodeBlend3 internal constructor(
 ) : AnimationNode(_handle) {
   fun isUsingSync(): Boolean {
     val _ret = __method_bind.is_using_sync.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setUseSync(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_use_sync.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_sync.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

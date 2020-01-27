@@ -21,64 +21,58 @@ open class NoiseTexture internal constructor(
 ) : Texture(_handle) {
   fun getBumpStrength(): Float {
     val _ret = __method_bind.get_bump_strength.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise(): OpenSimplexNoise {
     val _ret = __method_bind.get_noise.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::OpenSimplexNoise)!!
   }
 
   fun getSeamless(): Boolean {
     val _ret = __method_bind.get_seamless.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isNormalmap(): Boolean {
     val _ret = __method_bind.is_normalmap.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAsNormalmap(asNormalmap: Boolean) {
     val _args = VariantArray.new()
     _args.append(asNormalmap)
-    val _ret = __method_bind.set_as_normalmap.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_as_normalmap.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBumpStrength(bumpStrength: Float) {
     val _args = VariantArray.new()
     _args.append(bumpStrength)
-    val _ret = __method_bind.set_bump_strength.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bump_strength.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHeight(height: Int) {
     val _args = VariantArray.new()
     _args.append(height)
-    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNoise(noise: OpenSimplexNoise) {
     val _args = VariantArray.new()
     _args.append(noise)
-    val _ret = __method_bind.set_noise.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_noise.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSeamless(seamless: Boolean) {
     val _args = VariantArray.new()
     _args.append(seamless)
-    val _ret = __method_bind.set_seamless.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_seamless.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWidth(width: Int) {
     val _args = VariantArray.new()
     _args.append(width)
-    val _ret = __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

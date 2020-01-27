@@ -20,74 +20,68 @@ open class ParallaxBackground internal constructor(
 ) : CanvasLayer(_handle) {
   fun getLimitBegin(): Vector2 {
     val _ret = __method_bind.get_limit_begin.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getLimitEnd(): Vector2 {
     val _ret = __method_bind.get_limit_end.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getScrollBaseOffset(): Vector2 {
     val _ret = __method_bind.get_scroll_base_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getScrollBaseScale(): Vector2 {
     val _ret = __method_bind.get_scroll_base_scale.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getScrollOffset(): Vector2 {
     val _ret = __method_bind.get_scroll_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun isIgnoreCameraZoom(): Boolean {
     val _ret = __method_bind.is_ignore_camera_zoom.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setIgnoreCameraZoom(ignore: Boolean) {
     val _args = VariantArray.new()
     _args.append(ignore)
-    val _ret = __method_bind.set_ignore_camera_zoom.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_ignore_camera_zoom.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLimitBegin(ofs: Vector2) {
     val _args = VariantArray.new()
     _args.append(ofs)
-    val _ret = __method_bind.set_limit_begin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_limit_begin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLimitEnd(ofs: Vector2) {
     val _args = VariantArray.new()
     _args.append(ofs)
-    val _ret = __method_bind.set_limit_end.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_limit_end.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScrollBaseOffset(ofs: Vector2) {
     val _args = VariantArray.new()
     _args.append(ofs)
-    val _ret = __method_bind.set_scroll_base_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scroll_base_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScrollBaseScale(scale: Vector2) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_scroll_base_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scroll_base_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScrollOffset(ofs: Vector2) {
     val _args = VariantArray.new()
     _args.append(ofs)
-    val _ret = __method_bind.set_scroll_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scroll_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

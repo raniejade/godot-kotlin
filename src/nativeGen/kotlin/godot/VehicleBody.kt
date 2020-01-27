@@ -19,38 +19,35 @@ open class VehicleBody internal constructor(
 ) : RigidBody(_handle) {
   fun getBrake(): Float {
     val _ret = __method_bind.get_brake.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getEngineForce(): Float {
     val _ret = __method_bind.get_engine_force.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSteering(): Float {
     val _ret = __method_bind.get_steering.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setBrake(brake: Float) {
     val _args = VariantArray.new()
     _args.append(brake)
-    val _ret = __method_bind.set_brake.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_brake.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEngineForce(engineForce: Float) {
     val _args = VariantArray.new()
     _args.append(engineForce)
-    val _ret = __method_bind.set_engine_force.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_engine_force.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSteering(steering: Float) {
     val _args = VariantArray.new()
     _args.append(steering)
-    val _ret = __method_bind.set_steering.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_steering.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

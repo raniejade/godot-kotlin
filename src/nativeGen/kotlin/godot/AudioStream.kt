@@ -19,7 +19,7 @@ open class AudioStream internal constructor(
 ) : Resource(_handle) {
   fun getLength(): Float {
     val _ret = __method_bind.get_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   companion object {

@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Dictionary
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -23,18 +24,17 @@ open class WebRTCPeerConnection internal constructor(
     media: String,
     index: Int,
     name: String
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(media)
     _args.append(index)
     _args.append(name)
     val _ret = __method_bind.add_ice_candidate.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun close() {
-    val _ret = __method_bind.close.call(this.toVariant())
-    TODO()
+    __method_bind.close.call(this.toVariant())
   }
 
   fun createDataChannel(label: String, options: Dictionary): WebRTCDataChannel {
@@ -42,45 +42,45 @@ open class WebRTCPeerConnection internal constructor(
     _args.append(label)
     _args.append(options)
     val _ret = __method_bind.create_data_channel.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::WebRTCDataChannel)!!
   }
 
-  fun createOffer(): Error {
+  fun createOffer(): GDError {
     val _ret = __method_bind.create_offer.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getConnectionState(): ConnectionState {
     val _ret = __method_bind.get_connection_state.call(this.toVariant())
-    TODO()
+    return WebRTCPeerConnection.ConnectionState.from(_ret.asInt())
   }
 
-  fun initialize(configuration: Dictionary): Error {
+  fun initialize(configuration: Dictionary): GDError {
     val _args = VariantArray.new()
     _args.append(configuration)
     val _ret = __method_bind.initialize.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun poll(): Error {
+  fun poll(): GDError {
     val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun setLocalDescription(type: String, sdp: String): Error {
+  fun setLocalDescription(type: String, sdp: String): GDError {
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(sdp)
     val _ret = __method_bind.set_local_description.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun setRemoteDescription(type: String, sdp: String): Error {
+  fun setRemoteDescription(type: String, sdp: String): GDError {
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(sdp)
     val _ret = __method_bind.set_remote_description.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   enum class ConnectionState(

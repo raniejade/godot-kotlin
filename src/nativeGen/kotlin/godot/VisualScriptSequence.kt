@@ -19,14 +19,13 @@ open class VisualScriptSequence internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getSteps(): Int {
     val _ret = __method_bind.get_steps.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setSteps(steps: Int) {
     val _args = VariantArray.new()
     _args.append(steps)
-    val _ret = __method_bind.set_steps.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_steps.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

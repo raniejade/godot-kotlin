@@ -18,14 +18,13 @@ open class Path internal constructor(
 ) : Spatial(_handle) {
   fun getCurve(): Curve3D {
     val _ret = __method_bind.get_curve.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Curve3D)!!
   }
 
   fun setCurve(curve: Curve3D) {
     val _args = VariantArray.new()
     _args.append(curve)
-    val _ret = __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -21,45 +21,41 @@ open class InputEventMouseButton internal constructor(
 ) : InputEventMouse(_handle) {
   fun getButtonIndex(): Int {
     val _ret = __method_bind.get_button_index.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getFactor(): Float {
     val _ret = __method_bind.get_factor.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isDoubleclick(): Boolean {
     val _ret = __method_bind.is_doubleclick.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setButtonIndex(buttonIndex: Int) {
     val _args = VariantArray.new()
     _args.append(buttonIndex)
-    val _ret = __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDoubleclick(doubleclick: Boolean) {
     val _args = VariantArray.new()
     _args.append(doubleclick)
-    val _ret = __method_bind.set_doubleclick.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_doubleclick.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFactor(factor: Float) {
     val _args = VariantArray.new()
     _args.append(factor)
-    val _ret = __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _args = VariantArray.new()
     _args.append(pressed)
-    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

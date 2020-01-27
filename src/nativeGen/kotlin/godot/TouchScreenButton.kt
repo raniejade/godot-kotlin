@@ -21,115 +21,106 @@ open class TouchScreenButton internal constructor(
 ) : Node2D(_handle) {
   fun getAction(): String {
     val _ret = __method_bind.get_action.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getBitmask(): BitMap {
     val _ret = __method_bind.get_bitmask.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::BitMap)!!
   }
 
   fun getShape(): Shape2D {
     val _ret = __method_bind.get_shape.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Shape2D)!!
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.get_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getTexturePressed(): Texture {
     val _ret = __method_bind.get_texture_pressed.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getVisibilityMode(): VisibilityMode {
     val _ret = __method_bind.get_visibility_mode.call(this.toVariant())
-    TODO()
+    return TouchScreenButton.VisibilityMode.from(_ret.asInt())
   }
 
   fun isPassbyPressEnabled(): Boolean {
     val _ret = __method_bind.is_passby_press_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPressed(): Boolean {
     val _ret = __method_bind.is_pressed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isShapeCentered(): Boolean {
     val _ret = __method_bind.is_shape_centered.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isShapeVisible(): Boolean {
     val _ret = __method_bind.is_shape_visible.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAction(action: String) {
     val _args = VariantArray.new()
     _args.append(action)
-    val _ret = __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBitmask(bitmask: BitMap) {
     val _args = VariantArray.new()
     _args.append(bitmask)
-    val _ret = __method_bind.set_bitmask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bitmask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPassbyPress(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_passby_press.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_passby_press.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShape(shape: Shape2D) {
     val _args = VariantArray.new()
     _args.append(shape)
-    val _ret = __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShapeCentered(bool: Boolean) {
     val _args = VariantArray.new()
     _args.append(bool)
-    val _ret = __method_bind.set_shape_centered.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shape_centered.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShapeVisible(bool: Boolean) {
     val _args = VariantArray.new()
     _args.append(bool)
-    val _ret = __method_bind.set_shape_visible.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shape_visible.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTexture(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTexturePressed(texturePressed: Texture) {
     val _args = VariantArray.new()
     _args.append(texturePressed)
-    val _ret = __method_bind.set_texture_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture_pressed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVisibilityMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_visibility_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_visibility_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class VisibilityMode(

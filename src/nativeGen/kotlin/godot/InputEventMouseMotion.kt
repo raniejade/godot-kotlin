@@ -19,26 +19,24 @@ open class InputEventMouseMotion internal constructor(
 ) : InputEventMouse(_handle) {
   fun getRelative(): Vector2 {
     val _ret = __method_bind.get_relative.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSpeed(): Vector2 {
     val _ret = __method_bind.get_speed.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setRelative(relative: Vector2) {
     val _args = VariantArray.new()
     _args.append(relative)
-    val _ret = __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpeed(speed: Vector2) {
     val _args = VariantArray.new()
     _args.append(speed)
-    val _ret = __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

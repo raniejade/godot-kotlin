@@ -24,8 +24,7 @@ open class AnimationNode internal constructor(
   fun addInput(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.add_input.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_input.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun blendAnimation(
@@ -41,8 +40,7 @@ open class AnimationNode internal constructor(
     _args.append(delta)
     _args.append(seeked)
     _args.append(blend)
-    val _ret = __method_bind.blend_animation.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    __method_bind.blend_animation.call(this.toVariant(), _args.toVariant(), 5)
   }
 
   fun blendInput(
@@ -61,7 +59,7 @@ open class AnimationNode internal constructor(
     _args.append(filter)
     _args.append(optimize)
     val _ret = __method_bind.blend_input.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun blendNode(
@@ -82,68 +80,64 @@ open class AnimationNode internal constructor(
     _args.append(filter)
     _args.append(optimize)
     val _ret = __method_bind.blend_node.call(this.toVariant(), _args.toVariant(), 7)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getInputCount(): Int {
     val _ret = __method_bind.get_input_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getInputName(input: Int): String {
     val _args = VariantArray.new()
     _args.append(input)
     val _ret = __method_bind.get_input_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getParameter(name: String): Variant {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.get_parameter.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret
   }
 
   fun isFilterEnabled(): Boolean {
     val _ret = __method_bind.is_filter_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPathFiltered(path: NodePath): Boolean {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.is_path_filtered.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun removeInput(index: Int) {
     val _args = VariantArray.new()
     _args.append(index)
-    val _ret = __method_bind.remove_input.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_input.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFilterEnabled(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_filter_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_filter_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFilterPath(path: NodePath, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(enable)
-    val _ret = __method_bind.set_filter_path.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_filter_path.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setParameter(name: String, value: Variant) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(value)
-    val _ret = __method_bind.set_parameter.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_parameter.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   enum class FilterAction(

@@ -20,26 +20,24 @@ open class VisualScriptConstructor internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getConstructor(): Dictionary {
     val _ret = __method_bind.get_constructor.call(this.toVariant())
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun getConstructorType(): Variant.Type {
     val _ret = __method_bind.get_constructor_type.call(this.toVariant())
-    TODO()
+    return Variant.Type.from(_ret.asInt())
   }
 
   fun setConstructor(constructor: Dictionary) {
     val _args = VariantArray.new()
     _args.append(constructor)
-    val _ret = __method_bind.set_constructor.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_constructor.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setConstructorType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_constructor_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_constructor_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

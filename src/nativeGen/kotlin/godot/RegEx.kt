@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -20,35 +21,34 @@ open class RegEx internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {
-    val _ret = __method_bind.clear.call(this.toVariant())
-    TODO()
+    __method_bind.clear.call(this.toVariant())
   }
 
-  fun compile(pattern: String): Error {
+  fun compile(pattern: String): GDError {
     val _args = VariantArray.new()
     _args.append(pattern)
     val _ret = __method_bind.compile.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getGroupCount(): Int {
     val _ret = __method_bind.get_group_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNames(): VariantArray {
     val _ret = __method_bind.get_names.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getPattern(): String {
     val _ret = __method_bind.get_pattern.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isValid(): Boolean {
     val _ret = __method_bind.is_valid.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun search(
@@ -61,7 +61,7 @@ open class RegEx internal constructor(
     _args.append(offset)
     _args.append(end)
     val _ret = __method_bind.search.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asObject(::RegExMatch)!!
   }
 
   fun searchAll(
@@ -74,7 +74,7 @@ open class RegEx internal constructor(
     _args.append(offset)
     _args.append(end)
     val _ret = __method_bind.search_all.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asArray()
   }
 
   fun sub(
@@ -91,7 +91,7 @@ open class RegEx internal constructor(
     _args.append(offset)
     _args.append(end)
     val _ret = __method_bind.sub.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return _ret.asString()
   }
 
   companion object {

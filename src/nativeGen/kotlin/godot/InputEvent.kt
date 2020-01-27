@@ -26,74 +26,73 @@ open class InputEvent internal constructor(
     val _args = VariantArray.new()
     _args.append(withEvent)
     val _ret = __method_bind.accumulate.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun asText(): String {
     val _ret = __method_bind.as_text.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getActionStrength(action: String): Float {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.get_action_strength.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getDevice(): Int {
     val _ret = __method_bind.get_device.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isAction(action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.is_action.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.is_action_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isActionReleased(action: String): Boolean {
     val _args = VariantArray.new()
     _args.append(action)
     val _ret = __method_bind.is_action_released.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isActionType(): Boolean {
     val _ret = __method_bind.is_action_type.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isEcho(): Boolean {
     val _ret = __method_bind.is_echo.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPressed(): Boolean {
     val _ret = __method_bind.is_pressed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setDevice(device: Int) {
     val _args = VariantArray.new()
     _args.append(device)
-    val _ret = __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun shortcutMatch(event: InputEvent): Boolean {
     val _args = VariantArray.new()
     _args.append(event)
     val _ret = __method_bind.shortcut_match.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun xformedBy(xform: Transform2D, localOfs: Vector2): InputEvent {
@@ -101,7 +100,7 @@ open class InputEvent internal constructor(
     _args.append(xform)
     _args.append(localOfs)
     val _ret = __method_bind.xformed_by.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::InputEvent)!!
   }
 
   companion object {

@@ -21,38 +21,35 @@ open class AudioStreamOGGVorbis internal constructor(
 ) : AudioStream(_handle) {
   fun getData(): PoolByteArray {
     val _ret = __method_bind.get_data.call(this.toVariant())
-    TODO()
+    return _ret.asPoolByteArray()
   }
 
   fun getLoopOffset(): Float {
     val _ret = __method_bind.get_loop_offset.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun hasLoop(): Boolean {
     val _ret = __method_bind.has_loop.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setData(data: PoolByteArray) {
     val _args = VariantArray.new()
     _args.append(data)
-    val _ret = __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLoop(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLoopOffset(seconds: Float) {
     val _args = VariantArray.new()
     _args.append(seconds)
-    val _ret = __method_bind.set_loop_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_loop_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

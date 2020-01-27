@@ -22,204 +22,187 @@ open class Particles2D internal constructor(
 ) : Node2D(_handle) {
   fun captureRect(): Rect2 {
     val _ret = __method_bind.capture_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getAmount(): Int {
     val _ret = __method_bind.get_amount.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDrawOrder(): DrawOrder {
     val _ret = __method_bind.get_draw_order.call(this.toVariant())
-    TODO()
+    return Particles2D.DrawOrder.from(_ret.asInt())
   }
 
   fun getExplosivenessRatio(): Float {
     val _ret = __method_bind.get_explosiveness_ratio.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFixedFps(): Int {
     val _ret = __method_bind.get_fixed_fps.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getFractionalDelta(): Boolean {
     val _ret = __method_bind.get_fractional_delta.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getLifetime(): Float {
     val _ret = __method_bind.get_lifetime.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNormalMap(): Texture {
     val _ret = __method_bind.get_normal_map.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getOneShot(): Boolean {
     val _ret = __method_bind.get_one_shot.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getPreProcessTime(): Float {
     val _ret = __method_bind.get_pre_process_time.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getProcessMaterial(): Material {
     val _ret = __method_bind.get_process_material.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun getRandomnessRatio(): Float {
     val _ret = __method_bind.get_randomness_ratio.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSpeedScale(): Float {
     val _ret = __method_bind.get_speed_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTexture(): Texture {
     val _ret = __method_bind.get_texture.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getUseLocalCoordinates(): Boolean {
     val _ret = __method_bind.get_use_local_coordinates.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getVisibilityRect(): Rect2 {
     val _ret = __method_bind.get_visibility_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun isEmitting(): Boolean {
     val _ret = __method_bind.is_emitting.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun restart() {
-    val _ret = __method_bind.restart.call(this.toVariant())
-    TODO()
+    __method_bind.restart.call(this.toVariant())
   }
 
   fun setAmount(amount: Int) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_amount.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_amount.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDrawOrder(order: Int) {
     val _args = VariantArray.new()
     _args.append(order)
-    val _ret = __method_bind.set_draw_order.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_draw_order.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEmitting(emitting: Boolean) {
     val _args = VariantArray.new()
     _args.append(emitting)
-    val _ret = __method_bind.set_emitting.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_emitting.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExplosivenessRatio(ratio: Float) {
     val _args = VariantArray.new()
     _args.append(ratio)
-    val _ret = __method_bind.set_explosiveness_ratio.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_explosiveness_ratio.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFixedFps(fps: Int) {
     val _args = VariantArray.new()
     _args.append(fps)
-    val _ret = __method_bind.set_fixed_fps.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_fixed_fps.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFractionalDelta(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_fractional_delta.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_fractional_delta.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLifetime(secs: Float) {
     val _args = VariantArray.new()
     _args.append(secs)
-    val _ret = __method_bind.set_lifetime.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lifetime.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNormalMap(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOneShot(secs: Boolean) {
     val _args = VariantArray.new()
     _args.append(secs)
-    val _ret = __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPreProcessTime(secs: Float) {
     val _args = VariantArray.new()
     _args.append(secs)
-    val _ret = __method_bind.set_pre_process_time.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pre_process_time.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setProcessMaterial(material: Material) {
     val _args = VariantArray.new()
     _args.append(material)
-    val _ret = __method_bind.set_process_material.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_process_material.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRandomnessRatio(ratio: Float) {
     val _args = VariantArray.new()
     _args.append(ratio)
-    val _ret = __method_bind.set_randomness_ratio.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_randomness_ratio.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSpeedScale(scale: Float) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTexture(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_use_local_coordinates.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_local_coordinates.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVisibilityRect(visibilityRect: Rect2) {
     val _args = VariantArray.new()
     _args.append(visibilityRect)
-    val _ret = __method_bind.set_visibility_rect.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_visibility_rect.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class DrawOrder(

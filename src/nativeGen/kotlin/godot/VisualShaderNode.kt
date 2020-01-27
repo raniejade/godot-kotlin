@@ -22,29 +22,25 @@ open class VisualShaderNode internal constructor(
     _args.append(port)
     val _ret = __method_bind.get_input_port_default_value.call(this.toVariant(), _args.toVariant(),
         1)
-    TODO()
+    return _ret
   }
 
   fun getOutputPortForPreview(): Int {
     val _ret = __method_bind.get_output_port_for_preview.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setInputPortDefaultValue(port: Int, value: Variant) {
     val _args = VariantArray.new()
     _args.append(port)
     _args.append(value)
-    val _ret = __method_bind.set_input_port_default_value.call(this.toVariant(), _args.toVariant(),
-        2)
-    TODO()
+    __method_bind.set_input_port_default_value.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setOutputPortForPreview(port: Int) {
     val _args = VariantArray.new()
     _args.append(port)
-    val _ret = __method_bind.set_output_port_for_preview.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_output_port_for_preview.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

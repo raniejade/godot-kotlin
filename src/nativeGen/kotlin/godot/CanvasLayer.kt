@@ -24,115 +24,106 @@ open class CanvasLayer internal constructor(
 ) : Node(_handle) {
   fun getCanvas(): RID {
     val _ret = __method_bind.get_canvas.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun getCustomViewport(): Node {
     val _ret = __method_bind.get_custom_viewport.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Node)!!
   }
 
   fun getFollowViewportScale(): Float {
     val _ret = __method_bind.get_follow_viewport_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getLayer(): Int {
     val _ret = __method_bind.get_layer.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getOffset(): Vector2 {
     val _ret = __method_bind.get_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getRotation(): Float {
     val _ret = __method_bind.get_rotation.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRotationDegrees(): Float {
     val _ret = __method_bind.get_rotation_degrees.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getScale(): Vector2 {
     val _ret = __method_bind.get_scale.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getTransform(): Transform2D {
     val _ret = __method_bind.get_transform.call(this.toVariant())
-    TODO()
+    return _ret.asTransform2D()
   }
 
   fun isFollowingViewport(): Boolean {
     val _ret = __method_bind.is_following_viewport.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setCustomViewport(viewport: Node) {
     val _args = VariantArray.new()
     _args.append(viewport)
-    val _ret = __method_bind.set_custom_viewport.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_custom_viewport.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFollowViewport(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_follow_viewport.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_follow_viewport.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFollowViewportScale(scale: Float) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_follow_viewport_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_follow_viewport_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLayer(layer: Int) {
     val _args = VariantArray.new()
     _args.append(layer)
-    val _ret = __method_bind.set_layer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_layer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRotation(radians: Float) {
     val _args = VariantArray.new()
     _args.append(radians)
-    val _ret = __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRotationDegrees(degrees: Float) {
     val _args = VariantArray.new()
     _args.append(degrees)
-    val _ret = __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScale(scale: Vector2) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTransform(transform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(transform)
-    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

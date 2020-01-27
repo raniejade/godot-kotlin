@@ -21,74 +21,68 @@ open class CSGTorus internal constructor(
 ) : CSGPrimitive(_handle) {
   fun getInnerRadius(): Float {
     val _ret = __method_bind.get_inner_radius.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMaterial(): Material {
     val _ret = __method_bind.get_material.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun getOuterRadius(): Float {
     val _ret = __method_bind.get_outer_radius.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRingSides(): Int {
     val _ret = __method_bind.get_ring_sides.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSides(): Int {
     val _ret = __method_bind.get_sides.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSmoothFaces(): Boolean {
     val _ret = __method_bind.get_smooth_faces.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setInnerRadius(radius: Float) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_inner_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_inner_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMaterial(material: Material) {
     val _args = VariantArray.new()
     _args.append(material)
-    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOuterRadius(radius: Float) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_outer_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_outer_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRingSides(sides: Int) {
     val _args = VariantArray.new()
     _args.append(sides)
-    val _ret = __method_bind.set_ring_sides.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_ring_sides.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSides(sides: Int) {
     val _args = VariantArray.new()
     _args.append(sides)
-    val _ret = __method_bind.set_sides.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_sides.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
     val _args = VariantArray.new()
     _args.append(smoothFaces)
-    val _ret = __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

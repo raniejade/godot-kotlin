@@ -30,7 +30,7 @@ open class Shape2D internal constructor(
     _args.append(withShape)
     _args.append(shapeXform)
     val _ret = __method_bind.collide.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asBool()
   }
 
   fun collideAndGetContacts(
@@ -43,7 +43,7 @@ open class Shape2D internal constructor(
     _args.append(withShape)
     _args.append(shapeXform)
     val _ret = __method_bind.collide_and_get_contacts.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asArray()
   }
 
   fun collideWithMotion(
@@ -60,7 +60,7 @@ open class Shape2D internal constructor(
     _args.append(shapeXform)
     _args.append(shapeMotion)
     val _ret = __method_bind.collide_with_motion.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return _ret.asBool()
   }
 
   fun collideWithMotionAndGetContacts(
@@ -78,19 +78,18 @@ open class Shape2D internal constructor(
     _args.append(shapeMotion)
     val _ret = __method_bind.collide_with_motion_and_get_contacts.call(this.toVariant(),
         _args.toVariant(), 5)
-    TODO()
+    return _ret.asArray()
   }
 
   fun getCustomSolverBias(): Float {
     val _ret = __method_bind.get_custom_solver_bias.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setCustomSolverBias(bias: Float) {
     val _args = VariantArray.new()
     _args.append(bias)
-    val _ret = __method_bind.set_custom_solver_bias.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_custom_solver_bias.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

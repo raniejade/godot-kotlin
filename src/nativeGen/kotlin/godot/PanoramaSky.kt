@@ -18,14 +18,13 @@ open class PanoramaSky internal constructor(
 ) : Sky(_handle) {
   fun getPanorama(): Texture {
     val _ret = __method_bind.get_panorama.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun setPanorama(texture: Texture) {
     val _args = VariantArray.new()
     _args.append(texture)
-    val _ret = __method_bind.set_panorama.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_panorama.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

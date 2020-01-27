@@ -21,114 +21,106 @@ open class CSGShape internal constructor(
 ) : GeometryInstance(_handle) {
   fun getCollisionLayer(): Int {
     val _ret = __method_bind.get_collision_layer.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCollisionMask(): Int {
     val _ret = __method_bind.get_collision_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getMeshes(): VariantArray {
     val _ret = __method_bind.get_meshes.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getOperation(): Operation {
     val _ret = __method_bind.get_operation.call(this.toVariant())
-    TODO()
+    return CSGShape.Operation.from(_ret.asInt())
   }
 
   fun getSnap(): Float {
     val _ret = __method_bind.get_snap.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isCalculatingTangents(): Boolean {
     val _ret = __method_bind.is_calculating_tangents.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRootShape(): Boolean {
     val _ret = __method_bind.is_root_shape.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isUsingCollision(): Boolean {
     val _ret = __method_bind.is_using_collision.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setCalculateTangents(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_calculate_tangents.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_calculate_tangents.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionLayer(layer: Int) {
     val _args = VariantArray.new()
     _args.append(layer)
-    val _ret = __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setCollisionMask(mask: Int) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    val _ret = __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setOperation(operation: Int) {
     val _args = VariantArray.new()
     _args.append(operation)
-    val _ret = __method_bind.set_operation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_operation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSnap(snap: Float) {
     val _args = VariantArray.new()
     _args.append(snap)
-    val _ret = __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUseCollision(operation: Boolean) {
     val _args = VariantArray.new()
     _args.append(operation)
-    val _ret = __method_bind.set_use_collision.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_collision.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Operation(

@@ -20,50 +20,46 @@ open class AtlasTexture internal constructor(
 ) : Texture(_handle) {
   fun getAtlas(): Texture {
     val _ret = __method_bind.get_atlas.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun getMargin(): Rect2 {
     val _ret = __method_bind.get_margin.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getRegion(): Rect2 {
     val _ret = __method_bind.get_region.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun hasFilterClip(): Boolean {
     val _ret = __method_bind.has_filter_clip.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAtlas(atlas: Texture) {
     val _args = VariantArray.new()
     _args.append(atlas)
-    val _ret = __method_bind.set_atlas.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_atlas.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFilterClip(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMargin(margin: Rect2) {
     val _args = VariantArray.new()
     _args.append(margin)
-    val _ret = __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRegion(region: Rect2) {
     val _args = VariantArray.new()
     _args.append(region)
-    val _ret = __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

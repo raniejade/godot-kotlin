@@ -23,148 +23,135 @@ open class ReflectionProbe internal constructor(
 ) : VisualInstance(_handle) {
   fun areShadowsEnabled(): Boolean {
     val _ret = __method_bind.are_shadows_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCullMask(): Int {
     val _ret = __method_bind.get_cull_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getExtents(): Vector3 {
     val _ret = __method_bind.get_extents.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getIntensity(): Float {
     val _ret = __method_bind.get_intensity.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getInteriorAmbient(): Color {
     val _ret = __method_bind.get_interior_ambient.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getInteriorAmbientEnergy(): Float {
     val _ret = __method_bind.get_interior_ambient_energy.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getInteriorAmbientProbeContribution(): Float {
     val _ret = __method_bind.get_interior_ambient_probe_contribution.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMaxDistance(): Float {
     val _ret = __method_bind.get_max_distance.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getOriginOffset(): Vector3 {
     val _ret = __method_bind.get_origin_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getUpdateMode(): UpdateMode {
     val _ret = __method_bind.get_update_mode.call(this.toVariant())
-    TODO()
+    return ReflectionProbe.UpdateMode.from(_ret.asInt())
   }
 
   fun isBoxProjectionEnabled(): Boolean {
     val _ret = __method_bind.is_box_projection_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isSetAsInterior(): Boolean {
     val _ret = __method_bind.is_set_as_interior.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAsInterior(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_as_interior.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_as_interior.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCullMask(layers: Int) {
     val _args = VariantArray.new()
     _args.append(layers)
-    val _ret = __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEnableBoxProjection(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_enable_box_projection.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_enable_box_projection.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEnableShadows(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_enable_shadows.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_enable_shadows.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExtents(extents: Vector3) {
     val _args = VariantArray.new()
     _args.append(extents)
-    val _ret = __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIntensity(intensity: Float) {
     val _args = VariantArray.new()
     _args.append(intensity)
-    val _ret = __method_bind.set_intensity.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_intensity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setInteriorAmbient(ambient: Color) {
     val _args = VariantArray.new()
     _args.append(ambient)
-    val _ret = __method_bind.set_interior_ambient.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_interior_ambient.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setInteriorAmbientEnergy(ambientEnergy: Float) {
     val _args = VariantArray.new()
     _args.append(ambientEnergy)
-    val _ret = __method_bind.set_interior_ambient_energy.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_interior_ambient_energy.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setInteriorAmbientProbeContribution(ambientProbeContribution: Float) {
     val _args = VariantArray.new()
     _args.append(ambientProbeContribution)
-    val _ret = __method_bind.set_interior_ambient_probe_contribution.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_interior_ambient_probe_contribution.call(this.toVariant(), _args.toVariant(),
+        1)
   }
 
   fun setMaxDistance(maxDistance: Float) {
     val _args = VariantArray.new()
     _args.append(maxDistance)
-    val _ret = __method_bind.set_max_distance.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_max_distance.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOriginOffset(originOffset: Vector3) {
     val _args = VariantArray.new()
     _args.append(originOffset)
-    val _ret = __method_bind.set_origin_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_origin_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setUpdateMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_update_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_update_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class UpdateMode(

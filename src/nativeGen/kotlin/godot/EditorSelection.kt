@@ -19,30 +19,27 @@ open class EditorSelection internal constructor(
   fun addNode(node: Node) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clear() {
-    val _ret = __method_bind.clear.call(this.toVariant())
-    TODO()
+    __method_bind.clear.call(this.toVariant())
   }
 
   fun getSelectedNodes(): VariantArray {
     val _ret = __method_bind.get_selected_nodes.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun getTransformableSelectedNodes(): VariantArray {
     val _ret = __method_bind.get_transformable_selected_nodes.call(this.toVariant())
-    TODO()
+    return _ret.asArray()
   }
 
   fun removeNode(node: Node) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

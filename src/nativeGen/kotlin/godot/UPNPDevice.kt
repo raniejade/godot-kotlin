@@ -33,7 +33,7 @@ open class UPNPDevice internal constructor(
     _args.append(proto)
     _args.append(duration)
     val _ret = __method_bind.add_port_mapping.call(this.toVariant(), _args.toVariant(), 5)
-    TODO()
+    return _ret.asInt()
   }
 
   fun deletePortMapping(port: Int, proto: String): Int {
@@ -41,89 +41,83 @@ open class UPNPDevice internal constructor(
     _args.append(port)
     _args.append(proto)
     val _ret = __method_bind.delete_port_mapping.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getDescriptionUrl(): String {
     val _ret = __method_bind.get_description_url.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getIgdControlUrl(): String {
     val _ret = __method_bind.get_igd_control_url.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getIgdOurAddr(): String {
     val _ret = __method_bind.get_igd_our_addr.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getIgdServiceType(): String {
     val _ret = __method_bind.get_igd_service_type.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getIgdStatus(): IGDStatus {
     val _ret = __method_bind.get_igd_status.call(this.toVariant())
-    TODO()
+    return UPNPDevice.IGDStatus.from(_ret.asInt())
   }
 
   fun getServiceType(): String {
     val _ret = __method_bind.get_service_type.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isValidGateway(): Boolean {
     val _ret = __method_bind.is_valid_gateway.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun queryExternalAddress(): String {
     val _ret = __method_bind.query_external_address.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setDescriptionUrl(url: String) {
     val _args = VariantArray.new()
     _args.append(url)
-    val _ret = __method_bind.set_description_url.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_description_url.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIgdControlUrl(url: String) {
     val _args = VariantArray.new()
     _args.append(url)
-    val _ret = __method_bind.set_igd_control_url.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_igd_control_url.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIgdOurAddr(addr: String) {
     val _args = VariantArray.new()
     _args.append(addr)
-    val _ret = __method_bind.set_igd_our_addr.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_igd_our_addr.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIgdServiceType(type: String) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_igd_service_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_igd_service_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIgdStatus(status: Int) {
     val _args = VariantArray.new()
     _args.append(status)
-    val _ret = __method_bind.set_igd_status.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_igd_status.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setServiceType(type: String) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_service_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_service_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class IGDStatus(

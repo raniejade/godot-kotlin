@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.PoolIntArray
@@ -21,95 +22,88 @@ open class MultiplayerAPI internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {
-    val _ret = __method_bind.clear.call(this.toVariant())
-    TODO()
+    __method_bind.clear.call(this.toVariant())
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
     val _ret = __method_bind.get_network_connected_peers.call(this.toVariant())
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
     val _ret = __method_bind.get_network_peer.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::NetworkedMultiplayerPeer)!!
   }
 
   fun getNetworkUniqueId(): Int {
     val _ret = __method_bind.get_network_unique_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getRpcSenderId(): Int {
     val _ret = __method_bind.get_rpc_sender_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun hasNetworkPeer(): Boolean {
     val _ret = __method_bind.has_network_peer.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isNetworkServer(): Boolean {
     val _ret = __method_bind.is_network_server.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isObjectDecodingAllowed(): Boolean {
     val _ret = __method_bind.is_object_decoding_allowed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
     val _ret = __method_bind.is_refusing_new_network_connections.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun poll() {
-    val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    __method_bind.poll.call(this.toVariant())
   }
 
   fun sendBytes(
     bytes: PoolByteArray,
     id: Int,
     mode: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(bytes)
     _args.append(id)
     _args.append(mode)
     val _ret = __method_bind.send_bytes.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_allow_object_decoding.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_allow_object_decoding.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     val _args = VariantArray.new()
     _args.append(peer)
-    val _ret = __method_bind.set_network_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_network_peer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
     val _args = VariantArray.new()
     _args.append(refuse)
-    val _ret = __method_bind.set_refuse_new_network_connections.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRootNode(node: Node) {
     val _args = VariantArray.new()
     _args.append(node)
-    val _ret = __method_bind.set_root_node.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_root_node.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class RPCMode(

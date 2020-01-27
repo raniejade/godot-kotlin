@@ -20,50 +20,46 @@ open class PhysicsMaterial internal constructor(
 ) : Resource(_handle) {
   fun getBounce(): Float {
     val _ret = __method_bind.get_bounce.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFriction(): Float {
     val _ret = __method_bind.get_friction.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isAbsorbent(): Boolean {
     val _ret = __method_bind.is_absorbent.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRough(): Boolean {
     val _ret = __method_bind.is_rough.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAbsorbent(absorbent: Boolean) {
     val _args = VariantArray.new()
     _args.append(absorbent)
-    val _ret = __method_bind.set_absorbent.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_absorbent.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBounce(bounce: Float) {
     val _args = VariantArray.new()
     _args.append(bounce)
-    val _ret = __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFriction(friction: Float) {
     val _args = VariantArray.new()
     _args.append(friction)
-    val _ret = __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRough(rough: Boolean) {
     val _args = VariantArray.new()
     _args.append(rough)
-    val _ret = __method_bind.set_rough.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rough.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
 import godot.core.Variant
@@ -22,33 +23,33 @@ open class XMLParser internal constructor(
 ) : Reference(_handle) {
   fun getAttributeCount(): Int {
     val _ret = __method_bind.get_attribute_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getAttributeName(idx: Int): String {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_attribute_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getAttributeValue(idx: Int): String {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_attribute_value.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getCurrentLine(): Int {
     val _ret = __method_bind.get_current_line.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNamedAttributeValue(name: String): String {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.get_named_attribute_value.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
@@ -56,70 +57,69 @@ open class XMLParser internal constructor(
     _args.append(name)
     val _ret = __method_bind.get_named_attribute_value_safe.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asString()
   }
 
   fun getNodeData(): String {
     val _ret = __method_bind.get_node_data.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getNodeName(): String {
     val _ret = __method_bind.get_node_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getNodeOffset(): Int {
     val _ret = __method_bind.get_node_offset.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNodeType(): NodeType {
     val _ret = __method_bind.get_node_type.call(this.toVariant())
-    TODO()
+    return XMLParser.NodeType.from(_ret.asInt())
   }
 
   fun hasAttribute(name: String): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.has_attribute.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun isEmpty(): Boolean {
     val _ret = __method_bind.is_empty.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
-  fun open(file: String): Error {
+  fun open(file: String): GDError {
     val _args = VariantArray.new()
     _args.append(file)
     val _ret = __method_bind.open.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun openBuffer(buffer: PoolByteArray): Error {
+  fun openBuffer(buffer: PoolByteArray): GDError {
     val _args = VariantArray.new()
     _args.append(buffer)
     val _ret = __method_bind.open_buffer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun read(): Error {
+  fun read(): GDError {
     val _ret = __method_bind.read.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun seek(position: Int): Error {
+  fun seek(position: Int): GDError {
     val _args = VariantArray.new()
     _args.append(position)
     val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun skipSection() {
-    val _ret = __method_bind.skip_section.call(this.toVariant())
-    TODO()
+    __method_bind.skip_section.call(this.toVariant())
   }
 
   enum class NodeType(

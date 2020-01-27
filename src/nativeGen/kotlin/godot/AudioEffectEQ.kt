@@ -20,22 +20,21 @@ open class AudioEffectEQ internal constructor(
 ) : AudioEffect(_handle) {
   fun getBandCount(): Int {
     val _ret = __method_bind.get_band_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getBandGainDb(bandIdx: Int): Float {
     val _args = VariantArray.new()
     _args.append(bandIdx)
     val _ret = __method_bind.get_band_gain_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setBandGainDb(bandIdx: Int, volumeDb: Float) {
     val _args = VariantArray.new()
     _args.append(bandIdx)
     _args.append(volumeDb)
-    val _ret = __method_bind.set_band_gain_db.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_band_gain_db.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   companion object {

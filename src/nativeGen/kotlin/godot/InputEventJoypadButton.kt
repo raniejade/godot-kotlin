@@ -21,33 +21,30 @@ open class InputEventJoypadButton internal constructor(
 ) : InputEvent(_handle) {
   fun getButtonIndex(): Int {
     val _ret = __method_bind.get_button_index.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getPressure(): Float {
     val _ret = __method_bind.get_pressure.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setButtonIndex(buttonIndex: Int) {
     val _args = VariantArray.new()
     _args.append(buttonIndex)
-    val _ret = __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _args = VariantArray.new()
     _args.append(pressed)
-    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPressure(pressure: Float) {
     val _args = VariantArray.new()
     _args.append(pressure)
-    val _ret = __method_bind.set_pressure.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pressure.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -19,26 +19,24 @@ open class SegmentShape2D internal constructor(
 ) : Shape2D(_handle) {
   fun getA(): Vector2 {
     val _ret = __method_bind.get_a.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getB(): Vector2 {
     val _ret = __method_bind.get_b.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setA(a: Vector2) {
     val _args = VariantArray.new()
     _args.append(a)
-    val _ret = __method_bind.set_a.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_a.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setB(b: Vector2) {
     val _args = VariantArray.new()
     _args.append(b)
-    val _ret = __method_bind.set_b.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_b.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

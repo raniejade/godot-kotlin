@@ -19,14 +19,13 @@ open class VisualScriptGlobalConstant internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getGlobalConstant(): Int {
     val _ret = __method_bind.get_global_constant.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setGlobalConstant(index: Int) {
     val _args = VariantArray.new()
     _args.append(index)
-    val _ret = __method_bind.set_global_constant.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_global_constant.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

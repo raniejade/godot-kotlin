@@ -21,33 +21,30 @@ open class InputEventAction internal constructor(
 ) : InputEvent(_handle) {
   fun getAction(): String {
     val _ret = __method_bind.get_action.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getStrength(): Float {
     val _ret = __method_bind.get_strength.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setAction(action: String) {
     val _args = VariantArray.new()
     _args.append(action)
-    val _ret = __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _args = VariantArray.new()
     _args.append(pressed)
-    val _ret = __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStrength(strength: Float) {
     val _args = VariantArray.new()
     _args.append(strength)
-    val _ret = __method_bind.set_strength.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_strength.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

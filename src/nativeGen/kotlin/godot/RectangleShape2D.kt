@@ -19,14 +19,13 @@ open class RectangleShape2D internal constructor(
 ) : Shape2D(_handle) {
   fun getExtents(): Vector2 {
     val _ret = __method_bind.get_extents.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setExtents(extents: Vector2) {
     val _args = VariantArray.new()
     _args.append(extents)
-    val _ret = __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

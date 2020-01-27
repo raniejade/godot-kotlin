@@ -23,211 +23,191 @@ open class LineEdit internal constructor(
   fun appendAtCursor(text: String) {
     val _args = VariantArray.new()
     _args.append(text)
-    val _ret = __method_bind.append_at_cursor.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.append_at_cursor.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun clear() {
-    val _ret = __method_bind.clear.call(this.toVariant())
-    TODO()
+    __method_bind.clear.call(this.toVariant())
   }
 
   fun cursorGetBlinkEnabled(): Boolean {
     val _ret = __method_bind.cursor_get_blink_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun cursorGetBlinkSpeed(): Float {
     val _ret = __method_bind.cursor_get_blink_speed.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun cursorSetBlinkEnabled(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun cursorSetBlinkSpeed(blinkSpeed: Float) {
     val _args = VariantArray.new()
     _args.append(blinkSpeed)
-    val _ret = __method_bind.cursor_set_blink_speed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.cursor_set_blink_speed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun deselect() {
-    val _ret = __method_bind.deselect.call(this.toVariant())
-    TODO()
+    __method_bind.deselect.call(this.toVariant())
   }
 
   fun getAlign(): Align {
     val _ret = __method_bind.get_align.call(this.toVariant())
-    TODO()
+    return LineEdit.Align.from(_ret.asInt())
   }
 
   fun getCursorPosition(): Int {
     val _ret = __method_bind.get_cursor_position.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getExpandToTextLength(): Boolean {
     val _ret = __method_bind.get_expand_to_text_length.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getMaxLength(): Int {
     val _ret = __method_bind.get_max_length.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMenu(): PopupMenu {
     val _ret = __method_bind.get_menu.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::PopupMenu)!!
   }
 
   fun getPlaceholder(): String {
     val _ret = __method_bind.get_placeholder.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getPlaceholderAlpha(): Float {
     val _ret = __method_bind.get_placeholder_alpha.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSecretCharacter(): String {
     val _ret = __method_bind.get_secret_character.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getText(): String {
     val _ret = __method_bind.get_text.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isClearButtonEnabled(): Boolean {
     val _ret = __method_bind.is_clear_button_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isContextMenuEnabled(): Boolean {
     val _ret = __method_bind.is_context_menu_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isEditable(): Boolean {
     val _ret = __method_bind.is_editable.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isSecret(): Boolean {
     val _ret = __method_bind.is_secret.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun menuOption(option: Int) {
     val _args = VariantArray.new()
     _args.append(option)
-    val _ret = __method_bind.menu_option.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.menu_option.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun select(from: Int, to: Int) {
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.select.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.select.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun selectAll() {
-    val _ret = __method_bind.select_all.call(this.toVariant())
-    TODO()
+    __method_bind.select_all.call(this.toVariant())
   }
 
   fun setAlign(align: Int) {
     val _args = VariantArray.new()
     _args.append(align)
-    val _ret = __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setClearButtonEnabled(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_clear_button_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_clear_button_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_context_menu_enabled.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_context_menu_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCursorPosition(position: Int) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.set_cursor_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cursor_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEditable(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setExpandToTextLength(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_expand_to_text_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_expand_to_text_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMaxLength(chars: Int) {
     val _args = VariantArray.new()
     _args.append(chars)
-    val _ret = __method_bind.set_max_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_max_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPlaceholder(text: String) {
     val _args = VariantArray.new()
     _args.append(text)
-    val _ret = __method_bind.set_placeholder.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_placeholder.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPlaceholderAlpha(alpha: Float) {
     val _args = VariantArray.new()
     _args.append(alpha)
-    val _ret = __method_bind.set_placeholder_alpha.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_placeholder_alpha.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSecret(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_secret.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_secret.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSecretCharacter(character: String) {
     val _args = VariantArray.new()
     _args.append(character)
-    val _ret = __method_bind.set_secret_character.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_secret_character.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setText(text: String) {
     val _args = VariantArray.new()
     _args.append(text)
-    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Align(

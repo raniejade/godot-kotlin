@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -17,16 +18,16 @@ import kotlinx.cinterop.reinterpret
 open class PackedDataContainer internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  fun pack(value: Variant): Error {
+  fun pack(value: Variant): GDError {
     val _args = VariantArray.new()
     _args.append(value)
     val _ret = __method_bind.pack.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun size(): Int {
     val _ret = __method_bind.size.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   companion object {

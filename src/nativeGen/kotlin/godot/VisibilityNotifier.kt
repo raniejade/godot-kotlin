@@ -20,19 +20,18 @@ open class VisibilityNotifier internal constructor(
 ) : Spatial(_handle) {
   fun getAabb(): AABB {
     val _ret = __method_bind.get_aabb.call(this.toVariant())
-    TODO()
+    return _ret.asAABB()
   }
 
   fun isOnScreen(): Boolean {
     val _ret = __method_bind.is_on_screen.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAabb(rect: AABB) {
     val _args = VariantArray.new()
     _args.append(rect)
-    val _ret = __method_bind.set_aabb.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_aabb.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -22,62 +22,57 @@ open class StyleBoxLine internal constructor(
 ) : StyleBox(_handle) {
   fun getColor(): Color {
     val _ret = __method_bind.get_color.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getGrowBegin(): Float {
     val _ret = __method_bind.get_grow_begin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGrowEnd(): Float {
     val _ret = __method_bind.get_grow_end.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getThickness(): Int {
     val _ret = __method_bind.get_thickness.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isVertical(): Boolean {
     val _ret = __method_bind.is_vertical.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setColor(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGrowBegin(offset: Float) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_grow_begin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_grow_begin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGrowEnd(offset: Float) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_grow_end.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_grow_end.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setThickness(thickness: Int) {
     val _args = VariantArray.new()
     _args.append(thickness)
-    val _ret = __method_bind.set_thickness.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_thickness.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVertical(vertical: Boolean) {
     val _args = VariantArray.new()
     _args.append(vertical)
-    val _ret = __method_bind.set_vertical.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_vertical.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

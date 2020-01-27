@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,52 +20,48 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeerSSL internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
-  fun acceptStream(base: StreamPeer): Error {
+  fun acceptStream(base: StreamPeer): GDError {
     val _args = VariantArray.new()
     _args.append(base)
     val _ret = __method_bind.accept_stream.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun connectToStream(
     stream: StreamPeer,
     validateCerts: Boolean,
     forHostname: String
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(stream)
     _args.append(validateCerts)
     _args.append(forHostname)
     val _ret = __method_bind.connect_to_stream.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun disconnectFromStream() {
-    val _ret = __method_bind.disconnect_from_stream.call(this.toVariant())
-    TODO()
+    __method_bind.disconnect_from_stream.call(this.toVariant())
   }
 
   fun getStatus(): Status {
     val _ret = __method_bind.get_status.call(this.toVariant())
-    TODO()
+    return StreamPeerSSL.Status.from(_ret.asInt())
   }
 
   fun isBlockingHandshakeEnabled(): Boolean {
     val _ret = __method_bind.is_blocking_handshake_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun poll() {
-    val _ret = __method_bind.poll.call(this.toVariant())
-    TODO()
+    __method_bind.poll.call(this.toVariant())
   }
 
   fun setBlockingHandshakeEnabled(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_blocking_handshake_enabled.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_blocking_handshake_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Status(

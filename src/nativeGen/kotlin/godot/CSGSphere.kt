@@ -21,62 +21,57 @@ open class CSGSphere internal constructor(
 ) : CSGPrimitive(_handle) {
   fun getMaterial(): Material {
     val _ret = __method_bind.get_material.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun getRadialSegments(): Int {
     val _ret = __method_bind.get_radial_segments.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getRadius(): Float {
     val _ret = __method_bind.get_radius.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRings(): Int {
     val _ret = __method_bind.get_rings.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getSmoothFaces(): Boolean {
     val _ret = __method_bind.get_smooth_faces.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setMaterial(material: Material) {
     val _args = VariantArray.new()
     _args.append(material)
-    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRadialSegments(radialSegments: Int) {
     val _args = VariantArray.new()
     _args.append(radialSegments)
-    val _ret = __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRadius(radius: Float) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRings(rings: Int) {
     val _args = VariantArray.new()
     _args.append(rings)
-    val _ret = __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
     val _args = VariantArray.new()
     _args.append(smoothFaces)
-    val _ret = __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

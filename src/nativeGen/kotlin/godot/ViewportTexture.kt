@@ -19,14 +19,13 @@ open class ViewportTexture internal constructor(
 ) : Texture(_handle) {
   fun getViewportPathInScene(): NodePath {
     val _ret = __method_bind.get_viewport_path_in_scene.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun setViewportPathInScene(path: NodePath) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_viewport_path_in_scene.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_viewport_path_in_scene.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

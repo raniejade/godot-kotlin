@@ -21,55 +21,51 @@ open class SpinBox internal constructor(
 ) : Range(_handle) {
   fun getAlign(): LineEdit.Align {
     val _ret = __method_bind.get_align.call(this.toVariant())
-    TODO()
+    return LineEdit.Align.from(_ret.asInt())
   }
 
   fun getLineEdit(): LineEdit {
     val _ret = __method_bind.get_line_edit.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::LineEdit)!!
   }
 
   fun getPrefix(): String {
     val _ret = __method_bind.get_prefix.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getSuffix(): String {
     val _ret = __method_bind.get_suffix.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun isEditable(): Boolean {
     val _ret = __method_bind.is_editable.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAlign(align: Int) {
     val _args = VariantArray.new()
     _args.append(align)
-    val _ret = __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEditable(editable: Boolean) {
     val _args = VariantArray.new()
     _args.append(editable)
-    val _ret = __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPrefix(prefix: String) {
     val _args = VariantArray.new()
     _args.append(prefix)
-    val _ret = __method_bind.set_prefix.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_prefix.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSuffix(suffix: String) {
     val _args = VariantArray.new()
     _args.append(suffix)
-    val _ret = __method_bind.set_suffix.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_suffix.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

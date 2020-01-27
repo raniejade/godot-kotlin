@@ -22,120 +22,110 @@ open class AudioStreamPlayer internal constructor(
 ) : Node(_handle) {
   fun getBus(): String {
     val _ret = __method_bind.get_bus.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getMixTarget(): MixTarget {
     val _ret = __method_bind.get_mix_target.call(this.toVariant())
-    TODO()
+    return AudioStreamPlayer.MixTarget.from(_ret.asInt())
   }
 
   fun getPitchScale(): Float {
     val _ret = __method_bind.get_pitch_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPlaybackPosition(): Float {
     val _ret = __method_bind.get_playback_position.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getStream(): AudioStream {
     val _ret = __method_bind.get_stream.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::AudioStream)!!
   }
 
   fun getStreamPaused(): Boolean {
     val _ret = __method_bind.get_stream_paused.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getStreamPlayback(): AudioStreamPlayback {
     val _ret = __method_bind.get_stream_playback.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::AudioStreamPlayback)!!
   }
 
   fun getVolumeDb(): Float {
     val _ret = __method_bind.get_volume_db.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isAutoplayEnabled(): Boolean {
     val _ret = __method_bind.is_autoplay_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun play(fromPosition: Float) {
     val _args = VariantArray.new()
     _args.append(fromPosition)
-    val _ret = __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun seek(toPosition: Float) {
     val _args = VariantArray.new()
     _args.append(toPosition)
-    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAutoplay(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBus(bus: String) {
     val _args = VariantArray.new()
     _args.append(bus)
-    val _ret = __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMixTarget(mixTarget: Int) {
     val _args = VariantArray.new()
     _args.append(mixTarget)
-    val _ret = __method_bind.set_mix_target.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mix_target.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPitchScale(pitchScale: Float) {
     val _args = VariantArray.new()
     _args.append(pitchScale)
-    val _ret = __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStream(stream: AudioStream) {
     val _args = VariantArray.new()
     _args.append(stream)
-    val _ret = __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStreamPaused(pause: Boolean) {
     val _args = VariantArray.new()
     _args.append(pause)
-    val _ret = __method_bind.set_stream_paused.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_stream_paused.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVolumeDb(volumeDb: Float) {
     val _args = VariantArray.new()
     _args.append(volumeDb)
-    val _ret = __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun stop() {
-    val _ret = __method_bind.stop.call(this.toVariant())
-    TODO()
+    __method_bind.stop.call(this.toVariant())
   }
 
   enum class MixTarget(

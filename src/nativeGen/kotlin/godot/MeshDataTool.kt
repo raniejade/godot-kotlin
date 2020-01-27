@@ -3,6 +3,7 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Color
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Plane
 import godot.core.PoolIntArray
@@ -24,42 +25,41 @@ open class MeshDataTool internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun clear() {
-    val _ret = __method_bind.clear.call(this.toVariant())
-    TODO()
+    __method_bind.clear.call(this.toVariant())
   }
 
-  fun commitToSurface(mesh: ArrayMesh): Error {
+  fun commitToSurface(mesh: ArrayMesh): GDError {
     val _args = VariantArray.new()
     _args.append(mesh)
     val _ret = __method_bind.commit_to_surface.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun createFromSurface(mesh: ArrayMesh, surface: Int): Error {
+  fun createFromSurface(mesh: ArrayMesh, surface: Int): GDError {
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
     val _ret = __method_bind.create_from_surface.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun getEdgeCount(): Int {
     val _ret = __method_bind.get_edge_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getEdgeFaces(idx: Int): PoolIntArray {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_edge_faces.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getEdgeMeta(idx: Int): Variant {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_edge_meta.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret
   }
 
   fun getEdgeVertex(idx: Int, vertex: Int): Int {
@@ -67,12 +67,12 @@ open class MeshDataTool internal constructor(
     _args.append(idx)
     _args.append(vertex)
     val _ret = __method_bind.get_edge_vertex.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getFaceCount(): Int {
     val _ret = __method_bind.get_face_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getFaceEdge(idx: Int, edge: Int): Int {
@@ -80,21 +80,21 @@ open class MeshDataTool internal constructor(
     _args.append(idx)
     _args.append(edge)
     val _ret = __method_bind.get_face_edge.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getFaceMeta(idx: Int): Variant {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_face_meta.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret
   }
 
   fun getFaceNormal(idx: Int): Vector3 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_face_normal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getFaceVertex(idx: Int, vertex: Int): Int {
@@ -102,194 +102,182 @@ open class MeshDataTool internal constructor(
     _args.append(idx)
     _args.append(vertex)
     val _ret = __method_bind.get_face_vertex.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun getFormat(): Int {
     val _ret = __method_bind.get_format.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMaterial(): Material {
     val _ret = __method_bind.get_material.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Material)!!
   }
 
   fun getVertex(idx: Int): Vector3 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getVertexBones(idx: Int): PoolIntArray {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_bones.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getVertexColor(idx: Int): Color {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asColor()
   }
 
   fun getVertexCount(): Int {
     val _ret = __method_bind.get_vertex_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getVertexEdges(idx: Int): PoolIntArray {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_edges.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getVertexFaces(idx: Int): PoolIntArray {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_faces.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getVertexMeta(idx: Int): Variant {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_meta.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret
   }
 
   fun getVertexNormal(idx: Int): Vector3 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_normal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getVertexTangent(idx: Int): Plane {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_tangent.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPlane()
   }
 
   fun getVertexUv(idx: Int): Vector2 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_uv.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getVertexUv2(idx: Int): Vector2 {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_uv2.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getVertexWeights(idx: Int): PoolRealArray {
     val _args = VariantArray.new()
     _args.append(idx)
     val _ret = __method_bind.get_vertex_weights.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolRealArray()
   }
 
   fun setEdgeMeta(idx: Int, meta: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(meta)
-    val _ret = __method_bind.set_edge_meta.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_edge_meta.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setFaceMeta(idx: Int, meta: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(meta)
-    val _ret = __method_bind.set_face_meta.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_face_meta.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setMaterial(material: Material) {
     val _args = VariantArray.new()
     _args.append(material)
-    val _ret = __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setVertex(idx: Int, vertex: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(vertex)
-    val _ret = __method_bind.set_vertex.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexBones(idx: Int, bones: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(bones)
-    val _ret = __method_bind.set_vertex_bones.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_bones.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexColor(idx: Int, color: Color) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(color)
-    val _ret = __method_bind.set_vertex_color.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_color.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexMeta(idx: Int, meta: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(meta)
-    val _ret = __method_bind.set_vertex_meta.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_meta.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexNormal(idx: Int, normal: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(normal)
-    val _ret = __method_bind.set_vertex_normal.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_normal.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexTangent(idx: Int, tangent: Plane) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(tangent)
-    val _ret = __method_bind.set_vertex_tangent.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_tangent.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexUv(idx: Int, uv: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(uv)
-    val _ret = __method_bind.set_vertex_uv.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_uv.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexUv2(idx: Int, uv2: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(uv2)
-    val _ret = __method_bind.set_vertex_uv2.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_uv2.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setVertexWeights(idx: Int, weights: PoolRealArray) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(weights)
-    val _ret = __method_bind.set_vertex_weights.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_vertex_weights.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class BoneAttachment internal constructor(
 ) : Spatial(_handle) {
   fun getBoneName(): String {
     val _ret = __method_bind.get_bone_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setBoneName(boneName: String) {
     val _args = VariantArray.new()
     _args.append(boneName)
-    val _ret = __method_bind.set_bone_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bone_name.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

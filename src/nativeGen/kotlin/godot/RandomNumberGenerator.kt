@@ -20,12 +20,12 @@ open class RandomNumberGenerator internal constructor(
 ) : Reference(_handle) {
   fun getSeed(): Int {
     val _ret = __method_bind.get_seed.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun randf(): Float {
     val _ret = __method_bind.randf.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun randfRange(from: Float, to: Float): Float {
@@ -33,7 +33,7 @@ open class RandomNumberGenerator internal constructor(
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.randf_range.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun randfn(mean: Float, deviation: Float): Float {
@@ -41,12 +41,12 @@ open class RandomNumberGenerator internal constructor(
     _args.append(mean)
     _args.append(deviation)
     val _ret = __method_bind.randfn.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun randi(): Int {
     val _ret = __method_bind.randi.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun randiRange(from: Int, to: Int): Int {
@@ -54,19 +54,17 @@ open class RandomNumberGenerator internal constructor(
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.randi_range.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asInt()
   }
 
   fun randomize() {
-    val _ret = __method_bind.randomize.call(this.toVariant())
-    TODO()
+    __method_bind.randomize.call(this.toVariant())
   }
 
   fun setSeed(seed: Int) {
     val _args = VariantArray.new()
     _args.append(seed)
-    val _ret = __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

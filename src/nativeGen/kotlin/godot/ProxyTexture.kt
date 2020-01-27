@@ -18,14 +18,13 @@ open class ProxyTexture internal constructor(
 ) : Texture(_handle) {
   fun getBase(): Texture {
     val _ret = __method_bind.get_base.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Texture)!!
   }
 
   fun setBase(base: Texture) {
     val _args = VariantArray.new()
     _args.append(base)
-    val _ret = __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

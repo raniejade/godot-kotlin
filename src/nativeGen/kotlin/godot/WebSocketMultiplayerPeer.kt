@@ -21,7 +21,7 @@ open class WebSocketMultiplayerPeer internal constructor(
     val _args = VariantArray.new()
     _args.append(peerId)
     val _ret = __method_bind.get_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::WebSocketPeer)!!
   }
 
   companion object {

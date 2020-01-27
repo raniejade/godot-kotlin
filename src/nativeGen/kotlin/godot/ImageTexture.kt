@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -31,66 +32,60 @@ open class ImageTexture internal constructor(
     _args.append(height)
     _args.append(format)
     _args.append(flags)
-    val _ret = __method_bind.create.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.create.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun createFromImage(image: Image, flags: Int) {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(flags)
-    val _ret = __method_bind.create_from_image.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.create_from_image.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun getFormat(): Image.Format {
     val _ret = __method_bind.get_format.call(this.toVariant())
-    TODO()
+    return Image.Format.from(_ret.asInt())
   }
 
   fun getLossyStorageQuality(): Float {
     val _ret = __method_bind.get_lossy_storage_quality.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getStorage(): Storage {
     val _ret = __method_bind.get_storage.call(this.toVariant())
-    TODO()
+    return ImageTexture.Storage.from(_ret.asInt())
   }
 
-  fun load(path: String): Error {
+  fun load(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setData(image: Image) {
     val _args = VariantArray.new()
     _args.append(image)
-    val _ret = __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLossyStorageQuality(quality: Float) {
     val _args = VariantArray.new()
     _args.append(quality)
-    val _ret = __method_bind.set_lossy_storage_quality.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSizeOverride(size: Vector2) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_size_override.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_size_override.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setStorage(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_storage.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_storage.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Storage(

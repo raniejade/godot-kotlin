@@ -38,8 +38,7 @@ open class Font internal constructor(
     _args.append(modulate)
     _args.append(clipW)
     _args.append(outlineModulate)
-    val _ret = __method_bind.draw.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    __method_bind.draw.call(this.toVariant(), _args.toVariant(), 6)
   }
 
   fun drawChar(
@@ -58,29 +57,29 @@ open class Font internal constructor(
     _args.append(modulate)
     _args.append(outline)
     val _ret = __method_bind.draw_char.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getAscent(): Float {
     val _ret = __method_bind.get_ascent.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getDescent(): Float {
     val _ret = __method_bind.get_descent.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getHeight(): Float {
     val _ret = __method_bind.get_height.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getStringSize(string: String): Vector2 {
     val _args = VariantArray.new()
     _args.append(string)
     val _ret = __method_bind.get_string_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getWordwrapStringSize(string: String, pWidth: Float): Vector2 {
@@ -88,22 +87,21 @@ open class Font internal constructor(
     _args.append(string)
     _args.append(pWidth)
     val _ret = __method_bind.get_wordwrap_string_size.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun hasOutline(): Boolean {
     val _ret = __method_bind.has_outline.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isDistanceFieldHint(): Boolean {
     val _ret = __method_bind.is_distance_field_hint.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun updateChanges() {
-    val _ret = __method_bind.update_changes.call(this.toVariant())
-    TODO()
+    __method_bind.update_changes.call(this.toVariant())
   }
 
   companion object {

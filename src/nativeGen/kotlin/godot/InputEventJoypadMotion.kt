@@ -20,26 +20,24 @@ open class InputEventJoypadMotion internal constructor(
 ) : InputEvent(_handle) {
   fun getAxis(): Int {
     val _ret = __method_bind.get_axis.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getAxisValue(): Float {
     val _ret = __method_bind.get_axis_value.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setAxis(axis: Int) {
     val _args = VariantArray.new()
     _args.append(axis)
-    val _ret = __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAxisValue(axisValue: Float) {
     val _args = VariantArray.new()
     _args.append(axisValue)
-    val _ret = __method_bind.set_axis_value.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_axis_value.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

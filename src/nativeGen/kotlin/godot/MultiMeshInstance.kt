@@ -18,14 +18,13 @@ open class MultiMeshInstance internal constructor(
 ) : GeometryInstance(_handle) {
   fun getMultimesh(): MultiMesh {
     val _ret = __method_bind.get_multimesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::MultiMesh)!!
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
     val _args = VariantArray.new()
     _args.append(multimesh)
-    val _ret = __method_bind.set_multimesh.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_multimesh.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class ProgressBar internal constructor(
 ) : Range(_handle) {
   fun isPercentVisible(): Boolean {
     val _ret = __method_bind.is_percent_visible.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setPercentVisible(visible: Boolean) {
     val _args = VariantArray.new()
     _args.append(visible)
-    val _ret = __method_bind.set_percent_visible.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_percent_visible.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

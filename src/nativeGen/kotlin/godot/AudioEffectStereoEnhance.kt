@@ -19,38 +19,35 @@ open class AudioEffectStereoEnhance internal constructor(
 ) : AudioEffect(_handle) {
   fun getPanPullout(): Float {
     val _ret = __method_bind.get_pan_pullout.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSurround(): Float {
     val _ret = __method_bind.get_surround.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTimePullout(): Float {
     val _ret = __method_bind.get_time_pullout.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setPanPullout(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_pan_pullout.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pan_pullout.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSurround(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_surround.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_surround.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTimePullout(amount: Float) {
     val _args = VariantArray.new()
     _args.append(amount)
-    val _ret = __method_bind.set_time_pullout.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_time_pullout.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

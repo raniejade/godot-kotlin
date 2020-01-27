@@ -20,42 +20,39 @@ open class Bone2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun applyRest() {
-    val _ret = __method_bind.apply_rest.call(this.toVariant())
-    TODO()
+    __method_bind.apply_rest.call(this.toVariant())
   }
 
   fun getDefaultLength(): Float {
     val _ret = __method_bind.get_default_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getIndexInSkeleton(): Int {
     val _ret = __method_bind.get_index_in_skeleton.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getRest(): Transform2D {
     val _ret = __method_bind.get_rest.call(this.toVariant())
-    TODO()
+    return _ret.asTransform2D()
   }
 
   fun getSkeletonRest(): Transform2D {
     val _ret = __method_bind.get_skeleton_rest.call(this.toVariant())
-    TODO()
+    return _ret.asTransform2D()
   }
 
   fun setDefaultLength(defaultLength: Float) {
     val _args = VariantArray.new()
     _args.append(defaultLength)
-    val _ret = __method_bind.set_default_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_default_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRest(rest: Transform2D) {
     val _args = VariantArray.new()
     _args.append(rest)
-    val _ret = __method_bind.set_rest.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rest.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

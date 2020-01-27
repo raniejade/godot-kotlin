@@ -25,19 +25,19 @@ open class OpenSimplexNoise internal constructor(
     _args.append(width)
     _args.append(height)
     val _ret = __method_bind.get_image.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::Image)!!
   }
 
   fun getLacunarity(): Float {
     val _ret = __method_bind.get_lacunarity.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise1d(x: Float): Float {
     val _args = VariantArray.new()
     _args.append(x)
     val _ret = __method_bind.get_noise_1d.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise2d(x: Float, y: Float): Float {
@@ -45,14 +45,14 @@ open class OpenSimplexNoise internal constructor(
     _args.append(x)
     _args.append(y)
     val _ret = __method_bind.get_noise_2d.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise2dv(pos: Vector2): Float {
     val _args = VariantArray.new()
     _args.append(pos)
     val _ret = __method_bind.get_noise_2dv.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise3d(
@@ -65,14 +65,14 @@ open class OpenSimplexNoise internal constructor(
     _args.append(y)
     _args.append(z)
     val _ret = __method_bind.get_noise_3d.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise3dv(pos: Vector3): Float {
     val _args = VariantArray.new()
     _args.append(pos)
     val _ret = __method_bind.get_noise_3dv.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNoise4d(
@@ -87,69 +87,64 @@ open class OpenSimplexNoise internal constructor(
     _args.append(z)
     _args.append(w)
     val _ret = __method_bind.get_noise_4d.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getOctaves(): Int {
     val _ret = __method_bind.get_octaves.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getPeriod(): Float {
     val _ret = __method_bind.get_period.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPersistence(): Float {
     val _ret = __method_bind.get_persistence.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSeamlessImage(size: Int): Image {
     val _args = VariantArray.new()
     _args.append(size)
     val _ret = __method_bind.get_seamless_image.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Image)!!
   }
 
   fun getSeed(): Int {
     val _ret = __method_bind.get_seed.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun setLacunarity(lacunarity: Float) {
     val _args = VariantArray.new()
     _args.append(lacunarity)
-    val _ret = __method_bind.set_lacunarity.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_lacunarity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOctaves(octaveCount: Int) {
     val _args = VariantArray.new()
     _args.append(octaveCount)
-    val _ret = __method_bind.set_octaves.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_octaves.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPeriod(period: Float) {
     val _args = VariantArray.new()
     _args.append(period)
-    val _ret = __method_bind.set_period.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_period.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPersistence(persistence: Float) {
     val _args = VariantArray.new()
     _args.append(persistence)
-    val _ret = __method_bind.set_persistence.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_persistence.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSeed(seed: Int) {
     val _args = VariantArray.new()
     _args.append(seed)
-    val _ret = __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

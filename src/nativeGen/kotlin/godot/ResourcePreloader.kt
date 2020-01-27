@@ -23,42 +23,39 @@ open class ResourcePreloader internal constructor(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(resource)
-    val _ret = __method_bind.add_resource.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_resource.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun getResource(name: String): Resource {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.get_resource.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Resource)!!
   }
 
   fun getResourceList(): PoolStringArray {
     val _ret = __method_bind.get_resource_list.call(this.toVariant())
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun hasResource(name: String): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.has_resource.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun removeResource(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.remove_resource.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.remove_resource.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun renameResource(name: String, newname: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(newname)
-    val _ret = __method_bind.rename_resource.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.rename_resource.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   companion object {

@@ -19,14 +19,13 @@ open class CSGPrimitive internal constructor(
 ) : CSGShape(_handle) {
   fun isInvertingFaces(): Boolean {
     val _ret = __method_bind.is_inverting_faces.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setInvertFaces(invertFaces: Boolean) {
     val _args = VariantArray.new()
     _args.append(invertFaces)
-    val _ret = __method_bind.set_invert_faces.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_invert_faces.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

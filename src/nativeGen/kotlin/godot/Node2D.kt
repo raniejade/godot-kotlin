@@ -24,40 +24,39 @@ open class Node2D internal constructor(
   fun applyScale(ratio: Vector2) {
     val _args = VariantArray.new()
     _args.append(ratio)
-    val _ret = __method_bind.apply_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.apply_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun getAngleTo(point: Vector2): Float {
     val _args = VariantArray.new()
     _args.append(point)
     val _ret = __method_bind.get_angle_to.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGlobalPosition(): Vector2 {
     val _ret = __method_bind.get_global_position.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getGlobalRotation(): Float {
     val _ret = __method_bind.get_global_rotation.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGlobalRotationDegrees(): Float {
     val _ret = __method_bind.get_global_rotation_degrees.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGlobalScale(): Vector2 {
     val _ret = __method_bind.get_global_scale.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getPosition(): Vector2 {
     val _ret = __method_bind.get_position.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getRelativeTransformToParent(parent: Node): Transform2D {
@@ -65,175 +64,156 @@ open class Node2D internal constructor(
     _args.append(parent)
     val _ret = __method_bind.get_relative_transform_to_parent.call(this.toVariant(),
         _args.toVariant(), 1)
-    TODO()
+    return _ret.asTransform2D()
   }
 
   fun getRotation(): Float {
     val _ret = __method_bind.get_rotation.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRotationDegrees(): Float {
     val _ret = __method_bind.get_rotation_degrees.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getScale(): Vector2 {
     val _ret = __method_bind.get_scale.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getZIndex(): Int {
     val _ret = __method_bind.get_z_index.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun globalTranslate(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.global_translate.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.global_translate.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun isZRelative(): Boolean {
     val _ret = __method_bind.is_z_relative.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun lookAt(point: Vector2) {
     val _args = VariantArray.new()
     _args.append(point)
-    val _ret = __method_bind.look_at.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.look_at.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun moveLocalX(delta: Float, scaled: Boolean) {
     val _args = VariantArray.new()
     _args.append(delta)
     _args.append(scaled)
-    val _ret = __method_bind.move_local_x.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.move_local_x.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun moveLocalY(delta: Float, scaled: Boolean) {
     val _args = VariantArray.new()
     _args.append(delta)
     _args.append(scaled)
-    val _ret = __method_bind.move_local_y.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.move_local_y.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun rotate(radians: Float) {
     val _args = VariantArray.new()
     _args.append(radians)
-    val _ret = __method_bind.rotate.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.rotate.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGlobalPosition(position: Vector2) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.set_global_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_global_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGlobalRotation(radians: Float) {
     val _args = VariantArray.new()
     _args.append(radians)
-    val _ret = __method_bind.set_global_rotation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_global_rotation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGlobalRotationDegrees(degrees: Float) {
     val _args = VariantArray.new()
     _args.append(degrees)
-    val _ret = __method_bind.set_global_rotation_degrees.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_global_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGlobalScale(scale: Vector2) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_global_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_global_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGlobalTransform(xform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(xform)
-    val _ret = __method_bind.set_global_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_global_transform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPosition(position: Vector2) {
     val _args = VariantArray.new()
     _args.append(position)
-    val _ret = __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRotation(radians: Float) {
     val _args = VariantArray.new()
     _args.append(radians)
-    val _ret = __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRotationDegrees(degrees: Float) {
     val _args = VariantArray.new()
     _args.append(degrees)
-    val _ret = __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScale(scale: Vector2) {
     val _args = VariantArray.new()
     _args.append(scale)
-    val _ret = __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTransform(xform: Transform2D) {
     val _args = VariantArray.new()
     _args.append(xform)
-    val _ret = __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setZAsRelative(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_z_as_relative.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_z_as_relative.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setZIndex(zIndex: Int) {
     val _args = VariantArray.new()
     _args.append(zIndex)
-    val _ret = __method_bind.set_z_index.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_z_index.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun toGlobal(localPoint: Vector2): Vector2 {
     val _args = VariantArray.new()
     _args.append(localPoint)
     val _ret = __method_bind.to_global.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun toLocal(globalPoint: Vector2): Vector2 {
     val _args = VariantArray.new()
     _args.append(globalPoint)
     val _ret = __method_bind.to_local.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun translate(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.translate.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.translate.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

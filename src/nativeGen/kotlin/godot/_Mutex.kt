@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -17,18 +18,16 @@ open class _Mutex internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun lock() {
-    val _ret = __method_bind.lock.call(this.toVariant())
-    TODO()
+    __method_bind.lock.call(this.toVariant())
   }
 
-  fun tryLock(): Error {
+  fun tryLock(): GDError {
     val _ret = __method_bind.try_lock.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun unlock() {
-    val _ret = __method_bind.unlock.call(this.toVariant())
-    TODO()
+    __method_bind.unlock.call(this.toVariant())
   }
 
   companion object {

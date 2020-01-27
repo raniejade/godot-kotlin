@@ -19,14 +19,13 @@ open class ARVROrigin internal constructor(
 ) : Spatial(_handle) {
   fun getWorldScale(): Float {
     val _ret = __method_bind.get_world_scale.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setWorldScale(worldScale: Float) {
     val _args = VariantArray.new()
     _args.append(worldScale)
-    val _ret = __method_bind.set_world_scale.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_world_scale.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

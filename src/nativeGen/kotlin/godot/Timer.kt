@@ -21,84 +21,77 @@ open class Timer internal constructor(
 ) : Node(_handle) {
   fun getTimeLeft(): Float {
     val _ret = __method_bind.get_time_left.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getTimerProcessMode(): TimerProcessMode {
     val _ret = __method_bind.get_timer_process_mode.call(this.toVariant())
-    TODO()
+    return Timer.TimerProcessMode.from(_ret.asInt())
   }
 
   fun getWaitTime(): Float {
     val _ret = __method_bind.get_wait_time.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun hasAutostart(): Boolean {
     val _ret = __method_bind.has_autostart.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isOneShot(): Boolean {
     val _ret = __method_bind.is_one_shot.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPaused(): Boolean {
     val _ret = __method_bind.is_paused.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isStopped(): Boolean {
     val _ret = __method_bind.is_stopped.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAutostart(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_autostart.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_autostart.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOneShot(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPaused(paused: Boolean) {
     val _args = VariantArray.new()
     _args.append(paused)
-    val _ret = __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTimerProcessMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_timer_process_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_timer_process_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setWaitTime(timeSec: Float) {
     val _args = VariantArray.new()
     _args.append(timeSec)
-    val _ret = __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun start(timeSec: Float) {
     val _args = VariantArray.new()
     _args.append(timeSec)
-    val _ret = __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun stop() {
-    val _ret = __method_bind.stop.call(this.toVariant())
-    TODO()
+    __method_bind.stop.call(this.toVariant())
   }
 
   enum class TimerProcessMode(

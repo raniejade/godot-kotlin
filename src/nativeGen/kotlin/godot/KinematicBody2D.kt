@@ -23,44 +23,44 @@ open class KinematicBody2D internal constructor(
 ) : PhysicsBody2D(_handle) {
   fun getFloorVelocity(): Vector2 {
     val _ret = __method_bind.get_floor_velocity.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getSafeMargin(): Float {
     val _ret = __method_bind.get_safe_margin.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision2D {
     val _args = VariantArray.new()
     _args.append(slideIdx)
     val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::KinematicCollision2D)!!
   }
 
   fun getSlideCount(): Int {
     val _ret = __method_bind.get_slide_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun isOnCeiling(): Boolean {
     val _ret = __method_bind.is_on_ceiling.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isOnFloor(): Boolean {
     val _ret = __method_bind.is_on_floor.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isOnWall(): Boolean {
     val _ret = __method_bind.is_on_wall.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isSyncToPhysicsEnabled(): Boolean {
     val _ret = __method_bind.is_sync_to_physics_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun moveAndCollide(
@@ -75,7 +75,7 @@ open class KinematicBody2D internal constructor(
     _args.append(excludeRaycastShapes)
     _args.append(testOnly)
     val _ret = __method_bind.move_and_collide.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    return _ret.asObject(::KinematicCollision2D)!!
   }
 
   fun moveAndSlide(
@@ -94,7 +94,7 @@ open class KinematicBody2D internal constructor(
     _args.append(floorMaxAngle)
     _args.append(infiniteInertia)
     val _ret = __method_bind.move_and_slide.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun moveAndSlideWithSnap(
@@ -115,21 +115,19 @@ open class KinematicBody2D internal constructor(
     _args.append(floorMaxAngle)
     _args.append(infiniteInertia)
     val _ret = __method_bind.move_and_slide_with_snap.call(this.toVariant(), _args.toVariant(), 7)
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setSafeMargin(pixels: Float) {
     val _args = VariantArray.new()
     _args.append(pixels)
-    val _ret = __method_bind.set_safe_margin.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_safe_margin.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSyncToPhysics(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_sync_to_physics.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_sync_to_physics.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun testMove(
@@ -142,7 +140,7 @@ open class KinematicBody2D internal constructor(
     _args.append(relVec)
     _args.append(infiniteInertia)
     val _ret = __method_bind.test_move.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asBool()
   }
 
   companion object {

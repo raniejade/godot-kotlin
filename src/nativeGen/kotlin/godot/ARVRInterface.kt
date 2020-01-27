@@ -22,79 +22,74 @@ open class ARVRInterface internal constructor(
 ) : Reference(_handle) {
   fun getAnchorDetectionIsEnabled(): Boolean {
     val _ret = __method_bind.get_anchor_detection_is_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getCameraFeedId(): Int {
     val _ret = __method_bind.get_camera_feed_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getCapabilities(): Int {
     val _ret = __method_bind.get_capabilities.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getName(): String {
     val _ret = __method_bind.get_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getRenderTargetsize(): Vector2 {
     val _ret = __method_bind.get_render_targetsize.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getTrackingStatus(): Tracking_status {
     val _ret = __method_bind.get_tracking_status.call(this.toVariant())
-    TODO()
+    return ARVRInterface.Tracking_status.from(_ret.asInt())
   }
 
   fun initialize(): Boolean {
     val _ret = __method_bind.initialize.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isInitialized(): Boolean {
     val _ret = __method_bind.is_initialized.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPrimary(): Boolean {
     val _ret = __method_bind.is_primary.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isStereo(): Boolean {
     val _ret = __method_bind.is_stereo.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAnchorDetectionIsEnabled(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_anchor_detection_is_enabled.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_anchor_detection_is_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIsInitialized(initialized: Boolean) {
     val _args = VariantArray.new()
     _args.append(initialized)
-    val _ret = __method_bind.set_is_initialized.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_is_initialized.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setIsPrimary(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_is_primary.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_is_primary.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun uninitialize() {
-    val _ret = __method_bind.uninitialize.call(this.toVariant())
-    TODO()
+    __method_bind.uninitialize.call(this.toVariant())
   }
 
   enum class Tracking_status(

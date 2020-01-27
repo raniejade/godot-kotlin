@@ -20,38 +20,35 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
 ) : AudioEffect(_handle) {
   fun getBufferLength(): Float {
     val _ret = __method_bind.get_buffer_length.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getFftSize(): FFT_Size {
     val _ret = __method_bind.get_fft_size.call(this.toVariant())
-    TODO()
+    return AudioEffectSpectrumAnalyzer.FFT_Size.from(_ret.asInt())
   }
 
   fun getTapBackPos(): Float {
     val _ret = __method_bind.get_tap_back_pos.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setBufferLength(seconds: Float) {
     val _args = VariantArray.new()
     _args.append(seconds)
-    val _ret = __method_bind.set_buffer_length.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_buffer_length.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFftSize(size: Int) {
     val _args = VariantArray.new()
     _args.append(size)
-    val _ret = __method_bind.set_fft_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_fft_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTapBackPos(seconds: Float) {
     val _args = VariantArray.new()
     _args.append(seconds)
-    val _ret = __method_bind.set_tap_back_pos.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_tap_back_pos.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class FFT_Size(

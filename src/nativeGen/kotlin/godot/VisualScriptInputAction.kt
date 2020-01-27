@@ -20,26 +20,24 @@ open class VisualScriptInputAction internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getActionMode(): Mode {
     val _ret = __method_bind.get_action_mode.call(this.toVariant())
-    TODO()
+    return VisualScriptInputAction.Mode.from(_ret.asInt())
   }
 
   fun getActionName(): String {
     val _ret = __method_bind.get_action_name.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setActionMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setActionName(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_action_name.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_action_name.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class Mode(

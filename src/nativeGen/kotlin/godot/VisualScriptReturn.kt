@@ -20,26 +20,24 @@ open class VisualScriptReturn internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getReturnType(): Variant.Type {
     val _ret = __method_bind.get_return_type.call(this.toVariant())
-    TODO()
+    return Variant.Type.from(_ret.asInt())
   }
 
   fun isReturnValueEnabled(): Boolean {
     val _ret = __method_bind.is_return_value_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setEnableReturnValue(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_enable_return_value.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_enable_return_value.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setReturnType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_return_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_return_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

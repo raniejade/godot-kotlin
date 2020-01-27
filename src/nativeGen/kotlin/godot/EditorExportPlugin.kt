@@ -29,56 +29,48 @@ open class EditorExportPlugin internal constructor(
     _args.append(path)
     _args.append(file)
     _args.append(remap)
-    val _ret = __method_bind.add_file.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.add_file.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun addIosBundleFile(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.add_ios_bundle_file.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_ios_bundle_file.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addIosCppCode(code: String) {
     val _args = VariantArray.new()
     _args.append(code)
-    val _ret = __method_bind.add_ios_cpp_code.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_ios_cpp_code.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addIosFramework(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.add_ios_framework.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_ios_framework.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addIosLinkerFlags(flags: String) {
     val _args = VariantArray.new()
     _args.append(flags)
-    val _ret = __method_bind.add_ios_linker_flags.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_ios_linker_flags.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addIosPlistContent(plistContent: String) {
     val _args = VariantArray.new()
     _args.append(plistContent)
-    val _ret = __method_bind.add_ios_plist_content.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.add_ios_plist_content.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun addSharedObject(path: String, tags: PoolStringArray) {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(tags)
-    val _ret = __method_bind.add_shared_object.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.add_shared_object.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun skip() {
-    val _ret = __method_bind.skip.call(this.toVariant())
-    TODO()
+    __method_bind.skip.call(this.toVariant())
   }
 
   companion object {

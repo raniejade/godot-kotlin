@@ -22,7 +22,7 @@ open class Performance internal constructor(
     val _args = VariantArray.new()
     _args.append(monitor)
     val _ret = __method_bind.get_monitor.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   enum class Monitor(

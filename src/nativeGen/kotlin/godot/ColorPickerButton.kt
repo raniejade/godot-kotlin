@@ -20,36 +20,34 @@ open class ColorPickerButton internal constructor(
 ) : Button(_handle) {
   fun getPickColor(): Color {
     val _ret = __method_bind.get_pick_color.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getPicker(): ColorPicker {
     val _ret = __method_bind.get_picker.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::ColorPicker)!!
   }
 
   fun getPopup(): PopupPanel {
     val _ret = __method_bind.get_popup.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::PopupPanel)!!
   }
 
   fun isEditingAlpha(): Boolean {
     val _ret = __method_bind.is_editing_alpha.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setEditAlpha(show: Boolean) {
     val _args = VariantArray.new()
     _args.append(show)
-    val _ret = __method_bind.set_edit_alpha.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_edit_alpha.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPickColor(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.set_pick_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pick_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

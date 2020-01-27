@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -19,14 +20,14 @@ open class StreamTexture internal constructor(
 ) : Texture(_handle) {
   fun getLoadPath(): String {
     val _ret = __method_bind.get_load_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
-  fun load(path: String): Error {
+  fun load(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   companion object {

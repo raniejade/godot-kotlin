@@ -20,26 +20,24 @@ open class LineShape2D internal constructor(
 ) : Shape2D(_handle) {
   fun getD(): Float {
     val _ret = __method_bind.get_d.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNormal(): Vector2 {
     val _ret = __method_bind.get_normal.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun setD(d: Float) {
     val _args = VariantArray.new()
     _args.append(d)
-    val _ret = __method_bind.set_d.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_d.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNormal(normal: Vector2) {
     val _args = VariantArray.new()
     _args.append(normal)
-    val _ret = __method_bind.set_normal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_normal.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

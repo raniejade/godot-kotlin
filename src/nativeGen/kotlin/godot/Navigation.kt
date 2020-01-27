@@ -25,21 +25,21 @@ open class Navigation internal constructor(
     val _args = VariantArray.new()
     _args.append(toPoint)
     val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getClosestPointNormal(toPoint: Vector3): Vector3 {
     val _args = VariantArray.new()
     _args.append(toPoint)
     val _ret = __method_bind.get_closest_point_normal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getClosestPointOwner(toPoint: Vector3): Object {
     val _args = VariantArray.new()
     _args.append(toPoint)
     val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Object)!!
   }
 
   fun getClosestPointToSegment(
@@ -53,7 +53,7 @@ open class Navigation internal constructor(
     _args.append(useCollision)
     val _ret = __method_bind.get_closest_point_to_segment.call(this.toVariant(), _args.toVariant(),
         3)
-    TODO()
+    return _ret.asVector3()
   }
 
   fun getSimplePath(
@@ -66,12 +66,12 @@ open class Navigation internal constructor(
     _args.append(end)
     _args.append(optimize)
     val _ret = __method_bind.get_simple_path.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asPoolVector3Array()
   }
 
   fun getUpVector(): Vector3 {
     val _ret = __method_bind.get_up_vector.call(this.toVariant())
-    TODO()
+    return _ret.asVector3()
   }
 
   fun navmeshAdd(
@@ -84,29 +84,26 @@ open class Navigation internal constructor(
     _args.append(xform)
     _args.append(owner)
     val _ret = __method_bind.navmesh_add.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asInt()
   }
 
   fun navmeshRemove(id: Int) {
     val _args = VariantArray.new()
     _args.append(id)
-    val _ret = __method_bind.navmesh_remove.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.navmesh_remove.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun navmeshSetTransform(id: Int, xform: Transform) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(xform)
-    val _ret = __method_bind.navmesh_set_transform.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.navmesh_set_transform.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setUpVector(up: Vector3) {
     val _args = VariantArray.new()
     _args.append(up)
-    val _ret = __method_bind.set_up_vector.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_up_vector.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

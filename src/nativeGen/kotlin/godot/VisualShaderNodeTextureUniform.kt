@@ -19,26 +19,24 @@ open class VisualShaderNodeTextureUniform internal constructor(
 ) : VisualShaderNodeUniform(_handle) {
   fun getColorDefault(): ColorDefault {
     val _ret = __method_bind.get_color_default.call(this.toVariant())
-    TODO()
+    return VisualShaderNodeTextureUniform.ColorDefault.from(_ret.asInt())
   }
 
   fun getTextureType(): TextureType {
     val _ret = __method_bind.get_texture_type.call(this.toVariant())
-    TODO()
+    return VisualShaderNodeTextureUniform.TextureType.from(_ret.asInt())
   }
 
   fun setColorDefault(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_color_default.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_color_default.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTextureType(type: Int) {
     val _args = VariantArray.new()
     _args.append(type)
-    val _ret = __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class TextureType(

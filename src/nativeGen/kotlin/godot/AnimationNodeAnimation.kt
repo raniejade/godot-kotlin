@@ -19,14 +19,13 @@ open class AnimationNodeAnimation internal constructor(
 ) : AnimationRootNode(_handle) {
   fun getAnimation(): String {
     val _ret = __method_bind.get_animation.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setAnimation(name: String) {
     val _args = VariantArray.new()
     _args.append(name)
-    val _ret = __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

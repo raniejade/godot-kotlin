@@ -20,86 +20,79 @@ open class AudioEffectCompressor internal constructor(
 ) : AudioEffect(_handle) {
   fun getAttackUs(): Float {
     val _ret = __method_bind.get_attack_us.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getGain(): Float {
     val _ret = __method_bind.get_gain.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getMix(): Float {
     val _ret = __method_bind.get_mix.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRatio(): Float {
     val _ret = __method_bind.get_ratio.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getReleaseMs(): Float {
     val _ret = __method_bind.get_release_ms.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getSidechain(): String {
     val _ret = __method_bind.get_sidechain.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getThreshold(): Float {
     val _ret = __method_bind.get_threshold.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setAttackUs(attackUs: Float) {
     val _args = VariantArray.new()
     _args.append(attackUs)
-    val _ret = __method_bind.set_attack_us.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_attack_us.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGain(gain: Float) {
     val _args = VariantArray.new()
     _args.append(gain)
-    val _ret = __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMix(mix: Float) {
     val _args = VariantArray.new()
     _args.append(mix)
-    val _ret = __method_bind.set_mix.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_mix.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRatio(ratio: Float) {
     val _args = VariantArray.new()
     _args.append(ratio)
-    val _ret = __method_bind.set_ratio.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_ratio.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setReleaseMs(releaseMs: Float) {
     val _args = VariantArray.new()
     _args.append(releaseMs)
-    val _ret = __method_bind.set_release_ms.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_release_ms.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSidechain(sidechain: String) {
     val _args = VariantArray.new()
     _args.append(sidechain)
-    val _ret = __method_bind.set_sidechain.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_sidechain.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setThreshold(threshold: Float) {
     val _args = VariantArray.new()
     _args.append(threshold)
-    val _ret = __method_bind.set_threshold.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_threshold.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

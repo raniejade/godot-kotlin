@@ -19,14 +19,13 @@ open class SceneTreeTimer internal constructor(
 ) : Reference(_handle) {
   fun getTimeLeft(): Float {
     val _ret = __method_bind.get_time_left.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setTimeLeft(time: Float) {
     val _args = VariantArray.new()
     _args.append(time)
-    val _ret = __method_bind.set_time_left.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_time_left.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

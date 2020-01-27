@@ -19,17 +19,17 @@ open class World2D internal constructor(
 ) : Resource(_handle) {
   fun getCanvas(): RID {
     val _ret = __method_bind.get_canvas.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun getDirectSpaceState(): Physics2DDirectSpaceState {
     val _ret = __method_bind.get_direct_space_state.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Physics2DDirectSpaceState)!!
   }
 
   fun getSpace(): RID {
     val _ret = __method_bind.get_space.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   companion object {

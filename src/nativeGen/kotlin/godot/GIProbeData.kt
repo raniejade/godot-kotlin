@@ -24,134 +24,123 @@ open class GIProbeData internal constructor(
 ) : Resource(_handle) {
   fun getBias(): Float {
     val _ret = __method_bind.get_bias.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getBounds(): AABB {
     val _ret = __method_bind.get_bounds.call(this.toVariant())
-    TODO()
+    return _ret.asAABB()
   }
 
   fun getCellSize(): Float {
     val _ret = __method_bind.get_cell_size.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getDynamicData(): PoolIntArray {
     val _ret = __method_bind.get_dynamic_data.call(this.toVariant())
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getDynamicRange(): Int {
     val _ret = __method_bind.get_dynamic_range.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getEnergy(): Float {
     val _ret = __method_bind.get_energy.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getNormalBias(): Float {
     val _ret = __method_bind.get_normal_bias.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPropagation(): Float {
     val _ret = __method_bind.get_propagation.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getToCellXform(): Transform {
     val _ret = __method_bind.get_to_cell_xform.call(this.toVariant())
-    TODO()
+    return _ret.asTransform()
   }
 
   fun isCompressed(): Boolean {
     val _ret = __method_bind.is_compressed.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isInterior(): Boolean {
     val _ret = __method_bind.is_interior.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBias(bias: Float) {
     val _args = VariantArray.new()
     _args.append(bias)
-    val _ret = __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBounds(bounds: AABB) {
     val _args = VariantArray.new()
     _args.append(bounds)
-    val _ret = __method_bind.set_bounds.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bounds.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCellSize(cellSize: Float) {
     val _args = VariantArray.new()
     _args.append(cellSize)
-    val _ret = __method_bind.set_cell_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cell_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCompress(compress: Boolean) {
     val _args = VariantArray.new()
     _args.append(compress)
-    val _ret = __method_bind.set_compress.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_compress.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDynamicData(dynamicData: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(dynamicData)
-    val _ret = __method_bind.set_dynamic_data.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_dynamic_data.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDynamicRange(dynamicRange: Int) {
     val _args = VariantArray.new()
     _args.append(dynamicRange)
-    val _ret = __method_bind.set_dynamic_range.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_dynamic_range.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEnergy(energy: Float) {
     val _args = VariantArray.new()
     _args.append(energy)
-    val _ret = __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setInterior(interior: Boolean) {
     val _args = VariantArray.new()
     _args.append(interior)
-    val _ret = __method_bind.set_interior.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_interior.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNormalBias(bias: Float) {
     val _args = VariantArray.new()
     _args.append(bias)
-    val _ret = __method_bind.set_normal_bias.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_normal_bias.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPropagation(propagation: Float) {
     val _args = VariantArray.new()
     _args.append(propagation)
-    val _ret = __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setToCellXform(toCellXform: Transform) {
     val _args = VariantArray.new()
     _args.append(toCellXform)
-    val _ret = __method_bind.set_to_cell_xform.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_to_cell_xform.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolStringArray
 import godot.core.Variant
@@ -23,20 +24,20 @@ open class _ResourceSaver internal constructor(
     val _args = VariantArray.new()
     _args.append(type)
     val _ret = __method_bind.get_recognized_extensions.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asPoolStringArray()
   }
 
   fun save(
     path: String,
     resource: Resource,
     flags: Int
-  ): Error {
+  ): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(resource)
     _args.append(flags)
     val _ret = __method_bind.save.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   enum class SaverFlags(

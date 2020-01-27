@@ -22,114 +22,104 @@ open class Light internal constructor(
 ) : VisualInstance(_handle) {
   fun getBakeMode(): BakeMode {
     val _ret = __method_bind.get_bake_mode.call(this.toVariant())
-    TODO()
+    return Light.BakeMode.from(_ret.asInt())
   }
 
   fun getColor(): Color {
     val _ret = __method_bind.get_color.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getCullMask(): Int {
     val _ret = __method_bind.get_cull_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getParam(param: Int): Float {
     val _args = VariantArray.new()
     _args.append(param)
     val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getShadowColor(): Color {
     val _ret = __method_bind.get_shadow_color.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getShadowReverseCullFace(): Boolean {
     val _ret = __method_bind.get_shadow_reverse_cull_face.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun hasShadow(): Boolean {
     val _ret = __method_bind.has_shadow.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isEditorOnly(): Boolean {
     val _ret = __method_bind.is_editor_only.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isNegative(): Boolean {
     val _ret = __method_bind.is_negative.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setBakeMode(bakeMode: Int) {
     val _args = VariantArray.new()
     _args.append(bakeMode)
-    val _ret = __method_bind.set_bake_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bake_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setColor(color: Color) {
     val _args = VariantArray.new()
     _args.append(color)
-    val _ret = __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCullMask(cullMask: Int) {
     val _args = VariantArray.new()
     _args.append(cullMask)
-    val _ret = __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
     val _args = VariantArray.new()
     _args.append(editorOnly)
-    val _ret = __method_bind.set_editor_only.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_editor_only.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNegative(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_negative.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_negative.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setParam(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    val _ret = __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_param.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setShadow(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_shadow.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shadow.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShadowColor(shadowColor: Color) {
     val _args = VariantArray.new()
     _args.append(shadowColor)
-    val _ret = __method_bind.set_shadow_color.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_shadow_color.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setShadowReverseCullFace(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_shadow_reverse_cull_face.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_shadow_reverse_cull_face.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class BakeMode(

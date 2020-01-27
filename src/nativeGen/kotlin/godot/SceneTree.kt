@@ -2,6 +2,7 @@
 package godot
 
 import gdnative.godot_method_bind
+import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolIntArray
 import godot.core.Variant
@@ -27,7 +28,7 @@ open class SceneTree internal constructor(
     _args.append(group)
     _args.append(method)
     val _ret = __method_bind.call_group.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret
   }
 
   fun callGroupFlags(
@@ -40,21 +41,21 @@ open class SceneTree internal constructor(
     _args.append(group)
     _args.append(method)
     val _ret = __method_bind.call_group_flags.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret
   }
 
-  fun changeScene(path: String): Error {
+  fun changeScene(path: String): GDError {
     val _args = VariantArray.new()
     _args.append(path)
     val _ret = __method_bind.change_scene.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
-  fun changeSceneTo(packedScene: PackedScene): Error {
+  fun changeSceneTo(packedScene: PackedScene): GDError {
     val _args = VariantArray.new()
     _args.append(packedScene)
     val _ret = __method_bind.change_scene_to.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun createTimer(timeSec: Float, pauseModeProcess: Boolean): SceneTreeTimer {
@@ -62,124 +63,123 @@ open class SceneTree internal constructor(
     _args.append(timeSec)
     _args.append(pauseModeProcess)
     val _ret = __method_bind.create_timer.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asObject(::SceneTreeTimer)!!
   }
 
   fun getCurrentScene(): Node {
     val _ret = __method_bind.get_current_scene.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Node)!!
   }
 
   fun getEditedSceneRoot(): Node {
     val _ret = __method_bind.get_edited_scene_root.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Node)!!
   }
 
   fun getFrame(): Int {
     val _ret = __method_bind.get_frame.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getMultiplayer(): MultiplayerAPI {
     val _ret = __method_bind.get_multiplayer.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::MultiplayerAPI)!!
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
     val _ret = __method_bind.get_network_connected_peers.call(this.toVariant())
-    TODO()
+    return _ret.asPoolIntArray()
   }
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
     val _ret = __method_bind.get_network_peer.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::NetworkedMultiplayerPeer)!!
   }
 
   fun getNetworkUniqueId(): Int {
     val _ret = __method_bind.get_network_unique_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNodeCount(): Int {
     val _ret = __method_bind.get_node_count.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getNodesInGroup(group: String): VariantArray {
     val _args = VariantArray.new()
     _args.append(group)
     val _ret = __method_bind.get_nodes_in_group.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asArray()
   }
 
   fun getRoot(): Viewport {
     val _ret = __method_bind.get_root.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Viewport)!!
   }
 
   fun getRpcSenderId(): Int {
     val _ret = __method_bind.get_rpc_sender_id.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun hasGroup(name: String): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.has_group.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun hasNetworkPeer(): Boolean {
     val _ret = __method_bind.has_network_peer.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isDebuggingCollisionsHint(): Boolean {
     val _ret = __method_bind.is_debugging_collisions_hint.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isDebuggingNavigationHint(): Boolean {
     val _ret = __method_bind.is_debugging_navigation_hint.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isInputHandled(): Boolean {
     val _ret = __method_bind.is_input_handled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isMultiplayerPollEnabled(): Boolean {
     val _ret = __method_bind.is_multiplayer_poll_enabled.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isNetworkServer(): Boolean {
     val _ret = __method_bind.is_network_server.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isPaused(): Boolean {
     val _ret = __method_bind.is_paused.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
     val _ret = __method_bind.is_refusing_new_network_connections.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isUsingFontOversampling(): Boolean {
     val _ret = __method_bind.is_using_font_oversampling.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun notifyGroup(group: String, notification: Int) {
     val _args = VariantArray.new()
     _args.append(group)
     _args.append(notification)
-    val _ret = __method_bind.notify_group.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.notify_group.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun notifyGroupFlags(
@@ -191,60 +191,52 @@ open class SceneTree internal constructor(
     _args.append(callFlags)
     _args.append(group)
     _args.append(notification)
-    val _ret = __method_bind.notify_group_flags.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.notify_group_flags.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun queueDelete(obj: Object) {
     val _args = VariantArray.new()
     _args.append(obj)
-    val _ret = __method_bind.queue_delete.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.queue_delete.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun quit() {
-    val _ret = __method_bind.quit.call(this.toVariant())
-    TODO()
+    __method_bind.quit.call(this.toVariant())
   }
 
-  fun reloadCurrentScene(): Error {
+  fun reloadCurrentScene(): GDError {
     val _ret = __method_bind.reload_current_scene.call(this.toVariant())
-    TODO()
+    return GDError.from(_ret.asInt())
   }
 
   fun setAutoAcceptQuit(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_auto_accept_quit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_auto_accept_quit.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCurrentScene(childNode: Node) {
     val _args = VariantArray.new()
     _args.append(childNode)
-    val _ret = __method_bind.set_current_scene.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_current_scene.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDebugCollisionsHint(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_debug_collisions_hint.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_debug_collisions_hint.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDebugNavigationHint(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_debug_navigation_hint.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_debug_navigation_hint.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setEditedSceneRoot(scene: Node) {
     val _args = VariantArray.new()
     _args.append(scene)
-    val _ret = __method_bind.set_edited_scene_root.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_edited_scene_root.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setGroup(
@@ -256,8 +248,7 @@ open class SceneTree internal constructor(
     _args.append(group)
     _args.append(property)
     _args.append(value)
-    val _ret = __method_bind.set_group.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.set_group.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   fun setGroupFlags(
@@ -271,57 +262,47 @@ open class SceneTree internal constructor(
     _args.append(group)
     _args.append(property)
     _args.append(value)
-    val _ret = __method_bind.set_group_flags.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.set_group_flags.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun setInputAsHandled() {
-    val _ret = __method_bind.set_input_as_handled.call(this.toVariant())
-    TODO()
+    __method_bind.set_input_as_handled.call(this.toVariant())
   }
 
   fun setMultiplayer(multiplayer: MultiplayerAPI) {
     val _args = VariantArray.new()
     _args.append(multiplayer)
-    val _ret = __method_bind.set_multiplayer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_multiplayer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setMultiplayerPollEnabled(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_multiplayer_poll_enabled.call(this.toVariant(), _args.toVariant(),
-        1)
-    TODO()
+    __method_bind.set_multiplayer_poll_enabled.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     val _args = VariantArray.new()
     _args.append(peer)
-    val _ret = __method_bind.set_network_peer.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_network_peer.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPause(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_pause.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pause.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setQuitOnGoBack(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_quit_on_go_back.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_quit_on_go_back.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
     val _args = VariantArray.new()
     _args.append(refuse)
-    val _ret = __method_bind.set_refuse_new_network_connections.call(this.toVariant(),
-        _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setScreenStretch(
@@ -335,15 +316,13 @@ open class SceneTree internal constructor(
     _args.append(aspect)
     _args.append(minsize)
     _args.append(shrink)
-    val _ret = __method_bind.set_screen_stretch.call(this.toVariant(), _args.toVariant(), 4)
-    TODO()
+    __method_bind.set_screen_stretch.call(this.toVariant(), _args.toVariant(), 4)
   }
 
   fun setUseFontOversampling(enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(enable)
-    val _ret = __method_bind.set_use_font_oversampling.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_use_font_oversampling.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class StretchAspect(

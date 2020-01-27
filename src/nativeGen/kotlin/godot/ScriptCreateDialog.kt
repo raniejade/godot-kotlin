@@ -27,8 +27,7 @@ open class ScriptCreateDialog internal constructor(
     _args.append(inherits)
     _args.append(path)
     _args.append(builtInEnabled)
-    val _ret = __method_bind.config.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    __method_bind.config.call(this.toVariant(), _args.toVariant(), 3)
   }
 
   companion object {

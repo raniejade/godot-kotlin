@@ -28,55 +28,52 @@ open class AcceptDialog internal constructor(
     _args.append(right)
     _args.append(action)
     val _ret = __method_bind.add_button.call(this.toVariant(), _args.toVariant(), 3)
-    TODO()
+    return _ret.asObject(::Button)!!
   }
 
   fun addCancel(name: String): Button {
     val _args = VariantArray.new()
     _args.append(name)
     val _ret = __method_bind.add_cancel.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asObject(::Button)!!
   }
 
   fun getHideOnOk(): Boolean {
     val _ret = __method_bind.get_hide_on_ok.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun getLabel(): Label {
     val _ret = __method_bind.get_label.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Label)!!
   }
 
   fun getOk(): Button {
     val _ret = __method_bind.get_ok.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::Button)!!
   }
 
   fun getText(): String {
     val _ret = __method_bind.get_text.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun registerTextEnter(lineEdit: Node) {
     val _args = VariantArray.new()
     _args.append(lineEdit)
-    val _ret = __method_bind.register_text_enter.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.register_text_enter.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHideOnOk(enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(enabled)
-    val _ret = __method_bind.set_hide_on_ok.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_hide_on_ok.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setText(text: String) {
     val _args = VariantArray.new()
     _args.append(text)
-    val _ret = __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

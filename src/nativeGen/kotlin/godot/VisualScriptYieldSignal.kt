@@ -21,50 +21,46 @@ open class VisualScriptYieldSignal internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getBasePath(): NodePath {
     val _ret = __method_bind.get_base_path.call(this.toVariant())
-    TODO()
+    return _ret.asNodePath()
   }
 
   fun getBaseType(): String {
     val _ret = __method_bind.get_base_type.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun getCallMode(): CallMode {
     val _ret = __method_bind.get_call_mode.call(this.toVariant())
-    TODO()
+    return VisualScriptYieldSignal.CallMode.from(_ret.asInt())
   }
 
   fun getSignal(): String {
     val _ret = __method_bind.get_signal.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setBasePath(basePath: NodePath) {
     val _args = VariantArray.new()
     _args.append(basePath)
-    val _ret = __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setBaseType(baseType: String) {
     val _args = VariantArray.new()
     _args.append(baseType)
-    val _ret = __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCallMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setSignal(signal: String) {
     val _args = VariantArray.new()
     _args.append(signal)
-    val _ret = __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class CallMode(

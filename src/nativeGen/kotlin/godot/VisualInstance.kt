@@ -22,56 +22,53 @@ open class VisualInstance internal constructor(
 ) : Spatial(_handle) {
   fun getAabb(): AABB {
     val _ret = __method_bind.get_aabb.call(this.toVariant())
-    TODO()
+    return _ret.asAABB()
   }
 
   fun getBase(): RID {
     val _ret = __method_bind.get_base.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun getInstance(): RID {
     val _ret = __method_bind.get_instance.call(this.toVariant())
-    TODO()
+    return _ret.asRID()
   }
 
   fun getLayerMask(): Int {
     val _ret = __method_bind.get_layer_mask.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getLayerMaskBit(layer: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(layer)
     val _ret = __method_bind.get_layer_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getTransformedAabb(): AABB {
     val _ret = __method_bind.get_transformed_aabb.call(this.toVariant())
-    TODO()
+    return _ret.asAABB()
   }
 
   fun setBase(base: RID) {
     val _args = VariantArray.new()
     _args.append(base)
-    val _ret = __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLayerMask(mask: Int) {
     val _args = VariantArray.new()
     _args.append(mask)
-    val _ret = __method_bind.set_layer_mask.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_layer_mask.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setLayerMaskBit(layer: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(layer)
     _args.append(enabled)
-    val _ret = __method_bind.set_layer_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_layer_mask_bit.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   companion object {

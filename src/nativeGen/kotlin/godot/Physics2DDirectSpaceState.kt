@@ -24,7 +24,7 @@ open class Physics2DDirectSpaceState internal constructor(
     val _args = VariantArray.new()
     _args.append(shape)
     val _ret = __method_bind.cast_motion.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asArray()
   }
 
   fun collideShape(shape: Physics2DShapeQueryParameters, maxResults: Int): VariantArray {
@@ -32,14 +32,14 @@ open class Physics2DDirectSpaceState internal constructor(
     _args.append(shape)
     _args.append(maxResults)
     val _ret = __method_bind.collide_shape.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   fun getRestInfo(shape: Physics2DShapeQueryParameters): Dictionary {
     val _args = VariantArray.new()
     _args.append(shape)
     val _ret = __method_bind.get_rest_info.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun intersectPoint(
@@ -58,7 +58,7 @@ open class Physics2DDirectSpaceState internal constructor(
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
     val _ret = __method_bind.intersect_point.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    return _ret.asArray()
   }
 
   fun intersectPointOnCanvas(
@@ -79,7 +79,7 @@ open class Physics2DDirectSpaceState internal constructor(
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
     val _ret = __method_bind.intersect_point_on_canvas.call(this.toVariant(), _args.toVariant(), 7)
-    TODO()
+    return _ret.asArray()
   }
 
   fun intersectRay(
@@ -98,7 +98,7 @@ open class Physics2DDirectSpaceState internal constructor(
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
     val _ret = __method_bind.intersect_ray.call(this.toVariant(), _args.toVariant(), 6)
-    TODO()
+    return _ret.asDictionary()
   }
 
   fun intersectShape(shape: Physics2DShapeQueryParameters, maxResults: Int): VariantArray {
@@ -106,7 +106,7 @@ open class Physics2DDirectSpaceState internal constructor(
     _args.append(shape)
     _args.append(maxResults)
     val _ret = __method_bind.intersect_shape.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    return _ret.asArray()
   }
 
   companion object {

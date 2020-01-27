@@ -19,14 +19,13 @@ open class ConcavePolygonShape2D internal constructor(
 ) : Shape2D(_handle) {
   fun getSegments(): PoolVector2Array {
     val _ret = __method_bind.get_segments.call(this.toVariant())
-    TODO()
+    return _ret.asPoolVector2Array()
   }
 
   fun setSegments(segments: PoolVector2Array) {
     val _args = VariantArray.new()
     _args.append(segments)
-    val _ret = __method_bind.set_segments.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_segments.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

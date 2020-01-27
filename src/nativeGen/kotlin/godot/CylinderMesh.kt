@@ -20,62 +20,57 @@ open class CylinderMesh internal constructor(
 ) : PrimitiveMesh(_handle) {
   fun getBottomRadius(): Float {
     val _ret = __method_bind.get_bottom_radius.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getHeight(): Float {
     val _ret = __method_bind.get_height.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getRadialSegments(): Int {
     val _ret = __method_bind.get_radial_segments.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getRings(): Int {
     val _ret = __method_bind.get_rings.call(this.toVariant())
-    TODO()
+    return _ret.asInt()
   }
 
   fun getTopRadius(): Float {
     val _ret = __method_bind.get_top_radius.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun setBottomRadius(radius: Float) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_bottom_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_bottom_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setHeight(height: Float) {
     val _args = VariantArray.new()
     _args.append(height)
-    val _ret = __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRadialSegments(segments: Int) {
     val _args = VariantArray.new()
     _args.append(segments)
-    val _ret = __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setRings(rings: Int) {
     val _args = VariantArray.new()
     _args.append(rings)
-    val _ret = __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setTopRadius(radius: Float) {
     val _args = VariantArray.new()
     _args.append(radius)
-    val _ret = __method_bind.set_top_radius.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_top_radius.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {

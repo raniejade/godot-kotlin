@@ -25,135 +25,125 @@ open class SpriteBase3D internal constructor(
 ) : GeometryInstance(_handle) {
   fun generateTriangleMesh(): TriangleMesh {
     val _ret = __method_bind.generate_triangle_mesh.call(this.toVariant())
-    TODO()
+    return _ret.asObject(::TriangleMesh)!!
   }
 
   fun getAlphaCutMode(): AlphaCutMode {
     val _ret = __method_bind.get_alpha_cut_mode.call(this.toVariant())
-    TODO()
+    return SpriteBase3D.AlphaCutMode.from(_ret.asInt())
   }
 
   fun getAxis(): Vector3.Axis {
     val _ret = __method_bind.get_axis.call(this.toVariant())
-    TODO()
+    return Vector3.Axis.from(_ret.asInt())
   }
 
   fun getDrawFlag(flag: Int): Boolean {
     val _args = VariantArray.new()
     _args.append(flag)
     val _ret = __method_bind.get_draw_flag.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    return _ret.asBool()
   }
 
   fun getItemRect(): Rect2 {
     val _ret = __method_bind.get_item_rect.call(this.toVariant())
-    TODO()
+    return _ret.asRect2()
   }
 
   fun getModulate(): Color {
     val _ret = __method_bind.get_modulate.call(this.toVariant())
-    TODO()
+    return _ret.asColor()
   }
 
   fun getOffset(): Vector2 {
     val _ret = __method_bind.get_offset.call(this.toVariant())
-    TODO()
+    return _ret.asVector2()
   }
 
   fun getOpacity(): Float {
     val _ret = __method_bind.get_opacity.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun getPixelSize(): Float {
     val _ret = __method_bind.get_pixel_size.call(this.toVariant())
-    TODO()
+    return _ret.asFloat()
   }
 
   fun isCentered(): Boolean {
     val _ret = __method_bind.is_centered.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this.toVariant())
-    TODO()
+    return _ret.asBool()
   }
 
   fun setAlphaCutMode(mode: Int) {
     val _args = VariantArray.new()
     _args.append(mode)
-    val _ret = __method_bind.set_alpha_cut_mode.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_alpha_cut_mode.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setAxis(axis: Int) {
     val _args = VariantArray.new()
     _args.append(axis)
-    val _ret = __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setCentered(centered: Boolean) {
     val _args = VariantArray.new()
     _args.append(centered)
-    val _ret = __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setDrawFlag(flag: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(enabled)
-    val _ret = __method_bind.set_draw_flag.call(this.toVariant(), _args.toVariant(), 2)
-    TODO()
+    __method_bind.set_draw_flag.call(this.toVariant(), _args.toVariant(), 2)
   }
 
   fun setFlipH(flipH: Boolean) {
     val _args = VariantArray.new()
     _args.append(flipH)
-    val _ret = __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setFlipV(flipV: Boolean) {
     val _args = VariantArray.new()
     _args.append(flipV)
-    val _ret = __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setModulate(modulate: Color) {
     val _args = VariantArray.new()
     _args.append(modulate)
-    val _ret = __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _args = VariantArray.new()
     _args.append(offset)
-    val _ret = __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setOpacity(opacity: Float) {
     val _args = VariantArray.new()
     _args.append(opacity)
-    val _ret = __method_bind.set_opacity.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_opacity.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   fun setPixelSize(pixelSize: Float) {
     val _args = VariantArray.new()
     _args.append(pixelSize)
-    val _ret = __method_bind.set_pixel_size.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_pixel_size.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   enum class DrawFlags(

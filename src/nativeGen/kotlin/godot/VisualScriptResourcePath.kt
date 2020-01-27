@@ -19,14 +19,13 @@ open class VisualScriptResourcePath internal constructor(
 ) : VisualScriptNode(_handle) {
   fun getResourcePath(): String {
     val _ret = __method_bind.get_resource_path.call(this.toVariant())
-    TODO()
+    return _ret.asString()
   }
 
   fun setResourcePath(path: String) {
     val _args = VariantArray.new()
     _args.append(path)
-    val _ret = __method_bind.set_resource_path.call(this.toVariant(), _args.toVariant(), 1)
-    TODO()
+    __method_bind.set_resource_path.call(this.toVariant(), _args.toVariant(), 1)
   }
 
   companion object {
