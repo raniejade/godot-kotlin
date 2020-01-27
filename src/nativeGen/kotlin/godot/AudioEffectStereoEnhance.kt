@@ -33,28 +33,25 @@ open class AudioEffectStereoEnhance internal constructor(
   }
 
   fun setPanPullout(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_pan_pullout.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_pan_pullout.call(this.toVariant(), _arg, 1)
   }
 
   fun setSurround(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_surround.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_surround.call(this.toVariant(), _arg, 1)
   }
 
   fun setTimePullout(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_time_pullout.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_time_pullout.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectStereoEnhance = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectStereoEnhance".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectStereoEnhance" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectStereoEnhance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectStereoEnhance(
         fn()

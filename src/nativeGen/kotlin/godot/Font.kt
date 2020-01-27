@@ -76,9 +76,8 @@ open class Font internal constructor(
   }
 
   fun getStringSize(string: String): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(string)
-    val _ret = __method_bind.get_string_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(string)
+    val _ret = __method_bind.get_string_size.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 

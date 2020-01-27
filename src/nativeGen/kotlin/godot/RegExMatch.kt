@@ -20,9 +20,8 @@ open class RegExMatch internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getEnd(name: Variant): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_end.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -37,16 +36,14 @@ open class RegExMatch internal constructor(
   }
 
   fun getStart(name: Variant): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_start.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_start.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getString(name: Variant): String {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_string.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -63,7 +60,7 @@ open class RegExMatch internal constructor(
   companion object {
     fun new(): RegExMatch = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RegExMatch".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RegExMatch" }
+      requireNotNull(fnPtr) { "No instance found for RegExMatch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RegExMatch(
         fn()

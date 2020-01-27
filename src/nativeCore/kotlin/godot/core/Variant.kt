@@ -487,6 +487,11 @@ class Variant(
       }
     }
 
+    // I'm lazy to fix API generation
+    fun new(variant: Variant): Variant {
+      return variant
+    }
+
     private fun allocateVariant(constructor: MemScope.(CPointer<godot_variant>) -> Unit): Variant {
       return allocType(::Variant, constructor)
     }

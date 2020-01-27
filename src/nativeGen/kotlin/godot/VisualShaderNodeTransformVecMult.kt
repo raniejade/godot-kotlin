@@ -23,9 +23,8 @@ open class VisualShaderNodeTransformVecMult internal constructor(
   }
 
   fun setOperator(op: Int) {
-    val _args = VariantArray.new()
-    _args.append(op)
-    __method_bind.set_operator.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(op)
+    __method_bind.set_operator.call(this.toVariant(), _arg, 1)
   }
 
   enum class Operator(
@@ -63,7 +62,7 @@ open class VisualShaderNodeTransformVecMult internal constructor(
     fun new(): VisualShaderNodeTransformVecMult = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformVecMult".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTransformVecMult" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTransformVecMult" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTransformVecMult(
         fn()

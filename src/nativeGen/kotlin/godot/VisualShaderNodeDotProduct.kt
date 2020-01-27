@@ -19,7 +19,7 @@ open class VisualShaderNodeDotProduct internal constructor(
     fun new(): VisualShaderNodeDotProduct = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeDotProduct".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeDotProduct" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeDotProduct" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeDotProduct(
         fn()

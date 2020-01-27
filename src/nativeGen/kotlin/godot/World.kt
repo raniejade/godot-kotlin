@@ -43,21 +43,19 @@ open class World internal constructor(
   }
 
   fun setEnvironment(env: Environment) {
-    val _args = VariantArray.new()
-    _args.append(env)
-    __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(env)
+    __method_bind.set_environment.call(this.toVariant(), _arg, 1)
   }
 
   fun setFallbackEnvironment(env: Environment) {
-    val _args = VariantArray.new()
-    _args.append(env)
-    __method_bind.set_fallback_environment.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(env)
+    __method_bind.set_fallback_environment.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): World = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("World".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton World" }
+      requireNotNull(fnPtr) { "No instance found for World" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       World(
         fn()

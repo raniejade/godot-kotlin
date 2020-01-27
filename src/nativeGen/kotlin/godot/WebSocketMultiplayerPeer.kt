@@ -18,9 +18,8 @@ open class WebSocketMultiplayerPeer internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
   fun getPeer(peerId: Int): WebSocketPeer {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    val _ret = __method_bind.get_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peerId)
+    val _ret = __method_bind.get_peer.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::WebSocketPeer)!!
   }
 

@@ -27,16 +27,14 @@ open class XMLParser internal constructor(
   }
 
   fun getAttributeName(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_attribute_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_attribute_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getAttributeValue(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_attribute_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_attribute_value.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -46,17 +44,14 @@ open class XMLParser internal constructor(
   }
 
   fun getNamedAttributeValue(name: String): String {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_named_attribute_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_named_attribute_value.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_named_attribute_value_safe.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_named_attribute_value_safe.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -81,9 +76,8 @@ open class XMLParser internal constructor(
   }
 
   fun hasAttribute(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_attribute.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_attribute.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -93,16 +87,14 @@ open class XMLParser internal constructor(
   }
 
   fun open(file: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(file)
-    val _ret = __method_bind.open.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(file)
+    val _ret = __method_bind.open.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun openBuffer(buffer: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(buffer)
-    val _ret = __method_bind.open_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buffer)
+    val _ret = __method_bind.open_buffer.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -112,9 +104,8 @@ open class XMLParser internal constructor(
   }
 
   fun seek(position: Int): GDError {
-    val _args = VariantArray.new()
-    _args.append(position)
-    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    val _ret = __method_bind.seek.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -168,7 +159,7 @@ open class XMLParser internal constructor(
 
     fun new(): XMLParser = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("XMLParser".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton XMLParser" }
+      requireNotNull(fnPtr) { "No instance found for XMLParser" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       XMLParser(
         fn()

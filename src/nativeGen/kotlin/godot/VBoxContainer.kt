@@ -18,7 +18,7 @@ open class VBoxContainer internal constructor(
   companion object {
     fun new(): VBoxContainer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VBoxContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VBoxContainer" }
+      requireNotNull(fnPtr) { "No instance found for VBoxContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VBoxContainer(
         fn()

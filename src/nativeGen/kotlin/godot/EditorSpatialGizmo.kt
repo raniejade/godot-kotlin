@@ -21,15 +21,13 @@ open class EditorSpatialGizmo internal constructor(
   _handle: COpaquePointer
 ) : SpatialGizmo(_handle) {
   fun addCollisionSegments(segments: PoolVector3Array) {
-    val _args = VariantArray.new()
-    _args.append(segments)
-    __method_bind.add_collision_segments.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(segments)
+    __method_bind.add_collision_segments.call(this.toVariant(), _arg, 1)
   }
 
   fun addCollisionTriangles(triangles: TriangleMesh) {
-    val _args = VariantArray.new()
-    _args.append(triangles)
-    __method_bind.add_collision_triangles.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(triangles)
+    __method_bind.add_collision_triangles.call(this.toVariant(), _arg, 1)
   }
 
   fun addHandles(
@@ -94,22 +92,20 @@ open class EditorSpatialGizmo internal constructor(
   }
 
   fun setHidden(hidden: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(hidden)
-    __method_bind.set_hidden.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hidden)
+    __method_bind.set_hidden.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpatialNode(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_spatial_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_spatial_node.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): EditorSpatialGizmo = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSpatialGizmo".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorSpatialGizmo" }
+      requireNotNull(fnPtr) { "No instance found for EditorSpatialGizmo" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorSpatialGizmo(
         fn()

@@ -33,7 +33,7 @@ open class _Mutex internal constructor(
   companion object {
     fun new(): _Mutex = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Mutex".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton _Mutex" }
+      requireNotNull(fnPtr) { "No instance found for _Mutex" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       _Mutex(
         fn()

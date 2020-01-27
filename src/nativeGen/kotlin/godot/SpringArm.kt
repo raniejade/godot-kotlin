@@ -21,9 +21,8 @@ open class SpringArm internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun addExcludedObject(rID: RID) {
-    val _args = VariantArray.new()
-    _args.append(rID)
-    __method_bind.add_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rID)
+    __method_bind.add_excluded_object.call(this.toVariant(), _arg, 1)
   }
 
   fun clearExcludedObjects() {
@@ -56,40 +55,35 @@ open class SpringArm internal constructor(
   }
 
   fun removeExcludedObject(rID: RID): Boolean {
-    val _args = VariantArray.new()
-    _args.append(rID)
-    val _ret = __method_bind.remove_excluded_object.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rID)
+    val _ret = __method_bind.remove_excluded_object.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun setCollisionMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_collision_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setLength(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setMargin(margin: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    __method_bind.set_margin.call(this.toVariant(), _arg, 1)
   }
 
   fun setShape(shape: Shape) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SpringArm = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpringArm".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SpringArm" }
+      requireNotNull(fnPtr) { "No instance found for SpringArm" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpringArm(
         fn()

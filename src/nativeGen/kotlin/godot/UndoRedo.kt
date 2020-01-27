@@ -40,9 +40,8 @@ open class UndoRedo internal constructor(
   }
 
   fun addDoReference(`object`: Object) {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    __method_bind.add_do_reference.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`object`)
+    __method_bind.add_do_reference.call(this.toVariant(), _arg, 1)
   }
 
   fun addUndoMethod(`object`: Object, method: String): Variant {
@@ -66,15 +65,13 @@ open class UndoRedo internal constructor(
   }
 
   fun addUndoReference(`object`: Object) {
-    val _args = VariantArray.new()
-    _args.append(`object`)
-    __method_bind.add_undo_reference.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`object`)
+    __method_bind.add_undo_reference.call(this.toVariant(), _arg, 1)
   }
 
   fun clearHistory(increaseVersion: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(increaseVersion)
-    __method_bind.clear_history.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(increaseVersion)
+    __method_bind.clear_history.call(this.toVariant(), _arg, 1)
   }
 
   fun commitAction() {
@@ -143,7 +140,7 @@ open class UndoRedo internal constructor(
 
     fun new(): UndoRedo = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UndoRedo".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton UndoRedo" }
+      requireNotNull(fnPtr) { "No instance found for UndoRedo" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       UndoRedo(
         fn()

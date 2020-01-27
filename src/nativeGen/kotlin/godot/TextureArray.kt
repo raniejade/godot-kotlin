@@ -18,7 +18,7 @@ open class TextureArray internal constructor(
   companion object {
     fun new(): TextureArray = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureArray".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TextureArray" }
+      requireNotNull(fnPtr) { "No instance found for TextureArray" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextureArray(
         fn()

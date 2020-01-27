@@ -39,34 +39,30 @@ open class PhysicsMaterial internal constructor(
   }
 
   fun setAbsorbent(absorbent: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(absorbent)
-    __method_bind.set_absorbent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(absorbent)
+    __method_bind.set_absorbent.call(this.toVariant(), _arg, 1)
   }
 
   fun setBounce(bounce: Float) {
-    val _args = VariantArray.new()
-    _args.append(bounce)
-    __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bounce)
+    __method_bind.set_bounce.call(this.toVariant(), _arg, 1)
   }
 
   fun setFriction(friction: Float) {
-    val _args = VariantArray.new()
-    _args.append(friction)
-    __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(friction)
+    __method_bind.set_friction.call(this.toVariant(), _arg, 1)
   }
 
   fun setRough(rough: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(rough)
-    __method_bind.set_rough.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rough)
+    __method_bind.set_rough.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PhysicsMaterial = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicsMaterial".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PhysicsMaterial" }
+      requireNotNull(fnPtr) { "No instance found for PhysicsMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PhysicsMaterial(
         fn()

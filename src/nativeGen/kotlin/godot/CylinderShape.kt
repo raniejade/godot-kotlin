@@ -28,21 +28,19 @@ open class CylinderShape internal constructor(
   }
 
   fun setHeight(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CylinderShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CylinderShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CylinderShape" }
+      requireNotNull(fnPtr) { "No instance found for CylinderShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CylinderShape(
         fn()

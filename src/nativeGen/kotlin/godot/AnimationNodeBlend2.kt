@@ -23,16 +23,15 @@ open class AnimationNodeBlend2 internal constructor(
   }
 
   fun setUseSync(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_sync.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_sync.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AnimationNodeBlend2 = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlend2".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeBlend2" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeBlend2" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeBlend2(
         fn()

@@ -78,15 +78,13 @@ open class Spatial internal constructor(
   }
 
   fun globalScale(scale: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.global_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.global_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun globalTranslate(offset: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.global_translate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.global_translate.call(this.toVariant(), _arg, 1)
   }
 
   fun hide() {
@@ -161,51 +159,43 @@ open class Spatial internal constructor(
   }
 
   fun rotateX(angle: Float) {
-    val _args = VariantArray.new()
-    _args.append(angle)
-    __method_bind.rotate_x.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(angle)
+    __method_bind.rotate_x.call(this.toVariant(), _arg, 1)
   }
 
   fun rotateY(angle: Float) {
-    val _args = VariantArray.new()
-    _args.append(angle)
-    __method_bind.rotate_y.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(angle)
+    __method_bind.rotate_y.call(this.toVariant(), _arg, 1)
   }
 
   fun rotateZ(angle: Float) {
-    val _args = VariantArray.new()
-    _args.append(angle)
-    __method_bind.rotate_z.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(angle)
+    __method_bind.rotate_z.call(this.toVariant(), _arg, 1)
   }
 
   fun scaleObjectLocal(scale: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.scale_object_local.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.scale_object_local.call(this.toVariant(), _arg, 1)
   }
 
   fun setAsToplevel(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_as_toplevel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_as_toplevel.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisableScale(disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disable)
-    __method_bind.set_disable_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disable)
+    __method_bind.set_disable_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setGizmo(gizmo: SpatialGizmo) {
-    val _args = VariantArray.new()
-    _args.append(gizmo)
-    __method_bind.set_gizmo.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(gizmo)
+    __method_bind.set_gizmo.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlobalTransform(global: Transform) {
-    val _args = VariantArray.new()
-    _args.append(global)
-    __method_bind.set_global_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(global)
+    __method_bind.set_global_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setIdentity() {
@@ -213,57 +203,48 @@ open class Spatial internal constructor(
   }
 
   fun setIgnoreTransformNotification(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_ignore_transform_notification.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_ignore_transform_notification.call(this.toVariant(), _arg, 1)
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_notify_local_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_notify_local_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setNotifyTransform(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_notify_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_notify_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotation(euler: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(euler)
-    __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(euler)
+    __method_bind.set_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotationDegrees(eulerDegrees: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(eulerDegrees)
-    __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(eulerDegrees)
+    __method_bind.set_rotation_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setScale(scale: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransform(local: Transform) {
-    val _args = VariantArray.new()
-    _args.append(local)
-    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(local)
+    __method_bind.set_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setTranslation(translation: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(translation)
-    __method_bind.set_translation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(translation)
+    __method_bind.set_translation.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisible(visible: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(visible)
-    __method_bind.set_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visible)
+    __method_bind.set_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun show() {
@@ -271,29 +252,25 @@ open class Spatial internal constructor(
   }
 
   fun toGlobal(localPoint: Vector3): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(localPoint)
-    val _ret = __method_bind.to_global.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(localPoint)
+    val _ret = __method_bind.to_global.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun toLocal(globalPoint: Vector3): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(globalPoint)
-    val _ret = __method_bind.to_local.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(globalPoint)
+    val _ret = __method_bind.to_local.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun translate(offset: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.translate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.translate.call(this.toVariant(), _arg, 1)
   }
 
   fun translateObjectLocal(offset: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.translate_object_local.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.translate_object_local.call(this.toVariant(), _arg, 1)
   }
 
   fun updateGizmo() {
@@ -311,7 +288,7 @@ open class Spatial internal constructor(
 
     fun new(): Spatial = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Spatial".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Spatial" }
+      requireNotNull(fnPtr) { "No instance found for Spatial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Spatial(
         fn()

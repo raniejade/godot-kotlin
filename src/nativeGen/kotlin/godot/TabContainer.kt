@@ -55,9 +55,8 @@ open class TabContainer internal constructor(
   }
 
   fun getTabControl(idx: Int): Control {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_tab_control.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_tab_control.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Control)!!
   }
 
@@ -67,23 +66,20 @@ open class TabContainer internal constructor(
   }
 
   fun getTabDisabled(tabIdx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getTabIcon(tabIdx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_icon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_icon.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTabTitle(tabIdx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_title.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_title.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -93,27 +89,23 @@ open class TabContainer internal constructor(
   }
 
   fun setCurrentTab(tabIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    __method_bind.set_current_tab.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    __method_bind.set_current_tab.call(this.toVariant(), _arg, 1)
   }
 
   fun setDragToRearrangeEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_drag_to_rearrange_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_drag_to_rearrange_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setPopup(popup: Node) {
-    val _args = VariantArray.new()
-    _args.append(popup)
-    __method_bind.set_popup.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(popup)
+    __method_bind.set_popup.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabAlign(align: Int) {
-    val _args = VariantArray.new()
-    _args.append(align)
-    __method_bind.set_tab_align.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(align)
+    __method_bind.set_tab_align.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabDisabled(tabIdx: Int, disabled: Boolean) {
@@ -138,15 +130,13 @@ open class TabContainer internal constructor(
   }
 
   fun setTabsRearrangeGroup(groupId: Int) {
-    val _args = VariantArray.new()
-    _args.append(groupId)
-    __method_bind.set_tabs_rearrange_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(groupId)
+    __method_bind.set_tabs_rearrange_group.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabsVisible(visible: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(visible)
-    __method_bind.set_tabs_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visible)
+    __method_bind.set_tabs_visible.call(this.toVariant(), _arg, 1)
   }
 
   enum class TabAlign(
@@ -179,7 +169,7 @@ open class TabContainer internal constructor(
 
     fun new(): TabContainer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TabContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TabContainer" }
+      requireNotNull(fnPtr) { "No instance found for TabContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TabContainer(
         fn()

@@ -28,22 +28,20 @@ open class VisualScriptConstant internal constructor(
   }
 
   fun setConstantType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_constant_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_constant_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setConstantValue(value: Variant) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_constant_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_constant_value.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptConstant(
         fn()

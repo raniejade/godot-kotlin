@@ -20,9 +20,8 @@ open class EditorFileSystem internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun getFileType(path: String): String {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_file_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_file_type.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -32,9 +31,8 @@ open class EditorFileSystem internal constructor(
   }
 
   fun getFilesystemPath(path: String): EditorFileSystemDirectory {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_filesystem_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_filesystem_path.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
@@ -57,9 +55,8 @@ open class EditorFileSystem internal constructor(
   }
 
   fun updateFile(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.update_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.update_file.call(this.toVariant(), _arg, 1)
   }
 
   fun updateScriptClasses() {

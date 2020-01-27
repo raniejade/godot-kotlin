@@ -23,16 +23,15 @@ open class RectangleShape2D internal constructor(
   }
 
   fun setExtents(extents: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(extents)
-    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extents)
+    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): RectangleShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RectangleShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RectangleShape2D" }
+      requireNotNull(fnPtr) { "No instance found for RectangleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RectangleShape2D(
         fn()

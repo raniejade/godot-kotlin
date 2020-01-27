@@ -23,16 +23,15 @@ open class ConvexPolygonShape internal constructor(
   }
 
   fun setPoints(points: PoolVector3Array) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    __method_bind.set_points.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(points)
+    __method_bind.set_points.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ConvexPolygonShape = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConvexPolygonShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ConvexPolygonShape" }
+      requireNotNull(fnPtr) { "No instance found for ConvexPolygonShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConvexPolygonShape(
         fn()

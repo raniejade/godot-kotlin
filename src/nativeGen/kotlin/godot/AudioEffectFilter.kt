@@ -39,27 +39,23 @@ open class AudioEffectFilter internal constructor(
   }
 
   fun setCutoff(freq: Float) {
-    val _args = VariantArray.new()
-    _args.append(freq)
-    __method_bind.set_cutoff.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(freq)
+    __method_bind.set_cutoff.call(this.toVariant(), _arg, 1)
   }
 
   fun setDb(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setGain(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_gain.call(this.toVariant(), _arg, 1)
   }
 
   fun setResonance(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_resonance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_resonance.call(this.toVariant(), _arg, 1)
   }
 
   enum class FilterDB(
@@ -97,7 +93,7 @@ open class AudioEffectFilter internal constructor(
     fun new(): AudioEffectFilter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectFilter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectFilter" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectFilter(
         fn()

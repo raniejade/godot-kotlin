@@ -55,23 +55,20 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun getNode(name: String): AnimationNode {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::AnimationNode)!!
   }
 
   fun getNodeName(node: AnimationNode): String {
-    val _args = VariantArray.new()
-    _args.append(node)
-    val _ret = __method_bind.get_node_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    val _ret = __method_bind.get_node_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getNodePosition(name: String): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_node_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_node_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -81,9 +78,8 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun getTransition(idx: Int): AnimationNodeStateMachineTransition {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_transition.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_transition.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::AnimationNodeStateMachineTransition)!!
   }
 
@@ -93,23 +89,20 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun getTransitionFrom(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_transition_from.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_transition_from.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getTransitionTo(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_transition_to.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_transition_to.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun hasNode(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_node.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -122,9 +115,8 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun removeNode(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_node.call(this.toVariant(), _arg, 1)
   }
 
   fun removeTransition(from: String, to: String) {
@@ -135,9 +127,8 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun removeTransitionByIndex(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.remove_transition_by_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.remove_transition_by_index.call(this.toVariant(), _arg, 1)
   }
 
   fun renameNode(name: String, newName: String) {
@@ -148,15 +139,13 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun setEndNode(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_end_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_end_node.call(this.toVariant(), _arg, 1)
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_graph_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_graph_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodePosition(name: String, position: Vector2) {
@@ -167,16 +156,15 @@ open class AnimationNodeStateMachine internal constructor(
   }
 
   fun setStartNode(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_start_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_start_node.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AnimationNodeStateMachine = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachine".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeStateMachine" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeStateMachine" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeStateMachine(
         fn()

@@ -52,37 +52,32 @@ open class OptionButton internal constructor(
   }
 
   fun getItemIcon(idx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_item_icon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_item_icon.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemId(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_item_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_item_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getItemIndex(id: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_index.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getItemMetadata(idx: Int): Variant {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_item_metadata.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_item_metadata.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun getItemText(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_item_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_item_text.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -107,22 +102,19 @@ open class OptionButton internal constructor(
   }
 
   fun isItemDisabled(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.is_item_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.is_item_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeItem(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.remove_item.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.remove_item.call(this.toVariant(), _arg, 1)
   }
 
   fun select(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.select.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.select.call(this.toVariant(), _arg, 1)
   }
 
   fun setItemDisabled(idx: Int, disabled: Boolean) {
@@ -163,7 +155,7 @@ open class OptionButton internal constructor(
   companion object {
     fun new(): OptionButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OptionButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton OptionButton" }
+      requireNotNull(fnPtr) { "No instance found for OptionButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       OptionButton(
         fn()

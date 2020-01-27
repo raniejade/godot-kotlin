@@ -19,15 +19,13 @@ open class IP internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun clearCache(hostname: String) {
-    val _args = VariantArray.new()
-    _args.append(hostname)
-    __method_bind.clear_cache.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hostname)
+    __method_bind.clear_cache.call(this.toVariant(), _arg, 1)
   }
 
   fun eraseResolveItem(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.erase_resolve_item.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.erase_resolve_item.call(this.toVariant(), _arg, 1)
   }
 
   fun getLocalAddresses(): VariantArray {
@@ -36,16 +34,14 @@ open class IP internal constructor(
   }
 
   fun getResolveItemAddress(id: Int): String {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_resolve_item_address.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_resolve_item_address.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getResolveItemStatus(id: Int): ResolverStatus {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_resolve_item_status.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_resolve_item_status.call(this.toVariant(), _arg, 1)
     return IP.ResolverStatus.from(_ret.asInt())
   }
 

@@ -69,76 +69,65 @@ open class Curve internal constructor(
   }
 
   fun getPointLeftMode(index: Int): TangentMode {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_point_left_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_point_left_mode.call(this.toVariant(), _arg, 1)
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointLeftTangent(index: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_point_left_tangent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_point_left_tangent.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getPointPosition(index: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPointRightMode(index: Int): TangentMode {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_point_right_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_point_right_mode.call(this.toVariant(), _arg, 1)
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointRightTangent(index: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_point_right_tangent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_point_right_tangent.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun interpolate(offset: Float): Float {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    val _ret = __method_bind.interpolate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    val _ret = __method_bind.interpolate.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun interpolateBaked(offset: Float): Float {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    val _ret = __method_bind.interpolate_baked.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    val _ret = __method_bind.interpolate_baked.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun removePoint(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
   }
 
   fun setBakeResolution(resolution: Int) {
-    val _args = VariantArray.new()
-    _args.append(resolution)
-    __method_bind.set_bake_resolution.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resolution)
+    __method_bind.set_bake_resolution.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxValue(max: Float) {
-    val _args = VariantArray.new()
-    _args.append(max)
-    __method_bind.set_max_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(max)
+    __method_bind.set_max_value.call(this.toVariant(), _arg, 1)
   }
 
   fun setMinValue(min: Float) {
-    val _args = VariantArray.new()
-    _args.append(min)
-    __method_bind.set_min_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(min)
+    __method_bind.set_min_value.call(this.toVariant(), _arg, 1)
   }
 
   fun setPointLeftMode(index: Int, mode: Int) {
@@ -214,7 +203,7 @@ open class Curve internal constructor(
 
     fun new(): Curve = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Curve" }
+      requireNotNull(fnPtr) { "No instance found for Curve" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Curve(
         fn()

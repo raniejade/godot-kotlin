@@ -26,15 +26,13 @@ open class GraphNode internal constructor(
   }
 
   fun clearSlot(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.clear_slot.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.clear_slot.call(this.toVariant(), _arg, 1)
   }
 
   fun getConnectionInputColor(idx: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_input_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_input_color.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
@@ -44,25 +42,20 @@ open class GraphNode internal constructor(
   }
 
   fun getConnectionInputPosition(idx: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_input_position.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_input_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getConnectionInputType(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_input_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_input_type.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getConnectionOutputColor(idx: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_output_color.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_output_color.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
@@ -72,17 +65,14 @@ open class GraphNode internal constructor(
   }
 
   fun getConnectionOutputPosition(idx: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_output_position.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_output_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getConnectionOutputType(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_output_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_output_type.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -97,30 +87,26 @@ open class GraphNode internal constructor(
   }
 
   fun getSlotColorLeft(idx: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_slot_color_left.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_slot_color_left.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun getSlotColorRight(idx: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_slot_color_right.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_slot_color_right.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun getSlotTypeLeft(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_slot_type_left.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_slot_type_left.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getSlotTypeRight(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_slot_type_right.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_slot_type_right.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -150,53 +136,45 @@ open class GraphNode internal constructor(
   }
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.is_slot_enabled_left.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.is_slot_enabled_left.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.is_slot_enabled_right.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.is_slot_enabled_right.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun setComment(comment: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(comment)
-    __method_bind.set_comment.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(comment)
+    __method_bind.set_comment.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setOverlay(overlay: Int) {
-    val _args = VariantArray.new()
-    _args.append(overlay)
-    __method_bind.set_overlay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(overlay)
+    __method_bind.set_overlay.call(this.toVariant(), _arg, 1)
   }
 
   fun setResizable(resizable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(resizable)
-    __method_bind.set_resizable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resizable)
+    __method_bind.set_resizable.call(this.toVariant(), _arg, 1)
   }
 
   fun setSelected(selected: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(selected)
-    __method_bind.set_selected.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(selected)
+    __method_bind.set_selected.call(this.toVariant(), _arg, 1)
   }
 
   fun setShowCloseButton(show: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(show)
-    __method_bind.set_show_close_button.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(show)
+    __method_bind.set_show_close_button.call(this.toVariant(), _arg, 1)
   }
 
   fun setSlot(
@@ -224,9 +202,8 @@ open class GraphNode internal constructor(
   }
 
   fun setTitle(title: String) {
-    val _args = VariantArray.new()
-    _args.append(title)
-    __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(title)
+    __method_bind.set_title.call(this.toVariant(), _arg, 1)
   }
 
   enum class Overlay(
@@ -259,7 +236,7 @@ open class GraphNode internal constructor(
 
     fun new(): GraphNode = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphNode".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GraphNode" }
+      requireNotNull(fnPtr) { "No instance found for GraphNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GraphNode(
         fn()

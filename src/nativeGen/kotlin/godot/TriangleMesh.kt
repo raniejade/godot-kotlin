@@ -18,7 +18,7 @@ open class TriangleMesh internal constructor(
   companion object {
     fun new(): TriangleMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TriangleMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TriangleMesh" }
+      requireNotNull(fnPtr) { "No instance found for TriangleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TriangleMesh(
         fn()

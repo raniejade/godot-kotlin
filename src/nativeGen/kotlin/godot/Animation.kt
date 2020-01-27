@@ -245,9 +245,8 @@ open class Animation internal constructor(
   }
 
   fun findTrack(path: NodePath): Int {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.find_track.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.find_track.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -302,27 +301,23 @@ open class Animation internal constructor(
   }
 
   fun removeTrack(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.remove_track.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.remove_track.call(this.toVariant(), _arg, 1)
   }
 
   fun setLength(timeSec: Float) {
-    val _args = VariantArray.new()
-    _args.append(timeSec)
-    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(timeSec)
+    __method_bind.set_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoop(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_loop.call(this.toVariant(), _arg, 1)
   }
 
   fun setStep(sizeSec: Float) {
-    val _args = VariantArray.new()
-    _args.append(sizeSec)
-    __method_bind.set_step.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sizeSec)
+    __method_bind.set_step.call(this.toVariant(), _arg, 1)
   }
 
   fun trackFindKey(
@@ -339,25 +334,20 @@ open class Animation internal constructor(
   }
 
   fun trackGetInterpolationLoopWrap(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_get_interpolation_loop_wrap.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_get_interpolation_loop_wrap.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun trackGetInterpolationType(idx: Int): InterpolationType {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_get_interpolation_type.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_get_interpolation_type.call(this.toVariant(), _arg, 1)
     return Animation.InterpolationType.from(_ret.asInt())
   }
 
   fun trackGetKeyCount(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_get_key_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_get_key_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -386,16 +376,14 @@ open class Animation internal constructor(
   }
 
   fun trackGetPath(idx: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_get_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_get_path.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
   fun trackGetType(idx: Int): TrackType {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_get_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_get_type.call(this.toVariant(), _arg, 1)
     return Animation.TrackType.from(_ret.asInt())
   }
 
@@ -414,23 +402,20 @@ open class Animation internal constructor(
   }
 
   fun trackIsEnabled(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_is_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_is_enabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun trackIsImported(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.track_is_imported.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.track_is_imported.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun trackMoveDown(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.track_move_down.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.track_move_down.call(this.toVariant(), _arg, 1)
   }
 
   fun trackMoveTo(idx: Int, toIdx: Int) {
@@ -441,9 +426,8 @@ open class Animation internal constructor(
   }
 
   fun trackMoveUp(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.track_move_up.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.track_move_up.call(this.toVariant(), _arg, 1)
   }
 
   fun trackRemoveKey(idx: Int, keyIdx: Int) {
@@ -579,10 +563,8 @@ open class Animation internal constructor(
   }
 
   fun valueTrackGetUpdateMode(idx: Int): UpdateMode {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.value_track_get_update_mode.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.value_track_get_update_mode.call(this.toVariant(), _arg, 1)
     return Animation.UpdateMode.from(_ret.asInt())
   }
 
@@ -693,7 +675,7 @@ open class Animation internal constructor(
 
     fun new(): Animation = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Animation".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Animation" }
+      requireNotNull(fnPtr) { "No instance found for Animation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Animation(
         fn()

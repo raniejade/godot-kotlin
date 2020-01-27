@@ -29,22 +29,20 @@ open class VisualScriptReturn internal constructor(
   }
 
   fun setEnableReturnValue(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_enable_return_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_enable_return_value.call(this.toVariant(), _arg, 1)
   }
 
   fun setReturnType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_return_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_return_type.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptReturn = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptReturn".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptReturn" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptReturn" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptReturn(
         fn()

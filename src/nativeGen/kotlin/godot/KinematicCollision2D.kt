@@ -77,7 +77,7 @@ open class KinematicCollision2D internal constructor(
     fun new(): KinematicCollision2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicCollision2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton KinematicCollision2D" }
+      requireNotNull(fnPtr) { "No instance found for KinematicCollision2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       KinematicCollision2D(
         fn()

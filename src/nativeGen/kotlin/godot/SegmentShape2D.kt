@@ -28,22 +28,20 @@ open class SegmentShape2D internal constructor(
   }
 
   fun setA(a: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(a)
-    __method_bind.set_a.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(a)
+    __method_bind.set_a.call(this.toVariant(), _arg, 1)
   }
 
   fun setB(b: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(b)
-    __method_bind.set_b.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(b)
+    __method_bind.set_b.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SegmentShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SegmentShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SegmentShape2D" }
+      requireNotNull(fnPtr) { "No instance found for SegmentShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SegmentShape2D(
         fn()

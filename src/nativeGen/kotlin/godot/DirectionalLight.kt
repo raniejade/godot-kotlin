@@ -34,21 +34,18 @@ open class DirectionalLight internal constructor(
   }
 
   fun setBlendSplits(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_blend_splits.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_blend_splits.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowDepthRange(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_shadow_depth_range.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_shadow_depth_range.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_shadow_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_shadow_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class ShadowMode(
@@ -105,7 +102,7 @@ open class DirectionalLight internal constructor(
     fun new(): DirectionalLight = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DirectionalLight".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton DirectionalLight" }
+      requireNotNull(fnPtr) { "No instance found for DirectionalLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       DirectionalLight(
         fn()

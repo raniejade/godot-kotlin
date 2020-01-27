@@ -23,16 +23,15 @@ open class VisualScriptGlobalConstant internal constructor(
   }
 
   fun setGlobalConstant(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.set_global_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.set_global_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptGlobalConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptGlobalConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptGlobalConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptGlobalConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptGlobalConstant(
         fn()

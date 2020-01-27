@@ -19,9 +19,8 @@ open class BoxContainer internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun addSpacer(begin: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(begin)
-    __method_bind.add_spacer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(begin)
+    __method_bind.add_spacer.call(this.toVariant(), _arg, 1)
   }
 
   fun getAlignment(): AlignMode {
@@ -30,9 +29,8 @@ open class BoxContainer internal constructor(
   }
 
   fun setAlignment(alignment: Int) {
-    val _args = VariantArray.new()
-    _args.append(alignment)
-    __method_bind.set_alignment.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(alignment)
+    __method_bind.set_alignment.call(this.toVariant(), _arg, 1)
   }
 
   enum class AlignMode(

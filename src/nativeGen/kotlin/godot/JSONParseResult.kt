@@ -40,34 +40,30 @@ open class JSONParseResult internal constructor(
   }
 
   fun setError(error: Int) {
-    val _args = VariantArray.new()
-    _args.append(error)
-    __method_bind.set_error.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(error)
+    __method_bind.set_error.call(this.toVariant(), _arg, 1)
   }
 
   fun setErrorLine(errorLine: Int) {
-    val _args = VariantArray.new()
-    _args.append(errorLine)
-    __method_bind.set_error_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(errorLine)
+    __method_bind.set_error_line.call(this.toVariant(), _arg, 1)
   }
 
   fun setErrorString(errorString: String) {
-    val _args = VariantArray.new()
-    _args.append(errorString)
-    __method_bind.set_error_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(errorString)
+    __method_bind.set_error_string.call(this.toVariant(), _arg, 1)
   }
 
   fun setResult(result: Variant) {
-    val _args = VariantArray.new()
-    _args.append(result)
-    __method_bind.set_result.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(result)
+    __method_bind.set_result.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): JSONParseResult = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("JSONParseResult".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton JSONParseResult" }
+      requireNotNull(fnPtr) { "No instance found for JSONParseResult" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       JSONParseResult(
         fn()

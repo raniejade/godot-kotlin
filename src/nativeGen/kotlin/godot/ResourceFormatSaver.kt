@@ -19,7 +19,7 @@ open class ResourceFormatSaver internal constructor(
     fun new(): ResourceFormatSaver = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourceFormatSaver".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ResourceFormatSaver" }
+      requireNotNull(fnPtr) { "No instance found for ResourceFormatSaver" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ResourceFormatSaver(
         fn()

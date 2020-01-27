@@ -19,7 +19,7 @@ open class AudioBusLayout internal constructor(
     fun new(): AudioBusLayout = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioBusLayout".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioBusLayout" }
+      requireNotNull(fnPtr) { "No instance found for AudioBusLayout" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioBusLayout(
         fn()

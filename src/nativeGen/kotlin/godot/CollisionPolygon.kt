@@ -35,28 +35,25 @@ open class CollisionPolygon internal constructor(
   }
 
   fun setDepth(depth: Float) {
-    val _args = VariantArray.new()
-    _args.append(depth)
-    __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depth)
+    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disabled)
-    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disabled)
+    __method_bind.set_disabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    __method_bind.set_polygon.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CollisionPolygon = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionPolygon".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CollisionPolygon" }
+      requireNotNull(fnPtr) { "No instance found for CollisionPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CollisionPolygon(
         fn()

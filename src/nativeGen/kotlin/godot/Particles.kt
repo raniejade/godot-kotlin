@@ -36,9 +36,8 @@ open class Particles internal constructor(
   }
 
   fun getDrawPassMesh(pass: Int): Mesh {
-    val _args = VariantArray.new()
-    _args.append(pass)
-    val _ret = __method_bind.get_draw_pass_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pass)
+    val _ret = __method_bind.get_draw_pass_mesh.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Mesh)!!
   }
 
@@ -112,15 +111,13 @@ open class Particles internal constructor(
   }
 
   fun setAmount(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_amount.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_amount.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawOrder(order: Int) {
-    val _args = VariantArray.new()
-    _args.append(order)
-    __method_bind.set_draw_order.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(order)
+    __method_bind.set_draw_order.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawPassMesh(pass: Int, mesh: Mesh) {
@@ -131,81 +128,68 @@ open class Particles internal constructor(
   }
 
   fun setDrawPasses(passes: Int) {
-    val _args = VariantArray.new()
-    _args.append(passes)
-    __method_bind.set_draw_passes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(passes)
+    __method_bind.set_draw_passes.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmitting(emitting: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(emitting)
-    __method_bind.set_emitting.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(emitting)
+    __method_bind.set_emitting.call(this.toVariant(), _arg, 1)
   }
 
   fun setExplosivenessRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.set_explosiveness_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.set_explosiveness_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setFixedFps(fps: Int) {
-    val _args = VariantArray.new()
-    _args.append(fps)
-    __method_bind.set_fixed_fps.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fps)
+    __method_bind.set_fixed_fps.call(this.toVariant(), _arg, 1)
   }
 
   fun setFractionalDelta(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_fractional_delta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_fractional_delta.call(this.toVariant(), _arg, 1)
   }
 
   fun setLifetime(secs: Float) {
-    val _args = VariantArray.new()
-    _args.append(secs)
-    __method_bind.set_lifetime.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(secs)
+    __method_bind.set_lifetime.call(this.toVariant(), _arg, 1)
   }
 
   fun setOneShot(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_one_shot.call(this.toVariant(), _arg, 1)
   }
 
   fun setPreProcessTime(secs: Float) {
-    val _args = VariantArray.new()
-    _args.append(secs)
-    __method_bind.set_pre_process_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(secs)
+    __method_bind.set_pre_process_time.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_process_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_process_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setRandomnessRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.set_randomness_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.set_randomness_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeedScale(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_speed_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_local_coordinates.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_local_coordinates.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisibilityAabb(aabb: AABB) {
-    val _args = VariantArray.new()
-    _args.append(aabb)
-    __method_bind.set_visibility_aabb.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(aabb)
+    __method_bind.set_visibility_aabb.call(this.toVariant(), _arg, 1)
   }
 
   enum class DrawOrder(
@@ -240,7 +224,7 @@ open class Particles internal constructor(
 
     fun new(): Particles = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Particles".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Particles" }
+      requireNotNull(fnPtr) { "No instance found for Particles" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Particles(
         fn()

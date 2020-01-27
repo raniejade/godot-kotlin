@@ -26,9 +26,8 @@ open class Mesh internal constructor(
   }
 
   fun createOutline(margin: Float): Mesh {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.create_outline.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.create_outline.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Mesh)!!
   }
 
@@ -58,30 +57,25 @@ open class Mesh internal constructor(
   }
 
   fun setLightmapSizeHint(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_lightmap_size_hint.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_lightmap_size_hint.call(this.toVariant(), _arg, 1)
   }
 
   fun surfaceGetArrays(surfIdx: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_arrays.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_arrays.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_blend_shape_arrays.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_blend_shape_arrays.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun surfaceGetMaterial(surfIdx: Int): Material {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_material.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Material)!!
   }
 

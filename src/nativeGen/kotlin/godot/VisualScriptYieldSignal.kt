@@ -40,27 +40,23 @@ open class VisualScriptYieldSignal internal constructor(
   }
 
   fun setBasePath(basePath: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(basePath)
-    __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(basePath)
+    __method_bind.set_base_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setBaseType(baseType: String) {
-    val _args = VariantArray.new()
-    _args.append(baseType)
-    __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(baseType)
+    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setCallMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_call_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setSignal(signal: String) {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(signal)
+    __method_bind.set_signal.call(this.toVariant(), _arg, 1)
   }
 
   enum class CallMode(
@@ -94,7 +90,7 @@ open class VisualScriptYieldSignal internal constructor(
     fun new(): VisualScriptYieldSignal = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYieldSignal".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptYieldSignal" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptYieldSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptYieldSignal(
         fn()

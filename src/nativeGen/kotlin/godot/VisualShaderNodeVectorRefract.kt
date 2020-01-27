@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorRefract internal constructor(
     fun new(): VisualShaderNodeVectorRefract = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorRefract".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorRefract" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorRefract" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorRefract(
         fn()

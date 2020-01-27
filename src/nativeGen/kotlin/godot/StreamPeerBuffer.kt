@@ -43,28 +43,25 @@ open class StreamPeerBuffer internal constructor(
   }
 
   fun resize(size: Int) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.resize.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.resize.call(this.toVariant(), _arg, 1)
   }
 
   fun seek(position: Int) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.seek.call(this.toVariant(), _arg, 1)
   }
 
   fun setDataArray(data: PoolByteArray) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.set_data_array.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.set_data_array.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): StreamPeerBuffer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerBuffer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StreamPeerBuffer" }
+      requireNotNull(fnPtr) { "No instance found for StreamPeerBuffer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StreamPeerBuffer(
         fn()

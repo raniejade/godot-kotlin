@@ -28,15 +28,13 @@ open class Material internal constructor(
   }
 
   fun setNextPass(nextPass: Material) {
-    val _args = VariantArray.new()
-    _args.append(nextPass)
-    __method_bind.set_next_pass.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(nextPass)
+    __method_bind.set_next_pass.call(this.toVariant(), _arg, 1)
   }
 
   fun setRenderPriority(priority: Int) {
-    val _args = VariantArray.new()
-    _args.append(priority)
-    __method_bind.set_render_priority.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(priority)
+    __method_bind.set_render_priority.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

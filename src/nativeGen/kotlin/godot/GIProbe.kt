@@ -82,63 +82,53 @@ open class GIProbe internal constructor(
   }
 
   fun setBias(max: Float) {
-    val _args = VariantArray.new()
-    _args.append(max)
-    __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(max)
+    __method_bind.set_bias.call(this.toVariant(), _arg, 1)
   }
 
   fun setCompress(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_compress.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_compress.call(this.toVariant(), _arg, 1)
   }
 
   fun setDynamicRange(max: Int) {
-    val _args = VariantArray.new()
-    _args.append(max)
-    __method_bind.set_dynamic_range.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(max)
+    __method_bind.set_dynamic_range.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnergy(max: Float) {
-    val _args = VariantArray.new()
-    _args.append(max)
-    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(max)
+    __method_bind.set_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setExtents(extents: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(extents)
-    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extents)
+    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
   }
 
   fun setInterior(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_interior.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_interior.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalBias(max: Float) {
-    val _args = VariantArray.new()
-    _args.append(max)
-    __method_bind.set_normal_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(max)
+    __method_bind.set_normal_bias.call(this.toVariant(), _arg, 1)
   }
 
   fun setProbeData(data: GIProbeData) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.set_probe_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.set_probe_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setPropagation(max: Float) {
-    val _args = VariantArray.new()
-    _args.append(max)
-    __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(max)
+    __method_bind.set_propagation.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdiv(subdiv: Int) {
-    val _args = VariantArray.new()
-    _args.append(subdiv)
-    __method_bind.set_subdiv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(subdiv)
+    __method_bind.set_subdiv.call(this.toVariant(), _arg, 1)
   }
 
   enum class Subdiv(
@@ -179,7 +169,7 @@ open class GIProbe internal constructor(
 
     fun new(): GIProbe = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbe".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GIProbe" }
+      requireNotNull(fnPtr) { "No instance found for GIProbe" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GIProbe(
         fn()

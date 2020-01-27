@@ -63,9 +63,8 @@ open class Line2D internal constructor(
   }
 
   fun getPointPosition(i: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(i)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(i)
+    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -100,39 +99,33 @@ open class Line2D internal constructor(
   }
 
   fun removePoint(i: Int) {
-    val _args = VariantArray.new()
-    _args.append(i)
-    __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(i)
+    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
   }
 
   fun setBeginCapMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_begin_cap_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_begin_cap_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setDefaultColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_default_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_default_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setEndCapMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_end_cap_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_end_cap_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setGradient(color: Gradient) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_gradient.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_gradient.call(this.toVariant(), _arg, 1)
   }
 
   fun setJointMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_joint_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_joint_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPointPosition(i: Int, position: Vector2) {
@@ -143,39 +136,33 @@ open class Line2D internal constructor(
   }
 
   fun setPoints(points: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    __method_bind.set_points.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(points)
+    __method_bind.set_points.call(this.toVariant(), _arg, 1)
   }
 
   fun setRoundPrecision(precision: Int) {
-    val _args = VariantArray.new()
-    _args.append(precision)
-    __method_bind.set_round_precision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(precision)
+    __method_bind.set_round_precision.call(this.toVariant(), _arg, 1)
   }
 
   fun setSharpLimit(limit: Float) {
-    val _args = VariantArray.new()
-    _args.append(limit)
-    __method_bind.set_sharp_limit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(limit)
+    __method_bind.set_sharp_limit.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_texture_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_texture_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setWidth(width: Float) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(width)
+    __method_bind.set_width.call(this.toVariant(), _arg, 1)
   }
 
   enum class LineTextureMode(
@@ -262,7 +249,7 @@ open class Line2D internal constructor(
 
     fun new(): Line2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Line2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Line2D" }
+      requireNotNull(fnPtr) { "No instance found for Line2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Line2D(
         fn()

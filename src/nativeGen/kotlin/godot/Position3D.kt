@@ -18,7 +18,7 @@ open class Position3D internal constructor(
   companion object {
     fun new(): Position3D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Position3D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Position3D" }
+      requireNotNull(fnPtr) { "No instance found for Position3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Position3D(
         fn()

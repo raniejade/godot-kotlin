@@ -53,52 +53,45 @@ open class MobileVRInterface internal constructor(
   }
 
   fun setDisplayToLens(displayToLens: Float) {
-    val _args = VariantArray.new()
-    _args.append(displayToLens)
-    __method_bind.set_display_to_lens.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(displayToLens)
+    __method_bind.set_display_to_lens.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisplayWidth(displayWidth: Float) {
-    val _args = VariantArray.new()
-    _args.append(displayWidth)
-    __method_bind.set_display_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(displayWidth)
+    __method_bind.set_display_width.call(this.toVariant(), _arg, 1)
   }
 
   fun setEyeHeight(eyeHeight: Float) {
-    val _args = VariantArray.new()
-    _args.append(eyeHeight)
-    __method_bind.set_eye_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(eyeHeight)
+    __method_bind.set_eye_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setIod(iod: Float) {
-    val _args = VariantArray.new()
-    _args.append(iod)
-    __method_bind.set_iod.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(iod)
+    __method_bind.set_iod.call(this.toVariant(), _arg, 1)
   }
 
   fun setK1(k: Float) {
-    val _args = VariantArray.new()
-    _args.append(k)
-    __method_bind.set_k1.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(k)
+    __method_bind.set_k1.call(this.toVariant(), _arg, 1)
   }
 
   fun setK2(k: Float) {
-    val _args = VariantArray.new()
-    _args.append(k)
-    __method_bind.set_k2.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(k)
+    __method_bind.set_k2.call(this.toVariant(), _arg, 1)
   }
 
   fun setOversample(oversample: Float) {
-    val _args = VariantArray.new()
-    _args.append(oversample)
-    __method_bind.set_oversample.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(oversample)
+    __method_bind.set_oversample.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): MobileVRInterface = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MobileVRInterface".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MobileVRInterface" }
+      requireNotNull(fnPtr) { "No instance found for MobileVRInterface" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MobileVRInterface(
         fn()

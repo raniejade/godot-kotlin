@@ -53,9 +53,8 @@ open class Node internal constructor(
   }
 
   fun duplicate(flags: Int): Node {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    val _ret = __method_bind.duplicate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    val _ret = __method_bind.duplicate.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
@@ -73,16 +72,14 @@ open class Node internal constructor(
   }
 
   fun findParent(mask: String): Node {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    val _ret = __method_bind.find_parent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    val _ret = __method_bind.find_parent.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
   fun getChild(idx: Int): Node {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_child.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_child.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
@@ -132,23 +129,20 @@ open class Node internal constructor(
   }
 
   fun getNode(path: NodePath): Node {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
   fun getNodeAndResource(path: NodePath): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_node_and_resource.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_node_and_resource.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun getNodeOrNull(path: NodePath): Node {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_node_or_null.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_node_or_null.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
@@ -168,9 +162,8 @@ open class Node internal constructor(
   }
 
   fun getPathTo(node: Node): NodePath {
-    val _args = VariantArray.new()
-    _args.append(node)
-    val _ret = __method_bind.get_path_to.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    val _ret = __method_bind.get_path_to.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
@@ -210,23 +203,20 @@ open class Node internal constructor(
   }
 
   fun hasNode(path: NodePath): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.has_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.has_node.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun hasNodeAndResource(path: NodePath): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.has_node_and_resource.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.has_node_and_resource.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isAParentOf(node: Node): Boolean {
-    val _args = VariantArray.new()
-    _args.append(node)
-    val _ret = __method_bind.is_a_parent_of.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    val _ret = __method_bind.is_a_parent_of.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -236,16 +226,14 @@ open class Node internal constructor(
   }
 
   fun isGreaterThan(node: Node): Boolean {
-    val _args = VariantArray.new()
-    _args.append(node)
-    val _ret = __method_bind.is_greater_than.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    val _ret = __method_bind.is_greater_than.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isInGroup(group: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(group)
-    val _ret = __method_bind.is_in_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(group)
+    val _ret = __method_bind.is_in_group.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -326,9 +314,8 @@ open class Node internal constructor(
   }
 
   fun propagateNotification(what: Int) {
-    val _args = VariantArray.new()
-    _args.append(what)
-    __method_bind.propagate_notification.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(what)
+    __method_bind.propagate_notification.call(this.toVariant(), _arg, 1)
   }
 
   fun queueFree() {
@@ -344,15 +331,13 @@ open class Node internal constructor(
   }
 
   fun removeChild(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.remove_child.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.remove_child.call(this.toVariant(), _arg, 1)
   }
 
   fun removeFromGroup(group: String) {
-    val _args = VariantArray.new()
-    _args.append(group)
-    __method_bind.remove_from_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(group)
+    __method_bind.remove_from_group.call(this.toVariant(), _arg, 1)
   }
 
   fun replaceBy(node: Node, keepData: Boolean) {
@@ -367,9 +352,8 @@ open class Node internal constructor(
   }
 
   fun rpc(method: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    val _ret = __method_bind.rpc.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.rpc.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -389,9 +373,8 @@ open class Node internal constructor(
   }
 
   fun rpcUnreliable(method: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    val _ret = __method_bind.rpc_unreliable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.rpc_unreliable.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -449,27 +432,23 @@ open class Node internal constructor(
   }
 
   fun setCustomMultiplayer(api: MultiplayerAPI) {
-    val _args = VariantArray.new()
-    _args.append(api)
-    __method_bind.set_custom_multiplayer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(api)
+    __method_bind.set_custom_multiplayer.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisplayFolded(fold: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(fold)
-    __method_bind.set_display_folded.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fold)
+    __method_bind.set_display_folded.call(this.toVariant(), _arg, 1)
   }
 
   fun setFilename(filename: String) {
-    val _args = VariantArray.new()
-    _args.append(filename)
-    __method_bind.set_filename.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(filename)
+    __method_bind.set_filename.call(this.toVariant(), _arg, 1)
   }
 
   fun setName(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_name.call(this.toVariant(), _arg, 1)
   }
 
   fun setNetworkMaster(id: Int, recursive: Boolean) {
@@ -480,69 +459,58 @@ open class Node internal constructor(
   }
 
   fun setOwner(owner: Node) {
-    val _args = VariantArray.new()
-    _args.append(owner)
-    __method_bind.set_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(owner)
+    __method_bind.set_owner.call(this.toVariant(), _arg, 1)
   }
 
   fun setPauseMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_pause_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_pause_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPhysicsProcess(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_physics_process.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_physics_process.call(this.toVariant(), _arg, 1)
   }
 
   fun setPhysicsProcessInternal(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_physics_process_internal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_physics_process_internal.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcess(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_process.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_process.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessInput(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_process_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_process_input.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessInternal(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_process_internal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_process_internal.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessPriority(priority: Int) {
-    val _args = VariantArray.new()
-    _args.append(priority)
-    __method_bind.set_process_priority.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(priority)
+    __method_bind.set_process_priority.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessUnhandledInput(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_process_unhandled_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_process_unhandled_input.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessUnhandledKeyInput(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_process_unhandled_key_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_process_unhandled_key_input.call(this.toVariant(), _arg, 1)
   }
 
   fun setSceneInstanceLoadPlaceholder(loadPlaceholder: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(loadPlaceholder)
-    __method_bind.set_scene_instance_load_placeholder.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loadPlaceholder)
+    __method_bind.set_scene_instance_load_placeholder.call(this.toVariant(), _arg, 1)
   }
 
   enum class PauseMode(
@@ -662,7 +630,7 @@ open class Node internal constructor(
 
     fun new(): Node = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Node".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Node" }
+      requireNotNull(fnPtr) { "No instance found for Node" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Node(
         fn()

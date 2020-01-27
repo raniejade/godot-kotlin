@@ -2,10 +2,7 @@ import gdnative.godot_gdnative_init_options
 import gdnative.godot_gdnative_terminate_options
 import godot.PhysicsServer
 import godot.Spatial
-import godot.core.VariantArray
-import godot.core.Godot
-import godot.core.Variant
-import godot.core.Vector2
+import godot.core.*
 import kotlinx.cinterop.COpaquePointer
 
 @CName("godot_gdnative_init")
@@ -25,6 +22,9 @@ fun godot_gdnative_init(options: godot_gdnative_init_options) {
     val spatial = Spatial.new()
     val ps = PhysicsServer.Instance
     println(array[0])
+    val rotation = Vector3.new(x = 16f)
+    spatial.setRotationDegrees(rotation)
+    println(spatial.getRotation())
 }
 
 @CName("godot_gdnative_terminate")

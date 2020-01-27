@@ -37,9 +37,8 @@ open class PolygonPathFinder internal constructor(
   }
 
   fun getClosestPoint(point: Vector2): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -52,16 +51,14 @@ open class PolygonPathFinder internal constructor(
   }
 
   fun getPointPenalty(idx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_point_penalty.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_point_penalty.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun isPointInside(point: Vector2): Boolean {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.is_point_inside.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.is_point_inside.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -83,7 +80,7 @@ open class PolygonPathFinder internal constructor(
     fun new(): PolygonPathFinder = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PolygonPathFinder".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PolygonPathFinder" }
+      requireNotNull(fnPtr) { "No instance found for PolygonPathFinder" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PolygonPathFinder(
         fn()

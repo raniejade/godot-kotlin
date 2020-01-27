@@ -29,21 +29,19 @@ open class LineShape2D internal constructor(
   }
 
   fun setD(d: Float) {
-    val _args = VariantArray.new()
-    _args.append(d)
-    __method_bind.set_d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(d)
+    __method_bind.set_d.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormal(normal: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(normal)
-    __method_bind.set_normal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normal)
+    __method_bind.set_normal.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): LineShape2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LineShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton LineShape2D" }
+      requireNotNull(fnPtr) { "No instance found for LineShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       LineShape2D(
         fn()

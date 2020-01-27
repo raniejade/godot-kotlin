@@ -18,7 +18,7 @@ open class HBoxContainer internal constructor(
   companion object {
     fun new(): HBoxContainer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HBoxContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HBoxContainer" }
+      requireNotNull(fnPtr) { "No instance found for HBoxContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HBoxContainer(
         fn()

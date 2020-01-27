@@ -22,16 +22,14 @@ open class Navigation2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getClosestPoint(toPoint: Vector2): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getClosestPointOwner(toPoint: Vector2): Object {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -62,9 +60,8 @@ open class Navigation2D internal constructor(
   }
 
   fun navpolyRemove(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.navpoly_remove.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.navpoly_remove.call(this.toVariant(), _arg, 1)
   }
 
   fun navpolySetTransform(id: Int, xform: Transform2D) {
@@ -77,7 +74,7 @@ open class Navigation2D internal constructor(
   companion object {
     fun new(): Navigation2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Navigation2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Navigation2D" }
+      requireNotNull(fnPtr) { "No instance found for Navigation2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Navigation2D(
         fn()

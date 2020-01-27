@@ -50,45 +50,39 @@ open class CSGTorus internal constructor(
   }
 
   fun setInnerRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_inner_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_inner_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setOuterRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_outer_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_outer_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setRingSides(sides: Int) {
-    val _args = VariantArray.new()
-    _args.append(sides)
-    __method_bind.set_ring_sides.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sides)
+    __method_bind.set_ring_sides.call(this.toVariant(), _arg, 1)
   }
 
   fun setSides(sides: Int) {
-    val _args = VariantArray.new()
-    _args.append(sides)
-    __method_bind.set_sides.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sides)
+    __method_bind.set_sides.call(this.toVariant(), _arg, 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(smoothFaces)
-    __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(smoothFaces)
+    __method_bind.set_smooth_faces.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CSGTorus = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGTorus".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGTorus" }
+      requireNotNull(fnPtr) { "No instance found for CSGTorus" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGTorus(
         fn()

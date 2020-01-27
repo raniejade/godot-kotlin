@@ -21,15 +21,13 @@ open class EditorSettings internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addPropertyInfo(info: Dictionary) {
-    val _args = VariantArray.new()
-    _args.append(info)
-    __method_bind.add_property_info.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(info)
+    __method_bind.add_property_info.call(this.toVariant(), _arg, 1)
   }
 
   fun erase(property: String) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    __method_bind.erase.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(property)
+    __method_bind.erase.call(this.toVariant(), _arg, 1)
   }
 
   fun getFavorites(): PoolStringArray {
@@ -61,9 +59,8 @@ open class EditorSettings internal constructor(
   }
 
   fun getSetting(name: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_setting.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_setting.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -73,30 +70,26 @@ open class EditorSettings internal constructor(
   }
 
   fun hasSetting(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_setting.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_setting.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun propertyCanRevert(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun propertyGetRevert(name: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun setFavorites(dirs: PoolStringArray) {
-    val _args = VariantArray.new()
-    _args.append(dirs)
-    __method_bind.set_favorites.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(dirs)
+    __method_bind.set_favorites.call(this.toVariant(), _arg, 1)
   }
 
   fun setInitialValue(
@@ -124,9 +117,8 @@ open class EditorSettings internal constructor(
   }
 
   fun setRecentDirs(dirs: PoolStringArray) {
-    val _args = VariantArray.new()
-    _args.append(dirs)
-    __method_bind.set_recent_dirs.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(dirs)
+    __method_bind.set_recent_dirs.call(this.toVariant(), _arg, 1)
   }
 
   fun setSetting(name: String, value: Variant) {

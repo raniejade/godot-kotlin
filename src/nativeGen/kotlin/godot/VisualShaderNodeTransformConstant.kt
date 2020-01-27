@@ -23,16 +23,15 @@ open class VisualShaderNodeTransformConstant internal constructor(
   }
 
   fun setConstant(value: Transform) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeTransformConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTransformConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTransformConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTransformConstant(
         fn()

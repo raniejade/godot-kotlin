@@ -48,9 +48,8 @@ open class StreamPeer internal constructor(
   }
 
   fun getData(bytes: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    val _ret = __method_bind.get_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bytes)
+    val _ret = __method_bind.get_data.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -65,16 +64,14 @@ open class StreamPeer internal constructor(
   }
 
   fun getPartialData(bytes: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    val _ret = __method_bind.get_partial_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bytes)
+    val _ret = __method_bind.get_partial_data.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun getString(bytes: Int): String {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    val _ret = __method_bind.get_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bytes)
+    val _ret = __method_bind.get_string.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -99,16 +96,14 @@ open class StreamPeer internal constructor(
   }
 
   fun getUtf8String(bytes: Int): String {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    val _ret = __method_bind.get_utf8_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bytes)
+    val _ret = __method_bind.get_utf8_string.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean): Variant {
-    val _args = VariantArray.new()
-    _args.append(allowObjects)
-    val _ret = __method_bind.get_var.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allowObjects)
+    val _ret = __method_bind.get_var.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -118,89 +113,75 @@ open class StreamPeer internal constructor(
   }
 
   fun put16(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_16.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_16.call(this.toVariant(), _arg, 1)
   }
 
   fun put32(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_32.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_32.call(this.toVariant(), _arg, 1)
   }
 
   fun put64(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_64.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_64.call(this.toVariant(), _arg, 1)
   }
 
   fun put8(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_8.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_8.call(this.toVariant(), _arg, 1)
   }
 
   fun putData(data: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(data)
-    val _ret = __method_bind.put_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    val _ret = __method_bind.put_data.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun putDouble(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_double.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_double.call(this.toVariant(), _arg, 1)
   }
 
   fun putFloat(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_float.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_float.call(this.toVariant(), _arg, 1)
   }
 
   fun putPartialData(data: PoolByteArray): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(data)
-    val _ret = __method_bind.put_partial_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    val _ret = __method_bind.put_partial_data.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun putString(value: String) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_string.call(this.toVariant(), _arg, 1)
   }
 
   fun putU16(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_u16.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_u16.call(this.toVariant(), _arg, 1)
   }
 
   fun putU32(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_u32.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_u32.call(this.toVariant(), _arg, 1)
   }
 
   fun putU64(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_u64.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_u64.call(this.toVariant(), _arg, 1)
   }
 
   fun putU8(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_u8.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_u8.call(this.toVariant(), _arg, 1)
   }
 
   fun putUtf8String(value: String) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.put_utf8_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.put_utf8_string.call(this.toVariant(), _arg, 1)
   }
 
   fun putVar(value: Variant, fullObjects: Boolean) {
@@ -211,9 +192,8 @@ open class StreamPeer internal constructor(
   }
 
   fun setBigEndian(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_big_endian.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_big_endian.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

@@ -22,15 +22,13 @@ open class VisualScript internal constructor(
   _handle: COpaquePointer
 ) : Script(_handle) {
   fun addCustomSignal(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.add_custom_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.add_custom_signal.call(this.toVariant(), _arg, 1)
   }
 
   fun addFunction(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.add_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.add_function.call(this.toVariant(), _arg, 1)
   }
 
   fun addNode(
@@ -74,10 +72,8 @@ open class VisualScript internal constructor(
   }
 
   fun customSignalGetArgumentCount(name: String): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.custom_signal_get_argument_count.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.custom_signal_get_argument_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -175,16 +171,14 @@ open class VisualScript internal constructor(
   }
 
   fun getFunctionNodeId(name: String): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_function_node_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_function_node_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getFunctionScroll(name: String): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_function_scroll.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_function_scroll.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -205,30 +199,26 @@ open class VisualScript internal constructor(
   }
 
   fun getVariableDefaultValue(name: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_variable_default_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_variable_default_value.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun getVariableExport(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_variable_export.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_variable_export.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getVariableInfo(name: String): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_variable_info.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_variable_info.call(this.toVariant(), _arg, 1)
     return _ret.asDictionary()
   }
 
   fun hasCustomSignal(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_custom_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_custom_signal.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -250,9 +240,8 @@ open class VisualScript internal constructor(
   }
 
   fun hasFunction(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_function.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -280,22 +269,19 @@ open class VisualScript internal constructor(
   }
 
   fun hasVariable(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_variable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_variable.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeCustomSignal(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_custom_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_custom_signal.call(this.toVariant(), _arg, 1)
   }
 
   fun removeFunction(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_function.call(this.toVariant(), _arg, 1)
   }
 
   fun removeNode(func: String, id: Int) {
@@ -306,9 +292,8 @@ open class VisualScript internal constructor(
   }
 
   fun removeVariable(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_variable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_variable.call(this.toVariant(), _arg, 1)
   }
 
   fun renameCustomSignal(name: String, newName: String) {
@@ -368,9 +353,8 @@ open class VisualScript internal constructor(
   }
 
   fun setInstanceBaseType(type: String) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_instance_base_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_instance_base_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodePosition(
@@ -409,7 +393,7 @@ open class VisualScript internal constructor(
   companion object {
     fun new(): VisualScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScript".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScript" }
+      requireNotNull(fnPtr) { "No instance found for VisualScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScript(
         fn()

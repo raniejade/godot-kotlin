@@ -19,7 +19,7 @@ open class VisualScriptCondition internal constructor(
     fun new(): VisualScriptCondition = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptCondition".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptCondition" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptCondition" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptCondition(
         fn()

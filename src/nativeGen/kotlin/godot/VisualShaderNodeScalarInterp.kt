@@ -19,7 +19,7 @@ open class VisualShaderNodeScalarInterp internal constructor(
     fun new(): VisualShaderNodeScalarInterp = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarInterp".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeScalarInterp" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeScalarInterp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeScalarInterp(
         fn()

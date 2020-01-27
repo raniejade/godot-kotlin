@@ -39,34 +39,30 @@ open class InputEventScreenDrag internal constructor(
   }
 
   fun setIndex(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.set_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.set_index.call(this.toVariant(), _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setRelative(relative: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(relative)
-    __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(relative)
+    __method_bind.set_relative.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeed(speed: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(speed)
-    __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(speed)
+    __method_bind.set_speed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventScreenDrag = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventScreenDrag".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventScreenDrag" }
+      requireNotNull(fnPtr) { "No instance found for InputEventScreenDrag" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventScreenDrag(
         fn()

@@ -22,9 +22,8 @@ open class KinematicBody internal constructor(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
   fun getAxisLock(axis: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(axis)
-    val _ret = __method_bind.get_axis_lock.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(axis)
+    val _ret = __method_bind.get_axis_lock.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -39,9 +38,8 @@ open class KinematicBody internal constructor(
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision {
-    val _args = VariantArray.new()
-    _args.append(slideIdx)
-    val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(slideIdx)
+    val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::KinematicCollision)!!
   }
 
@@ -128,9 +126,8 @@ open class KinematicBody internal constructor(
   }
 
   fun setSafeMargin(pixels: Float) {
-    val _args = VariantArray.new()
-    _args.append(pixels)
-    __method_bind.set_safe_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pixels)
+    __method_bind.set_safe_margin.call(this.toVariant(), _arg, 1)
   }
 
   fun testMove(
@@ -149,7 +146,7 @@ open class KinematicBody internal constructor(
   companion object {
     fun new(): KinematicBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton KinematicBody" }
+      requireNotNull(fnPtr) { "No instance found for KinematicBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       KinematicBody(
         fn()

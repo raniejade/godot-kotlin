@@ -127,129 +127,108 @@ open class Light2D internal constructor(
   }
 
   fun setColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(editorOnly)
-    __method_bind.set_editor_only.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(editorOnly)
+    __method_bind.set_editor_only.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setHeight(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setItemCullMask(itemCullMask: Int) {
-    val _args = VariantArray.new()
-    _args.append(itemCullMask)
-    __method_bind.set_item_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(itemCullMask)
+    __method_bind.set_item_cull_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setItemShadowCullMask(itemShadowCullMask: Int) {
-    val _args = VariantArray.new()
-    _args.append(itemShadowCullMask)
-    __method_bind.set_item_shadow_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(itemShadowCullMask)
+    __method_bind.set_item_shadow_cull_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setLayerRangeMax(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_layer_range_max.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_layer_range_max.call(this.toVariant(), _arg, 1)
   }
 
   fun setLayerRangeMin(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_layer_range_min.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_layer_range_min.call(this.toVariant(), _arg, 1)
   }
 
   fun setMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowBufferSize(size: Int) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_shadow_buffer_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_shadow_buffer_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowColor(shadowColor: Color) {
-    val _args = VariantArray.new()
-    _args.append(shadowColor)
-    __method_bind.set_shadow_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shadowColor)
+    __method_bind.set_shadow_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_shadow_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_shadow_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowFilter(filter: Int) {
-    val _args = VariantArray.new()
-    _args.append(filter)
-    __method_bind.set_shadow_filter.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(filter)
+    __method_bind.set_shadow_filter.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowGradientLength(multiplier: Float) {
-    val _args = VariantArray.new()
-    _args.append(multiplier)
-    __method_bind.set_shadow_gradient_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(multiplier)
+    __method_bind.set_shadow_gradient_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowSmooth(smooth: Float) {
-    val _args = VariantArray.new()
-    _args.append(smooth)
-    __method_bind.set_shadow_smooth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(smooth)
+    __method_bind.set_shadow_smooth.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(textureOffset)
-    __method_bind.set_texture_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(textureOffset)
+    __method_bind.set_texture_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureScale(textureScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(textureScale)
-    __method_bind.set_texture_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(textureScale)
+    __method_bind.set_texture_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setZRangeMax(z: Int) {
-    val _args = VariantArray.new()
-    _args.append(z)
-    __method_bind.set_z_range_max.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(z)
+    __method_bind.set_z_range_max.call(this.toVariant(), _arg, 1)
   }
 
   fun setZRangeMin(z: Int) {
-    val _args = VariantArray.new()
-    _args.append(z)
-    __method_bind.set_z_range_min.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(z)
+    __method_bind.set_z_range_min.call(this.toVariant(), _arg, 1)
   }
 
   enum class ShadowFilter(
@@ -325,7 +304,7 @@ open class Light2D internal constructor(
 
     fun new(): Light2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Light2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Light2D" }
+      requireNotNull(fnPtr) { "No instance found for Light2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Light2D(
         fn()

@@ -55,45 +55,38 @@ open class PathFollow internal constructor(
   }
 
   fun setCubicInterpolation(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_cubic_interpolation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_cubic_interpolation.call(this.toVariant(), _arg, 1)
   }
 
   fun setHOffset(hOffset: Float) {
-    val _args = VariantArray.new()
-    _args.append(hOffset)
-    __method_bind.set_h_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hOffset)
+    __method_bind.set_h_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoop(loop: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(loop)
-    __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loop)
+    __method_bind.set_loop.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotationMode(rotationMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(rotationMode)
-    __method_bind.set_rotation_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rotationMode)
+    __method_bind.set_rotation_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnitOffset(unitOffset: Float) {
-    val _args = VariantArray.new()
-    _args.append(unitOffset)
-    __method_bind.set_unit_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(unitOffset)
+    __method_bind.set_unit_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setVOffset(vOffset: Float) {
-    val _args = VariantArray.new()
-    _args.append(vOffset)
-    __method_bind.set_v_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vOffset)
+    __method_bind.set_v_offset.call(this.toVariant(), _arg, 1)
   }
 
   enum class RotationMode(
@@ -134,7 +127,7 @@ open class PathFollow internal constructor(
 
     fun new(): PathFollow = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PathFollow" }
+      requireNotNull(fnPtr) { "No instance found for PathFollow" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PathFollow(
         fn()

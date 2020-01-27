@@ -19,7 +19,7 @@ open class VisualShaderNodeTransformCompose internal constructor(
     fun new(): VisualShaderNodeTransformCompose = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformCompose".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTransformCompose" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTransformCompose" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTransformCompose(
         fn()

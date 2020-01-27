@@ -18,7 +18,7 @@ open class CheckButton internal constructor(
   companion object {
     fun new(): CheckButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CheckButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CheckButton" }
+      requireNotNull(fnPtr) { "No instance found for CheckButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CheckButton(
         fn()

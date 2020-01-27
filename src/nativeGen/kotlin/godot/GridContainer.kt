@@ -23,15 +23,14 @@ open class GridContainer internal constructor(
   }
 
   fun setColumns(columns: Int) {
-    val _args = VariantArray.new()
-    _args.append(columns)
-    __method_bind.set_columns.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(columns)
+    __method_bind.set_columns.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): GridContainer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GridContainer" }
+      requireNotNull(fnPtr) { "No instance found for GridContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GridContainer(
         fn()

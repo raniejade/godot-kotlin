@@ -25,9 +25,8 @@ open class TileSet internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun autotileClearBitmaskMap(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.autotile_clear_bitmask_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.autotile_clear_bitmask_map.call(this.toVariant(), _arg, 1)
   }
 
   fun autotileGetBitmask(id: Int, coord: Vector2): Int {
@@ -39,17 +38,14 @@ open class TileSet internal constructor(
   }
 
   fun autotileGetBitmaskMode(id: Int): BitmaskMode {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.autotile_get_bitmask_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.autotile_get_bitmask_mode.call(this.toVariant(), _arg, 1)
     return TileSet.BitmaskMode.from(_ret.asInt())
   }
 
   fun autotileGetIconCoordinate(id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.autotile_get_icon_coordinate.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.autotile_get_icon_coordinate.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -72,16 +68,14 @@ open class TileSet internal constructor(
   }
 
   fun autotileGetSize(id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.autotile_get_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.autotile_get_size.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun autotileGetSpacing(id: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.autotile_get_spacing.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.autotile_get_spacing.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -195,15 +189,13 @@ open class TileSet internal constructor(
   }
 
   fun createTile(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.create_tile.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.create_tile.call(this.toVariant(), _arg, 1)
   }
 
   fun findTileByName(name: String): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.find_tile_by_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.find_tile_by_name.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -218,9 +210,8 @@ open class TileSet internal constructor(
   }
 
   fun removeTile(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.remove_tile.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.remove_tile.call(this.toVariant(), _arg, 1)
   }
 
   fun tileAddShape(
@@ -240,67 +231,56 @@ open class TileSet internal constructor(
   }
 
   fun tileGetLightOccluder(id: Int): OccluderPolygon2D {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_light_occluder.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_light_occluder.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::OccluderPolygon2D)!!
   }
 
   fun tileGetMaterial(id: Int): ShaderMaterial {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_material.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::ShaderMaterial)!!
   }
 
   fun tileGetModulate(id: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_modulate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_modulate.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun tileGetName(id: Int): String {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun tileGetNavigationPolygon(id: Int): NavigationPolygon {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_navigation_polygon.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_navigation_polygon.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::NavigationPolygon)!!
   }
 
   fun tileGetNavigationPolygonOffset(id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_navigation_polygon_offset.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_navigation_polygon_offset.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun tileGetNormalMap(id: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_normal_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_normal_map.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun tileGetOccluderOffset(id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_occluder_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_occluder_offset.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun tileGetRegion(id: Int): Rect2 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_region.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_region.call(this.toVariant(), _arg, 1)
     return _ret.asRect2()
   }
 
@@ -313,9 +293,8 @@ open class TileSet internal constructor(
   }
 
   fun tileGetShapeCount(id: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_shape_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_shape_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -353,37 +332,32 @@ open class TileSet internal constructor(
   }
 
   fun tileGetShapes(id: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_shapes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_shapes.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun tileGetTexture(id: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_texture.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun tileGetTextureOffset(id: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_texture_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_texture_offset.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun tileGetTileMode(id: Int): TileMode {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_tile_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_tile_mode.call(this.toVariant(), _arg, 1)
     return TileSet.TileMode.from(_ret.asInt())
   }
 
   fun tileGetZIndex(id: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.tile_get_z_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.tile_get_z_index.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -649,7 +623,7 @@ open class TileSet internal constructor(
 
     fun new(): TileSet = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TileSet".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TileSet" }
+      requireNotNull(fnPtr) { "No instance found for TileSet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TileSet(
         fn()

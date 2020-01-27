@@ -45,39 +45,34 @@ open class PrismMesh internal constructor(
   }
 
   fun setLeftToRight(leftToRight: Float) {
-    val _args = VariantArray.new()
-    _args.append(leftToRight)
-    __method_bind.set_left_to_right.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(leftToRight)
+    __method_bind.set_left_to_right.call(this.toVariant(), _arg, 1)
   }
 
   fun setSize(size: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideDepth(segments: Int) {
-    val _args = VariantArray.new()
-    _args.append(segments)
-    __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(segments)
+    __method_bind.set_subdivide_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideHeight(segments: Int) {
-    val _args = VariantArray.new()
-    _args.append(segments)
-    __method_bind.set_subdivide_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(segments)
+    __method_bind.set_subdivide_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideWidth(segments: Int) {
-    val _args = VariantArray.new()
-    _args.append(segments)
-    __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(segments)
+    __method_bind.set_subdivide_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PrismMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PrismMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PrismMesh" }
+      requireNotNull(fnPtr) { "No instance found for PrismMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PrismMesh(
         fn()

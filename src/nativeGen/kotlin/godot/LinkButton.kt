@@ -29,15 +29,13 @@ open class LinkButton internal constructor(
   }
 
   fun setText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_text.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnderlineMode(underlineMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(underlineMode)
-    __method_bind.set_underline_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(underlineMode)
+    __method_bind.set_underline_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class UnderlineMode(
@@ -70,7 +68,7 @@ open class LinkButton internal constructor(
 
     fun new(): LinkButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LinkButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton LinkButton" }
+      requireNotNull(fnPtr) { "No instance found for LinkButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       LinkButton(
         fn()

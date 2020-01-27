@@ -40,16 +40,14 @@ open class StyleBox internal constructor(
   }
 
   fun getDefaultMargin(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_default_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_default_margin.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMargin(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_margin.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 

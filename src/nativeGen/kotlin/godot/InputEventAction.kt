@@ -30,28 +30,25 @@ open class InputEventAction internal constructor(
   }
 
   fun setAction(action: String) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    __method_bind.set_action.call(this.toVariant(), _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pressed)
+    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
   }
 
   fun setStrength(strength: Float) {
-    val _args = VariantArray.new()
-    _args.append(strength)
-    __method_bind.set_strength.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(strength)
+    __method_bind.set_strength.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventAction = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventAction".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventAction" }
+      requireNotNull(fnPtr) { "No instance found for InputEventAction" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventAction(
         fn()

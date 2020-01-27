@@ -39,34 +39,30 @@ open class CollisionShape2D internal constructor(
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disabled)
-    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disabled)
+    __method_bind.set_disabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setOneWayCollision(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_one_way_collision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_one_way_collision.call(this.toVariant(), _arg, 1)
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    __method_bind.set_one_way_collision_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    __method_bind.set_one_way_collision_margin.call(this.toVariant(), _arg, 1)
   }
 
   fun setShape(shape: Shape2D) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CollisionShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CollisionShape2D" }
+      requireNotNull(fnPtr) { "No instance found for CollisionShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CollisionShape2D(
         fn()

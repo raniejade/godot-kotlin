@@ -23,9 +23,8 @@ open class VisualScriptBuiltinFunc internal constructor(
   }
 
   fun setFunc(which: Int) {
-    val _args = VariantArray.new()
-    _args.append(which)
-    __method_bind.set_func.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(which)
+    __method_bind.set_func.call(this.toVariant(), _arg, 1)
   }
 
   enum class BuiltinFunc(
@@ -311,7 +310,7 @@ open class VisualScriptBuiltinFunc internal constructor(
     fun new(): VisualScriptBuiltinFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptBuiltinFunc".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptBuiltinFunc" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptBuiltinFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptBuiltinFunc(
         fn()

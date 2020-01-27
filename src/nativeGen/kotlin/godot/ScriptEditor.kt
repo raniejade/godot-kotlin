@@ -64,9 +64,8 @@ open class ScriptEditor internal constructor(
   }
 
   fun gotoLine(lineNumber: Int) {
-    val _args = VariantArray.new()
-    _args.append(lineNumber)
-    __method_bind.goto_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lineNumber)
+    __method_bind.goto_line.call(this.toVariant(), _arg, 1)
   }
 
   fun openScriptCreateDialog(baseName: String, basePath: String) {

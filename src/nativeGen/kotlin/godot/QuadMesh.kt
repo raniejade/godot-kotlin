@@ -23,15 +23,14 @@ open class QuadMesh internal constructor(
   }
 
   fun setSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): QuadMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("QuadMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton QuadMesh" }
+      requireNotNull(fnPtr) { "No instance found for QuadMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       QuadMesh(
         fn()

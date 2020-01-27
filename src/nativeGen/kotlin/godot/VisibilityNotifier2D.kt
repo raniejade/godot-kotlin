@@ -29,16 +29,15 @@ open class VisibilityNotifier2D internal constructor(
   }
 
   fun setRect(rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_rect.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisibilityNotifier2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisibilityNotifier2D" }
+      requireNotNull(fnPtr) { "No instance found for VisibilityNotifier2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisibilityNotifier2D(
         fn()

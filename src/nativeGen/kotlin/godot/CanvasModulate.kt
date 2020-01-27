@@ -23,16 +23,15 @@ open class CanvasModulate internal constructor(
   }
 
   fun setColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_color.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CanvasModulate = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasModulate".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CanvasModulate" }
+      requireNotNull(fnPtr) { "No instance found for CanvasModulate" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CanvasModulate(
         fn()

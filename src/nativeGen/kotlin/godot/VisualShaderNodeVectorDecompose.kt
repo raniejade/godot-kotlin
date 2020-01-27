@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorDecompose internal constructor(
     fun new(): VisualShaderNodeVectorDecompose = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorDecompose".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorDecompose" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorDecompose" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorDecompose(
         fn()

@@ -24,16 +24,15 @@ open class EditorNavigationMeshGenerator internal constructor(
   }
 
   fun clear(navMesh: NavigationMesh) {
-    val _args = VariantArray.new()
-    _args.append(navMesh)
-    __method_bind.clear.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(navMesh)
+    __method_bind.clear.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): EditorNavigationMeshGenerator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorNavigationMeshGenerator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorNavigationMeshGenerator" }
+      requireNotNull(fnPtr) { "No instance found for EditorNavigationMeshGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorNavigationMeshGenerator(
         fn()

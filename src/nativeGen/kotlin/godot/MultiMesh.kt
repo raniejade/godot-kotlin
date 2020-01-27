@@ -38,9 +38,8 @@ open class MultiMesh internal constructor(
   }
 
   fun getInstanceColor(instance: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(instance)
-    val _ret = __method_bind.get_instance_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(instance)
+    val _ret = __method_bind.get_instance_color.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
@@ -50,23 +49,20 @@ open class MultiMesh internal constructor(
   }
 
   fun getInstanceCustomData(instance: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(instance)
-    val _ret = __method_bind.get_instance_custom_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(instance)
+    val _ret = __method_bind.get_instance_custom_data.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun getInstanceTransform(instance: Int): Transform {
-    val _args = VariantArray.new()
-    _args.append(instance)
-    val _ret = __method_bind.get_instance_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(instance)
+    val _ret = __method_bind.get_instance_transform.call(this.toVariant(), _arg, 1)
     return _ret.asTransform()
   }
 
   fun getInstanceTransform2d(instance: Int): Transform2D {
-    val _args = VariantArray.new()
-    _args.append(instance)
-    val _ret = __method_bind.get_instance_transform_2d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(instance)
+    val _ret = __method_bind.get_instance_transform_2d.call(this.toVariant(), _arg, 1)
     return _ret.asTransform2D()
   }
 
@@ -86,21 +82,18 @@ open class MultiMesh internal constructor(
   }
 
   fun setAsBulkArray(array: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(array)
-    __method_bind.set_as_bulk_array.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(array)
+    __method_bind.set_as_bulk_array.call(this.toVariant(), _arg, 1)
   }
 
   fun setColorFormat(format: Int) {
-    val _args = VariantArray.new()
-    _args.append(format)
-    __method_bind.set_color_format.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(format)
+    __method_bind.set_color_format.call(this.toVariant(), _arg, 1)
   }
 
   fun setCustomDataFormat(format: Int) {
-    val _args = VariantArray.new()
-    _args.append(format)
-    __method_bind.set_custom_data_format.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(format)
+    __method_bind.set_custom_data_format.call(this.toVariant(), _arg, 1)
   }
 
   fun setInstanceColor(instance: Int, color: Color) {
@@ -111,9 +104,8 @@ open class MultiMesh internal constructor(
   }
 
   fun setInstanceCount(count: Int) {
-    val _args = VariantArray.new()
-    _args.append(count)
-    __method_bind.set_instance_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(count)
+    __method_bind.set_instance_count.call(this.toVariant(), _arg, 1)
   }
 
   fun setInstanceCustomData(instance: Int, customData: Color) {
@@ -138,21 +130,18 @@ open class MultiMesh internal constructor(
   }
 
   fun setMesh(mesh: Mesh) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mesh)
+    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransformFormat(format: Int) {
-    val _args = VariantArray.new()
-    _args.append(format)
-    __method_bind.set_transform_format.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(format)
+    __method_bind.set_transform_format.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisibleInstanceCount(count: Int) {
-    val _args = VariantArray.new()
-    _args.append(count)
-    __method_bind.set_visible_instance_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(count)
+    __method_bind.set_visible_instance_count.call(this.toVariant(), _arg, 1)
   }
 
   enum class TransformFormat(
@@ -235,7 +224,7 @@ open class MultiMesh internal constructor(
 
     fun new(): MultiMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MultiMesh" }
+      requireNotNull(fnPtr) { "No instance found for MultiMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MultiMesh(
         fn()

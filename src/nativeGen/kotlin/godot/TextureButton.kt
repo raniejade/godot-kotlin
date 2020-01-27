@@ -59,51 +59,43 @@ open class TextureButton internal constructor(
   }
 
   fun setClickMask(mask: BitMap) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_click_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_click_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisabledTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_disabled_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_disabled_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setExpand(pExpand: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pExpand)
-    __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pExpand)
+    __method_bind.set_expand.call(this.toVariant(), _arg, 1)
   }
 
   fun setFocusedTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_focused_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_focused_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setHoverTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_hover_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_hover_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_normal_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_normal_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setPressedTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_pressed_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_pressed_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setStretchMode(pMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(pMode)
-    __method_bind.set_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pMode)
+    __method_bind.set_stretch_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class StretchMode(
@@ -152,7 +144,7 @@ open class TextureButton internal constructor(
 
     fun new(): TextureButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TextureButton" }
+      requireNotNull(fnPtr) { "No instance found for TextureButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextureButton(
         fn()

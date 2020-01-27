@@ -23,9 +23,8 @@ open class AnimationTree internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun advance(delta: Float) {
-    val _args = VariantArray.new()
-    _args.append(delta)
-    __method_bind.advance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(delta)
+    __method_bind.advance.call(this.toVariant(), _arg, 1)
   }
 
   fun getAnimationPlayer(): NodePath {
@@ -66,33 +65,28 @@ open class AnimationTree internal constructor(
   }
 
   fun setActive(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setAnimationPlayer(root: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(root)
-    __method_bind.set_animation_player.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(root)
+    __method_bind.set_animation_player.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_process_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_process_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setRootMotionTrack(path: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_root_motion_track.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_root_motion_track.call(this.toVariant(), _arg, 1)
   }
 
   fun setTreeRoot(root: AnimationNode) {
-    val _args = VariantArray.new()
-    _args.append(root)
-    __method_bind.set_tree_root.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(root)
+    __method_bind.set_tree_root.call(this.toVariant(), _arg, 1)
   }
 
   enum class AnimationProcessMode(
@@ -125,7 +119,7 @@ open class AnimationTree internal constructor(
 
     fun new(): AnimationTree = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTree".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationTree" }
+      requireNotNull(fnPtr) { "No instance found for AnimationTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationTree(
         fn()

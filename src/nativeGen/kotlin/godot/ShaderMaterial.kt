@@ -24,30 +24,26 @@ open class ShaderMaterial internal constructor(
   }
 
   fun getShaderParam(param: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_shader_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_shader_param.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun propertyCanRevert(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.property_can_revert.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun propertyGetRevert(name: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.property_get_revert.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun setShader(shader: Shader) {
-    val _args = VariantArray.new()
-    _args.append(shader)
-    __method_bind.set_shader.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shader)
+    __method_bind.set_shader.call(this.toVariant(), _arg, 1)
   }
 
   fun setShaderParam(param: String, value: Variant) {
@@ -61,7 +57,7 @@ open class ShaderMaterial internal constructor(
     fun new(): ShaderMaterial = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ShaderMaterial".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ShaderMaterial" }
+      requireNotNull(fnPtr) { "No instance found for ShaderMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ShaderMaterial(
         fn()

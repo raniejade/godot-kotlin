@@ -30,39 +30,33 @@ open class SurfaceTool internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addBones(bones: PoolIntArray) {
-    val _args = VariantArray.new()
-    _args.append(bones)
-    __method_bind.add_bones.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bones)
+    __method_bind.add_bones.call(this.toVariant(), _arg, 1)
   }
 
   fun addColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.add_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.add_color.call(this.toVariant(), _arg, 1)
   }
 
   fun addIndex(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.add_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.add_index.call(this.toVariant(), _arg, 1)
   }
 
   fun addNormal(normal: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(normal)
-    __method_bind.add_normal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normal)
+    __method_bind.add_normal.call(this.toVariant(), _arg, 1)
   }
 
   fun addSmoothGroup(smooth: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(smooth)
-    __method_bind.add_smooth_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(smooth)
+    __method_bind.add_smooth_group.call(this.toVariant(), _arg, 1)
   }
 
   fun addTangent(tangent: Plane) {
-    val _args = VariantArray.new()
-    _args.append(tangent)
-    __method_bind.add_tangent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tangent)
+    __method_bind.add_tangent.call(this.toVariant(), _arg, 1)
   }
 
   fun addTriangleFan(
@@ -84,27 +78,23 @@ open class SurfaceTool internal constructor(
   }
 
   fun addUv(uv: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(uv)
-    __method_bind.add_uv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(uv)
+    __method_bind.add_uv.call(this.toVariant(), _arg, 1)
   }
 
   fun addUv2(uv2: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(uv2)
-    __method_bind.add_uv2.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(uv2)
+    __method_bind.add_uv2.call(this.toVariant(), _arg, 1)
   }
 
   fun addVertex(vertex: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(vertex)
-    __method_bind.add_vertex.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vertex)
+    __method_bind.add_vertex.call(this.toVariant(), _arg, 1)
   }
 
   fun addWeights(weights: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(weights)
-    __method_bind.add_weights.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(weights)
+    __method_bind.add_weights.call(this.toVariant(), _arg, 1)
   }
 
   fun appendFrom(
@@ -120,9 +110,8 @@ open class SurfaceTool internal constructor(
   }
 
   fun begin(primitive: Int) {
-    val _args = VariantArray.new()
-    _args.append(primitive)
-    __method_bind.begin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(primitive)
+    __method_bind.begin.call(this.toVariant(), _arg, 1)
   }
 
   fun clear() {
@@ -166,9 +155,8 @@ open class SurfaceTool internal constructor(
   }
 
   fun generateNormals(flip: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flip)
-    __method_bind.generate_normals.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flip)
+    __method_bind.generate_normals.call(this.toVariant(), _arg, 1)
   }
 
   fun generateTangents() {
@@ -180,15 +168,14 @@ open class SurfaceTool internal constructor(
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SurfaceTool = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SurfaceTool".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SurfaceTool" }
+      requireNotNull(fnPtr) { "No instance found for SurfaceTool" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SurfaceTool(
         fn()

@@ -23,15 +23,14 @@ open class ProgressBar internal constructor(
   }
 
   fun setPercentVisible(visible: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(visible)
-    __method_bind.set_percent_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visible)
+    __method_bind.set_percent_visible.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ProgressBar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProgressBar".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ProgressBar" }
+      requireNotNull(fnPtr) { "No instance found for ProgressBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ProgressBar(
         fn()

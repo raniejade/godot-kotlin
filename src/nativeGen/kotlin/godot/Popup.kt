@@ -27,15 +27,13 @@ open class Popup internal constructor(
   }
 
   fun popup(bounds: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(bounds)
-    __method_bind.popup.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bounds)
+    __method_bind.popup.call(this.toVariant(), _arg, 1)
   }
 
   fun popupCentered(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.popup_centered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.popup_centered.call(this.toVariant(), _arg, 1)
   }
 
   fun popupCenteredClamped(size: Vector2, fallbackRatio: Float) {
@@ -46,21 +44,18 @@ open class Popup internal constructor(
   }
 
   fun popupCenteredMinsize(minsize: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(minsize)
-    __method_bind.popup_centered_minsize.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(minsize)
+    __method_bind.popup_centered_minsize.call(this.toVariant(), _arg, 1)
   }
 
   fun popupCenteredRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.popup_centered_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.popup_centered_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setExclusive(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_exclusive.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_exclusive.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
@@ -70,7 +65,7 @@ open class Popup internal constructor(
 
     fun new(): Popup = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Popup".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Popup" }
+      requireNotNull(fnPtr) { "No instance found for Popup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Popup(
         fn()

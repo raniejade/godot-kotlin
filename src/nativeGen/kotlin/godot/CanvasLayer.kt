@@ -73,63 +73,54 @@ open class CanvasLayer internal constructor(
   }
 
   fun setCustomViewport(viewport: Node) {
-    val _args = VariantArray.new()
-    _args.append(viewport)
-    __method_bind.set_custom_viewport.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(viewport)
+    __method_bind.set_custom_viewport.call(this.toVariant(), _arg, 1)
   }
 
   fun setFollowViewport(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_follow_viewport.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_follow_viewport.call(this.toVariant(), _arg, 1)
   }
 
   fun setFollowViewportScale(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_follow_viewport_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_follow_viewport_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setLayer(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_layer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_layer.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotation(radians: Float) {
-    val _args = VariantArray.new()
-    _args.append(radians)
-    __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radians)
+    __method_bind.set_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotationDegrees(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_rotation_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setScale(scale: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransform(transform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(transform)
-    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(transform)
+    __method_bind.set_transform.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CanvasLayer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasLayer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CanvasLayer" }
+      requireNotNull(fnPtr) { "No instance found for CanvasLayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CanvasLayer(
         fn()

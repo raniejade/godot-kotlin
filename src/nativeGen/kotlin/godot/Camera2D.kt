@@ -53,9 +53,8 @@ open class Camera2D internal constructor(
   }
 
   fun getDragMargin(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_drag_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_drag_margin.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -70,9 +69,8 @@ open class Camera2D internal constructor(
   }
 
   fun getLimit(margin: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_limit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_limit.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -150,15 +148,13 @@ open class Camera2D internal constructor(
   }
 
   fun setAnchorMode(anchorMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(anchorMode)
-    __method_bind.set_anchor_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anchorMode)
+    __method_bind.set_anchor_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setCustomViewport(viewport: Node) {
-    val _args = VariantArray.new()
-    _args.append(viewport)
-    __method_bind.set_custom_viewport.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(viewport)
+    __method_bind.set_custom_viewport.call(this.toVariant(), _arg, 1)
   }
 
   fun setDragMargin(margin: Int, dragMargin: Float) {
@@ -169,27 +165,23 @@ open class Camera2D internal constructor(
   }
 
   fun setEnableFollowSmoothing(followSmoothing: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(followSmoothing)
-    __method_bind.set_enable_follow_smoothing.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(followSmoothing)
+    __method_bind.set_enable_follow_smoothing.call(this.toVariant(), _arg, 1)
   }
 
   fun setFollowSmoothing(followSmoothing: Float) {
-    val _args = VariantArray.new()
-    _args.append(followSmoothing)
-    __method_bind.set_follow_smoothing.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(followSmoothing)
+    __method_bind.set_follow_smoothing.call(this.toVariant(), _arg, 1)
   }
 
   fun setHDragEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_h_drag_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_h_drag_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setHOffset(ofs: Float) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_h_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_h_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setLimit(margin: Int, limit: Int) {
@@ -200,63 +192,53 @@ open class Camera2D internal constructor(
   }
 
   fun setLimitDrawingEnabled(limitDrawingEnabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(limitDrawingEnabled)
-    __method_bind.set_limit_drawing_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(limitDrawingEnabled)
+    __method_bind.set_limit_drawing_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setLimitSmoothingEnabled(limitSmoothingEnabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(limitSmoothingEnabled)
-    __method_bind.set_limit_smoothing_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(limitSmoothingEnabled)
+    __method_bind.set_limit_smoothing_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setMarginDrawingEnabled(marginDrawingEnabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(marginDrawingEnabled)
-    __method_bind.set_margin_drawing_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(marginDrawingEnabled)
+    __method_bind.set_margin_drawing_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_process_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_process_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotating(rotating: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(rotating)
-    __method_bind.set_rotating.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rotating)
+    __method_bind.set_rotating.call(this.toVariant(), _arg, 1)
   }
 
   fun setScreenDrawingEnabled(screenDrawingEnabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(screenDrawingEnabled)
-    __method_bind.set_screen_drawing_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(screenDrawingEnabled)
+    __method_bind.set_screen_drawing_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setVDragEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_v_drag_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_v_drag_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setVOffset(ofs: Float) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_v_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_v_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setZoom(zoom: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(zoom)
-    __method_bind.set_zoom.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(zoom)
+    __method_bind.set_zoom.call(this.toVariant(), _arg, 1)
   }
 
   enum class Camera2DProcessMode(
@@ -308,7 +290,7 @@ open class Camera2D internal constructor(
 
     fun new(): Camera2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Camera2D" }
+      requireNotNull(fnPtr) { "No instance found for Camera2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Camera2D(
         fn()

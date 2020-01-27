@@ -18,7 +18,7 @@ open class Position2D internal constructor(
   companion object {
     fun new(): Position2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Position2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Position2D" }
+      requireNotNull(fnPtr) { "No instance found for Position2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Position2D(
         fn()

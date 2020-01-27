@@ -21,9 +21,8 @@ open class Physics2DDirectSpaceState internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun castMotion(shape: Physics2DShapeQueryParameters): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    val _ret = __method_bind.cast_motion.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    val _ret = __method_bind.cast_motion.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -36,9 +35,8 @@ open class Physics2DDirectSpaceState internal constructor(
   }
 
   fun getRestInfo(shape: Physics2DShapeQueryParameters): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    val _ret = __method_bind.get_rest_info.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    val _ret = __method_bind.get_rest_info.call(this.toVariant(), _arg, 1)
     return _ret.asDictionary()
   }
 

@@ -18,7 +18,7 @@ open class SpotLight internal constructor(
   companion object {
     fun new(): SpotLight = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpotLight".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SpotLight" }
+      requireNotNull(fnPtr) { "No instance found for SpotLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpotLight(
         fn()

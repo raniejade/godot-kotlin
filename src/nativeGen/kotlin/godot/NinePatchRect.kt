@@ -25,9 +25,8 @@ open class NinePatchRect internal constructor(
   }
 
   fun getPatchMargin(margin: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_patch_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_patch_margin.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -52,15 +51,13 @@ open class NinePatchRect internal constructor(
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(drawCenter)
-    __method_bind.set_draw_center.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(drawCenter)
+    __method_bind.set_draw_center.call(this.toVariant(), _arg, 1)
   }
 
   fun setHAxisStretchMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPatchMargin(margin: Int, value: Int) {
@@ -71,21 +68,18 @@ open class NinePatchRect internal constructor(
   }
 
   fun setRegionRect(rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setVAxisStretchMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class AxisStretchMode(
@@ -118,7 +112,7 @@ open class NinePatchRect internal constructor(
 
     fun new(): NinePatchRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NinePatchRect".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NinePatchRect" }
+      requireNotNull(fnPtr) { "No instance found for NinePatchRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NinePatchRect(
         fn()

@@ -19,7 +19,7 @@ open class VisualShaderNodeFaceForward internal constructor(
     fun new(): VisualShaderNodeFaceForward = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeFaceForward".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeFaceForward" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeFaceForward" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeFaceForward(
         fn()

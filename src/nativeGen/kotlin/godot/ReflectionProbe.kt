@@ -82,76 +82,63 @@ open class ReflectionProbe internal constructor(
   }
 
   fun setAsInterior(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_as_interior.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_as_interior.call(this.toVariant(), _arg, 1)
   }
 
   fun setCullMask(layers: Int) {
-    val _args = VariantArray.new()
-    _args.append(layers)
-    __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layers)
+    __method_bind.set_cull_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnableBoxProjection(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_enable_box_projection.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_enable_box_projection.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnableShadows(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_enable_shadows.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_enable_shadows.call(this.toVariant(), _arg, 1)
   }
 
   fun setExtents(extents: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(extents)
-    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extents)
+    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
   }
 
   fun setIntensity(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_intensity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_intensity.call(this.toVariant(), _arg, 1)
   }
 
   fun setInteriorAmbient(ambient: Color) {
-    val _args = VariantArray.new()
-    _args.append(ambient)
-    __method_bind.set_interior_ambient.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ambient)
+    __method_bind.set_interior_ambient.call(this.toVariant(), _arg, 1)
   }
 
   fun setInteriorAmbientEnergy(ambientEnergy: Float) {
-    val _args = VariantArray.new()
-    _args.append(ambientEnergy)
-    __method_bind.set_interior_ambient_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ambientEnergy)
+    __method_bind.set_interior_ambient_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setInteriorAmbientProbeContribution(ambientProbeContribution: Float) {
-    val _args = VariantArray.new()
-    _args.append(ambientProbeContribution)
-    __method_bind.set_interior_ambient_probe_contribution.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(ambientProbeContribution)
+    __method_bind.set_interior_ambient_probe_contribution.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxDistance(maxDistance: Float) {
-    val _args = VariantArray.new()
-    _args.append(maxDistance)
-    __method_bind.set_max_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxDistance)
+    __method_bind.set_max_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setOriginOffset(originOffset: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(originOffset)
-    __method_bind.set_origin_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(originOffset)
+    __method_bind.set_origin_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setUpdateMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_update_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_update_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class UpdateMode(
@@ -181,7 +168,7 @@ open class ReflectionProbe internal constructor(
     fun new(): ReflectionProbe = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReflectionProbe".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ReflectionProbe" }
+      requireNotNull(fnPtr) { "No instance found for ReflectionProbe" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ReflectionProbe(
         fn()

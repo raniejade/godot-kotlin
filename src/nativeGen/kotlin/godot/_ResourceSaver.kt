@@ -21,9 +21,8 @@ open class _ResourceSaver internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_recognized_extensions.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_recognized_extensions.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 

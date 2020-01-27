@@ -19,7 +19,7 @@ open class AudioEffectLowShelfFilter internal constructor(
     fun new(): AudioEffectLowShelfFilter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectLowShelfFilter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectLowShelfFilter" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectLowShelfFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectLowShelfFilter(
         fn()

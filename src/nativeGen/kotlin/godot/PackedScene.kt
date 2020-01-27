@@ -30,16 +30,14 @@ open class PackedScene internal constructor(
   }
 
   fun instance(editState: Int): Node {
-    val _args = VariantArray.new()
-    _args.append(editState)
-    val _ret = __method_bind.instance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(editState)
+    val _ret = __method_bind.instance.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Node)!!
   }
 
   fun pack(path: Node): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.pack.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.pack.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -73,7 +71,7 @@ open class PackedScene internal constructor(
 
     fun new(): PackedScene = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedScene".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PackedScene" }
+      requireNotNull(fnPtr) { "No instance found for PackedScene" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PackedScene(
         fn()

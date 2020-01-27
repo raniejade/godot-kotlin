@@ -84,69 +84,58 @@ open class SkeletonIK internal constructor(
   }
 
   fun setInterpolation(interpolation: Float) {
-    val _args = VariantArray.new()
-    _args.append(interpolation)
-    __method_bind.set_interpolation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(interpolation)
+    __method_bind.set_interpolation.call(this.toVariant(), _arg, 1)
   }
 
   fun setMagnetPosition(localPosition: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(localPosition)
-    __method_bind.set_magnet_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(localPosition)
+    __method_bind.set_magnet_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxIterations(iterations: Int) {
-    val _args = VariantArray.new()
-    _args.append(iterations)
-    __method_bind.set_max_iterations.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(iterations)
+    __method_bind.set_max_iterations.call(this.toVariant(), _arg, 1)
   }
 
   fun setMinDistance(minDistance: Float) {
-    val _args = VariantArray.new()
-    _args.append(minDistance)
-    __method_bind.set_min_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(minDistance)
+    __method_bind.set_min_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setOverrideTipBasis(override: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(override)
-    __method_bind.set_override_tip_basis.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(override)
+    __method_bind.set_override_tip_basis.call(this.toVariant(), _arg, 1)
   }
 
   fun setRootBone(rootBone: String) {
-    val _args = VariantArray.new()
-    _args.append(rootBone)
-    __method_bind.set_root_bone.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rootBone)
+    __method_bind.set_root_bone.call(this.toVariant(), _arg, 1)
   }
 
   fun setTargetNode(node: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_target_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_target_node.call(this.toVariant(), _arg, 1)
   }
 
   fun setTargetTransform(target: Transform) {
-    val _args = VariantArray.new()
-    _args.append(target)
-    __method_bind.set_target_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(target)
+    __method_bind.set_target_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setTipBone(tipBone: String) {
-    val _args = VariantArray.new()
-    _args.append(tipBone)
-    __method_bind.set_tip_bone.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tipBone)
+    __method_bind.set_tip_bone.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseMagnet(use: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(use)
-    __method_bind.set_use_magnet.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(use)
+    __method_bind.set_use_magnet.call(this.toVariant(), _arg, 1)
   }
 
   fun start(oneTime: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(oneTime)
-    __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(oneTime)
+    __method_bind.start.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -156,7 +145,7 @@ open class SkeletonIK internal constructor(
   companion object {
     fun new(): SkeletonIK = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SkeletonIK".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SkeletonIK" }
+      requireNotNull(fnPtr) { "No instance found for SkeletonIK" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SkeletonIK(
         fn()

@@ -19,9 +19,8 @@ open class Performance internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun getMonitor(monitor: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(monitor)
-    val _ret = __method_bind.get_monitor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(monitor)
+    val _ret = __method_bind.get_monitor.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 

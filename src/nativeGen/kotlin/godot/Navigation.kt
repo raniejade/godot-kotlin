@@ -22,23 +22,20 @@ open class Navigation internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun getClosestPoint(toPoint: Vector3): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun getClosestPointNormal(toPoint: Vector3): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_point_normal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_point_normal.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun getClosestPointOwner(toPoint: Vector3): Object {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_point_owner.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -88,9 +85,8 @@ open class Navigation internal constructor(
   }
 
   fun navmeshRemove(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.navmesh_remove.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.navmesh_remove.call(this.toVariant(), _arg, 1)
   }
 
   fun navmeshSetTransform(id: Int, xform: Transform) {
@@ -101,15 +97,14 @@ open class Navigation internal constructor(
   }
 
   fun setUpVector(up: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(up)
-    __method_bind.set_up_vector.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(up)
+    __method_bind.set_up_vector.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Navigation = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Navigation".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Navigation" }
+      requireNotNull(fnPtr) { "No instance found for Navigation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Navigation(
         fn()

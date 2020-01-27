@@ -49,39 +49,33 @@ open class CanvasItemMaterial internal constructor(
   }
 
   fun setBlendMode(blendMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(blendMode)
-    __method_bind.set_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(blendMode)
+    __method_bind.set_blend_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setLightMode(lightMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(lightMode)
-    __method_bind.set_light_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lightMode)
+    __method_bind.set_light_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
-    val _args = VariantArray.new()
-    _args.append(frames)
-    __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frames)
+    __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(loop)
-    __method_bind.set_particles_anim_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loop)
+    __method_bind.set_particles_anim_loop.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
-    val _args = VariantArray.new()
-    _args.append(frames)
-    __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frames)
+    __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimation(particlesAnim: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(particlesAnim)
-    __method_bind.set_particles_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(particlesAnim)
+    __method_bind.set_particles_animation.call(this.toVariant(), _arg, 1)
   }
 
   enum class LightMode(
@@ -150,7 +144,7 @@ open class CanvasItemMaterial internal constructor(
     fun new(): CanvasItemMaterial = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CanvasItemMaterial".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CanvasItemMaterial" }
+      requireNotNull(fnPtr) { "No instance found for CanvasItemMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CanvasItemMaterial(
         fn()

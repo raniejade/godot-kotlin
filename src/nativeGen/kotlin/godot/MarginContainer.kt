@@ -19,7 +19,7 @@ open class MarginContainer internal constructor(
     fun new(): MarginContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MarginContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MarginContainer" }
+      requireNotNull(fnPtr) { "No instance found for MarginContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MarginContainer(
         fn()

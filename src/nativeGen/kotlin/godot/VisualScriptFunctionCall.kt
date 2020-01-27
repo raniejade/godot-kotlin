@@ -71,63 +71,53 @@ open class VisualScriptFunctionCall internal constructor(
   }
 
   fun setBasePath(basePath: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(basePath)
-    __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(basePath)
+    __method_bind.set_base_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setBaseScript(baseScript: String) {
-    val _args = VariantArray.new()
-    _args.append(baseScript)
-    __method_bind.set_base_script.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(baseScript)
+    __method_bind.set_base_script.call(this.toVariant(), _arg, 1)
   }
 
   fun setBaseType(baseType: String) {
-    val _args = VariantArray.new()
-    _args.append(baseType)
-    __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(baseType)
+    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setBasicType(basicType: Int) {
-    val _args = VariantArray.new()
-    _args.append(basicType)
-    __method_bind.set_basic_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(basicType)
+    __method_bind.set_basic_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setCallMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_call_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setFunction(function: String) {
-    val _args = VariantArray.new()
-    _args.append(function)
-    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(function)
+    __method_bind.set_function.call(this.toVariant(), _arg, 1)
   }
 
   fun setRpcCallMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_rpc_call_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_rpc_call_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setSingleton(singleton: String) {
-    val _args = VariantArray.new()
-    _args.append(singleton)
-    __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(singleton)
+    __method_bind.set_singleton.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseDefaultArgs(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_use_default_args.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_use_default_args.call(this.toVariant(), _arg, 1)
   }
 
   fun setValidate(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_validate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_validate.call(this.toVariant(), _arg, 1)
   }
 
   enum class RPCCallMode(
@@ -204,7 +194,7 @@ open class VisualScriptFunctionCall internal constructor(
     fun new(): VisualScriptFunctionCall = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptFunctionCall".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptFunctionCall" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptFunctionCall" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptFunctionCall(
         fn()

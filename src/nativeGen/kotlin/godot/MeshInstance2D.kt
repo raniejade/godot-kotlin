@@ -32,28 +32,25 @@ open class MeshInstance2D internal constructor(
   }
 
   fun setMesh(mesh: Mesh) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mesh)
+    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _args = VariantArray.new()
-    _args.append(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normalMap)
+    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): MeshInstance2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshInstance2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MeshInstance2D" }
+      requireNotNull(fnPtr) { "No instance found for MeshInstance2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MeshInstance2D(
         fn()

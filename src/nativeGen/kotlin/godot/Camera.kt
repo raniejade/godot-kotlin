@@ -24,9 +24,8 @@ open class Camera internal constructor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
   fun clearCurrent(enableNext: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enableNext)
-    __method_bind.clear_current.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enableNext)
+    __method_bind.clear_current.call(this.toVariant(), _arg, 1)
   }
 
   fun getCameraRid(): RID {
@@ -45,9 +44,8 @@ open class Camera internal constructor(
   }
 
   fun getCullMaskBit(layer: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    val _ret = __method_bind.get_cull_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    val _ret = __method_bind.get_cull_mask_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -117,9 +115,8 @@ open class Camera internal constructor(
   }
 
   fun isPositionBehind(worldPoint: Vector3): Boolean {
-    val _args = VariantArray.new()
-    _args.append(worldPoint)
-    val _ret = __method_bind.is_position_behind.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(worldPoint)
+    val _ret = __method_bind.is_position_behind.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -128,9 +125,8 @@ open class Camera internal constructor(
   }
 
   fun projectLocalRayNormal(screenPoint: Vector2): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(screenPoint)
-    val _ret = __method_bind.project_local_ray_normal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(screenPoint)
+    val _ret = __method_bind.project_local_ray_normal.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
@@ -143,23 +139,20 @@ open class Camera internal constructor(
   }
 
   fun projectRayNormal(screenPoint: Vector2): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(screenPoint)
-    val _ret = __method_bind.project_ray_normal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(screenPoint)
+    val _ret = __method_bind.project_ray_normal.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun projectRayOrigin(screenPoint: Vector2): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(screenPoint)
-    val _ret = __method_bind.project_ray_origin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(screenPoint)
+    val _ret = __method_bind.project_ray_origin.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun setCullMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_cull_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setCullMaskBit(layer: Int, enable: Boolean) {
@@ -170,27 +163,23 @@ open class Camera internal constructor(
   }
 
   fun setCurrent(arg0: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_current.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_current.call(this.toVariant(), _arg, 1)
   }
 
   fun setDopplerTracking(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_doppler_tracking.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_doppler_tracking.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnvironment(env: Environment) {
-    val _args = VariantArray.new()
-    _args.append(env)
-    __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(env)
+    __method_bind.set_environment.call(this.toVariant(), _arg, 1)
   }
 
   fun setFov(arg0: Float) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_fov.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_fov.call(this.toVariant(), _arg, 1)
   }
 
   fun setFrustum(
@@ -208,21 +197,18 @@ open class Camera internal constructor(
   }
 
   fun setFrustumOffset(arg0: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_frustum_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_frustum_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setHOffset(ofs: Float) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_h_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_h_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setKeepAspectMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_keep_aspect_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_keep_aspect_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setOrthogonal(
@@ -250,39 +236,33 @@ open class Camera internal constructor(
   }
 
   fun setProjection(arg0: Int) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_projection.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_projection.call(this.toVariant(), _arg, 1)
   }
 
   fun setSize(arg0: Float) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setVOffset(ofs: Float) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_v_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_v_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setZfar(arg0: Float) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_zfar.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_zfar.call(this.toVariant(), _arg, 1)
   }
 
   fun setZnear(arg0: Float) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_znear.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_znear.call(this.toVariant(), _arg, 1)
   }
 
   fun unprojectPosition(worldPoint: Vector3): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(worldPoint)
-    val _ret = __method_bind.unproject_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(worldPoint)
+    val _ret = __method_bind.unproject_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -366,7 +346,7 @@ open class Camera internal constructor(
 
     fun new(): Camera = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Camera".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Camera" }
+      requireNotNull(fnPtr) { "No instance found for Camera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Camera(
         fn()

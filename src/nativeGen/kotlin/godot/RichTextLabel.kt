@@ -23,21 +23,18 @@ open class RichTextLabel internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun addImage(image: Texture) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    __method_bind.add_image.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(image)
+    __method_bind.add_image.call(this.toVariant(), _arg, 1)
   }
 
   fun addText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.add_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.add_text.call(this.toVariant(), _arg, 1)
   }
 
   fun appendBbcode(bbcode: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(bbcode)
-    val _ret = __method_bind.append_bbcode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bbcode)
+    val _ret = __method_bind.append_bbcode.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -130,9 +127,8 @@ open class RichTextLabel internal constructor(
   }
 
   fun parseBbcode(bbcode: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(bbcode)
-    val _ret = __method_bind.parse_bbcode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bbcode)
+    val _ret = __method_bind.parse_bbcode.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -141,9 +137,8 @@ open class RichTextLabel internal constructor(
   }
 
   fun pushAlign(align: Int) {
-    val _args = VariantArray.new()
-    _args.append(align)
-    __method_bind.push_align.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(align)
+    __method_bind.push_align.call(this.toVariant(), _arg, 1)
   }
 
   fun pushCell() {
@@ -151,33 +146,28 @@ open class RichTextLabel internal constructor(
   }
 
   fun pushColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.push_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.push_color.call(this.toVariant(), _arg, 1)
   }
 
   fun pushFont(font: Font) {
-    val _args = VariantArray.new()
-    _args.append(font)
-    __method_bind.push_font.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(font)
+    __method_bind.push_font.call(this.toVariant(), _arg, 1)
   }
 
   fun pushIndent(level: Int) {
-    val _args = VariantArray.new()
-    _args.append(level)
-    __method_bind.push_indent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(level)
+    __method_bind.push_indent.call(this.toVariant(), _arg, 1)
   }
 
   fun pushList(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.push_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.push_list.call(this.toVariant(), _arg, 1)
   }
 
   fun pushMeta(data: Variant) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.push_meta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.push_meta.call(this.toVariant(), _arg, 1)
   }
 
   fun pushStrikethrough() {
@@ -185,9 +175,8 @@ open class RichTextLabel internal constructor(
   }
 
   fun pushTable(columns: Int) {
-    val _args = VariantArray.new()
-    _args.append(columns)
-    __method_bind.push_table.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(columns)
+    __method_bind.push_table.call(this.toVariant(), _arg, 1)
   }
 
   fun pushUnderline() {
@@ -195,64 +184,54 @@ open class RichTextLabel internal constructor(
   }
 
   fun removeLine(line: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(line)
-    val _ret = __method_bind.remove_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    val _ret = __method_bind.remove_line.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun scrollToLine(line: Int) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    __method_bind.scroll_to_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    __method_bind.scroll_to_line.call(this.toVariant(), _arg, 1)
   }
 
   fun setBbcode(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_bbcode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_bbcode.call(this.toVariant(), _arg, 1)
   }
 
   fun setMetaUnderline(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_meta_underline.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_meta_underline.call(this.toVariant(), _arg, 1)
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(override)
-    __method_bind.set_override_selected_font_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(override)
+    __method_bind.set_override_selected_font_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setPercentVisible(percentVisible: Float) {
-    val _args = VariantArray.new()
-    _args.append(percentVisible)
-    __method_bind.set_percent_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(percentVisible)
+    __method_bind.set_percent_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollActive(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_scroll_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_scroll_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollFollow(follow: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(follow)
-    __method_bind.set_scroll_follow.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(follow)
+    __method_bind.set_scroll_follow.call(this.toVariant(), _arg, 1)
   }
 
   fun setSelectionEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_selection_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_selection_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabSize(spaces: Int) {
-    val _args = VariantArray.new()
-    _args.append(spaces)
-    __method_bind.set_tab_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(spaces)
+    __method_bind.set_tab_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setTableColumnExpand(
@@ -268,21 +247,18 @@ open class RichTextLabel internal constructor(
   }
 
   fun setText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_text.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseBbcode(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_bbcode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_bbcode.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisibleCharacters(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_visible_characters.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_visible_characters.call(this.toVariant(), _arg, 1)
   }
 
   enum class Align(
@@ -413,7 +389,7 @@ open class RichTextLabel internal constructor(
 
     fun new(): RichTextLabel = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RichTextLabel".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RichTextLabel" }
+      requireNotNull(fnPtr) { "No instance found for RichTextLabel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RichTextLabel(
         fn()

@@ -23,16 +23,15 @@ open class InputEventPanGesture internal constructor(
   }
 
   fun setDelta(delta: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(delta)
-    __method_bind.set_delta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(delta)
+    __method_bind.set_delta.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventPanGesture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventPanGesture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventPanGesture" }
+      requireNotNull(fnPtr) { "No instance found for InputEventPanGesture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventPanGesture(
         fn()

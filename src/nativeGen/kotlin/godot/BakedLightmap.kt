@@ -84,63 +84,53 @@ open class BakedLightmap internal constructor(
   }
 
   fun setBakeCellSize(bakeCellSize: Float) {
-    val _args = VariantArray.new()
-    _args.append(bakeCellSize)
-    __method_bind.set_bake_cell_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bakeCellSize)
+    __method_bind.set_bake_cell_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setBakeMode(bakeMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(bakeMode)
-    __method_bind.set_bake_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bakeMode)
+    __method_bind.set_bake_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setBakeQuality(bakeQuality: Int) {
-    val _args = VariantArray.new()
-    _args.append(bakeQuality)
-    __method_bind.set_bake_quality.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bakeQuality)
+    __method_bind.set_bake_quality.call(this.toVariant(), _arg, 1)
   }
 
   fun setCaptureCellSize(captureCellSize: Float) {
-    val _args = VariantArray.new()
-    _args.append(captureCellSize)
-    __method_bind.set_capture_cell_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(captureCellSize)
+    __method_bind.set_capture_cell_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setExtents(extents: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(extents)
-    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extents)
+    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
   }
 
   fun setHdr(hdr: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(hdr)
-    __method_bind.set_hdr.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hdr)
+    __method_bind.set_hdr.call(this.toVariant(), _arg, 1)
   }
 
   fun setImagePath(imagePath: String) {
-    val _args = VariantArray.new()
-    _args.append(imagePath)
-    __method_bind.set_image_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(imagePath)
+    __method_bind.set_image_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setLightData(data: BakedLightmapData) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.set_light_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.set_light_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setPropagation(propagation: Float) {
-    val _args = VariantArray.new()
-    _args.append(propagation)
-    __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(propagation)
+    __method_bind.set_propagation.call(this.toVariant(), _arg, 1)
   }
 
   enum class BakeQuality(
@@ -231,7 +221,7 @@ open class BakedLightmap internal constructor(
 
     fun new(): BakedLightmap = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BakedLightmap".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BakedLightmap" }
+      requireNotNull(fnPtr) { "No instance found for BakedLightmap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BakedLightmap(
         fn()

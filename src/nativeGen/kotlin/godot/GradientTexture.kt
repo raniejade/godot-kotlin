@@ -23,22 +23,20 @@ open class GradientTexture internal constructor(
   }
 
   fun setGradient(gradient: Gradient) {
-    val _args = VariantArray.new()
-    _args.append(gradient)
-    __method_bind.set_gradient.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(gradient)
+    __method_bind.set_gradient.call(this.toVariant(), _arg, 1)
   }
 
   fun setWidth(width: Int) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(width)
+    __method_bind.set_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): GradientTexture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("GradientTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GradientTexture" }
+      requireNotNull(fnPtr) { "No instance found for GradientTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GradientTexture(
         fn()

@@ -48,21 +48,18 @@ open class NetworkedMultiplayerPeer internal constructor(
   }
 
   fun setRefuseNewConnections(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_refuse_new_connections.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_refuse_new_connections.call(this.toVariant(), _arg, 1)
   }
 
   fun setTargetPeer(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.set_target_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.set_target_peer.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransferMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_transfer_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_transfer_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class ConnectionStatus(

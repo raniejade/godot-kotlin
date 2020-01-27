@@ -23,16 +23,15 @@ open class VisualScriptEmitSignal internal constructor(
   }
 
   fun setSignal(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_signal.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptEmitSignal = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptEmitSignal".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptEmitSignal" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptEmitSignal" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptEmitSignal(
         fn()

@@ -22,15 +22,14 @@ open class ProxyTexture internal constructor(
   }
 
   fun setBase(base: Texture) {
-    val _args = VariantArray.new()
-    _args.append(base)
-    __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(base)
+    __method_bind.set_base.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ProxyTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProxyTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ProxyTexture" }
+      requireNotNull(fnPtr) { "No instance found for ProxyTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ProxyTexture(
         fn()

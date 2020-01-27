@@ -38,34 +38,30 @@ open class AudioEffectLimiter internal constructor(
   }
 
   fun setCeilingDb(ceiling: Float) {
-    val _args = VariantArray.new()
-    _args.append(ceiling)
-    __method_bind.set_ceiling_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ceiling)
+    __method_bind.set_ceiling_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setSoftClipDb(softClip: Float) {
-    val _args = VariantArray.new()
-    _args.append(softClip)
-    __method_bind.set_soft_clip_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(softClip)
+    __method_bind.set_soft_clip_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setSoftClipRatio(softClip: Float) {
-    val _args = VariantArray.new()
-    _args.append(softClip)
-    __method_bind.set_soft_clip_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(softClip)
+    __method_bind.set_soft_clip_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setThresholdDb(threshold: Float) {
-    val _args = VariantArray.new()
-    _args.append(threshold)
-    __method_bind.set_threshold_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(threshold)
+    __method_bind.set_threshold_db.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectLimiter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectLimiter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectLimiter" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectLimiter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectLimiter(
         fn()

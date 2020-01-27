@@ -53,9 +53,8 @@ open class VisualShaderNodeGroupBase internal constructor(
   }
 
   fun getControl(index: Int): Control {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_control.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_control.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Control)!!
   }
 
@@ -95,29 +94,25 @@ open class VisualShaderNodeGroupBase internal constructor(
   }
 
   fun hasInputPort(id: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.has_input_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.has_input_port.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun hasOutputPort(id: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.has_output_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.has_output_port.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeInputPort(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.remove_input_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.remove_input_port.call(this.toVariant(), _arg, 1)
   }
 
   fun removeOutputPort(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.remove_output_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.remove_output_port.call(this.toVariant(), _arg, 1)
   }
 
   fun setControl(control: Control, index: Int) {
@@ -142,9 +137,8 @@ open class VisualShaderNodeGroupBase internal constructor(
   }
 
   fun setInputs(inputs: String) {
-    val _args = VariantArray.new()
-    _args.append(inputs)
-    __method_bind.set_inputs.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(inputs)
+    __method_bind.set_inputs.call(this.toVariant(), _arg, 1)
   }
 
   fun setOutputPortName(arg0: Int, arg1: String) {
@@ -162,22 +156,20 @@ open class VisualShaderNodeGroupBase internal constructor(
   }
 
   fun setOutputs(outputs: String) {
-    val _args = VariantArray.new()
-    _args.append(outputs)
-    __method_bind.set_outputs.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(outputs)
+    __method_bind.set_outputs.call(this.toVariant(), _arg, 1)
   }
 
   fun setSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeGroupBase = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeGroupBase".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeGroupBase" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeGroupBase" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeGroupBase(
         fn()

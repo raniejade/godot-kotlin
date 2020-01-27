@@ -20,16 +20,14 @@ open class HingeJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getFlag(flag: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    val _ret = __method_bind.get_flag.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flag)
+    val _ret = __method_bind.get_flag.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getParam(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -128,7 +126,7 @@ open class HingeJoint internal constructor(
 
     fun new(): HingeJoint = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HingeJoint".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HingeJoint" }
+      requireNotNull(fnPtr) { "No instance found for HingeJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HingeJoint(
         fn()

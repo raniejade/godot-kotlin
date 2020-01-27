@@ -33,27 +33,24 @@ open class ParallaxLayer internal constructor(
   }
 
   fun setMirroring(mirror: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(mirror)
-    __method_bind.set_mirroring.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mirror)
+    __method_bind.set_mirroring.call(this.toVariant(), _arg, 1)
   }
 
   fun setMotionOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_motion_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_motion_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setMotionScale(scale: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_motion_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_motion_scale.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ParallaxLayer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxLayer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ParallaxLayer" }
+      requireNotNull(fnPtr) { "No instance found for ParallaxLayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ParallaxLayer(
         fn()

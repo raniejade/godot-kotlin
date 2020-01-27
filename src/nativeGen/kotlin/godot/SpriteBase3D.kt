@@ -39,9 +39,8 @@ open class SpriteBase3D internal constructor(
   }
 
   fun getDrawFlag(flag: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    val _ret = __method_bind.get_draw_flag.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flag)
+    val _ret = __method_bind.get_draw_flag.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -86,21 +85,18 @@ open class SpriteBase3D internal constructor(
   }
 
   fun setAlphaCutMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_alpha_cut_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_alpha_cut_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setAxis(axis: Int) {
-    val _args = VariantArray.new()
-    _args.append(axis)
-    __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(axis)
+    __method_bind.set_axis.call(this.toVariant(), _arg, 1)
   }
 
   fun setCentered(centered: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(centered)
-    __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(centered)
+    __method_bind.set_centered.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawFlag(flag: Int, enabled: Boolean) {
@@ -111,39 +107,33 @@ open class SpriteBase3D internal constructor(
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipH)
-    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipH)
+    __method_bind.set_flip_h.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipV)
-    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipV)
+    __method_bind.set_flip_v.call(this.toVariant(), _arg, 1)
   }
 
   fun setModulate(modulate: Color) {
-    val _args = VariantArray.new()
-    _args.append(modulate)
-    __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(modulate)
+    __method_bind.set_modulate.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setOpacity(opacity: Float) {
-    val _args = VariantArray.new()
-    _args.append(opacity)
-    __method_bind.set_opacity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(opacity)
+    __method_bind.set_opacity.call(this.toVariant(), _arg, 1)
   }
 
   fun setPixelSize(pixelSize: Float) {
-    val _args = VariantArray.new()
-    _args.append(pixelSize)
-    __method_bind.set_pixel_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pixelSize)
+    __method_bind.set_pixel_size.call(this.toVariant(), _arg, 1)
   }
 
   enum class DrawFlags(

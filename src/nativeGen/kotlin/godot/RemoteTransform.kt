@@ -44,40 +44,35 @@ open class RemoteTransform internal constructor(
   }
 
   fun setRemoteNode(path: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_remote_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_remote_node.call(this.toVariant(), _arg, 1)
   }
 
   fun setUpdatePosition(updateRemotePosition: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(updateRemotePosition)
-    __method_bind.set_update_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(updateRemotePosition)
+    __method_bind.set_update_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setUpdateRotation(updateRemoteRotation: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(updateRemoteRotation)
-    __method_bind.set_update_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(updateRemoteRotation)
+    __method_bind.set_update_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setUpdateScale(updateRemoteScale: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(updateRemoteScale)
-    __method_bind.set_update_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(updateRemoteScale)
+    __method_bind.set_update_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(useGlobalCoordinates)
-    __method_bind.set_use_global_coordinates.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(useGlobalCoordinates)
+    __method_bind.set_use_global_coordinates.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): RemoteTransform = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RemoteTransform".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RemoteTransform" }
+      requireNotNull(fnPtr) { "No instance found for RemoteTransform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RemoteTransform(
         fn()

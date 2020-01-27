@@ -25,15 +25,13 @@ open class MeshLibrary internal constructor(
   }
 
   fun createItem(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.create_item.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.create_item.call(this.toVariant(), _arg, 1)
   }
 
   fun findItemByName(name: String): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.find_item_by_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.find_item_by_name.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -43,44 +41,38 @@ open class MeshLibrary internal constructor(
   }
 
   fun getItemMesh(id: Int): Mesh {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_mesh.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getItemName(id: Int): String {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getItemNavmesh(id: Int): NavigationMesh {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_navmesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_navmesh.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::NavigationMesh)!!
   }
 
   fun getItemNavmeshTransform(id: Int): Transform {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_navmesh_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_navmesh_transform.call(this.toVariant(), _arg, 1)
     return _ret.asTransform()
   }
 
   fun getItemPreview(id: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_preview.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_preview.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemShapes(id: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_item_shapes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_item_shapes.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -90,9 +82,8 @@ open class MeshLibrary internal constructor(
   }
 
   fun removeItem(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.remove_item.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.remove_item.call(this.toVariant(), _arg, 1)
   }
 
   fun setItemMesh(id: Int, mesh: Mesh) {
@@ -140,7 +131,7 @@ open class MeshLibrary internal constructor(
   companion object {
     fun new(): MeshLibrary = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshLibrary".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MeshLibrary" }
+      requireNotNull(fnPtr) { "No instance found for MeshLibrary" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MeshLibrary(
         fn()

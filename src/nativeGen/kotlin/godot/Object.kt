@@ -30,16 +30,14 @@ open class Object internal constructor(
   }
 
   fun call(method: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    val _ret = __method_bind.call.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.call.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun callDeferred(method: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(method)
-    val _ret = __method_bind.call_deferred.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.call_deferred.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -86,9 +84,8 @@ open class Object internal constructor(
   }
 
   fun emitSignal(signal: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    val _ret = __method_bind.emit_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(signal)
+    val _ret = __method_bind.emit_signal.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -97,9 +94,8 @@ open class Object internal constructor(
   }
 
   fun get(property: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(property)
-    val _ret = __method_bind.get.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(property)
+    val _ret = __method_bind.get.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -114,9 +110,8 @@ open class Object internal constructor(
   }
 
   fun getIndexed(property: NodePath): Variant {
-    val _args = VariantArray.new()
-    _args.append(property)
-    val _ret = __method_bind.get_indexed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(property)
+    val _ret = __method_bind.get_indexed.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -126,9 +121,8 @@ open class Object internal constructor(
   }
 
   fun getMeta(name: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_meta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_meta.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -153,9 +147,8 @@ open class Object internal constructor(
   }
 
   fun getSignalConnectionList(signal: String): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    val _ret = __method_bind.get_signal_connection_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(signal)
+    val _ret = __method_bind.get_signal_connection_list.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -165,23 +158,20 @@ open class Object internal constructor(
   }
 
   fun hasMeta(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_meta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_meta.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun hasMethod(method: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(method)
-    val _ret = __method_bind.has_method.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.has_method.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun hasUserSignal(signal: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(signal)
-    val _ret = __method_bind.has_user_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(signal)
+    val _ret = __method_bind.has_user_signal.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -191,9 +181,8 @@ open class Object internal constructor(
   }
 
   fun isClass(type: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.is_class.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.is_class.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -227,9 +216,8 @@ open class Object internal constructor(
   }
 
   fun removeMeta(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_meta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_meta.call(this.toVariant(), _arg, 1)
   }
 
   fun set(property: String, value: Variant) {
@@ -240,9 +228,8 @@ open class Object internal constructor(
   }
 
   fun setBlockSignals(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_block_signals.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_block_signals.call(this.toVariant(), _arg, 1)
   }
 
   fun setDeferred(property: String, value: Variant) {
@@ -260,9 +247,8 @@ open class Object internal constructor(
   }
 
   fun setMessageTranslation(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_message_translation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_message_translation.call(this.toVariant(), _arg, 1)
   }
 
   fun setMeta(name: String, value: Variant) {
@@ -273,9 +259,8 @@ open class Object internal constructor(
   }
 
   fun setScript(script: Reference) {
-    val _args = VariantArray.new()
-    _args.append(script)
-    __method_bind.set_script.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(script)
+    __method_bind.set_script.call(this.toVariant(), _arg, 1)
   }
 
   override fun toString(): String {
@@ -284,9 +269,8 @@ open class Object internal constructor(
   }
 
   fun tr(message: String): String {
-    val _args = VariantArray.new()
-    _args.append(message)
-    val _ret = __method_bind.tr.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(message)
+    val _ret = __method_bind.tr.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -328,7 +312,7 @@ open class Object internal constructor(
 
     fun new(): Object = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Object".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Object" }
+      requireNotNull(fnPtr) { "No instance found for Object" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Object(
         fn()

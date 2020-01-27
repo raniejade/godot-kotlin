@@ -42,9 +42,8 @@ open class GDNative internal constructor(
   }
 
   fun setLibrary(library: GDNativeLibrary) {
-    val _args = VariantArray.new()
-    _args.append(library)
-    __method_bind.set_library.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(library)
+    __method_bind.set_library.call(this.toVariant(), _arg, 1)
   }
 
   fun terminate(): Boolean {
@@ -55,7 +54,7 @@ open class GDNative internal constructor(
   companion object {
     fun new(): GDNative = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GDNative" }
+      requireNotNull(fnPtr) { "No instance found for GDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GDNative(
         fn()

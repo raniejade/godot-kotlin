@@ -39,33 +39,29 @@ open class CapsuleMesh internal constructor(
   }
 
   fun setMidHeight(midHeight: Float) {
-    val _args = VariantArray.new()
-    _args.append(midHeight)
-    __method_bind.set_mid_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(midHeight)
+    __method_bind.set_mid_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadialSegments(segments: Int) {
-    val _args = VariantArray.new()
-    _args.append(segments)
-    __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(segments)
+    __method_bind.set_radial_segments.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setRings(rings: Int) {
-    val _args = VariantArray.new()
-    _args.append(rings)
-    __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rings)
+    __method_bind.set_rings.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CapsuleMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CapsuleMesh" }
+      requireNotNull(fnPtr) { "No instance found for CapsuleMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CapsuleMesh(
         fn()

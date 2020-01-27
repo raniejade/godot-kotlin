@@ -28,22 +28,20 @@ open class LightOccluder2D internal constructor(
   }
 
   fun setOccluderLightMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_occluder_light_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_occluder_light_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setOccluderPolygon(polygon: OccluderPolygon2D) {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    __method_bind.set_occluder_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    __method_bind.set_occluder_polygon.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): LightOccluder2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("LightOccluder2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton LightOccluder2D" }
+      requireNotNull(fnPtr) { "No instance found for LightOccluder2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       LightOccluder2D(
         fn()

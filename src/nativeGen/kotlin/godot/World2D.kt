@@ -35,7 +35,7 @@ open class World2D internal constructor(
   companion object {
     fun new(): World2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("World2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton World2D" }
+      requireNotNull(fnPtr) { "No instance found for World2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       World2D(
         fn()

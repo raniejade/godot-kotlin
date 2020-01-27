@@ -25,9 +25,8 @@ open class MainLoop internal constructor(
   }
 
   fun idle(delta: Float): Boolean {
-    val _args = VariantArray.new()
-    _args.append(delta)
-    val _ret = __method_bind.idle.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(delta)
+    val _ret = __method_bind.idle.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -36,21 +35,18 @@ open class MainLoop internal constructor(
   }
 
   fun inputEvent(event: InputEvent) {
-    val _args = VariantArray.new()
-    _args.append(event)
-    __method_bind.input_event.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(event)
+    __method_bind.input_event.call(this.toVariant(), _arg, 1)
   }
 
   fun inputText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.input_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.input_text.call(this.toVariant(), _arg, 1)
   }
 
   fun iteration(delta: Float): Boolean {
-    val _args = VariantArray.new()
-    _args.append(delta)
-    val _ret = __method_bind.iteration.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(delta)
+    val _ret = __method_bind.iteration.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -81,7 +77,7 @@ open class MainLoop internal constructor(
 
     fun new(): MainLoop = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MainLoop".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MainLoop" }
+      requireNotNull(fnPtr) { "No instance found for MainLoop" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MainLoop(
         fn()

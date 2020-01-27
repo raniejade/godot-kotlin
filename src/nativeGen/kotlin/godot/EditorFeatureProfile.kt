@@ -21,23 +21,20 @@ open class EditorFeatureProfile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getFeatureName(feature: Int): String {
-    val _args = VariantArray.new()
-    _args.append(feature)
-    val _ret = __method_bind.get_feature_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feature)
+    val _ret = __method_bind.get_feature_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun isClassDisabled(className: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(className)
-    val _ret = __method_bind.is_class_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(className)
+    val _ret = __method_bind.is_class_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isClassEditorDisabled(className: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(className)
-    val _ret = __method_bind.is_class_editor_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(className)
+    val _ret = __method_bind.is_class_editor_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -50,23 +47,20 @@ open class EditorFeatureProfile internal constructor(
   }
 
   fun isFeatureDisabled(feature: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(feature)
-    val _ret = __method_bind.is_feature_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feature)
+    val _ret = __method_bind.is_feature_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun loadFromFile(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.load_from_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.load_from_file.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun saveToFile(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.save_to_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.save_to_file.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -154,7 +148,7 @@ open class EditorFeatureProfile internal constructor(
     fun new(): EditorFeatureProfile = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFeatureProfile".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorFeatureProfile" }
+      requireNotNull(fnPtr) { "No instance found for EditorFeatureProfile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorFeatureProfile(
         fn()

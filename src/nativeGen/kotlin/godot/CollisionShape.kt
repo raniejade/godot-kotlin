@@ -32,28 +32,25 @@ open class CollisionShape internal constructor(
   }
 
   fun resourceChanged(resource: Resource) {
-    val _args = VariantArray.new()
-    _args.append(resource)
-    __method_bind.resource_changed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resource)
+    __method_bind.resource_changed.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_disabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setShape(shape: Shape) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CollisionShape = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CollisionShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CollisionShape" }
+      requireNotNull(fnPtr) { "No instance found for CollisionShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CollisionShape(
         fn()

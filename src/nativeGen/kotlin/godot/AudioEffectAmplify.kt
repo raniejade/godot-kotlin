@@ -23,16 +23,15 @@ open class AudioEffectAmplify internal constructor(
   }
 
   fun setVolumeDb(volume: Float) {
-    val _args = VariantArray.new()
-    _args.append(volume)
-    __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(volume)
+    __method_bind.set_volume_db.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectAmplify = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectAmplify".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectAmplify" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectAmplify" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectAmplify(
         fn()

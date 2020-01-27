@@ -23,9 +23,8 @@ open class Shape internal constructor(
   }
 
   fun setMargin(margin: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    __method_bind.set_margin.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

@@ -19,7 +19,7 @@ open class StreamPeerGDNative internal constructor(
     fun new(): StreamPeerGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StreamPeerGDNative" }
+      requireNotNull(fnPtr) { "No instance found for StreamPeerGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StreamPeerGDNative(
         fn()

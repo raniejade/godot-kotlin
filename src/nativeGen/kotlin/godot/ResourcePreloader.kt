@@ -27,9 +27,8 @@ open class ResourcePreloader internal constructor(
   }
 
   fun getResource(name: String): Resource {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_resource.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_resource.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Resource)!!
   }
 
@@ -39,16 +38,14 @@ open class ResourcePreloader internal constructor(
   }
 
   fun hasResource(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_resource.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_resource.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeResource(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_resource.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_resource.call(this.toVariant(), _arg, 1)
   }
 
   fun renameResource(name: String, newname: String) {
@@ -62,7 +59,7 @@ open class ResourcePreloader internal constructor(
     fun new(): ResourcePreloader = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourcePreloader".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ResourcePreloader" }
+      requireNotNull(fnPtr) { "No instance found for ResourcePreloader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ResourcePreloader(
         fn()

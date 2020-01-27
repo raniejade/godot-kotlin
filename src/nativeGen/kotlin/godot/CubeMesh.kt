@@ -39,33 +39,29 @@ open class CubeMesh internal constructor(
   }
 
   fun setSize(size: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideDepth(divisions: Int) {
-    val _args = VariantArray.new()
-    _args.append(divisions)
-    __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(divisions)
+    __method_bind.set_subdivide_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideHeight(divisions: Int) {
-    val _args = VariantArray.new()
-    _args.append(divisions)
-    __method_bind.set_subdivide_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(divisions)
+    __method_bind.set_subdivide_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideWidth(subdivide: Int) {
-    val _args = VariantArray.new()
-    _args.append(subdivide)
-    __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(subdivide)
+    __method_bind.set_subdivide_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CubeMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CubeMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CubeMesh" }
+      requireNotNull(fnPtr) { "No instance found for CubeMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CubeMesh(
         fn()

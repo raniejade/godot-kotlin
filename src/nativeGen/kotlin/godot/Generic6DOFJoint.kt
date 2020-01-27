@@ -20,44 +20,38 @@ open class Generic6DOFJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getFlagX(flag: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    val _ret = __method_bind.get_flag_x.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flag)
+    val _ret = __method_bind.get_flag_x.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getFlagY(flag: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    val _ret = __method_bind.get_flag_y.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flag)
+    val _ret = __method_bind.get_flag_y.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getFlagZ(flag: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    val _ret = __method_bind.get_flag_z.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flag)
+    val _ret = __method_bind.get_flag_z.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getParamX(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param_x.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param_x.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getParamY(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param_y.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param_y.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getParamZ(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param_z.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param_z.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -109,9 +103,8 @@ open class Generic6DOFJoint internal constructor(
   }
 
   fun setPrecision(precision: Int) {
-    val _args = VariantArray.new()
-    _args.append(precision)
-    __method_bind.set_precision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(precision)
+    __method_bind.set_precision.call(this.toVariant(), _arg, 1)
   }
 
   enum class Param(
@@ -244,7 +237,7 @@ open class Generic6DOFJoint internal constructor(
     fun new(): Generic6DOFJoint = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Generic6DOFJoint".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Generic6DOFJoint" }
+      requireNotNull(fnPtr) { "No instance found for Generic6DOFJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Generic6DOFJoint(
         fn()

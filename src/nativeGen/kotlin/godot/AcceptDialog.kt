@@ -32,9 +32,8 @@ open class AcceptDialog internal constructor(
   }
 
   fun addCancel(name: String): Button {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.add_cancel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.add_cancel.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Button)!!
   }
 
@@ -59,27 +58,24 @@ open class AcceptDialog internal constructor(
   }
 
   fun registerTextEnter(lineEdit: Node) {
-    val _args = VariantArray.new()
-    _args.append(lineEdit)
-    __method_bind.register_text_enter.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lineEdit)
+    __method_bind.register_text_enter.call(this.toVariant(), _arg, 1)
   }
 
   fun setHideOnOk(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_hide_on_ok.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_hide_on_ok.call(this.toVariant(), _arg, 1)
   }
 
   fun setText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_text.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AcceptDialog = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AcceptDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AcceptDialog" }
+      requireNotNull(fnPtr) { "No instance found for AcceptDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AcceptDialog(
         fn()

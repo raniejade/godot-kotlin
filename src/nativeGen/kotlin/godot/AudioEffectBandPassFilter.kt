@@ -19,7 +19,7 @@ open class AudioEffectBandPassFilter internal constructor(
     fun new(): AudioEffectBandPassFilter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectBandPassFilter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectBandPassFilter" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectBandPassFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectBandPassFilter(
         fn()

@@ -46,15 +46,13 @@ open class CameraFeed internal constructor(
   }
 
   fun setActive(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransform(transform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(transform)
-    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(transform)
+    __method_bind.set_transform.call(this.toVariant(), _arg, 1)
   }
 
   enum class FeedDataType(
@@ -118,7 +116,7 @@ open class CameraFeed internal constructor(
 
     fun new(): CameraFeed = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraFeed".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CameraFeed" }
+      requireNotNull(fnPtr) { "No instance found for CameraFeed" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CameraFeed(
         fn()

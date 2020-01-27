@@ -75,9 +75,8 @@ open class WebRTCDataChannel internal constructor(
   }
 
   fun setWriteMode(writeMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(writeMode)
-    __method_bind.set_write_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(writeMode)
+    __method_bind.set_write_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun wasStringPacket(): Boolean {

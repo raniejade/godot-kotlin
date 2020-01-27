@@ -18,15 +18,13 @@ open class EditorResourcePreview internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
-    val _args = VariantArray.new()
-    _args.append(generator)
-    __method_bind.add_preview_generator.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(generator)
+    __method_bind.add_preview_generator.call(this.toVariant(), _arg, 1)
   }
 
   fun checkForInvalidation(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.check_for_invalidation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.check_for_invalidation.call(this.toVariant(), _arg, 1)
   }
 
   fun queueEditedResourcePreview(
@@ -58,9 +56,8 @@ open class EditorResourcePreview internal constructor(
   }
 
   fun removePreviewGenerator(generator: EditorResourcePreviewGenerator) {
-    val _args = VariantArray.new()
-    _args.append(generator)
-    __method_bind.remove_preview_generator.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(generator)
+    __method_bind.remove_preview_generator.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

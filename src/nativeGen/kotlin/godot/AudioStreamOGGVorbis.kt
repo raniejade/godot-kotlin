@@ -35,28 +35,25 @@ open class AudioStreamOGGVorbis internal constructor(
   }
 
   fun setData(data: PoolByteArray) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.set_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoop(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_loop.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoopOffset(seconds: Float) {
-    val _args = VariantArray.new()
-    _args.append(seconds)
-    __method_bind.set_loop_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seconds)
+    __method_bind.set_loop_offset.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioStreamOGGVorbis = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamOGGVorbis".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamOGGVorbis" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamOGGVorbis" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamOGGVorbis(
         fn()

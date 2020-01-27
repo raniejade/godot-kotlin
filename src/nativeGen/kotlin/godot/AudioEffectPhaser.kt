@@ -43,40 +43,35 @@ open class AudioEffectPhaser internal constructor(
   }
 
   fun setDepth(depth: Float) {
-    val _args = VariantArray.new()
-    _args.append(depth)
-    __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depth)
+    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setFeedback(fbk: Float) {
-    val _args = VariantArray.new()
-    _args.append(fbk)
-    __method_bind.set_feedback.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fbk)
+    __method_bind.set_feedback.call(this.toVariant(), _arg, 1)
   }
 
   fun setRangeMaxHz(hz: Float) {
-    val _args = VariantArray.new()
-    _args.append(hz)
-    __method_bind.set_range_max_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hz)
+    __method_bind.set_range_max_hz.call(this.toVariant(), _arg, 1)
   }
 
   fun setRangeMinHz(hz: Float) {
-    val _args = VariantArray.new()
-    _args.append(hz)
-    __method_bind.set_range_min_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hz)
+    __method_bind.set_range_min_hz.call(this.toVariant(), _arg, 1)
   }
 
   fun setRateHz(hz: Float) {
-    val _args = VariantArray.new()
-    _args.append(hz)
-    __method_bind.set_rate_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hz)
+    __method_bind.set_rate_hz.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectPhaser = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPhaser".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectPhaser" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectPhaser" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectPhaser(
         fn()

@@ -54,52 +54,45 @@ open class AudioEffectCompressor internal constructor(
   }
 
   fun setAttackUs(attackUs: Float) {
-    val _args = VariantArray.new()
-    _args.append(attackUs)
-    __method_bind.set_attack_us.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(attackUs)
+    __method_bind.set_attack_us.call(this.toVariant(), _arg, 1)
   }
 
   fun setGain(gain: Float) {
-    val _args = VariantArray.new()
-    _args.append(gain)
-    __method_bind.set_gain.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(gain)
+    __method_bind.set_gain.call(this.toVariant(), _arg, 1)
   }
 
   fun setMix(mix: Float) {
-    val _args = VariantArray.new()
-    _args.append(mix)
-    __method_bind.set_mix.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mix)
+    __method_bind.set_mix.call(this.toVariant(), _arg, 1)
   }
 
   fun setRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.set_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.set_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setReleaseMs(releaseMs: Float) {
-    val _args = VariantArray.new()
-    _args.append(releaseMs)
-    __method_bind.set_release_ms.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(releaseMs)
+    __method_bind.set_release_ms.call(this.toVariant(), _arg, 1)
   }
 
   fun setSidechain(sidechain: String) {
-    val _args = VariantArray.new()
-    _args.append(sidechain)
-    __method_bind.set_sidechain.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sidechain)
+    __method_bind.set_sidechain.call(this.toVariant(), _arg, 1)
   }
 
   fun setThreshold(threshold: Float) {
-    val _args = VariantArray.new()
-    _args.append(threshold)
-    __method_bind.set_threshold.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(threshold)
+    __method_bind.set_threshold.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectCompressor = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectCompressor".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectCompressor" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectCompressor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectCompressor(
         fn()

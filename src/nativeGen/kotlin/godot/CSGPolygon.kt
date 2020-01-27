@@ -87,81 +87,68 @@ open class CSGPolygon internal constructor(
   }
 
   fun setDepth(depth: Float) {
-    val _args = VariantArray.new()
-    _args.append(depth)
-    __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depth)
+    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPathContinuousU(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_path_continuous_u.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_path_continuous_u.call(this.toVariant(), _arg, 1)
   }
 
   fun setPathInterval(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_path_interval.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_path_interval.call(this.toVariant(), _arg, 1)
   }
 
   fun setPathJoined(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_path_joined.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_path_joined.call(this.toVariant(), _arg, 1)
   }
 
   fun setPathLocal(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_path_local.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_path_local.call(this.toVariant(), _arg, 1)
   }
 
   fun setPathNode(path: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_path_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_path_node.call(this.toVariant(), _arg, 1)
   }
 
   fun setPathRotation(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_path_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_path_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    __method_bind.set_polygon.call(this.toVariant(), _arg, 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(smoothFaces)
-    __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(smoothFaces)
+    __method_bind.set_smooth_faces.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpinDegrees(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_spin_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_spin_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpinSides(spinSides: Int) {
-    val _args = VariantArray.new()
-    _args.append(spinSides)
-    __method_bind.set_spin_sides.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(spinSides)
+    __method_bind.set_spin_sides.call(this.toVariant(), _arg, 1)
   }
 
   enum class PathRotation(
@@ -221,7 +208,7 @@ open class CSGPolygon internal constructor(
 
     fun new(): CSGPolygon = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGPolygon".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGPolygon" }
+      requireNotNull(fnPtr) { "No instance found for CSGPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGPolygon(
         fn()

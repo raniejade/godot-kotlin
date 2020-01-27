@@ -69,69 +69,58 @@ open class Range internal constructor(
   }
 
   fun setAllowGreater(allow: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(allow)
-    __method_bind.set_allow_greater.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allow)
+    __method_bind.set_allow_greater.call(this.toVariant(), _arg, 1)
   }
 
   fun setAllowLesser(allow: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(allow)
-    __method_bind.set_allow_lesser.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allow)
+    __method_bind.set_allow_lesser.call(this.toVariant(), _arg, 1)
   }
 
   fun setAsRatio(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_as_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_as_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setExpRatio(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_exp_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_exp_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setMax(maximum: Float) {
-    val _args = VariantArray.new()
-    _args.append(maximum)
-    __method_bind.set_max.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maximum)
+    __method_bind.set_max.call(this.toVariant(), _arg, 1)
   }
 
   fun setMin(minimum: Float) {
-    val _args = VariantArray.new()
-    _args.append(minimum)
-    __method_bind.set_min.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(minimum)
+    __method_bind.set_min.call(this.toVariant(), _arg, 1)
   }
 
   fun setPage(pagesize: Float) {
-    val _args = VariantArray.new()
-    _args.append(pagesize)
-    __method_bind.set_page.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pagesize)
+    __method_bind.set_page.call(this.toVariant(), _arg, 1)
   }
 
   fun setStep(step: Float) {
-    val _args = VariantArray.new()
-    _args.append(step)
-    __method_bind.set_step.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(step)
+    __method_bind.set_step.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseRoundedValues(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_use_rounded_values.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_use_rounded_values.call(this.toVariant(), _arg, 1)
   }
 
   fun setValue(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_value.call(this.toVariant(), _arg, 1)
   }
 
   fun share(with: Node) {
-    val _args = VariantArray.new()
-    _args.append(with)
-    __method_bind.share.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(with)
+    __method_bind.share.call(this.toVariant(), _arg, 1)
   }
 
   fun unshare() {

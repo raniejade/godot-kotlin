@@ -30,28 +30,25 @@ open class InputEventScreenTouch internal constructor(
   }
 
   fun setIndex(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.set_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.set_index.call(this.toVariant(), _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pressed)
+    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventScreenTouch = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventScreenTouch".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventScreenTouch" }
+      requireNotNull(fnPtr) { "No instance found for InputEventScreenTouch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventScreenTouch(
         fn()

@@ -23,15 +23,14 @@ open class BoxShape internal constructor(
   }
 
   fun setExtents(extents: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(extents)
-    __method_bind.set_extents.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extents)
+    __method_bind.set_extents.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): BoxShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BoxShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BoxShape" }
+      requireNotNull(fnPtr) { "No instance found for BoxShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BoxShape(
         fn()

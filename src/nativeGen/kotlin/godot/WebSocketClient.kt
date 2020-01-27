@@ -47,16 +47,15 @@ open class WebSocketClient internal constructor(
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_verify_ssl_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_verify_ssl_enabled.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): WebSocketClient = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketClient".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebSocketClient" }
+      requireNotNull(fnPtr) { "No instance found for WebSocketClient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebSocketClient(
         fn()

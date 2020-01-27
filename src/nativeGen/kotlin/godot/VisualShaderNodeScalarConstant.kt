@@ -23,16 +23,15 @@ open class VisualShaderNodeScalarConstant internal constructor(
   }
 
   fun setConstant(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeScalarConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeScalarConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeScalarConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeScalarConstant(
         fn()

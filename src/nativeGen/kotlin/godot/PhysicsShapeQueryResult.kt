@@ -24,30 +24,26 @@ open class PhysicsShapeQueryResult internal constructor(
   }
 
   fun getResultObject(idx: Int): Object {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_result_object.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_result_object.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
   fun getResultObjectId(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_result_object_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_result_object_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getResultObjectShape(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_result_object_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_result_object_shape.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getResultRid(idx: Int): RID {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_result_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_result_rid.call(this.toVariant(), _arg, 1)
     return _ret.asRID()
   }
 

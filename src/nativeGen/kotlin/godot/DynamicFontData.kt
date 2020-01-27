@@ -35,21 +35,18 @@ open class DynamicFontData internal constructor(
   }
 
   fun setAntialiased(antialiased: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(antialiased)
-    __method_bind.set_antialiased.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(antialiased)
+    __method_bind.set_antialiased.call(this.toVariant(), _arg, 1)
   }
 
   fun setFontPath(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_font_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_font_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setHinting(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_hinting.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_hinting.call(this.toVariant(), _arg, 1)
   }
 
   enum class Hinting(
@@ -83,7 +80,7 @@ open class DynamicFontData internal constructor(
     fun new(): DynamicFontData = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DynamicFontData".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton DynamicFontData" }
+      requireNotNull(fnPtr) { "No instance found for DynamicFontData" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       DynamicFontData(
         fn()

@@ -69,9 +69,8 @@ open class ARVRPositionalTracker internal constructor(
   }
 
   fun getTransform(adjustByReferenceFrame: Boolean): Transform {
-    val _args = VariantArray.new()
-    _args.append(adjustByReferenceFrame)
-    val _ret = __method_bind.get_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(adjustByReferenceFrame)
+    val _ret = __method_bind.get_transform.call(this.toVariant(), _arg, 1)
     return _ret.asTransform()
   }
 
@@ -81,9 +80,8 @@ open class ARVRPositionalTracker internal constructor(
   }
 
   fun setRumble(rumble: Float) {
-    val _args = VariantArray.new()
-    _args.append(rumble)
-    __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rumble)
+    __method_bind.set_rumble.call(this.toVariant(), _arg, 1)
   }
 
   enum class TrackerHand(
@@ -117,7 +115,7 @@ open class ARVRPositionalTracker internal constructor(
     fun new(): ARVRPositionalTracker = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRPositionalTracker".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ARVRPositionalTracker" }
+      requireNotNull(fnPtr) { "No instance found for ARVRPositionalTracker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ARVRPositionalTracker(
         fn()

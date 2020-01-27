@@ -28,22 +28,20 @@ open class VisualScriptOperator internal constructor(
   }
 
   fun setOperator(op: Int) {
-    val _args = VariantArray.new()
-    _args.append(op)
-    __method_bind.set_operator.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(op)
+    __method_bind.set_operator.call(this.toVariant(), _arg, 1)
   }
 
   fun setTyped(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_typed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_typed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptOperator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptOperator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptOperator" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptOperator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptOperator(
         fn()

@@ -51,39 +51,33 @@ open class AnimationNodeStateMachineTransition internal constructor(
   }
 
   fun setAdvanceCondition(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_advance_condition.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_advance_condition.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutoAdvance(autoAdvance: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(autoAdvance)
-    __method_bind.set_auto_advance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(autoAdvance)
+    __method_bind.set_auto_advance.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisabled(disabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disabled)
-    __method_bind.set_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disabled)
+    __method_bind.set_disabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setPriority(priority: Int) {
-    val _args = VariantArray.new()
-    _args.append(priority)
-    __method_bind.set_priority.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(priority)
+    __method_bind.set_priority.call(this.toVariant(), _arg, 1)
   }
 
   fun setSwitchMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_switch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_switch_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setXfadeTime(secs: Float) {
-    val _args = VariantArray.new()
-    _args.append(secs)
-    __method_bind.set_xfade_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(secs)
+    __method_bind.set_xfade_time.call(this.toVariant(), _arg, 1)
   }
 
   enum class SwitchMode(
@@ -117,8 +111,7 @@ open class AnimationNodeStateMachineTransition internal constructor(
     fun new(): AnimationNodeStateMachineTransition = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachineTransition".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeStateMachineTransition"
-        }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeStateMachineTransition" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeStateMachineTransition(
         fn()

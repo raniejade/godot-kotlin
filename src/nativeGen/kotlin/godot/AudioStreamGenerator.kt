@@ -28,22 +28,20 @@ open class AudioStreamGenerator internal constructor(
   }
 
   fun setBufferLength(seconds: Float) {
-    val _args = VariantArray.new()
-    _args.append(seconds)
-    __method_bind.set_buffer_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seconds)
+    __method_bind.set_buffer_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setMixRate(hz: Float) {
-    val _args = VariantArray.new()
-    _args.append(hz)
-    __method_bind.set_mix_rate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hz)
+    __method_bind.set_mix_rate.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioStreamGenerator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamGenerator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamGenerator" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamGenerator(
         fn()

@@ -46,39 +46,34 @@ open class StyleBoxLine internal constructor(
   }
 
   fun setColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setGrowBegin(offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_grow_begin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_grow_begin.call(this.toVariant(), _arg, 1)
   }
 
   fun setGrowEnd(offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_grow_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_grow_end.call(this.toVariant(), _arg, 1)
   }
 
   fun setThickness(thickness: Int) {
-    val _args = VariantArray.new()
-    _args.append(thickness)
-    __method_bind.set_thickness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(thickness)
+    __method_bind.set_thickness.call(this.toVariant(), _arg, 1)
   }
 
   fun setVertical(vertical: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(vertical)
-    __method_bind.set_vertical.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vertical)
+    __method_bind.set_vertical.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): StyleBoxLine = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxLine".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StyleBoxLine" }
+      requireNotNull(fnPtr) { "No instance found for StyleBoxLine" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StyleBoxLine(
         fn()

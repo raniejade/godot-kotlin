@@ -21,9 +21,8 @@ open class NetworkedMultiplayerENet internal constructor(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
   fun closeConnection(waitUsec: Int) {
-    val _args = VariantArray.new()
-    _args.append(waitUsec)
-    __method_bind.close_connection.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(waitUsec)
+    __method_bind.close_connection.call(this.toVariant(), _arg, 1)
   }
 
   fun createClient(
@@ -86,16 +85,14 @@ open class NetworkedMultiplayerENet internal constructor(
   }
 
   fun getPeerAddress(id: Int): String {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -110,33 +107,28 @@ open class NetworkedMultiplayerENet internal constructor(
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(ordered)
-    __method_bind.set_always_ordered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ordered)
+    __method_bind.set_always_ordered.call(this.toVariant(), _arg, 1)
   }
 
   fun setBindIp(ip: String) {
-    val _args = VariantArray.new()
-    _args.append(ip)
-    __method_bind.set_bind_ip.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ip)
+    __method_bind.set_bind_ip.call(this.toVariant(), _arg, 1)
   }
 
   fun setChannelCount(channels: Int) {
-    val _args = VariantArray.new()
-    _args.append(channels)
-    __method_bind.set_channel_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channels)
+    __method_bind.set_channel_count.call(this.toVariant(), _arg, 1)
   }
 
   fun setCompressionMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_compression_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_compression_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransferChannel(channel: Int) {
-    val _args = VariantArray.new()
-    _args.append(channel)
-    __method_bind.set_transfer_channel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channel)
+    __method_bind.set_transfer_channel.call(this.toVariant(), _arg, 1)
   }
 
   enum class CompressionMode(
@@ -178,7 +170,7 @@ open class NetworkedMultiplayerENet internal constructor(
     fun new(): NetworkedMultiplayerENet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NetworkedMultiplayerENet".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NetworkedMultiplayerENet" }
+      requireNotNull(fnPtr) { "No instance found for NetworkedMultiplayerENet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NetworkedMultiplayerENet(
         fn()

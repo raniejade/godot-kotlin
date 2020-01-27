@@ -19,9 +19,8 @@ open class SliderJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getParam(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -142,7 +141,7 @@ open class SliderJoint internal constructor(
 
     fun new(): SliderJoint = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SliderJoint".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SliderJoint" }
+      requireNotNull(fnPtr) { "No instance found for SliderJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SliderJoint(
         fn()

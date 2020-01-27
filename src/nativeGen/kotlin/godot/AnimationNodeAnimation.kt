@@ -23,16 +23,15 @@ open class AnimationNodeAnimation internal constructor(
   }
 
   fun setAnimation(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_animation.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AnimationNodeAnimation = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeAnimation".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeAnimation" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeAnimation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeAnimation(
         fn()

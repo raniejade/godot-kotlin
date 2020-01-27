@@ -23,16 +23,15 @@ open class InputEventMagnifyGesture internal constructor(
   }
 
   fun setFactor(factor: Float) {
-    val _args = VariantArray.new()
-    _args.append(factor)
-    __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(factor)
+    __method_bind.set_factor.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventMagnifyGesture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMagnifyGesture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventMagnifyGesture" }
+      requireNotNull(fnPtr) { "No instance found for InputEventMagnifyGesture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventMagnifyGesture(
         fn()

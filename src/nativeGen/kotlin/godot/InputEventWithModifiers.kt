@@ -43,33 +43,28 @@ open class InputEventWithModifiers internal constructor(
   }
 
   fun setAlt(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_alt.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_alt.call(this.toVariant(), _arg, 1)
   }
 
   fun setCommand(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_command.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_command.call(this.toVariant(), _arg, 1)
   }
 
   fun setControl(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_control.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_control.call(this.toVariant(), _arg, 1)
   }
 
   fun setMetakey(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_metakey.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_metakey.call(this.toVariant(), _arg, 1)
   }
 
   fun setShift(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_shift.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_shift.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

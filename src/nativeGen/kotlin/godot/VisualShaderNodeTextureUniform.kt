@@ -28,15 +28,13 @@ open class VisualShaderNodeTextureUniform internal constructor(
   }
 
   fun setColorDefault(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_color_default.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_color_default.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_texture_type.call(this.toVariant(), _arg, 1)
   }
 
   enum class TextureType(
@@ -97,7 +95,7 @@ open class VisualShaderNodeTextureUniform internal constructor(
     fun new(): VisualShaderNodeTextureUniform = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTextureUniform".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTextureUniform" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTextureUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTextureUniform(
         fn()

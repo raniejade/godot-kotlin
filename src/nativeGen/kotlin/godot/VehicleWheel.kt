@@ -89,75 +89,64 @@ open class VehicleWheel internal constructor(
   }
 
   fun setDampingCompression(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_damping_compression.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_damping_compression.call(this.toVariant(), _arg, 1)
   }
 
   fun setDampingRelaxation(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_damping_relaxation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_damping_relaxation.call(this.toVariant(), _arg, 1)
   }
 
   fun setFrictionSlip(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_friction_slip.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_friction_slip.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setRollInfluence(rollInfluence: Float) {
-    val _args = VariantArray.new()
-    _args.append(rollInfluence)
-    __method_bind.set_roll_influence.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rollInfluence)
+    __method_bind.set_roll_influence.call(this.toVariant(), _arg, 1)
   }
 
   fun setSuspensionMaxForce(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_suspension_max_force.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_suspension_max_force.call(this.toVariant(), _arg, 1)
   }
 
   fun setSuspensionRestLength(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_suspension_rest_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_suspension_rest_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setSuspensionStiffness(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_suspension_stiffness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_suspension_stiffness.call(this.toVariant(), _arg, 1)
   }
 
   fun setSuspensionTravel(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_suspension_travel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_suspension_travel.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseAsSteering(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_as_steering.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_as_steering.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseAsTraction(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_as_traction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_as_traction.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VehicleWheel = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleWheel".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VehicleWheel" }
+      requireNotNull(fnPtr) { "No instance found for VehicleWheel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VehicleWheel(
         fn()

@@ -23,9 +23,8 @@ open class VisualShaderNodeScalarFunc internal constructor(
   }
 
   fun setFunction(func: Int) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(func)
+    __method_bind.set_function.call(this.toVariant(), _arg, 1)
   }
 
   enum class Function(
@@ -175,7 +174,7 @@ open class VisualShaderNodeScalarFunc internal constructor(
     fun new(): VisualShaderNodeScalarFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeScalarFunc".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeScalarFunc" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeScalarFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeScalarFunc(
         fn()

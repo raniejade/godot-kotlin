@@ -19,7 +19,7 @@ open class VisualShaderNodeDeterminant internal constructor(
     fun new(): VisualShaderNodeDeterminant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeDeterminant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeDeterminant" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeDeterminant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeDeterminant(
         fn()

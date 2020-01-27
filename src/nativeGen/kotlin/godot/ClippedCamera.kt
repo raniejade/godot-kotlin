@@ -21,15 +21,13 @@ open class ClippedCamera internal constructor(
   _handle: COpaquePointer
 ) : Camera(_handle) {
   fun addException(node: Object) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.add_exception.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.add_exception.call(this.toVariant(), _arg, 1)
   }
 
   fun addExceptionRid(rid: RID) {
-    val _args = VariantArray.new()
-    _args.append(rid)
-    __method_bind.add_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rid)
+    __method_bind.add_exception_rid.call(this.toVariant(), _arg, 1)
   }
 
   fun clearExceptions() {
@@ -47,9 +45,8 @@ open class ClippedCamera internal constructor(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -74,33 +71,28 @@ open class ClippedCamera internal constructor(
   }
 
   fun removeException(node: Object) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.remove_exception.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.remove_exception.call(this.toVariant(), _arg, 1)
   }
 
   fun removeExceptionRid(rid: RID) {
-    val _args = VariantArray.new()
-    _args.append(rid)
-    __method_bind.remove_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rid)
+    __method_bind.remove_exception_rid.call(this.toVariant(), _arg, 1)
   }
 
   fun setClipToAreas(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_clip_to_areas.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_clip_to_areas.call(this.toVariant(), _arg, 1)
   }
 
   fun setClipToBodies(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_clip_to_bodies.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_clip_to_bodies.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_collision_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
@@ -111,15 +103,13 @@ open class ClippedCamera internal constructor(
   }
 
   fun setMargin(margin: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    __method_bind.set_margin.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessMode(processMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(processMode)
-    __method_bind.set_process_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(processMode)
+    __method_bind.set_process_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class ProcessMode(
@@ -148,7 +138,7 @@ open class ClippedCamera internal constructor(
 
     fun new(): ClippedCamera = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ClippedCamera".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ClippedCamera" }
+      requireNotNull(fnPtr) { "No instance found for ClippedCamera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ClippedCamera(
         fn()

@@ -22,9 +22,8 @@ open class AnimationNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addInput(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.add_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.add_input.call(this.toVariant(), _arg, 1)
   }
 
   fun blendAnimation(
@@ -89,16 +88,14 @@ open class AnimationNode internal constructor(
   }
 
   fun getInputName(input: Int): String {
-    val _args = VariantArray.new()
-    _args.append(input)
-    val _ret = __method_bind.get_input_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(input)
+    val _ret = __method_bind.get_input_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getParameter(name: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_parameter.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_parameter.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -108,22 +105,19 @@ open class AnimationNode internal constructor(
   }
 
   fun isPathFiltered(path: NodePath): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.is_path_filtered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.is_path_filtered.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeInput(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.remove_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.remove_input.call(this.toVariant(), _arg, 1)
   }
 
   fun setFilterEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_filter_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_filter_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setFilterPath(path: NodePath, enable: Boolean) {
@@ -174,7 +168,7 @@ open class AnimationNode internal constructor(
 
     fun new(): AnimationNode = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNode".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNode" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNode(
         fn()

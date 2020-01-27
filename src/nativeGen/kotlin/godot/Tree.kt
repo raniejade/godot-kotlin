@@ -53,23 +53,20 @@ open class Tree internal constructor(
   }
 
   fun getColumnAtPosition(position: Vector2): Int {
-    val _args = VariantArray.new()
-    _args.append(position)
-    val _ret = __method_bind.get_column_at_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    val _ret = __method_bind.get_column_at_position.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getColumnTitle(column: Int): String {
-    val _args = VariantArray.new()
-    _args.append(column)
-    val _ret = __method_bind.get_column_title.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(column)
+    val _ret = __method_bind.get_column_title.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getColumnWidth(column: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(column)
-    val _ret = __method_bind.get_column_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(column)
+    val _ret = __method_bind.get_column_width.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -89,10 +86,8 @@ open class Tree internal constructor(
   }
 
   fun getDropSectionAtPosition(position: Vector2): Int {
-    val _args = VariantArray.new()
-    _args.append(position)
-    val _ret = __method_bind.get_drop_section_at_position.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(position)
+    val _ret = __method_bind.get_drop_section_at_position.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -115,16 +110,14 @@ open class Tree internal constructor(
   }
 
   fun getItemAtPosition(position: Vector2): TreeItem {
-    val _args = VariantArray.new()
-    _args.append(position)
-    val _ret = __method_bind.get_item_at_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    val _ret = __method_bind.get_item_at_position.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::TreeItem)!!
   }
 
   fun getNextSelected(from: Object): TreeItem {
-    val _args = VariantArray.new()
-    _args.append(from)
-    val _ret = __method_bind.get_next_selected.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(from)
+    val _ret = __method_bind.get_next_selected.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::TreeItem)!!
   }
 
@@ -169,15 +162,13 @@ open class Tree internal constructor(
   }
 
   fun setAllowReselect(allow: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(allow)
-    __method_bind.set_allow_reselect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allow)
+    __method_bind.set_allow_reselect.call(this.toVariant(), _arg, 1)
   }
 
   fun setAllowRmbSelect(allow: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(allow)
-    __method_bind.set_allow_rmb_select.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allow)
+    __method_bind.set_allow_rmb_select.call(this.toVariant(), _arg, 1)
   }
 
   fun setColumnExpand(column: Int, expand: Boolean) {
@@ -202,39 +193,33 @@ open class Tree internal constructor(
   }
 
   fun setColumnTitlesVisible(visible: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(visible)
-    __method_bind.set_column_titles_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visible)
+    __method_bind.set_column_titles_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun setColumns(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_columns.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_columns.call(this.toVariant(), _arg, 1)
   }
 
   fun setDropModeFlags(flags: Int) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.set_drop_mode_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.set_drop_mode_flags.call(this.toVariant(), _arg, 1)
   }
 
   fun setHideFolding(hide: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(hide)
-    __method_bind.set_hide_folding.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hide)
+    __method_bind.set_hide_folding.call(this.toVariant(), _arg, 1)
   }
 
   fun setHideRoot(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_hide_root.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_hide_root.call(this.toVariant(), _arg, 1)
   }
 
   fun setSelectMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_select_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_select_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class SelectMode(
@@ -294,7 +279,7 @@ open class Tree internal constructor(
 
     fun new(): Tree = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tree".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Tree" }
+      requireNotNull(fnPtr) { "No instance found for Tree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Tree(
         fn()

@@ -78,9 +78,8 @@ open class Image internal constructor(
   }
 
   fun bumpmapToNormalmap(bumpScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(bumpScale)
-    __method_bind.bumpmap_to_normalmap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bumpScale)
+    __method_bind.bumpmap_to_normalmap.call(this.toVariant(), _arg, 1)
   }
 
   fun clearMipmaps() {
@@ -101,15 +100,13 @@ open class Image internal constructor(
   }
 
   fun convert(format: Int) {
-    val _args = VariantArray.new()
-    _args.append(format)
-    __method_bind.convert.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(format)
+    __method_bind.convert.call(this.toVariant(), _arg, 1)
   }
 
   fun copyFrom(src: Image) {
-    val _args = VariantArray.new()
-    _args.append(src)
-    __method_bind.copy_from.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(src)
+    __method_bind.copy_from.call(this.toVariant(), _arg, 1)
   }
 
   fun create(
@@ -164,9 +161,8 @@ open class Image internal constructor(
   }
 
   fun fill(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.fill.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.fill.call(this.toVariant(), _arg, 1)
   }
 
   fun fixAlphaEdges() {
@@ -182,9 +178,8 @@ open class Image internal constructor(
   }
 
   fun generateMipmaps(renormalize: Boolean): GDError {
-    val _args = VariantArray.new()
-    _args.append(renormalize)
-    val _ret = __method_bind.generate_mipmaps.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(renormalize)
+    val _ret = __method_bind.generate_mipmaps.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -204,9 +199,8 @@ open class Image internal constructor(
   }
 
   fun getMipmapOffset(mipmap: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(mipmap)
-    val _ret = __method_bind.get_mipmap_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mipmap)
+    val _ret = __method_bind.get_mipmap_offset.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -219,16 +213,14 @@ open class Image internal constructor(
   }
 
   fun getPixelv(src: Vector2): Color {
-    val _args = VariantArray.new()
-    _args.append(src)
-    val _ret = __method_bind.get_pixelv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(src)
+    val _ret = __method_bind.get_pixelv.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun getRect(rect: Rect2): Image {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    val _ret = __method_bind.get_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    val _ret = __method_bind.get_rect.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
@@ -268,30 +260,26 @@ open class Image internal constructor(
   }
 
   fun load(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun loadJpgFromBuffer(buffer: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(buffer)
-    val _ret = __method_bind.load_jpg_from_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buffer)
+    val _ret = __method_bind.load_jpg_from_buffer.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun loadPngFromBuffer(buffer: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(buffer)
-    val _ret = __method_bind.load_png_from_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buffer)
+    val _ret = __method_bind.load_png_from_buffer.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun loadWebpFromBuffer(buffer: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(buffer)
-    val _ret = __method_bind.load_webp_from_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buffer)
+    val _ret = __method_bind.load_webp_from_buffer.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -320,9 +308,8 @@ open class Image internal constructor(
   }
 
   fun resizeToPo2(square: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(square)
-    __method_bind.resize_to_po2.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(square)
+    __method_bind.resize_to_po2.call(this.toVariant(), _arg, 1)
   }
 
   fun rgbeToSrgb(): Image {
@@ -331,9 +318,8 @@ open class Image internal constructor(
   }
 
   fun savePng(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.save_png.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.save_png.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -666,7 +652,7 @@ open class Image internal constructor(
 
     fun new(): Image = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Image".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Image" }
+      requireNotNull(fnPtr) { "No instance found for Image" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Image(
         fn()

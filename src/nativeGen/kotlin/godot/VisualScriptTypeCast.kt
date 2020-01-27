@@ -28,22 +28,20 @@ open class VisualScriptTypeCast internal constructor(
   }
 
   fun setBaseScript(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_base_script.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_base_script.call(this.toVariant(), _arg, 1)
   }
 
   fun setBaseType(type: String) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptTypeCast = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptTypeCast".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptTypeCast" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptTypeCast" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptTypeCast(
         fn()

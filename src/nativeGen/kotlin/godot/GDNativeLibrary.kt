@@ -50,33 +50,28 @@ open class GDNativeLibrary internal constructor(
   }
 
   fun setConfigFile(configFile: ConfigFile) {
-    val _args = VariantArray.new()
-    _args.append(configFile)
-    __method_bind.set_config_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(configFile)
+    __method_bind.set_config_file.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoadOnce(loadOnce: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(loadOnce)
-    __method_bind.set_load_once.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loadOnce)
+    __method_bind.set_load_once.call(this.toVariant(), _arg, 1)
   }
 
   fun setReloadable(reloadable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(reloadable)
-    __method_bind.set_reloadable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(reloadable)
+    __method_bind.set_reloadable.call(this.toVariant(), _arg, 1)
   }
 
   fun setSingleton(singleton: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(singleton)
-    __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(singleton)
+    __method_bind.set_singleton.call(this.toVariant(), _arg, 1)
   }
 
   fun setSymbolPrefix(symbolPrefix: String) {
-    val _args = VariantArray.new()
-    _args.append(symbolPrefix)
-    __method_bind.set_symbol_prefix.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(symbolPrefix)
+    __method_bind.set_symbol_prefix.call(this.toVariant(), _arg, 1)
   }
 
   fun shouldLoadOnce(): Boolean {
@@ -88,7 +83,7 @@ open class GDNativeLibrary internal constructor(
     fun new(): GDNativeLibrary = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDNativeLibrary".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GDNativeLibrary" }
+      requireNotNull(fnPtr) { "No instance found for GDNativeLibrary" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GDNativeLibrary(
         fn()

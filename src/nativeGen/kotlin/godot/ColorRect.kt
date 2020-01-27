@@ -23,15 +23,14 @@ open class ColorRect internal constructor(
   }
 
   fun setFrameColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_frame_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_frame_color.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ColorRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorRect".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ColorRect" }
+      requireNotNull(fnPtr) { "No instance found for ColorRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ColorRect(
         fn()

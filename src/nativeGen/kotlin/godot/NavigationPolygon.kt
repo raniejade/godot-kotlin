@@ -20,9 +20,8 @@ open class NavigationPolygon internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addOutline(outline: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(outline)
-    __method_bind.add_outline.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(outline)
+    __method_bind.add_outline.call(this.toVariant(), _arg, 1)
   }
 
   fun addOutlineAtIndex(outline: PoolVector2Array, index: Int) {
@@ -33,9 +32,8 @@ open class NavigationPolygon internal constructor(
   }
 
   fun addPolygon(polygon: PoolIntArray) {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    __method_bind.add_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    __method_bind.add_polygon.call(this.toVariant(), _arg, 1)
   }
 
   fun clearOutlines() {
@@ -47,9 +45,8 @@ open class NavigationPolygon internal constructor(
   }
 
   fun getOutline(idx: Int): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_outline.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_outline.call(this.toVariant(), _arg, 1)
     return _ret.asPoolVector2Array()
   }
 
@@ -59,9 +56,8 @@ open class NavigationPolygon internal constructor(
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_polygon.call(this.toVariant(), _arg, 1)
     return _ret.asPoolIntArray()
   }
 
@@ -80,9 +76,8 @@ open class NavigationPolygon internal constructor(
   }
 
   fun removeOutline(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.remove_outline.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.remove_outline.call(this.toVariant(), _arg, 1)
   }
 
   fun setOutline(idx: Int, outline: PoolVector2Array) {
@@ -93,16 +88,15 @@ open class NavigationPolygon internal constructor(
   }
 
   fun setVertices(vertices: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(vertices)
-    __method_bind.set_vertices.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vertices)
+    __method_bind.set_vertices.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): NavigationPolygon = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationPolygon".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NavigationPolygon" }
+      requireNotNull(fnPtr) { "No instance found for NavigationPolygon" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NavigationPolygon(
         fn()

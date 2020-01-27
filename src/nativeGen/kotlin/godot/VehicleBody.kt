@@ -33,27 +33,24 @@ open class VehicleBody internal constructor(
   }
 
   fun setBrake(brake: Float) {
-    val _args = VariantArray.new()
-    _args.append(brake)
-    __method_bind.set_brake.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(brake)
+    __method_bind.set_brake.call(this.toVariant(), _arg, 1)
   }
 
   fun setEngineForce(engineForce: Float) {
-    val _args = VariantArray.new()
-    _args.append(engineForce)
-    __method_bind.set_engine_force.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(engineForce)
+    __method_bind.set_engine_force.call(this.toVariant(), _arg, 1)
   }
 
   fun setSteering(steering: Float) {
-    val _args = VariantArray.new()
-    _args.append(steering)
-    __method_bind.set_steering.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(steering)
+    __method_bind.set_steering.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VehicleBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VehicleBody".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VehicleBody" }
+      requireNotNull(fnPtr) { "No instance found for VehicleBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VehicleBody(
         fn()

@@ -52,9 +52,8 @@ open class BitmapFont internal constructor(
   }
 
   fun addTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.add_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.add_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun clear() {
@@ -62,9 +61,8 @@ open class BitmapFont internal constructor(
   }
 
   fun createFromFnt(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.create_from_fnt.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.create_from_fnt.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -90,9 +88,8 @@ open class BitmapFont internal constructor(
   }
 
   fun getTexture(idx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_texture.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -102,33 +99,29 @@ open class BitmapFont internal constructor(
   }
 
   fun setAscent(px: Float) {
-    val _args = VariantArray.new()
-    _args.append(px)
-    __method_bind.set_ascent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(px)
+    __method_bind.set_ascent.call(this.toVariant(), _arg, 1)
   }
 
   fun setDistanceFieldHint(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_distance_field_hint.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_distance_field_hint.call(this.toVariant(), _arg, 1)
   }
 
   fun setFallback(fallback: BitmapFont) {
-    val _args = VariantArray.new()
-    _args.append(fallback)
-    __method_bind.set_fallback.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fallback)
+    __method_bind.set_fallback.call(this.toVariant(), _arg, 1)
   }
 
   fun setHeight(px: Float) {
-    val _args = VariantArray.new()
-    _args.append(px)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(px)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): BitmapFont = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitmapFont".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BitmapFont" }
+      requireNotNull(fnPtr) { "No instance found for BitmapFont" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BitmapFont(
         fn()

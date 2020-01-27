@@ -25,9 +25,8 @@ open class Shader internal constructor(
   }
 
   fun getDefaultTextureParam(param: String): Texture {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_default_texture_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_default_texture_param.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -37,16 +36,14 @@ open class Shader internal constructor(
   }
 
   fun hasParam(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_param.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun setCode(code: String) {
-    val _args = VariantArray.new()
-    _args.append(code)
-    __method_bind.set_code.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(code)
+    __method_bind.set_code.call(this.toVariant(), _arg, 1)
   }
 
   fun setDefaultTextureParam(param: String, texture: Texture) {
@@ -86,7 +83,7 @@ open class Shader internal constructor(
 
     fun new(): Shader = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Shader".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Shader" }
+      requireNotNull(fnPtr) { "No instance found for Shader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Shader(
         fn()

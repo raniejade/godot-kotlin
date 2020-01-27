@@ -45,39 +45,34 @@ open class CSGSphere internal constructor(
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadialSegments(radialSegments: Int) {
-    val _args = VariantArray.new()
-    _args.append(radialSegments)
-    __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radialSegments)
+    __method_bind.set_radial_segments.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setRings(rings: Int) {
-    val _args = VariantArray.new()
-    _args.append(rings)
-    __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rings)
+    __method_bind.set_rings.call(this.toVariant(), _arg, 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(smoothFaces)
-    __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(smoothFaces)
+    __method_bind.set_smooth_faces.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CSGSphere = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGSphere".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGSphere" }
+      requireNotNull(fnPtr) { "No instance found for CSGSphere" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGSphere(
         fn()

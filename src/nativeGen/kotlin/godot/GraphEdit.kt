@@ -30,15 +30,13 @@ open class GraphEdit internal constructor(
   }
 
   fun addValidLeftDisconnectType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.add_valid_left_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.add_valid_left_disconnect_type.call(this.toVariant(), _arg, 1)
   }
 
   fun addValidRightDisconnectType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.add_valid_right_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.add_valid_right_disconnect_type.call(this.toVariant(), _arg, 1)
   }
 
   fun clearConnections() {
@@ -140,15 +138,13 @@ open class GraphEdit internal constructor(
   }
 
   fun removeValidLeftDisconnectType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.remove_valid_left_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.remove_valid_left_disconnect_type.call(this.toVariant(), _arg, 1)
   }
 
   fun removeValidRightDisconnectType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.remove_valid_right_disconnect_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.remove_valid_right_disconnect_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setConnectionActivity(
@@ -168,45 +164,39 @@ open class GraphEdit internal constructor(
   }
 
   fun setRightDisconnects(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_right_disconnects.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_right_disconnects.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollOfs(ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_scroll_ofs.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_scroll_ofs.call(this.toVariant(), _arg, 1)
   }
 
   fun setSelected(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_selected.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_selected.call(this.toVariant(), _arg, 1)
   }
 
   fun setSnap(pixels: Int) {
-    val _args = VariantArray.new()
-    _args.append(pixels)
-    __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pixels)
+    __method_bind.set_snap.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseSnap(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_snap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_snap.call(this.toVariant(), _arg, 1)
   }
 
   fun setZoom(pZoom: Float) {
-    val _args = VariantArray.new()
-    _args.append(pZoom)
-    __method_bind.set_zoom.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pZoom)
+    __method_bind.set_zoom.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): GraphEdit = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GraphEdit".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GraphEdit" }
+      requireNotNull(fnPtr) { "No instance found for GraphEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GraphEdit(
         fn()

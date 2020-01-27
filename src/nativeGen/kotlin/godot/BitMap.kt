@@ -22,9 +22,8 @@ open class BitMap internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun create(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.create.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.create.call(this.toVariant(), _arg, 1)
   }
 
   fun createFromImageAlpha(image: Image, threshold: Float) {
@@ -35,9 +34,8 @@ open class BitMap internal constructor(
   }
 
   fun getBit(position: Vector2): Boolean {
-    val _args = VariantArray.new()
-    _args.append(position)
-    val _ret = __method_bind.get_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    val _ret = __method_bind.get_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -83,7 +81,7 @@ open class BitMap internal constructor(
   companion object {
     fun new(): BitMap = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("BitMap".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BitMap" }
+      requireNotNull(fnPtr) { "No instance found for BitMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BitMap(
         fn()

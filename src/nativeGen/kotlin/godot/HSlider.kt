@@ -18,7 +18,7 @@ open class HSlider internal constructor(
   companion object {
     fun new(): HSlider = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HSlider".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HSlider" }
+      requireNotNull(fnPtr) { "No instance found for HSlider" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HSlider(
         fn()

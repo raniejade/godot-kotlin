@@ -33,33 +33,28 @@ open class EditorExportPlugin internal constructor(
   }
 
   fun addIosBundleFile(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.add_ios_bundle_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.add_ios_bundle_file.call(this.toVariant(), _arg, 1)
   }
 
   fun addIosCppCode(code: String) {
-    val _args = VariantArray.new()
-    _args.append(code)
-    __method_bind.add_ios_cpp_code.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(code)
+    __method_bind.add_ios_cpp_code.call(this.toVariant(), _arg, 1)
   }
 
   fun addIosFramework(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.add_ios_framework.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.add_ios_framework.call(this.toVariant(), _arg, 1)
   }
 
   fun addIosLinkerFlags(flags: String) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.add_ios_linker_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.add_ios_linker_flags.call(this.toVariant(), _arg, 1)
   }
 
   fun addIosPlistContent(plistContent: String) {
-    val _args = VariantArray.new()
-    _args.append(plistContent)
-    __method_bind.add_ios_plist_content.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(plistContent)
+    __method_bind.add_ios_plist_content.call(this.toVariant(), _arg, 1)
   }
 
   fun addSharedObject(path: String, tags: PoolStringArray) {
@@ -77,7 +72,7 @@ open class EditorExportPlugin internal constructor(
     fun new(): EditorExportPlugin = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorExportPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorExportPlugin" }
+      requireNotNull(fnPtr) { "No instance found for EditorExportPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorExportPlugin(
         fn()

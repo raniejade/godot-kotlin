@@ -34,27 +34,24 @@ open class CameraTexture internal constructor(
   }
 
   fun setCameraActive(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_camera_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_camera_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setCameraFeedId(feedId: Int) {
-    val _args = VariantArray.new()
-    _args.append(feedId)
-    __method_bind.set_camera_feed_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feedId)
+    __method_bind.set_camera_feed_id.call(this.toVariant(), _arg, 1)
   }
 
   fun setWhichFeed(whichFeed: Int) {
-    val _args = VariantArray.new()
-    _args.append(whichFeed)
-    __method_bind.set_which_feed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(whichFeed)
+    __method_bind.set_which_feed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CameraTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CameraTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CameraTexture" }
+      requireNotNull(fnPtr) { "No instance found for CameraTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CameraTexture(
         fn()

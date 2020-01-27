@@ -21,15 +21,13 @@ open class RayCast2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun addException(node: Object) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.add_exception.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.add_exception.call(this.toVariant(), _arg, 1)
   }
 
   fun addExceptionRid(rid: RID) {
-    val _args = VariantArray.new()
-    _args.append(rid)
-    __method_bind.add_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rid)
+    __method_bind.add_exception_rid.call(this.toVariant(), _arg, 1)
   }
 
   fun clearExceptions() {
@@ -61,9 +59,8 @@ open class RayCast2D internal constructor(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -103,39 +100,33 @@ open class RayCast2D internal constructor(
   }
 
   fun removeException(node: Object) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.remove_exception.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.remove_exception.call(this.toVariant(), _arg, 1)
   }
 
   fun removeExceptionRid(rid: RID) {
-    val _args = VariantArray.new()
-    _args.append(rid)
-    __method_bind.remove_exception_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rid)
+    __method_bind.remove_exception_rid.call(this.toVariant(), _arg, 1)
   }
 
   fun setCastTo(localPoint: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(localPoint)
-    __method_bind.set_cast_to.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(localPoint)
+    __method_bind.set_cast_to.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollideWithAreas(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_collide_with_areas.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollideWithBodies(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_collide_with_bodies.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_collision_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
@@ -146,21 +137,19 @@ open class RayCast2D internal constructor(
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setExcludeParentBody(mask: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_exclude_parent_body.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_exclude_parent_body.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): RayCast2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayCast2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RayCast2D" }
+      requireNotNull(fnPtr) { "No instance found for RayCast2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RayCast2D(
         fn()

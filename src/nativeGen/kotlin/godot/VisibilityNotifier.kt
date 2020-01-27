@@ -29,16 +29,15 @@ open class VisibilityNotifier internal constructor(
   }
 
   fun setAabb(rect: AABB) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_aabb.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_aabb.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisibilityNotifier = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityNotifier".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisibilityNotifier" }
+      requireNotNull(fnPtr) { "No instance found for VisibilityNotifier" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisibilityNotifier(
         fn()

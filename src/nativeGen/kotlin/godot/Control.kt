@@ -78,9 +78,8 @@ open class Control internal constructor(
   }
 
   fun getAnchor(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_anchor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_anchor.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -111,9 +110,8 @@ open class Control internal constructor(
   }
 
   fun getCursorShape(position: Vector2): CursorShape {
-    val _args = VariantArray.new()
-    _args.append(position)
-    val _ret = __method_bind.get_cursor_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    val _ret = __method_bind.get_cursor_shape.call(this.toVariant(), _arg, 1)
     return Control.CursorShape.from(_ret.asInt())
   }
 
@@ -138,9 +136,8 @@ open class Control internal constructor(
   }
 
   fun getFocusNeighbour(margin: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_focus_neighbour.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_focus_neighbour.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
@@ -196,9 +193,8 @@ open class Control internal constructor(
   }
 
   fun getMargin(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_margin.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -276,9 +272,8 @@ open class Control internal constructor(
   }
 
   fun getTooltip(atPosition: Vector2): String {
-    val _args = VariantArray.new()
-    _args.append(atPosition)
-    val _ret = __method_bind.get_tooltip.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(atPosition)
+    val _ret = __method_bind.get_tooltip.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -309,9 +304,8 @@ open class Control internal constructor(
   }
 
   fun hasColorOverride(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_color_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_color_override.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -324,9 +318,8 @@ open class Control internal constructor(
   }
 
   fun hasConstantOverride(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_constant_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_constant_override.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -344,9 +337,8 @@ open class Control internal constructor(
   }
 
   fun hasFontOverride(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_font_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_font_override.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -359,16 +351,14 @@ open class Control internal constructor(
   }
 
   fun hasIconOverride(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_icon_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_icon_override.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun hasShaderOverride(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_shader_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_shader_override.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -381,9 +371,8 @@ open class Control internal constructor(
   }
 
   fun hasStyleboxOverride(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_stylebox_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_stylebox_override.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -448,51 +437,43 @@ open class Control internal constructor(
   }
 
   fun setBegin(position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_begin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_begin.call(this.toVariant(), _arg, 1)
   }
 
   fun setClipContents(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_clip_contents.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_clip_contents.call(this.toVariant(), _arg, 1)
   }
 
   fun setCustomMinimumSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_custom_minimum_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_custom_minimum_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setDefaultCursorShape(shape: Int) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_default_cursor_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_default_cursor_shape.call(this.toVariant(), _arg, 1)
   }
 
   fun setDragForwarding(target: Control) {
-    val _args = VariantArray.new()
-    _args.append(target)
-    __method_bind.set_drag_forwarding.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(target)
+    __method_bind.set_drag_forwarding.call(this.toVariant(), _arg, 1)
   }
 
   fun setDragPreview(control: Control) {
-    val _args = VariantArray.new()
-    _args.append(control)
-    __method_bind.set_drag_preview.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(control)
+    __method_bind.set_drag_preview.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnd(position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_end.call(this.toVariant(), _arg, 1)
   }
 
   fun setFocusMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_focus_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_focus_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setFocusNeighbour(margin: Int, neighbour: NodePath) {
@@ -503,15 +484,13 @@ open class Control internal constructor(
   }
 
   fun setFocusNext(next: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(next)
-    __method_bind.set_focus_next.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(next)
+    __method_bind.set_focus_next.call(this.toVariant(), _arg, 1)
   }
 
   fun setFocusPrevious(previous: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(previous)
-    __method_bind.set_focus_previous.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(previous)
+    __method_bind.set_focus_previous.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlobalPosition(position: Vector2, keepMargins: Boolean) {
@@ -522,15 +501,13 @@ open class Control internal constructor(
   }
 
   fun setHGrowDirection(direction: Int) {
-    val _args = VariantArray.new()
-    _args.append(direction)
-    __method_bind.set_h_grow_direction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(direction)
+    __method_bind.set_h_grow_direction.call(this.toVariant(), _arg, 1)
   }
 
   fun setHSizeFlags(flags: Int) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.set_h_size_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.set_h_size_flags.call(this.toVariant(), _arg, 1)
   }
 
   fun setMargin(margin: Int, offset: Float) {
@@ -553,15 +530,13 @@ open class Control internal constructor(
   }
 
   fun setMouseFilter(filter: Int) {
-    val _args = VariantArray.new()
-    _args.append(filter)
-    __method_bind.set_mouse_filter.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(filter)
+    __method_bind.set_mouse_filter.call(this.toVariant(), _arg, 1)
   }
 
   fun setPivotOffset(pivotOffset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(pivotOffset)
-    __method_bind.set_pivot_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pivotOffset)
+    __method_bind.set_pivot_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setPosition(position: Vector2, keepMargins: Boolean) {
@@ -572,21 +547,18 @@ open class Control internal constructor(
   }
 
   fun setRotation(radians: Float) {
-    val _args = VariantArray.new()
-    _args.append(radians)
-    __method_bind.set_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radians)
+    __method_bind.set_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotationDegrees(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_rotation_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setScale(scale: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setSize(size: Vector2, keepMargins: Boolean) {
@@ -597,45 +569,38 @@ open class Control internal constructor(
   }
 
   fun setStretchRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.set_stretch_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.set_stretch_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setTheme(theme: Theme) {
-    val _args = VariantArray.new()
-    _args.append(theme)
-    __method_bind.set_theme.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(theme)
+    __method_bind.set_theme.call(this.toVariant(), _arg, 1)
   }
 
   fun setTooltip(tooltip: String) {
-    val _args = VariantArray.new()
-    _args.append(tooltip)
-    __method_bind.set_tooltip.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tooltip)
+    __method_bind.set_tooltip.call(this.toVariant(), _arg, 1)
   }
 
   fun setVGrowDirection(direction: Int) {
-    val _args = VariantArray.new()
-    _args.append(direction)
-    __method_bind.set_v_grow_direction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(direction)
+    __method_bind.set_v_grow_direction.call(this.toVariant(), _arg, 1)
   }
 
   fun setVSizeFlags(flags: Int) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.set_v_size_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.set_v_size_flags.call(this.toVariant(), _arg, 1)
   }
 
   fun showModal(exclusive: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(exclusive)
-    __method_bind.show_modal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exclusive)
+    __method_bind.show_modal.call(this.toVariant(), _arg, 1)
   }
 
   fun warpMouse(toPosition: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    __method_bind.warp_mouse.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPosition)
+    __method_bind.warp_mouse.call(this.toVariant(), _arg, 1)
   }
 
   enum class Anchor(
@@ -991,7 +956,7 @@ open class Control internal constructor(
 
     fun new(): Control = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Control".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Control" }
+      requireNotNull(fnPtr) { "No instance found for Control" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Control(
         fn()

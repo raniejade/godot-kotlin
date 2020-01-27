@@ -23,16 +23,15 @@ open class VisualScriptEngineSingleton internal constructor(
   }
 
   fun setSingleton(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_singleton.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_singleton.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptEngineSingleton = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptEngineSingleton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptEngineSingleton" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptEngineSingleton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptEngineSingleton(
         fn()

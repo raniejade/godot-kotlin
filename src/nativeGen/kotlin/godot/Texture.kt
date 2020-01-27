@@ -107,9 +107,8 @@ open class Texture internal constructor(
   }
 
   fun setFlags(flags: Int) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.set_flags.call(this.toVariant(), _arg, 1)
   }
 
   enum class Flags(

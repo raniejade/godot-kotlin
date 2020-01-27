@@ -147,16 +147,14 @@ open class SpatialMaterial internal constructor(
   }
 
   fun getFeature(feature: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(feature)
-    val _ret = __method_bind.get_feature.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feature)
+    val _ret = __method_bind.get_feature.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getFlag(flag: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(flag)
-    val _ret = __method_bind.get_flag.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flag)
+    val _ret = __method_bind.get_flag.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -256,9 +254,8 @@ open class SpatialMaterial internal constructor(
   }
 
   fun getTexture(param: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_texture.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -313,159 +310,133 @@ open class SpatialMaterial internal constructor(
   }
 
   fun setAlbedo(albedo: Color) {
-    val _args = VariantArray.new()
-    _args.append(albedo)
-    __method_bind.set_albedo.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(albedo)
+    __method_bind.set_albedo.call(this.toVariant(), _arg, 1)
   }
 
   fun setAlphaScissorThreshold(threshold: Float) {
-    val _args = VariantArray.new()
-    _args.append(threshold)
-    __method_bind.set_alpha_scissor_threshold.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(threshold)
+    __method_bind.set_alpha_scissor_threshold.call(this.toVariant(), _arg, 1)
   }
 
   fun setAnisotropy(anisotropy: Float) {
-    val _args = VariantArray.new()
-    _args.append(anisotropy)
-    __method_bind.set_anisotropy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anisotropy)
+    __method_bind.set_anisotropy.call(this.toVariant(), _arg, 1)
   }
 
   fun setAoLightAffect(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_ao_light_affect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_ao_light_affect.call(this.toVariant(), _arg, 1)
   }
 
   fun setAoTextureChannel(channel: Int) {
-    val _args = VariantArray.new()
-    _args.append(channel)
-    __method_bind.set_ao_texture_channel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channel)
+    __method_bind.set_ao_texture_channel.call(this.toVariant(), _arg, 1)
   }
 
   fun setBillboardMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_billboard_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_billboard_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setBlendMode(blendMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(blendMode)
-    __method_bind.set_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(blendMode)
+    __method_bind.set_blend_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setClearcoat(clearcoat: Float) {
-    val _args = VariantArray.new()
-    _args.append(clearcoat)
-    __method_bind.set_clearcoat.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(clearcoat)
+    __method_bind.set_clearcoat.call(this.toVariant(), _arg, 1)
   }
 
   fun setClearcoatGloss(clearcoatGloss: Float) {
-    val _args = VariantArray.new()
-    _args.append(clearcoatGloss)
-    __method_bind.set_clearcoat_gloss.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(clearcoatGloss)
+    __method_bind.set_clearcoat_gloss.call(this.toVariant(), _arg, 1)
   }
 
   fun setCullMode(cullMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(cullMode)
-    __method_bind.set_cull_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cullMode)
+    __method_bind.set_cull_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthDeepParallax(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_depth_deep_parallax.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_depth_deep_parallax.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthDeepParallaxFlipBinormal(flip: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flip)
-    __method_bind.set_depth_deep_parallax_flip_binormal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flip)
+    __method_bind.set_depth_deep_parallax_flip_binormal.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthDeepParallaxFlipTangent(flip: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flip)
-    __method_bind.set_depth_deep_parallax_flip_tangent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flip)
+    __method_bind.set_depth_deep_parallax_flip_tangent.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthDeepParallaxMaxLayers(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_depth_deep_parallax_max_layers.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_depth_deep_parallax_max_layers.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthDeepParallaxMinLayers(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_depth_deep_parallax_min_layers.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_depth_deep_parallax_min_layers.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthDrawMode(depthDrawMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(depthDrawMode)
-    __method_bind.set_depth_draw_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depthDrawMode)
+    __method_bind.set_depth_draw_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setDepthScale(depthScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(depthScale)
-    __method_bind.set_depth_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depthScale)
+    __method_bind.set_depth_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setDetailBlendMode(detailBlendMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(detailBlendMode)
-    __method_bind.set_detail_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(detailBlendMode)
+    __method_bind.set_detail_blend_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setDetailUv(detailUv: Int) {
-    val _args = VariantArray.new()
-    _args.append(detailUv)
-    __method_bind.set_detail_uv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(detailUv)
+    __method_bind.set_detail_uv.call(this.toVariant(), _arg, 1)
   }
 
   fun setDiffuseMode(diffuseMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(diffuseMode)
-    __method_bind.set_diffuse_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(diffuseMode)
+    __method_bind.set_diffuse_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setDistanceFade(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_distance_fade.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_distance_fade.call(this.toVariant(), _arg, 1)
   }
 
   fun setDistanceFadeMaxDistance(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_distance_fade_max_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_distance_fade_max_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setDistanceFadeMinDistance(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_distance_fade_min_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_distance_fade_min_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmission(emission: Color) {
-    val _args = VariantArray.new()
-    _args.append(emission)
-    __method_bind.set_emission.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(emission)
+    __method_bind.set_emission.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmissionEnergy(emissionEnergy: Float) {
-    val _args = VariantArray.new()
-    _args.append(emissionEnergy)
-    __method_bind.set_emission_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(emissionEnergy)
+    __method_bind.set_emission_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmissionOperator(operator: Int) {
-    val _args = VariantArray.new()
-    _args.append(operator)
-    __method_bind.set_emission_operator.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(operator)
+    __method_bind.set_emission_operator.call(this.toVariant(), _arg, 1)
   }
 
   fun setFeature(feature: Int, enable: Boolean) {
@@ -483,129 +454,108 @@ open class SpatialMaterial internal constructor(
   }
 
   fun setGrow(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_grow.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_grow.call(this.toVariant(), _arg, 1)
   }
 
   fun setGrowEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_grow_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_grow_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setLineWidth(lineWidth: Float) {
-    val _args = VariantArray.new()
-    _args.append(lineWidth)
-    __method_bind.set_line_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lineWidth)
+    __method_bind.set_line_width.call(this.toVariant(), _arg, 1)
   }
 
   fun setMetallic(metallic: Float) {
-    val _args = VariantArray.new()
-    _args.append(metallic)
-    __method_bind.set_metallic.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(metallic)
+    __method_bind.set_metallic.call(this.toVariant(), _arg, 1)
   }
 
   fun setMetallicTextureChannel(channel: Int) {
-    val _args = VariantArray.new()
-    _args.append(channel)
-    __method_bind.set_metallic_texture_channel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channel)
+    __method_bind.set_metallic_texture_channel.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalScale(normalScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(normalScale)
-    __method_bind.set_normal_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normalScale)
+    __method_bind.set_normal_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
-    val _args = VariantArray.new()
-    _args.append(frames)
-    __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frames)
+    __method_bind.set_particles_anim_h_frames.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(loop)
-    __method_bind.set_particles_anim_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loop)
+    __method_bind.set_particles_anim_loop.call(this.toVariant(), _arg, 1)
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
-    val _args = VariantArray.new()
-    _args.append(frames)
-    __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frames)
+    __method_bind.set_particles_anim_v_frames.call(this.toVariant(), _arg, 1)
   }
 
   fun setPointSize(pointSize: Float) {
-    val _args = VariantArray.new()
-    _args.append(pointSize)
-    __method_bind.set_point_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pointSize)
+    __method_bind.set_point_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setProximityFade(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_proximity_fade.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_proximity_fade.call(this.toVariant(), _arg, 1)
   }
 
   fun setProximityFadeDistance(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_proximity_fade_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_proximity_fade_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setRefraction(refraction: Float) {
-    val _args = VariantArray.new()
-    _args.append(refraction)
-    __method_bind.set_refraction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(refraction)
+    __method_bind.set_refraction.call(this.toVariant(), _arg, 1)
   }
 
   fun setRefractionTextureChannel(channel: Int) {
-    val _args = VariantArray.new()
-    _args.append(channel)
-    __method_bind.set_refraction_texture_channel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channel)
+    __method_bind.set_refraction_texture_channel.call(this.toVariant(), _arg, 1)
   }
 
   fun setRim(rim: Float) {
-    val _args = VariantArray.new()
-    _args.append(rim)
-    __method_bind.set_rim.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rim)
+    __method_bind.set_rim.call(this.toVariant(), _arg, 1)
   }
 
   fun setRimTint(rimTint: Float) {
-    val _args = VariantArray.new()
-    _args.append(rimTint)
-    __method_bind.set_rim_tint.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rimTint)
+    __method_bind.set_rim_tint.call(this.toVariant(), _arg, 1)
   }
 
   fun setRoughness(roughness: Float) {
-    val _args = VariantArray.new()
-    _args.append(roughness)
-    __method_bind.set_roughness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(roughness)
+    __method_bind.set_roughness.call(this.toVariant(), _arg, 1)
   }
 
   fun setRoughnessTextureChannel(channel: Int) {
-    val _args = VariantArray.new()
-    _args.append(channel)
-    __method_bind.set_roughness_texture_channel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channel)
+    __method_bind.set_roughness_texture_channel.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpecular(specular: Float) {
-    val _args = VariantArray.new()
-    _args.append(specular)
-    __method_bind.set_specular.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(specular)
+    __method_bind.set_specular.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpecularMode(specularMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(specularMode)
-    __method_bind.set_specular_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(specularMode)
+    __method_bind.set_specular_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubsurfaceScatteringStrength(strength: Float) {
-    val _args = VariantArray.new()
-    _args.append(strength)
-    __method_bind.set_subsurface_scattering_strength.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(strength)
+    __method_bind.set_subsurface_scattering_strength.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(param: Int, texture: Texture) {
@@ -616,45 +566,38 @@ open class SpatialMaterial internal constructor(
   }
 
   fun setTransmission(transmission: Color) {
-    val _args = VariantArray.new()
-    _args.append(transmission)
-    __method_bind.set_transmission.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(transmission)
+    __method_bind.set_transmission.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv1Offset(offset: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_uv1_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_uv1_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv1Scale(scale: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_uv1_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_uv1_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv1TriplanarBlendSharpness(sharpness: Float) {
-    val _args = VariantArray.new()
-    _args.append(sharpness)
-    __method_bind.set_uv1_triplanar_blend_sharpness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sharpness)
+    __method_bind.set_uv1_triplanar_blend_sharpness.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv2Offset(offset: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_uv2_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_uv2_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv2Scale(scale: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_uv2_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_uv2_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv2TriplanarBlendSharpness(sharpness: Float) {
-    val _args = VariantArray.new()
-    _args.append(sharpness)
-    __method_bind.set_uv2_triplanar_blend_sharpness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sharpness)
+    __method_bind.set_uv2_triplanar_blend_sharpness.call(this.toVariant(), _arg, 1)
   }
 
   enum class EmissionOperator(
@@ -1208,7 +1151,7 @@ open class SpatialMaterial internal constructor(
     fun new(): SpatialMaterial = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpatialMaterial".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SpatialMaterial" }
+      requireNotNull(fnPtr) { "No instance found for SpatialMaterial" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpatialMaterial(
         fn()

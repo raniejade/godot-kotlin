@@ -23,9 +23,8 @@ open class VisualShaderNodeVectorOp internal constructor(
   }
 
   fun setOperator(op: Int) {
-    val _args = VariantArray.new()
-    _args.append(op)
-    __method_bind.set_operator.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(op)
+    __method_bind.set_operator.call(this.toVariant(), _arg, 1)
   }
 
   enum class Operator(
@@ -95,7 +94,7 @@ open class VisualShaderNodeVectorOp internal constructor(
     fun new(): VisualShaderNodeVectorOp = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorOp".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorOp" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorOp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorOp(
         fn()

@@ -49,46 +49,40 @@ open class ParallaxBackground internal constructor(
   }
 
   fun setIgnoreCameraZoom(ignore: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(ignore)
-    __method_bind.set_ignore_camera_zoom.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ignore)
+    __method_bind.set_ignore_camera_zoom.call(this.toVariant(), _arg, 1)
   }
 
   fun setLimitBegin(ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_limit_begin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_limit_begin.call(this.toVariant(), _arg, 1)
   }
 
   fun setLimitEnd(ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_limit_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_limit_end.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollBaseOffset(ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_scroll_base_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_scroll_base_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollBaseScale(scale: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_scroll_base_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_scroll_base_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollOffset(ofs: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(ofs)
-    __method_bind.set_scroll_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ofs)
+    __method_bind.set_scroll_offset.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ParallaxBackground = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ParallaxBackground".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ParallaxBackground" }
+      requireNotNull(fnPtr) { "No instance found for ParallaxBackground" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ParallaxBackground(
         fn()

@@ -19,7 +19,7 @@ open class AudioStreamMicrophone internal constructor(
     fun new(): AudioStreamMicrophone = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamMicrophone".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamMicrophone" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamMicrophone" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamMicrophone(
         fn()

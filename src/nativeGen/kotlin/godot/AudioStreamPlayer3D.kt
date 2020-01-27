@@ -126,124 +126,103 @@ open class AudioStreamPlayer3D internal constructor(
   }
 
   fun play(fromPosition: Float) {
-    val _args = VariantArray.new()
-    _args.append(fromPosition)
-    __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fromPosition)
+    __method_bind.play.call(this.toVariant(), _arg, 1)
   }
 
   fun seek(toPosition: Float) {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPosition)
+    __method_bind.seek.call(this.toVariant(), _arg, 1)
   }
 
   fun setAreaMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_area_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_area_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setAttenuationFilterCutoffHz(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_attenuation_filter_cutoff_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_attenuation_filter_cutoff_hz.call(this.toVariant(), _arg, 1)
   }
 
   fun setAttenuationFilterDb(db: Float) {
-    val _args = VariantArray.new()
-    _args.append(db)
-    __method_bind.set_attenuation_filter_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(db)
+    __method_bind.set_attenuation_filter_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setAttenuationModel(model: Int) {
-    val _args = VariantArray.new()
-    _args.append(model)
-    __method_bind.set_attenuation_model.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(model)
+    __method_bind.set_attenuation_model.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutoplay(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_autoplay.call(this.toVariant(), _arg, 1)
   }
 
   fun setBus(bus: String) {
-    val _args = VariantArray.new()
-    _args.append(bus)
-    __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bus)
+    __method_bind.set_bus.call(this.toVariant(), _arg, 1)
   }
 
   fun setDopplerTracking(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_doppler_tracking.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_doppler_tracking.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmissionAngle(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_emission_angle.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_emission_angle.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmissionAngleEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_emission_angle_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_emission_angle_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmissionAngleFilterAttenuationDb(db: Float) {
-    val _args = VariantArray.new()
-    _args.append(db)
-    __method_bind.set_emission_angle_filter_attenuation_db.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(db)
+    __method_bind.set_emission_angle_filter_attenuation_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxDb(maxDb: Float) {
-    val _args = VariantArray.new()
-    _args.append(maxDb)
-    __method_bind.set_max_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxDb)
+    __method_bind.set_max_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxDistance(metres: Float) {
-    val _args = VariantArray.new()
-    _args.append(metres)
-    __method_bind.set_max_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(metres)
+    __method_bind.set_max_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setOutOfRangeMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_out_of_range_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_out_of_range_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPitchScale(pitchScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(pitchScale)
-    __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pitchScale)
+    __method_bind.set_pitch_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setStream(stream: AudioStream) {
-    val _args = VariantArray.new()
-    _args.append(stream)
-    __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stream)
+    __method_bind.set_stream.call(this.toVariant(), _arg, 1)
   }
 
   fun setStreamPaused(pause: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pause)
-    __method_bind.set_stream_paused.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pause)
+    __method_bind.set_stream_paused.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnitDb(unitDb: Float) {
-    val _args = VariantArray.new()
-    _args.append(unitDb)
-    __method_bind.set_unit_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(unitDb)
+    __method_bind.set_unit_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnitSize(unitSize: Float) {
-    val _args = VariantArray.new()
-    _args.append(unitSize)
-    __method_bind.set_unit_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(unitSize)
+    __method_bind.set_unit_size.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -335,7 +314,7 @@ open class AudioStreamPlayer3D internal constructor(
     fun new(): AudioStreamPlayer3D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamPlayer3D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamPlayer3D" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamPlayer3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamPlayer3D(
         fn()

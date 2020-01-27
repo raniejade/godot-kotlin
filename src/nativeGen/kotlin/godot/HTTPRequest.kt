@@ -78,27 +78,23 @@ open class HTTPRequest internal constructor(
   }
 
   fun setBodySizeLimit(bytes: Int) {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    __method_bind.set_body_size_limit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bytes)
+    __method_bind.set_body_size_limit.call(this.toVariant(), _arg, 1)
   }
 
   fun setDownloadFile(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_download_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_download_file.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxRedirects(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_max_redirects.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_max_redirects.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseThreads(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_threads.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_threads.call(this.toVariant(), _arg, 1)
   }
 
   enum class Result(
@@ -167,7 +163,7 @@ open class HTTPRequest internal constructor(
 
     fun new(): HTTPRequest = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPRequest".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HTTPRequest" }
+      requireNotNull(fnPtr) { "No instance found for HTTPRequest" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HTTPRequest(
         fn()

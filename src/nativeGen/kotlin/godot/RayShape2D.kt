@@ -29,21 +29,19 @@ open class RayShape2D internal constructor(
   }
 
   fun setLength(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setSlipsOnSlope(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_slips_on_slope.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_slips_on_slope.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): RayShape2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RayShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RayShape2D" }
+      requireNotNull(fnPtr) { "No instance found for RayShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RayShape2D(
         fn()

@@ -54,40 +54,35 @@ open class ScrollContainer internal constructor(
   }
 
   fun setDeadzone(deadzone: Int) {
-    val _args = VariantArray.new()
-    _args.append(deadzone)
-    __method_bind.set_deadzone.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(deadzone)
+    __method_bind.set_deadzone.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnableHScroll(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_enable_h_scroll.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_enable_h_scroll.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnableVScroll(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_enable_v_scroll.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_enable_v_scroll.call(this.toVariant(), _arg, 1)
   }
 
   fun setHScroll(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_h_scroll.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_h_scroll.call(this.toVariant(), _arg, 1)
   }
 
   fun setVScroll(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_v_scroll.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_v_scroll.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ScrollContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ScrollContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ScrollContainer" }
+      requireNotNull(fnPtr) { "No instance found for ScrollContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ScrollContainer(
         fn()

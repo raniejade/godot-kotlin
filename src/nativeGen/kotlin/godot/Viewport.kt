@@ -93,17 +93,14 @@ open class Viewport internal constructor(
   }
 
   fun getRenderInfo(info: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(info)
-    val _ret = __method_bind.get_render_info.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(info)
+    val _ret = __method_bind.get_render_info.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getShadowAtlasQuadrantSubdiv(quadrant: Int): ShadowAtlasQuadrantSubdiv {
-    val _args = VariantArray.new()
-    _args.append(quadrant)
-    val _ret = __method_bind.get_shadow_atlas_quadrant_subdiv.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(quadrant)
+    val _ret = __method_bind.get_shadow_atlas_quadrant_subdiv.call(this.toVariant(), _arg, 1)
     return Viewport.ShadowAtlasQuadrantSubdiv.from(_ret.asInt())
   }
 
@@ -183,9 +180,8 @@ open class Viewport internal constructor(
   }
 
   fun input(localEvent: InputEvent) {
-    val _args = VariantArray.new()
-    _args.append(localEvent)
-    __method_bind.input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(localEvent)
+    __method_bind.input.call(this.toVariant(), _arg, 1)
   }
 
   fun is3dDisabled(): Boolean {
@@ -244,69 +240,58 @@ open class Viewport internal constructor(
   }
 
   fun setAsAudioListener(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_as_audio_listener.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_as_audio_listener.call(this.toVariant(), _arg, 1)
   }
 
   fun setAsAudioListener2d(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_as_audio_listener_2d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_as_audio_listener_2d.call(this.toVariant(), _arg, 1)
   }
 
   fun setAttachToScreenRect(rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_attach_to_screen_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_attach_to_screen_rect.call(this.toVariant(), _arg, 1)
   }
 
   fun setCanvasTransform(xform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(xform)
-    __method_bind.set_canvas_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(xform)
+    __method_bind.set_canvas_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setClearMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_clear_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_clear_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setDebugDraw(debugDraw: Int) {
-    val _args = VariantArray.new()
-    _args.append(debugDraw)
-    __method_bind.set_debug_draw.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(debugDraw)
+    __method_bind.set_debug_draw.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisable3d(disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disable)
-    __method_bind.set_disable_3d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disable)
+    __method_bind.set_disable_3d.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisableInput(disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disable)
-    __method_bind.set_disable_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disable)
+    __method_bind.set_disable_input.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlobalCanvasTransform(xform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(xform)
-    __method_bind.set_global_canvas_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(xform)
+    __method_bind.set_global_canvas_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setHandleInputLocally(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_handle_input_locally.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_handle_input_locally.call(this.toVariant(), _arg, 1)
   }
 
   fun setHdr(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_hdr.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_hdr.call(this.toVariant(), _arg, 1)
   }
 
   fun setInputAsHandled() {
@@ -314,21 +299,18 @@ open class Viewport internal constructor(
   }
 
   fun setKeep3dLinear(keep3dLinear: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(keep3dLinear)
-    __method_bind.set_keep_3d_linear.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(keep3dLinear)
+    __method_bind.set_keep_3d_linear.call(this.toVariant(), _arg, 1)
   }
 
   fun setMsaa(msaa: Int) {
-    val _args = VariantArray.new()
-    _args.append(msaa)
-    __method_bind.set_msaa.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(msaa)
+    __method_bind.set_msaa.call(this.toVariant(), _arg, 1)
   }
 
   fun setPhysicsObjectPicking(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_physics_object_picking.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_physics_object_picking.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowAtlasQuadrantSubdiv(quadrant: Int, subdiv: Int) {
@@ -339,15 +321,13 @@ open class Viewport internal constructor(
   }
 
   fun setShadowAtlasSize(size: Int) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_shadow_atlas_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_shadow_atlas_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setSizeOverride(
@@ -363,75 +343,63 @@ open class Viewport internal constructor(
   }
 
   fun setSizeOverrideStretch(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_size_override_stretch.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_size_override_stretch.call(this.toVariant(), _arg, 1)
   }
 
   fun setSnapControlsToPixels(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_snap_controls_to_pixels.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_snap_controls_to_pixels.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransparentBackground(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_transparent_background.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_transparent_background.call(this.toVariant(), _arg, 1)
   }
 
   fun setUpdateMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_update_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_update_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setUsage(usage: Int) {
-    val _args = VariantArray.new()
-    _args.append(usage)
-    __method_bind.set_usage.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(usage)
+    __method_bind.set_usage.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseArvr(use: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(use)
-    __method_bind.set_use_arvr.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(use)
+    __method_bind.set_use_arvr.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseOwnWorld(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_own_world.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_own_world.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseRenderDirectToScreen(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_render_direct_to_screen.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_render_direct_to_screen.call(this.toVariant(), _arg, 1)
   }
 
   fun setVflip(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_vflip.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_vflip.call(this.toVariant(), _arg, 1)
   }
 
   fun setWorld(world: World) {
-    val _args = VariantArray.new()
-    _args.append(world)
-    __method_bind.set_world.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(world)
+    __method_bind.set_world.call(this.toVariant(), _arg, 1)
   }
 
   fun setWorld2d(world2d: World2D) {
-    val _args = VariantArray.new()
-    _args.append(world2d)
-    __method_bind.set_world_2d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(world2d)
+    __method_bind.set_world_2d.call(this.toVariant(), _arg, 1)
   }
 
   fun unhandledInput(localEvent: InputEvent) {
-    val _args = VariantArray.new()
-    _args.append(localEvent)
-    __method_bind.unhandled_input.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(localEvent)
+    __method_bind.unhandled_input.call(this.toVariant(), _arg, 1)
   }
 
   fun updateWorlds() {
@@ -444,9 +412,8 @@ open class Viewport internal constructor(
   }
 
   fun warpMouse(toPosition: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    __method_bind.warp_mouse.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPosition)
+    __method_bind.warp_mouse.call(this.toVariant(), _arg, 1)
   }
 
   enum class ClearMode(
@@ -697,7 +664,7 @@ open class Viewport internal constructor(
 
     fun new(): Viewport = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Viewport".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Viewport" }
+      requireNotNull(fnPtr) { "No instance found for Viewport" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Viewport(
         fn()

@@ -18,7 +18,7 @@ open class VSlider internal constructor(
   companion object {
     fun new(): VSlider = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSlider".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VSlider" }
+      requireNotNull(fnPtr) { "No instance found for VSlider" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VSlider(
         fn()

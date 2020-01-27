@@ -19,7 +19,7 @@ open class WebRTCPeerConnectionGDNative internal constructor(
     fun new(): WebRTCPeerConnectionGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCPeerConnectionGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebRTCPeerConnectionGDNative" }
+      requireNotNull(fnPtr) { "No instance found for WebRTCPeerConnectionGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebRTCPeerConnectionGDNative(
         fn()

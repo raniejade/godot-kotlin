@@ -23,16 +23,15 @@ open class VisualScriptVariableGet internal constructor(
   }
 
   fun setVariable(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_variable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_variable.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptVariableGet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptVariableGet".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptVariableGet" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptVariableGet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptVariableGet(
         fn()

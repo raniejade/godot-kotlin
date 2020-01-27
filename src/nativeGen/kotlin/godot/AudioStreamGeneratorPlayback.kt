@@ -21,9 +21,8 @@ open class AudioStreamGeneratorPlayback internal constructor(
   _handle: COpaquePointer
 ) : AudioStreamPlaybackResampled(_handle) {
   fun canPushBuffer(amount: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    val _ret = __method_bind.can_push_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    val _ret = __method_bind.can_push_buffer.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -42,16 +41,14 @@ open class AudioStreamGeneratorPlayback internal constructor(
   }
 
   fun pushBuffer(frames: PoolVector2Array): Boolean {
-    val _args = VariantArray.new()
-    _args.append(frames)
-    val _ret = __method_bind.push_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frames)
+    val _ret = __method_bind.push_buffer.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun pushFrame(frame: Vector2): Boolean {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    val _ret = __method_bind.push_frame.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    val _ret = __method_bind.push_frame.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 

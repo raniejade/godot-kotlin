@@ -23,9 +23,8 @@ open class VisualShaderNodeVectorDerivativeFunc internal constructor(
   }
 
   fun setFunction(func: Int) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(func)
+    __method_bind.set_function.call(this.toVariant(), _arg, 1)
   }
 
   enum class Function(
@@ -59,8 +58,7 @@ open class VisualShaderNodeVectorDerivativeFunc internal constructor(
     fun new(): VisualShaderNodeVectorDerivativeFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorDerivativeFunc".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorDerivativeFunc"
-        }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorDerivativeFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorDerivativeFunc(
         fn()

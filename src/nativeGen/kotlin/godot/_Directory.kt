@@ -21,9 +21,8 @@ open class _Directory internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun changeDir(todir: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(todir)
-    val _ret = __method_bind.change_dir.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(todir)
+    val _ret = __method_bind.change_dir.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -41,16 +40,14 @@ open class _Directory internal constructor(
   }
 
   fun dirExists(path: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.dir_exists.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.dir_exists.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun fileExists(path: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.file_exists.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.file_exists.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -65,9 +62,8 @@ open class _Directory internal constructor(
   }
 
   fun getDrive(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_drive.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_drive.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -99,30 +95,26 @@ open class _Directory internal constructor(
   }
 
   fun makeDir(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.make_dir.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.make_dir.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun makeDirRecursive(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.make_dir_recursive.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.make_dir_recursive.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun open(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.open.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.open.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun remove(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.remove.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.remove.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -137,7 +129,7 @@ open class _Directory internal constructor(
   companion object {
     fun new(): _Directory = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Directory".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton _Directory" }
+      requireNotNull(fnPtr) { "No instance found for _Directory" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       _Directory(
         fn()

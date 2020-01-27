@@ -19,7 +19,7 @@ open class WebRTCDataChannelGDNative internal constructor(
     fun new(): WebRTCDataChannelGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCDataChannelGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebRTCDataChannelGDNative" }
+      requireNotNull(fnPtr) { "No instance found for WebRTCDataChannelGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebRTCDataChannelGDNative(
         fn()

@@ -24,16 +24,14 @@ open class AnimatedTexture internal constructor(
   }
 
   fun getFrameDelay(frame: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    val _ret = __method_bind.get_frame_delay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    val _ret = __method_bind.get_frame_delay.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getFrameTexture(frame: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    val _ret = __method_bind.get_frame_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    val _ret = __method_bind.get_frame_texture.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -43,9 +41,8 @@ open class AnimatedTexture internal constructor(
   }
 
   fun setFps(fps: Float) {
-    val _args = VariantArray.new()
-    _args.append(fps)
-    __method_bind.set_fps.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fps)
+    __method_bind.set_fps.call(this.toVariant(), _arg, 1)
   }
 
   fun setFrameDelay(frame: Int, delay: Float) {
@@ -63,9 +60,8 @@ open class AnimatedTexture internal constructor(
   }
 
   fun setFrames(frames: Int) {
-    val _args = VariantArray.new()
-    _args.append(frames)
-    __method_bind.set_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frames)
+    __method_bind.set_frames.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
@@ -74,7 +70,7 @@ open class AnimatedTexture internal constructor(
     fun new(): AnimatedTexture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimatedTexture" }
+      requireNotNull(fnPtr) { "No instance found for AnimatedTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimatedTexture(
         fn()

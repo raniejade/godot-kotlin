@@ -41,9 +41,8 @@ open class VisualInstance internal constructor(
   }
 
   fun getLayerMaskBit(layer: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    val _ret = __method_bind.get_layer_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    val _ret = __method_bind.get_layer_mask_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -53,15 +52,13 @@ open class VisualInstance internal constructor(
   }
 
   fun setBase(base: RID) {
-    val _args = VariantArray.new()
-    _args.append(base)
-    __method_bind.set_base.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(base)
+    __method_bind.set_base.call(this.toVariant(), _arg, 1)
   }
 
   fun setLayerMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_layer_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_layer_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setLayerMaskBit(layer: Int, enabled: Boolean) {

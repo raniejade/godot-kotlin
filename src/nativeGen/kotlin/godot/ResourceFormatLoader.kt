@@ -19,7 +19,7 @@ open class ResourceFormatLoader internal constructor(
     fun new(): ResourceFormatLoader = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ResourceFormatLoader".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ResourceFormatLoader" }
+      requireNotNull(fnPtr) { "No instance found for ResourceFormatLoader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ResourceFormatLoader(
         fn()

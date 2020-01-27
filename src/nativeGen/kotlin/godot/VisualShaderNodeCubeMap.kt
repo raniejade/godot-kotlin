@@ -28,15 +28,13 @@ open class VisualShaderNodeCubeMap internal constructor(
   }
 
   fun setCubeMap(value: CubeMap) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_cube_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_cube_map.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureType(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_texture_type.call(this.toVariant(), _arg, 1)
   }
 
   enum class TextureType(
@@ -70,7 +68,7 @@ open class VisualShaderNodeCubeMap internal constructor(
     fun new(): VisualShaderNodeCubeMap = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCubeMap".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeCubeMap" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeCubeMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeCubeMap(
         fn()

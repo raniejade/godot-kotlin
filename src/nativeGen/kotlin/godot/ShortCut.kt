@@ -29,9 +29,8 @@ open class ShortCut internal constructor(
   }
 
   fun isShortcut(event: InputEvent): Boolean {
-    val _args = VariantArray.new()
-    _args.append(event)
-    val _ret = __method_bind.is_shortcut.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(event)
+    val _ret = __method_bind.is_shortcut.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -41,15 +40,14 @@ open class ShortCut internal constructor(
   }
 
   fun setShortcut(event: InputEvent) {
-    val _args = VariantArray.new()
-    _args.append(event)
-    __method_bind.set_shortcut.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(event)
+    __method_bind.set_shortcut.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ShortCut = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ShortCut".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ShortCut" }
+      requireNotNull(fnPtr) { "No instance found for ShortCut" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ShortCut(
         fn()

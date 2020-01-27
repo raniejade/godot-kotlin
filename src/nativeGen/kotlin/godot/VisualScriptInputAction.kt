@@ -29,15 +29,13 @@ open class VisualScriptInputAction internal constructor(
   }
 
   fun setActionMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_action_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_action_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setActionName(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_action_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_action_name.call(this.toVariant(), _arg, 1)
   }
 
   enum class Mode(
@@ -75,7 +73,7 @@ open class VisualScriptInputAction internal constructor(
     fun new(): VisualScriptInputAction = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptInputAction".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptInputAction" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptInputAction" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptInputAction(
         fn()

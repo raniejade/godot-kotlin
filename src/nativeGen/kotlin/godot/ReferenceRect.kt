@@ -23,15 +23,14 @@ open class ReferenceRect internal constructor(
   }
 
   fun setBorderColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_border_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_border_color.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ReferenceRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ReferenceRect".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ReferenceRect" }
+      requireNotNull(fnPtr) { "No instance found for ReferenceRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ReferenceRect(
         fn()

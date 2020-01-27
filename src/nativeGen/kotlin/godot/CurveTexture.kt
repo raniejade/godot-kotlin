@@ -23,21 +23,19 @@ open class CurveTexture internal constructor(
   }
 
   fun setCurve(curve: Curve) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setWidth(width: Int) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(width)
+    __method_bind.set_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CurveTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CurveTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CurveTexture" }
+      requireNotNull(fnPtr) { "No instance found for CurveTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CurveTexture(
         fn()

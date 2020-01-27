@@ -39,22 +39,20 @@ open class ColorPickerButton internal constructor(
   }
 
   fun setEditAlpha(show: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(show)
-    __method_bind.set_edit_alpha.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(show)
+    __method_bind.set_edit_alpha.call(this.toVariant(), _arg, 1)
   }
 
   fun setPickColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_pick_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_pick_color.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ColorPickerButton = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorPickerButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ColorPickerButton" }
+      requireNotNull(fnPtr) { "No instance found for ColorPickerButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ColorPickerButton(
         fn()

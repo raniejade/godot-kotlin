@@ -23,23 +23,20 @@ open class _ClassDB internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun canInstance(`class`: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.can_instance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.can_instance.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun classExists(`class`: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.class_exists.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.class_exists.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun classGetCategory(`class`: String): String {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.class_get_category.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.class_get_category.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -148,30 +145,26 @@ open class _ClassDB internal constructor(
   }
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.get_inheriters_from_class.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.get_inheriters_from_class.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getParentClass(`class`: String): String {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.get_parent_class.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.get_parent_class.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun instance(`class`: String): Variant {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.instance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.instance.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun isClassEnabled(`class`: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(`class`)
-    val _ret = __method_bind.is_class_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`class`)
+    val _ret = __method_bind.is_class_enabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 

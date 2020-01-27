@@ -55,45 +55,38 @@ open class AnimationNodeOneShot internal constructor(
   }
 
   fun setAutorestart(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_autorestart.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_autorestart.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutorestartDelay(enable: Float) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_autorestart_delay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_autorestart_delay.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutorestartRandomDelay(enable: Float) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_autorestart_random_delay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_autorestart_random_delay.call(this.toVariant(), _arg, 1)
   }
 
   fun setFadeinTime(time: Float) {
-    val _args = VariantArray.new()
-    _args.append(time)
-    __method_bind.set_fadein_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(time)
+    __method_bind.set_fadein_time.call(this.toVariant(), _arg, 1)
   }
 
   fun setFadeoutTime(time: Float) {
-    val _args = VariantArray.new()
-    _args.append(time)
-    __method_bind.set_fadeout_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(time)
+    __method_bind.set_fadeout_time.call(this.toVariant(), _arg, 1)
   }
 
   fun setMixMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_mix_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_mix_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseSync(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_sync.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_sync.call(this.toVariant(), _arg, 1)
   }
 
   enum class MixMode(
@@ -123,7 +116,7 @@ open class AnimationNodeOneShot internal constructor(
     fun new(): AnimationNodeOneShot = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeOneShot".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeOneShot" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeOneShot" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeOneShot(
         fn()

@@ -40,45 +40,39 @@ open class NoiseTexture internal constructor(
   }
 
   fun setAsNormalmap(asNormalmap: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(asNormalmap)
-    __method_bind.set_as_normalmap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(asNormalmap)
+    __method_bind.set_as_normalmap.call(this.toVariant(), _arg, 1)
   }
 
   fun setBumpStrength(bumpStrength: Float) {
-    val _args = VariantArray.new()
-    _args.append(bumpStrength)
-    __method_bind.set_bump_strength.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bumpStrength)
+    __method_bind.set_bump_strength.call(this.toVariant(), _arg, 1)
   }
 
   fun setHeight(height: Int) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setNoise(noise: OpenSimplexNoise) {
-    val _args = VariantArray.new()
-    _args.append(noise)
-    __method_bind.set_noise.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(noise)
+    __method_bind.set_noise.call(this.toVariant(), _arg, 1)
   }
 
   fun setSeamless(seamless: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(seamless)
-    __method_bind.set_seamless.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seamless)
+    __method_bind.set_seamless.call(this.toVariant(), _arg, 1)
   }
 
   fun setWidth(width: Int) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(width)
+    __method_bind.set_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): NoiseTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NoiseTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NoiseTexture" }
+      requireNotNull(fnPtr) { "No instance found for NoiseTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NoiseTexture(
         fn()

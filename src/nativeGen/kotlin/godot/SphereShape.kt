@@ -23,15 +23,14 @@ open class SphereShape internal constructor(
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SphereShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SphereShape" }
+      requireNotNull(fnPtr) { "No instance found for SphereShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SphereShape(
         fn()

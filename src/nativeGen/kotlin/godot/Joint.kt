@@ -40,27 +40,23 @@ open class Joint internal constructor(
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_exclude_nodes_from_collision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_exclude_nodes_from_collision.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodeA(node: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_node_a.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_node_a.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodeB(node: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_node_b.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_node_b.call(this.toVariant(), _arg, 1)
   }
 
   fun setSolverPriority(priority: Int) {
-    val _args = VariantArray.new()
-    _args.append(priority)
-    __method_bind.set_solver_priority.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(priority)
+    __method_bind.set_solver_priority.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

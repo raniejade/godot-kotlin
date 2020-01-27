@@ -28,31 +28,26 @@ open class _ResourceLoader internal constructor(
   }
 
   fun getDependencies(path: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_dependencies.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_dependencies.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getRecognizedExtensionsForType(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_recognized_extensions_for_type.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_recognized_extensions_for_type.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun has(path: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.has.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.has.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun hasCached(path: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.has_cached.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.has_cached.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -78,9 +73,8 @@ open class _ResourceLoader internal constructor(
   }
 
   fun setAbortOnMissingResources(abort: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(abort)
-    __method_bind.set_abort_on_missing_resources.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(abort)
+    __method_bind.set_abort_on_missing_resources.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

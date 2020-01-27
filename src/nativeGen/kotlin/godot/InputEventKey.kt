@@ -34,33 +34,29 @@ open class InputEventKey internal constructor(
   }
 
   fun setEcho(echo: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(echo)
-    __method_bind.set_echo.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(echo)
+    __method_bind.set_echo.call(this.toVariant(), _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pressed)
+    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
   }
 
   fun setScancode(scancode: Int) {
-    val _args = VariantArray.new()
-    _args.append(scancode)
-    __method_bind.set_scancode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scancode)
+    __method_bind.set_scancode.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnicode(unicode: Int) {
-    val _args = VariantArray.new()
-    _args.append(unicode)
-    __method_bind.set_unicode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(unicode)
+    __method_bind.set_unicode.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventKey = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventKey".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventKey" }
+      requireNotNull(fnPtr) { "No instance found for InputEventKey" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventKey(
         fn()

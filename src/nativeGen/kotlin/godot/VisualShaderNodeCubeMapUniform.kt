@@ -19,7 +19,7 @@ open class VisualShaderNodeCubeMapUniform internal constructor(
     fun new(): VisualShaderNodeCubeMapUniform = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeCubeMapUniform".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeCubeMapUniform" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeCubeMapUniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeCubeMapUniform(
         fn()

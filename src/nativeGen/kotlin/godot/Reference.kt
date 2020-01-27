@@ -35,7 +35,7 @@ open class Reference internal constructor(
   companion object {
     fun new(): Reference = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Reference".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Reference" }
+      requireNotNull(fnPtr) { "No instance found for Reference" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Reference(
         fn()

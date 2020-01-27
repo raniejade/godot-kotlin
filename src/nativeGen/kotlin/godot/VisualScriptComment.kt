@@ -34,28 +34,25 @@ open class VisualScriptComment internal constructor(
   }
 
   fun setDescription(description: String) {
-    val _args = VariantArray.new()
-    _args.append(description)
-    __method_bind.set_description.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(description)
+    __method_bind.set_description.call(this.toVariant(), _arg, 1)
   }
 
   fun setSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setTitle(title: String) {
-    val _args = VariantArray.new()
-    _args.append(title)
-    __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(title)
+    __method_bind.set_title.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptComment = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptComment".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptComment" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptComment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptComment(
         fn()

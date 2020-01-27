@@ -55,39 +55,33 @@ open class Timer internal constructor(
   }
 
   fun setAutostart(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_autostart.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_autostart.call(this.toVariant(), _arg, 1)
   }
 
   fun setOneShot(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_one_shot.call(this.toVariant(), _arg, 1)
   }
 
   fun setPaused(paused: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(paused)
-    __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(paused)
+    __method_bind.set_paused.call(this.toVariant(), _arg, 1)
   }
 
   fun setTimerProcessMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_timer_process_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_timer_process_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setWaitTime(timeSec: Float) {
-    val _args = VariantArray.new()
-    _args.append(timeSec)
-    __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(timeSec)
+    __method_bind.set_wait_time.call(this.toVariant(), _arg, 1)
   }
 
   fun start(timeSec: Float) {
-    val _args = VariantArray.new()
-    _args.append(timeSec)
-    __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(timeSec)
+    __method_bind.start.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -120,7 +114,7 @@ open class Timer internal constructor(
 
     fun new(): Timer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Timer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Timer" }
+      requireNotNull(fnPtr) { "No instance found for Timer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Timer(
         fn()

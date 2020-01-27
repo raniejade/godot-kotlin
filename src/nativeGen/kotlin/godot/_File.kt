@@ -33,9 +33,8 @@ open class _File internal constructor(
   }
 
   fun fileExists(path: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.file_exists.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.file_exists.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -65,16 +64,14 @@ open class _File internal constructor(
   }
 
   fun getBuffer(len: Int): PoolByteArray {
-    val _args = VariantArray.new()
-    _args.append(len)
-    val _ret = __method_bind.get_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(len)
+    val _ret = __method_bind.get_buffer.call(this.toVariant(), _arg, 1)
     return _ret.asPoolByteArray()
   }
 
   fun getCsvLine(delim: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(delim)
-    val _ret = __method_bind.get_csv_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(delim)
+    val _ret = __method_bind.get_csv_line.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -109,16 +106,14 @@ open class _File internal constructor(
   }
 
   fun getMd5(path: String): String {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_md5.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_md5.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getModifiedTime(file: String): Int {
-    val _args = VariantArray.new()
-    _args.append(file)
-    val _ret = __method_bind.get_modified_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(file)
+    val _ret = __method_bind.get_modified_time.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -148,16 +143,14 @@ open class _File internal constructor(
   }
 
   fun getSha256(path: String): String {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_sha256.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_sha256.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean): Variant {
-    val _args = VariantArray.new()
-    _args.append(allowObjects)
-    val _ret = __method_bind.get_var.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allowObjects)
+    val _ret = __method_bind.get_var.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -214,51 +207,43 @@ open class _File internal constructor(
   }
 
   fun seek(position: Int) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.seek.call(this.toVariant(), _arg, 1)
   }
 
   fun seekEnd(position: Int) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.seek_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.seek_end.call(this.toVariant(), _arg, 1)
   }
 
   fun setEndianSwap(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_endian_swap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_endian_swap.call(this.toVariant(), _arg, 1)
   }
 
   fun store16(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_16.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_16.call(this.toVariant(), _arg, 1)
   }
 
   fun store32(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_32.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_32.call(this.toVariant(), _arg, 1)
   }
 
   fun store64(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_64.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_64.call(this.toVariant(), _arg, 1)
   }
 
   fun store8(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_8.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_8.call(this.toVariant(), _arg, 1)
   }
 
   fun storeBuffer(buffer: PoolByteArray) {
-    val _args = VariantArray.new()
-    _args.append(buffer)
-    __method_bind.store_buffer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buffer)
+    __method_bind.store_buffer.call(this.toVariant(), _arg, 1)
   }
 
   fun storeCsvLine(values: PoolStringArray, delim: String) {
@@ -269,39 +254,33 @@ open class _File internal constructor(
   }
 
   fun storeDouble(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_double.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_double.call(this.toVariant(), _arg, 1)
   }
 
   fun storeFloat(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_float.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_float.call(this.toVariant(), _arg, 1)
   }
 
   fun storeLine(line: String) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    __method_bind.store_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    __method_bind.store_line.call(this.toVariant(), _arg, 1)
   }
 
   fun storePascalString(string: String) {
-    val _args = VariantArray.new()
-    _args.append(string)
-    __method_bind.store_pascal_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(string)
+    __method_bind.store_pascal_string.call(this.toVariant(), _arg, 1)
   }
 
   fun storeReal(value: Float) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.store_real.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.store_real.call(this.toVariant(), _arg, 1)
   }
 
   fun storeString(string: String) {
-    val _args = VariantArray.new()
-    _args.append(string)
-    __method_bind.store_string.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(string)
+    __method_bind.store_string.call(this.toVariant(), _arg, 1)
   }
 
   fun storeVar(value: Variant, fullObjects: Boolean) {
@@ -376,7 +355,7 @@ open class _File internal constructor(
 
     fun new(): _File = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_File".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton _File" }
+      requireNotNull(fnPtr) { "No instance found for _File" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       _File(
         fn()

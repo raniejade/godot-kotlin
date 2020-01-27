@@ -27,21 +27,19 @@ open class CSGMesh internal constructor(
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setMesh(mesh: Mesh) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mesh)
+    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CSGMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGMesh" }
+      requireNotNull(fnPtr) { "No instance found for CSGMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGMesh(
         fn()

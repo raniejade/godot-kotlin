@@ -20,9 +20,8 @@ open class ColorPicker internal constructor(
   _handle: COpaquePointer
 ) : BoxContainer(_handle) {
   fun addPreset(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.add_preset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.add_preset.call(this.toVariant(), _arg, 1)
   }
 
   fun arePresetsEnabled(): Boolean {
@@ -36,9 +35,8 @@ open class ColorPicker internal constructor(
   }
 
   fun erasePreset(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.erase_preset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.erase_preset.call(this.toVariant(), _arg, 1)
   }
 
   fun getPickColor(): Color {
@@ -67,45 +65,39 @@ open class ColorPicker internal constructor(
   }
 
   fun setDeferredMode(mode: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_deferred_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_deferred_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setEditAlpha(show: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(show)
-    __method_bind.set_edit_alpha.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(show)
+    __method_bind.set_edit_alpha.call(this.toVariant(), _arg, 1)
   }
 
   fun setPickColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_pick_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_pick_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setPresetsEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_presets_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_presets_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setPresetsVisible(visible: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(visible)
-    __method_bind.set_presets_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visible)
+    __method_bind.set_presets_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun setRawMode(mode: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_raw_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_raw_mode.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ColorPicker = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ColorPicker".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ColorPicker" }
+      requireNotNull(fnPtr) { "No instance found for ColorPicker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ColorPicker(
         fn()

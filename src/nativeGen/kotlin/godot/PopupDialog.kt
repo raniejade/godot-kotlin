@@ -18,7 +18,7 @@ open class PopupDialog internal constructor(
   companion object {
     fun new(): PopupDialog = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PopupDialog" }
+      requireNotNull(fnPtr) { "No instance found for PopupDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PopupDialog(
         fn()

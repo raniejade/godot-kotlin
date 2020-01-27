@@ -30,9 +30,8 @@ open class GridMap internal constructor(
   }
 
   fun getBakeMeshInstance(idx: Int): RID {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_bake_mesh_instance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_bake_mesh_instance.call(this.toVariant(), _arg, 1)
     return _ret.asRID()
   }
 
@@ -98,9 +97,8 @@ open class GridMap internal constructor(
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bit)
+    val _ret = __method_bind.get_collision_layer_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -110,9 +108,8 @@ open class GridMap internal constructor(
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bit)
+    val _ret = __method_bind.get_collision_mask_bit.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -162,9 +159,8 @@ open class GridMap internal constructor(
   }
 
   fun resourceChanged(resource: Resource) {
-    val _args = VariantArray.new()
-    _args.append(resource)
-    __method_bind.resource_changed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resource)
+    __method_bind.resource_changed.call(this.toVariant(), _arg, 1)
   }
 
   fun setCellItem(
@@ -184,33 +180,28 @@ open class GridMap internal constructor(
   }
 
   fun setCellScale(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_cell_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_cell_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setCellSize(size: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_cell_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_cell_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setCenterX(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_center_x.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_center_x.call(this.toVariant(), _arg, 1)
   }
 
   fun setCenterY(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_center_y.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_center_y.call(this.toVariant(), _arg, 1)
   }
 
   fun setCenterZ(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_center_z.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_center_z.call(this.toVariant(), _arg, 1)
   }
 
   fun setClip(
@@ -228,9 +219,8 @@ open class GridMap internal constructor(
   }
 
   fun setCollisionLayer(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_collision_layer.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
@@ -241,9 +231,8 @@ open class GridMap internal constructor(
   }
 
   fun setCollisionMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_collision_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
@@ -254,27 +243,23 @@ open class GridMap internal constructor(
   }
 
   fun setMeshLibrary(meshLibrary: MeshLibrary) {
-    val _args = VariantArray.new()
-    _args.append(meshLibrary)
-    __method_bind.set_mesh_library.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(meshLibrary)
+    __method_bind.set_mesh_library.call(this.toVariant(), _arg, 1)
   }
 
   fun setOctantSize(size: Int) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_octant_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_octant_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setTheme(theme: MeshLibrary) {
-    val _args = VariantArray.new()
-    _args.append(theme)
-    __method_bind.set_theme.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(theme)
+    __method_bind.set_theme.call(this.toVariant(), _arg, 1)
   }
 
   fun worldToMap(pos: Vector3): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(pos)
-    val _ret = __method_bind.world_to_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pos)
+    val _ret = __method_bind.world_to_map.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
@@ -283,7 +268,7 @@ open class GridMap internal constructor(
 
     fun new(): GridMap = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GridMap".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GridMap" }
+      requireNotNull(fnPtr) { "No instance found for GridMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GridMap(
         fn()

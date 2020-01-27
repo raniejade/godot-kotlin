@@ -57,9 +57,8 @@ open class TextureProgress internal constructor(
   }
 
   fun getStretchMargin(margin: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_stretch_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_stretch_margin.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -84,45 +83,38 @@ open class TextureProgress internal constructor(
   }
 
   fun setFillDegrees(mode: Float) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_fill_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_fill_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setFillMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_fill_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_fill_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setNinePatchStretch(stretch: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(stretch)
-    __method_bind.set_nine_patch_stretch.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stretch)
+    __method_bind.set_nine_patch_stretch.call(this.toVariant(), _arg, 1)
   }
 
   fun setOverTexture(tex: Texture) {
-    val _args = VariantArray.new()
-    _args.append(tex)
-    __method_bind.set_over_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tex)
+    __method_bind.set_over_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setProgressTexture(tex: Texture) {
-    val _args = VariantArray.new()
-    _args.append(tex)
-    __method_bind.set_progress_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tex)
+    __method_bind.set_progress_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadialCenterOffset(mode: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_radial_center_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_radial_center_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadialInitialAngle(mode: Float) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_radial_initial_angle.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_radial_initial_angle.call(this.toVariant(), _arg, 1)
   }
 
   fun setStretchMargin(margin: Int, value: Int) {
@@ -133,27 +125,23 @@ open class TextureProgress internal constructor(
   }
 
   fun setTintOver(tint: Color) {
-    val _args = VariantArray.new()
-    _args.append(tint)
-    __method_bind.set_tint_over.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tint)
+    __method_bind.set_tint_over.call(this.toVariant(), _arg, 1)
   }
 
   fun setTintProgress(tint: Color) {
-    val _args = VariantArray.new()
-    _args.append(tint)
-    __method_bind.set_tint_progress.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tint)
+    __method_bind.set_tint_progress.call(this.toVariant(), _arg, 1)
   }
 
   fun setTintUnder(tint: Color) {
-    val _args = VariantArray.new()
-    _args.append(tint)
-    __method_bind.set_tint_under.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tint)
+    __method_bind.set_tint_under.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnderTexture(tex: Texture) {
-    val _args = VariantArray.new()
-    _args.append(tex)
-    __method_bind.set_under_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tex)
+    __method_bind.set_under_texture.call(this.toVariant(), _arg, 1)
   }
 
   enum class FillMode(
@@ -211,7 +199,7 @@ open class TextureProgress internal constructor(
     fun new(): TextureProgress = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureProgress".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TextureProgress" }
+      requireNotNull(fnPtr) { "No instance found for TextureProgress" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextureProgress(
         fn()

@@ -24,16 +24,15 @@ open class StreamTexture internal constructor(
   }
 
   fun load(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   companion object {
     fun new(): StreamTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StreamTexture" }
+      requireNotNull(fnPtr) { "No instance found for StreamTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StreamTexture(
         fn()

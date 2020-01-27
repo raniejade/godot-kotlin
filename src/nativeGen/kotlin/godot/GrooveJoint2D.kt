@@ -28,21 +28,19 @@ open class GrooveJoint2D internal constructor(
   }
 
   fun setInitialOffset(offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_initial_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_initial_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setLength(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_length.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): GrooveJoint2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GrooveJoint2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GrooveJoint2D" }
+      requireNotNull(fnPtr) { "No instance found for GrooveJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GrooveJoint2D(
         fn()

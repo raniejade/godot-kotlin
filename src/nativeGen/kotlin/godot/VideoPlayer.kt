@@ -90,63 +90,53 @@ open class VideoPlayer internal constructor(
   }
 
   fun setAudioTrack(track: Int) {
-    val _args = VariantArray.new()
-    _args.append(track)
-    __method_bind.set_audio_track.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(track)
+    __method_bind.set_audio_track.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutoplay(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_autoplay.call(this.toVariant(), _arg, 1)
   }
 
   fun setBufferingMsec(msec: Int) {
-    val _args = VariantArray.new()
-    _args.append(msec)
-    __method_bind.set_buffering_msec.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(msec)
+    __method_bind.set_buffering_msec.call(this.toVariant(), _arg, 1)
   }
 
   fun setBus(bus: String) {
-    val _args = VariantArray.new()
-    _args.append(bus)
-    __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bus)
+    __method_bind.set_bus.call(this.toVariant(), _arg, 1)
   }
 
   fun setExpand(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_expand.call(this.toVariant(), _arg, 1)
   }
 
   fun setPaused(paused: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(paused)
-    __method_bind.set_paused.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(paused)
+    __method_bind.set_paused.call(this.toVariant(), _arg, 1)
   }
 
   fun setStream(stream: VideoStream) {
-    val _args = VariantArray.new()
-    _args.append(stream)
-    __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stream)
+    __method_bind.set_stream.call(this.toVariant(), _arg, 1)
   }
 
   fun setStreamPosition(position: Float) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_stream_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_stream_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setVolume(volume: Float) {
-    val _args = VariantArray.new()
-    _args.append(volume)
-    __method_bind.set_volume.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(volume)
+    __method_bind.set_volume.call(this.toVariant(), _arg, 1)
   }
 
   fun setVolumeDb(db: Float) {
-    val _args = VariantArray.new()
-    _args.append(db)
-    __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(db)
+    __method_bind.set_volume_db.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -156,7 +146,7 @@ open class VideoPlayer internal constructor(
   companion object {
     fun new(): VideoPlayer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoPlayer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VideoPlayer" }
+      requireNotNull(fnPtr) { "No instance found for VideoPlayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VideoPlayer(
         fn()

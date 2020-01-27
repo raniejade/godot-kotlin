@@ -18,7 +18,7 @@ open class ToolButton internal constructor(
   companion object {
     fun new(): ToolButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ToolButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ToolButton" }
+      requireNotNull(fnPtr) { "No instance found for ToolButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ToolButton(
         fn()

@@ -57,7 +57,7 @@ open class VisualScriptCustomNode internal constructor(
     fun new(): VisualScriptCustomNode = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptCustomNode".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptCustomNode" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptCustomNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptCustomNode(
         fn()

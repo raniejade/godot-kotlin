@@ -18,9 +18,8 @@ open class CameraServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addFeed(feed: CameraFeed) {
-    val _args = VariantArray.new()
-    _args.append(feed)
-    __method_bind.add_feed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feed)
+    __method_bind.add_feed.call(this.toVariant(), _arg, 1)
   }
 
   fun feeds(): VariantArray {
@@ -29,9 +28,8 @@ open class CameraServer internal constructor(
   }
 
   fun getFeed(index: Int): CameraFeed {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_feed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_feed.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::CameraFeed)!!
   }
 
@@ -41,9 +39,8 @@ open class CameraServer internal constructor(
   }
 
   fun removeFeed(feed: CameraFeed) {
-    val _args = VariantArray.new()
-    _args.append(feed)
-    __method_bind.remove_feed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feed)
+    __method_bind.remove_feed.call(this.toVariant(), _arg, 1)
   }
 
   enum class FeedImage(

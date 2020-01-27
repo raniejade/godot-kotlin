@@ -18,9 +18,8 @@ open class VisualScriptNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getDefaultInputValue(portIdx: Int): Variant {
-    val _args = VariantArray.new()
-    _args.append(portIdx)
-    val _ret = __method_bind.get_default_input_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(portIdx)
+    val _ret = __method_bind.get_default_input_value.call(this.toVariant(), _arg, 1)
     return _ret
   }
 

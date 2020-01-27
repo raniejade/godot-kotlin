@@ -23,9 +23,8 @@ open class InputEventGesture internal constructor(
   }
 
   fun setPosition(position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_position.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

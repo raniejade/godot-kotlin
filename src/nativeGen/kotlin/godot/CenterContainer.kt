@@ -23,16 +23,15 @@ open class CenterContainer internal constructor(
   }
 
   fun setUseTopLeft(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_top_left.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_top_left.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CenterContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CenterContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CenterContainer" }
+      requireNotNull(fnPtr) { "No instance found for CenterContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CenterContainer(
         fn()

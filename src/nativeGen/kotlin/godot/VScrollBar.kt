@@ -18,7 +18,7 @@ open class VScrollBar internal constructor(
   companion object {
     fun new(): VScrollBar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VScrollBar".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VScrollBar" }
+      requireNotNull(fnPtr) { "No instance found for VScrollBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VScrollBar(
         fn()

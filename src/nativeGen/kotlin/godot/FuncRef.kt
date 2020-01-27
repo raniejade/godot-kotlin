@@ -29,21 +29,19 @@ open class FuncRef internal constructor(
   }
 
   fun setFunction(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_function.call(this.toVariant(), _arg, 1)
   }
 
   fun setInstance(instance: Object) {
-    val _args = VariantArray.new()
-    _args.append(instance)
-    __method_bind.set_instance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(instance)
+    __method_bind.set_instance.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): FuncRef = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("FuncRef".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton FuncRef" }
+      requireNotNull(fnPtr) { "No instance found for FuncRef" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       FuncRef(
         fn()

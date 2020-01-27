@@ -19,7 +19,7 @@ open class VisualScriptSwitch internal constructor(
     fun new(): VisualScriptSwitch = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSwitch".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptSwitch" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptSwitch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptSwitch(
         fn()

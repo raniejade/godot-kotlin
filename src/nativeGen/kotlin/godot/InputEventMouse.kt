@@ -34,21 +34,18 @@ open class InputEventMouse internal constructor(
   }
 
   fun setButtonMask(buttonMask: Int) {
-    val _args = VariantArray.new()
-    _args.append(buttonMask)
-    __method_bind.set_button_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buttonMask)
+    __method_bind.set_button_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlobalPosition(globalPosition: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(globalPosition)
-    __method_bind.set_global_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(globalPosition)
+    __method_bind.set_global_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_position.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

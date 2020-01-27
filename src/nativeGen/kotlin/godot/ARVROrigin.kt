@@ -23,15 +23,14 @@ open class ARVROrigin internal constructor(
   }
 
   fun setWorldScale(worldScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(worldScale)
-    __method_bind.set_world_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(worldScale)
+    __method_bind.set_world_scale.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ARVROrigin = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVROrigin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ARVROrigin" }
+      requireNotNull(fnPtr) { "No instance found for ARVROrigin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ARVROrigin(
         fn()

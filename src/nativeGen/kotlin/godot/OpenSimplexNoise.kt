@@ -34,9 +34,8 @@ open class OpenSimplexNoise internal constructor(
   }
 
   fun getNoise1d(x: Float): Float {
-    val _args = VariantArray.new()
-    _args.append(x)
-    val _ret = __method_bind.get_noise_1d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(x)
+    val _ret = __method_bind.get_noise_1d.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -49,9 +48,8 @@ open class OpenSimplexNoise internal constructor(
   }
 
   fun getNoise2dv(pos: Vector2): Float {
-    val _args = VariantArray.new()
-    _args.append(pos)
-    val _ret = __method_bind.get_noise_2dv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pos)
+    val _ret = __method_bind.get_noise_2dv.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -69,9 +67,8 @@ open class OpenSimplexNoise internal constructor(
   }
 
   fun getNoise3dv(pos: Vector3): Float {
-    val _args = VariantArray.new()
-    _args.append(pos)
-    val _ret = __method_bind.get_noise_3dv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pos)
+    val _ret = __method_bind.get_noise_3dv.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -106,9 +103,8 @@ open class OpenSimplexNoise internal constructor(
   }
 
   fun getSeamlessImage(size: Int): Image {
-    val _args = VariantArray.new()
-    _args.append(size)
-    val _ret = __method_bind.get_seamless_image.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    val _ret = __method_bind.get_seamless_image.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
@@ -118,40 +114,35 @@ open class OpenSimplexNoise internal constructor(
   }
 
   fun setLacunarity(lacunarity: Float) {
-    val _args = VariantArray.new()
-    _args.append(lacunarity)
-    __method_bind.set_lacunarity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lacunarity)
+    __method_bind.set_lacunarity.call(this.toVariant(), _arg, 1)
   }
 
   fun setOctaves(octaveCount: Int) {
-    val _args = VariantArray.new()
-    _args.append(octaveCount)
-    __method_bind.set_octaves.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(octaveCount)
+    __method_bind.set_octaves.call(this.toVariant(), _arg, 1)
   }
 
   fun setPeriod(period: Float) {
-    val _args = VariantArray.new()
-    _args.append(period)
-    __method_bind.set_period.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(period)
+    __method_bind.set_period.call(this.toVariant(), _arg, 1)
   }
 
   fun setPersistence(persistence: Float) {
-    val _args = VariantArray.new()
-    _args.append(persistence)
-    __method_bind.set_persistence.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(persistence)
+    __method_bind.set_persistence.call(this.toVariant(), _arg, 1)
   }
 
   fun setSeed(seed: Int) {
-    val _args = VariantArray.new()
-    _args.append(seed)
-    __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seed)
+    __method_bind.set_seed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): OpenSimplexNoise = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("OpenSimplexNoise".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton OpenSimplexNoise" }
+      requireNotNull(fnPtr) { "No instance found for OpenSimplexNoise" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       OpenSimplexNoise(
         fn()

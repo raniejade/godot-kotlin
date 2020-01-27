@@ -29,9 +29,8 @@ open class PCKPacker internal constructor(
   }
 
   fun flush(verbose: Boolean): GDError {
-    val _args = VariantArray.new()
-    _args.append(verbose)
-    val _ret = __method_bind.flush.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(verbose)
+    val _ret = __method_bind.flush.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -46,7 +45,7 @@ open class PCKPacker internal constructor(
   companion object {
     fun new(): PCKPacker = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PCKPacker".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PCKPacker" }
+      requireNotNull(fnPtr) { "No instance found for PCKPacker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PCKPacker(
         fn()

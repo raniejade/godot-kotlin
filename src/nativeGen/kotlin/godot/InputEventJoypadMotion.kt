@@ -29,22 +29,20 @@ open class InputEventJoypadMotion internal constructor(
   }
 
   fun setAxis(axis: Int) {
-    val _args = VariantArray.new()
-    _args.append(axis)
-    __method_bind.set_axis.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(axis)
+    __method_bind.set_axis.call(this.toVariant(), _arg, 1)
   }
 
   fun setAxisValue(axisValue: Float) {
-    val _args = VariantArray.new()
-    _args.append(axisValue)
-    __method_bind.set_axis_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(axisValue)
+    __method_bind.set_axis_value.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventJoypadMotion = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventJoypadMotion".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventJoypadMotion" }
+      requireNotNull(fnPtr) { "No instance found for InputEventJoypadMotion" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventJoypadMotion(
         fn()

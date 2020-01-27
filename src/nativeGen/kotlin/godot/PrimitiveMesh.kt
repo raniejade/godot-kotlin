@@ -39,21 +39,18 @@ open class PrimitiveMesh internal constructor(
   }
 
   fun setCustomAabb(aabb: AABB) {
-    val _args = VariantArray.new()
-    _args.append(aabb)
-    __method_bind.set_custom_aabb.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(aabb)
+    __method_bind.set_custom_aabb.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipFaces(flipFaces: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipFaces)
-    __method_bind.set_flip_faces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipFaces)
+    __method_bind.set_flip_faces.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

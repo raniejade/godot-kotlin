@@ -28,22 +28,20 @@ open class NavigationPolygonInstance internal constructor(
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setNavigationPolygon(navpoly: NavigationPolygon) {
-    val _args = VariantArray.new()
-    _args.append(navpoly)
-    __method_bind.set_navigation_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(navpoly)
+    __method_bind.set_navigation_polygon.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): NavigationPolygonInstance = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationPolygonInstance".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NavigationPolygonInstance" }
+      requireNotNull(fnPtr) { "No instance found for NavigationPolygonInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NavigationPolygonInstance(
         fn()

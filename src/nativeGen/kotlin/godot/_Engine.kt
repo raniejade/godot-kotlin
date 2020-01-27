@@ -72,9 +72,8 @@ open class _Engine internal constructor(
   }
 
   fun getSingleton(name: String): Object {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_singleton.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_singleton.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -94,9 +93,8 @@ open class _Engine internal constructor(
   }
 
   fun hasSingleton(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_singleton.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_singleton.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -111,33 +109,28 @@ open class _Engine internal constructor(
   }
 
   fun setEditorHint(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_editor_hint.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_editor_hint.call(this.toVariant(), _arg, 1)
   }
 
   fun setIterationsPerSecond(iterationsPerSecond: Int) {
-    val _args = VariantArray.new()
-    _args.append(iterationsPerSecond)
-    __method_bind.set_iterations_per_second.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(iterationsPerSecond)
+    __method_bind.set_iterations_per_second.call(this.toVariant(), _arg, 1)
   }
 
   fun setPhysicsJitterFix(physicsJitterFix: Float) {
-    val _args = VariantArray.new()
-    _args.append(physicsJitterFix)
-    __method_bind.set_physics_jitter_fix.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(physicsJitterFix)
+    __method_bind.set_physics_jitter_fix.call(this.toVariant(), _arg, 1)
   }
 
   fun setTargetFps(targetFps: Int) {
-    val _args = VariantArray.new()
-    _args.append(targetFps)
-    __method_bind.set_target_fps.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(targetFps)
+    __method_bind.set_target_fps.call(this.toVariant(), _arg, 1)
   }
 
   fun setTimeScale(timeScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(timeScale)
-    __method_bind.set_time_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(timeScale)
+    __method_bind.set_time_scale.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

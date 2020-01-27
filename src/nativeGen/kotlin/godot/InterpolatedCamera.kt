@@ -35,34 +35,30 @@ open class InterpolatedCamera internal constructor(
   }
 
   fun setInterpolationEnabled(targetPath: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(targetPath)
-    __method_bind.set_interpolation_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(targetPath)
+    __method_bind.set_interpolation_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeed(speed: Float) {
-    val _args = VariantArray.new()
-    _args.append(speed)
-    __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(speed)
+    __method_bind.set_speed.call(this.toVariant(), _arg, 1)
   }
 
   fun setTarget(target: Object) {
-    val _args = VariantArray.new()
-    _args.append(target)
-    __method_bind.set_target.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(target)
+    __method_bind.set_target.call(this.toVariant(), _arg, 1)
   }
 
   fun setTargetPath(targetPath: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(targetPath)
-    __method_bind.set_target_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(targetPath)
+    __method_bind.set_target_path.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InterpolatedCamera = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InterpolatedCamera".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InterpolatedCamera" }
+      requireNotNull(fnPtr) { "No instance found for InterpolatedCamera" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InterpolatedCamera(
         fn()

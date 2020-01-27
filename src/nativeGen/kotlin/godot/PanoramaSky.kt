@@ -22,15 +22,14 @@ open class PanoramaSky internal constructor(
   }
 
   fun setPanorama(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_panorama.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_panorama.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PanoramaSky = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PanoramaSky".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PanoramaSky" }
+      requireNotNull(fnPtr) { "No instance found for PanoramaSky" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PanoramaSky(
         fn()

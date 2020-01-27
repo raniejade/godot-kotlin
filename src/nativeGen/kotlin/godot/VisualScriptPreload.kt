@@ -22,16 +22,15 @@ open class VisualScriptPreload internal constructor(
   }
 
   fun setPreload(resource: Resource) {
-    val _args = VariantArray.new()
-    _args.append(resource)
-    __method_bind.set_preload.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resource)
+    __method_bind.set_preload.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptPreload = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPreload".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptPreload" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptPreload" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptPreload(
         fn()

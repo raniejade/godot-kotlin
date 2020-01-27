@@ -19,7 +19,7 @@ open class VisualShaderNodeVec3Uniform internal constructor(
     fun new(): VisualShaderNodeVec3Uniform = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVec3Uniform".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVec3Uniform" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVec3Uniform" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVec3Uniform(
         fn()

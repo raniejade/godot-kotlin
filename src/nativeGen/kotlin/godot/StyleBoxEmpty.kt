@@ -18,7 +18,7 @@ open class StyleBoxEmpty internal constructor(
   companion object {
     fun new(): StyleBoxEmpty = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxEmpty".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StyleBoxEmpty" }
+      requireNotNull(fnPtr) { "No instance found for StyleBoxEmpty" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StyleBoxEmpty(
         fn()

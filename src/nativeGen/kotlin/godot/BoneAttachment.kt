@@ -23,16 +23,15 @@ open class BoneAttachment internal constructor(
   }
 
   fun setBoneName(boneName: String) {
-    val _args = VariantArray.new()
-    _args.append(boneName)
-    __method_bind.set_bone_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(boneName)
+    __method_bind.set_bone_name.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): BoneAttachment = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BoneAttachment".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BoneAttachment" }
+      requireNotNull(fnPtr) { "No instance found for BoneAttachment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BoneAttachment(
         fn()

@@ -393,9 +393,8 @@ open class Environment internal constructor(
   }
 
   fun isGlowLevelEnabled(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.is_glow_level_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.is_glow_level_enabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -415,273 +414,228 @@ open class Environment internal constructor(
   }
 
   fun setAdjustmentBrightness(brightness: Float) {
-    val _args = VariantArray.new()
-    _args.append(brightness)
-    __method_bind.set_adjustment_brightness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(brightness)
+    __method_bind.set_adjustment_brightness.call(this.toVariant(), _arg, 1)
   }
 
   fun setAdjustmentColorCorrection(colorCorrection: Texture) {
-    val _args = VariantArray.new()
-    _args.append(colorCorrection)
-    __method_bind.set_adjustment_color_correction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(colorCorrection)
+    __method_bind.set_adjustment_color_correction.call(this.toVariant(), _arg, 1)
   }
 
   fun setAdjustmentContrast(contrast: Float) {
-    val _args = VariantArray.new()
-    _args.append(contrast)
-    __method_bind.set_adjustment_contrast.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(contrast)
+    __method_bind.set_adjustment_contrast.call(this.toVariant(), _arg, 1)
   }
 
   fun setAdjustmentEnable(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_adjustment_enable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_adjustment_enable.call(this.toVariant(), _arg, 1)
   }
 
   fun setAdjustmentSaturation(saturation: Float) {
-    val _args = VariantArray.new()
-    _args.append(saturation)
-    __method_bind.set_adjustment_saturation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(saturation)
+    __method_bind.set_adjustment_saturation.call(this.toVariant(), _arg, 1)
   }
 
   fun setAmbientLightColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_ambient_light_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_ambient_light_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setAmbientLightEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_ambient_light_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_ambient_light_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setAmbientLightSkyContribution(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_ambient_light_sky_contribution.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_ambient_light_sky_contribution.call(this.toVariant(), _arg, 1)
   }
 
   fun setBackground(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_background.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_background.call(this.toVariant(), _arg, 1)
   }
 
   fun setBgColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_bg_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_bg_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setBgEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_bg_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_bg_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setCameraFeedId(cameraFeedId: Int) {
-    val _args = VariantArray.new()
-    _args.append(cameraFeedId)
-    __method_bind.set_camera_feed_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cameraFeedId)
+    __method_bind.set_camera_feed_id.call(this.toVariant(), _arg, 1)
   }
 
   fun setCanvasMaxLayer(layer: Int) {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    __method_bind.set_canvas_max_layer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    __method_bind.set_canvas_max_layer.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurFarAmount(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_far_amount.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_far_amount.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurFarDistance(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_far_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_far_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurFarEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_dof_blur_far_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_dof_blur_far_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurFarQuality(intensity: Int) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_far_quality.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_far_quality.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurFarTransition(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_far_transition.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_far_transition.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurNearAmount(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_near_amount.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_near_amount.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurNearDistance(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_near_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_near_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurNearEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_dof_blur_near_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_dof_blur_near_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurNearQuality(level: Int) {
-    val _args = VariantArray.new()
-    _args.append(level)
-    __method_bind.set_dof_blur_near_quality.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(level)
+    __method_bind.set_dof_blur_near_quality.call(this.toVariant(), _arg, 1)
   }
 
   fun setDofBlurNearTransition(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_dof_blur_near_transition.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_dof_blur_near_transition.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_fog_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_fog_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogDepthBegin(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_fog_depth_begin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_fog_depth_begin.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogDepthCurve(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_fog_depth_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_fog_depth_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogDepthEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_fog_depth_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_fog_depth_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogDepthEnd(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_fog_depth_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_fog_depth_end.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_fog_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_fog_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogHeightCurve(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_fog_height_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_fog_height_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogHeightEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_fog_height_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_fog_height_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogHeightMax(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_fog_height_max.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_fog_height_max.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogHeightMin(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_fog_height_min.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_fog_height_min.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogSunAmount(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_fog_sun_amount.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_fog_sun_amount.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogSunColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_fog_sun_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_fog_sun_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogTransmitCurve(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_fog_transmit_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_fog_transmit_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setFogTransmitEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_fog_transmit_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_fog_transmit_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowBicubicUpscale(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_glow_bicubic_upscale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_glow_bicubic_upscale.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowBlendMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_glow_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_glow_blend_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowBloom(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_glow_bloom.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_glow_bloom.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_glow_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_glow_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowHdrBleedScale(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_glow_hdr_bleed_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_glow_hdr_bleed_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowHdrBleedThreshold(threshold: Float) {
-    val _args = VariantArray.new()
-    _args.append(threshold)
-    __method_bind.set_glow_hdr_bleed_threshold.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(threshold)
+    __method_bind.set_glow_hdr_bleed_threshold.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowHdrLuminanceCap(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_glow_hdr_luminance_cap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_glow_hdr_luminance_cap.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowIntensity(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_glow_intensity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_glow_intensity.call(this.toVariant(), _arg, 1)
   }
 
   fun setGlowLevel(idx: Int, enabled: Boolean) {
@@ -692,195 +646,163 @@ open class Environment internal constructor(
   }
 
   fun setGlowStrength(strength: Float) {
-    val _args = VariantArray.new()
-    _args.append(strength)
-    __method_bind.set_glow_strength.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(strength)
+    __method_bind.set_glow_strength.call(this.toVariant(), _arg, 1)
   }
 
   fun setSky(sky: Sky) {
-    val _args = VariantArray.new()
-    _args.append(sky)
-    __method_bind.set_sky.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sky)
+    __method_bind.set_sky.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyCustomFov(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_sky_custom_fov.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_sky_custom_fov.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyOrientation(orientation: Basis) {
-    val _args = VariantArray.new()
-    _args.append(orientation)
-    __method_bind.set_sky_orientation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(orientation)
+    __method_bind.set_sky_orientation.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyRotation(eulerRadians: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(eulerRadians)
-    __method_bind.set_sky_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(eulerRadians)
+    __method_bind.set_sky_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyRotationDegrees(eulerDegrees: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(eulerDegrees)
-    __method_bind.set_sky_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(eulerDegrees)
+    __method_bind.set_sky_rotation_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoAoChannelAffect(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_ssao_ao_channel_affect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_ssao_ao_channel_affect.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoBias(bias: Float) {
-    val _args = VariantArray.new()
-    _args.append(bias)
-    __method_bind.set_ssao_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bias)
+    __method_bind.set_ssao_bias.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoBlur(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_ssao_blur.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_ssao_blur.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_ssao_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_ssao_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoDirectLightAffect(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_ssao_direct_light_affect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_ssao_direct_light_affect.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoEdgeSharpness(edgeSharpness: Float) {
-    val _args = VariantArray.new()
-    _args.append(edgeSharpness)
-    __method_bind.set_ssao_edge_sharpness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(edgeSharpness)
+    __method_bind.set_ssao_edge_sharpness.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_ssao_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_ssao_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoIntensity(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_ssao_intensity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_ssao_intensity.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoIntensity2(intensity: Float) {
-    val _args = VariantArray.new()
-    _args.append(intensity)
-    __method_bind.set_ssao_intensity2.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(intensity)
+    __method_bind.set_ssao_intensity2.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoQuality(quality: Int) {
-    val _args = VariantArray.new()
-    _args.append(quality)
-    __method_bind.set_ssao_quality.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(quality)
+    __method_bind.set_ssao_quality.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_ssao_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_ssao_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsaoRadius2(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_ssao_radius2.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_ssao_radius2.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsrDepthTolerance(depthTolerance: Float) {
-    val _args = VariantArray.new()
-    _args.append(depthTolerance)
-    __method_bind.set_ssr_depth_tolerance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depthTolerance)
+    __method_bind.set_ssr_depth_tolerance.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsrEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_ssr_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_ssr_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsrFadeIn(fadeIn: Float) {
-    val _args = VariantArray.new()
-    _args.append(fadeIn)
-    __method_bind.set_ssr_fade_in.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fadeIn)
+    __method_bind.set_ssr_fade_in.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsrFadeOut(fadeOut: Float) {
-    val _args = VariantArray.new()
-    _args.append(fadeOut)
-    __method_bind.set_ssr_fade_out.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fadeOut)
+    __method_bind.set_ssr_fade_out.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsrMaxSteps(maxSteps: Int) {
-    val _args = VariantArray.new()
-    _args.append(maxSteps)
-    __method_bind.set_ssr_max_steps.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxSteps)
+    __method_bind.set_ssr_max_steps.call(this.toVariant(), _arg, 1)
   }
 
   fun setSsrRough(rough: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(rough)
-    __method_bind.set_ssr_rough.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rough)
+    __method_bind.set_ssr_rough.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapAutoExposure(autoExposure: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(autoExposure)
-    __method_bind.set_tonemap_auto_exposure.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(autoExposure)
+    __method_bind.set_tonemap_auto_exposure.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapAutoExposureGrey(exposureGrey: Float) {
-    val _args = VariantArray.new()
-    _args.append(exposureGrey)
-    __method_bind.set_tonemap_auto_exposure_grey.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exposureGrey)
+    __method_bind.set_tonemap_auto_exposure_grey.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapAutoExposureMax(exposureMax: Float) {
-    val _args = VariantArray.new()
-    _args.append(exposureMax)
-    __method_bind.set_tonemap_auto_exposure_max.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exposureMax)
+    __method_bind.set_tonemap_auto_exposure_max.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapAutoExposureMin(exposureMin: Float) {
-    val _args = VariantArray.new()
-    _args.append(exposureMin)
-    __method_bind.set_tonemap_auto_exposure_min.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exposureMin)
+    __method_bind.set_tonemap_auto_exposure_min.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapAutoExposureSpeed(exposureSpeed: Float) {
-    val _args = VariantArray.new()
-    _args.append(exposureSpeed)
-    __method_bind.set_tonemap_auto_exposure_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exposureSpeed)
+    __method_bind.set_tonemap_auto_exposure_speed.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapExposure(exposure: Float) {
-    val _args = VariantArray.new()
-    _args.append(exposure)
-    __method_bind.set_tonemap_exposure.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exposure)
+    __method_bind.set_tonemap_exposure.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapWhite(white: Float) {
-    val _args = VariantArray.new()
-    _args.append(white)
-    __method_bind.set_tonemap_white.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(white)
+    __method_bind.set_tonemap_white.call(this.toVariant(), _arg, 1)
   }
 
   fun setTonemapper(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_tonemapper.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_tonemapper.call(this.toVariant(), _arg, 1)
   }
 
   enum class SSAOBlur(
@@ -1080,7 +1002,7 @@ open class Environment internal constructor(
 
     fun new(): Environment = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Environment".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Environment" }
+      requireNotNull(fnPtr) { "No instance found for Environment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Environment(
         fn()

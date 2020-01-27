@@ -28,15 +28,13 @@ open class OmniLight internal constructor(
   }
 
   fun setShadowDetail(detail: Int) {
-    val _args = VariantArray.new()
-    _args.append(detail)
-    __method_bind.set_shadow_detail.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(detail)
+    __method_bind.set_shadow_detail.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_shadow_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_shadow_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class ShadowMode(
@@ -88,7 +86,7 @@ open class OmniLight internal constructor(
 
     fun new(): OmniLight = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("OmniLight".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton OmniLight" }
+      requireNotNull(fnPtr) { "No instance found for OmniLight" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       OmniLight(
         fn()

@@ -23,22 +23,20 @@ open class ConvexPolygonShape2D internal constructor(
   }
 
   fun setPointCloud(pointCloud: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(pointCloud)
-    __method_bind.set_point_cloud.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pointCloud)
+    __method_bind.set_point_cloud.call(this.toVariant(), _arg, 1)
   }
 
   fun setPoints(points: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(points)
-    __method_bind.set_points.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(points)
+    __method_bind.set_points.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ConvexPolygonShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConvexPolygonShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ConvexPolygonShape2D" }
+      requireNotNull(fnPtr) { "No instance found for ConvexPolygonShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConvexPolygonShape2D(
         fn()

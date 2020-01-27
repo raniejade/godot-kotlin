@@ -22,16 +22,15 @@ open class MultiMeshInstance internal constructor(
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
-    val _args = VariantArray.new()
-    _args.append(multimesh)
-    __method_bind.set_multimesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(multimesh)
+    __method_bind.set_multimesh.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): MultiMeshInstance = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMeshInstance".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MultiMeshInstance" }
+      requireNotNull(fnPtr) { "No instance found for MultiMeshInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MultiMeshInstance(
         fn()

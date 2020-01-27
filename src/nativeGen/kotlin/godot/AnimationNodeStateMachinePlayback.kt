@@ -35,9 +35,8 @@ open class AnimationNodeStateMachinePlayback internal constructor(
   }
 
   fun start(node: String) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.start.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.start.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -45,16 +44,15 @@ open class AnimationNodeStateMachinePlayback internal constructor(
   }
 
   fun travel(toNode: String) {
-    val _args = VariantArray.new()
-    _args.append(toNode)
-    __method_bind.travel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toNode)
+    __method_bind.travel.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AnimationNodeStateMachinePlayback = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeStateMachinePlayback".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeStateMachinePlayback" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeStateMachinePlayback" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeStateMachinePlayback(
         fn()

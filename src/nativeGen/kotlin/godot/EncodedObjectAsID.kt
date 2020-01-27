@@ -23,16 +23,15 @@ open class EncodedObjectAsID internal constructor(
   }
 
   fun setObjectId(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.set_object_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.set_object_id.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): EncodedObjectAsID = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EncodedObjectAsID".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EncodedObjectAsID" }
+      requireNotNull(fnPtr) { "No instance found for EncodedObjectAsID" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EncodedObjectAsID(
         fn()

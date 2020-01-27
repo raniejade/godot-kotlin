@@ -33,16 +33,14 @@ open class NativeScript internal constructor(
   }
 
   fun getMethodDocumentation(method: String): String {
-    val _args = VariantArray.new()
-    _args.append(method)
-    val _ret = __method_bind.get_method_documentation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(method)
+    val _ret = __method_bind.get_method_documentation.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getPropertyDocumentation(path: String): String {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.get_property_documentation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.get_property_documentation.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -57,9 +55,8 @@ open class NativeScript internal constructor(
   }
 
   fun getSignalDocumentation(signalName: String): String {
-    val _args = VariantArray.new()
-    _args.append(signalName)
-    val _ret = __method_bind.get_signal_documentation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(signalName)
+    val _ret = __method_bind.get_signal_documentation.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -69,33 +66,29 @@ open class NativeScript internal constructor(
   }
 
   fun setClassName(className: String) {
-    val _args = VariantArray.new()
-    _args.append(className)
-    __method_bind.set_class_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(className)
+    __method_bind.set_class_name.call(this.toVariant(), _arg, 1)
   }
 
   fun setLibrary(library: GDNativeLibrary) {
-    val _args = VariantArray.new()
-    _args.append(library)
-    __method_bind.set_library.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(library)
+    __method_bind.set_library.call(this.toVariant(), _arg, 1)
   }
 
   fun setScriptClassIconPath(iconPath: String) {
-    val _args = VariantArray.new()
-    _args.append(iconPath)
-    __method_bind.set_script_class_icon_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(iconPath)
+    __method_bind.set_script_class_icon_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setScriptClassName(className: String) {
-    val _args = VariantArray.new()
-    _args.append(className)
-    __method_bind.set_script_class_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(className)
+    __method_bind.set_script_class_name.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): NativeScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("NativeScript".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NativeScript" }
+      requireNotNull(fnPtr) { "No instance found for NativeScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NativeScript(
         fn()

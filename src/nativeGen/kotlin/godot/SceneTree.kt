@@ -45,16 +45,14 @@ open class SceneTree internal constructor(
   }
 
   fun changeScene(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.change_scene.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.change_scene.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun changeSceneTo(packedScene: PackedScene): GDError {
-    val _args = VariantArray.new()
-    _args.append(packedScene)
-    val _ret = __method_bind.change_scene_to.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(packedScene)
+    val _ret = __method_bind.change_scene_to.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -107,9 +105,8 @@ open class SceneTree internal constructor(
   }
 
   fun getNodesInGroup(group: String): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(group)
-    val _ret = __method_bind.get_nodes_in_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(group)
+    val _ret = __method_bind.get_nodes_in_group.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -124,9 +121,8 @@ open class SceneTree internal constructor(
   }
 
   fun hasGroup(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_group.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -195,9 +191,8 @@ open class SceneTree internal constructor(
   }
 
   fun queueDelete(obj: Object) {
-    val _args = VariantArray.new()
-    _args.append(obj)
-    __method_bind.queue_delete.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(obj)
+    __method_bind.queue_delete.call(this.toVariant(), _arg, 1)
   }
 
   fun quit() {
@@ -210,33 +205,28 @@ open class SceneTree internal constructor(
   }
 
   fun setAutoAcceptQuit(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_auto_accept_quit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_auto_accept_quit.call(this.toVariant(), _arg, 1)
   }
 
   fun setCurrentScene(childNode: Node) {
-    val _args = VariantArray.new()
-    _args.append(childNode)
-    __method_bind.set_current_scene.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(childNode)
+    __method_bind.set_current_scene.call(this.toVariant(), _arg, 1)
   }
 
   fun setDebugCollisionsHint(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_debug_collisions_hint.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_debug_collisions_hint.call(this.toVariant(), _arg, 1)
   }
 
   fun setDebugNavigationHint(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_debug_navigation_hint.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_debug_navigation_hint.call(this.toVariant(), _arg, 1)
   }
 
   fun setEditedSceneRoot(scene: Node) {
-    val _args = VariantArray.new()
-    _args.append(scene)
-    __method_bind.set_edited_scene_root.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scene)
+    __method_bind.set_edited_scene_root.call(this.toVariant(), _arg, 1)
   }
 
   fun setGroup(
@@ -270,39 +260,33 @@ open class SceneTree internal constructor(
   }
 
   fun setMultiplayer(multiplayer: MultiplayerAPI) {
-    val _args = VariantArray.new()
-    _args.append(multiplayer)
-    __method_bind.set_multiplayer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(multiplayer)
+    __method_bind.set_multiplayer.call(this.toVariant(), _arg, 1)
   }
 
   fun setMultiplayerPollEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_multiplayer_poll_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_multiplayer_poll_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
-    val _args = VariantArray.new()
-    _args.append(peer)
-    __method_bind.set_network_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peer)
+    __method_bind.set_network_peer.call(this.toVariant(), _arg, 1)
   }
 
   fun setPause(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_pause.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_pause.call(this.toVariant(), _arg, 1)
   }
 
   fun setQuitOnGoBack(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_quit_on_go_back.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_quit_on_go_back.call(this.toVariant(), _arg, 1)
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(refuse)
-    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(refuse)
+    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _arg, 1)
   }
 
   fun setScreenStretch(
@@ -320,9 +304,8 @@ open class SceneTree internal constructor(
   }
 
   fun setUseFontOversampling(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_font_oversampling.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_font_oversampling.call(this.toVariant(), _arg, 1)
   }
 
   enum class StretchAspect(
@@ -421,7 +404,7 @@ open class SceneTree internal constructor(
 
     fun new(): SceneTree = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SceneTree".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SceneTree" }
+      requireNotNull(fnPtr) { "No instance found for SceneTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SceneTree(
         fn()

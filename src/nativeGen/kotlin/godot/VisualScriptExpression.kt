@@ -19,7 +19,7 @@ open class VisualScriptExpression internal constructor(
     fun new(): VisualScriptExpression = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptExpression".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptExpression" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptExpression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptExpression(
         fn()

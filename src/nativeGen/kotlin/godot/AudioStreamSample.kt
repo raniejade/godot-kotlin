@@ -57,52 +57,44 @@ open class AudioStreamSample internal constructor(
   }
 
   fun saveToWav(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.save_to_wav.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.save_to_wav.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setData(data: PoolByteArray) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.set_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setFormat(format: Int) {
-    val _args = VariantArray.new()
-    _args.append(format)
-    __method_bind.set_format.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(format)
+    __method_bind.set_format.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoopBegin(loopBegin: Int) {
-    val _args = VariantArray.new()
-    _args.append(loopBegin)
-    __method_bind.set_loop_begin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loopBegin)
+    __method_bind.set_loop_begin.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoopEnd(loopEnd: Int) {
-    val _args = VariantArray.new()
-    _args.append(loopEnd)
-    __method_bind.set_loop_end.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loopEnd)
+    __method_bind.set_loop_end.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoopMode(loopMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(loopMode)
-    __method_bind.set_loop_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loopMode)
+    __method_bind.set_loop_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setMixRate(mixRate: Int) {
-    val _args = VariantArray.new()
-    _args.append(mixRate)
-    __method_bind.set_mix_rate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mixRate)
+    __method_bind.set_mix_rate.call(this.toVariant(), _arg, 1)
   }
 
   fun setStereo(stereo: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(stereo)
-    __method_bind.set_stereo.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stereo)
+    __method_bind.set_stereo.call(this.toVariant(), _arg, 1)
   }
 
   enum class LoopMode(
@@ -167,7 +159,7 @@ open class AudioStreamSample internal constructor(
     fun new(): AudioStreamSample = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamSample".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamSample" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamSample" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamSample(
         fn()

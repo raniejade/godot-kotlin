@@ -57,30 +57,26 @@ open class AnimationNodeBlendTree internal constructor(
   }
 
   fun getNode(name: String): AnimationNode {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_node.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::AnimationNode)!!
   }
 
   fun getNodePosition(name: String): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.get_node_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.get_node_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun hasNode(name: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.has_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.has_node.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeNode(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.remove_node.call(this.toVariant(), _arg, 1)
   }
 
   fun renameNode(name: String, newName: String) {
@@ -91,9 +87,8 @@ open class AnimationNodeBlendTree internal constructor(
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_graph_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_graph_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodePosition(name: String, position: Vector2) {
@@ -119,7 +114,7 @@ open class AnimationNodeBlendTree internal constructor(
     fun new(): AnimationNodeBlendTree = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendTree".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeBlendTree" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeBlendTree(
         fn()

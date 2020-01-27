@@ -18,7 +18,7 @@ open class PopupPanel internal constructor(
   companion object {
     fun new(): PopupPanel = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PopupPanel".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PopupPanel" }
+      requireNotNull(fnPtr) { "No instance found for PopupPanel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PopupPanel(
         fn()

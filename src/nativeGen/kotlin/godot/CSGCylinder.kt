@@ -50,45 +50,39 @@ open class CSGCylinder internal constructor(
   }
 
   fun setCone(cone: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(cone)
-    __method_bind.set_cone.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cone)
+    __method_bind.set_cone.call(this.toVariant(), _arg, 1)
   }
 
   fun setHeight(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setSides(sides: Int) {
-    val _args = VariantArray.new()
-    _args.append(sides)
-    __method_bind.set_sides.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sides)
+    __method_bind.set_sides.call(this.toVariant(), _arg, 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(smoothFaces)
-    __method_bind.set_smooth_faces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(smoothFaces)
+    __method_bind.set_smooth_faces.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CSGCylinder = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCylinder".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGCylinder" }
+      requireNotNull(fnPtr) { "No instance found for CSGCylinder" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGCylinder(
         fn()

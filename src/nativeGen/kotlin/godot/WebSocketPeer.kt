@@ -47,9 +47,8 @@ open class WebSocketPeer internal constructor(
   }
 
   fun setWriteMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_write_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_write_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun wasStringPacket(): Boolean {
@@ -83,7 +82,7 @@ open class WebSocketPeer internal constructor(
 
     fun new(): WebSocketPeer = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketPeer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebSocketPeer" }
+      requireNotNull(fnPtr) { "No instance found for WebSocketPeer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebSocketPeer(
         fn()

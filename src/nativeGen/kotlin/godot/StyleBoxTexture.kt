@@ -22,9 +22,8 @@ open class StyleBoxTexture internal constructor(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
   fun getExpandMarginSize(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_expand_margin_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_expand_margin_size.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -34,9 +33,8 @@ open class StyleBoxTexture internal constructor(
   }
 
   fun getMarginSize(margin: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    val _ret = __method_bind.get_margin_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    val _ret = __method_bind.get_margin_size.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -71,15 +69,13 @@ open class StyleBoxTexture internal constructor(
   }
 
   fun setDrawCenter(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_draw_center.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_draw_center.call(this.toVariant(), _arg, 1)
   }
 
   fun setExpandMarginAll(size: Float) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_expand_margin_all.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_expand_margin_all.call(this.toVariant(), _arg, 1)
   }
 
   fun setExpandMarginIndividual(
@@ -104,9 +100,8 @@ open class StyleBoxTexture internal constructor(
   }
 
   fun setHAxisStretchMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_h_axis_stretch_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setMarginSize(margin: Int, size: Float) {
@@ -117,33 +112,28 @@ open class StyleBoxTexture internal constructor(
   }
 
   fun setModulate(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_modulate.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _args = VariantArray.new()
-    _args.append(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normalMap)
+    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
   }
 
   fun setRegionRect(region: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(region)
-    __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(region)
+    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setVAxisStretchMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_v_axis_stretch_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class AxisStretchMode(
@@ -177,7 +167,7 @@ open class StyleBoxTexture internal constructor(
     fun new(): StyleBoxTexture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("StyleBoxTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StyleBoxTexture" }
+      requireNotNull(fnPtr) { "No instance found for StyleBoxTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StyleBoxTexture(
         fn()

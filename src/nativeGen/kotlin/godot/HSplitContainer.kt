@@ -19,7 +19,7 @@ open class HSplitContainer internal constructor(
     fun new(): HSplitContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("HSplitContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HSplitContainer" }
+      requireNotNull(fnPtr) { "No instance found for HSplitContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HSplitContainer(
         fn()

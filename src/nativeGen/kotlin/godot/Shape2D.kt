@@ -87,9 +87,8 @@ open class Shape2D internal constructor(
   }
 
   fun setCustomSolverBias(bias: Float) {
-    val _args = VariantArray.new()
-    _args.append(bias)
-    __method_bind.set_custom_solver_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bias)
+    __method_bind.set_custom_solver_bias.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

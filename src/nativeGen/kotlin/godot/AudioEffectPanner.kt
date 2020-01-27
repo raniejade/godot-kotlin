@@ -23,16 +23,15 @@ open class AudioEffectPanner internal constructor(
   }
 
   fun setPan(cpanume: Float) {
-    val _args = VariantArray.new()
-    _args.append(cpanume)
-    __method_bind.set_pan.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cpanume)
+    __method_bind.set_pan.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectPanner = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPanner".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectPanner" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectPanner" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectPanner(
         fn()

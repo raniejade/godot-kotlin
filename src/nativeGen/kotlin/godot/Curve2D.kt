@@ -55,16 +55,14 @@ open class Curve2D internal constructor(
   }
 
   fun getClosestOffset(toPoint: Vector2): Float {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_offset.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getClosestPoint(toPoint: Vector2): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(toPoint)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPoint)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -74,23 +72,20 @@ open class Curve2D internal constructor(
   }
 
   fun getPointIn(idx: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_point_in.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_point_in.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPointOut(idx: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_point_out.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_point_out.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPointPosition(idx: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -111,22 +106,19 @@ open class Curve2D internal constructor(
   }
 
   fun interpolatef(fofs: Float): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(fofs)
-    val _ret = __method_bind.interpolatef.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fofs)
+    val _ret = __method_bind.interpolatef.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun removePoint(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
   }
 
   fun setBakeInterval(distance: Float) {
-    val _args = VariantArray.new()
-    _args.append(distance)
-    __method_bind.set_bake_interval.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(distance)
+    __method_bind.set_bake_interval.call(this.toVariant(), _arg, 1)
   }
 
   fun setPointIn(idx: Int, position: Vector2) {
@@ -161,7 +153,7 @@ open class Curve2D internal constructor(
   companion object {
     fun new(): Curve2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Curve2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Curve2D" }
+      requireNotNull(fnPtr) { "No instance found for Curve2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Curve2D(
         fn()

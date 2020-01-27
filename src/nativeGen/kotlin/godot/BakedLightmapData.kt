@@ -69,54 +69,47 @@ open class BakedLightmapData internal constructor(
   }
 
   fun getUserLightmap(userIdx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(userIdx)
-    val _ret = __method_bind.get_user_lightmap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(userIdx)
+    val _ret = __method_bind.get_user_lightmap.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getUserPath(userIdx: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(userIdx)
-    val _ret = __method_bind.get_user_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(userIdx)
+    val _ret = __method_bind.get_user_path.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
   fun setBounds(bounds: AABB) {
-    val _args = VariantArray.new()
-    _args.append(bounds)
-    __method_bind.set_bounds.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bounds)
+    __method_bind.set_bounds.call(this.toVariant(), _arg, 1)
   }
 
   fun setCellSpaceTransform(xform: Transform) {
-    val _args = VariantArray.new()
-    _args.append(xform)
-    __method_bind.set_cell_space_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(xform)
+    __method_bind.set_cell_space_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setCellSubdiv(cellSubdiv: Int) {
-    val _args = VariantArray.new()
-    _args.append(cellSubdiv)
-    __method_bind.set_cell_subdiv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cellSubdiv)
+    __method_bind.set_cell_subdiv.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setOctree(octree: PoolByteArray) {
-    val _args = VariantArray.new()
-    _args.append(octree)
-    __method_bind.set_octree.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(octree)
+    __method_bind.set_octree.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): BakedLightmapData = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BakedLightmapData".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BakedLightmapData" }
+      requireNotNull(fnPtr) { "No instance found for BakedLightmapData" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BakedLightmapData(
         fn()

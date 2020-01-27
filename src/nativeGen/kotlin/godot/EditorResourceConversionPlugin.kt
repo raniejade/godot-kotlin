@@ -19,7 +19,7 @@ open class EditorResourceConversionPlugin internal constructor(
     fun new(): EditorResourceConversionPlugin = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorResourceConversionPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorResourceConversionPlugin" }
+      requireNotNull(fnPtr) { "No instance found for EditorResourceConversionPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorResourceConversionPlugin(
         fn()

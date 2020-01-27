@@ -19,9 +19,8 @@ open class _JSON internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun parse(json: String): JSONParseResult {
-    val _args = VariantArray.new()
-    _args.append(json)
-    val _ret = __method_bind.parse.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(json)
+    val _ret = __method_bind.parse.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::JSONParseResult)!!
   }
 

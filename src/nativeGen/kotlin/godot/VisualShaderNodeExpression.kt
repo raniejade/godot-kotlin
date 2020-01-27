@@ -27,16 +27,15 @@ open class VisualShaderNodeExpression internal constructor(
   }
 
   fun setExpression(expression: String) {
-    val _args = VariantArray.new()
-    _args.append(expression)
-    __method_bind.set_expression.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(expression)
+    __method_bind.set_expression.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeExpression = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeExpression".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeExpression" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeExpression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeExpression(
         fn()

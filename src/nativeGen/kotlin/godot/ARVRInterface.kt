@@ -71,21 +71,18 @@ open class ARVRInterface internal constructor(
   }
 
   fun setAnchorDetectionIsEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_anchor_detection_is_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_anchor_detection_is_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setIsInitialized(initialized: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(initialized)
-    __method_bind.set_is_initialized.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(initialized)
+    __method_bind.set_is_initialized.call(this.toVariant(), _arg, 1)
   }
 
   fun setIsPrimary(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_is_primary.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_is_primary.call(this.toVariant(), _arg, 1)
   }
 
   fun uninitialize() {

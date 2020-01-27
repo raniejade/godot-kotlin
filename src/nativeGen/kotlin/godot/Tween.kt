@@ -229,34 +229,29 @@ open class Tween internal constructor(
   }
 
   fun seek(time: Float): Boolean {
-    val _args = VariantArray.new()
-    _args.append(time)
-    val _ret = __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(time)
+    val _ret = __method_bind.seek.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun setActive(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setRepeat(repeat: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(repeat)
-    __method_bind.set_repeat.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(repeat)
+    __method_bind.set_repeat.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeedScale(speed: Float) {
-    val _args = VariantArray.new()
-    _args.append(speed)
-    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(speed)
+    __method_bind.set_speed_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setTweenProcessMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_tween_process_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_tween_process_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun start(): Boolean {
@@ -448,7 +443,7 @@ open class Tween internal constructor(
 
     fun new(): Tween = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tween".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Tween" }
+      requireNotNull(fnPtr) { "No instance found for Tween" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Tween(
         fn()

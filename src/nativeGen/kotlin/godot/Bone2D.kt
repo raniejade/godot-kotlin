@@ -44,21 +44,19 @@ open class Bone2D internal constructor(
   }
 
   fun setDefaultLength(defaultLength: Float) {
-    val _args = VariantArray.new()
-    _args.append(defaultLength)
-    __method_bind.set_default_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(defaultLength)
+    __method_bind.set_default_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setRest(rest: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(rest)
-    __method_bind.set_rest.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rest)
+    __method_bind.set_rest.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Bone2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Bone2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Bone2D" }
+      requireNotNull(fnPtr) { "No instance found for Bone2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Bone2D(
         fn()

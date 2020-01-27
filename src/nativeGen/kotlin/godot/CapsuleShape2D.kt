@@ -28,22 +28,20 @@ open class CapsuleShape2D internal constructor(
   }
 
   fun setHeight(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CapsuleShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("CapsuleShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CapsuleShape2D" }
+      requireNotNull(fnPtr) { "No instance found for CapsuleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CapsuleShape2D(
         fn()

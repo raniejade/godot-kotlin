@@ -19,7 +19,7 @@ open class VisualScriptIterator internal constructor(
     fun new(): VisualScriptIterator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptIterator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptIterator" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptIterator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptIterator(
         fn()

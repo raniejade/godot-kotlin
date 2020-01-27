@@ -36,16 +36,14 @@ open class LargeTexture internal constructor(
   }
 
   fun getPieceOffset(idx: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_piece_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_piece_offset.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPieceTexture(idx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_piece_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_piece_texture.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -64,15 +62,14 @@ open class LargeTexture internal constructor(
   }
 
   fun setSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): LargeTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LargeTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton LargeTexture" }
+      requireNotNull(fnPtr) { "No instance found for LargeTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       LargeTexture(
         fn()

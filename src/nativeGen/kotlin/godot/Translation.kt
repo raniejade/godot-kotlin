@@ -27,9 +27,8 @@ open class Translation internal constructor(
   }
 
   fun eraseMessage(srcMessage: String) {
-    val _args = VariantArray.new()
-    _args.append(srcMessage)
-    __method_bind.erase_message.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(srcMessage)
+    __method_bind.erase_message.call(this.toVariant(), _arg, 1)
   }
 
   fun getLocale(): String {
@@ -38,9 +37,8 @@ open class Translation internal constructor(
   }
 
   fun getMessage(srcMessage: String): String {
-    val _args = VariantArray.new()
-    _args.append(srcMessage)
-    val _ret = __method_bind.get_message.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(srcMessage)
+    val _ret = __method_bind.get_message.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -55,15 +53,14 @@ open class Translation internal constructor(
   }
 
   fun setLocale(locale: String) {
-    val _args = VariantArray.new()
-    _args.append(locale)
-    __method_bind.set_locale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(locale)
+    __method_bind.set_locale.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Translation = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Translation".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Translation" }
+      requireNotNull(fnPtr) { "No instance found for Translation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Translation(
         fn()

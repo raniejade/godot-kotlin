@@ -68,7 +68,7 @@ open class PacketPeerUDP internal constructor(
   companion object {
     fun new(): PacketPeerUDP = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerUDP".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PacketPeerUDP" }
+      requireNotNull(fnPtr) { "No instance found for PacketPeerUDP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PacketPeerUDP(
         fn()

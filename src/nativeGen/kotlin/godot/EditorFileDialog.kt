@@ -20,9 +20,8 @@ open class EditorFileDialog internal constructor(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
   fun addFilter(filter: String) {
-    val _args = VariantArray.new()
-    _args.append(filter)
-    __method_bind.add_filter.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(filter)
+    __method_bind.add_filter.call(this.toVariant(), _arg, 1)
   }
 
   fun clearFilters() {
@@ -79,51 +78,43 @@ open class EditorFileDialog internal constructor(
   }
 
   fun setAccess(access: Int) {
-    val _args = VariantArray.new()
-    _args.append(access)
-    __method_bind.set_access.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(access)
+    __method_bind.set_access.call(this.toVariant(), _arg, 1)
   }
 
   fun setCurrentDir(dir: String) {
-    val _args = VariantArray.new()
-    _args.append(dir)
-    __method_bind.set_current_dir.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(dir)
+    __method_bind.set_current_dir.call(this.toVariant(), _arg, 1)
   }
 
   fun setCurrentFile(file: String) {
-    val _args = VariantArray.new()
-    _args.append(file)
-    __method_bind.set_current_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(file)
+    __method_bind.set_current_file.call(this.toVariant(), _arg, 1)
   }
 
   fun setCurrentPath(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_current_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_current_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisableOverwriteWarning(disable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disable)
-    __method_bind.set_disable_overwrite_warning.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disable)
+    __method_bind.set_disable_overwrite_warning.call(this.toVariant(), _arg, 1)
   }
 
   fun setDisplayMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_display_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_display_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setShowHiddenFiles(show: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(show)
-    __method_bind.set_show_hidden_files.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(show)
+    __method_bind.set_show_hidden_files.call(this.toVariant(), _arg, 1)
   }
 
   enum class DisplayMode(
@@ -215,7 +206,7 @@ open class EditorFileDialog internal constructor(
     fun new(): EditorFileDialog = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorFileDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorFileDialog" }
+      requireNotNull(fnPtr) { "No instance found for EditorFileDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorFileDialog(
         fn()

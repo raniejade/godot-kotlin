@@ -31,7 +31,7 @@ open class EditorScenePostImport internal constructor(
     fun new(): EditorScenePostImport = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorScenePostImport".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorScenePostImport" }
+      requireNotNull(fnPtr) { "No instance found for EditorScenePostImport" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorScenePostImport(
         fn()

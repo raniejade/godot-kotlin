@@ -30,7 +30,7 @@ open class _Semaphore internal constructor(
   companion object {
     fun new(): _Semaphore = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Semaphore".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton _Semaphore" }
+      requireNotNull(fnPtr) { "No instance found for _Semaphore" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       _Semaphore(
         fn()

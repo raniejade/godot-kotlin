@@ -39,27 +39,23 @@ open class Slider internal constructor(
   }
 
   fun setEditable(editable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(editable)
-    __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(editable)
+    __method_bind.set_editable.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollable(scrollable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(scrollable)
-    __method_bind.set_scrollable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scrollable)
+    __method_bind.set_scrollable.call(this.toVariant(), _arg, 1)
   }
 
   fun setTicks(count: Int) {
-    val _args = VariantArray.new()
-    _args.append(count)
-    __method_bind.set_ticks.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(count)
+    __method_bind.set_ticks.call(this.toVariant(), _arg, 1)
   }
 
   fun setTicksOnBorders(ticksOnBorder: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(ticksOnBorder)
-    __method_bind.set_ticks_on_borders.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ticksOnBorder)
+    __method_bind.set_ticks_on_borders.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

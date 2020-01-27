@@ -19,7 +19,7 @@ open class AnimationNodeTimeScale internal constructor(
     fun new(): AnimationNodeTimeScale = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeTimeScale".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeTimeScale" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeTimeScale" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeTimeScale(
         fn()

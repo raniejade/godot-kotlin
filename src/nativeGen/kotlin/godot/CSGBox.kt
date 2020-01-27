@@ -38,33 +38,29 @@ open class CSGBox internal constructor(
   }
 
   fun setDepth(depth: Float) {
-    val _args = VariantArray.new()
-    _args.append(depth)
-    __method_bind.set_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(depth)
+    __method_bind.set_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setHeight(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setWidth(width: Float) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    __method_bind.set_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(width)
+    __method_bind.set_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CSGBox = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGBox".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGBox" }
+      requireNotNull(fnPtr) { "No instance found for CSGBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGBox(
         fn()

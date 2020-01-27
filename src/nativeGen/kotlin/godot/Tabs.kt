@@ -28,9 +28,8 @@ open class Tabs internal constructor(
   }
 
   fun ensureTabVisible(idx: Int) {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    __method_bind.ensure_tab_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    __method_bind.ensure_tab_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun getCurrentTab(): Int {
@@ -74,16 +73,14 @@ open class Tabs internal constructor(
   }
 
   fun getTabDisabled(tabIdx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun getTabIcon(tabIdx: Int): Texture {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_icon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_icon.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -93,16 +90,14 @@ open class Tabs internal constructor(
   }
 
   fun getTabRect(tabIdx: Int): Rect2 {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_rect.call(this.toVariant(), _arg, 1)
     return _ret.asRect2()
   }
 
   fun getTabTitle(tabIdx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    val _ret = __method_bind.get_tab_title.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    val _ret = __method_bind.get_tab_title.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -119,45 +114,38 @@ open class Tabs internal constructor(
   }
 
   fun removeTab(tabIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    __method_bind.remove_tab.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    __method_bind.remove_tab.call(this.toVariant(), _arg, 1)
   }
 
   fun setCurrentTab(tabIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(tabIdx)
-    __method_bind.set_current_tab.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tabIdx)
+    __method_bind.set_current_tab.call(this.toVariant(), _arg, 1)
   }
 
   fun setDragToRearrangeEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_drag_to_rearrange_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_drag_to_rearrange_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setScrollingEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_scrolling_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_scrolling_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setSelectWithRmb(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_select_with_rmb.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_select_with_rmb.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabAlign(align: Int) {
-    val _args = VariantArray.new()
-    _args.append(align)
-    __method_bind.set_tab_align.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(align)
+    __method_bind.set_tab_align.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabCloseDisplayPolicy(policy: Int) {
-    val _args = VariantArray.new()
-    _args.append(policy)
-    __method_bind.set_tab_close_display_policy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(policy)
+    __method_bind.set_tab_close_display_policy.call(this.toVariant(), _arg, 1)
   }
 
   fun setTabDisabled(tabIdx: Int, disabled: Boolean) {
@@ -182,9 +170,8 @@ open class Tabs internal constructor(
   }
 
   fun setTabsRearrangeGroup(groupId: Int) {
-    val _args = VariantArray.new()
-    _args.append(groupId)
-    __method_bind.set_tabs_rearrange_group.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(groupId)
+    __method_bind.set_tabs_rearrange_group.call(this.toVariant(), _arg, 1)
   }
 
   enum class CloseButtonDisplayPolicy(
@@ -252,7 +239,7 @@ open class Tabs internal constructor(
 
     fun new(): Tabs = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Tabs".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Tabs" }
+      requireNotNull(fnPtr) { "No instance found for Tabs" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Tabs(
         fn()

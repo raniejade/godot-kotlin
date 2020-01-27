@@ -19,7 +19,7 @@ open class VisualShaderNodeSwitch internal constructor(
     fun new(): VisualShaderNodeSwitch = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeSwitch".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeSwitch" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeSwitch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeSwitch(
         fn()

@@ -19,7 +19,7 @@ open class AnimationRootNode internal constructor(
     fun new(): AnimationRootNode = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationRootNode".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationRootNode" }
+      requireNotNull(fnPtr) { "No instance found for AnimationRootNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationRootNode(
         fn()

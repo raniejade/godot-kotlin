@@ -28,21 +28,19 @@ open class MenuButton internal constructor(
   }
 
   fun setDisableShortcuts(disabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(disabled)
-    __method_bind.set_disable_shortcuts.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(disabled)
+    __method_bind.set_disable_shortcuts.call(this.toVariant(), _arg, 1)
   }
 
   fun setSwitchOnHover(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_switch_on_hover.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_switch_on_hover.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): MenuButton = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MenuButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MenuButton" }
+      requireNotNull(fnPtr) { "No instance found for MenuButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MenuButton(
         fn()

@@ -29,7 +29,7 @@ open class ButtonGroup internal constructor(
   companion object {
     fun new(): ButtonGroup = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ButtonGroup".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ButtonGroup" }
+      requireNotNull(fnPtr) { "No instance found for ButtonGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ButtonGroup(
         fn()

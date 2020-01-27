@@ -37,9 +37,8 @@ open class Polygon2D internal constructor(
   }
 
   fun eraseBone(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.erase_bone.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.erase_bone.call(this.toVariant(), _arg, 1)
   }
 
   fun getAntialiased(): Boolean {
@@ -53,16 +52,14 @@ open class Polygon2D internal constructor(
   }
 
   fun getBonePath(index: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_bone_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_bone_path.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
   fun getBoneWeights(index: Int): PoolRealArray {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_bone_weights.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_bone_weights.call(this.toVariant(), _arg, 1)
     return _ret.asPoolRealArray()
   }
 
@@ -142,9 +139,8 @@ open class Polygon2D internal constructor(
   }
 
   fun setAntialiased(antialiased: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(antialiased)
-    __method_bind.set_antialiased.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(antialiased)
+    __method_bind.set_antialiased.call(this.toVariant(), _arg, 1)
   }
 
   fun setBonePath(index: Int, path: NodePath) {
@@ -162,99 +158,84 @@ open class Polygon2D internal constructor(
   }
 
   fun setColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setInternalVertexCount(internalVertexCount: Int) {
-    val _args = VariantArray.new()
-    _args.append(internalVertexCount)
-    __method_bind.set_internal_vertex_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(internalVertexCount)
+    __method_bind.set_internal_vertex_count.call(this.toVariant(), _arg, 1)
   }
 
   fun setInvert(invert: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(invert)
-    __method_bind.set_invert.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(invert)
+    __method_bind.set_invert.call(this.toVariant(), _arg, 1)
   }
 
   fun setInvertBorder(invertBorder: Float) {
-    val _args = VariantArray.new()
-    _args.append(invertBorder)
-    __method_bind.set_invert_border.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(invertBorder)
+    __method_bind.set_invert_border.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    __method_bind.set_polygon.call(this.toVariant(), _arg, 1)
   }
 
   fun setPolygons(polygons: VariantArray) {
-    val _args = VariantArray.new()
-    _args.append(polygons)
-    __method_bind.set_polygons.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygons)
+    __method_bind.set_polygons.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkeleton(skeleton: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(skeleton)
-    __method_bind.set_skeleton.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(skeleton)
+    __method_bind.set_skeleton.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureOffset(textureOffset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(textureOffset)
-    __method_bind.set_texture_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(textureOffset)
+    __method_bind.set_texture_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureRotation(textureRotation: Float) {
-    val _args = VariantArray.new()
-    _args.append(textureRotation)
-    __method_bind.set_texture_rotation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(textureRotation)
+    __method_bind.set_texture_rotation.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureRotationDegrees(textureRotation: Float) {
-    val _args = VariantArray.new()
-    _args.append(textureRotation)
-    __method_bind.set_texture_rotation_degrees.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(textureRotation)
+    __method_bind.set_texture_rotation_degrees.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureScale(textureScale: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(textureScale)
-    __method_bind.set_texture_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(textureScale)
+    __method_bind.set_texture_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv(uv: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(uv)
-    __method_bind.set_uv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(uv)
+    __method_bind.set_uv.call(this.toVariant(), _arg, 1)
   }
 
   fun setVertexColors(vertexColors: PoolColorArray) {
-    val _args = VariantArray.new()
-    _args.append(vertexColors)
-    __method_bind.set_vertex_colors.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vertexColors)
+    __method_bind.set_vertex_colors.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Polygon2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Polygon2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Polygon2D" }
+      requireNotNull(fnPtr) { "No instance found for Polygon2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Polygon2D(
         fn()

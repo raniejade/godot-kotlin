@@ -75,7 +75,7 @@ open class EditorSpatialGizmoPlugin internal constructor(
     fun new(): EditorSpatialGizmoPlugin = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSpatialGizmoPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorSpatialGizmoPlugin" }
+      requireNotNull(fnPtr) { "No instance found for EditorSpatialGizmoPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorSpatialGizmoPlugin(
         fn()

@@ -44,39 +44,34 @@ open class StaticBody internal constructor(
   }
 
   fun setBounce(bounce: Float) {
-    val _args = VariantArray.new()
-    _args.append(bounce)
-    __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bounce)
+    __method_bind.set_bounce.call(this.toVariant(), _arg, 1)
   }
 
   fun setConstantAngularVelocity(vel: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(vel)
-    __method_bind.set_constant_angular_velocity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vel)
+    __method_bind.set_constant_angular_velocity.call(this.toVariant(), _arg, 1)
   }
 
   fun setConstantLinearVelocity(vel: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(vel)
-    __method_bind.set_constant_linear_velocity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vel)
+    __method_bind.set_constant_linear_velocity.call(this.toVariant(), _arg, 1)
   }
 
   fun setFriction(friction: Float) {
-    val _args = VariantArray.new()
-    _args.append(friction)
-    __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(friction)
+    __method_bind.set_friction.call(this.toVariant(), _arg, 1)
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
-    val _args = VariantArray.new()
-    _args.append(physicsMaterialOverride)
-    __method_bind.set_physics_material_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(physicsMaterialOverride)
+    __method_bind.set_physics_material_override.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): StaticBody = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StaticBody".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StaticBody" }
+      requireNotNull(fnPtr) { "No instance found for StaticBody" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StaticBody(
         fn()

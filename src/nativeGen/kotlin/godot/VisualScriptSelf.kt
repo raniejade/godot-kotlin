@@ -19,7 +19,7 @@ open class VisualScriptSelf internal constructor(
     fun new(): VisualScriptSelf = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSelf".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptSelf" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptSelf" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptSelf(
         fn()

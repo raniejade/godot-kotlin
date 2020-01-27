@@ -24,9 +24,8 @@ open class AudioEffectEQ internal constructor(
   }
 
   fun getBandGainDb(bandIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(bandIdx)
-    val _ret = __method_bind.get_band_gain_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bandIdx)
+    val _ret = __method_bind.get_band_gain_db.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -40,7 +39,7 @@ open class AudioEffectEQ internal constructor(
   companion object {
     fun new(): AudioEffectEQ = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectEQ".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectEQ" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectEQ" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectEQ(
         fn()

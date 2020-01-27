@@ -110,99 +110,83 @@ open class Particles2D internal constructor(
   }
 
   fun setAmount(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_amount.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_amount.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawOrder(order: Int) {
-    val _args = VariantArray.new()
-    _args.append(order)
-    __method_bind.set_draw_order.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(order)
+    __method_bind.set_draw_order.call(this.toVariant(), _arg, 1)
   }
 
   fun setEmitting(emitting: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(emitting)
-    __method_bind.set_emitting.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(emitting)
+    __method_bind.set_emitting.call(this.toVariant(), _arg, 1)
   }
 
   fun setExplosivenessRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.set_explosiveness_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.set_explosiveness_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setFixedFps(fps: Int) {
-    val _args = VariantArray.new()
-    _args.append(fps)
-    __method_bind.set_fixed_fps.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fps)
+    __method_bind.set_fixed_fps.call(this.toVariant(), _arg, 1)
   }
 
   fun setFractionalDelta(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_fractional_delta.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_fractional_delta.call(this.toVariant(), _arg, 1)
   }
 
   fun setLifetime(secs: Float) {
-    val _args = VariantArray.new()
-    _args.append(secs)
-    __method_bind.set_lifetime.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(secs)
+    __method_bind.set_lifetime.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalMap(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
   }
 
   fun setOneShot(secs: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(secs)
-    __method_bind.set_one_shot.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(secs)
+    __method_bind.set_one_shot.call(this.toVariant(), _arg, 1)
   }
 
   fun setPreProcessTime(secs: Float) {
-    val _args = VariantArray.new()
-    _args.append(secs)
-    __method_bind.set_pre_process_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(secs)
+    __method_bind.set_pre_process_time.call(this.toVariant(), _arg, 1)
   }
 
   fun setProcessMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_process_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_process_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setRandomnessRatio(ratio: Float) {
-    val _args = VariantArray.new()
-    _args.append(ratio)
-    __method_bind.set_randomness_ratio.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ratio)
+    __method_bind.set_randomness_ratio.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeedScale(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_speed_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_local_coordinates.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_local_coordinates.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisibilityRect(visibilityRect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(visibilityRect)
-    __method_bind.set_visibility_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visibilityRect)
+    __method_bind.set_visibility_rect.call(this.toVariant(), _arg, 1)
   }
 
   enum class DrawOrder(
@@ -231,7 +215,7 @@ open class Particles2D internal constructor(
 
     fun new(): Particles2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Particles2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Particles2D" }
+      requireNotNull(fnPtr) { "No instance found for Particles2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Particles2D(
         fn()

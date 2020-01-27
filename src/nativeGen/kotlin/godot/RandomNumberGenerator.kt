@@ -62,16 +62,15 @@ open class RandomNumberGenerator internal constructor(
   }
 
   fun setSeed(seed: Int) {
-    val _args = VariantArray.new()
-    _args.append(seed)
-    __method_bind.set_seed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seed)
+    __method_bind.set_seed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): RandomNumberGenerator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("RandomNumberGenerator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RandomNumberGenerator" }
+      requireNotNull(fnPtr) { "No instance found for RandomNumberGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RandomNumberGenerator(
         fn()

@@ -45,33 +45,29 @@ open class SpinBox internal constructor(
   }
 
   fun setAlign(align: Int) {
-    val _args = VariantArray.new()
-    _args.append(align)
-    __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(align)
+    __method_bind.set_align.call(this.toVariant(), _arg, 1)
   }
 
   fun setEditable(editable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(editable)
-    __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(editable)
+    __method_bind.set_editable.call(this.toVariant(), _arg, 1)
   }
 
   fun setPrefix(prefix: String) {
-    val _args = VariantArray.new()
-    _args.append(prefix)
-    __method_bind.set_prefix.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(prefix)
+    __method_bind.set_prefix.call(this.toVariant(), _arg, 1)
   }
 
   fun setSuffix(suffix: String) {
-    val _args = VariantArray.new()
-    _args.append(suffix)
-    __method_bind.set_suffix.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(suffix)
+    __method_bind.set_suffix.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SpinBox = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpinBox".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SpinBox" }
+      requireNotNull(fnPtr) { "No instance found for SpinBox" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpinBox(
         fn()

@@ -23,16 +23,15 @@ open class VideoStreamWebm internal constructor(
   }
 
   fun setFile(file: String) {
-    val _args = VariantArray.new()
-    _args.append(file)
-    __method_bind.set_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(file)
+    __method_bind.set_file.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VideoStreamWebm = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoStreamWebm".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VideoStreamWebm" }
+      requireNotNull(fnPtr) { "No instance found for VideoStreamWebm" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VideoStreamWebm(
         fn()

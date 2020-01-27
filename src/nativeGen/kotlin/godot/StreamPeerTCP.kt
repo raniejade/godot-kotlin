@@ -53,9 +53,8 @@ open class StreamPeerTCP internal constructor(
   }
 
   fun setNoDelay(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_no_delay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_no_delay.call(this.toVariant(), _arg, 1)
   }
 
   enum class Status(
@@ -92,7 +91,7 @@ open class StreamPeerTCP internal constructor(
 
     fun new(): StreamPeerTCP = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerTCP".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StreamPeerTCP" }
+      requireNotNull(fnPtr) { "No instance found for StreamPeerTCP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StreamPeerTCP(
         fn()

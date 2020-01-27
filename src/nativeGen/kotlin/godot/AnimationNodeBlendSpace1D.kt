@@ -37,16 +37,14 @@ open class AnimationNodeBlendSpace1D internal constructor(
   }
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_blend_point_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_blend_point_node.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::AnimationRootNode)!!
   }
 
   fun getBlendPointPosition(point: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_blend_point_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_blend_point_position.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -71,9 +69,8 @@ open class AnimationNodeBlendSpace1D internal constructor(
   }
 
   fun removeBlendPoint(point: Int) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    __method_bind.remove_blend_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    __method_bind.remove_blend_point.call(this.toVariant(), _arg, 1)
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
@@ -91,34 +88,30 @@ open class AnimationNodeBlendSpace1D internal constructor(
   }
 
   fun setMaxSpace(maxSpace: Float) {
-    val _args = VariantArray.new()
-    _args.append(maxSpace)
-    __method_bind.set_max_space.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxSpace)
+    __method_bind.set_max_space.call(this.toVariant(), _arg, 1)
   }
 
   fun setMinSpace(minSpace: Float) {
-    val _args = VariantArray.new()
-    _args.append(minSpace)
-    __method_bind.set_min_space.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(minSpace)
+    __method_bind.set_min_space.call(this.toVariant(), _arg, 1)
   }
 
   fun setSnap(snap: Float) {
-    val _args = VariantArray.new()
-    _args.append(snap)
-    __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(snap)
+    __method_bind.set_snap.call(this.toVariant(), _arg, 1)
   }
 
   fun setValueLabel(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_value_label.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_value_label.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AnimationNodeBlendSpace1D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendSpace1D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeBlendSpace1D" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendSpace1D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeBlendSpace1D(
         fn()

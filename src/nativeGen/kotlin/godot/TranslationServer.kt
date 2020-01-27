@@ -18,9 +18,8 @@ open class TranslationServer internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addTranslation(translation: Translation) {
-    val _args = VariantArray.new()
-    _args.append(translation)
-    __method_bind.add_translation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(translation)
+    __method_bind.add_translation.call(this.toVariant(), _arg, 1)
   }
 
   fun clear() {
@@ -38,28 +37,24 @@ open class TranslationServer internal constructor(
   }
 
   fun getLocaleName(locale: String): String {
-    val _args = VariantArray.new()
-    _args.append(locale)
-    val _ret = __method_bind.get_locale_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(locale)
+    val _ret = __method_bind.get_locale_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun removeTranslation(translation: Translation) {
-    val _args = VariantArray.new()
-    _args.append(translation)
-    __method_bind.remove_translation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(translation)
+    __method_bind.remove_translation.call(this.toVariant(), _arg, 1)
   }
 
   fun setLocale(locale: String) {
-    val _args = VariantArray.new()
-    _args.append(locale)
-    __method_bind.set_locale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(locale)
+    __method_bind.set_locale.call(this.toVariant(), _arg, 1)
   }
 
   fun translate(message: String): String {
-    val _args = VariantArray.new()
-    _args.append(message)
-    val _ret = __method_bind.translate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(message)
+    val _ret = __method_bind.translate.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 

@@ -19,7 +19,7 @@ open class PanelContainer internal constructor(
     fun new(): PanelContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PanelContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PanelContainer" }
+      requireNotNull(fnPtr) { "No instance found for PanelContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PanelContainer(
         fn()

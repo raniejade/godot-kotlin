@@ -29,22 +29,20 @@ open class VisualScriptLocalVarSet internal constructor(
   }
 
   fun setVarName(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_var_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_var_name.call(this.toVariant(), _arg, 1)
   }
 
   fun setVarType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_var_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_var_type.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptLocalVarSet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptLocalVarSet".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptLocalVarSet" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptLocalVarSet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptLocalVarSet(
         fn()

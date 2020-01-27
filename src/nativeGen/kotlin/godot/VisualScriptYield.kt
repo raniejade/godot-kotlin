@@ -29,15 +29,13 @@ open class VisualScriptYield internal constructor(
   }
 
   fun setWaitTime(sec: Float) {
-    val _args = VariantArray.new()
-    _args.append(sec)
-    __method_bind.set_wait_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sec)
+    __method_bind.set_wait_time.call(this.toVariant(), _arg, 1)
   }
 
   fun setYieldMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_yield_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_yield_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class YieldMode(
@@ -71,7 +69,7 @@ open class VisualScriptYield internal constructor(
     fun new(): VisualScriptYield = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptYield".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptYield" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptYield" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptYield(
         fn()

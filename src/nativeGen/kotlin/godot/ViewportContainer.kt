@@ -29,22 +29,20 @@ open class ViewportContainer internal constructor(
   }
 
   fun setStretch(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_stretch.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_stretch.call(this.toVariant(), _arg, 1)
   }
 
   fun setStretchShrink(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_stretch_shrink.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_stretch_shrink.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ViewportContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ViewportContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ViewportContainer" }
+      requireNotNull(fnPtr) { "No instance found for ViewportContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ViewportContainer(
         fn()

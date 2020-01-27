@@ -45,33 +45,28 @@ open class Button internal constructor(
   }
 
   fun setButtonIcon(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_button_icon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_button_icon.call(this.toVariant(), _arg, 1)
   }
 
   fun setClipText(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_clip_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_clip_text.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlat(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_flat.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_flat.call(this.toVariant(), _arg, 1)
   }
 
   fun setText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_text.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextAlign(align: Int) {
-    val _args = VariantArray.new()
-    _args.append(align)
-    __method_bind.set_text_align.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(align)
+    __method_bind.set_text_align.call(this.toVariant(), _arg, 1)
   }
 
   enum class TextAlign(
@@ -104,7 +99,7 @@ open class Button internal constructor(
 
     fun new(): Button = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Button".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Button" }
+      requireNotNull(fnPtr) { "No instance found for Button" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Button(
         fn()

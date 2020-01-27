@@ -38,9 +38,8 @@ open class WebRTCMultiplayer internal constructor(
   }
 
   fun getPeer(peerId: Int): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    val _ret = __method_bind.get_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peerId)
+    val _ret = __method_bind.get_peer.call(this.toVariant(), _arg, 1)
     return _ret.asDictionary()
   }
 
@@ -50,9 +49,8 @@ open class WebRTCMultiplayer internal constructor(
   }
 
   fun hasPeer(peerId: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    val _ret = __method_bind.has_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peerId)
+    val _ret = __method_bind.has_peer.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -65,16 +63,15 @@ open class WebRTCMultiplayer internal constructor(
   }
 
   fun removePeer(peerId: Int) {
-    val _args = VariantArray.new()
-    _args.append(peerId)
-    __method_bind.remove_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peerId)
+    __method_bind.remove_peer.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): WebRTCMultiplayer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCMultiplayer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebRTCMultiplayer" }
+      requireNotNull(fnPtr) { "No instance found for WebRTCMultiplayer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebRTCMultiplayer(
         fn()

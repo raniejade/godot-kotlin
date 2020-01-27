@@ -28,9 +28,8 @@ open class _Geometry internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun buildBoxPlanes(extents: Vector3): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(extents)
-    val _ret = __method_bind.build_box_planes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extents)
+    val _ret = __method_bind.build_box_planes.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -93,9 +92,8 @@ open class _Geometry internal constructor(
   }
 
   fun convexHull2d(points: PoolVector2Array): PoolVector2Array {
-    val _args = VariantArray.new()
-    _args.append(points)
-    val _ret = __method_bind.convex_hull_2d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(points)
+    val _ret = __method_bind.convex_hull_2d.call(this.toVariant(), _arg, 1)
     return _ret.asPoolVector2Array()
   }
 
@@ -196,9 +194,8 @@ open class _Geometry internal constructor(
   }
 
   fun getUv84NormalBit(normal: Vector3): Int {
-    val _args = VariantArray.new()
-    _args.append(normal)
-    val _ret = __method_bind.get_uv84_normal_bit.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normal)
+    val _ret = __method_bind.get_uv84_normal_bit.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -221,9 +218,8 @@ open class _Geometry internal constructor(
   }
 
   fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    val _ret = __method_bind.is_polygon_clockwise.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    val _ret = __method_bind.is_polygon_clockwise.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -243,9 +239,8 @@ open class _Geometry internal constructor(
   }
 
   fun makeAtlas(sizes: PoolVector2Array): Dictionary {
-    val _args = VariantArray.new()
-    _args.append(sizes)
-    val _ret = __method_bind.make_atlas.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sizes)
+    val _ret = __method_bind.make_atlas.call(this.toVariant(), _arg, 1)
     return _ret.asDictionary()
   }
 
@@ -419,16 +414,14 @@ open class _Geometry internal constructor(
   }
 
   fun triangulateDelaunay2d(points: PoolVector2Array): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(points)
-    val _ret = __method_bind.triangulate_delaunay_2d.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(points)
+    val _ret = __method_bind.triangulate_delaunay_2d.call(this.toVariant(), _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun triangulatePolygon(polygon: PoolVector2Array): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    val _ret = __method_bind.triangulate_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    val _ret = __method_bind.triangulate_polygon.call(this.toVariant(), _arg, 1)
     return _ret.asPoolIntArray()
   }
 

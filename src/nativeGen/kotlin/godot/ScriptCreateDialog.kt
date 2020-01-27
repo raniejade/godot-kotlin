@@ -34,7 +34,7 @@ open class ScriptCreateDialog internal constructor(
     fun new(): ScriptCreateDialog = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ScriptCreateDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ScriptCreateDialog" }
+      requireNotNull(fnPtr) { "No instance found for ScriptCreateDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ScriptCreateDialog(
         fn()

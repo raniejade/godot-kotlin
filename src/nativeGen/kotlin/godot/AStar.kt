@@ -71,17 +71,14 @@ open class AStar internal constructor(
   }
 
   fun getClosestPoint(toPosition: Vector3): Int {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPosition)
+    val _ret = __method_bind.get_closest_point.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getClosestPositionInSegment(toPosition: Vector3): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    val _ret = __method_bind.get_closest_position_in_segment.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(toPosition)
+    val _ret = __method_bind.get_closest_position_in_segment.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
@@ -94,9 +91,8 @@ open class AStar internal constructor(
   }
 
   fun getPointConnections(id: Int): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_point_connections.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_point_connections.call(this.toVariant(), _arg, 1)
     return _ret.asPoolIntArray()
   }
 
@@ -109,16 +105,14 @@ open class AStar internal constructor(
   }
 
   fun getPointPosition(id: Int): Vector3 {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_point_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_point_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector3()
   }
 
   fun getPointWeightScale(id: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_point_weight_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_point_weight_scale.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -128,23 +122,20 @@ open class AStar internal constructor(
   }
 
   fun hasPoint(id: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.has_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.has_point.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isPointDisabled(id: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.is_point_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.is_point_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removePoint(id: Int) {
-    val _args = VariantArray.new()
-    _args.append(id)
-    __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
   }
 
   fun setPointDisabled(id: Int, disabled: Boolean) {
@@ -171,7 +162,7 @@ open class AStar internal constructor(
   companion object {
     fun new(): AStar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("AStar".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AStar" }
+      requireNotNull(fnPtr) { "No instance found for AStar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AStar(
         fn()

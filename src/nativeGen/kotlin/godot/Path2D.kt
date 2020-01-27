@@ -22,15 +22,14 @@ open class Path2D internal constructor(
   }
 
   fun setCurve(curve: Curve2D) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_curve.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Path2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Path2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Path2D" }
+      requireNotNull(fnPtr) { "No instance found for Path2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Path2D(
         fn()

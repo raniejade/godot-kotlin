@@ -19,9 +19,8 @@ open class EditorInspectorPlugin internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addCustomControl(control: Control) {
-    val _args = VariantArray.new()
-    _args.append(control)
-    __method_bind.add_custom_control.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(control)
+    __method_bind.add_custom_control.call(this.toVariant(), _arg, 1)
   }
 
   fun addPropertyEditor(property: String, editor: Control) {
@@ -48,7 +47,7 @@ open class EditorInspectorPlugin internal constructor(
     fun new(): EditorInspectorPlugin = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorInspectorPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorInspectorPlugin" }
+      requireNotNull(fnPtr) { "No instance found for EditorInspectorPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorInspectorPlugin(
         fn()

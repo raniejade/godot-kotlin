@@ -18,7 +18,7 @@ open class CSGCombiner internal constructor(
   companion object {
     fun new(): CSGCombiner = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CSGCombiner".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CSGCombiner" }
+      requireNotNull(fnPtr) { "No instance found for CSGCombiner" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CSGCombiner(
         fn()

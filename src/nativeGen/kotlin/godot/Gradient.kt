@@ -29,9 +29,8 @@ open class Gradient internal constructor(
   }
 
   fun getColor(point: Int): Color {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_color.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
@@ -41,9 +40,8 @@ open class Gradient internal constructor(
   }
 
   fun getOffset(point: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_offset.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -58,16 +56,14 @@ open class Gradient internal constructor(
   }
 
   fun interpolate(offset: Float): Color {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    val _ret = __method_bind.interpolate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    val _ret = __method_bind.interpolate.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun removePoint(offset: Int) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.remove_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.remove_point.call(this.toVariant(), _arg, 1)
   }
 
   fun setColor(point: Int, color: Color) {
@@ -78,9 +74,8 @@ open class Gradient internal constructor(
   }
 
   fun setColors(colors: PoolColorArray) {
-    val _args = VariantArray.new()
-    _args.append(colors)
-    __method_bind.set_colors.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(colors)
+    __method_bind.set_colors.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(point: Int, offset: Float) {
@@ -91,15 +86,14 @@ open class Gradient internal constructor(
   }
 
   fun setOffsets(offsets: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(offsets)
-    __method_bind.set_offsets.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offsets)
+    __method_bind.set_offsets.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Gradient = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Gradient".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Gradient" }
+      requireNotNull(fnPtr) { "No instance found for Gradient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Gradient(
         fn()

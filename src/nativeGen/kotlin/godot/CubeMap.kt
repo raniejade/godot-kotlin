@@ -34,9 +34,8 @@ open class CubeMap internal constructor(
   }
 
   fun getSide(side: Int): Image {
-    val _args = VariantArray.new()
-    _args.append(side)
-    val _ret = __method_bind.get_side.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(side)
+    val _ret = __method_bind.get_side.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
@@ -51,15 +50,13 @@ open class CubeMap internal constructor(
   }
 
   fun setFlags(flags: Int) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.set_flags.call(this.toVariant(), _arg, 1)
   }
 
   fun setLossyStorageQuality(quality: Float) {
-    val _args = VariantArray.new()
-    _args.append(quality)
-    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(quality)
+    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _arg, 1)
   }
 
   fun setSide(side: Int, image: Image) {
@@ -70,9 +67,8 @@ open class CubeMap internal constructor(
   }
 
   fun setStorage(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_storage.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_storage.call(this.toVariant(), _arg, 1)
   }
 
   enum class Flags(
@@ -175,7 +171,7 @@ open class CubeMap internal constructor(
 
     fun new(): CubeMap = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CubeMap".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CubeMap" }
+      requireNotNull(fnPtr) { "No instance found for CubeMap" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CubeMap(
         fn()

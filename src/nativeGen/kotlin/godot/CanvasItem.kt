@@ -235,9 +235,8 @@ open class CanvasItem internal constructor(
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(xform)
-    __method_bind.draw_set_transform_matrix.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(xform)
+    __method_bind.draw_set_transform_matrix.call(this.toVariant(), _arg, 1)
   }
 
   fun drawString(
@@ -434,77 +433,65 @@ open class CanvasItem internal constructor(
   }
 
   fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(screenPoint)
-    val _ret = __method_bind.make_canvas_position_local.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(screenPoint)
+    val _ret = __method_bind.make_canvas_position_local.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
-    val _args = VariantArray.new()
-    _args.append(event)
-    val _ret = __method_bind.make_input_local.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(event)
+    val _ret = __method_bind.make_input_local.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::InputEvent)!!
   }
 
   fun setAsToplevel(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_as_toplevel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_as_toplevel.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawBehindParent(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_draw_behind_parent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_draw_behind_parent.call(this.toVariant(), _arg, 1)
   }
 
   fun setLightMask(lightMask: Int) {
-    val _args = VariantArray.new()
-    _args.append(lightMask)
-    __method_bind.set_light_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lightMask)
+    __method_bind.set_light_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaterial(material: Material) {
-    val _args = VariantArray.new()
-    _args.append(material)
-    __method_bind.set_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(material)
+    __method_bind.set_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setModulate(modulate: Color) {
-    val _args = VariantArray.new()
-    _args.append(modulate)
-    __method_bind.set_modulate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(modulate)
+    __method_bind.set_modulate.call(this.toVariant(), _arg, 1)
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_notify_local_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_notify_local_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setNotifyTransform(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_notify_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_notify_transform.call(this.toVariant(), _arg, 1)
   }
 
   fun setSelfModulate(selfModulate: Color) {
-    val _args = VariantArray.new()
-    _args.append(selfModulate)
-    __method_bind.set_self_modulate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(selfModulate)
+    __method_bind.set_self_modulate.call(this.toVariant(), _arg, 1)
   }
 
   fun setUseParentMaterial(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_use_parent_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_use_parent_material.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisible(visible: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(visible)
-    __method_bind.set_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(visible)
+    __method_bind.set_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun show() {

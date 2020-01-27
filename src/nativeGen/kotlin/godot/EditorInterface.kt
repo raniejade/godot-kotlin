@@ -21,9 +21,8 @@ open class EditorInterface internal constructor(
   _handle: COpaquePointer
 ) : Node(_handle) {
   fun editResource(resource: Resource) {
-    val _args = VariantArray.new()
-    _args.append(resource)
-    __method_bind.edit_resource.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resource)
+    __method_bind.edit_resource.call(this.toVariant(), _arg, 1)
   }
 
   fun getBaseControl(): Control {
@@ -89,9 +88,8 @@ open class EditorInterface internal constructor(
   }
 
   fun isPluginEnabled(plugin: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(plugin)
-    val _ret = __method_bind.is_plugin_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(plugin)
+    val _ret = __method_bind.is_plugin_enabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -104,15 +102,13 @@ open class EditorInterface internal constructor(
   }
 
   fun openSceneFromPath(sceneFilepath: String) {
-    val _args = VariantArray.new()
-    _args.append(sceneFilepath)
-    __method_bind.open_scene_from_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sceneFilepath)
+    __method_bind.open_scene_from_path.call(this.toVariant(), _arg, 1)
   }
 
   fun reloadSceneFromPath(sceneFilepath: String) {
-    val _args = VariantArray.new()
-    _args.append(sceneFilepath)
-    __method_bind.reload_scene_from_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(sceneFilepath)
+    __method_bind.reload_scene_from_path.call(this.toVariant(), _arg, 1)
   }
 
   fun saveScene(): GDError {
@@ -128,9 +124,8 @@ open class EditorInterface internal constructor(
   }
 
   fun selectFile(file: String) {
-    val _args = VariantArray.new()
-    _args.append(file)
-    __method_bind.select_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(file)
+    __method_bind.select_file.call(this.toVariant(), _arg, 1)
   }
 
   fun setPluginEnabled(plugin: String, enabled: Boolean) {

@@ -34,7 +34,7 @@ open class Container internal constructor(
 
     fun new(): Container = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Container".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Container" }
+      requireNotNull(fnPtr) { "No instance found for Container" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Container(
         fn()

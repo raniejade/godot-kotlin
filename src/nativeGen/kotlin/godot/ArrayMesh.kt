@@ -24,9 +24,8 @@ open class ArrayMesh internal constructor(
   _handle: COpaquePointer
 ) : Mesh(_handle) {
   fun addBlendShape(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.add_blend_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.add_blend_shape.call(this.toVariant(), _arg, 1)
   }
 
   fun addSurfaceFromArrays(
@@ -58,9 +57,8 @@ open class ArrayMesh internal constructor(
   }
 
   fun getBlendShapeName(index: Int): String {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_blend_shape_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_blend_shape_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -82,64 +80,54 @@ open class ArrayMesh internal constructor(
   }
 
   fun setBlendShapeMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_blend_shape_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_blend_shape_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setCustomAabb(aabb: AABB) {
-    val _args = VariantArray.new()
-    _args.append(aabb)
-    __method_bind.set_custom_aabb.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(aabb)
+    __method_bind.set_custom_aabb.call(this.toVariant(), _arg, 1)
   }
 
   fun surfaceFindByName(name: String): Int {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.surface_find_by_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.surface_find_by_name.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun surfaceGetArrayIndexLen(surfIdx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_array_index_len.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_array_index_len.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun surfaceGetArrayLen(surfIdx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_array_len.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_array_len.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun surfaceGetFormat(surfIdx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_format.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_format.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun surfaceGetName(surfIdx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun surfaceGetPrimitiveType(surfIdx: Int): Mesh.PrimitiveType {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    val _ret = __method_bind.surface_get_primitive_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    val _ret = __method_bind.surface_get_primitive_type.call(this.toVariant(), _arg, 1)
     return Mesh.PrimitiveType.from(_ret.asInt())
   }
 
   fun surfaceRemove(surfIdx: Int) {
-    val _args = VariantArray.new()
-    _args.append(surfIdx)
-    __method_bind.surface_remove.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surfIdx)
+    __method_bind.surface_remove.call(this.toVariant(), _arg, 1)
   }
 
   fun surfaceSetName(surfIdx: Int, name: String) {
@@ -274,7 +262,7 @@ open class ArrayMesh internal constructor(
 
     fun new(): ArrayMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ArrayMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ArrayMesh" }
+      requireNotNull(fnPtr) { "No instance found for ArrayMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ArrayMesh(
         fn()

@@ -23,16 +23,15 @@ open class AudioEffectPitchShift internal constructor(
   }
 
   fun setPitchScale(rate: Float) {
-    val _args = VariantArray.new()
-    _args.append(rate)
-    __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rate)
+    __method_bind.set_pitch_scale.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectPitchShift = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectPitchShift".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectPitchShift" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectPitchShift" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectPitchShift(
         fn()

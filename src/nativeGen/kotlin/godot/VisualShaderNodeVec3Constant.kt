@@ -23,16 +23,15 @@ open class VisualShaderNodeVec3Constant internal constructor(
   }
 
   fun setConstant(value: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeVec3Constant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVec3Constant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVec3Constant" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVec3Constant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVec3Constant(
         fn()

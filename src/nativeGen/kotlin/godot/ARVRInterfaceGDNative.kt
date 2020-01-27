@@ -19,7 +19,7 @@ open class ARVRInterfaceGDNative internal constructor(
     fun new(): ARVRInterfaceGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRInterfaceGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ARVRInterfaceGDNative" }
+      requireNotNull(fnPtr) { "No instance found for ARVRInterfaceGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ARVRInterfaceGDNative(
         fn()

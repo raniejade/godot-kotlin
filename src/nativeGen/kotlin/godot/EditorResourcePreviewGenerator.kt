@@ -19,7 +19,7 @@ open class EditorResourcePreviewGenerator internal constructor(
     fun new(): EditorResourcePreviewGenerator = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorResourcePreviewGenerator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorResourcePreviewGenerator" }
+      requireNotNull(fnPtr) { "No instance found for EditorResourcePreviewGenerator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorResourcePreviewGenerator(
         fn()

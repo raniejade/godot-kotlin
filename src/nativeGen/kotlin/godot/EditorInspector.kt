@@ -24,7 +24,7 @@ open class EditorInspector internal constructor(
     fun new(): EditorInspector = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorInspector".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorInspector" }
+      requireNotNull(fnPtr) { "No instance found for EditorInspector" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorInspector(
         fn()

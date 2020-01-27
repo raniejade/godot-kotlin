@@ -41,9 +41,8 @@ open class ARVRController internal constructor(
   }
 
   fun getJoystickAxis(axis: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(axis)
-    val _ret = __method_bind.get_joystick_axis.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(axis)
+    val _ret = __method_bind.get_joystick_axis.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -63,29 +62,26 @@ open class ARVRController internal constructor(
   }
 
   fun isButtonPressed(button: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(button)
-    val _ret = __method_bind.is_button_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(button)
+    val _ret = __method_bind.is_button_pressed.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun setControllerId(controllerId: Int) {
-    val _args = VariantArray.new()
-    _args.append(controllerId)
-    __method_bind.set_controller_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(controllerId)
+    __method_bind.set_controller_id.call(this.toVariant(), _arg, 1)
   }
 
   fun setRumble(rumble: Float) {
-    val _args = VariantArray.new()
-    _args.append(rumble)
-    __method_bind.set_rumble.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rumble)
+    __method_bind.set_rumble.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ARVRController = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRController".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ARVRController" }
+      requireNotNull(fnPtr) { "No instance found for ARVRController" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ARVRController(
         fn()

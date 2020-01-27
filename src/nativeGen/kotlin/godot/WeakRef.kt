@@ -24,7 +24,7 @@ open class WeakRef internal constructor(
   companion object {
     fun new(): WeakRef = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WeakRef".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WeakRef" }
+      requireNotNull(fnPtr) { "No instance found for WeakRef" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WeakRef(
         fn()

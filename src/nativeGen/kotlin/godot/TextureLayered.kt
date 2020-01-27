@@ -54,9 +54,8 @@ open class TextureLayered internal constructor(
   }
 
   fun getLayerData(layer: Int): Image {
-    val _args = VariantArray.new()
-    _args.append(layer)
-    val _ret = __method_bind.get_layer_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(layer)
+    val _ret = __method_bind.get_layer_data.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
@@ -82,9 +81,8 @@ open class TextureLayered internal constructor(
   }
 
   fun setFlags(flags: Int) {
-    val _args = VariantArray.new()
-    _args.append(flags)
-    __method_bind.set_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flags)
+    __method_bind.set_flags.call(this.toVariant(), _arg, 1)
   }
 
   fun setLayerData(image: Image, layer: Int) {

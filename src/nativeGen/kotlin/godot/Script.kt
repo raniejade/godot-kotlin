@@ -40,9 +40,8 @@ open class Script internal constructor(
   }
 
   fun hasScriptSignal(signalName: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(signalName)
-    val _ret = __method_bind.has_script_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(signalName)
+    val _ret = __method_bind.has_script_signal.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -52,9 +51,8 @@ open class Script internal constructor(
   }
 
   fun instanceHas(baseObject: Object): Boolean {
-    val _args = VariantArray.new()
-    _args.append(baseObject)
-    val _ret = __method_bind.instance_has.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(baseObject)
+    val _ret = __method_bind.instance_has.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -64,16 +62,14 @@ open class Script internal constructor(
   }
 
   fun reload(keepState: Boolean): GDError {
-    val _args = VariantArray.new()
-    _args.append(keepState)
-    val _ret = __method_bind.reload.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(keepState)
+    val _ret = __method_bind.reload.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setSourceCode(source: String) {
-    val _args = VariantArray.new()
-    _args.append(source)
-    __method_bind.set_source_code.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(source)
+    __method_bind.set_source_code.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

@@ -34,27 +34,24 @@ open class PlaneMesh internal constructor(
   }
 
   fun setSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideDepth(subdivide: Int) {
-    val _args = VariantArray.new()
-    _args.append(subdivide)
-    __method_bind.set_subdivide_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(subdivide)
+    __method_bind.set_subdivide_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setSubdivideWidth(subdivide: Int) {
-    val _args = VariantArray.new()
-    _args.append(subdivide)
-    __method_bind.set_subdivide_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(subdivide)
+    __method_bind.set_subdivide_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PlaneMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PlaneMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PlaneMesh" }
+      requireNotNull(fnPtr) { "No instance found for PlaneMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PlaneMesh(
         fn()

@@ -28,22 +28,20 @@ open class InputEventMouseMotion internal constructor(
   }
 
   fun setRelative(relative: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(relative)
-    __method_bind.set_relative.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(relative)
+    __method_bind.set_relative.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeed(speed: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(speed)
-    __method_bind.set_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(speed)
+    __method_bind.set_speed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventMouseMotion = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMouseMotion".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventMouseMotion" }
+      requireNotNull(fnPtr) { "No instance found for InputEventMouseMotion" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventMouseMotion(
         fn()

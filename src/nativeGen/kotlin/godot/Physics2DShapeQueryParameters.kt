@@ -63,64 +63,55 @@ open class Physics2DShapeQueryParameters internal constructor(
   }
 
   fun setCollideWithAreas(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_collide_with_areas.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_collide_with_areas.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollideWithBodies(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_collide_with_bodies.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_collide_with_bodies.call(this.toVariant(), _arg, 1)
   }
 
   fun setCollisionLayer(collisionLayer: Int) {
-    val _args = VariantArray.new()
-    _args.append(collisionLayer)
-    __method_bind.set_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(collisionLayer)
+    __method_bind.set_collision_layer.call(this.toVariant(), _arg, 1)
   }
 
   fun setExclude(exclude: VariantArray) {
-    val _args = VariantArray.new()
-    _args.append(exclude)
-    __method_bind.set_exclude.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(exclude)
+    __method_bind.set_exclude.call(this.toVariant(), _arg, 1)
   }
 
   fun setMargin(margin: Float) {
-    val _args = VariantArray.new()
-    _args.append(margin)
-    __method_bind.set_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(margin)
+    __method_bind.set_margin.call(this.toVariant(), _arg, 1)
   }
 
   fun setMotion(motion: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(motion)
-    __method_bind.set_motion.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(motion)
+    __method_bind.set_motion.call(this.toVariant(), _arg, 1)
   }
 
   fun setShape(shape: Resource) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
   }
 
   fun setShapeRid(shape: RID) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_shape_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_shape_rid.call(this.toVariant(), _arg, 1)
   }
 
   fun setTransform(transform: Transform2D) {
-    val _args = VariantArray.new()
-    _args.append(transform)
-    __method_bind.set_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(transform)
+    __method_bind.set_transform.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Physics2DShapeQueryParameters = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Physics2DShapeQueryParameters".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Physics2DShapeQueryParameters" }
+      requireNotNull(fnPtr) { "No instance found for Physics2DShapeQueryParameters" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Physics2DShapeQueryParameters(
         fn()

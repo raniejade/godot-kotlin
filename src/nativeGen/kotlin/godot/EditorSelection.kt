@@ -17,9 +17,8 @@ open class EditorSelection internal constructor(
   _handle: COpaquePointer
 ) : Object(_handle) {
   fun addNode(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.add_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.add_node.call(this.toVariant(), _arg, 1)
   }
 
   fun clear() {
@@ -37,16 +36,15 @@ open class EditorSelection internal constructor(
   }
 
   fun removeNode(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.remove_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.remove_node.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): EditorSelection = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSelection".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorSelection" }
+      requireNotNull(fnPtr) { "No instance found for EditorSelection" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorSelection(
         fn()

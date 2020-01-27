@@ -21,9 +21,8 @@ open class LineEdit internal constructor(
   _handle: COpaquePointer
 ) : Control(_handle) {
   fun appendAtCursor(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.append_at_cursor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.append_at_cursor.call(this.toVariant(), _arg, 1)
   }
 
   fun clear() {
@@ -41,15 +40,13 @@ open class LineEdit internal constructor(
   }
 
   fun cursorSetBlinkEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun cursorSetBlinkSpeed(blinkSpeed: Float) {
-    val _args = VariantArray.new()
-    _args.append(blinkSpeed)
-    __method_bind.cursor_set_blink_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(blinkSpeed)
+    __method_bind.cursor_set_blink_speed.call(this.toVariant(), _arg, 1)
   }
 
   fun deselect() {
@@ -122,9 +119,8 @@ open class LineEdit internal constructor(
   }
 
   fun menuOption(option: Int) {
-    val _args = VariantArray.new()
-    _args.append(option)
-    __method_bind.menu_option.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(option)
+    __method_bind.menu_option.call(this.toVariant(), _arg, 1)
   }
 
   fun select(from: Int, to: Int) {
@@ -139,75 +135,63 @@ open class LineEdit internal constructor(
   }
 
   fun setAlign(align: Int) {
-    val _args = VariantArray.new()
-    _args.append(align)
-    __method_bind.set_align.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(align)
+    __method_bind.set_align.call(this.toVariant(), _arg, 1)
   }
 
   fun setClearButtonEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_clear_button_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_clear_button_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_context_menu_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_context_menu_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setCursorPosition(position: Int) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.set_cursor_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.set_cursor_position.call(this.toVariant(), _arg, 1)
   }
 
   fun setEditable(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_editable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_editable.call(this.toVariant(), _arg, 1)
   }
 
   fun setExpandToTextLength(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_expand_to_text_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_expand_to_text_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxLength(chars: Int) {
-    val _args = VariantArray.new()
-    _args.append(chars)
-    __method_bind.set_max_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(chars)
+    __method_bind.set_max_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setPlaceholder(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_placeholder.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_placeholder.call(this.toVariant(), _arg, 1)
   }
 
   fun setPlaceholderAlpha(alpha: Float) {
-    val _args = VariantArray.new()
-    _args.append(alpha)
-    __method_bind.set_placeholder_alpha.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(alpha)
+    __method_bind.set_placeholder_alpha.call(this.toVariant(), _arg, 1)
   }
 
   fun setSecret(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_secret.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_secret.call(this.toVariant(), _arg, 1)
   }
 
   fun setSecretCharacter(character: String) {
-    val _args = VariantArray.new()
-    _args.append(character)
-    __method_bind.set_secret_character.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(character)
+    __method_bind.set_secret_character.call(this.toVariant(), _arg, 1)
   }
 
   fun setText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_text.call(this.toVariant(), _arg, 1)
   }
 
   enum class Align(
@@ -291,7 +275,7 @@ open class LineEdit internal constructor(
 
     fun new(): LineEdit = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("LineEdit".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton LineEdit" }
+      requireNotNull(fnPtr) { "No instance found for LineEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       LineEdit(
         fn()

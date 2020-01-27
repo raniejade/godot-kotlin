@@ -23,16 +23,15 @@ open class VisualScriptDeconstruct internal constructor(
   }
 
   fun setDeconstructType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_deconstruct_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_deconstruct_type.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptDeconstruct = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptDeconstruct".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptDeconstruct" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptDeconstruct" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptDeconstruct(
         fn()

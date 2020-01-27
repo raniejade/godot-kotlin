@@ -29,28 +29,25 @@ open class SpatialVelocityTracker internal constructor(
   }
 
   fun reset(position: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.reset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.reset.call(this.toVariant(), _arg, 1)
   }
 
   fun setTrackPhysicsStep(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_track_physics_step.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_track_physics_step.call(this.toVariant(), _arg, 1)
   }
 
   fun updatePosition(position: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.update_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.update_position.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SpatialVelocityTracker = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpatialVelocityTracker".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SpatialVelocityTracker" }
+      requireNotNull(fnPtr) { "No instance found for SpatialVelocityTracker" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpatialVelocityTracker(
         fn()

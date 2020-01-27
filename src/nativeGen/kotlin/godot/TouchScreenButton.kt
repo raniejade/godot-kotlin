@@ -70,57 +70,48 @@ open class TouchScreenButton internal constructor(
   }
 
   fun setAction(action: String) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    __method_bind.set_action.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    __method_bind.set_action.call(this.toVariant(), _arg, 1)
   }
 
   fun setBitmask(bitmask: BitMap) {
-    val _args = VariantArray.new()
-    _args.append(bitmask)
-    __method_bind.set_bitmask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bitmask)
+    __method_bind.set_bitmask.call(this.toVariant(), _arg, 1)
   }
 
   fun setPassbyPress(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_passby_press.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_passby_press.call(this.toVariant(), _arg, 1)
   }
 
   fun setShape(shape: Shape2D) {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    __method_bind.set_shape.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    __method_bind.set_shape.call(this.toVariant(), _arg, 1)
   }
 
   fun setShapeCentered(bool: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bool)
-    __method_bind.set_shape_centered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bool)
+    __method_bind.set_shape_centered.call(this.toVariant(), _arg, 1)
   }
 
   fun setShapeVisible(bool: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(bool)
-    __method_bind.set_shape_visible.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bool)
+    __method_bind.set_shape_visible.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexturePressed(texturePressed: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texturePressed)
-    __method_bind.set_texture_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texturePressed)
+    __method_bind.set_texture_pressed.call(this.toVariant(), _arg, 1)
   }
 
   fun setVisibilityMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_visibility_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_visibility_mode.call(this.toVariant(), _arg, 1)
   }
 
   enum class VisibilityMode(
@@ -150,7 +141,7 @@ open class TouchScreenButton internal constructor(
     fun new(): TouchScreenButton = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("TouchScreenButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TouchScreenButton" }
+      requireNotNull(fnPtr) { "No instance found for TouchScreenButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TouchScreenButton(
         fn()

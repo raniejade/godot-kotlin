@@ -23,9 +23,8 @@ open class CSGPrimitive internal constructor(
   }
 
   fun setInvertFaces(invertFaces: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(invertFaces)
-    __method_bind.set_invert_faces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(invertFaces)
+    __method_bind.set_invert_faces.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

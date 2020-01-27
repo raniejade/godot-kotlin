@@ -52,15 +52,14 @@ open class ARVRAnchor internal constructor(
   }
 
   fun setAnchorId(anchorId: Int) {
-    val _args = VariantArray.new()
-    _args.append(anchorId)
-    __method_bind.set_anchor_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anchorId)
+    __method_bind.set_anchor_id.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ARVRAnchor = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ARVRAnchor".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ARVRAnchor" }
+      requireNotNull(fnPtr) { "No instance found for ARVRAnchor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ARVRAnchor(
         fn()

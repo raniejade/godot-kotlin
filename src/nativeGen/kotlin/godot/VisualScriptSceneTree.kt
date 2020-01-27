@@ -19,7 +19,7 @@ open class VisualScriptSceneTree internal constructor(
     fun new(): VisualScriptSceneTree = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSceneTree".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptSceneTree" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptSceneTree" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptSceneTree(
         fn()

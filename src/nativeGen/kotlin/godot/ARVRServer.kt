@@ -29,9 +29,8 @@ open class ARVRServer internal constructor(
   }
 
   fun findInterface(name: String): ARVRInterface {
-    val _args = VariantArray.new()
-    _args.append(name)
-    val _ret = __method_bind.find_interface.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    val _ret = __method_bind.find_interface.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::ARVRInterface)!!
   }
 
@@ -41,9 +40,8 @@ open class ARVRServer internal constructor(
   }
 
   fun getInterface(idx: Int): ARVRInterface {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_interface.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_interface.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::ARVRInterface)!!
   }
 
@@ -83,9 +81,8 @@ open class ARVRServer internal constructor(
   }
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_tracker.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_tracker.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::ARVRPositionalTracker)!!
   }
 
@@ -100,15 +97,13 @@ open class ARVRServer internal constructor(
   }
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
-    val _args = VariantArray.new()
-    _args.append(`interface`)
-    __method_bind.set_primary_interface.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(`interface`)
+    __method_bind.set_primary_interface.call(this.toVariant(), _arg, 1)
   }
 
   fun setWorldScale(arg0: Float) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_world_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_world_scale.call(this.toVariant(), _arg, 1)
   }
 
   enum class RotationMode(

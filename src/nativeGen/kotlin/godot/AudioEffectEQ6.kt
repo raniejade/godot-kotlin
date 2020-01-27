@@ -19,7 +19,7 @@ open class AudioEffectEQ6 internal constructor(
     fun new(): AudioEffectEQ6 = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectEQ6".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectEQ6" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectEQ6" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectEQ6(
         fn()

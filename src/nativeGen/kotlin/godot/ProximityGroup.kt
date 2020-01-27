@@ -42,21 +42,18 @@ open class ProximityGroup internal constructor(
   }
 
   fun setDispatchMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_dispatch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_dispatch_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setGridRadius(radius: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_grid_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_grid_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setGroupName(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_group_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_group_name.call(this.toVariant(), _arg, 1)
   }
 
   enum class DispatchMode(
@@ -86,7 +83,7 @@ open class ProximityGroup internal constructor(
     fun new(): ProximityGroup = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProximityGroup".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ProximityGroup" }
+      requireNotNull(fnPtr) { "No instance found for ProximityGroup" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ProximityGroup(
         fn()

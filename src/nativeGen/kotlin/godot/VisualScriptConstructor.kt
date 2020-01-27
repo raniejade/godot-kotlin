@@ -29,22 +29,20 @@ open class VisualScriptConstructor internal constructor(
   }
 
   fun setConstructor(constructor: Dictionary) {
-    val _args = VariantArray.new()
-    _args.append(constructor)
-    __method_bind.set_constructor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(constructor)
+    __method_bind.set_constructor.call(this.toVariant(), _arg, 1)
   }
 
   fun setConstructorType(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_constructor_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_constructor_type.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptConstructor = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptConstructor".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptConstructor" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptConstructor" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptConstructor(
         fn()

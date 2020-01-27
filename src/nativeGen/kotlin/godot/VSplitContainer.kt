@@ -19,7 +19,7 @@ open class VSplitContainer internal constructor(
     fun new(): VSplitContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSplitContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VSplitContainer" }
+      requireNotNull(fnPtr) { "No instance found for VSplitContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VSplitContainer(
         fn()

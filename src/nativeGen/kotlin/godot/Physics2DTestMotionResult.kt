@@ -68,7 +68,7 @@ open class Physics2DTestMotionResult internal constructor(
     fun new(): Physics2DTestMotionResult = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("Physics2DTestMotionResult".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Physics2DTestMotionResult" }
+      requireNotNull(fnPtr) { "No instance found for Physics2DTestMotionResult" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Physics2DTestMotionResult(
         fn()

@@ -23,9 +23,8 @@ open class VisualShaderNodeTransformFunc internal constructor(
   }
 
   fun setFunction(func: Int) {
-    val _args = VariantArray.new()
-    _args.append(func)
-    __method_bind.set_function.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(func)
+    __method_bind.set_function.call(this.toVariant(), _arg, 1)
   }
 
   enum class Function(
@@ -55,7 +54,7 @@ open class VisualShaderNodeTransformFunc internal constructor(
     fun new(): VisualShaderNodeTransformFunc = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTransformFunc".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTransformFunc" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTransformFunc" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTransformFunc(
         fn()

@@ -22,9 +22,8 @@ open class CollisionObject2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun createShapeOwner(owner: Object): Int {
-    val _args = VariantArray.new()
-    _args.append(owner)
-    val _ret = __method_bind.create_shape_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(owner)
+    val _ret = __method_bind.create_shape_owner.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -34,10 +33,9 @@ open class CollisionObject2D internal constructor(
   }
 
   fun getShapeOwnerOneWayCollisionMargin(ownerId: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    val _ret = __method_bind.get_shape_owner_one_way_collision_margin.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    val _ret = __method_bind.get_shape_owner_one_way_collision_margin.call(this.toVariant(), _arg,
+        1)
     return _ret.asFloat()
   }
 
@@ -52,36 +50,31 @@ open class CollisionObject2D internal constructor(
   }
 
   fun isShapeOwnerDisabled(ownerId: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    val _ret = __method_bind.is_shape_owner_disabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    val _ret = __method_bind.is_shape_owner_disabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isShapeOwnerOneWayCollisionEnabled(ownerId: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    val _ret = __method_bind.is_shape_owner_one_way_collision_enabled.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    val _ret = __method_bind.is_shape_owner_one_way_collision_enabled.call(this.toVariant(), _arg,
+        1)
     return _ret.asBool()
   }
 
   fun removeShapeOwner(ownerId: Int) {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    __method_bind.remove_shape_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    __method_bind.remove_shape_owner.call(this.toVariant(), _arg, 1)
   }
 
   fun setPickable(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_pickable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_pickable.call(this.toVariant(), _arg, 1)
   }
 
   fun shapeFindOwner(shapeIndex: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(shapeIndex)
-    val _ret = __method_bind.shape_find_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shapeIndex)
+    val _ret = __method_bind.shape_find_owner.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -93,15 +86,13 @@ open class CollisionObject2D internal constructor(
   }
 
   fun shapeOwnerClearShapes(ownerId: Int) {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    __method_bind.shape_owner_clear_shapes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    __method_bind.shape_owner_clear_shapes.call(this.toVariant(), _arg, 1)
   }
 
   fun shapeOwnerGetOwner(ownerId: Int): Object {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    val _ret = __method_bind.shape_owner_get_owner.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    val _ret = __method_bind.shape_owner_get_owner.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -114,10 +105,8 @@ open class CollisionObject2D internal constructor(
   }
 
   fun shapeOwnerGetShapeCount(ownerId: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    val _ret = __method_bind.shape_owner_get_shape_count.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(ownerId)
+    val _ret = __method_bind.shape_owner_get_shape_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -131,9 +120,8 @@ open class CollisionObject2D internal constructor(
   }
 
   fun shapeOwnerGetTransform(ownerId: Int): Transform2D {
-    val _args = VariantArray.new()
-    _args.append(ownerId)
-    val _ret = __method_bind.shape_owner_get_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ownerId)
+    val _ret = __method_bind.shape_owner_get_transform.call(this.toVariant(), _arg, 1)
     return _ret.asTransform2D()
   }
 

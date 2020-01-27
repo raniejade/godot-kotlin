@@ -19,7 +19,7 @@ open class VisualShaderNodeFresnel internal constructor(
     fun new(): VisualShaderNodeFresnel = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeFresnel".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeFresnel" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeFresnel" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeFresnel(
         fn()

@@ -80,7 +80,7 @@ open class _Thread internal constructor(
 
     fun new(): _Thread = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("_Thread".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton _Thread" }
+      requireNotNull(fnPtr) { "No instance found for _Thread" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       _Thread(
         fn()

@@ -83,27 +83,23 @@ open class MultiplayerAPI internal constructor(
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_allow_object_decoding.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_allow_object_decoding.call(this.toVariant(), _arg, 1)
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
-    val _args = VariantArray.new()
-    _args.append(peer)
-    __method_bind.set_network_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peer)
+    __method_bind.set_network_peer.call(this.toVariant(), _arg, 1)
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(refuse)
-    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(refuse)
+    __method_bind.set_refuse_new_network_connections.call(this.toVariant(), _arg, 1)
   }
 
   fun setRootNode(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_root_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_root_node.call(this.toVariant(), _arg, 1)
   }
 
   enum class RPCMode(
@@ -161,7 +157,7 @@ open class MultiplayerAPI internal constructor(
     fun new(): MultiplayerAPI = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiplayerAPI".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MultiplayerAPI" }
+      requireNotNull(fnPtr) { "No instance found for MultiplayerAPI" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MultiplayerAPI(
         fn()

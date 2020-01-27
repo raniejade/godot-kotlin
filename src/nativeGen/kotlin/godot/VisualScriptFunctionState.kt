@@ -36,9 +36,8 @@ open class VisualScriptFunctionState internal constructor(
   }
 
   fun resume(args: VariantArray): Variant {
-    val _args = VariantArray.new()
-    _args.append(args)
-    val _ret = __method_bind.resume.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(args)
+    val _ret = __method_bind.resume.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -46,7 +45,7 @@ open class VisualScriptFunctionState internal constructor(
     fun new(): VisualScriptFunctionState = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptFunctionState".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptFunctionState" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptFunctionState" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptFunctionState(
         fn()

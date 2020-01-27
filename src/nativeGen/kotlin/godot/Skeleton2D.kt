@@ -19,9 +19,8 @@ open class Skeleton2D internal constructor(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
   fun getBone(idx: Int): Bone2D {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_bone.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_bone.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Bone2D)!!
   }
 
@@ -38,7 +37,7 @@ open class Skeleton2D internal constructor(
   companion object {
     fun new(): Skeleton2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Skeleton2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Skeleton2D" }
+      requireNotNull(fnPtr) { "No instance found for Skeleton2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Skeleton2D(
         fn()

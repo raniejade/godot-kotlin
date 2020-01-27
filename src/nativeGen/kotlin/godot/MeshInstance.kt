@@ -41,9 +41,8 @@ open class MeshInstance internal constructor(
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
-    val _args = VariantArray.new()
-    _args.append(surface)
-    val _ret = __method_bind.get_surface_material.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(surface)
+    val _ret = __method_bind.get_surface_material.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Material)!!
   }
 
@@ -53,15 +52,13 @@ open class MeshInstance internal constructor(
   }
 
   fun setMesh(mesh: Mesh) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mesh)
+    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkeletonPath(skeletonPath: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(skeletonPath)
-    __method_bind.set_skeleton_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(skeletonPath)
+    __method_bind.set_skeleton_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setSurfaceMaterial(surface: Int, material: Material) {
@@ -74,7 +71,7 @@ open class MeshInstance internal constructor(
   companion object {
     fun new(): MeshInstance = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshInstance".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MeshInstance" }
+      requireNotNull(fnPtr) { "No instance found for MeshInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MeshInstance(
         fn()

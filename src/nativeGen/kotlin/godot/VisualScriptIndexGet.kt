@@ -19,7 +19,7 @@ open class VisualScriptIndexGet internal constructor(
     fun new(): VisualScriptIndexGet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptIndexGet".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptIndexGet" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptIndexGet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptIndexGet(
         fn()

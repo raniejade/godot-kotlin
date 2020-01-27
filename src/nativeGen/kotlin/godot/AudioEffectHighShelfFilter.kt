@@ -19,7 +19,7 @@ open class AudioEffectHighShelfFilter internal constructor(
     fun new(): AudioEffectHighShelfFilter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectHighShelfFilter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectHighShelfFilter" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectHighShelfFilter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectHighShelfFilter(
         fn()

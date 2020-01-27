@@ -19,9 +19,8 @@ open class PackedDataContainer internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun pack(value: Variant): GDError {
-    val _args = VariantArray.new()
-    _args.append(value)
-    val _ret = __method_bind.pack.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    val _ret = __method_bind.pack.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -34,7 +33,7 @@ open class PackedDataContainer internal constructor(
     fun new(): PackedDataContainer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PackedDataContainer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PackedDataContainer" }
+      requireNotNull(fnPtr) { "No instance found for PackedDataContainer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PackedDataContainer(
         fn()

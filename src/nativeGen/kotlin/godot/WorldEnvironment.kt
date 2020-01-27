@@ -22,16 +22,15 @@ open class WorldEnvironment internal constructor(
   }
 
   fun setEnvironment(env: Environment) {
-    val _args = VariantArray.new()
-    _args.append(env)
-    __method_bind.set_environment.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(env)
+    __method_bind.set_environment.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): WorldEnvironment = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WorldEnvironment".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WorldEnvironment" }
+      requireNotNull(fnPtr) { "No instance found for WorldEnvironment" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WorldEnvironment(
         fn()

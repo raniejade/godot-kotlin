@@ -29,15 +29,13 @@ open class BackBufferCopy internal constructor(
   }
 
   fun setCopyMode(copyMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(copyMode)
-    __method_bind.set_copy_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(copyMode)
+    __method_bind.set_copy_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setRect(rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_rect.call(this.toVariant(), _arg, 1)
   }
 
   enum class CopyMode(
@@ -71,7 +69,7 @@ open class BackBufferCopy internal constructor(
     fun new(): BackBufferCopy = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("BackBufferCopy".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton BackBufferCopy" }
+      requireNotNull(fnPtr) { "No instance found for BackBufferCopy" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       BackBufferCopy(
         fn()

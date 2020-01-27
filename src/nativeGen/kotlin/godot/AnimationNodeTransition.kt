@@ -31,30 +31,25 @@ open class AnimationNodeTransition internal constructor(
   }
 
   fun getInputCaption(input: Int): String {
-    val _args = VariantArray.new()
-    _args.append(input)
-    val _ret = __method_bind.get_input_caption.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(input)
+    val _ret = __method_bind.get_input_caption.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun isInputSetAsAutoAdvance(input: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(input)
-    val _ret = __method_bind.is_input_set_as_auto_advance.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(input)
+    val _ret = __method_bind.is_input_set_as_auto_advance.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun setCrossFadeTime(time: Float) {
-    val _args = VariantArray.new()
-    _args.append(time)
-    __method_bind.set_cross_fade_time.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(time)
+    __method_bind.set_cross_fade_time.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnabledInputs(amount: Int) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_enabled_inputs.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_enabled_inputs.call(this.toVariant(), _arg, 1)
   }
 
   fun setInputAsAutoAdvance(input: Int, enable: Boolean) {
@@ -75,7 +70,7 @@ open class AnimationNodeTransition internal constructor(
     fun new(): AnimationNodeTransition = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeTransition".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeTransition" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeTransition" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeTransition(
         fn()

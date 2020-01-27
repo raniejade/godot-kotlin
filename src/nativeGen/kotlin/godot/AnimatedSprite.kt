@@ -74,51 +74,43 @@ open class AnimatedSprite internal constructor(
   }
 
   fun setAnimation(animation: String) {
-    val _args = VariantArray.new()
-    _args.append(animation)
-    __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(animation)
+    __method_bind.set_animation.call(this.toVariant(), _arg, 1)
   }
 
   fun setCentered(centered: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(centered)
-    __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(centered)
+    __method_bind.set_centered.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipH)
-    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipH)
+    __method_bind.set_flip_h.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipV)
-    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipV)
+    __method_bind.set_flip_v.call(this.toVariant(), _arg, 1)
   }
 
   fun setFrame(frame: Int) {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    __method_bind.set_frame.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpeedScale(speedScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(speedScale)
-    __method_bind.set_speed_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(speedScale)
+    __method_bind.set_speed_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
-    val _args = VariantArray.new()
-    _args.append(spriteFrames)
-    __method_bind.set_sprite_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(spriteFrames)
+    __method_bind.set_sprite_frames.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -129,7 +121,7 @@ open class AnimatedSprite internal constructor(
     fun new(): AnimatedSprite = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedSprite".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimatedSprite" }
+      requireNotNull(fnPtr) { "No instance found for AnimatedSprite" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimatedSprite(
         fn()

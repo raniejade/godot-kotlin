@@ -33,28 +33,25 @@ open class PacketPeerStream internal constructor(
   }
 
   fun setInputBufferMaxSize(maxSizeBytes: Int) {
-    val _args = VariantArray.new()
-    _args.append(maxSizeBytes)
-    __method_bind.set_input_buffer_max_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxSizeBytes)
+    __method_bind.set_input_buffer_max_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setOutputBufferMaxSize(maxSizeBytes: Int) {
-    val _args = VariantArray.new()
-    _args.append(maxSizeBytes)
-    __method_bind.set_output_buffer_max_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxSizeBytes)
+    __method_bind.set_output_buffer_max_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setStreamPeer(peer: StreamPeer) {
-    val _args = VariantArray.new()
-    _args.append(peer)
-    __method_bind.set_stream_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(peer)
+    __method_bind.set_stream_peer.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PacketPeerStream = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PacketPeerStream".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PacketPeerStream" }
+      requireNotNull(fnPtr) { "No instance found for PacketPeerStream" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PacketPeerStream(
         fn()

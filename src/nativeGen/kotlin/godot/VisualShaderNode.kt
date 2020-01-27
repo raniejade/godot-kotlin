@@ -18,10 +18,8 @@ open class VisualShaderNode internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getInputPortDefaultValue(port: Int): Variant {
-    val _args = VariantArray.new()
-    _args.append(port)
-    val _ret = __method_bind.get_input_port_default_value.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(port)
+    val _ret = __method_bind.get_input_port_default_value.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -38,9 +36,8 @@ open class VisualShaderNode internal constructor(
   }
 
   fun setOutputPortForPreview(port: Int) {
-    val _args = VariantArray.new()
-    _args.append(port)
-    __method_bind.set_output_port_for_preview.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(port)
+    __method_bind.set_output_port_for_preview.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

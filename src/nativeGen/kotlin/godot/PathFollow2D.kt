@@ -59,57 +59,49 @@ open class PathFollow2D internal constructor(
   }
 
   fun setCubicInterpolation(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_cubic_interpolation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_cubic_interpolation.call(this.toVariant(), _arg, 1)
   }
 
   fun setHOffset(hOffset: Float) {
-    val _args = VariantArray.new()
-    _args.append(hOffset)
-    __method_bind.set_h_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hOffset)
+    __method_bind.set_h_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setLookahead(lookahead: Float) {
-    val _args = VariantArray.new()
-    _args.append(lookahead)
-    __method_bind.set_lookahead.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(lookahead)
+    __method_bind.set_lookahead.call(this.toVariant(), _arg, 1)
   }
 
   fun setLoop(loop: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(loop)
-    __method_bind.set_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(loop)
+    __method_bind.set_loop.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Float) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setRotate(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_rotate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_rotate.call(this.toVariant(), _arg, 1)
   }
 
   fun setUnitOffset(unitOffset: Float) {
-    val _args = VariantArray.new()
-    _args.append(unitOffset)
-    __method_bind.set_unit_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(unitOffset)
+    __method_bind.set_unit_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setVOffset(vOffset: Float) {
-    val _args = VariantArray.new()
-    _args.append(vOffset)
-    __method_bind.set_v_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vOffset)
+    __method_bind.set_v_offset.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PathFollow2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PathFollow2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PathFollow2D" }
+      requireNotNull(fnPtr) { "No instance found for PathFollow2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PathFollow2D(
         fn()

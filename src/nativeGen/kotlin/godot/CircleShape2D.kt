@@ -23,15 +23,14 @@ open class CircleShape2D internal constructor(
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): CircleShape2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("CircleShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton CircleShape2D" }
+      requireNotNull(fnPtr) { "No instance found for CircleShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       CircleShape2D(
         fn()

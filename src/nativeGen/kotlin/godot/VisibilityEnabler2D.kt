@@ -19,9 +19,8 @@ open class VisibilityEnabler2D internal constructor(
   _handle: COpaquePointer
 ) : VisibilityNotifier2D(_handle) {
   fun isEnablerEnabled(enabler: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(enabler)
-    val _ret = __method_bind.is_enabler_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabler)
+    val _ret = __method_bind.is_enabler_enabled.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -79,7 +78,7 @@ open class VisibilityEnabler2D internal constructor(
     fun new(): VisibilityEnabler2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisibilityEnabler2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisibilityEnabler2D" }
+      requireNotNull(fnPtr) { "No instance found for VisibilityEnabler2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisibilityEnabler2D(
         fn()

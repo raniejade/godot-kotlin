@@ -29,22 +29,20 @@ open class VisualScriptBasicTypeConstant internal constructor(
   }
 
   fun setBasicType(name: Int) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_basic_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_basic_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setBasicTypeConstant(name: String) {
-    val _args = VariantArray.new()
-    _args.append(name)
-    __method_bind.set_basic_type_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(name)
+    __method_bind.set_basic_type_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptBasicTypeConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptBasicTypeConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptBasicTypeConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptBasicTypeConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptBasicTypeConstant(
         fn()

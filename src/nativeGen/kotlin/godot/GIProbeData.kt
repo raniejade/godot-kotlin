@@ -78,75 +78,64 @@ open class GIProbeData internal constructor(
   }
 
   fun setBias(bias: Float) {
-    val _args = VariantArray.new()
-    _args.append(bias)
-    __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bias)
+    __method_bind.set_bias.call(this.toVariant(), _arg, 1)
   }
 
   fun setBounds(bounds: AABB) {
-    val _args = VariantArray.new()
-    _args.append(bounds)
-    __method_bind.set_bounds.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bounds)
+    __method_bind.set_bounds.call(this.toVariant(), _arg, 1)
   }
 
   fun setCellSize(cellSize: Float) {
-    val _args = VariantArray.new()
-    _args.append(cellSize)
-    __method_bind.set_cell_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cellSize)
+    __method_bind.set_cell_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setCompress(compress: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(compress)
-    __method_bind.set_compress.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(compress)
+    __method_bind.set_compress.call(this.toVariant(), _arg, 1)
   }
 
   fun setDynamicData(dynamicData: PoolIntArray) {
-    val _args = VariantArray.new()
-    _args.append(dynamicData)
-    __method_bind.set_dynamic_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(dynamicData)
+    __method_bind.set_dynamic_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setDynamicRange(dynamicRange: Int) {
-    val _args = VariantArray.new()
-    _args.append(dynamicRange)
-    __method_bind.set_dynamic_range.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(dynamicRange)
+    __method_bind.set_dynamic_range.call(this.toVariant(), _arg, 1)
   }
 
   fun setEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setInterior(interior: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(interior)
-    __method_bind.set_interior.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(interior)
+    __method_bind.set_interior.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalBias(bias: Float) {
-    val _args = VariantArray.new()
-    _args.append(bias)
-    __method_bind.set_normal_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bias)
+    __method_bind.set_normal_bias.call(this.toVariant(), _arg, 1)
   }
 
   fun setPropagation(propagation: Float) {
-    val _args = VariantArray.new()
-    _args.append(propagation)
-    __method_bind.set_propagation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(propagation)
+    __method_bind.set_propagation.call(this.toVariant(), _arg, 1)
   }
 
   fun setToCellXform(toCellXform: Transform) {
-    val _args = VariantArray.new()
-    _args.append(toCellXform)
-    __method_bind.set_to_cell_xform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toCellXform)
+    __method_bind.set_to_cell_xform.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): GIProbeData = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GIProbeData".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GIProbeData" }
+      requireNotNull(fnPtr) { "No instance found for GIProbeData" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GIProbeData(
         fn()

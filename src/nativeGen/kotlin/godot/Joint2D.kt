@@ -40,27 +40,23 @@ open class Joint2D internal constructor(
   }
 
   fun setBias(bias: Float) {
-    val _args = VariantArray.new()
-    _args.append(bias)
-    __method_bind.set_bias.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bias)
+    __method_bind.set_bias.call(this.toVariant(), _arg, 1)
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_exclude_nodes_from_collision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_exclude_nodes_from_collision.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodeA(node: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_node_a.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_node_a.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodeB(node: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.set_node_b.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.set_node_b.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

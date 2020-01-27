@@ -93,9 +93,8 @@ open class HTTPClient internal constructor(
   }
 
   fun queryStringFromDict(fields: Dictionary): String {
-    val _args = VariantArray.new()
-    _args.append(fields)
-    val _ret = __method_bind.query_string_from_dict.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fields)
+    val _ret = __method_bind.query_string_from_dict.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -135,21 +134,18 @@ open class HTTPClient internal constructor(
   }
 
   fun setBlockingMode(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_blocking_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_blocking_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setConnection(connection: StreamPeer) {
-    val _args = VariantArray.new()
-    _args.append(connection)
-    __method_bind.set_connection.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(connection)
+    __method_bind.set_connection.call(this.toVariant(), _arg, 1)
   }
 
   fun setReadChunkSize(bytes: Int) {
-    val _args = VariantArray.new()
-    _args.append(bytes)
-    __method_bind.set_read_chunk_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bytes)
+    __method_bind.set_read_chunk_size.call(this.toVariant(), _arg, 1)
   }
 
   enum class Status(
@@ -524,7 +520,7 @@ open class HTTPClient internal constructor(
 
     fun new(): HTTPClient = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HTTPClient".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HTTPClient" }
+      requireNotNull(fnPtr) { "No instance found for HTTPClient" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HTTPClient(
         fn()

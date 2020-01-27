@@ -23,9 +23,8 @@ open class VisualScriptMathConstant internal constructor(
   }
 
   fun setMathConstant(which: Int) {
-    val _args = VariantArray.new()
-    _args.append(which)
-    __method_bind.set_math_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(which)
+    __method_bind.set_math_constant.call(this.toVariant(), _arg, 1)
   }
 
   enum class MathConstant(
@@ -83,7 +82,7 @@ open class VisualScriptMathConstant internal constructor(
     fun new(): VisualScriptMathConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptMathConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptMathConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptMathConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptMathConstant(
         fn()

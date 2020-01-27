@@ -29,44 +29,38 @@ open class AudioEffectChorus internal constructor(
   }
 
   fun getVoiceCutoffHz(voiceIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(voiceIdx)
-    val _ret = __method_bind.get_voice_cutoff_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voiceIdx)
+    val _ret = __method_bind.get_voice_cutoff_hz.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceDelayMs(voiceIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(voiceIdx)
-    val _ret = __method_bind.get_voice_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voiceIdx)
+    val _ret = __method_bind.get_voice_delay_ms.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceDepthMs(voiceIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(voiceIdx)
-    val _ret = __method_bind.get_voice_depth_ms.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voiceIdx)
+    val _ret = __method_bind.get_voice_depth_ms.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceLevelDb(voiceIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(voiceIdx)
-    val _ret = __method_bind.get_voice_level_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voiceIdx)
+    val _ret = __method_bind.get_voice_level_db.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoicePan(voiceIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(voiceIdx)
-    val _ret = __method_bind.get_voice_pan.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voiceIdx)
+    val _ret = __method_bind.get_voice_pan.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceRateHz(voiceIdx: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(voiceIdx)
-    val _ret = __method_bind.get_voice_rate_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voiceIdx)
+    val _ret = __method_bind.get_voice_rate_hz.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -76,15 +70,13 @@ open class AudioEffectChorus internal constructor(
   }
 
   fun setDry(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_dry.call(this.toVariant(), _arg, 1)
   }
 
   fun setVoiceCount(voices: Int) {
-    val _args = VariantArray.new()
-    _args.append(voices)
-    __method_bind.set_voice_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(voices)
+    __method_bind.set_voice_count.call(this.toVariant(), _arg, 1)
   }
 
   fun setVoiceCutoffHz(voiceIdx: Int, cutoffHz: Float) {
@@ -130,16 +122,15 @@ open class AudioEffectChorus internal constructor(
   }
 
   fun setWet(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_wet.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_wet.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectChorus = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectChorus".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectChorus" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectChorus" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectChorus(
         fn()

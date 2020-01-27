@@ -81,51 +81,43 @@ open class PhysicalBone internal constructor(
   }
 
   fun setBodyOffset(offset: Transform) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_body_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_body_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setBounce(bounce: Float) {
-    val _args = VariantArray.new()
-    _args.append(bounce)
-    __method_bind.set_bounce.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bounce)
+    __method_bind.set_bounce.call(this.toVariant(), _arg, 1)
   }
 
   fun setFriction(friction: Float) {
-    val _args = VariantArray.new()
-    _args.append(friction)
-    __method_bind.set_friction.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(friction)
+    __method_bind.set_friction.call(this.toVariant(), _arg, 1)
   }
 
   fun setGravityScale(gravityScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(gravityScale)
-    __method_bind.set_gravity_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(gravityScale)
+    __method_bind.set_gravity_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setJointOffset(offset: Transform) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_joint_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_joint_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setJointType(jointType: Int) {
-    val _args = VariantArray.new()
-    _args.append(jointType)
-    __method_bind.set_joint_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(jointType)
+    __method_bind.set_joint_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setMass(mass: Float) {
-    val _args = VariantArray.new()
-    _args.append(mass)
-    __method_bind.set_mass.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mass)
+    __method_bind.set_mass.call(this.toVariant(), _arg, 1)
   }
 
   fun setWeight(weight: Float) {
-    val _args = VariantArray.new()
-    _args.append(weight)
-    __method_bind.set_weight.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(weight)
+    __method_bind.set_weight.call(this.toVariant(), _arg, 1)
   }
 
   enum class JointType(
@@ -170,7 +162,7 @@ open class PhysicalBone internal constructor(
 
     fun new(): PhysicalBone = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PhysicalBone".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PhysicalBone" }
+      requireNotNull(fnPtr) { "No instance found for PhysicalBone" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PhysicalBone(
         fn()

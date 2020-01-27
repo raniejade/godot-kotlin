@@ -81,69 +81,58 @@ open class AudioStreamPlayer2D internal constructor(
   }
 
   fun play(fromPosition: Float) {
-    val _args = VariantArray.new()
-    _args.append(fromPosition)
-    __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(fromPosition)
+    __method_bind.play.call(this.toVariant(), _arg, 1)
   }
 
   fun seek(toPosition: Float) {
-    val _args = VariantArray.new()
-    _args.append(toPosition)
-    __method_bind.seek.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(toPosition)
+    __method_bind.seek.call(this.toVariant(), _arg, 1)
   }
 
   fun setAreaMask(mask: Int) {
-    val _args = VariantArray.new()
-    _args.append(mask)
-    __method_bind.set_area_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mask)
+    __method_bind.set_area_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setAttenuation(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_attenuation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_attenuation.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutoplay(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_autoplay.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_autoplay.call(this.toVariant(), _arg, 1)
   }
 
   fun setBus(bus: String) {
-    val _args = VariantArray.new()
-    _args.append(bus)
-    __method_bind.set_bus.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bus)
+    __method_bind.set_bus.call(this.toVariant(), _arg, 1)
   }
 
   fun setMaxDistance(pixels: Float) {
-    val _args = VariantArray.new()
-    _args.append(pixels)
-    __method_bind.set_max_distance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pixels)
+    __method_bind.set_max_distance.call(this.toVariant(), _arg, 1)
   }
 
   fun setPitchScale(pitchScale: Float) {
-    val _args = VariantArray.new()
-    _args.append(pitchScale)
-    __method_bind.set_pitch_scale.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pitchScale)
+    __method_bind.set_pitch_scale.call(this.toVariant(), _arg, 1)
   }
 
   fun setStream(stream: AudioStream) {
-    val _args = VariantArray.new()
-    _args.append(stream)
-    __method_bind.set_stream.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stream)
+    __method_bind.set_stream.call(this.toVariant(), _arg, 1)
   }
 
   fun setStreamPaused(pause: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pause)
-    __method_bind.set_stream_paused.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pause)
+    __method_bind.set_stream_paused.call(this.toVariant(), _arg, 1)
   }
 
   fun setVolumeDb(volumeDb: Float) {
-    val _args = VariantArray.new()
-    _args.append(volumeDb)
-    __method_bind.set_volume_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(volumeDb)
+    __method_bind.set_volume_db.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -154,7 +143,7 @@ open class AudioStreamPlayer2D internal constructor(
     fun new(): AudioStreamPlayer2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamPlayer2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamPlayer2D" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamPlayer2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamPlayer2D(
         fn()

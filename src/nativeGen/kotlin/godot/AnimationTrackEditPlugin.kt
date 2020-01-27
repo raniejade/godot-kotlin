@@ -19,7 +19,7 @@ open class AnimationTrackEditPlugin internal constructor(
     fun new(): AnimationTrackEditPlugin = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationTrackEditPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationTrackEditPlugin" }
+      requireNotNull(fnPtr) { "No instance found for AnimationTrackEditPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationTrackEditPlugin(
         fn()

@@ -19,9 +19,8 @@ open class ConeTwistJoint internal constructor(
   _handle: COpaquePointer
 ) : Joint(_handle) {
   fun getParam(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -75,7 +74,7 @@ open class ConeTwistJoint internal constructor(
     fun new(): ConeTwistJoint = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConeTwistJoint".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ConeTwistJoint" }
+      requireNotNull(fnPtr) { "No instance found for ConeTwistJoint" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConeTwistJoint(
         fn()

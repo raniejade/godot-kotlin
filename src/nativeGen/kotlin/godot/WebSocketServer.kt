@@ -34,23 +34,20 @@ open class WebSocketServer internal constructor(
   }
 
   fun getPeerAddress(id: Int): String {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_peer_address.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.get_peer_port.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun hasPeer(id: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(id)
-    val _ret = __method_bind.has_peer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(id)
+    val _ret = __method_bind.has_peer.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -80,7 +77,7 @@ open class WebSocketServer internal constructor(
     fun new(): WebSocketServer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebSocketServer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebSocketServer" }
+      requireNotNull(fnPtr) { "No instance found for WebSocketServer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebSocketServer(
         fn()

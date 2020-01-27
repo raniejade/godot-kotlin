@@ -35,34 +35,30 @@ open class InputEventMouseButton internal constructor(
   }
 
   fun setButtonIndex(buttonIndex: Int) {
-    val _args = VariantArray.new()
-    _args.append(buttonIndex)
-    __method_bind.set_button_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buttonIndex)
+    __method_bind.set_button_index.call(this.toVariant(), _arg, 1)
   }
 
   fun setDoubleclick(doubleclick: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(doubleclick)
-    __method_bind.set_doubleclick.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(doubleclick)
+    __method_bind.set_doubleclick.call(this.toVariant(), _arg, 1)
   }
 
   fun setFactor(factor: Float) {
-    val _args = VariantArray.new()
-    _args.append(factor)
-    __method_bind.set_factor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(factor)
+    __method_bind.set_factor.call(this.toVariant(), _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(pressed)
-    __method_bind.set_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pressed)
+    __method_bind.set_pressed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventMouseButton = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMouseButton".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventMouseButton" }
+      requireNotNull(fnPtr) { "No instance found for InputEventMouseButton" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventMouseButton(
         fn()

@@ -58,58 +58,50 @@ open class AudioEffectReverb internal constructor(
   }
 
   fun setDamping(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_damping.call(this.toVariant(), _arg, 1)
   }
 
   fun setDry(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_dry.call(this.toVariant(), _arg, 1)
   }
 
   fun setHpf(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_hpf.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_hpf.call(this.toVariant(), _arg, 1)
   }
 
   fun setPredelayFeedback(feedback: Float) {
-    val _args = VariantArray.new()
-    _args.append(feedback)
-    __method_bind.set_predelay_feedback.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(feedback)
+    __method_bind.set_predelay_feedback.call(this.toVariant(), _arg, 1)
   }
 
   fun setPredelayMsec(msec: Float) {
-    val _args = VariantArray.new()
-    _args.append(msec)
-    __method_bind.set_predelay_msec.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(msec)
+    __method_bind.set_predelay_msec.call(this.toVariant(), _arg, 1)
   }
 
   fun setRoomSize(size: Float) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_room_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_room_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpread(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_spread.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_spread.call(this.toVariant(), _arg, 1)
   }
 
   fun setWet(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_wet.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_wet.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectReverb = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectReverb".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectReverb" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectReverb" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectReverb(
         fn()

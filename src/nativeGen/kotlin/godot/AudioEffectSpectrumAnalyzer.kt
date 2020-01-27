@@ -34,21 +34,18 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
   }
 
   fun setBufferLength(seconds: Float) {
-    val _args = VariantArray.new()
-    _args.append(seconds)
-    __method_bind.set_buffer_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seconds)
+    __method_bind.set_buffer_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setFftSize(size: Int) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_fft_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_fft_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setTapBackPos(seconds: Float) {
-    val _args = VariantArray.new()
-    _args.append(seconds)
-    __method_bind.set_tap_back_pos.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(seconds)
+    __method_bind.set_tap_back_pos.call(this.toVariant(), _arg, 1)
   }
 
   enum class FFT_Size(
@@ -94,7 +91,7 @@ open class AudioEffectSpectrumAnalyzer internal constructor(
     fun new(): AudioEffectSpectrumAnalyzer = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectSpectrumAnalyzer".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectSpectrumAnalyzer" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectSpectrumAnalyzer" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectSpectrumAnalyzer(
         fn()

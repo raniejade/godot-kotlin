@@ -36,9 +36,8 @@ open class PacketPeer internal constructor(
   }
 
   fun getVar(allowObjects: Boolean): Variant {
-    val _args = VariantArray.new()
-    _args.append(allowObjects)
-    val _ret = __method_bind.get_var.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(allowObjects)
+    val _ret = __method_bind.get_var.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
@@ -48,9 +47,8 @@ open class PacketPeer internal constructor(
   }
 
   fun putPacket(buffer: PoolByteArray): GDError {
-    val _args = VariantArray.new()
-    _args.append(buffer)
-    val _ret = __method_bind.put_packet.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(buffer)
+    val _ret = __method_bind.put_packet.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -63,9 +61,8 @@ open class PacketPeer internal constructor(
   }
 
   fun setAllowObjectDecoding(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_allow_object_decoding.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_allow_object_decoding.call(this.toVariant(), _arg, 1)
   }
 
   companion object {

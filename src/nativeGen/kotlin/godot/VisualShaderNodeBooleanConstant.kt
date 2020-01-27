@@ -23,16 +23,15 @@ open class VisualShaderNodeBooleanConstant internal constructor(
   }
 
   fun setConstant(value: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeBooleanConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeBooleanConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeBooleanConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeBooleanConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeBooleanConstant(
         fn()

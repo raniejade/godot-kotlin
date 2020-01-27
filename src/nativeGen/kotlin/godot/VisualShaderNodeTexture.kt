@@ -33,21 +33,18 @@ open class VisualShaderNodeTexture internal constructor(
   }
 
   fun setSource(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_source.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_source.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(value: Texture) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureType(value: Int) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_texture_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_texture_type.call(this.toVariant(), _arg, 1)
   }
 
   enum class TextureType(
@@ -112,7 +109,7 @@ open class VisualShaderNodeTexture internal constructor(
     fun new(): VisualShaderNodeTexture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeTexture" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeTexture(
         fn()

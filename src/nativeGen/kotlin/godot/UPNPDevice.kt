@@ -85,39 +85,33 @@ open class UPNPDevice internal constructor(
   }
 
   fun setDescriptionUrl(url: String) {
-    val _args = VariantArray.new()
-    _args.append(url)
-    __method_bind.set_description_url.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(url)
+    __method_bind.set_description_url.call(this.toVariant(), _arg, 1)
   }
 
   fun setIgdControlUrl(url: String) {
-    val _args = VariantArray.new()
-    _args.append(url)
-    __method_bind.set_igd_control_url.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(url)
+    __method_bind.set_igd_control_url.call(this.toVariant(), _arg, 1)
   }
 
   fun setIgdOurAddr(addr: String) {
-    val _args = VariantArray.new()
-    _args.append(addr)
-    __method_bind.set_igd_our_addr.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(addr)
+    __method_bind.set_igd_our_addr.call(this.toVariant(), _arg, 1)
   }
 
   fun setIgdServiceType(type: String) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_igd_service_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_igd_service_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setIgdStatus(status: Int) {
-    val _args = VariantArray.new()
-    _args.append(status)
-    __method_bind.set_igd_status.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(status)
+    __method_bind.set_igd_status.call(this.toVariant(), _arg, 1)
   }
 
   fun setServiceType(type: String) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_service_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_service_type.call(this.toVariant(), _arg, 1)
   }
 
   enum class IGDStatus(
@@ -178,7 +172,7 @@ open class UPNPDevice internal constructor(
 
     fun new(): UPNPDevice = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UPNPDevice".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton UPNPDevice" }
+      requireNotNull(fnPtr) { "No instance found for UPNPDevice" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       UPNPDevice(
         fn()

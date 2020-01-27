@@ -18,7 +18,7 @@ open class TextFile internal constructor(
   companion object {
     fun new(): TextFile = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextFile".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TextFile" }
+      requireNotNull(fnPtr) { "No instance found for TextFile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextFile(
         fn()

@@ -28,22 +28,20 @@ open class AudioStreamRandomPitch internal constructor(
   }
 
   fun setAudioStream(stream: AudioStream) {
-    val _args = VariantArray.new()
-    _args.append(stream)
-    __method_bind.set_audio_stream.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stream)
+    __method_bind.set_audio_stream.call(this.toVariant(), _arg, 1)
   }
 
   fun setRandomPitch(scale: Float) {
-    val _args = VariantArray.new()
-    _args.append(scale)
-    __method_bind.set_random_pitch.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(scale)
+    __method_bind.set_random_pitch.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioStreamRandomPitch = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioStreamRandomPitch".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioStreamRandomPitch" }
+      requireNotNull(fnPtr) { "No instance found for AudioStreamRandomPitch" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioStreamRandomPitch(
         fn()

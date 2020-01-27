@@ -23,16 +23,15 @@ open class VisualScriptSelect internal constructor(
   }
 
   fun setTyped(type: Int) {
-    val _args = VariantArray.new()
-    _args.append(type)
-    __method_bind.set_typed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    __method_bind.set_typed.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptSelect = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSelect".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptSelect" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptSelect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptSelect(
         fn()

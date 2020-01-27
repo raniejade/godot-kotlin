@@ -19,7 +19,7 @@ open class AnimationNodeTimeSeek internal constructor(
     fun new(): AnimationNodeTimeSeek = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeTimeSeek".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeTimeSeek" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeTimeSeek" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeTimeSeek(
         fn()

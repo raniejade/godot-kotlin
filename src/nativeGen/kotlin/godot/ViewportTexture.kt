@@ -23,16 +23,15 @@ open class ViewportTexture internal constructor(
   }
 
   fun setViewportPathInScene(path: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_viewport_path_in_scene.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_viewport_path_in_scene.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ViewportTexture = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ViewportTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ViewportTexture" }
+      requireNotNull(fnPtr) { "No instance found for ViewportTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ViewportTexture(
         fn()

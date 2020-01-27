@@ -34,22 +34,20 @@ open class AudioEffectRecord internal constructor(
   }
 
   fun setFormat(format: Int) {
-    val _args = VariantArray.new()
-    _args.append(format)
-    __method_bind.set_format.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(format)
+    __method_bind.set_format.call(this.toVariant(), _arg, 1)
   }
 
   fun setRecordingActive(record: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(record)
-    __method_bind.set_recording_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(record)
+    __method_bind.set_recording_active.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectRecord = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectRecord".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectRecord" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectRecord" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectRecord(
         fn()

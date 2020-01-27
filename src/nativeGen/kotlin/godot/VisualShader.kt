@@ -115,16 +115,14 @@ open class VisualShader internal constructor(
   }
 
   fun getNodeConnections(type: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_node_connections.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_node_connections.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
   fun getNodeList(type: Int): PoolIntArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_node_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_node_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolIntArray()
   }
 
@@ -137,9 +135,8 @@ open class VisualShader internal constructor(
   }
 
   fun getValidNodeId(type: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_valid_node_id.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_valid_node_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -172,15 +169,13 @@ open class VisualShader internal constructor(
   }
 
   fun setGraphOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_graph_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_graph_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setNodePosition(
@@ -233,7 +228,7 @@ open class VisualShader internal constructor(
 
     fun new(): VisualShader = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShader".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShader" }
+      requireNotNull(fnPtr) { "No instance found for VisualShader" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShader(
         fn()

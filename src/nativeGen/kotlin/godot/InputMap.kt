@@ -34,9 +34,8 @@ open class InputMap internal constructor(
   }
 
   fun actionEraseEvents(action: String) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    __method_bind.action_erase_events.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    __method_bind.action_erase_events.call(this.toVariant(), _arg, 1)
   }
 
   fun actionHasEvent(action: String, event: InputEvent): Boolean {
@@ -62,9 +61,8 @@ open class InputMap internal constructor(
   }
 
   fun eraseAction(action: String) {
-    val _args = VariantArray.new()
-    _args.append(action)
-    __method_bind.erase_action.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    __method_bind.erase_action.call(this.toVariant(), _arg, 1)
   }
 
   fun eventIsAction(event: InputEvent, action: String): Boolean {
@@ -76,9 +74,8 @@ open class InputMap internal constructor(
   }
 
   fun getActionList(action: String): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(action)
-    val _ret = __method_bind.get_action_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    val _ret = __method_bind.get_action_list.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -88,9 +85,8 @@ open class InputMap internal constructor(
   }
 
   fun hasAction(action: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(action)
-    val _ret = __method_bind.has_action.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    val _ret = __method_bind.has_action.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 

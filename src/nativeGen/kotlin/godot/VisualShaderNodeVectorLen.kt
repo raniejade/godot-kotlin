@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorLen internal constructor(
     fun new(): VisualShaderNodeVectorLen = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorLen".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorLen" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorLen" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorLen(
         fn()

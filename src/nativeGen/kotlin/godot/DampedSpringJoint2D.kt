@@ -38,34 +38,30 @@ open class DampedSpringJoint2D internal constructor(
   }
 
   fun setDamping(damping: Float) {
-    val _args = VariantArray.new()
-    _args.append(damping)
-    __method_bind.set_damping.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(damping)
+    __method_bind.set_damping.call(this.toVariant(), _arg, 1)
   }
 
   fun setLength(length: Float) {
-    val _args = VariantArray.new()
-    _args.append(length)
-    __method_bind.set_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(length)
+    __method_bind.set_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setRestLength(restLength: Float) {
-    val _args = VariantArray.new()
-    _args.append(restLength)
-    __method_bind.set_rest_length.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(restLength)
+    __method_bind.set_rest_length.call(this.toVariant(), _arg, 1)
   }
 
   fun setStiffness(stiffness: Float) {
-    val _args = VariantArray.new()
-    _args.append(stiffness)
-    __method_bind.set_stiffness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stiffness)
+    __method_bind.set_stiffness.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): DampedSpringJoint2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("DampedSpringJoint2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton DampedSpringJoint2D" }
+      requireNotNull(fnPtr) { "No instance found for DampedSpringJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       DampedSpringJoint2D(
         fn()

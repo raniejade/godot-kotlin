@@ -28,22 +28,20 @@ open class NavigationMeshInstance internal constructor(
   }
 
   fun setEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setNavigationMesh(navmesh: NavigationMesh) {
-    val _args = VariantArray.new()
-    _args.append(navmesh)
-    __method_bind.set_navigation_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(navmesh)
+    __method_bind.set_navigation_mesh.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): NavigationMeshInstance = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("NavigationMeshInstance".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton NavigationMeshInstance" }
+      requireNotNull(fnPtr) { "No instance found for NavigationMeshInstance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       NavigationMeshInstance(
         fn()

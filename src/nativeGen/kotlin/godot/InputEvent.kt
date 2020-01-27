@@ -23,9 +23,8 @@ open class InputEvent internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun accumulate(withEvent: InputEvent): Boolean {
-    val _args = VariantArray.new()
-    _args.append(withEvent)
-    val _ret = __method_bind.accumulate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(withEvent)
+    val _ret = __method_bind.accumulate.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -35,9 +34,8 @@ open class InputEvent internal constructor(
   }
 
   fun getActionStrength(action: String): Float {
-    val _args = VariantArray.new()
-    _args.append(action)
-    val _ret = __method_bind.get_action_strength.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    val _ret = __method_bind.get_action_strength.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -47,23 +45,20 @@ open class InputEvent internal constructor(
   }
 
   fun isAction(action: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(action)
-    val _ret = __method_bind.is_action.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    val _ret = __method_bind.is_action.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isActionPressed(action: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(action)
-    val _ret = __method_bind.is_action_pressed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    val _ret = __method_bind.is_action_pressed.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun isActionReleased(action: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(action)
-    val _ret = __method_bind.is_action_released.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(action)
+    val _ret = __method_bind.is_action_released.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -83,15 +78,13 @@ open class InputEvent internal constructor(
   }
 
   fun setDevice(device: Int) {
-    val _args = VariantArray.new()
-    _args.append(device)
-    __method_bind.set_device.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(device)
+    __method_bind.set_device.call(this.toVariant(), _arg, 1)
   }
 
   fun shortcutMatch(event: InputEvent): Boolean {
-    val _args = VariantArray.new()
-    _args.append(event)
-    val _ret = __method_bind.shortcut_match.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(event)
+    val _ret = __method_bind.shortcut_match.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 

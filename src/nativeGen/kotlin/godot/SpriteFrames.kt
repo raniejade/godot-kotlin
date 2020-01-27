@@ -22,9 +22,8 @@ open class SpriteFrames internal constructor(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun addAnimation(anim: String) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    __method_bind.add_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    __method_bind.add_animation.call(this.toVariant(), _arg, 1)
   }
 
   fun addFrame(
@@ -40,9 +39,8 @@ open class SpriteFrames internal constructor(
   }
 
   fun clear(anim: String) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    __method_bind.clear.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    __method_bind.clear.call(this.toVariant(), _arg, 1)
   }
 
   fun clearAll() {
@@ -50,9 +48,8 @@ open class SpriteFrames internal constructor(
   }
 
   fun getAnimationLoop(anim: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    val _ret = __method_bind.get_animation_loop.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    val _ret = __method_bind.get_animation_loop.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -62,9 +59,8 @@ open class SpriteFrames internal constructor(
   }
 
   fun getAnimationSpeed(anim: String): Float {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    val _ret = __method_bind.get_animation_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    val _ret = __method_bind.get_animation_speed.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -77,23 +73,20 @@ open class SpriteFrames internal constructor(
   }
 
   fun getFrameCount(anim: String): Int {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    val _ret = __method_bind.get_frame_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    val _ret = __method_bind.get_frame_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun hasAnimation(anim: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    val _ret = __method_bind.has_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    val _ret = __method_bind.has_animation.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun removeAnimation(anim: String) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    __method_bind.remove_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    __method_bind.remove_animation.call(this.toVariant(), _arg, 1)
   }
 
   fun removeFrame(anim: String, idx: Int) {
@@ -139,7 +132,7 @@ open class SpriteFrames internal constructor(
   companion object {
     fun new(): SpriteFrames = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpriteFrames".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SpriteFrames" }
+      requireNotNull(fnPtr) { "No instance found for SpriteFrames" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SpriteFrames(
         fn()

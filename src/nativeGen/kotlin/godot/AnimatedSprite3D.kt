@@ -40,27 +40,23 @@ open class AnimatedSprite3D internal constructor(
   }
 
   fun play(anim: String) {
-    val _args = VariantArray.new()
-    _args.append(anim)
-    __method_bind.play.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(anim)
+    __method_bind.play.call(this.toVariant(), _arg, 1)
   }
 
   fun setAnimation(animation: String) {
-    val _args = VariantArray.new()
-    _args.append(animation)
-    __method_bind.set_animation.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(animation)
+    __method_bind.set_animation.call(this.toVariant(), _arg, 1)
   }
 
   fun setFrame(frame: Int) {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    __method_bind.set_frame.call(this.toVariant(), _arg, 1)
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
-    val _args = VariantArray.new()
-    _args.append(spriteFrames)
-    __method_bind.set_sprite_frames.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(spriteFrames)
+    __method_bind.set_sprite_frames.call(this.toVariant(), _arg, 1)
   }
 
   fun stop() {
@@ -71,7 +67,7 @@ open class AnimatedSprite3D internal constructor(
     fun new(): AnimatedSprite3D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimatedSprite3D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimatedSprite3D" }
+      requireNotNull(fnPtr) { "No instance found for AnimatedSprite3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimatedSprite3D(
         fn()

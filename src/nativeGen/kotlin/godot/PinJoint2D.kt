@@ -23,15 +23,14 @@ open class PinJoint2D internal constructor(
   }
 
   fun setSoftness(softness: Float) {
-    val _args = VariantArray.new()
-    _args.append(softness)
-    __method_bind.set_softness.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(softness)
+    __method_bind.set_softness.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PinJoint2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PinJoint2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PinJoint2D" }
+      requireNotNull(fnPtr) { "No instance found for PinJoint2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PinJoint2D(
         fn()

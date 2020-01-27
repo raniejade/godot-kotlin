@@ -21,9 +21,8 @@ open class StreamPeerSSL internal constructor(
   _handle: COpaquePointer
 ) : StreamPeer(_handle) {
   fun acceptStream(base: StreamPeer): GDError {
-    val _args = VariantArray.new()
-    _args.append(base)
-    val _ret = __method_bind.accept_stream.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(base)
+    val _ret = __method_bind.accept_stream.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -59,9 +58,8 @@ open class StreamPeerSSL internal constructor(
   }
 
   fun setBlockingHandshakeEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_blocking_handshake_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_blocking_handshake_enabled.call(this.toVariant(), _arg, 1)
   }
 
   enum class Status(
@@ -102,7 +100,7 @@ open class StreamPeerSSL internal constructor(
 
     fun new(): StreamPeerSSL = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("StreamPeerSSL".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton StreamPeerSSL" }
+      requireNotNull(fnPtr) { "No instance found for StreamPeerSSL" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       StreamPeerSSL(
         fn()

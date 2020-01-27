@@ -45,39 +45,34 @@ open class SphereMesh internal constructor(
   }
 
   fun setHeight(height: Float) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_height.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_height.call(this.toVariant(), _arg, 1)
   }
 
   fun setIsHemisphere(isHemisphere: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(isHemisphere)
-    __method_bind.set_is_hemisphere.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(isHemisphere)
+    __method_bind.set_is_hemisphere.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadialSegments(radialSegments: Int) {
-    val _args = VariantArray.new()
-    _args.append(radialSegments)
-    __method_bind.set_radial_segments.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radialSegments)
+    __method_bind.set_radial_segments.call(this.toVariant(), _arg, 1)
   }
 
   fun setRadius(radius: Float) {
-    val _args = VariantArray.new()
-    _args.append(radius)
-    __method_bind.set_radius.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(radius)
+    __method_bind.set_radius.call(this.toVariant(), _arg, 1)
   }
 
   fun setRings(rings: Int) {
-    val _args = VariantArray.new()
-    _args.append(rings)
-    __method_bind.set_rings.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rings)
+    __method_bind.set_rings.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): SphereMesh = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SphereMesh".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton SphereMesh" }
+      requireNotNull(fnPtr) { "No instance found for SphereMesh" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       SphereMesh(
         fn()

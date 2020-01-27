@@ -25,7 +25,7 @@ open class ConfirmationDialog internal constructor(
     fun new(): ConfirmationDialog = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConfirmationDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ConfirmationDialog" }
+      requireNotNull(fnPtr) { "No instance found for ConfirmationDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConfirmationDialog(
         fn()

@@ -23,16 +23,15 @@ open class VisualScriptSceneNode internal constructor(
   }
 
   fun setNodePath(path: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_node_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_node_path.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptSceneNode = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSceneNode".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptSceneNode" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptSceneNode" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptSceneNode(
         fn()

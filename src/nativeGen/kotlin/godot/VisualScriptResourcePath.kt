@@ -23,16 +23,15 @@ open class VisualScriptResourcePath internal constructor(
   }
 
   fun setResourcePath(path: String) {
-    val _args = VariantArray.new()
-    _args.append(path)
-    __method_bind.set_resource_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    __method_bind.set_resource_path.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualScriptResourcePath = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptResourcePath".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptResourcePath" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptResourcePath" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptResourcePath(
         fn()

@@ -22,9 +22,8 @@ open class SceneState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getConnectionBinds(idx: Int): VariantArray {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_binds.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_binds.call(this.toVariant(), _arg, 1)
     return _ret.asArray()
   }
 
@@ -34,37 +33,32 @@ open class SceneState internal constructor(
   }
 
   fun getConnectionFlags(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_flags.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_flags.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getConnectionMethod(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_method.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_method.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getConnectionSignal(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_signal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_signal.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getConnectionSource(idx: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_source.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_source.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
   fun getConnectionTarget(idx: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_connection_target.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_connection_target.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
@@ -74,45 +68,38 @@ open class SceneState internal constructor(
   }
 
   fun getNodeGroups(idx: Int): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_groups.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_groups.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getNodeIndex(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_index.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun getNodeInstance(idx: Int): PackedScene {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_instance.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_instance.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::PackedScene)!!
   }
 
   fun getNodeInstancePlaceholder(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_instance_placeholder.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_instance_placeholder.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getNodeName(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_name.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_name.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun getNodeOwnerPath(idx: Int): NodePath {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_owner_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_owner_path.call(this.toVariant(), _arg, 1)
     return _ret.asNodePath()
   }
 
@@ -125,9 +112,8 @@ open class SceneState internal constructor(
   }
 
   fun getNodePropertyCount(idx: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_property_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_property_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -148,17 +134,14 @@ open class SceneState internal constructor(
   }
 
   fun getNodeType(idx: Int): String {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.get_node_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.get_node_type.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
   fun isNodeInstancePlaceholder(idx: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(idx)
-    val _ret = __method_bind.is_node_instance_placeholder.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(idx)
+    val _ret = __method_bind.is_node_instance_placeholder.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 

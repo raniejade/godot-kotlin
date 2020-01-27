@@ -38,9 +38,8 @@ open class ImmediateGeometry internal constructor(
   }
 
   fun addVertex(position: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(position)
-    __method_bind.add_vertex.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(position)
+    __method_bind.add_vertex.call(this.toVariant(), _arg, 1)
   }
 
   fun begin(primitive: Int, texture: Texture) {
@@ -59,40 +58,35 @@ open class ImmediateGeometry internal constructor(
   }
 
   fun setColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormal(normal: Vector3) {
-    val _args = VariantArray.new()
-    _args.append(normal)
-    __method_bind.set_normal.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normal)
+    __method_bind.set_normal.call(this.toVariant(), _arg, 1)
   }
 
   fun setTangent(tangent: Plane) {
-    val _args = VariantArray.new()
-    _args.append(tangent)
-    __method_bind.set_tangent.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(tangent)
+    __method_bind.set_tangent.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv(uv: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(uv)
-    __method_bind.set_uv.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(uv)
+    __method_bind.set_uv.call(this.toVariant(), _arg, 1)
   }
 
   fun setUv2(uv: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(uv)
-    __method_bind.set_uv2.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(uv)
+    __method_bind.set_uv2.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ImmediateGeometry = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImmediateGeometry".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ImmediateGeometry" }
+      requireNotNull(fnPtr) { "No instance found for ImmediateGeometry" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ImmediateGeometry(
         fn()

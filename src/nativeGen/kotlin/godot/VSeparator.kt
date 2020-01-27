@@ -18,7 +18,7 @@ open class VSeparator internal constructor(
   companion object {
     fun new(): VSeparator = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("VSeparator".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VSeparator" }
+      requireNotNull(fnPtr) { "No instance found for VSeparator" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VSeparator(
         fn()

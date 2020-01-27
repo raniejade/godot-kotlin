@@ -18,7 +18,7 @@ open class HScrollBar internal constructor(
   companion object {
     fun new(): HScrollBar = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("HScrollBar".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HScrollBar" }
+      requireNotNull(fnPtr) { "No instance found for HScrollBar" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HScrollBar(
         fn()

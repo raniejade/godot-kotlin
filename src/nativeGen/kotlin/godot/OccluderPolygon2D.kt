@@ -35,21 +35,18 @@ open class OccluderPolygon2D internal constructor(
   }
 
   fun setClosed(closed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(closed)
-    __method_bind.set_closed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(closed)
+    __method_bind.set_closed.call(this.toVariant(), _arg, 1)
   }
 
   fun setCullMode(cullMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(cullMode)
-    __method_bind.set_cull_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cullMode)
+    __method_bind.set_cull_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(polygon)
-    __method_bind.set_polygon.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(polygon)
+    __method_bind.set_polygon.call(this.toVariant(), _arg, 1)
   }
 
   enum class CullMode(
@@ -83,7 +80,7 @@ open class OccluderPolygon2D internal constructor(
     fun new(): OccluderPolygon2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("OccluderPolygon2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton OccluderPolygon2D" }
+      requireNotNull(fnPtr) { "No instance found for OccluderPolygon2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       OccluderPolygon2D(
         fn()

@@ -55,45 +55,38 @@ open class VisualScriptPropertyGet internal constructor(
   }
 
   fun setBasePath(basePath: NodePath) {
-    val _args = VariantArray.new()
-    _args.append(basePath)
-    __method_bind.set_base_path.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(basePath)
+    __method_bind.set_base_path.call(this.toVariant(), _arg, 1)
   }
 
   fun setBaseScript(baseScript: String) {
-    val _args = VariantArray.new()
-    _args.append(baseScript)
-    __method_bind.set_base_script.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(baseScript)
+    __method_bind.set_base_script.call(this.toVariant(), _arg, 1)
   }
 
   fun setBaseType(baseType: String) {
-    val _args = VariantArray.new()
-    _args.append(baseType)
-    __method_bind.set_base_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(baseType)
+    __method_bind.set_base_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setBasicType(basicType: Int) {
-    val _args = VariantArray.new()
-    _args.append(basicType)
-    __method_bind.set_basic_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(basicType)
+    __method_bind.set_basic_type.call(this.toVariant(), _arg, 1)
   }
 
   fun setCallMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_call_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_call_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setIndex(index: String) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.set_index.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.set_index.call(this.toVariant(), _arg, 1)
   }
 
   fun setProperty(property: String) {
-    val _args = VariantArray.new()
-    _args.append(property)
-    __method_bind.set_property.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(property)
+    __method_bind.set_property.call(this.toVariant(), _arg, 1)
   }
 
   enum class CallMode(
@@ -127,7 +120,7 @@ open class VisualScriptPropertyGet internal constructor(
     fun new(): VisualScriptPropertyGet = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptPropertyGet".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptPropertyGet" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptPropertyGet" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptPropertyGet(
         fn()

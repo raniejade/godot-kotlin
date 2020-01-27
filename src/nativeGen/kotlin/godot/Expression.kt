@@ -54,7 +54,7 @@ open class Expression internal constructor(
   companion object {
     fun new(): Expression = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Expression".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Expression" }
+      requireNotNull(fnPtr) { "No instance found for Expression" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Expression(
         fn()

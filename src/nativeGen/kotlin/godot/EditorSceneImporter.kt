@@ -70,7 +70,7 @@ open class EditorSceneImporter internal constructor(
     fun new(): EditorSceneImporter = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSceneImporter".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorSceneImporter" }
+      requireNotNull(fnPtr) { "No instance found for EditorSceneImporter" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorSceneImporter(
         fn()

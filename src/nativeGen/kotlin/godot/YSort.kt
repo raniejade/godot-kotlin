@@ -23,15 +23,14 @@ open class YSort internal constructor(
   }
 
   fun setSortEnabled(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_sort_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_sort_enabled.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): YSort = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("YSort".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton YSort" }
+      requireNotNull(fnPtr) { "No instance found for YSort" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       YSort(
         fn()

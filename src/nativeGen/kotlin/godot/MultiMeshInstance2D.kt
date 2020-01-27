@@ -32,28 +32,25 @@ open class MultiMeshInstance2D internal constructor(
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
-    val _args = VariantArray.new()
-    _args.append(multimesh)
-    __method_bind.set_multimesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(multimesh)
+    __method_bind.set_multimesh.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _args = VariantArray.new()
-    _args.append(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normalMap)
+    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): MultiMeshInstance2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiMeshInstance2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MultiMeshInstance2D" }
+      requireNotNull(fnPtr) { "No instance found for MultiMeshInstance2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MultiMeshInstance2D(
         fn()

@@ -58,34 +58,29 @@ open class ImageTexture internal constructor(
   }
 
   fun load(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setData(image: Image) {
-    val _args = VariantArray.new()
-    _args.append(image)
-    __method_bind.set_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(image)
+    __method_bind.set_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setLossyStorageQuality(quality: Float) {
-    val _args = VariantArray.new()
-    _args.append(quality)
-    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(quality)
+    __method_bind.set_lossy_storage_quality.call(this.toVariant(), _arg, 1)
   }
 
   fun setSizeOverride(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_size_override.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_size_override.call(this.toVariant(), _arg, 1)
   }
 
   fun setStorage(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_storage.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_storage.call(this.toVariant(), _arg, 1)
   }
 
   enum class Storage(
@@ -118,7 +113,7 @@ open class ImageTexture internal constructor(
 
     fun new(): ImageTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ImageTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ImageTexture" }
+      requireNotNull(fnPtr) { "No instance found for ImageTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ImageTexture(
         fn()

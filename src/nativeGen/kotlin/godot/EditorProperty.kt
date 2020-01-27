@@ -19,9 +19,8 @@ open class EditorProperty internal constructor(
   _handle: COpaquePointer
 ) : Container(_handle) {
   fun addFocusable(control: Control) {
-    val _args = VariantArray.new()
-    _args.append(control)
-    __method_bind.add_focusable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(control)
+    __method_bind.add_focusable.call(this.toVariant(), _arg, 1)
   }
 
   fun emitChanged(
@@ -84,52 +83,45 @@ open class EditorProperty internal constructor(
   }
 
   fun setBottomEditor(editor: Control) {
-    val _args = VariantArray.new()
-    _args.append(editor)
-    __method_bind.set_bottom_editor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(editor)
+    __method_bind.set_bottom_editor.call(this.toVariant(), _arg, 1)
   }
 
   fun setCheckable(checkable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(checkable)
-    __method_bind.set_checkable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(checkable)
+    __method_bind.set_checkable.call(this.toVariant(), _arg, 1)
   }
 
   fun setChecked(checked: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(checked)
-    __method_bind.set_checked.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(checked)
+    __method_bind.set_checked.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawRed(drawRed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(drawRed)
-    __method_bind.set_draw_red.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(drawRed)
+    __method_bind.set_draw_red.call(this.toVariant(), _arg, 1)
   }
 
   fun setKeying(keying: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(keying)
-    __method_bind.set_keying.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(keying)
+    __method_bind.set_keying.call(this.toVariant(), _arg, 1)
   }
 
   fun setLabel(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_label.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_label.call(this.toVariant(), _arg, 1)
   }
 
   fun setReadOnly(readOnly: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(readOnly)
-    __method_bind.set_read_only.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(readOnly)
+    __method_bind.set_read_only.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): EditorProperty = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorProperty".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorProperty" }
+      requireNotNull(fnPtr) { "No instance found for EditorProperty" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorProperty(
         fn()

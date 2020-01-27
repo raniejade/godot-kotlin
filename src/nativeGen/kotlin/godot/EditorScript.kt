@@ -17,9 +17,8 @@ open class EditorScript internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addRootNode(node: Node) {
-    val _args = VariantArray.new()
-    _args.append(node)
-    __method_bind.add_root_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(node)
+    __method_bind.add_root_node.call(this.toVariant(), _arg, 1)
   }
 
   fun getEditorInterface(): EditorInterface {
@@ -35,7 +34,7 @@ open class EditorScript internal constructor(
   companion object {
     fun new(): EditorScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorScript".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorScript" }
+      requireNotNull(fnPtr) { "No instance found for EditorScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorScript(
         fn()

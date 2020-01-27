@@ -30,7 +30,7 @@ open class GDScript internal constructor(
   companion object {
     fun new(): GDScript = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("GDScript".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton GDScript" }
+      requireNotNull(fnPtr) { "No instance found for GDScript" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       GDScript(
         fn()

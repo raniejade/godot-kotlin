@@ -19,7 +19,7 @@ open class EditorImportPlugin internal constructor(
     fun new(): EditorImportPlugin = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorImportPlugin".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorImportPlugin" }
+      requireNotNull(fnPtr) { "No instance found for EditorImportPlugin" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorImportPlugin(
         fn()

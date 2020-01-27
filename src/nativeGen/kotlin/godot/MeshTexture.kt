@@ -33,27 +33,24 @@ open class MeshTexture internal constructor(
   }
 
   fun setBaseTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_base_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_base_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setImageSize(size: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_image_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_image_size.call(this.toVariant(), _arg, 1)
   }
 
   fun setMesh(mesh: Mesh) {
-    val _args = VariantArray.new()
-    _args.append(mesh)
-    __method_bind.set_mesh.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mesh)
+    __method_bind.set_mesh.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): MeshTexture = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("MeshTexture".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MeshTexture" }
+      requireNotNull(fnPtr) { "No instance found for MeshTexture" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MeshTexture(
         fn()

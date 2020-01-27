@@ -32,9 +32,8 @@ open class KinematicBody2D internal constructor(
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision2D {
-    val _args = VariantArray.new()
-    _args.append(slideIdx)
-    val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(slideIdx)
+    val _ret = __method_bind.get_slide_collision.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::KinematicCollision2D)!!
   }
 
@@ -119,15 +118,13 @@ open class KinematicBody2D internal constructor(
   }
 
   fun setSafeMargin(pixels: Float) {
-    val _args = VariantArray.new()
-    _args.append(pixels)
-    __method_bind.set_safe_margin.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pixels)
+    __method_bind.set_safe_margin.call(this.toVariant(), _arg, 1)
   }
 
   fun setSyncToPhysics(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_sync_to_physics.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_sync_to_physics.call(this.toVariant(), _arg, 1)
   }
 
   fun testMove(
@@ -147,7 +144,7 @@ open class KinematicBody2D internal constructor(
     fun new(): KinematicBody2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("KinematicBody2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton KinematicBody2D" }
+      requireNotNull(fnPtr) { "No instance found for KinematicBody2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       KinematicBody2D(
         fn()

@@ -56,9 +56,8 @@ open class WebRTCPeerConnection internal constructor(
   }
 
   fun initialize(configuration: Dictionary): GDError {
-    val _args = VariantArray.new()
-    _args.append(configuration)
-    val _ret = __method_bind.initialize.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(configuration)
+    val _ret = __method_bind.initialize.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -126,7 +125,7 @@ open class WebRTCPeerConnection internal constructor(
     fun new(): WebRTCPeerConnection = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("WebRTCPeerConnection".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WebRTCPeerConnection" }
+      requireNotNull(fnPtr) { "No instance found for WebRTCPeerConnection" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WebRTCPeerConnection(
         fn()

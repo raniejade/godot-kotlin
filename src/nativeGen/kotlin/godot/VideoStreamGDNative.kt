@@ -23,16 +23,15 @@ open class VideoStreamGDNative internal constructor(
   }
 
   fun setFile(file: String) {
-    val _args = VariantArray.new()
-    _args.append(file)
-    __method_bind.set_file.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(file)
+    __method_bind.set_file.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VideoStreamGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VideoStreamGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VideoStreamGDNative" }
+      requireNotNull(fnPtr) { "No instance found for VideoStreamGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VideoStreamGDNative(
         fn()

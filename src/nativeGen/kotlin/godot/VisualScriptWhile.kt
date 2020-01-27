@@ -19,7 +19,7 @@ open class VisualScriptWhile internal constructor(
     fun new(): VisualScriptWhile = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptWhile".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptWhile" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptWhile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptWhile(
         fn()

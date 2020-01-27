@@ -44,9 +44,8 @@ open class TextEdit internal constructor(
   }
 
   fun canFold(line: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(line)
-    val _ret = __method_bind.can_fold.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    val _ret = __method_bind.can_fold.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -88,21 +87,18 @@ open class TextEdit internal constructor(
   }
 
   fun cursorSetBlinkEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.cursor_set_blink_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun cursorSetBlinkSpeed(blinkSpeed: Float) {
-    val _args = VariantArray.new()
-    _args.append(blinkSpeed)
-    __method_bind.cursor_set_blink_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(blinkSpeed)
+    __method_bind.cursor_set_blink_speed.call(this.toVariant(), _arg, 1)
   }
 
   fun cursorSetBlockMode(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.cursor_set_block_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.cursor_set_block_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun cursorSetColumn(column: Int, adjustViewport: Boolean) {
@@ -139,9 +135,8 @@ open class TextEdit internal constructor(
   }
 
   fun foldLine(line: Int) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    __method_bind.fold_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    __method_bind.fold_line.call(this.toVariant(), _arg, 1)
   }
 
   fun getBreakpoints(): VariantArray {
@@ -150,16 +145,14 @@ open class TextEdit internal constructor(
   }
 
   fun getKeywordColor(keyword: String): Color {
-    val _args = VariantArray.new()
-    _args.append(keyword)
-    val _ret = __method_bind.get_keyword_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(keyword)
+    val _ret = __method_bind.get_keyword_color.call(this.toVariant(), _arg, 1)
     return _ret.asColor()
   }
 
   fun getLine(line: Int): String {
-    val _args = VariantArray.new()
-    _args.append(line)
-    val _ret = __method_bind.get_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    val _ret = __method_bind.get_line.call(this.toVariant(), _arg, 1)
     return _ret.asString()
   }
 
@@ -214,16 +207,14 @@ open class TextEdit internal constructor(
   }
 
   fun hasKeywordColor(keyword: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(keyword)
-    val _ret = __method_bind.has_keyword_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(keyword)
+    val _ret = __method_bind.has_keyword_color.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun insertTextAtCursor(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.insert_text_at_cursor.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.insert_text_at_cursor.call(this.toVariant(), _arg, 1)
   }
 
   fun isBreakpointGutterEnabled(): Boolean {
@@ -252,9 +243,8 @@ open class TextEdit internal constructor(
   }
 
   fun isFolded(line: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(line)
-    val _ret = __method_bind.is_folded.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    val _ret = __method_bind.is_folded.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -274,9 +264,8 @@ open class TextEdit internal constructor(
   }
 
   fun isLineHidden(line: Int): Boolean {
-    val _args = VariantArray.new()
-    _args.append(line)
-    val _ret = __method_bind.is_line_hidden.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    val _ret = __method_bind.is_line_hidden.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -321,9 +310,8 @@ open class TextEdit internal constructor(
   }
 
   fun menuOption(option: Int) {
-    val _args = VariantArray.new()
-    _args.append(option)
-    __method_bind.menu_option.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(option)
+    __method_bind.menu_option.call(this.toVariant(), _arg, 1)
   }
 
   fun paste() {
@@ -372,51 +360,43 @@ open class TextEdit internal constructor(
   }
 
   fun setBreakpointGutterEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_breakpoint_gutter_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_breakpoint_gutter_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setContextMenuEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_context_menu_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_context_menu_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawFoldGutter(arg0: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_draw_fold_gutter.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_draw_fold_gutter.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawSpaces(arg0: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_draw_spaces.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_draw_spaces.call(this.toVariant(), _arg, 1)
   }
 
   fun setDrawTabs(arg0: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(arg0)
-    __method_bind.set_draw_tabs.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg0)
+    __method_bind.set_draw_tabs.call(this.toVariant(), _arg, 1)
   }
 
   fun setHidingEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_hiding_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_hiding_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun setHighlightAllOccurrences(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_highlight_all_occurrences.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_highlight_all_occurrences.call(this.toVariant(), _arg, 1)
   }
 
   fun setHighlightCurrentLine(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_highlight_current_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_highlight_current_line.call(this.toVariant(), _arg, 1)
   }
 
   fun setLineAsHidden(line: Int, enable: Boolean) {
@@ -427,63 +407,53 @@ open class TextEdit internal constructor(
   }
 
   fun setOverrideSelectedFontColor(override: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(override)
-    __method_bind.set_override_selected_font_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(override)
+    __method_bind.set_override_selected_font_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setReadonly(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_readonly.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_readonly.call(this.toVariant(), _arg, 1)
   }
 
   fun setRightClickMovesCaret(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_right_click_moves_caret.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_right_click_moves_caret.call(this.toVariant(), _arg, 1)
   }
 
   fun setShowLineNumbers(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_show_line_numbers.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_show_line_numbers.call(this.toVariant(), _arg, 1)
   }
 
   fun setSmoothScrollEnable(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_smooth_scroll_enable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_smooth_scroll_enable.call(this.toVariant(), _arg, 1)
   }
 
   fun setSyntaxColoring(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_syntax_coloring.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_syntax_coloring.call(this.toVariant(), _arg, 1)
   }
 
   fun setText(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_text.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_text.call(this.toVariant(), _arg, 1)
   }
 
   fun setVScrollSpeed(speed: Float) {
-    val _args = VariantArray.new()
-    _args.append(speed)
-    __method_bind.set_v_scroll_speed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(speed)
+    __method_bind.set_v_scroll_speed.call(this.toVariant(), _arg, 1)
   }
 
   fun setWrapEnabled(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_wrap_enabled.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_wrap_enabled.call(this.toVariant(), _arg, 1)
   }
 
   fun toggleFoldLine(line: Int) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    __method_bind.toggle_fold_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    __method_bind.toggle_fold_line.call(this.toVariant(), _arg, 1)
   }
 
   fun undo() {
@@ -491,9 +461,8 @@ open class TextEdit internal constructor(
   }
 
   fun unfoldLine(line: Int) {
-    val _args = VariantArray.new()
-    _args.append(line)
-    __method_bind.unfold_line.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(line)
+    __method_bind.unfold_line.call(this.toVariant(), _arg, 1)
   }
 
   fun unhideAllLines() {
@@ -577,7 +546,7 @@ open class TextEdit internal constructor(
 
     fun new(): TextEdit = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextEdit".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TextEdit" }
+      requireNotNull(fnPtr) { "No instance found for TextEdit" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextEdit(
         fn()

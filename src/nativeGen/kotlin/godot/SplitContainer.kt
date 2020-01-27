@@ -38,21 +38,18 @@ open class SplitContainer internal constructor(
   }
 
   fun setCollapsed(collapsed: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(collapsed)
-    __method_bind.set_collapsed.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(collapsed)
+    __method_bind.set_collapsed.call(this.toVariant(), _arg, 1)
   }
 
   fun setDraggerVisibility(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_dragger_visibility.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_dragger_visibility.call(this.toVariant(), _arg, 1)
   }
 
   fun setSplitOffset(offset: Int) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_split_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_split_offset.call(this.toVariant(), _arg, 1)
   }
 
   enum class DraggerVisibility(

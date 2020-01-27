@@ -19,7 +19,7 @@ open class AnimationNodeOutput internal constructor(
     fun new(): AnimationNodeOutput = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeOutput".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeOutput" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeOutput" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeOutput(
         fn()

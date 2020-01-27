@@ -20,9 +20,8 @@ open class UPNP internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun addDevice(device: UPNPDevice) {
-    val _args = VariantArray.new()
-    _args.append(device)
-    __method_bind.add_device.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(device)
+    __method_bind.add_device.call(this.toVariant(), _arg, 1)
   }
 
   fun addPortMapping(
@@ -68,9 +67,8 @@ open class UPNP internal constructor(
   }
 
   fun getDevice(index: Int): UPNPDevice {
-    val _args = VariantArray.new()
-    _args.append(index)
-    val _ret = __method_bind.get_device.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    val _ret = __method_bind.get_device.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::UPNPDevice)!!
   }
 
@@ -105,9 +103,8 @@ open class UPNP internal constructor(
   }
 
   fun removeDevice(index: Int) {
-    val _args = VariantArray.new()
-    _args.append(index)
-    __method_bind.remove_device.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(index)
+    __method_bind.remove_device.call(this.toVariant(), _arg, 1)
   }
 
   fun setDevice(index: Int, device: UPNPDevice) {
@@ -118,21 +115,18 @@ open class UPNP internal constructor(
   }
 
   fun setDiscoverIpv6(ipv6: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(ipv6)
-    __method_bind.set_discover_ipv6.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(ipv6)
+    __method_bind.set_discover_ipv6.call(this.toVariant(), _arg, 1)
   }
 
   fun setDiscoverLocalPort(port: Int) {
-    val _args = VariantArray.new()
-    _args.append(port)
-    __method_bind.set_discover_local_port.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(port)
+    __method_bind.set_discover_local_port.call(this.toVariant(), _arg, 1)
   }
 
   fun setDiscoverMulticastIf(mIf: String) {
-    val _args = VariantArray.new()
-    _args.append(mIf)
-    __method_bind.set_discover_multicast_if.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mIf)
+    __method_bind.set_discover_multicast_if.call(this.toVariant(), _arg, 1)
   }
 
   enum class UPNPResult(
@@ -269,7 +263,7 @@ open class UPNP internal constructor(
 
     fun new(): UPNP = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("UPNP".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton UPNP" }
+      requireNotNull(fnPtr) { "No instance found for UPNP" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       UPNP(
         fn()

@@ -52,9 +52,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun areaClearShapes(area: RID) {
-    val _args = VariantArray.new()
-    _args.append(area)
-    __method_bind.area_clear_shapes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(area)
+    __method_bind.area_clear_shapes.call(this.toVariant(), _arg, 1)
   }
 
   fun areaCreate(): RID {
@@ -63,18 +62,14 @@ open class Physics2DServer internal constructor(
   }
 
   fun areaGetCanvasInstanceId(area: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(area)
-    val _ret = __method_bind.area_get_canvas_instance_id.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(area)
+    val _ret = __method_bind.area_get_canvas_instance_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun areaGetObjectInstanceId(area: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(area)
-    val _ret = __method_bind.area_get_object_instance_id.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(area)
+    val _ret = __method_bind.area_get_object_instance_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -95,9 +90,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun areaGetShapeCount(area: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(area)
-    val _ret = __method_bind.area_get_shape_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(area)
+    val _ret = __method_bind.area_get_shape_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -110,24 +104,20 @@ open class Physics2DServer internal constructor(
   }
 
   fun areaGetSpace(area: RID): RID {
-    val _args = VariantArray.new()
-    _args.append(area)
-    val _ret = __method_bind.area_get_space.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(area)
+    val _ret = __method_bind.area_get_space.call(this.toVariant(), _arg, 1)
     return _ret.asRID()
   }
 
   fun areaGetSpaceOverrideMode(area: RID): AreaSpaceOverrideMode {
-    val _args = VariantArray.new()
-    _args.append(area)
-    val _ret = __method_bind.area_get_space_override_mode.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(area)
+    val _ret = __method_bind.area_get_space_override_mode.call(this.toVariant(), _arg, 1)
     return Physics2DServer.AreaSpaceOverrideMode.from(_ret.asInt())
   }
 
   fun areaGetTransform(area: RID): Transform2D {
-    val _args = VariantArray.new()
-    _args.append(area)
-    val _ret = __method_bind.area_get_transform.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(area)
+    val _ret = __method_bind.area_get_transform.call(this.toVariant(), _arg, 1)
     return _ret.asTransform2D()
   }
 
@@ -340,9 +330,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun bodyClearShapes(body: RID) {
-    val _args = VariantArray.new()
-    _args.append(body)
-    __method_bind.body_clear_shapes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    __method_bind.body_clear_shapes.call(this.toVariant(), _arg, 1)
   }
 
   fun bodyCreate(): RID {
@@ -351,62 +340,51 @@ open class Physics2DServer internal constructor(
   }
 
   fun bodyGetCanvasInstanceId(body: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_canvas_instance_id.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_canvas_instance_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun bodyGetCollisionLayer(body: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_collision_layer.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_collision_layer.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun bodyGetCollisionMask(body: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_collision_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_collision_mask.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun bodyGetContinuousCollisionDetectionMode(body: RID): CCDMode {
-    val _args = VariantArray.new()
-    _args.append(body)
+    val _arg = Variant.new(body)
     val _ret = __method_bind.body_get_continuous_collision_detection_mode.call(this.toVariant(),
-        _args.toVariant(), 1)
+        _arg, 1)
     return Physics2DServer.CCDMode.from(_ret.asInt())
   }
 
   fun bodyGetDirectState(body: RID): Physics2DDirectBodyState {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_direct_state.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_direct_state.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Physics2DDirectBodyState)!!
   }
 
   fun bodyGetMaxContactsReported(body: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_max_contacts_reported.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_max_contacts_reported.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
   fun bodyGetMode(body: RID): BodyMode {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_mode.call(this.toVariant(), _arg, 1)
     return Physics2DServer.BodyMode.from(_ret.asInt())
   }
 
   fun bodyGetObjectInstanceId(body: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_object_instance_id.call(this.toVariant(), _args.toVariant(),
-        1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_object_instance_id.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -427,9 +405,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun bodyGetShapeCount(body: RID): Int {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_shape_count.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_shape_count.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -450,9 +427,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun bodyGetSpace(body: RID): RID {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_get_space.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_get_space.call(this.toVariant(), _arg, 1)
     return _ret.asRID()
   }
 
@@ -465,10 +441,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun bodyIsOmittingForceIntegration(body: RID): Boolean {
-    val _args = VariantArray.new()
-    _args.append(body)
-    val _ret = __method_bind.body_is_omitting_force_integration.call(this.toVariant(),
-        _args.toVariant(), 1)
+    val _arg = Variant.new(body)
+    val _ret = __method_bind.body_is_omitting_force_integration.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -719,15 +693,13 @@ open class Physics2DServer internal constructor(
   }
 
   fun freeRid(rid: RID) {
-    val _args = VariantArray.new()
-    _args.append(rid)
-    __method_bind.free_rid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rid)
+    __method_bind.free_rid.call(this.toVariant(), _arg, 1)
   }
 
   fun getProcessInfo(processInfo: Int): Int {
-    val _args = VariantArray.new()
-    _args.append(processInfo)
-    val _ret = __method_bind.get_process_info.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(processInfo)
+    val _ret = __method_bind.get_process_info.call(this.toVariant(), _arg, 1)
     return _ret.asInt()
   }
 
@@ -757,9 +729,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun jointGetType(joint: RID): JointType {
-    val _args = VariantArray.new()
-    _args.append(joint)
-    val _ret = __method_bind.joint_get_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(joint)
+    val _ret = __method_bind.joint_get_type.call(this.toVariant(), _arg, 1)
     return Physics2DServer.JointType.from(_ret.asInt())
   }
 
@@ -809,22 +780,19 @@ open class Physics2DServer internal constructor(
   }
 
   fun setActive(active: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(active)
-    __method_bind.set_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(active)
+    __method_bind.set_active.call(this.toVariant(), _arg, 1)
   }
 
   fun shapeGetData(shape: RID): Variant {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    val _ret = __method_bind.shape_get_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    val _ret = __method_bind.shape_get_data.call(this.toVariant(), _arg, 1)
     return _ret
   }
 
   fun shapeGetType(shape: RID): ShapeType {
-    val _args = VariantArray.new()
-    _args.append(shape)
-    val _ret = __method_bind.shape_get_type.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shape)
+    val _ret = __method_bind.shape_get_type.call(this.toVariant(), _arg, 1)
     return Physics2DServer.ShapeType.from(_ret.asInt())
   }
 
@@ -841,9 +809,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun spaceGetDirectState(space: RID): Physics2DDirectSpaceState {
-    val _args = VariantArray.new()
-    _args.append(space)
-    val _ret = __method_bind.space_get_direct_state.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(space)
+    val _ret = __method_bind.space_get_direct_state.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::Physics2DDirectSpaceState)!!
   }
 
@@ -856,9 +823,8 @@ open class Physics2DServer internal constructor(
   }
 
   fun spaceIsActive(space: RID): Boolean {
-    val _args = VariantArray.new()
-    _args.append(space)
-    val _ret = __method_bind.space_is_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(space)
+    val _ret = __method_bind.space_is_active.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 

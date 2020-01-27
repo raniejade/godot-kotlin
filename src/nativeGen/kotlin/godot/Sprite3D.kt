@@ -50,45 +50,39 @@ open class Sprite3D internal constructor(
   }
 
   fun setFrame(frame: Int) {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    __method_bind.set_frame.call(this.toVariant(), _arg, 1)
   }
 
   fun setHframes(hframes: Int) {
-    val _args = VariantArray.new()
-    _args.append(hframes)
-    __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hframes)
+    __method_bind.set_hframes.call(this.toVariant(), _arg, 1)
   }
 
   fun setRegion(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_region.call(this.toVariant(), _arg, 1)
   }
 
   fun setRegionRect(rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setVframes(vframes: Int) {
-    val _args = VariantArray.new()
-    _args.append(vframes)
-    __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vframes)
+    __method_bind.set_vframes.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Sprite3D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite3D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Sprite3D" }
+      requireNotNull(fnPtr) { "No instance found for Sprite3D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Sprite3D(
         fn()

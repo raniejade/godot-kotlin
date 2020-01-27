@@ -84,88 +84,75 @@ open class AudioEffectDelay internal constructor(
   }
 
   fun setDry(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_dry.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_dry.call(this.toVariant(), _arg, 1)
   }
 
   fun setFeedbackActive(amount: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_feedback_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_feedback_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setFeedbackDelayMs(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_feedback_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_feedback_delay_ms.call(this.toVariant(), _arg, 1)
   }
 
   fun setFeedbackLevelDb(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_feedback_level_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_feedback_level_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setFeedbackLowpass(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_feedback_lowpass.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_feedback_lowpass.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap1Active(amount: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap1_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap1_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap1DelayMs(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap1_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap1_delay_ms.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap1LevelDb(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap1_level_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap1_level_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap1Pan(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap1_pan.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap1_pan.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap2Active(amount: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap2_active.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap2_active.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap2DelayMs(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap2_delay_ms.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap2_delay_ms.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap2LevelDb(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap2_level_db.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap2_level_db.call(this.toVariant(), _arg, 1)
   }
 
   fun setTap2Pan(amount: Float) {
-    val _args = VariantArray.new()
-    _args.append(amount)
-    __method_bind.set_tap2_pan.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(amount)
+    __method_bind.set_tap2_pan.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): AudioEffectDelay = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDelay".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectDelay" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectDelay" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectDelay(
         fn()

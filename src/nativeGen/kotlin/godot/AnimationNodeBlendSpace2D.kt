@@ -62,16 +62,14 @@ open class AnimationNodeBlendSpace2D internal constructor(
   }
 
   fun getBlendPointNode(point: Int): AnimationRootNode {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_blend_point_node.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_blend_point_node.call(this.toVariant(), _arg, 1)
     return _ret.asObject(::AnimationRootNode)!!
   }
 
   fun getBlendPointPosition(point: Int): Vector2 {
-    val _args = VariantArray.new()
-    _args.append(point)
-    val _ret = __method_bind.get_blend_point_position.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    val _ret = __method_bind.get_blend_point_position.call(this.toVariant(), _arg, 1)
     return _ret.asVector2()
   }
 
@@ -114,27 +112,23 @@ open class AnimationNodeBlendSpace2D internal constructor(
   }
 
   fun removeBlendPoint(point: Int) {
-    val _args = VariantArray.new()
-    _args.append(point)
-    __method_bind.remove_blend_point.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(point)
+    __method_bind.remove_blend_point.call(this.toVariant(), _arg, 1)
   }
 
   fun removeTriangle(triangle: Int) {
-    val _args = VariantArray.new()
-    _args.append(triangle)
-    __method_bind.remove_triangle.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(triangle)
+    __method_bind.remove_triangle.call(this.toVariant(), _arg, 1)
   }
 
   fun setAutoTriangles(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_auto_triangles.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_auto_triangles.call(this.toVariant(), _arg, 1)
   }
 
   fun setBlendMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_blend_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_blend_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setBlendPointNode(point: Int, node: AnimationRootNode) {
@@ -152,33 +146,28 @@ open class AnimationNodeBlendSpace2D internal constructor(
   }
 
   fun setMaxSpace(maxSpace: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(maxSpace)
-    __method_bind.set_max_space.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(maxSpace)
+    __method_bind.set_max_space.call(this.toVariant(), _arg, 1)
   }
 
   fun setMinSpace(minSpace: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(minSpace)
-    __method_bind.set_min_space.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(minSpace)
+    __method_bind.set_min_space.call(this.toVariant(), _arg, 1)
   }
 
   fun setSnap(snap: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(snap)
-    __method_bind.set_snap.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(snap)
+    __method_bind.set_snap.call(this.toVariant(), _arg, 1)
   }
 
   fun setXLabel(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_x_label.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_x_label.call(this.toVariant(), _arg, 1)
   }
 
   fun setYLabel(text: String) {
-    val _args = VariantArray.new()
-    _args.append(text)
-    __method_bind.set_y_label.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(text)
+    __method_bind.set_y_label.call(this.toVariant(), _arg, 1)
   }
 
   enum class BlendMode(
@@ -212,7 +201,7 @@ open class AnimationNodeBlendSpace2D internal constructor(
     fun new(): AnimationNodeBlendSpace2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AnimationNodeBlendSpace2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AnimationNodeBlendSpace2D" }
+      requireNotNull(fnPtr) { "No instance found for AnimationNodeBlendSpace2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AnimationNodeBlendSpace2D(
         fn()

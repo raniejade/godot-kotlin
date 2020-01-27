@@ -34,28 +34,25 @@ open class HeightMapShape internal constructor(
   }
 
   fun setMapData(data: PoolRealArray) {
-    val _args = VariantArray.new()
-    _args.append(data)
-    __method_bind.set_map_data.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(data)
+    __method_bind.set_map_data.call(this.toVariant(), _arg, 1)
   }
 
   fun setMapDepth(height: Int) {
-    val _args = VariantArray.new()
-    _args.append(height)
-    __method_bind.set_map_depth.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(height)
+    __method_bind.set_map_depth.call(this.toVariant(), _arg, 1)
   }
 
   fun setMapWidth(width: Int) {
-    val _args = VariantArray.new()
-    _args.append(width)
-    __method_bind.set_map_width.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(width)
+    __method_bind.set_map_width.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): HeightMapShape = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("HeightMapShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton HeightMapShape" }
+      requireNotNull(fnPtr) { "No instance found for HeightMapShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       HeightMapShape(
         fn()

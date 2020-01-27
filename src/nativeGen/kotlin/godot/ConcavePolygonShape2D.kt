@@ -23,16 +23,15 @@ open class ConcavePolygonShape2D internal constructor(
   }
 
   fun setSegments(segments: PoolVector2Array) {
-    val _args = VariantArray.new()
-    _args.append(segments)
-    __method_bind.set_segments.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(segments)
+    __method_bind.set_segments.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): ConcavePolygonShape2D = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConcavePolygonShape2D".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ConcavePolygonShape2D" }
+      requireNotNull(fnPtr) { "No instance found for ConcavePolygonShape2D" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConcavePolygonShape2D(
         fn()

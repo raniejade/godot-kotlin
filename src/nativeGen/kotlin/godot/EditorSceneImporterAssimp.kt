@@ -19,7 +19,7 @@ open class EditorSceneImporterAssimp internal constructor(
     fun new(): EditorSceneImporterAssimp = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("EditorSceneImporterAssimp".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton EditorSceneImporterAssimp" }
+      requireNotNull(fnPtr) { "No instance found for EditorSceneImporterAssimp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       EditorSceneImporterAssimp(
         fn()

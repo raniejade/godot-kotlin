@@ -76,9 +76,8 @@ open class Sprite internal constructor(
   }
 
   fun isPixelOpaque(pos: Vector2): Boolean {
-    val _args = VariantArray.new()
-    _args.append(pos)
-    val _ret = __method_bind.is_pixel_opaque.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pos)
+    val _ret = __method_bind.is_pixel_opaque.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -93,81 +92,69 @@ open class Sprite internal constructor(
   }
 
   fun setCentered(centered: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(centered)
-    __method_bind.set_centered.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(centered)
+    __method_bind.set_centered.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipH(flipH: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipH)
-    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipH)
+    __method_bind.set_flip_h.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipV(flipV: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(flipV)
-    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(flipV)
+    __method_bind.set_flip_v.call(this.toVariant(), _arg, 1)
   }
 
   fun setFrame(frame: Int) {
-    val _args = VariantArray.new()
-    _args.append(frame)
-    __method_bind.set_frame.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(frame)
+    __method_bind.set_frame.call(this.toVariant(), _arg, 1)
   }
 
   fun setHframes(hframes: Int) {
-    val _args = VariantArray.new()
-    _args.append(hframes)
-    __method_bind.set_hframes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(hframes)
+    __method_bind.set_hframes.call(this.toVariant(), _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
-    val _args = VariantArray.new()
-    _args.append(normalMap)
-    __method_bind.set_normal_map.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(normalMap)
+    __method_bind.set_normal_map.call(this.toVariant(), _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
-    val _args = VariantArray.new()
-    _args.append(offset)
-    __method_bind.set_offset.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(offset)
+    __method_bind.set_offset.call(this.toVariant(), _arg, 1)
   }
 
   fun setRegion(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_region.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_region.call(this.toVariant(), _arg, 1)
   }
 
   fun setRegionFilterClip(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_region_filter_clip.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_region_filter_clip.call(this.toVariant(), _arg, 1)
   }
 
   fun setRegionRect(rect: Rect2) {
-    val _args = VariantArray.new()
-    _args.append(rect)
-    __method_bind.set_region_rect.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(rect)
+    __method_bind.set_region_rect.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   fun setVframes(vframes: Int) {
-    val _args = VariantArray.new()
-    _args.append(vframes)
-    __method_bind.set_vframes.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(vframes)
+    __method_bind.set_vframes.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): Sprite = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Sprite".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Sprite" }
+      requireNotNull(fnPtr) { "No instance found for Sprite" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Sprite(
         fn()

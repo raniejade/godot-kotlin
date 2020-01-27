@@ -65,9 +65,8 @@ open class Theme internal constructor(
   }
 
   fun copyTheme(other: Theme) {
-    val _args = VariantArray.new()
-    _args.append(other)
-    __method_bind.copy_theme.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(other)
+    __method_bind.copy_theme.call(this.toVariant(), _arg, 1)
   }
 
   fun getColor(name: String, type: String): Color {
@@ -79,9 +78,8 @@ open class Theme internal constructor(
   }
 
   fun getColorList(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_color_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_color_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -94,9 +92,8 @@ open class Theme internal constructor(
   }
 
   fun getConstantList(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_constant_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_constant_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -114,9 +111,8 @@ open class Theme internal constructor(
   }
 
   fun getFontList(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_font_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_font_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -129,9 +125,8 @@ open class Theme internal constructor(
   }
 
   fun getIconList(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_icon_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_icon_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -144,9 +139,8 @@ open class Theme internal constructor(
   }
 
   fun getStyleboxList(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_stylebox_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_stylebox_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -156,9 +150,8 @@ open class Theme internal constructor(
   }
 
   fun getTypeList(type: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(type)
-    val _ret = __method_bind.get_type_list.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(type)
+    val _ret = __method_bind.get_type_list.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -227,9 +220,8 @@ open class Theme internal constructor(
   }
 
   fun setDefaultFont(font: Font) {
-    val _args = VariantArray.new()
-    _args.append(font)
-    __method_bind.set_default_font.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(font)
+    __method_bind.set_default_font.call(this.toVariant(), _arg, 1)
   }
 
   fun setFont(
@@ -271,7 +263,7 @@ open class Theme internal constructor(
   companion object {
     fun new(): Theme = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Theme".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton Theme" }
+      requireNotNull(fnPtr) { "No instance found for Theme" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       Theme(
         fn()

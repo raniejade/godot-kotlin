@@ -19,7 +19,7 @@ open class MultiplayerPeerGDNative internal constructor(
     fun new(): MultiplayerPeerGDNative = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("MultiplayerPeerGDNative".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton MultiplayerPeerGDNative" }
+      requireNotNull(fnPtr) { "No instance found for MultiplayerPeerGDNative" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       MultiplayerPeerGDNative(
         fn()

@@ -23,15 +23,14 @@ open class PlaneShape internal constructor(
   }
 
   fun setPlane(plane: Plane) {
-    val _args = VariantArray.new()
-    _args.append(plane)
-    __method_bind.set_plane.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(plane)
+    __method_bind.set_plane.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PlaneShape = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("PlaneShape".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PlaneShape" }
+      requireNotNull(fnPtr) { "No instance found for PlaneShape" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PlaneShape(
         fn()

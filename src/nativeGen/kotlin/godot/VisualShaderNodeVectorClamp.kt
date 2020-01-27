@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorClamp internal constructor(
     fun new(): VisualShaderNodeVectorClamp = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorClamp".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorClamp" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorClamp" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorClamp(
         fn()

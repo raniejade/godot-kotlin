@@ -18,16 +18,14 @@ open class GDScriptFunctionState internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun isValid(extendedCheck: Boolean): Boolean {
-    val _args = VariantArray.new()
-    _args.append(extendedCheck)
-    val _ret = __method_bind.is_valid.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(extendedCheck)
+    val _ret = __method_bind.is_valid.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
   fun resume(arg: Variant): Variant {
-    val _args = VariantArray.new()
-    _args.append(arg)
-    val _ret = __method_bind.resume.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(arg)
+    val _ret = __method_bind.resume.call(this.toVariant(), _arg, 1)
     return _ret
   }
 

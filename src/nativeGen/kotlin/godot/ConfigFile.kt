@@ -21,15 +21,13 @@ open class ConfigFile internal constructor(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun eraseSection(section: String) {
-    val _args = VariantArray.new()
-    _args.append(section)
-    __method_bind.erase_section.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(section)
+    __method_bind.erase_section.call(this.toVariant(), _arg, 1)
   }
 
   fun getSectionKeys(section: String): PoolStringArray {
-    val _args = VariantArray.new()
-    _args.append(section)
-    val _ret = __method_bind.get_section_keys.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(section)
+    val _ret = __method_bind.get_section_keys.call(this.toVariant(), _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -52,9 +50,8 @@ open class ConfigFile internal constructor(
   }
 
   fun hasSection(section: String): Boolean {
-    val _args = VariantArray.new()
-    _args.append(section)
-    val _ret = __method_bind.has_section.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(section)
+    val _ret = __method_bind.has_section.call(this.toVariant(), _arg, 1)
     return _ret.asBool()
   }
 
@@ -67,16 +64,14 @@ open class ConfigFile internal constructor(
   }
 
   fun load(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.load.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.load.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun save(path: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(path)
-    val _ret = __method_bind.save.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(path)
+    val _ret = __method_bind.save.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -95,7 +90,7 @@ open class ConfigFile internal constructor(
   companion object {
     fun new(): ConfigFile = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ConfigFile".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ConfigFile" }
+      requireNotNull(fnPtr) { "No instance found for ConfigFile" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ConfigFile(
         fn()

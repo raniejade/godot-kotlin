@@ -44,33 +44,28 @@ open class AudioEffectDistortion internal constructor(
   }
 
   fun setDrive(drive: Float) {
-    val _args = VariantArray.new()
-    _args.append(drive)
-    __method_bind.set_drive.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(drive)
+    __method_bind.set_drive.call(this.toVariant(), _arg, 1)
   }
 
   fun setKeepHfHz(keepHfHz: Float) {
-    val _args = VariantArray.new()
-    _args.append(keepHfHz)
-    __method_bind.set_keep_hf_hz.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(keepHfHz)
+    __method_bind.set_keep_hf_hz.call(this.toVariant(), _arg, 1)
   }
 
   fun setMode(mode: Int) {
-    val _args = VariantArray.new()
-    _args.append(mode)
-    __method_bind.set_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(mode)
+    __method_bind.set_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setPostGain(postGain: Float) {
-    val _args = VariantArray.new()
-    _args.append(postGain)
-    __method_bind.set_post_gain.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(postGain)
+    __method_bind.set_post_gain.call(this.toVariant(), _arg, 1)
   }
 
   fun setPreGain(preGain: Float) {
-    val _args = VariantArray.new()
-    _args.append(preGain)
-    __method_bind.set_pre_gain.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(preGain)
+    __method_bind.set_pre_gain.call(this.toVariant(), _arg, 1)
   }
 
   enum class Mode(
@@ -112,7 +107,7 @@ open class AudioEffectDistortion internal constructor(
     fun new(): AudioEffectDistortion = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("AudioEffectDistortion".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton AudioEffectDistortion" }
+      requireNotNull(fnPtr) { "No instance found for AudioEffectDistortion" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       AudioEffectDistortion(
         fn()

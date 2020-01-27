@@ -34,21 +34,19 @@ open class WindowDialog internal constructor(
   }
 
   fun setResizable(resizable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(resizable)
-    __method_bind.set_resizable.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(resizable)
+    __method_bind.set_resizable.call(this.toVariant(), _arg, 1)
   }
 
   fun setTitle(title: String) {
-    val _args = VariantArray.new()
-    _args.append(title)
-    __method_bind.set_title.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(title)
+    __method_bind.set_title.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): WindowDialog = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("WindowDialog".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton WindowDialog" }
+      requireNotNull(fnPtr) { "No instance found for WindowDialog" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       WindowDialog(
         fn()

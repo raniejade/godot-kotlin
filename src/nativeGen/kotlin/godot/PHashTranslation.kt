@@ -17,16 +17,15 @@ open class PHashTranslation internal constructor(
   _handle: COpaquePointer
 ) : Translation(_handle) {
   fun generate(from: Translation) {
-    val _args = VariantArray.new()
-    _args.append(from)
-    __method_bind.generate.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(from)
+    __method_bind.generate.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): PHashTranslation = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("PHashTranslation".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton PHashTranslation" }
+      requireNotNull(fnPtr) { "No instance found for PHashTranslation" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       PHashTranslation(
         fn()

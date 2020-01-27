@@ -36,9 +36,8 @@ open class Light internal constructor(
   }
 
   fun getParam(param: Int): Float {
-    val _args = VariantArray.new()
-    _args.append(param)
-    val _ret = __method_bind.get_param.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(param)
+    val _ret = __method_bind.get_param.call(this.toVariant(), _arg, 1)
     return _ret.asFloat()
   }
 
@@ -68,33 +67,28 @@ open class Light internal constructor(
   }
 
   fun setBakeMode(bakeMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(bakeMode)
-    __method_bind.set_bake_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(bakeMode)
+    __method_bind.set_bake_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setCullMask(cullMask: Int) {
-    val _args = VariantArray.new()
-    _args.append(cullMask)
-    __method_bind.set_cull_mask.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(cullMask)
+    __method_bind.set_cull_mask.call(this.toVariant(), _arg, 1)
   }
 
   fun setEditorOnly(editorOnly: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(editorOnly)
-    __method_bind.set_editor_only.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(editorOnly)
+    __method_bind.set_editor_only.call(this.toVariant(), _arg, 1)
   }
 
   fun setNegative(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_negative.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_negative.call(this.toVariant(), _arg, 1)
   }
 
   fun setParam(param: Int, value: Float) {
@@ -105,21 +99,18 @@ open class Light internal constructor(
   }
 
   fun setShadow(enabled: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enabled)
-    __method_bind.set_shadow.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enabled)
+    __method_bind.set_shadow.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowColor(shadowColor: Color) {
-    val _args = VariantArray.new()
-    _args.append(shadowColor)
-    __method_bind.set_shadow_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(shadowColor)
+    __method_bind.set_shadow_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setShadowReverseCullFace(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_shadow_reverse_cull_face.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_shadow_reverse_cull_face.call(this.toVariant(), _arg, 1)
   }
 
   enum class BakeMode(

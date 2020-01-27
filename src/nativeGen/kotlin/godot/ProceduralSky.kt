@@ -100,99 +100,83 @@ open class ProceduralSky internal constructor(
   }
 
   fun setGroundBottomColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_ground_bottom_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_ground_bottom_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setGroundCurve(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_ground_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_ground_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setGroundEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_ground_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_ground_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setGroundHorizonColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_ground_horizon_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_ground_horizon_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyCurve(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_sky_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_sky_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_sky_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_sky_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyHorizonColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_sky_horizon_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_sky_horizon_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setSkyTopColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_sky_top_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_sky_top_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunAngleMax(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_sun_angle_max.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_sun_angle_max.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunAngleMin(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_sun_angle_min.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_sun_angle_min.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunColor(color: Color) {
-    val _args = VariantArray.new()
-    _args.append(color)
-    __method_bind.set_sun_color.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(color)
+    __method_bind.set_sun_color.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunCurve(curve: Float) {
-    val _args = VariantArray.new()
-    _args.append(curve)
-    __method_bind.set_sun_curve.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(curve)
+    __method_bind.set_sun_curve.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunEnergy(energy: Float) {
-    val _args = VariantArray.new()
-    _args.append(energy)
-    __method_bind.set_sun_energy.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(energy)
+    __method_bind.set_sun_energy.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunLatitude(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_sun_latitude.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_sun_latitude.call(this.toVariant(), _arg, 1)
   }
 
   fun setSunLongitude(degrees: Float) {
-    val _args = VariantArray.new()
-    _args.append(degrees)
-    __method_bind.set_sun_longitude.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(degrees)
+    __method_bind.set_sun_longitude.call(this.toVariant(), _arg, 1)
   }
 
   fun setTextureSize(size: Int) {
-    val _args = VariantArray.new()
-    _args.append(size)
-    __method_bind.set_texture_size.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(size)
+    __method_bind.set_texture_size.call(this.toVariant(), _arg, 1)
   }
 
   enum class TextureSize(
@@ -237,7 +221,7 @@ open class ProceduralSky internal constructor(
 
     fun new(): ProceduralSky = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("ProceduralSky".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton ProceduralSky" }
+      requireNotNull(fnPtr) { "No instance found for ProceduralSky" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       ProceduralSky(
         fn()

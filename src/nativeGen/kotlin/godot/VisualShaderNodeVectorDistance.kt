@@ -19,7 +19,7 @@ open class VisualShaderNodeVectorDistance internal constructor(
     fun new(): VisualShaderNodeVectorDistance = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeVectorDistance".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeVectorDistance" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeVectorDistance" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeVectorDistance(
         fn()

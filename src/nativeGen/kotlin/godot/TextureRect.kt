@@ -44,33 +44,28 @@ open class TextureRect internal constructor(
   }
 
   fun setExpand(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_expand.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_expand.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipH(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_flip_h.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_flip_h.call(this.toVariant(), _arg, 1)
   }
 
   fun setFlipV(enable: Boolean) {
-    val _args = VariantArray.new()
-    _args.append(enable)
-    __method_bind.set_flip_v.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(enable)
+    __method_bind.set_flip_v.call(this.toVariant(), _arg, 1)
   }
 
   fun setStretchMode(stretchMode: Int) {
-    val _args = VariantArray.new()
-    _args.append(stretchMode)
-    __method_bind.set_stretch_mode.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(stretchMode)
+    __method_bind.set_stretch_mode.call(this.toVariant(), _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
-    val _args = VariantArray.new()
-    _args.append(texture)
-    __method_bind.set_texture.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(texture)
+    __method_bind.set_texture.call(this.toVariant(), _arg, 1)
   }
 
   enum class StretchMode(
@@ -123,7 +118,7 @@ open class TextureRect internal constructor(
 
     fun new(): TextureRect = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("TextureRect".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton TextureRect" }
+      requireNotNull(fnPtr) { "No instance found for TextureRect" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       TextureRect(
         fn()

@@ -25,9 +25,8 @@ open class RegEx internal constructor(
   }
 
   fun compile(pattern: String): GDError {
-    val _args = VariantArray.new()
-    _args.append(pattern)
-    val _ret = __method_bind.compile.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pattern)
+    val _ret = __method_bind.compile.call(this.toVariant(), _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -97,7 +96,7 @@ open class RegEx internal constructor(
   companion object {
     fun new(): RegEx = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("RegEx".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton RegEx" }
+      requireNotNull(fnPtr) { "No instance found for RegEx" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       RegEx(
         fn()

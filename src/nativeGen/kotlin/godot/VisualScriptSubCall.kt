@@ -19,7 +19,7 @@ open class VisualScriptSubCall internal constructor(
     fun new(): VisualScriptSubCall = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualScriptSubCall".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualScriptSubCall" }
+      requireNotNull(fnPtr) { "No instance found for VisualScriptSubCall" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualScriptSubCall(
         fn()

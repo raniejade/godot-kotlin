@@ -142,7 +142,7 @@ class APIGenerator {
                 fn()
               )
             }
-          """.trimIndent(), cls.name, "No instance found for singleton ${cls.name}", cls.name)
+          """.trimIndent(), cls.name, "No instance found for ${cls.name}", cls.name)
           .returns(className)
           .build()
       )
@@ -267,13 +267,19 @@ class APIGenerator {
         }
 
         if (parameters.isNotEmpty()) {
-          builder.addStatement("val _args = VariantArray.new()")
+          if (parameters.size == 1) {
+            val parameter = parameters[0]
+            builder.addStatement("val _arg = Variant.new(%N)", parameter.name)
+            builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant(), _arg, 1)", method.name)
+          } else {
+            builder.addStatement("val _args = VariantArray.new()")
 
-          parameters.forEach { parameter ->
-            builder.addStatement("_args.append(%N)", parameter)
+            parameters.forEach { parameter ->
+              builder.addStatement("_args.append(%N)", parameter)
+            }
+
+            builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant(), _args.toVariant(), %L)", method.name, parameters.size)
           }
-
-          builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant(), _args.toVariant(), %L)", method.name, parameters.size)
         } else {
           builder.addStatement("${returnVar}__method_bind.%L.call(this.toVariant())", method.name)
         }

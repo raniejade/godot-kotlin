@@ -58,58 +58,50 @@ open class InputEventMIDI internal constructor(
   }
 
   fun setChannel(channel: Int) {
-    val _args = VariantArray.new()
-    _args.append(channel)
-    __method_bind.set_channel.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(channel)
+    __method_bind.set_channel.call(this.toVariant(), _arg, 1)
   }
 
   fun setControllerNumber(controllerNumber: Int) {
-    val _args = VariantArray.new()
-    _args.append(controllerNumber)
-    __method_bind.set_controller_number.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(controllerNumber)
+    __method_bind.set_controller_number.call(this.toVariant(), _arg, 1)
   }
 
   fun setControllerValue(controllerValue: Int) {
-    val _args = VariantArray.new()
-    _args.append(controllerValue)
-    __method_bind.set_controller_value.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(controllerValue)
+    __method_bind.set_controller_value.call(this.toVariant(), _arg, 1)
   }
 
   fun setInstrument(instrument: Int) {
-    val _args = VariantArray.new()
-    _args.append(instrument)
-    __method_bind.set_instrument.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(instrument)
+    __method_bind.set_instrument.call(this.toVariant(), _arg, 1)
   }
 
   fun setMessage(message: Int) {
-    val _args = VariantArray.new()
-    _args.append(message)
-    __method_bind.set_message.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(message)
+    __method_bind.set_message.call(this.toVariant(), _arg, 1)
   }
 
   fun setPitch(pitch: Int) {
-    val _args = VariantArray.new()
-    _args.append(pitch)
-    __method_bind.set_pitch.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pitch)
+    __method_bind.set_pitch.call(this.toVariant(), _arg, 1)
   }
 
   fun setPressure(pressure: Int) {
-    val _args = VariantArray.new()
-    _args.append(pressure)
-    __method_bind.set_pressure.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(pressure)
+    __method_bind.set_pressure.call(this.toVariant(), _arg, 1)
   }
 
   fun setVelocity(velocity: Int) {
-    val _args = VariantArray.new()
-    _args.append(velocity)
-    __method_bind.set_velocity.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(velocity)
+    __method_bind.set_velocity.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): InputEventMIDI = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("InputEventMIDI".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton InputEventMIDI" }
+      requireNotNull(fnPtr) { "No instance found for InputEventMIDI" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       InputEventMIDI(
         fn()

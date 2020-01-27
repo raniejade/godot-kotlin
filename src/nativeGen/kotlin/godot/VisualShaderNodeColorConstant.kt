@@ -23,16 +23,15 @@ open class VisualShaderNodeColorConstant internal constructor(
   }
 
   fun setConstant(value: Color) {
-    val _args = VariantArray.new()
-    _args.append(value)
-    __method_bind.set_constant.call(this.toVariant(), _args.toVariant(), 1)
+    val _arg = Variant.new(value)
+    __method_bind.set_constant.call(this.toVariant(), _arg, 1)
   }
 
   companion object {
     fun new(): VisualShaderNodeColorConstant = memScoped {
       val fnPtr =
         checkNotNull(Godot.gdnative.godot_get_class_constructor)("VisualShaderNodeColorConstant".cstr.ptr)
-      requireNotNull(fnPtr) { "No instance found for singleton VisualShaderNodeColorConstant" }
+      requireNotNull(fnPtr) { "No instance found for VisualShaderNodeColorConstant" }
       val fn = fnPtr.reinterpret<CFunction<() -> COpaquePointer>>()
       VisualShaderNodeColorConstant(
         fn()
