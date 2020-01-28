@@ -18,6 +18,8 @@ open class GenerateAPI: DefaultTask() {
     @TaskAction
     fun generate() {
         val generator = APIGenerator()
+        // clear output directly first
+        outputDir.get().asFile.deleteRecursively()
         generator.generate(source.asFile.get(), outputDir.asFile.get())
     }
 }
