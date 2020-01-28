@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptBuiltinFunc(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var function: Int
+  var function: BuiltinFunc
     get() {
-       return VisualScriptBuiltinFunc.BuiltinFunc.from(getFunc()) 
+       return getFunc() 
     }
     set(value) {
-      setFunc(VisualScriptBuiltinFunc.BuiltinFunc.from(value))
+      setFunc(value.value)
     }
 
   fun getFunc(): BuiltinFunc {
@@ -333,15 +333,15 @@ open class VisualScriptBuiltinFunc(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
-            "getFunc".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFunc" }
+            "get_func".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_func" }
         }
       val setFunc: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
-            "setFunc".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFunc" }
+            "set_func".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_func" }
         }}
   }
 }

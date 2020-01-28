@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectRecord(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
-  var format: Int
+  var format: AudioStreamSample.Format
     get() {
-       return AudioStreamSample.Format.from(getFormat()) 
+       return getFormat() 
     }
     set(value) {
-      setFormat(AudioStreamSample.Format.from(value))
+      setFormat(value.value)
     }
 
   fun getFormat(): AudioStreamSample.Format {
@@ -70,36 +70,36 @@ open class AudioEffectRecord(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectRecord".cstr.ptr,
-            "getFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFormat" }
+            "get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getRecording: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectRecord".cstr.ptr,
-            "getRecording".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRecording" }
+            "get_recording".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_recording" }
         }
       val isRecordingActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectRecord".cstr.ptr,
-            "isRecordingActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRecordingActive" }
+            "is_recording_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_recording_active" }
         }
       val setFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectRecord".cstr.ptr,
-            "setFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFormat" }
+            "set_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_format" }
         }
       val setRecordingActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectRecord".cstr.ptr,
-            "setRecordingActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRecordingActive" }
+            "set_recording_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_recording_active" }
         }}
   }
 }

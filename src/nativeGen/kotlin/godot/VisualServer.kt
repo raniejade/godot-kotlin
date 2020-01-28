@@ -4520,557 +4520,572 @@ open class VisualServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "blackBarsSetImages".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blackBarsSetImages" }
+            "black_bars_set_images".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method black_bars_set_images" }
         }
       val blackBarsSetMargins: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "blackBarsSetMargins".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blackBarsSetMargins" }
+            "black_bars_set_margins".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method black_bars_set_margins" }
         }
       val cameraCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraCreate" }
+            "camera_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_create" }
         }
       val cameraSetCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetCullMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetCullMask" }
+            "camera_set_cull_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_cull_mask" }
         }
       val cameraSetEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetEnvironment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetEnvironment" }
+            "camera_set_environment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_environment" }
         }
       val cameraSetFrustum: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetFrustum".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetFrustum" }
+            "camera_set_frustum".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_frustum" }
         }
       val cameraSetOrthogonal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetOrthogonal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetOrthogonal" }
+            "camera_set_orthogonal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_orthogonal" }
         }
       val cameraSetPerspective: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetPerspective".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetPerspective" }
+            "camera_set_perspective".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_perspective" }
         }
       val cameraSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetTransform" }
+            "camera_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_transform" }
         }
       val cameraSetUseVerticalAspect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "cameraSetUseVerticalAspect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cameraSetUseVerticalAspect" }
+            "camera_set_use_vertical_aspect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method camera_set_use_vertical_aspect" }
         }
       val canvasCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasCreate" }
+            "canvas_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_create" }
         }
       val canvasItemAddCircle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddCircle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddCircle" }
+            "canvas_item_add_circle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_circle" }
         }
       val canvasItemAddClipIgnore: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddClipIgnore".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddClipIgnore" }
+            "canvas_item_add_clip_ignore".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_clip_ignore" }
         }
       val canvasItemAddLine: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddLine".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddLine" }
+            "canvas_item_add_line".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_line" }
         }
       val canvasItemAddMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddMesh" }
+            "canvas_item_add_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_mesh" }
         }
       val canvasItemAddMultimesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddMultimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddMultimesh" }
+            "canvas_item_add_multimesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_multimesh" }
         }
       val canvasItemAddNinePatch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddNinePatch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddNinePatch" }
+            "canvas_item_add_nine_patch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_nine_patch" }
         }
       val canvasItemAddParticles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddParticles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddParticles" }
+            "canvas_item_add_particles".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_particles" }
         }
       val canvasItemAddPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddPolygon" }
+            "canvas_item_add_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_polygon" }
         }
       val canvasItemAddPolyline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddPolyline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddPolyline" }
+            "canvas_item_add_polyline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_polyline" }
         }
       val canvasItemAddPrimitive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddPrimitive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddPrimitive" }
+            "canvas_item_add_primitive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_primitive" }
         }
       val canvasItemAddRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddRect" }
+            "canvas_item_add_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_rect" }
         }
       val canvasItemAddSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddSetTransform" }
+            "canvas_item_add_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_set_transform" }
         }
       val canvasItemAddTextureRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddTextureRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddTextureRect" }
+            "canvas_item_add_texture_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_texture_rect" }
         }
       val canvasItemAddTextureRectRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddTextureRectRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddTextureRectRegion" }
+            "canvas_item_add_texture_rect_region".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_item_add_texture_rect_region" }
         }
       val canvasItemAddTriangleArray: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemAddTriangleArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemAddTriangleArray" }
+            "canvas_item_add_triangle_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_add_triangle_array" }
         }
       val canvasItemClear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemClear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemClear" }
+            "canvas_item_clear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_clear" }
         }
       val canvasItemCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemCreate" }
+            "canvas_item_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_create" }
         }
       val canvasItemSetClip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetClip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetClip" }
+            "canvas_item_set_clip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_clip" }
         }
       val canvasItemSetCopyToBackbuffer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetCopyToBackbuffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetCopyToBackbuffer" }
+            "canvas_item_set_copy_to_backbuffer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_copy_to_backbuffer"
+            }
         }
       val canvasItemSetCustomRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetCustomRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetCustomRect" }
+            "canvas_item_set_custom_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_custom_rect" }
         }
       val canvasItemSetDistanceFieldMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetDistanceFieldMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetDistanceFieldMode" }
+            "canvas_item_set_distance_field_mode".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_item_set_distance_field_mode" }
         }
       val canvasItemSetDrawBehindParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetDrawBehindParent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetDrawBehindParent" }
+            "canvas_item_set_draw_behind_parent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_draw_behind_parent"
+            }
         }
       val canvasItemSetDrawIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetDrawIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetDrawIndex" }
+            "canvas_item_set_draw_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_draw_index" }
         }
       val canvasItemSetLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetLightMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetLightMask" }
+            "canvas_item_set_light_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_light_mask" }
         }
       val canvasItemSetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetMaterial" }
+            "canvas_item_set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_material" }
         }
       val canvasItemSetModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetModulate" }
+            "canvas_item_set_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_modulate" }
         }
       val canvasItemSetParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetParent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetParent" }
+            "canvas_item_set_parent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_parent" }
         }
       val canvasItemSetSelfModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetSelfModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetSelfModulate" }
+            "canvas_item_set_self_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_self_modulate" }
         }
       val canvasItemSetSortChildrenByY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetSortChildrenByY".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetSortChildrenByY" }
+            "canvas_item_set_sort_children_by_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_sort_children_by_y"
+            }
         }
       val canvasItemSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetTransform" }
+            "canvas_item_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_transform" }
         }
       val canvasItemSetUseParentMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetUseParentMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetUseParentMaterial" }
+            "canvas_item_set_use_parent_material".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_item_set_use_parent_material" }
         }
       val canvasItemSetVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetVisible" }
+            "canvas_item_set_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_visible" }
         }
       val canvasItemSetZAsRelativeToParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetZAsRelativeToParent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetZAsRelativeToParent" }
+            "canvas_item_set_z_as_relative_to_parent".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_item_set_z_as_relative_to_parent" }
         }
       val canvasItemSetZIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasItemSetZIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasItemSetZIndex" }
+            "canvas_item_set_z_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_item_set_z_index" }
         }
       val canvasLightAttachToCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightAttachToCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightAttachToCanvas" }
+            "canvas_light_attach_to_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_attach_to_canvas" }
         }
       val canvasLightCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightCreate" }
+            "canvas_light_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_create" }
         }
       val canvasLightOccluderAttachToCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightOccluderAttachToCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightOccluderAttachToCanvas"
-            }
+            "canvas_light_occluder_attach_to_canvas".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_light_occluder_attach_to_canvas" }
         }
       val canvasLightOccluderCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightOccluderCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightOccluderCreate" }
+            "canvas_light_occluder_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_occluder_create" }
         }
       val canvasLightOccluderSetEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightOccluderSetEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightOccluderSetEnabled" }
+            "canvas_light_occluder_set_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_occluder_set_enabled"
+            }
         }
       val canvasLightOccluderSetLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightOccluderSetLightMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightOccluderSetLightMask" }
+            "canvas_light_occluder_set_light_mask".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_light_occluder_set_light_mask" }
         }
       val canvasLightOccluderSetPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightOccluderSetPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightOccluderSetPolygon" }
+            "canvas_light_occluder_set_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_occluder_set_polygon"
+            }
         }
       val canvasLightOccluderSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightOccluderSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightOccluderSetTransform" }
+            "canvas_light_occluder_set_transform".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_light_occluder_set_transform" }
         }
       val canvasLightSetColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetColor" }
+            "canvas_light_set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_color" }
         }
       val canvasLightSetEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetEnabled" }
+            "canvas_light_set_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_enabled" }
         }
       val canvasLightSetEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetEnergy" }
+            "canvas_light_set_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_energy" }
         }
       val canvasLightSetHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetHeight" }
+            "canvas_light_set_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_height" }
         }
       val canvasLightSetItemCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetItemCullMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetItemCullMask" }
+            "canvas_light_set_item_cull_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_item_cull_mask" }
         }
       val canvasLightSetItemShadowCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetItemShadowCullMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetItemShadowCullMask" }
+            "canvas_light_set_item_shadow_cull_mask".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_light_set_item_shadow_cull_mask" }
         }
       val canvasLightSetLayerRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetLayerRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetLayerRange" }
+            "canvas_light_set_layer_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_layer_range" }
         }
       val canvasLightSetMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetMode" }
+            "canvas_light_set_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_mode" }
         }
       val canvasLightSetScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetScale" }
+            "canvas_light_set_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_scale" }
         }
       val canvasLightSetShadowBufferSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetShadowBufferSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetShadowBufferSize" }
+            "canvas_light_set_shadow_buffer_size".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_light_set_shadow_buffer_size" }
         }
       val canvasLightSetShadowColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetShadowColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetShadowColor" }
+            "canvas_light_set_shadow_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_shadow_color" }
         }
       val canvasLightSetShadowEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetShadowEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetShadowEnabled" }
+            "canvas_light_set_shadow_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_shadow_enabled" }
         }
       val canvasLightSetShadowFilter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetShadowFilter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetShadowFilter" }
+            "canvas_light_set_shadow_filter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_shadow_filter" }
         }
       val canvasLightSetShadowGradientLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetShadowGradientLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetShadowGradientLength"
-            }
+            "canvas_light_set_shadow_gradient_length".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_light_set_shadow_gradient_length" }
         }
       val canvasLightSetShadowSmooth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetShadowSmooth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetShadowSmooth" }
+            "canvas_light_set_shadow_smooth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_shadow_smooth" }
         }
       val canvasLightSetTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetTexture" }
+            "canvas_light_set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_texture" }
         }
       val canvasLightSetTextureOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetTextureOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetTextureOffset" }
+            "canvas_light_set_texture_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_texture_offset" }
         }
       val canvasLightSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetTransform" }
+            "canvas_light_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_transform" }
         }
       val canvasLightSetZRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasLightSetZRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasLightSetZRange" }
+            "canvas_light_set_z_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_light_set_z_range" }
         }
       val canvasOccluderPolygonCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasOccluderPolygonCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasOccluderPolygonCreate" }
+            "canvas_occluder_polygon_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_occluder_polygon_create" }
         }
       val canvasOccluderPolygonSetCullMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasOccluderPolygonSetCullMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasOccluderPolygonSetCullMode" }
+            "canvas_occluder_polygon_set_cull_mode".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method canvas_occluder_polygon_set_cull_mode" }
         }
       val canvasOccluderPolygonSetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasOccluderPolygonSetShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasOccluderPolygonSetShape" }
+            "canvas_occluder_polygon_set_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_occluder_polygon_set_shape"
+            }
         }
       val canvasOccluderPolygonSetShapeAsLines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasOccluderPolygonSetShapeAsLines".cstr.ptr)
+            "canvas_occluder_polygon_set_shape_as_lines".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method canvasOccluderPolygonSetShapeAsLines" }
+            "No method_bind found for method canvas_occluder_polygon_set_shape_as_lines" }
         }
       val canvasSetItemMirroring: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasSetItemMirroring".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasSetItemMirroring" }
+            "canvas_set_item_mirroring".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_set_item_mirroring" }
         }
       val canvasSetModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "canvasSetModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canvasSetModulate" }
+            "canvas_set_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canvas_set_modulate" }
         }
       val directionalLightCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "directionalLightCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method directionalLightCreate" }
+            "directional_light_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method directional_light_create" }
         }
       val draw: CPointer<godot_method_bind>
         get() = memScoped {
@@ -5083,134 +5098,134 @@ open class VisualServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentCreate" }
+            "environment_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_create" }
         }
       val environmentSetAdjustment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetAdjustment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetAdjustment" }
+            "environment_set_adjustment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_adjustment" }
         }
       val environmentSetAmbientLight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetAmbientLight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetAmbientLight" }
+            "environment_set_ambient_light".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_ambient_light" }
         }
       val environmentSetBackground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetBackground".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetBackground" }
+            "environment_set_background".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_background" }
         }
       val environmentSetBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetBgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetBgColor" }
+            "environment_set_bg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_bg_color" }
         }
       val environmentSetBgEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetBgEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetBgEnergy" }
+            "environment_set_bg_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_bg_energy" }
         }
       val environmentSetCanvasMaxLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetCanvasMaxLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetCanvasMaxLayer" }
+            "environment_set_canvas_max_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_canvas_max_layer" }
         }
       val environmentSetDofBlurFar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetDofBlurFar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetDofBlurFar" }
+            "environment_set_dof_blur_far".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_dof_blur_far" }
         }
       val environmentSetDofBlurNear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetDofBlurNear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetDofBlurNear" }
+            "environment_set_dof_blur_near".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_dof_blur_near" }
         }
       val environmentSetFog: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetFog".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetFog" }
+            "environment_set_fog".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_fog" }
         }
       val environmentSetFogDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetFogDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetFogDepth" }
+            "environment_set_fog_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_fog_depth" }
         }
       val environmentSetFogHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetFogHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetFogHeight" }
+            "environment_set_fog_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_fog_height" }
         }
       val environmentSetGlow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetGlow".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetGlow" }
+            "environment_set_glow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_glow" }
         }
       val environmentSetSky: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetSky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetSky" }
+            "environment_set_sky".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_sky" }
         }
       val environmentSetSkyCustomFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetSkyCustomFov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetSkyCustomFov" }
+            "environment_set_sky_custom_fov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_sky_custom_fov" }
         }
       val environmentSetSkyOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetSkyOrientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetSkyOrientation" }
+            "environment_set_sky_orientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_sky_orientation" }
         }
       val environmentSetSsao: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetSsao".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetSsao" }
+            "environment_set_ssao".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_ssao" }
         }
       val environmentSetSsr: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetSsr".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetSsr" }
+            "environment_set_ssr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_ssr" }
         }
       val environmentSetTonemap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "environmentSetTonemap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method environmentSetTonemap" }
+            "environment_set_tonemap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method environment_set_tonemap" }
         }
       val finish: CPointer<godot_method_bind>
         get() = memScoped {
@@ -5223,323 +5238,323 @@ open class VisualServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "forceDraw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method forceDraw" }
+            "force_draw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method force_draw" }
         }
       val forceSync: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "forceSync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method forceSync" }
+            "force_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method force_sync" }
         }
       val freeRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "freeRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method freeRid" }
+            "free_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method free_rid" }
         }
       val getRenderInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "getRenderInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRenderInfo" }
+            "get_render_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_render_info" }
         }
       val getTestCube: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "getTestCube".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTestCube" }
+            "get_test_cube".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_test_cube" }
         }
       val getTestTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "getTestTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTestTexture" }
+            "get_test_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_test_texture" }
         }
       val getWhiteTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "getWhiteTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWhiteTexture" }
+            "get_white_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_white_texture" }
         }
       val giProbeCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeCreate" }
+            "gi_probe_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_create" }
         }
       val giProbeGetBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetBias" }
+            "gi_probe_get_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_bias" }
         }
       val giProbeGetBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetBounds" }
+            "gi_probe_get_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_bounds" }
         }
       val giProbeGetCellSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetCellSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetCellSize" }
+            "gi_probe_get_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_cell_size" }
         }
       val giProbeGetDynamicData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetDynamicData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetDynamicData" }
+            "gi_probe_get_dynamic_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_dynamic_data" }
         }
       val giProbeGetDynamicRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetDynamicRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetDynamicRange" }
+            "gi_probe_get_dynamic_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_dynamic_range" }
         }
       val giProbeGetEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetEnergy" }
+            "gi_probe_get_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_energy" }
         }
       val giProbeGetNormalBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetNormalBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetNormalBias" }
+            "gi_probe_get_normal_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_normal_bias" }
         }
       val giProbeGetPropagation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetPropagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetPropagation" }
+            "gi_probe_get_propagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_propagation" }
         }
       val giProbeGetToCellXform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeGetToCellXform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeGetToCellXform" }
+            "gi_probe_get_to_cell_xform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_get_to_cell_xform" }
         }
       val giProbeIsCompressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeIsCompressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeIsCompressed" }
+            "gi_probe_is_compressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_is_compressed" }
         }
       val giProbeIsInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeIsInterior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeIsInterior" }
+            "gi_probe_is_interior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_is_interior" }
         }
       val giProbeSetBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetBias" }
+            "gi_probe_set_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_bias" }
         }
       val giProbeSetBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetBounds" }
+            "gi_probe_set_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_bounds" }
         }
       val giProbeSetCellSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetCellSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetCellSize" }
+            "gi_probe_set_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_cell_size" }
         }
       val giProbeSetCompress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetCompress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetCompress" }
+            "gi_probe_set_compress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_compress" }
         }
       val giProbeSetDynamicData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetDynamicData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetDynamicData" }
+            "gi_probe_set_dynamic_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_dynamic_data" }
         }
       val giProbeSetDynamicRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetDynamicRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetDynamicRange" }
+            "gi_probe_set_dynamic_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_dynamic_range" }
         }
       val giProbeSetEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetEnergy" }
+            "gi_probe_set_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_energy" }
         }
       val giProbeSetInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetInterior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetInterior" }
+            "gi_probe_set_interior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_interior" }
         }
       val giProbeSetNormalBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetNormalBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetNormalBias" }
+            "gi_probe_set_normal_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_normal_bias" }
         }
       val giProbeSetPropagation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetPropagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetPropagation" }
+            "gi_probe_set_propagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_propagation" }
         }
       val giProbeSetToCellXform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "giProbeSetToCellXform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method giProbeSetToCellXform" }
+            "gi_probe_set_to_cell_xform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method gi_probe_set_to_cell_xform" }
         }
       val hasChanged: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "hasChanged".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasChanged" }
+            "has_changed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_changed" }
         }
       val hasFeature: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "hasFeature".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasFeature" }
+            "has_feature".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_feature" }
         }
       val hasOsFeature: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "hasOsFeature".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasOsFeature" }
+            "has_os_feature".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_os_feature" }
         }
       val immediateBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateBegin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateBegin" }
+            "immediate_begin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_begin" }
         }
       val immediateClear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateClear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateClear" }
+            "immediate_clear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_clear" }
         }
       val immediateColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateColor" }
+            "immediate_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_color" }
         }
       val immediateCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateCreate" }
+            "immediate_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_create" }
         }
       val immediateEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateEnd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateEnd" }
+            "immediate_end".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_end" }
         }
       val immediateGetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateGetMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateGetMaterial" }
+            "immediate_get_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_get_material" }
         }
       val immediateNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateNormal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateNormal" }
+            "immediate_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_normal" }
         }
       val immediateSetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateSetMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateSetMaterial" }
+            "immediate_set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_set_material" }
         }
       val immediateTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateTangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateTangent" }
+            "immediate_tangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_tangent" }
         }
       val immediateUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateUv" }
+            "immediate_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_uv" }
         }
       val immediateUv2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateUv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateUv2" }
+            "immediate_uv2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_uv2" }
         }
       val immediateVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateVertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateVertex" }
+            "immediate_vertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_vertex" }
         }
       val immediateVertex2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "immediateVertex2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method immediateVertex2d" }
+            "immediate_vertex_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method immediate_vertex_2d" }
         }
       val init: CPointer<godot_method_bind>
         get() = memScoped {
@@ -5552,1132 +5567,1150 @@ open class VisualServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceAttachObjectInstanceId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceAttachObjectInstanceId" }
+            "instance_attach_object_instance_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_attach_object_instance_id"
+            }
         }
       val instanceAttachSkeleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceAttachSkeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceAttachSkeleton" }
+            "instance_attach_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_attach_skeleton" }
         }
       val instanceCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceCreate" }
+            "instance_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_create" }
         }
       val instanceCreate2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceCreate2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceCreate2" }
+            "instance_create2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_create2" }
         }
       val instanceGeometrySetAsInstanceLod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceGeometrySetAsInstanceLod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceGeometrySetAsInstanceLod" }
+            "instance_geometry_set_as_instance_lod".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method instance_geometry_set_as_instance_lod" }
         }
       val instanceGeometrySetCastShadowsSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceGeometrySetCastShadowsSetting".cstr.ptr)
+            "instance_geometry_set_cast_shadows_setting".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method instanceGeometrySetCastShadowsSetting" }
+            "No method_bind found for method instance_geometry_set_cast_shadows_setting" }
         }
       val instanceGeometrySetDrawRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceGeometrySetDrawRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceGeometrySetDrawRange" }
+            "instance_geometry_set_draw_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_geometry_set_draw_range" }
         }
       val instanceGeometrySetFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceGeometrySetFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceGeometrySetFlag" }
+            "instance_geometry_set_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_geometry_set_flag" }
         }
       val instanceGeometrySetMaterialOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceGeometrySetMaterialOverride".cstr.ptr)
+            "instance_geometry_set_material_override".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method instanceGeometrySetMaterialOverride" }
+            "No method_bind found for method instance_geometry_set_material_override" }
         }
       val instanceSetBase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetBase".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetBase" }
+            "instance_set_base".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_base" }
         }
       val instanceSetBlendShapeWeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetBlendShapeWeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetBlendShapeWeight" }
+            "instance_set_blend_shape_weight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_blend_shape_weight" }
         }
       val instanceSetCustomAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetCustomAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetCustomAabb" }
+            "instance_set_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_custom_aabb" }
         }
       val instanceSetExterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetExterior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetExterior" }
+            "instance_set_exterior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_exterior" }
         }
       val instanceSetExtraVisibilityMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetExtraVisibilityMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetExtraVisibilityMargin" }
+            "instance_set_extra_visibility_margin".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method instance_set_extra_visibility_margin" }
         }
       val instanceSetLayerMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetLayerMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetLayerMask" }
+            "instance_set_layer_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_layer_mask" }
         }
       val instanceSetScenario: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetScenario".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetScenario" }
+            "instance_set_scenario".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_scenario" }
         }
       val instanceSetSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetSurfaceMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetSurfaceMaterial" }
+            "instance_set_surface_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_surface_material" }
         }
       val instanceSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetTransform" }
+            "instance_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_transform" }
         }
       val instanceSetUseLightmap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetUseLightmap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetUseLightmap" }
+            "instance_set_use_lightmap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_use_lightmap" }
         }
       val instanceSetVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instanceSetVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceSetVisible" }
+            "instance_set_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_set_visible" }
         }
       val instancesCullAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instancesCullAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instancesCullAabb" }
+            "instances_cull_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instances_cull_aabb" }
         }
       val instancesCullConvex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instancesCullConvex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instancesCullConvex" }
+            "instances_cull_convex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instances_cull_convex" }
         }
       val instancesCullRay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "instancesCullRay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instancesCullRay" }
+            "instances_cull_ray".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instances_cull_ray" }
         }
       val lightDirectionalSetBlendSplits: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightDirectionalSetBlendSplits".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightDirectionalSetBlendSplits" }
+            "light_directional_set_blend_splits".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_directional_set_blend_splits"
+            }
         }
       val lightDirectionalSetShadowDepthRangeMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightDirectionalSetShadowDepthRangeMode".cstr.ptr)
+            "light_directional_set_shadow_depth_range_mode".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method lightDirectionalSetShadowDepthRangeMode" }
+            "No method_bind found for method light_directional_set_shadow_depth_range_mode" }
         }
       val lightDirectionalSetShadowMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightDirectionalSetShadowMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightDirectionalSetShadowMode" }
+            "light_directional_set_shadow_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_directional_set_shadow_mode"
+            }
         }
       val lightOmniSetShadowDetail: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightOmniSetShadowDetail".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightOmniSetShadowDetail" }
+            "light_omni_set_shadow_detail".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_omni_set_shadow_detail" }
         }
       val lightOmniSetShadowMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightOmniSetShadowMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightOmniSetShadowMode" }
+            "light_omni_set_shadow_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_omni_set_shadow_mode" }
         }
       val lightSetColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetColor" }
+            "light_set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_color" }
         }
       val lightSetCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetCullMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetCullMask" }
+            "light_set_cull_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_cull_mask" }
         }
       val lightSetNegative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetNegative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetNegative" }
+            "light_set_negative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_negative" }
         }
       val lightSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetParam" }
+            "light_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_param" }
         }
       val lightSetProjector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetProjector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetProjector" }
+            "light_set_projector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_projector" }
         }
       val lightSetReverseCullFaceMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetReverseCullFaceMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetReverseCullFaceMode" }
+            "light_set_reverse_cull_face_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_reverse_cull_face_mode" }
         }
       val lightSetShadow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetShadow".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetShadow" }
+            "light_set_shadow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_shadow" }
         }
       val lightSetShadowColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetShadowColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetShadowColor" }
+            "light_set_shadow_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_shadow_color" }
         }
       val lightSetUseGi: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightSetUseGi".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightSetUseGi" }
+            "light_set_use_gi".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method light_set_use_gi" }
         }
       val lightmapCaptureCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureCreate" }
+            "lightmap_capture_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_create" }
         }
       val lightmapCaptureGetBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureGetBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureGetBounds" }
+            "lightmap_capture_get_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_get_bounds" }
         }
       val lightmapCaptureGetEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureGetEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureGetEnergy" }
+            "lightmap_capture_get_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_get_energy" }
         }
       val lightmapCaptureGetOctree: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureGetOctree".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureGetOctree" }
+            "lightmap_capture_get_octree".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_get_octree" }
         }
       val lightmapCaptureGetOctreeCellSubdiv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureGetOctreeCellSubdiv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureGetOctreeCellSubdiv"
-            }
+            "lightmap_capture_get_octree_cell_subdiv".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method lightmap_capture_get_octree_cell_subdiv" }
         }
       val lightmapCaptureGetOctreeCellTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureGetOctreeCellTransform".cstr.ptr)
+            "lightmap_capture_get_octree_cell_transform".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method lightmapCaptureGetOctreeCellTransform" }
+            "No method_bind found for method lightmap_capture_get_octree_cell_transform" }
         }
       val lightmapCaptureSetBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureSetBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureSetBounds" }
+            "lightmap_capture_set_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_set_bounds" }
         }
       val lightmapCaptureSetEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureSetEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureSetEnergy" }
+            "lightmap_capture_set_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_set_energy" }
         }
       val lightmapCaptureSetOctree: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureSetOctree".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureSetOctree" }
+            "lightmap_capture_set_octree".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method lightmap_capture_set_octree" }
         }
       val lightmapCaptureSetOctreeCellSubdiv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureSetOctreeCellSubdiv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lightmapCaptureSetOctreeCellSubdiv"
-            }
+            "lightmap_capture_set_octree_cell_subdiv".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method lightmap_capture_set_octree_cell_subdiv" }
         }
       val lightmapCaptureSetOctreeCellTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "lightmapCaptureSetOctreeCellTransform".cstr.ptr)
+            "lightmap_capture_set_octree_cell_transform".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method lightmapCaptureSetOctreeCellTransform" }
+            "No method_bind found for method lightmap_capture_set_octree_cell_transform" }
         }
       val makeSphereMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "makeSphereMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method makeSphereMesh" }
+            "make_sphere_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method make_sphere_mesh" }
         }
       val materialCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialCreate" }
+            "material_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_create" }
         }
       val materialGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialGetParam" }
+            "material_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_get_param" }
         }
       val materialGetParamDefault: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialGetParamDefault".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialGetParamDefault" }
+            "material_get_param_default".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_get_param_default" }
         }
       val materialGetShader: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialGetShader".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialGetShader" }
+            "material_get_shader".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_get_shader" }
         }
       val materialSetLineWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialSetLineWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialSetLineWidth" }
+            "material_set_line_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_set_line_width" }
         }
       val materialSetNextPass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialSetNextPass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialSetNextPass" }
+            "material_set_next_pass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_set_next_pass" }
         }
       val materialSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialSetParam" }
+            "material_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_set_param" }
         }
       val materialSetRenderPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialSetRenderPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialSetRenderPriority" }
+            "material_set_render_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_set_render_priority" }
         }
       val materialSetShader: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "materialSetShader".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method materialSetShader" }
+            "material_set_shader".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method material_set_shader" }
         }
       val meshAddSurfaceFromArrays: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshAddSurfaceFromArrays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshAddSurfaceFromArrays" }
+            "mesh_add_surface_from_arrays".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_add_surface_from_arrays" }
         }
       val meshClear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshClear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshClear" }
+            "mesh_clear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_clear" }
         }
       val meshCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshCreate" }
+            "mesh_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_create" }
         }
       val meshGetBlendShapeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshGetBlendShapeCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshGetBlendShapeCount" }
+            "mesh_get_blend_shape_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_get_blend_shape_count" }
         }
       val meshGetBlendShapeMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshGetBlendShapeMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshGetBlendShapeMode" }
+            "mesh_get_blend_shape_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_get_blend_shape_mode" }
         }
       val meshGetCustomAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshGetCustomAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshGetCustomAabb" }
+            "mesh_get_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_get_custom_aabb" }
         }
       val meshGetSurfaceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshGetSurfaceCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshGetSurfaceCount" }
+            "mesh_get_surface_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_get_surface_count" }
         }
       val meshRemoveSurface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshRemoveSurface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshRemoveSurface" }
+            "mesh_remove_surface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_remove_surface" }
         }
       val meshSetBlendShapeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSetBlendShapeCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSetBlendShapeCount" }
+            "mesh_set_blend_shape_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_set_blend_shape_count" }
         }
       val meshSetBlendShapeMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSetBlendShapeMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSetBlendShapeMode" }
+            "mesh_set_blend_shape_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_set_blend_shape_mode" }
         }
       val meshSetCustomAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSetCustomAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSetCustomAabb" }
+            "mesh_set_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_set_custom_aabb" }
         }
       val meshSurfaceGetAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetAabb" }
+            "mesh_surface_get_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_aabb" }
         }
       val meshSurfaceGetArray: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetArray" }
+            "mesh_surface_get_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_array" }
         }
       val meshSurfaceGetArrayIndexLen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetArrayIndexLen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetArrayIndexLen" }
+            "mesh_surface_get_array_index_len".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_array_index_len" }
         }
       val meshSurfaceGetArrayLen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetArrayLen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetArrayLen" }
+            "mesh_surface_get_array_len".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_array_len" }
         }
       val meshSurfaceGetArrays: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetArrays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetArrays" }
+            "mesh_surface_get_arrays".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_arrays" }
         }
       val meshSurfaceGetBlendShapeArrays: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetBlendShapeArrays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetBlendShapeArrays" }
+            "mesh_surface_get_blend_shape_arrays".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method mesh_surface_get_blend_shape_arrays" }
         }
       val meshSurfaceGetFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetFormat" }
+            "mesh_surface_get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_format" }
         }
       val meshSurfaceGetFormatOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetFormatOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetFormatOffset" }
+            "mesh_surface_get_format_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_format_offset" }
         }
       val meshSurfaceGetFormatStride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetFormatStride".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetFormatStride" }
+            "mesh_surface_get_format_stride".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_format_stride" }
         }
       val meshSurfaceGetIndexArray: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetIndexArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetIndexArray" }
+            "mesh_surface_get_index_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_index_array" }
         }
       val meshSurfaceGetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetMaterial" }
+            "mesh_surface_get_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_material" }
         }
       val meshSurfaceGetPrimitiveType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetPrimitiveType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetPrimitiveType" }
+            "mesh_surface_get_primitive_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_primitive_type" }
         }
       val meshSurfaceGetSkeletonAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceGetSkeletonAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceGetSkeletonAabb" }
+            "mesh_surface_get_skeleton_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_get_skeleton_aabb" }
         }
       val meshSurfaceSetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceSetMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceSetMaterial" }
+            "mesh_surface_set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_set_material" }
         }
       val meshSurfaceUpdateRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "meshSurfaceUpdateRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method meshSurfaceUpdateRegion" }
+            "mesh_surface_update_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method mesh_surface_update_region" }
         }
       val multimeshAllocate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshAllocate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshAllocate" }
+            "multimesh_allocate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_allocate" }
         }
       val multimeshGetAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshGetAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshGetAabb" }
+            "multimesh_get_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_get_aabb" }
         }
       val multimeshGetInstanceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshGetInstanceCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshGetInstanceCount" }
+            "multimesh_get_instance_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_get_instance_count" }
         }
       val multimeshGetMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshGetMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshGetMesh" }
+            "multimesh_get_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_get_mesh" }
         }
       val multimeshGetVisibleInstances: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshGetVisibleInstances".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshGetVisibleInstances" }
+            "multimesh_get_visible_instances".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_get_visible_instances" }
         }
       val multimeshInstanceGetColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceGetColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceGetColor" }
+            "multimesh_instance_get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_instance_get_color" }
         }
       val multimeshInstanceGetCustomData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceGetCustomData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceGetCustomData" }
+            "multimesh_instance_get_custom_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_instance_get_custom_data"
+            }
         }
       val multimeshInstanceGetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceGetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceGetTransform" }
+            "multimesh_instance_get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_instance_get_transform" }
         }
       val multimeshInstanceGetTransform2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceGetTransform2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceGetTransform2d" }
+            "multimesh_instance_get_transform_2d".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method multimesh_instance_get_transform_2d" }
         }
       val multimeshInstanceSetColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceSetColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceSetColor" }
+            "multimesh_instance_set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_instance_set_color" }
         }
       val multimeshInstanceSetCustomData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceSetCustomData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceSetCustomData" }
+            "multimesh_instance_set_custom_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_instance_set_custom_data"
+            }
         }
       val multimeshInstanceSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceSetTransform" }
+            "multimesh_instance_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_instance_set_transform" }
         }
       val multimeshInstanceSetTransform2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshInstanceSetTransform2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshInstanceSetTransform2d" }
+            "multimesh_instance_set_transform_2d".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method multimesh_instance_set_transform_2d" }
         }
       val multimeshSetAsBulkArray: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshSetAsBulkArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshSetAsBulkArray" }
+            "multimesh_set_as_bulk_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_set_as_bulk_array" }
         }
       val multimeshSetMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshSetMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshSetMesh" }
+            "multimesh_set_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_set_mesh" }
         }
       val multimeshSetVisibleInstances: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "multimeshSetVisibleInstances".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method multimeshSetVisibleInstances" }
+            "multimesh_set_visible_instances".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method multimesh_set_visible_instances" }
         }
       val omniLightCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "omniLightCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method omniLightCreate" }
+            "omni_light_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method omni_light_create" }
         }
       val particlesCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesCreate" }
+            "particles_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_create" }
         }
       val particlesGetCurrentAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesGetCurrentAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesGetCurrentAabb" }
+            "particles_get_current_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_get_current_aabb" }
         }
       val particlesGetEmitting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesGetEmitting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesGetEmitting" }
+            "particles_get_emitting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_get_emitting" }
         }
       val particlesRestart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesRestart".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesRestart" }
+            "particles_restart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_restart" }
         }
       val particlesSetAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetAmount" }
+            "particles_set_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_amount" }
         }
       val particlesSetCustomAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetCustomAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetCustomAabb" }
+            "particles_set_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_custom_aabb" }
         }
       val particlesSetDrawOrder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetDrawOrder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetDrawOrder" }
+            "particles_set_draw_order".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_draw_order" }
         }
       val particlesSetDrawPassMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetDrawPassMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetDrawPassMesh" }
+            "particles_set_draw_pass_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_draw_pass_mesh" }
         }
       val particlesSetDrawPasses: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetDrawPasses".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetDrawPasses" }
+            "particles_set_draw_passes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_draw_passes" }
         }
       val particlesSetEmissionTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetEmissionTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetEmissionTransform" }
+            "particles_set_emission_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_emission_transform" }
         }
       val particlesSetEmitting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetEmitting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetEmitting" }
+            "particles_set_emitting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_emitting" }
         }
       val particlesSetExplosivenessRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetExplosivenessRatio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetExplosivenessRatio" }
+            "particles_set_explosiveness_ratio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_explosiveness_ratio"
+            }
         }
       val particlesSetFixedFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetFixedFps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetFixedFps" }
+            "particles_set_fixed_fps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_fixed_fps" }
         }
       val particlesSetFractionalDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetFractionalDelta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetFractionalDelta" }
+            "particles_set_fractional_delta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_fractional_delta" }
         }
       val particlesSetLifetime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetLifetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetLifetime" }
+            "particles_set_lifetime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_lifetime" }
         }
       val particlesSetOneShot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetOneShot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetOneShot" }
+            "particles_set_one_shot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_one_shot" }
         }
       val particlesSetPreProcessTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetPreProcessTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetPreProcessTime" }
+            "particles_set_pre_process_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_pre_process_time" }
         }
       val particlesSetProcessMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetProcessMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetProcessMaterial" }
+            "particles_set_process_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_process_material" }
         }
       val particlesSetRandomnessRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetRandomnessRatio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetRandomnessRatio" }
+            "particles_set_randomness_ratio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_randomness_ratio" }
         }
       val particlesSetSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetSpeedScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetSpeedScale" }
+            "particles_set_speed_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method particles_set_speed_scale" }
         }
       val particlesSetUseLocalCoordinates: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "particlesSetUseLocalCoordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method particlesSetUseLocalCoordinates" }
+            "particles_set_use_local_coordinates".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method particles_set_use_local_coordinates" }
         }
       val reflectionProbeCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeCreate" }
+            "reflection_probe_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_create" }
         }
       val reflectionProbeSetAsInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetAsInterior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetAsInterior" }
+            "reflection_probe_set_as_interior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_as_interior" }
         }
       val reflectionProbeSetCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetCullMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetCullMask" }
+            "reflection_probe_set_cull_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_cull_mask" }
         }
       val reflectionProbeSetEnableBoxProjection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetEnableBoxProjection".cstr.ptr)
+            "reflection_probe_set_enable_box_projection".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method reflectionProbeSetEnableBoxProjection" }
+            "No method_bind found for method reflection_probe_set_enable_box_projection" }
         }
       val reflectionProbeSetEnableShadows: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetEnableShadows".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetEnableShadows" }
+            "reflection_probe_set_enable_shadows".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method reflection_probe_set_enable_shadows" }
         }
       val reflectionProbeSetExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetExtents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetExtents" }
+            "reflection_probe_set_extents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_extents" }
         }
       val reflectionProbeSetIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetIntensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetIntensity" }
+            "reflection_probe_set_intensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_intensity" }
         }
       val reflectionProbeSetInteriorAmbient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetInteriorAmbient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetInteriorAmbient"
-            }
+            "reflection_probe_set_interior_ambient".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method reflection_probe_set_interior_ambient" }
         }
       val reflectionProbeSetInteriorAmbientEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetInteriorAmbientEnergy".cstr.ptr)
+            "reflection_probe_set_interior_ambient_energy".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method reflectionProbeSetInteriorAmbientEnergy" }
+            "No method_bind found for method reflection_probe_set_interior_ambient_energy" }
         }
       val reflectionProbeSetInteriorAmbientProbeContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetInteriorAmbientProbeContribution".cstr.ptr)
+            "reflection_probe_set_interior_ambient_probe_contribution".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method reflectionProbeSetInteriorAmbientProbeContribution" }
+            "No method_bind found for method reflection_probe_set_interior_ambient_probe_contribution"
+            }
         }
       val reflectionProbeSetMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetMaxDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetMaxDistance" }
+            "reflection_probe_set_max_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_max_distance"
+            }
         }
       val reflectionProbeSetOriginOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetOriginOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetOriginOffset" }
+            "reflection_probe_set_origin_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_origin_offset"
+            }
         }
       val reflectionProbeSetUpdateMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "reflectionProbeSetUpdateMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reflectionProbeSetUpdateMode" }
+            "reflection_probe_set_update_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reflection_probe_set_update_mode" }
         }
       val requestFrameDrawnCallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "requestFrameDrawnCallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method requestFrameDrawnCallback" }
+            "request_frame_drawn_callback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method request_frame_drawn_callback" }
         }
       val scenarioCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "scenarioCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scenarioCreate" }
+            "scenario_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scenario_create" }
         }
       val scenarioSetDebug: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "scenarioSetDebug".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scenarioSetDebug" }
+            "scenario_set_debug".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scenario_set_debug" }
         }
       val scenarioSetEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "scenarioSetEnvironment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scenarioSetEnvironment" }
+            "scenario_set_environment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scenario_set_environment" }
         }
       val scenarioSetFallbackEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "scenarioSetFallbackEnvironment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scenarioSetFallbackEnvironment" }
+            "scenario_set_fallback_environment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scenario_set_fallback_environment"
+            }
         }
       val scenarioSetReflectionAtlasSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "scenarioSetReflectionAtlasSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scenarioSetReflectionAtlasSize" }
+            "scenario_set_reflection_atlas_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scenario_set_reflection_atlas_size"
+            }
         }
       val setBootImage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "setBootImage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBootImage" }
+            "set_boot_image".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_boot_image" }
         }
       val setDebugGenerateWireframes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "setDebugGenerateWireframes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDebugGenerateWireframes" }
+            "set_debug_generate_wireframes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_debug_generate_wireframes" }
         }
       val setDefaultClearColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "setDefaultClearColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDefaultClearColor" }
+            "set_default_clear_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_clear_color" }
         }
       val shaderCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "shaderCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shaderCreate" }
+            "shader_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shader_create" }
         }
       val shaderGetCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "shaderGetCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shaderGetCode" }
+            "shader_get_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shader_get_code" }
         }
       val shaderGetDefaultTextureParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "shaderGetDefaultTextureParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shaderGetDefaultTextureParam" }
+            "shader_get_default_texture_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shader_get_default_texture_param" }
         }
       val shaderGetParamList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "shaderGetParamList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shaderGetParamList" }
+            "shader_get_param_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shader_get_param_list" }
         }
       val shaderSetCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "shaderSetCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shaderSetCode" }
+            "shader_set_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shader_set_code" }
         }
       val shaderSetDefaultTextureParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "shaderSetDefaultTextureParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shaderSetDefaultTextureParam" }
+            "shader_set_default_texture_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shader_set_default_texture_param" }
         }
       val skeletonAllocate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonAllocate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonAllocate" }
+            "skeleton_allocate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_allocate" }
         }
       val skeletonBoneGetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonBoneGetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonBoneGetTransform" }
+            "skeleton_bone_get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_bone_get_transform" }
         }
       val skeletonBoneGetTransform2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonBoneGetTransform2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonBoneGetTransform2d" }
+            "skeleton_bone_get_transform_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_bone_get_transform_2d" }
         }
       val skeletonBoneSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonBoneSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonBoneSetTransform" }
+            "skeleton_bone_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_bone_set_transform" }
         }
       val skeletonBoneSetTransform2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonBoneSetTransform2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonBoneSetTransform2d" }
+            "skeleton_bone_set_transform_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_bone_set_transform_2d" }
         }
       val skeletonCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonCreate" }
+            "skeleton_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_create" }
         }
       val skeletonGetBoneCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skeletonGetBoneCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skeletonGetBoneCount" }
+            "skeleton_get_bone_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skeleton_get_bone_count" }
         }
       val skyCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skyCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skyCreate" }
+            "sky_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method sky_create" }
         }
       val skySetTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "skySetTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skySetTexture" }
+            "sky_set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method sky_set_texture" }
         }
       val spotLightCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "spotLightCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spotLightCreate" }
+            "spot_light_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method spot_light_create" }
         }
       val sync: CPointer<godot_method_bind>
         get() = memScoped {
@@ -6690,366 +6723,370 @@ open class VisualServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureAllocate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureAllocate" }
+            "texture_allocate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_allocate" }
         }
       val textureBind: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureBind".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureBind" }
+            "texture_bind".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_bind" }
         }
       val textureCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureCreate" }
+            "texture_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_create" }
         }
       val textureCreateFromImage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureCreateFromImage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureCreateFromImage" }
+            "texture_create_from_image".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_create_from_image" }
         }
       val textureDebugUsage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureDebugUsage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureDebugUsage" }
+            "texture_debug_usage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_debug_usage" }
         }
       val textureGetData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetData" }
+            "texture_get_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_data" }
         }
       val textureGetDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetDepth" }
+            "texture_get_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_depth" }
         }
       val textureGetFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetFlags" }
+            "texture_get_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_flags" }
         }
       val textureGetFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetFormat" }
+            "texture_get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_format" }
         }
       val textureGetHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetHeight" }
+            "texture_get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_height" }
         }
       val textureGetPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetPath" }
+            "texture_get_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_path" }
         }
       val textureGetTexid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetTexid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetTexid" }
+            "texture_get_texid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_texid" }
         }
       val textureGetType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetType" }
+            "texture_get_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_type" }
         }
       val textureGetWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureGetWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureGetWidth" }
+            "texture_get_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_get_width" }
         }
       val textureSetData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureSetData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureSetData" }
+            "texture_set_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_set_data" }
         }
       val textureSetDataPartial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureSetDataPartial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureSetDataPartial" }
+            "texture_set_data_partial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_set_data_partial" }
         }
       val textureSetFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureSetFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureSetFlags" }
+            "texture_set_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_set_flags" }
         }
       val textureSetPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureSetPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureSetPath" }
+            "texture_set_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_set_path" }
         }
       val textureSetShrinkAllX2OnSetData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureSetShrinkAllX2OnSetData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureSetShrinkAllX2OnSetData" }
+            "texture_set_shrink_all_x2_on_set_data".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method texture_set_shrink_all_x2_on_set_data" }
         }
       val textureSetSizeOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "textureSetSizeOverride".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method textureSetSizeOverride" }
+            "texture_set_size_override".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method texture_set_size_override" }
         }
       val texturesKeepOriginal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "texturesKeepOriginal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method texturesKeepOriginal" }
+            "textures_keep_original".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method textures_keep_original" }
         }
       val viewportAttachCamera: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportAttachCamera".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportAttachCamera" }
+            "viewport_attach_camera".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_attach_camera" }
         }
       val viewportAttachCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportAttachCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportAttachCanvas" }
+            "viewport_attach_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_attach_canvas" }
         }
       val viewportAttachToScreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportAttachToScreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportAttachToScreen" }
+            "viewport_attach_to_screen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_attach_to_screen" }
         }
       val viewportCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportCreate" }
+            "viewport_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_create" }
         }
       val viewportDetach: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportDetach".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportDetach" }
+            "viewport_detach".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_detach" }
         }
       val viewportGetRenderInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportGetRenderInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportGetRenderInfo" }
+            "viewport_get_render_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_get_render_info" }
         }
       val viewportGetTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportGetTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportGetTexture" }
+            "viewport_get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_get_texture" }
         }
       val viewportRemoveCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportRemoveCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportRemoveCanvas" }
+            "viewport_remove_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_remove_canvas" }
         }
       val viewportSetActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetActive" }
+            "viewport_set_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_active" }
         }
       val viewportSetCanvasStacking: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetCanvasStacking".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetCanvasStacking" }
+            "viewport_set_canvas_stacking".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_canvas_stacking" }
         }
       val viewportSetCanvasTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetCanvasTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetCanvasTransform" }
+            "viewport_set_canvas_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_canvas_transform" }
         }
       val viewportSetClearMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetClearMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetClearMode" }
+            "viewport_set_clear_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_clear_mode" }
         }
       val viewportSetDebugDraw: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetDebugDraw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetDebugDraw" }
+            "viewport_set_debug_draw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_debug_draw" }
         }
       val viewportSetDisable3d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetDisable3d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetDisable3d" }
+            "viewport_set_disable_3d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_disable_3d" }
         }
       val viewportSetDisableEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetDisableEnvironment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetDisableEnvironment" }
+            "viewport_set_disable_environment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_disable_environment" }
         }
       val viewportSetGlobalCanvasTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetGlobalCanvasTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetGlobalCanvasTransform" }
+            "viewport_set_global_canvas_transform".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method viewport_set_global_canvas_transform" }
         }
       val viewportSetHdr: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetHdr".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetHdr" }
+            "viewport_set_hdr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_hdr" }
         }
       val viewportSetHideCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetHideCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetHideCanvas" }
+            "viewport_set_hide_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_hide_canvas" }
         }
       val viewportSetHideScenario: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetHideScenario".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetHideScenario" }
+            "viewport_set_hide_scenario".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_hide_scenario" }
         }
       val viewportSetMsaa: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetMsaa".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetMsaa" }
+            "viewport_set_msaa".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_msaa" }
         }
       val viewportSetParentViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetParentViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetParentViewport" }
+            "viewport_set_parent_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_parent_viewport" }
         }
       val viewportSetRenderDirectToScreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetRenderDirectToScreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetRenderDirectToScreen" }
+            "viewport_set_render_direct_to_screen".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method viewport_set_render_direct_to_screen" }
         }
       val viewportSetScenario: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetScenario".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetScenario" }
+            "viewport_set_scenario".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_scenario" }
         }
       val viewportSetShadowAtlasQuadrantSubdivision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetShadowAtlasQuadrantSubdivision".cstr.ptr)
+            "viewport_set_shadow_atlas_quadrant_subdivision".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method viewportSetShadowAtlasQuadrantSubdivision" }
+            "No method_bind found for method viewport_set_shadow_atlas_quadrant_subdivision" }
         }
       val viewportSetShadowAtlasSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetShadowAtlasSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetShadowAtlasSize" }
+            "viewport_set_shadow_atlas_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_shadow_atlas_size" }
         }
       val viewportSetSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetSize" }
+            "viewport_set_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_size" }
         }
       val viewportSetTransparentBackground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetTransparentBackground".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetTransparentBackground" }
+            "viewport_set_transparent_background".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method viewport_set_transparent_background" }
         }
       val viewportSetUpdateMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetUpdateMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetUpdateMode" }
+            "viewport_set_update_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_update_mode" }
         }
       val viewportSetUsage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetUsage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetUsage" }
+            "viewport_set_usage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_usage" }
         }
       val viewportSetUseArvr: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetUseArvr".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetUseArvr" }
+            "viewport_set_use_arvr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_use_arvr" }
         }
       val viewportSetVflip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualServer".cstr.ptr,
-            "viewportSetVflip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method viewportSetVflip" }
+            "viewport_set_vflip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method viewport_set_vflip" }
         }}
   }
 }

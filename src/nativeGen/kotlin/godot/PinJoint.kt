@@ -75,14 +75,14 @@ open class PinJoint(
       val getParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint".cstr.ptr,
-            "getParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParam" }
+            "get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val setParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint".cstr.ptr,
-            "setParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setParam" }
+            "set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param" }
         }}
   }
 }

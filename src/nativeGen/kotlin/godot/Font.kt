@@ -117,56 +117,56 @@ open class Font(
       val drawChar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "drawChar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method drawChar" }
+            "draw_char".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method draw_char" }
         }
       val getAscent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "getAscent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAscent" }
+            "get_ascent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ascent" }
         }
       val getDescent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "getDescent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDescent" }
+            "get_descent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_descent" }
         }
       val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "getHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHeight" }
+            "get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getStringSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "getStringSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStringSize" }
+            "get_string_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_string_size" }
         }
       val getWordwrapStringSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "getWordwrapStringSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWordwrapStringSize" }
+            "get_wordwrap_string_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_wordwrap_string_size" }
         }
       val hasOutline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "hasOutline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasOutline" }
+            "has_outline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_outline" }
         }
       val isDistanceFieldHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "isDistanceFieldHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDistanceFieldHint" }
+            "is_distance_field_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_distance_field_hint" }
         }
       val updateChanges: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "updateChanges".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updateChanges" }
+            "update_changes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_changes" }
         }}
   }
 }

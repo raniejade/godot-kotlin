@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptLocalVarSet(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var type: Int
+  var type: Variant.Type
     get() {
-       return Variant.Type.from(getVarType()) 
+       return getVarType() 
     }
     set(value) {
-      setVarType(Variant.Type.from(value))
+      setVarType(value.value)
     }
 
   var varName: String
@@ -73,29 +73,29 @@ open class VisualScriptLocalVarSet(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "getVarName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVarName" }
+            "get_var_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_var_name" }
         }
       val getVarType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "getVarType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVarType" }
+            "get_var_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_var_type" }
         }
       val setVarName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "setVarName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVarName" }
+            "set_var_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_var_name" }
         }
       val setVarType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptLocalVarSet".cstr.ptr,
-            "setVarType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVarType" }
+            "set_var_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_var_type" }
         }}
   }
 }

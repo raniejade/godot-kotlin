@@ -37,12 +37,12 @@ open class GraphNode(
       setOffset(value)
     }
 
-  var overlay: Int
+  var overlay: Overlay
     get() {
-       return GraphNode.Overlay.from(getOverlay()) 
+       return getOverlay() 
     }
     set(value) {
-      setOverlay(GraphNode.Overlay.from(value))
+      setOverlay(value.value)
     }
 
   var resizable: Boolean
@@ -306,188 +306,188 @@ open class GraphNode(
       val clearAllSlots: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "clearAllSlots".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearAllSlots" }
+            "clear_all_slots".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_all_slots" }
         }
       val clearSlot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "clearSlot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearSlot" }
+            "clear_slot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_slot" }
         }
       val getConnectionInputColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionInputColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionInputColor" }
+            "get_connection_input_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_input_color" }
         }
       val getConnectionInputCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionInputCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionInputCount" }
+            "get_connection_input_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_input_count" }
         }
       val getConnectionInputPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionInputPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionInputPosition" }
+            "get_connection_input_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_input_position" }
         }
       val getConnectionInputType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionInputType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionInputType" }
+            "get_connection_input_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_input_type" }
         }
       val getConnectionOutputColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionOutputColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputColor" }
+            "get_connection_output_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_output_color" }
         }
       val getConnectionOutputCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionOutputCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputCount" }
+            "get_connection_output_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_output_count" }
         }
       val getConnectionOutputPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionOutputPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputPosition" }
+            "get_connection_output_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_output_position" }
         }
       val getConnectionOutputType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getConnectionOutputType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputType" }
+            "get_connection_output_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_output_type" }
         }
       val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffset" }
+            "get_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val getOverlay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getOverlay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOverlay" }
+            "get_overlay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_overlay" }
         }
       val getSlotColorLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getSlotColorLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSlotColorLeft" }
+            "get_slot_color_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_slot_color_left" }
         }
       val getSlotColorRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getSlotColorRight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSlotColorRight" }
+            "get_slot_color_right".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_slot_color_right" }
         }
       val getSlotTypeLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getSlotTypeLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSlotTypeLeft" }
+            "get_slot_type_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_slot_type_left" }
         }
       val getSlotTypeRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getSlotTypeRight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSlotTypeRight" }
+            "get_slot_type_right".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_slot_type_right" }
         }
       val getTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "getTitle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTitle" }
+            "get_title".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_title" }
         }
       val isCloseButtonVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "isCloseButtonVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCloseButtonVisible" }
+            "is_close_button_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_close_button_visible" }
         }
       val isComment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "isComment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isComment" }
+            "is_comment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_comment" }
         }
       val isResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "isResizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isResizable" }
+            "is_resizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_resizable" }
         }
       val isSelected: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "isSelected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSelected" }
+            "is_selected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_selected" }
         }
       val isSlotEnabledLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "isSlotEnabledLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSlotEnabledLeft" }
+            "is_slot_enabled_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_left" }
         }
       val isSlotEnabledRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "isSlotEnabledRight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSlotEnabledRight" }
+            "is_slot_enabled_right".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_right" }
         }
       val setComment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setComment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setComment" }
+            "set_comment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_comment" }
         }
       val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffset" }
+            "set_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offset" }
         }
       val setOverlay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setOverlay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOverlay" }
+            "set_overlay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_overlay" }
         }
       val setResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setResizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setResizable" }
+            "set_resizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_resizable" }
         }
       val setSelected: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setSelected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSelected" }
+            "set_selected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_selected" }
         }
       val setShowCloseButton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setShowCloseButton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setShowCloseButton" }
+            "set_show_close_button".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_show_close_button" }
         }
       val setSlot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setSlot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSlot" }
+            "set_slot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_slot" }
         }
       val setTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "setTitle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTitle" }
+            "set_title".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_title" }
         }}
   }
 }

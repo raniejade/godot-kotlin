@@ -64,12 +64,12 @@ open class ItemList(
       setFixedIconSize(value)
     }
 
-  var iconMode: Int
+  var iconMode: IconMode
     get() {
-       return ItemList.IconMode.from(getIconMode()) 
+       return getIconMode() 
     }
     set(value) {
-      setIconMode(ItemList.IconMode.from(value))
+      setIconMode(value.value)
     }
 
   var iconScale: Float
@@ -78,14 +78,6 @@ open class ItemList(
     }
     set(value) {
       setIconScale(value)
-    }
-
-  var items: VariantArray
-    get() {
-       return _getItems() 
-    }
-    set(value) {
-      _setItems(value)
     }
 
   var maxColumns: Int
@@ -112,12 +104,12 @@ open class ItemList(
       setSameColumnWidth(value)
     }
 
-  var selectMode: Int
+  var selectMode: SelectMode
     get() {
-       return ItemList.SelectMode.from(getSelectMode()) 
+       return getSelectMode() 
     }
     set(value) {
-      setSelectMode(ItemList.SelectMode.from(value))
+      setSelectMode(value.value)
     }
 
   fun addIconItem(icon: Texture, selectable: Boolean) {
@@ -542,14 +534,14 @@ open class ItemList(
       val addIconItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "addIconItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIconItem" }
+            "add_icon_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_item" }
         }
       val addItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "addItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addItem" }
+            "add_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_item" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -560,194 +552,194 @@ open class ItemList(
       val ensureCurrentIsVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "ensureCurrentIsVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method ensureCurrentIsVisible" }
+            "ensure_current_is_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method ensure_current_is_visible" }
         }
       val getAllowReselect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getAllowReselect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAllowReselect" }
+            "get_allow_reselect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_allow_reselect" }
         }
       val getAllowRmbSelect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getAllowRmbSelect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAllowRmbSelect" }
+            "get_allow_rmb_select".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_allow_rmb_select" }
         }
       val getFixedColumnWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getFixedColumnWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFixedColumnWidth" }
+            "get_fixed_column_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fixed_column_width" }
         }
       val getFixedIconSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getFixedIconSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFixedIconSize" }
+            "get_fixed_icon_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fixed_icon_size" }
         }
       val getIconMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getIconMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIconMode" }
+            "get_icon_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_icon_mode" }
         }
       val getIconScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getIconScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIconScale" }
+            "get_icon_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_icon_scale" }
         }
       val getItemAtPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemAtPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemAtPosition" }
+            "get_item_at_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_at_position" }
         }
       val getItemCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemCount" }
+            "get_item_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_count" }
         }
       val getItemCustomBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemCustomBgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemCustomBgColor" }
+            "get_item_custom_bg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_custom_bg_color" }
         }
       val getItemCustomFgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemCustomFgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemCustomFgColor" }
+            "get_item_custom_fg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_custom_fg_color" }
         }
       val getItemIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemIcon" }
+            "get_item_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_icon" }
         }
       val getItemIconModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemIconModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemIconModulate" }
+            "get_item_icon_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_icon_modulate" }
         }
       val getItemIconRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemIconRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemIconRegion" }
+            "get_item_icon_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_icon_region" }
         }
       val getItemMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemMetadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemMetadata" }
+            "get_item_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_metadata" }
         }
       val getItemText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemText" }
+            "get_item_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_text" }
         }
       val getItemTooltip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getItemTooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemTooltip" }
+            "get_item_tooltip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_tooltip" }
         }
       val getMaxColumns: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getMaxColumns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaxColumns" }
+            "get_max_columns".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_columns" }
         }
       val getMaxTextLines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getMaxTextLines".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaxTextLines" }
+            "get_max_text_lines".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_text_lines" }
         }
       val getSelectMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getSelectMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSelectMode" }
+            "get_select_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_select_mode" }
         }
       val getSelectedItems: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getSelectedItems".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSelectedItems" }
+            "get_selected_items".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_selected_items" }
         }
       val getVScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "getVScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVScroll" }
+            "get_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
         }
       val hasAutoHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "hasAutoHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasAutoHeight" }
+            "has_auto_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_auto_height" }
         }
       val isAnythingSelected: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isAnythingSelected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isAnythingSelected" }
+            "is_anything_selected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_anything_selected" }
         }
       val isItemDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isItemDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemDisabled" }
+            "is_item_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_disabled" }
         }
       val isItemIconTransposed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isItemIconTransposed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemIconTransposed" }
+            "is_item_icon_transposed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_icon_transposed" }
         }
       val isItemSelectable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isItemSelectable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemSelectable" }
+            "is_item_selectable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_selectable" }
         }
       val isItemTooltipEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isItemTooltipEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemTooltipEnabled" }
+            "is_item_tooltip_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_tooltip_enabled" }
         }
       val isSameColumnWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isSameColumnWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSameColumnWidth" }
+            "is_same_column_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_same_column_width" }
         }
       val isSelected: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "isSelected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSelected" }
+            "is_selected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_selected" }
         }
       val moveItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "moveItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method moveItem" }
+            "move_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method move_item" }
         }
       val removeItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "removeItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeItem" }
+            "remove_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_item" }
         }
       val select: CPointer<godot_method_bind>
         get() = memScoped {
@@ -758,146 +750,146 @@ open class ItemList(
       val setAllowReselect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setAllowReselect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAllowReselect" }
+            "set_allow_reselect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_allow_reselect" }
         }
       val setAllowRmbSelect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setAllowRmbSelect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAllowRmbSelect" }
+            "set_allow_rmb_select".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_allow_rmb_select" }
         }
       val setAutoHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setAutoHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutoHeight" }
+            "set_auto_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_auto_height" }
         }
       val setFixedColumnWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setFixedColumnWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFixedColumnWidth" }
+            "set_fixed_column_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fixed_column_width" }
         }
       val setFixedIconSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setFixedIconSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFixedIconSize" }
+            "set_fixed_icon_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fixed_icon_size" }
         }
       val setIconMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setIconMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIconMode" }
+            "set_icon_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_icon_mode" }
         }
       val setIconScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setIconScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIconScale" }
+            "set_icon_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_icon_scale" }
         }
       val setItemCustomBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemCustomBgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemCustomBgColor" }
+            "set_item_custom_bg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_custom_bg_color" }
         }
       val setItemCustomFgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemCustomFgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemCustomFgColor" }
+            "set_item_custom_fg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_custom_fg_color" }
         }
       val setItemDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemDisabled" }
+            "set_item_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_disabled" }
         }
       val setItemIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemIcon" }
+            "set_item_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_icon" }
         }
       val setItemIconModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemIconModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemIconModulate" }
+            "set_item_icon_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_icon_modulate" }
         }
       val setItemIconRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemIconRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemIconRegion" }
+            "set_item_icon_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_icon_region" }
         }
       val setItemIconTransposed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemIconTransposed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemIconTransposed" }
+            "set_item_icon_transposed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_icon_transposed" }
         }
       val setItemMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemMetadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemMetadata" }
+            "set_item_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_metadata" }
         }
       val setItemSelectable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemSelectable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemSelectable" }
+            "set_item_selectable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_selectable" }
         }
       val setItemText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemText" }
+            "set_item_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_text" }
         }
       val setItemTooltip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemTooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemTooltip" }
+            "set_item_tooltip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_tooltip" }
         }
       val setItemTooltipEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setItemTooltipEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemTooltipEnabled" }
+            "set_item_tooltip_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_tooltip_enabled" }
         }
       val setMaxColumns: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setMaxColumns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaxColumns" }
+            "set_max_columns".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_columns" }
         }
       val setMaxTextLines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setMaxTextLines".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaxTextLines" }
+            "set_max_text_lines".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_text_lines" }
         }
       val setSameColumnWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setSameColumnWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSameColumnWidth" }
+            "set_same_column_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_same_column_width" }
         }
       val setSelectMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "setSelectMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSelectMode" }
+            "set_select_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_select_mode" }
         }
       val sortItemsByText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "sortItemsByText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sortItemsByText" }
+            "sort_items_by_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method sort_items_by_text" }
         }
       val unselect: CPointer<godot_method_bind>
         get() = memScoped {
@@ -908,8 +900,8 @@ open class ItemList(
       val unselectAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ItemList".cstr.ptr,
-            "unselectAll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unselectAll" }
+            "unselect_all".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method unselect_all" }
         }}
   }
 }

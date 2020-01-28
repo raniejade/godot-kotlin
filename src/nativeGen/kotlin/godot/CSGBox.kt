@@ -33,7 +33,7 @@ open class CSGBox(
       setHeight(value)
     }
 
-  var material: `SpatialMaterial,ShaderMaterial`
+  var material: Material
     get() {
        return getMaterial() 
     }
@@ -106,50 +106,50 @@ open class CSGBox(
       val getDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "getDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDepth" }
+            "get_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_depth" }
         }
       val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "getHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHeight" }
+            "get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "getMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
+            "get_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_material" }
         }
       val getWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "getWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWidth" }
+            "get_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_width" }
         }
       val setDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "setDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDepth" }
+            "set_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_depth" }
         }
       val setHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "setHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHeight" }
+            "set_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_height" }
         }
       val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "setMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
+            "set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_material" }
         }
       val setWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGBox".cstr.ptr,
-            "setWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWidth" }
+            "set_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_width" }
         }}
   }
 }

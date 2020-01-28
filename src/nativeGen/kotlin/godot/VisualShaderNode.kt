@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var defaultInputValues: VariantArray
-    get() {
-       return _getDefaultInputValues() 
-    }
-    set(value) {
-      _setDefaultInputValues(value)
-    }
-
   var outputPortForPreview: Int
     get() {
        return getOutputPortForPreview() 
@@ -65,29 +57,29 @@ open class VisualShaderNode(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "getInputPortDefaultValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInputPortDefaultValue" }
+            "get_input_port_default_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_port_default_value" }
         }
       val getOutputPortForPreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "getOutputPortForPreview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOutputPortForPreview" }
+            "get_output_port_for_preview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_output_port_for_preview" }
         }
       val setInputPortDefaultValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "setInputPortDefaultValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInputPortDefaultValue" }
+            "set_input_port_default_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_input_port_default_value" }
         }
       val setOutputPortForPreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNode".cstr.ptr,
-            "setOutputPortForPreview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOutputPortForPreview" }
+            "set_output_port_for_preview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_output_port_for_preview" }
         }}
   }
 }

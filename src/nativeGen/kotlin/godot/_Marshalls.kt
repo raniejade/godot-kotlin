@@ -75,38 +75,38 @@ open class _Marshalls(
       val base64ToRaw: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
-            "base64ToRaw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method base64ToRaw" }
+            "base64_to_raw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method base64_to_raw" }
         }
       val base64ToUtf8: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
-            "base64ToUtf8".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method base64ToUtf8" }
+            "base64_to_utf8".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method base64_to_utf8" }
         }
       val base64ToVariant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
-            "base64ToVariant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method base64ToVariant" }
+            "base64_to_variant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method base64_to_variant" }
         }
       val rawToBase64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
-            "rawToBase64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rawToBase64" }
+            "raw_to_base64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method raw_to_base64" }
         }
       val utf8ToBase64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
-            "utf8ToBase64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method utf8ToBase64" }
+            "utf8_to_base64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method utf8_to_base64" }
         }
       val variantToBase64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Marshalls".cstr.ptr,
-            "variantToBase64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method variantToBase64" }
+            "variant_to_base64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method variant_to_base64" }
         }}
   }
 }

@@ -184,127 +184,127 @@ open class EditorProperty(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "addFocusable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addFocusable" }
+            "add_focusable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_focusable" }
         }
       val emitChanged: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "emitChanged".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method emitChanged" }
+            "emit_changed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method emit_changed" }
         }
       val getEditedObject: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "getEditedObject".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditedObject" }
+            "get_edited_object".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_edited_object" }
         }
       val getEditedProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "getEditedProperty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditedProperty" }
+            "get_edited_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_edited_property" }
         }
       val getLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "getLabel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLabel" }
+            "get_label".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_label" }
         }
       val getTooltipText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "getTooltipText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTooltipText" }
+            "get_tooltip_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tooltip_text" }
         }
       val isCheckable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "isCheckable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCheckable" }
+            "is_checkable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_checkable" }
         }
       val isChecked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "isChecked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isChecked" }
+            "is_checked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_checked" }
         }
       val isDrawRed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "isDrawRed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDrawRed" }
+            "is_draw_red".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_draw_red" }
         }
       val isKeying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "isKeying".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isKeying" }
+            "is_keying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_keying" }
         }
       val isReadOnly: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "isReadOnly".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isReadOnly" }
+            "is_read_only".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_read_only" }
         }
       val setBottomEditor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setBottomEditor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBottomEditor" }
+            "set_bottom_editor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bottom_editor" }
         }
       val setCheckable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setCheckable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCheckable" }
+            "set_checkable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_checkable" }
         }
       val setChecked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setChecked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setChecked" }
+            "set_checked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_checked" }
         }
       val setDrawRed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setDrawRed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDrawRed" }
+            "set_draw_red".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_draw_red" }
         }
       val setKeying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setKeying".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setKeying" }
+            "set_keying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_keying" }
         }
       val setLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setLabel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLabel" }
+            "set_label".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_label" }
         }
       val setReadOnly: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorProperty".cstr.ptr,
-            "setReadOnly".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setReadOnly" }
+            "set_read_only".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_read_only" }
         }}
   }
 }

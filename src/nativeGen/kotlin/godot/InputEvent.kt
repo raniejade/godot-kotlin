@@ -118,74 +118,74 @@ open class InputEvent(
       val asText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "asText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method asText" }
+            "as_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method as_text" }
         }
       val getActionStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "getActionStrength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getActionStrength" }
+            "get_action_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_action_strength" }
         }
       val getDevice: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "getDevice".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDevice" }
+            "get_device".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_device" }
         }
       val isAction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "isAction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isAction" }
+            "is_action".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_action" }
         }
       val isActionPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "isActionPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isActionPressed" }
+            "is_action_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_action_pressed" }
         }
       val isActionReleased: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "isActionReleased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isActionReleased" }
+            "is_action_released".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_action_released" }
         }
       val isActionType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "isActionType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isActionType" }
+            "is_action_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_action_type" }
         }
       val isEcho: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "isEcho".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEcho" }
+            "is_echo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_echo" }
         }
       val isPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "isPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPressed" }
+            "is_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_pressed" }
         }
       val setDevice: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "setDevice".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDevice" }
+            "set_device".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_device" }
         }
       val shortcutMatch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "shortcutMatch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shortcutMatch" }
+            "shortcut_match".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shortcut_match" }
         }
       val xformedBy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEvent".cstr.ptr,
-            "xformedBy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method xformedBy" }
+            "xformed_by".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method xformed_by" }
         }}
   }
 }

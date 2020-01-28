@@ -19,12 +19,12 @@ import kotlinx.cinterop.reinterpret
 open class EditorFileDialog(
   _handle: COpaquePointer
 ) : ConfirmationDialog(_handle) {
-  var access: Int
+  var access: Access
     get() {
-       return EditorFileDialog.Access.from(getAccess()) 
+       return getAccess() 
     }
     set(value) {
-      setAccess(EditorFileDialog.Access.from(value))
+      setAccess(value.value)
     }
 
   var currentDir: String
@@ -59,20 +59,20 @@ open class EditorFileDialog(
       setDisableOverwriteWarning(value)
     }
 
-  var displayMode: Int
+  var displayMode: DisplayMode
     get() {
-       return EditorFileDialog.DisplayMode.from(getDisplayMode()) 
+       return getDisplayMode() 
     }
     set(value) {
-      setDisplayMode(EditorFileDialog.DisplayMode.from(value))
+      setDisplayMode(value.value)
     }
 
-  var mode: Int
+  var mode: Mode
     get() {
-       return EditorFileDialog.Mode.from(getMode()) 
+       return getMode() 
     }
     set(value) {
-      setMode(EditorFileDialog.Mode.from(value))
+      setMode(value.value)
     }
 
   var showHiddenFiles: Boolean
@@ -285,64 +285,64 @@ open class EditorFileDialog(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "addFilter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addFilter" }
+            "add_filter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_filter" }
         }
       val clearFilters: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "clearFilters".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearFilters" }
+            "clear_filters".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_filters" }
         }
       val getAccess: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getAccess".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAccess" }
+            "get_access".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_access" }
         }
       val getCurrentDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getCurrentDir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentDir" }
+            "get_current_dir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_dir" }
         }
       val getCurrentFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getCurrentFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentFile" }
+            "get_current_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_file" }
         }
       val getCurrentPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getCurrentPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentPath" }
+            "get_current_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_path" }
         }
       val getDisplayMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getDisplayMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDisplayMode" }
+            "get_display_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_display_mode" }
         }
       val getMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMode" }
+            "get_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mode" }
         }
       val getVbox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "getVbox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVbox" }
+            "get_vbox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_vbox" }
         }
       val invalidate: CPointer<godot_method_bind>
         get() = memScoped {
@@ -355,71 +355,71 @@ open class EditorFileDialog(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "isOverwriteWarningDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOverwriteWarningDisabled" }
+            "is_overwrite_warning_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_overwrite_warning_disabled" }
         }
       val isShowingHiddenFiles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "isShowingHiddenFiles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isShowingHiddenFiles" }
+            "is_showing_hidden_files".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_showing_hidden_files" }
         }
       val setAccess: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setAccess".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAccess" }
+            "set_access".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_access" }
         }
       val setCurrentDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setCurrentDir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCurrentDir" }
+            "set_current_dir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_current_dir" }
         }
       val setCurrentFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setCurrentFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCurrentFile" }
+            "set_current_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_current_file" }
         }
       val setCurrentPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setCurrentPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCurrentPath" }
+            "set_current_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_current_path" }
         }
       val setDisableOverwriteWarning: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setDisableOverwriteWarning".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableOverwriteWarning" }
+            "set_disable_overwrite_warning".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_overwrite_warning" }
         }
       val setDisplayMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setDisplayMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisplayMode" }
+            "set_display_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_display_mode" }
         }
       val setMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMode" }
+            "set_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mode" }
         }
       val setShowHiddenFiles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileDialog".cstr.ptr,
-            "setShowHiddenFiles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setShowHiddenFiles" }
+            "set_show_hidden_files".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_show_hidden_files" }
         }}
   }
 }

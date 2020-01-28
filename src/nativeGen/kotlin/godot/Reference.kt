@@ -49,8 +49,8 @@ open class Reference(
       val initRef: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Reference".cstr.ptr,
-            "initRef".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method initRef" }
+            "init_ref".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method init_ref" }
         }
       val reference: CPointer<godot_method_bind>
         get() = memScoped {

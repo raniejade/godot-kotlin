@@ -29,12 +29,12 @@ open class AudioStreamSample(
       setData(value)
     }
 
-  var format: Int
+  var format: Format
     get() {
-       return AudioStreamSample.Format.from(getFormat()) 
+       return getFormat() 
     }
     set(value) {
-      setFormat(AudioStreamSample.Format.from(value))
+      setFormat(value.value)
     }
 
   var loopBegin: Int
@@ -53,12 +53,12 @@ open class AudioStreamSample(
       setLoopEnd(value)
     }
 
-  var loopMode: Int
+  var loopMode: LoopMode
     get() {
-       return AudioStreamSample.LoopMode.from(getLoopMode()) 
+       return getLoopMode() 
     }
     set(value) {
-      setLoopMode(AudioStreamSample.LoopMode.from(value))
+      setLoopMode(value.value)
     }
 
   var mixRate: Int
@@ -230,106 +230,106 @@ open class AudioStreamSample(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "getData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getData" }
+            "get_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_data" }
         }
       val getFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "getFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFormat" }
+            "get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getLoopBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "getLoopBegin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLoopBegin" }
+            "get_loop_begin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_loop_begin" }
         }
       val getLoopEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "getLoopEnd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLoopEnd" }
+            "get_loop_end".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_loop_end" }
         }
       val getLoopMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "getLoopMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLoopMode" }
+            "get_loop_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_loop_mode" }
         }
       val getMixRate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "getMixRate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMixRate" }
+            "get_mix_rate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mix_rate" }
         }
       val isStereo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "isStereo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isStereo" }
+            "is_stereo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_stereo" }
         }
       val saveToWav: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "saveToWav".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method saveToWav" }
+            "save_to_wav".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_to_wav" }
         }
       val setData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setData" }
+            "set_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_data" }
         }
       val setFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFormat" }
+            "set_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_format" }
         }
       val setLoopBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setLoopBegin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoopBegin" }
+            "set_loop_begin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_loop_begin" }
         }
       val setLoopEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setLoopEnd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoopEnd" }
+            "set_loop_end".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_loop_end" }
         }
       val setLoopMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setLoopMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoopMode" }
+            "set_loop_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_loop_mode" }
         }
       val setMixRate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setMixRate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMixRate" }
+            "set_mix_rate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mix_rate" }
         }
       val setStereo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamSample".cstr.ptr,
-            "setStereo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStereo" }
+            "set_stereo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stereo" }
         }}
   }
 }

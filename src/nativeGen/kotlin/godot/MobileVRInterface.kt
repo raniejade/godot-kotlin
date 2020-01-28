@@ -162,99 +162,99 @@ open class MobileVRInterface(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getDisplayToLens".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDisplayToLens" }
+            "get_display_to_lens".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_display_to_lens" }
         }
       val getDisplayWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getDisplayWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDisplayWidth" }
+            "get_display_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_display_width" }
         }
       val getEyeHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getEyeHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEyeHeight" }
+            "get_eye_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_eye_height" }
         }
       val getIod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getIod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIod" }
+            "get_iod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_iod" }
         }
       val getK1: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getK1".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getK1" }
+            "get_k1".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_k1" }
         }
       val getK2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getK2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getK2" }
+            "get_k2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_k2" }
         }
       val getOversample: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "getOversample".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOversample" }
+            "get_oversample".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_oversample" }
         }
       val setDisplayToLens: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setDisplayToLens".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisplayToLens" }
+            "set_display_to_lens".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_display_to_lens" }
         }
       val setDisplayWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setDisplayWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisplayWidth" }
+            "set_display_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_display_width" }
         }
       val setEyeHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setEyeHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEyeHeight" }
+            "set_eye_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_eye_height" }
         }
       val setIod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setIod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIod" }
+            "set_iod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_iod" }
         }
       val setK1: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setK1".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setK1" }
+            "set_k1".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_k1" }
         }
       val setK2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setK2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setK2" }
+            "set_k2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_k2" }
         }
       val setOversample: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MobileVRInterface".cstr.ptr,
-            "setOversample".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOversample" }
+            "set_oversample".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_oversample" }
         }}
   }
 }

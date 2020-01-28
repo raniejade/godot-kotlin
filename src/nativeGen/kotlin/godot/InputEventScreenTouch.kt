@@ -87,36 +87,36 @@ open class InputEventScreenTouch(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "getIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIndex" }
+            "get_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_index" }
         }
       val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val setIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "setIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIndex" }
+            "set_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_index" }
         }
       val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "setPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPosition" }
+            "set_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_position" }
         }
       val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "setPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressed" }
+            "set_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }}
   }
 }

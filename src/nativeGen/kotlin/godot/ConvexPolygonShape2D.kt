@@ -59,22 +59,22 @@ open class ConvexPolygonShape2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
-            "getPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPoints" }
+            "get_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_points" }
         }
       val setPointCloud: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
-            "setPointCloud".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPointCloud" }
+            "set_point_cloud".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_point_cloud" }
         }
       val setPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape2D".cstr.ptr,
-            "setPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPoints" }
+            "set_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_points" }
         }}
   }
 }

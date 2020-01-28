@@ -163,99 +163,99 @@ open class AudioEffectCompressor(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getAttackUs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAttackUs" }
+            "get_attack_us".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_attack_us" }
         }
       val getGain: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getGain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGain" }
+            "get_gain".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gain" }
         }
       val getMix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getMix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMix" }
+            "get_mix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mix" }
         }
       val getRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getRatio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRatio" }
+            "get_ratio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ratio" }
         }
       val getReleaseMs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getReleaseMs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getReleaseMs" }
+            "get_release_ms".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_release_ms" }
         }
       val getSidechain: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getSidechain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSidechain" }
+            "get_sidechain".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sidechain" }
         }
       val getThreshold: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "getThreshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getThreshold" }
+            "get_threshold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_threshold" }
         }
       val setAttackUs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setAttackUs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAttackUs" }
+            "set_attack_us".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_attack_us" }
         }
       val setGain: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setGain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGain" }
+            "set_gain".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gain" }
         }
       val setMix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setMix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMix" }
+            "set_mix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mix" }
         }
       val setRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setRatio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRatio" }
+            "set_ratio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ratio" }
         }
       val setReleaseMs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setReleaseMs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setReleaseMs" }
+            "set_release_ms".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_release_ms" }
         }
       val setSidechain: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setSidechain".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSidechain" }
+            "set_sidechain".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sidechain" }
         }
       val setThreshold: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectCompressor".cstr.ptr,
-            "setThreshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setThreshold" }
+            "set_threshold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_threshold" }
         }}
   }
 }

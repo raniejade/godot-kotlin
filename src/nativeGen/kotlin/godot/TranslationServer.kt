@@ -76,8 +76,8 @@ open class TranslationServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TranslationServer".cstr.ptr,
-            "addTranslation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addTranslation" }
+            "add_translation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_translation" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -90,36 +90,36 @@ open class TranslationServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TranslationServer".cstr.ptr,
-            "getLoadedLocales".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLoadedLocales" }
+            "get_loaded_locales".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_loaded_locales" }
         }
       val getLocale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TranslationServer".cstr.ptr,
-            "getLocale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLocale" }
+            "get_locale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_locale" }
         }
       val getLocaleName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TranslationServer".cstr.ptr,
-            "getLocaleName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLocaleName" }
+            "get_locale_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_locale_name" }
         }
       val removeTranslation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TranslationServer".cstr.ptr,
-            "removeTranslation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeTranslation" }
+            "remove_translation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_translation" }
         }
       val setLocale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TranslationServer".cstr.ptr,
-            "setLocale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLocale" }
+            "set_locale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_locale" }
         }
       val translate: CPointer<godot_method_bind>
         get() = memScoped {

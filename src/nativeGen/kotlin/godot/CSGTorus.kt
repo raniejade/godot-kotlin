@@ -27,7 +27,7 @@ open class CSGTorus(
       setInnerRadius(value)
     }
 
-  var material: `SpatialMaterial,ShaderMaterial`
+  var material: Material
     get() {
        return getMaterial() 
     }
@@ -144,74 +144,74 @@ open class CSGTorus(
       val getInnerRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "getInnerRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInnerRadius" }
+            "get_inner_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_inner_radius" }
         }
       val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "getMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
+            "get_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_material" }
         }
       val getOuterRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "getOuterRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOuterRadius" }
+            "get_outer_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_outer_radius" }
         }
       val getRingSides: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "getRingSides".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRingSides" }
+            "get_ring_sides".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ring_sides" }
         }
       val getSides: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "getSides".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSides" }
+            "get_sides".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sides" }
         }
       val getSmoothFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "getSmoothFaces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSmoothFaces" }
+            "get_smooth_faces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_smooth_faces" }
         }
       val setInnerRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "setInnerRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInnerRadius" }
+            "set_inner_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_inner_radius" }
         }
       val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "setMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
+            "set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_material" }
         }
       val setOuterRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "setOuterRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOuterRadius" }
+            "set_outer_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_outer_radius" }
         }
       val setRingSides: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "setRingSides".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRingSides" }
+            "set_ring_sides".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ring_sides" }
         }
       val setSides: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "setSides".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSides" }
+            "set_sides".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sides" }
         }
       val setSmoothFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGTorus".cstr.ptr,
-            "setSmoothFaces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSmoothFaces" }
+            "set_smooth_faces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_smooth_faces" }
         }}
   }
 }

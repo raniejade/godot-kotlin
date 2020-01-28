@@ -25,12 +25,12 @@ open class VisualShaderNodeCubeMap(
       setCubeMap(value)
     }
 
-  var textureType: Int
+  var textureType: TextureType
     get() {
-       return VisualShaderNodeCubeMap.TextureType.from(getTextureType()) 
+       return getTextureType() 
     }
     set(value) {
-      setTextureType(VisualShaderNodeCubeMap.TextureType.from(value))
+      setTextureType(value.value)
     }
 
   fun getCubeMap(): CubeMap {
@@ -99,29 +99,29 @@ open class VisualShaderNodeCubeMap(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-            "getCubeMap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCubeMap" }
+            "get_cube_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cube_map" }
         }
       val getTextureType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-            "getTextureType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureType" }
+            "get_texture_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_type" }
         }
       val setCubeMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-            "setCubeMap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCubeMap" }
+            "set_cube_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cube_map" }
         }
       val setTextureType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeCubeMap".cstr.ptr,
-            "setTextureType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextureType" }
+            "set_texture_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_type" }
         }}
   }
 }

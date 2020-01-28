@@ -54,15 +54,15 @@ open class ConcavePolygonShape2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
-            "getSegments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSegments" }
+            "get_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_segments" }
         }
       val setSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
-            "setSegments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSegments" }
+            "set_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_segments" }
         }}
   }
 }

@@ -78,29 +78,29 @@ open class WebSocketClient(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
-            "connectToUrl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connectToUrl" }
+            "connect_to_url".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method connect_to_url" }
         }
       val disconnectFromHost: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
-            "disconnectFromHost".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnectFromHost" }
+            "disconnect_from_host".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method disconnect_from_host" }
         }
       val isVerifySslEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
-            "isVerifySslEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isVerifySslEnabled" }
+            "is_verify_ssl_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_verify_ssl_enabled" }
         }
       val setVerifySslEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketClient".cstr.ptr,
-            "setVerifySslEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVerifySslEnabled" }
+            "set_verify_ssl_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_verify_ssl_enabled" }
         }}
   }
 }

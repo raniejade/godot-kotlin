@@ -78,36 +78,36 @@ open class PhysicsDirectSpaceState(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "castMotion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method castMotion" }
+            "cast_motion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method cast_motion" }
         }
       val collideShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "collideShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collideShape" }
+            "collide_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method collide_shape" }
         }
       val getRestInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "getRestInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRestInfo" }
+            "get_rest_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rest_info" }
         }
       val intersectRay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "intersectRay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersectRay" }
+            "intersect_ray".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method intersect_ray" }
         }
       val intersectShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "intersectShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersectShape" }
+            "intersect_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method intersect_shape" }
         }}
   }
 }

@@ -48,14 +48,14 @@ open class Container(
       val fitChildInRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-            "fitChildInRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method fitChildInRect" }
+            "fit_child_in_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
         }
       val queueSort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-            "queueSort".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queueSort" }
+            "queue_sort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queue_sort" }
         }}
   }
 }

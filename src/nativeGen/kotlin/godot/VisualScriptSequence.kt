@@ -54,15 +54,15 @@ open class VisualScriptSequence(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
-            "getSteps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSteps" }
+            "get_steps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_steps" }
         }
       val setSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
-            "setSteps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSteps" }
+            "set_steps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_steps" }
         }}
   }
 }

@@ -54,15 +54,15 @@ open class CanvasModulate(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
-            "getColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColor" }
+            "get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color" }
         }
       val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
-            "setColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColor" }
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
         }}
   }
 }

@@ -29,12 +29,12 @@ open class ImageTexture(
       setLossyStorageQuality(value)
     }
 
-  var storage: Int
+  var storage: Storage
     get() {
-       return ImageTexture.Storage.from(getStorage()) 
+       return getStorage() 
     }
     set(value) {
-      setStorage(ImageTexture.Storage.from(value))
+      setStorage(value.value)
     }
 
   fun create(
@@ -151,29 +151,29 @@ open class ImageTexture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "createFromImage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createFromImage" }
+            "create_from_image".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_from_image" }
         }
       val getFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "getFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFormat" }
+            "get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getLossyStorageQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "getLossyStorageQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLossyStorageQuality" }
+            "get_lossy_storage_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
         }
       val getStorage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "getStorage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStorage" }
+            "get_storage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_storage" }
         }
       val load: CPointer<godot_method_bind>
         get() = memScoped {
@@ -186,29 +186,29 @@ open class ImageTexture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "setData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setData" }
+            "set_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_data" }
         }
       val setLossyStorageQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "setLossyStorageQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLossyStorageQuality" }
+            "set_lossy_storage_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
         }
       val setSizeOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "setSizeOverride".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSizeOverride" }
+            "set_size_override".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_size_override" }
         }
       val setStorage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImageTexture".cstr.ptr,
-            "setStorage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStorage" }
+            "set_storage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_storage" }
         }}
   }
 }

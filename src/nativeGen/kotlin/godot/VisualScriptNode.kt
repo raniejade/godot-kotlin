@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var defaultInputValues: VariantArray
-    get() {
-       return _getDefaultInputValues() 
-    }
-    set(value) {
-      _setDefaultInputValues(value)
-    }
-
   fun getDefaultInputValue(portIdx: Int): Variant {
     val _arg = Variant.new(portIdx)
     val _ret = __method_bind.getDefaultInputValue.call(this._handle, _arg, 1)
@@ -56,29 +48,29 @@ open class VisualScriptNode(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "getDefaultInputValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDefaultInputValue" }
+            "get_default_input_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_default_input_value" }
         }
       val getVisualScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "getVisualScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVisualScript" }
+            "get_visual_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_visual_script" }
         }
       val portsChangedNotify: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "portsChangedNotify".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method portsChangedNotify" }
+            "ports_changed_notify".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method ports_changed_notify" }
         }
       val setDefaultInputValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "setDefaultInputValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDefaultInputValue" }
+            "set_default_input_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_input_value" }
         }}
   }
 }

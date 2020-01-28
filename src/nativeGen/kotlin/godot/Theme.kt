@@ -291,188 +291,188 @@ open class Theme(
       val clearColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clearColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearColor" }
+            "clear_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_color" }
         }
       val clearConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clearConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearConstant" }
+            "clear_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_constant" }
         }
       val clearFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clearFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearFont" }
+            "clear_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_font" }
         }
       val clearIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clearIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearIcon" }
+            "clear_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_icon" }
         }
       val clearStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clearStylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearStylebox" }
+            "clear_stylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_stylebox" }
         }
       val copyDefaultTheme: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "copyDefaultTheme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copyDefaultTheme" }
+            "copy_default_theme".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method copy_default_theme" }
         }
       val copyTheme: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "copyTheme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copyTheme" }
+            "copy_theme".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method copy_theme" }
         }
       val getColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColor" }
+            "get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color" }
         }
       val getColorList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getColorList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColorList" }
+            "get_color_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color_list" }
         }
       val getConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstant" }
+            "get_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constant" }
         }
       val getConstantList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getConstantList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstantList" }
+            "get_constant_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constant_list" }
         }
       val getDefaultFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getDefaultFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDefaultFont" }
+            "get_default_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_default_font" }
         }
       val getFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFont" }
+            "get_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_font" }
         }
       val getFontList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getFontList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFontList" }
+            "get_font_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_font_list" }
         }
       val getIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIcon" }
+            "get_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_icon" }
         }
       val getIconList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getIconList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIconList" }
+            "get_icon_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_icon_list" }
         }
       val getStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getStylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStylebox" }
+            "get_stylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stylebox" }
         }
       val getStyleboxList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getStyleboxList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStyleboxList" }
+            "get_stylebox_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stylebox_list" }
         }
       val getStyleboxTypes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getStyleboxTypes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStyleboxTypes" }
+            "get_stylebox_types".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stylebox_types" }
         }
       val getTypeList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "getTypeList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTypeList" }
+            "get_type_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_type_list" }
         }
       val hasColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "hasColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasColor" }
+            "has_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_color" }
         }
       val hasConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "hasConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasConstant" }
+            "has_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_constant" }
         }
       val hasFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "hasFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasFont" }
+            "has_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_font" }
         }
       val hasIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "hasIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasIcon" }
+            "has_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_icon" }
         }
       val hasStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "hasStylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasStylebox" }
+            "has_stylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_stylebox" }
         }
       val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "setColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColor" }
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
         }
       val setConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "setConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConstant" }
+            "set_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constant" }
         }
       val setDefaultFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "setDefaultFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDefaultFont" }
+            "set_default_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_font" }
         }
       val setFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "setFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFont" }
+            "set_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_font" }
         }
       val setIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "setIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIcon" }
+            "set_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_icon" }
         }
       val setStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "setStylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStylebox" }
+            "set_stylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stylebox" }
         }}
   }
 }

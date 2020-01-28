@@ -92,36 +92,36 @@ open class WebSocketServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-            "disconnectPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnectPeer" }
+            "disconnect_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method disconnect_peer" }
         }
       val getPeerAddress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-            "getPeerAddress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPeerAddress" }
+            "get_peer_address".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peer_address" }
         }
       val getPeerPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-            "getPeerPort".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPeerPort" }
+            "get_peer_port".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peer_port" }
         }
       val hasPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-            "hasPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasPeer" }
+            "has_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_peer" }
         }
       val isListening: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketServer".cstr.ptr,
-            "isListening".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isListening" }
+            "is_listening".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_listening" }
         }
       val listen: CPointer<godot_method_bind>
         get() = memScoped {

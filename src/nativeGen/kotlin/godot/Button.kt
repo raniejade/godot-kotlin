@@ -19,12 +19,12 @@ import kotlinx.cinterop.reinterpret
 open class Button(
   _handle: COpaquePointer
 ) : BaseButton(_handle) {
-  var align: Int
+  var align: TextAlign
     get() {
-       return Button.TextAlign.from(getTextAlign()) 
+       return getTextAlign() 
     }
     set(value) {
-      setTextAlign(Button.TextAlign.from(value))
+      setTextAlign(value.value)
     }
 
   var clipText: Boolean
@@ -153,62 +153,62 @@ open class Button(
       val getButtonIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "getButtonIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtonIcon" }
+            "get_button_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_icon" }
         }
       val getClipText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "getClipText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClipText" }
+            "get_clip_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_clip_text" }
         }
       val getText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "getText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getText" }
+            "get_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val getTextAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "getTextAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextAlign" }
+            "get_text_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text_align" }
         }
       val isFlat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "isFlat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFlat" }
+            "is_flat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_flat" }
         }
       val setButtonIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "setButtonIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setButtonIcon" }
+            "set_button_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_icon" }
         }
       val setClipText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "setClipText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setClipText" }
+            "set_clip_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_clip_text" }
         }
       val setFlat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "setFlat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlat" }
+            "set_flat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flat" }
         }
       val setText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "setText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setText" }
+            "set_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text" }
         }
       val setTextAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Button".cstr.ptr,
-            "setTextAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextAlign" }
+            "set_text_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text_align" }
         }}
   }
 }

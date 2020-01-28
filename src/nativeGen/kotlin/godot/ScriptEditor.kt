@@ -84,50 +84,50 @@ open class ScriptEditor(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "canDropDataFw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canDropDataFw" }
+            "can_drop_data_fw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method can_drop_data_fw" }
         }
       val dropDataFw: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "dropDataFw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dropDataFw" }
+            "drop_data_fw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drop_data_fw" }
         }
       val getCurrentScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "getCurrentScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentScript" }
+            "get_current_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_script" }
         }
       val getDragDataFw: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "getDragDataFw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDragDataFw" }
+            "get_drag_data_fw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_drag_data_fw" }
         }
       val getOpenScripts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "getOpenScripts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOpenScripts" }
+            "get_open_scripts".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_open_scripts" }
         }
       val gotoLine: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "gotoLine".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method gotoLine" }
+            "goto_line".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method goto_line" }
         }
       val openScriptCreateDialog: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScriptEditor".cstr.ptr,
-            "openScriptCreateDialog".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method openScriptCreateDialog" }
+            "open_script_create_dialog".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method open_script_create_dialog" }
         }}
   }
 }

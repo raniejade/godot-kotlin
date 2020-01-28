@@ -60,22 +60,22 @@ open class VisibilityNotifier2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
-            "getRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRect" }
+            "get_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rect" }
         }
       val isOnScreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
-            "isOnScreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOnScreen" }
+            "is_on_screen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
         }
       val setRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier2D".cstr.ptr,
-            "setRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRect" }
+            "set_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rect" }
         }}
   }
 }

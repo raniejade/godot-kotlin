@@ -60,22 +60,22 @@ open class VisibilityNotifier(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
-            "getAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAabb" }
+            "get_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_aabb" }
         }
       val isOnScreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
-            "isOnScreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOnScreen" }
+            "is_on_screen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_on_screen" }
         }
       val setAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityNotifier".cstr.ptr,
-            "setAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAabb" }
+            "set_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_aabb" }
         }}
   }
 }

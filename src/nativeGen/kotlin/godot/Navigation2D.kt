@@ -89,43 +89,43 @@ open class Navigation2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation2D".cstr.ptr,
-            "getClosestPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPoint" }
+            "get_closest_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
         }
       val getClosestPointOwner: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation2D".cstr.ptr,
-            "getClosestPointOwner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointOwner" }
+            "get_closest_point_owner".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_closest_point_owner" }
         }
       val getSimplePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation2D".cstr.ptr,
-            "getSimplePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSimplePath" }
+            "get_simple_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_simple_path" }
         }
       val navpolyAdd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation2D".cstr.ptr,
-            "navpolyAdd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navpolyAdd" }
+            "navpoly_add".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method navpoly_add" }
         }
       val navpolyRemove: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation2D".cstr.ptr,
-            "navpolyRemove".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navpolyRemove" }
+            "navpoly_remove".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method navpoly_remove" }
         }
       val navpolySetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation2D".cstr.ptr,
-            "navpolySetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navpolySetTransform" }
+            "navpoly_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method navpoly_set_transform" }
         }}
   }
 }

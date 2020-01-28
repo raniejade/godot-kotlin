@@ -2,7 +2,6 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.Variant
@@ -20,14 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class PackedScene(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var bundled: Dictionary
-    get() {
-       return _getBundledScene() 
-    }
-    set(value) {
-      _setBundledScene(value)
-    }
-
   fun canInstance(): Boolean {
     val _ret = __method_bind.canInstance.call(this._handle)
     return _ret.asBoolean()
@@ -95,15 +86,15 @@ open class PackedScene(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-            "canInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canInstance" }
+            "can_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method can_instance" }
         }
       val getState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PackedScene".cstr.ptr,
-            "getState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getState" }
+            "get_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_state" }
         }
       val instance: CPointer<godot_method_bind>
         get() = memScoped {

@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class Sky(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var radianceSize: Int
+  var radianceSize: RadianceSize
     get() {
-       return Sky.RadianceSize.from(getRadianceSize()) 
+       return getRadianceSize() 
     }
     set(value) {
-      setRadianceSize(Sky.RadianceSize.from(value))
+      setRadianceSize(value.value)
     }
 
   fun getRadianceSize(): RadianceSize {
@@ -90,14 +90,14 @@ open class Sky(
       val getRadianceSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
-            "getRadianceSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRadianceSize" }
+            "get_radiance_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_radiance_size" }
         }
       val setRadianceSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
-            "setRadianceSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRadianceSize" }
+            "set_radiance_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_radiance_size" }
         }}
   }
 }

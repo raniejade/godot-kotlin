@@ -100,8 +100,8 @@ open class _ResourceSaver(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
-            "getRecognizedExtensions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRecognizedExtensions" }
+            "get_recognized_extensions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
         }
       val save: CPointer<godot_method_bind>
         get() = memScoped {

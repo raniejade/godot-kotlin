@@ -61,23 +61,23 @@ open class EditorInspectorPlugin(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "addCustomControl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCustomControl" }
+            "add_custom_control".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_custom_control" }
         }
       val addPropertyEditor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "addPropertyEditor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addPropertyEditor" }
+            "add_property_editor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_property_editor" }
         }
       val addPropertyEditorForMultipleProperties: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "addPropertyEditorForMultipleProperties".cstr.ptr)
+            "add_property_editor_for_multiple_properties".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method addPropertyEditorForMultipleProperties" }
+            "No method_bind found for method add_property_editor_for_multiple_properties" }
         }}
   }
 }

@@ -20,12 +20,12 @@ import kotlinx.cinterop.reinterpret
 open class GeometryInstance(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
-  var castShadow: Int
+  var castShadow: ShadowCastingSetting
     get() {
-       return GeometryInstance.ShadowCastingSetting.from(getCastShadowsSetting()) 
+       return getCastShadowsSetting() 
     }
     set(value) {
-      setCastShadowsSetting(GeometryInstance.ShadowCastingSetting.from(value))
+      setCastShadowsSetting(value.value)
     }
 
   var extraCullMargin: Float
@@ -36,7 +36,7 @@ open class GeometryInstance(
       setExtraCullMargin(value)
     }
 
-  var lodMaxDistance: Int
+  var lodMaxDistance: Float
     get() {
        return getLodMaxDistance() 
     }
@@ -44,7 +44,7 @@ open class GeometryInstance(
       setLodMaxDistance(value)
     }
 
-  var lodMaxHysteresis: Int
+  var lodMaxHysteresis: Float
     get() {
        return getLodMaxHysteresis() 
     }
@@ -52,7 +52,7 @@ open class GeometryInstance(
       setLodMaxHysteresis(value)
     }
 
-  var lodMinDistance: Int
+  var lodMinDistance: Float
     get() {
        return getLodMinDistance() 
     }
@@ -60,7 +60,7 @@ open class GeometryInstance(
       setLodMinDistance(value)
     }
 
-  var lodMinHysteresis: Int
+  var lodMinHysteresis: Float
     get() {
        return getLodMinHysteresis() 
     }
@@ -68,7 +68,7 @@ open class GeometryInstance(
       setLodMinHysteresis(value)
     }
 
-  var materialOverride: `ShaderMaterial,SpatialMaterial`
+  var materialOverride: Material
     get() {
        return getMaterialOverride() 
     }
@@ -227,120 +227,120 @@ open class GeometryInstance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getCastShadowsSetting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCastShadowsSetting" }
+            "get_cast_shadows_setting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cast_shadows_setting" }
         }
       val getExtraCullMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getExtraCullMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getExtraCullMargin" }
+            "get_extra_cull_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_extra_cull_margin" }
         }
       val getFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFlag" }
+            "get_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_flag" }
         }
       val getLodMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getLodMaxDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLodMaxDistance" }
+            "get_lod_max_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lod_max_distance" }
         }
       val getLodMaxHysteresis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getLodMaxHysteresis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLodMaxHysteresis" }
+            "get_lod_max_hysteresis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lod_max_hysteresis" }
         }
       val getLodMinDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getLodMinDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLodMinDistance" }
+            "get_lod_min_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lod_min_distance" }
         }
       val getLodMinHysteresis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getLodMinHysteresis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLodMinHysteresis" }
+            "get_lod_min_hysteresis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lod_min_hysteresis" }
         }
       val getMaterialOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "getMaterialOverride".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaterialOverride" }
+            "get_material_override".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_material_override" }
         }
       val setCastShadowsSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setCastShadowsSetting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCastShadowsSetting" }
+            "set_cast_shadows_setting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cast_shadows_setting" }
         }
       val setCustomAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setCustomAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCustomAabb" }
+            "set_custom_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_aabb" }
         }
       val setExtraCullMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setExtraCullMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setExtraCullMargin" }
+            "set_extra_cull_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_extra_cull_margin" }
         }
       val setFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlag" }
+            "set_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flag" }
         }
       val setLodMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setLodMaxDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLodMaxDistance" }
+            "set_lod_max_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lod_max_distance" }
         }
       val setLodMaxHysteresis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setLodMaxHysteresis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLodMaxHysteresis" }
+            "set_lod_max_hysteresis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lod_max_hysteresis" }
         }
       val setLodMinDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setLodMinDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLodMinDistance" }
+            "set_lod_min_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lod_min_distance" }
         }
       val setLodMinHysteresis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setLodMinHysteresis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLodMinHysteresis" }
+            "set_lod_min_hysteresis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lod_min_hysteresis" }
         }
       val setMaterialOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GeometryInstance".cstr.ptr,
-            "setMaterialOverride".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaterialOverride" }
+            "set_material_override".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_material_override" }
         }}
   }
 }

@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class BaseButton(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  var actionMode: Int
+  var actionMode: ActionMode
     get() {
-       return BaseButton.ActionMode.from(getActionMode()) 
+       return getActionMode() 
     }
     set(value) {
-      setActionMode(BaseButton.ActionMode.from(value))
+      setActionMode(value.value)
     }
 
   var buttonMask: Int
@@ -42,12 +42,12 @@ open class BaseButton(
       setDisabled(value)
     }
 
-  var enabledFocusMode: Int
+  var enabledFocusMode: Control.FocusMode
     get() {
-       return Control.FocusMode.from(getEnabledFocusMode()) 
+       return getEnabledFocusMode() 
     }
     set(value) {
-      setEnabledFocusMode(Control.FocusMode.from(value))
+      setEnabledFocusMode(value.value)
     }
 
   var group: ButtonGroup
@@ -274,134 +274,134 @@ open class BaseButton(
       val getActionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "getActionMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getActionMode" }
+            "get_action_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_action_mode" }
         }
       val getButtonGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "getButtonGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtonGroup" }
+            "get_button_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_group" }
         }
       val getButtonMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "getButtonMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtonMask" }
+            "get_button_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_mask" }
         }
       val getDrawMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "getDrawMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDrawMode" }
+            "get_draw_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_draw_mode" }
         }
       val getEnabledFocusMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "getEnabledFocusMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEnabledFocusMode" }
+            "get_enabled_focus_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_enabled_focus_mode" }
         }
       val getShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "getShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getShortcut" }
+            "get_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shortcut" }
         }
       val isDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "isDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDisabled" }
+            "is_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_disabled" }
         }
       val isHovered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "isHovered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHovered" }
+            "is_hovered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_hovered" }
         }
       val isKeepPressedOutside: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "isKeepPressedOutside".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isKeepPressedOutside" }
+            "is_keep_pressed_outside".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_keep_pressed_outside" }
         }
       val isPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "isPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPressed" }
+            "is_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_pressed" }
         }
       val isShortcutInTooltipEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "isShortcutInTooltipEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isShortcutInTooltipEnabled" }
+            "is_shortcut_in_tooltip_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_shortcut_in_tooltip_enabled" }
         }
       val isToggleMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "isToggleMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isToggleMode" }
+            "is_toggle_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_toggle_mode" }
         }
       val setActionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setActionMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setActionMode" }
+            "set_action_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_action_mode" }
         }
       val setButtonGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setButtonGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setButtonGroup" }
+            "set_button_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_group" }
         }
       val setButtonMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setButtonMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setButtonMask" }
+            "set_button_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_mask" }
         }
       val setDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisabled" }
+            "set_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disabled" }
         }
       val setEnabledFocusMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setEnabledFocusMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnabledFocusMode" }
+            "set_enabled_focus_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabled_focus_mode" }
         }
       val setKeepPressedOutside: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setKeepPressedOutside".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setKeepPressedOutside" }
+            "set_keep_pressed_outside".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_keep_pressed_outside" }
         }
       val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressed" }
+            "set_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }
       val setShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setShortcut" }
+            "set_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shortcut" }
         }
       val setShortcutInTooltip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setShortcutInTooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setShortcutInTooltip" }
+            "set_shortcut_in_tooltip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shortcut_in_tooltip" }
         }
       val setToggleMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BaseButton".cstr.ptr,
-            "setToggleMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setToggleMode" }
+            "set_toggle_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_toggle_mode" }
         }}
   }
 }

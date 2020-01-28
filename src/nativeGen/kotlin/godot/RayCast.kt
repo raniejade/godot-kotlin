@@ -211,152 +211,152 @@ open class RayCast(
       val addException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "addException".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addException" }
+            "add_exception".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_exception" }
         }
       val addExceptionRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "addExceptionRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addExceptionRid" }
+            "add_exception_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_exception_rid" }
         }
       val clearExceptions: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "clearExceptions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearExceptions" }
+            "clear_exceptions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_exceptions" }
         }
       val forceRaycastUpdate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "forceRaycastUpdate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method forceRaycastUpdate" }
+            "force_raycast_update".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method force_raycast_update" }
         }
       val getCastTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getCastTo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCastTo" }
+            "get_cast_to".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cast_to" }
         }
       val getCollider: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getCollider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollider" }
+            "get_collider".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider" }
         }
       val getColliderShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getColliderShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderShape" }
+            "get_collider_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
+            "get_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
+            "get_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val getCollisionNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getCollisionNormal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionNormal" }
+            "get_collision_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_normal" }
         }
       val getCollisionPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getCollisionPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionPoint" }
+            "get_collision_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_point" }
         }
       val getExcludeParentBody: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "getExcludeParentBody".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getExcludeParentBody" }
+            "get_exclude_parent_body".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_exclude_parent_body" }
         }
       val isCollideWithAreasEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "isCollideWithAreasEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCollideWithAreasEnabled" }
+            "is_collide_with_areas_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_collide_with_areas_enabled" }
         }
       val isCollideWithBodiesEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "isCollideWithBodiesEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCollideWithBodiesEnabled" }
+            "is_collide_with_bodies_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_collide_with_bodies_enabled" }
         }
       val isColliding: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "isColliding".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isColliding" }
+            "is_colliding".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_colliding" }
         }
       val isEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "isEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEnabled" }
+            "is_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
         }
       val removeException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "removeException".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeException" }
+            "remove_exception".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_exception" }
         }
       val removeExceptionRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "removeExceptionRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeExceptionRid" }
+            "remove_exception_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_exception_rid" }
         }
       val setCastTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setCastTo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCastTo" }
+            "set_cast_to".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cast_to" }
         }
       val setCollideWithAreas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setCollideWithAreas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollideWithAreas" }
+            "set_collide_with_areas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collide_with_areas" }
         }
       val setCollideWithBodies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setCollideWithBodies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollideWithBodies" }
+            "set_collide_with_bodies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collide_with_bodies" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
+            "set_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
+            "set_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
         }
       val setEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnabled" }
+            "set_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
         }
       val setExcludeParentBody: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "setExcludeParentBody".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setExcludeParentBody" }
+            "set_exclude_parent_body".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_exclude_parent_body" }
         }}
   }
 }

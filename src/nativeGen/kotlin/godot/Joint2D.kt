@@ -99,50 +99,50 @@ open class Joint2D(
       val getBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "getBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBias" }
+            "get_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bias" }
         }
       val getExcludeNodesFromCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "getExcludeNodesFromCollision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getExcludeNodesFromCollision" }
+            "get_exclude_nodes_from_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_exclude_nodes_from_collision" }
         }
       val getNodeA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "getNodeA".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodeA" }
+            "get_node_a".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_a" }
         }
       val getNodeB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "getNodeB".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodeB" }
+            "get_node_b".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_b" }
         }
       val setBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "setBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBias" }
+            "set_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bias" }
         }
       val setExcludeNodesFromCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "setExcludeNodesFromCollision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setExcludeNodesFromCollision" }
+            "set_exclude_nodes_from_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_exclude_nodes_from_collision" }
         }
       val setNodeA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "setNodeA".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNodeA" }
+            "set_node_a".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_a" }
         }
       val setNodeB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "setNodeB".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNodeB" }
+            "set_node_b".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_b" }
         }}
   }
 }

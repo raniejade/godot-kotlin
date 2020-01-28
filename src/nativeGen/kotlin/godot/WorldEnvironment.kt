@@ -53,15 +53,15 @@ open class WorldEnvironment(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
-            "getEnvironment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEnvironment" }
+            "get_environment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_environment" }
         }
       val setEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
-            "setEnvironment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnvironment" }
+            "set_environment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_environment" }
         }}
   }
 }

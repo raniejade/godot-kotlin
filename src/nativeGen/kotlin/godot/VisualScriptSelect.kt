@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptSelect(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var type: Int
+  var type: Variant.Type
     get() {
-       return Variant.Type.from(getTyped()) 
+       return getTyped() 
     }
     set(value) {
-      setTyped(Variant.Type.from(value))
+      setTyped(value.value)
     }
 
   fun getTyped(): Variant.Type {
@@ -54,15 +54,15 @@ open class VisualScriptSelect(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSelect".cstr.ptr,
-            "getTyped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTyped" }
+            "get_typed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_typed" }
         }
       val setTyped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSelect".cstr.ptr,
-            "setTyped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTyped" }
+            "set_typed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_typed" }
         }}
   }
 }

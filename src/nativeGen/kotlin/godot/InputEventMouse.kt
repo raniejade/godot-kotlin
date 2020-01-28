@@ -81,43 +81,43 @@ open class InputEventMouse(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "getButtonMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtonMask" }
+            "get_button_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_mask" }
         }
       val getGlobalPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "getGlobalPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlobalPosition" }
+            "get_global_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_global_position" }
         }
       val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val setButtonMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "setButtonMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setButtonMask" }
+            "set_button_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_mask" }
         }
       val setGlobalPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "setGlobalPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlobalPosition" }
+            "set_global_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_global_position" }
         }
       val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "setPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPosition" }
+            "set_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_position" }
         }}
   }
 }

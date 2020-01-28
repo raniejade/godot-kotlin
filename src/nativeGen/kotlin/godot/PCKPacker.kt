@@ -59,8 +59,8 @@ open class PCKPacker(
       val addFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-            "addFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addFile" }
+            "add_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_file" }
         }
       val flush: CPointer<godot_method_bind>
         get() = memScoped {
@@ -71,8 +71,8 @@ open class PCKPacker(
       val pckStart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-            "pckStart".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pckStart" }
+            "pck_start".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pck_start" }
         }}
   }
 }

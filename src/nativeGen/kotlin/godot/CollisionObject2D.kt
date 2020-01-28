@@ -174,158 +174,159 @@ open class CollisionObject2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "createShapeOwner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createShapeOwner" }
+            "create_shape_owner".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_shape_owner" }
         }
       val getRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "getRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRid" }
+            "get_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rid" }
         }
       val getShapeOwnerOneWayCollisionMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "getShapeOwnerOneWayCollisionMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getShapeOwnerOneWayCollisionMargin"
-            }
+            "get_shape_owner_one_way_collision_margin".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method get_shape_owner_one_way_collision_margin" }
         }
       val getShapeOwners: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "getShapeOwners".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getShapeOwners" }
+            "get_shape_owners".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shape_owners" }
         }
       val isPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "isPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPickable" }
+            "is_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_pickable" }
         }
       val isShapeOwnerDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "isShapeOwnerDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isShapeOwnerDisabled" }
+            "is_shape_owner_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_shape_owner_disabled" }
         }
       val isShapeOwnerOneWayCollisionEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "isShapeOwnerOneWayCollisionEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isShapeOwnerOneWayCollisionEnabled"
-            }
+            "is_shape_owner_one_way_collision_enabled".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method is_shape_owner_one_way_collision_enabled" }
         }
       val removeShapeOwner: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "removeShapeOwner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeShapeOwner" }
+            "remove_shape_owner".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_shape_owner" }
         }
       val setPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "setPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPickable" }
+            "set_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pickable" }
         }
       val shapeFindOwner: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeFindOwner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeFindOwner" }
+            "shape_find_owner".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_find_owner" }
         }
       val shapeOwnerAddShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerAddShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerAddShape" }
+            "shape_owner_add_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_add_shape" }
         }
       val shapeOwnerClearShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerClearShapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerClearShapes" }
+            "shape_owner_clear_shapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_clear_shapes" }
         }
       val shapeOwnerGetOwner: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerGetOwner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerGetOwner" }
+            "shape_owner_get_owner".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_get_owner" }
         }
       val shapeOwnerGetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerGetShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerGetShape" }
+            "shape_owner_get_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_get_shape" }
         }
       val shapeOwnerGetShapeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerGetShapeCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerGetShapeCount" }
+            "shape_owner_get_shape_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_get_shape_count" }
         }
       val shapeOwnerGetShapeIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerGetShapeIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerGetShapeIndex" }
+            "shape_owner_get_shape_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_get_shape_index" }
         }
       val shapeOwnerGetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerGetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerGetTransform" }
+            "shape_owner_get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_get_transform" }
         }
       val shapeOwnerRemoveShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerRemoveShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerRemoveShape" }
+            "shape_owner_remove_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_remove_shape" }
         }
       val shapeOwnerSetDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerSetDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerSetDisabled" }
+            "shape_owner_set_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_set_disabled" }
         }
       val shapeOwnerSetOneWayCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerSetOneWayCollision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerSetOneWayCollision" }
+            "shape_owner_set_one_way_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_set_one_way_collision"
+            }
         }
       val shapeOwnerSetOneWayCollisionMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerSetOneWayCollisionMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerSetOneWayCollisionMargin"
-            }
+            "shape_owner_set_one_way_collision_margin".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method shape_owner_set_one_way_collision_margin" }
         }
       val shapeOwnerSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionObject2D".cstr.ptr,
-            "shapeOwnerSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeOwnerSetTransform" }
+            "shape_owner_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_owner_set_transform" }
         }}
   }
 }

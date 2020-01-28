@@ -101,57 +101,57 @@ open class AnimationNodeTransition(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "getCrossFadeTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCrossFadeTime" }
+            "get_cross_fade_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cross_fade_time" }
         }
       val getEnabledInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "getEnabledInputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEnabledInputs" }
+            "get_enabled_inputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_enabled_inputs" }
         }
       val getInputCaption: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "getInputCaption".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInputCaption" }
+            "get_input_caption".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_caption" }
         }
       val isInputSetAsAutoAdvance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "isInputSetAsAutoAdvance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isInputSetAsAutoAdvance" }
+            "is_input_set_as_auto_advance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_input_set_as_auto_advance" }
         }
       val setCrossFadeTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "setCrossFadeTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCrossFadeTime" }
+            "set_cross_fade_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cross_fade_time" }
         }
       val setEnabledInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "setEnabledInputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnabledInputs" }
+            "set_enabled_inputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabled_inputs" }
         }
       val setInputAsAutoAdvance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "setInputAsAutoAdvance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInputAsAutoAdvance" }
+            "set_input_as_auto_advance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_input_as_auto_advance" }
         }
       val setInputCaption: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeTransition".cstr.ptr,
-            "setInputCaption".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInputCaption" }
+            "set_input_caption".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_input_caption" }
         }}
   }
 }

@@ -158,106 +158,106 @@ open class AnimationNodeBlendSpace1D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "addBlendPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addBlendPoint" }
+            "add_blend_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_blend_point" }
         }
       val getBlendPointCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getBlendPointCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBlendPointCount" }
+            "get_blend_point_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_blend_point_count" }
         }
       val getBlendPointNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getBlendPointNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBlendPointNode" }
+            "get_blend_point_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_blend_point_node" }
         }
       val getBlendPointPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getBlendPointPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBlendPointPosition" }
+            "get_blend_point_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_blend_point_position" }
         }
       val getMaxSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getMaxSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaxSpace" }
+            "get_max_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_space" }
         }
       val getMinSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getMinSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMinSpace" }
+            "get_min_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_min_space" }
         }
       val getSnap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getSnap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSnap" }
+            "get_snap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_snap" }
         }
       val getValueLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "getValueLabel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getValueLabel" }
+            "get_value_label".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_value_label" }
         }
       val removeBlendPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "removeBlendPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeBlendPoint" }
+            "remove_blend_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_blend_point" }
         }
       val setBlendPointNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "setBlendPointNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBlendPointNode" }
+            "set_blend_point_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_blend_point_node" }
         }
       val setBlendPointPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "setBlendPointPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBlendPointPosition" }
+            "set_blend_point_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_blend_point_position" }
         }
       val setMaxSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "setMaxSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaxSpace" }
+            "set_max_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_space" }
         }
       val setMinSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "setMinSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMinSpace" }
+            "set_min_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_min_space" }
         }
       val setSnap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "setSnap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSnap" }
+            "set_snap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_snap" }
         }
       val setValueLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeBlendSpace1D".cstr.ptr,
-            "setValueLabel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setValueLabel" }
+            "set_value_label".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_value_label" }
         }}
   }
 }

@@ -143,44 +143,44 @@ open class IP(
       val clearCache: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "clearCache".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearCache" }
+            "clear_cache".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_cache" }
         }
       val eraseResolveItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "eraseResolveItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method eraseResolveItem" }
+            "erase_resolve_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_resolve_item" }
         }
       val getLocalAddresses: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "getLocalAddresses".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLocalAddresses" }
+            "get_local_addresses".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_local_addresses" }
         }
       val getResolveItemAddress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "getResolveItemAddress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResolveItemAddress" }
+            "get_resolve_item_address".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resolve_item_address" }
         }
       val getResolveItemStatus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "getResolveItemStatus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResolveItemStatus" }
+            "get_resolve_item_status".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resolve_item_status" }
         }
       val resolveHostname: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "resolveHostname".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resolveHostname" }
+            "resolve_hostname".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resolve_hostname" }
         }
       val resolveHostnameQueueItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("IP".cstr.ptr,
-            "resolveHostnameQueueItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resolveHostnameQueueItem" }
+            "resolve_hostname_queue_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resolve_hostname_queue_item" }
         }}
   }
 }

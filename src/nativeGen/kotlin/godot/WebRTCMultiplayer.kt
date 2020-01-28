@@ -86,8 +86,8 @@ open class WebRTCMultiplayer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "addPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addPeer" }
+            "add_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_peer" }
         }
       val close: CPointer<godot_method_bind>
         get() = memScoped {
@@ -100,22 +100,22 @@ open class WebRTCMultiplayer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "getPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPeer" }
+            "get_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peer" }
         }
       val getPeers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "getPeers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPeers" }
+            "get_peers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_peers" }
         }
       val hasPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "hasPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasPeer" }
+            "has_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_peer" }
         }
       val initialize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -128,8 +128,8 @@ open class WebRTCMultiplayer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "removePeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removePeer" }
+            "remove_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_peer" }
         }}
   }
 }

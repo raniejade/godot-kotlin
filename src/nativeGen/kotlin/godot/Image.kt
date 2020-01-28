@@ -3,7 +3,6 @@ package godot
 
 import gdnative.godot_method_bind
 import godot.core.Color
-import godot.core.Dictionary
 import godot.core.GDError
 import godot.core.Godot
 import godot.core.PoolByteArray
@@ -26,14 +25,6 @@ import kotlinx.cinterop.reinterpret
 open class Image(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var data: Dictionary
-    get() {
-       return _getData() 
-    }
-    set(value) {
-      _setData(value)
-    }
-
   fun blendRect(
     src: Image,
     srcRect: Rect2,
@@ -675,38 +666,38 @@ open class Image(
       val blendRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "blendRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blendRect" }
+            "blend_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_rect" }
         }
       val blendRectMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "blendRectMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blendRectMask" }
+            "blend_rect_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_rect_mask" }
         }
       val blitRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "blitRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blitRect" }
+            "blit_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blit_rect" }
         }
       val blitRectMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "blitRectMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blitRectMask" }
+            "blit_rect_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blit_rect_mask" }
         }
       val bumpmapToNormalmap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "bumpmapToNormalmap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bumpmapToNormalmap" }
+            "bumpmap_to_normalmap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bumpmap_to_normalmap" }
         }
       val clearMipmaps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "clearMipmaps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearMipmaps" }
+            "clear_mipmaps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_mipmaps" }
         }
       val compress: CPointer<godot_method_bind>
         get() = memScoped {
@@ -723,8 +714,8 @@ open class Image(
       val copyFrom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "copyFrom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copyFrom" }
+            "copy_from".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method copy_from" }
         }
       val create: CPointer<godot_method_bind>
         get() = memScoped {
@@ -735,8 +726,8 @@ open class Image(
       val createFromData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "createFromData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createFromData" }
+            "create_from_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_from_data" }
         }
       val crop: CPointer<godot_method_bind>
         get() = memScoped {
@@ -753,14 +744,14 @@ open class Image(
       val detectAlpha: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "detectAlpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method detectAlpha" }
+            "detect_alpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method detect_alpha" }
         }
       val expandX2Hq2x: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "expandX2Hq2x".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method expandX2Hq2x" }
+            "expand_x2_hq2x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method expand_x2_hq2x" }
         }
       val fill: CPointer<godot_method_bind>
         get() = memScoped {
@@ -771,110 +762,110 @@ open class Image(
       val fixAlphaEdges: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "fixAlphaEdges".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method fixAlphaEdges" }
+            "fix_alpha_edges".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method fix_alpha_edges" }
         }
       val flipX: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "flipX".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method flipX" }
+            "flip_x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method flip_x" }
         }
       val flipY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "flipY".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method flipY" }
+            "flip_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method flip_y" }
         }
       val generateMipmaps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "generateMipmaps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generateMipmaps" }
+            "generate_mipmaps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generate_mipmaps" }
         }
       val getData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getData" }
+            "get_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_data" }
         }
       val getFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFormat" }
+            "get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHeight" }
+            "get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getMipmapOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getMipmapOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMipmapOffset" }
+            "get_mipmap_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mipmap_offset" }
         }
       val getPixel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getPixel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPixel" }
+            "get_pixel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pixel" }
         }
       val getPixelv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getPixelv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPixelv" }
+            "get_pixelv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pixelv" }
         }
       val getRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRect" }
+            "get_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rect" }
         }
       val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSize" }
+            "get_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getUsedRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getUsedRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUsedRect" }
+            "get_used_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_used_rect" }
         }
       val getWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "getWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWidth" }
+            "get_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_width" }
         }
       val hasMipmaps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "hasMipmaps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasMipmaps" }
+            "has_mipmaps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_mipmaps" }
         }
       val isCompressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "isCompressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCompressed" }
+            "is_compressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_compressed" }
         }
       val isEmpty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "isEmpty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEmpty" }
+            "is_empty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_empty" }
         }
       val isInvisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "isInvisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isInvisible" }
+            "is_invisible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_invisible" }
         }
       val load: CPointer<godot_method_bind>
         get() = memScoped {
@@ -885,20 +876,20 @@ open class Image(
       val loadJpgFromBuffer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "loadJpgFromBuffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method loadJpgFromBuffer" }
+            "load_jpg_from_buffer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_jpg_from_buffer" }
         }
       val loadPngFromBuffer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "loadPngFromBuffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method loadPngFromBuffer" }
+            "load_png_from_buffer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_png_from_buffer" }
         }
       val loadWebpFromBuffer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "loadWebpFromBuffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method loadWebpFromBuffer" }
+            "load_webp_from_buffer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_webp_from_buffer" }
         }
       val lock: CPointer<godot_method_bind>
         get() = memScoped {
@@ -909,14 +900,14 @@ open class Image(
       val normalmapToXy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "normalmapToXy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method normalmapToXy" }
+            "normalmap_to_xy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method normalmap_to_xy" }
         }
       val premultiplyAlpha: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "premultiplyAlpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method premultiplyAlpha" }
+            "premultiply_alpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method premultiply_alpha" }
         }
       val resize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -927,44 +918,44 @@ open class Image(
       val resizeToPo2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "resizeToPo2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resizeToPo2" }
+            "resize_to_po2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resize_to_po2" }
         }
       val rgbeToSrgb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "rgbeToSrgb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rgbeToSrgb" }
+            "rgbe_to_srgb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rgbe_to_srgb" }
         }
       val savePng: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "savePng".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method savePng" }
+            "save_png".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_png" }
         }
       val setPixel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "setPixel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPixel" }
+            "set_pixel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pixel" }
         }
       val setPixelv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "setPixelv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPixelv" }
+            "set_pixelv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pixelv" }
         }
       val shrinkX2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "shrinkX2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shrinkX2" }
+            "shrink_x2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shrink_x2" }
         }
       val srgbToLinear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Image".cstr.ptr,
-            "srgbToLinear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method srgbToLinear" }
+            "srgb_to_linear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method srgb_to_linear" }
         }
       val unlock: CPointer<godot_method_bind>
         get() = memScoped {

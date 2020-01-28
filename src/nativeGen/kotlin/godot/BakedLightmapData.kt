@@ -62,14 +62,6 @@ open class BakedLightmapData(
       setOctree(value)
     }
 
-  var userData: VariantArray
-    get() {
-       return _getUserData() 
-    }
-    set(value) {
-      _setUserData(value)
-    }
-
   fun addUser(
     path: NodePath,
     lightmap: Texture,
@@ -172,106 +164,106 @@ open class BakedLightmapData(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "addUser".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addUser" }
+            "add_user".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_user" }
         }
       val clearUsers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "clearUsers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearUsers" }
+            "clear_users".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_users" }
         }
       val getBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBounds" }
+            "get_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bounds" }
         }
       val getCellSpaceTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getCellSpaceTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCellSpaceTransform" }
+            "get_cell_space_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cell_space_transform" }
         }
       val getCellSubdiv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getCellSubdiv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCellSubdiv" }
+            "get_cell_subdiv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cell_subdiv" }
         }
       val getEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEnergy" }
+            "get_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_energy" }
         }
       val getOctree: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getOctree".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOctree" }
+            "get_octree".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_octree" }
         }
       val getUserCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getUserCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUserCount" }
+            "get_user_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_user_count" }
         }
       val getUserLightmap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getUserLightmap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUserLightmap" }
+            "get_user_lightmap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_user_lightmap" }
         }
       val getUserPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "getUserPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUserPath" }
+            "get_user_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_user_path" }
         }
       val setBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "setBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBounds" }
+            "set_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bounds" }
         }
       val setCellSpaceTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "setCellSpaceTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCellSpaceTransform" }
+            "set_cell_space_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cell_space_transform" }
         }
       val setCellSubdiv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "setCellSubdiv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCellSubdiv" }
+            "set_cell_subdiv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cell_subdiv" }
         }
       val setEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "setEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnergy" }
+            "set_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_energy" }
         }
       val setOctree: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BakedLightmapData".cstr.ptr,
-            "setOctree".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOctree" }
+            "set_octree".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_octree" }
         }}
   }
 }

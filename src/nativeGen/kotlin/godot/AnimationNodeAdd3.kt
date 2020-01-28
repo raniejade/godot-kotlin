@@ -54,15 +54,15 @@ open class AnimationNodeAdd3(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd3".cstr.ptr,
-            "isUsingSync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingSync" }
+            "is_using_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
         }
       val setUseSync: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAdd3".cstr.ptr,
-            "setUseSync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseSync" }
+            "set_use_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_sync" }
         }}
   }
 }

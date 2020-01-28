@@ -18,22 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class SliderJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  var angularLimitLowerAngle: Float
-    get() {
-       return _getLowerLimitAngular() 
-    }
-    set(value) {
-      _setLowerLimitAngular(value)
-    }
-
-  var angularLimitUpperAngle: Float
-    get() {
-       return _getUpperLimitAngular() 
-    }
-    set(value) {
-      _setUpperLimitAngular(value)
-    }
-
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
     val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
@@ -172,15 +156,15 @@ open class SliderJoint(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-            "getParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParam" }
+            "get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val setParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-            "setParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setParam" }
+            "set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param" }
         }}
   }
 }

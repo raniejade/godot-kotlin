@@ -44,15 +44,15 @@ open class InputEventGesture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
-            "setPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPosition" }
+            "set_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_position" }
         }}
   }
 }

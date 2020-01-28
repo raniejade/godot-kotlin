@@ -73,29 +73,29 @@ open class ViewportContainer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-            "getStretchShrink".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStretchShrink" }
+            "get_stretch_shrink".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stretch_shrink" }
         }
       val isStretchEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-            "isStretchEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isStretchEnabled" }
+            "is_stretch_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_stretch_enabled" }
         }
       val setStretch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-            "setStretch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStretch" }
+            "set_stretch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stretch" }
         }
       val setStretchShrink: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportContainer".cstr.ptr,
-            "setStretchShrink".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStretchShrink" }
+            "set_stretch_shrink".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stretch_shrink" }
         }}
   }
 }

@@ -98,22 +98,22 @@ open class StreamPeerBuffer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "getDataArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDataArray" }
+            "get_data_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_data_array" }
         }
       val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "getSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSize" }
+            "get_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val resize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -133,8 +133,8 @@ open class StreamPeerBuffer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeerBuffer".cstr.ptr,
-            "setDataArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDataArray" }
+            "set_data_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_data_array" }
         }}
   }
 }

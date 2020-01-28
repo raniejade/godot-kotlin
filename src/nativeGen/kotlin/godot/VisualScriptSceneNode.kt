@@ -54,15 +54,15 @@ open class VisualScriptSceneNode(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
-            "getNodePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodePath" }
+            "get_node_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_path" }
         }
       val setNodePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
-            "setNodePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNodePath" }
+            "set_node_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_path" }
         }}
   }
 }

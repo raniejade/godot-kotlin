@@ -46,15 +46,15 @@ open class EditorScenePostImport(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
-            "getSourceFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSourceFile" }
+            "get_source_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_file" }
         }
       val getSourceFolder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScenePostImport".cstr.ptr,
-            "getSourceFolder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSourceFolder" }
+            "get_source_folder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_folder" }
         }}
   }
 }

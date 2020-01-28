@@ -54,15 +54,15 @@ open class VisualScriptGlobalConstant(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
-            "getGlobalConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlobalConstant" }
+            "get_global_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_global_constant" }
         }
       val setGlobalConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
-            "setGlobalConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlobalConstant" }
+            "set_global_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_global_constant" }
         }}
   }
 }

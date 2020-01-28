@@ -144,74 +144,74 @@ open class Sprite3D(
       val getFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "getFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFrame" }
+            "get_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame" }
         }
       val getHframes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "getHframes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHframes" }
+            "get_hframes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_hframes" }
         }
       val getRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "getRegionRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRegionRect" }
+            "get_region_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_region_rect" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getVframes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "getVframes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVframes" }
+            "get_vframes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_vframes" }
         }
       val isRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "isRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRegion" }
+            "is_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_region" }
         }
       val setFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "setFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFrame" }
+            "set_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frame" }
         }
       val setHframes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "setHframes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHframes" }
+            "set_hframes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hframes" }
         }
       val setRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "setRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRegion" }
+            "set_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_region" }
         }
       val setRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "setRegionRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRegionRect" }
+            "set_region_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_region_rect" }
         }
       val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "setTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTexture" }
+            "set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setVframes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sprite3D".cstr.ptr,
-            "setVframes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVframes" }
+            "set_vframes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_vframes" }
         }}
   }
 }

@@ -22,7 +22,7 @@ import kotlinx.cinterop.reinterpret
 open class CanvasLayer(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  var customViewport: Viewport
+  var customViewport: Node
     get() {
        return getCustomViewport() 
     }
@@ -207,134 +207,134 @@ open class CanvasLayer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCanvas" }
+            "get_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
         }
       val getCustomViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getCustomViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCustomViewport" }
+            "get_custom_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_viewport" }
         }
       val getFollowViewportScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getFollowViewportScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFollowViewportScale" }
+            "get_follow_viewport_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_follow_viewport_scale" }
         }
       val getLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLayer" }
+            "get_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_layer" }
         }
       val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffset" }
+            "get_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val getRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRotation" }
+            "get_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rotation" }
         }
       val getRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRotationDegrees" }
+            "get_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rotation_degrees" }
         }
       val getScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScale" }
+            "get_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scale" }
         }
       val getTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "getTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransform" }
+            "get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val isFollowingViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "isFollowingViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFollowingViewport" }
+            "is_following_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_following_viewport" }
         }
       val setCustomViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setCustomViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCustomViewport" }
+            "set_custom_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_viewport" }
         }
       val setFollowViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setFollowViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFollowViewport" }
+            "set_follow_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_follow_viewport" }
         }
       val setFollowViewportScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setFollowViewportScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFollowViewportScale" }
+            "set_follow_viewport_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_follow_viewport_scale" }
         }
       val setLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLayer" }
+            "set_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_layer" }
         }
       val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffset" }
+            "set_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offset" }
         }
       val setRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRotation" }
+            "set_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rotation" }
         }
       val setRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRotationDegrees" }
+            "set_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rotation_degrees" }
         }
       val setScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScale" }
+            "set_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_scale" }
         }
       val setTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasLayer".cstr.ptr,
-            "setTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTransform" }
+            "set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_transform" }
         }}
   }
 }

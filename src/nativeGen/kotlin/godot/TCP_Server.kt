@@ -59,8 +59,8 @@ open class TCP_Server(
       val isConnectionAvailable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TCP_Server".cstr.ptr,
-            "isConnectionAvailable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isConnectionAvailable" }
+            "is_connection_available".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_connection_available" }
         }
       val listen: CPointer<godot_method_bind>
         get() = memScoped {
@@ -77,8 +77,8 @@ open class TCP_Server(
       val takeConnection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TCP_Server".cstr.ptr,
-            "takeConnection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method takeConnection" }
+            "take_connection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method take_connection" }
         }}
   }
 }

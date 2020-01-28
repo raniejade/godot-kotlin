@@ -135,71 +135,71 @@ open class NoiseTexture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "getBumpStrength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBumpStrength" }
+            "get_bump_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bump_strength" }
         }
       val getNoise: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "getNoise".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise" }
+            "get_noise".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise" }
         }
       val getSeamless: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "getSeamless".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSeamless" }
+            "get_seamless".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_seamless" }
         }
       val isNormalmap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "isNormalmap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isNormalmap" }
+            "is_normalmap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_normalmap" }
         }
       val setAsNormalmap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "setAsNormalmap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAsNormalmap" }
+            "set_as_normalmap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_as_normalmap" }
         }
       val setBumpStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "setBumpStrength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBumpStrength" }
+            "set_bump_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bump_strength" }
         }
       val setHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "setHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHeight" }
+            "set_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_height" }
         }
       val setNoise: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "setNoise".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNoise" }
+            "set_noise".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_noise" }
         }
       val setSeamless: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "setSeamless".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSeamless" }
+            "set_seamless".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_seamless" }
         }
       val setWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NoiseTexture".cstr.ptr,
-            "setWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWidth" }
+            "set_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_width" }
         }}
   }
 }

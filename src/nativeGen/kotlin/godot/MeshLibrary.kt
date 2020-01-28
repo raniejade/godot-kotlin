@@ -153,120 +153,120 @@ open class MeshLibrary(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "createItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createItem" }
+            "create_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_item" }
         }
       val findItemByName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "findItemByName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method findItemByName" }
+            "find_item_by_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method find_item_by_name" }
         }
       val getItemList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemList" }
+            "get_item_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_list" }
         }
       val getItemMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemMesh" }
+            "get_item_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_mesh" }
         }
       val getItemName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemName" }
+            "get_item_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_name" }
         }
       val getItemNavmesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemNavmesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemNavmesh" }
+            "get_item_navmesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_navmesh" }
         }
       val getItemNavmeshTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemNavmeshTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemNavmeshTransform" }
+            "get_item_navmesh_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_navmesh_transform" }
         }
       val getItemPreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemPreview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemPreview" }
+            "get_item_preview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_preview" }
         }
       val getItemShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getItemShapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemShapes" }
+            "get_item_shapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_shapes" }
         }
       val getLastUnusedItemId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "getLastUnusedItemId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLastUnusedItemId" }
+            "get_last_unused_item_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_last_unused_item_id" }
         }
       val removeItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "removeItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeItem" }
+            "remove_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_item" }
         }
       val setItemMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "setItemMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemMesh" }
+            "set_item_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_mesh" }
         }
       val setItemName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "setItemName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemName" }
+            "set_item_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_name" }
         }
       val setItemNavmesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "setItemNavmesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemNavmesh" }
+            "set_item_navmesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_navmesh" }
         }
       val setItemNavmeshTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "setItemNavmeshTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemNavmeshTransform" }
+            "set_item_navmesh_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_navmesh_transform" }
         }
       val setItemPreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "setItemPreview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemPreview" }
+            "set_item_preview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_preview" }
         }
       val setItemShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "setItemShapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemShapes" }
+            "set_item_shapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_shapes" }
         }}
   }
 }

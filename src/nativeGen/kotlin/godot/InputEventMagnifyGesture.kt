@@ -54,15 +54,15 @@ open class InputEventMagnifyGesture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
-            "getFactor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFactor" }
+            "get_factor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_factor" }
         }
       val setFactor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
-            "setFactor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFactor" }
+            "set_factor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_factor" }
         }}
   }
 }

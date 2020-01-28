@@ -176,8 +176,8 @@ open class Performance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Performance".cstr.ptr,
-            "getMonitor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMonitor" }
+            "get_monitor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_monitor" }
         }}
   }
 }

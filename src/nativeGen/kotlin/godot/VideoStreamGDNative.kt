@@ -54,15 +54,15 @@ open class VideoStreamGDNative(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VideoStreamGDNative".cstr.ptr,
-            "getFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFile" }
+            "get_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_file" }
         }
       val setFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VideoStreamGDNative".cstr.ptr,
-            "setFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFile" }
+            "set_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_file" }
         }}
   }
 }

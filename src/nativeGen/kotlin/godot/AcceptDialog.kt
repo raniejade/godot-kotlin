@@ -106,64 +106,64 @@ open class AcceptDialog(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "addButton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addButton" }
+            "add_button".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_button" }
         }
       val addCancel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "addCancel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCancel" }
+            "add_cancel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_cancel" }
         }
       val getHideOnOk: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "getHideOnOk".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHideOnOk" }
+            "get_hide_on_ok".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_hide_on_ok" }
         }
       val getLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "getLabel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLabel" }
+            "get_label".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_label" }
         }
       val getOk: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "getOk".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOk" }
+            "get_ok".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ok" }
         }
       val getText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "getText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getText" }
+            "get_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val registerTextEnter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "registerTextEnter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method registerTextEnter" }
+            "register_text_enter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method register_text_enter" }
         }
       val setHideOnOk: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "setHideOnOk".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHideOnOk" }
+            "set_hide_on_ok".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hide_on_ok" }
         }
       val setText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "setText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setText" }
+            "set_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text" }
         }}
   }
 }

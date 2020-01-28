@@ -705,116 +705,118 @@ open class Animation(
       val addTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "addTrack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addTrack" }
+            "add_track".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_track" }
         }
       val animationTrackGetKeyAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "animationTrackGetKeyAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method animationTrackGetKeyAnimation" }
+            "animation_track_get_key_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method animation_track_get_key_animation"
+            }
         }
       val animationTrackInsertKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "animationTrackInsertKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method animationTrackInsertKey" }
+            "animation_track_insert_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method animation_track_insert_key" }
         }
       val animationTrackSetKeyAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "animationTrackSetKeyAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method animationTrackSetKeyAnimation" }
+            "animation_track_set_key_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method animation_track_set_key_animation"
+            }
         }
       val audioTrackGetKeyEndOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackGetKeyEndOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackGetKeyEndOffset" }
+            "audio_track_get_key_end_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_get_key_end_offset" }
         }
       val audioTrackGetKeyStartOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackGetKeyStartOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackGetKeyStartOffset" }
+            "audio_track_get_key_start_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_get_key_start_offset" }
         }
       val audioTrackGetKeyStream: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackGetKeyStream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackGetKeyStream" }
+            "audio_track_get_key_stream".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_get_key_stream" }
         }
       val audioTrackInsertKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackInsertKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackInsertKey" }
+            "audio_track_insert_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_insert_key" }
         }
       val audioTrackSetKeyEndOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackSetKeyEndOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackSetKeyEndOffset" }
+            "audio_track_set_key_end_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_set_key_end_offset" }
         }
       val audioTrackSetKeyStartOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackSetKeyStartOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackSetKeyStartOffset" }
+            "audio_track_set_key_start_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_set_key_start_offset" }
         }
       val audioTrackSetKeyStream: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "audioTrackSetKeyStream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method audioTrackSetKeyStream" }
+            "audio_track_set_key_stream".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method audio_track_set_key_stream" }
         }
       val bezierTrackGetKeyInHandle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackGetKeyInHandle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackGetKeyInHandle" }
+            "bezier_track_get_key_in_handle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_get_key_in_handle" }
         }
       val bezierTrackGetKeyOutHandle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackGetKeyOutHandle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackGetKeyOutHandle" }
+            "bezier_track_get_key_out_handle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_get_key_out_handle" }
         }
       val bezierTrackGetKeyValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackGetKeyValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackGetKeyValue" }
+            "bezier_track_get_key_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_get_key_value" }
         }
       val bezierTrackInsertKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackInsertKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackInsertKey" }
+            "bezier_track_insert_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_insert_key" }
         }
       val bezierTrackInterpolate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackInterpolate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackInterpolate" }
+            "bezier_track_interpolate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_interpolate" }
         }
       val bezierTrackSetKeyInHandle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackSetKeyInHandle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackSetKeyInHandle" }
+            "bezier_track_set_key_in_handle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_set_key_in_handle" }
         }
       val bezierTrackSetKeyOutHandle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackSetKeyOutHandle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackSetKeyOutHandle" }
+            "bezier_track_set_key_out_handle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_set_key_out_handle" }
         }
       val bezierTrackSetKeyValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "bezierTrackSetKeyValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bezierTrackSetKeyValue" }
+            "bezier_track_set_key_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bezier_track_set_key_value" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -825,266 +827,268 @@ open class Animation(
       val copyTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "copyTrack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copyTrack" }
+            "copy_track".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method copy_track" }
         }
       val findTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "findTrack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method findTrack" }
+            "find_track".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method find_track" }
         }
       val getLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "getLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLength" }
+            "get_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_length" }
         }
       val getStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "getStep".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStep" }
+            "get_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_step" }
         }
       val getTrackCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "getTrackCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTrackCount" }
+            "get_track_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_track_count" }
         }
       val hasLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "hasLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasLoop" }
+            "has_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_loop" }
         }
       val methodTrackGetKeyIndices: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "methodTrackGetKeyIndices".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method methodTrackGetKeyIndices" }
+            "method_track_get_key_indices".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method method_track_get_key_indices" }
         }
       val methodTrackGetName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "methodTrackGetName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method methodTrackGetName" }
+            "method_track_get_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method method_track_get_name" }
         }
       val methodTrackGetParams: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "methodTrackGetParams".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method methodTrackGetParams" }
+            "method_track_get_params".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method method_track_get_params" }
         }
       val removeTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "removeTrack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeTrack" }
+            "remove_track".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_track" }
         }
       val setLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "setLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLength" }
+            "set_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_length" }
         }
       val setLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "setLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoop" }
+            "set_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_loop" }
         }
       val setStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "setStep".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStep" }
+            "set_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_step" }
         }
       val trackFindKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackFindKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackFindKey" }
+            "track_find_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_find_key" }
         }
       val trackGetInterpolationLoopWrap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetInterpolationLoopWrap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetInterpolationLoopWrap" }
+            "track_get_interpolation_loop_wrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_interpolation_loop_wrap"
+            }
         }
       val trackGetInterpolationType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetInterpolationType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetInterpolationType" }
+            "track_get_interpolation_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_interpolation_type" }
         }
       val trackGetKeyCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetKeyCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetKeyCount" }
+            "track_get_key_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_key_count" }
         }
       val trackGetKeyTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetKeyTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetKeyTime" }
+            "track_get_key_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_key_time" }
         }
       val trackGetKeyTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetKeyTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetKeyTransition" }
+            "track_get_key_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_key_transition" }
         }
       val trackGetKeyValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetKeyValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetKeyValue" }
+            "track_get_key_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_key_value" }
         }
       val trackGetPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetPath" }
+            "track_get_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_path" }
         }
       val trackGetType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackGetType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackGetType" }
+            "track_get_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_get_type" }
         }
       val trackInsertKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackInsertKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackInsertKey" }
+            "track_insert_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_insert_key" }
         }
       val trackIsEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackIsEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackIsEnabled" }
+            "track_is_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_is_enabled" }
         }
       val trackIsImported: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackIsImported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackIsImported" }
+            "track_is_imported".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_is_imported" }
         }
       val trackMoveDown: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackMoveDown".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackMoveDown" }
+            "track_move_down".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_move_down" }
         }
       val trackMoveTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackMoveTo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackMoveTo" }
+            "track_move_to".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_move_to" }
         }
       val trackMoveUp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackMoveUp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackMoveUp" }
+            "track_move_up".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_move_up" }
         }
       val trackRemoveKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackRemoveKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackRemoveKey" }
+            "track_remove_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_remove_key" }
         }
       val trackRemoveKeyAtPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackRemoveKeyAtPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackRemoveKeyAtPosition" }
+            "track_remove_key_at_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_remove_key_at_position" }
         }
       val trackSetEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetEnabled" }
+            "track_set_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_enabled" }
         }
       val trackSetImported: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetImported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetImported" }
+            "track_set_imported".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_imported" }
         }
       val trackSetInterpolationLoopWrap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetInterpolationLoopWrap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetInterpolationLoopWrap" }
+            "track_set_interpolation_loop_wrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_interpolation_loop_wrap"
+            }
         }
       val trackSetInterpolationType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetInterpolationType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetInterpolationType" }
+            "track_set_interpolation_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_interpolation_type" }
         }
       val trackSetKeyTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetKeyTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetKeyTime" }
+            "track_set_key_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_key_time" }
         }
       val trackSetKeyTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetKeyTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetKeyTransition" }
+            "track_set_key_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_key_transition" }
         }
       val trackSetKeyValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetKeyValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetKeyValue" }
+            "track_set_key_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_key_value" }
         }
       val trackSetPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSetPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSetPath" }
+            "track_set_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_set_path" }
         }
       val trackSwap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "trackSwap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method trackSwap" }
+            "track_swap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method track_swap" }
         }
       val transformTrackInsertKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "transformTrackInsertKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method transformTrackInsertKey" }
+            "transform_track_insert_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method transform_track_insert_key" }
         }
       val transformTrackInterpolate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "transformTrackInterpolate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method transformTrackInterpolate" }
+            "transform_track_interpolate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method transform_track_interpolate" }
         }
       val valueTrackGetKeyIndices: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "valueTrackGetKeyIndices".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method valueTrackGetKeyIndices" }
+            "value_track_get_key_indices".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method value_track_get_key_indices" }
         }
       val valueTrackGetUpdateMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "valueTrackGetUpdateMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method valueTrackGetUpdateMode" }
+            "value_track_get_update_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method value_track_get_update_mode" }
         }
       val valueTrackSetUpdateMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Animation".cstr.ptr,
-            "valueTrackSetUpdateMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method valueTrackSetUpdateMode" }
+            "value_track_set_update_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method value_track_set_update_mode" }
         }}
   }
 }

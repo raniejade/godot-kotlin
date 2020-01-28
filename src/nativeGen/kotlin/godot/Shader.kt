@@ -105,38 +105,38 @@ open class Shader(
       val getCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-            "getCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCode" }
+            "get_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_code" }
         }
       val getDefaultTextureParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-            "getDefaultTextureParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDefaultTextureParam" }
+            "get_default_texture_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_default_texture_param" }
         }
       val getMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-            "getMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMode" }
+            "get_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mode" }
         }
       val hasParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-            "hasParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasParam" }
+            "has_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_param" }
         }
       val setCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-            "setCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCode" }
+            "set_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_code" }
         }
       val setDefaultTextureParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shader".cstr.ptr,
-            "setDefaultTextureParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDefaultTextureParam" }
+            "set_default_texture_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_texture_param" }
         }}
   }
 }

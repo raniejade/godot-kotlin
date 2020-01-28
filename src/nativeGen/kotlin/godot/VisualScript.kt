@@ -21,14 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScript(
   _handle: COpaquePointer
 ) : Script(_handle) {
-  var data: Dictionary
-    get() {
-       return _getData() 
-    }
-    set(value) {
-      _setData(value)
-    }
-
   fun addCustomSignal(name: String) {
     val _arg = Variant.new(name)
     __method_bind.addCustomSignal.call(this._handle, _arg, 1)
@@ -414,295 +406,295 @@ open class VisualScript(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "addCustomSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCustomSignal" }
+            "add_custom_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_custom_signal" }
         }
       val addFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "addFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addFunction" }
+            "add_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_function" }
         }
       val addNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "addNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addNode" }
+            "add_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_node" }
         }
       val addVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "addVariable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addVariable" }
+            "add_variable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_variable" }
         }
       val customSignalAddArgument: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalAddArgument".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalAddArgument" }
+            "custom_signal_add_argument".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_add_argument" }
         }
       val customSignalGetArgumentCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalGetArgumentCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalGetArgumentCount" }
+            "custom_signal_get_argument_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_get_argument_count" }
         }
       val customSignalGetArgumentName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalGetArgumentName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalGetArgumentName" }
+            "custom_signal_get_argument_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_get_argument_name" }
         }
       val customSignalGetArgumentType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalGetArgumentType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalGetArgumentType" }
+            "custom_signal_get_argument_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_get_argument_type" }
         }
       val customSignalRemoveArgument: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalRemoveArgument".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalRemoveArgument" }
+            "custom_signal_remove_argument".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_remove_argument" }
         }
       val customSignalSetArgumentName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalSetArgumentName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalSetArgumentName" }
+            "custom_signal_set_argument_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_set_argument_name" }
         }
       val customSignalSetArgumentType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalSetArgumentType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalSetArgumentType" }
+            "custom_signal_set_argument_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_set_argument_type" }
         }
       val customSignalSwapArgument: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "customSignalSwapArgument".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method customSignalSwapArgument" }
+            "custom_signal_swap_argument".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method custom_signal_swap_argument" }
         }
       val dataConnect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "dataConnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dataConnect" }
+            "data_connect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method data_connect" }
         }
       val dataDisconnect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "dataDisconnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dataDisconnect" }
+            "data_disconnect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method data_disconnect" }
         }
       val getFunctionNodeId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getFunctionNodeId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFunctionNodeId" }
+            "get_function_node_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_function_node_id" }
         }
       val getFunctionScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getFunctionScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFunctionScroll" }
+            "get_function_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_function_scroll" }
         }
       val getNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNode" }
+            "get_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node" }
         }
       val getNodePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getNodePosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodePosition" }
+            "get_node_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_position" }
         }
       val getVariableDefaultValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getVariableDefaultValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVariableDefaultValue" }
+            "get_variable_default_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_variable_default_value" }
         }
       val getVariableExport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getVariableExport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVariableExport" }
+            "get_variable_export".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_variable_export" }
         }
       val getVariableInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "getVariableInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVariableInfo" }
+            "get_variable_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_variable_info" }
         }
       val hasCustomSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "hasCustomSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasCustomSignal" }
+            "has_custom_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_custom_signal" }
         }
       val hasDataConnection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "hasDataConnection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasDataConnection" }
+            "has_data_connection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_data_connection" }
         }
       val hasFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "hasFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasFunction" }
+            "has_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_function" }
         }
       val hasNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "hasNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasNode" }
+            "has_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_node" }
         }
       val hasSequenceConnection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "hasSequenceConnection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasSequenceConnection" }
+            "has_sequence_connection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_sequence_connection" }
         }
       val hasVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "hasVariable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasVariable" }
+            "has_variable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_variable" }
         }
       val removeCustomSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "removeCustomSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeCustomSignal" }
+            "remove_custom_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_custom_signal" }
         }
       val removeFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "removeFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeFunction" }
+            "remove_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_function" }
         }
       val removeNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "removeNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeNode" }
+            "remove_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_node" }
         }
       val removeVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "removeVariable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeVariable" }
+            "remove_variable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_variable" }
         }
       val renameCustomSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "renameCustomSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method renameCustomSignal" }
+            "rename_custom_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rename_custom_signal" }
         }
       val renameFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "renameFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method renameFunction" }
+            "rename_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rename_function" }
         }
       val renameVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "renameVariable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method renameVariable" }
+            "rename_variable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rename_variable" }
         }
       val sequenceConnect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "sequenceConnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sequenceConnect" }
+            "sequence_connect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method sequence_connect" }
         }
       val sequenceDisconnect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "sequenceDisconnect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sequenceDisconnect" }
+            "sequence_disconnect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method sequence_disconnect" }
         }
       val setFunctionScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "setFunctionScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFunctionScroll" }
+            "set_function_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_function_scroll" }
         }
       val setInstanceBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "setInstanceBaseType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstanceBaseType" }
+            "set_instance_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance_base_type" }
         }
       val setNodePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "setNodePosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNodePosition" }
+            "set_node_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_position" }
         }
       val setVariableDefaultValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "setVariableDefaultValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVariableDefaultValue" }
+            "set_variable_default_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_variable_default_value" }
         }
       val setVariableExport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "setVariableExport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVariableExport" }
+            "set_variable_export".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_variable_export" }
         }
       val setVariableInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScript".cstr.ptr,
-            "setVariableInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVariableInfo" }
+            "set_variable_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_variable_info" }
         }}
   }
 }

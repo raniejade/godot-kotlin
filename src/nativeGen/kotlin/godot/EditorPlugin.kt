@@ -337,227 +337,227 @@ open class EditorPlugin(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addAutoloadSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addAutoloadSingleton" }
+            "add_autoload_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_autoload_singleton" }
         }
       val addControlToBottomPanel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addControlToBottomPanel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addControlToBottomPanel" }
+            "add_control_to_bottom_panel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_control_to_bottom_panel" }
         }
       val addControlToContainer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addControlToContainer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addControlToContainer" }
+            "add_control_to_container".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_control_to_container" }
         }
       val addControlToDock: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addControlToDock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addControlToDock" }
+            "add_control_to_dock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_control_to_dock" }
         }
       val addCustomType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addCustomType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCustomType" }
+            "add_custom_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_custom_type" }
         }
       val addExportPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addExportPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addExportPlugin" }
+            "add_export_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_export_plugin" }
         }
       val addImportPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addImportPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addImportPlugin" }
+            "add_import_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_import_plugin" }
         }
       val addInspectorPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addInspectorPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addInspectorPlugin" }
+            "add_inspector_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_inspector_plugin" }
         }
       val addSceneImportPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addSceneImportPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSceneImportPlugin" }
+            "add_scene_import_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_scene_import_plugin" }
         }
       val addSpatialGizmoPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addSpatialGizmoPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSpatialGizmoPlugin" }
+            "add_spatial_gizmo_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_spatial_gizmo_plugin" }
         }
       val addToolMenuItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addToolMenuItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addToolMenuItem" }
+            "add_tool_menu_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_tool_menu_item" }
         }
       val addToolSubmenuItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "addToolSubmenuItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addToolSubmenuItem" }
+            "add_tool_submenu_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_tool_submenu_item" }
         }
       val getEditorInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "getEditorInterface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditorInterface" }
+            "get_editor_interface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
         }
       val getScriptCreateDialog: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "getScriptCreateDialog".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScriptCreateDialog" }
+            "get_script_create_dialog".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_create_dialog" }
         }
       val getUndoRedo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "getUndoRedo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUndoRedo" }
+            "get_undo_redo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_undo_redo" }
         }
       val hideBottomPanel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "hideBottomPanel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hideBottomPanel" }
+            "hide_bottom_panel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hide_bottom_panel" }
         }
       val makeBottomPanelItemVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "makeBottomPanelItemVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method makeBottomPanelItemVisible" }
+            "make_bottom_panel_item_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method make_bottom_panel_item_visible" }
         }
       val queueSaveLayout: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "queueSaveLayout".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queueSaveLayout" }
+            "queue_save_layout".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queue_save_layout" }
         }
       val removeAutoloadSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeAutoloadSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeAutoloadSingleton" }
+            "remove_autoload_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_autoload_singleton" }
         }
       val removeControlFromBottomPanel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeControlFromBottomPanel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeControlFromBottomPanel" }
+            "remove_control_from_bottom_panel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_control_from_bottom_panel" }
         }
       val removeControlFromContainer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeControlFromContainer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeControlFromContainer" }
+            "remove_control_from_container".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_control_from_container" }
         }
       val removeControlFromDocks: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeControlFromDocks".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeControlFromDocks" }
+            "remove_control_from_docks".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_control_from_docks" }
         }
       val removeCustomType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeCustomType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeCustomType" }
+            "remove_custom_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_custom_type" }
         }
       val removeExportPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeExportPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeExportPlugin" }
+            "remove_export_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_export_plugin" }
         }
       val removeImportPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeImportPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeImportPlugin" }
+            "remove_import_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_import_plugin" }
         }
       val removeInspectorPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeInspectorPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeInspectorPlugin" }
+            "remove_inspector_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_inspector_plugin" }
         }
       val removeSceneImportPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeSceneImportPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeSceneImportPlugin" }
+            "remove_scene_import_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_scene_import_plugin" }
         }
       val removeSpatialGizmoPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeSpatialGizmoPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeSpatialGizmoPlugin" }
+            "remove_spatial_gizmo_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_spatial_gizmo_plugin" }
         }
       val removeToolMenuItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "removeToolMenuItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeToolMenuItem" }
+            "remove_tool_menu_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_tool_menu_item" }
         }
       val setForceDrawOverForwardingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "setForceDrawOverForwardingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setForceDrawOverForwardingEnabled"
-            }
+            "set_force_draw_over_forwarding_enabled".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method set_force_draw_over_forwarding_enabled" }
         }
       val setInputEventForwardingAlwaysEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "setInputEventForwardingAlwaysEnabled".cstr.ptr)
+            "set_input_event_forwarding_always_enabled".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method setInputEventForwardingAlwaysEnabled" }
+            "No method_bind found for method set_input_event_forwarding_always_enabled" }
         }
       val updateOverlays: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorPlugin".cstr.ptr,
-            "updateOverlays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updateOverlays" }
+            "update_overlays".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_overlays" }
         }}
   }
 }

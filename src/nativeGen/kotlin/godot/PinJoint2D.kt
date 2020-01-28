@@ -52,14 +52,14 @@ open class PinJoint2D(
       val getSoftness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
-            "getSoftness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSoftness" }
+            "get_softness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_softness" }
         }
       val setSoftness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
-            "setSoftness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSoftness" }
+            "set_softness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_softness" }
         }}
   }
 }

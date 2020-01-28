@@ -180,113 +180,113 @@ open class AudioEffectReverb(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getDamping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDamping" }
+            "get_damping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_damping" }
         }
       val getDry: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getDry".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDry" }
+            "get_dry".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dry" }
         }
       val getHpf: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getHpf".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHpf" }
+            "get_hpf".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_hpf" }
         }
       val getPredelayFeedback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getPredelayFeedback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPredelayFeedback" }
+            "get_predelay_feedback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_predelay_feedback" }
         }
       val getPredelayMsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getPredelayMsec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPredelayMsec" }
+            "get_predelay_msec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_predelay_msec" }
         }
       val getRoomSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getRoomSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRoomSize" }
+            "get_room_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_room_size" }
         }
       val getSpread: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getSpread".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpread" }
+            "get_spread".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_spread" }
         }
       val getWet: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "getWet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWet" }
+            "get_wet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_wet" }
         }
       val setDamping: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setDamping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDamping" }
+            "set_damping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_damping" }
         }
       val setDry: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setDry".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDry" }
+            "set_dry".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dry" }
         }
       val setHpf: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setHpf".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHpf" }
+            "set_hpf".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hpf" }
         }
       val setPredelayFeedback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setPredelayFeedback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPredelayFeedback" }
+            "set_predelay_feedback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_predelay_feedback" }
         }
       val setPredelayMsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setPredelayMsec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPredelayMsec" }
+            "set_predelay_msec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_predelay_msec" }
         }
       val setRoomSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setRoomSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRoomSize" }
+            "set_room_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_room_size" }
         }
       val setSpread: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setSpread".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSpread" }
+            "set_spread".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_spread" }
         }
       val setWet: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectReverb".cstr.ptr,
-            "setWet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWet" }
+            "set_wet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_wet" }
         }}
   }
 }

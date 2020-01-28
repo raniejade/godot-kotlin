@@ -109,57 +109,57 @@ open class PhysicsMaterial(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "getBounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBounce" }
+            "get_bounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
         }
       val getFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "getFriction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFriction" }
+            "get_friction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_friction" }
         }
       val isAbsorbent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "isAbsorbent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isAbsorbent" }
+            "is_absorbent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_absorbent" }
         }
       val isRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "isRough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRough" }
+            "is_rough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_rough" }
         }
       val setAbsorbent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "setAbsorbent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAbsorbent" }
+            "set_absorbent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_absorbent" }
         }
       val setBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "setBounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBounce" }
+            "set_bounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
         }
       val setFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "setFriction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFriction" }
+            "set_friction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_friction" }
         }
       val setRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "setRough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRough" }
+            "set_rough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rough" }
         }}
   }
 }

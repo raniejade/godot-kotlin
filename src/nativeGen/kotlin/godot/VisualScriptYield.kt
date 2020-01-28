@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptYield(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var mode: Int
+  var mode: YieldMode
     get() {
-       return VisualScriptYield.YieldMode.from(getYieldMode()) 
+       return getYieldMode() 
     }
     set(value) {
-      setYieldMode(VisualScriptYield.YieldMode.from(value))
+      setYieldMode(value.value)
     }
 
   var waitTime: Float
@@ -100,29 +100,29 @@ open class VisualScriptYield(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "getWaitTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWaitTime" }
+            "get_wait_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_wait_time" }
         }
       val getYieldMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "getYieldMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getYieldMode" }
+            "get_yield_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_yield_mode" }
         }
       val setWaitTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "setWaitTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWaitTime" }
+            "set_wait_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_wait_time" }
         }
       val setYieldMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "setYieldMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setYieldMode" }
+            "set_yield_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_yield_mode" }
         }}
   }
 }

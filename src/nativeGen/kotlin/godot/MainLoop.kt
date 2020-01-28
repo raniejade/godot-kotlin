@@ -109,14 +109,14 @@ open class MainLoop(
       val inputEvent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "inputEvent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method inputEvent" }
+            "input_event".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method input_event" }
         }
       val inputText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "inputText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method inputText" }
+            "input_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method input_text" }
         }
       val iteration: CPointer<godot_method_bind>
         get() = memScoped {

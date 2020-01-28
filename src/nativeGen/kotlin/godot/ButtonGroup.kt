@@ -44,15 +44,15 @@ open class ButtonGroup(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
-            "getButtons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtons" }
+            "get_buttons".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_buttons" }
         }
       val getPressedButton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
-            "getPressedButton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPressedButton" }
+            "get_pressed_button".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pressed_button" }
         }}
   }
 }

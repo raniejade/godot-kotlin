@@ -70,15 +70,15 @@ open class SpatialVelocityTracker(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "getTrackedLinearVelocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTrackedLinearVelocity" }
+            "get_tracked_linear_velocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tracked_linear_velocity" }
         }
       val isTrackingPhysicsStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "isTrackingPhysicsStep".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isTrackingPhysicsStep" }
+            "is_tracking_physics_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_tracking_physics_step" }
         }
       val reset: CPointer<godot_method_bind>
         get() = memScoped {
@@ -91,15 +91,15 @@ open class SpatialVelocityTracker(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "setTrackPhysicsStep".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTrackPhysicsStep" }
+            "set_track_physics_step".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_track_physics_step" }
         }
       val updatePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpatialVelocityTracker".cstr.ptr,
-            "updatePosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updatePosition" }
+            "update_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_position" }
         }}
   }
 }

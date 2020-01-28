@@ -126,62 +126,62 @@ open class SphereMesh(
       val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "getHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHeight" }
+            "get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getIsHemisphere: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "getIsHemisphere".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIsHemisphere" }
+            "get_is_hemisphere".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_is_hemisphere" }
         }
       val getRadialSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "getRadialSegments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRadialSegments" }
+            "get_radial_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
         }
       val getRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "getRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRadius" }
+            "get_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_radius" }
         }
       val getRings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "getRings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRings" }
+            "get_rings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rings" }
         }
       val setHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "setHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHeight" }
+            "set_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_height" }
         }
       val setIsHemisphere: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "setIsHemisphere".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIsHemisphere" }
+            "set_is_hemisphere".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_is_hemisphere" }
         }
       val setRadialSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "setRadialSegments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRadialSegments" }
+            "set_radial_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
         }
       val setRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "setRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRadius" }
+            "set_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_radius" }
         }
       val setRings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SphereMesh".cstr.ptr,
-            "setRings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRings" }
+            "set_rings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rings" }
         }}
   }
 }

@@ -29,14 +29,6 @@ open class AnimationNode(
       setFilterEnabled(value)
     }
 
-  var filters: VariantArray
-    get() {
-       return _getFilters() 
-    }
-    set(value) {
-      _setFilters(value)
-    }
-
   fun addInput(name: String) {
     val _arg = Variant.new(name)
     __method_bind.addInput.call(this._handle, _arg, 1)
@@ -199,92 +191,92 @@ open class AnimationNode(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "addInput".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addInput" }
+            "add_input".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_input" }
         }
       val blendAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "blendAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blendAnimation" }
+            "blend_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_animation" }
         }
       val blendInput: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "blendInput".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blendInput" }
+            "blend_input".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_input" }
         }
       val blendNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "blendNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method blendNode" }
+            "blend_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method blend_node" }
         }
       val getInputCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "getInputCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInputCount" }
+            "get_input_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_count" }
         }
       val getInputName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "getInputName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInputName" }
+            "get_input_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_name" }
         }
       val getParameter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "getParameter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParameter" }
+            "get_parameter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_parameter" }
         }
       val isFilterEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "isFilterEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFilterEnabled" }
+            "is_filter_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_filter_enabled" }
         }
       val isPathFiltered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "isPathFiltered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPathFiltered" }
+            "is_path_filtered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_path_filtered" }
         }
       val removeInput: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "removeInput".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeInput" }
+            "remove_input".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_input" }
         }
       val setFilterEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "setFilterEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFilterEnabled" }
+            "set_filter_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_filter_enabled" }
         }
       val setFilterPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "setFilterPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFilterPath" }
+            "set_filter_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_filter_path" }
         }
       val setParameter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNode".cstr.ptr,
-            "setParameter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setParameter" }
+            "set_parameter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_parameter" }
         }}
   }
 }

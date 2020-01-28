@@ -54,15 +54,15 @@ open class RectangleShape2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
-            "getExtents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getExtents" }
+            "get_extents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_extents" }
         }
       val setExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
-            "setExtents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setExtents" }
+            "set_extents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_extents" }
         }}
   }
 }

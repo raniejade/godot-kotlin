@@ -223,184 +223,185 @@ open class Skeleton(
       val addBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "addBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addBone" }
+            "add_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_bone" }
         }
       val bindChildNodeToBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "bindChildNodeToBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bindChildNodeToBone" }
+            "bind_child_node_to_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method bind_child_node_to_bone" }
         }
       val clearBones: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "clearBones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearBones" }
+            "clear_bones".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_bones" }
         }
       val findBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "findBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method findBone" }
+            "find_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method find_bone" }
         }
       val getBoneCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneCount" }
+            "get_bone_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
         }
       val getBoneCustomPose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneCustomPose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneCustomPose" }
+            "get_bone_custom_pose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_custom_pose" }
         }
       val getBoneGlobalPose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneGlobalPose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneGlobalPose" }
+            "get_bone_global_pose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_global_pose" }
         }
       val getBoneName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneName" }
+            "get_bone_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_name" }
         }
       val getBoneParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneParent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneParent" }
+            "get_bone_parent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_parent" }
         }
       val getBonePose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBonePose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBonePose" }
+            "get_bone_pose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_pose" }
         }
       val getBoneRest: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneRest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneRest" }
+            "get_bone_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_rest" }
         }
       val getBoneTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoneTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneTransform" }
+            "get_bone_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_transform" }
         }
       val getBoundChildNodesToBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "getBoundChildNodesToBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoundChildNodesToBone" }
+            "get_bound_child_nodes_to_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bound_child_nodes_to_bone" }
         }
       val isBoneRestDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "isBoneRestDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isBoneRestDisabled" }
+            "is_bone_rest_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_bone_rest_disabled" }
         }
       val isUsingBonesInWorldTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "isUsingBonesInWorldTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingBonesInWorldTransform" }
+            "is_using_bones_in_world_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_bones_in_world_transform"
+            }
         }
       val localizeRests: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "localizeRests".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method localizeRests" }
+            "localize_rests".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method localize_rests" }
         }
       val physicalBonesAddCollisionException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physicalBonesAddCollisionException".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method physicalBonesAddCollisionException"
-            }
+            "physical_bones_add_collision_exception".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method physical_bones_add_collision_exception" }
         }
       val physicalBonesRemoveCollisionException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physicalBonesRemoveCollisionException".cstr.ptr)
+            "physical_bones_remove_collision_exception".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method physicalBonesRemoveCollisionException" }
+            "No method_bind found for method physical_bones_remove_collision_exception" }
         }
       val physicalBonesStartSimulation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physicalBonesStartSimulation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method physicalBonesStartSimulation" }
+            "physical_bones_start_simulation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method physical_bones_start_simulation" }
         }
       val physicalBonesStopSimulation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "physicalBonesStopSimulation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method physicalBonesStopSimulation" }
+            "physical_bones_stop_simulation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method physical_bones_stop_simulation" }
         }
       val setBoneCustomPose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBoneCustomPose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneCustomPose" }
+            "set_bone_custom_pose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_custom_pose" }
         }
       val setBoneDisableRest: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBoneDisableRest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneDisableRest" }
+            "set_bone_disable_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_disable_rest" }
         }
       val setBoneGlobalPose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBoneGlobalPose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneGlobalPose" }
+            "set_bone_global_pose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_global_pose" }
         }
       val setBoneIgnoreAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBoneIgnoreAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneIgnoreAnimation" }
+            "set_bone_ignore_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_ignore_animation" }
         }
       val setBoneParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBoneParent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneParent" }
+            "set_bone_parent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_parent" }
         }
       val setBonePose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBonePose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBonePose" }
+            "set_bone_pose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_pose" }
         }
       val setBoneRest: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setBoneRest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneRest" }
+            "set_bone_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_rest" }
         }
       val setUseBonesInWorldTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "setUseBonesInWorldTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseBonesInWorldTransform" }
+            "set_use_bones_in_world_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_bones_in_world_transform" }
         }
       val unbindChildNodeFromBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "unbindChildNodeFromBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unbindChildNodeFromBone" }
+            "unbind_child_node_from_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method unbind_child_node_from_bone" }
         }
       val unparentBoneAndRest: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton".cstr.ptr,
-            "unparentBoneAndRest".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unparentBoneAndRest" }
+            "unparent_bone_and_rest".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method unparent_bone_and_rest" }
         }}
   }
 }

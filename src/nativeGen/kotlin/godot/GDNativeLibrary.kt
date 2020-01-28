@@ -138,85 +138,85 @@ open class GDNativeLibrary(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "getConfigFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConfigFile" }
+            "get_config_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_config_file" }
         }
       val getCurrentDependencies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "getCurrentDependencies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentDependencies" }
+            "get_current_dependencies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_dependencies" }
         }
       val getCurrentLibraryPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "getCurrentLibraryPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentLibraryPath" }
+            "get_current_library_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_library_path" }
         }
       val getSymbolPrefix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "getSymbolPrefix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSymbolPrefix" }
+            "get_symbol_prefix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_symbol_prefix" }
         }
       val isReloadable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "isReloadable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isReloadable" }
+            "is_reloadable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_reloadable" }
         }
       val isSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "isSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSingleton" }
+            "is_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_singleton" }
         }
       val setConfigFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "setConfigFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConfigFile" }
+            "set_config_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_config_file" }
         }
       val setLoadOnce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "setLoadOnce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoadOnce" }
+            "set_load_once".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_load_once" }
         }
       val setReloadable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "setReloadable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setReloadable" }
+            "set_reloadable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_reloadable" }
         }
       val setSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "setSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSingleton" }
+            "set_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_singleton" }
         }
       val setSymbolPrefix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "setSymbolPrefix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSymbolPrefix" }
+            "set_symbol_prefix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_symbol_prefix" }
         }
       val shouldLoadOnce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNativeLibrary".cstr.ptr,
-            "shouldLoadOnce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shouldLoadOnce" }
+            "should_load_once".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method should_load_once" }
         }}
   }
 }

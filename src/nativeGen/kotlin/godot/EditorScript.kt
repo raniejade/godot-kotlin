@@ -49,22 +49,22 @@ open class EditorScript(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "addRootNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addRootNode" }
+            "add_root_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_root_node" }
         }
       val getEditorInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "getEditorInterface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditorInterface" }
+            "get_editor_interface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
         }
       val getScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "getScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScene" }
+            "get_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scene" }
         }}
   }
 }

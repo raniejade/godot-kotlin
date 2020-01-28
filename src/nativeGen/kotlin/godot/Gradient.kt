@@ -123,38 +123,38 @@ open class Gradient(
       val addPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "addPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addPoint" }
+            "add_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_point" }
         }
       val getColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "getColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColor" }
+            "get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color" }
         }
       val getColors: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "getColors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColors" }
+            "get_colors".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_colors" }
         }
       val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "getOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffset" }
+            "get_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val getOffsets: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "getOffsets".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffsets" }
+            "get_offsets".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offsets" }
         }
       val getPointCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "getPointCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPointCount" }
+            "get_point_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_point_count" }
         }
       val interpolate: CPointer<godot_method_bind>
         get() = memScoped {
@@ -165,32 +165,32 @@ open class Gradient(
       val removePoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "removePoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removePoint" }
+            "remove_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_point" }
         }
       val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "setColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColor" }
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
         }
       val setColors: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "setColors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColors" }
+            "set_colors".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_colors" }
         }
       val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "setOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffset" }
+            "set_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offset" }
         }
       val setOffsets: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Gradient".cstr.ptr,
-            "setOffsets".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffsets" }
+            "set_offsets".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offsets" }
         }}
   }
 }

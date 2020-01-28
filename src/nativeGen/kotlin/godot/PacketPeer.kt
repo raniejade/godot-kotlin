@@ -81,50 +81,50 @@ open class PacketPeer(
       val getAvailablePacketCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "getAvailablePacketCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAvailablePacketCount" }
+            "get_available_packet_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_available_packet_count" }
         }
       val getPacket: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "getPacket".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPacket" }
+            "get_packet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_packet" }
         }
       val getPacketError: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "getPacketError".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPacketError" }
+            "get_packet_error".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_packet_error" }
         }
       val getVar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "getVar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVar" }
+            "get_var".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_var" }
         }
       val isObjectDecodingAllowed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "isObjectDecodingAllowed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isObjectDecodingAllowed" }
+            "is_object_decoding_allowed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_object_decoding_allowed" }
         }
       val putPacket: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "putPacket".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method putPacket" }
+            "put_packet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method put_packet" }
         }
       val putVar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "putVar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method putVar" }
+            "put_var".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method put_var" }
         }
       val setAllowObjectDecoding: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeer".cstr.ptr,
-            "setAllowObjectDecoding".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAllowObjectDecoding" }
+            "set_allow_object_decoding".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_allow_object_decoding" }
         }}
   }
 }

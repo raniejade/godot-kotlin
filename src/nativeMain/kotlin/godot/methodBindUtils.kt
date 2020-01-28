@@ -52,7 +52,7 @@ private fun maybeThrowException(error: godot_variant_call_error) {
     }
     godot_variant_call_error_error.GODOT_CALL_ERROR_CALL_ERROR_INVALID_ARGUMENT -> {
       throw IllegalArgumentException(
-        "Invalid argument at position ${error.argument}, expecting a ${Variant.Type.from(error.expected)}"
+        "Invalid argument at position ${error.argument}, expecting a ${Variant.Type.from(error.expected.value.toInt())}"
       )
     }
     godot_variant_call_error_error.GODOT_CALL_ERROR_CALL_ERROR_INVALID_METHOD -> {

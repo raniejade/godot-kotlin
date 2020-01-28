@@ -38,12 +38,12 @@ open class TileMap(
       setCustomTransform(value)
     }
 
-  var cellHalfOffset: Int
+  var cellHalfOffset: HalfOffset
     get() {
-       return TileMap.HalfOffset.from(getHalfOffset()) 
+       return getHalfOffset() 
     }
     set(value) {
-      setHalfOffset(TileMap.HalfOffset.from(value))
+      setHalfOffset(value.value)
     }
 
   var cellQuadrantSize: Int
@@ -62,12 +62,12 @@ open class TileMap(
       setCellSize(value)
     }
 
-  var cellTileOrigin: Int
+  var cellTileOrigin: TileOrigin
     get() {
-       return TileMap.TileOrigin.from(getTileOrigin()) 
+       return getTileOrigin() 
     }
     set(value) {
-      setTileOrigin(TileMap.TileOrigin.from(value))
+      setTileOrigin(value.value)
     }
 
   var cellYSort: Boolean
@@ -118,12 +118,12 @@ open class TileMap(
       setCollisionUseKinematic(value)
     }
 
-  var mode: Int
+  var mode: Mode
     get() {
-       return TileMap.Mode.from(getMode()) 
+       return getMode() 
     }
     set(value) {
-      setMode(TileMap.Mode.from(value))
+      setMode(value.value)
     }
 
   var occluderLightMask: Int
@@ -568,308 +568,308 @@ open class TileMap(
       val fixInvalidTiles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "fixInvalidTiles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method fixInvalidTiles" }
+            "fix_invalid_tiles".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method fix_invalid_tiles" }
         }
       val getCell: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCell".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCell" }
+            "get_cell".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cell" }
         }
       val getCellAutotileCoord: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCellAutotileCoord".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCellAutotileCoord" }
+            "get_cell_autotile_coord".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cell_autotile_coord" }
         }
       val getCellSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCellSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCellSize" }
+            "get_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
         }
       val getCellv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCellv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCellv" }
+            "get_cellv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cellv" }
         }
       val getClipUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getClipUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClipUv" }
+            "get_clip_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_clip_uv" }
         }
       val getCollisionBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionBounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionBounce" }
+            "get_collision_bounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_bounce" }
         }
       val getCollisionFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionFriction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionFriction" }
+            "get_collision_friction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_friction" }
         }
       val getCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionLayer" }
+            "get_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
         }
       val getCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionLayerBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionLayerBit" }
+            "get_collision_layer_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
+            "get_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
+            "get_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val getCollisionUseKinematic: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCollisionUseKinematic".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionUseKinematic" }
+            "get_collision_use_kinematic".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_use_kinematic" }
         }
       val getCustomTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getCustomTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCustomTransform" }
+            "get_custom_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_transform" }
         }
       val getHalfOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getHalfOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHalfOffset" }
+            "get_half_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_half_offset" }
         }
       val getMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMode" }
+            "get_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mode" }
         }
       val getOccluderLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getOccluderLightMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOccluderLightMask" }
+            "get_occluder_light_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
         }
       val getQuadrantSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getQuadrantSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getQuadrantSize" }
+            "get_quadrant_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_quadrant_size" }
         }
       val getTileOrigin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getTileOrigin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTileOrigin" }
+            "get_tile_origin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tile_origin" }
         }
       val getTileset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getTileset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTileset" }
+            "get_tileset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tileset" }
         }
       val getUsedCells: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getUsedCells".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUsedCells" }
+            "get_used_cells".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_used_cells" }
         }
       val getUsedCellsById: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getUsedCellsById".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUsedCellsById" }
+            "get_used_cells_by_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_used_cells_by_id" }
         }
       val getUsedRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "getUsedRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUsedRect" }
+            "get_used_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_used_rect" }
         }
       val isCellTransposed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "isCellTransposed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCellTransposed" }
+            "is_cell_transposed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_cell_transposed" }
         }
       val isCellXFlipped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "isCellXFlipped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCellXFlipped" }
+            "is_cell_x_flipped".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_cell_x_flipped" }
         }
       val isCellYFlipped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "isCellYFlipped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCellYFlipped" }
+            "is_cell_y_flipped".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_cell_y_flipped" }
         }
       val isYSortModeEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "isYSortModeEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isYSortModeEnabled" }
+            "is_y_sort_mode_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_y_sort_mode_enabled" }
         }
       val mapToWorld: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "mapToWorld".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method mapToWorld" }
+            "map_to_world".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method map_to_world" }
         }
       val setCell: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCell".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCell" }
+            "set_cell".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cell" }
         }
       val setCellSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCellSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCellSize" }
+            "set_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
         }
       val setCellv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCellv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCellv" }
+            "set_cellv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cellv" }
         }
       val setClipUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setClipUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setClipUv" }
+            "set_clip_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_clip_uv" }
         }
       val setCollisionBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionBounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionBounce" }
+            "set_collision_bounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_bounce" }
         }
       val setCollisionFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionFriction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionFriction" }
+            "set_collision_friction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_friction" }
         }
       val setCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionLayer" }
+            "set_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
         }
       val setCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionLayerBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionLayerBit" }
+            "set_collision_layer_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
+            "set_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
+            "set_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
         }
       val setCollisionUseKinematic: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCollisionUseKinematic".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionUseKinematic" }
+            "set_collision_use_kinematic".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_use_kinematic" }
         }
       val setCustomTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setCustomTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCustomTransform" }
+            "set_custom_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_transform" }
         }
       val setHalfOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setHalfOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHalfOffset" }
+            "set_half_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_half_offset" }
         }
       val setMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMode" }
+            "set_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mode" }
         }
       val setOccluderLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setOccluderLightMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOccluderLightMask" }
+            "set_occluder_light_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
         }
       val setQuadrantSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setQuadrantSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setQuadrantSize" }
+            "set_quadrant_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_quadrant_size" }
         }
       val setTileOrigin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setTileOrigin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTileOrigin" }
+            "set_tile_origin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tile_origin" }
         }
       val setTileset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setTileset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTileset" }
+            "set_tileset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tileset" }
         }
       val setYSortMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "setYSortMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setYSortMode" }
+            "set_y_sort_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_y_sort_mode" }
         }
       val updateBitmaskArea: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "updateBitmaskArea".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updateBitmaskArea" }
+            "update_bitmask_area".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_bitmask_area" }
         }
       val updateBitmaskRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "updateBitmaskRegion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updateBitmaskRegion" }
+            "update_bitmask_region".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_bitmask_region" }
         }
       val updateDirtyQuadrants: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "updateDirtyQuadrants".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updateDirtyQuadrants" }
+            "update_dirty_quadrants".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_dirty_quadrants" }
         }
       val worldToMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileMap".cstr.ptr,
-            "worldToMap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method worldToMap" }
+            "world_to_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method world_to_map" }
         }}
   }
 }

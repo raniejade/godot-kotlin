@@ -44,15 +44,15 @@ open class SceneTreeTimer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTreeTimer".cstr.ptr,
-            "getTimeLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTimeLeft" }
+            "get_time_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_time_left" }
         }
       val setTimeLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTreeTimer".cstr.ptr,
-            "setTimeLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTimeLeft" }
+            "set_time_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_time_left" }
         }}
   }
 }

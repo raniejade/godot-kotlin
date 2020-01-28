@@ -72,29 +72,29 @@ open class NavigationMeshInstance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "getNavigationMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNavigationMesh" }
+            "get_navigation_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_navigation_mesh" }
         }
       val isEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "isEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEnabled" }
+            "is_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
         }
       val setEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "setEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnabled" }
+            "set_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
         }
       val setNavigationMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationMeshInstance".cstr.ptr,
-            "setNavigationMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNavigationMesh" }
+            "set_navigation_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_navigation_mesh" }
         }}
   }
 }

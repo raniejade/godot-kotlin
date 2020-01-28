@@ -179,155 +179,155 @@ open class AnimationNodeStateMachine(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "addNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addNode" }
+            "add_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_node" }
         }
       val addTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "addTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addTransition" }
+            "add_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_transition" }
         }
       val getEndNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getEndNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEndNode" }
+            "get_end_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_end_node" }
         }
       val getGraphOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getGraphOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGraphOffset" }
+            "get_graph_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_graph_offset" }
         }
       val getNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNode" }
+            "get_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node" }
         }
       val getNodeName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getNodeName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodeName" }
+            "get_node_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_name" }
         }
       val getNodePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getNodePosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodePosition" }
+            "get_node_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_position" }
         }
       val getStartNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getStartNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStartNode" }
+            "get_start_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_start_node" }
         }
       val getTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransition" }
+            "get_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transition" }
         }
       val getTransitionCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getTransitionCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransitionCount" }
+            "get_transition_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transition_count" }
         }
       val getTransitionFrom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getTransitionFrom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransitionFrom" }
+            "get_transition_from".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transition_from" }
         }
       val getTransitionTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "getTransitionTo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransitionTo" }
+            "get_transition_to".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transition_to" }
         }
       val hasNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "hasNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasNode" }
+            "has_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_node" }
         }
       val hasTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "hasTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasTransition" }
+            "has_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_transition" }
         }
       val removeNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "removeNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeNode" }
+            "remove_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_node" }
         }
       val removeTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "removeTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeTransition" }
+            "remove_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_transition" }
         }
       val removeTransitionByIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "removeTransitionByIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeTransitionByIndex" }
+            "remove_transition_by_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_transition_by_index" }
         }
       val renameNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "renameNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method renameNode" }
+            "rename_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rename_node" }
         }
       val setEndNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "setEndNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEndNode" }
+            "set_end_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_end_node" }
         }
       val setGraphOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "setGraphOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGraphOffset" }
+            "set_graph_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_graph_offset" }
         }
       val setNodePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "setNodePosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNodePosition" }
+            "set_node_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_node_position" }
         }
       val setStartNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachine".cstr.ptr,
-            "setStartNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStartNode" }
+            "set_start_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_start_node" }
         }}
   }
 }

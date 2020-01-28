@@ -2,7 +2,6 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Rect2
 import godot.core.Variant
@@ -22,14 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class BitMap(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var data: Dictionary
-    get() {
-       return _getData() 
-    }
-    set(value) {
-      _setData(value)
-    }
-
   fun create(size: Vector2) {
     val _arg = Variant.new(size)
     __method_bind.create.call(this._handle, _arg, 1)
@@ -110,50 +101,50 @@ open class BitMap(
       val createFromImageAlpha: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "createFromImageAlpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createFromImageAlpha" }
+            "create_from_image_alpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_from_image_alpha" }
         }
       val getBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "getBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBit" }
+            "get_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bit" }
         }
       val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "getSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSize" }
+            "get_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getTrueBitCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "getTrueBitCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTrueBitCount" }
+            "get_true_bit_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_true_bit_count" }
         }
       val growMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "growMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method growMask" }
+            "grow_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method grow_mask" }
         }
       val opaqueToPolygons: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "opaqueToPolygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method opaqueToPolygons" }
+            "opaque_to_polygons".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method opaque_to_polygons" }
         }
       val setBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "setBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBit" }
+            "set_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bit" }
         }
       val setBitRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitMap".cstr.ptr,
-            "setBitRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBitRect" }
+            "set_bit_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bit_rect" }
         }}
   }
 }

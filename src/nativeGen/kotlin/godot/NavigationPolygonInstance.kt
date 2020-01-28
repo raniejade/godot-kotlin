@@ -72,29 +72,29 @@ open class NavigationPolygonInstance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "getNavigationPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNavigationPolygon" }
+            "get_navigation_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_navigation_polygon" }
         }
       val isEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "isEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEnabled" }
+            "is_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
         }
       val setEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "setEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnabled" }
+            "set_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
         }
       val setNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "setNavigationPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNavigationPolygon" }
+            "set_navigation_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_navigation_polygon" }
         }}
   }
 }

@@ -65,26 +65,26 @@ open class Material(
       val getNextPass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "getNextPass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNextPass" }
+            "get_next_pass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_next_pass" }
         }
       val getRenderPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "getRenderPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRenderPriority" }
+            "get_render_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_render_priority" }
         }
       val setNextPass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "setNextPass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNextPass" }
+            "set_next_pass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_next_pass" }
         }
       val setRenderPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Material".cstr.ptr,
-            "setRenderPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRenderPriority" }
+            "set_render_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_render_priority" }
         }}
   }
 }

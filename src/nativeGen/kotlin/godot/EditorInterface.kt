@@ -144,148 +144,148 @@ open class EditorInterface(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "editResource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method editResource" }
+            "edit_resource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method edit_resource" }
         }
       val getBaseControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getBaseControl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBaseControl" }
+            "get_base_control".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_control" }
         }
       val getEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getEditedSceneRoot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditedSceneRoot" }
+            "get_edited_scene_root".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_edited_scene_root" }
         }
       val getEditorSettings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getEditorSettings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditorSettings" }
+            "get_editor_settings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_editor_settings" }
         }
       val getEditorViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getEditorViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditorViewport" }
+            "get_editor_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_editor_viewport" }
         }
       val getInspector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getInspector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInspector" }
+            "get_inspector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_inspector" }
         }
       val getOpenScenes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getOpenScenes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOpenScenes" }
+            "get_open_scenes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_open_scenes" }
         }
       val getResourceFilesystem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getResourceFilesystem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResourceFilesystem" }
+            "get_resource_filesystem".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resource_filesystem" }
         }
       val getResourcePreviewer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getResourcePreviewer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResourcePreviewer" }
+            "get_resource_previewer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resource_previewer" }
         }
       val getScriptEditor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getScriptEditor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScriptEditor" }
+            "get_script_editor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_script_editor" }
         }
       val getSelectedPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getSelectedPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSelectedPath" }
+            "get_selected_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_selected_path" }
         }
       val getSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "getSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSelection" }
+            "get_selection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_selection" }
         }
       val inspectObject: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "inspectObject".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method inspectObject" }
+            "inspect_object".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method inspect_object" }
         }
       val isPluginEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "isPluginEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPluginEnabled" }
+            "is_plugin_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_plugin_enabled" }
         }
       val makeMeshPreviews: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "makeMeshPreviews".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method makeMeshPreviews" }
+            "make_mesh_previews".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method make_mesh_previews" }
         }
       val openSceneFromPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "openSceneFromPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method openSceneFromPath" }
+            "open_scene_from_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method open_scene_from_path" }
         }
       val reloadSceneFromPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "reloadSceneFromPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reloadSceneFromPath" }
+            "reload_scene_from_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reload_scene_from_path" }
         }
       val saveScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "saveScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method saveScene" }
+            "save_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_scene" }
         }
       val saveSceneAs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "saveSceneAs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method saveSceneAs" }
+            "save_scene_as".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_scene_as" }
         }
       val selectFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "selectFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method selectFile" }
+            "select_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method select_file" }
         }
       val setPluginEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "setPluginEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPluginEnabled" }
+            "set_plugin_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_plugin_enabled" }
         }}
   }
 }

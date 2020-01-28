@@ -104,43 +104,43 @@ open class WebSocketPeer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "getConnectedHost".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectedHost" }
+            "get_connected_host".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connected_host" }
         }
       val getConnectedPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "getConnectedPort".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectedPort" }
+            "get_connected_port".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connected_port" }
         }
       val getWriteMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "getWriteMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWriteMode" }
+            "get_write_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_write_mode" }
         }
       val isConnectedToHost: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "isConnectedToHost".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isConnectedToHost" }
+            "is_connected_to_host".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_connected_to_host" }
         }
       val setWriteMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "setWriteMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWriteMode" }
+            "set_write_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_write_mode" }
         }
       val wasStringPacket: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebSocketPeer".cstr.ptr,
-            "wasStringPacket".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method wasStringPacket" }
+            "was_string_packet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method was_string_packet" }
         }}
   }
 }

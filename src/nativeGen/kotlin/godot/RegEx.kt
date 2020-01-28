@@ -122,26 +122,26 @@ open class RegEx(
       val getGroupCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
-            "getGroupCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGroupCount" }
+            "get_group_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_group_count" }
         }
       val getNames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
-            "getNames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNames" }
+            "get_names".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_names" }
         }
       val getPattern: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
-            "getPattern".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPattern" }
+            "get_pattern".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pattern" }
         }
       val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
-            "isValid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isValid" }
+            "is_valid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid" }
         }
       val search: CPointer<godot_method_bind>
         get() = memScoped {
@@ -152,8 +152,8 @@ open class RegEx(
       val searchAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegEx".cstr.ptr,
-            "searchAll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method searchAll" }
+            "search_all".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method search_all" }
         }
       val sub: CPointer<godot_method_bind>
         get() = memScoped {

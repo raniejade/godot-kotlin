@@ -38,12 +38,12 @@ open class AnimationTree(
       setAnimationPlayer(value)
     }
 
-  var processMode: Int
+  var processMode: AnimationProcessMode
     get() {
-       return AnimationTree.AnimationProcessMode.from(getProcessMode()) 
+       return getProcessMode() 
     }
     set(value) {
-      setProcessMode(AnimationTree.AnimationProcessMode.from(value))
+      setProcessMode(value.value)
     }
 
   var rootMotionTrack: NodePath
@@ -54,7 +54,7 @@ open class AnimationTree(
       setRootMotionTrack(value)
     }
 
-  var treeRoot: AnimationRootNode
+  var treeRoot: AnimationNode
     get() {
        return getTreeRoot() 
     }
@@ -181,85 +181,85 @@ open class AnimationTree(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "getAnimationPlayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAnimationPlayer" }
+            "get_animation_player".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_animation_player" }
         }
       val getProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "getProcessMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getProcessMode" }
+            "get_process_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_process_mode" }
         }
       val getRootMotionTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "getRootMotionTrack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRootMotionTrack" }
+            "get_root_motion_track".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_root_motion_track" }
         }
       val getRootMotionTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "getRootMotionTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRootMotionTransform" }
+            "get_root_motion_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_root_motion_transform" }
         }
       val getTreeRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "getTreeRoot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTreeRoot" }
+            "get_tree_root".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tree_root" }
         }
       val isActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "isActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isActive" }
+            "is_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_active" }
         }
       val renameParameter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "renameParameter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method renameParameter" }
+            "rename_parameter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rename_parameter" }
         }
       val setActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "setActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setActive" }
+            "set_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_active" }
         }
       val setAnimationPlayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "setAnimationPlayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAnimationPlayer" }
+            "set_animation_player".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_animation_player" }
         }
       val setProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "setProcessMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setProcessMode" }
+            "set_process_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_process_mode" }
         }
       val setRootMotionTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "setRootMotionTrack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRootMotionTrack" }
+            "set_root_motion_track".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_root_motion_track" }
         }
       val setTreeRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "setTreeRoot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTreeRoot" }
+            "set_tree_root".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tree_root" }
         }}
   }
 }

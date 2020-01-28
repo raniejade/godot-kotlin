@@ -53,15 +53,15 @@ open class MultiMeshInstance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance".cstr.ptr,
-            "getMultimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMultimesh" }
+            "get_multimesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_multimesh" }
         }
       val setMultimesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance".cstr.ptr,
-            "setMultimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMultimesh" }
+            "set_multimesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_multimesh" }
         }}
   }
 }

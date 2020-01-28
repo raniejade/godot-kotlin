@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class LightOccluder2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  var lightMask: Int
-    get() {
-       return getOccluderLightMask() 
-    }
-    set(value) {
-      setOccluderLightMask(value)
-    }
-
   var occluder: OccluderPolygon2D
     get() {
        return getOccluderPolygon() 
@@ -72,29 +64,29 @@ open class LightOccluder2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "getOccluderLightMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOccluderLightMask" }
+            "get_occluder_light_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
         }
       val getOccluderPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "getOccluderPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOccluderPolygon" }
+            "get_occluder_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_occluder_polygon" }
         }
       val setOccluderLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "setOccluderLightMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOccluderLightMask" }
+            "set_occluder_light_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
         }
       val setOccluderPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "setOccluderPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOccluderPolygon" }
+            "set_occluder_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_occluder_polygon" }
         }}
   }
 }

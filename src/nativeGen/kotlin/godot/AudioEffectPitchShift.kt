@@ -54,15 +54,15 @@ open class AudioEffectPitchShift(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "getPitchScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPitchScale" }
+            "get_pitch_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
         }
       val setPitchScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "setPitchScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPitchScale" }
+            "set_pitch_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
         }}
   }
 }

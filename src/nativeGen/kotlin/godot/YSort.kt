@@ -52,14 +52,14 @@ open class YSort(
       val isSortEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
-            "isSortEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSortEnabled" }
+            "is_sort_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_sort_enabled" }
         }
       val setSortEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
-            "setSortEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSortEnabled" }
+            "set_sort_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sort_enabled" }
         }}
   }
 }

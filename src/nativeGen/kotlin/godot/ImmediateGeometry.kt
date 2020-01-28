@@ -101,15 +101,15 @@ open class ImmediateGeometry(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "addSphere".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSphere" }
+            "add_sphere".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_sphere" }
         }
       val addVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "addVertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addVertex" }
+            "add_vertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_vertex" }
         }
       val begin: CPointer<godot_method_bind>
         get() = memScoped {
@@ -136,36 +136,36 @@ open class ImmediateGeometry(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "setColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColor" }
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
         }
       val setNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "setNormal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNormal" }
+            "set_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_normal" }
         }
       val setTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "setTangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTangent" }
+            "set_tangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tangent" }
         }
       val setUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "setUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUv" }
+            "set_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_uv" }
         }
       val setUv2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ImmediateGeometry".cstr.ptr,
-            "setUv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUv2" }
+            "set_uv2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_uv2" }
         }}
   }
 }

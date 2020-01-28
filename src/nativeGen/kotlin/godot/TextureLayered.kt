@@ -2,7 +2,6 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
@@ -18,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class TextureLayered(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var data: Dictionary
-    get() {
-       return _getData() 
-    }
-    set(value) {
-      _setData(value)
-    }
-
   var flags: Int
     get() {
        return getFlags() 
@@ -156,64 +147,64 @@ open class TextureLayered(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "getDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDepth" }
+            "get_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_depth" }
         }
       val getFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "getFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFlags" }
+            "get_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_flags" }
         }
       val getFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "getFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFormat" }
+            "get_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_format" }
         }
       val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "getHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHeight" }
+            "get_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_height" }
         }
       val getLayerData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "getLayerData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLayerData" }
+            "get_layer_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_layer_data" }
         }
       val getWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "getWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWidth" }
+            "get_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_width" }
         }
       val setDataPartial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "setDataPartial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDataPartial" }
+            "set_data_partial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_data_partial" }
         }
       val setFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "setFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlags" }
+            "set_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flags" }
         }
       val setLayerData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureLayered".cstr.ptr,
-            "setLayerData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLayerData" }
+            "set_layer_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_layer_data" }
         }}
   }
 }

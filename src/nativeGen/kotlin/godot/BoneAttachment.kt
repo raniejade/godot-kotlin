@@ -54,15 +54,15 @@ open class BoneAttachment(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoneAttachment".cstr.ptr,
-            "getBoneName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneName" }
+            "get_bone_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_name" }
         }
       val setBoneName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoneAttachment".cstr.ptr,
-            "setBoneName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneName" }
+            "set_bone_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_name" }
         }}
   }
 }

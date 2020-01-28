@@ -54,15 +54,15 @@ open class VisualScriptVariableGet(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableGet".cstr.ptr,
-            "getVariable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVariable" }
+            "get_variable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_variable" }
         }
       val setVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableGet".cstr.ptr,
-            "setVariable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVariable" }
+            "set_variable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_variable" }
         }}
   }
 }

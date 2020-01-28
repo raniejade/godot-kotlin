@@ -163,78 +163,78 @@ open class EditorFeatureProfile(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "getFeatureName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFeatureName" }
+            "get_feature_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_feature_name" }
         }
       val isClassDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "isClassDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isClassDisabled" }
+            "is_class_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_class_disabled" }
         }
       val isClassEditorDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "isClassEditorDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isClassEditorDisabled" }
+            "is_class_editor_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_class_editor_disabled" }
         }
       val isClassPropertyDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "isClassPropertyDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isClassPropertyDisabled" }
+            "is_class_property_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_class_property_disabled" }
         }
       val isFeatureDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "isFeatureDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFeatureDisabled" }
+            "is_feature_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_feature_disabled" }
         }
       val loadFromFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "loadFromFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method loadFromFile" }
+            "load_from_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_from_file" }
         }
       val saveToFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "saveToFile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method saveToFile" }
+            "save_to_file".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_to_file" }
         }
       val setDisableClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "setDisableClass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableClass" }
+            "set_disable_class".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_class" }
         }
       val setDisableClassEditor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "setDisableClassEditor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableClassEditor" }
+            "set_disable_class_editor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_class_editor" }
         }
       val setDisableClassProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "setDisableClassProperty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableClassProperty" }
+            "set_disable_class_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_class_property" }
         }
       val setDisableFeature: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFeatureProfile".cstr.ptr,
-            "setDisableFeature".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableFeature" }
+            "set_disable_feature".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_feature" }
         }}
   }
 }

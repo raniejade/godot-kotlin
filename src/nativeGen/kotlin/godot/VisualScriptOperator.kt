@@ -17,20 +17,20 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptOperator(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var operator: Int
+  var operator: Variant.Operator
     get() {
-       return Variant.Operator.from(getOperator()) 
+       return getOperator() 
     }
     set(value) {
-      setOperator(Variant.Operator.from(value))
+      setOperator(value.value)
     }
 
-  var type: Int
+  var type: Variant.Type
     get() {
-       return Variant.Type.from(getTyped()) 
+       return getTyped() 
     }
     set(value) {
-      setTyped(Variant.Type.from(value))
+      setTyped(value.value)
     }
 
   fun getOperator(): Variant.Operator {
@@ -72,29 +72,29 @@ open class VisualScriptOperator(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptOperator".cstr.ptr,
-            "getOperator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOperator" }
+            "get_operator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_operator" }
         }
       val getTyped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptOperator".cstr.ptr,
-            "getTyped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTyped" }
+            "get_typed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_typed" }
         }
       val setOperator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptOperator".cstr.ptr,
-            "setOperator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOperator" }
+            "set_operator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_operator" }
         }
       val setTyped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptOperator".cstr.ptr,
-            "setTyped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTyped" }
+            "set_typed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_typed" }
         }}
   }
 }

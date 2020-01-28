@@ -89,43 +89,43 @@ open class MeshInstance2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
-            "getMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMesh" }
+            "get_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val getNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
-            "getNormalMap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNormalMap" }
+            "get_normal_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_normal_map" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val setMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
-            "setMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMesh" }
+            "set_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
         }
       val setNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
-            "setNormalMap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNormalMap" }
+            "set_normal_map".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_normal_map" }
         }
       val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance2D".cstr.ptr,
-            "setTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTexture" }
+            "set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }}
   }
 }

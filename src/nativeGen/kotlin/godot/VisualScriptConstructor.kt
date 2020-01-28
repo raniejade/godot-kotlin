@@ -26,12 +26,12 @@ open class VisualScriptConstructor(
       setConstructor(value)
     }
 
-  var type: Int
+  var type: Variant.Type
     get() {
-       return Variant.Type.from(getConstructorType()) 
+       return getConstructorType() 
     }
     set(value) {
-      setConstructorType(Variant.Type.from(value))
+      setConstructorType(value.value)
     }
 
   fun getConstructor(): Dictionary {
@@ -73,29 +73,29 @@ open class VisualScriptConstructor(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
-            "getConstructor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstructor" }
+            "get_constructor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constructor" }
         }
       val getConstructorType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
-            "getConstructorType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstructorType" }
+            "get_constructor_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constructor_type" }
         }
       val setConstructor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
-            "setConstructor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConstructor" }
+            "set_constructor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constructor" }
         }
       val setConstructorType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstructor".cstr.ptr,
-            "setConstructorType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConstructorType" }
+            "set_constructor_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constructor_type" }
         }}
   }
 }

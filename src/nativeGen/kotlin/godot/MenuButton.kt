@@ -17,14 +17,6 @@ import kotlinx.cinterop.reinterpret
 open class MenuButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
-  var items: VariantArray
-    get() {
-       return _getItems() 
-    }
-    set(value) {
-      _setItems(value)
-    }
-
   var switchOnHover: Boolean
     get() {
        return isSwitchOnHover() 
@@ -70,26 +62,26 @@ open class MenuButton(
       val getPopup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "getPopup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPopup" }
+            "get_popup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_popup" }
         }
       val isSwitchOnHover: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "isSwitchOnHover".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSwitchOnHover" }
+            "is_switch_on_hover".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_switch_on_hover" }
         }
       val setDisableShortcuts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "setDisableShortcuts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableShortcuts" }
+            "set_disable_shortcuts".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_shortcuts" }
         }
       val setSwitchOnHover: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "setSwitchOnHover".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSwitchOnHover" }
+            "set_switch_on_hover".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_switch_on_hover" }
         }}
   }
 }

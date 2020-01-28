@@ -84,15 +84,16 @@ open class EditorSceneImporter(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-            "importAnimationFromOtherImporter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method importAnimationFromOtherImporter" }
+            "import_animation_from_other_importer".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method import_animation_from_other_importer" }
         }
       val importSceneFromOtherImporter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-            "importSceneFromOtherImporter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method importSceneFromOtherImporter" }
+            "import_scene_from_other_importer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method import_scene_from_other_importer" }
         }}
   }
 }

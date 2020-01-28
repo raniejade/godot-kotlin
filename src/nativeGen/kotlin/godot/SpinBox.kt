@@ -19,12 +19,12 @@ import kotlinx.cinterop.reinterpret
 open class SpinBox(
   _handle: COpaquePointer
 ) : Range(_handle) {
-  var align: Int
+  var align: LineEdit.Align
     get() {
-       return LineEdit.Align.from(getAlign()) 
+       return getAlign() 
     }
     set(value) {
-      setAlign(LineEdit.Align.from(value))
+      setAlign(value.value)
     }
 
   var editable: Boolean
@@ -113,56 +113,56 @@ open class SpinBox(
       val getAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "getAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAlign" }
+            "get_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_align" }
         }
       val getLineEdit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "getLineEdit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLineEdit" }
+            "get_line_edit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_line_edit" }
         }
       val getPrefix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "getPrefix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPrefix" }
+            "get_prefix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_prefix" }
         }
       val getSuffix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "getSuffix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSuffix" }
+            "get_suffix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_suffix" }
         }
       val isEditable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "isEditable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEditable" }
+            "is_editable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_editable" }
         }
       val setAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "setAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAlign" }
+            "set_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_align" }
         }
       val setEditable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "setEditable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEditable" }
+            "set_editable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_editable" }
         }
       val setPrefix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "setPrefix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPrefix" }
+            "set_prefix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_prefix" }
         }
       val setSuffix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpinBox".cstr.ptr,
-            "setSuffix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSuffix" }
+            "set_suffix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_suffix" }
         }}
   }
 }

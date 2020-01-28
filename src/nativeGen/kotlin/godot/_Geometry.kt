@@ -527,208 +527,211 @@ open class _Geometry(
       val buildBoxPlanes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "buildBoxPlanes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method buildBoxPlanes" }
+            "build_box_planes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method build_box_planes" }
         }
       val buildCapsulePlanes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "buildCapsulePlanes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method buildCapsulePlanes" }
+            "build_capsule_planes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method build_capsule_planes" }
         }
       val buildCylinderPlanes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "buildCylinderPlanes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method buildCylinderPlanes" }
+            "build_cylinder_planes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method build_cylinder_planes" }
         }
       val clipPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "clipPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clipPolygon" }
+            "clip_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clip_polygon" }
         }
       val clipPolygons2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "clipPolygons2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clipPolygons2d" }
+            "clip_polygons_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clip_polygons_2d" }
         }
       val clipPolylineWithPolygon2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "clipPolylineWithPolygon2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clipPolylineWithPolygon2d" }
+            "clip_polyline_with_polygon_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clip_polyline_with_polygon_2d" }
         }
       val convexHull2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "convexHull2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method convexHull2d" }
+            "convex_hull_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method convex_hull_2d" }
         }
       val excludePolygons2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "excludePolygons2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method excludePolygons2d" }
+            "exclude_polygons_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method exclude_polygons_2d" }
         }
       val getClosestPointToSegment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getClosestPointToSegment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointToSegment" }
+            "get_closest_point_to_segment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_closest_point_to_segment" }
         }
       val getClosestPointToSegment2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getClosestPointToSegment2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointToSegment2d" }
+            "get_closest_point_to_segment_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_closest_point_to_segment_2d" }
         }
       val getClosestPointToSegmentUncapped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getClosestPointToSegmentUncapped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointToSegmentUncapped" }
+            "get_closest_point_to_segment_uncapped".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method get_closest_point_to_segment_uncapped" }
         }
       val getClosestPointToSegmentUncapped2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getClosestPointToSegmentUncapped2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointToSegmentUncapped2d"
-            }
+            "get_closest_point_to_segment_uncapped_2d".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method get_closest_point_to_segment_uncapped_2d" }
         }
       val getClosestPointsBetweenSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getClosestPointsBetweenSegments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointsBetweenSegments" }
+            "get_closest_points_between_segments".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method get_closest_points_between_segments" }
         }
       val getClosestPointsBetweenSegments2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getClosestPointsBetweenSegments2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClosestPointsBetweenSegments2d"
-            }
+            "get_closest_points_between_segments_2d".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method get_closest_points_between_segments_2d" }
         }
       val getUv84NormalBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "getUv84NormalBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUv84NormalBit" }
+            "get_uv84_normal_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_uv84_normal_bit" }
         }
       val intersectPolygons2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "intersectPolygons2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersectPolygons2d" }
+            "intersect_polygons_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method intersect_polygons_2d" }
         }
       val intersectPolylineWithPolygon2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "intersectPolylineWithPolygon2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersectPolylineWithPolygon2d" }
+            "intersect_polyline_with_polygon_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method intersect_polyline_with_polygon_2d"
+            }
         }
       val isPolygonClockwise: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "isPolygonClockwise".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPolygonClockwise" }
+            "is_polygon_clockwise".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_polygon_clockwise" }
         }
       val lineIntersectsLine2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "lineIntersectsLine2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lineIntersectsLine2d" }
+            "line_intersects_line_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method line_intersects_line_2d" }
         }
       val makeAtlas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "makeAtlas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method makeAtlas" }
+            "make_atlas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method make_atlas" }
         }
       val mergePolygons2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "mergePolygons2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method mergePolygons2d" }
+            "merge_polygons_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method merge_polygons_2d" }
         }
       val offsetPolygon2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "offsetPolygon2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method offsetPolygon2d" }
+            "offset_polygon_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method offset_polygon_2d" }
         }
       val offsetPolyline2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "offsetPolyline2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method offsetPolyline2d" }
+            "offset_polyline_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method offset_polyline_2d" }
         }
       val pointIsInsideTriangle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "pointIsInsideTriangle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pointIsInsideTriangle" }
+            "point_is_inside_triangle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method point_is_inside_triangle" }
         }
       val rayIntersectsTriangle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "rayIntersectsTriangle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rayIntersectsTriangle" }
+            "ray_intersects_triangle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method ray_intersects_triangle" }
         }
       val segmentIntersectsCircle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "segmentIntersectsCircle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method segmentIntersectsCircle" }
+            "segment_intersects_circle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method segment_intersects_circle" }
         }
       val segmentIntersectsConvex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "segmentIntersectsConvex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method segmentIntersectsConvex" }
+            "segment_intersects_convex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method segment_intersects_convex" }
         }
       val segmentIntersectsCylinder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "segmentIntersectsCylinder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method segmentIntersectsCylinder" }
+            "segment_intersects_cylinder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method segment_intersects_cylinder" }
         }
       val segmentIntersectsSegment2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "segmentIntersectsSegment2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method segmentIntersectsSegment2d" }
+            "segment_intersects_segment_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method segment_intersects_segment_2d" }
         }
       val segmentIntersectsSphere: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "segmentIntersectsSphere".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method segmentIntersectsSphere" }
+            "segment_intersects_sphere".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method segment_intersects_sphere" }
         }
       val segmentIntersectsTriangle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "segmentIntersectsTriangle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method segmentIntersectsTriangle" }
+            "segment_intersects_triangle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method segment_intersects_triangle" }
         }
       val transformPoints2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "transformPoints2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method transformPoints2d" }
+            "transform_points_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method transform_points_2d" }
         }
       val triangulateDelaunay2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "triangulateDelaunay2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method triangulateDelaunay2d" }
+            "triangulate_delaunay_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method triangulate_delaunay_2d" }
         }
       val triangulatePolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Geometry".cstr.ptr,
-            "triangulatePolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method triangulatePolygon" }
+            "triangulate_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method triangulate_polygon" }
         }}
   }
 }

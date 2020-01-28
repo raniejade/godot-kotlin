@@ -27,14 +27,6 @@ open class Translation(
       setLocale(value)
     }
 
-  var messages: PoolStringArray
-    get() {
-       return _getMessages() 
-    }
-    set(value) {
-      _setMessages(value)
-    }
-
   fun addMessage(srcMessage: String, xlatedMessage: String) {
     val _args = VariantArray.new()
     _args.append(srcMessage)
@@ -91,50 +83,50 @@ open class Translation(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "addMessage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addMessage" }
+            "add_message".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_message" }
         }
       val eraseMessage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "eraseMessage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method eraseMessage" }
+            "erase_message".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_message" }
         }
       val getLocale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "getLocale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLocale" }
+            "get_locale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_locale" }
         }
       val getMessage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "getMessage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMessage" }
+            "get_message".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_message" }
         }
       val getMessageCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "getMessageCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMessageCount" }
+            "get_message_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_message_count" }
         }
       val getMessageList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "getMessageList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMessageList" }
+            "get_message_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_message_list" }
         }
       val setLocale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Translation".cstr.ptr,
-            "setLocale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLocale" }
+            "set_locale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_locale" }
         }}
   }
 }

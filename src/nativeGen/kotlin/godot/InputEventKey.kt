@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class InputEventKey(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
-  var echo: Int
+  var echo: Boolean
     get() {
        return isEcho() 
     }
@@ -103,50 +103,50 @@ open class InputEventKey(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "getScancode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScancode" }
+            "get_scancode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scancode" }
         }
       val getScancodeWithModifiers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "getScancodeWithModifiers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScancodeWithModifiers" }
+            "get_scancode_with_modifiers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scancode_with_modifiers" }
         }
       val getUnicode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "getUnicode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUnicode" }
+            "get_unicode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_unicode" }
         }
       val setEcho: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "setEcho".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEcho" }
+            "set_echo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_echo" }
         }
       val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "setPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressed" }
+            "set_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }
       val setScancode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "setScancode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScancode" }
+            "set_scancode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_scancode" }
         }
       val setUnicode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventKey".cstr.ptr,
-            "setUnicode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUnicode" }
+            "set_unicode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_unicode" }
         }}
   }
 }

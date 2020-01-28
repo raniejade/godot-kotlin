@@ -21,22 +21,6 @@ import kotlinx.cinterop.reinterpret
 open class SpriteFrames(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var animations: VariantArray
-    get() {
-       return _getAnimations() 
-    }
-    set(value) {
-      _setAnimations(value)
-    }
-
-  var frames: VariantArray
-    get() {
-       return _getFrames() 
-    }
-    set(value) {
-      _setFrames(value)
-    }
-
   fun addAnimation(anim: String) {
     val _arg = Variant.new(anim)
     __method_bind.addAnimation.call(this._handle, _arg, 1)
@@ -163,15 +147,15 @@ open class SpriteFrames(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "addAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addAnimation" }
+            "add_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_animation" }
         }
       val addFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "addFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addFrame" }
+            "add_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_frame" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -184,92 +168,92 @@ open class SpriteFrames(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "clearAll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearAll" }
+            "clear_all".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_all" }
         }
       val getAnimationLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "getAnimationLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAnimationLoop" }
+            "get_animation_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_animation_loop" }
         }
       val getAnimationNames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "getAnimationNames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAnimationNames" }
+            "get_animation_names".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_animation_names" }
         }
       val getAnimationSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "getAnimationSpeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAnimationSpeed" }
+            "get_animation_speed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_animation_speed" }
         }
       val getFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "getFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFrame" }
+            "get_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame" }
         }
       val getFrameCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "getFrameCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFrameCount" }
+            "get_frame_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame_count" }
         }
       val hasAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "hasAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasAnimation" }
+            "has_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_animation" }
         }
       val removeAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "removeAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeAnimation" }
+            "remove_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_animation" }
         }
       val removeFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "removeFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeFrame" }
+            "remove_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_frame" }
         }
       val renameAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "renameAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method renameAnimation" }
+            "rename_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rename_animation" }
         }
       val setAnimationLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "setAnimationLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAnimationLoop" }
+            "set_animation_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_animation_loop" }
         }
       val setAnimationSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "setAnimationSpeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAnimationSpeed" }
+            "set_animation_speed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_animation_speed" }
         }
       val setFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteFrames".cstr.ptr,
-            "setFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFrame" }
+            "set_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frame" }
         }}
   }
 }

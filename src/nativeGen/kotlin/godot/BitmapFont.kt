@@ -4,7 +4,6 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.GDError
 import godot.core.Godot
-import godot.core.PoolIntArray
 import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
@@ -32,14 +31,6 @@ open class BitmapFont(
       setAscent(value)
     }
 
-  var chars: PoolIntArray
-    get() {
-       return _getChars() 
-    }
-    set(value) {
-      _setChars(value)
-    }
-
   var distanceField: Boolean
     get() {
        return isDistanceFieldHint() 
@@ -62,22 +53,6 @@ open class BitmapFont(
     }
     set(value) {
       setHeight(value)
-    }
-
-  var kernings: PoolIntArray
-    get() {
-       return _getKernings() 
-    }
-    set(value) {
-      _setKernings(value)
-    }
-
-  var textures: VariantArray
-    get() {
-       return _getTextures() 
-    }
-    set(value) {
-      _setTextures(value)
     }
 
   fun addChar(
@@ -192,20 +167,20 @@ open class BitmapFont(
       val addChar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "addChar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addChar" }
+            "add_char".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_char" }
         }
       val addKerningPair: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "addKerningPair".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addKerningPair" }
+            "add_kerning_pair".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_kerning_pair" }
         }
       val addTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "addTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addTexture" }
+            "add_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_texture" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -216,62 +191,62 @@ open class BitmapFont(
       val createFromFnt: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "createFromFnt".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createFromFnt" }
+            "create_from_fnt".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_from_fnt" }
         }
       val getCharSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "getCharSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCharSize" }
+            "get_char_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_char_size" }
         }
       val getFallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "getFallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFallback" }
+            "get_fallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fallback" }
         }
       val getKerningPair: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "getKerningPair".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getKerningPair" }
+            "get_kerning_pair".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_kerning_pair" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getTextureCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "getTextureCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureCount" }
+            "get_texture_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_count" }
         }
       val setAscent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "setAscent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAscent" }
+            "set_ascent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ascent" }
         }
       val setDistanceFieldHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "setDistanceFieldHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDistanceFieldHint" }
+            "set_distance_field_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_distance_field_hint" }
         }
       val setFallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "setFallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFallback" }
+            "set_fallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fallback" }
         }
       val setHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BitmapFont".cstr.ptr,
-            "setHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHeight" }
+            "set_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_height" }
         }}
   }
 }

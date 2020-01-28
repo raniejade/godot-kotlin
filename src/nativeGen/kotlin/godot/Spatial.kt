@@ -366,80 +366,80 @@ open class Spatial(
       val forceUpdateTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "forceUpdateTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method forceUpdateTransform" }
+            "force_update_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method force_update_transform" }
         }
       val getGizmo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getGizmo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGizmo" }
+            "get_gizmo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gizmo" }
         }
       val getGlobalTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getGlobalTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlobalTransform" }
+            "get_global_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_global_transform" }
         }
       val getParentSpatial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getParentSpatial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParentSpatial" }
+            "get_parent_spatial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_parent_spatial" }
         }
       val getRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRotation" }
+            "get_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rotation" }
         }
       val getRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRotationDegrees" }
+            "get_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rotation_degrees" }
         }
       val getScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getScale" }
+            "get_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_scale" }
         }
       val getTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransform" }
+            "get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val getTranslation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getTranslation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTranslation" }
+            "get_translation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_translation" }
         }
       val getWorld: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "getWorld".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWorld" }
+            "get_world".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_world" }
         }
       val globalRotate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "globalRotate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method globalRotate" }
+            "global_rotate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_rotate" }
         }
       val globalScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "globalScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method globalScale" }
+            "global_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_scale" }
         }
       val globalTranslate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "globalTranslate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method globalTranslate" }
+            "global_translate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method global_translate" }
         }
       val hide: CPointer<godot_method_bind>
         get() = memScoped {
@@ -450,51 +450,52 @@ open class Spatial(
       val isLocalTransformNotificationEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "isLocalTransformNotificationEnabled".cstr.ptr)
+            "is_local_transform_notification_enabled".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method isLocalTransformNotificationEnabled" }
+            "No method_bind found for method is_local_transform_notification_enabled" }
         }
       val isScaleDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "isScaleDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isScaleDisabled" }
+            "is_scale_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_scale_disabled" }
         }
       val isSetAsToplevel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "isSetAsToplevel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSetAsToplevel" }
+            "is_set_as_toplevel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_set_as_toplevel" }
         }
       val isTransformNotificationEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "isTransformNotificationEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isTransformNotificationEnabled" }
+            "is_transform_notification_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_transform_notification_enabled"
+            }
         }
       val isVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "isVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isVisible" }
+            "is_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_visible" }
         }
       val isVisibleInTree: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "isVisibleInTree".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isVisibleInTree" }
+            "is_visible_in_tree".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_visible_in_tree" }
         }
       val lookAt: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "lookAt".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lookAt" }
+            "look_at".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method look_at" }
         }
       val lookAtFromPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "lookAtFromPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method lookAtFromPosition" }
+            "look_at_from_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method look_at_from_position" }
         }
       val orthonormalize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -511,116 +512,117 @@ open class Spatial(
       val rotateObjectLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "rotateObjectLocal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rotateObjectLocal" }
+            "rotate_object_local".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rotate_object_local" }
         }
       val rotateX: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "rotateX".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rotateX" }
+            "rotate_x".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rotate_x" }
         }
       val rotateY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "rotateY".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rotateY" }
+            "rotate_y".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rotate_y" }
         }
       val rotateZ: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "rotateZ".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rotateZ" }
+            "rotate_z".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method rotate_z" }
         }
       val scaleObjectLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "scaleObjectLocal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scaleObjectLocal" }
+            "scale_object_local".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scale_object_local" }
         }
       val setAsToplevel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setAsToplevel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAsToplevel" }
+            "set_as_toplevel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_as_toplevel" }
         }
       val setDisableScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setDisableScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDisableScale" }
+            "set_disable_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_disable_scale" }
         }
       val setGizmo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setGizmo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGizmo" }
+            "set_gizmo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gizmo" }
         }
       val setGlobalTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setGlobalTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlobalTransform" }
+            "set_global_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_global_transform" }
         }
       val setIdentity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setIdentity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIdentity" }
+            "set_identity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_identity" }
         }
       val setIgnoreTransformNotification: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setIgnoreTransformNotification".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIgnoreTransformNotification" }
+            "set_ignore_transform_notification".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ignore_transform_notification"
+            }
         }
       val setNotifyLocalTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setNotifyLocalTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNotifyLocalTransform" }
+            "set_notify_local_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_notify_local_transform" }
         }
       val setNotifyTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setNotifyTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNotifyTransform" }
+            "set_notify_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_notify_transform" }
         }
       val setRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRotation" }
+            "set_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rotation" }
         }
       val setRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRotationDegrees" }
+            "set_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rotation_degrees" }
         }
       val setScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScale" }
+            "set_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_scale" }
         }
       val setTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTransform" }
+            "set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_transform" }
         }
       val setTranslation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setTranslation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTranslation" }
+            "set_translation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_translation" }
         }
       val setVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "setVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVisible" }
+            "set_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_visible" }
         }
       val show: CPointer<godot_method_bind>
         get() = memScoped {
@@ -631,14 +633,14 @@ open class Spatial(
       val toGlobal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "toGlobal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method toGlobal" }
+            "to_global".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method to_global" }
         }
       val toLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "toLocal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method toLocal" }
+            "to_local".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method to_local" }
         }
       val translate: CPointer<godot_method_bind>
         get() = memScoped {
@@ -649,14 +651,14 @@ open class Spatial(
       val translateObjectLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "translateObjectLocal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method translateObjectLocal" }
+            "translate_object_local".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method translate_object_local" }
         }
       val updateGizmo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Spatial".cstr.ptr,
-            "updateGizmo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method updateGizmo" }
+            "update_gizmo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method update_gizmo" }
         }}
   }
 }

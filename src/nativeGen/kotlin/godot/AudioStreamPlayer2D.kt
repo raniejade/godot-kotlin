@@ -68,14 +68,6 @@ open class AudioStreamPlayer2D(
       setPitchScale(value)
     }
 
-  var playing: Boolean
-    get() {
-       return isPlaying() 
-    }
-    set(value) {
-      _setPlaying(value)
-    }
-
   var stream: AudioStream
     get() {
        return getStream() 
@@ -238,85 +230,85 @@ open class AudioStreamPlayer2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getAreaMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAreaMask" }
+            "get_area_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_area_mask" }
         }
       val getAttenuation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getAttenuation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAttenuation" }
+            "get_attenuation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_attenuation" }
         }
       val getBus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getBus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBus" }
+            "get_bus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus" }
         }
       val getMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getMaxDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaxDistance" }
+            "get_max_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_distance" }
         }
       val getPitchScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getPitchScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPitchScale" }
+            "get_pitch_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
         }
       val getPlaybackPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getPlaybackPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPlaybackPosition" }
+            "get_playback_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_playback_position" }
         }
       val getStream: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getStream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStream" }
+            "get_stream".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stream" }
         }
       val getStreamPaused: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getStreamPaused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStreamPaused" }
+            "get_stream_paused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stream_paused" }
         }
       val getStreamPlayback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getStreamPlayback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStreamPlayback" }
+            "get_stream_playback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stream_playback" }
         }
       val getVolumeDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "getVolumeDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVolumeDb" }
+            "get_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_volume_db" }
         }
       val isAutoplayEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "isAutoplayEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isAutoplayEnabled" }
+            "is_autoplay_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_autoplay_enabled" }
         }
       val isPlaying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "isPlaying".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPlaying" }
+            "is_playing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_playing" }
         }
       val play: CPointer<godot_method_bind>
         get() = memScoped {
@@ -336,64 +328,64 @@ open class AudioStreamPlayer2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setAreaMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAreaMask" }
+            "set_area_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_area_mask" }
         }
       val setAttenuation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setAttenuation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAttenuation" }
+            "set_attenuation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_attenuation" }
         }
       val setAutoplay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setAutoplay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutoplay" }
+            "set_autoplay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autoplay" }
         }
       val setBus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setBus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBus" }
+            "set_bus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus" }
         }
       val setMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setMaxDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaxDistance" }
+            "set_max_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_distance" }
         }
       val setPitchScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setPitchScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPitchScale" }
+            "set_pitch_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
         }
       val setStream: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setStream".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStream" }
+            "set_stream".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stream" }
         }
       val setStreamPaused: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setStreamPaused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStreamPaused" }
+            "set_stream_paused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stream_paused" }
         }
       val setVolumeDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamPlayer2D".cstr.ptr,
-            "setVolumeDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVolumeDb" }
+            "set_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_volume_db" }
         }
       val stop: CPointer<godot_method_bind>
         get() = memScoped {

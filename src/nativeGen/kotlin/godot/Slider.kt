@@ -26,14 +26,6 @@ open class Slider(
       setEditable(value)
     }
 
-  var focusMode: Int
-    get() {
-       return Control.FocusMode.from(getFocusMode()) 
-    }
-    set(value) {
-      setFocusMode(Control.FocusMode.from(value))
-    }
-
   var scrollable: Boolean
     get() {
        return isScrollable() 
@@ -106,50 +98,50 @@ open class Slider(
       val getTicks: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "getTicks".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTicks" }
+            "get_ticks".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ticks" }
         }
       val getTicksOnBorders: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "getTicksOnBorders".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTicksOnBorders" }
+            "get_ticks_on_borders".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ticks_on_borders" }
         }
       val isEditable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "isEditable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEditable" }
+            "is_editable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_editable" }
         }
       val isScrollable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "isScrollable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isScrollable" }
+            "is_scrollable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_scrollable" }
         }
       val setEditable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "setEditable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEditable" }
+            "set_editable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_editable" }
         }
       val setScrollable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "setScrollable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScrollable" }
+            "set_scrollable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_scrollable" }
         }
       val setTicks: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "setTicks".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTicks" }
+            "set_ticks".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ticks" }
         }
       val setTicksOnBorders: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Slider".cstr.ptr,
-            "setTicksOnBorders".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTicksOnBorders" }
+            "set_ticks_on_borders".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ticks_on_borders" }
         }}
   }
 }

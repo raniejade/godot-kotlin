@@ -60,15 +60,15 @@ open class VisualScriptFunctionState(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "connectToSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connectToSignal" }
+            "connect_to_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method connect_to_signal" }
         }
       val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "isValid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isValid" }
+            "is_valid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid" }
         }
       val resume: CPointer<godot_method_bind>
         get() = memScoped {

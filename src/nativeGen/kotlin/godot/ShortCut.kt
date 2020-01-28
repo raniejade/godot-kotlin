@@ -69,32 +69,32 @@ open class ShortCut(
       val getAsText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "getAsText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAsText" }
+            "get_as_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_as_text" }
         }
       val getShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "getShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getShortcut" }
+            "get_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_shortcut" }
         }
       val isShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "isShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isShortcut" }
+            "is_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_shortcut" }
         }
       val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "isValid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isValid" }
+            "is_valid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid" }
         }
       val setShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "setShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setShortcut" }
+            "set_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_shortcut" }
         }}
   }
 }

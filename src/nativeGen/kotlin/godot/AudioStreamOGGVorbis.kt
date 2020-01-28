@@ -92,43 +92,43 @@ open class AudioStreamOGGVorbis(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamOGGVorbis".cstr.ptr,
-            "getData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getData" }
+            "get_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_data" }
         }
       val getLoopOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamOGGVorbis".cstr.ptr,
-            "getLoopOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLoopOffset" }
+            "get_loop_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_loop_offset" }
         }
       val hasLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamOGGVorbis".cstr.ptr,
-            "hasLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasLoop" }
+            "has_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_loop" }
         }
       val setData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamOGGVorbis".cstr.ptr,
-            "setData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setData" }
+            "set_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_data" }
         }
       val setLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamOGGVorbis".cstr.ptr,
-            "setLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoop" }
+            "set_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_loop" }
         }
       val setLoopOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStreamOGGVorbis".cstr.ptr,
-            "setLoopOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLoopOffset" }
+            "set_loop_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_loop_offset" }
         }}
   }
 }

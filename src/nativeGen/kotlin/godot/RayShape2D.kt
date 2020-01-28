@@ -71,26 +71,26 @@ open class RayShape2D(
       val getLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "getLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLength" }
+            "get_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_length" }
         }
       val getSlipsOnSlope: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "getSlipsOnSlope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSlipsOnSlope" }
+            "get_slips_on_slope".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_slips_on_slope" }
         }
       val setLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "setLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLength" }
+            "set_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_length" }
         }
       val setSlipsOnSlope: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayShape2D".cstr.ptr,
-            "setSlipsOnSlope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSlipsOnSlope" }
+            "set_slips_on_slope".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_slips_on_slope" }
         }}
   }
 }

@@ -35,12 +35,12 @@ open class VisualScriptPropertyGet(
       setBaseType(value)
     }
 
-  var basicType: Int
+  var basicType: Variant.Type
     get() {
-       return Variant.Type.from(getBasicType()) 
+       return getBasicType() 
     }
     set(value) {
-      setBasicType(Variant.Type.from(value))
+      setBasicType(value.value)
     }
 
   var index: String
@@ -67,20 +67,12 @@ open class VisualScriptPropertyGet(
       setProperty(value)
     }
 
-  var setMode: Int
+  var setMode: CallMode
     get() {
-       return VisualScriptPropertyGet.CallMode.from(getCallMode()) 
+       return getCallMode() 
     }
     set(value) {
-      setCallMode(VisualScriptPropertyGet.CallMode.from(value))
-    }
-
-  var typeCache: Int
-    get() {
-       return Variant.Type.from(_getTypeCache()) 
-    }
-    set(value) {
-      _setTypeCache(Variant.Type.from(value))
+      setCallMode(value.value)
     }
 
   fun getBasePath(): NodePath {
@@ -199,99 +191,99 @@ open class VisualScriptPropertyGet(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getBasePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBasePath" }
+            "get_base_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_path" }
         }
       val getBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getBaseScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBaseScript" }
+            "get_base_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_script" }
         }
       val getBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getBaseType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBaseType" }
+            "get_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
         }
       val getBasicType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getBasicType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBasicType" }
+            "get_basic_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_basic_type" }
         }
       val getCallMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getCallMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCallMode" }
+            "get_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_call_mode" }
         }
       val getIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIndex" }
+            "get_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_index" }
         }
       val getProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "getProperty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getProperty" }
+            "get_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_property" }
         }
       val setBasePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setBasePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBasePath" }
+            "set_base_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_path" }
         }
       val setBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setBaseScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBaseScript" }
+            "set_base_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_script" }
         }
       val setBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setBaseType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBaseType" }
+            "set_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
         }
       val setBasicType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setBasicType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBasicType" }
+            "set_basic_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_basic_type" }
         }
       val setCallMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setCallMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCallMode" }
+            "set_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_call_mode" }
         }
       val setIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIndex" }
+            "set_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_index" }
         }
       val setProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPropertyGet".cstr.ptr,
-            "setProperty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setProperty" }
+            "set_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_property" }
         }}
   }
 }

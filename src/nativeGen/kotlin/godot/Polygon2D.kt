@@ -33,14 +33,6 @@ open class Polygon2D(
       setAntialiased(value)
     }
 
-  var bones: Boolean
-    get() {
-       return _getBones() 
-    }
-    set(value) {
-      _setBones(value)
-    }
-
   var color: Color
     get() {
        return getColor() 
@@ -385,242 +377,242 @@ open class Polygon2D(
       val addBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "addBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addBone" }
+            "add_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_bone" }
         }
       val clearBones: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "clearBones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearBones" }
+            "clear_bones".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_bones" }
         }
       val eraseBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "eraseBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method eraseBone" }
+            "erase_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_bone" }
         }
       val getAntialiased: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getAntialiased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAntialiased" }
+            "get_antialiased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_antialiased" }
         }
       val getBoneCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getBoneCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneCount" }
+            "get_bone_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
         }
       val getBonePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getBonePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBonePath" }
+            "get_bone_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_path" }
         }
       val getBoneWeights: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getBoneWeights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneWeights" }
+            "get_bone_weights".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_weights" }
         }
       val getColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColor" }
+            "get_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color" }
         }
       val getInternalVertexCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getInternalVertexCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInternalVertexCount" }
+            "get_internal_vertex_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_internal_vertex_count" }
         }
       val getInvert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getInvert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInvert" }
+            "get_invert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_invert" }
         }
       val getInvertBorder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getInvertBorder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInvertBorder" }
+            "get_invert_border".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_invert_border" }
         }
       val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffset" }
+            "get_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val getPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPolygon" }
+            "get_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
         }
       val getPolygons: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getPolygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPolygons" }
+            "get_polygons".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_polygons" }
         }
       val getSkeleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getSkeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkeleton" }
+            "get_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getTextureOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getTextureOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureOffset" }
+            "get_texture_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_offset" }
         }
       val getTextureRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getTextureRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureRotation" }
+            "get_texture_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_rotation" }
         }
       val getTextureRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getTextureRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureRotationDegrees" }
+            "get_texture_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_rotation_degrees" }
         }
       val getTextureScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getTextureScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureScale" }
+            "get_texture_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_scale" }
         }
       val getUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUv" }
+            "get_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_uv" }
         }
       val getVertexColors: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "getVertexColors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVertexColors" }
+            "get_vertex_colors".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_vertex_colors" }
         }
       val setAntialiased: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setAntialiased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAntialiased" }
+            "set_antialiased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_antialiased" }
         }
       val setBonePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setBonePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBonePath" }
+            "set_bone_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_path" }
         }
       val setBoneWeights: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setBoneWeights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBoneWeights" }
+            "set_bone_weights".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bone_weights" }
         }
       val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColor" }
+            "set_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color" }
         }
       val setInternalVertexCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setInternalVertexCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInternalVertexCount" }
+            "set_internal_vertex_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_internal_vertex_count" }
         }
       val setInvert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setInvert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInvert" }
+            "set_invert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_invert" }
         }
       val setInvertBorder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setInvertBorder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInvertBorder" }
+            "set_invert_border".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_invert_border" }
         }
       val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffset" }
+            "set_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offset" }
         }
       val setPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setPolygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPolygon" }
+            "set_polygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
         }
       val setPolygons: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setPolygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPolygons" }
+            "set_polygons".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_polygons" }
         }
       val setSkeleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setSkeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSkeleton" }
+            "set_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_skeleton" }
         }
       val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTexture" }
+            "set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setTextureOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setTextureOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextureOffset" }
+            "set_texture_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_offset" }
         }
       val setTextureRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setTextureRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextureRotation" }
+            "set_texture_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_rotation" }
         }
       val setTextureRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setTextureRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextureRotationDegrees" }
+            "set_texture_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_rotation_degrees" }
         }
       val setTextureScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setTextureScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextureScale" }
+            "set_texture_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_scale" }
         }
       val setUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUv" }
+            "set_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_uv" }
         }
       val setVertexColors: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Polygon2D".cstr.ptr,
-            "setVertexColors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVertexColors" }
+            "set_vertex_colors".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_vertex_colors" }
         }}
   }
 }

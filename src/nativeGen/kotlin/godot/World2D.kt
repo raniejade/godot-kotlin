@@ -64,20 +64,20 @@ open class World2D(
       val getCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "getCanvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCanvas" }
+            "get_canvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
         }
       val getDirectSpaceState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "getDirectSpaceState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDirectSpaceState" }
+            "get_direct_space_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
         }
       val getSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "getSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpace" }
+            "get_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_space" }
         }}
   }
 }

@@ -217,134 +217,134 @@ open class DynamicFont(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "addFallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addFallback" }
+            "add_fallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_fallback" }
         }
       val getFallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getFallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFallback" }
+            "get_fallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fallback" }
         }
       val getFallbackCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getFallbackCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFallbackCount" }
+            "get_fallback_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fallback_count" }
         }
       val getFontData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getFontData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFontData" }
+            "get_font_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_font_data" }
         }
       val getOutlineColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getOutlineColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOutlineColor" }
+            "get_outline_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_outline_color" }
         }
       val getOutlineSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getOutlineSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOutlineSize" }
+            "get_outline_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_outline_size" }
         }
       val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSize" }
+            "get_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getSpacing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getSpacing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpacing" }
+            "get_spacing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_spacing" }
         }
       val getUseFilter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getUseFilter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUseFilter" }
+            "get_use_filter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_use_filter" }
         }
       val getUseMipmaps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "getUseMipmaps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUseMipmaps" }
+            "get_use_mipmaps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_use_mipmaps" }
         }
       val removeFallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "removeFallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeFallback" }
+            "remove_fallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_fallback" }
         }
       val setFallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setFallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFallback" }
+            "set_fallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fallback" }
         }
       val setFontData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setFontData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFontData" }
+            "set_font_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_font_data" }
         }
       val setOutlineColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setOutlineColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOutlineColor" }
+            "set_outline_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_outline_color" }
         }
       val setOutlineSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setOutlineSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOutlineSize" }
+            "set_outline_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_outline_size" }
         }
       val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSize" }
+            "set_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_size" }
         }
       val setSpacing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setSpacing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSpacing" }
+            "set_spacing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_spacing" }
         }
       val setUseFilter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setUseFilter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseFilter" }
+            "set_use_filter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_filter" }
         }
       val setUseMipmaps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DynamicFont".cstr.ptr,
-            "setUseMipmaps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseMipmaps" }
+            "set_use_mipmaps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_mipmaps" }
         }}
   }
 }

@@ -54,15 +54,15 @@ open class AnimationNodeAnimation(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
-            "getAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAnimation" }
+            "get_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_animation" }
         }
       val setAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
-            "setAnimation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAnimation" }
+            "set_animation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_animation" }
         }}
   }
 }

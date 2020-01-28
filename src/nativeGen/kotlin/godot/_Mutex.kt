@@ -53,8 +53,8 @@ open class _Mutex(
       val tryLock: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-            "tryLock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tryLock" }
+            "try_lock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method try_lock" }
         }
       val unlock: CPointer<godot_method_bind>
         get() = memScoped {

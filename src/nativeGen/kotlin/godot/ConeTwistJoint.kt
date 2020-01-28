@@ -18,22 +18,6 @@ import kotlinx.cinterop.reinterpret
 open class ConeTwistJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  var swingSpan: Float
-    get() {
-       return _getSwingSpan() 
-    }
-    set(value) {
-      _setSwingSpan(value)
-    }
-
-  var twistSpan: Float
-    get() {
-       return _getTwistSpan() 
-    }
-    set(value) {
-      _setTwistSpan(value)
-    }
-
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
     val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
@@ -105,15 +89,15 @@ open class ConeTwistJoint(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-            "getParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParam" }
+            "get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val setParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConeTwistJoint".cstr.ptr,
-            "setParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setParam" }
+            "set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param" }
         }}
   }
 }

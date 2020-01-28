@@ -52,14 +52,6 @@ open class PopupMenu(
       setHideOnStateItemSelection(value)
     }
 
-  var items: VariantArray
-    get() {
-       return _getItems() 
-    }
-    set(value) {
-      _setItems(value)
-    }
-
   var submenuPopupDelay: Float
     get() {
        return getSubmenuPopupDelay() 
@@ -514,74 +506,74 @@ open class PopupMenu(
       val addCheckItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addCheckItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCheckItem" }
+            "add_check_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_check_item" }
         }
       val addCheckShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addCheckShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCheckShortcut" }
+            "add_check_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_check_shortcut" }
         }
       val addIconCheckItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addIconCheckItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIconCheckItem" }
+            "add_icon_check_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_check_item" }
         }
       val addIconCheckShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addIconCheckShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIconCheckShortcut" }
+            "add_icon_check_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_check_shortcut" }
         }
       val addIconItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addIconItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIconItem" }
+            "add_icon_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_item" }
         }
       val addIconShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addIconShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIconShortcut" }
+            "add_icon_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_icon_shortcut" }
         }
       val addItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addItem" }
+            "add_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_item" }
         }
       val addRadioCheckItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addRadioCheckItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addRadioCheckItem" }
+            "add_radio_check_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_radio_check_item" }
         }
       val addRadioCheckShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addRadioCheckShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addRadioCheckShortcut" }
+            "add_radio_check_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_radio_check_shortcut" }
         }
       val addSeparator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addSeparator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSeparator" }
+            "add_separator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_separator" }
         }
       val addShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addShortcut" }
+            "add_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_shortcut" }
         }
       val addSubmenuItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "addSubmenuItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSubmenuItem" }
+            "add_submenu_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_submenu_item" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -592,278 +584,280 @@ open class PopupMenu(
       val getAllowSearch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getAllowSearch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAllowSearch" }
+            "get_allow_search".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_allow_search" }
         }
       val getItemAccelerator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemAccelerator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemAccelerator" }
+            "get_item_accelerator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_accelerator" }
         }
       val getItemCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemCount" }
+            "get_item_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_count" }
         }
       val getItemIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemIcon" }
+            "get_item_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_icon" }
         }
       val getItemId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemId" }
+            "get_item_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_id" }
         }
       val getItemIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemIndex" }
+            "get_item_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_index" }
         }
       val getItemMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemMetadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemMetadata" }
+            "get_item_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_metadata" }
         }
       val getItemShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemShortcut" }
+            "get_item_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_shortcut" }
         }
       val getItemSubmenu: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemSubmenu".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemSubmenu" }
+            "get_item_submenu".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_submenu" }
         }
       val getItemText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemText" }
+            "get_item_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_text" }
         }
       val getItemTooltip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getItemTooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemTooltip" }
+            "get_item_tooltip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_tooltip" }
         }
       val getSubmenuPopupDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "getSubmenuPopupDelay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSubmenuPopupDelay" }
+            "get_submenu_popup_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_submenu_popup_delay" }
         }
       val isHideOnCheckableItemSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isHideOnCheckableItemSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHideOnCheckableItemSelection" }
+            "is_hide_on_checkable_item_selection".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method is_hide_on_checkable_item_selection" }
         }
       val isHideOnItemSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isHideOnItemSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHideOnItemSelection" }
+            "is_hide_on_item_selection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_hide_on_item_selection" }
         }
       val isHideOnStateItemSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isHideOnStateItemSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHideOnStateItemSelection" }
+            "is_hide_on_state_item_selection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_hide_on_state_item_selection" }
         }
       val isHideOnWindowLoseFocus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isHideOnWindowLoseFocus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHideOnWindowLoseFocus" }
+            "is_hide_on_window_lose_focus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_hide_on_window_lose_focus" }
         }
       val isItemCheckable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isItemCheckable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemCheckable" }
+            "is_item_checkable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_checkable" }
         }
       val isItemChecked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isItemChecked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemChecked" }
+            "is_item_checked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_checked" }
         }
       val isItemDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isItemDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemDisabled" }
+            "is_item_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_disabled" }
         }
       val isItemRadioCheckable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isItemRadioCheckable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemRadioCheckable" }
+            "is_item_radio_checkable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_radio_checkable" }
         }
       val isItemSeparator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isItemSeparator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemSeparator" }
+            "is_item_separator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_separator" }
         }
       val isItemShortcutDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "isItemShortcutDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isItemShortcutDisabled" }
+            "is_item_shortcut_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_item_shortcut_disabled" }
         }
       val removeItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "removeItem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeItem" }
+            "remove_item".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_item" }
         }
       val setAllowSearch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setAllowSearch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAllowSearch" }
+            "set_allow_search".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_allow_search" }
         }
       val setHideOnCheckableItemSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setHideOnCheckableItemSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHideOnCheckableItemSelection" }
+            "set_hide_on_checkable_item_selection".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method set_hide_on_checkable_item_selection" }
         }
       val setHideOnItemSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setHideOnItemSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHideOnItemSelection" }
+            "set_hide_on_item_selection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hide_on_item_selection" }
         }
       val setHideOnStateItemSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setHideOnStateItemSelection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHideOnStateItemSelection" }
+            "set_hide_on_state_item_selection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hide_on_state_item_selection" }
         }
       val setHideOnWindowLoseFocus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setHideOnWindowLoseFocus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHideOnWindowLoseFocus" }
+            "set_hide_on_window_lose_focus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hide_on_window_lose_focus" }
         }
       val setItemAccelerator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemAccelerator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemAccelerator" }
+            "set_item_accelerator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_accelerator" }
         }
       val setItemAsCheckable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemAsCheckable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemAsCheckable" }
+            "set_item_as_checkable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_as_checkable" }
         }
       val setItemAsRadioCheckable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemAsRadioCheckable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemAsRadioCheckable" }
+            "set_item_as_radio_checkable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_as_radio_checkable" }
         }
       val setItemAsSeparator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemAsSeparator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemAsSeparator" }
+            "set_item_as_separator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_as_separator" }
         }
       val setItemChecked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemChecked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemChecked" }
+            "set_item_checked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_checked" }
         }
       val setItemDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemDisabled" }
+            "set_item_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_disabled" }
         }
       val setItemIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemIcon" }
+            "set_item_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_icon" }
         }
       val setItemId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemId" }
+            "set_item_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_id" }
         }
       val setItemMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemMetadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemMetadata" }
+            "set_item_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_metadata" }
         }
       val setItemMultistate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemMultistate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemMultistate" }
+            "set_item_multistate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_multistate" }
         }
       val setItemShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemShortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemShortcut" }
+            "set_item_shortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_shortcut" }
         }
       val setItemShortcutDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemShortcutDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemShortcutDisabled" }
+            "set_item_shortcut_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_shortcut_disabled" }
         }
       val setItemSubmenu: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemSubmenu".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemSubmenu" }
+            "set_item_submenu".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_submenu" }
         }
       val setItemText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemText" }
+            "set_item_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_text" }
         }
       val setItemTooltip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setItemTooltip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setItemTooltip" }
+            "set_item_tooltip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_item_tooltip" }
         }
       val setSubmenuPopupDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "setSubmenuPopupDelay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSubmenuPopupDelay" }
+            "set_submenu_popup_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_submenu_popup_delay" }
         }
       val toggleItemChecked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "toggleItemChecked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method toggleItemChecked" }
+            "toggle_item_checked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method toggle_item_checked" }
         }
       val toggleItemMultistate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PopupMenu".cstr.ptr,
-            "toggleItemMultistate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method toggleItemMultistate" }
+            "toggle_item_multistate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method toggle_item_multistate" }
         }}
   }
 }

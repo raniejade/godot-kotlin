@@ -38,8 +38,8 @@ open class GDScriptFunctionState(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScriptFunctionState".cstr.ptr,
-            "isValid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isValid" }
+            "is_valid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid" }
         }
       val resume: CPointer<godot_method_bind>
         get() = memScoped {

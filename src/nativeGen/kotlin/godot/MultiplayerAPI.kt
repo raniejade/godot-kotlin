@@ -203,57 +203,58 @@ open class MultiplayerAPI(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "getNetworkConnectedPeers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNetworkConnectedPeers" }
+            "get_network_connected_peers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_network_connected_peers" }
         }
       val getNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "getNetworkPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNetworkPeer" }
+            "get_network_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_network_peer" }
         }
       val getNetworkUniqueId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "getNetworkUniqueId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNetworkUniqueId" }
+            "get_network_unique_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_network_unique_id" }
         }
       val getRpcSenderId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "getRpcSenderId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRpcSenderId" }
+            "get_rpc_sender_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rpc_sender_id" }
         }
       val hasNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "hasNetworkPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasNetworkPeer" }
+            "has_network_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_network_peer" }
         }
       val isNetworkServer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "isNetworkServer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isNetworkServer" }
+            "is_network_server".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_network_server" }
         }
       val isObjectDecodingAllowed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "isObjectDecodingAllowed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isObjectDecodingAllowed" }
+            "is_object_decoding_allowed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_object_decoding_allowed" }
         }
       val isRefusingNewNetworkConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "isRefusingNewNetworkConnections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRefusingNewNetworkConnections" }
+            "is_refusing_new_network_connections".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method is_refusing_new_network_connections" }
         }
       val poll: CPointer<godot_method_bind>
         get() = memScoped {
@@ -266,36 +267,37 @@ open class MultiplayerAPI(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "sendBytes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sendBytes" }
+            "send_bytes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method send_bytes" }
         }
       val setAllowObjectDecoding: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "setAllowObjectDecoding".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAllowObjectDecoding" }
+            "set_allow_object_decoding".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_allow_object_decoding" }
         }
       val setNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "setNetworkPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNetworkPeer" }
+            "set_network_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_network_peer" }
         }
       val setRefuseNewNetworkConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "setRefuseNewNetworkConnections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRefuseNewNetworkConnections" }
+            "set_refuse_new_network_connections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_refuse_new_network_connections"
+            }
         }
       val setRootNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiplayerAPI".cstr.ptr,
-            "setRootNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRootNode" }
+            "set_root_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_root_node" }
         }}
   }
 }

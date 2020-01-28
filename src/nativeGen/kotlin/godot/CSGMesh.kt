@@ -16,7 +16,7 @@ import kotlinx.cinterop.reinterpret
 open class CSGMesh(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
-  var material: `SpatialMaterial,ShaderMaterial`
+  var material: Material
     get() {
        return getMaterial() 
     }
@@ -69,26 +69,26 @@ open class CSGMesh(
       val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "getMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
+            "get_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_material" }
         }
       val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "getMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMesh" }
+            "get_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "setMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
+            "set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_material" }
         }
       val setMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGMesh".cstr.ptr,
-            "setMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMesh" }
+            "set_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
         }}
   }
 }

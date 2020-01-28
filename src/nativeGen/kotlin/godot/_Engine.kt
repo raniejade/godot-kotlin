@@ -189,134 +189,134 @@ open class _Engine(
       val getAuthorInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getAuthorInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAuthorInfo" }
+            "get_author_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_author_info" }
         }
       val getCopyrightInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getCopyrightInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCopyrightInfo" }
+            "get_copyright_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_copyright_info" }
         }
       val getDonorInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getDonorInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDonorInfo" }
+            "get_donor_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_donor_info" }
         }
       val getFramesDrawn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getFramesDrawn".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFramesDrawn" }
+            "get_frames_drawn".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frames_drawn" }
         }
       val getFramesPerSecond: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getFramesPerSecond".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFramesPerSecond" }
+            "get_frames_per_second".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frames_per_second" }
         }
       val getIterationsPerSecond: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getIterationsPerSecond".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIterationsPerSecond" }
+            "get_iterations_per_second".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_iterations_per_second" }
         }
       val getLicenseInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getLicenseInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLicenseInfo" }
+            "get_license_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_license_info" }
         }
       val getLicenseText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getLicenseText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLicenseText" }
+            "get_license_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_license_text" }
         }
       val getMainLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getMainLoop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMainLoop" }
+            "get_main_loop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_main_loop" }
         }
       val getPhysicsJitterFix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getPhysicsJitterFix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPhysicsJitterFix" }
+            "get_physics_jitter_fix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_physics_jitter_fix" }
         }
       val getSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSingleton" }
+            "get_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_singleton" }
         }
       val getTargetFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getTargetFps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTargetFps" }
+            "get_target_fps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_target_fps" }
         }
       val getTimeScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getTimeScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTimeScale" }
+            "get_time_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_time_scale" }
         }
       val getVersionInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "getVersionInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVersionInfo" }
+            "get_version_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_version_info" }
         }
       val hasSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "hasSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasSingleton" }
+            "has_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_singleton" }
         }
       val isEditorHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "isEditorHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEditorHint" }
+            "is_editor_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_editor_hint" }
         }
       val isInPhysicsFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "isInPhysicsFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isInPhysicsFrame" }
+            "is_in_physics_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_in_physics_frame" }
         }
       val setEditorHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "setEditorHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEditorHint" }
+            "set_editor_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_editor_hint" }
         }
       val setIterationsPerSecond: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "setIterationsPerSecond".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIterationsPerSecond" }
+            "set_iterations_per_second".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_iterations_per_second" }
         }
       val setPhysicsJitterFix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "setPhysicsJitterFix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPhysicsJitterFix" }
+            "set_physics_jitter_fix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_physics_jitter_fix" }
         }
       val setTargetFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "setTargetFps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTargetFps" }
+            "set_target_fps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_target_fps" }
         }
       val setTimeScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Engine".cstr.ptr,
-            "setTimeScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTimeScale" }
+            "set_time_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_time_scale" }
         }}
   }
 }

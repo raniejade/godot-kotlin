@@ -54,15 +54,15 @@ open class VisualScriptEmitSignal(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
-            "getSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSignal" }
+            "get_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_signal" }
         }
       val setSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
-            "setSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSignal" }
+            "set_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_signal" }
         }}
   }
 }

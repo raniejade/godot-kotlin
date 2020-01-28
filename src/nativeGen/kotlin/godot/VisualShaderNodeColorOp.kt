@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeColorOp(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  var operator: Int
+  var operator: Operator
     get() {
-       return VisualShaderNodeColorOp.Operator.from(getOperator()) 
+       return getOperator() 
     }
     set(value) {
-      setOperator(VisualShaderNodeColorOp.Operator.from(value))
+      setOperator(value.value)
     }
 
   fun getOperator(): Operator {
@@ -105,15 +105,15 @@ open class VisualShaderNodeColorOp(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
-            "getOperator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOperator" }
+            "get_operator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_operator" }
         }
       val setOperator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeColorOp".cstr.ptr,
-            "setOperator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOperator" }
+            "set_operator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_operator" }
         }}
   }
 }

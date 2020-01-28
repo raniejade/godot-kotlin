@@ -77,36 +77,36 @@ open class WindowDialog(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-            "getCloseButton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCloseButton" }
+            "get_close_button".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_close_button" }
         }
       val getResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-            "getResizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResizable" }
+            "get_resizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resizable" }
         }
       val getTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-            "getTitle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTitle" }
+            "get_title".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_title" }
         }
       val setResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-            "setResizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setResizable" }
+            "set_resizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_resizable" }
         }
       val setTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WindowDialog".cstr.ptr,
-            "setTitle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTitle" }
+            "set_title".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_title" }
         }}
   }
 }

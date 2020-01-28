@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptMathConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var constant: Int
+  var constant: MathConstant
     get() {
-       return VisualScriptMathConstant.MathConstant.from(getMathConstant()) 
+       return getMathConstant() 
     }
     set(value) {
-      setMathConstant(VisualScriptMathConstant.MathConstant.from(value))
+      setMathConstant(value.value)
     }
 
   fun getMathConstant(): MathConstant {
@@ -105,15 +105,15 @@ open class VisualScriptMathConstant(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
-            "getMathConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMathConstant" }
+            "get_math_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_math_constant" }
         }
       val setMathConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
-            "setMathConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMathConstant" }
+            "set_math_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_math_constant" }
         }}
   }
 }

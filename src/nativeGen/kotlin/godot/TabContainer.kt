@@ -35,12 +35,12 @@ open class TabContainer(
       setDragToRearrangeEnabled(value)
     }
 
-  var tabAlign: Int
+  var tabAlign: TabAlign
     get() {
-       return TabContainer.TabAlign.from(getTabAlign()) 
+       return getTabAlign() 
     }
     set(value) {
-      setTabAlign(TabContainer.TabAlign.from(value))
+      setTabAlign(value.value)
     }
 
   var tabsVisible: Boolean
@@ -216,155 +216,155 @@ open class TabContainer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "areTabsVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areTabsVisible" }
+            "are_tabs_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method are_tabs_visible" }
         }
       val getCurrentTab: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getCurrentTab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentTab" }
+            "get_current_tab".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_tab" }
         }
       val getCurrentTabControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getCurrentTabControl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentTabControl" }
+            "get_current_tab_control".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_tab_control" }
         }
       val getDragToRearrangeEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getDragToRearrangeEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDragToRearrangeEnabled" }
+            "get_drag_to_rearrange_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_drag_to_rearrange_enabled" }
         }
       val getPopup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getPopup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPopup" }
+            "get_popup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_popup" }
         }
       val getPreviousTab: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getPreviousTab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPreviousTab" }
+            "get_previous_tab".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_previous_tab" }
         }
       val getTabAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabAlign" }
+            "get_tab_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_align" }
         }
       val getTabControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabControl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabControl" }
+            "get_tab_control".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_control" }
         }
       val getTabCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabCount" }
+            "get_tab_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_count" }
         }
       val getTabDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabDisabled" }
+            "get_tab_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_disabled" }
         }
       val getTabIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabIcon" }
+            "get_tab_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_icon" }
         }
       val getTabTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabTitle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabTitle" }
+            "get_tab_title".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_title" }
         }
       val getTabsRearrangeGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "getTabsRearrangeGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabsRearrangeGroup" }
+            "get_tabs_rearrange_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tabs_rearrange_group" }
         }
       val setCurrentTab: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setCurrentTab".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCurrentTab" }
+            "set_current_tab".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_current_tab" }
         }
       val setDragToRearrangeEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setDragToRearrangeEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDragToRearrangeEnabled" }
+            "set_drag_to_rearrange_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_drag_to_rearrange_enabled" }
         }
       val setPopup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setPopup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPopup" }
+            "set_popup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_popup" }
         }
       val setTabAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setTabAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabAlign" }
+            "set_tab_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tab_align" }
         }
       val setTabDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setTabDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabDisabled" }
+            "set_tab_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tab_disabled" }
         }
       val setTabIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setTabIcon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabIcon" }
+            "set_tab_icon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tab_icon" }
         }
       val setTabTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setTabTitle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabTitle" }
+            "set_tab_title".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tab_title" }
         }
       val setTabsRearrangeGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setTabsRearrangeGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabsRearrangeGroup" }
+            "set_tabs_rearrange_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tabs_rearrange_group" }
         }
       val setTabsVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TabContainer".cstr.ptr,
-            "setTabsVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabsVisible" }
+            "set_tabs_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tabs_visible" }
         }}
   }
 }

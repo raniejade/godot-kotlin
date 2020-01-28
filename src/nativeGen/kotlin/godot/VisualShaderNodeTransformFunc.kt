@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTransformFunc(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
-  var function: Int
+  var function: Function
     get() {
-       return VisualShaderNodeTransformFunc.Function.from(getFunction()) 
+       return getFunction() 
     }
     set(value) {
-      setFunction(VisualShaderNodeTransformFunc.Function.from(value))
+      setFunction(value.value)
     }
 
   fun getFunction(): Function {
@@ -78,15 +78,15 @@ open class VisualShaderNodeTransformFunc(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformFunc".cstr.ptr,
-            "getFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFunction" }
+            "get_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_function" }
         }
       val setFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformFunc".cstr.ptr,
-            "setFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFunction" }
+            "set_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_function" }
         }}
   }
 }

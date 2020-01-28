@@ -67,22 +67,22 @@ open class GradientTexture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-            "getGradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGradient" }
+            "get_gradient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gradient" }
         }
       val setGradient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-            "setGradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGradient" }
+            "set_gradient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gradient" }
         }
       val setWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GradientTexture".cstr.ptr,
-            "setWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWidth" }
+            "set_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_width" }
         }}
   }
 }

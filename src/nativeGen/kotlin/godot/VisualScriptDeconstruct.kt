@@ -17,20 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptDeconstruct(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var elemCache: VariantArray
+  var type: Variant.Type
     get() {
-       return _getElemCache() 
+       return getDeconstructType() 
     }
     set(value) {
-      _setElemCache(value)
-    }
-
-  var type: Int
-    get() {
-       return Variant.Type.from(getDeconstructType()) 
-    }
-    set(value) {
-      setDeconstructType(Variant.Type.from(value))
+      setDeconstructType(value.value)
     }
 
   fun getDeconstructType(): Variant.Type {
@@ -62,15 +54,15 @@ open class VisualScriptDeconstruct(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-            "getDeconstructType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDeconstructType" }
+            "get_deconstruct_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_deconstruct_type" }
         }
       val setDeconstructType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-            "setDeconstructType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDeconstructType" }
+            "set_deconstruct_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_deconstruct_type" }
         }}
   }
 }

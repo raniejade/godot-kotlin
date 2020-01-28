@@ -17,12 +17,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var type: Int
+  var type: Variant.Type
     get() {
-       return Variant.Type.from(getConstantType()) 
+       return getConstantType() 
     }
     set(value) {
-      setConstantType(Variant.Type.from(value))
+      setConstantType(value.value)
     }
 
   var value: Variant
@@ -72,29 +72,29 @@ open class VisualScriptConstant(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "getConstantType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstantType" }
+            "get_constant_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constant_type" }
         }
       val getConstantValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "getConstantValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstantValue" }
+            "get_constant_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constant_value" }
         }
       val setConstantType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "setConstantType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConstantType" }
+            "set_constant_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constant_type" }
         }
       val setConstantValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "setConstantValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConstantValue" }
+            "set_constant_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constant_value" }
         }}
   }
 }

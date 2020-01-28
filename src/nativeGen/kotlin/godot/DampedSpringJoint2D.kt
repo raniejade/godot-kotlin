@@ -108,57 +108,57 @@ open class DampedSpringJoint2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "getDamping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDamping" }
+            "get_damping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_damping" }
         }
       val getLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "getLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLength" }
+            "get_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_length" }
         }
       val getRestLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "getRestLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRestLength" }
+            "get_rest_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rest_length" }
         }
       val getStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "getStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStiffness" }
+            "get_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stiffness" }
         }
       val setDamping: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "setDamping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDamping" }
+            "set_damping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_damping" }
         }
       val setLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "setLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLength" }
+            "set_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_length" }
         }
       val setRestLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "setRestLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRestLength" }
+            "set_rest_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rest_length" }
         }
       val setStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("DampedSpringJoint2D".cstr.ptr,
-            "setStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStiffness" }
+            "set_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stiffness" }
         }}
   }
 }

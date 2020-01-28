@@ -54,15 +54,15 @@ open class VisualShaderNodeInput(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
-            "getInputName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInputName" }
+            "get_input_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_input_name" }
         }
       val setInputName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
-            "setInputName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInputName" }
+            "set_input_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_input_name" }
         }}
   }
 }

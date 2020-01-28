@@ -21,12 +21,12 @@ import kotlinx.cinterop.reinterpret
 open class Line2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  var beginCapMode: Int
+  var beginCapMode: LineCapMode
     get() {
-       return Line2D.LineCapMode.from(getBeginCapMode()) 
+       return getBeginCapMode() 
     }
     set(value) {
-      setBeginCapMode(Line2D.LineCapMode.from(value))
+      setBeginCapMode(value.value)
     }
 
   var defaultColor: Color
@@ -37,12 +37,12 @@ open class Line2D(
       setDefaultColor(value)
     }
 
-  var endCapMode: Int
+  var endCapMode: LineCapMode
     get() {
-       return Line2D.LineCapMode.from(getEndCapMode()) 
+       return getEndCapMode() 
     }
     set(value) {
-      setEndCapMode(Line2D.LineCapMode.from(value))
+      setEndCapMode(value.value)
     }
 
   var gradient: Gradient
@@ -53,12 +53,12 @@ open class Line2D(
       setGradient(value)
     }
 
-  var jointMode: Int
+  var jointMode: LineJointMode
     get() {
-       return Line2D.LineJointMode.from(getJointMode()) 
+       return getJointMode() 
     }
     set(value) {
-      setJointMode(Line2D.LineJointMode.from(value))
+      setJointMode(value.value)
     }
 
   var points: PoolVector2Array
@@ -93,12 +93,12 @@ open class Line2D(
       setTexture(value)
     }
 
-  var textureMode: Int
+  var textureMode: LineTextureMode
     get() {
-       return Line2D.LineTextureMode.from(getTextureMode()) 
+       return getTextureMode() 
     }
     set(value) {
-      setTextureMode(Line2D.LineTextureMode.from(value))
+      setTextureMode(value.value)
     }
 
   var width: Float
@@ -351,170 +351,170 @@ open class Line2D(
       val addPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "addPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addPoint" }
+            "add_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_point" }
         }
       val clearPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "clearPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearPoints" }
+            "clear_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_points" }
         }
       val getBeginCapMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getBeginCapMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBeginCapMode" }
+            "get_begin_cap_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_begin_cap_mode" }
         }
       val getDefaultColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getDefaultColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDefaultColor" }
+            "get_default_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_default_color" }
         }
       val getEndCapMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getEndCapMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEndCapMode" }
+            "get_end_cap_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_end_cap_mode" }
         }
       val getGradient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getGradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGradient" }
+            "get_gradient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gradient" }
         }
       val getJointMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getJointMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getJointMode" }
+            "get_joint_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_joint_mode" }
         }
       val getPointCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getPointCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPointCount" }
+            "get_point_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_point_count" }
         }
       val getPointPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getPointPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPointPosition" }
+            "get_point_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_point_position" }
         }
       val getPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPoints" }
+            "get_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_points" }
         }
       val getRoundPrecision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getRoundPrecision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRoundPrecision" }
+            "get_round_precision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_round_precision" }
         }
       val getSharpLimit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getSharpLimit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSharpLimit" }
+            "get_sharp_limit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sharp_limit" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getTextureMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getTextureMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTextureMode" }
+            "get_texture_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture_mode" }
         }
       val getWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "getWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWidth" }
+            "get_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_width" }
         }
       val removePoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "removePoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removePoint" }
+            "remove_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_point" }
         }
       val setBeginCapMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setBeginCapMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBeginCapMode" }
+            "set_begin_cap_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_begin_cap_mode" }
         }
       val setDefaultColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setDefaultColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDefaultColor" }
+            "set_default_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_default_color" }
         }
       val setEndCapMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setEndCapMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEndCapMode" }
+            "set_end_cap_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_end_cap_mode" }
         }
       val setGradient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setGradient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGradient" }
+            "set_gradient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gradient" }
         }
       val setJointMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setJointMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setJointMode" }
+            "set_joint_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_joint_mode" }
         }
       val setPointPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setPointPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPointPosition" }
+            "set_point_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_point_position" }
         }
       val setPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPoints" }
+            "set_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_points" }
         }
       val setRoundPrecision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setRoundPrecision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRoundPrecision" }
+            "set_round_precision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_round_precision" }
         }
       val setSharpLimit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setSharpLimit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSharpLimit" }
+            "set_sharp_limit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sharp_limit" }
         }
       val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTexture" }
+            "set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setTextureMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setTextureMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTextureMode" }
+            "set_texture_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture_mode" }
         }
       val setWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Line2D".cstr.ptr,
-            "setWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWidth" }
+            "set_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_width" }
         }}
   }
 }

@@ -88,50 +88,50 @@ open class Script(
       val canInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "canInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canInstance" }
+            "can_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method can_instance" }
         }
       val getBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "getBaseScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBaseScript" }
+            "get_base_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_script" }
         }
       val getInstanceBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "getInstanceBaseType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstanceBaseType" }
+            "get_instance_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_base_type" }
         }
       val getSourceCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "getSourceCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSourceCode" }
+            "get_source_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_source_code" }
         }
       val hasScriptSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "hasScriptSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasScriptSignal" }
+            "has_script_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_script_signal" }
         }
       val hasSourceCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "hasSourceCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasSourceCode" }
+            "has_source_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_source_code" }
         }
       val instanceHas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "instanceHas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method instanceHas" }
+            "instance_has".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method instance_has" }
         }
       val isTool: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "isTool".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isTool" }
+            "is_tool".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_tool" }
         }
       val reload: CPointer<godot_method_bind>
         get() = memScoped {
@@ -142,8 +142,8 @@ open class Script(
       val setSourceCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Script".cstr.ptr,
-            "setSourceCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSourceCode" }
+            "set_source_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_source_code" }
         }}
   }
 }

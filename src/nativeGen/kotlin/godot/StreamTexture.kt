@@ -55,8 +55,8 @@ open class StreamTexture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamTexture".cstr.ptr,
-            "getLoadPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLoadPath" }
+            "get_load_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_load_path" }
         }
       val load: CPointer<godot_method_bind>
         get() = memScoped {

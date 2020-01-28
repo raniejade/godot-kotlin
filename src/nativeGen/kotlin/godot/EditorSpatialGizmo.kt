@@ -120,43 +120,43 @@ open class EditorSpatialGizmo(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "addCollisionSegments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCollisionSegments" }
+            "add_collision_segments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_collision_segments" }
         }
       val addCollisionTriangles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "addCollisionTriangles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCollisionTriangles" }
+            "add_collision_triangles".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_collision_triangles" }
         }
       val addHandles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "addHandles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addHandles" }
+            "add_handles".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_handles" }
         }
       val addLines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "addLines".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addLines" }
+            "add_lines".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_lines" }
         }
       val addMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "addMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addMesh" }
+            "add_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_mesh" }
         }
       val addUnscaledBillboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "addUnscaledBillboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addUnscaledBillboard" }
+            "add_unscaled_billboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_unscaled_billboard" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -169,29 +169,29 @@ open class EditorSpatialGizmo(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "getPlugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPlugin" }
+            "get_plugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_plugin" }
         }
       val getSpatialNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "getSpatialNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpatialNode" }
+            "get_spatial_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_spatial_node" }
         }
       val setHidden: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "setHidden".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHidden" }
+            "set_hidden".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_hidden" }
         }
       val setSpatialNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "setSpatialNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSpatialNode" }
+            "set_spatial_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_spatial_node" }
         }}
   }
 }

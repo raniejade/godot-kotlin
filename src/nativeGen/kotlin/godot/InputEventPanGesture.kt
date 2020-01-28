@@ -54,15 +54,15 @@ open class InputEventPanGesture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
-            "getDelta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDelta" }
+            "get_delta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_delta" }
         }
       val setDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
-            "setDelta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDelta" }
+            "set_delta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_delta" }
         }}
   }
 }

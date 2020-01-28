@@ -74,14 +74,14 @@ open class Expression(
       val getErrorText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "getErrorText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getErrorText" }
+            "get_error_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_error_text" }
         }
       val hasExecuteFailed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "hasExecuteFailed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasExecuteFailed" }
+            "has_execute_failed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
         }
       val parse: CPointer<godot_method_bind>
         get() = memScoped {

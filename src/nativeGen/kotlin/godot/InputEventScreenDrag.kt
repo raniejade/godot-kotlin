@@ -109,57 +109,57 @@ open class InputEventScreenDrag(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "getIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIndex" }
+            "get_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_index" }
         }
       val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "getRelative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRelative" }
+            "get_relative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_relative" }
         }
       val getSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "getSpeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpeed" }
+            "get_speed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_speed" }
         }
       val setIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "setIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIndex" }
+            "set_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_index" }
         }
       val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "setPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPosition" }
+            "set_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_position" }
         }
       val setRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "setRelative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRelative" }
+            "set_relative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_relative" }
         }
       val setSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "setSpeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSpeed" }
+            "set_speed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_speed" }
         }}
   }
 }

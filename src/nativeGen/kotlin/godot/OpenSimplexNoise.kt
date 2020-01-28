@@ -197,127 +197,127 @@ open class OpenSimplexNoise(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getImage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getImage" }
+            "get_image".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_image" }
         }
       val getLacunarity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getLacunarity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLacunarity" }
+            "get_lacunarity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lacunarity" }
         }
       val getNoise1d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getNoise1d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise1d" }
+            "get_noise_1d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise_1d" }
         }
       val getNoise2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getNoise2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise2d" }
+            "get_noise_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise_2d" }
         }
       val getNoise2dv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getNoise2dv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise2dv" }
+            "get_noise_2dv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise_2dv" }
         }
       val getNoise3d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getNoise3d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise3d" }
+            "get_noise_3d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise_3d" }
         }
       val getNoise3dv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getNoise3dv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise3dv" }
+            "get_noise_3dv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise_3dv" }
         }
       val getNoise4d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getNoise4d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNoise4d" }
+            "get_noise_4d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_noise_4d" }
         }
       val getOctaves: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getOctaves".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOctaves" }
+            "get_octaves".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_octaves" }
         }
       val getPeriod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getPeriod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPeriod" }
+            "get_period".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_period" }
         }
       val getPersistence: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getPersistence".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPersistence" }
+            "get_persistence".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_persistence" }
         }
       val getSeamlessImage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getSeamlessImage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSeamlessImage" }
+            "get_seamless_image".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_seamless_image" }
         }
       val getSeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "getSeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSeed" }
+            "get_seed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_seed" }
         }
       val setLacunarity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "setLacunarity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLacunarity" }
+            "set_lacunarity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lacunarity" }
         }
       val setOctaves: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "setOctaves".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOctaves" }
+            "set_octaves".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_octaves" }
         }
       val setPeriod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "setPeriod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPeriod" }
+            "set_period".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_period" }
         }
       val setPersistence: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "setPersistence".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPersistence" }
+            "set_persistence".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_persistence" }
         }
       val setSeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OpenSimplexNoise".cstr.ptr,
-            "setSeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSeed" }
+            "set_seed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_seed" }
         }}
   }
 }

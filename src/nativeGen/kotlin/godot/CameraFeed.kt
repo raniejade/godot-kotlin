@@ -146,44 +146,44 @@ open class CameraFeed(
       val getId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "getId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getId" }
+            "get_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_id" }
         }
       val getName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "getName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getName" }
+            "get_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_name" }
         }
       val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "getTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransform" }
+            "get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transform" }
         }
       val isActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "isActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isActive" }
+            "is_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_active" }
         }
       val setActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "setActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setActive" }
+            "set_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_active" }
         }
       val setTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraFeed".cstr.ptr,
-            "setTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTransform" }
+            "set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_transform" }
         }}
   }
 }

@@ -304,200 +304,200 @@ open class SoftBody(
       val addCollisionExceptionWith: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "addCollisionExceptionWith".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCollisionExceptionWith" }
+            "add_collision_exception_with".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_collision_exception_with" }
         }
       val getAreaAngularStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getAreaAngularStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAreaAngularStiffness" }
+            "get_areaAngular_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_areaAngular_stiffness" }
         }
       val getCollisionExceptions: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getCollisionExceptions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionExceptions" }
+            "get_collision_exceptions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_exceptions" }
         }
       val getCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionLayer" }
+            "get_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
         }
       val getCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getCollisionLayerBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionLayerBit" }
+            "get_collision_layer_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
+            "get_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
+            "get_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val getDampingCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getDampingCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDampingCoefficient" }
+            "get_damping_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_damping_coefficient" }
         }
       val getDragCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getDragCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDragCoefficient" }
+            "get_drag_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_drag_coefficient" }
         }
       val getLinearStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getLinearStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLinearStiffness" }
+            "get_linear_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_linear_stiffness" }
         }
       val getParentCollisionIgnore: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getParentCollisionIgnore".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParentCollisionIgnore" }
+            "get_parent_collision_ignore".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_parent_collision_ignore" }
         }
       val getPoseMatchingCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getPoseMatchingCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPoseMatchingCoefficient" }
+            "get_pose_matching_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pose_matching_coefficient" }
         }
       val getPressureCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getPressureCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPressureCoefficient" }
+            "get_pressure_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pressure_coefficient" }
         }
       val getSimulationPrecision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getSimulationPrecision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSimulationPrecision" }
+            "get_simulation_precision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_simulation_precision" }
         }
       val getTotalMass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getTotalMass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTotalMass" }
+            "get_total_mass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_total_mass" }
         }
       val getVolumeStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "getVolumeStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVolumeStiffness" }
+            "get_volume_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_volume_stiffness" }
         }
       val isRayPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "isRayPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRayPickable" }
+            "is_ray_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_ray_pickable" }
         }
       val removeCollisionExceptionWith: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "removeCollisionExceptionWith".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeCollisionExceptionWith" }
+            "remove_collision_exception_with".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_collision_exception_with" }
         }
       val setAreaAngularStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setAreaAngularStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAreaAngularStiffness" }
+            "set_areaAngular_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_areaAngular_stiffness" }
         }
       val setCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionLayer" }
+            "set_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
         }
       val setCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setCollisionLayerBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionLayerBit" }
+            "set_collision_layer_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
+            "set_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
+            "set_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
         }
       val setDampingCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setDampingCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDampingCoefficient" }
+            "set_damping_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_damping_coefficient" }
         }
       val setDragCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setDragCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDragCoefficient" }
+            "set_drag_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_drag_coefficient" }
         }
       val setLinearStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setLinearStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLinearStiffness" }
+            "set_linear_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_linear_stiffness" }
         }
       val setParentCollisionIgnore: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setParentCollisionIgnore".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setParentCollisionIgnore" }
+            "set_parent_collision_ignore".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_parent_collision_ignore" }
         }
       val setPoseMatchingCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setPoseMatchingCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPoseMatchingCoefficient" }
+            "set_pose_matching_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pose_matching_coefficient" }
         }
       val setPressureCoefficient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setPressureCoefficient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressureCoefficient" }
+            "set_pressure_coefficient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressure_coefficient" }
         }
       val setRayPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setRayPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRayPickable" }
+            "set_ray_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ray_pickable" }
         }
       val setSimulationPrecision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setSimulationPrecision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSimulationPrecision" }
+            "set_simulation_precision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_simulation_precision" }
         }
       val setTotalMass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setTotalMass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTotalMass" }
+            "set_total_mass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_total_mass" }
         }
       val setVolumeStiffness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SoftBody".cstr.ptr,
-            "setVolumeStiffness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVolumeStiffness" }
+            "set_volume_stiffness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_volume_stiffness" }
         }}
   }
 }

@@ -52,22 +52,22 @@ open class ResourceInteractiveLoader(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-            "getResource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResource" }
+            "get_resource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_resource" }
         }
       val getStage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-            "getStage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStage" }
+            "get_stage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stage" }
         }
       val getStageCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-            "getStageCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStageCount" }
+            "get_stage_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stage_count" }
         }
       val poll: CPointer<godot_method_bind>
         get() = memScoped {

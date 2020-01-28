@@ -51,12 +51,12 @@ open class UPNPDevice(
       setIgdServiceType(value)
     }
 
-  var igdStatus: Int
+  var igdStatus: IGDStatus
     get() {
-       return UPNPDevice.IGDStatus.from(getIgdStatus()) 
+       return getIgdStatus() 
     }
     set(value) {
-      setIgdStatus(UPNPDevice.IGDStatus.from(value))
+      setIgdStatus(value.value)
     }
 
   var serviceType: String
@@ -234,98 +234,98 @@ open class UPNPDevice(
       val addPortMapping: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "addPortMapping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addPortMapping" }
+            "add_port_mapping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_port_mapping" }
         }
       val deletePortMapping: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "deletePortMapping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method deletePortMapping" }
+            "delete_port_mapping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method delete_port_mapping" }
         }
       val getDescriptionUrl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "getDescriptionUrl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDescriptionUrl" }
+            "get_description_url".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_description_url" }
         }
       val getIgdControlUrl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "getIgdControlUrl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIgdControlUrl" }
+            "get_igd_control_url".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_igd_control_url" }
         }
       val getIgdOurAddr: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "getIgdOurAddr".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIgdOurAddr" }
+            "get_igd_our_addr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_igd_our_addr" }
         }
       val getIgdServiceType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "getIgdServiceType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIgdServiceType" }
+            "get_igd_service_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_igd_service_type" }
         }
       val getIgdStatus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "getIgdStatus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIgdStatus" }
+            "get_igd_status".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_igd_status" }
         }
       val getServiceType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "getServiceType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getServiceType" }
+            "get_service_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_service_type" }
         }
       val isValidGateway: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "isValidGateway".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isValidGateway" }
+            "is_valid_gateway".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid_gateway" }
         }
       val queryExternalAddress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "queryExternalAddress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queryExternalAddress" }
+            "query_external_address".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method query_external_address" }
         }
       val setDescriptionUrl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "setDescriptionUrl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDescriptionUrl" }
+            "set_description_url".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_description_url" }
         }
       val setIgdControlUrl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "setIgdControlUrl".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIgdControlUrl" }
+            "set_igd_control_url".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_igd_control_url" }
         }
       val setIgdOurAddr: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "setIgdOurAddr".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIgdOurAddr" }
+            "set_igd_our_addr".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_igd_our_addr" }
         }
       val setIgdServiceType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "setIgdServiceType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIgdServiceType" }
+            "set_igd_service_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_igd_service_type" }
         }
       val setIgdStatus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "setIgdStatus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setIgdStatus" }
+            "set_igd_status".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_igd_status" }
         }
       val setServiceType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("UPNPDevice".cstr.ptr,
-            "setServiceType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setServiceType" }
+            "set_service_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_service_type" }
         }}
   }
 }

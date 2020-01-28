@@ -65,15 +65,15 @@ open class VisualShaderNodeExpression(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "getExpression".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getExpression" }
+            "get_expression".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_expression" }
         }
       val setExpression: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "setExpression".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setExpression" }
+            "set_expression".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_expression" }
         }}
   }
 }

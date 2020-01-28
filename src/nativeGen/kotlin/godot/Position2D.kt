@@ -5,7 +5,6 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
-import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.cstr
@@ -16,14 +15,6 @@ import kotlinx.cinterop.reinterpret
 open class Position2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  var gizmoExtents: Float
-    get() {
-       return _getGizmoExtents() 
-    }
-    set(value) {
-      _setGizmoExtents(value)
-    }
-
   companion object {
     fun new(): Position2D = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("Position2D".cstr.ptr)

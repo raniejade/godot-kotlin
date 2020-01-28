@@ -54,15 +54,15 @@ open class CenterContainer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
-            "isUsingTopLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingTopLeft" }
+            "is_using_top_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_top_left" }
         }
       val setUseTopLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
-            "setUseTopLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseTopLeft" }
+            "set_use_top_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_top_left" }
         }}
   }
 }

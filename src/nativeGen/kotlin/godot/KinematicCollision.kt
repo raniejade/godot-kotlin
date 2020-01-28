@@ -147,78 +147,78 @@ open class KinematicCollision(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getCollider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollider" }
+            "get_collider".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider" }
         }
       val getColliderId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getColliderId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderId" }
+            "get_collider_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_id" }
         }
       val getColliderMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getColliderMetadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderMetadata" }
+            "get_collider_metadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_metadata" }
         }
       val getColliderShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getColliderShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderShape" }
+            "get_collider_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
         }
       val getColliderShapeIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getColliderShapeIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderShapeIndex" }
+            "get_collider_shape_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_shape_index" }
         }
       val getColliderVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getColliderVelocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderVelocity" }
+            "get_collider_velocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_velocity" }
         }
       val getLocalShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getLocalShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLocalShape" }
+            "get_local_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_local_shape" }
         }
       val getNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getNormal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNormal" }
+            "get_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_normal" }
         }
       val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPosition" }
+            "get_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_position" }
         }
       val getRemainder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getRemainder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRemainder" }
+            "get_remainder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_remainder" }
         }
       val getTravel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicCollision".cstr.ptr,
-            "getTravel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTravel" }
+            "get_travel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_travel" }
         }}
   }
 }

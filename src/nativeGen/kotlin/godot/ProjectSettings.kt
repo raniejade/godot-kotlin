@@ -129,8 +129,8 @@ open class ProjectSettings(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "addPropertyInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addPropertyInfo" }
+            "add_property_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_property_info" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -143,57 +143,57 @@ open class ProjectSettings(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "getOrder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOrder" }
+            "get_order".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_order" }
         }
       val getSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "getSetting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSetting" }
+            "get_setting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_setting" }
         }
       val globalizePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "globalizePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method globalizePath" }
+            "globalize_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method globalize_path" }
         }
       val hasSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "hasSetting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasSetting" }
+            "has_setting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_setting" }
         }
       val loadResourcePack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "loadResourcePack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method loadResourcePack" }
+            "load_resource_pack".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method load_resource_pack" }
         }
       val localizePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "localizePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method localizePath" }
+            "localize_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method localize_path" }
         }
       val propertyCanRevert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "propertyCanRevert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method propertyCanRevert" }
+            "property_can_revert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method property_can_revert" }
         }
       val propertyGetRevert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "propertyGetRevert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method propertyGetRevert" }
+            "property_get_revert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method property_get_revert" }
         }
       val save: CPointer<godot_method_bind>
         get() = memScoped {
@@ -206,29 +206,29 @@ open class ProjectSettings(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "saveCustom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method saveCustom" }
+            "save_custom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method save_custom" }
         }
       val setInitialValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "setInitialValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInitialValue" }
+            "set_initial_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_initial_value" }
         }
       val setOrder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "setOrder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOrder" }
+            "set_order".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_order" }
         }
       val setSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProjectSettings".cstr.ptr,
-            "setSetting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSetting" }
+            "set_setting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_setting" }
         }}
   }
 }

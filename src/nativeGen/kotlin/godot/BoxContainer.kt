@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class BoxContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
-  var alignment: Int
+  var alignment: AlignMode
     get() {
-       return BoxContainer.AlignMode.from(getAlignment()) 
+       return getAlignment() 
     }
     set(value) {
-      setAlignment(BoxContainer.AlignMode.from(value))
+      setAlignment(value.value)
     }
 
   fun addSpacer(begin: Boolean) {
@@ -77,22 +77,22 @@ open class BoxContainer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
-            "addSpacer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSpacer" }
+            "add_spacer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_spacer" }
         }
       val getAlignment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
-            "getAlignment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAlignment" }
+            "get_alignment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_alignment" }
         }
       val setAlignment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxContainer".cstr.ptr,
-            "setAlignment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAlignment" }
+            "set_alignment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_alignment" }
         }}
   }
 }

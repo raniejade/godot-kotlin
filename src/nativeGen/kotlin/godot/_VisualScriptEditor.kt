@@ -54,15 +54,15 @@ open class _VisualScriptEditor(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-            "addCustomNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addCustomNode" }
+            "add_custom_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
         }
       val removeCustomNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-            "removeCustomNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeCustomNode" }
+            "remove_custom_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
         }}
   }
 }

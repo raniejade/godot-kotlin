@@ -53,26 +53,26 @@ open class Listener(
       val clearCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "clearCurrent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearCurrent" }
+            "clear_current".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_current" }
         }
       val getListenerTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "getListenerTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getListenerTransform" }
+            "get_listener_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_listener_transform" }
         }
       val isCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "isCurrent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCurrent" }
+            "is_current".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_current" }
         }
       val makeCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Listener".cstr.ptr,
-            "makeCurrent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method makeCurrent" }
+            "make_current".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method make_current" }
         }}
   }
 }

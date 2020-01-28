@@ -158,12 +158,12 @@ open class Environment(
       setBgEnergy(value)
     }
 
-  var backgroundMode: Int
+  var backgroundMode: BGMode
     get() {
-       return Environment.BGMode.from(getBackground()) 
+       return getBackground() 
     }
     set(value) {
-      setBackground(Environment.BGMode.from(value))
+      setBackground(value.value)
     }
 
   var backgroundSky: Sky
@@ -230,12 +230,12 @@ open class Environment(
       setDofBlurFarEnabled(value)
     }
 
-  var dofBlurFarQuality: Int
+  var dofBlurFarQuality: DOFBlurQuality
     get() {
-       return Environment.DOFBlurQuality.from(getDofBlurFarQuality()) 
+       return getDofBlurFarQuality() 
     }
     set(value) {
-      setDofBlurFarQuality(Environment.DOFBlurQuality.from(value))
+      setDofBlurFarQuality(value.value)
     }
 
   var dofBlurFarTransition: Float
@@ -270,12 +270,12 @@ open class Environment(
       setDofBlurNearEnabled(value)
     }
 
-  var dofBlurNearQuality: Int
+  var dofBlurNearQuality: DOFBlurQuality
     get() {
-       return Environment.DOFBlurQuality.from(getDofBlurNearQuality()) 
+       return getDofBlurNearQuality() 
     }
     set(value) {
-      setDofBlurNearQuality(Environment.DOFBlurQuality.from(value))
+      setDofBlurNearQuality(value.value)
     }
 
   var dofBlurNearTransition: Float
@@ -406,12 +406,12 @@ open class Environment(
       setGlowBicubicUpscale(value)
     }
 
-  var glowBlendMode: Int
+  var glowBlendMode: GlowBlendMode
     get() {
-       return Environment.GlowBlendMode.from(getGlowBlendMode()) 
+       return getGlowBlendMode() 
     }
     set(value) {
-      setGlowBlendMode(Environment.GlowBlendMode.from(value))
+      setGlowBlendMode(value.value)
     }
 
   var glowBloom: Float
@@ -534,12 +534,12 @@ open class Environment(
       setSsaoBias(value)
     }
 
-  var ssaoBlur: Int
+  var ssaoBlur: SSAOBlur
     get() {
-       return Environment.SSAOBlur.from(getSsaoBlur()) 
+       return getSsaoBlur() 
     }
     set(value) {
-      setSsaoBlur(Environment.SSAOBlur.from(value))
+      setSsaoBlur(value.value)
     }
 
   var ssaoColor: Color
@@ -590,12 +590,12 @@ open class Environment(
       setSsaoDirectLightAffect(value)
     }
 
-  var ssaoQuality: Int
+  var ssaoQuality: SSAOQuality
     get() {
-       return Environment.SSAOQuality.from(getSsaoQuality()) 
+       return getSsaoQuality() 
     }
     set(value) {
-      setSsaoQuality(Environment.SSAOQuality.from(value))
+      setSsaoQuality(value.value)
     }
 
   var ssaoRadius: Float
@@ -622,12 +622,12 @@ open class Environment(
       setTonemapExposure(value)
     }
 
-  var tonemapMode: Int
+  var tonemapMode: ToneMapper
     get() {
-       return Environment.ToneMapper.from(getTonemapper()) 
+       return getTonemapper() 
     }
     set(value) {
-      setTonemapper(Environment.ToneMapper.from(value))
+      setTonemapper(value.value)
     }
 
   var tonemapWhite: Float
@@ -1633,1093 +1633,1095 @@ open class Environment(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAdjustmentBrightness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAdjustmentBrightness" }
+            "get_adjustment_brightness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_adjustment_brightness" }
         }
       val getAdjustmentColorCorrection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAdjustmentColorCorrection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAdjustmentColorCorrection" }
+            "get_adjustment_color_correction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_adjustment_color_correction" }
         }
       val getAdjustmentContrast: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAdjustmentContrast".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAdjustmentContrast" }
+            "get_adjustment_contrast".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_adjustment_contrast" }
         }
       val getAdjustmentSaturation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAdjustmentSaturation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAdjustmentSaturation" }
+            "get_adjustment_saturation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_adjustment_saturation" }
         }
       val getAmbientLightColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAmbientLightColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAmbientLightColor" }
+            "get_ambient_light_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_color" }
         }
       val getAmbientLightEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAmbientLightEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAmbientLightEnergy" }
+            "get_ambient_light_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_energy" }
         }
       val getAmbientLightSkyContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getAmbientLightSkyContribution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAmbientLightSkyContribution" }
+            "get_ambient_light_sky_contribution".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_sky_contribution"
+            }
         }
       val getBackground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getBackground".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBackground" }
+            "get_background".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_background" }
         }
       val getBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getBgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBgColor" }
+            "get_bg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bg_color" }
         }
       val getBgEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getBgEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBgEnergy" }
+            "get_bg_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bg_energy" }
         }
       val getCameraFeedId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getCameraFeedId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCameraFeedId" }
+            "get_camera_feed_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
         }
       val getCanvasMaxLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getCanvasMaxLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCanvasMaxLayer" }
+            "get_canvas_max_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_canvas_max_layer" }
         }
       val getDofBlurFarAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurFarAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarAmount" }
+            "get_dof_blur_far_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_amount" }
         }
       val getDofBlurFarDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurFarDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarDistance" }
+            "get_dof_blur_far_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_distance" }
         }
       val getDofBlurFarQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurFarQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarQuality" }
+            "get_dof_blur_far_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_quality" }
         }
       val getDofBlurFarTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurFarTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarTransition" }
+            "get_dof_blur_far_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_transition" }
         }
       val getDofBlurNearAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurNearAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearAmount" }
+            "get_dof_blur_near_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_amount" }
         }
       val getDofBlurNearDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurNearDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearDistance" }
+            "get_dof_blur_near_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_distance" }
         }
       val getDofBlurNearQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurNearQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearQuality" }
+            "get_dof_blur_near_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_quality" }
         }
       val getDofBlurNearTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getDofBlurNearTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearTransition" }
+            "get_dof_blur_near_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_transition" }
         }
       val getFogColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogColor" }
+            "get_fog_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_color" }
         }
       val getFogDepthBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogDepthBegin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogDepthBegin" }
+            "get_fog_depth_begin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_begin" }
         }
       val getFogDepthCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogDepthCurve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogDepthCurve" }
+            "get_fog_depth_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_curve" }
         }
       val getFogDepthEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogDepthEnd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogDepthEnd" }
+            "get_fog_depth_end".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_end" }
         }
       val getFogHeightCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogHeightCurve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogHeightCurve" }
+            "get_fog_height_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_height_curve" }
         }
       val getFogHeightMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogHeightMax".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogHeightMax" }
+            "get_fog_height_max".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_height_max" }
         }
       val getFogHeightMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogHeightMin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogHeightMin" }
+            "get_fog_height_min".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_height_min" }
         }
       val getFogSunAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogSunAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogSunAmount" }
+            "get_fog_sun_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_sun_amount" }
         }
       val getFogSunColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogSunColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogSunColor" }
+            "get_fog_sun_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_sun_color" }
         }
       val getFogTransmitCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getFogTransmitCurve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFogTransmitCurve" }
+            "get_fog_transmit_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fog_transmit_curve" }
         }
       val getGlowBlendMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowBlendMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowBlendMode" }
+            "get_glow_blend_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_blend_mode" }
         }
       val getGlowBloom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowBloom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowBloom" }
+            "get_glow_bloom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_bloom" }
         }
       val getGlowHdrBleedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowHdrBleedScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowHdrBleedScale" }
+            "get_glow_hdr_bleed_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_scale" }
         }
       val getGlowHdrBleedThreshold: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowHdrBleedThreshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowHdrBleedThreshold" }
+            "get_glow_hdr_bleed_threshold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_threshold" }
         }
       val getGlowHdrLuminanceCap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowHdrLuminanceCap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowHdrLuminanceCap" }
+            "get_glow_hdr_luminance_cap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_luminance_cap" }
         }
       val getGlowIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowIntensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowIntensity" }
+            "get_glow_intensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_intensity" }
         }
       val getGlowStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getGlowStrength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGlowStrength" }
+            "get_glow_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_glow_strength" }
         }
       val getSky: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSky" }
+            "get_sky".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky" }
         }
       val getSkyCustomFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSkyCustomFov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkyCustomFov" }
+            "get_sky_custom_fov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_custom_fov" }
         }
       val getSkyOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSkyOrientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkyOrientation" }
+            "get_sky_orientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_orientation" }
         }
       val getSkyRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSkyRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkyRotation" }
+            "get_sky_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_rotation" }
         }
       val getSkyRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSkyRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkyRotationDegrees" }
+            "get_sky_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sky_rotation_degrees" }
         }
       val getSsaoAoChannelAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoAoChannelAffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoAoChannelAffect" }
+            "get_ssao_ao_channel_affect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_ao_channel_affect" }
         }
       val getSsaoBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoBias" }
+            "get_ssao_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_bias" }
         }
       val getSsaoBlur: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoBlur".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoBlur" }
+            "get_ssao_blur".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_blur" }
         }
       val getSsaoColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoColor" }
+            "get_ssao_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_color" }
         }
       val getSsaoDirectLightAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoDirectLightAffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoDirectLightAffect" }
+            "get_ssao_direct_light_affect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_direct_light_affect" }
         }
       val getSsaoEdgeSharpness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoEdgeSharpness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoEdgeSharpness" }
+            "get_ssao_edge_sharpness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_edge_sharpness" }
         }
       val getSsaoIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoIntensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoIntensity" }
+            "get_ssao_intensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity" }
         }
       val getSsaoIntensity2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoIntensity2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoIntensity2" }
+            "get_ssao_intensity2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity2" }
         }
       val getSsaoQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoQuality" }
+            "get_ssao_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_quality" }
         }
       val getSsaoRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoRadius" }
+            "get_ssao_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_radius" }
         }
       val getSsaoRadius2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsaoRadius2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsaoRadius2" }
+            "get_ssao_radius2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssao_radius2" }
         }
       val getSsrDepthTolerance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsrDepthTolerance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsrDepthTolerance" }
+            "get_ssr_depth_tolerance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssr_depth_tolerance" }
         }
       val getSsrFadeIn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsrFadeIn".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsrFadeIn" }
+            "get_ssr_fade_in".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_in" }
         }
       val getSsrFadeOut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsrFadeOut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsrFadeOut" }
+            "get_ssr_fade_out".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_out" }
         }
       val getSsrMaxSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getSsrMaxSteps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSsrMaxSteps" }
+            "get_ssr_max_steps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ssr_max_steps" }
         }
       val getTonemapAutoExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapAutoExposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposure" }
+            "get_tonemap_auto_exposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure" }
         }
       val getTonemapAutoExposureGrey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapAutoExposureGrey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureGrey" }
+            "get_tonemap_auto_exposure_grey".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_grey" }
         }
       val getTonemapAutoExposureMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapAutoExposureMax".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureMax" }
+            "get_tonemap_auto_exposure_max".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_max" }
         }
       val getTonemapAutoExposureMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapAutoExposureMin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureMin" }
+            "get_tonemap_auto_exposure_min".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_min" }
         }
       val getTonemapAutoExposureSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapAutoExposureSpeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureSpeed" }
+            "get_tonemap_auto_exposure_speed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_speed" }
         }
       val getTonemapExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapExposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapExposure" }
+            "get_tonemap_exposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_exposure" }
         }
       val getTonemapWhite: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapWhite".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapWhite" }
+            "get_tonemap_white".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemap_white" }
         }
       val getTonemapper: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "getTonemapper".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTonemapper" }
+            "get_tonemapper".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tonemapper" }
         }
       val isAdjustmentEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isAdjustmentEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isAdjustmentEnabled" }
+            "is_adjustment_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_adjustment_enabled" }
         }
       val isDofBlurFarEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isDofBlurFarEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDofBlurFarEnabled" }
+            "is_dof_blur_far_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_dof_blur_far_enabled" }
         }
       val isDofBlurNearEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isDofBlurNearEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDofBlurNearEnabled" }
+            "is_dof_blur_near_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_dof_blur_near_enabled" }
         }
       val isFogDepthEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isFogDepthEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFogDepthEnabled" }
+            "is_fog_depth_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_fog_depth_enabled" }
         }
       val isFogEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isFogEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFogEnabled" }
+            "is_fog_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_fog_enabled" }
         }
       val isFogHeightEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isFogHeightEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFogHeightEnabled" }
+            "is_fog_height_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_fog_height_enabled" }
         }
       val isFogTransmitEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isFogTransmitEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFogTransmitEnabled" }
+            "is_fog_transmit_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_fog_transmit_enabled" }
         }
       val isGlowBicubicUpscaleEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isGlowBicubicUpscaleEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isGlowBicubicUpscaleEnabled" }
+            "is_glow_bicubic_upscale_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_glow_bicubic_upscale_enabled" }
         }
       val isGlowEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isGlowEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isGlowEnabled" }
+            "is_glow_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_glow_enabled" }
         }
       val isGlowLevelEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isGlowLevelEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isGlowLevelEnabled" }
+            "is_glow_level_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_glow_level_enabled" }
         }
       val isSsaoEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isSsaoEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSsaoEnabled" }
+            "is_ssao_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_ssao_enabled" }
         }
       val isSsrEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isSsrEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSsrEnabled" }
+            "is_ssr_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_ssr_enabled" }
         }
       val isSsrRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "isSsrRough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSsrRough" }
+            "is_ssr_rough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_ssr_rough" }
         }
       val setAdjustmentBrightness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAdjustmentBrightness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAdjustmentBrightness" }
+            "set_adjustment_brightness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_adjustment_brightness" }
         }
       val setAdjustmentColorCorrection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAdjustmentColorCorrection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAdjustmentColorCorrection" }
+            "set_adjustment_color_correction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_adjustment_color_correction" }
         }
       val setAdjustmentContrast: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAdjustmentContrast".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAdjustmentContrast" }
+            "set_adjustment_contrast".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_adjustment_contrast" }
         }
       val setAdjustmentEnable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAdjustmentEnable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAdjustmentEnable" }
+            "set_adjustment_enable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_adjustment_enable" }
         }
       val setAdjustmentSaturation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAdjustmentSaturation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAdjustmentSaturation" }
+            "set_adjustment_saturation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_adjustment_saturation" }
         }
       val setAmbientLightColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAmbientLightColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAmbientLightColor" }
+            "set_ambient_light_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_color" }
         }
       val setAmbientLightEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAmbientLightEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAmbientLightEnergy" }
+            "set_ambient_light_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_energy" }
         }
       val setAmbientLightSkyContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setAmbientLightSkyContribution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAmbientLightSkyContribution" }
+            "set_ambient_light_sky_contribution".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_sky_contribution"
+            }
         }
       val setBackground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setBackground".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBackground" }
+            "set_background".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_background" }
         }
       val setBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setBgColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBgColor" }
+            "set_bg_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bg_color" }
         }
       val setBgEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setBgEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBgEnergy" }
+            "set_bg_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bg_energy" }
         }
       val setCameraFeedId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setCameraFeedId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCameraFeedId" }
+            "set_camera_feed_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
         }
       val setCanvasMaxLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setCanvasMaxLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCanvasMaxLayer" }
+            "set_canvas_max_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_canvas_max_layer" }
         }
       val setDofBlurFarAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurFarAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarAmount" }
+            "set_dof_blur_far_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_amount" }
         }
       val setDofBlurFarDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurFarDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarDistance" }
+            "set_dof_blur_far_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_distance" }
         }
       val setDofBlurFarEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurFarEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarEnabled" }
+            "set_dof_blur_far_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_enabled" }
         }
       val setDofBlurFarQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurFarQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarQuality" }
+            "set_dof_blur_far_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_quality" }
         }
       val setDofBlurFarTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurFarTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarTransition" }
+            "set_dof_blur_far_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_transition" }
         }
       val setDofBlurNearAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurNearAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearAmount" }
+            "set_dof_blur_near_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_amount" }
         }
       val setDofBlurNearDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurNearDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearDistance" }
+            "set_dof_blur_near_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_distance" }
         }
       val setDofBlurNearEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurNearEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearEnabled" }
+            "set_dof_blur_near_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_enabled" }
         }
       val setDofBlurNearQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurNearQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearQuality" }
+            "set_dof_blur_near_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_quality" }
         }
       val setDofBlurNearTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setDofBlurNearTransition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearTransition" }
+            "set_dof_blur_near_transition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_transition" }
         }
       val setFogColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogColor" }
+            "set_fog_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_color" }
         }
       val setFogDepthBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogDepthBegin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogDepthBegin" }
+            "set_fog_depth_begin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_begin" }
         }
       val setFogDepthCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogDepthCurve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogDepthCurve" }
+            "set_fog_depth_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_curve" }
         }
       val setFogDepthEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogDepthEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogDepthEnabled" }
+            "set_fog_depth_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_enabled" }
         }
       val setFogDepthEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogDepthEnd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogDepthEnd" }
+            "set_fog_depth_end".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_end" }
         }
       val setFogEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogEnabled" }
+            "set_fog_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_enabled" }
         }
       val setFogHeightCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogHeightCurve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogHeightCurve" }
+            "set_fog_height_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_height_curve" }
         }
       val setFogHeightEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogHeightEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogHeightEnabled" }
+            "set_fog_height_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_height_enabled" }
         }
       val setFogHeightMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogHeightMax".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogHeightMax" }
+            "set_fog_height_max".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_height_max" }
         }
       val setFogHeightMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogHeightMin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogHeightMin" }
+            "set_fog_height_min".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_height_min" }
         }
       val setFogSunAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogSunAmount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogSunAmount" }
+            "set_fog_sun_amount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_sun_amount" }
         }
       val setFogSunColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogSunColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogSunColor" }
+            "set_fog_sun_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_sun_color" }
         }
       val setFogTransmitCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogTransmitCurve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogTransmitCurve" }
+            "set_fog_transmit_curve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_curve" }
         }
       val setFogTransmitEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setFogTransmitEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFogTransmitEnabled" }
+            "set_fog_transmit_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_enabled" }
         }
       val setGlowBicubicUpscale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowBicubicUpscale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowBicubicUpscale" }
+            "set_glow_bicubic_upscale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_bicubic_upscale" }
         }
       val setGlowBlendMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowBlendMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowBlendMode" }
+            "set_glow_blend_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_blend_mode" }
         }
       val setGlowBloom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowBloom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowBloom" }
+            "set_glow_bloom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_bloom" }
         }
       val setGlowEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowEnabled" }
+            "set_glow_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_enabled" }
         }
       val setGlowHdrBleedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowHdrBleedScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowHdrBleedScale" }
+            "set_glow_hdr_bleed_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_scale" }
         }
       val setGlowHdrBleedThreshold: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowHdrBleedThreshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowHdrBleedThreshold" }
+            "set_glow_hdr_bleed_threshold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_threshold" }
         }
       val setGlowHdrLuminanceCap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowHdrLuminanceCap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowHdrLuminanceCap" }
+            "set_glow_hdr_luminance_cap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_luminance_cap" }
         }
       val setGlowIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowIntensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowIntensity" }
+            "set_glow_intensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_intensity" }
         }
       val setGlowLevel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowLevel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowLevel" }
+            "set_glow_level".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_level" }
         }
       val setGlowStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setGlowStrength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGlowStrength" }
+            "set_glow_strength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_glow_strength" }
         }
       val setSky: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSky" }
+            "set_sky".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky" }
         }
       val setSkyCustomFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSkyCustomFov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSkyCustomFov" }
+            "set_sky_custom_fov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_custom_fov" }
         }
       val setSkyOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSkyOrientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSkyOrientation" }
+            "set_sky_orientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_orientation" }
         }
       val setSkyRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSkyRotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSkyRotation" }
+            "set_sky_rotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_rotation" }
         }
       val setSkyRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSkyRotationDegrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSkyRotationDegrees" }
+            "set_sky_rotation_degrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_sky_rotation_degrees" }
         }
       val setSsaoAoChannelAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoAoChannelAffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoAoChannelAffect" }
+            "set_ssao_ao_channel_affect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_ao_channel_affect" }
         }
       val setSsaoBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoBias" }
+            "set_ssao_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_bias" }
         }
       val setSsaoBlur: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoBlur".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoBlur" }
+            "set_ssao_blur".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_blur" }
         }
       val setSsaoColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoColor" }
+            "set_ssao_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_color" }
         }
       val setSsaoDirectLightAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoDirectLightAffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoDirectLightAffect" }
+            "set_ssao_direct_light_affect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_direct_light_affect" }
         }
       val setSsaoEdgeSharpness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoEdgeSharpness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoEdgeSharpness" }
+            "set_ssao_edge_sharpness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_edge_sharpness" }
         }
       val setSsaoEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoEnabled" }
+            "set_ssao_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_enabled" }
         }
       val setSsaoIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoIntensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoIntensity" }
+            "set_ssao_intensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity" }
         }
       val setSsaoIntensity2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoIntensity2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoIntensity2" }
+            "set_ssao_intensity2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity2" }
         }
       val setSsaoQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoQuality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoQuality" }
+            "set_ssao_quality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_quality" }
         }
       val setSsaoRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoRadius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoRadius" }
+            "set_ssao_radius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_radius" }
         }
       val setSsaoRadius2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsaoRadius2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsaoRadius2" }
+            "set_ssao_radius2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssao_radius2" }
         }
       val setSsrDepthTolerance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsrDepthTolerance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsrDepthTolerance" }
+            "set_ssr_depth_tolerance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssr_depth_tolerance" }
         }
       val setSsrEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsrEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsrEnabled" }
+            "set_ssr_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssr_enabled" }
         }
       val setSsrFadeIn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsrFadeIn".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsrFadeIn" }
+            "set_ssr_fade_in".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_in" }
         }
       val setSsrFadeOut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsrFadeOut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsrFadeOut" }
+            "set_ssr_fade_out".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_out" }
         }
       val setSsrMaxSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsrMaxSteps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsrMaxSteps" }
+            "set_ssr_max_steps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssr_max_steps" }
         }
       val setSsrRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setSsrRough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSsrRough" }
+            "set_ssr_rough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_ssr_rough" }
         }
       val setTonemapAutoExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapAutoExposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposure" }
+            "set_tonemap_auto_exposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure" }
         }
       val setTonemapAutoExposureGrey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapAutoExposureGrey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureGrey" }
+            "set_tonemap_auto_exposure_grey".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_grey" }
         }
       val setTonemapAutoExposureMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapAutoExposureMax".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureMax" }
+            "set_tonemap_auto_exposure_max".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_max" }
         }
       val setTonemapAutoExposureMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapAutoExposureMin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureMin" }
+            "set_tonemap_auto_exposure_min".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_min" }
         }
       val setTonemapAutoExposureSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapAutoExposureSpeed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureSpeed" }
+            "set_tonemap_auto_exposure_speed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_speed" }
         }
       val setTonemapExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapExposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapExposure" }
+            "set_tonemap_exposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_exposure" }
         }
       val setTonemapWhite: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapWhite".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapWhite" }
+            "set_tonemap_white".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemap_white" }
         }
       val setTonemapper: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "setTonemapper".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTonemapper" }
+            "set_tonemapper".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tonemapper" }
         }}
   }
 }

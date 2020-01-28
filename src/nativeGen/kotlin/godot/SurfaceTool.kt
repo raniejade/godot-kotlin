@@ -190,85 +190,85 @@ open class SurfaceTool(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addBones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addBones" }
+            "add_bones".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_bones" }
         }
       val addColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addColor" }
+            "add_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_color" }
         }
       val addIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIndex" }
+            "add_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_index" }
         }
       val addNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addNormal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addNormal" }
+            "add_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_normal" }
         }
       val addSmoothGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addSmoothGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addSmoothGroup" }
+            "add_smooth_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_smooth_group" }
         }
       val addTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addTangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addTangent" }
+            "add_tangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_tangent" }
         }
       val addTriangleFan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addTriangleFan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addTriangleFan" }
+            "add_triangle_fan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_triangle_fan" }
         }
       val addUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addUv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addUv" }
+            "add_uv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_uv" }
         }
       val addUv2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addUv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addUv2" }
+            "add_uv2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_uv2" }
         }
       val addVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addVertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addVertex" }
+            "add_vertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_vertex" }
         }
       val addWeights: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "addWeights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addWeights" }
+            "add_weights".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_weights" }
         }
       val appendFrom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "appendFrom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method appendFrom" }
+            "append_from".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method append_from" }
         }
       val begin: CPointer<godot_method_bind>
         get() = memScoped {
@@ -295,22 +295,22 @@ open class SurfaceTool(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "commitToArrays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commitToArrays" }
+            "commit_to_arrays".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method commit_to_arrays" }
         }
       val createFrom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "createFrom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createFrom" }
+            "create_from".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_from" }
         }
       val createFromBlendShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "createFromBlendShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createFromBlendShape" }
+            "create_from_blend_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_from_blend_shape" }
         }
       val deindex: CPointer<godot_method_bind>
         get() = memScoped {
@@ -323,15 +323,15 @@ open class SurfaceTool(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "generateNormals".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generateNormals" }
+            "generate_normals".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generate_normals" }
         }
       val generateTangents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "generateTangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generateTangents" }
+            "generate_tangents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generate_tangents" }
         }
       val index: CPointer<godot_method_bind>
         get() = memScoped {
@@ -344,8 +344,8 @@ open class SurfaceTool(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "setMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
+            "set_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_material" }
         }}
   }
 }

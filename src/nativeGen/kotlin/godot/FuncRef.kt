@@ -55,26 +55,26 @@ open class FuncRef(
       val callFunc: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "callFunc".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method callFunc" }
+            "call_func".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method call_func" }
         }
       val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "isValid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isValid" }
+            "is_valid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_valid" }
         }
       val setFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "setFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFunction" }
+            "set_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_function" }
         }
       val setInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("FuncRef".cstr.ptr,
-            "setInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstance" }
+            "set_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance" }
         }}
   }
 }

@@ -53,15 +53,15 @@ open class ProgressBar(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
-            "isPercentVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPercentVisible" }
+            "is_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_percent_visible" }
         }
       val setPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
-            "setPercentVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPercentVisible" }
+            "set_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
         }}
   }
 }

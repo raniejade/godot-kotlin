@@ -19,20 +19,20 @@ import kotlinx.cinterop.reinterpret
 open class NinePatchRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  var axisStretchHorizontal: Int
+  var axisStretchHorizontal: AxisStretchMode
     get() {
-       return NinePatchRect.AxisStretchMode.from(getHAxisStretchMode()) 
+       return getHAxisStretchMode() 
     }
     set(value) {
-      setHAxisStretchMode(NinePatchRect.AxisStretchMode.from(value))
+      setHAxisStretchMode(value.value)
     }
 
-  var axisStretchVertical: Int
+  var axisStretchVertical: AxisStretchMode
     get() {
-       return NinePatchRect.AxisStretchMode.from(getVAxisStretchMode()) 
+       return getVAxisStretchMode() 
     }
     set(value) {
-      setVAxisStretchMode(NinePatchRect.AxisStretchMode.from(value))
+      setVAxisStretchMode(value.value)
     }
 
   var drawCenter: Boolean
@@ -167,85 +167,85 @@ open class NinePatchRect(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "getHAxisStretchMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHAxisStretchMode" }
+            "get_h_axis_stretch_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_h_axis_stretch_mode" }
         }
       val getPatchMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "getPatchMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPatchMargin" }
+            "get_patch_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_patch_margin" }
         }
       val getRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "getRegionRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRegionRect" }
+            "get_region_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_region_rect" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val getVAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "getVAxisStretchMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVAxisStretchMode" }
+            "get_v_axis_stretch_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_axis_stretch_mode" }
         }
       val isDrawCenterEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "isDrawCenterEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDrawCenterEnabled" }
+            "is_draw_center_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_draw_center_enabled" }
         }
       val setDrawCenter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "setDrawCenter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDrawCenter" }
+            "set_draw_center".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_draw_center" }
         }
       val setHAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "setHAxisStretchMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHAxisStretchMode" }
+            "set_h_axis_stretch_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_h_axis_stretch_mode" }
         }
       val setPatchMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "setPatchMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPatchMargin" }
+            "set_patch_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_patch_margin" }
         }
       val setRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "setRegionRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRegionRect" }
+            "set_region_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_region_rect" }
         }
       val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "setTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTexture" }
+            "set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }
       val setVAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "setVAxisStretchMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVAxisStretchMode" }
+            "set_v_axis_stretch_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_v_axis_stretch_mode" }
         }}
   }
 }

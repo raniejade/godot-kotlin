@@ -113,32 +113,33 @@ open class Shape2D(
       val collideAndGetContacts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collideAndGetContacts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collideAndGetContacts" }
+            "collide_and_get_contacts".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method collide_and_get_contacts" }
         }
       val collideWithMotion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collideWithMotion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collideWithMotion" }
+            "collide_with_motion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method collide_with_motion" }
         }
       val collideWithMotionAndGetContacts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "collideWithMotionAndGetContacts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collideWithMotionAndGetContacts" }
+            "collide_with_motion_and_get_contacts".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method collide_with_motion_and_get_contacts" }
         }
       val getCustomSolverBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "getCustomSolverBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCustomSolverBias" }
+            "get_custom_solver_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_solver_bias" }
         }
       val setCustomSolverBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape2D".cstr.ptr,
-            "setCustomSolverBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCustomSolverBias" }
+            "set_custom_solver_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_solver_bias" }
         }}
   }
 }

@@ -64,8 +64,9 @@ open class AudioEffectSpectrumAnalyzerInstance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzerInstance".cstr.ptr,
-            "getMagnitudeForFrequencyRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMagnitudeForFrequencyRange" }
+            "get_magnitude_for_frequency_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_magnitude_for_frequency_range"
+            }
         }}
   }
 }

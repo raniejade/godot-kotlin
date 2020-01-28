@@ -54,15 +54,15 @@ open class AudioEffectPanner(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
-            "getPan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPan" }
+            "get_pan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pan" }
         }
       val setPan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
-            "setPan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPan" }
+            "set_pan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pan" }
         }}
   }
 }

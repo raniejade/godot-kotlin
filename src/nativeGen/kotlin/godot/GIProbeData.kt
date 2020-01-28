@@ -238,155 +238,155 @@ open class GIProbeData(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBias" }
+            "get_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bias" }
         }
       val getBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBounds" }
+            "get_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bounds" }
         }
       val getCellSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getCellSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCellSize" }
+            "get_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cell_size" }
         }
       val getDynamicData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getDynamicData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDynamicData" }
+            "get_dynamic_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dynamic_data" }
         }
       val getDynamicRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getDynamicRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDynamicRange" }
+            "get_dynamic_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_dynamic_range" }
         }
       val getEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEnergy" }
+            "get_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_energy" }
         }
       val getNormalBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getNormalBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNormalBias" }
+            "get_normal_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_normal_bias" }
         }
       val getPropagation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getPropagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPropagation" }
+            "get_propagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_propagation" }
         }
       val getToCellXform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "getToCellXform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getToCellXform" }
+            "get_to_cell_xform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_to_cell_xform" }
         }
       val isCompressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "isCompressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCompressed" }
+            "is_compressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_compressed" }
         }
       val isInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "isInterior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isInterior" }
+            "is_interior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_interior" }
         }
       val setBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBias" }
+            "set_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bias" }
         }
       val setBounds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setBounds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBounds" }
+            "set_bounds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bounds" }
         }
       val setCellSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setCellSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCellSize" }
+            "set_cell_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_cell_size" }
         }
       val setCompress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setCompress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCompress" }
+            "set_compress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_compress" }
         }
       val setDynamicData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setDynamicData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDynamicData" }
+            "set_dynamic_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dynamic_data" }
         }
       val setDynamicRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setDynamicRange".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDynamicRange" }
+            "set_dynamic_range".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_dynamic_range" }
         }
       val setEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setEnergy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnergy" }
+            "set_energy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_energy" }
         }
       val setInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setInterior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInterior" }
+            "set_interior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_interior" }
         }
       val setNormalBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setNormalBias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNormalBias" }
+            "set_normal_bias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_normal_bias" }
         }
       val setPropagation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setPropagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPropagation" }
+            "set_propagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_propagation" }
         }
       val setToCellXform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbeData".cstr.ptr,
-            "setToCellXform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setToCellXform" }
+            "set_to_cell_xform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_to_cell_xform" }
         }}
   }
 }

@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptBasicTypeConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var basicType: Int
+  var basicType: Variant.Type
     get() {
-       return Variant.Type.from(getBasicType()) 
+       return getBasicType() 
     }
     set(value) {
-      setBasicType(Variant.Type.from(value))
+      setBasicType(value.value)
     }
 
   var constant: String
@@ -74,29 +74,29 @@ open class VisualScriptBasicTypeConstant(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBasicTypeConstant".cstr.ptr,
-            "getBasicType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBasicType" }
+            "get_basic_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_basic_type" }
         }
       val getBasicTypeConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBasicTypeConstant".cstr.ptr,
-            "getBasicTypeConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBasicTypeConstant" }
+            "get_basic_type_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_basic_type_constant" }
         }
       val setBasicType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBasicTypeConstant".cstr.ptr,
-            "setBasicType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBasicType" }
+            "set_basic_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_basic_type" }
         }
       val setBasicTypeConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBasicTypeConstant".cstr.ptr,
-            "setBasicTypeConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBasicTypeConstant" }
+            "set_basic_type_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_basic_type_constant" }
         }}
   }
 }

@@ -26,12 +26,12 @@ open class NetworkedMultiplayerPeer(
       setRefuseNewConnections(value)
     }
 
-  var transferMode: Int
+  var transferMode: TransferMode
     get() {
-       return NetworkedMultiplayerPeer.TransferMode.from(getTransferMode()) 
+       return getTransferMode() 
     }
     set(value) {
-      setTransferMode(NetworkedMultiplayerPeer.TransferMode.from(value))
+      setTransferMode(value.value)
     }
 
   fun getConnectionStatus(): ConnectionStatus {
@@ -145,36 +145,36 @@ open class NetworkedMultiplayerPeer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "getConnectionStatus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionStatus" }
+            "get_connection_status".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_status" }
         }
       val getPacketPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "getPacketPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPacketPeer" }
+            "get_packet_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_packet_peer" }
         }
       val getTransferMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "getTransferMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransferMode" }
+            "get_transfer_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transfer_mode" }
         }
       val getUniqueId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "getUniqueId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUniqueId" }
+            "get_unique_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_unique_id" }
         }
       val isRefusingNewConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "isRefusingNewConnections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRefusingNewConnections" }
+            "is_refusing_new_connections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_refusing_new_connections" }
         }
       val poll: CPointer<godot_method_bind>
         get() = memScoped {
@@ -187,22 +187,22 @@ open class NetworkedMultiplayerPeer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "setRefuseNewConnections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRefuseNewConnections" }
+            "set_refuse_new_connections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_refuse_new_connections" }
         }
       val setTargetPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "setTargetPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTargetPeer" }
+            "set_target_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_target_peer" }
         }
       val setTransferMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerPeer".cstr.ptr,
-            "setTransferMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTransferMode" }
+            "set_transfer_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_transfer_mode" }
         }}
   }
 }

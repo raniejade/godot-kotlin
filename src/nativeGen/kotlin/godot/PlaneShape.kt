@@ -52,14 +52,14 @@ open class PlaneShape(
       val getPlane: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
-            "getPlane".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPlane" }
+            "get_plane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_plane" }
         }
       val setPlane: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
-            "setPlane".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPlane" }
+            "set_plane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_plane" }
         }}
   }
 }

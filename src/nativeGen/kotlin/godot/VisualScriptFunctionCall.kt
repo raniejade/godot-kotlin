@@ -2,7 +2,6 @@
 package godot
 
 import gdnative.godot_method_bind
-import godot.core.Dictionary
 import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
@@ -21,14 +20,6 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptFunctionCall(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
-  var argumentCache: Dictionary
-    get() {
-       return _getArgumentCache() 
-    }
-    set(value) {
-      _setArgumentCache(value)
-    }
-
   var baseScript: String
     get() {
        return getBaseScript() 
@@ -45,20 +36,20 @@ open class VisualScriptFunctionCall(
       setBaseType(value)
     }
 
-  var basicType: Int
+  var basicType: Variant.Type
     get() {
-       return Variant.Type.from(getBasicType()) 
+       return getBasicType() 
     }
     set(value) {
-      setBasicType(Variant.Type.from(value))
+      setBasicType(value.value)
     }
 
-  var callMode: Int
+  var callMode: CallMode
     get() {
-       return VisualScriptFunctionCall.CallMode.from(getCallMode()) 
+       return getCallMode() 
     }
     set(value) {
-      setCallMode(VisualScriptFunctionCall.CallMode.from(value))
+      setCallMode(value.value)
     }
 
   var function: String
@@ -77,12 +68,12 @@ open class VisualScriptFunctionCall(
       setBasePath(value)
     }
 
-  var rpcCallMode: Int
+  var rpcCallMode: RPCCallMode
     get() {
-       return VisualScriptFunctionCall.RPCCallMode.from(getRpcCallMode()) 
+       return getRpcCallMode() 
     }
     set(value) {
-      setRpcCallMode(VisualScriptFunctionCall.RPCCallMode.from(value))
+      setRpcCallMode(value.value)
     }
 
   var singleton: String
@@ -298,141 +289,141 @@ open class VisualScriptFunctionCall(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getBasePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBasePath" }
+            "get_base_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_path" }
         }
       val getBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getBaseScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBaseScript" }
+            "get_base_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_script" }
         }
       val getBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getBaseType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBaseType" }
+            "get_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
         }
       val getBasicType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getBasicType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBasicType" }
+            "get_basic_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_basic_type" }
         }
       val getCallMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getCallMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCallMode" }
+            "get_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_call_mode" }
         }
       val getFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFunction" }
+            "get_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_function" }
         }
       val getRpcCallMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getRpcCallMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRpcCallMode" }
+            "get_rpc_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rpc_call_mode" }
         }
       val getSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSingleton" }
+            "get_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_singleton" }
         }
       val getUseDefaultArgs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getUseDefaultArgs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUseDefaultArgs" }
+            "get_use_default_args".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_use_default_args" }
         }
       val getValidate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "getValidate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getValidate" }
+            "get_validate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_validate" }
         }
       val setBasePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setBasePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBasePath" }
+            "set_base_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_path" }
         }
       val setBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setBaseScript".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBaseScript" }
+            "set_base_script".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_script" }
         }
       val setBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setBaseType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBaseType" }
+            "set_base_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
         }
       val setBasicType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setBasicType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBasicType" }
+            "set_basic_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_basic_type" }
         }
       val setCallMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setCallMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCallMode" }
+            "set_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_call_mode" }
         }
       val setFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setFunction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFunction" }
+            "set_function".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_function" }
         }
       val setRpcCallMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setRpcCallMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRpcCallMode" }
+            "set_rpc_call_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rpc_call_mode" }
         }
       val setSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setSingleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSingleton" }
+            "set_singleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_singleton" }
         }
       val setUseDefaultArgs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setUseDefaultArgs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseDefaultArgs" }
+            "set_use_default_args".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_default_args" }
         }
       val setValidate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionCall".cstr.ptr,
-            "setValidate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setValidate" }
+            "set_validate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_validate" }
         }}
   }
 }

@@ -105,50 +105,50 @@ open class InputEventMouseButton(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "getButtonIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtonIndex" }
+            "get_button_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_index" }
         }
       val getFactor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "getFactor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFactor" }
+            "get_factor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_factor" }
         }
       val isDoubleclick: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "isDoubleclick".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDoubleclick" }
+            "is_doubleclick".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_doubleclick" }
         }
       val setButtonIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "setButtonIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setButtonIndex" }
+            "set_button_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_index" }
         }
       val setDoubleclick: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "setDoubleclick".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDoubleclick" }
+            "set_doubleclick".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_doubleclick" }
         }
       val setFactor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "setFactor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFactor" }
+            "set_factor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_factor" }
         }
       val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseButton".cstr.ptr,
-            "setPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressed" }
+            "set_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }}
   }
 }

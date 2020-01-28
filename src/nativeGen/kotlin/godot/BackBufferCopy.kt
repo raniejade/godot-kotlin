@@ -18,12 +18,12 @@ import kotlinx.cinterop.reinterpret
 open class BackBufferCopy(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  var copyMode: Int
+  var copyMode: CopyMode
     get() {
-       return BackBufferCopy.CopyMode.from(getCopyMode()) 
+       return getCopyMode() 
     }
     set(value) {
-      setCopyMode(BackBufferCopy.CopyMode.from(value))
+      setCopyMode(value.value)
     }
 
   var rect: Rect2
@@ -100,29 +100,29 @@ open class BackBufferCopy(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "getCopyMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCopyMode" }
+            "get_copy_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_copy_mode" }
         }
       val getRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "getRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRect" }
+            "get_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rect" }
         }
       val setCopyMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "setCopyMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCopyMode" }
+            "set_copy_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_copy_mode" }
         }
       val setRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BackBufferCopy".cstr.ptr,
-            "setRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRect" }
+            "set_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rect" }
         }}
   }
 }

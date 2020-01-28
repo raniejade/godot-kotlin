@@ -140,8 +140,8 @@ open class WebRTCPeerConnection(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "addIceCandidate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addIceCandidate" }
+            "add_ice_candidate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_ice_candidate" }
         }
       val close: CPointer<godot_method_bind>
         get() = memScoped {
@@ -154,22 +154,22 @@ open class WebRTCPeerConnection(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "createDataChannel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createDataChannel" }
+            "create_data_channel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_data_channel" }
         }
       val createOffer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "createOffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createOffer" }
+            "create_offer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_offer" }
         }
       val getConnectionState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "getConnectionState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConnectionState" }
+            "get_connection_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_connection_state" }
         }
       val initialize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -189,15 +189,15 @@ open class WebRTCPeerConnection(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "setLocalDescription".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLocalDescription" }
+            "set_local_description".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_local_description" }
         }
       val setRemoteDescription: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCPeerConnection".cstr.ptr,
-            "setRemoteDescription".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRemoteDescription" }
+            "set_remote_description".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_remote_description" }
         }}
   }
 }

@@ -31,8 +31,8 @@ open class AudioStream(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioStream".cstr.ptr,
-            "getLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLength" }
+            "get_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_length" }
         }}
   }
 }

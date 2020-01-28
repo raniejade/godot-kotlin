@@ -43,8 +43,8 @@ class APIGenerator {
       .maybeGenerateInheritance(cls)
       .generateEnums(cls)
       .generateProperties(cls, index)
-      .generateMethods(cls)
-      .generateCompanionObject(cls)
+      .generateMethods(cls, index)
+      .generateCompanionObject(cls, index)
 
     return classBuilder
       .build()
@@ -54,23 +54,41 @@ class APIGenerator {
     val propertySpecs = cls.properties.values.toList()
       // skip properties requiring an index and begins with an _
       .filter { property -> property.index == -1 && !property.isVirtual }
-      // getter should exist
-      .filter { property -> index.findMethod(cls, property.getter) != null }
+      // getter should exist and not virtual
+      .filter { property ->
+        val method = index.findMethod(cls, property.getter)
+        method != null && !method.isVirtual
+      }
+      // setter should exist and not virtual
+      .filter { property ->
+        if (property.isMutable) {
+          val method = index.findMethod(cls, property.setter)
+          method != null && !method.isVirtual
+        } else {
+          true
+        }
+      }
+      .filter { property ->
+        // oh god already declared
+        // godot api weirdness again!
+        index.findProperty(index.classes[cls.baseClass], property.name) == null
+      }
       .map { property ->
-        val propertyType = property.type
+        val getterReturnType = checkNotNull(index.findMethod(cls, property.getter)).returnType
+        // property is probably an int, but getter returns an enum
+        val propertyType = if (getterReturnType.fqName != property.type.fqName) {
+          getterReturnType
+        } else {
+          property.type
+        }
         val propertyName = property.name
 
         val typeClassName = checkNotNull(propertyType.toClassName())
         val builder = PropertySpec.builder(propertyName, typeClassName)
-        val methodReturnType = checkNotNull(index.findMethod(cls, property.getter)) {
-          println(cls.name)
-          println(index.classes[cls.name]?.methods)
-          ""
-        }.returnType
 
         // getter
         val getter = FunSpec.getterBuilder()
-        val requireEnumCast = methodReturnType.isEnum && !propertyType.isEnum
+        val requireEnumCast = getterReturnType.isEnum && !propertyType.isEnum
         if (!requireEnumCast) {
           getter.addCode("""
             « return %L() »
@@ -78,24 +96,34 @@ class APIGenerator {
         } else {
           getter.addCode("""
             « return %L.from(%L()) »
-          """.trimIndent(), methodReturnType.fqName, property.getter)
+          """.trimIndent(), getterReturnType.fqName, property.getter)
         }
 
         builder.getter(getter.build())
 
         // setter
         if (property.isMutable) {
+          val setterArgType = checkNotNull(index.findMethod(cls, property.setter)).arguments[0].type
+          // another godot weirdness
+          // property type is an enum but setter argument is an int
+          val reverseCast = propertyType.isEnum && !setterArgType.isEnum
           val setter = FunSpec.setterBuilder()
             .addParameter("value", typeClassName)
 
           if (!requireEnumCast) {
-            setter.addCode("""
-              %L(value)
-            """.trimIndent(), property.setter)
+            if (!reverseCast) {
+              setter.addCode("""
+                %L(value)
+              """.trimIndent(), property.setter)
+            } else {
+              setter.addCode("""
+                %L(value.value)
+              """.trimIndent(), property.setter)
+            }
           } else {
             setter.addCode("""
               %L(%L.from(value))
-            """.trimIndent(), property.setter,  methodReturnType.fqName)
+            """.trimIndent(), property.setter,  propertyType.fqName)
           }
           builder.mutable(true)
           builder.setter(setter.build())
@@ -187,7 +215,7 @@ class APIGenerator {
     return this
   }
 
-  private fun TypeSpec.Builder.generateCompanionObject(cls: GDClass): TypeSpec.Builder {
+  private fun TypeSpec.Builder.generateCompanionObject(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
     val companionObjectBuilder = TypeSpec.companionObjectBuilder()
     val className = ClassName(BASE_PACKAGE, cls.name)
 
@@ -253,17 +281,22 @@ class APIGenerator {
 
     addType(
       companionObjectBuilder
-        .generateMethodBindObject(cls.name, cls.methods.values.toList())
+        .generateMethodBindObject(cls, index)
         .build()
     )
     return this
   }
 
-  private fun TypeSpec.Builder.generateMethodBindObject(className: String, methods: List<GDMethod>): TypeSpec.Builder {
+  private fun TypeSpec.Builder.generateMethodBindObject(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
     val builder = TypeSpec.objectBuilder("__method_bind")
-      .addKdoc("Container for method_bind pointers for $className")
+      .addKdoc("Container for method_bind pointers for ${cls.name}")
       .addModifiers(KModifier.PRIVATE)
-    val methodBindProperties = methods.filter { method -> isMethodImplGeneratable(method) }
+
+    val methodBindProperties = cls.methods.values.toList()
+      // we generate the free method
+      .filter { method -> method.name != "free" }
+      // generate non-virtual methods
+      .filter { method -> !method.isVirtual }
       .map { method ->
         PropertySpec.builder(method.name, METHOD_BIND_TYPE)
           .getter(FunSpec.getterBuilder()
@@ -272,7 +305,7 @@ class APIGenerator {
                   val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)(%S.cstr.ptr, %S.cstr.ptr)
                   requireNotNull(ptr) { %S }
                 }
-              """.trimIndent(), className, method.name, "No method_bind found for method ${method.name}")
+              """.trimIndent(), cls.name, method.rawName, "No method_bind found for method ${method.rawName}")
             .build()
           ).build()
       }
@@ -301,9 +334,12 @@ class APIGenerator {
     return !method.isVirtual && method.name != "free"
   }
 
-  private fun TypeSpec.Builder.generateMethods(cls: GDClass): TypeSpec.Builder {
+  private fun TypeSpec.Builder.generateMethods(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
     val methodSpecs = cls.methods.values.toList()
-      .filter { method -> isMethodImplGeneratable(method) }
+      // we generate the free method
+      .filter { method -> method.name != "free" }
+      // generate non-virtual methods
+      .filter { method -> !method.isVirtual }
       .map { method ->
         val parsedType = method.returnType
         val returnTypeClassName = parsedType.toClassName()

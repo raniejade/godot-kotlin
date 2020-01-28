@@ -26,12 +26,12 @@ open class VisualScriptReturn(
       setEnableReturnValue(value)
     }
 
-  var returnType: Int
+  var returnType: Variant.Type
     get() {
-       return Variant.Type.from(getReturnType()) 
+       return getReturnType() 
     }
     set(value) {
-      setReturnType(Variant.Type.from(value))
+      setReturnType(value.value)
     }
 
   fun getReturnType(): Variant.Type {
@@ -73,29 +73,29 @@ open class VisualScriptReturn(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "getReturnType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getReturnType" }
+            "get_return_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_return_type" }
         }
       val isReturnValueEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "isReturnValueEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isReturnValueEnabled" }
+            "is_return_value_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_return_value_enabled" }
         }
       val setEnableReturnValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "setEnableReturnValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnableReturnValue" }
+            "set_enable_return_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enable_return_value" }
         }
       val setReturnType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "setReturnType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setReturnType" }
+            "set_return_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_return_type" }
         }}
   }
 }

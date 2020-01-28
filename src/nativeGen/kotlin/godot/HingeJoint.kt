@@ -19,22 +19,6 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
-  var angularLimitLower: Float
-    get() {
-       return _getLowerLimit() 
-    }
-    set(value) {
-      _setLowerLimit(value)
-    }
-
-  var angularLimitUpper: Float
-    get() {
-       return _getUpperLimit() 
-    }
-    set(value) {
-      _setUpperLimit(value)
-    }
-
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.getFlag.call(this._handle, _arg, 1)
@@ -156,26 +140,26 @@ open class HingeJoint(
       val getFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "getFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFlag" }
+            "get_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_flag" }
         }
       val getParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "getParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParam" }
+            "get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_param" }
         }
       val setFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "setFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlag" }
+            "set_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flag" }
         }
       val setParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "setParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setParam" }
+            "set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_param" }
         }}
   }
 }

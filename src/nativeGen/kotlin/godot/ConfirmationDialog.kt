@@ -40,8 +40,8 @@ open class ConfirmationDialog(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfirmationDialog".cstr.ptr,
-            "getCancel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCancel" }
+            "get_cancel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_cancel" }
         }}
   }
 }

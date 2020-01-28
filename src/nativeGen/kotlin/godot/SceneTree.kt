@@ -95,7 +95,7 @@ open class SceneTree(
       setRefuseNewNetworkConnections(value)
     }
 
-  val root: Node
+  val root: Viewport
     get() {
        return getRoot() 
     }
@@ -503,176 +503,177 @@ open class SceneTree(
       val callGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "callGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method callGroup" }
+            "call_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method call_group" }
         }
       val callGroupFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "callGroupFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method callGroupFlags" }
+            "call_group_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method call_group_flags" }
         }
       val changeScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "changeScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method changeScene" }
+            "change_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method change_scene" }
         }
       val changeSceneTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "changeSceneTo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method changeSceneTo" }
+            "change_scene_to".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method change_scene_to" }
         }
       val createTimer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "createTimer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createTimer" }
+            "create_timer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_timer" }
         }
       val getCurrentScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getCurrentScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCurrentScene" }
+            "get_current_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_current_scene" }
         }
       val getEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getEditedSceneRoot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEditedSceneRoot" }
+            "get_edited_scene_root".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_edited_scene_root" }
         }
       val getFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getFrame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFrame" }
+            "get_frame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame" }
         }
       val getMultiplayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getMultiplayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMultiplayer" }
+            "get_multiplayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_multiplayer" }
         }
       val getNetworkConnectedPeers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getNetworkConnectedPeers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNetworkConnectedPeers" }
+            "get_network_connected_peers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_network_connected_peers" }
         }
       val getNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getNetworkPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNetworkPeer" }
+            "get_network_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_network_peer" }
         }
       val getNetworkUniqueId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getNetworkUniqueId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNetworkUniqueId" }
+            "get_network_unique_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_network_unique_id" }
         }
       val getNodeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getNodeCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodeCount" }
+            "get_node_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_node_count" }
         }
       val getNodesInGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getNodesInGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getNodesInGroup" }
+            "get_nodes_in_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_nodes_in_group" }
         }
       val getRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getRoot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRoot" }
+            "get_root".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_root" }
         }
       val getRpcSenderId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "getRpcSenderId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRpcSenderId" }
+            "get_rpc_sender_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rpc_sender_id" }
         }
       val hasGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "hasGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasGroup" }
+            "has_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_group" }
         }
       val hasNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "hasNetworkPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasNetworkPeer" }
+            "has_network_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_network_peer" }
         }
       val isDebuggingCollisionsHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isDebuggingCollisionsHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDebuggingCollisionsHint" }
+            "is_debugging_collisions_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_debugging_collisions_hint" }
         }
       val isDebuggingNavigationHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isDebuggingNavigationHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isDebuggingNavigationHint" }
+            "is_debugging_navigation_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_debugging_navigation_hint" }
         }
       val isInputHandled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isInputHandled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isInputHandled" }
+            "is_input_handled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_input_handled" }
         }
       val isMultiplayerPollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isMultiplayerPollEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isMultiplayerPollEnabled" }
+            "is_multiplayer_poll_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_multiplayer_poll_enabled" }
         }
       val isNetworkServer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isNetworkServer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isNetworkServer" }
+            "is_network_server".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_network_server" }
         }
       val isPaused: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isPaused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPaused" }
+            "is_paused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_paused" }
         }
       val isRefusingNewNetworkConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isRefusingNewNetworkConnections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRefusingNewNetworkConnections" }
+            "is_refusing_new_network_connections".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method is_refusing_new_network_connections" }
         }
       val isUsingFontOversampling: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "isUsingFontOversampling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingFontOversampling" }
+            "is_using_font_oversampling".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_font_oversampling" }
         }
       val notifyGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "notifyGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method notifyGroup" }
+            "notify_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method notify_group" }
         }
       val notifyGroupFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "notifyGroupFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method notifyGroupFlags" }
+            "notify_group_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method notify_group_flags" }
         }
       val queueDelete: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "queueDelete".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queueDelete" }
+            "queue_delete".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queue_delete" }
         }
       val quit: CPointer<godot_method_bind>
         get() = memScoped {
@@ -683,104 +684,105 @@ open class SceneTree(
       val reloadCurrentScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "reloadCurrentScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reloadCurrentScene" }
+            "reload_current_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reload_current_scene" }
         }
       val setAutoAcceptQuit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setAutoAcceptQuit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutoAcceptQuit" }
+            "set_auto_accept_quit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_auto_accept_quit" }
         }
       val setCurrentScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setCurrentScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCurrentScene" }
+            "set_current_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_current_scene" }
         }
       val setDebugCollisionsHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setDebugCollisionsHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDebugCollisionsHint" }
+            "set_debug_collisions_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_debug_collisions_hint" }
         }
       val setDebugNavigationHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setDebugNavigationHint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDebugNavigationHint" }
+            "set_debug_navigation_hint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_debug_navigation_hint" }
         }
       val setEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setEditedSceneRoot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEditedSceneRoot" }
+            "set_edited_scene_root".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_edited_scene_root" }
         }
       val setGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setGroup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGroup" }
+            "set_group".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_group" }
         }
       val setGroupFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setGroupFlags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGroupFlags" }
+            "set_group_flags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_group_flags" }
         }
       val setInputAsHandled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setInputAsHandled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInputAsHandled" }
+            "set_input_as_handled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_input_as_handled" }
         }
       val setMultiplayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setMultiplayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMultiplayer" }
+            "set_multiplayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_multiplayer" }
         }
       val setMultiplayerPollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setMultiplayerPollEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMultiplayerPollEnabled" }
+            "set_multiplayer_poll_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_multiplayer_poll_enabled" }
         }
       val setNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setNetworkPeer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setNetworkPeer" }
+            "set_network_peer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_network_peer" }
         }
       val setPause: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setPause".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPause" }
+            "set_pause".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pause" }
         }
       val setQuitOnGoBack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setQuitOnGoBack".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setQuitOnGoBack" }
+            "set_quit_on_go_back".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_quit_on_go_back" }
         }
       val setRefuseNewNetworkConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setRefuseNewNetworkConnections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRefuseNewNetworkConnections" }
+            "set_refuse_new_network_connections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_refuse_new_network_connections"
+            }
         }
       val setScreenStretch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setScreenStretch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScreenStretch" }
+            "set_screen_stretch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_screen_stretch" }
         }
       val setUseFontOversampling: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "setUseFontOversampling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseFontOversampling" }
+            "set_use_font_oversampling".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_font_oversampling" }
         }}
   }
 }

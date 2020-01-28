@@ -42,12 +42,12 @@ open class TextureRect(
       setFlipV(value)
     }
 
-  var stretchMode: Int
+  var stretchMode: StretchMode
     get() {
-       return TextureRect.StretchMode.from(getStretchMode()) 
+       return getStretchMode() 
     }
     set(value) {
-      setStretchMode(TextureRect.StretchMode.from(value))
+      setStretchMode(value.value)
     }
 
   var texture: Texture
@@ -173,71 +173,71 @@ open class TextureRect(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "getStretchMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStretchMode" }
+            "get_stretch_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stretch_mode" }
         }
       val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "getTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTexture" }
+            "get_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_texture" }
         }
       val hasExpand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "hasExpand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasExpand" }
+            "has_expand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_expand" }
         }
       val isFlippedH: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "isFlippedH".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFlippedH" }
+            "is_flipped_h".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
         }
       val isFlippedV: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "isFlippedV".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFlippedV" }
+            "is_flipped_v".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
         }
       val setExpand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "setExpand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setExpand" }
+            "set_expand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_expand" }
         }
       val setFlipH: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "setFlipH".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlipH" }
+            "set_flip_h".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
         }
       val setFlipV: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "setFlipV".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlipV" }
+            "set_flip_v".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
         }
       val setStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "setStretchMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setStretchMode" }
+            "set_stretch_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_stretch_mode" }
         }
       val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TextureRect".cstr.ptr,
-            "setTexture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTexture" }
+            "set_texture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_texture" }
         }}
   }
 }

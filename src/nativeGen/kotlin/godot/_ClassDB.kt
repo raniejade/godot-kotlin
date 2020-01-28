@@ -191,104 +191,104 @@ open class _ClassDB(
       val canInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "canInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method canInstance" }
+            "can_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method can_instance" }
         }
       val classExists: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classExists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classExists" }
+            "class_exists".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_exists" }
         }
       val classGetCategory: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetCategory".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetCategory" }
+            "class_get_category".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_category" }
         }
       val classGetIntegerConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetIntegerConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetIntegerConstant" }
+            "class_get_integer_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_integer_constant" }
         }
       val classGetIntegerConstantList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetIntegerConstantList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetIntegerConstantList" }
+            "class_get_integer_constant_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_integer_constant_list" }
         }
       val classGetMethodList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetMethodList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetMethodList" }
+            "class_get_method_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_method_list" }
         }
       val classGetProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetProperty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetProperty" }
+            "class_get_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_property" }
         }
       val classGetPropertyList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetPropertyList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetPropertyList" }
+            "class_get_property_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_property_list" }
         }
       val classGetSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetSignal" }
+            "class_get_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_signal" }
         }
       val classGetSignalList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classGetSignalList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classGetSignalList" }
+            "class_get_signal_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_get_signal_list" }
         }
       val classHasIntegerConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classHasIntegerConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classHasIntegerConstant" }
+            "class_has_integer_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_has_integer_constant" }
         }
       val classHasMethod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classHasMethod".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classHasMethod" }
+            "class_has_method".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_has_method" }
         }
       val classHasSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classHasSignal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classHasSignal" }
+            "class_has_signal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_has_signal" }
         }
       val classSetProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "classSetProperty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method classSetProperty" }
+            "class_set_property".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method class_set_property" }
         }
       val getClassList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "getClassList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getClassList" }
+            "get_class_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_class_list" }
         }
       val getInheritersFromClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "getInheritersFromClass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInheritersFromClass" }
+            "get_inheriters_from_class".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_inheriters_from_class" }
         }
       val getParentClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "getParentClass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParentClass" }
+            "get_parent_class".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_parent_class" }
         }
       val instance: CPointer<godot_method_bind>
         get() = memScoped {
@@ -299,14 +299,14 @@ open class _ClassDB(
       val isClassEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "isClassEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isClassEnabled" }
+            "is_class_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_class_enabled" }
         }
       val isParentClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "isParentClass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isParentClass" }
+            "is_parent_class".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_parent_class" }
         }}
   }
 }

@@ -38,8 +38,8 @@ open class WeakRef(
       val getRef: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WeakRef".cstr.ptr,
-            "getRef".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRef" }
+            "get_ref".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_ref" }
         }}
   }
 }

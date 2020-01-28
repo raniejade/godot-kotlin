@@ -117,7 +117,7 @@ open class Area2D(
       setMonitoring(value)
     }
 
-  var priority: Int
+  var priority: Float
     get() {
        return getPriority() 
     }
@@ -125,12 +125,12 @@ open class Area2D(
       setPriority(value)
     }
 
-  var spaceOverride: Int
+  var spaceOverride: SpaceOverride
     get() {
-       return Area2D.SpaceOverride.from(getSpaceOverrideMode()) 
+       return getSpaceOverrideMode() 
     }
     set(value) {
-      setSpaceOverrideMode(Area2D.SpaceOverride.from(value))
+      setSpaceOverrideMode(value.value)
     }
 
   fun getAngularDamp(): Float {
@@ -373,218 +373,218 @@ open class Area2D(
       val getAngularDamp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getAngularDamp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAngularDamp" }
+            "get_angular_damp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_angular_damp" }
         }
       val getAudioBusName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getAudioBusName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAudioBusName" }
+            "get_audio_bus_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_audio_bus_name" }
         }
       val getCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionLayer" }
+            "get_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
         }
       val getCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getCollisionLayerBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionLayerBit" }
+            "get_collision_layer_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
         }
       val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
+            "get_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
         }
       val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
+            "get_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
         }
       val getGravity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getGravity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGravity" }
+            "get_gravity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gravity" }
         }
       val getGravityDistanceScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getGravityDistanceScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGravityDistanceScale" }
+            "get_gravity_distance_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gravity_distance_scale" }
         }
       val getGravityVector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getGravityVector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getGravityVector" }
+            "get_gravity_vector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_gravity_vector" }
         }
       val getLinearDamp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getLinearDamp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLinearDamp" }
+            "get_linear_damp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_linear_damp" }
         }
       val getOverlappingAreas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getOverlappingAreas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOverlappingAreas" }
+            "get_overlapping_areas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_overlapping_areas" }
         }
       val getOverlappingBodies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getOverlappingBodies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOverlappingBodies" }
+            "get_overlapping_bodies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_overlapping_bodies" }
         }
       val getPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPriority" }
+            "get_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_priority" }
         }
       val getSpaceOverrideMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "getSpaceOverrideMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpaceOverrideMode" }
+            "get_space_override_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_space_override_mode" }
         }
       val isGravityAPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "isGravityAPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isGravityAPoint" }
+            "is_gravity_a_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_gravity_a_point" }
         }
       val isMonitorable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "isMonitorable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isMonitorable" }
+            "is_monitorable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_monitorable" }
         }
       val isMonitoring: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "isMonitoring".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isMonitoring" }
+            "is_monitoring".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_monitoring" }
         }
       val isOverridingAudioBus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "isOverridingAudioBus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOverridingAudioBus" }
+            "is_overriding_audio_bus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_overriding_audio_bus" }
         }
       val overlapsArea: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "overlapsArea".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method overlapsArea" }
+            "overlaps_area".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method overlaps_area" }
         }
       val overlapsBody: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "overlapsBody".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method overlapsBody" }
+            "overlaps_body".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method overlaps_body" }
         }
       val setAngularDamp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setAngularDamp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAngularDamp" }
+            "set_angular_damp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_angular_damp" }
         }
       val setAudioBusName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setAudioBusName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAudioBusName" }
+            "set_audio_bus_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_audio_bus_name" }
         }
       val setAudioBusOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setAudioBusOverride".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAudioBusOverride" }
+            "set_audio_bus_override".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_audio_bus_override" }
         }
       val setCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionLayer" }
+            "set_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
         }
       val setCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setCollisionLayerBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionLayerBit" }
+            "set_collision_layer_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
         }
       val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
+            "set_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
         }
       val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setCollisionMaskBit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
+            "set_collision_mask_bit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
         }
       val setGravity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setGravity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGravity" }
+            "set_gravity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gravity" }
         }
       val setGravityDistanceScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setGravityDistanceScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGravityDistanceScale" }
+            "set_gravity_distance_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gravity_distance_scale" }
         }
       val setGravityIsPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setGravityIsPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGravityIsPoint" }
+            "set_gravity_is_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gravity_is_point" }
         }
       val setGravityVector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setGravityVector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setGravityVector" }
+            "set_gravity_vector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_gravity_vector" }
         }
       val setLinearDamp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setLinearDamp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLinearDamp" }
+            "set_linear_damp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_linear_damp" }
         }
       val setMonitorable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setMonitorable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMonitorable" }
+            "set_monitorable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_monitorable" }
         }
       val setMonitoring: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setMonitoring".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMonitoring" }
+            "set_monitoring".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_monitoring" }
         }
       val setPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPriority" }
+            "set_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_priority" }
         }
       val setSpaceOverrideMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Area2D".cstr.ptr,
-            "setSpaceOverrideMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSpaceOverrideMode" }
+            "set_space_override_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_space_override_mode" }
         }}
   }
 }

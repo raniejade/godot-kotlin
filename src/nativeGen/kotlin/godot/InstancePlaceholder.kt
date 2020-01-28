@@ -52,29 +52,29 @@ open class InstancePlaceholder(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "createInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createInstance" }
+            "create_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_instance" }
         }
       val getInstancePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "getInstancePath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstancePath" }
+            "get_instance_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_path" }
         }
       val getStoredValues: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "getStoredValues".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getStoredValues" }
+            "get_stored_values".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_stored_values" }
         }
       val replaceByInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InstancePlaceholder".cstr.ptr,
-            "replaceByInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method replaceByInstance" }
+            "replace_by_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method replace_by_instance" }
         }}
   }
 }

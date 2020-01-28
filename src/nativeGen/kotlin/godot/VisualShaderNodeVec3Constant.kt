@@ -54,15 +54,15 @@ open class VisualShaderNodeVec3Constant(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVec3Constant".cstr.ptr,
-            "getConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getConstant" }
+            "get_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_constant" }
         }
       val setConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVec3Constant".cstr.ptr,
-            "setConstant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setConstant" }
+            "set_constant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_constant" }
         }}
   }
 }

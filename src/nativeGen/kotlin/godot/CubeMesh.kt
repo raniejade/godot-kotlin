@@ -107,50 +107,50 @@ open class CubeMesh(
       val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "getSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSize" }
+            "get_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_size" }
         }
       val getSubdivideDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "getSubdivideDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSubdivideDepth" }
+            "get_subdivide_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_subdivide_depth" }
         }
       val getSubdivideHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "getSubdivideHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSubdivideHeight" }
+            "get_subdivide_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_subdivide_height" }
         }
       val getSubdivideWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "getSubdivideWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSubdivideWidth" }
+            "get_subdivide_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_subdivide_width" }
         }
       val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "setSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSize" }
+            "set_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_size" }
         }
       val setSubdivideDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "setSubdivideDepth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSubdivideDepth" }
+            "set_subdivide_depth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_subdivide_depth" }
         }
       val setSubdivideHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "setSubdivideHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSubdivideHeight" }
+            "set_subdivide_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_subdivide_height" }
         }
       val setSubdivideWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMesh".cstr.ptr,
-            "setSubdivideWidth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSubdivideWidth" }
+            "set_subdivide_width".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_subdivide_width" }
         }}
   }
 }

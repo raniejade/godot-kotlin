@@ -53,15 +53,15 @@ open class GridContainer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
-            "getColumns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColumns" }
+            "get_columns".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_columns" }
         }
       val setColumns: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
-            "setColumns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColumns" }
+            "set_columns".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_columns" }
         }}
   }
 }

@@ -121,62 +121,62 @@ open class Resource(
       val getLocalScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "getLocalScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLocalScene" }
+            "get_local_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_local_scene" }
         }
       val getName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "getName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getName" }
+            "get_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_name" }
         }
       val getPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "getPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPath" }
+            "get_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_path" }
         }
       val getRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "getRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRid" }
+            "get_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rid" }
         }
       val isLocalToScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "isLocalToScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isLocalToScene" }
+            "is_local_to_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_local_to_scene" }
         }
       val setLocalToScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "setLocalToScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLocalToScene" }
+            "set_local_to_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_local_to_scene" }
         }
       val setName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "setName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setName" }
+            "set_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_name" }
         }
       val setPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "setPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPath" }
+            "set_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_path" }
         }
       val setupLocalToScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "setupLocalToScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setupLocalToScene" }
+            "setup_local_to_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setup_local_to_scene" }
         }
       val takeOverPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "takeOverPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method takeOverPath" }
+            "take_over_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method take_over_path" }
         }}
   }
 }

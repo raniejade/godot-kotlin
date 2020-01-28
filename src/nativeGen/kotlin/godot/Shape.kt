@@ -43,14 +43,14 @@ open class Shape(
       val getMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
-            "getMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMargin" }
+            "get_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_margin" }
         }
       val setMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
-            "setMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMargin" }
+            "set_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_margin" }
         }}
   }
 }

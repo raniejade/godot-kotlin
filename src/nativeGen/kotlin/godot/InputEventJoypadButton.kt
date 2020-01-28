@@ -87,36 +87,36 @@ open class InputEventJoypadButton(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "getButtonIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getButtonIndex" }
+            "get_button_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_button_index" }
         }
       val getPressure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "getPressure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPressure" }
+            "get_pressure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pressure" }
         }
       val setButtonIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "setButtonIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setButtonIndex" }
+            "set_button_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_button_index" }
         }
       val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "setPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressed" }
+            "set_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
         }
       val setPressure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadButton".cstr.ptr,
-            "setPressure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPressure" }
+            "set_pressure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pressure" }
         }}
   }
 }

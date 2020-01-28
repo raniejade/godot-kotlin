@@ -179,99 +179,99 @@ open class AnimationNodeOneShot(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "getAutorestartDelay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAutorestartDelay" }
+            "get_autorestart_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_autorestart_delay" }
         }
       val getAutorestartRandomDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "getAutorestartRandomDelay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAutorestartRandomDelay" }
+            "get_autorestart_random_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_autorestart_random_delay" }
         }
       val getFadeinTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "getFadeinTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFadeinTime" }
+            "get_fadein_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fadein_time" }
         }
       val getFadeoutTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "getFadeoutTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFadeoutTime" }
+            "get_fadeout_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fadeout_time" }
         }
       val getMixMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "getMixMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMixMode" }
+            "get_mix_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mix_mode" }
         }
       val hasAutorestart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "hasAutorestart".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasAutorestart" }
+            "has_autorestart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_autorestart" }
         }
       val isUsingSync: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "isUsingSync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingSync" }
+            "is_using_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_sync" }
         }
       val setAutorestart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setAutorestart".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutorestart" }
+            "set_autorestart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autorestart" }
         }
       val setAutorestartDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setAutorestartDelay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutorestartDelay" }
+            "set_autorestart_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autorestart_delay" }
         }
       val setAutorestartRandomDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setAutorestartRandomDelay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutorestartRandomDelay" }
+            "set_autorestart_random_delay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autorestart_random_delay" }
         }
       val setFadeinTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setFadeinTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFadeinTime" }
+            "set_fadein_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fadein_time" }
         }
       val setFadeoutTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setFadeoutTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFadeoutTime" }
+            "set_fadeout_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fadeout_time" }
         }
       val setMixMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setMixMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMixMode" }
+            "set_mix_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mix_mode" }
         }
       val setUseSync: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeOneShot".cstr.ptr,
-            "setUseSync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseSync" }
+            "set_use_sync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_sync" }
         }}
   }
 }

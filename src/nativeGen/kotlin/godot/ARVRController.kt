@@ -112,78 +112,78 @@ open class ARVRController(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getControllerId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getControllerId" }
+            "get_controller_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_controller_id" }
         }
       val getControllerName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getControllerName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getControllerName" }
+            "get_controller_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_controller_name" }
         }
       val getHand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getHand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHand" }
+            "get_hand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_hand" }
         }
       val getIsActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getIsActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getIsActive" }
+            "get_is_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_is_active" }
         }
       val getJoystickAxis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getJoystickAxis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getJoystickAxis" }
+            "get_joystick_axis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_joystick_axis" }
         }
       val getJoystickId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getJoystickId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getJoystickId" }
+            "get_joystick_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_joystick_id" }
         }
       val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMesh" }
+            "get_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val getRumble: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "getRumble".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRumble" }
+            "get_rumble".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_rumble" }
         }
       val isButtonPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "isButtonPressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isButtonPressed" }
+            "is_button_pressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_button_pressed" }
         }
       val setControllerId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "setControllerId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setControllerId" }
+            "set_controller_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_controller_id" }
         }
       val setRumble: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRController".cstr.ptr,
-            "setRumble".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRumble" }
+            "set_rumble".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rumble" }
         }}
   }
 }

@@ -23,20 +23,20 @@ import kotlinx.cinterop.reinterpret
 open class SpriteBase3D(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
-  var alphaCut: Int
+  var alphaCut: AlphaCutMode
     get() {
-       return SpriteBase3D.AlphaCutMode.from(getAlphaCutMode()) 
+       return getAlphaCutMode() 
     }
     set(value) {
-      setAlphaCutMode(SpriteBase3D.AlphaCutMode.from(value))
+      setAlphaCutMode(value.value)
     }
 
-  var axis: Int
+  var axis: Vector3.Axis
     get() {
-       return Vector3.Axis.from(getAxis()) 
+       return getAxis() 
     }
     set(value) {
-      setAxis(Vector3.Axis.from(value))
+      setAxis(value.value)
     }
 
   var centered: Boolean
@@ -275,155 +275,155 @@ open class SpriteBase3D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "generateTriangleMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generateTriangleMesh" }
+            "generate_triangle_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generate_triangle_mesh" }
         }
       val getAlphaCutMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getAlphaCutMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAlphaCutMode" }
+            "get_alpha_cut_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_alpha_cut_mode" }
         }
       val getAxis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getAxis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAxis" }
+            "get_axis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_axis" }
         }
       val getDrawFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getDrawFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDrawFlag" }
+            "get_draw_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_draw_flag" }
         }
       val getItemRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getItemRect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getItemRect" }
+            "get_item_rect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_item_rect" }
         }
       val getModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getModulate" }
+            "get_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_modulate" }
         }
       val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffset" }
+            "get_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val getOpacity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getOpacity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOpacity" }
+            "get_opacity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_opacity" }
         }
       val getPixelSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "getPixelSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPixelSize" }
+            "get_pixel_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_pixel_size" }
         }
       val isCentered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "isCentered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCentered" }
+            "is_centered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_centered" }
         }
       val isFlippedH: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "isFlippedH".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFlippedH" }
+            "is_flipped_h".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
         }
       val isFlippedV: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "isFlippedV".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFlippedV" }
+            "is_flipped_v".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
         }
       val setAlphaCutMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setAlphaCutMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAlphaCutMode" }
+            "set_alpha_cut_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_alpha_cut_mode" }
         }
       val setAxis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setAxis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAxis" }
+            "set_axis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_axis" }
         }
       val setCentered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setCentered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCentered" }
+            "set_centered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_centered" }
         }
       val setDrawFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setDrawFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDrawFlag" }
+            "set_draw_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_draw_flag" }
         }
       val setFlipH: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setFlipH".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlipH" }
+            "set_flip_h".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
         }
       val setFlipV: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setFlipV".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFlipV" }
+            "set_flip_v".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
         }
       val setModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setModulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setModulate" }
+            "set_modulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_modulate" }
         }
       val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffset" }
+            "set_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offset" }
         }
       val setOpacity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setOpacity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOpacity" }
+            "set_opacity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_opacity" }
         }
       val setPixelSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SpriteBase3D".cstr.ptr,
-            "setPixelSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPixelSize" }
+            "set_pixel_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_pixel_size" }
         }}
   }
 }

@@ -44,8 +44,8 @@ open class GDScript(
       val getAsByteCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScript".cstr.ptr,
-            "getAsByteCode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAsByteCode" }
+            "get_as_byte_code".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_as_byte_code" }
         }
       val new: CPointer<godot_method_bind>
         get() = memScoped {

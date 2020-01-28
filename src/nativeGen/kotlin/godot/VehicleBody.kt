@@ -89,43 +89,43 @@ open class VehicleBody(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "getBrake".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBrake" }
+            "get_brake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_brake" }
         }
       val getEngineForce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "getEngineForce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getEngineForce" }
+            "get_engine_force".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_engine_force" }
         }
       val getSteering: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "getSteering".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSteering" }
+            "get_steering".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_steering" }
         }
       val setBrake: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "setBrake".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBrake" }
+            "set_brake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_brake" }
         }
       val setEngineForce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "setEngineForce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEngineForce" }
+            "set_engine_force".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_engine_force" }
         }
       val setSteering: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VehicleBody".cstr.ptr,
-            "setSteering".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSteering" }
+            "set_steering".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_steering" }
         }}
   }
 }

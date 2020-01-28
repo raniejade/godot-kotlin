@@ -43,12 +43,12 @@ open class Timer(
       setPaused(value)
     }
 
-  var processMode: Int
+  var processMode: TimerProcessMode
     get() {
-       return Timer.TimerProcessMode.from(getTimerProcessMode()) 
+       return getTimerProcessMode() 
     }
     set(value) {
-      setTimerProcessMode(Timer.TimerProcessMode.from(value))
+      setTimerProcessMode(value.value)
     }
 
   val timeLeft: Float
@@ -173,74 +173,74 @@ open class Timer(
       val getTimeLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "getTimeLeft".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTimeLeft" }
+            "get_time_left".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_time_left" }
         }
       val getTimerProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "getTimerProcessMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTimerProcessMode" }
+            "get_timer_process_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_timer_process_mode" }
         }
       val getWaitTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "getWaitTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWaitTime" }
+            "get_wait_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_wait_time" }
         }
       val hasAutostart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "hasAutostart".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasAutostart" }
+            "has_autostart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_autostart" }
         }
       val isOneShot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "isOneShot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOneShot" }
+            "is_one_shot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_one_shot" }
         }
       val isPaused: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "isPaused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isPaused" }
+            "is_paused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_paused" }
         }
       val isStopped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "isStopped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isStopped" }
+            "is_stopped".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_stopped" }
         }
       val setAutostart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "setAutostart".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutostart" }
+            "set_autostart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autostart" }
         }
       val setOneShot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "setOneShot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOneShot" }
+            "set_one_shot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_one_shot" }
         }
       val setPaused: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "setPaused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPaused" }
+            "set_paused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_paused" }
         }
       val setTimerProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "setTimerProcessMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTimerProcessMode" }
+            "set_timer_process_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_timer_process_mode" }
         }
       val setWaitTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Timer".cstr.ptr,
-            "setWaitTime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWaitTime" }
+            "set_wait_time".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_wait_time" }
         }
       val start: CPointer<godot_method_bind>
         get() = memScoped {

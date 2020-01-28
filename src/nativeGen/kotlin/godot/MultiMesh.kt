@@ -5,10 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.AABB
 import godot.core.Color
 import godot.core.Godot
-import godot.core.PoolColorArray
 import godot.core.PoolRealArray
-import godot.core.PoolVector2Array
-import godot.core.PoolVector3Array
 import godot.core.Transform
 import godot.core.Transform2D
 import godot.core.Variant
@@ -25,36 +22,20 @@ import kotlinx.cinterop.reinterpret
 open class MultiMesh(
   _handle: COpaquePointer
 ) : Resource(_handle) {
-  var colorArray: PoolColorArray
+  var colorFormat: ColorFormat
     get() {
-       return _getColorArray() 
+       return getColorFormat() 
     }
     set(value) {
-      _setColorArray(value)
+      setColorFormat(value.value)
     }
 
-  var colorFormat: Int
+  var customDataFormat: CustomDataFormat
     get() {
-       return MultiMesh.ColorFormat.from(getColorFormat()) 
+       return getCustomDataFormat() 
     }
     set(value) {
-      setColorFormat(MultiMesh.ColorFormat.from(value))
-    }
-
-  var customDataArray: PoolColorArray
-    get() {
-       return _getCustomDataArray() 
-    }
-    set(value) {
-      _setCustomDataArray(value)
-    }
-
-  var customDataFormat: Int
-    get() {
-       return MultiMesh.CustomDataFormat.from(getCustomDataFormat()) 
-    }
-    set(value) {
-      setCustomDataFormat(MultiMesh.CustomDataFormat.from(value))
+      setCustomDataFormat(value.value)
     }
 
   var instanceCount: Int
@@ -73,28 +54,12 @@ open class MultiMesh(
       setMesh(value)
     }
 
-  var transform2dArray: PoolVector2Array
+  var transformFormat: TransformFormat
     get() {
-       return _getTransform2dArray() 
+       return getTransformFormat() 
     }
     set(value) {
-      _setTransform2dArray(value)
-    }
-
-  var transformArray: PoolVector3Array
-    get() {
-       return _getTransformArray() 
-    }
-    set(value) {
-      _setTransformArray(value)
-    }
-
-  var transformFormat: Int
-    get() {
-       return MultiMesh.TransformFormat.from(getTransformFormat()) 
-    }
-    set(value) {
-      setTransformFormat(MultiMesh.TransformFormat.from(value))
+      setTransformFormat(value.value)
     }
 
   var visibleInstanceCount: Int
@@ -321,134 +286,134 @@ open class MultiMesh(
       val getAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getAabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAabb" }
+            "get_aabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_aabb" }
         }
       val getColorFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getColorFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColorFormat" }
+            "get_color_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_color_format" }
         }
       val getCustomDataFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getCustomDataFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCustomDataFormat" }
+            "get_custom_data_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_data_format" }
         }
       val getInstanceColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getInstanceColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstanceColor" }
+            "get_instance_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_color" }
         }
       val getInstanceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getInstanceCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstanceCount" }
+            "get_instance_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_count" }
         }
       val getInstanceCustomData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getInstanceCustomData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstanceCustomData" }
+            "get_instance_custom_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_custom_data" }
         }
       val getInstanceTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getInstanceTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstanceTransform" }
+            "get_instance_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_transform" }
         }
       val getInstanceTransform2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getInstanceTransform2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInstanceTransform2d" }
+            "get_instance_transform_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_instance_transform_2d" }
         }
       val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMesh" }
+            "get_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val getTransformFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getTransformFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTransformFormat" }
+            "get_transform_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_transform_format" }
         }
       val getVisibleInstanceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "getVisibleInstanceCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVisibleInstanceCount" }
+            "get_visible_instance_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_visible_instance_count" }
         }
       val setAsBulkArray: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setAsBulkArray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAsBulkArray" }
+            "set_as_bulk_array".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_as_bulk_array" }
         }
       val setColorFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setColorFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setColorFormat" }
+            "set_color_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_color_format" }
         }
       val setCustomDataFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setCustomDataFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCustomDataFormat" }
+            "set_custom_data_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_data_format" }
         }
       val setInstanceColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setInstanceColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstanceColor" }
+            "set_instance_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance_color" }
         }
       val setInstanceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setInstanceCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstanceCount" }
+            "set_instance_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance_count" }
         }
       val setInstanceCustomData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setInstanceCustomData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstanceCustomData" }
+            "set_instance_custom_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance_custom_data" }
         }
       val setInstanceTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setInstanceTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstanceTransform" }
+            "set_instance_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance_transform" }
         }
       val setInstanceTransform2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setInstanceTransform2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInstanceTransform2d" }
+            "set_instance_transform_2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_instance_transform_2d" }
         }
       val setMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMesh" }
+            "set_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
         }
       val setTransformFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setTransformFormat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTransformFormat" }
+            "set_transform_format".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_transform_format" }
         }
       val setVisibleInstanceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMesh".cstr.ptr,
-            "setVisibleInstanceCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVisibleInstanceCount" }
+            "set_visible_instance_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_visible_instance_count" }
         }}
   }
 }

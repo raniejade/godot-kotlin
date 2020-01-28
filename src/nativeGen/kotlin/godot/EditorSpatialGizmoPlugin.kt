@@ -90,36 +90,36 @@ open class EditorSpatialGizmoPlugin(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "addMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addMaterial" }
+            "add_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_material" }
         }
       val createHandleMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "createHandleMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createHandleMaterial" }
+            "create_handle_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_handle_material" }
         }
       val createIconMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "createIconMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createIconMaterial" }
+            "create_icon_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_icon_material" }
         }
       val createMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "createMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createMaterial" }
+            "create_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_material" }
         }
       val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "getMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
+            "get_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_material" }
         }}
   }
 }

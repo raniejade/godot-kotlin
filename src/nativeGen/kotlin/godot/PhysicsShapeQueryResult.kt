@@ -56,36 +56,36 @@ open class PhysicsShapeQueryResult(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
-            "getResultCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResultCount" }
+            "get_result_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_result_count" }
         }
       val getResultObject: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
-            "getResultObject".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResultObject" }
+            "get_result_object".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_result_object" }
         }
       val getResultObjectId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
-            "getResultObjectId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResultObjectId" }
+            "get_result_object_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_result_object_id" }
         }
       val getResultObjectShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
-            "getResultObjectShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResultObjectShape" }
+            "get_result_object_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_result_object_shape" }
         }
       val getResultRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryResult".cstr.ptr,
-            "getResultRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getResultRid" }
+            "get_result_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_result_rid" }
         }}
   }
 }

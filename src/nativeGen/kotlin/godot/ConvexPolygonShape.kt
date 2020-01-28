@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class ConvexPolygonShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
-  var points: VariantArray
+  var points: PoolVector3Array
     get() {
        return getPoints() 
     }
@@ -54,15 +54,15 @@ open class ConvexPolygonShape(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
-            "getPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPoints" }
+            "get_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_points" }
         }
       val setPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
-            "setPoints".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPoints" }
+            "set_points".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_points" }
         }}
   }
 }

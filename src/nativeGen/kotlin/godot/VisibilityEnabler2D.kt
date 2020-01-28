@@ -93,15 +93,15 @@ open class VisibilityEnabler2D(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler2D".cstr.ptr,
-            "isEnablerEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isEnablerEnabled" }
+            "is_enabler_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_enabler_enabled" }
         }
       val setEnabler: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler2D".cstr.ptr,
-            "setEnabler".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnabler" }
+            "set_enabler".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enabler" }
         }}
   }
 }

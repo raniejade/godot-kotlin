@@ -128,64 +128,64 @@ open class Physics2DTestMotionResult(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getCollider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollider" }
+            "get_collider".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider" }
         }
       val getColliderId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getColliderId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderId" }
+            "get_collider_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_id" }
         }
       val getColliderRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getColliderRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderRid" }
+            "get_collider_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_rid" }
         }
       val getColliderShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getColliderShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderShape" }
+            "get_collider_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
         }
       val getColliderVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getColliderVelocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getColliderVelocity" }
+            "get_collider_velocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collider_velocity" }
         }
       val getCollisionNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getCollisionNormal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionNormal" }
+            "get_collision_normal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_normal" }
         }
       val getCollisionPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getCollisionPoint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCollisionPoint" }
+            "get_collision_point".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_collision_point" }
         }
       val getMotion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getMotion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMotion" }
+            "get_motion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_motion" }
         }
       val getMotionRemainder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "getMotionRemainder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMotionRemainder" }
+            "get_motion_remainder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_motion_remainder" }
         }}
   }
 }

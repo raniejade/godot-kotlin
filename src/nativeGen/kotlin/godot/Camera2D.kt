@@ -20,23 +20,15 @@ import kotlinx.cinterop.reinterpret
 open class Camera2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
-  var anchorMode: Int
+  var anchorMode: AnchorMode
     get() {
-       return Camera2D.AnchorMode.from(getAnchorMode()) 
+       return getAnchorMode() 
     }
     set(value) {
-      setAnchorMode(Camera2D.AnchorMode.from(value))
+      setAnchorMode(value.value)
     }
 
-  var current: Boolean
-    get() {
-       return isCurrent() 
-    }
-    set(value) {
-      _setCurrent(value)
-    }
-
-  var customViewport: Viewport
+  var customViewport: Node
     get() {
        return getCustomViewport() 
     }
@@ -116,12 +108,12 @@ open class Camera2D(
       setVOffset(value)
     }
 
-  var processMode: Int
+  var processMode: Camera2DProcessMode
     get() {
-       return Camera2D.Camera2DProcessMode.from(getProcessMode()) 
+       return getProcessMode() 
     }
     set(value) {
-      setProcessMode(Camera2D.Camera2DProcessMode.from(value))
+      setProcessMode(value.value)
     }
 
   var rotating: Boolean
@@ -446,260 +438,260 @@ open class Camera2D(
       val clearCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "clearCurrent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clearCurrent" }
+            "clear_current".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clear_current" }
         }
       val forceUpdateScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "forceUpdateScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method forceUpdateScroll" }
+            "force_update_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method force_update_scroll" }
         }
       val getAnchorMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getAnchorMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAnchorMode" }
+            "get_anchor_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_anchor_mode" }
         }
       val getCameraPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getCameraPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCameraPosition" }
+            "get_camera_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_camera_position" }
         }
       val getCameraScreenCenter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getCameraScreenCenter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCameraScreenCenter" }
+            "get_camera_screen_center".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_camera_screen_center" }
         }
       val getCustomViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getCustomViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getCustomViewport" }
+            "get_custom_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_custom_viewport" }
         }
       val getDragMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getDragMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDragMargin" }
+            "get_drag_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_drag_margin" }
         }
       val getFollowSmoothing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getFollowSmoothing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFollowSmoothing" }
+            "get_follow_smoothing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_follow_smoothing" }
         }
       val getHOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getHOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHOffset" }
+            "get_h_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
         }
       val getLimit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getLimit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLimit" }
+            "get_limit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_limit" }
         }
       val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOffset" }
+            "get_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_offset" }
         }
       val getProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getProcessMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getProcessMode" }
+            "get_process_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_process_mode" }
         }
       val getVOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getVOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVOffset" }
+            "get_v_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
         }
       val getZoom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "getZoom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getZoom" }
+            "get_zoom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_zoom" }
         }
       val isCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isCurrent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isCurrent" }
+            "is_current".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_current" }
         }
       val isFollowSmoothingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isFollowSmoothingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isFollowSmoothingEnabled" }
+            "is_follow_smoothing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_follow_smoothing_enabled" }
         }
       val isHDragEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isHDragEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHDragEnabled" }
+            "is_h_drag_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_h_drag_enabled" }
         }
       val isLimitDrawingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isLimitDrawingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isLimitDrawingEnabled" }
+            "is_limit_drawing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_limit_drawing_enabled" }
         }
       val isLimitSmoothingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isLimitSmoothingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isLimitSmoothingEnabled" }
+            "is_limit_smoothing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_limit_smoothing_enabled" }
         }
       val isMarginDrawingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isMarginDrawingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isMarginDrawingEnabled" }
+            "is_margin_drawing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_margin_drawing_enabled" }
         }
       val isRotating: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isRotating".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRotating" }
+            "is_rotating".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_rotating" }
         }
       val isScreenDrawingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isScreenDrawingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isScreenDrawingEnabled" }
+            "is_screen_drawing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_screen_drawing_enabled" }
         }
       val isVDragEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "isVDragEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isVDragEnabled" }
+            "is_v_drag_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_v_drag_enabled" }
         }
       val makeCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "makeCurrent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method makeCurrent" }
+            "make_current".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method make_current" }
         }
       val resetSmoothing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "resetSmoothing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resetSmoothing" }
+            "reset_smoothing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reset_smoothing" }
         }
       val setAnchorMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setAnchorMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAnchorMode" }
+            "set_anchor_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_anchor_mode" }
         }
       val setCustomViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setCustomViewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setCustomViewport" }
+            "set_custom_viewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_custom_viewport" }
         }
       val setDragMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setDragMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDragMargin" }
+            "set_drag_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_drag_margin" }
         }
       val setEnableFollowSmoothing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setEnableFollowSmoothing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnableFollowSmoothing" }
+            "set_enable_follow_smoothing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enable_follow_smoothing" }
         }
       val setFollowSmoothing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setFollowSmoothing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFollowSmoothing" }
+            "set_follow_smoothing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_follow_smoothing" }
         }
       val setHDragEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setHDragEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHDragEnabled" }
+            "set_h_drag_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_h_drag_enabled" }
         }
       val setHOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setHOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHOffset" }
+            "set_h_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
         }
       val setLimit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setLimit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLimit" }
+            "set_limit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_limit" }
         }
       val setLimitDrawingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setLimitDrawingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLimitDrawingEnabled" }
+            "set_limit_drawing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_limit_drawing_enabled" }
         }
       val setLimitSmoothingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setLimitSmoothingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLimitSmoothingEnabled" }
+            "set_limit_smoothing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_limit_smoothing_enabled" }
         }
       val setMarginDrawingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setMarginDrawingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMarginDrawingEnabled" }
+            "set_margin_drawing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_margin_drawing_enabled" }
         }
       val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOffset" }
+            "set_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_offset" }
         }
       val setProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setProcessMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setProcessMode" }
+            "set_process_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_process_mode" }
         }
       val setRotating: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setRotating".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRotating" }
+            "set_rotating".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_rotating" }
         }
       val setScreenDrawingEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setScreenDrawingEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScreenDrawingEnabled" }
+            "set_screen_drawing_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_screen_drawing_enabled" }
         }
       val setVDragEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setVDragEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVDragEnabled" }
+            "set_v_drag_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_v_drag_enabled" }
         }
       val setVOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setVOffset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVOffset" }
+            "set_v_offset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
         }
       val setZoom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera2D".cstr.ptr,
-            "setZoom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setZoom" }
+            "set_zoom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_zoom" }
         }}
   }
 }

@@ -26,12 +26,12 @@ open class AudioEffectSpectrumAnalyzer(
       setBufferLength(value)
     }
 
-  var fftSize: Int
+  var fftSize: FFT_Size
     get() {
-       return AudioEffectSpectrumAnalyzer.FFT_Size.from(getFftSize()) 
+       return getFftSize() 
     }
     set(value) {
-      setFftSize(AudioEffectSpectrumAnalyzer.FFT_Size.from(value))
+      setFftSize(value.value)
     }
 
   var tapBackPos: Float
@@ -130,43 +130,43 @@ open class AudioEffectSpectrumAnalyzer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzer".cstr.ptr,
-            "getBufferLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBufferLength" }
+            "get_buffer_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_buffer_length" }
         }
       val getFftSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzer".cstr.ptr,
-            "getFftSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFftSize" }
+            "get_fft_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_fft_size" }
         }
       val getTapBackPos: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzer".cstr.ptr,
-            "getTapBackPos".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTapBackPos" }
+            "get_tap_back_pos".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tap_back_pos" }
         }
       val setBufferLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzer".cstr.ptr,
-            "setBufferLength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBufferLength" }
+            "set_buffer_length".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_buffer_length" }
         }
       val setFftSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzer".cstr.ptr,
-            "setFftSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFftSize" }
+            "set_fft_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_fft_size" }
         }
       val setTapBackPos: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzer".cstr.ptr,
-            "setTapBackPos".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTapBackPos" }
+            "set_tap_back_pos".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tap_back_pos" }
         }}
   }
 }

@@ -46,15 +46,15 @@ open class EncodedObjectAsID(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
-            "getObjectId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getObjectId" }
+            "get_object_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_object_id" }
         }
       val setObjectId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
-            "setObjectId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setObjectId" }
+            "set_object_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_object_id" }
         }}
   }
 }

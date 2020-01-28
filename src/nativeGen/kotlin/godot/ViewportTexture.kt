@@ -54,15 +54,15 @@ open class ViewportTexture(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
-            "getViewportPathInScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getViewportPathInScene" }
+            "get_viewport_path_in_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_viewport_path_in_scene" }
         }
       val setViewportPathInScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ViewportTexture".cstr.ptr,
-            "setViewportPathInScene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setViewportPathInScene" }
+            "set_viewport_path_in_scene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_viewport_path_in_scene" }
         }}
   }
 }

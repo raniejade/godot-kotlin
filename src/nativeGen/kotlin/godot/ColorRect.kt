@@ -52,14 +52,14 @@ open class ColorRect(
       val getFrameColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
-            "getFrameColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getFrameColor" }
+            "get_frame_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_frame_color" }
         }
       val setFrameColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
-            "setFrameColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setFrameColor" }
+            "set_frame_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_frame_color" }
         }}
   }
 }

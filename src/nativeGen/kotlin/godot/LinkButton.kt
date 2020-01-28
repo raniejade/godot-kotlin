@@ -26,12 +26,12 @@ open class LinkButton(
       setText(value)
     }
 
-  var underline: Int
+  var underline: UnderlineMode
     get() {
-       return LinkButton.UnderlineMode.from(getUnderlineMode()) 
+       return getUnderlineMode() 
     }
     set(value) {
-      setUnderlineMode(LinkButton.UnderlineMode.from(value))
+      setUnderlineMode(value.value)
     }
 
   fun getText(): String {
@@ -98,26 +98,26 @@ open class LinkButton(
       val getText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-            "getText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getText" }
+            "get_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val getUnderlineMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-            "getUnderlineMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUnderlineMode" }
+            "get_underline_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_underline_mode" }
         }
       val setText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-            "setText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setText" }
+            "set_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text" }
         }
       val setUnderlineMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LinkButton".cstr.ptr,
-            "setUnderlineMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUnderlineMode" }
+            "set_underline_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_underline_mode" }
         }}
   }
 }

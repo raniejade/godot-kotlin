@@ -44,15 +44,15 @@ open class VisualShaderNodeUniform(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
-            "getUniformName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getUniformName" }
+            "get_uniform_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_uniform_name" }
         }
       val setUniformName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
-            "setUniformName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUniformName" }
+            "set_uniform_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_uniform_name" }
         }}
   }
 }

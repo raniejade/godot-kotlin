@@ -492,22 +492,22 @@ open class RichTextLabel(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "addImage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addImage" }
+            "add_image".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_image" }
         }
       val addText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "addText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addText" }
+            "add_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_text" }
         }
       val appendBbcode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "appendBbcode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method appendBbcode" }
+            "append_bbcode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method append_bbcode" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -520,113 +520,114 @@ open class RichTextLabel(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getBbcode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBbcode" }
+            "get_bbcode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bbcode" }
         }
       val getContentHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getContentHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getContentHeight" }
+            "get_content_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_content_height" }
         }
       val getLineCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getLineCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLineCount" }
+            "get_line_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_line_count" }
         }
       val getPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getPercentVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPercentVisible" }
+            "get_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_percent_visible" }
         }
       val getTabSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getTabSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTabSize" }
+            "get_tab_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tab_size" }
         }
       val getText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getText" }
+            "get_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val getTotalCharacterCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getTotalCharacterCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTotalCharacterCount" }
+            "get_total_character_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_total_character_count" }
         }
       val getVScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getVScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVScroll" }
+            "get_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
         }
       val getVisibleCharacters: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getVisibleCharacters".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVisibleCharacters" }
+            "get_visible_characters".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_visible_characters" }
         }
       val getVisibleLineCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "getVisibleLineCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVisibleLineCount" }
+            "get_visible_line_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_visible_line_count" }
         }
       val isMetaUnderlined: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "isMetaUnderlined".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isMetaUnderlined" }
+            "is_meta_underlined".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_meta_underlined" }
         }
       val isOverridingSelectedFontColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "isOverridingSelectedFontColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOverridingSelectedFontColor" }
+            "is_overriding_selected_font_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_overriding_selected_font_color"
+            }
         }
       val isScrollActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "isScrollActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isScrollActive" }
+            "is_scroll_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_scroll_active" }
         }
       val isScrollFollowing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "isScrollFollowing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isScrollFollowing" }
+            "is_scroll_following".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_scroll_following" }
         }
       val isSelectionEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "isSelectionEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isSelectionEnabled" }
+            "is_selection_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_selection_enabled" }
         }
       val isUsingBbcode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "isUsingBbcode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingBbcode" }
+            "is_using_bbcode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_bbcode" }
         }
       val newline: CPointer<godot_method_bind>
         get() = memScoped {
@@ -639,8 +640,8 @@ open class RichTextLabel(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "parseBbcode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method parseBbcode" }
+            "parse_bbcode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method parse_bbcode" }
         }
       val pop: CPointer<godot_method_bind>
         get() = memScoped {
@@ -653,169 +654,169 @@ open class RichTextLabel(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushAlign" }
+            "push_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_align" }
         }
       val pushCell: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushCell".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushCell" }
+            "push_cell".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_cell" }
         }
       val pushColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushColor" }
+            "push_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_color" }
         }
       val pushFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushFont".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushFont" }
+            "push_font".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_font" }
         }
       val pushIndent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushIndent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushIndent" }
+            "push_indent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_indent" }
         }
       val pushList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushList" }
+            "push_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_list" }
         }
       val pushMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushMeta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushMeta" }
+            "push_meta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_meta" }
         }
       val pushStrikethrough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushStrikethrough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushStrikethrough" }
+            "push_strikethrough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_strikethrough" }
         }
       val pushTable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushTable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushTable" }
+            "push_table".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_table" }
         }
       val pushUnderline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "pushUnderline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pushUnderline" }
+            "push_underline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method push_underline" }
         }
       val removeLine: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "removeLine".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeLine" }
+            "remove_line".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_line" }
         }
       val scrollToLine: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "scrollToLine".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method scrollToLine" }
+            "scroll_to_line".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method scroll_to_line" }
         }
       val setBbcode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setBbcode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBbcode" }
+            "set_bbcode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bbcode" }
         }
       val setMetaUnderline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setMetaUnderline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMetaUnderline" }
+            "set_meta_underline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_meta_underline" }
         }
       val setOverrideSelectedFontColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setOverrideSelectedFontColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOverrideSelectedFontColor" }
+            "set_override_selected_font_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_override_selected_font_color" }
         }
       val setPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setPercentVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPercentVisible" }
+            "set_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
         }
       val setScrollActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setScrollActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScrollActive" }
+            "set_scroll_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_scroll_active" }
         }
       val setScrollFollow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setScrollFollow".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setScrollFollow" }
+            "set_scroll_follow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_scroll_follow" }
         }
       val setSelectionEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setSelectionEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSelectionEnabled" }
+            "set_selection_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_selection_enabled" }
         }
       val setTabSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setTabSize".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTabSize" }
+            "set_tab_size".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tab_size" }
         }
       val setTableColumnExpand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setTableColumnExpand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTableColumnExpand" }
+            "set_table_column_expand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_table_column_expand" }
         }
       val setText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setText" }
+            "set_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text" }
         }
       val setUseBbcode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setUseBbcode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseBbcode" }
+            "set_use_bbcode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_bbcode" }
         }
       val setVisibleCharacters: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RichTextLabel".cstr.ptr,
-            "setVisibleCharacters".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVisibleCharacters" }
+            "set_visible_characters".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_visible_characters" }
         }}
   }
 }

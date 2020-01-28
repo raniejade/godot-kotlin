@@ -104,38 +104,38 @@ open class ConfigFile(
       val eraseSection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "eraseSection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method eraseSection" }
+            "erase_section".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method erase_section" }
         }
       val getSectionKeys: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "getSectionKeys".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSectionKeys" }
+            "get_section_keys".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_section_keys" }
         }
       val getSections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "getSections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSections" }
+            "get_sections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_sections" }
         }
       val getValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "getValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getValue" }
+            "get_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_value" }
         }
       val hasSection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "hasSection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasSection" }
+            "has_section".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_section" }
         }
       val hasSectionKey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "hasSectionKey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasSectionKey" }
+            "has_section_key".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_section_key" }
         }
       val load: CPointer<godot_method_bind>
         get() = memScoped {
@@ -152,8 +152,8 @@ open class ConfigFile(
       val setValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConfigFile".cstr.ptr,
-            "setValue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setValue" }
+            "set_value".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_value" }
         }}
   }
 }

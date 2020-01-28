@@ -18,48 +18,39 @@ class Variant(
       ref.compareAndSet(ref.value, value.freeze())
     }
 
-  enum class Type(internal val value: godot_variant_type) {
-    NIL(godot_variant_type.GODOT_VARIANT_TYPE_NIL),
-    BOOL(godot_variant_type.GODOT_VARIANT_TYPE_BOOL),
-    INT(godot_variant_type.GODOT_VARIANT_TYPE_INT),
-    FLOAT(godot_variant_type.GODOT_VARIANT_TYPE_REAL),
-    STRING(godot_variant_type.GODOT_VARIANT_TYPE_STRING),
-    VECTOR2(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR2),
-    RECT2(godot_variant_type.GODOT_VARIANT_TYPE_RECT2),
-    VECTOR3(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR3),
-    TRANSFORM2D(godot_variant_type.GODOT_VARIANT_TYPE_TRANSFORM2D),
-    PLANE(godot_variant_type.GODOT_VARIANT_TYPE_PLANE),
-    QUAT(godot_variant_type.GODOT_VARIANT_TYPE_QUAT),
-    AABB(godot_variant_type.GODOT_VARIANT_TYPE_AABB),
-    BASIS(godot_variant_type.GODOT_VARIANT_TYPE_BASIS),
-    TRANSFORM(godot_variant_type.GODOT_VARIANT_TYPE_TRANSFORM),
-    COLOR(godot_variant_type.GODOT_VARIANT_TYPE_COLOR),
-    NODE_PATH(godot_variant_type.GODOT_VARIANT_TYPE_NODE_PATH),
-    RID(godot_variant_type.GODOT_VARIANT_TYPE_RID),
-    OBJECT(godot_variant_type.GODOT_VARIANT_TYPE_OBJECT),
-    DICTIONARY(godot_variant_type.GODOT_VARIANT_TYPE_DICTIONARY),
-    ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_ARRAY),
-    POOL_BYTE_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_BYTE_ARRAY),
-    POOL_INT_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_INT_ARRAY),
-    POOL_REAL_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_REAL_ARRAY),
-    POOL_STRING_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_STRING_ARRAY),
-    POOL_COLOR_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_COLOR_ARRAY),
-    POOL_VECTOR2_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR2_ARRAY),
-    POOL_VECTOR3_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR3_ARRAY);
+  enum class Type(val value: Int) {
+    NIL(godot_variant_type.GODOT_VARIANT_TYPE_NIL.value.toInt()),
+    BOOL(godot_variant_type.GODOT_VARIANT_TYPE_BOOL.value.toInt()),
+    INT(godot_variant_type.GODOT_VARIANT_TYPE_INT.value.toInt()),
+    FLOAT(godot_variant_type.GODOT_VARIANT_TYPE_REAL.value.toInt()),
+    STRING(godot_variant_type.GODOT_VARIANT_TYPE_STRING.value.toInt()),
+    VECTOR2(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR2.value.toInt()),
+    RECT2(godot_variant_type.GODOT_VARIANT_TYPE_RECT2.value.toInt()),
+    VECTOR3(godot_variant_type.GODOT_VARIANT_TYPE_VECTOR3.value.toInt()),
+    TRANSFORM2D(godot_variant_type.GODOT_VARIANT_TYPE_TRANSFORM2D.value.toInt()),
+    PLANE(godot_variant_type.GODOT_VARIANT_TYPE_PLANE.value.toInt()),
+    QUAT(godot_variant_type.GODOT_VARIANT_TYPE_QUAT.value.toInt()),
+    AABB(godot_variant_type.GODOT_VARIANT_TYPE_AABB.value.toInt()),
+    BASIS(godot_variant_type.GODOT_VARIANT_TYPE_BASIS.value.toInt()),
+    TRANSFORM(godot_variant_type.GODOT_VARIANT_TYPE_TRANSFORM.value.toInt()),
+    COLOR(godot_variant_type.GODOT_VARIANT_TYPE_COLOR.value.toInt()),
+    NODE_PATH(godot_variant_type.GODOT_VARIANT_TYPE_NODE_PATH.value.toInt()),
+    RID(godot_variant_type.GODOT_VARIANT_TYPE_RID.value.toInt()),
+    OBJECT(godot_variant_type.GODOT_VARIANT_TYPE_OBJECT.value.toInt()),
+    DICTIONARY(godot_variant_type.GODOT_VARIANT_TYPE_DICTIONARY.value.toInt()),
+    ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_ARRAY.value.toInt()),
+    POOL_BYTE_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_BYTE_ARRAY.value.toInt()),
+    POOL_INT_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_INT_ARRAY.value.toInt()),
+    POOL_REAL_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_REAL_ARRAY.value.toInt()),
+    POOL_STRING_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_STRING_ARRAY.value.toInt()),
+    POOL_COLOR_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_COLOR_ARRAY.value.toInt()),
+    POOL_VECTOR2_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR2_ARRAY.value.toInt()),
+    POOL_VECTOR3_ARRAY(godot_variant_type.GODOT_VARIANT_TYPE_POOL_VECTOR3_ARRAY.value.toInt());
 
     companion object {
-      fun from(value: godot_variant_type): Type {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("Unknown value: $value")
-      }
-
       fun from(value: Int): Type {
         for (enumValue in values()) {
-          if (enumValue.value.value == value.toUInt()) {
+          if (enumValue.value == value) {
             return enumValue
           }
         }
@@ -68,47 +59,38 @@ class Variant(
     }
   }
 
-  enum class Operator(private val value: godot_variant_operator) {
-    EQUAL(godot_variant_operator.GODOT_VARIANT_OP_EQUAL),
-    NOT_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_NOT_EQUAL),
-    LESS(godot_variant_operator.GODOT_VARIANT_OP_LESS),
-    LESS_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_LESS_EQUAL),
-    GREATER(godot_variant_operator.GODOT_VARIANT_OP_GREATER),
-    GREATER_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_GREATER_EQUAL),
-    ADD(godot_variant_operator.GODOT_VARIANT_OP_ADD),
-    SUBTRACT(godot_variant_operator.GODOT_VARIANT_OP_SUBTRACT),
-    MULTIPLY(godot_variant_operator.GODOT_VARIANT_OP_MULTIPLY),
-    DIVIDE(godot_variant_operator.GODOT_VARIANT_OP_DIVIDE),
-    NEGATE(godot_variant_operator.GODOT_VARIANT_OP_NEGATE),
-    POSITIVE(godot_variant_operator.GODOT_VARIANT_OP_POSITIVE),
-    MODULE(godot_variant_operator.GODOT_VARIANT_OP_MODULE),
-    STRING_CONCAT(godot_variant_operator.GODOT_VARIANT_OP_STRING_CONCAT),
-    SHIFT_LEFT(godot_variant_operator.GODOT_VARIANT_OP_SHIFT_LEFT),
-    SHIFT_RIGHT(godot_variant_operator.GODOT_VARIANT_OP_SHIFT_RIGHT),
-    BIT_AND(godot_variant_operator.GODOT_VARIANT_OP_BIT_AND),
-    BIT_OR(godot_variant_operator.GODOT_VARIANT_OP_BIT_OR),
-    BIT_XOR(godot_variant_operator.GODOT_VARIANT_OP_BIT_XOR),
-    BIT_NEGATE(godot_variant_operator.GODOT_VARIANT_OP_BIT_NEGATE),
-    AND(godot_variant_operator.GODOT_VARIANT_OP_AND),
-    OR(godot_variant_operator.GODOT_VARIANT_OP_OR),
-    XOR(godot_variant_operator.GODOT_VARIANT_OP_XOR),
-    NOT(godot_variant_operator.GODOT_VARIANT_OP_NOT),
-    IN(godot_variant_operator.GODOT_VARIANT_OP_IN),
-    MAX(godot_variant_operator.GODOT_VARIANT_OP_MAX);
+  enum class Operator(val value: Int) {
+    EQUAL(godot_variant_operator.GODOT_VARIANT_OP_EQUAL.value.toInt()),
+    NOT_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_NOT_EQUAL.value.toInt()),
+    LESS(godot_variant_operator.GODOT_VARIANT_OP_LESS.value.toInt()),
+    LESS_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_LESS_EQUAL.value.toInt()),
+    GREATER(godot_variant_operator.GODOT_VARIANT_OP_GREATER.value.toInt()),
+    GREATER_EQUAL(godot_variant_operator.GODOT_VARIANT_OP_GREATER_EQUAL.value.toInt()),
+    ADD(godot_variant_operator.GODOT_VARIANT_OP_ADD.value.toInt()),
+    SUBTRACT(godot_variant_operator.GODOT_VARIANT_OP_SUBTRACT.value.toInt()),
+    MULTIPLY(godot_variant_operator.GODOT_VARIANT_OP_MULTIPLY.value.toInt()),
+    DIVIDE(godot_variant_operator.GODOT_VARIANT_OP_DIVIDE.value.toInt()),
+    NEGATE(godot_variant_operator.GODOT_VARIANT_OP_NEGATE.value.toInt()),
+    POSITIVE(godot_variant_operator.GODOT_VARIANT_OP_POSITIVE.value.toInt()),
+    MODULE(godot_variant_operator.GODOT_VARIANT_OP_MODULE.value.toInt()),
+    STRING_CONCAT(godot_variant_operator.GODOT_VARIANT_OP_STRING_CONCAT.value.toInt()),
+    SHIFT_LEFT(godot_variant_operator.GODOT_VARIANT_OP_SHIFT_LEFT.value.toInt()),
+    SHIFT_RIGHT(godot_variant_operator.GODOT_VARIANT_OP_SHIFT_RIGHT.value.toInt()),
+    BIT_AND(godot_variant_operator.GODOT_VARIANT_OP_BIT_AND.value.toInt()),
+    BIT_OR(godot_variant_operator.GODOT_VARIANT_OP_BIT_OR.value.toInt()),
+    BIT_XOR(godot_variant_operator.GODOT_VARIANT_OP_BIT_XOR.value.toInt()),
+    BIT_NEGATE(godot_variant_operator.GODOT_VARIANT_OP_BIT_NEGATE.value.toInt()),
+    AND(godot_variant_operator.GODOT_VARIANT_OP_AND.value.toInt()),
+    OR(godot_variant_operator.GODOT_VARIANT_OP_OR.value.toInt()),
+    XOR(godot_variant_operator.GODOT_VARIANT_OP_XOR.value.toInt()),
+    NOT(godot_variant_operator.GODOT_VARIANT_OP_NOT.value.toInt()),
+    IN(godot_variant_operator.GODOT_VARIANT_OP_IN.value.toInt()),
+    MAX(godot_variant_operator.GODOT_VARIANT_OP_MAX.value.toInt());
 
     companion object {
-      fun from(value: godot_variant_operator): Operator {
-        for (enumValue in values()) {
-          if (enumValue.value == value) {
-            return enumValue
-          }
-        }
-        throw AssertionError("Unknown value: $value")
-      }
-
       fun from(value: Int): Operator {
         for (enumValue in values()) {
-          if (enumValue.value.value == value.toUInt()) {
+          if (enumValue.value == value) {
             return enumValue
           }
         }
@@ -120,7 +102,7 @@ class Variant(
   val type: Type
     get() {
       return memScoped {
-        Type.from(checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr))
+        Type.from(checkNotNull(Godot.gdnative.godot_variant_get_type)(_value.ptr).value.toInt())
       }
     }
 

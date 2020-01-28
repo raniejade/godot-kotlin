@@ -352,197 +352,197 @@ open class AudioServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "addBus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addBus" }
+            "add_bus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_bus" }
         }
       val addBusEffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "addBusEffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method addBusEffect" }
+            "add_bus_effect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method add_bus_effect" }
         }
       val captureGetDevice: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "captureGetDevice".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method captureGetDevice" }
+            "capture_get_device".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method capture_get_device" }
         }
       val captureGetDeviceList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "captureGetDeviceList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method captureGetDeviceList" }
+            "capture_get_device_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method capture_get_device_list" }
         }
       val captureSetDevice: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "captureSetDevice".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method captureSetDevice" }
+            "capture_set_device".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method capture_set_device" }
         }
       val generateBusLayout: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "generateBusLayout".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generateBusLayout" }
+            "generate_bus_layout".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generate_bus_layout" }
         }
       val getBusChannels: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusChannels".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusChannels" }
+            "get_bus_channels".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_channels" }
         }
       val getBusCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusCount" }
+            "get_bus_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_count" }
         }
       val getBusEffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusEffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusEffect" }
+            "get_bus_effect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_effect" }
         }
       val getBusEffectCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusEffectCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusEffectCount" }
+            "get_bus_effect_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_effect_count" }
         }
       val getBusEffectInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusEffectInstance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusEffectInstance" }
+            "get_bus_effect_instance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_effect_instance" }
         }
       val getBusIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusIndex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusIndex" }
+            "get_bus_index".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_index" }
         }
       val getBusName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusName" }
+            "get_bus_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_name" }
         }
       val getBusPeakVolumeLeftDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusPeakVolumeLeftDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusPeakVolumeLeftDb" }
+            "get_bus_peak_volume_left_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_peak_volume_left_db" }
         }
       val getBusPeakVolumeRightDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusPeakVolumeRightDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusPeakVolumeRightDb" }
+            "get_bus_peak_volume_right_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_peak_volume_right_db" }
         }
       val getBusSend: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusSend".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusSend" }
+            "get_bus_send".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_send" }
         }
       val getBusVolumeDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getBusVolumeDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBusVolumeDb" }
+            "get_bus_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bus_volume_db" }
         }
       val getDevice: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getDevice".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDevice" }
+            "get_device".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_device" }
         }
       val getDeviceList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getDeviceList".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDeviceList" }
+            "get_device_list".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_device_list" }
         }
       val getMixRate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getMixRate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMixRate" }
+            "get_mix_rate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mix_rate" }
         }
       val getOutputLatency: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getOutputLatency".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getOutputLatency" }
+            "get_output_latency".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_output_latency" }
         }
       val getSpeakerMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getSpeakerMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSpeakerMode" }
+            "get_speaker_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_speaker_mode" }
         }
       val getTimeSinceLastMix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getTimeSinceLastMix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTimeSinceLastMix" }
+            "get_time_since_last_mix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_time_since_last_mix" }
         }
       val getTimeToNextMix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "getTimeToNextMix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTimeToNextMix" }
+            "get_time_to_next_mix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_time_to_next_mix" }
         }
       val isBusBypassingEffects: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "isBusBypassingEffects".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isBusBypassingEffects" }
+            "is_bus_bypassing_effects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_bus_bypassing_effects" }
         }
       val isBusEffectEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "isBusEffectEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isBusEffectEnabled" }
+            "is_bus_effect_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_bus_effect_enabled" }
         }
       val isBusMute: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "isBusMute".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isBusMute" }
+            "is_bus_mute".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_bus_mute" }
         }
       val isBusSolo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "isBusSolo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isBusSolo" }
+            "is_bus_solo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_bus_solo" }
         }
       val lock: CPointer<godot_method_bind>
         get() = memScoped {
@@ -555,99 +555,99 @@ open class AudioServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "moveBus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method moveBus" }
+            "move_bus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method move_bus" }
         }
       val removeBus: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "removeBus".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeBus" }
+            "remove_bus".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_bus" }
         }
       val removeBusEffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "removeBusEffect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method removeBusEffect" }
+            "remove_bus_effect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method remove_bus_effect" }
         }
       val setBusBypassEffects: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusBypassEffects".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusBypassEffects" }
+            "set_bus_bypass_effects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_bypass_effects" }
         }
       val setBusCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusCount" }
+            "set_bus_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_count" }
         }
       val setBusEffectEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusEffectEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusEffectEnabled" }
+            "set_bus_effect_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_effect_enabled" }
         }
       val setBusLayout: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusLayout".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusLayout" }
+            "set_bus_layout".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_layout" }
         }
       val setBusMute: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusMute".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusMute" }
+            "set_bus_mute".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_mute" }
         }
       val setBusName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusName" }
+            "set_bus_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_name" }
         }
       val setBusSend: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusSend".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusSend" }
+            "set_bus_send".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_send" }
         }
       val setBusSolo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusSolo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusSolo" }
+            "set_bus_solo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_solo" }
         }
       val setBusVolumeDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setBusVolumeDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBusVolumeDb" }
+            "set_bus_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_bus_volume_db" }
         }
       val setDevice: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "setDevice".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDevice" }
+            "set_device".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_device" }
         }
       val swapBusEffects: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioServer".cstr.ptr,
-            "swapBusEffects".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method swapBusEffects" }
+            "swap_bus_effects".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method swap_bus_effects" }
         }
       val unlock: CPointer<godot_method_bind>
         get() = memScoped {

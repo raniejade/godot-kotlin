@@ -20,12 +20,12 @@ import kotlinx.cinterop.reinterpret
 open class Label(
   _handle: COpaquePointer
 ) : Control(_handle) {
-  var align: Int
+  var align: Align
     get() {
-       return Label.Align.from(getAlign()) 
+       return getAlign() 
     }
     set(value) {
-      setAlign(Label.Align.from(value))
+      setAlign(value.value)
     }
 
   var autowrap: Boolean
@@ -84,12 +84,12 @@ open class Label(
       setUppercase(value)
     }
 
-  var valign: Int
+  var valign: VAlign
     get() {
-       return Label.VAlign.from(getValign()) 
+       return getValign() 
     }
     set(value) {
-      setValign(Label.VAlign.from(value))
+      setValign(value.value)
     }
 
   var visibleCharacters: Int
@@ -299,146 +299,146 @@ open class Label(
       val getAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getAlign" }
+            "get_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_align" }
         }
       val getLineCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getLineCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLineCount" }
+            "get_line_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_line_count" }
         }
       val getLineHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getLineHeight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLineHeight" }
+            "get_line_height".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_line_height" }
         }
       val getLinesSkipped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getLinesSkipped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getLinesSkipped" }
+            "get_lines_skipped".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_lines_skipped" }
         }
       val getMaxLinesVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getMaxLinesVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaxLinesVisible" }
+            "get_max_lines_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_lines_visible" }
         }
       val getPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getPercentVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPercentVisible" }
+            "get_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_percent_visible" }
         }
       val getText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getText" }
+            "get_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_text" }
         }
       val getTotalCharacterCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getTotalCharacterCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTotalCharacterCount" }
+            "get_total_character_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_total_character_count" }
         }
       val getValign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getValign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getValign" }
+            "get_valign".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_valign" }
         }
       val getVisibleCharacters: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getVisibleCharacters".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVisibleCharacters" }
+            "get_visible_characters".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_visible_characters" }
         }
       val getVisibleLineCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "getVisibleLineCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVisibleLineCount" }
+            "get_visible_line_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_visible_line_count" }
         }
       val hasAutowrap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "hasAutowrap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hasAutowrap" }
+            "has_autowrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method has_autowrap" }
         }
       val isClippingText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "isClippingText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isClippingText" }
+            "is_clipping_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_clipping_text" }
         }
       val isUppercase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "isUppercase".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUppercase" }
+            "is_uppercase".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_uppercase" }
         }
       val setAlign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setAlign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAlign" }
+            "set_align".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_align" }
         }
       val setAutowrap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setAutowrap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setAutowrap" }
+            "set_autowrap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_autowrap" }
         }
       val setClipText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setClipText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setClipText" }
+            "set_clip_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_clip_text" }
         }
       val setLinesSkipped: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setLinesSkipped".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setLinesSkipped" }
+            "set_lines_skipped".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_lines_skipped" }
         }
       val setMaxLinesVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setMaxLinesVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaxLinesVisible" }
+            "set_max_lines_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_lines_visible" }
         }
       val setPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setPercentVisible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPercentVisible" }
+            "set_percent_visible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
         }
       val setText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setText".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setText" }
+            "set_text".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_text" }
         }
       val setUppercase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setUppercase".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUppercase" }
+            "set_uppercase".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_uppercase" }
         }
       val setValign: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setValign".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setValign" }
+            "set_valign".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_valign" }
         }
       val setVisibleCharacters: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Label".cstr.ptr,
-            "setVisibleCharacters".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVisibleCharacters" }
+            "set_visible_characters".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_visible_characters" }
         }}
   }
 }

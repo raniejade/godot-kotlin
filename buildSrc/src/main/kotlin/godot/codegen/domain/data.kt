@@ -158,6 +158,7 @@ data class GDEnum(
 }
 
 data class GDProperty(
+  val rawName: String,
   val name: String,
   val type: GDType,
   val getter: String,
@@ -170,6 +171,7 @@ data class GDProperty(
   companion object {
     fun from(raw: RawGDProperty): GDProperty {
       return GDProperty(
+        raw.name,
         normalizePropertyName(raw.name),
         GDType.from(raw.type),
         GDMethod.normalizeMethodName(raw.getter),
@@ -187,6 +189,7 @@ data class GDProperty(
 }
 
 data class GDMethod(
+  val rawName: String,
   val name: String,
   val returnType: GDType,
   val isEditor: Boolean,
@@ -201,6 +204,7 @@ data class GDMethod(
   companion object {
     fun from(raw: RawGDMethod): GDMethod {
       return GDMethod(
+        raw.name,
         normalizeMethodName(raw.name),
         GDType.from(raw.return_type),
         raw.is_editor,
@@ -230,6 +234,7 @@ data class GDMethod(
 }
 
 data class GDArgument(
+  val rawName: String,
   val name: String,
   val type: GDType,
   val hasDefaultValue: Boolean,
@@ -238,6 +243,7 @@ data class GDArgument(
   companion object {
     fun from(raw: RawGDArgument): GDArgument {
       return GDArgument(
+        raw.name,
         normalizeArgName(raw.name),
         GDType.from(raw.type),
         raw.has_default_value,

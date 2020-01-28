@@ -239,134 +239,134 @@ open class SkeletonIK(
       val getInterpolation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getInterpolation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getInterpolation" }
+            "get_interpolation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_interpolation" }
         }
       val getMagnetPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getMagnetPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMagnetPosition" }
+            "get_magnet_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_magnet_position" }
         }
       val getMaxIterations: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getMaxIterations".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMaxIterations" }
+            "get_max_iterations".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_max_iterations" }
         }
       val getMinDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getMinDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMinDistance" }
+            "get_min_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_min_distance" }
         }
       val getParentSkeleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getParentSkeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getParentSkeleton" }
+            "get_parent_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_parent_skeleton" }
         }
       val getRootBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getRootBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getRootBone" }
+            "get_root_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_root_bone" }
         }
       val getTargetNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getTargetNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTargetNode" }
+            "get_target_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_target_node" }
         }
       val getTargetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getTargetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTargetTransform" }
+            "get_target_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_target_transform" }
         }
       val getTipBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "getTipBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getTipBone" }
+            "get_tip_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_tip_bone" }
         }
       val isOverrideTipBasis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "isOverrideTipBasis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isOverrideTipBasis" }
+            "is_override_tip_basis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_override_tip_basis" }
         }
       val isRunning: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "isRunning".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isRunning" }
+            "is_running".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_running" }
         }
       val isUsingMagnet: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "isUsingMagnet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isUsingMagnet" }
+            "is_using_magnet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_using_magnet" }
         }
       val setInterpolation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setInterpolation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setInterpolation" }
+            "set_interpolation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_interpolation" }
         }
       val setMagnetPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setMagnetPosition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMagnetPosition" }
+            "set_magnet_position".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_magnet_position" }
         }
       val setMaxIterations: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setMaxIterations".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMaxIterations" }
+            "set_max_iterations".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_max_iterations" }
         }
       val setMinDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setMinDistance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMinDistance" }
+            "set_min_distance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_min_distance" }
         }
       val setOverrideTipBasis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setOverrideTipBasis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setOverrideTipBasis" }
+            "set_override_tip_basis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_override_tip_basis" }
         }
       val setRootBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setRootBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setRootBone" }
+            "set_root_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_root_bone" }
         }
       val setTargetNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setTargetNode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTargetNode" }
+            "set_target_node".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_target_node" }
         }
       val setTargetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setTargetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTargetTransform" }
+            "set_target_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_target_transform" }
         }
       val setTipBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setTipBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setTipBone" }
+            "set_tip_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_tip_bone" }
         }
       val setUseMagnet: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SkeletonIK".cstr.ptr,
-            "setUseMagnet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setUseMagnet" }
+            "set_use_magnet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_use_magnet" }
         }
       val start: CPointer<godot_method_bind>
         get() = memScoped {

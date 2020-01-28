@@ -52,14 +52,14 @@ open class ARVROrigin(
       val getWorldScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
-            "getWorldScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getWorldScale" }
+            "get_world_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_world_scale" }
         }
       val setWorldScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVROrigin".cstr.ptr,
-            "setWorldScale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setWorldScale" }
+            "set_world_scale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_world_scale" }
         }}
   }
 }

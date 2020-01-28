@@ -102,71 +102,71 @@ open class MeshInstance(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "createConvexCollision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createConvexCollision" }
+            "create_convex_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_convex_collision" }
         }
       val createDebugTangents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "createDebugTangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createDebugTangents" }
+            "create_debug_tangents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_debug_tangents" }
         }
       val createTrimeshCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "createTrimeshCollision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method createTrimeshCollision" }
+            "create_trimesh_collision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method create_trimesh_collision" }
         }
       val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "getMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getMesh" }
+            "get_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
         }
       val getSkeletonPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "getSkeletonPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkeletonPath" }
+            "get_skeleton_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_skeleton_path" }
         }
       val getSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "getSurfaceMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSurfaceMaterial" }
+            "get_surface_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_surface_material" }
         }
       val getSurfaceMaterialCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "getSurfaceMaterialCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSurfaceMaterialCount" }
+            "get_surface_material_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_surface_material_count" }
         }
       val setMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "setMesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setMesh" }
+            "set_mesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
         }
       val setSkeletonPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "setSkeletonPath".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSkeletonPath" }
+            "set_skeleton_path".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_skeleton_path" }
         }
       val setSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "setSurfaceMaterial".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setSurfaceMaterial" }
+            "set_surface_material".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_surface_material" }
         }}
   }
 }

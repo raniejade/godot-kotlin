@@ -1764,794 +1764,796 @@ open class PhysicsServer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaAddShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaAddShape" }
+            "area_add_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_add_shape" }
         }
       val areaAttachObjectInstanceId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaAttachObjectInstanceId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaAttachObjectInstanceId" }
+            "area_attach_object_instance_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_attach_object_instance_id" }
         }
       val areaClearShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaClearShapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaClearShapes" }
+            "area_clear_shapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_clear_shapes" }
         }
       val areaCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaCreate" }
+            "area_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_create" }
         }
       val areaGetObjectInstanceId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetObjectInstanceId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetObjectInstanceId" }
+            "area_get_object_instance_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_object_instance_id" }
         }
       val areaGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetParam" }
+            "area_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_param" }
         }
       val areaGetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetShape" }
+            "area_get_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_shape" }
         }
       val areaGetShapeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetShapeCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetShapeCount" }
+            "area_get_shape_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_shape_count" }
         }
       val areaGetShapeTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetShapeTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetShapeTransform" }
+            "area_get_shape_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_shape_transform" }
         }
       val areaGetSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetSpace" }
+            "area_get_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_space" }
         }
       val areaGetSpaceOverrideMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetSpaceOverrideMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetSpaceOverrideMode" }
+            "area_get_space_override_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_space_override_mode" }
         }
       val areaGetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaGetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaGetTransform" }
+            "area_get_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_get_transform" }
         }
       val areaIsRayPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaIsRayPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaIsRayPickable" }
+            "area_is_ray_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_is_ray_pickable" }
         }
       val areaRemoveShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaRemoveShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaRemoveShape" }
+            "area_remove_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_remove_shape" }
         }
       val areaSetAreaMonitorCallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetAreaMonitorCallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetAreaMonitorCallback" }
+            "area_set_area_monitor_callback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_area_monitor_callback" }
         }
       val areaSetCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetCollisionLayer" }
+            "area_set_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_collision_layer" }
         }
       val areaSetCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetCollisionMask" }
+            "area_set_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_collision_mask" }
         }
       val areaSetMonitorCallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetMonitorCallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetMonitorCallback" }
+            "area_set_monitor_callback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_monitor_callback" }
         }
       val areaSetMonitorable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetMonitorable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetMonitorable" }
+            "area_set_monitorable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_monitorable" }
         }
       val areaSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetParam" }
+            "area_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_param" }
         }
       val areaSetRayPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetRayPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetRayPickable" }
+            "area_set_ray_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_ray_pickable" }
         }
       val areaSetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetShape" }
+            "area_set_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_shape" }
         }
       val areaSetShapeDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetShapeDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetShapeDisabled" }
+            "area_set_shape_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_shape_disabled" }
         }
       val areaSetShapeTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetShapeTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetShapeTransform" }
+            "area_set_shape_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_shape_transform" }
         }
       val areaSetSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetSpace" }
+            "area_set_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_space" }
         }
       val areaSetSpaceOverrideMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetSpaceOverrideMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetSpaceOverrideMode" }
+            "area_set_space_override_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_space_override_mode" }
         }
       val areaSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "areaSetTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method areaSetTransform" }
+            "area_set_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method area_set_transform" }
         }
       val bodyAddCentralForce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyAddCentralForce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyAddCentralForce" }
+            "body_add_central_force".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_add_central_force" }
         }
       val bodyAddCollisionException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyAddCollisionException".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyAddCollisionException" }
+            "body_add_collision_exception".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_add_collision_exception" }
         }
       val bodyAddForce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyAddForce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyAddForce" }
+            "body_add_force".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_add_force" }
         }
       val bodyAddShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyAddShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyAddShape" }
+            "body_add_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_add_shape" }
         }
       val bodyAddTorque: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyAddTorque".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyAddTorque" }
+            "body_add_torque".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_add_torque" }
         }
       val bodyApplyCentralImpulse: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyApplyCentralImpulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyApplyCentralImpulse" }
+            "body_apply_central_impulse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_apply_central_impulse" }
         }
       val bodyApplyImpulse: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyApplyImpulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyApplyImpulse" }
+            "body_apply_impulse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_apply_impulse" }
         }
       val bodyApplyTorqueImpulse: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyApplyTorqueImpulse".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyApplyTorqueImpulse" }
+            "body_apply_torque_impulse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_apply_torque_impulse" }
         }
       val bodyAttachObjectInstanceId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyAttachObjectInstanceId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyAttachObjectInstanceId" }
+            "body_attach_object_instance_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_attach_object_instance_id" }
         }
       val bodyClearShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyClearShapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyClearShapes" }
+            "body_clear_shapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_clear_shapes" }
         }
       val bodyCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyCreate" }
+            "body_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_create" }
         }
       val bodyGetCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetCollisionLayer" }
+            "body_get_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_collision_layer" }
         }
       val bodyGetCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetCollisionMask" }
+            "body_get_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_collision_mask" }
         }
       val bodyGetDirectState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetDirectState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetDirectState" }
+            "body_get_direct_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_direct_state" }
         }
       val bodyGetKinematicSafeMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetKinematicSafeMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetKinematicSafeMargin" }
+            "body_get_kinematic_safe_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_kinematic_safe_margin" }
         }
       val bodyGetMaxContactsReported: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetMaxContactsReported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetMaxContactsReported" }
+            "body_get_max_contacts_reported".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_max_contacts_reported" }
         }
       val bodyGetMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetMode" }
+            "body_get_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_mode" }
         }
       val bodyGetObjectInstanceId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetObjectInstanceId".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetObjectInstanceId" }
+            "body_get_object_instance_id".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_object_instance_id" }
         }
       val bodyGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetParam" }
+            "body_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_param" }
         }
       val bodyGetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetShape" }
+            "body_get_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_shape" }
         }
       val bodyGetShapeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetShapeCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetShapeCount" }
+            "body_get_shape_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_shape_count" }
         }
       val bodyGetShapeTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetShapeTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetShapeTransform" }
+            "body_get_shape_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_shape_transform" }
         }
       val bodyGetSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetSpace" }
+            "body_get_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_space" }
         }
       val bodyGetState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyGetState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyGetState" }
+            "body_get_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_get_state" }
         }
       val bodyIsAxisLocked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyIsAxisLocked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyIsAxisLocked" }
+            "body_is_axis_locked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_is_axis_locked" }
         }
       val bodyIsContinuousCollisionDetectionEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyIsContinuousCollisionDetectionEnabled".cstr.ptr)
+            "body_is_continuous_collision_detection_enabled".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method bodyIsContinuousCollisionDetectionEnabled" }
+            "No method_bind found for method body_is_continuous_collision_detection_enabled" }
         }
       val bodyIsOmittingForceIntegration: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyIsOmittingForceIntegration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyIsOmittingForceIntegration" }
+            "body_is_omitting_force_integration".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_is_omitting_force_integration"
+            }
         }
       val bodyIsRayPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyIsRayPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyIsRayPickable" }
+            "body_is_ray_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_is_ray_pickable" }
         }
       val bodyRemoveCollisionException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyRemoveCollisionException".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyRemoveCollisionException" }
+            "body_remove_collision_exception".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_remove_collision_exception" }
         }
       val bodyRemoveShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodyRemoveShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodyRemoveShape" }
+            "body_remove_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_remove_shape" }
         }
       val bodySetAxisLock: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetAxisLock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetAxisLock" }
+            "body_set_axis_lock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_axis_lock" }
         }
       val bodySetAxisVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetAxisVelocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetAxisVelocity" }
+            "body_set_axis_velocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_axis_velocity" }
         }
       val bodySetCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetCollisionLayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetCollisionLayer" }
+            "body_set_collision_layer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_collision_layer" }
         }
       val bodySetCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetCollisionMask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetCollisionMask" }
+            "body_set_collision_mask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_collision_mask" }
         }
       val bodySetEnableContinuousCollisionDetection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetEnableContinuousCollisionDetection".cstr.ptr)
+            "body_set_enable_continuous_collision_detection".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method bodySetEnableContinuousCollisionDetection" }
+            "No method_bind found for method body_set_enable_continuous_collision_detection" }
         }
       val bodySetForceIntegrationCallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetForceIntegrationCallback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetForceIntegrationCallback" }
+            "body_set_force_integration_callback".cstr.ptr)
+          requireNotNull(ptr) {
+            "No method_bind found for method body_set_force_integration_callback" }
         }
       val bodySetKinematicSafeMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetKinematicSafeMargin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetKinematicSafeMargin" }
+            "body_set_kinematic_safe_margin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_kinematic_safe_margin" }
         }
       val bodySetMaxContactsReported: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetMaxContactsReported".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetMaxContactsReported" }
+            "body_set_max_contacts_reported".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_max_contacts_reported" }
         }
       val bodySetMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetMode" }
+            "body_set_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_mode" }
         }
       val bodySetOmitForceIntegration: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetOmitForceIntegration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetOmitForceIntegration" }
+            "body_set_omit_force_integration".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_omit_force_integration" }
         }
       val bodySetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetParam" }
+            "body_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_param" }
         }
       val bodySetRayPickable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetRayPickable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetRayPickable" }
+            "body_set_ray_pickable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_ray_pickable" }
         }
       val bodySetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetShape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetShape" }
+            "body_set_shape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_shape" }
         }
       val bodySetShapeDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetShapeDisabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetShapeDisabled" }
+            "body_set_shape_disabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_shape_disabled" }
         }
       val bodySetShapeTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetShapeTransform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetShapeTransform" }
+            "body_set_shape_transform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_shape_transform" }
         }
       val bodySetSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetSpace".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetSpace" }
+            "body_set_space".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_space" }
         }
       val bodySetState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "bodySetState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method bodySetState" }
+            "body_set_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method body_set_state" }
         }
       val coneTwistJointGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "coneTwistJointGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method coneTwistJointGetParam" }
+            "cone_twist_joint_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method cone_twist_joint_get_param" }
         }
       val coneTwistJointSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "coneTwistJointSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method coneTwistJointSetParam" }
+            "cone_twist_joint_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method cone_twist_joint_set_param" }
         }
       val freeRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "freeRid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method freeRid" }
+            "free_rid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method free_rid" }
         }
       val generic6dofJointGetFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic6dofJointGetFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic6dofJointGetFlag" }
+            "generic_6dof_joint_get_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_get_flag" }
         }
       val generic6dofJointGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic6dofJointGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic6dofJointGetParam" }
+            "generic_6dof_joint_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_get_param" }
         }
       val generic6dofJointSetFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic6dofJointSetFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic6dofJointSetFlag" }
+            "generic_6dof_joint_set_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_set_flag" }
         }
       val generic6dofJointSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "generic6dofJointSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generic6dofJointSetParam" }
+            "generic_6dof_joint_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generic_6dof_joint_set_param" }
         }
       val getProcessInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "getProcessInfo".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getProcessInfo" }
+            "get_process_info".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_process_info" }
         }
       val hingeJointGetFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hingeJointGetFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hingeJointGetFlag" }
+            "hinge_joint_get_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hinge_joint_get_flag" }
         }
       val hingeJointGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hingeJointGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hingeJointGetParam" }
+            "hinge_joint_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hinge_joint_get_param" }
         }
       val hingeJointSetFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hingeJointSetFlag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hingeJointSetFlag" }
+            "hinge_joint_set_flag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hinge_joint_set_flag" }
         }
       val hingeJointSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "hingeJointSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hingeJointSetParam" }
+            "hinge_joint_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hinge_joint_set_param" }
         }
       val jointCreateConeTwist: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointCreateConeTwist".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointCreateConeTwist" }
+            "joint_create_cone_twist".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_create_cone_twist" }
         }
       val jointCreateGeneric6dof: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointCreateGeneric6dof".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointCreateGeneric6dof" }
+            "joint_create_generic_6dof".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_create_generic_6dof" }
         }
       val jointCreateHinge: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointCreateHinge".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointCreateHinge" }
+            "joint_create_hinge".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_create_hinge" }
         }
       val jointCreatePin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointCreatePin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointCreatePin" }
+            "joint_create_pin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_create_pin" }
         }
       val jointCreateSlider: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointCreateSlider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointCreateSlider" }
+            "joint_create_slider".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_create_slider" }
         }
       val jointGetSolverPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointGetSolverPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointGetSolverPriority" }
+            "joint_get_solver_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_get_solver_priority" }
         }
       val jointGetType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointGetType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointGetType" }
+            "joint_get_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_get_type" }
         }
       val jointSetSolverPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "jointSetSolverPriority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method jointSetSolverPriority" }
+            "joint_set_solver_priority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joint_set_solver_priority" }
         }
       val pinJointGetLocalA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pinJointGetLocalA".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pinJointGetLocalA" }
+            "pin_joint_get_local_a".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pin_joint_get_local_a" }
         }
       val pinJointGetLocalB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pinJointGetLocalB".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pinJointGetLocalB" }
+            "pin_joint_get_local_b".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pin_joint_get_local_b" }
         }
       val pinJointGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pinJointGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pinJointGetParam" }
+            "pin_joint_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pin_joint_get_param" }
         }
       val pinJointSetLocalA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pinJointSetLocalA".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pinJointSetLocalA" }
+            "pin_joint_set_local_a".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pin_joint_set_local_a" }
         }
       val pinJointSetLocalB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pinJointSetLocalB".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pinJointSetLocalB" }
+            "pin_joint_set_local_b".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pin_joint_set_local_b" }
         }
       val pinJointSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "pinJointSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pinJointSetParam" }
+            "pin_joint_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pin_joint_set_param" }
         }
       val setActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "setActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setActive" }
+            "set_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_active" }
         }
       val shapeCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shapeCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeCreate" }
+            "shape_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_create" }
         }
       val shapeGetData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shapeGetData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeGetData" }
+            "shape_get_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_get_data" }
         }
       val shapeGetType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shapeGetType".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeGetType" }
+            "shape_get_type".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_get_type" }
         }
       val shapeSetData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "shapeSetData".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shapeSetData" }
+            "shape_set_data".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shape_set_data" }
         }
       val sliderJointGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "sliderJointGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sliderJointGetParam" }
+            "slider_joint_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method slider_joint_get_param" }
         }
       val sliderJointSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "sliderJointSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method sliderJointSetParam" }
+            "slider_joint_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method slider_joint_set_param" }
         }
       val spaceCreate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "spaceCreate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spaceCreate" }
+            "space_create".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method space_create" }
         }
       val spaceGetDirectState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "spaceGetDirectState".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spaceGetDirectState" }
+            "space_get_direct_state".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method space_get_direct_state" }
         }
       val spaceGetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "spaceGetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spaceGetParam" }
+            "space_get_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method space_get_param" }
         }
       val spaceIsActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "spaceIsActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spaceIsActive" }
+            "space_is_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method space_is_active" }
         }
       val spaceSetActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "spaceSetActive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spaceSetActive" }
+            "space_set_active".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method space_set_active" }
         }
       val spaceSetParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsServer".cstr.ptr,
-            "spaceSetParam".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method spaceSetParam" }
+            "space_set_param".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method space_set_param" }
         }}
   }
 }

@@ -54,15 +54,15 @@ open class AudioEffectAmplify(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectAmplify".cstr.ptr,
-            "getVolumeDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVolumeDb" }
+            "get_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_volume_db" }
         }
       val setVolumeDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectAmplify".cstr.ptr,
-            "setVolumeDb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVolumeDb" }
+            "set_volume_db".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_volume_db" }
         }}
   }
 }

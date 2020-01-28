@@ -26,12 +26,12 @@ open class VisualScriptInputAction(
       setActionName(value)
     }
 
-  var mode: Int
+  var mode: Mode
     get() {
-       return VisualScriptInputAction.Mode.from(getActionMode()) 
+       return getActionMode() 
     }
     set(value) {
-      setActionMode(VisualScriptInputAction.Mode.from(value))
+      setActionMode(value.value)
     }
 
   fun getActionMode(): Mode {
@@ -104,29 +104,29 @@ open class VisualScriptInputAction(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "getActionMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getActionMode" }
+            "get_action_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_action_mode" }
         }
       val getActionName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "getActionName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getActionName" }
+            "get_action_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_action_name" }
         }
       val setActionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "setActionMode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setActionMode" }
+            "set_action_mode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_action_mode" }
         }
       val setActionName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "setActionName".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setActionName" }
+            "set_action_name".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_action_name" }
         }}
   }
 }

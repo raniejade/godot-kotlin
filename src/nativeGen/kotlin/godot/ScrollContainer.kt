@@ -137,85 +137,85 @@ open class ScrollContainer(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "getDeadzone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getDeadzone" }
+            "get_deadzone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_deadzone" }
         }
       val getHScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "getHScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHScroll" }
+            "get_h_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_h_scroll" }
         }
       val getHScrollbar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "getHScrollbar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getHScrollbar" }
+            "get_h_scrollbar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_h_scrollbar" }
         }
       val getVScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "getVScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVScroll" }
+            "get_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_scroll" }
         }
       val getVScrollbar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "getVScrollbar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getVScrollbar" }
+            "get_v_scrollbar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_v_scrollbar" }
         }
       val isHScrollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "isHScrollEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isHScrollEnabled" }
+            "is_h_scroll_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_h_scroll_enabled" }
         }
       val isVScrollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "isVScrollEnabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method isVScrollEnabled" }
+            "is_v_scroll_enabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method is_v_scroll_enabled" }
         }
       val setDeadzone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "setDeadzone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setDeadzone" }
+            "set_deadzone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_deadzone" }
         }
       val setEnableHScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "setEnableHScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnableHScroll" }
+            "set_enable_h_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enable_h_scroll" }
         }
       val setEnableVScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "setEnableVScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setEnableVScroll" }
+            "set_enable_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_enable_v_scroll" }
         }
       val setHScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "setHScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setHScroll" }
+            "set_h_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_h_scroll" }
         }
       val setVScroll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollContainer".cstr.ptr,
-            "setVScroll".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setVScroll" }
+            "set_v_scroll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_v_scroll" }
         }}
   }
 }

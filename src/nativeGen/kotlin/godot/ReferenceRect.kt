@@ -53,15 +53,15 @@ open class ReferenceRect(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "getBorderColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBorderColor" }
+            "get_border_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_border_color" }
         }
       val setBorderColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "setBorderColor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setBorderColor" }
+            "set_border_color".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_border_color" }
         }}
   }
 }

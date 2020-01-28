@@ -52,15 +52,15 @@ open class PanoramaSky(
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
-            "getPanorama".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getPanorama" }
+            "get_panorama".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_panorama" }
         }
       val setPanorama: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
-            "setPanorama".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setPanorama" }
+            "set_panorama".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method set_panorama" }
         }}
   }
 }

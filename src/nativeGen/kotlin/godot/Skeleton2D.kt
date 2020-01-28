@@ -51,20 +51,20 @@ open class Skeleton2D(
       val getBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-            "getBone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBone" }
+            "get_bone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone" }
         }
       val getBoneCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-            "getBoneCount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getBoneCount" }
+            "get_bone_count".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
         }
       val getSkeleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-            "getSkeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method getSkeleton" }
+            "get_skeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
         }}
   }
 }
