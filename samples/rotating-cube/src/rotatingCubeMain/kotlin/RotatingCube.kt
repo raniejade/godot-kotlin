@@ -5,15 +5,16 @@ import godot.core.Vector3
 import kotlinx.cinterop.COpaquePointer
 
 class RotatingCube(handle: COpaquePointer): Spatial(handle) {
-  private lateinit var rotation: Vector3
-
   override fun _onInit() {
-    rotation = Vector3.new(y = 1f)
+    rotationDegrees = Vector3.new(y = 1f)
   }
 
   fun _process(delta: Float) {
+    // will not work as core types are pass-by-value
+    // rotationDegrees.y += delta * 12f
+    val rotation = rotationDegrees
     rotation.y += delta * 12f
-    setRotationDegrees(rotation)
+    rotationDegrees = rotation
   }
 
   companion object: GodotClass<RotatingCube>(::RotatingCube) {
