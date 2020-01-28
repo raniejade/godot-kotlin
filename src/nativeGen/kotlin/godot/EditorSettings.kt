@@ -22,7 +22,7 @@ open class EditorSettings(
 ) : Resource(_handle) {
   fun addPropertyInfo(info: Dictionary) {
     val _arg = Variant.new(info)
-    __method_bind.add_property_info.call(this._handle, _arg, 1)
+    __method_bind.addPropertyInfo.call(this._handle, _arg, 1)
   }
 
   fun erase(property: String) {
@@ -31,7 +31,7 @@ open class EditorSettings(
   }
 
   fun getFavorites(): PoolStringArray {
-    val _ret = __method_bind.get_favorites.call(this._handle)
+    val _ret = __method_bind.getFavorites.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
@@ -44,52 +44,52 @@ open class EditorSettings(
     _args.append(section)
     _args.append(key)
     _args.append(default)
-    val _ret = __method_bind.get_project_metadata.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.getProjectMetadata.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun getProjectSettingsDir(): String {
-    val _ret = __method_bind.get_project_settings_dir.call(this._handle)
+    val _ret = __method_bind.getProjectSettingsDir.call(this._handle)
     return _ret.asString()
   }
 
   fun getRecentDirs(): PoolStringArray {
-    val _ret = __method_bind.get_recent_dirs.call(this._handle)
+    val _ret = __method_bind.getRecentDirs.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getSetting(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_setting.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSetting.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getSettingsDir(): String {
-    val _ret = __method_bind.get_settings_dir.call(this._handle)
+    val _ret = __method_bind.getSettingsDir.call(this._handle)
     return _ret.asString()
   }
 
   fun hasSetting(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_setting.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasSetting.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_can_revert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyCanRevert.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_get_revert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyGetRevert.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun setFavorites(dirs: PoolStringArray) {
     val _arg = Variant.new(dirs)
-    __method_bind.set_favorites.call(this._handle, _arg, 1)
+    __method_bind.setFavorites.call(this._handle, _arg, 1)
   }
 
   fun setInitialValue(
@@ -101,7 +101,7 @@ open class EditorSettings(
     _args.append(name)
     _args.append(value)
     _args.append(updateCurrent)
-    __method_bind.set_initial_value.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setInitialValue.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setProjectMetadata(
@@ -113,19 +113,19 @@ open class EditorSettings(
     _args.append(section)
     _args.append(key)
     _args.append(data)
-    __method_bind.set_project_metadata.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setProjectMetadata.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setRecentDirs(dirs: PoolStringArray) {
     val _arg = Variant.new(dirs)
-    __method_bind.set_recent_dirs.call(this._handle, _arg, 1)
+    __method_bind.setRecentDirs.call(this._handle, _arg, 1)
   }
 
   fun setSetting(name: String, value: Variant) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(value)
-    __method_bind.set_setting.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setSetting.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -133,12 +133,12 @@ open class EditorSettings(
      * Container for method_bind pointers for EditorSettings
      */
     private object __method_bind {
-      val add_property_info: CPointer<godot_method_bind>
+      val addPropertyInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "add_property_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_property_info" }
+            "addPropertyInfo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPropertyInfo" }
         }
       val erase: CPointer<godot_method_bind>
         get() = memScoped {
@@ -147,103 +147,103 @@ open class EditorSettings(
             "erase".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method erase" }
         }
-      val get_favorites: CPointer<godot_method_bind>
+      val getFavorites: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "get_favorites".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_favorites" }
+            "getFavorites".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFavorites" }
         }
-      val get_project_metadata: CPointer<godot_method_bind>
+      val getProjectMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "get_project_metadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_project_metadata" }
+            "getProjectMetadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProjectMetadata" }
         }
-      val get_project_settings_dir: CPointer<godot_method_bind>
+      val getProjectSettingsDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "get_project_settings_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_project_settings_dir" }
+            "getProjectSettingsDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProjectSettingsDir" }
         }
-      val get_recent_dirs: CPointer<godot_method_bind>
+      val getRecentDirs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "get_recent_dirs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_recent_dirs" }
+            "getRecentDirs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRecentDirs" }
         }
-      val get_setting: CPointer<godot_method_bind>
+      val getSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "get_setting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_setting" }
+            "getSetting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSetting" }
         }
-      val get_settings_dir: CPointer<godot_method_bind>
+      val getSettingsDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "get_settings_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_settings_dir" }
+            "getSettingsDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSettingsDir" }
         }
-      val has_setting: CPointer<godot_method_bind>
+      val hasSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "has_setting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_setting" }
+            "hasSetting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasSetting" }
         }
-      val property_can_revert: CPointer<godot_method_bind>
+      val propertyCanRevert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "property_can_revert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method property_can_revert" }
+            "propertyCanRevert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method propertyCanRevert" }
         }
-      val property_get_revert: CPointer<godot_method_bind>
+      val propertyGetRevert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "property_get_revert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method property_get_revert" }
+            "propertyGetRevert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method propertyGetRevert" }
         }
-      val set_favorites: CPointer<godot_method_bind>
+      val setFavorites: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "set_favorites".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_favorites" }
+            "setFavorites".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFavorites" }
         }
-      val set_initial_value: CPointer<godot_method_bind>
+      val setInitialValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "set_initial_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_initial_value" }
+            "setInitialValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInitialValue" }
         }
-      val set_project_metadata: CPointer<godot_method_bind>
+      val setProjectMetadata: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "set_project_metadata".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_project_metadata" }
+            "setProjectMetadata".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setProjectMetadata" }
         }
-      val set_recent_dirs: CPointer<godot_method_bind>
+      val setRecentDirs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "set_recent_dirs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_recent_dirs" }
+            "setRecentDirs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRecentDirs" }
         }
-      val set_setting: CPointer<godot_method_bind>
+      val setSetting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSettings".cstr.ptr,
-            "set_setting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_setting" }
+            "setSetting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSetting" }
         }}
   }
 }

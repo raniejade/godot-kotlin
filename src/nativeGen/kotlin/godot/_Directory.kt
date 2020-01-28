@@ -22,7 +22,7 @@ open class _Directory(
 ) : Reference(_handle) {
   fun changeDir(todir: String): GDError {
     val _arg = Variant.new(todir)
-    val _ret = __method_bind.change_dir.call(this._handle, _arg, 1)
+    val _ret = __method_bind.changeDir.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -35,50 +35,50 @@ open class _Directory(
   }
 
   fun currentIsDir(): Boolean {
-    val _ret = __method_bind.current_is_dir.call(this._handle)
+    val _ret = __method_bind.currentIsDir.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun dirExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.dir_exists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.dirExists.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun fileExists(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.file_exists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.fileExists.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getCurrentDir(): String {
-    val _ret = __method_bind.get_current_dir.call(this._handle)
+    val _ret = __method_bind.getCurrentDir.call(this._handle)
     return _ret.asString()
   }
 
   fun getCurrentDrive(): Int {
-    val _ret = __method_bind.get_current_drive.call(this._handle)
+    val _ret = __method_bind.getCurrentDrive.call(this._handle)
     return _ret.asInt()
   }
 
   fun getDrive(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_drive.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDrive.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getDriveCount(): Int {
-    val _ret = __method_bind.get_drive_count.call(this._handle)
+    val _ret = __method_bind.getDriveCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNext(): String {
-    val _ret = __method_bind.get_next.call(this._handle)
+    val _ret = __method_bind.getNext.call(this._handle)
     return _ret.asString()
   }
 
   fun getSpaceLeft(): Int {
-    val _ret = __method_bind.get_space_left.call(this._handle)
+    val _ret = __method_bind.getSpaceLeft.call(this._handle)
     return _ret.asInt()
   }
 
@@ -86,23 +86,23 @@ open class _Directory(
     val _args = VariantArray.new()
     _args.append(skipNavigational)
     _args.append(skipHidden)
-    val _ret = __method_bind.list_dir_begin.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.listDirBegin.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun listDirEnd() {
-    __method_bind.list_dir_end.call(this._handle)
+    __method_bind.listDirEnd.call(this._handle)
   }
 
   fun makeDir(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.make_dir.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeDir.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun makeDirRecursive(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.make_dir_recursive.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeDirRecursive.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -140,11 +140,11 @@ open class _Directory(
      * Container for method_bind pointers for _Directory
      */
     private object __method_bind {
-      val change_dir: CPointer<godot_method_bind>
+      val changeDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "change_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method change_dir" }
+            "changeDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method changeDir" }
         }
       val copy: CPointer<godot_method_bind>
         get() = memScoped {
@@ -152,83 +152,83 @@ open class _Directory(
             "copy".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method copy" }
         }
-      val current_is_dir: CPointer<godot_method_bind>
+      val currentIsDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "current_is_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method current_is_dir" }
+            "currentIsDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method currentIsDir" }
         }
-      val dir_exists: CPointer<godot_method_bind>
+      val dirExists: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "dir_exists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dir_exists" }
+            "dirExists".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method dirExists" }
         }
-      val file_exists: CPointer<godot_method_bind>
+      val fileExists: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "file_exists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method file_exists" }
+            "fileExists".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method fileExists" }
         }
-      val get_current_dir: CPointer<godot_method_bind>
+      val getCurrentDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_current_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_dir" }
+            "getCurrentDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentDir" }
         }
-      val get_current_drive: CPointer<godot_method_bind>
+      val getCurrentDrive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_current_drive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_drive" }
+            "getCurrentDrive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentDrive" }
         }
-      val get_drive: CPointer<godot_method_bind>
+      val getDrive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_drive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drive" }
+            "getDrive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDrive" }
         }
-      val get_drive_count: CPointer<godot_method_bind>
+      val getDriveCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_drive_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_drive_count" }
+            "getDriveCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDriveCount" }
         }
-      val get_next: CPointer<godot_method_bind>
+      val getNext: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_next".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_next" }
+            "getNext".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNext" }
         }
-      val get_space_left: CPointer<godot_method_bind>
+      val getSpaceLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "get_space_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_space_left" }
+            "getSpaceLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpaceLeft" }
         }
-      val list_dir_begin: CPointer<godot_method_bind>
+      val listDirBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "list_dir_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method list_dir_begin" }
+            "listDirBegin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method listDirBegin" }
         }
-      val list_dir_end: CPointer<godot_method_bind>
+      val listDirEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "list_dir_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method list_dir_end" }
+            "listDirEnd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method listDirEnd" }
         }
-      val make_dir: CPointer<godot_method_bind>
+      val makeDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "make_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_dir" }
+            "makeDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeDir" }
         }
-      val make_dir_recursive: CPointer<godot_method_bind>
+      val makeDirRecursive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Directory".cstr.ptr,
-            "make_dir_recursive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_dir_recursive" }
+            "makeDirRecursive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeDirRecursive" }
         }
       val open: CPointer<godot_method_bind>
         get() = memScoped {

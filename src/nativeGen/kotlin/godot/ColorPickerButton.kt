@@ -18,34 +18,50 @@ import kotlinx.cinterop.reinterpret
 open class ColorPickerButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
+  var color: Color
+    get() {
+       return getPickColor() 
+    }
+    set(value) {
+      setPickColor(value)
+    }
+
+  var editAlpha: Boolean
+    get() {
+       return isEditingAlpha() 
+    }
+    set(value) {
+      setEditAlpha(value)
+    }
+
   fun getPickColor(): Color {
-    val _ret = __method_bind.get_pick_color.call(this._handle)
+    val _ret = __method_bind.getPickColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getPicker(): ColorPicker {
-    val _ret = __method_bind.get_picker.call(this._handle)
+    val _ret = __method_bind.getPicker.call(this._handle)
     return _ret.asObject(::ColorPicker)!!
   }
 
   fun getPopup(): PopupPanel {
-    val _ret = __method_bind.get_popup.call(this._handle)
+    val _ret = __method_bind.getPopup.call(this._handle)
     return _ret.asObject(::PopupPanel)!!
   }
 
   fun isEditingAlpha(): Boolean {
-    val _ret = __method_bind.is_editing_alpha.call(this._handle)
+    val _ret = __method_bind.isEditingAlpha.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setEditAlpha(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.set_edit_alpha.call(this._handle, _arg, 1)
+    __method_bind.setEditAlpha.call(this._handle, _arg, 1)
   }
 
   fun setPickColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_pick_color.call(this._handle, _arg, 1)
+    __method_bind.setPickColor.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -63,47 +79,47 @@ open class ColorPickerButton(
      * Container for method_bind pointers for ColorPickerButton
      */
     private object __method_bind {
-      val get_pick_color: CPointer<godot_method_bind>
+      val getPickColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "get_pick_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pick_color" }
+            "getPickColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPickColor" }
         }
-      val get_picker: CPointer<godot_method_bind>
+      val getPicker: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "get_picker".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_picker" }
+            "getPicker".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPicker" }
         }
-      val get_popup: CPointer<godot_method_bind>
+      val getPopup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "get_popup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_popup" }
+            "getPopup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPopup" }
         }
-      val is_editing_alpha: CPointer<godot_method_bind>
+      val isEditingAlpha: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "is_editing_alpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_editing_alpha" }
+            "isEditingAlpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isEditingAlpha" }
         }
-      val set_edit_alpha: CPointer<godot_method_bind>
+      val setEditAlpha: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "set_edit_alpha".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edit_alpha" }
+            "setEditAlpha".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEditAlpha" }
         }
-      val set_pick_color: CPointer<godot_method_bind>
+      val setPickColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorPickerButton".cstr.ptr,
-            "set_pick_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pick_color" }
+            "setPickColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPickColor" }
         }}
   }
 }

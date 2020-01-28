@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptMathConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var constant: Int
+    get() {
+       return VisualScriptMathConstant.MathConstant.from(getMathConstant()) 
+    }
+    set(value) {
+      setMathConstant(VisualScriptMathConstant.MathConstant.from(value))
+    }
+
   fun getMathConstant(): MathConstant {
-    val _ret = __method_bind.get_math_constant.call(this._handle)
+    val _ret = __method_bind.getMathConstant.call(this._handle)
     return VisualScriptMathConstant.MathConstant.from(_ret.asInt())
   }
 
   fun setMathConstant(which: Int) {
     val _arg = Variant.new(which)
-    __method_bind.set_math_constant.call(this._handle, _arg, 1)
+    __method_bind.setMathConstant.call(this._handle, _arg, 1)
   }
 
   enum class MathConstant(
@@ -93,19 +101,19 @@ open class VisualScriptMathConstant(
      * Container for method_bind pointers for VisualScriptMathConstant
      */
     private object __method_bind {
-      val get_math_constant: CPointer<godot_method_bind>
+      val getMathConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
-            "get_math_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_math_constant" }
+            "getMathConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMathConstant" }
         }
-      val set_math_constant: CPointer<godot_method_bind>
+      val setMathConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptMathConstant".cstr.ptr,
-            "set_math_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_math_constant" }
+            "setMathConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMathConstant" }
         }}
   }
 }

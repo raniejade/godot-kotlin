@@ -21,45 +21,53 @@ import kotlinx.cinterop.reinterpret
 open class KinematicBody(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
+  var collisionSafeMargin: Float
+    get() {
+       return getSafeMargin() 
+    }
+    set(value) {
+      setSafeMargin(value)
+    }
+
   fun getAxisLock(axis: Int): Boolean {
     val _arg = Variant.new(axis)
-    val _ret = __method_bind.get_axis_lock.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAxisLock.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getFloorVelocity(): Vector3 {
-    val _ret = __method_bind.get_floor_velocity.call(this._handle)
+    val _ret = __method_bind.getFloorVelocity.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getSafeMargin(): Float {
-    val _ret = __method_bind.get_safe_margin.call(this._handle)
+    val _ret = __method_bind.getSafeMargin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSlideCollision(slideIdx: Int): KinematicCollision {
     val _arg = Variant.new(slideIdx)
-    val _ret = __method_bind.get_slide_collision.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlideCollision.call(this._handle, _arg, 1)
     return _ret.asObject(::KinematicCollision)!!
   }
 
   fun getSlideCount(): Int {
-    val _ret = __method_bind.get_slide_count.call(this._handle)
+    val _ret = __method_bind.getSlideCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun isOnCeiling(): Boolean {
-    val _ret = __method_bind.is_on_ceiling.call(this._handle)
+    val _ret = __method_bind.isOnCeiling.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isOnFloor(): Boolean {
-    val _ret = __method_bind.is_on_floor.call(this._handle)
+    val _ret = __method_bind.isOnFloor.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isOnWall(): Boolean {
-    val _ret = __method_bind.is_on_wall.call(this._handle)
+    val _ret = __method_bind.isOnWall.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -74,7 +82,7 @@ open class KinematicBody(
     _args.append(infiniteInertia)
     _args.append(excludeRaycastShapes)
     _args.append(testOnly)
-    val _ret = __method_bind.move_and_collide.call(this._handle, _args.toVariant(), 4)
+    val _ret = __method_bind.moveAndCollide.call(this._handle, _args.toVariant(), 4)
     return _ret.asObject(::KinematicCollision)!!
   }
 
@@ -93,7 +101,7 @@ open class KinematicBody(
     _args.append(maxSlides)
     _args.append(floorMaxAngle)
     _args.append(infiniteInertia)
-    val _ret = __method_bind.move_and_slide.call(this._handle, _args.toVariant(), 6)
+    val _ret = __method_bind.moveAndSlide.call(this._handle, _args.toVariant(), 6)
     return _ret.asVector3()
   }
 
@@ -114,7 +122,7 @@ open class KinematicBody(
     _args.append(maxSlides)
     _args.append(floorMaxAngle)
     _args.append(infiniteInertia)
-    val _ret = __method_bind.move_and_slide_with_snap.call(this._handle, _args.toVariant(), 7)
+    val _ret = __method_bind.moveAndSlideWithSnap.call(this._handle, _args.toVariant(), 7)
     return _ret.asVector3()
   }
 
@@ -122,12 +130,12 @@ open class KinematicBody(
     val _args = VariantArray.new()
     _args.append(axis)
     _args.append(lock)
-    __method_bind.set_axis_lock.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setAxisLock.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setSafeMargin(pixels: Float) {
     val _arg = Variant.new(pixels)
-    __method_bind.set_safe_margin.call(this._handle, _arg, 1)
+    __method_bind.setSafeMargin.call(this._handle, _arg, 1)
   }
 
   fun testMove(
@@ -139,7 +147,7 @@ open class KinematicBody(
     _args.append(from)
     _args.append(relVec)
     _args.append(infiniteInertia)
-    val _ret = __method_bind.test_move.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.testMove.call(this._handle, _args.toVariant(), 3)
     return _ret.asBoolean()
   }
 
@@ -157,103 +165,103 @@ open class KinematicBody(
      * Container for method_bind pointers for KinematicBody
      */
     private object __method_bind {
-      val get_axis_lock: CPointer<godot_method_bind>
+      val getAxisLock: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_axis_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis_lock" }
+            "getAxisLock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAxisLock" }
         }
-      val get_floor_velocity: CPointer<godot_method_bind>
+      val getFloorVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_floor_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_floor_velocity" }
+            "getFloorVelocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFloorVelocity" }
         }
-      val get_safe_margin: CPointer<godot_method_bind>
+      val getSafeMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_safe_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_safe_margin" }
+            "getSafeMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSafeMargin" }
         }
-      val get_slide_collision: CPointer<godot_method_bind>
+      val getSlideCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_slide_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slide_collision" }
+            "getSlideCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSlideCollision" }
         }
-      val get_slide_count: CPointer<godot_method_bind>
+      val getSlideCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "get_slide_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slide_count" }
+            "getSlideCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSlideCount" }
         }
-      val is_on_ceiling: CPointer<godot_method_bind>
+      val isOnCeiling: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "is_on_ceiling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_on_ceiling" }
+            "isOnCeiling".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isOnCeiling" }
         }
-      val is_on_floor: CPointer<godot_method_bind>
+      val isOnFloor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "is_on_floor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_on_floor" }
+            "isOnFloor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isOnFloor" }
         }
-      val is_on_wall: CPointer<godot_method_bind>
+      val isOnWall: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "is_on_wall".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_on_wall" }
+            "isOnWall".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isOnWall" }
         }
-      val move_and_collide: CPointer<godot_method_bind>
+      val moveAndCollide: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "move_and_collide".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_and_collide" }
+            "moveAndCollide".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method moveAndCollide" }
         }
-      val move_and_slide: CPointer<godot_method_bind>
+      val moveAndSlide: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "move_and_slide".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_and_slide" }
+            "moveAndSlide".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method moveAndSlide" }
         }
-      val move_and_slide_with_snap: CPointer<godot_method_bind>
+      val moveAndSlideWithSnap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "move_and_slide_with_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_and_slide_with_snap" }
+            "moveAndSlideWithSnap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method moveAndSlideWithSnap" }
         }
-      val set_axis_lock: CPointer<godot_method_bind>
+      val setAxisLock: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "set_axis_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis_lock" }
+            "setAxisLock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAxisLock" }
         }
-      val set_safe_margin: CPointer<godot_method_bind>
+      val setSafeMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "set_safe_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_safe_margin" }
+            "setSafeMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSafeMargin" }
         }
-      val test_move: CPointer<godot_method_bind>
+      val testMove: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("KinematicBody".cstr.ptr,
-            "test_move".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method test_move" }
+            "testMove".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method testMove" }
         }}
   }
 }

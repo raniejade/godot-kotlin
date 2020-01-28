@@ -30,34 +30,34 @@ open class StyleBox(
   }
 
   fun getCenterSize(): Vector2 {
-    val _ret = __method_bind.get_center_size.call(this._handle)
+    val _ret = __method_bind.getCenterSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCurrentItemDrawn(): CanvasItem {
-    val _ret = __method_bind.get_current_item_drawn.call(this._handle)
+    val _ret = __method_bind.getCurrentItemDrawn.call(this._handle)
     return _ret.asObject(::CanvasItem)!!
   }
 
   fun getDefaultMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_default_margin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDefaultMargin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_margin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMargin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getMinimumSize(): Vector2 {
-    val _ret = __method_bind.get_minimum_size.call(this._handle)
+    val _ret = __method_bind.getMinimumSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.get_offset.call(this._handle)
+    val _ret = __method_bind.getOffset.call(this._handle)
     return _ret.asVector2()
   }
 
@@ -65,14 +65,14 @@ open class StyleBox(
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(offset)
-    __method_bind.set_default_margin.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setDefaultMargin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun testMask(point: Vector2, rect: Rect2): Boolean {
     val _args = VariantArray.new()
     _args.append(point)
     _args.append(rect)
-    val _ret = __method_bind.test_mask.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.testMask.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -87,53 +87,53 @@ open class StyleBox(
             "draw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw" }
         }
-      val get_center_size: CPointer<godot_method_bind>
+      val getCenterSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "get_center_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_center_size" }
+            "getCenterSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCenterSize" }
         }
-      val get_current_item_drawn: CPointer<godot_method_bind>
+      val getCurrentItemDrawn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "get_current_item_drawn".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_item_drawn" }
+            "getCurrentItemDrawn".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentItemDrawn" }
         }
-      val get_default_margin: CPointer<godot_method_bind>
+      val getDefaultMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "get_default_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_margin" }
+            "getDefaultMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDefaultMargin" }
         }
-      val get_margin: CPointer<godot_method_bind>
+      val getMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            "getMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMargin" }
         }
-      val get_minimum_size: CPointer<godot_method_bind>
+      val getMinimumSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "get_minimum_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_minimum_size" }
+            "getMinimumSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMinimumSize" }
         }
-      val get_offset: CPointer<godot_method_bind>
+      val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            "getOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOffset" }
         }
-      val set_default_margin: CPointer<godot_method_bind>
+      val setDefaultMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "set_default_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_margin" }
+            "setDefaultMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDefaultMargin" }
         }
-      val test_mask: CPointer<godot_method_bind>
+      val testMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBox".cstr.ptr,
-            "test_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method test_mask" }
+            "testMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method testMask" }
         }}
   }
 }

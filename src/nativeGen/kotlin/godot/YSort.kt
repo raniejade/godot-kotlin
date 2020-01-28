@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class YSort(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var sortEnabled: Boolean
+    get() {
+       return isSortEnabled() 
+    }
+    set(value) {
+      setSortEnabled(value)
+    }
+
   fun isSortEnabled(): Boolean {
-    val _ret = __method_bind.is_sort_enabled.call(this._handle)
+    val _ret = __method_bind.isSortEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setSortEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_sort_enabled.call(this._handle, _arg, 1)
+    __method_bind.setSortEnabled.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,17 +49,17 @@ open class YSort(
      * Container for method_bind pointers for YSort
      */
     private object __method_bind {
-      val is_sort_enabled: CPointer<godot_method_bind>
+      val isSortEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
-            "is_sort_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_sort_enabled" }
+            "isSortEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSortEnabled" }
         }
-      val set_sort_enabled: CPointer<godot_method_bind>
+      val setSortEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("YSort".cstr.ptr,
-            "set_sort_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sort_enabled" }
+            "setSortEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSortEnabled" }
         }}
   }
 }

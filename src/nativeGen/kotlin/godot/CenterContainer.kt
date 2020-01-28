@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class CenterContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  var useTopLeft: Boolean
+    get() {
+       return isUsingTopLeft() 
+    }
+    set(value) {
+      setUseTopLeft(value)
+    }
+
   fun isUsingTopLeft(): Boolean {
-    val _ret = __method_bind.is_using_top_left.call(this._handle)
+    val _ret = __method_bind.isUsingTopLeft.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setUseTopLeft(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_top_left.call(this._handle, _arg, 1)
+    __method_bind.setUseTopLeft.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class CenterContainer(
      * Container for method_bind pointers for CenterContainer
      */
     private object __method_bind {
-      val is_using_top_left: CPointer<godot_method_bind>
+      val isUsingTopLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
-            "is_using_top_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_top_left" }
+            "isUsingTopLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isUsingTopLeft" }
         }
-      val set_use_top_left: CPointer<godot_method_bind>
+      val setUseTopLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CenterContainer".cstr.ptr,
-            "set_use_top_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_top_left" }
+            "setUseTopLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseTopLeft" }
         }}
   }
 }

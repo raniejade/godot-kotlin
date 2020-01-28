@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptResourcePath(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var path: String
+    get() {
+       return getResourcePath() 
+    }
+    set(value) {
+      setResourcePath(value)
+    }
+
   fun getResourcePath(): String {
-    val _ret = __method_bind.get_resource_path.call(this._handle)
+    val _ret = __method_bind.getResourcePath.call(this._handle)
     return _ret.asString()
   }
 
   fun setResourcePath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_resource_path.call(this._handle, _arg, 1)
+    __method_bind.setResourcePath.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptResourcePath(
      * Container for method_bind pointers for VisualScriptResourcePath
      */
     private object __method_bind {
-      val get_resource_path: CPointer<godot_method_bind>
+      val getResourcePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
-            "get_resource_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource_path" }
+            "getResourcePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getResourcePath" }
         }
-      val set_resource_path: CPointer<godot_method_bind>
+      val setResourcePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptResourcePath".cstr.ptr,
-            "set_resource_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_resource_path" }
+            "setResourcePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setResourcePath" }
         }}
   }
 }

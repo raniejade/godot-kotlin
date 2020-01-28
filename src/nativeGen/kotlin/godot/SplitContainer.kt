@@ -18,38 +18,62 @@ import kotlinx.cinterop.reinterpret
 open class SplitContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  var collapsed: Boolean
+    get() {
+       return isCollapsed() 
+    }
+    set(value) {
+      setCollapsed(value)
+    }
+
+  var draggerVisibility: Int
+    get() {
+       return SplitContainer.DraggerVisibility.from(getDraggerVisibility()) 
+    }
+    set(value) {
+      setDraggerVisibility(SplitContainer.DraggerVisibility.from(value))
+    }
+
+  var splitOffset: Int
+    get() {
+       return getSplitOffset() 
+    }
+    set(value) {
+      setSplitOffset(value)
+    }
+
   fun clampSplitOffset() {
-    __method_bind.clamp_split_offset.call(this._handle)
+    __method_bind.clampSplitOffset.call(this._handle)
   }
 
   fun getDraggerVisibility(): DraggerVisibility {
-    val _ret = __method_bind.get_dragger_visibility.call(this._handle)
+    val _ret = __method_bind.getDraggerVisibility.call(this._handle)
     return SplitContainer.DraggerVisibility.from(_ret.asInt())
   }
 
   fun getSplitOffset(): Int {
-    val _ret = __method_bind.get_split_offset.call(this._handle)
+    val _ret = __method_bind.getSplitOffset.call(this._handle)
     return _ret.asInt()
   }
 
   fun isCollapsed(): Boolean {
-    val _ret = __method_bind.is_collapsed.call(this._handle)
+    val _ret = __method_bind.isCollapsed.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setCollapsed(collapsed: Boolean) {
     val _arg = Variant.new(collapsed)
-    __method_bind.set_collapsed.call(this._handle, _arg, 1)
+    __method_bind.setCollapsed.call(this._handle, _arg, 1)
   }
 
   fun setDraggerVisibility(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_dragger_visibility.call(this._handle, _arg, 1)
+    __method_bind.setDraggerVisibility.call(this._handle, _arg, 1)
   }
 
   fun setSplitOffset(offset: Int) {
     val _arg = Variant.new(offset)
-    __method_bind.set_split_offset.call(this._handle, _arg, 1)
+    __method_bind.setSplitOffset.call(this._handle, _arg, 1)
   }
 
   enum class DraggerVisibility(
@@ -84,54 +108,54 @@ open class SplitContainer(
      * Container for method_bind pointers for SplitContainer
      */
     private object __method_bind {
-      val clamp_split_offset: CPointer<godot_method_bind>
+      val clampSplitOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "clamp_split_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clamp_split_offset" }
+            "clampSplitOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clampSplitOffset" }
         }
-      val get_dragger_visibility: CPointer<godot_method_bind>
+      val getDraggerVisibility: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "get_dragger_visibility".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dragger_visibility" }
+            "getDraggerVisibility".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDraggerVisibility" }
         }
-      val get_split_offset: CPointer<godot_method_bind>
+      val getSplitOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "get_split_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_split_offset" }
+            "getSplitOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSplitOffset" }
         }
-      val is_collapsed: CPointer<godot_method_bind>
+      val isCollapsed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "is_collapsed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_collapsed" }
+            "isCollapsed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCollapsed" }
         }
-      val set_collapsed: CPointer<godot_method_bind>
+      val setCollapsed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "set_collapsed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collapsed" }
+            "setCollapsed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollapsed" }
         }
-      val set_dragger_visibility: CPointer<godot_method_bind>
+      val setDraggerVisibility: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "set_dragger_visibility".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dragger_visibility" }
+            "setDraggerVisibility".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDraggerVisibility" }
         }
-      val set_split_offset: CPointer<godot_method_bind>
+      val setSplitOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SplitContainer".cstr.ptr,
-            "set_split_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_split_offset" }
+            "setSplitOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSplitOffset" }
         }}
   }
 }

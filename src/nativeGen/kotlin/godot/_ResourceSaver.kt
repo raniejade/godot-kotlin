@@ -22,7 +22,7 @@ open class _ResourceSaver(
 ) : Object(_handle) {
   fun getRecognizedExtensions(type: Resource): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_recognized_extensions.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRecognizedExtensions.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -96,12 +96,12 @@ open class _ResourceSaver(
      * Container for method_bind pointers for _ResourceSaver
      */
     private object __method_bind {
-      val get_recognized_extensions: CPointer<godot_method_bind>
+      val getRecognizedExtensions: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceSaver".cstr.ptr,
-            "get_recognized_extensions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions" }
+            "getRecognizedExtensions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRecognizedExtensions" }
         }
       val save: CPointer<godot_method_bind>
         get() = memScoped {

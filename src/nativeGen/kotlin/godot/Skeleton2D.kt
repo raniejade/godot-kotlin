@@ -20,17 +20,17 @@ open class Skeleton2D(
 ) : Node2D(_handle) {
   fun getBone(idx: Int): Bone2D {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_bone.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBone.call(this._handle, _arg, 1)
     return _ret.asObject(::Bone2D)!!
   }
 
   fun getBoneCount(): Int {
-    val _ret = __method_bind.get_bone_count.call(this._handle)
+    val _ret = __method_bind.getBoneCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSkeleton(): RID {
-    val _ret = __method_bind.get_skeleton.call(this._handle)
+    val _ret = __method_bind.getSkeleton.call(this._handle)
     return _ret.asRID()
   }
 
@@ -48,23 +48,23 @@ open class Skeleton2D(
      * Container for method_bind pointers for Skeleton2D
      */
     private object __method_bind {
-      val get_bone: CPointer<godot_method_bind>
+      val getBone: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-            "get_bone".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone" }
+            "getBone".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBone" }
         }
-      val get_bone_count: CPointer<godot_method_bind>
+      val getBoneCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-            "get_bone_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_count" }
+            "getBoneCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBoneCount" }
         }
-      val get_skeleton: CPointer<godot_method_bind>
+      val getSkeleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Skeleton2D".cstr.ptr,
-            "get_skeleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skeleton" }
+            "getSkeleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSkeleton" }
         }}
   }
 }

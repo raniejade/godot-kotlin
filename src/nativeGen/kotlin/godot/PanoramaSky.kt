@@ -16,14 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class PanoramaSky(
   _handle: COpaquePointer
 ) : Sky(_handle) {
+  var panorama: Texture
+    get() {
+       return getPanorama() 
+    }
+    set(value) {
+      setPanorama(value)
+    }
+
   fun getPanorama(): Texture {
-    val _ret = __method_bind.get_panorama.call(this._handle)
+    val _ret = __method_bind.getPanorama.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setPanorama(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_panorama.call(this._handle, _arg, 1)
+    __method_bind.setPanorama.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -40,19 +48,19 @@ open class PanoramaSky(
      * Container for method_bind pointers for PanoramaSky
      */
     private object __method_bind {
-      val get_panorama: CPointer<godot_method_bind>
+      val getPanorama: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
-            "get_panorama".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_panorama" }
+            "getPanorama".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPanorama" }
         }
-      val set_panorama: CPointer<godot_method_bind>
+      val setPanorama: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PanoramaSky".cstr.ptr,
-            "set_panorama".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_panorama" }
+            "setPanorama".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPanorama" }
         }}
   }
 }

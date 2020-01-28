@@ -23,11 +23,85 @@ import kotlinx.cinterop.reinterpret
 open class AnimationPlayer(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  var assignedAnimation: String
+    get() {
+       return getAssignedAnimation() 
+    }
+    set(value) {
+      setAssignedAnimation(value)
+    }
+
+  var autoplay: String
+    get() {
+       return getAutoplay() 
+    }
+    set(value) {
+      setAutoplay(value)
+    }
+
+  var currentAnimation: String
+    get() {
+       return getCurrentAnimation() 
+    }
+    set(value) {
+      setCurrentAnimation(value)
+    }
+
+  val currentAnimationLength: Float
+    get() {
+       return getCurrentAnimationLength() 
+    }
+
+  val currentAnimationPosition: Float
+    get() {
+       return getCurrentAnimationPosition() 
+    }
+
+  var playbackActive: Boolean
+    get() {
+       return isActive() 
+    }
+    set(value) {
+      setActive(value)
+    }
+
+  var playbackDefaultBlendTime: Float
+    get() {
+       return getDefaultBlendTime() 
+    }
+    set(value) {
+      setDefaultBlendTime(value)
+    }
+
+  var playbackProcessMode: Int
+    get() {
+       return AnimationPlayer.AnimationProcessMode.from(getAnimationProcessMode()) 
+    }
+    set(value) {
+      setAnimationProcessMode(AnimationPlayer.AnimationProcessMode.from(value))
+    }
+
+  var playbackSpeed: Float
+    get() {
+       return getSpeedScale() 
+    }
+    set(value) {
+      setSpeedScale(value)
+    }
+
+  var rootNode: NodePath
+    get() {
+       return getRoot() 
+    }
+    set(value) {
+      setRoot(value)
+    }
+
   fun addAnimation(name: String, animation: Animation): GDError {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(animation)
-    val _ret = __method_bind.add_animation.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.addAnimation.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
@@ -38,7 +112,7 @@ open class AnimationPlayer(
 
   fun animationGetNext(animFrom: String): String {
     val _arg = Variant.new(animFrom)
-    val _ret = __method_bind.animation_get_next.call(this._handle, _arg, 1)
+    val _ret = __method_bind.animationGetNext.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
@@ -46,46 +120,46 @@ open class AnimationPlayer(
     val _args = VariantArray.new()
     _args.append(animFrom)
     _args.append(animTo)
-    __method_bind.animation_set_next.call(this._handle, _args.toVariant(), 2)
+    __method_bind.animationSetNext.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearCaches() {
-    __method_bind.clear_caches.call(this._handle)
+    __method_bind.clearCaches.call(this._handle)
   }
 
   fun clearQueue() {
-    __method_bind.clear_queue.call(this._handle)
+    __method_bind.clearQueue.call(this._handle)
   }
 
   fun findAnimation(animation: Animation): String {
     val _arg = Variant.new(animation)
-    val _ret = __method_bind.find_animation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findAnimation.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getAnimation(name: String): Animation {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_animation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAnimation.call(this._handle, _arg, 1)
     return _ret.asObject(::Animation)!!
   }
 
   fun getAnimationList(): PoolStringArray {
-    val _ret = __method_bind.get_animation_list.call(this._handle)
+    val _ret = __method_bind.getAnimationList.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getAnimationProcessMode(): AnimationProcessMode {
-    val _ret = __method_bind.get_animation_process_mode.call(this._handle)
+    val _ret = __method_bind.getAnimationProcessMode.call(this._handle)
     return AnimationPlayer.AnimationProcessMode.from(_ret.asInt())
   }
 
   fun getAssignedAnimation(): String {
-    val _ret = __method_bind.get_assigned_animation.call(this._handle)
+    val _ret = __method_bind.getAssignedAnimation.call(this._handle)
     return _ret.asString()
   }
 
   fun getAutoplay(): String {
-    val _ret = __method_bind.get_autoplay.call(this._handle)
+    val _ret = __method_bind.getAutoplay.call(this._handle)
     return _ret.asString()
   }
 
@@ -93,63 +167,63 @@ open class AnimationPlayer(
     val _args = VariantArray.new()
     _args.append(animFrom)
     _args.append(animTo)
-    val _ret = __method_bind.get_blend_time.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getBlendTime.call(this._handle, _args.toVariant(), 2)
     return _ret.asFloat()
   }
 
   fun getCurrentAnimation(): String {
-    val _ret = __method_bind.get_current_animation.call(this._handle)
+    val _ret = __method_bind.getCurrentAnimation.call(this._handle)
     return _ret.asString()
   }
 
   fun getCurrentAnimationLength(): Float {
-    val _ret = __method_bind.get_current_animation_length.call(this._handle)
+    val _ret = __method_bind.getCurrentAnimationLength.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getCurrentAnimationPosition(): Float {
-    val _ret = __method_bind.get_current_animation_position.call(this._handle)
+    val _ret = __method_bind.getCurrentAnimationPosition.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDefaultBlendTime(): Float {
-    val _ret = __method_bind.get_default_blend_time.call(this._handle)
+    val _ret = __method_bind.getDefaultBlendTime.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPlayingSpeed(): Float {
-    val _ret = __method_bind.get_playing_speed.call(this._handle)
+    val _ret = __method_bind.getPlayingSpeed.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getQueue(): PoolStringArray {
-    val _ret = __method_bind.get_queue.call(this._handle)
+    val _ret = __method_bind.getQueue.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getRoot(): NodePath {
-    val _ret = __method_bind.get_root.call(this._handle)
+    val _ret = __method_bind.getRoot.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.get_speed_scale.call(this._handle)
+    val _ret = __method_bind.getSpeedScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun hasAnimation(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_animation.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasAnimation.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.is_active.call(this._handle)
+    val _ret = __method_bind.isActive.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this._handle)
+    val _ret = __method_bind.isPlaying.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -171,7 +245,7 @@ open class AnimationPlayer(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(customBlend)
-    __method_bind.play_backwards.call(this._handle, _args.toVariant(), 2)
+    __method_bind.playBackwards.call(this._handle, _args.toVariant(), 2)
   }
 
   fun queue(name: String) {
@@ -181,14 +255,14 @@ open class AnimationPlayer(
 
   fun removeAnimation(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.remove_animation.call(this._handle, _arg, 1)
+    __method_bind.removeAnimation.call(this._handle, _arg, 1)
   }
 
   fun renameAnimation(name: String, newname: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(newname)
-    __method_bind.rename_animation.call(this._handle, _args.toVariant(), 2)
+    __method_bind.renameAnimation.call(this._handle, _args.toVariant(), 2)
   }
 
   fun seek(seconds: Float, update: Boolean) {
@@ -200,22 +274,22 @@ open class AnimationPlayer(
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_active.call(this._handle, _arg, 1)
+    __method_bind.setActive.call(this._handle, _arg, 1)
   }
 
   fun setAnimationProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_animation_process_mode.call(this._handle, _arg, 1)
+    __method_bind.setAnimationProcessMode.call(this._handle, _arg, 1)
   }
 
   fun setAssignedAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.set_assigned_animation.call(this._handle, _arg, 1)
+    __method_bind.setAssignedAnimation.call(this._handle, _arg, 1)
   }
 
   fun setAutoplay(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_autoplay.call(this._handle, _arg, 1)
+    __method_bind.setAutoplay.call(this._handle, _arg, 1)
   }
 
   fun setBlendTime(
@@ -227,27 +301,27 @@ open class AnimationPlayer(
     _args.append(animFrom)
     _args.append(animTo)
     _args.append(sec)
-    __method_bind.set_blend_time.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setBlendTime.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setCurrentAnimation(anim: String) {
     val _arg = Variant.new(anim)
-    __method_bind.set_current_animation.call(this._handle, _arg, 1)
+    __method_bind.setCurrentAnimation.call(this._handle, _arg, 1)
   }
 
   fun setDefaultBlendTime(sec: Float) {
     val _arg = Variant.new(sec)
-    __method_bind.set_default_blend_time.call(this._handle, _arg, 1)
+    __method_bind.setDefaultBlendTime.call(this._handle, _arg, 1)
   }
 
   fun setRoot(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_root.call(this._handle, _arg, 1)
+    __method_bind.setRoot.call(this._handle, _arg, 1)
   }
 
   fun setSpeedScale(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed_scale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
   }
 
   fun stop(reset: Boolean) {
@@ -297,12 +371,12 @@ open class AnimationPlayer(
      * Container for method_bind pointers for AnimationPlayer
      */
     private object __method_bind {
-      val add_animation: CPointer<godot_method_bind>
+      val addAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "add_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_animation" }
+            "addAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addAnimation" }
         }
       val advance: CPointer<godot_method_bind>
         get() = memScoped {
@@ -311,159 +385,159 @@ open class AnimationPlayer(
             "advance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method advance" }
         }
-      val animation_get_next: CPointer<godot_method_bind>
+      val animationGetNext: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "animation_get_next".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method animation_get_next" }
+            "animationGetNext".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method animationGetNext" }
         }
-      val animation_set_next: CPointer<godot_method_bind>
+      val animationSetNext: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "animation_set_next".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method animation_set_next" }
+            "animationSetNext".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method animationSetNext" }
         }
-      val clear_caches: CPointer<godot_method_bind>
+      val clearCaches: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "clear_caches".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_caches" }
+            "clearCaches".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearCaches" }
         }
-      val clear_queue: CPointer<godot_method_bind>
+      val clearQueue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "clear_queue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_queue" }
+            "clearQueue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearQueue" }
         }
-      val find_animation: CPointer<godot_method_bind>
+      val findAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "find_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_animation" }
+            "findAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findAnimation" }
         }
-      val get_animation: CPointer<godot_method_bind>
+      val getAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation" }
+            "getAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimation" }
         }
-      val get_animation_list: CPointer<godot_method_bind>
+      val getAnimationList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_animation_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation_list" }
+            "getAnimationList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimationList" }
         }
-      val get_animation_process_mode: CPointer<godot_method_bind>
+      val getAnimationProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_animation_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation_process_mode" }
+            "getAnimationProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimationProcessMode" }
         }
-      val get_assigned_animation: CPointer<godot_method_bind>
+      val getAssignedAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_assigned_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_assigned_animation" }
+            "getAssignedAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAssignedAnimation" }
         }
-      val get_autoplay: CPointer<godot_method_bind>
+      val getAutoplay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_autoplay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_autoplay" }
+            "getAutoplay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAutoplay" }
         }
-      val get_blend_time: CPointer<godot_method_bind>
+      val getBlendTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_blend_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_blend_time" }
+            "getBlendTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBlendTime" }
         }
-      val get_current_animation: CPointer<godot_method_bind>
+      val getCurrentAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_current_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_animation" }
+            "getCurrentAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentAnimation" }
         }
-      val get_current_animation_length: CPointer<godot_method_bind>
+      val getCurrentAnimationLength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_current_animation_length".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_animation_length" }
+            "getCurrentAnimationLength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentAnimationLength" }
         }
-      val get_current_animation_position: CPointer<godot_method_bind>
+      val getCurrentAnimationPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_current_animation_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_animation_position" }
+            "getCurrentAnimationPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentAnimationPosition" }
         }
-      val get_default_blend_time: CPointer<godot_method_bind>
+      val getDefaultBlendTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_default_blend_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_blend_time" }
+            "getDefaultBlendTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDefaultBlendTime" }
         }
-      val get_playing_speed: CPointer<godot_method_bind>
+      val getPlayingSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_playing_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_playing_speed" }
+            "getPlayingSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPlayingSpeed" }
         }
-      val get_queue: CPointer<godot_method_bind>
+      val getQueue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_queue".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_queue" }
+            "getQueue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getQueue" }
         }
-      val get_root: CPointer<godot_method_bind>
+      val getRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_root" }
+            "getRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRoot" }
         }
-      val get_speed_scale: CPointer<godot_method_bind>
+      val getSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "get_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
+            "getSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeedScale" }
         }
-      val has_animation: CPointer<godot_method_bind>
+      val hasAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "has_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_animation" }
+            "hasAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasAnimation" }
         }
-      val is_active: CPointer<godot_method_bind>
+      val isActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_active" }
+            "isActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isActive" }
         }
-      val is_playing: CPointer<godot_method_bind>
+      val isPlaying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_playing" }
+            "isPlaying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPlaying" }
         }
       val play: CPointer<godot_method_bind>
         get() = memScoped {
@@ -472,12 +546,12 @@ open class AnimationPlayer(
             "play".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method play" }
         }
-      val play_backwards: CPointer<godot_method_bind>
+      val playBackwards: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "play_backwards".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method play_backwards" }
+            "playBackwards".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method playBackwards" }
         }
       val queue: CPointer<godot_method_bind>
         get() = memScoped {
@@ -486,19 +560,19 @@ open class AnimationPlayer(
             "queue".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method queue" }
         }
-      val remove_animation: CPointer<godot_method_bind>
+      val removeAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "remove_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_animation" }
+            "removeAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeAnimation" }
         }
-      val rename_animation: CPointer<godot_method_bind>
+      val renameAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "rename_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename_animation" }
+            "renameAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method renameAnimation" }
         }
       val seek: CPointer<godot_method_bind>
         get() = memScoped {
@@ -507,68 +581,68 @@ open class AnimationPlayer(
             "seek".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method seek" }
         }
-      val set_active: CPointer<godot_method_bind>
+      val setActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_active" }
+            "setActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setActive" }
         }
-      val set_animation_process_mode: CPointer<godot_method_bind>
+      val setAnimationProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_animation_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation_process_mode" }
+            "setAnimationProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAnimationProcessMode" }
         }
-      val set_assigned_animation: CPointer<godot_method_bind>
+      val setAssignedAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_assigned_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_assigned_animation" }
+            "setAssignedAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAssignedAnimation" }
         }
-      val set_autoplay: CPointer<godot_method_bind>
+      val setAutoplay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_autoplay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_autoplay" }
+            "setAutoplay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAutoplay" }
         }
-      val set_blend_time: CPointer<godot_method_bind>
+      val setBlendTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_blend_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_blend_time" }
+            "setBlendTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBlendTime" }
         }
-      val set_current_animation: CPointer<godot_method_bind>
+      val setCurrentAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_current_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current_animation" }
+            "setCurrentAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCurrentAnimation" }
         }
-      val set_default_blend_time: CPointer<godot_method_bind>
+      val setDefaultBlendTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_default_blend_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_blend_time" }
+            "setDefaultBlendTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDefaultBlendTime" }
         }
-      val set_root: CPointer<godot_method_bind>
+      val setRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_root" }
+            "setRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRoot" }
         }
-      val set_speed_scale: CPointer<godot_method_bind>
+      val setSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationPlayer".cstr.ptr,
-            "set_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
+            "setSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeedScale" }
         }
       val stop: CPointer<godot_method_bind>
         get() = memScoped {

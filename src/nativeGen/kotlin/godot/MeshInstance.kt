@@ -18,54 +18,70 @@ import kotlinx.cinterop.reinterpret
 open class MeshInstance(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  var mesh: Mesh
+    get() {
+       return getMesh() 
+    }
+    set(value) {
+      setMesh(value)
+    }
+
+  var skeleton: NodePath
+    get() {
+       return getSkeletonPath() 
+    }
+    set(value) {
+      setSkeletonPath(value)
+    }
+
   fun createConvexCollision() {
-    __method_bind.create_convex_collision.call(this._handle)
+    __method_bind.createConvexCollision.call(this._handle)
   }
 
   fun createDebugTangents() {
-    __method_bind.create_debug_tangents.call(this._handle)
+    __method_bind.createDebugTangents.call(this._handle)
   }
 
   fun createTrimeshCollision() {
-    __method_bind.create_trimesh_collision.call(this._handle)
+    __method_bind.createTrimeshCollision.call(this._handle)
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this._handle)
+    val _ret = __method_bind.getMesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getSkeletonPath(): NodePath {
-    val _ret = __method_bind.get_skeleton_path.call(this._handle)
+    val _ret = __method_bind.getSkeletonPath.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getSurfaceMaterial(surface: Int): Material {
     val _arg = Variant.new(surface)
-    val _ret = __method_bind.get_surface_material.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSurfaceMaterial.call(this._handle, _arg, 1)
     return _ret.asObject(::Material)!!
   }
 
   fun getSurfaceMaterialCount(): Int {
-    val _ret = __method_bind.get_surface_material_count.call(this._handle)
+    val _ret = __method_bind.getSurfaceMaterialCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.set_mesh.call(this._handle, _arg, 1)
+    __method_bind.setMesh.call(this._handle, _arg, 1)
   }
 
   fun setSkeletonPath(skeletonPath: NodePath) {
     val _arg = Variant.new(skeletonPath)
-    __method_bind.set_skeleton_path.call(this._handle, _arg, 1)
+    __method_bind.setSkeletonPath.call(this._handle, _arg, 1)
   }
 
   fun setSurfaceMaterial(surface: Int, material: Material) {
     val _args = VariantArray.new()
     _args.append(surface)
     _args.append(material)
-    __method_bind.set_surface_material.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setSurfaceMaterial.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -82,75 +98,75 @@ open class MeshInstance(
      * Container for method_bind pointers for MeshInstance
      */
     private object __method_bind {
-      val create_convex_collision: CPointer<godot_method_bind>
+      val createConvexCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "create_convex_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_convex_collision" }
+            "createConvexCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createConvexCollision" }
         }
-      val create_debug_tangents: CPointer<godot_method_bind>
+      val createDebugTangents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "create_debug_tangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_debug_tangents" }
+            "createDebugTangents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createDebugTangents" }
         }
-      val create_trimesh_collision: CPointer<godot_method_bind>
+      val createTrimeshCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "create_trimesh_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_trimesh_collision" }
+            "createTrimeshCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createTrimeshCollision" }
         }
-      val get_mesh: CPointer<godot_method_bind>
+      val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            "getMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMesh" }
         }
-      val get_skeleton_path: CPointer<godot_method_bind>
+      val getSkeletonPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_skeleton_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_skeleton_path" }
+            "getSkeletonPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSkeletonPath" }
         }
-      val get_surface_material: CPointer<godot_method_bind>
+      val getSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_surface_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_surface_material" }
+            "getSurfaceMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSurfaceMaterial" }
         }
-      val get_surface_material_count: CPointer<godot_method_bind>
+      val getSurfaceMaterialCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "get_surface_material_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_surface_material_count" }
+            "getSurfaceMaterialCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSurfaceMaterialCount" }
         }
-      val set_mesh: CPointer<godot_method_bind>
+      val setMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
+            "setMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMesh" }
         }
-      val set_skeleton_path: CPointer<godot_method_bind>
+      val setSkeletonPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_skeleton_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_skeleton_path" }
+            "setSkeletonPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSkeletonPath" }
         }
-      val set_surface_material: CPointer<godot_method_bind>
+      val setSurfaceMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshInstance".cstr.ptr,
-            "set_surface_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_surface_material" }
+            "setSurfaceMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSurfaceMaterial" }
         }}
   }
 }

@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class ProgressBar(
   _handle: COpaquePointer
 ) : Range(_handle) {
+  var percentVisible: Boolean
+    get() {
+       return isPercentVisible() 
+    }
+    set(value) {
+      setPercentVisible(value)
+    }
+
   fun isPercentVisible(): Boolean {
-    val _ret = __method_bind.is_percent_visible.call(this._handle)
+    val _ret = __method_bind.isPercentVisible.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setPercentVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.set_percent_visible.call(this._handle, _arg, 1)
+    __method_bind.setPercentVisible.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,19 +49,19 @@ open class ProgressBar(
      * Container for method_bind pointers for ProgressBar
      */
     private object __method_bind {
-      val is_percent_visible: CPointer<godot_method_bind>
+      val isPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
-            "is_percent_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_percent_visible" }
+            "isPercentVisible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPercentVisible" }
         }
-      val set_percent_visible: CPointer<godot_method_bind>
+      val setPercentVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProgressBar".cstr.ptr,
-            "set_percent_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_percent_visible" }
+            "setPercentVisible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPercentVisible" }
         }}
   }
 }

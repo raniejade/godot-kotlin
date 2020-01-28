@@ -18,104 +18,184 @@ import kotlinx.cinterop.reinterpret
 open class Range(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  var allowGreater: Boolean
+    get() {
+       return isGreaterAllowed() 
+    }
+    set(value) {
+      setAllowGreater(value)
+    }
+
+  var allowLesser: Boolean
+    get() {
+       return isLesserAllowed() 
+    }
+    set(value) {
+      setAllowLesser(value)
+    }
+
+  var expEdit: Boolean
+    get() {
+       return isRatioExp() 
+    }
+    set(value) {
+      setExpRatio(value)
+    }
+
+  var maxValue: Float
+    get() {
+       return getMax() 
+    }
+    set(value) {
+      setMax(value)
+    }
+
+  var minValue: Float
+    get() {
+       return getMin() 
+    }
+    set(value) {
+      setMin(value)
+    }
+
+  var page: Float
+    get() {
+       return getPage() 
+    }
+    set(value) {
+      setPage(value)
+    }
+
+  var ratio: Float
+    get() {
+       return getAsRatio() 
+    }
+    set(value) {
+      setAsRatio(value)
+    }
+
+  var rounded: Boolean
+    get() {
+       return isUsingRoundedValues() 
+    }
+    set(value) {
+      setUseRoundedValues(value)
+    }
+
+  var step: Float
+    get() {
+       return getStep() 
+    }
+    set(value) {
+      setStep(value)
+    }
+
+  var value: Float
+    get() {
+       return getValue() 
+    }
+    set(value) {
+      setValue(value)
+    }
+
   fun getAsRatio(): Float {
-    val _ret = __method_bind.get_as_ratio.call(this._handle)
+    val _ret = __method_bind.getAsRatio.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMax(): Float {
-    val _ret = __method_bind.get_max.call(this._handle)
+    val _ret = __method_bind.getMax.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMin(): Float {
-    val _ret = __method_bind.get_min.call(this._handle)
+    val _ret = __method_bind.getMin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPage(): Float {
-    val _ret = __method_bind.get_page.call(this._handle)
+    val _ret = __method_bind.getPage.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getStep(): Float {
-    val _ret = __method_bind.get_step.call(this._handle)
+    val _ret = __method_bind.getStep.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getValue(): Float {
-    val _ret = __method_bind.get_value.call(this._handle)
+    val _ret = __method_bind.getValue.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isGreaterAllowed(): Boolean {
-    val _ret = __method_bind.is_greater_allowed.call(this._handle)
+    val _ret = __method_bind.isGreaterAllowed.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isLesserAllowed(): Boolean {
-    val _ret = __method_bind.is_lesser_allowed.call(this._handle)
+    val _ret = __method_bind.isLesserAllowed.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isRatioExp(): Boolean {
-    val _ret = __method_bind.is_ratio_exp.call(this._handle)
+    val _ret = __method_bind.isRatioExp.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isUsingRoundedValues(): Boolean {
-    val _ret = __method_bind.is_using_rounded_values.call(this._handle)
+    val _ret = __method_bind.isUsingRoundedValues.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAllowGreater(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_greater.call(this._handle, _arg, 1)
+    __method_bind.setAllowGreater.call(this._handle, _arg, 1)
   }
 
   fun setAllowLesser(allow: Boolean) {
     val _arg = Variant.new(allow)
-    __method_bind.set_allow_lesser.call(this._handle, _arg, 1)
+    __method_bind.setAllowLesser.call(this._handle, _arg, 1)
   }
 
   fun setAsRatio(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.set_as_ratio.call(this._handle, _arg, 1)
+    __method_bind.setAsRatio.call(this._handle, _arg, 1)
   }
 
   fun setExpRatio(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_exp_ratio.call(this._handle, _arg, 1)
+    __method_bind.setExpRatio.call(this._handle, _arg, 1)
   }
 
   fun setMax(maximum: Float) {
     val _arg = Variant.new(maximum)
-    __method_bind.set_max.call(this._handle, _arg, 1)
+    __method_bind.setMax.call(this._handle, _arg, 1)
   }
 
   fun setMin(minimum: Float) {
     val _arg = Variant.new(minimum)
-    __method_bind.set_min.call(this._handle, _arg, 1)
+    __method_bind.setMin.call(this._handle, _arg, 1)
   }
 
   fun setPage(pagesize: Float) {
     val _arg = Variant.new(pagesize)
-    __method_bind.set_page.call(this._handle, _arg, 1)
+    __method_bind.setPage.call(this._handle, _arg, 1)
   }
 
   fun setStep(step: Float) {
     val _arg = Variant.new(step)
-    __method_bind.set_step.call(this._handle, _arg, 1)
+    __method_bind.setStep.call(this._handle, _arg, 1)
   }
 
   fun setUseRoundedValues(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_use_rounded_values.call(this._handle, _arg, 1)
+    __method_bind.setUseRoundedValues.call(this._handle, _arg, 1)
   }
 
   fun setValue(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.set_value.call(this._handle, _arg, 1)
+    __method_bind.setValue.call(this._handle, _arg, 1)
   }
 
   fun share(with: Node) {
@@ -132,125 +212,125 @@ open class Range(
      * Container for method_bind pointers for Range
      */
     private object __method_bind {
-      val get_as_ratio: CPointer<godot_method_bind>
+      val getAsRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_as_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_as_ratio" }
+            "getAsRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAsRatio" }
         }
-      val get_max: CPointer<godot_method_bind>
+      val getMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max" }
+            "getMax".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMax" }
         }
-      val get_min: CPointer<godot_method_bind>
+      val getMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_min" }
+            "getMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMin" }
         }
-      val get_page: CPointer<godot_method_bind>
+      val getPage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_page".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_page" }
+            "getPage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPage" }
         }
-      val get_step: CPointer<godot_method_bind>
+      val getStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_step" }
+            "getStep".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStep" }
         }
-      val get_value: CPointer<godot_method_bind>
+      val getValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "get_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_value" }
+            "getValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getValue" }
         }
-      val is_greater_allowed: CPointer<godot_method_bind>
+      val isGreaterAllowed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_greater_allowed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_greater_allowed" }
+            "isGreaterAllowed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isGreaterAllowed" }
         }
-      val is_lesser_allowed: CPointer<godot_method_bind>
+      val isLesserAllowed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_lesser_allowed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_lesser_allowed" }
+            "isLesserAllowed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isLesserAllowed" }
         }
-      val is_ratio_exp: CPointer<godot_method_bind>
+      val isRatioExp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_ratio_exp".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ratio_exp" }
+            "isRatioExp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isRatioExp" }
         }
-      val is_using_rounded_values: CPointer<godot_method_bind>
+      val isUsingRoundedValues: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "is_using_rounded_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_rounded_values" }
+            "isUsingRoundedValues".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isUsingRoundedValues" }
         }
-      val set_allow_greater: CPointer<godot_method_bind>
+      val setAllowGreater: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_allow_greater".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_allow_greater" }
+            "setAllowGreater".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAllowGreater" }
         }
-      val set_allow_lesser: CPointer<godot_method_bind>
+      val setAllowLesser: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_allow_lesser".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_allow_lesser" }
+            "setAllowLesser".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAllowLesser" }
         }
-      val set_as_ratio: CPointer<godot_method_bind>
+      val setAsRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_as_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_as_ratio" }
+            "setAsRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAsRatio" }
         }
-      val set_exp_ratio: CPointer<godot_method_bind>
+      val setExpRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_exp_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exp_ratio" }
+            "setExpRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpRatio" }
         }
-      val set_max: CPointer<godot_method_bind>
+      val setMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max" }
+            "setMax".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMax" }
         }
-      val set_min: CPointer<godot_method_bind>
+      val setMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_min" }
+            "setMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMin" }
         }
-      val set_page: CPointer<godot_method_bind>
+      val setPage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_page".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_page" }
+            "setPage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPage" }
         }
-      val set_step: CPointer<godot_method_bind>
+      val setStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_step" }
+            "setStep".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setStep" }
         }
-      val set_use_rounded_values: CPointer<godot_method_bind>
+      val setUseRoundedValues: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_use_rounded_values".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_rounded_values" }
+            "setUseRoundedValues".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseRoundedValues" }
         }
-      val set_value: CPointer<godot_method_bind>
+      val setValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Range".cstr.ptr,
-            "set_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_value" }
+            "setValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setValue" }
         }
       val share: CPointer<godot_method_bind>
         get() = memScoped {

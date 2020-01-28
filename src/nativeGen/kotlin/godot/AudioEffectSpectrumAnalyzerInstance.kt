@@ -28,8 +28,7 @@ open class AudioEffectSpectrumAnalyzerInstance(
     _args.append(fromHz)
     _args.append(toHz)
     _args.append(mode)
-    val _ret = __method_bind.get_magnitude_for_frequency_range.call(this._handle, _args.toVariant(),
-        3)
+    val _ret = __method_bind.getMagnitudeForFrequencyRange.call(this._handle, _args.toVariant(), 3)
     return _ret.asVector2()
   }
 
@@ -61,13 +60,12 @@ open class AudioEffectSpectrumAnalyzerInstance(
      * Container for method_bind pointers for AudioEffectSpectrumAnalyzerInstance
      */
     private object __method_bind {
-      val get_magnitude_for_frequency_range: CPointer<godot_method_bind>
+      val getMagnitudeForFrequencyRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectSpectrumAnalyzerInstance".cstr.ptr,
-            "get_magnitude_for_frequency_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_magnitude_for_frequency_range"
-            }
+            "getMagnitudeForFrequencyRange".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMagnitudeForFrequencyRange" }
         }}
   }
 }

@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeAnimation(
   _handle: COpaquePointer
 ) : AnimationRootNode(_handle) {
+  var animation: String
+    get() {
+       return getAnimation() 
+    }
+    set(value) {
+      setAnimation(value)
+    }
+
   fun getAnimation(): String {
-    val _ret = __method_bind.get_animation.call(this._handle)
+    val _ret = __method_bind.getAnimation.call(this._handle)
     return _ret.asString()
   }
 
   fun setAnimation(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_animation.call(this._handle, _arg, 1)
+    __method_bind.setAnimation.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class AnimationNodeAnimation(
      * Container for method_bind pointers for AnimationNodeAnimation
      */
     private object __method_bind {
-      val get_animation: CPointer<godot_method_bind>
+      val getAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
-            "get_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation" }
+            "getAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimation" }
         }
-      val set_animation: CPointer<godot_method_bind>
+      val setAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeAnimation".cstr.ptr,
-            "set_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation" }
+            "setAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAnimation" }
         }}
   }
 }

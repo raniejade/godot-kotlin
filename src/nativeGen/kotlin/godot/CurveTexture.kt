@@ -17,19 +17,35 @@ import kotlinx.cinterop.reinterpret
 open class CurveTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var curve: Curve
+    get() {
+       return getCurve() 
+    }
+    set(value) {
+      setCurve(value)
+    }
+
+  var width: Int
+    get() {
+       return getWidth() 
+    }
+    set(value) {
+      setWidth(value)
+    }
+
   fun getCurve(): Curve {
-    val _ret = __method_bind.get_curve.call(this._handle)
+    val _ret = __method_bind.getCurve.call(this._handle)
     return _ret.asObject(::Curve)!!
   }
 
   fun setCurve(curve: Curve) {
     val _arg = Variant.new(curve)
-    __method_bind.set_curve.call(this._handle, _arg, 1)
+    __method_bind.setCurve.call(this._handle, _arg, 1)
   }
 
   fun setWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_width.call(this._handle, _arg, 1)
+    __method_bind.setWidth.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -46,26 +62,26 @@ open class CurveTexture(
      * Container for method_bind pointers for CurveTexture
      */
     private object __method_bind {
-      val get_curve: CPointer<godot_method_bind>
+      val getCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
-            "get_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_curve" }
+            "getCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurve" }
         }
-      val set_curve: CPointer<godot_method_bind>
+      val setCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
-            "set_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_curve" }
+            "setCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCurve" }
         }
-      val set_width: CPointer<godot_method_bind>
+      val setWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CurveTexture".cstr.ptr,
-            "set_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_width" }
+            "setWidth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWidth" }
         }}
   }
 }

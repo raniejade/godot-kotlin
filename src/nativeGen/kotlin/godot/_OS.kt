@@ -25,6 +25,126 @@ import kotlinx.cinterop.reinterpret
 open class _OS(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  var clipboard: String
+    get() {
+       return getClipboard() 
+    }
+    set(value) {
+      setClipboard(value)
+    }
+
+  var currentScreen: Int
+    get() {
+       return getCurrentScreen() 
+    }
+    set(value) {
+      setCurrentScreen(value)
+    }
+
+  var exitCode: Int
+    get() {
+       return getExitCode() 
+    }
+    set(value) {
+      setExitCode(value)
+    }
+
+  var keepScreenOn: Boolean
+    get() {
+       return isKeepScreenOn() 
+    }
+    set(value) {
+      setKeepScreenOn(value)
+    }
+
+  var lowProcessorUsageMode: Boolean
+    get() {
+       return isInLowProcessorUsageMode() 
+    }
+    set(value) {
+      setLowProcessorUsageMode(value)
+    }
+
+  var screenOrientation: Int
+    get() {
+       return _OS.ScreenOrientation.from(getScreenOrientation()) 
+    }
+    set(value) {
+      setScreenOrientation(_OS.ScreenOrientation.from(value))
+    }
+
+  var vsyncEnabled: Boolean
+    get() {
+       return isVsyncEnabled() 
+    }
+    set(value) {
+      setUseVsync(value)
+    }
+
+  var windowBorderless: Boolean
+    get() {
+       return getBorderlessWindow() 
+    }
+    set(value) {
+      setBorderlessWindow(value)
+    }
+
+  var windowFullscreen: Boolean
+    get() {
+       return isWindowFullscreen() 
+    }
+    set(value) {
+      setWindowFullscreen(value)
+    }
+
+  var windowMaximized: Boolean
+    get() {
+       return isWindowMaximized() 
+    }
+    set(value) {
+      setWindowMaximized(value)
+    }
+
+  var windowMinimized: Boolean
+    get() {
+       return isWindowMinimized() 
+    }
+    set(value) {
+      setWindowMinimized(value)
+    }
+
+  var windowPerPixelTransparencyEnabled: Boolean
+    get() {
+       return getWindowPerPixelTransparencyEnabled() 
+    }
+    set(value) {
+      setWindowPerPixelTransparencyEnabled(value)
+    }
+
+  var windowPosition: Vector2
+    get() {
+       return getWindowPosition() 
+    }
+    set(value) {
+      setWindowPosition(value)
+    }
+
+  var windowResizable: Boolean
+    get() {
+       return isWindowResizable() 
+    }
+    set(value) {
+      setWindowResizable(value)
+    }
+
+  var windowSize: Vector2
+    get() {
+       return getWindowSize() 
+    }
+    set(value) {
+      setWindowSize(value)
+    }
+
   fun alert(text: String, title: String) {
     val _args = VariantArray.new()
     _args.append(text)
@@ -33,41 +153,41 @@ open class _OS(
   }
 
   fun canDraw(): Boolean {
-    val _ret = __method_bind.can_draw.call(this._handle)
+    val _ret = __method_bind.canDraw.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun canUseThreads(): Boolean {
-    val _ret = __method_bind.can_use_threads.call(this._handle)
+    val _ret = __method_bind.canUseThreads.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun centerWindow() {
-    __method_bind.center_window.call(this._handle)
+    __method_bind.centerWindow.call(this._handle)
   }
 
   fun closeMidiInputs() {
-    __method_bind.close_midi_inputs.call(this._handle)
+    __method_bind.closeMidiInputs.call(this._handle)
   }
 
   fun delayMsec(msec: Int) {
     val _arg = Variant.new(msec)
-    __method_bind.delay_msec.call(this._handle, _arg, 1)
+    __method_bind.delayMsec.call(this._handle, _arg, 1)
   }
 
   fun delayUsec(usec: Int) {
     val _arg = Variant.new(usec)
-    __method_bind.delay_usec.call(this._handle, _arg, 1)
+    __method_bind.delayUsec.call(this._handle, _arg, 1)
   }
 
   fun dumpMemoryToFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.dump_memory_to_file.call(this._handle, _arg, 1)
+    __method_bind.dumpMemoryToFile.call(this._handle, _arg, 1)
   }
 
   fun dumpResourcesToFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.dump_resources_to_file.call(this._handle, _arg, 1)
+    __method_bind.dumpResourcesToFile.call(this._handle, _arg, 1)
   }
 
   fun execute(
@@ -89,382 +209,382 @@ open class _OS(
 
   fun findScancodeFromString(string: String): Int {
     val _arg = Variant.new(string)
-    val _ret = __method_bind.find_scancode_from_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findScancodeFromString.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getAudioDriverCount(): Int {
-    val _ret = __method_bind.get_audio_driver_count.call(this._handle)
+    val _ret = __method_bind.getAudioDriverCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAudioDriverName(driver: Int): String {
     val _arg = Variant.new(driver)
-    val _ret = __method_bind.get_audio_driver_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAudioDriverName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getBorderlessWindow(): Boolean {
-    val _ret = __method_bind.get_borderless_window.call(this._handle)
+    val _ret = __method_bind.getBorderlessWindow.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getClipboard(): String {
-    val _ret = __method_bind.get_clipboard.call(this._handle)
+    val _ret = __method_bind.getClipboard.call(this._handle)
     return _ret.asString()
   }
 
   fun getCmdlineArgs(): PoolStringArray {
-    val _ret = __method_bind.get_cmdline_args.call(this._handle)
+    val _ret = __method_bind.getCmdlineArgs.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getConnectedMidiInputs(): PoolStringArray {
-    val _ret = __method_bind.get_connected_midi_inputs.call(this._handle)
+    val _ret = __method_bind.getConnectedMidiInputs.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getCurrentScreen(): Int {
-    val _ret = __method_bind.get_current_screen.call(this._handle)
+    val _ret = __method_bind.getCurrentScreen.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCurrentVideoDriver(): VideoDriver {
-    val _ret = __method_bind.get_current_video_driver.call(this._handle)
+    val _ret = __method_bind.getCurrentVideoDriver.call(this._handle)
     return _OS.VideoDriver.from(_ret.asInt())
   }
 
   fun getDate(utc: Boolean): Dictionary {
     val _arg = Variant.new(utc)
-    val _ret = __method_bind.get_date.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDate.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getDatetime(utc: Boolean): Dictionary {
     val _arg = Variant.new(utc)
-    val _ret = __method_bind.get_datetime.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDatetime.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getDatetimeFromUnixTime(unixTimeVal: Int): Dictionary {
     val _arg = Variant.new(unixTimeVal)
-    val _ret = __method_bind.get_datetime_from_unix_time.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDatetimeFromUnixTime.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getDynamicMemoryUsage(): Int {
-    val _ret = __method_bind.get_dynamic_memory_usage.call(this._handle)
+    val _ret = __method_bind.getDynamicMemoryUsage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getEnvironment(environment: String): String {
     val _arg = Variant.new(environment)
-    val _ret = __method_bind.get_environment.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEnvironment.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getExecutablePath(): String {
-    val _ret = __method_bind.get_executable_path.call(this._handle)
+    val _ret = __method_bind.getExecutablePath.call(this._handle)
     return _ret.asString()
   }
 
   fun getExitCode(): Int {
-    val _ret = __method_bind.get_exit_code.call(this._handle)
+    val _ret = __method_bind.getExitCode.call(this._handle)
     return _ret.asInt()
   }
 
   fun getImeSelection(): Vector2 {
-    val _ret = __method_bind.get_ime_selection.call(this._handle)
+    val _ret = __method_bind.getImeSelection.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getImeText(): String {
-    val _ret = __method_bind.get_ime_text.call(this._handle)
+    val _ret = __method_bind.getImeText.call(this._handle)
     return _ret.asString()
   }
 
   fun getLatinKeyboardVariant(): String {
-    val _ret = __method_bind.get_latin_keyboard_variant.call(this._handle)
+    val _ret = __method_bind.getLatinKeyboardVariant.call(this._handle)
     return _ret.asString()
   }
 
   fun getLocale(): String {
-    val _ret = __method_bind.get_locale.call(this._handle)
+    val _ret = __method_bind.getLocale.call(this._handle)
     return _ret.asString()
   }
 
   fun getModelName(): String {
-    val _ret = __method_bind.get_model_name.call(this._handle)
+    val _ret = __method_bind.getModelName.call(this._handle)
     return _ret.asString()
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this._handle)
+    val _ret = __method_bind.getName.call(this._handle)
     return _ret.asString()
   }
 
   fun getPowerPercentLeft(): Int {
-    val _ret = __method_bind.get_power_percent_left.call(this._handle)
+    val _ret = __method_bind.getPowerPercentLeft.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPowerSecondsLeft(): Int {
-    val _ret = __method_bind.get_power_seconds_left.call(this._handle)
+    val _ret = __method_bind.getPowerSecondsLeft.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPowerState(): PowerState {
-    val _ret = __method_bind.get_power_state.call(this._handle)
+    val _ret = __method_bind.getPowerState.call(this._handle)
     return _OS.PowerState.from(_ret.asInt())
   }
 
   fun getProcessId(): Int {
-    val _ret = __method_bind.get_process_id.call(this._handle)
+    val _ret = __method_bind.getProcessId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getProcessorCount(): Int {
-    val _ret = __method_bind.get_processor_count.call(this._handle)
+    val _ret = __method_bind.getProcessorCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRealWindowSize(): Vector2 {
-    val _ret = __method_bind.get_real_window_size.call(this._handle)
+    val _ret = __method_bind.getRealWindowSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getScancodeString(code: Int): String {
     val _arg = Variant.new(code)
-    val _ret = __method_bind.get_scancode_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getScancodeString.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getScreenCount(): Int {
-    val _ret = __method_bind.get_screen_count.call(this._handle)
+    val _ret = __method_bind.getScreenCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getScreenDpi(screen: Int): Int {
     val _arg = Variant.new(screen)
-    val _ret = __method_bind.get_screen_dpi.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getScreenDpi.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getScreenOrientation(): ScreenOrientation {
-    val _ret = __method_bind.get_screen_orientation.call(this._handle)
+    val _ret = __method_bind.getScreenOrientation.call(this._handle)
     return _OS.ScreenOrientation.from(_ret.asInt())
   }
 
   fun getScreenPosition(screen: Int): Vector2 {
     val _arg = Variant.new(screen)
-    val _ret = __method_bind.get_screen_position.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getScreenPosition.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getScreenSize(screen: Int): Vector2 {
     val _arg = Variant.new(screen)
-    val _ret = __method_bind.get_screen_size.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getScreenSize.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getSplashTickMsec(): Int {
-    val _ret = __method_bind.get_splash_tick_msec.call(this._handle)
+    val _ret = __method_bind.getSplashTickMsec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStaticMemoryPeakUsage(): Int {
-    val _ret = __method_bind.get_static_memory_peak_usage.call(this._handle)
+    val _ret = __method_bind.getStaticMemoryPeakUsage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStaticMemoryUsage(): Int {
-    val _ret = __method_bind.get_static_memory_usage.call(this._handle)
+    val _ret = __method_bind.getStaticMemoryUsage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSystemDir(dir: Int): String {
     val _arg = Variant.new(dir)
-    val _ret = __method_bind.get_system_dir.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSystemDir.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getSystemTimeMsecs(): Int {
-    val _ret = __method_bind.get_system_time_msecs.call(this._handle)
+    val _ret = __method_bind.getSystemTimeMsecs.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSystemTimeSecs(): Int {
-    val _ret = __method_bind.get_system_time_secs.call(this._handle)
+    val _ret = __method_bind.getSystemTimeSecs.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTicksMsec(): Int {
-    val _ret = __method_bind.get_ticks_msec.call(this._handle)
+    val _ret = __method_bind.getTicksMsec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTicksUsec(): Int {
-    val _ret = __method_bind.get_ticks_usec.call(this._handle)
+    val _ret = __method_bind.getTicksUsec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTime(utc: Boolean): Dictionary {
     val _arg = Variant.new(utc)
-    val _ret = __method_bind.get_time.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTime.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getTimeZoneInfo(): Dictionary {
-    val _ret = __method_bind.get_time_zone_info.call(this._handle)
+    val _ret = __method_bind.getTimeZoneInfo.call(this._handle)
     return _ret.asDictionary()
   }
 
   fun getUniqueId(): String {
-    val _ret = __method_bind.get_unique_id.call(this._handle)
+    val _ret = __method_bind.getUniqueId.call(this._handle)
     return _ret.asString()
   }
 
   fun getUnixTime(): Int {
-    val _ret = __method_bind.get_unix_time.call(this._handle)
+    val _ret = __method_bind.getUnixTime.call(this._handle)
     return _ret.asInt()
   }
 
   fun getUnixTimeFromDatetime(datetime: Dictionary): Int {
     val _arg = Variant.new(datetime)
-    val _ret = __method_bind.get_unix_time_from_datetime.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getUnixTimeFromDatetime.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getUserDataDir(): String {
-    val _ret = __method_bind.get_user_data_dir.call(this._handle)
+    val _ret = __method_bind.getUserDataDir.call(this._handle)
     return _ret.asString()
   }
 
   fun getVideoDriverCount(): Int {
-    val _ret = __method_bind.get_video_driver_count.call(this._handle)
+    val _ret = __method_bind.getVideoDriverCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVideoDriverName(driver: Int): String {
     val _arg = Variant.new(driver)
-    val _ret = __method_bind.get_video_driver_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVideoDriverName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getVirtualKeyboardHeight(): Int {
-    val _ret = __method_bind.get_virtual_keyboard_height.call(this._handle)
+    val _ret = __method_bind.getVirtualKeyboardHeight.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWindowPerPixelTransparencyEnabled(): Boolean {
-    val _ret = __method_bind.get_window_per_pixel_transparency_enabled.call(this._handle)
+    val _ret = __method_bind.getWindowPerPixelTransparencyEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getWindowPosition(): Vector2 {
-    val _ret = __method_bind.get_window_position.call(this._handle)
+    val _ret = __method_bind.getWindowPosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getWindowSafeArea(): Rect2 {
-    val _ret = __method_bind.get_window_safe_area.call(this._handle)
+    val _ret = __method_bind.getWindowSafeArea.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getWindowSize(): Vector2 {
-    val _ret = __method_bind.get_window_size.call(this._handle)
+    val _ret = __method_bind.getWindowSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun hasEnvironment(environment: String): Boolean {
     val _arg = Variant.new(environment)
-    val _ret = __method_bind.has_environment.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasEnvironment.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun hasFeature(tagName: String): Boolean {
     val _arg = Variant.new(tagName)
-    val _ret = __method_bind.has_feature.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasFeature.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun hasTouchscreenUiHint(): Boolean {
-    val _ret = __method_bind.has_touchscreen_ui_hint.call(this._handle)
+    val _ret = __method_bind.hasTouchscreenUiHint.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun hasVirtualKeyboard(): Boolean {
-    val _ret = __method_bind.has_virtual_keyboard.call(this._handle)
+    val _ret = __method_bind.hasVirtualKeyboard.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun hideVirtualKeyboard() {
-    __method_bind.hide_virtual_keyboard.call(this._handle)
+    __method_bind.hideVirtualKeyboard.call(this._handle)
   }
 
   fun isDebugBuild(): Boolean {
-    val _ret = __method_bind.is_debug_build.call(this._handle)
+    val _ret = __method_bind.isDebugBuild.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isInLowProcessorUsageMode(): Boolean {
-    val _ret = __method_bind.is_in_low_processor_usage_mode.call(this._handle)
+    val _ret = __method_bind.isInLowProcessorUsageMode.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isKeepScreenOn(): Boolean {
-    val _ret = __method_bind.is_keep_screen_on.call(this._handle)
+    val _ret = __method_bind.isKeepScreenOn.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isOkLeftAndCancelRight(): Boolean {
-    val _ret = __method_bind.is_ok_left_and_cancel_right.call(this._handle)
+    val _ret = __method_bind.isOkLeftAndCancelRight.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isScancodeUnicode(code: Int): Boolean {
     val _arg = Variant.new(code)
-    val _ret = __method_bind.is_scancode_unicode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isScancodeUnicode.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isStdoutVerbose(): Boolean {
-    val _ret = __method_bind.is_stdout_verbose.call(this._handle)
+    val _ret = __method_bind.isStdoutVerbose.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isUserfsPersistent(): Boolean {
-    val _ret = __method_bind.is_userfs_persistent.call(this._handle)
+    val _ret = __method_bind.isUserfsPersistent.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isVsyncEnabled(): Boolean {
-    val _ret = __method_bind.is_vsync_enabled.call(this._handle)
+    val _ret = __method_bind.isVsyncEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isWindowAlwaysOnTop(): Boolean {
-    val _ret = __method_bind.is_window_always_on_top.call(this._handle)
+    val _ret = __method_bind.isWindowAlwaysOnTop.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isWindowFullscreen(): Boolean {
-    val _ret = __method_bind.is_window_fullscreen.call(this._handle)
+    val _ret = __method_bind.isWindowFullscreen.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isWindowMaximized(): Boolean {
-    val _ret = __method_bind.is_window_maximized.call(this._handle)
+    val _ret = __method_bind.isWindowMaximized.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isWindowMinimized(): Boolean {
-    val _ret = __method_bind.is_window_minimized.call(this._handle)
+    val _ret = __method_bind.isWindowMinimized.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isWindowResizable(): Boolean {
-    val _ret = __method_bind.is_window_resizable.call(this._handle)
+    val _ret = __method_bind.isWindowResizable.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -475,16 +595,16 @@ open class _OS(
   }
 
   fun moveWindowToForeground() {
-    __method_bind.move_window_to_foreground.call(this._handle)
+    __method_bind.moveWindowToForeground.call(this._handle)
   }
 
   fun nativeVideoIsPlaying(): Boolean {
-    val _ret = __method_bind.native_video_is_playing.call(this._handle)
+    val _ret = __method_bind.nativeVideoIsPlaying.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun nativeVideoPause() {
-    __method_bind.native_video_pause.call(this._handle)
+    __method_bind.nativeVideoPause.call(this._handle)
   }
 
   fun nativeVideoPlay(
@@ -498,176 +618,176 @@ open class _OS(
     _args.append(volume)
     _args.append(audioTrack)
     _args.append(subtitleTrack)
-    val _ret = __method_bind.native_video_play.call(this._handle, _args.toVariant(), 4)
+    val _ret = __method_bind.nativeVideoPlay.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
   fun nativeVideoStop() {
-    __method_bind.native_video_stop.call(this._handle)
+    __method_bind.nativeVideoStop.call(this._handle)
   }
 
   fun nativeVideoUnpause() {
-    __method_bind.native_video_unpause.call(this._handle)
+    __method_bind.nativeVideoUnpause.call(this._handle)
   }
 
   fun openMidiInputs() {
-    __method_bind.open_midi_inputs.call(this._handle)
+    __method_bind.openMidiInputs.call(this._handle)
   }
 
   fun printAllResources(tofile: String) {
     val _arg = Variant.new(tofile)
-    __method_bind.print_all_resources.call(this._handle, _arg, 1)
+    __method_bind.printAllResources.call(this._handle, _arg, 1)
   }
 
   fun printAllTexturesBySize() {
-    __method_bind.print_all_textures_by_size.call(this._handle)
+    __method_bind.printAllTexturesBySize.call(this._handle)
   }
 
   fun printResourcesByType(types: PoolStringArray) {
     val _arg = Variant.new(types)
-    __method_bind.print_resources_by_type.call(this._handle, _arg, 1)
+    __method_bind.printResourcesByType.call(this._handle, _arg, 1)
   }
 
   fun printResourcesInUse(short: Boolean) {
     val _arg = Variant.new(short)
-    __method_bind.print_resources_in_use.call(this._handle, _arg, 1)
+    __method_bind.printResourcesInUse.call(this._handle, _arg, 1)
   }
 
   fun requestAttention() {
-    __method_bind.request_attention.call(this._handle)
+    __method_bind.requestAttention.call(this._handle)
   }
 
   fun requestPermission(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.request_permission.call(this._handle, _arg, 1)
+    val _ret = __method_bind.requestPermission.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun setBorderlessWindow(borderless: Boolean) {
     val _arg = Variant.new(borderless)
-    __method_bind.set_borderless_window.call(this._handle, _arg, 1)
+    __method_bind.setBorderlessWindow.call(this._handle, _arg, 1)
   }
 
   fun setClipboard(clipboard: String) {
     val _arg = Variant.new(clipboard)
-    __method_bind.set_clipboard.call(this._handle, _arg, 1)
+    __method_bind.setClipboard.call(this._handle, _arg, 1)
   }
 
   fun setCurrentScreen(screen: Int) {
     val _arg = Variant.new(screen)
-    __method_bind.set_current_screen.call(this._handle, _arg, 1)
+    __method_bind.setCurrentScreen.call(this._handle, _arg, 1)
   }
 
   fun setExitCode(code: Int) {
     val _arg = Variant.new(code)
-    __method_bind.set_exit_code.call(this._handle, _arg, 1)
+    __method_bind.setExitCode.call(this._handle, _arg, 1)
   }
 
   fun setIcon(icon: Image) {
     val _arg = Variant.new(icon)
-    __method_bind.set_icon.call(this._handle, _arg, 1)
+    __method_bind.setIcon.call(this._handle, _arg, 1)
   }
 
   fun setImeActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_ime_active.call(this._handle, _arg, 1)
+    __method_bind.setImeActive.call(this._handle, _arg, 1)
   }
 
   fun setImePosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_ime_position.call(this._handle, _arg, 1)
+    __method_bind.setImePosition.call(this._handle, _arg, 1)
   }
 
   fun setKeepScreenOn(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_keep_screen_on.call(this._handle, _arg, 1)
+    __method_bind.setKeepScreenOn.call(this._handle, _arg, 1)
   }
 
   fun setLowProcessorUsageMode(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_low_processor_usage_mode.call(this._handle, _arg, 1)
+    __method_bind.setLowProcessorUsageMode.call(this._handle, _arg, 1)
   }
 
   fun setNativeIcon(filename: String) {
     val _arg = Variant.new(filename)
-    __method_bind.set_native_icon.call(this._handle, _arg, 1)
+    __method_bind.setNativeIcon.call(this._handle, _arg, 1)
   }
 
   fun setScreenOrientation(orientation: Int) {
     val _arg = Variant.new(orientation)
-    __method_bind.set_screen_orientation.call(this._handle, _arg, 1)
+    __method_bind.setScreenOrientation.call(this._handle, _arg, 1)
   }
 
   fun setThreadName(name: String): GDError {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.set_thread_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.setThreadName.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun setUseFileAccessSaveAndSwap(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_use_file_access_save_and_swap.call(this._handle, _arg, 1)
+    __method_bind.setUseFileAccessSaveAndSwap.call(this._handle, _arg, 1)
   }
 
   fun setUseVsync(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_vsync.call(this._handle, _arg, 1)
+    __method_bind.setUseVsync.call(this._handle, _arg, 1)
   }
 
   fun setWindowAlwaysOnTop(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_always_on_top.call(this._handle, _arg, 1)
+    __method_bind.setWindowAlwaysOnTop.call(this._handle, _arg, 1)
   }
 
   fun setWindowFullscreen(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_fullscreen.call(this._handle, _arg, 1)
+    __method_bind.setWindowFullscreen.call(this._handle, _arg, 1)
   }
 
   fun setWindowMaximized(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_maximized.call(this._handle, _arg, 1)
+    __method_bind.setWindowMaximized.call(this._handle, _arg, 1)
   }
 
   fun setWindowMinimized(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_minimized.call(this._handle, _arg, 1)
+    __method_bind.setWindowMinimized.call(this._handle, _arg, 1)
   }
 
   fun setWindowPerPixelTransparencyEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_per_pixel_transparency_enabled.call(this._handle, _arg, 1)
+    __method_bind.setWindowPerPixelTransparencyEnabled.call(this._handle, _arg, 1)
   }
 
   fun setWindowPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_window_position.call(this._handle, _arg, 1)
+    __method_bind.setWindowPosition.call(this._handle, _arg, 1)
   }
 
   fun setWindowResizable(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_window_resizable.call(this._handle, _arg, 1)
+    __method_bind.setWindowResizable.call(this._handle, _arg, 1)
   }
 
   fun setWindowSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_window_size.call(this._handle, _arg, 1)
+    __method_bind.setWindowSize.call(this._handle, _arg, 1)
   }
 
   fun setWindowTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.set_window_title.call(this._handle, _arg, 1)
+    __method_bind.setWindowTitle.call(this._handle, _arg, 1)
   }
 
   fun shellOpen(uri: String): GDError {
     val _arg = Variant.new(uri)
-    val _ret = __method_bind.shell_open.call(this._handle, _arg, 1)
+    val _ret = __method_bind.shellOpen.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun showVirtualKeyboard(existingText: String) {
     val _arg = Variant.new(existingText)
-    __method_bind.show_virtual_keyboard.call(this._handle, _arg, 1)
+    __method_bind.showVirtualKeyboard.call(this._handle, _arg, 1)
   }
 
   enum class VideoDriver(
@@ -943,53 +1063,53 @@ open class _OS(
             "alert".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method alert" }
         }
-      val can_draw: CPointer<godot_method_bind>
+      val canDraw: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "can_draw".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_draw" }
+            "canDraw".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canDraw" }
         }
-      val can_use_threads: CPointer<godot_method_bind>
+      val canUseThreads: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "can_use_threads".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_use_threads" }
+            "canUseThreads".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canUseThreads" }
         }
-      val center_window: CPointer<godot_method_bind>
+      val centerWindow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "center_window".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method center_window" }
+            "centerWindow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method centerWindow" }
         }
-      val close_midi_inputs: CPointer<godot_method_bind>
+      val closeMidiInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "close_midi_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method close_midi_inputs" }
+            "closeMidiInputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method closeMidiInputs" }
         }
-      val delay_msec: CPointer<godot_method_bind>
+      val delayMsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "delay_msec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method delay_msec" }
+            "delayMsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method delayMsec" }
         }
-      val delay_usec: CPointer<godot_method_bind>
+      val delayUsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "delay_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method delay_usec" }
+            "delayUsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method delayUsec" }
         }
-      val dump_memory_to_file: CPointer<godot_method_bind>
+      val dumpMemoryToFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "dump_memory_to_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dump_memory_to_file" }
+            "dumpMemoryToFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method dumpMemoryToFile" }
         }
-      val dump_resources_to_file: CPointer<godot_method_bind>
+      val dumpResourcesToFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "dump_resources_to_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method dump_resources_to_file" }
+            "dumpResourcesToFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method dumpResourcesToFile" }
         }
       val execute: CPointer<godot_method_bind>
         get() = memScoped {
@@ -997,444 +1117,444 @@ open class _OS(
             "execute".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method execute" }
         }
-      val find_scancode_from_string: CPointer<godot_method_bind>
+      val findScancodeFromString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "find_scancode_from_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_scancode_from_string" }
+            "findScancodeFromString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findScancodeFromString" }
         }
-      val get_audio_driver_count: CPointer<godot_method_bind>
+      val getAudioDriverCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_audio_driver_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_audio_driver_count" }
+            "getAudioDriverCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAudioDriverCount" }
         }
-      val get_audio_driver_name: CPointer<godot_method_bind>
+      val getAudioDriverName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_audio_driver_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_audio_driver_name" }
+            "getAudioDriverName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAudioDriverName" }
         }
-      val get_borderless_window: CPointer<godot_method_bind>
+      val getBorderlessWindow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_borderless_window".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_borderless_window" }
+            "getBorderlessWindow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBorderlessWindow" }
         }
-      val get_clipboard: CPointer<godot_method_bind>
+      val getClipboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_clipboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_clipboard" }
+            "getClipboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClipboard" }
         }
-      val get_cmdline_args: CPointer<godot_method_bind>
+      val getCmdlineArgs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_cmdline_args".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cmdline_args" }
+            "getCmdlineArgs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCmdlineArgs" }
         }
-      val get_connected_midi_inputs: CPointer<godot_method_bind>
+      val getConnectedMidiInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_connected_midi_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connected_midi_inputs" }
+            "getConnectedMidiInputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectedMidiInputs" }
         }
-      val get_current_screen: CPointer<godot_method_bind>
+      val getCurrentScreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_current_screen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_screen" }
+            "getCurrentScreen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentScreen" }
         }
-      val get_current_video_driver: CPointer<godot_method_bind>
+      val getCurrentVideoDriver: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_current_video_driver".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_video_driver" }
+            "getCurrentVideoDriver".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentVideoDriver" }
         }
-      val get_date: CPointer<godot_method_bind>
+      val getDate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_date".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_date" }
+            "getDate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDate" }
         }
-      val get_datetime: CPointer<godot_method_bind>
+      val getDatetime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_datetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_datetime" }
+            "getDatetime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDatetime" }
         }
-      val get_datetime_from_unix_time: CPointer<godot_method_bind>
+      val getDatetimeFromUnixTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_datetime_from_unix_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_datetime_from_unix_time" }
+            "getDatetimeFromUnixTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDatetimeFromUnixTime" }
         }
-      val get_dynamic_memory_usage: CPointer<godot_method_bind>
+      val getDynamicMemoryUsage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_dynamic_memory_usage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dynamic_memory_usage" }
+            "getDynamicMemoryUsage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDynamicMemoryUsage" }
         }
-      val get_environment: CPointer<godot_method_bind>
+      val getEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            "getEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEnvironment" }
         }
-      val get_executable_path: CPointer<godot_method_bind>
+      val getExecutablePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_executable_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_executable_path" }
+            "getExecutablePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExecutablePath" }
         }
-      val get_exit_code: CPointer<godot_method_bind>
+      val getExitCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_exit_code".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_exit_code" }
+            "getExitCode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExitCode" }
         }
-      val get_ime_selection: CPointer<godot_method_bind>
+      val getImeSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ime_selection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ime_selection" }
+            "getImeSelection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getImeSelection" }
         }
-      val get_ime_text: CPointer<godot_method_bind>
+      val getImeText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ime_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ime_text" }
+            "getImeText".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getImeText" }
         }
-      val get_latin_keyboard_variant: CPointer<godot_method_bind>
+      val getLatinKeyboardVariant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_latin_keyboard_variant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_latin_keyboard_variant" }
+            "getLatinKeyboardVariant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLatinKeyboardVariant" }
         }
-      val get_locale: CPointer<godot_method_bind>
+      val getLocale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_locale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_locale" }
+            "getLocale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLocale" }
         }
-      val get_model_name: CPointer<godot_method_bind>
+      val getModelName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_model_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_model_name" }
+            "getModelName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getModelName" }
         }
-      val get_name: CPointer<godot_method_bind>
+      val getName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_name" }
+            "getName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getName" }
         }
-      val get_power_percent_left: CPointer<godot_method_bind>
+      val getPowerPercentLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_power_percent_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_power_percent_left" }
+            "getPowerPercentLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPowerPercentLeft" }
         }
-      val get_power_seconds_left: CPointer<godot_method_bind>
+      val getPowerSecondsLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_power_seconds_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_power_seconds_left" }
+            "getPowerSecondsLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPowerSecondsLeft" }
         }
-      val get_power_state: CPointer<godot_method_bind>
+      val getPowerState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_power_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_power_state" }
+            "getPowerState".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPowerState" }
         }
-      val get_process_id: CPointer<godot_method_bind>
+      val getProcessId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_process_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_process_id" }
+            "getProcessId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProcessId" }
         }
-      val get_processor_count: CPointer<godot_method_bind>
+      val getProcessorCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_processor_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_processor_count" }
+            "getProcessorCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProcessorCount" }
         }
-      val get_real_window_size: CPointer<godot_method_bind>
+      val getRealWindowSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_real_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_real_window_size" }
+            "getRealWindowSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRealWindowSize" }
         }
-      val get_scancode_string: CPointer<godot_method_bind>
+      val getScancodeString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_scancode_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scancode_string" }
+            "getScancodeString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScancodeString" }
         }
-      val get_screen_count: CPointer<godot_method_bind>
+      val getScreenCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_count" }
+            "getScreenCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScreenCount" }
         }
-      val get_screen_dpi: CPointer<godot_method_bind>
+      val getScreenDpi: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_dpi".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_dpi" }
+            "getScreenDpi".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScreenDpi" }
         }
-      val get_screen_orientation: CPointer<godot_method_bind>
+      val getScreenOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_orientation" }
+            "getScreenOrientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScreenOrientation" }
         }
-      val get_screen_position: CPointer<godot_method_bind>
+      val getScreenPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_position" }
+            "getScreenPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScreenPosition" }
         }
-      val get_screen_size: CPointer<godot_method_bind>
+      val getScreenSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_screen_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_screen_size" }
+            "getScreenSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScreenSize" }
         }
-      val get_splash_tick_msec: CPointer<godot_method_bind>
+      val getSplashTickMsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_splash_tick_msec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_splash_tick_msec" }
+            "getSplashTickMsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSplashTickMsec" }
         }
-      val get_static_memory_peak_usage: CPointer<godot_method_bind>
+      val getStaticMemoryPeakUsage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_static_memory_peak_usage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_static_memory_peak_usage" }
+            "getStaticMemoryPeakUsage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStaticMemoryPeakUsage" }
         }
-      val get_static_memory_usage: CPointer<godot_method_bind>
+      val getStaticMemoryUsage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_static_memory_usage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_static_memory_usage" }
+            "getStaticMemoryUsage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStaticMemoryUsage" }
         }
-      val get_system_dir: CPointer<godot_method_bind>
+      val getSystemDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_system_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_system_dir" }
+            "getSystemDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSystemDir" }
         }
-      val get_system_time_msecs: CPointer<godot_method_bind>
+      val getSystemTimeMsecs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_system_time_msecs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_system_time_msecs" }
+            "getSystemTimeMsecs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSystemTimeMsecs" }
         }
-      val get_system_time_secs: CPointer<godot_method_bind>
+      val getSystemTimeSecs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_system_time_secs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_system_time_secs" }
+            "getSystemTimeSecs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSystemTimeSecs" }
         }
-      val get_ticks_msec: CPointer<godot_method_bind>
+      val getTicksMsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ticks_msec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ticks_msec" }
+            "getTicksMsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTicksMsec" }
         }
-      val get_ticks_usec: CPointer<godot_method_bind>
+      val getTicksUsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_ticks_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ticks_usec" }
+            "getTicksUsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTicksUsec" }
         }
-      val get_time: CPointer<godot_method_bind>
+      val getTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_time" }
+            "getTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTime" }
         }
-      val get_time_zone_info: CPointer<godot_method_bind>
+      val getTimeZoneInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_time_zone_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_time_zone_info" }
+            "getTimeZoneInfo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTimeZoneInfo" }
         }
-      val get_unique_id: CPointer<godot_method_bind>
+      val getUniqueId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_unique_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unique_id" }
+            "getUniqueId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUniqueId" }
         }
-      val get_unix_time: CPointer<godot_method_bind>
+      val getUnixTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_unix_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unix_time" }
+            "getUnixTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUnixTime" }
         }
-      val get_unix_time_from_datetime: CPointer<godot_method_bind>
+      val getUnixTimeFromDatetime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_unix_time_from_datetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unix_time_from_datetime" }
+            "getUnixTimeFromDatetime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUnixTimeFromDatetime" }
         }
-      val get_user_data_dir: CPointer<godot_method_bind>
+      val getUserDataDir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_user_data_dir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_user_data_dir" }
+            "getUserDataDir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUserDataDir" }
         }
-      val get_video_driver_count: CPointer<godot_method_bind>
+      val getVideoDriverCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_video_driver_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_video_driver_count" }
+            "getVideoDriverCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVideoDriverCount" }
         }
-      val get_video_driver_name: CPointer<godot_method_bind>
+      val getVideoDriverName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_video_driver_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_video_driver_name" }
+            "getVideoDriverName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVideoDriverName" }
         }
-      val get_virtual_keyboard_height: CPointer<godot_method_bind>
+      val getVirtualKeyboardHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_virtual_keyboard_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_virtual_keyboard_height" }
+            "getVirtualKeyboardHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVirtualKeyboardHeight" }
         }
-      val get_window_per_pixel_transparency_enabled: CPointer<godot_method_bind>
+      val getWindowPerPixelTransparencyEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_per_pixel_transparency_enabled".cstr.ptr)
+            "getWindowPerPixelTransparencyEnabled".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method get_window_per_pixel_transparency_enabled" }
+            "No method_bind found for method getWindowPerPixelTransparencyEnabled" }
         }
-      val get_window_position: CPointer<godot_method_bind>
+      val getWindowPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_window_position" }
+            "getWindowPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWindowPosition" }
         }
-      val get_window_safe_area: CPointer<godot_method_bind>
+      val getWindowSafeArea: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_safe_area".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_window_safe_area" }
+            "getWindowSafeArea".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWindowSafeArea" }
         }
-      val get_window_size: CPointer<godot_method_bind>
+      val getWindowSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "get_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_window_size" }
+            "getWindowSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWindowSize" }
         }
-      val has_environment: CPointer<godot_method_bind>
+      val hasEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_environment" }
+            "hasEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasEnvironment" }
         }
-      val has_feature: CPointer<godot_method_bind>
+      val hasFeature: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_feature".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_feature" }
+            "hasFeature".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasFeature" }
         }
-      val has_touchscreen_ui_hint: CPointer<godot_method_bind>
+      val hasTouchscreenUiHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_touchscreen_ui_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_touchscreen_ui_hint" }
+            "hasTouchscreenUiHint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasTouchscreenUiHint" }
         }
-      val has_virtual_keyboard: CPointer<godot_method_bind>
+      val hasVirtualKeyboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "has_virtual_keyboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_virtual_keyboard" }
+            "hasVirtualKeyboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasVirtualKeyboard" }
         }
-      val hide_virtual_keyboard: CPointer<godot_method_bind>
+      val hideVirtualKeyboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "hide_virtual_keyboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method hide_virtual_keyboard" }
+            "hideVirtualKeyboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hideVirtualKeyboard" }
         }
-      val is_debug_build: CPointer<godot_method_bind>
+      val isDebugBuild: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_debug_build".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_debug_build" }
+            "isDebugBuild".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDebugBuild" }
         }
-      val is_in_low_processor_usage_mode: CPointer<godot_method_bind>
+      val isInLowProcessorUsageMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_in_low_processor_usage_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_in_low_processor_usage_mode" }
+            "isInLowProcessorUsageMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isInLowProcessorUsageMode" }
         }
-      val is_keep_screen_on: CPointer<godot_method_bind>
+      val isKeepScreenOn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_keep_screen_on".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_keep_screen_on" }
+            "isKeepScreenOn".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isKeepScreenOn" }
         }
-      val is_ok_left_and_cancel_right: CPointer<godot_method_bind>
+      val isOkLeftAndCancelRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_ok_left_and_cancel_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ok_left_and_cancel_right" }
+            "isOkLeftAndCancelRight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isOkLeftAndCancelRight" }
         }
-      val is_scancode_unicode: CPointer<godot_method_bind>
+      val isScancodeUnicode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_scancode_unicode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_scancode_unicode" }
+            "isScancodeUnicode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isScancodeUnicode" }
         }
-      val is_stdout_verbose: CPointer<godot_method_bind>
+      val isStdoutVerbose: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_stdout_verbose".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_stdout_verbose" }
+            "isStdoutVerbose".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isStdoutVerbose" }
         }
-      val is_userfs_persistent: CPointer<godot_method_bind>
+      val isUserfsPersistent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_userfs_persistent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_userfs_persistent" }
+            "isUserfsPersistent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isUserfsPersistent" }
         }
-      val is_vsync_enabled: CPointer<godot_method_bind>
+      val isVsyncEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_vsync_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_vsync_enabled" }
+            "isVsyncEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isVsyncEnabled" }
         }
-      val is_window_always_on_top: CPointer<godot_method_bind>
+      val isWindowAlwaysOnTop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_always_on_top".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_always_on_top" }
+            "isWindowAlwaysOnTop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isWindowAlwaysOnTop" }
         }
-      val is_window_fullscreen: CPointer<godot_method_bind>
+      val isWindowFullscreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_fullscreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_fullscreen" }
+            "isWindowFullscreen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isWindowFullscreen" }
         }
-      val is_window_maximized: CPointer<godot_method_bind>
+      val isWindowMaximized: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_maximized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_maximized" }
+            "isWindowMaximized".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isWindowMaximized" }
         }
-      val is_window_minimized: CPointer<godot_method_bind>
+      val isWindowMinimized: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_minimized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_minimized" }
+            "isWindowMinimized".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isWindowMinimized" }
         }
-      val is_window_resizable: CPointer<godot_method_bind>
+      val isWindowResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "is_window_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_window_resizable" }
+            "isWindowResizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isWindowResizable" }
         }
       val kill: CPointer<godot_method_bind>
         get() = memScoped {
@@ -1442,235 +1562,234 @@ open class _OS(
             "kill".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method kill" }
         }
-      val move_window_to_foreground: CPointer<godot_method_bind>
+      val moveWindowToForeground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "move_window_to_foreground".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method move_window_to_foreground" }
+            "moveWindowToForeground".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method moveWindowToForeground" }
         }
-      val native_video_is_playing: CPointer<godot_method_bind>
+      val nativeVideoIsPlaying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_is_playing" }
+            "nativeVideoIsPlaying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method nativeVideoIsPlaying" }
         }
-      val native_video_pause: CPointer<godot_method_bind>
+      val nativeVideoPause: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_pause".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_pause" }
+            "nativeVideoPause".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method nativeVideoPause" }
         }
-      val native_video_play: CPointer<godot_method_bind>
+      val nativeVideoPlay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_play".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_play" }
+            "nativeVideoPlay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method nativeVideoPlay" }
         }
-      val native_video_stop: CPointer<godot_method_bind>
+      val nativeVideoStop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_stop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_stop" }
+            "nativeVideoStop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method nativeVideoStop" }
         }
-      val native_video_unpause: CPointer<godot_method_bind>
+      val nativeVideoUnpause: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "native_video_unpause".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method native_video_unpause" }
+            "nativeVideoUnpause".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method nativeVideoUnpause" }
         }
-      val open_midi_inputs: CPointer<godot_method_bind>
+      val openMidiInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "open_midi_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_midi_inputs" }
+            "openMidiInputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method openMidiInputs" }
         }
-      val print_all_resources: CPointer<godot_method_bind>
+      val printAllResources: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_all_resources".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_all_resources" }
+            "printAllResources".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method printAllResources" }
         }
-      val print_all_textures_by_size: CPointer<godot_method_bind>
+      val printAllTexturesBySize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_all_textures_by_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_all_textures_by_size" }
+            "printAllTexturesBySize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method printAllTexturesBySize" }
         }
-      val print_resources_by_type: CPointer<godot_method_bind>
+      val printResourcesByType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_resources_by_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_resources_by_type" }
+            "printResourcesByType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method printResourcesByType" }
         }
-      val print_resources_in_use: CPointer<godot_method_bind>
+      val printResourcesInUse: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "print_resources_in_use".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method print_resources_in_use" }
+            "printResourcesInUse".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method printResourcesInUse" }
         }
-      val request_attention: CPointer<godot_method_bind>
+      val requestAttention: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "request_attention".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method request_attention" }
+            "requestAttention".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method requestAttention" }
         }
-      val request_permission: CPointer<godot_method_bind>
+      val requestPermission: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "request_permission".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method request_permission" }
+            "requestPermission".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method requestPermission" }
         }
-      val set_borderless_window: CPointer<godot_method_bind>
+      val setBorderlessWindow: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_borderless_window".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_borderless_window" }
+            "setBorderlessWindow".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBorderlessWindow" }
         }
-      val set_clipboard: CPointer<godot_method_bind>
+      val setClipboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_clipboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clipboard" }
+            "setClipboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setClipboard" }
         }
-      val set_current_screen: CPointer<godot_method_bind>
+      val setCurrentScreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_current_screen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current_screen" }
+            "setCurrentScreen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCurrentScreen" }
         }
-      val set_exit_code: CPointer<godot_method_bind>
+      val setExitCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_exit_code".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exit_code" }
+            "setExitCode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExitCode" }
         }
-      val set_icon: CPointer<godot_method_bind>
+      val setIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_icon" }
+            "setIcon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setIcon" }
         }
-      val set_ime_active: CPointer<godot_method_bind>
+      val setImeActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_ime_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ime_active" }
+            "setImeActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setImeActive" }
         }
-      val set_ime_position: CPointer<godot_method_bind>
+      val setImePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_ime_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ime_position" }
+            "setImePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setImePosition" }
         }
-      val set_keep_screen_on: CPointer<godot_method_bind>
+      val setKeepScreenOn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_keep_screen_on".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_keep_screen_on" }
+            "setKeepScreenOn".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setKeepScreenOn" }
         }
-      val set_low_processor_usage_mode: CPointer<godot_method_bind>
+      val setLowProcessorUsageMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_low_processor_usage_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_low_processor_usage_mode" }
+            "setLowProcessorUsageMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLowProcessorUsageMode" }
         }
-      val set_native_icon: CPointer<godot_method_bind>
+      val setNativeIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_native_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_native_icon" }
+            "setNativeIcon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNativeIcon" }
         }
-      val set_screen_orientation: CPointer<godot_method_bind>
+      val setScreenOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_screen_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_screen_orientation" }
+            "setScreenOrientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setScreenOrientation" }
         }
-      val set_thread_name: CPointer<godot_method_bind>
+      val setThreadName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_thread_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_thread_name" }
+            "setThreadName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setThreadName" }
         }
-      val set_use_file_access_save_and_swap: CPointer<godot_method_bind>
+      val setUseFileAccessSaveAndSwap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_use_file_access_save_and_swap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_file_access_save_and_swap"
-            }
+            "setUseFileAccessSaveAndSwap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseFileAccessSaveAndSwap" }
         }
-      val set_use_vsync: CPointer<godot_method_bind>
+      val setUseVsync: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_use_vsync".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_vsync" }
+            "setUseVsync".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseVsync" }
         }
-      val set_window_always_on_top: CPointer<godot_method_bind>
+      val setWindowAlwaysOnTop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_always_on_top".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_always_on_top" }
+            "setWindowAlwaysOnTop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowAlwaysOnTop" }
         }
-      val set_window_fullscreen: CPointer<godot_method_bind>
+      val setWindowFullscreen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_fullscreen".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_fullscreen" }
+            "setWindowFullscreen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowFullscreen" }
         }
-      val set_window_maximized: CPointer<godot_method_bind>
+      val setWindowMaximized: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_maximized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_maximized" }
+            "setWindowMaximized".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowMaximized" }
         }
-      val set_window_minimized: CPointer<godot_method_bind>
+      val setWindowMinimized: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_minimized".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_minimized" }
+            "setWindowMinimized".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowMinimized" }
         }
-      val set_window_per_pixel_transparency_enabled: CPointer<godot_method_bind>
+      val setWindowPerPixelTransparencyEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_per_pixel_transparency_enabled".cstr.ptr)
+            "setWindowPerPixelTransparencyEnabled".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method set_window_per_pixel_transparency_enabled" }
+            "No method_bind found for method setWindowPerPixelTransparencyEnabled" }
         }
-      val set_window_position: CPointer<godot_method_bind>
+      val setWindowPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_position" }
+            "setWindowPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowPosition" }
         }
-      val set_window_resizable: CPointer<godot_method_bind>
+      val setWindowResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_resizable" }
+            "setWindowResizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowResizable" }
         }
-      val set_window_size: CPointer<godot_method_bind>
+      val setWindowSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_size" }
+            "setWindowSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowSize" }
         }
-      val set_window_title: CPointer<godot_method_bind>
+      val setWindowTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "set_window_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_window_title" }
+            "setWindowTitle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWindowTitle" }
         }
-      val shell_open: CPointer<godot_method_bind>
+      val shellOpen: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "shell_open".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method shell_open" }
+            "shellOpen".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method shellOpen" }
         }
-      val show_virtual_keyboard: CPointer<godot_method_bind>
+      val showVirtualKeyboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_OS".cstr.ptr,
-            "show_virtual_keyboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method show_virtual_keyboard" }
+            "showVirtualKeyboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method showVirtualKeyboard" }
         }}
   }
 }

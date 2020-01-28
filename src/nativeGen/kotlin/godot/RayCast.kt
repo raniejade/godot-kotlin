@@ -20,130 +20,178 @@ import kotlinx.cinterop.reinterpret
 open class RayCast(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var castTo: Vector3
+    get() {
+       return getCastTo() 
+    }
+    set(value) {
+      setCastTo(value)
+    }
+
+  var collideWithAreas: Boolean
+    get() {
+       return isCollideWithAreasEnabled() 
+    }
+    set(value) {
+      setCollideWithAreas(value)
+    }
+
+  var collideWithBodies: Boolean
+    get() {
+       return isCollideWithBodiesEnabled() 
+    }
+    set(value) {
+      setCollideWithBodies(value)
+    }
+
+  var collisionMask: Int
+    get() {
+       return getCollisionMask() 
+    }
+    set(value) {
+      setCollisionMask(value)
+    }
+
+  var enabled: Boolean
+    get() {
+       return isEnabled() 
+    }
+    set(value) {
+      setEnabled(value)
+    }
+
+  var excludeParent: Boolean
+    get() {
+       return getExcludeParentBody() 
+    }
+    set(value) {
+      setExcludeParentBody(value)
+    }
+
   fun addException(node: Object) {
     val _arg = Variant.new(node)
-    __method_bind.add_exception.call(this._handle, _arg, 1)
+    __method_bind.addException.call(this._handle, _arg, 1)
   }
 
   fun addExceptionRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.add_exception_rid.call(this._handle, _arg, 1)
+    __method_bind.addExceptionRid.call(this._handle, _arg, 1)
   }
 
   fun clearExceptions() {
-    __method_bind.clear_exceptions.call(this._handle)
+    __method_bind.clearExceptions.call(this._handle)
   }
 
   fun forceRaycastUpdate() {
-    __method_bind.force_raycast_update.call(this._handle)
+    __method_bind.forceRaycastUpdate.call(this._handle)
   }
 
   fun getCastTo(): Vector3 {
-    val _ret = __method_bind.get_cast_to.call(this._handle)
+    val _ret = __method_bind.getCastTo.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getCollider(): Object {
-    val _ret = __method_bind.get_collider.call(this._handle)
+    val _ret = __method_bind.getCollider.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getColliderShape(): Int {
-    val _ret = __method_bind.get_collider_shape.call(this._handle)
+    val _ret = __method_bind.getColliderShape.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.get_collision_mask.call(this._handle)
+    val _ret = __method_bind.getCollisionMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getCollisionNormal(): Vector3 {
-    val _ret = __method_bind.get_collision_normal.call(this._handle)
+    val _ret = __method_bind.getCollisionNormal.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getCollisionPoint(): Vector3 {
-    val _ret = __method_bind.get_collision_point.call(this._handle)
+    val _ret = __method_bind.getCollisionPoint.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getExcludeParentBody(): Boolean {
-    val _ret = __method_bind.get_exclude_parent_body.call(this._handle)
+    val _ret = __method_bind.getExcludeParentBody.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
-    val _ret = __method_bind.is_collide_with_areas_enabled.call(this._handle)
+    val _ret = __method_bind.isCollideWithAreasEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
-    val _ret = __method_bind.is_collide_with_bodies_enabled.call(this._handle)
+    val _ret = __method_bind.isCollideWithBodiesEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isColliding(): Boolean {
-    val _ret = __method_bind.is_colliding.call(this._handle)
+    val _ret = __method_bind.isColliding.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isEnabled(): Boolean {
-    val _ret = __method_bind.is_enabled.call(this._handle)
+    val _ret = __method_bind.isEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun removeException(node: Object) {
     val _arg = Variant.new(node)
-    __method_bind.remove_exception.call(this._handle, _arg, 1)
+    __method_bind.removeException.call(this._handle, _arg, 1)
   }
 
   fun removeExceptionRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.remove_exception_rid.call(this._handle, _arg, 1)
+    __method_bind.removeExceptionRid.call(this._handle, _arg, 1)
   }
 
   fun setCastTo(localPoint: Vector3) {
     val _arg = Variant.new(localPoint)
-    __method_bind.set_cast_to.call(this._handle, _arg, 1)
+    __method_bind.setCastTo.call(this._handle, _arg, 1)
   }
 
   fun setCollideWithAreas(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_collide_with_areas.call(this._handle, _arg, 1)
+    __method_bind.setCollideWithAreas.call(this._handle, _arg, 1)
   }
 
   fun setCollideWithBodies(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_collide_with_bodies.call(this._handle, _arg, 1)
+    __method_bind.setCollideWithBodies.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_collision_mask.call(this._handle, _arg, 1)
+    __method_bind.setCollisionMask.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_mask_bit.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setCollisionMaskBit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_enabled.call(this._handle, _arg, 1)
+    __method_bind.setEnabled.call(this._handle, _arg, 1)
   }
 
   fun setExcludeParentBody(mask: Boolean) {
     val _arg = Variant.new(mask)
-    __method_bind.set_exclude_parent_body.call(this._handle, _arg, 1)
+    __method_bind.setExcludeParentBody.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -160,155 +208,155 @@ open class RayCast(
      * Container for method_bind pointers for RayCast
      */
     private object __method_bind {
-      val add_exception: CPointer<godot_method_bind>
+      val addException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "add_exception".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_exception" }
+            "addException".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addException" }
         }
-      val add_exception_rid: CPointer<godot_method_bind>
+      val addExceptionRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "add_exception_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_exception_rid" }
+            "addExceptionRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addExceptionRid" }
         }
-      val clear_exceptions: CPointer<godot_method_bind>
+      val clearExceptions: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "clear_exceptions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_exceptions" }
+            "clearExceptions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearExceptions" }
         }
-      val force_raycast_update: CPointer<godot_method_bind>
+      val forceRaycastUpdate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "force_raycast_update".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method force_raycast_update" }
+            "forceRaycastUpdate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method forceRaycastUpdate" }
         }
-      val get_cast_to: CPointer<godot_method_bind>
+      val getCastTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_cast_to".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cast_to" }
+            "getCastTo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCastTo" }
         }
-      val get_collider: CPointer<godot_method_bind>
+      val getCollider: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_collider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider" }
+            "getCollider".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollider" }
         }
-      val get_collider_shape: CPointer<godot_method_bind>
+      val getColliderShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_collider_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
+            "getColliderShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColliderShape" }
         }
-      val get_collision_mask: CPointer<godot_method_bind>
+      val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            "getCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
         }
-      val get_collision_mask_bit: CPointer<godot_method_bind>
+      val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
+            "getCollisionMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
         }
-      val get_collision_normal: CPointer<godot_method_bind>
+      val getCollisionNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_collision_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_normal" }
+            "getCollisionNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionNormal" }
         }
-      val get_collision_point: CPointer<godot_method_bind>
+      val getCollisionPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_collision_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_point" }
+            "getCollisionPoint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionPoint" }
         }
-      val get_exclude_parent_body: CPointer<godot_method_bind>
+      val getExcludeParentBody: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "get_exclude_parent_body".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_exclude_parent_body" }
+            "getExcludeParentBody".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExcludeParentBody" }
         }
-      val is_collide_with_areas_enabled: CPointer<godot_method_bind>
+      val isCollideWithAreasEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "is_collide_with_areas_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_collide_with_areas_enabled" }
+            "isCollideWithAreasEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCollideWithAreasEnabled" }
         }
-      val is_collide_with_bodies_enabled: CPointer<godot_method_bind>
+      val isCollideWithBodiesEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "is_collide_with_bodies_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_collide_with_bodies_enabled" }
+            "isCollideWithBodiesEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCollideWithBodiesEnabled" }
         }
-      val is_colliding: CPointer<godot_method_bind>
+      val isColliding: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "is_colliding".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_colliding" }
+            "isColliding".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isColliding" }
         }
-      val is_enabled: CPointer<godot_method_bind>
+      val isEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "is_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
+            "isEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isEnabled" }
         }
-      val remove_exception: CPointer<godot_method_bind>
+      val removeException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "remove_exception".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_exception" }
+            "removeException".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeException" }
         }
-      val remove_exception_rid: CPointer<godot_method_bind>
+      val removeExceptionRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "remove_exception_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_exception_rid" }
+            "removeExceptionRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeExceptionRid" }
         }
-      val set_cast_to: CPointer<godot_method_bind>
+      val setCastTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_cast_to".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cast_to" }
+            "setCastTo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCastTo" }
         }
-      val set_collide_with_areas: CPointer<godot_method_bind>
+      val setCollideWithAreas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_collide_with_areas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collide_with_areas" }
+            "setCollideWithAreas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollideWithAreas" }
         }
-      val set_collide_with_bodies: CPointer<godot_method_bind>
+      val setCollideWithBodies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_collide_with_bodies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collide_with_bodies" }
+            "setCollideWithBodies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollideWithBodies" }
         }
-      val set_collision_mask: CPointer<godot_method_bind>
+      val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            "setCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
         }
-      val set_collision_mask_bit: CPointer<godot_method_bind>
+      val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
+            "setCollisionMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
         }
-      val set_enabled: CPointer<godot_method_bind>
+      val setEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
+            "setEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnabled" }
         }
-      val set_exclude_parent_body: CPointer<godot_method_bind>
+      val setExcludeParentBody: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RayCast".cstr.ptr,
-            "set_exclude_parent_body".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exclude_parent_body" }
+            "setExcludeParentBody".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExcludeParentBody" }
         }}
   }
 }

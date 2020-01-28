@@ -20,104 +20,168 @@ import kotlinx.cinterop.reinterpret
 open class PhysicalBone(
   _handle: COpaquePointer
 ) : PhysicsBody(_handle) {
+  var bodyOffset: Transform
+    get() {
+       return getBodyOffset() 
+    }
+    set(value) {
+      setBodyOffset(value)
+    }
+
+  var bounce: Float
+    get() {
+       return getBounce() 
+    }
+    set(value) {
+      setBounce(value)
+    }
+
+  var friction: Float
+    get() {
+       return getFriction() 
+    }
+    set(value) {
+      setFriction(value)
+    }
+
+  var gravityScale: Float
+    get() {
+       return getGravityScale() 
+    }
+    set(value) {
+      setGravityScale(value)
+    }
+
+  var jointOffset: Transform
+    get() {
+       return getJointOffset() 
+    }
+    set(value) {
+      setJointOffset(value)
+    }
+
+  var jointType: Int
+    get() {
+       return PhysicalBone.JointType.from(getJointType()) 
+    }
+    set(value) {
+      setJointType(PhysicalBone.JointType.from(value))
+    }
+
+  var mass: Float
+    get() {
+       return getMass() 
+    }
+    set(value) {
+      setMass(value)
+    }
+
+  var weight: Float
+    get() {
+       return getWeight() 
+    }
+    set(value) {
+      setWeight(value)
+    }
+
   fun getBodyOffset(): Transform {
-    val _ret = __method_bind.get_body_offset.call(this._handle)
+    val _ret = __method_bind.getBodyOffset.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getBoneId(): Int {
-    val _ret = __method_bind.get_bone_id.call(this._handle)
+    val _ret = __method_bind.getBoneId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getBounce(): Float {
-    val _ret = __method_bind.get_bounce.call(this._handle)
+    val _ret = __method_bind.getBounce.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.get_friction.call(this._handle)
+    val _ret = __method_bind.getFriction.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGravityScale(): Float {
-    val _ret = __method_bind.get_gravity_scale.call(this._handle)
+    val _ret = __method_bind.getGravityScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getJointOffset(): Transform {
-    val _ret = __method_bind.get_joint_offset.call(this._handle)
+    val _ret = __method_bind.getJointOffset.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getJointType(): JointType {
-    val _ret = __method_bind.get_joint_type.call(this._handle)
+    val _ret = __method_bind.getJointType.call(this._handle)
     return PhysicalBone.JointType.from(_ret.asInt())
   }
 
   fun getMass(): Float {
-    val _ret = __method_bind.get_mass.call(this._handle)
+    val _ret = __method_bind.getMass.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSimulatePhysics(): Boolean {
-    val _ret = __method_bind.get_simulate_physics.call(this._handle)
+    val _ret = __method_bind.getSimulatePhysics.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getWeight(): Float {
-    val _ret = __method_bind.get_weight.call(this._handle)
+    val _ret = __method_bind.getWeight.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isSimulatingPhysics(): Boolean {
-    val _ret = __method_bind.is_simulating_physics.call(this._handle)
+    val _ret = __method_bind.isSimulatingPhysics.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isStaticBody(): Boolean {
-    val _ret = __method_bind.is_static_body.call(this._handle)
+    val _ret = __method_bind.isStaticBody.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setBodyOffset(offset: Transform) {
     val _arg = Variant.new(offset)
-    __method_bind.set_body_offset.call(this._handle, _arg, 1)
+    __method_bind.setBodyOffset.call(this._handle, _arg, 1)
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.set_bounce.call(this._handle, _arg, 1)
+    __method_bind.setBounce.call(this._handle, _arg, 1)
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.set_friction.call(this._handle, _arg, 1)
+    __method_bind.setFriction.call(this._handle, _arg, 1)
   }
 
   fun setGravityScale(gravityScale: Float) {
     val _arg = Variant.new(gravityScale)
-    __method_bind.set_gravity_scale.call(this._handle, _arg, 1)
+    __method_bind.setGravityScale.call(this._handle, _arg, 1)
   }
 
   fun setJointOffset(offset: Transform) {
     val _arg = Variant.new(offset)
-    __method_bind.set_joint_offset.call(this._handle, _arg, 1)
+    __method_bind.setJointOffset.call(this._handle, _arg, 1)
   }
 
   fun setJointType(jointType: Int) {
     val _arg = Variant.new(jointType)
-    __method_bind.set_joint_type.call(this._handle, _arg, 1)
+    __method_bind.setJointType.call(this._handle, _arg, 1)
   }
 
   fun setMass(mass: Float) {
     val _arg = Variant.new(mass)
-    __method_bind.set_mass.call(this._handle, _arg, 1)
+    __method_bind.setMass.call(this._handle, _arg, 1)
   }
 
   fun setWeight(weight: Float) {
     val _arg = Variant.new(weight)
-    __method_bind.set_weight.call(this._handle, _arg, 1)
+    __method_bind.setWeight.call(this._handle, _arg, 1)
   }
 
   enum class JointType(
@@ -173,145 +237,145 @@ open class PhysicalBone(
      * Container for method_bind pointers for PhysicalBone
      */
     private object __method_bind {
-      val get_body_offset: CPointer<godot_method_bind>
+      val getBodyOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_body_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_body_offset" }
+            "getBodyOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBodyOffset" }
         }
-      val get_bone_id: CPointer<godot_method_bind>
+      val getBoneId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_bone_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bone_id" }
+            "getBoneId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBoneId" }
         }
-      val get_bounce: CPointer<godot_method_bind>
+      val getBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
+            "getBounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBounce" }
         }
-      val get_friction: CPointer<godot_method_bind>
+      val getFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_friction" }
+            "getFriction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFriction" }
         }
-      val get_gravity_scale: CPointer<godot_method_bind>
+      val getGravityScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_gravity_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gravity_scale" }
+            "getGravityScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGravityScale" }
         }
-      val get_joint_offset: CPointer<godot_method_bind>
+      val getJointOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_joint_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joint_offset" }
+            "getJointOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJointOffset" }
         }
-      val get_joint_type: CPointer<godot_method_bind>
+      val getJointType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_joint_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joint_type" }
+            "getJointType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJointType" }
         }
-      val get_mass: CPointer<godot_method_bind>
+      val getMass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_mass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mass" }
+            "getMass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMass" }
         }
-      val get_simulate_physics: CPointer<godot_method_bind>
+      val getSimulatePhysics: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_simulate_physics".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_simulate_physics" }
+            "getSimulatePhysics".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSimulatePhysics" }
         }
-      val get_weight: CPointer<godot_method_bind>
+      val getWeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "get_weight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_weight" }
+            "getWeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWeight" }
         }
-      val is_simulating_physics: CPointer<godot_method_bind>
+      val isSimulatingPhysics: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "is_simulating_physics".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_simulating_physics" }
+            "isSimulatingPhysics".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSimulatingPhysics" }
         }
-      val is_static_body: CPointer<godot_method_bind>
+      val isStaticBody: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "is_static_body".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_static_body" }
+            "isStaticBody".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isStaticBody" }
         }
-      val set_body_offset: CPointer<godot_method_bind>
+      val setBodyOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_body_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_body_offset" }
+            "setBodyOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBodyOffset" }
         }
-      val set_bounce: CPointer<godot_method_bind>
+      val setBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
+            "setBounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBounce" }
         }
-      val set_friction: CPointer<godot_method_bind>
+      val setFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_friction" }
+            "setFriction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFriction" }
         }
-      val set_gravity_scale: CPointer<godot_method_bind>
+      val setGravityScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_gravity_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_gravity_scale" }
+            "setGravityScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGravityScale" }
         }
-      val set_joint_offset: CPointer<godot_method_bind>
+      val setJointOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_joint_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_joint_offset" }
+            "setJointOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setJointOffset" }
         }
-      val set_joint_type: CPointer<godot_method_bind>
+      val setJointType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_joint_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_joint_type" }
+            "setJointType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setJointType" }
         }
-      val set_mass: CPointer<godot_method_bind>
+      val setMass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_mass".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mass" }
+            "setMass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMass" }
         }
-      val set_weight: CPointer<godot_method_bind>
+      val setWeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicalBone".cstr.ptr,
-            "set_weight".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_weight" }
+            "setWeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWeight" }
         }}
   }
 }

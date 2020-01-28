@@ -17,7 +17,7 @@ open class WeakRef(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getRef(): Variant {
-    val _ret = __method_bind.get_ref.call(this._handle)
+    val _ret = __method_bind.getRef.call(this._handle)
     return _ret
   }
 
@@ -35,11 +35,11 @@ open class WeakRef(
      * Container for method_bind pointers for WeakRef
      */
     private object __method_bind {
-      val get_ref: CPointer<godot_method_bind>
+      val getRef: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WeakRef".cstr.ptr,
-            "get_ref".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ref" }
+            "getRef".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRef" }
         }}
   }
 }

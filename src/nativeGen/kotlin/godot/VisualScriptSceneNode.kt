@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptSceneNode(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var nodePath: NodePath
+    get() {
+       return getNodePath() 
+    }
+    set(value) {
+      setNodePath(value)
+    }
+
   fun getNodePath(): NodePath {
-    val _ret = __method_bind.get_node_path.call(this._handle)
+    val _ret = __method_bind.getNodePath.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun setNodePath(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_node_path.call(this._handle, _arg, 1)
+    __method_bind.setNodePath.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptSceneNode(
      * Container for method_bind pointers for VisualScriptSceneNode
      */
     private object __method_bind {
-      val get_node_path: CPointer<godot_method_bind>
+      val getNodePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
-            "get_node_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_path" }
+            "getNodePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodePath" }
         }
-      val set_node_path: CPointer<godot_method_bind>
+      val setNodePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSceneNode".cstr.ptr,
-            "set_node_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_path" }
+            "setNodePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNodePath" }
         }}
   }
 }

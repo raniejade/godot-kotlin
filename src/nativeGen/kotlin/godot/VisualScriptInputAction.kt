@@ -18,24 +18,40 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptInputAction(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var action: String
+    get() {
+       return getActionName() 
+    }
+    set(value) {
+      setActionName(value)
+    }
+
+  var mode: Int
+    get() {
+       return VisualScriptInputAction.Mode.from(getActionMode()) 
+    }
+    set(value) {
+      setActionMode(VisualScriptInputAction.Mode.from(value))
+    }
+
   fun getActionMode(): Mode {
-    val _ret = __method_bind.get_action_mode.call(this._handle)
+    val _ret = __method_bind.getActionMode.call(this._handle)
     return VisualScriptInputAction.Mode.from(_ret.asInt())
   }
 
   fun getActionName(): String {
-    val _ret = __method_bind.get_action_name.call(this._handle)
+    val _ret = __method_bind.getActionName.call(this._handle)
     return _ret.asString()
   }
 
   fun setActionMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_action_mode.call(this._handle, _arg, 1)
+    __method_bind.setActionMode.call(this._handle, _arg, 1)
   }
 
   fun setActionName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_action_name.call(this._handle, _arg, 1)
+    __method_bind.setActionName.call(this._handle, _arg, 1)
   }
 
   enum class Mode(
@@ -84,33 +100,33 @@ open class VisualScriptInputAction(
      * Container for method_bind pointers for VisualScriptInputAction
      */
     private object __method_bind {
-      val get_action_mode: CPointer<godot_method_bind>
+      val getActionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "get_action_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_action_mode" }
+            "getActionMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getActionMode" }
         }
-      val get_action_name: CPointer<godot_method_bind>
+      val getActionName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "get_action_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_action_name" }
+            "getActionName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getActionName" }
         }
-      val set_action_mode: CPointer<godot_method_bind>
+      val setActionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "set_action_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_action_mode" }
+            "setActionMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setActionMode" }
         }
-      val set_action_name: CPointer<godot_method_bind>
+      val setActionName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptInputAction".cstr.ptr,
-            "set_action_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_action_name" }
+            "setActionName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setActionName" }
         }}
   }
 }

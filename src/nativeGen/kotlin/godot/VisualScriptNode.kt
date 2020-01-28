@@ -17,26 +17,34 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptNode(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var defaultInputValues: VariantArray
+    get() {
+       return _getDefaultInputValues() 
+    }
+    set(value) {
+      _setDefaultInputValues(value)
+    }
+
   fun getDefaultInputValue(portIdx: Int): Variant {
     val _arg = Variant.new(portIdx)
-    val _ret = __method_bind.get_default_input_value.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDefaultInputValue.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getVisualScript(): VisualScript {
-    val _ret = __method_bind.get_visual_script.call(this._handle)
+    val _ret = __method_bind.getVisualScript.call(this._handle)
     return _ret.asObject(::VisualScript)!!
   }
 
   fun portsChangedNotify() {
-    __method_bind.ports_changed_notify.call(this._handle)
+    __method_bind.portsChangedNotify.call(this._handle)
   }
 
   fun setDefaultInputValue(portIdx: Int, value: Variant) {
     val _args = VariantArray.new()
     _args.append(portIdx)
     _args.append(value)
-    __method_bind.set_default_input_value.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setDefaultInputValue.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -44,33 +52,33 @@ open class VisualScriptNode(
      * Container for method_bind pointers for VisualScriptNode
      */
     private object __method_bind {
-      val get_default_input_value: CPointer<godot_method_bind>
+      val getDefaultInputValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "get_default_input_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_input_value" }
+            "getDefaultInputValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDefaultInputValue" }
         }
-      val get_visual_script: CPointer<godot_method_bind>
+      val getVisualScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "get_visual_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_visual_script" }
+            "getVisualScript".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVisualScript" }
         }
-      val ports_changed_notify: CPointer<godot_method_bind>
+      val portsChangedNotify: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "ports_changed_notify".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method ports_changed_notify" }
+            "portsChangedNotify".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method portsChangedNotify" }
         }
-      val set_default_input_value: CPointer<godot_method_bind>
+      val setDefaultInputValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptNode".cstr.ptr,
-            "set_default_input_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_input_value" }
+            "setDefaultInputValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDefaultInputValue" }
         }}
   }
 }

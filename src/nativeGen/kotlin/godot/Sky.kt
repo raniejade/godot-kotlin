@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class Sky(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var radianceSize: Int
+    get() {
+       return Sky.RadianceSize.from(getRadianceSize()) 
+    }
+    set(value) {
+      setRadianceSize(Sky.RadianceSize.from(value))
+    }
+
   fun getRadianceSize(): RadianceSize {
-    val _ret = __method_bind.get_radiance_size.call(this._handle)
+    val _ret = __method_bind.getRadianceSize.call(this._handle)
     return Sky.RadianceSize.from(_ret.asInt())
   }
 
   fun setRadianceSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.set_radiance_size.call(this._handle, _arg, 1)
+    __method_bind.setRadianceSize.call(this._handle, _arg, 1)
   }
 
   enum class RadianceSize(
@@ -79,17 +87,17 @@ open class Sky(
      * Container for method_bind pointers for Sky
      */
     private object __method_bind {
-      val get_radiance_size: CPointer<godot_method_bind>
+      val getRadianceSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
-            "get_radiance_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radiance_size" }
+            "getRadianceSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRadianceSize" }
         }
-      val set_radiance_size: CPointer<godot_method_bind>
+      val setRadianceSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Sky".cstr.ptr,
-            "set_radiance_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radiance_size" }
+            "setRadianceSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRadianceSize" }
         }}
   }
 }

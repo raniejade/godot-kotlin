@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class ColorRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  var color: Color
+    get() {
+       return getFrameColor() 
+    }
+    set(value) {
+      setFrameColor(value)
+    }
+
   fun getFrameColor(): Color {
-    val _ret = __method_bind.get_frame_color.call(this._handle)
+    val _ret = __method_bind.getFrameColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun setFrameColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_frame_color.call(this._handle, _arg, 1)
+    __method_bind.setFrameColor.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,17 +49,17 @@ open class ColorRect(
      * Container for method_bind pointers for ColorRect
      */
     private object __method_bind {
-      val get_frame_color: CPointer<godot_method_bind>
+      val getFrameColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
-            "get_frame_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame_color" }
+            "getFrameColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrameColor" }
         }
-      val set_frame_color: CPointer<godot_method_bind>
+      val setFrameColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ColorRect".cstr.ptr,
-            "set_frame_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame_color" }
+            "setFrameColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrameColor" }
         }}
   }
 }

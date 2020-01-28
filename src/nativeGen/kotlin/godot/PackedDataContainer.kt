@@ -4,6 +4,7 @@ package godot
 import gdnative.godot_method_bind
 import godot.core.GDError
 import godot.core.Godot
+import godot.core.PoolByteArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
@@ -18,6 +19,14 @@ import kotlinx.cinterop.reinterpret
 open class PackedDataContainer(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var data: PoolByteArray
+    get() {
+       return _getData() 
+    }
+    set(value) {
+      _setData(value)
+    }
+
   fun pack(value: Variant): GDError {
     val _arg = Variant.new(value)
     val _ret = __method_bind.pack.call(this._handle, _arg, 1)

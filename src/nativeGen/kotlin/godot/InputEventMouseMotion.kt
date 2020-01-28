@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMouseMotion(
   _handle: COpaquePointer
 ) : InputEventMouse(_handle) {
+  var relative: Vector2
+    get() {
+       return getRelative() 
+    }
+    set(value) {
+      setRelative(value)
+    }
+
+  var speed: Vector2
+    get() {
+       return getSpeed() 
+    }
+    set(value) {
+      setSpeed(value)
+    }
+
   fun getRelative(): Vector2 {
-    val _ret = __method_bind.get_relative.call(this._handle)
+    val _ret = __method_bind.getRelative.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getSpeed(): Vector2 {
-    val _ret = __method_bind.get_speed.call(this._handle)
+    val _ret = __method_bind.getSpeed.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setRelative(relative: Vector2) {
     val _arg = Variant.new(relative)
-    __method_bind.set_relative.call(this._handle, _arg, 1)
+    __method_bind.setRelative.call(this._handle, _arg, 1)
   }
 
   fun setSpeed(speed: Vector2) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed.call(this._handle, _arg, 1)
+    __method_bind.setSpeed.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class InputEventMouseMotion(
      * Container for method_bind pointers for InputEventMouseMotion
      */
     private object __method_bind {
-      val get_relative: CPointer<godot_method_bind>
+      val getRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
-            "get_relative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_relative" }
+            "getRelative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRelative" }
         }
-      val get_speed: CPointer<godot_method_bind>
+      val getSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
-            "get_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed" }
+            "getSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeed" }
         }
-      val set_relative: CPointer<godot_method_bind>
+      val setRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
-            "set_relative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_relative" }
+            "setRelative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRelative" }
         }
-      val set_speed: CPointer<godot_method_bind>
+      val setSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouseMotion".cstr.ptr,
-            "set_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed" }
+            "setSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeed" }
         }}
   }
 }

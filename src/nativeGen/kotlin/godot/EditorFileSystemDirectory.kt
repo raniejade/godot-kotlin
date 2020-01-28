@@ -21,80 +21,80 @@ open class EditorFileSystemDirectory(
 ) : Object(_handle) {
   fun findDirIndex(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.find_dir_index.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findDirIndex.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun findFileIndex(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.find_file_index.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findFileIndex.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getFile(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_file.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFile.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getFileCount(): Int {
-    val _ret = __method_bind.get_file_count.call(this._handle)
+    val _ret = __method_bind.getFileCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFileImportIsValid(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_file_import_is_valid.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFileImportIsValid.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getFilePath(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_file_path.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFilePath.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getFileScriptClassExtends(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_file_script_class_extends.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFileScriptClassExtends.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getFileScriptClassName(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_file_script_class_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFileScriptClassName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getFileType(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_file_type.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFileType.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this._handle)
+    val _ret = __method_bind.getName.call(this._handle)
     return _ret.asString()
   }
 
   fun getParent(): EditorFileSystemDirectory {
-    val _ret = __method_bind.get_parent.call(this._handle)
+    val _ret = __method_bind.getParent.call(this._handle)
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
   fun getPath(): String {
-    val _ret = __method_bind.get_path.call(this._handle)
+    val _ret = __method_bind.getPath.call(this._handle)
     return _ret.asString()
   }
 
   fun getSubdir(idx: Int): EditorFileSystemDirectory {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_subdir.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSubdir.call(this._handle, _arg, 1)
     return _ret.asObject(::EditorFileSystemDirectory)!!
   }
 
   fun getSubdirCount(): Int {
-    val _ret = __method_bind.get_subdir_count.call(this._handle)
+    val _ret = __method_bind.getSubdirCount.call(this._handle)
     return _ret.asInt()
   }
 
@@ -113,103 +113,103 @@ open class EditorFileSystemDirectory(
      * Container for method_bind pointers for EditorFileSystemDirectory
      */
     private object __method_bind {
-      val find_dir_index: CPointer<godot_method_bind>
+      val findDirIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "find_dir_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_dir_index" }
+            "findDirIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findDirIndex" }
         }
-      val find_file_index: CPointer<godot_method_bind>
+      val findFileIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "find_file_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_file_index" }
+            "findFileIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findFileIndex" }
         }
-      val get_file: CPointer<godot_method_bind>
+      val getFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file" }
+            "getFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFile" }
         }
-      val get_file_count: CPointer<godot_method_bind>
+      val getFileCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_count" }
+            "getFileCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFileCount" }
         }
-      val get_file_import_is_valid: CPointer<godot_method_bind>
+      val getFileImportIsValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file_import_is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_import_is_valid" }
+            "getFileImportIsValid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFileImportIsValid" }
         }
-      val get_file_path: CPointer<godot_method_bind>
+      val getFilePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_path" }
+            "getFilePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFilePath" }
         }
-      val get_file_script_class_extends: CPointer<godot_method_bind>
+      val getFileScriptClassExtends: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file_script_class_extends".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_script_class_extends" }
+            "getFileScriptClassExtends".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFileScriptClassExtends" }
         }
-      val get_file_script_class_name: CPointer<godot_method_bind>
+      val getFileScriptClassName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file_script_class_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_script_class_name" }
+            "getFileScriptClassName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFileScriptClassName" }
         }
-      val get_file_type: CPointer<godot_method_bind>
+      val getFileType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_file_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_file_type" }
+            "getFileType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFileType" }
         }
-      val get_name: CPointer<godot_method_bind>
+      val getName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_name" }
+            "getName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getName" }
         }
-      val get_parent: CPointer<godot_method_bind>
+      val getParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_parent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_parent" }
+            "getParent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParent" }
         }
-      val get_path: CPointer<godot_method_bind>
+      val getPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_path" }
+            "getPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPath" }
         }
-      val get_subdir: CPointer<godot_method_bind>
+      val getSubdir: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_subdir".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdir" }
+            "getSubdir".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSubdir" }
         }
-      val get_subdir_count: CPointer<godot_method_bind>
+      val getSubdirCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorFileSystemDirectory".cstr.ptr,
-            "get_subdir_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdir_count" }
+            "getSubdirCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSubdirCount" }
         }}
   }
 }

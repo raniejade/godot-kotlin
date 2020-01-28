@@ -22,787 +22,1403 @@ import kotlinx.cinterop.reinterpret
 open class Environment(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var adjustmentBrightness: Float
+    get() {
+       return getAdjustmentBrightness() 
+    }
+    set(value) {
+      setAdjustmentBrightness(value)
+    }
+
+  var adjustmentColorCorrection: Texture
+    get() {
+       return getAdjustmentColorCorrection() 
+    }
+    set(value) {
+      setAdjustmentColorCorrection(value)
+    }
+
+  var adjustmentContrast: Float
+    get() {
+       return getAdjustmentContrast() 
+    }
+    set(value) {
+      setAdjustmentContrast(value)
+    }
+
+  var adjustmentEnabled: Boolean
+    get() {
+       return isAdjustmentEnabled() 
+    }
+    set(value) {
+      setAdjustmentEnable(value)
+    }
+
+  var adjustmentSaturation: Float
+    get() {
+       return getAdjustmentSaturation() 
+    }
+    set(value) {
+      setAdjustmentSaturation(value)
+    }
+
+  var ambientLightColor: Color
+    get() {
+       return getAmbientLightColor() 
+    }
+    set(value) {
+      setAmbientLightColor(value)
+    }
+
+  var ambientLightEnergy: Float
+    get() {
+       return getAmbientLightEnergy() 
+    }
+    set(value) {
+      setAmbientLightEnergy(value)
+    }
+
+  var ambientLightSkyContribution: Float
+    get() {
+       return getAmbientLightSkyContribution() 
+    }
+    set(value) {
+      setAmbientLightSkyContribution(value)
+    }
+
+  var autoExposureEnabled: Boolean
+    get() {
+       return getTonemapAutoExposure() 
+    }
+    set(value) {
+      setTonemapAutoExposure(value)
+    }
+
+  var autoExposureMaxLuma: Float
+    get() {
+       return getTonemapAutoExposureMax() 
+    }
+    set(value) {
+      setTonemapAutoExposureMax(value)
+    }
+
+  var autoExposureMinLuma: Float
+    get() {
+       return getTonemapAutoExposureMin() 
+    }
+    set(value) {
+      setTonemapAutoExposureMin(value)
+    }
+
+  var autoExposureScale: Float
+    get() {
+       return getTonemapAutoExposureGrey() 
+    }
+    set(value) {
+      setTonemapAutoExposureGrey(value)
+    }
+
+  var autoExposureSpeed: Float
+    get() {
+       return getTonemapAutoExposureSpeed() 
+    }
+    set(value) {
+      setTonemapAutoExposureSpeed(value)
+    }
+
+  var backgroundCameraFeedId: Int
+    get() {
+       return getCameraFeedId() 
+    }
+    set(value) {
+      setCameraFeedId(value)
+    }
+
+  var backgroundCanvasMaxLayer: Int
+    get() {
+       return getCanvasMaxLayer() 
+    }
+    set(value) {
+      setCanvasMaxLayer(value)
+    }
+
+  var backgroundColor: Color
+    get() {
+       return getBgColor() 
+    }
+    set(value) {
+      setBgColor(value)
+    }
+
+  var backgroundEnergy: Float
+    get() {
+       return getBgEnergy() 
+    }
+    set(value) {
+      setBgEnergy(value)
+    }
+
+  var backgroundMode: Int
+    get() {
+       return Environment.BGMode.from(getBackground()) 
+    }
+    set(value) {
+      setBackground(Environment.BGMode.from(value))
+    }
+
+  var backgroundSky: Sky
+    get() {
+       return getSky() 
+    }
+    set(value) {
+      setSky(value)
+    }
+
+  var backgroundSkyCustomFov: Float
+    get() {
+       return getSkyCustomFov() 
+    }
+    set(value) {
+      setSkyCustomFov(value)
+    }
+
+  var backgroundSkyOrientation: Basis
+    get() {
+       return getSkyOrientation() 
+    }
+    set(value) {
+      setSkyOrientation(value)
+    }
+
+  var backgroundSkyRotation: Vector3
+    get() {
+       return getSkyRotation() 
+    }
+    set(value) {
+      setSkyRotation(value)
+    }
+
+  var backgroundSkyRotationDegrees: Vector3
+    get() {
+       return getSkyRotationDegrees() 
+    }
+    set(value) {
+      setSkyRotationDegrees(value)
+    }
+
+  var dofBlurFarAmount: Float
+    get() {
+       return getDofBlurFarAmount() 
+    }
+    set(value) {
+      setDofBlurFarAmount(value)
+    }
+
+  var dofBlurFarDistance: Float
+    get() {
+       return getDofBlurFarDistance() 
+    }
+    set(value) {
+      setDofBlurFarDistance(value)
+    }
+
+  var dofBlurFarEnabled: Boolean
+    get() {
+       return isDofBlurFarEnabled() 
+    }
+    set(value) {
+      setDofBlurFarEnabled(value)
+    }
+
+  var dofBlurFarQuality: Int
+    get() {
+       return Environment.DOFBlurQuality.from(getDofBlurFarQuality()) 
+    }
+    set(value) {
+      setDofBlurFarQuality(Environment.DOFBlurQuality.from(value))
+    }
+
+  var dofBlurFarTransition: Float
+    get() {
+       return getDofBlurFarTransition() 
+    }
+    set(value) {
+      setDofBlurFarTransition(value)
+    }
+
+  var dofBlurNearAmount: Float
+    get() {
+       return getDofBlurNearAmount() 
+    }
+    set(value) {
+      setDofBlurNearAmount(value)
+    }
+
+  var dofBlurNearDistance: Float
+    get() {
+       return getDofBlurNearDistance() 
+    }
+    set(value) {
+      setDofBlurNearDistance(value)
+    }
+
+  var dofBlurNearEnabled: Boolean
+    get() {
+       return isDofBlurNearEnabled() 
+    }
+    set(value) {
+      setDofBlurNearEnabled(value)
+    }
+
+  var dofBlurNearQuality: Int
+    get() {
+       return Environment.DOFBlurQuality.from(getDofBlurNearQuality()) 
+    }
+    set(value) {
+      setDofBlurNearQuality(Environment.DOFBlurQuality.from(value))
+    }
+
+  var dofBlurNearTransition: Float
+    get() {
+       return getDofBlurNearTransition() 
+    }
+    set(value) {
+      setDofBlurNearTransition(value)
+    }
+
+  var fogColor: Color
+    get() {
+       return getFogColor() 
+    }
+    set(value) {
+      setFogColor(value)
+    }
+
+  var fogDepthBegin: Float
+    get() {
+       return getFogDepthBegin() 
+    }
+    set(value) {
+      setFogDepthBegin(value)
+    }
+
+  var fogDepthCurve: Float
+    get() {
+       return getFogDepthCurve() 
+    }
+    set(value) {
+      setFogDepthCurve(value)
+    }
+
+  var fogDepthEnabled: Boolean
+    get() {
+       return isFogDepthEnabled() 
+    }
+    set(value) {
+      setFogDepthEnabled(value)
+    }
+
+  var fogDepthEnd: Float
+    get() {
+       return getFogDepthEnd() 
+    }
+    set(value) {
+      setFogDepthEnd(value)
+    }
+
+  var fogEnabled: Boolean
+    get() {
+       return isFogEnabled() 
+    }
+    set(value) {
+      setFogEnabled(value)
+    }
+
+  var fogHeightCurve: Float
+    get() {
+       return getFogHeightCurve() 
+    }
+    set(value) {
+      setFogHeightCurve(value)
+    }
+
+  var fogHeightEnabled: Boolean
+    get() {
+       return isFogHeightEnabled() 
+    }
+    set(value) {
+      setFogHeightEnabled(value)
+    }
+
+  var fogHeightMax: Float
+    get() {
+       return getFogHeightMax() 
+    }
+    set(value) {
+      setFogHeightMax(value)
+    }
+
+  var fogHeightMin: Float
+    get() {
+       return getFogHeightMin() 
+    }
+    set(value) {
+      setFogHeightMin(value)
+    }
+
+  var fogSunAmount: Float
+    get() {
+       return getFogSunAmount() 
+    }
+    set(value) {
+      setFogSunAmount(value)
+    }
+
+  var fogSunColor: Color
+    get() {
+       return getFogSunColor() 
+    }
+    set(value) {
+      setFogSunColor(value)
+    }
+
+  var fogTransmitCurve: Float
+    get() {
+       return getFogTransmitCurve() 
+    }
+    set(value) {
+      setFogTransmitCurve(value)
+    }
+
+  var fogTransmitEnabled: Boolean
+    get() {
+       return isFogTransmitEnabled() 
+    }
+    set(value) {
+      setFogTransmitEnabled(value)
+    }
+
+  var glowBicubicUpscale: Boolean
+    get() {
+       return isGlowBicubicUpscaleEnabled() 
+    }
+    set(value) {
+      setGlowBicubicUpscale(value)
+    }
+
+  var glowBlendMode: Int
+    get() {
+       return Environment.GlowBlendMode.from(getGlowBlendMode()) 
+    }
+    set(value) {
+      setGlowBlendMode(Environment.GlowBlendMode.from(value))
+    }
+
+  var glowBloom: Float
+    get() {
+       return getGlowBloom() 
+    }
+    set(value) {
+      setGlowBloom(value)
+    }
+
+  var glowEnabled: Boolean
+    get() {
+       return isGlowEnabled() 
+    }
+    set(value) {
+      setGlowEnabled(value)
+    }
+
+  var glowHdrLuminanceCap: Float
+    get() {
+       return getGlowHdrLuminanceCap() 
+    }
+    set(value) {
+      setGlowHdrLuminanceCap(value)
+    }
+
+  var glowHdrScale: Float
+    get() {
+       return getGlowHdrBleedScale() 
+    }
+    set(value) {
+      setGlowHdrBleedScale(value)
+    }
+
+  var glowHdrThreshold: Float
+    get() {
+       return getGlowHdrBleedThreshold() 
+    }
+    set(value) {
+      setGlowHdrBleedThreshold(value)
+    }
+
+  var glowIntensity: Float
+    get() {
+       return getGlowIntensity() 
+    }
+    set(value) {
+      setGlowIntensity(value)
+    }
+
+  var glowStrength: Float
+    get() {
+       return getGlowStrength() 
+    }
+    set(value) {
+      setGlowStrength(value)
+    }
+
+  var ssReflectionsDepthTolerance: Float
+    get() {
+       return getSsrDepthTolerance() 
+    }
+    set(value) {
+      setSsrDepthTolerance(value)
+    }
+
+  var ssReflectionsEnabled: Boolean
+    get() {
+       return isSsrEnabled() 
+    }
+    set(value) {
+      setSsrEnabled(value)
+    }
+
+  var ssReflectionsFadeIn: Float
+    get() {
+       return getSsrFadeIn() 
+    }
+    set(value) {
+      setSsrFadeIn(value)
+    }
+
+  var ssReflectionsFadeOut: Float
+    get() {
+       return getSsrFadeOut() 
+    }
+    set(value) {
+      setSsrFadeOut(value)
+    }
+
+  var ssReflectionsMaxSteps: Int
+    get() {
+       return getSsrMaxSteps() 
+    }
+    set(value) {
+      setSsrMaxSteps(value)
+    }
+
+  var ssReflectionsRoughness: Boolean
+    get() {
+       return isSsrRough() 
+    }
+    set(value) {
+      setSsrRough(value)
+    }
+
+  var ssaoAoChannelAffect: Float
+    get() {
+       return getSsaoAoChannelAffect() 
+    }
+    set(value) {
+      setSsaoAoChannelAffect(value)
+    }
+
+  var ssaoBias: Float
+    get() {
+       return getSsaoBias() 
+    }
+    set(value) {
+      setSsaoBias(value)
+    }
+
+  var ssaoBlur: Int
+    get() {
+       return Environment.SSAOBlur.from(getSsaoBlur()) 
+    }
+    set(value) {
+      setSsaoBlur(Environment.SSAOBlur.from(value))
+    }
+
+  var ssaoColor: Color
+    get() {
+       return getSsaoColor() 
+    }
+    set(value) {
+      setSsaoColor(value)
+    }
+
+  var ssaoEdgeSharpness: Float
+    get() {
+       return getSsaoEdgeSharpness() 
+    }
+    set(value) {
+      setSsaoEdgeSharpness(value)
+    }
+
+  var ssaoEnabled: Boolean
+    get() {
+       return isSsaoEnabled() 
+    }
+    set(value) {
+      setSsaoEnabled(value)
+    }
+
+  var ssaoIntensity: Float
+    get() {
+       return getSsaoIntensity() 
+    }
+    set(value) {
+      setSsaoIntensity(value)
+    }
+
+  var ssaoIntensity2: Float
+    get() {
+       return getSsaoIntensity2() 
+    }
+    set(value) {
+      setSsaoIntensity2(value)
+    }
+
+  var ssaoLightAffect: Float
+    get() {
+       return getSsaoDirectLightAffect() 
+    }
+    set(value) {
+      setSsaoDirectLightAffect(value)
+    }
+
+  var ssaoQuality: Int
+    get() {
+       return Environment.SSAOQuality.from(getSsaoQuality()) 
+    }
+    set(value) {
+      setSsaoQuality(Environment.SSAOQuality.from(value))
+    }
+
+  var ssaoRadius: Float
+    get() {
+       return getSsaoRadius() 
+    }
+    set(value) {
+      setSsaoRadius(value)
+    }
+
+  var ssaoRadius2: Float
+    get() {
+       return getSsaoRadius2() 
+    }
+    set(value) {
+      setSsaoRadius2(value)
+    }
+
+  var tonemapExposure: Float
+    get() {
+       return getTonemapExposure() 
+    }
+    set(value) {
+      setTonemapExposure(value)
+    }
+
+  var tonemapMode: Int
+    get() {
+       return Environment.ToneMapper.from(getTonemapper()) 
+    }
+    set(value) {
+      setTonemapper(Environment.ToneMapper.from(value))
+    }
+
+  var tonemapWhite: Float
+    get() {
+       return getTonemapWhite() 
+    }
+    set(value) {
+      setTonemapWhite(value)
+    }
+
   fun getAdjustmentBrightness(): Float {
-    val _ret = __method_bind.get_adjustment_brightness.call(this._handle)
+    val _ret = __method_bind.getAdjustmentBrightness.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getAdjustmentColorCorrection(): Texture {
-    val _ret = __method_bind.get_adjustment_color_correction.call(this._handle)
+    val _ret = __method_bind.getAdjustmentColorCorrection.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getAdjustmentContrast(): Float {
-    val _ret = __method_bind.get_adjustment_contrast.call(this._handle)
+    val _ret = __method_bind.getAdjustmentContrast.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getAdjustmentSaturation(): Float {
-    val _ret = __method_bind.get_adjustment_saturation.call(this._handle)
+    val _ret = __method_bind.getAdjustmentSaturation.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getAmbientLightColor(): Color {
-    val _ret = __method_bind.get_ambient_light_color.call(this._handle)
+    val _ret = __method_bind.getAmbientLightColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getAmbientLightEnergy(): Float {
-    val _ret = __method_bind.get_ambient_light_energy.call(this._handle)
+    val _ret = __method_bind.getAmbientLightEnergy.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getAmbientLightSkyContribution(): Float {
-    val _ret = __method_bind.get_ambient_light_sky_contribution.call(this._handle)
+    val _ret = __method_bind.getAmbientLightSkyContribution.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getBackground(): BGMode {
-    val _ret = __method_bind.get_background.call(this._handle)
+    val _ret = __method_bind.getBackground.call(this._handle)
     return Environment.BGMode.from(_ret.asInt())
   }
 
   fun getBgColor(): Color {
-    val _ret = __method_bind.get_bg_color.call(this._handle)
+    val _ret = __method_bind.getBgColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getBgEnergy(): Float {
-    val _ret = __method_bind.get_bg_energy.call(this._handle)
+    val _ret = __method_bind.getBgEnergy.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getCameraFeedId(): Int {
-    val _ret = __method_bind.get_camera_feed_id.call(this._handle)
+    val _ret = __method_bind.getCameraFeedId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCanvasMaxLayer(): Int {
-    val _ret = __method_bind.get_canvas_max_layer.call(this._handle)
+    val _ret = __method_bind.getCanvasMaxLayer.call(this._handle)
     return _ret.asInt()
   }
 
   fun getDofBlurFarAmount(): Float {
-    val _ret = __method_bind.get_dof_blur_far_amount.call(this._handle)
+    val _ret = __method_bind.getDofBlurFarAmount.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDofBlurFarDistance(): Float {
-    val _ret = __method_bind.get_dof_blur_far_distance.call(this._handle)
+    val _ret = __method_bind.getDofBlurFarDistance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDofBlurFarQuality(): DOFBlurQuality {
-    val _ret = __method_bind.get_dof_blur_far_quality.call(this._handle)
+    val _ret = __method_bind.getDofBlurFarQuality.call(this._handle)
     return Environment.DOFBlurQuality.from(_ret.asInt())
   }
 
   fun getDofBlurFarTransition(): Float {
-    val _ret = __method_bind.get_dof_blur_far_transition.call(this._handle)
+    val _ret = __method_bind.getDofBlurFarTransition.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDofBlurNearAmount(): Float {
-    val _ret = __method_bind.get_dof_blur_near_amount.call(this._handle)
+    val _ret = __method_bind.getDofBlurNearAmount.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDofBlurNearDistance(): Float {
-    val _ret = __method_bind.get_dof_blur_near_distance.call(this._handle)
+    val _ret = __method_bind.getDofBlurNearDistance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDofBlurNearQuality(): DOFBlurQuality {
-    val _ret = __method_bind.get_dof_blur_near_quality.call(this._handle)
+    val _ret = __method_bind.getDofBlurNearQuality.call(this._handle)
     return Environment.DOFBlurQuality.from(_ret.asInt())
   }
 
   fun getDofBlurNearTransition(): Float {
-    val _ret = __method_bind.get_dof_blur_near_transition.call(this._handle)
+    val _ret = __method_bind.getDofBlurNearTransition.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogColor(): Color {
-    val _ret = __method_bind.get_fog_color.call(this._handle)
+    val _ret = __method_bind.getFogColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getFogDepthBegin(): Float {
-    val _ret = __method_bind.get_fog_depth_begin.call(this._handle)
+    val _ret = __method_bind.getFogDepthBegin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogDepthCurve(): Float {
-    val _ret = __method_bind.get_fog_depth_curve.call(this._handle)
+    val _ret = __method_bind.getFogDepthCurve.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogDepthEnd(): Float {
-    val _ret = __method_bind.get_fog_depth_end.call(this._handle)
+    val _ret = __method_bind.getFogDepthEnd.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogHeightCurve(): Float {
-    val _ret = __method_bind.get_fog_height_curve.call(this._handle)
+    val _ret = __method_bind.getFogHeightCurve.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogHeightMax(): Float {
-    val _ret = __method_bind.get_fog_height_max.call(this._handle)
+    val _ret = __method_bind.getFogHeightMax.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogHeightMin(): Float {
-    val _ret = __method_bind.get_fog_height_min.call(this._handle)
+    val _ret = __method_bind.getFogHeightMin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogSunAmount(): Float {
-    val _ret = __method_bind.get_fog_sun_amount.call(this._handle)
+    val _ret = __method_bind.getFogSunAmount.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFogSunColor(): Color {
-    val _ret = __method_bind.get_fog_sun_color.call(this._handle)
+    val _ret = __method_bind.getFogSunColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getFogTransmitCurve(): Float {
-    val _ret = __method_bind.get_fog_transmit_curve.call(this._handle)
+    val _ret = __method_bind.getFogTransmitCurve.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGlowBlendMode(): GlowBlendMode {
-    val _ret = __method_bind.get_glow_blend_mode.call(this._handle)
+    val _ret = __method_bind.getGlowBlendMode.call(this._handle)
     return Environment.GlowBlendMode.from(_ret.asInt())
   }
 
   fun getGlowBloom(): Float {
-    val _ret = __method_bind.get_glow_bloom.call(this._handle)
+    val _ret = __method_bind.getGlowBloom.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGlowHdrBleedScale(): Float {
-    val _ret = __method_bind.get_glow_hdr_bleed_scale.call(this._handle)
+    val _ret = __method_bind.getGlowHdrBleedScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGlowHdrBleedThreshold(): Float {
-    val _ret = __method_bind.get_glow_hdr_bleed_threshold.call(this._handle)
+    val _ret = __method_bind.getGlowHdrBleedThreshold.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGlowHdrLuminanceCap(): Float {
-    val _ret = __method_bind.get_glow_hdr_luminance_cap.call(this._handle)
+    val _ret = __method_bind.getGlowHdrLuminanceCap.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGlowIntensity(): Float {
-    val _ret = __method_bind.get_glow_intensity.call(this._handle)
+    val _ret = __method_bind.getGlowIntensity.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGlowStrength(): Float {
-    val _ret = __method_bind.get_glow_strength.call(this._handle)
+    val _ret = __method_bind.getGlowStrength.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSky(): Sky {
-    val _ret = __method_bind.get_sky.call(this._handle)
+    val _ret = __method_bind.getSky.call(this._handle)
     return _ret.asObject(::Sky)!!
   }
 
   fun getSkyCustomFov(): Float {
-    val _ret = __method_bind.get_sky_custom_fov.call(this._handle)
+    val _ret = __method_bind.getSkyCustomFov.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSkyOrientation(): Basis {
-    val _ret = __method_bind.get_sky_orientation.call(this._handle)
+    val _ret = __method_bind.getSkyOrientation.call(this._handle)
     return _ret.asBasis()
   }
 
   fun getSkyRotation(): Vector3 {
-    val _ret = __method_bind.get_sky_rotation.call(this._handle)
+    val _ret = __method_bind.getSkyRotation.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getSkyRotationDegrees(): Vector3 {
-    val _ret = __method_bind.get_sky_rotation_degrees.call(this._handle)
+    val _ret = __method_bind.getSkyRotationDegrees.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getSsaoAoChannelAffect(): Float {
-    val _ret = __method_bind.get_ssao_ao_channel_affect.call(this._handle)
+    val _ret = __method_bind.getSsaoAoChannelAffect.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoBias(): Float {
-    val _ret = __method_bind.get_ssao_bias.call(this._handle)
+    val _ret = __method_bind.getSsaoBias.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoBlur(): SSAOBlur {
-    val _ret = __method_bind.get_ssao_blur.call(this._handle)
+    val _ret = __method_bind.getSsaoBlur.call(this._handle)
     return Environment.SSAOBlur.from(_ret.asInt())
   }
 
   fun getSsaoColor(): Color {
-    val _ret = __method_bind.get_ssao_color.call(this._handle)
+    val _ret = __method_bind.getSsaoColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getSsaoDirectLightAffect(): Float {
-    val _ret = __method_bind.get_ssao_direct_light_affect.call(this._handle)
+    val _ret = __method_bind.getSsaoDirectLightAffect.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoEdgeSharpness(): Float {
-    val _ret = __method_bind.get_ssao_edge_sharpness.call(this._handle)
+    val _ret = __method_bind.getSsaoEdgeSharpness.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoIntensity(): Float {
-    val _ret = __method_bind.get_ssao_intensity.call(this._handle)
+    val _ret = __method_bind.getSsaoIntensity.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoIntensity2(): Float {
-    val _ret = __method_bind.get_ssao_intensity2.call(this._handle)
+    val _ret = __method_bind.getSsaoIntensity2.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoQuality(): SSAOQuality {
-    val _ret = __method_bind.get_ssao_quality.call(this._handle)
+    val _ret = __method_bind.getSsaoQuality.call(this._handle)
     return Environment.SSAOQuality.from(_ret.asInt())
   }
 
   fun getSsaoRadius(): Float {
-    val _ret = __method_bind.get_ssao_radius.call(this._handle)
+    val _ret = __method_bind.getSsaoRadius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsaoRadius2(): Float {
-    val _ret = __method_bind.get_ssao_radius2.call(this._handle)
+    val _ret = __method_bind.getSsaoRadius2.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsrDepthTolerance(): Float {
-    val _ret = __method_bind.get_ssr_depth_tolerance.call(this._handle)
+    val _ret = __method_bind.getSsrDepthTolerance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsrFadeIn(): Float {
-    val _ret = __method_bind.get_ssr_fade_in.call(this._handle)
+    val _ret = __method_bind.getSsrFadeIn.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsrFadeOut(): Float {
-    val _ret = __method_bind.get_ssr_fade_out.call(this._handle)
+    val _ret = __method_bind.getSsrFadeOut.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSsrMaxSteps(): Int {
-    val _ret = __method_bind.get_ssr_max_steps.call(this._handle)
+    val _ret = __method_bind.getSsrMaxSteps.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTonemapAutoExposure(): Boolean {
-    val _ret = __method_bind.get_tonemap_auto_exposure.call(this._handle)
+    val _ret = __method_bind.getTonemapAutoExposure.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getTonemapAutoExposureGrey(): Float {
-    val _ret = __method_bind.get_tonemap_auto_exposure_grey.call(this._handle)
+    val _ret = __method_bind.getTonemapAutoExposureGrey.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTonemapAutoExposureMax(): Float {
-    val _ret = __method_bind.get_tonemap_auto_exposure_max.call(this._handle)
+    val _ret = __method_bind.getTonemapAutoExposureMax.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTonemapAutoExposureMin(): Float {
-    val _ret = __method_bind.get_tonemap_auto_exposure_min.call(this._handle)
+    val _ret = __method_bind.getTonemapAutoExposureMin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTonemapAutoExposureSpeed(): Float {
-    val _ret = __method_bind.get_tonemap_auto_exposure_speed.call(this._handle)
+    val _ret = __method_bind.getTonemapAutoExposureSpeed.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTonemapExposure(): Float {
-    val _ret = __method_bind.get_tonemap_exposure.call(this._handle)
+    val _ret = __method_bind.getTonemapExposure.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTonemapWhite(): Float {
-    val _ret = __method_bind.get_tonemap_white.call(this._handle)
+    val _ret = __method_bind.getTonemapWhite.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTonemapper(): ToneMapper {
-    val _ret = __method_bind.get_tonemapper.call(this._handle)
+    val _ret = __method_bind.getTonemapper.call(this._handle)
     return Environment.ToneMapper.from(_ret.asInt())
   }
 
   fun isAdjustmentEnabled(): Boolean {
-    val _ret = __method_bind.is_adjustment_enabled.call(this._handle)
+    val _ret = __method_bind.isAdjustmentEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDofBlurFarEnabled(): Boolean {
-    val _ret = __method_bind.is_dof_blur_far_enabled.call(this._handle)
+    val _ret = __method_bind.isDofBlurFarEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDofBlurNearEnabled(): Boolean {
-    val _ret = __method_bind.is_dof_blur_near_enabled.call(this._handle)
+    val _ret = __method_bind.isDofBlurNearEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isFogDepthEnabled(): Boolean {
-    val _ret = __method_bind.is_fog_depth_enabled.call(this._handle)
+    val _ret = __method_bind.isFogDepthEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isFogEnabled(): Boolean {
-    val _ret = __method_bind.is_fog_enabled.call(this._handle)
+    val _ret = __method_bind.isFogEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isFogHeightEnabled(): Boolean {
-    val _ret = __method_bind.is_fog_height_enabled.call(this._handle)
+    val _ret = __method_bind.isFogHeightEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isFogTransmitEnabled(): Boolean {
-    val _ret = __method_bind.is_fog_transmit_enabled.call(this._handle)
+    val _ret = __method_bind.isFogTransmitEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isGlowBicubicUpscaleEnabled(): Boolean {
-    val _ret = __method_bind.is_glow_bicubic_upscale_enabled.call(this._handle)
+    val _ret = __method_bind.isGlowBicubicUpscaleEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isGlowEnabled(): Boolean {
-    val _ret = __method_bind.is_glow_enabled.call(this._handle)
+    val _ret = __method_bind.isGlowEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isGlowLevelEnabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_glow_level_enabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isGlowLevelEnabled.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isSsaoEnabled(): Boolean {
-    val _ret = __method_bind.is_ssao_enabled.call(this._handle)
+    val _ret = __method_bind.isSsaoEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isSsrEnabled(): Boolean {
-    val _ret = __method_bind.is_ssr_enabled.call(this._handle)
+    val _ret = __method_bind.isSsrEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isSsrRough(): Boolean {
-    val _ret = __method_bind.is_ssr_rough.call(this._handle)
+    val _ret = __method_bind.isSsrRough.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAdjustmentBrightness(brightness: Float) {
     val _arg = Variant.new(brightness)
-    __method_bind.set_adjustment_brightness.call(this._handle, _arg, 1)
+    __method_bind.setAdjustmentBrightness.call(this._handle, _arg, 1)
   }
 
   fun setAdjustmentColorCorrection(colorCorrection: Texture) {
     val _arg = Variant.new(colorCorrection)
-    __method_bind.set_adjustment_color_correction.call(this._handle, _arg, 1)
+    __method_bind.setAdjustmentColorCorrection.call(this._handle, _arg, 1)
   }
 
   fun setAdjustmentContrast(contrast: Float) {
     val _arg = Variant.new(contrast)
-    __method_bind.set_adjustment_contrast.call(this._handle, _arg, 1)
+    __method_bind.setAdjustmentContrast.call(this._handle, _arg, 1)
   }
 
   fun setAdjustmentEnable(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_adjustment_enable.call(this._handle, _arg, 1)
+    __method_bind.setAdjustmentEnable.call(this._handle, _arg, 1)
   }
 
   fun setAdjustmentSaturation(saturation: Float) {
     val _arg = Variant.new(saturation)
-    __method_bind.set_adjustment_saturation.call(this._handle, _arg, 1)
+    __method_bind.setAdjustmentSaturation.call(this._handle, _arg, 1)
   }
 
   fun setAmbientLightColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_ambient_light_color.call(this._handle, _arg, 1)
+    __method_bind.setAmbientLightColor.call(this._handle, _arg, 1)
   }
 
   fun setAmbientLightEnergy(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.set_ambient_light_energy.call(this._handle, _arg, 1)
+    __method_bind.setAmbientLightEnergy.call(this._handle, _arg, 1)
   }
 
   fun setAmbientLightSkyContribution(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.set_ambient_light_sky_contribution.call(this._handle, _arg, 1)
+    __method_bind.setAmbientLightSkyContribution.call(this._handle, _arg, 1)
   }
 
   fun setBackground(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_background.call(this._handle, _arg, 1)
+    __method_bind.setBackground.call(this._handle, _arg, 1)
   }
 
   fun setBgColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_bg_color.call(this._handle, _arg, 1)
+    __method_bind.setBgColor.call(this._handle, _arg, 1)
   }
 
   fun setBgEnergy(energy: Float) {
     val _arg = Variant.new(energy)
-    __method_bind.set_bg_energy.call(this._handle, _arg, 1)
+    __method_bind.setBgEnergy.call(this._handle, _arg, 1)
   }
 
   fun setCameraFeedId(cameraFeedId: Int) {
     val _arg = Variant.new(cameraFeedId)
-    __method_bind.set_camera_feed_id.call(this._handle, _arg, 1)
+    __method_bind.setCameraFeedId.call(this._handle, _arg, 1)
   }
 
   fun setCanvasMaxLayer(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.set_canvas_max_layer.call(this._handle, _arg, 1)
+    __method_bind.setCanvasMaxLayer.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurFarAmount(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_far_amount.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurFarAmount.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurFarDistance(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_far_distance.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurFarDistance.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurFarEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_dof_blur_far_enabled.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurFarEnabled.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurFarQuality(intensity: Int) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_far_quality.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurFarQuality.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurFarTransition(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_far_transition.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurFarTransition.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurNearAmount(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_near_amount.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurNearAmount.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurNearDistance(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_near_distance.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurNearDistance.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurNearEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_dof_blur_near_enabled.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurNearEnabled.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurNearQuality(level: Int) {
     val _arg = Variant.new(level)
-    __method_bind.set_dof_blur_near_quality.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurNearQuality.call(this._handle, _arg, 1)
   }
 
   fun setDofBlurNearTransition(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_dof_blur_near_transition.call(this._handle, _arg, 1)
+    __method_bind.setDofBlurNearTransition.call(this._handle, _arg, 1)
   }
 
   fun setFogColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_fog_color.call(this._handle, _arg, 1)
+    __method_bind.setFogColor.call(this._handle, _arg, 1)
   }
 
   fun setFogDepthBegin(distance: Float) {
     val _arg = Variant.new(distance)
-    __method_bind.set_fog_depth_begin.call(this._handle, _arg, 1)
+    __method_bind.setFogDepthBegin.call(this._handle, _arg, 1)
   }
 
   fun setFogDepthCurve(curve: Float) {
     val _arg = Variant.new(curve)
-    __method_bind.set_fog_depth_curve.call(this._handle, _arg, 1)
+    __method_bind.setFogDepthCurve.call(this._handle, _arg, 1)
   }
 
   fun setFogDepthEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_fog_depth_enabled.call(this._handle, _arg, 1)
+    __method_bind.setFogDepthEnabled.call(this._handle, _arg, 1)
   }
 
   fun setFogDepthEnd(distance: Float) {
     val _arg = Variant.new(distance)
-    __method_bind.set_fog_depth_end.call(this._handle, _arg, 1)
+    __method_bind.setFogDepthEnd.call(this._handle, _arg, 1)
   }
 
   fun setFogEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_fog_enabled.call(this._handle, _arg, 1)
+    __method_bind.setFogEnabled.call(this._handle, _arg, 1)
   }
 
   fun setFogHeightCurve(curve: Float) {
     val _arg = Variant.new(curve)
-    __method_bind.set_fog_height_curve.call(this._handle, _arg, 1)
+    __method_bind.setFogHeightCurve.call(this._handle, _arg, 1)
   }
 
   fun setFogHeightEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_fog_height_enabled.call(this._handle, _arg, 1)
+    __method_bind.setFogHeightEnabled.call(this._handle, _arg, 1)
   }
 
   fun setFogHeightMax(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_fog_height_max.call(this._handle, _arg, 1)
+    __method_bind.setFogHeightMax.call(this._handle, _arg, 1)
   }
 
   fun setFogHeightMin(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_fog_height_min.call(this._handle, _arg, 1)
+    __method_bind.setFogHeightMin.call(this._handle, _arg, 1)
   }
 
   fun setFogSunAmount(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_fog_sun_amount.call(this._handle, _arg, 1)
+    __method_bind.setFogSunAmount.call(this._handle, _arg, 1)
   }
 
   fun setFogSunColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_fog_sun_color.call(this._handle, _arg, 1)
+    __method_bind.setFogSunColor.call(this._handle, _arg, 1)
   }
 
   fun setFogTransmitCurve(curve: Float) {
     val _arg = Variant.new(curve)
-    __method_bind.set_fog_transmit_curve.call(this._handle, _arg, 1)
+    __method_bind.setFogTransmitCurve.call(this._handle, _arg, 1)
   }
 
   fun setFogTransmitEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_fog_transmit_enabled.call(this._handle, _arg, 1)
+    __method_bind.setFogTransmitEnabled.call(this._handle, _arg, 1)
   }
 
   fun setGlowBicubicUpscale(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_glow_bicubic_upscale.call(this._handle, _arg, 1)
+    __method_bind.setGlowBicubicUpscale.call(this._handle, _arg, 1)
   }
 
   fun setGlowBlendMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_glow_blend_mode.call(this._handle, _arg, 1)
+    __method_bind.setGlowBlendMode.call(this._handle, _arg, 1)
   }
 
   fun setGlowBloom(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_glow_bloom.call(this._handle, _arg, 1)
+    __method_bind.setGlowBloom.call(this._handle, _arg, 1)
   }
 
   fun setGlowEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_glow_enabled.call(this._handle, _arg, 1)
+    __method_bind.setGlowEnabled.call(this._handle, _arg, 1)
   }
 
   fun setGlowHdrBleedScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.set_glow_hdr_bleed_scale.call(this._handle, _arg, 1)
+    __method_bind.setGlowHdrBleedScale.call(this._handle, _arg, 1)
   }
 
   fun setGlowHdrBleedThreshold(threshold: Float) {
     val _arg = Variant.new(threshold)
-    __method_bind.set_glow_hdr_bleed_threshold.call(this._handle, _arg, 1)
+    __method_bind.setGlowHdrBleedThreshold.call(this._handle, _arg, 1)
   }
 
   fun setGlowHdrLuminanceCap(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_glow_hdr_luminance_cap.call(this._handle, _arg, 1)
+    __method_bind.setGlowHdrLuminanceCap.call(this._handle, _arg, 1)
   }
 
   fun setGlowIntensity(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_glow_intensity.call(this._handle, _arg, 1)
+    __method_bind.setGlowIntensity.call(this._handle, _arg, 1)
   }
 
   fun setGlowLevel(idx: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(enabled)
-    __method_bind.set_glow_level.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setGlowLevel.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setGlowStrength(strength: Float) {
     val _arg = Variant.new(strength)
-    __method_bind.set_glow_strength.call(this._handle, _arg, 1)
+    __method_bind.setGlowStrength.call(this._handle, _arg, 1)
   }
 
   fun setSky(sky: Sky) {
     val _arg = Variant.new(sky)
-    __method_bind.set_sky.call(this._handle, _arg, 1)
+    __method_bind.setSky.call(this._handle, _arg, 1)
   }
 
   fun setSkyCustomFov(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.set_sky_custom_fov.call(this._handle, _arg, 1)
+    __method_bind.setSkyCustomFov.call(this._handle, _arg, 1)
   }
 
   fun setSkyOrientation(orientation: Basis) {
     val _arg = Variant.new(orientation)
-    __method_bind.set_sky_orientation.call(this._handle, _arg, 1)
+    __method_bind.setSkyOrientation.call(this._handle, _arg, 1)
   }
 
   fun setSkyRotation(eulerRadians: Vector3) {
     val _arg = Variant.new(eulerRadians)
-    __method_bind.set_sky_rotation.call(this._handle, _arg, 1)
+    __method_bind.setSkyRotation.call(this._handle, _arg, 1)
   }
 
   fun setSkyRotationDegrees(eulerDegrees: Vector3) {
     val _arg = Variant.new(eulerDegrees)
-    __method_bind.set_sky_rotation_degrees.call(this._handle, _arg, 1)
+    __method_bind.setSkyRotationDegrees.call(this._handle, _arg, 1)
   }
 
   fun setSsaoAoChannelAffect(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_ssao_ao_channel_affect.call(this._handle, _arg, 1)
+    __method_bind.setSsaoAoChannelAffect.call(this._handle, _arg, 1)
   }
 
   fun setSsaoBias(bias: Float) {
     val _arg = Variant.new(bias)
-    __method_bind.set_ssao_bias.call(this._handle, _arg, 1)
+    __method_bind.setSsaoBias.call(this._handle, _arg, 1)
   }
 
   fun setSsaoBlur(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_ssao_blur.call(this._handle, _arg, 1)
+    __method_bind.setSsaoBlur.call(this._handle, _arg, 1)
   }
 
   fun setSsaoColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_ssao_color.call(this._handle, _arg, 1)
+    __method_bind.setSsaoColor.call(this._handle, _arg, 1)
   }
 
   fun setSsaoDirectLightAffect(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_ssao_direct_light_affect.call(this._handle, _arg, 1)
+    __method_bind.setSsaoDirectLightAffect.call(this._handle, _arg, 1)
   }
 
   fun setSsaoEdgeSharpness(edgeSharpness: Float) {
     val _arg = Variant.new(edgeSharpness)
-    __method_bind.set_ssao_edge_sharpness.call(this._handle, _arg, 1)
+    __method_bind.setSsaoEdgeSharpness.call(this._handle, _arg, 1)
   }
 
   fun setSsaoEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_ssao_enabled.call(this._handle, _arg, 1)
+    __method_bind.setSsaoEnabled.call(this._handle, _arg, 1)
   }
 
   fun setSsaoIntensity(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_ssao_intensity.call(this._handle, _arg, 1)
+    __method_bind.setSsaoIntensity.call(this._handle, _arg, 1)
   }
 
   fun setSsaoIntensity2(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_ssao_intensity2.call(this._handle, _arg, 1)
+    __method_bind.setSsaoIntensity2.call(this._handle, _arg, 1)
   }
 
   fun setSsaoQuality(quality: Int) {
     val _arg = Variant.new(quality)
-    __method_bind.set_ssao_quality.call(this._handle, _arg, 1)
+    __method_bind.setSsaoQuality.call(this._handle, _arg, 1)
   }
 
   fun setSsaoRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_ssao_radius.call(this._handle, _arg, 1)
+    __method_bind.setSsaoRadius.call(this._handle, _arg, 1)
   }
 
   fun setSsaoRadius2(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_ssao_radius2.call(this._handle, _arg, 1)
+    __method_bind.setSsaoRadius2.call(this._handle, _arg, 1)
   }
 
   fun setSsrDepthTolerance(depthTolerance: Float) {
     val _arg = Variant.new(depthTolerance)
-    __method_bind.set_ssr_depth_tolerance.call(this._handle, _arg, 1)
+    __method_bind.setSsrDepthTolerance.call(this._handle, _arg, 1)
   }
 
   fun setSsrEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_ssr_enabled.call(this._handle, _arg, 1)
+    __method_bind.setSsrEnabled.call(this._handle, _arg, 1)
   }
 
   fun setSsrFadeIn(fadeIn: Float) {
     val _arg = Variant.new(fadeIn)
-    __method_bind.set_ssr_fade_in.call(this._handle, _arg, 1)
+    __method_bind.setSsrFadeIn.call(this._handle, _arg, 1)
   }
 
   fun setSsrFadeOut(fadeOut: Float) {
     val _arg = Variant.new(fadeOut)
-    __method_bind.set_ssr_fade_out.call(this._handle, _arg, 1)
+    __method_bind.setSsrFadeOut.call(this._handle, _arg, 1)
   }
 
   fun setSsrMaxSteps(maxSteps: Int) {
     val _arg = Variant.new(maxSteps)
-    __method_bind.set_ssr_max_steps.call(this._handle, _arg, 1)
+    __method_bind.setSsrMaxSteps.call(this._handle, _arg, 1)
   }
 
   fun setSsrRough(rough: Boolean) {
     val _arg = Variant.new(rough)
-    __method_bind.set_ssr_rough.call(this._handle, _arg, 1)
+    __method_bind.setSsrRough.call(this._handle, _arg, 1)
   }
 
   fun setTonemapAutoExposure(autoExposure: Boolean) {
     val _arg = Variant.new(autoExposure)
-    __method_bind.set_tonemap_auto_exposure.call(this._handle, _arg, 1)
+    __method_bind.setTonemapAutoExposure.call(this._handle, _arg, 1)
   }
 
   fun setTonemapAutoExposureGrey(exposureGrey: Float) {
     val _arg = Variant.new(exposureGrey)
-    __method_bind.set_tonemap_auto_exposure_grey.call(this._handle, _arg, 1)
+    __method_bind.setTonemapAutoExposureGrey.call(this._handle, _arg, 1)
   }
 
   fun setTonemapAutoExposureMax(exposureMax: Float) {
     val _arg = Variant.new(exposureMax)
-    __method_bind.set_tonemap_auto_exposure_max.call(this._handle, _arg, 1)
+    __method_bind.setTonemapAutoExposureMax.call(this._handle, _arg, 1)
   }
 
   fun setTonemapAutoExposureMin(exposureMin: Float) {
     val _arg = Variant.new(exposureMin)
-    __method_bind.set_tonemap_auto_exposure_min.call(this._handle, _arg, 1)
+    __method_bind.setTonemapAutoExposureMin.call(this._handle, _arg, 1)
   }
 
   fun setTonemapAutoExposureSpeed(exposureSpeed: Float) {
     val _arg = Variant.new(exposureSpeed)
-    __method_bind.set_tonemap_auto_exposure_speed.call(this._handle, _arg, 1)
+    __method_bind.setTonemapAutoExposureSpeed.call(this._handle, _arg, 1)
   }
 
   fun setTonemapExposure(exposure: Float) {
     val _arg = Variant.new(exposure)
-    __method_bind.set_tonemap_exposure.call(this._handle, _arg, 1)
+    __method_bind.setTonemapExposure.call(this._handle, _arg, 1)
   }
 
   fun setTonemapWhite(white: Float) {
     val _arg = Variant.new(white)
-    __method_bind.set_tonemap_white.call(this._handle, _arg, 1)
+    __method_bind.setTonemapWhite.call(this._handle, _arg, 1)
   }
 
   fun setTonemapper(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_tonemapper.call(this._handle, _arg, 1)
+    __method_bind.setTonemapper.call(this._handle, _arg, 1)
   }
 
   enum class SSAOBlur(
@@ -1013,1099 +1629,1097 @@ open class Environment(
      * Container for method_bind pointers for Environment
      */
     private object __method_bind {
-      val get_adjustment_brightness: CPointer<godot_method_bind>
+      val getAdjustmentBrightness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_brightness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_brightness" }
+            "getAdjustmentBrightness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAdjustmentBrightness" }
         }
-      val get_adjustment_color_correction: CPointer<godot_method_bind>
+      val getAdjustmentColorCorrection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_color_correction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_color_correction" }
+            "getAdjustmentColorCorrection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAdjustmentColorCorrection" }
         }
-      val get_adjustment_contrast: CPointer<godot_method_bind>
+      val getAdjustmentContrast: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_contrast".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_contrast" }
+            "getAdjustmentContrast".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAdjustmentContrast" }
         }
-      val get_adjustment_saturation: CPointer<godot_method_bind>
+      val getAdjustmentSaturation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_adjustment_saturation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_adjustment_saturation" }
+            "getAdjustmentSaturation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAdjustmentSaturation" }
         }
-      val get_ambient_light_color: CPointer<godot_method_bind>
+      val getAmbientLightColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ambient_light_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_color" }
+            "getAmbientLightColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAmbientLightColor" }
         }
-      val get_ambient_light_energy: CPointer<godot_method_bind>
+      val getAmbientLightEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ambient_light_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_energy" }
+            "getAmbientLightEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAmbientLightEnergy" }
         }
-      val get_ambient_light_sky_contribution: CPointer<godot_method_bind>
+      val getAmbientLightSkyContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ambient_light_sky_contribution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ambient_light_sky_contribution"
-            }
+            "getAmbientLightSkyContribution".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAmbientLightSkyContribution" }
         }
-      val get_background: CPointer<godot_method_bind>
+      val getBackground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_background".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_background" }
+            "getBackground".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBackground" }
         }
-      val get_bg_color: CPointer<godot_method_bind>
+      val getBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_bg_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bg_color" }
+            "getBgColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBgColor" }
         }
-      val get_bg_energy: CPointer<godot_method_bind>
+      val getBgEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_bg_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bg_energy" }
+            "getBgEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBgEnergy" }
         }
-      val get_camera_feed_id: CPointer<godot_method_bind>
+      val getCameraFeedId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_camera_feed_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
+            "getCameraFeedId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCameraFeedId" }
         }
-      val get_canvas_max_layer: CPointer<godot_method_bind>
+      val getCanvasMaxLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_canvas_max_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas_max_layer" }
+            "getCanvasMaxLayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCanvasMaxLayer" }
         }
-      val get_dof_blur_far_amount: CPointer<godot_method_bind>
+      val getDofBlurFarAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_amount" }
+            "getDofBlurFarAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarAmount" }
         }
-      val get_dof_blur_far_distance: CPointer<godot_method_bind>
+      val getDofBlurFarDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_distance" }
+            "getDofBlurFarDistance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarDistance" }
         }
-      val get_dof_blur_far_quality: CPointer<godot_method_bind>
+      val getDofBlurFarQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_quality" }
+            "getDofBlurFarQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarQuality" }
         }
-      val get_dof_blur_far_transition: CPointer<godot_method_bind>
+      val getDofBlurFarTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_far_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_far_transition" }
+            "getDofBlurFarTransition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurFarTransition" }
         }
-      val get_dof_blur_near_amount: CPointer<godot_method_bind>
+      val getDofBlurNearAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_amount" }
+            "getDofBlurNearAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearAmount" }
         }
-      val get_dof_blur_near_distance: CPointer<godot_method_bind>
+      val getDofBlurNearDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_distance" }
+            "getDofBlurNearDistance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearDistance" }
         }
-      val get_dof_blur_near_quality: CPointer<godot_method_bind>
+      val getDofBlurNearQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_quality" }
+            "getDofBlurNearQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearQuality" }
         }
-      val get_dof_blur_near_transition: CPointer<godot_method_bind>
+      val getDofBlurNearTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_dof_blur_near_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dof_blur_near_transition" }
+            "getDofBlurNearTransition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDofBlurNearTransition" }
         }
-      val get_fog_color: CPointer<godot_method_bind>
+      val getFogColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_color" }
+            "getFogColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogColor" }
         }
-      val get_fog_depth_begin: CPointer<godot_method_bind>
+      val getFogDepthBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_depth_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_begin" }
+            "getFogDepthBegin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogDepthBegin" }
         }
-      val get_fog_depth_curve: CPointer<godot_method_bind>
+      val getFogDepthCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_depth_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_curve" }
+            "getFogDepthCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogDepthCurve" }
         }
-      val get_fog_depth_end: CPointer<godot_method_bind>
+      val getFogDepthEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_depth_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_depth_end" }
+            "getFogDepthEnd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogDepthEnd" }
         }
-      val get_fog_height_curve: CPointer<godot_method_bind>
+      val getFogHeightCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_height_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_height_curve" }
+            "getFogHeightCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogHeightCurve" }
         }
-      val get_fog_height_max: CPointer<godot_method_bind>
+      val getFogHeightMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_height_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_height_max" }
+            "getFogHeightMax".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogHeightMax" }
         }
-      val get_fog_height_min: CPointer<godot_method_bind>
+      val getFogHeightMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_height_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_height_min" }
+            "getFogHeightMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogHeightMin" }
         }
-      val get_fog_sun_amount: CPointer<godot_method_bind>
+      val getFogSunAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_sun_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_sun_amount" }
+            "getFogSunAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogSunAmount" }
         }
-      val get_fog_sun_color: CPointer<godot_method_bind>
+      val getFogSunColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_sun_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_sun_color" }
+            "getFogSunColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogSunColor" }
         }
-      val get_fog_transmit_curve: CPointer<godot_method_bind>
+      val getFogTransmitCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_fog_transmit_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fog_transmit_curve" }
+            "getFogTransmitCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFogTransmitCurve" }
         }
-      val get_glow_blend_mode: CPointer<godot_method_bind>
+      val getGlowBlendMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_blend_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_blend_mode" }
+            "getGlowBlendMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowBlendMode" }
         }
-      val get_glow_bloom: CPointer<godot_method_bind>
+      val getGlowBloom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_bloom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_bloom" }
+            "getGlowBloom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowBloom" }
         }
-      val get_glow_hdr_bleed_scale: CPointer<godot_method_bind>
+      val getGlowHdrBleedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_hdr_bleed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_scale" }
+            "getGlowHdrBleedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowHdrBleedScale" }
         }
-      val get_glow_hdr_bleed_threshold: CPointer<godot_method_bind>
+      val getGlowHdrBleedThreshold: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_hdr_bleed_threshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_bleed_threshold" }
+            "getGlowHdrBleedThreshold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowHdrBleedThreshold" }
         }
-      val get_glow_hdr_luminance_cap: CPointer<godot_method_bind>
+      val getGlowHdrLuminanceCap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_hdr_luminance_cap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_hdr_luminance_cap" }
+            "getGlowHdrLuminanceCap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowHdrLuminanceCap" }
         }
-      val get_glow_intensity: CPointer<godot_method_bind>
+      val getGlowIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_intensity" }
+            "getGlowIntensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowIntensity" }
         }
-      val get_glow_strength: CPointer<godot_method_bind>
+      val getGlowStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_glow_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_glow_strength" }
+            "getGlowStrength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlowStrength" }
         }
-      val get_sky: CPointer<godot_method_bind>
+      val getSky: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky" }
+            "getSky".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSky" }
         }
-      val get_sky_custom_fov: CPointer<godot_method_bind>
+      val getSkyCustomFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_custom_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_custom_fov" }
+            "getSkyCustomFov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSkyCustomFov" }
         }
-      val get_sky_orientation: CPointer<godot_method_bind>
+      val getSkyOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_orientation" }
+            "getSkyOrientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSkyOrientation" }
         }
-      val get_sky_rotation: CPointer<godot_method_bind>
+      val getSkyRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_rotation" }
+            "getSkyRotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSkyRotation" }
         }
-      val get_sky_rotation_degrees: CPointer<godot_method_bind>
+      val getSkyRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_sky_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sky_rotation_degrees" }
+            "getSkyRotationDegrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSkyRotationDegrees" }
         }
-      val get_ssao_ao_channel_affect: CPointer<godot_method_bind>
+      val getSsaoAoChannelAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_ao_channel_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_ao_channel_affect" }
+            "getSsaoAoChannelAffect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoAoChannelAffect" }
         }
-      val get_ssao_bias: CPointer<godot_method_bind>
+      val getSsaoBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_bias" }
+            "getSsaoBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoBias" }
         }
-      val get_ssao_blur: CPointer<godot_method_bind>
+      val getSsaoBlur: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_blur".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_blur" }
+            "getSsaoBlur".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoBlur" }
         }
-      val get_ssao_color: CPointer<godot_method_bind>
+      val getSsaoColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_color" }
+            "getSsaoColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoColor" }
         }
-      val get_ssao_direct_light_affect: CPointer<godot_method_bind>
+      val getSsaoDirectLightAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_direct_light_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_direct_light_affect" }
+            "getSsaoDirectLightAffect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoDirectLightAffect" }
         }
-      val get_ssao_edge_sharpness: CPointer<godot_method_bind>
+      val getSsaoEdgeSharpness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_edge_sharpness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_edge_sharpness" }
+            "getSsaoEdgeSharpness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoEdgeSharpness" }
         }
-      val get_ssao_intensity: CPointer<godot_method_bind>
+      val getSsaoIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity" }
+            "getSsaoIntensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoIntensity" }
         }
-      val get_ssao_intensity2: CPointer<godot_method_bind>
+      val getSsaoIntensity2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_intensity2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_intensity2" }
+            "getSsaoIntensity2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoIntensity2" }
         }
-      val get_ssao_quality: CPointer<godot_method_bind>
+      val getSsaoQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_quality" }
+            "getSsaoQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoQuality" }
         }
-      val get_ssao_radius: CPointer<godot_method_bind>
+      val getSsaoRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_radius" }
+            "getSsaoRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoRadius" }
         }
-      val get_ssao_radius2: CPointer<godot_method_bind>
+      val getSsaoRadius2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssao_radius2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssao_radius2" }
+            "getSsaoRadius2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsaoRadius2" }
         }
-      val get_ssr_depth_tolerance: CPointer<godot_method_bind>
+      val getSsrDepthTolerance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_depth_tolerance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_depth_tolerance" }
+            "getSsrDepthTolerance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsrDepthTolerance" }
         }
-      val get_ssr_fade_in: CPointer<godot_method_bind>
+      val getSsrFadeIn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_fade_in".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_in" }
+            "getSsrFadeIn".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsrFadeIn" }
         }
-      val get_ssr_fade_out: CPointer<godot_method_bind>
+      val getSsrFadeOut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_fade_out".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_fade_out" }
+            "getSsrFadeOut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsrFadeOut" }
         }
-      val get_ssr_max_steps: CPointer<godot_method_bind>
+      val getSsrMaxSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_ssr_max_steps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ssr_max_steps" }
+            "getSsrMaxSteps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSsrMaxSteps" }
         }
-      val get_tonemap_auto_exposure: CPointer<godot_method_bind>
+      val getTonemapAutoExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure" }
+            "getTonemapAutoExposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposure" }
         }
-      val get_tonemap_auto_exposure_grey: CPointer<godot_method_bind>
+      val getTonemapAutoExposureGrey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_grey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_grey" }
+            "getTonemapAutoExposureGrey".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureGrey" }
         }
-      val get_tonemap_auto_exposure_max: CPointer<godot_method_bind>
+      val getTonemapAutoExposureMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_max" }
+            "getTonemapAutoExposureMax".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureMax" }
         }
-      val get_tonemap_auto_exposure_min: CPointer<godot_method_bind>
+      val getTonemapAutoExposureMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_min" }
+            "getTonemapAutoExposureMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureMin" }
         }
-      val get_tonemap_auto_exposure_speed: CPointer<godot_method_bind>
+      val getTonemapAutoExposureSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_auto_exposure_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_auto_exposure_speed" }
+            "getTonemapAutoExposureSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapAutoExposureSpeed" }
         }
-      val get_tonemap_exposure: CPointer<godot_method_bind>
+      val getTonemapExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_exposure" }
+            "getTonemapExposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapExposure" }
         }
-      val get_tonemap_white: CPointer<godot_method_bind>
+      val getTonemapWhite: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemap_white".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemap_white" }
+            "getTonemapWhite".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapWhite" }
         }
-      val get_tonemapper: CPointer<godot_method_bind>
+      val getTonemapper: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "get_tonemapper".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tonemapper" }
+            "getTonemapper".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTonemapper" }
         }
-      val is_adjustment_enabled: CPointer<godot_method_bind>
+      val isAdjustmentEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_adjustment_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_adjustment_enabled" }
+            "isAdjustmentEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isAdjustmentEnabled" }
         }
-      val is_dof_blur_far_enabled: CPointer<godot_method_bind>
+      val isDofBlurFarEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_dof_blur_far_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_dof_blur_far_enabled" }
+            "isDofBlurFarEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDofBlurFarEnabled" }
         }
-      val is_dof_blur_near_enabled: CPointer<godot_method_bind>
+      val isDofBlurNearEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_dof_blur_near_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_dof_blur_near_enabled" }
+            "isDofBlurNearEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDofBlurNearEnabled" }
         }
-      val is_fog_depth_enabled: CPointer<godot_method_bind>
+      val isFogDepthEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_depth_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_depth_enabled" }
+            "isFogDepthEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isFogDepthEnabled" }
         }
-      val is_fog_enabled: CPointer<godot_method_bind>
+      val isFogEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_enabled" }
+            "isFogEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isFogEnabled" }
         }
-      val is_fog_height_enabled: CPointer<godot_method_bind>
+      val isFogHeightEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_height_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_height_enabled" }
+            "isFogHeightEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isFogHeightEnabled" }
         }
-      val is_fog_transmit_enabled: CPointer<godot_method_bind>
+      val isFogTransmitEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_fog_transmit_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_fog_transmit_enabled" }
+            "isFogTransmitEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isFogTransmitEnabled" }
         }
-      val is_glow_bicubic_upscale_enabled: CPointer<godot_method_bind>
+      val isGlowBicubicUpscaleEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_glow_bicubic_upscale_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_glow_bicubic_upscale_enabled" }
+            "isGlowBicubicUpscaleEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isGlowBicubicUpscaleEnabled" }
         }
-      val is_glow_enabled: CPointer<godot_method_bind>
+      val isGlowEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_glow_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_glow_enabled" }
+            "isGlowEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isGlowEnabled" }
         }
-      val is_glow_level_enabled: CPointer<godot_method_bind>
+      val isGlowLevelEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_glow_level_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_glow_level_enabled" }
+            "isGlowLevelEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isGlowLevelEnabled" }
         }
-      val is_ssao_enabled: CPointer<godot_method_bind>
+      val isSsaoEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_ssao_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ssao_enabled" }
+            "isSsaoEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSsaoEnabled" }
         }
-      val is_ssr_enabled: CPointer<godot_method_bind>
+      val isSsrEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_ssr_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ssr_enabled" }
+            "isSsrEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSsrEnabled" }
         }
-      val is_ssr_rough: CPointer<godot_method_bind>
+      val isSsrRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "is_ssr_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ssr_rough" }
+            "isSsrRough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSsrRough" }
         }
-      val set_adjustment_brightness: CPointer<godot_method_bind>
+      val setAdjustmentBrightness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_brightness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_brightness" }
+            "setAdjustmentBrightness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAdjustmentBrightness" }
         }
-      val set_adjustment_color_correction: CPointer<godot_method_bind>
+      val setAdjustmentColorCorrection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_color_correction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_color_correction" }
+            "setAdjustmentColorCorrection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAdjustmentColorCorrection" }
         }
-      val set_adjustment_contrast: CPointer<godot_method_bind>
+      val setAdjustmentContrast: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_contrast".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_contrast" }
+            "setAdjustmentContrast".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAdjustmentContrast" }
         }
-      val set_adjustment_enable: CPointer<godot_method_bind>
+      val setAdjustmentEnable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_enable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_enable" }
+            "setAdjustmentEnable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAdjustmentEnable" }
         }
-      val set_adjustment_saturation: CPointer<godot_method_bind>
+      val setAdjustmentSaturation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_adjustment_saturation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_adjustment_saturation" }
+            "setAdjustmentSaturation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAdjustmentSaturation" }
         }
-      val set_ambient_light_color: CPointer<godot_method_bind>
+      val setAmbientLightColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ambient_light_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_color" }
+            "setAmbientLightColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAmbientLightColor" }
         }
-      val set_ambient_light_energy: CPointer<godot_method_bind>
+      val setAmbientLightEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ambient_light_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_energy" }
+            "setAmbientLightEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAmbientLightEnergy" }
         }
-      val set_ambient_light_sky_contribution: CPointer<godot_method_bind>
+      val setAmbientLightSkyContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ambient_light_sky_contribution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ambient_light_sky_contribution"
-            }
+            "setAmbientLightSkyContribution".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAmbientLightSkyContribution" }
         }
-      val set_background: CPointer<godot_method_bind>
+      val setBackground: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_background".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_background" }
+            "setBackground".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBackground" }
         }
-      val set_bg_color: CPointer<godot_method_bind>
+      val setBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_bg_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bg_color" }
+            "setBgColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBgColor" }
         }
-      val set_bg_energy: CPointer<godot_method_bind>
+      val setBgEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_bg_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bg_energy" }
+            "setBgEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBgEnergy" }
         }
-      val set_camera_feed_id: CPointer<godot_method_bind>
+      val setCameraFeedId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_camera_feed_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
+            "setCameraFeedId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCameraFeedId" }
         }
-      val set_canvas_max_layer: CPointer<godot_method_bind>
+      val setCanvasMaxLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_canvas_max_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_canvas_max_layer" }
+            "setCanvasMaxLayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCanvasMaxLayer" }
         }
-      val set_dof_blur_far_amount: CPointer<godot_method_bind>
+      val setDofBlurFarAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_amount" }
+            "setDofBlurFarAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarAmount" }
         }
-      val set_dof_blur_far_distance: CPointer<godot_method_bind>
+      val setDofBlurFarDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_distance" }
+            "setDofBlurFarDistance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarDistance" }
         }
-      val set_dof_blur_far_enabled: CPointer<godot_method_bind>
+      val setDofBlurFarEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_enabled" }
+            "setDofBlurFarEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarEnabled" }
         }
-      val set_dof_blur_far_quality: CPointer<godot_method_bind>
+      val setDofBlurFarQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_quality" }
+            "setDofBlurFarQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarQuality" }
         }
-      val set_dof_blur_far_transition: CPointer<godot_method_bind>
+      val setDofBlurFarTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_far_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_far_transition" }
+            "setDofBlurFarTransition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurFarTransition" }
         }
-      val set_dof_blur_near_amount: CPointer<godot_method_bind>
+      val setDofBlurNearAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_amount" }
+            "setDofBlurNearAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearAmount" }
         }
-      val set_dof_blur_near_distance: CPointer<godot_method_bind>
+      val setDofBlurNearDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_distance" }
+            "setDofBlurNearDistance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearDistance" }
         }
-      val set_dof_blur_near_enabled: CPointer<godot_method_bind>
+      val setDofBlurNearEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_enabled" }
+            "setDofBlurNearEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearEnabled" }
         }
-      val set_dof_blur_near_quality: CPointer<godot_method_bind>
+      val setDofBlurNearQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_quality" }
+            "setDofBlurNearQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearQuality" }
         }
-      val set_dof_blur_near_transition: CPointer<godot_method_bind>
+      val setDofBlurNearTransition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_dof_blur_near_transition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dof_blur_near_transition" }
+            "setDofBlurNearTransition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDofBlurNearTransition" }
         }
-      val set_fog_color: CPointer<godot_method_bind>
+      val setFogColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_color" }
+            "setFogColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogColor" }
         }
-      val set_fog_depth_begin: CPointer<godot_method_bind>
+      val setFogDepthBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_begin" }
+            "setFogDepthBegin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogDepthBegin" }
         }
-      val set_fog_depth_curve: CPointer<godot_method_bind>
+      val setFogDepthCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_curve" }
+            "setFogDepthCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogDepthCurve" }
         }
-      val set_fog_depth_enabled: CPointer<godot_method_bind>
+      val setFogDepthEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_enabled" }
+            "setFogDepthEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogDepthEnabled" }
         }
-      val set_fog_depth_end: CPointer<godot_method_bind>
+      val setFogDepthEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_depth_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_depth_end" }
+            "setFogDepthEnd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogDepthEnd" }
         }
-      val set_fog_enabled: CPointer<godot_method_bind>
+      val setFogEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_enabled" }
+            "setFogEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogEnabled" }
         }
-      val set_fog_height_curve: CPointer<godot_method_bind>
+      val setFogHeightCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_curve" }
+            "setFogHeightCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogHeightCurve" }
         }
-      val set_fog_height_enabled: CPointer<godot_method_bind>
+      val setFogHeightEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_enabled" }
+            "setFogHeightEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogHeightEnabled" }
         }
-      val set_fog_height_max: CPointer<godot_method_bind>
+      val setFogHeightMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_max" }
+            "setFogHeightMax".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogHeightMax" }
         }
-      val set_fog_height_min: CPointer<godot_method_bind>
+      val setFogHeightMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_height_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_height_min" }
+            "setFogHeightMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogHeightMin" }
         }
-      val set_fog_sun_amount: CPointer<godot_method_bind>
+      val setFogSunAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_sun_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_sun_amount" }
+            "setFogSunAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogSunAmount" }
         }
-      val set_fog_sun_color: CPointer<godot_method_bind>
+      val setFogSunColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_sun_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_sun_color" }
+            "setFogSunColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogSunColor" }
         }
-      val set_fog_transmit_curve: CPointer<godot_method_bind>
+      val setFogTransmitCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_transmit_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_curve" }
+            "setFogTransmitCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogTransmitCurve" }
         }
-      val set_fog_transmit_enabled: CPointer<godot_method_bind>
+      val setFogTransmitEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_fog_transmit_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fog_transmit_enabled" }
+            "setFogTransmitEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFogTransmitEnabled" }
         }
-      val set_glow_bicubic_upscale: CPointer<godot_method_bind>
+      val setGlowBicubicUpscale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_bicubic_upscale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_bicubic_upscale" }
+            "setGlowBicubicUpscale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowBicubicUpscale" }
         }
-      val set_glow_blend_mode: CPointer<godot_method_bind>
+      val setGlowBlendMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_blend_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_blend_mode" }
+            "setGlowBlendMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowBlendMode" }
         }
-      val set_glow_bloom: CPointer<godot_method_bind>
+      val setGlowBloom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_bloom".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_bloom" }
+            "setGlowBloom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowBloom" }
         }
-      val set_glow_enabled: CPointer<godot_method_bind>
+      val setGlowEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_enabled" }
+            "setGlowEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowEnabled" }
         }
-      val set_glow_hdr_bleed_scale: CPointer<godot_method_bind>
+      val setGlowHdrBleedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_hdr_bleed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_scale" }
+            "setGlowHdrBleedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowHdrBleedScale" }
         }
-      val set_glow_hdr_bleed_threshold: CPointer<godot_method_bind>
+      val setGlowHdrBleedThreshold: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_hdr_bleed_threshold".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_bleed_threshold" }
+            "setGlowHdrBleedThreshold".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowHdrBleedThreshold" }
         }
-      val set_glow_hdr_luminance_cap: CPointer<godot_method_bind>
+      val setGlowHdrLuminanceCap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_hdr_luminance_cap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_hdr_luminance_cap" }
+            "setGlowHdrLuminanceCap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowHdrLuminanceCap" }
         }
-      val set_glow_intensity: CPointer<godot_method_bind>
+      val setGlowIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_intensity" }
+            "setGlowIntensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowIntensity" }
         }
-      val set_glow_level: CPointer<godot_method_bind>
+      val setGlowLevel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_level".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_level" }
+            "setGlowLevel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowLevel" }
         }
-      val set_glow_strength: CPointer<godot_method_bind>
+      val setGlowStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_glow_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_glow_strength" }
+            "setGlowStrength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlowStrength" }
         }
-      val set_sky: CPointer<godot_method_bind>
+      val setSky: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky" }
+            "setSky".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSky" }
         }
-      val set_sky_custom_fov: CPointer<godot_method_bind>
+      val setSkyCustomFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_custom_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_custom_fov" }
+            "setSkyCustomFov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSkyCustomFov" }
         }
-      val set_sky_orientation: CPointer<godot_method_bind>
+      val setSkyOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_orientation" }
+            "setSkyOrientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSkyOrientation" }
         }
-      val set_sky_rotation: CPointer<godot_method_bind>
+      val setSkyRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_rotation" }
+            "setSkyRotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSkyRotation" }
         }
-      val set_sky_rotation_degrees: CPointer<godot_method_bind>
+      val setSkyRotationDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_sky_rotation_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sky_rotation_degrees" }
+            "setSkyRotationDegrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSkyRotationDegrees" }
         }
-      val set_ssao_ao_channel_affect: CPointer<godot_method_bind>
+      val setSsaoAoChannelAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_ao_channel_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_ao_channel_affect" }
+            "setSsaoAoChannelAffect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoAoChannelAffect" }
         }
-      val set_ssao_bias: CPointer<godot_method_bind>
+      val setSsaoBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_bias" }
+            "setSsaoBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoBias" }
         }
-      val set_ssao_blur: CPointer<godot_method_bind>
+      val setSsaoBlur: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_blur".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_blur" }
+            "setSsaoBlur".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoBlur" }
         }
-      val set_ssao_color: CPointer<godot_method_bind>
+      val setSsaoColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_color" }
+            "setSsaoColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoColor" }
         }
-      val set_ssao_direct_light_affect: CPointer<godot_method_bind>
+      val setSsaoDirectLightAffect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_direct_light_affect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_direct_light_affect" }
+            "setSsaoDirectLightAffect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoDirectLightAffect" }
         }
-      val set_ssao_edge_sharpness: CPointer<godot_method_bind>
+      val setSsaoEdgeSharpness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_edge_sharpness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_edge_sharpness" }
+            "setSsaoEdgeSharpness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoEdgeSharpness" }
         }
-      val set_ssao_enabled: CPointer<godot_method_bind>
+      val setSsaoEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_enabled" }
+            "setSsaoEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoEnabled" }
         }
-      val set_ssao_intensity: CPointer<godot_method_bind>
+      val setSsaoIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity" }
+            "setSsaoIntensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoIntensity" }
         }
-      val set_ssao_intensity2: CPointer<godot_method_bind>
+      val setSsaoIntensity2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_intensity2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_intensity2" }
+            "setSsaoIntensity2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoIntensity2" }
         }
-      val set_ssao_quality: CPointer<godot_method_bind>
+      val setSsaoQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_quality" }
+            "setSsaoQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoQuality" }
         }
-      val set_ssao_radius: CPointer<godot_method_bind>
+      val setSsaoRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_radius" }
+            "setSsaoRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoRadius" }
         }
-      val set_ssao_radius2: CPointer<godot_method_bind>
+      val setSsaoRadius2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssao_radius2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssao_radius2" }
+            "setSsaoRadius2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsaoRadius2" }
         }
-      val set_ssr_depth_tolerance: CPointer<godot_method_bind>
+      val setSsrDepthTolerance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_depth_tolerance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_depth_tolerance" }
+            "setSsrDepthTolerance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsrDepthTolerance" }
         }
-      val set_ssr_enabled: CPointer<godot_method_bind>
+      val setSsrEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_enabled" }
+            "setSsrEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsrEnabled" }
         }
-      val set_ssr_fade_in: CPointer<godot_method_bind>
+      val setSsrFadeIn: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_fade_in".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_in" }
+            "setSsrFadeIn".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsrFadeIn" }
         }
-      val set_ssr_fade_out: CPointer<godot_method_bind>
+      val setSsrFadeOut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_fade_out".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_fade_out" }
+            "setSsrFadeOut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsrFadeOut" }
         }
-      val set_ssr_max_steps: CPointer<godot_method_bind>
+      val setSsrMaxSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_max_steps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_max_steps" }
+            "setSsrMaxSteps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsrMaxSteps" }
         }
-      val set_ssr_rough: CPointer<godot_method_bind>
+      val setSsrRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_ssr_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ssr_rough" }
+            "setSsrRough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSsrRough" }
         }
-      val set_tonemap_auto_exposure: CPointer<godot_method_bind>
+      val setTonemapAutoExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure" }
+            "setTonemapAutoExposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposure" }
         }
-      val set_tonemap_auto_exposure_grey: CPointer<godot_method_bind>
+      val setTonemapAutoExposureGrey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_grey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_grey" }
+            "setTonemapAutoExposureGrey".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureGrey" }
         }
-      val set_tonemap_auto_exposure_max: CPointer<godot_method_bind>
+      val setTonemapAutoExposureMax: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_max".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_max" }
+            "setTonemapAutoExposureMax".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureMax" }
         }
-      val set_tonemap_auto_exposure_min: CPointer<godot_method_bind>
+      val setTonemapAutoExposureMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_min" }
+            "setTonemapAutoExposureMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureMin" }
         }
-      val set_tonemap_auto_exposure_speed: CPointer<godot_method_bind>
+      val setTonemapAutoExposureSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_auto_exposure_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_auto_exposure_speed" }
+            "setTonemapAutoExposureSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapAutoExposureSpeed" }
         }
-      val set_tonemap_exposure: CPointer<godot_method_bind>
+      val setTonemapExposure: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_exposure".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_exposure" }
+            "setTonemapExposure".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapExposure" }
         }
-      val set_tonemap_white: CPointer<godot_method_bind>
+      val setTonemapWhite: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemap_white".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemap_white" }
+            "setTonemapWhite".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapWhite" }
         }
-      val set_tonemapper: CPointer<godot_method_bind>
+      val setTonemapper: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Environment".cstr.ptr,
-            "set_tonemapper".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tonemapper" }
+            "setTonemapper".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTonemapper" }
         }}
   }
 }

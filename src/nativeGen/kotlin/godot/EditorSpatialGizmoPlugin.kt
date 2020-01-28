@@ -23,14 +23,14 @@ open class EditorSpatialGizmoPlugin(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(material)
-    __method_bind.add_material.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addMaterial.call(this._handle, _args.toVariant(), 2)
   }
 
   fun createHandleMaterial(name: String, billboard: Boolean) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(billboard)
-    __method_bind.create_handle_material.call(this._handle, _args.toVariant(), 2)
+    __method_bind.createHandleMaterial.call(this._handle, _args.toVariant(), 2)
   }
 
   fun createIconMaterial(
@@ -44,7 +44,7 @@ open class EditorSpatialGizmoPlugin(
     _args.append(texture)
     _args.append(onTop)
     _args.append(color)
-    __method_bind.create_icon_material.call(this._handle, _args.toVariant(), 4)
+    __method_bind.createIconMaterial.call(this._handle, _args.toVariant(), 4)
   }
 
   fun createMaterial(
@@ -60,14 +60,14 @@ open class EditorSpatialGizmoPlugin(
     _args.append(billboard)
     _args.append(onTop)
     _args.append(useVertexColor)
-    __method_bind.create_material.call(this._handle, _args.toVariant(), 5)
+    __method_bind.createMaterial.call(this._handle, _args.toVariant(), 5)
   }
 
   fun getMaterial(name: String, gizmo: EditorSpatialGizmo): SpatialMaterial {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(gizmo)
-    val _ret = __method_bind.get_material.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getMaterial.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::SpatialMaterial)!!
   }
 
@@ -86,40 +86,40 @@ open class EditorSpatialGizmoPlugin(
      * Container for method_bind pointers for EditorSpatialGizmoPlugin
      */
     private object __method_bind {
-      val add_material: CPointer<godot_method_bind>
+      val addMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "add_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_material" }
+            "addMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addMaterial" }
         }
-      val create_handle_material: CPointer<godot_method_bind>
+      val createHandleMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "create_handle_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_handle_material" }
+            "createHandleMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createHandleMaterial" }
         }
-      val create_icon_material: CPointer<godot_method_bind>
+      val createIconMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "create_icon_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_icon_material" }
+            "createIconMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createIconMaterial" }
         }
-      val create_material: CPointer<godot_method_bind>
+      val createMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "create_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_material" }
+            "createMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createMaterial" }
         }
-      val get_material: CPointer<godot_method_bind>
+      val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmoPlugin".cstr.ptr,
-            "get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_material" }
+            "getMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
         }}
   }
 }

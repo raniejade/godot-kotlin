@@ -17,12 +17,12 @@ open class ButtonGroup(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getButtons(): VariantArray {
-    val _ret = __method_bind.get_buttons.call(this._handle)
+    val _ret = __method_bind.getButtons.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getPressedButton(): BaseButton {
-    val _ret = __method_bind.get_pressed_button.call(this._handle)
+    val _ret = __method_bind.getPressedButton.call(this._handle)
     return _ret.asObject(::BaseButton)!!
   }
 
@@ -40,19 +40,19 @@ open class ButtonGroup(
      * Container for method_bind pointers for ButtonGroup
      */
     private object __method_bind {
-      val get_buttons: CPointer<godot_method_bind>
+      val getButtons: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
-            "get_buttons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_buttons" }
+            "getButtons".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getButtons" }
         }
-      val get_pressed_button: CPointer<godot_method_bind>
+      val getPressedButton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ButtonGroup".cstr.ptr,
-            "get_pressed_button".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pressed_button" }
+            "getPressedButton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPressedButton" }
         }}
   }
 }

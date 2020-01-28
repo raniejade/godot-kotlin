@@ -34,12 +34,12 @@ open class Expression(
   }
 
   fun getErrorText(): String {
-    val _ret = __method_bind.get_error_text.call(this._handle)
+    val _ret = __method_bind.getErrorText.call(this._handle)
     return _ret.asString()
   }
 
   fun hasExecuteFailed(): Boolean {
-    val _ret = __method_bind.has_execute_failed.call(this._handle)
+    val _ret = __method_bind.hasExecuteFailed.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -71,17 +71,17 @@ open class Expression(
             "execute".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method execute" }
         }
-      val get_error_text: CPointer<godot_method_bind>
+      val getErrorText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "get_error_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_error_text" }
+            "getErrorText".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getErrorText" }
         }
-      val has_execute_failed: CPointer<godot_method_bind>
+      val hasExecuteFailed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Expression".cstr.ptr,
-            "has_execute_failed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_execute_failed" }
+            "hasExecuteFailed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasExecuteFailed" }
         }
       val parse: CPointer<godot_method_bind>
         get() = memScoped {

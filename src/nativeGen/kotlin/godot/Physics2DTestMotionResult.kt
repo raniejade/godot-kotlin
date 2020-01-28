@@ -19,48 +19,93 @@ import kotlinx.cinterop.reinterpret
 open class Physics2DTestMotionResult(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  val collider: Object
+    get() {
+       return getCollider() 
+    }
+
+  val colliderId: Int
+    get() {
+       return getColliderId() 
+    }
+
+  val colliderRid: RID
+    get() {
+       return getColliderRid() 
+    }
+
+  val colliderShape: Int
+    get() {
+       return getColliderShape() 
+    }
+
+  val colliderVelocity: Vector2
+    get() {
+       return getColliderVelocity() 
+    }
+
+  val collisionNormal: Vector2
+    get() {
+       return getCollisionNormal() 
+    }
+
+  val collisionPoint: Vector2
+    get() {
+       return getCollisionPoint() 
+    }
+
+  val motion: Vector2
+    get() {
+       return getMotion() 
+    }
+
+  val motionRemainder: Vector2
+    get() {
+       return getMotionRemainder() 
+    }
+
   fun getCollider(): Object {
-    val _ret = __method_bind.get_collider.call(this._handle)
+    val _ret = __method_bind.getCollider.call(this._handle)
     return _ret.asObject(::Object)!!
   }
 
   fun getColliderId(): Int {
-    val _ret = __method_bind.get_collider_id.call(this._handle)
+    val _ret = __method_bind.getColliderId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getColliderRid(): RID {
-    val _ret = __method_bind.get_collider_rid.call(this._handle)
+    val _ret = __method_bind.getColliderRid.call(this._handle)
     return _ret.asRID()
   }
 
   fun getColliderShape(): Int {
-    val _ret = __method_bind.get_collider_shape.call(this._handle)
+    val _ret = __method_bind.getColliderShape.call(this._handle)
     return _ret.asInt()
   }
 
   fun getColliderVelocity(): Vector2 {
-    val _ret = __method_bind.get_collider_velocity.call(this._handle)
+    val _ret = __method_bind.getColliderVelocity.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCollisionNormal(): Vector2 {
-    val _ret = __method_bind.get_collision_normal.call(this._handle)
+    val _ret = __method_bind.getCollisionNormal.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getCollisionPoint(): Vector2 {
-    val _ret = __method_bind.get_collision_point.call(this._handle)
+    val _ret = __method_bind.getCollisionPoint.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMotion(): Vector2 {
-    val _ret = __method_bind.get_motion.call(this._handle)
+    val _ret = __method_bind.getMotion.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMotionRemainder(): Vector2 {
-    val _ret = __method_bind.get_motion_remainder.call(this._handle)
+    val _ret = __method_bind.getMotionRemainder.call(this._handle)
     return _ret.asVector2()
   }
 
@@ -79,68 +124,68 @@ open class Physics2DTestMotionResult(
      * Container for method_bind pointers for Physics2DTestMotionResult
      */
     private object __method_bind {
-      val get_collider: CPointer<godot_method_bind>
+      val getCollider: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collider".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider" }
+            "getCollider".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollider" }
         }
-      val get_collider_id: CPointer<godot_method_bind>
+      val getColliderId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collider_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider_id" }
+            "getColliderId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColliderId" }
         }
-      val get_collider_rid: CPointer<godot_method_bind>
+      val getColliderRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collider_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider_rid" }
+            "getColliderRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColliderRid" }
         }
-      val get_collider_shape: CPointer<godot_method_bind>
+      val getColliderShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collider_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider_shape" }
+            "getColliderShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColliderShape" }
         }
-      val get_collider_velocity: CPointer<godot_method_bind>
+      val getColliderVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collider_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collider_velocity" }
+            "getColliderVelocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColliderVelocity" }
         }
-      val get_collision_normal: CPointer<godot_method_bind>
+      val getCollisionNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collision_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_normal" }
+            "getCollisionNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionNormal" }
         }
-      val get_collision_point: CPointer<godot_method_bind>
+      val getCollisionPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_collision_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_point" }
+            "getCollisionPoint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionPoint" }
         }
-      val get_motion: CPointer<godot_method_bind>
+      val getMotion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_motion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_motion" }
+            "getMotion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMotion" }
         }
-      val get_motion_remainder: CPointer<godot_method_bind>
+      val getMotionRemainder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Physics2DTestMotionResult".cstr.ptr,
-            "get_motion_remainder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_motion_remainder" }
+            "getMotionRemainder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMotionRemainder" }
         }}
   }
 }

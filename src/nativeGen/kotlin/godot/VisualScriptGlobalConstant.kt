@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptGlobalConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var constant: Int
+    get() {
+       return getGlobalConstant() 
+    }
+    set(value) {
+      setGlobalConstant(value)
+    }
+
   fun getGlobalConstant(): Int {
-    val _ret = __method_bind.get_global_constant.call(this._handle)
+    val _ret = __method_bind.getGlobalConstant.call(this._handle)
     return _ret.asInt()
   }
 
   fun setGlobalConstant(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.set_global_constant.call(this._handle, _arg, 1)
+    __method_bind.setGlobalConstant.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptGlobalConstant(
      * Container for method_bind pointers for VisualScriptGlobalConstant
      */
     private object __method_bind {
-      val get_global_constant: CPointer<godot_method_bind>
+      val getGlobalConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
-            "get_global_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_constant" }
+            "getGlobalConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlobalConstant" }
         }
-      val set_global_constant: CPointer<godot_method_bind>
+      val setGlobalConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptGlobalConstant".cstr.ptr,
-            "set_global_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_global_constant" }
+            "setGlobalConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlobalConstant" }
         }}
   }
 }

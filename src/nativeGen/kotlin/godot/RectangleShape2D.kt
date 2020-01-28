@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class RectangleShape2D(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  var extents: Vector2
+    get() {
+       return getExtents() 
+    }
+    set(value) {
+      setExtents(value)
+    }
+
   fun getExtents(): Vector2 {
-    val _ret = __method_bind.get_extents.call(this._handle)
+    val _ret = __method_bind.getExtents.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setExtents(extents: Vector2) {
     val _arg = Variant.new(extents)
-    __method_bind.set_extents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class RectangleShape2D(
      * Container for method_bind pointers for RectangleShape2D
      */
     private object __method_bind {
-      val get_extents: CPointer<godot_method_bind>
+      val getExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
-            "get_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_extents" }
+            "getExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExtents" }
         }
-      val set_extents: CPointer<godot_method_bind>
+      val setExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RectangleShape2D".cstr.ptr,
-            "set_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_extents" }
+            "setExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExtents" }
         }}
   }
 }

@@ -17,34 +17,58 @@ import kotlinx.cinterop.reinterpret
 open class MeshTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var baseTexture: Texture
+    get() {
+       return getBaseTexture() 
+    }
+    set(value) {
+      setBaseTexture(value)
+    }
+
+  var imageSize: Vector2
+    get() {
+       return getImageSize() 
+    }
+    set(value) {
+      setImageSize(value)
+    }
+
+  var mesh: Mesh
+    get() {
+       return getMesh() 
+    }
+    set(value) {
+      setMesh(value)
+    }
+
   fun getBaseTexture(): Texture {
-    val _ret = __method_bind.get_base_texture.call(this._handle)
+    val _ret = __method_bind.getBaseTexture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getImageSize(): Vector2 {
-    val _ret = __method_bind.get_image_size.call(this._handle)
+    val _ret = __method_bind.getImageSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this._handle)
+    val _ret = __method_bind.getMesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun setBaseTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_base_texture.call(this._handle, _arg, 1)
+    __method_bind.setBaseTexture.call(this._handle, _arg, 1)
   }
 
   fun setImageSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_image_size.call(this._handle, _arg, 1)
+    __method_bind.setImageSize.call(this._handle, _arg, 1)
   }
 
   fun setMesh(mesh: Mesh) {
     val _arg = Variant.new(mesh)
-    __method_bind.set_mesh.call(this._handle, _arg, 1)
+    __method_bind.setMesh.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -61,47 +85,47 @@ open class MeshTexture(
      * Container for method_bind pointers for MeshTexture
      */
     private object __method_bind {
-      val get_base_texture: CPointer<godot_method_bind>
+      val getBaseTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "get_base_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_texture" }
+            "getBaseTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBaseTexture" }
         }
-      val get_image_size: CPointer<godot_method_bind>
+      val getImageSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "get_image_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_image_size" }
+            "getImageSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getImageSize" }
         }
-      val get_mesh: CPointer<godot_method_bind>
+      val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            "getMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMesh" }
         }
-      val set_base_texture: CPointer<godot_method_bind>
+      val setBaseTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "set_base_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_texture" }
+            "setBaseTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBaseTexture" }
         }
-      val set_image_size: CPointer<godot_method_bind>
+      val setImageSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "set_image_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_image_size" }
+            "setImageSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setImageSize" }
         }
-      val set_mesh: CPointer<godot_method_bind>
+      val setMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshTexture".cstr.ptr,
-            "set_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mesh" }
+            "setMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMesh" }
         }}
   }
 }

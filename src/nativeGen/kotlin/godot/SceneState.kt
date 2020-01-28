@@ -23,83 +23,83 @@ open class SceneState(
 ) : Reference(_handle) {
   fun getConnectionBinds(idx: Int): VariantArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_binds.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionBinds.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun getConnectionCount(): Int {
-    val _ret = __method_bind.get_connection_count.call(this._handle)
+    val _ret = __method_bind.getConnectionCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getConnectionFlags(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_flags.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionFlags.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getConnectionMethod(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_method.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionMethod.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getConnectionSignal(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_signal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionSignal.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getConnectionSource(idx: Int): NodePath {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_source.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionSource.call(this._handle, _arg, 1)
     return _ret.asNodePath()
   }
 
   fun getConnectionTarget(idx: Int): NodePath {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_target.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionTarget.call(this._handle, _arg, 1)
     return _ret.asNodePath()
   }
 
   fun getNodeCount(): Int {
-    val _ret = __method_bind.get_node_count.call(this._handle)
+    val _ret = __method_bind.getNodeCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNodeGroups(idx: Int): PoolStringArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_groups.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeGroups.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getNodeIndex(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_index.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeIndex.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getNodeInstance(idx: Int): PackedScene {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_instance.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeInstance.call(this._handle, _arg, 1)
     return _ret.asObject(::PackedScene)!!
   }
 
   fun getNodeInstancePlaceholder(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_instance_placeholder.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeInstancePlaceholder.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getNodeName(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getNodeOwnerPath(idx: Int): NodePath {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_owner_path.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeOwnerPath.call(this._handle, _arg, 1)
     return _ret.asNodePath()
   }
 
@@ -107,13 +107,13 @@ open class SceneState(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(forParent)
-    val _ret = __method_bind.get_node_path.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getNodePath.call(this._handle, _args.toVariant(), 2)
     return _ret.asNodePath()
   }
 
   fun getNodePropertyCount(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_property_count.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodePropertyCount.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -121,7 +121,7 @@ open class SceneState(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(propIdx)
-    val _ret = __method_bind.get_node_property_name.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getNodePropertyName.call(this._handle, _args.toVariant(), 2)
     return _ret.asString()
   }
 
@@ -129,19 +129,19 @@ open class SceneState(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(propIdx)
-    val _ret = __method_bind.get_node_property_value.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getNodePropertyValue.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
   fun getNodeType(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_node_type.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeType.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun isNodeInstancePlaceholder(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_node_instance_placeholder.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isNodeInstancePlaceholder.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -177,125 +177,125 @@ open class SceneState(
      * Container for method_bind pointers for SceneState
      */
     private object __method_bind {
-      val get_connection_binds: CPointer<godot_method_bind>
+      val getConnectionBinds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_binds".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_binds" }
+            "getConnectionBinds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionBinds" }
         }
-      val get_connection_count: CPointer<godot_method_bind>
+      val getConnectionCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_count" }
+            "getConnectionCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionCount" }
         }
-      val get_connection_flags: CPointer<godot_method_bind>
+      val getConnectionFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_flags" }
+            "getConnectionFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionFlags" }
         }
-      val get_connection_method: CPointer<godot_method_bind>
+      val getConnectionMethod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_method" }
+            "getConnectionMethod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionMethod" }
         }
-      val get_connection_signal: CPointer<godot_method_bind>
+      val getConnectionSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_signal" }
+            "getConnectionSignal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionSignal" }
         }
-      val get_connection_source: CPointer<godot_method_bind>
+      val getConnectionSource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_source".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_source" }
+            "getConnectionSource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionSource" }
         }
-      val get_connection_target: CPointer<godot_method_bind>
+      val getConnectionTarget: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_connection_target".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_target" }
+            "getConnectionTarget".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionTarget" }
         }
-      val get_node_count: CPointer<godot_method_bind>
+      val getNodeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_count" }
+            "getNodeCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeCount" }
         }
-      val get_node_groups: CPointer<godot_method_bind>
+      val getNodeGroups: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_groups".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_groups" }
+            "getNodeGroups".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeGroups" }
         }
-      val get_node_index: CPointer<godot_method_bind>
+      val getNodeIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_index" }
+            "getNodeIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeIndex" }
         }
-      val get_node_instance: CPointer<godot_method_bind>
+      val getNodeInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_instance" }
+            "getNodeInstance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeInstance" }
         }
-      val get_node_instance_placeholder: CPointer<godot_method_bind>
+      val getNodeInstancePlaceholder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_instance_placeholder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_instance_placeholder" }
+            "getNodeInstancePlaceholder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeInstancePlaceholder" }
         }
-      val get_node_name: CPointer<godot_method_bind>
+      val getNodeName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_name" }
+            "getNodeName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeName" }
         }
-      val get_node_owner_path: CPointer<godot_method_bind>
+      val getNodeOwnerPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_owner_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_owner_path" }
+            "getNodeOwnerPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeOwnerPath" }
         }
-      val get_node_path: CPointer<godot_method_bind>
+      val getNodePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_path" }
+            "getNodePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodePath" }
         }
-      val get_node_property_count: CPointer<godot_method_bind>
+      val getNodePropertyCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_property_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_property_count" }
+            "getNodePropertyCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodePropertyCount" }
         }
-      val get_node_property_name: CPointer<godot_method_bind>
+      val getNodePropertyName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_property_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_property_name" }
+            "getNodePropertyName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodePropertyName" }
         }
-      val get_node_property_value: CPointer<godot_method_bind>
+      val getNodePropertyValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_property_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_property_value" }
+            "getNodePropertyValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodePropertyValue" }
         }
-      val get_node_type: CPointer<godot_method_bind>
+      val getNodeType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "get_node_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_type" }
+            "getNodeType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeType" }
         }
-      val is_node_instance_placeholder: CPointer<godot_method_bind>
+      val isNodeInstancePlaceholder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneState".cstr.ptr,
-            "is_node_instance_placeholder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_node_instance_placeholder" }
+            "isNodeInstancePlaceholder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isNodeInstancePlaceholder" }
         }}
   }
 }

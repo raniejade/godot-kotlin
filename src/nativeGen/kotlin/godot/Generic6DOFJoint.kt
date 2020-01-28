@@ -19,44 +19,100 @@ import kotlinx.cinterop.reinterpret
 open class Generic6DOFJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var angularLimitXLowerAngle: Float
+    get() {
+       return _getAngularLoLimitX() 
+    }
+    set(value) {
+      _setAngularLoLimitX(value)
+    }
+
+  var angularLimitXUpperAngle: Float
+    get() {
+       return _getAngularHiLimitX() 
+    }
+    set(value) {
+      _setAngularHiLimitX(value)
+    }
+
+  var angularLimitYLowerAngle: Float
+    get() {
+       return _getAngularLoLimitY() 
+    }
+    set(value) {
+      _setAngularLoLimitY(value)
+    }
+
+  var angularLimitYUpperAngle: Float
+    get() {
+       return _getAngularHiLimitY() 
+    }
+    set(value) {
+      _setAngularHiLimitY(value)
+    }
+
+  var angularLimitZLowerAngle: Float
+    get() {
+       return _getAngularLoLimitZ() 
+    }
+    set(value) {
+      _setAngularLoLimitZ(value)
+    }
+
+  var angularLimitZUpperAngle: Float
+    get() {
+       return _getAngularHiLimitZ() 
+    }
+    set(value) {
+      _setAngularHiLimitZ(value)
+    }
+
+  var precision: Int
+    get() {
+       return getPrecision() 
+    }
+    set(value) {
+      setPrecision(value)
+    }
+
   fun getFlagX(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag_x.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlagX.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getFlagY(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag_y.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlagY.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getFlagZ(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag_z.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlagZ.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getParamX(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param_x.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamX.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getParamY(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param_y.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamY.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getParamZ(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param_z.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParamZ.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getPrecision(): Int {
-    val _ret = __method_bind.get_precision.call(this._handle)
+    val _ret = __method_bind.getPrecision.call(this._handle)
     return _ret.asInt()
   }
 
@@ -64,47 +120,47 @@ open class Generic6DOFJoint(
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag_x.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFlagX.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFlagY(flag: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag_y.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFlagY.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFlagZ(flag: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(value)
-    __method_bind.set_flag_z.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFlagZ.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParamX(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param_x.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setParamX.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParamY(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param_y.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setParamY.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParamZ(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param_z.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setParamZ.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPrecision(precision: Int) {
     val _arg = Variant.new(precision)
-    __method_bind.set_precision.call(this._handle, _arg, 1)
+    __method_bind.setPrecision.call(this._handle, _arg, 1)
   }
 
   enum class Param(
@@ -248,103 +304,103 @@ open class Generic6DOFJoint(
      * Container for method_bind pointers for Generic6DOFJoint
      */
     private object __method_bind {
-      val get_flag_x: CPointer<godot_method_bind>
+      val getFlagX: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_flag_x".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flag_x" }
+            "getFlagX".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFlagX" }
         }
-      val get_flag_y: CPointer<godot_method_bind>
+      val getFlagY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_flag_y".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flag_y" }
+            "getFlagY".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFlagY" }
         }
-      val get_flag_z: CPointer<godot_method_bind>
+      val getFlagZ: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_flag_z".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flag_z" }
+            "getFlagZ".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFlagZ" }
         }
-      val get_param_x: CPointer<godot_method_bind>
+      val getParamX: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_param_x".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_param_x" }
+            "getParamX".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParamX" }
         }
-      val get_param_y: CPointer<godot_method_bind>
+      val getParamY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_param_y".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_param_y" }
+            "getParamY".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParamY" }
         }
-      val get_param_z: CPointer<godot_method_bind>
+      val getParamZ: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_param_z".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_param_z" }
+            "getParamZ".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParamZ" }
         }
-      val get_precision: CPointer<godot_method_bind>
+      val getPrecision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "get_precision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_precision" }
+            "getPrecision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPrecision" }
         }
-      val set_flag_x: CPointer<godot_method_bind>
+      val setFlagX: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_flag_x".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flag_x" }
+            "setFlagX".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlagX" }
         }
-      val set_flag_y: CPointer<godot_method_bind>
+      val setFlagY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_flag_y".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flag_y" }
+            "setFlagY".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlagY" }
         }
-      val set_flag_z: CPointer<godot_method_bind>
+      val setFlagZ: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_flag_z".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flag_z" }
+            "setFlagZ".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlagZ" }
         }
-      val set_param_x: CPointer<godot_method_bind>
+      val setParamX: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_param_x".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_param_x" }
+            "setParamX".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParamX" }
         }
-      val set_param_y: CPointer<godot_method_bind>
+      val setParamY: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_param_y".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_param_y" }
+            "setParamY".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParamY" }
         }
-      val set_param_z: CPointer<godot_method_bind>
+      val setParamZ: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_param_z".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_param_z" }
+            "setParamZ".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParamZ" }
         }
-      val set_precision: CPointer<godot_method_bind>
+      val setPrecision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Generic6DOFJoint".cstr.ptr,
-            "set_precision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_precision" }
+            "setPrecision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPrecision" }
         }}
   }
 }

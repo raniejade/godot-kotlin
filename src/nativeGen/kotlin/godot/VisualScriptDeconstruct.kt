@@ -17,14 +17,30 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptDeconstruct(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var elemCache: VariantArray
+    get() {
+       return _getElemCache() 
+    }
+    set(value) {
+      _setElemCache(value)
+    }
+
+  var type: Int
+    get() {
+       return Variant.Type.from(getDeconstructType()) 
+    }
+    set(value) {
+      setDeconstructType(Variant.Type.from(value))
+    }
+
   fun getDeconstructType(): Variant.Type {
-    val _ret = __method_bind.get_deconstruct_type.call(this._handle)
+    val _ret = __method_bind.getDeconstructType.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun setDeconstructType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_deconstruct_type.call(this._handle, _arg, 1)
+    __method_bind.setDeconstructType.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +58,19 @@ open class VisualScriptDeconstruct(
      * Container for method_bind pointers for VisualScriptDeconstruct
      */
     private object __method_bind {
-      val get_deconstruct_type: CPointer<godot_method_bind>
+      val getDeconstructType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-            "get_deconstruct_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_deconstruct_type" }
+            "getDeconstructType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDeconstructType" }
         }
-      val set_deconstruct_type: CPointer<godot_method_bind>
+      val setDeconstructType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptDeconstruct".cstr.ptr,
-            "set_deconstruct_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_deconstruct_type" }
+            "setDeconstructType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDeconstructType" }
         }}
   }
 }

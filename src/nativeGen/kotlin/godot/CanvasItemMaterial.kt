@@ -18,64 +18,112 @@ import kotlinx.cinterop.reinterpret
 open class CanvasItemMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  var blendMode: Int
+    get() {
+       return CanvasItemMaterial.BlendMode.from(getBlendMode()) 
+    }
+    set(value) {
+      setBlendMode(CanvasItemMaterial.BlendMode.from(value))
+    }
+
+  var lightMode: Int
+    get() {
+       return CanvasItemMaterial.LightMode.from(getLightMode()) 
+    }
+    set(value) {
+      setLightMode(CanvasItemMaterial.LightMode.from(value))
+    }
+
+  var particlesAnimHFrames: Int
+    get() {
+       return getParticlesAnimHFrames() 
+    }
+    set(value) {
+      setParticlesAnimHFrames(value)
+    }
+
+  var particlesAnimLoop: Boolean
+    get() {
+       return getParticlesAnimLoop() 
+    }
+    set(value) {
+      setParticlesAnimLoop(value)
+    }
+
+  var particlesAnimVFrames: Int
+    get() {
+       return getParticlesAnimVFrames() 
+    }
+    set(value) {
+      setParticlesAnimVFrames(value)
+    }
+
+  var particlesAnimation: Boolean
+    get() {
+       return getParticlesAnimation() 
+    }
+    set(value) {
+      setParticlesAnimation(value)
+    }
+
   fun getBlendMode(): BlendMode {
-    val _ret = __method_bind.get_blend_mode.call(this._handle)
+    val _ret = __method_bind.getBlendMode.call(this._handle)
     return CanvasItemMaterial.BlendMode.from(_ret.asInt())
   }
 
   fun getLightMode(): LightMode {
-    val _ret = __method_bind.get_light_mode.call(this._handle)
+    val _ret = __method_bind.getLightMode.call(this._handle)
     return CanvasItemMaterial.LightMode.from(_ret.asInt())
   }
 
   fun getParticlesAnimHFrames(): Int {
-    val _ret = __method_bind.get_particles_anim_h_frames.call(this._handle)
+    val _ret = __method_bind.getParticlesAnimHFrames.call(this._handle)
     return _ret.asInt()
   }
 
   fun getParticlesAnimLoop(): Boolean {
-    val _ret = __method_bind.get_particles_anim_loop.call(this._handle)
+    val _ret = __method_bind.getParticlesAnimLoop.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getParticlesAnimVFrames(): Int {
-    val _ret = __method_bind.get_particles_anim_v_frames.call(this._handle)
+    val _ret = __method_bind.getParticlesAnimVFrames.call(this._handle)
     return _ret.asInt()
   }
 
   fun getParticlesAnimation(): Boolean {
-    val _ret = __method_bind.get_particles_animation.call(this._handle)
+    val _ret = __method_bind.getParticlesAnimation.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setBlendMode(blendMode: Int) {
     val _arg = Variant.new(blendMode)
-    __method_bind.set_blend_mode.call(this._handle, _arg, 1)
+    __method_bind.setBlendMode.call(this._handle, _arg, 1)
   }
 
   fun setLightMode(lightMode: Int) {
     val _arg = Variant.new(lightMode)
-    __method_bind.set_light_mode.call(this._handle, _arg, 1)
+    __method_bind.setLightMode.call(this._handle, _arg, 1)
   }
 
   fun setParticlesAnimHFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.set_particles_anim_h_frames.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimHFrames.call(this._handle, _arg, 1)
   }
 
   fun setParticlesAnimLoop(loop: Boolean) {
     val _arg = Variant.new(loop)
-    __method_bind.set_particles_anim_loop.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimLoop.call(this._handle, _arg, 1)
   }
 
   fun setParticlesAnimVFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.set_particles_anim_v_frames.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimVFrames.call(this._handle, _arg, 1)
   }
 
   fun setParticlesAnimation(particlesAnim: Boolean) {
     val _arg = Variant.new(particlesAnim)
-    __method_bind.set_particles_animation.call(this._handle, _arg, 1)
+    __method_bind.setParticlesAnimation.call(this._handle, _arg, 1)
   }
 
   enum class LightMode(
@@ -155,89 +203,89 @@ open class CanvasItemMaterial(
      * Container for method_bind pointers for CanvasItemMaterial
      */
     private object __method_bind {
-      val get_blend_mode: CPointer<godot_method_bind>
+      val getBlendMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "get_blend_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_blend_mode" }
+            "getBlendMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBlendMode" }
         }
-      val get_light_mode: CPointer<godot_method_bind>
+      val getLightMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "get_light_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_light_mode" }
+            "getLightMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLightMode" }
         }
-      val get_particles_anim_h_frames: CPointer<godot_method_bind>
+      val getParticlesAnimHFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "get_particles_anim_h_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_particles_anim_h_frames" }
+            "getParticlesAnimHFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParticlesAnimHFrames" }
         }
-      val get_particles_anim_loop: CPointer<godot_method_bind>
+      val getParticlesAnimLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "get_particles_anim_loop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_particles_anim_loop" }
+            "getParticlesAnimLoop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParticlesAnimLoop" }
         }
-      val get_particles_anim_v_frames: CPointer<godot_method_bind>
+      val getParticlesAnimVFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "get_particles_anim_v_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_particles_anim_v_frames" }
+            "getParticlesAnimVFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParticlesAnimVFrames" }
         }
-      val get_particles_animation: CPointer<godot_method_bind>
+      val getParticlesAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "get_particles_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_particles_animation" }
+            "getParticlesAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParticlesAnimation" }
         }
-      val set_blend_mode: CPointer<godot_method_bind>
+      val setBlendMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "set_blend_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_blend_mode" }
+            "setBlendMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBlendMode" }
         }
-      val set_light_mode: CPointer<godot_method_bind>
+      val setLightMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "set_light_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_light_mode" }
+            "setLightMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLightMode" }
         }
-      val set_particles_anim_h_frames: CPointer<godot_method_bind>
+      val setParticlesAnimHFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "set_particles_anim_h_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_particles_anim_h_frames" }
+            "setParticlesAnimHFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParticlesAnimHFrames" }
         }
-      val set_particles_anim_loop: CPointer<godot_method_bind>
+      val setParticlesAnimLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "set_particles_anim_loop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_particles_anim_loop" }
+            "setParticlesAnimLoop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParticlesAnimLoop" }
         }
-      val set_particles_anim_v_frames: CPointer<godot_method_bind>
+      val setParticlesAnimVFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "set_particles_anim_v_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_particles_anim_v_frames" }
+            "setParticlesAnimVFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParticlesAnimVFrames" }
         }
-      val set_particles_animation: CPointer<godot_method_bind>
+      val setParticlesAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItemMaterial".cstr.ptr,
-            "set_particles_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_particles_animation" }
+            "setParticlesAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParticlesAnimation" }
         }}
   }
 }

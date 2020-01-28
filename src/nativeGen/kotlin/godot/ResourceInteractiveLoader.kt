@@ -19,17 +19,17 @@ open class ResourceInteractiveLoader(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getResource(): Resource {
-    val _ret = __method_bind.get_resource.call(this._handle)
+    val _ret = __method_bind.getResource.call(this._handle)
     return _ret.asObject(::Resource)!!
   }
 
   fun getStage(): Int {
-    val _ret = __method_bind.get_stage.call(this._handle)
+    val _ret = __method_bind.getStage.call(this._handle)
     return _ret.asInt()
   }
 
   fun getStageCount(): Int {
-    val _ret = __method_bind.get_stage_count.call(this._handle)
+    val _ret = __method_bind.getStageCount.call(this._handle)
     return _ret.asInt()
   }
 
@@ -48,26 +48,26 @@ open class ResourceInteractiveLoader(
      * Container for method_bind pointers for ResourceInteractiveLoader
      */
     private object __method_bind {
-      val get_resource: CPointer<godot_method_bind>
+      val getResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-            "get_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource" }
+            "getResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getResource" }
         }
-      val get_stage: CPointer<godot_method_bind>
+      val getStage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-            "get_stage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stage" }
+            "getStage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStage" }
         }
-      val get_stage_count: CPointer<godot_method_bind>
+      val getStageCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourceInteractiveLoader".cstr.ptr,
-            "get_stage_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stage_count" }
+            "getStageCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStageCount" }
         }
       val poll: CPointer<godot_method_bind>
         get() = memScoped {

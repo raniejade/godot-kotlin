@@ -20,89 +20,209 @@ import kotlinx.cinterop.reinterpret
 open class Particles(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  var amount: Int
+    get() {
+       return getAmount() 
+    }
+    set(value) {
+      setAmount(value)
+    }
+
+  var drawOrder: Int
+    get() {
+       return Particles.DrawOrder.from(getDrawOrder()) 
+    }
+    set(value) {
+      setDrawOrder(Particles.DrawOrder.from(value))
+    }
+
+  var drawPasses: Int
+    get() {
+       return getDrawPasses() 
+    }
+    set(value) {
+      setDrawPasses(value)
+    }
+
+  var emitting: Boolean
+    get() {
+       return isEmitting() 
+    }
+    set(value) {
+      setEmitting(value)
+    }
+
+  var explosiveness: Float
+    get() {
+       return getExplosivenessRatio() 
+    }
+    set(value) {
+      setExplosivenessRatio(value)
+    }
+
+  var fixedFps: Int
+    get() {
+       return getFixedFps() 
+    }
+    set(value) {
+      setFixedFps(value)
+    }
+
+  var fractDelta: Boolean
+    get() {
+       return getFractionalDelta() 
+    }
+    set(value) {
+      setFractionalDelta(value)
+    }
+
+  var lifetime: Float
+    get() {
+       return getLifetime() 
+    }
+    set(value) {
+      setLifetime(value)
+    }
+
+  var localCoords: Boolean
+    get() {
+       return getUseLocalCoordinates() 
+    }
+    set(value) {
+      setUseLocalCoordinates(value)
+    }
+
+  var oneShot: Boolean
+    get() {
+       return getOneShot() 
+    }
+    set(value) {
+      setOneShot(value)
+    }
+
+  var preprocess: Float
+    get() {
+       return getPreProcessTime() 
+    }
+    set(value) {
+      setPreProcessTime(value)
+    }
+
+  var processMaterial: `ShaderMaterial,ParticlesMaterial`
+    get() {
+       return getProcessMaterial() 
+    }
+    set(value) {
+      setProcessMaterial(value)
+    }
+
+  var randomness: Float
+    get() {
+       return getRandomnessRatio() 
+    }
+    set(value) {
+      setRandomnessRatio(value)
+    }
+
+  var speedScale: Float
+    get() {
+       return getSpeedScale() 
+    }
+    set(value) {
+      setSpeedScale(value)
+    }
+
+  var visibilityAabb: AABB
+    get() {
+       return getVisibilityAabb() 
+    }
+    set(value) {
+      setVisibilityAabb(value)
+    }
+
   fun captureAabb(): AABB {
-    val _ret = __method_bind.capture_aabb.call(this._handle)
+    val _ret = __method_bind.captureAabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun getAmount(): Int {
-    val _ret = __method_bind.get_amount.call(this._handle)
+    val _ret = __method_bind.getAmount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getDrawOrder(): DrawOrder {
-    val _ret = __method_bind.get_draw_order.call(this._handle)
+    val _ret = __method_bind.getDrawOrder.call(this._handle)
     return Particles.DrawOrder.from(_ret.asInt())
   }
 
   fun getDrawPassMesh(pass: Int): Mesh {
     val _arg = Variant.new(pass)
-    val _ret = __method_bind.get_draw_pass_mesh.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDrawPassMesh.call(this._handle, _arg, 1)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getDrawPasses(): Int {
-    val _ret = __method_bind.get_draw_passes.call(this._handle)
+    val _ret = __method_bind.getDrawPasses.call(this._handle)
     return _ret.asInt()
   }
 
   fun getExplosivenessRatio(): Float {
-    val _ret = __method_bind.get_explosiveness_ratio.call(this._handle)
+    val _ret = __method_bind.getExplosivenessRatio.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFixedFps(): Int {
-    val _ret = __method_bind.get_fixed_fps.call(this._handle)
+    val _ret = __method_bind.getFixedFps.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFractionalDelta(): Boolean {
-    val _ret = __method_bind.get_fractional_delta.call(this._handle)
+    val _ret = __method_bind.getFractionalDelta.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getLifetime(): Float {
-    val _ret = __method_bind.get_lifetime.call(this._handle)
+    val _ret = __method_bind.getLifetime.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOneShot(): Boolean {
-    val _ret = __method_bind.get_one_shot.call(this._handle)
+    val _ret = __method_bind.getOneShot.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getPreProcessTime(): Float {
-    val _ret = __method_bind.get_pre_process_time.call(this._handle)
+    val _ret = __method_bind.getPreProcessTime.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getProcessMaterial(): Material {
-    val _ret = __method_bind.get_process_material.call(this._handle)
+    val _ret = __method_bind.getProcessMaterial.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getRandomnessRatio(): Float {
-    val _ret = __method_bind.get_randomness_ratio.call(this._handle)
+    val _ret = __method_bind.getRandomnessRatio.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.get_speed_scale.call(this._handle)
+    val _ret = __method_bind.getSpeedScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getUseLocalCoordinates(): Boolean {
-    val _ret = __method_bind.get_use_local_coordinates.call(this._handle)
+    val _ret = __method_bind.getUseLocalCoordinates.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getVisibilityAabb(): AABB {
-    val _ret = __method_bind.get_visibility_aabb.call(this._handle)
+    val _ret = __method_bind.getVisibilityAabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun isEmitting(): Boolean {
-    val _ret = __method_bind.is_emitting.call(this._handle)
+    val _ret = __method_bind.isEmitting.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -112,84 +232,84 @@ open class Particles(
 
   fun setAmount(amount: Int) {
     val _arg = Variant.new(amount)
-    __method_bind.set_amount.call(this._handle, _arg, 1)
+    __method_bind.setAmount.call(this._handle, _arg, 1)
   }
 
   fun setDrawOrder(order: Int) {
     val _arg = Variant.new(order)
-    __method_bind.set_draw_order.call(this._handle, _arg, 1)
+    __method_bind.setDrawOrder.call(this._handle, _arg, 1)
   }
 
   fun setDrawPassMesh(pass: Int, mesh: Mesh) {
     val _args = VariantArray.new()
     _args.append(pass)
     _args.append(mesh)
-    __method_bind.set_draw_pass_mesh.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setDrawPassMesh.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setDrawPasses(passes: Int) {
     val _arg = Variant.new(passes)
-    __method_bind.set_draw_passes.call(this._handle, _arg, 1)
+    __method_bind.setDrawPasses.call(this._handle, _arg, 1)
   }
 
   fun setEmitting(emitting: Boolean) {
     val _arg = Variant.new(emitting)
-    __method_bind.set_emitting.call(this._handle, _arg, 1)
+    __method_bind.setEmitting.call(this._handle, _arg, 1)
   }
 
   fun setExplosivenessRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.set_explosiveness_ratio.call(this._handle, _arg, 1)
+    __method_bind.setExplosivenessRatio.call(this._handle, _arg, 1)
   }
 
   fun setFixedFps(fps: Int) {
     val _arg = Variant.new(fps)
-    __method_bind.set_fixed_fps.call(this._handle, _arg, 1)
+    __method_bind.setFixedFps.call(this._handle, _arg, 1)
   }
 
   fun setFractionalDelta(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_fractional_delta.call(this._handle, _arg, 1)
+    __method_bind.setFractionalDelta.call(this._handle, _arg, 1)
   }
 
   fun setLifetime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.set_lifetime.call(this._handle, _arg, 1)
+    __method_bind.setLifetime.call(this._handle, _arg, 1)
   }
 
   fun setOneShot(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_one_shot.call(this._handle, _arg, 1)
+    __method_bind.setOneShot.call(this._handle, _arg, 1)
   }
 
   fun setPreProcessTime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.set_pre_process_time.call(this._handle, _arg, 1)
+    __method_bind.setPreProcessTime.call(this._handle, _arg, 1)
   }
 
   fun setProcessMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_process_material.call(this._handle, _arg, 1)
+    __method_bind.setProcessMaterial.call(this._handle, _arg, 1)
   }
 
   fun setRandomnessRatio(ratio: Float) {
     val _arg = Variant.new(ratio)
-    __method_bind.set_randomness_ratio.call(this._handle, _arg, 1)
+    __method_bind.setRandomnessRatio.call(this._handle, _arg, 1)
   }
 
   fun setSpeedScale(scale: Float) {
     val _arg = Variant.new(scale)
-    __method_bind.set_speed_scale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
   }
 
   fun setUseLocalCoordinates(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_local_coordinates.call(this._handle, _arg, 1)
+    __method_bind.setUseLocalCoordinates.call(this._handle, _arg, 1)
   }
 
   fun setVisibilityAabb(aabb: AABB) {
     val _arg = Variant.new(aabb)
-    __method_bind.set_visibility_aabb.call(this._handle, _arg, 1)
+    __method_bind.setVisibilityAabb.call(this._handle, _arg, 1)
   }
 
   enum class DrawOrder(
@@ -235,107 +355,107 @@ open class Particles(
      * Container for method_bind pointers for Particles
      */
     private object __method_bind {
-      val capture_aabb: CPointer<godot_method_bind>
+      val captureAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "capture_aabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method capture_aabb" }
+            "captureAabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method captureAabb" }
         }
-      val get_amount: CPointer<godot_method_bind>
+      val getAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_amount" }
+            "getAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAmount" }
         }
-      val get_draw_order: CPointer<godot_method_bind>
+      val getDrawOrder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_draw_order".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_draw_order" }
+            "getDrawOrder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDrawOrder" }
         }
-      val get_draw_pass_mesh: CPointer<godot_method_bind>
+      val getDrawPassMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_draw_pass_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_draw_pass_mesh" }
+            "getDrawPassMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDrawPassMesh" }
         }
-      val get_draw_passes: CPointer<godot_method_bind>
+      val getDrawPasses: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_draw_passes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_draw_passes" }
+            "getDrawPasses".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDrawPasses" }
         }
-      val get_explosiveness_ratio: CPointer<godot_method_bind>
+      val getExplosivenessRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_explosiveness_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_explosiveness_ratio" }
+            "getExplosivenessRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExplosivenessRatio" }
         }
-      val get_fixed_fps: CPointer<godot_method_bind>
+      val getFixedFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_fixed_fps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fixed_fps" }
+            "getFixedFps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFixedFps" }
         }
-      val get_fractional_delta: CPointer<godot_method_bind>
+      val getFractionalDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_fractional_delta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fractional_delta" }
+            "getFractionalDelta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFractionalDelta" }
         }
-      val get_lifetime: CPointer<godot_method_bind>
+      val getLifetime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_lifetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_lifetime" }
+            "getLifetime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLifetime" }
         }
-      val get_one_shot: CPointer<godot_method_bind>
+      val getOneShot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_one_shot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_one_shot" }
+            "getOneShot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOneShot" }
         }
-      val get_pre_process_time: CPointer<godot_method_bind>
+      val getPreProcessTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_pre_process_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pre_process_time" }
+            "getPreProcessTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPreProcessTime" }
         }
-      val get_process_material: CPointer<godot_method_bind>
+      val getProcessMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_process_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_process_material" }
+            "getProcessMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProcessMaterial" }
         }
-      val get_randomness_ratio: CPointer<godot_method_bind>
+      val getRandomnessRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_randomness_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_randomness_ratio" }
+            "getRandomnessRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRandomnessRatio" }
         }
-      val get_speed_scale: CPointer<godot_method_bind>
+      val getSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
+            "getSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeedScale" }
         }
-      val get_use_local_coordinates: CPointer<godot_method_bind>
+      val getUseLocalCoordinates: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_use_local_coordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_use_local_coordinates" }
+            "getUseLocalCoordinates".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUseLocalCoordinates" }
         }
-      val get_visibility_aabb: CPointer<godot_method_bind>
+      val getVisibilityAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "get_visibility_aabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_visibility_aabb" }
+            "getVisibilityAabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVisibilityAabb" }
         }
-      val is_emitting: CPointer<godot_method_bind>
+      val isEmitting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "is_emitting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_emitting" }
+            "isEmitting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isEmitting" }
         }
       val restart: CPointer<godot_method_bind>
         get() = memScoped {
@@ -343,101 +463,101 @@ open class Particles(
             "restart".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method restart" }
         }
-      val set_amount: CPointer<godot_method_bind>
+      val setAmount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_amount".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_amount" }
+            "setAmount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAmount" }
         }
-      val set_draw_order: CPointer<godot_method_bind>
+      val setDrawOrder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_draw_order".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_order" }
+            "setDrawOrder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawOrder" }
         }
-      val set_draw_pass_mesh: CPointer<godot_method_bind>
+      val setDrawPassMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_draw_pass_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_pass_mesh" }
+            "setDrawPassMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawPassMesh" }
         }
-      val set_draw_passes: CPointer<godot_method_bind>
+      val setDrawPasses: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_draw_passes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_passes" }
+            "setDrawPasses".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawPasses" }
         }
-      val set_emitting: CPointer<godot_method_bind>
+      val setEmitting: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_emitting".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_emitting" }
+            "setEmitting".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEmitting" }
         }
-      val set_explosiveness_ratio: CPointer<godot_method_bind>
+      val setExplosivenessRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_explosiveness_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_explosiveness_ratio" }
+            "setExplosivenessRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExplosivenessRatio" }
         }
-      val set_fixed_fps: CPointer<godot_method_bind>
+      val setFixedFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_fixed_fps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fixed_fps" }
+            "setFixedFps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFixedFps" }
         }
-      val set_fractional_delta: CPointer<godot_method_bind>
+      val setFractionalDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_fractional_delta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fractional_delta" }
+            "setFractionalDelta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFractionalDelta" }
         }
-      val set_lifetime: CPointer<godot_method_bind>
+      val setLifetime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_lifetime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_lifetime" }
+            "setLifetime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLifetime" }
         }
-      val set_one_shot: CPointer<godot_method_bind>
+      val setOneShot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_one_shot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_one_shot" }
+            "setOneShot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOneShot" }
         }
-      val set_pre_process_time: CPointer<godot_method_bind>
+      val setPreProcessTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_pre_process_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pre_process_time" }
+            "setPreProcessTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPreProcessTime" }
         }
-      val set_process_material: CPointer<godot_method_bind>
+      val setProcessMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_process_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_process_material" }
+            "setProcessMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setProcessMaterial" }
         }
-      val set_randomness_ratio: CPointer<godot_method_bind>
+      val setRandomnessRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_randomness_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_randomness_ratio" }
+            "setRandomnessRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRandomnessRatio" }
         }
-      val set_speed_scale: CPointer<godot_method_bind>
+      val setSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
+            "setSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeedScale" }
         }
-      val set_use_local_coordinates: CPointer<godot_method_bind>
+      val setUseLocalCoordinates: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_use_local_coordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_local_coordinates" }
+            "setUseLocalCoordinates".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseLocalCoordinates" }
         }
-      val set_visibility_aabb: CPointer<godot_method_bind>
+      val setVisibilityAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Particles".cstr.ptr,
-            "set_visibility_aabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_visibility_aabb" }
+            "setVisibilityAabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVisibilityAabb" }
         }}
   }
 }

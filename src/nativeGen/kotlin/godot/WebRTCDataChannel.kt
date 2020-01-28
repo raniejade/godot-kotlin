@@ -20,52 +20,60 @@ import kotlinx.cinterop.reinterpret
 open class WebRTCDataChannel(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
+  var writeMode: Int
+    get() {
+       return WebRTCDataChannel.WriteMode.from(getWriteMode()) 
+    }
+    set(value) {
+      setWriteMode(WebRTCDataChannel.WriteMode.from(value))
+    }
+
   fun close() {
     __method_bind.close.call(this._handle)
   }
 
   fun getId(): Int {
-    val _ret = __method_bind.get_id.call(this._handle)
+    val _ret = __method_bind.getId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLabel(): String {
-    val _ret = __method_bind.get_label.call(this._handle)
+    val _ret = __method_bind.getLabel.call(this._handle)
     return _ret.asString()
   }
 
   fun getMaxPacketLifeTime(): Int {
-    val _ret = __method_bind.get_max_packet_life_time.call(this._handle)
+    val _ret = __method_bind.getMaxPacketLifeTime.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaxRetransmits(): Int {
-    val _ret = __method_bind.get_max_retransmits.call(this._handle)
+    val _ret = __method_bind.getMaxRetransmits.call(this._handle)
     return _ret.asInt()
   }
 
   fun getProtocol(): String {
-    val _ret = __method_bind.get_protocol.call(this._handle)
+    val _ret = __method_bind.getProtocol.call(this._handle)
     return _ret.asString()
   }
 
   fun getReadyState(): ChannelState {
-    val _ret = __method_bind.get_ready_state.call(this._handle)
+    val _ret = __method_bind.getReadyState.call(this._handle)
     return WebRTCDataChannel.ChannelState.from(_ret.asInt())
   }
 
   fun getWriteMode(): WriteMode {
-    val _ret = __method_bind.get_write_mode.call(this._handle)
+    val _ret = __method_bind.getWriteMode.call(this._handle)
     return WebRTCDataChannel.WriteMode.from(_ret.asInt())
   }
 
   fun isNegotiated(): Boolean {
-    val _ret = __method_bind.is_negotiated.call(this._handle)
+    val _ret = __method_bind.isNegotiated.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isOrdered(): Boolean {
-    val _ret = __method_bind.is_ordered.call(this._handle)
+    val _ret = __method_bind.isOrdered.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -76,11 +84,11 @@ open class WebRTCDataChannel(
 
   fun setWriteMode(writeMode: Int) {
     val _arg = Variant.new(writeMode)
-    __method_bind.set_write_mode.call(this._handle, _arg, 1)
+    __method_bind.setWriteMode.call(this._handle, _arg, 1)
   }
 
   fun wasStringPacket(): Boolean {
-    val _ret = __method_bind.was_string_packet.call(this._handle)
+    val _ret = __method_bind.wasStringPacket.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -150,68 +158,68 @@ open class WebRTCDataChannel(
             "close".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close" }
         }
-      val get_id: CPointer<godot_method_bind>
+      val getId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_id" }
+            "getId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getId" }
         }
-      val get_label: CPointer<godot_method_bind>
+      val getLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_label".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_label" }
+            "getLabel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLabel" }
         }
-      val get_max_packet_life_time: CPointer<godot_method_bind>
+      val getMaxPacketLifeTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_max_packet_life_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_packet_life_time" }
+            "getMaxPacketLifeTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaxPacketLifeTime" }
         }
-      val get_max_retransmits: CPointer<godot_method_bind>
+      val getMaxRetransmits: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_max_retransmits".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_retransmits" }
+            "getMaxRetransmits".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaxRetransmits" }
         }
-      val get_protocol: CPointer<godot_method_bind>
+      val getProtocol: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_protocol".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_protocol" }
+            "getProtocol".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProtocol" }
         }
-      val get_ready_state: CPointer<godot_method_bind>
+      val getReadyState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_ready_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ready_state" }
+            "getReadyState".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getReadyState" }
         }
-      val get_write_mode: CPointer<godot_method_bind>
+      val getWriteMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "get_write_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_write_mode" }
+            "getWriteMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWriteMode" }
         }
-      val is_negotiated: CPointer<godot_method_bind>
+      val isNegotiated: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "is_negotiated".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_negotiated" }
+            "isNegotiated".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isNegotiated" }
         }
-      val is_ordered: CPointer<godot_method_bind>
+      val isOrdered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "is_ordered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_ordered" }
+            "isOrdered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isOrdered" }
         }
       val poll: CPointer<godot_method_bind>
         get() = memScoped {
@@ -220,19 +228,19 @@ open class WebRTCDataChannel(
             "poll".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method poll" }
         }
-      val set_write_mode: CPointer<godot_method_bind>
+      val setWriteMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "set_write_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_write_mode" }
+            "setWriteMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWriteMode" }
         }
-      val was_string_packet: CPointer<godot_method_bind>
+      val wasStringPacket: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCDataChannel".cstr.ptr,
-            "was_string_packet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method was_string_packet" }
+            "wasStringPacket".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method wasStringPacket" }
         }}
   }
 }

@@ -21,7 +21,7 @@ open class TCP_Server(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun isConnectionAvailable(): Boolean {
-    val _ret = __method_bind.is_connection_available.call(this._handle)
+    val _ret = __method_bind.isConnectionAvailable.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -38,7 +38,7 @@ open class TCP_Server(
   }
 
   fun takeConnection(): StreamPeerTCP {
-    val _ret = __method_bind.take_connection.call(this._handle)
+    val _ret = __method_bind.takeConnection.call(this._handle)
     return _ret.asObject(::StreamPeerTCP)!!
   }
 
@@ -56,11 +56,11 @@ open class TCP_Server(
      * Container for method_bind pointers for TCP_Server
      */
     private object __method_bind {
-      val is_connection_available: CPointer<godot_method_bind>
+      val isConnectionAvailable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TCP_Server".cstr.ptr,
-            "is_connection_available".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_connection_available" }
+            "isConnectionAvailable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isConnectionAvailable" }
         }
       val listen: CPointer<godot_method_bind>
         get() = memScoped {
@@ -74,11 +74,11 @@ open class TCP_Server(
             "stop".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method stop" }
         }
-      val take_connection: CPointer<godot_method_bind>
+      val takeConnection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TCP_Server".cstr.ptr,
-            "take_connection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method take_connection" }
+            "takeConnection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method takeConnection" }
         }}
   }
 }

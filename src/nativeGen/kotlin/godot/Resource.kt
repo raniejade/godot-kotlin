@@ -19,6 +19,30 @@ import kotlinx.cinterop.reinterpret
 open class Resource(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var resourceLocalToScene: Boolean
+    get() {
+       return isLocalToScene() 
+    }
+    set(value) {
+      setLocalToScene(value)
+    }
+
+  var resourceName: String
+    get() {
+       return getName() 
+    }
+    set(value) {
+      setName(value)
+    }
+
+  var resourcePath: String
+    get() {
+       return getPath() 
+    }
+    set(value) {
+      setPath(value)
+    }
+
   fun duplicate(subresources: Boolean): Resource {
     val _arg = Variant.new(subresources)
     val _ret = __method_bind.duplicate.call(this._handle, _arg, 1)
@@ -26,52 +50,52 @@ open class Resource(
   }
 
   fun getLocalScene(): Node {
-    val _ret = __method_bind.get_local_scene.call(this._handle)
+    val _ret = __method_bind.getLocalScene.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this._handle)
+    val _ret = __method_bind.getName.call(this._handle)
     return _ret.asString()
   }
 
   fun getPath(): String {
-    val _ret = __method_bind.get_path.call(this._handle)
+    val _ret = __method_bind.getPath.call(this._handle)
     return _ret.asString()
   }
 
   fun getRid(): RID {
-    val _ret = __method_bind.get_rid.call(this._handle)
+    val _ret = __method_bind.getRid.call(this._handle)
     return _ret.asRID()
   }
 
   fun isLocalToScene(): Boolean {
-    val _ret = __method_bind.is_local_to_scene.call(this._handle)
+    val _ret = __method_bind.isLocalToScene.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setLocalToScene(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_local_to_scene.call(this._handle, _arg, 1)
+    __method_bind.setLocalToScene.call(this._handle, _arg, 1)
   }
 
   fun setName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_name.call(this._handle, _arg, 1)
+    __method_bind.setName.call(this._handle, _arg, 1)
   }
 
   fun setPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_path.call(this._handle, _arg, 1)
+    __method_bind.setPath.call(this._handle, _arg, 1)
   }
 
   fun setupLocalToScene() {
-    __method_bind.setup_local_to_scene.call(this._handle)
+    __method_bind.setupLocalToScene.call(this._handle)
   }
 
   fun takeOverPath(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.take_over_path.call(this._handle, _arg, 1)
+    __method_bind.takeOverPath.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -94,65 +118,65 @@ open class Resource(
             "duplicate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method duplicate" }
         }
-      val get_local_scene: CPointer<godot_method_bind>
+      val getLocalScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "get_local_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_local_scene" }
+            "getLocalScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLocalScene" }
         }
-      val get_name: CPointer<godot_method_bind>
+      val getName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "get_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_name" }
+            "getName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getName" }
         }
-      val get_path: CPointer<godot_method_bind>
+      val getPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "get_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_path" }
+            "getPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPath" }
         }
-      val get_rid: CPointer<godot_method_bind>
+      val getRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "get_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rid" }
+            "getRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRid" }
         }
-      val is_local_to_scene: CPointer<godot_method_bind>
+      val isLocalToScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "is_local_to_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_local_to_scene" }
+            "isLocalToScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isLocalToScene" }
         }
-      val set_local_to_scene: CPointer<godot_method_bind>
+      val setLocalToScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "set_local_to_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_local_to_scene" }
+            "setLocalToScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLocalToScene" }
         }
-      val set_name: CPointer<godot_method_bind>
+      val setName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "set_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_name" }
+            "setName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setName" }
         }
-      val set_path: CPointer<godot_method_bind>
+      val setPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "set_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path" }
+            "setPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPath" }
         }
-      val setup_local_to_scene: CPointer<godot_method_bind>
+      val setupLocalToScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "setup_local_to_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method setup_local_to_scene" }
+            "setupLocalToScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setupLocalToScene" }
         }
-      val take_over_path: CPointer<godot_method_bind>
+      val takeOverPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Resource".cstr.ptr,
-            "take_over_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method take_over_path" }
+            "takeOverPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method takeOverPath" }
         }}
   }
 }

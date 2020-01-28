@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygonInstance(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var enabled: Boolean
+    get() {
+       return isEnabled() 
+    }
+    set(value) {
+      setEnabled(value)
+    }
+
+  var navpoly: NavigationPolygon
+    get() {
+       return getNavigationPolygon() 
+    }
+    set(value) {
+      setNavigationPolygon(value)
+    }
+
   fun getNavigationPolygon(): NavigationPolygon {
-    val _ret = __method_bind.get_navigation_polygon.call(this._handle)
+    val _ret = __method_bind.getNavigationPolygon.call(this._handle)
     return _ret.asObject(::NavigationPolygon)!!
   }
 
   fun isEnabled(): Boolean {
-    val _ret = __method_bind.is_enabled.call(this._handle)
+    val _ret = __method_bind.isEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_enabled.call(this._handle, _arg, 1)
+    __method_bind.setEnabled.call(this._handle, _arg, 1)
   }
 
   fun setNavigationPolygon(navpoly: NavigationPolygon) {
     val _arg = Variant.new(navpoly)
-    __method_bind.set_navigation_polygon.call(this._handle, _arg, 1)
+    __method_bind.setNavigationPolygon.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class NavigationPolygonInstance(
      * Container for method_bind pointers for NavigationPolygonInstance
      */
     private object __method_bind {
-      val get_navigation_polygon: CPointer<godot_method_bind>
+      val getNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "get_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_navigation_polygon" }
+            "getNavigationPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNavigationPolygon" }
         }
-      val is_enabled: CPointer<godot_method_bind>
+      val isEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "is_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_enabled" }
+            "isEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isEnabled" }
         }
-      val set_enabled: CPointer<godot_method_bind>
+      val setEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "set_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enabled" }
+            "setEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnabled" }
         }
-      val set_navigation_polygon: CPointer<godot_method_bind>
+      val setNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygonInstance".cstr.ptr,
-            "set_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_navigation_polygon" }
+            "setNavigationPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNavigationPolygon" }
         }}
   }
 }

@@ -24,7 +24,7 @@ open class PCKPacker(
     val _args = VariantArray.new()
     _args.append(pckPath)
     _args.append(sourcePath)
-    val _ret = __method_bind.add_file.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.addFile.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
@@ -38,7 +38,7 @@ open class PCKPacker(
     val _args = VariantArray.new()
     _args.append(pckName)
     _args.append(alignment)
-    val _ret = __method_bind.pck_start.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.pckStart.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
@@ -56,11 +56,11 @@ open class PCKPacker(
      * Container for method_bind pointers for PCKPacker
      */
     private object __method_bind {
-      val add_file: CPointer<godot_method_bind>
+      val addFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-            "add_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_file" }
+            "addFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addFile" }
         }
       val flush: CPointer<godot_method_bind>
         get() = memScoped {
@@ -68,11 +68,11 @@ open class PCKPacker(
             "flush".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method flush" }
         }
-      val pck_start: CPointer<godot_method_bind>
+      val pckStart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PCKPacker".cstr.ptr,
-            "pck_start".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method pck_start" }
+            "pckStart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method pckStart" }
         }}
   }
 }

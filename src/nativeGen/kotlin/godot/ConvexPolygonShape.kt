@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class ConvexPolygonShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  var points: VariantArray
+    get() {
+       return getPoints() 
+    }
+    set(value) {
+      setPoints(value)
+    }
+
   fun getPoints(): PoolVector3Array {
-    val _ret = __method_bind.get_points.call(this._handle)
+    val _ret = __method_bind.getPoints.call(this._handle)
     return _ret.asPoolVector3Array()
   }
 
   fun setPoints(points: PoolVector3Array) {
     val _arg = Variant.new(points)
-    __method_bind.set_points.call(this._handle, _arg, 1)
+    __method_bind.setPoints.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class ConvexPolygonShape(
      * Container for method_bind pointers for ConvexPolygonShape
      */
     private object __method_bind {
-      val get_points: CPointer<godot_method_bind>
+      val getPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
-            "get_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_points" }
+            "getPoints".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPoints" }
         }
-      val set_points: CPointer<godot_method_bind>
+      val setPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConvexPolygonShape".cstr.ptr,
-            "set_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_points" }
+            "setPoints".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPoints" }
         }}
   }
 }

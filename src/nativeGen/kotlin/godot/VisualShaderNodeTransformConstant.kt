@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTransformConstant(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  var constant: Transform
+    get() {
+       return getConstant() 
+    }
+    set(value) {
+      setConstant(value)
+    }
+
   fun getConstant(): Transform {
-    val _ret = __method_bind.get_constant.call(this._handle)
+    val _ret = __method_bind.getConstant.call(this._handle)
     return _ret.asTransform()
   }
 
   fun setConstant(value: Transform) {
     val _arg = Variant.new(value)
-    __method_bind.set_constant.call(this._handle, _arg, 1)
+    __method_bind.setConstant.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -43,19 +51,19 @@ open class VisualShaderNodeTransformConstant(
      * Container for method_bind pointers for VisualShaderNodeTransformConstant
      */
     private object __method_bind {
-      val get_constant: CPointer<godot_method_bind>
+      val getConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformConstant".cstr.ptr,
-            "get_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant" }
+            "getConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstant" }
         }
-      val set_constant: CPointer<godot_method_bind>
+      val setConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformConstant".cstr.ptr,
-            "set_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant" }
+            "setConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setConstant" }
         }}
   }
 }

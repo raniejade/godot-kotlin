@@ -18,24 +18,40 @@ import kotlinx.cinterop.reinterpret
 open class LineShape2D(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  var d: Float
+    get() {
+       return getD() 
+    }
+    set(value) {
+      setD(value)
+    }
+
+  var normal: Vector2
+    get() {
+       return getNormal() 
+    }
+    set(value) {
+      setNormal(value)
+    }
+
   fun getD(): Float {
-    val _ret = __method_bind.get_d.call(this._handle)
+    val _ret = __method_bind.getD.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getNormal(): Vector2 {
-    val _ret = __method_bind.get_normal.call(this._handle)
+    val _ret = __method_bind.getNormal.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setD(d: Float) {
     val _arg = Variant.new(d)
-    __method_bind.set_d.call(this._handle, _arg, 1)
+    __method_bind.setD.call(this._handle, _arg, 1)
   }
 
   fun setNormal(normal: Vector2) {
     val _arg = Variant.new(normal)
-    __method_bind.set_normal.call(this._handle, _arg, 1)
+    __method_bind.setNormal.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class LineShape2D(
      * Container for method_bind pointers for LineShape2D
      */
     private object __method_bind {
-      val get_d: CPointer<godot_method_bind>
+      val getD: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "get_d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_d" }
+            "getD".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getD" }
         }
-      val get_normal: CPointer<godot_method_bind>
+      val getNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "get_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal" }
+            "getNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNormal" }
         }
-      val set_d: CPointer<godot_method_bind>
+      val setD: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "set_d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_d" }
+            "setD".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setD" }
         }
-      val set_normal: CPointer<godot_method_bind>
+      val setNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LineShape2D".cstr.ptr,
-            "set_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal" }
+            "setNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNormal" }
         }}
   }
 }

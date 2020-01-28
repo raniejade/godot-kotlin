@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectPitchShift(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  var pitchScale: Float
+    get() {
+       return getPitchScale() 
+    }
+    set(value) {
+      setPitchScale(value)
+    }
+
   fun getPitchScale(): Float {
-    val _ret = __method_bind.get_pitch_scale.call(this._handle)
+    val _ret = __method_bind.getPitchScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setPitchScale(rate: Float) {
     val _arg = Variant.new(rate)
-    __method_bind.set_pitch_scale.call(this._handle, _arg, 1)
+    __method_bind.setPitchScale.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class AudioEffectPitchShift(
      * Container for method_bind pointers for AudioEffectPitchShift
      */
     private object __method_bind {
-      val get_pitch_scale: CPointer<godot_method_bind>
+      val getPitchScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "get_pitch_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pitch_scale" }
+            "getPitchScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPitchScale" }
         }
-      val set_pitch_scale: CPointer<godot_method_bind>
+      val setPitchScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPitchShift".cstr.ptr,
-            "set_pitch_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pitch_scale" }
+            "setPitchScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPitchScale" }
         }}
   }
 }

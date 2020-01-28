@@ -18,44 +18,76 @@ import kotlinx.cinterop.reinterpret
 open class CapsuleMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  var midHeight: Float
+    get() {
+       return getMidHeight() 
+    }
+    set(value) {
+      setMidHeight(value)
+    }
+
+  var radialSegments: Int
+    get() {
+       return getRadialSegments() 
+    }
+    set(value) {
+      setRadialSegments(value)
+    }
+
+  var radius: Float
+    get() {
+       return getRadius() 
+    }
+    set(value) {
+      setRadius(value)
+    }
+
+  var rings: Int
+    get() {
+       return getRings() 
+    }
+    set(value) {
+      setRings(value)
+    }
+
   fun getMidHeight(): Float {
-    val _ret = __method_bind.get_mid_height.call(this._handle)
+    val _ret = __method_bind.getMidHeight.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRadialSegments(): Int {
-    val _ret = __method_bind.get_radial_segments.call(this._handle)
+    val _ret = __method_bind.getRadialSegments.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRadius(): Float {
-    val _ret = __method_bind.get_radius.call(this._handle)
+    val _ret = __method_bind.getRadius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRings(): Int {
-    val _ret = __method_bind.get_rings.call(this._handle)
+    val _ret = __method_bind.getRings.call(this._handle)
     return _ret.asInt()
   }
 
   fun setMidHeight(midHeight: Float) {
     val _arg = Variant.new(midHeight)
-    __method_bind.set_mid_height.call(this._handle, _arg, 1)
+    __method_bind.setMidHeight.call(this._handle, _arg, 1)
   }
 
   fun setRadialSegments(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.set_radial_segments.call(this._handle, _arg, 1)
+    __method_bind.setRadialSegments.call(this._handle, _arg, 1)
   }
 
   fun setRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_radius.call(this._handle, _arg, 1)
+    __method_bind.setRadius.call(this._handle, _arg, 1)
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.set_rings.call(this._handle, _arg, 1)
+    __method_bind.setRings.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -72,61 +104,61 @@ open class CapsuleMesh(
      * Container for method_bind pointers for CapsuleMesh
      */
     private object __method_bind {
-      val get_mid_height: CPointer<godot_method_bind>
+      val getMidHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "get_mid_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mid_height" }
+            "getMidHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMidHeight" }
         }
-      val get_radial_segments: CPointer<godot_method_bind>
+      val getRadialSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "get_radial_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
+            "getRadialSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRadialSegments" }
         }
-      val get_radius: CPointer<godot_method_bind>
+      val getRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "get_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radius" }
+            "getRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRadius" }
         }
-      val get_rings: CPointer<godot_method_bind>
+      val getRings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "get_rings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rings" }
+            "getRings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRings" }
         }
-      val set_mid_height: CPointer<godot_method_bind>
+      val setMidHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "set_mid_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mid_height" }
+            "setMidHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMidHeight" }
         }
-      val set_radial_segments: CPointer<godot_method_bind>
+      val setRadialSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "set_radial_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
+            "setRadialSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRadialSegments" }
         }
-      val set_radius: CPointer<godot_method_bind>
+      val setRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "set_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radius" }
+            "setRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRadius" }
         }
-      val set_rings: CPointer<godot_method_bind>
+      val setRings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CapsuleMesh".cstr.ptr,
-            "set_rings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rings" }
+            "setRings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRings" }
         }}
   }
 }

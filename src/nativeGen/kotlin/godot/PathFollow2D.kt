@@ -18,84 +18,148 @@ import kotlinx.cinterop.reinterpret
 open class PathFollow2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var cubicInterp: Boolean
+    get() {
+       return getCubicInterpolation() 
+    }
+    set(value) {
+      setCubicInterpolation(value)
+    }
+
+  var hOffset: Float
+    get() {
+       return getHOffset() 
+    }
+    set(value) {
+      setHOffset(value)
+    }
+
+  var lookahead: Float
+    get() {
+       return getLookahead() 
+    }
+    set(value) {
+      setLookahead(value)
+    }
+
+  var loop: Boolean
+    get() {
+       return hasLoop() 
+    }
+    set(value) {
+      setLoop(value)
+    }
+
+  var offset: Float
+    get() {
+       return getOffset() 
+    }
+    set(value) {
+      setOffset(value)
+    }
+
+  var rotate: Boolean
+    get() {
+       return isRotating() 
+    }
+    set(value) {
+      setRotate(value)
+    }
+
+  var unitOffset: Float
+    get() {
+       return getUnitOffset() 
+    }
+    set(value) {
+      setUnitOffset(value)
+    }
+
+  var vOffset: Float
+    get() {
+       return getVOffset() 
+    }
+    set(value) {
+      setVOffset(value)
+    }
+
   fun getCubicInterpolation(): Boolean {
-    val _ret = __method_bind.get_cubic_interpolation.call(this._handle)
+    val _ret = __method_bind.getCubicInterpolation.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getHOffset(): Float {
-    val _ret = __method_bind.get_h_offset.call(this._handle)
+    val _ret = __method_bind.getHOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getLookahead(): Float {
-    val _ret = __method_bind.get_lookahead.call(this._handle)
+    val _ret = __method_bind.getLookahead.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOffset(): Float {
-    val _ret = __method_bind.get_offset.call(this._handle)
+    val _ret = __method_bind.getOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getUnitOffset(): Float {
-    val _ret = __method_bind.get_unit_offset.call(this._handle)
+    val _ret = __method_bind.getUnitOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getVOffset(): Float {
-    val _ret = __method_bind.get_v_offset.call(this._handle)
+    val _ret = __method_bind.getVOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun hasLoop(): Boolean {
-    val _ret = __method_bind.has_loop.call(this._handle)
+    val _ret = __method_bind.hasLoop.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isRotating(): Boolean {
-    val _ret = __method_bind.is_rotating.call(this._handle)
+    val _ret = __method_bind.isRotating.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setCubicInterpolation(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_cubic_interpolation.call(this._handle, _arg, 1)
+    __method_bind.setCubicInterpolation.call(this._handle, _arg, 1)
   }
 
   fun setHOffset(hOffset: Float) {
     val _arg = Variant.new(hOffset)
-    __method_bind.set_h_offset.call(this._handle, _arg, 1)
+    __method_bind.setHOffset.call(this._handle, _arg, 1)
   }
 
   fun setLookahead(lookahead: Float) {
     val _arg = Variant.new(lookahead)
-    __method_bind.set_lookahead.call(this._handle, _arg, 1)
+    __method_bind.setLookahead.call(this._handle, _arg, 1)
   }
 
   fun setLoop(loop: Boolean) {
     val _arg = Variant.new(loop)
-    __method_bind.set_loop.call(this._handle, _arg, 1)
+    __method_bind.setLoop.call(this._handle, _arg, 1)
   }
 
   fun setOffset(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_offset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, _arg, 1)
   }
 
   fun setRotate(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_rotate.call(this._handle, _arg, 1)
+    __method_bind.setRotate.call(this._handle, _arg, 1)
   }
 
   fun setUnitOffset(unitOffset: Float) {
     val _arg = Variant.new(unitOffset)
-    __method_bind.set_unit_offset.call(this._handle, _arg, 1)
+    __method_bind.setUnitOffset.call(this._handle, _arg, 1)
   }
 
   fun setVOffset(vOffset: Float) {
     val _arg = Variant.new(vOffset)
-    __method_bind.set_v_offset.call(this._handle, _arg, 1)
+    __method_bind.setVOffset.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -112,117 +176,117 @@ open class PathFollow2D(
      * Container for method_bind pointers for PathFollow2D
      */
     private object __method_bind {
-      val get_cubic_interpolation: CPointer<godot_method_bind>
+      val getCubicInterpolation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "get_cubic_interpolation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cubic_interpolation" }
+            "getCubicInterpolation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCubicInterpolation" }
         }
-      val get_h_offset: CPointer<godot_method_bind>
+      val getHOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "get_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
+            "getHOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHOffset" }
         }
-      val get_lookahead: CPointer<godot_method_bind>
+      val getLookahead: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "get_lookahead".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_lookahead" }
+            "getLookahead".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLookahead" }
         }
-      val get_offset: CPointer<godot_method_bind>
+      val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            "getOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOffset" }
         }
-      val get_unit_offset: CPointer<godot_method_bind>
+      val getUnitOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "get_unit_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_unit_offset" }
+            "getUnitOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUnitOffset" }
         }
-      val get_v_offset: CPointer<godot_method_bind>
+      val getVOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "get_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
+            "getVOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVOffset" }
         }
-      val has_loop: CPointer<godot_method_bind>
+      val hasLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "has_loop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_loop" }
+            "hasLoop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasLoop" }
         }
-      val is_rotating: CPointer<godot_method_bind>
+      val isRotating: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "is_rotating".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_rotating" }
+            "isRotating".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isRotating" }
         }
-      val set_cubic_interpolation: CPointer<godot_method_bind>
+      val setCubicInterpolation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_cubic_interpolation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cubic_interpolation" }
+            "setCubicInterpolation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCubicInterpolation" }
         }
-      val set_h_offset: CPointer<godot_method_bind>
+      val setHOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
+            "setHOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHOffset" }
         }
-      val set_lookahead: CPointer<godot_method_bind>
+      val setLookahead: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_lookahead".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_lookahead" }
+            "setLookahead".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLookahead" }
         }
-      val set_loop: CPointer<godot_method_bind>
+      val setLoop: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_loop".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_loop" }
+            "setLoop".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLoop" }
         }
-      val set_offset: CPointer<godot_method_bind>
+      val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            "setOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOffset" }
         }
-      val set_rotate: CPointer<godot_method_bind>
+      val setRotate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_rotate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rotate" }
+            "setRotate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRotate" }
         }
-      val set_unit_offset: CPointer<godot_method_bind>
+      val setUnitOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_unit_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_unit_offset" }
+            "setUnitOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUnitOffset" }
         }
-      val set_v_offset: CPointer<godot_method_bind>
+      val setVOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PathFollow2D".cstr.ptr,
-            "set_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
+            "setVOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVOffset" }
         }}
   }
 }

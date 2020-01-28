@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class MenuButton(
   _handle: COpaquePointer
 ) : Button(_handle) {
+  var items: VariantArray
+    get() {
+       return _getItems() 
+    }
+    set(value) {
+      _setItems(value)
+    }
+
+  var switchOnHover: Boolean
+    get() {
+       return isSwitchOnHover() 
+    }
+    set(value) {
+      setSwitchOnHover(value)
+    }
+
   fun getPopup(): PopupMenu {
-    val _ret = __method_bind.get_popup.call(this._handle)
+    val _ret = __method_bind.getPopup.call(this._handle)
     return _ret.asObject(::PopupMenu)!!
   }
 
   fun isSwitchOnHover(): Boolean {
-    val _ret = __method_bind.is_switch_on_hover.call(this._handle)
+    val _ret = __method_bind.isSwitchOnHover.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setDisableShortcuts(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.set_disable_shortcuts.call(this._handle, _arg, 1)
+    __method_bind.setDisableShortcuts.call(this._handle, _arg, 1)
   }
 
   fun setSwitchOnHover(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_switch_on_hover.call(this._handle, _arg, 1)
+    __method_bind.setSwitchOnHover.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -51,29 +67,29 @@ open class MenuButton(
      * Container for method_bind pointers for MenuButton
      */
     private object __method_bind {
-      val get_popup: CPointer<godot_method_bind>
+      val getPopup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "get_popup".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_popup" }
+            "getPopup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPopup" }
         }
-      val is_switch_on_hover: CPointer<godot_method_bind>
+      val isSwitchOnHover: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "is_switch_on_hover".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_switch_on_hover" }
+            "isSwitchOnHover".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSwitchOnHover" }
         }
-      val set_disable_shortcuts: CPointer<godot_method_bind>
+      val setDisableShortcuts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "set_disable_shortcuts".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_disable_shortcuts" }
+            "setDisableShortcuts".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDisableShortcuts" }
         }
-      val set_switch_on_hover: CPointer<godot_method_bind>
+      val setSwitchOnHover: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MenuButton".cstr.ptr,
-            "set_switch_on_hover".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_switch_on_hover" }
+            "setSwitchOnHover".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSwitchOnHover" }
         }}
   }
 }

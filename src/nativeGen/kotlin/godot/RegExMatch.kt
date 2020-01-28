@@ -19,41 +19,56 @@ import kotlinx.cinterop.reinterpret
 open class RegExMatch(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  val names: Dictionary
+    get() {
+       return getNames() 
+    }
+
+  val strings: VariantArray
+    get() {
+       return getStrings() 
+    }
+
+  val subject: String
+    get() {
+       return getSubject() 
+    }
+
   fun getEnd(name: Variant): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_end.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEnd.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getGroupCount(): Int {
-    val _ret = __method_bind.get_group_count.call(this._handle)
+    val _ret = __method_bind.getGroupCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNames(): Dictionary {
-    val _ret = __method_bind.get_names.call(this._handle)
+    val _ret = __method_bind.getNames.call(this._handle)
     return _ret.asDictionary()
   }
 
   fun getStart(name: Variant): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_start.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStart.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getString(name: Variant): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getString.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getStrings(): VariantArray {
-    val _ret = __method_bind.get_strings.call(this._handle)
+    val _ret = __method_bind.getStrings.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getSubject(): String {
-    val _ret = __method_bind.get_subject.call(this._handle)
+    val _ret = __method_bind.getSubject.call(this._handle)
     return _ret.asString()
   }
 
@@ -71,47 +86,47 @@ open class RegExMatch(
      * Container for method_bind pointers for RegExMatch
      */
     private object __method_bind {
-      val get_end: CPointer<godot_method_bind>
+      val getEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_end" }
+            "getEnd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEnd" }
         }
-      val get_group_count: CPointer<godot_method_bind>
+      val getGroupCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_group_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_group_count" }
+            "getGroupCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGroupCount" }
         }
-      val get_names: CPointer<godot_method_bind>
+      val getNames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_names".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_names" }
+            "getNames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNames" }
         }
-      val get_start: CPointer<godot_method_bind>
+      val getStart: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_start".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_start" }
+            "getStart".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStart" }
         }
-      val get_string: CPointer<godot_method_bind>
+      val getString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_string" }
+            "getString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getString" }
         }
-      val get_strings: CPointer<godot_method_bind>
+      val getStrings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_strings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_strings" }
+            "getStrings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStrings" }
         }
-      val get_subject: CPointer<godot_method_bind>
+      val getSubject: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RegExMatch".cstr.ptr,
-            "get_subject".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subject" }
+            "getSubject".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSubject" }
         }}
   }
 }

@@ -26,106 +26,106 @@ open class MeshLibrary(
 
   fun createItem(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.create_item.call(this._handle, _arg, 1)
+    __method_bind.createItem.call(this._handle, _arg, 1)
   }
 
   fun findItemByName(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.find_item_by_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findItemByName.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getItemList(): PoolIntArray {
-    val _ret = __method_bind.get_item_list.call(this._handle)
+    val _ret = __method_bind.getItemList.call(this._handle)
     return _ret.asPoolIntArray()
   }
 
   fun getItemMesh(id: Int): Mesh {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_mesh.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemMesh.call(this._handle, _arg, 1)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getItemName(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getItemNavmesh(id: Int): NavigationMesh {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_navmesh.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemNavmesh.call(this._handle, _arg, 1)
     return _ret.asObject(::NavigationMesh)!!
   }
 
   fun getItemNavmeshTransform(id: Int): Transform {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_navmesh_transform.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemNavmeshTransform.call(this._handle, _arg, 1)
     return _ret.asTransform()
   }
 
   fun getItemPreview(id: Int): Texture {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_preview.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemPreview.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getItemShapes(id: Int): VariantArray {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_item_shapes.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getItemShapes.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun getLastUnusedItemId(): Int {
-    val _ret = __method_bind.get_last_unused_item_id.call(this._handle)
+    val _ret = __method_bind.getLastUnusedItemId.call(this._handle)
     return _ret.asInt()
   }
 
   fun removeItem(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_item.call(this._handle, _arg, 1)
+    __method_bind.removeItem.call(this._handle, _arg, 1)
   }
 
   fun setItemMesh(id: Int, mesh: Mesh) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(mesh)
-    __method_bind.set_item_mesh.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setItemMesh.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemName(id: Int, name: String) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(name)
-    __method_bind.set_item_name.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setItemName.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemNavmesh(id: Int, navmesh: NavigationMesh) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(navmesh)
-    __method_bind.set_item_navmesh.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setItemNavmesh.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemNavmeshTransform(id: Int, navmesh: Transform) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(navmesh)
-    __method_bind.set_item_navmesh_transform.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setItemNavmeshTransform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemPreview(id: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(texture)
-    __method_bind.set_item_preview.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setItemPreview.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setItemShapes(id: Int, shapes: VariantArray) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapes)
-    __method_bind.set_item_shapes.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setItemShapes.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -149,124 +149,124 @@ open class MeshLibrary(
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
-      val create_item: CPointer<godot_method_bind>
+      val createItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "create_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_item" }
+            "createItem".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createItem" }
         }
-      val find_item_by_name: CPointer<godot_method_bind>
+      val findItemByName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "find_item_by_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_item_by_name" }
+            "findItemByName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findItemByName" }
         }
-      val get_item_list: CPointer<godot_method_bind>
+      val getItemList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_list" }
+            "getItemList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemList" }
         }
-      val get_item_mesh: CPointer<godot_method_bind>
+      val getItemMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_mesh" }
+            "getItemMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemMesh" }
         }
-      val get_item_name: CPointer<godot_method_bind>
+      val getItemName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_name" }
+            "getItemName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemName" }
         }
-      val get_item_navmesh: CPointer<godot_method_bind>
+      val getItemNavmesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_navmesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_navmesh" }
+            "getItemNavmesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemNavmesh" }
         }
-      val get_item_navmesh_transform: CPointer<godot_method_bind>
+      val getItemNavmeshTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_navmesh_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_navmesh_transform" }
+            "getItemNavmeshTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemNavmeshTransform" }
         }
-      val get_item_preview: CPointer<godot_method_bind>
+      val getItemPreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_preview" }
+            "getItemPreview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemPreview" }
         }
-      val get_item_shapes: CPointer<godot_method_bind>
+      val getItemShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_item_shapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_item_shapes" }
+            "getItemShapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getItemShapes" }
         }
-      val get_last_unused_item_id: CPointer<godot_method_bind>
+      val getLastUnusedItemId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "get_last_unused_item_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_unused_item_id" }
+            "getLastUnusedItemId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastUnusedItemId" }
         }
-      val remove_item: CPointer<godot_method_bind>
+      val removeItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "remove_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_item" }
+            "removeItem".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeItem" }
         }
-      val set_item_mesh: CPointer<godot_method_bind>
+      val setItemMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "set_item_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_mesh" }
+            "setItemMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setItemMesh" }
         }
-      val set_item_name: CPointer<godot_method_bind>
+      val setItemName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "set_item_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_name" }
+            "setItemName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setItemName" }
         }
-      val set_item_navmesh: CPointer<godot_method_bind>
+      val setItemNavmesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "set_item_navmesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_navmesh" }
+            "setItemNavmesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setItemNavmesh" }
         }
-      val set_item_navmesh_transform: CPointer<godot_method_bind>
+      val setItemNavmeshTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "set_item_navmesh_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_navmesh_transform" }
+            "setItemNavmeshTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setItemNavmeshTransform" }
         }
-      val set_item_preview: CPointer<godot_method_bind>
+      val setItemPreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "set_item_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_preview" }
+            "setItemPreview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setItemPreview" }
         }
-      val set_item_shapes: CPointer<godot_method_bind>
+      val setItemShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshLibrary".cstr.ptr,
-            "set_item_shapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_item_shapes" }
+            "setItemShapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setItemShapes" }
         }}
   }
 }

@@ -29,39 +29,39 @@ open class EditorExportPlugin(
     _args.append(path)
     _args.append(file)
     _args.append(remap)
-    __method_bind.add_file.call(this._handle, _args.toVariant(), 3)
+    __method_bind.addFile.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addIosBundleFile(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.add_ios_bundle_file.call(this._handle, _arg, 1)
+    __method_bind.addIosBundleFile.call(this._handle, _arg, 1)
   }
 
   fun addIosCppCode(code: String) {
     val _arg = Variant.new(code)
-    __method_bind.add_ios_cpp_code.call(this._handle, _arg, 1)
+    __method_bind.addIosCppCode.call(this._handle, _arg, 1)
   }
 
   fun addIosFramework(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.add_ios_framework.call(this._handle, _arg, 1)
+    __method_bind.addIosFramework.call(this._handle, _arg, 1)
   }
 
   fun addIosLinkerFlags(flags: String) {
     val _arg = Variant.new(flags)
-    __method_bind.add_ios_linker_flags.call(this._handle, _arg, 1)
+    __method_bind.addIosLinkerFlags.call(this._handle, _arg, 1)
   }
 
   fun addIosPlistContent(plistContent: String) {
     val _arg = Variant.new(plistContent)
-    __method_bind.add_ios_plist_content.call(this._handle, _arg, 1)
+    __method_bind.addIosPlistContent.call(this._handle, _arg, 1)
   }
 
   fun addSharedObject(path: String, tags: PoolStringArray) {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(tags)
-    __method_bind.add_shared_object.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addSharedObject.call(this._handle, _args.toVariant(), 2)
   }
 
   fun skip() {
@@ -83,54 +83,54 @@ open class EditorExportPlugin(
      * Container for method_bind pointers for EditorExportPlugin
      */
     private object __method_bind {
-      val add_file: CPointer<godot_method_bind>
+      val addFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_file" }
+            "addFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addFile" }
         }
-      val add_ios_bundle_file: CPointer<godot_method_bind>
+      val addIosBundleFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_ios_bundle_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_ios_bundle_file" }
+            "addIosBundleFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addIosBundleFile" }
         }
-      val add_ios_cpp_code: CPointer<godot_method_bind>
+      val addIosCppCode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_ios_cpp_code".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_ios_cpp_code" }
+            "addIosCppCode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addIosCppCode" }
         }
-      val add_ios_framework: CPointer<godot_method_bind>
+      val addIosFramework: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_ios_framework".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_ios_framework" }
+            "addIosFramework".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addIosFramework" }
         }
-      val add_ios_linker_flags: CPointer<godot_method_bind>
+      val addIosLinkerFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_ios_linker_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_ios_linker_flags" }
+            "addIosLinkerFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addIosLinkerFlags" }
         }
-      val add_ios_plist_content: CPointer<godot_method_bind>
+      val addIosPlistContent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_ios_plist_content".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_ios_plist_content" }
+            "addIosPlistContent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addIosPlistContent" }
         }
-      val add_shared_object: CPointer<godot_method_bind>
+      val addSharedObject: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorExportPlugin".cstr.ptr,
-            "add_shared_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_shared_object" }
+            "addSharedObject".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addSharedObject" }
         }
       val skip: CPointer<godot_method_bind>
         get() = memScoped {

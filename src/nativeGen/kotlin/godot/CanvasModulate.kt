@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class CanvasModulate(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var color: Color
+    get() {
+       return getColor() 
+    }
+    set(value) {
+      setColor(value)
+    }
+
   fun getColor(): Color {
-    val _ret = __method_bind.get_color.call(this._handle)
+    val _ret = __method_bind.getColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_color.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class CanvasModulate(
      * Container for method_bind pointers for CanvasModulate
      */
     private object __method_bind {
-      val get_color: CPointer<godot_method_bind>
+      val getColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
+            "getColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColor" }
         }
-      val set_color: CPointer<godot_method_bind>
+      val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasModulate".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
+            "setColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setColor" }
         }}
   }
 }

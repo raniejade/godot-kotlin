@@ -18,16 +18,16 @@ open class EditorScript(
 ) : Reference(_handle) {
   fun addRootNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.add_root_node.call(this._handle, _arg, 1)
+    __method_bind.addRootNode.call(this._handle, _arg, 1)
   }
 
   fun getEditorInterface(): EditorInterface {
-    val _ret = __method_bind.get_editor_interface.call(this._handle)
+    val _ret = __method_bind.getEditorInterface.call(this._handle)
     return _ret.asObject(::EditorInterface)!!
   }
 
   fun getScene(): Node {
-    val _ret = __method_bind.get_scene.call(this._handle)
+    val _ret = __method_bind.getScene.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
@@ -45,26 +45,26 @@ open class EditorScript(
      * Container for method_bind pointers for EditorScript
      */
     private object __method_bind {
-      val add_root_node: CPointer<godot_method_bind>
+      val addRootNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "add_root_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_root_node" }
+            "addRootNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addRootNode" }
         }
-      val get_editor_interface: CPointer<godot_method_bind>
+      val getEditorInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "get_editor_interface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_interface" }
+            "getEditorInterface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEditorInterface" }
         }
-      val get_scene: CPointer<godot_method_bind>
+      val getScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorScript".cstr.ptr,
-            "get_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scene" }
+            "getScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScene" }
         }}
   }
 }

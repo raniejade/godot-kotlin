@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeVectorFunc(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  var function: Int
+    get() {
+       return VisualShaderNodeVectorFunc.Function.from(getFunction()) 
+    }
+    set(value) {
+      setFunction(VisualShaderNodeVectorFunc.Function.from(value))
+    }
+
   fun getFunction(): Function {
-    val _ret = __method_bind.get_function.call(this._handle)
+    val _ret = __method_bind.getFunction.call(this._handle)
     return VisualShaderNodeVectorFunc.Function.from(_ret.asInt())
   }
 
   fun setFunction(func: Int) {
     val _arg = Variant.new(func)
-    __method_bind.set_function.call(this._handle, _arg, 1)
+    __method_bind.setFunction.call(this._handle, _arg, 1)
   }
 
   enum class Function(
@@ -197,19 +205,19 @@ open class VisualShaderNodeVectorFunc(
      * Container for method_bind pointers for VisualShaderNodeVectorFunc
      */
     private object __method_bind {
-      val get_function: CPointer<godot_method_bind>
+      val getFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorFunc".cstr.ptr,
-            "get_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_function" }
+            "getFunction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFunction" }
         }
-      val set_function: CPointer<godot_method_bind>
+      val setFunction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeVectorFunc".cstr.ptr,
-            "set_function".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_function" }
+            "setFunction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFunction" }
         }}
   }
 }

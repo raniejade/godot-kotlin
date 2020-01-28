@@ -20,52 +20,60 @@ import kotlinx.cinterop.reinterpret
 open class VisualInstance(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var layers: Int
+    get() {
+       return getLayerMask() 
+    }
+    set(value) {
+      setLayerMask(value)
+    }
+
   fun getAabb(): AABB {
-    val _ret = __method_bind.get_aabb.call(this._handle)
+    val _ret = __method_bind.getAabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun getBase(): RID {
-    val _ret = __method_bind.get_base.call(this._handle)
+    val _ret = __method_bind.getBase.call(this._handle)
     return _ret.asRID()
   }
 
   fun getInstance(): RID {
-    val _ret = __method_bind.get_instance.call(this._handle)
+    val _ret = __method_bind.getInstance.call(this._handle)
     return _ret.asRID()
   }
 
   fun getLayerMask(): Int {
-    val _ret = __method_bind.get_layer_mask.call(this._handle)
+    val _ret = __method_bind.getLayerMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLayerMaskBit(layer: Int): Boolean {
     val _arg = Variant.new(layer)
-    val _ret = __method_bind.get_layer_mask_bit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getLayerMaskBit.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getTransformedAabb(): AABB {
-    val _ret = __method_bind.get_transformed_aabb.call(this._handle)
+    val _ret = __method_bind.getTransformedAabb.call(this._handle)
     return _ret.asAABB()
   }
 
   fun setBase(base: RID) {
     val _arg = Variant.new(base)
-    __method_bind.set_base.call(this._handle, _arg, 1)
+    __method_bind.setBase.call(this._handle, _arg, 1)
   }
 
   fun setLayerMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_layer_mask.call(this._handle, _arg, 1)
+    __method_bind.setLayerMask.call(this._handle, _arg, 1)
   }
 
   fun setLayerMaskBit(layer: Int, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(layer)
     _args.append(enabled)
-    __method_bind.set_layer_mask_bit.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setLayerMaskBit.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -73,68 +81,68 @@ open class VisualInstance(
      * Container for method_bind pointers for VisualInstance
      */
     private object __method_bind {
-      val get_aabb: CPointer<godot_method_bind>
+      val getAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "get_aabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_aabb" }
+            "getAabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAabb" }
         }
-      val get_base: CPointer<godot_method_bind>
+      val getBase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "get_base".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base" }
+            "getBase".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBase" }
         }
-      val get_instance: CPointer<godot_method_bind>
+      val getInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "get_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_instance" }
+            "getInstance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInstance" }
         }
-      val get_layer_mask: CPointer<godot_method_bind>
+      val getLayerMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "get_layer_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_layer_mask" }
+            "getLayerMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLayerMask" }
         }
-      val get_layer_mask_bit: CPointer<godot_method_bind>
+      val getLayerMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "get_layer_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_layer_mask_bit" }
+            "getLayerMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLayerMaskBit" }
         }
-      val get_transformed_aabb: CPointer<godot_method_bind>
+      val getTransformedAabb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "get_transformed_aabb".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transformed_aabb" }
+            "getTransformedAabb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTransformedAabb" }
         }
-      val set_base: CPointer<godot_method_bind>
+      val setBase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "set_base".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base" }
+            "setBase".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBase" }
         }
-      val set_layer_mask: CPointer<godot_method_bind>
+      val setLayerMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "set_layer_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_layer_mask" }
+            "setLayerMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLayerMask" }
         }
-      val set_layer_mask_bit: CPointer<godot_method_bind>
+      val setLayerMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualInstance".cstr.ptr,
-            "set_layer_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_layer_mask_bit" }
+            "setLayerMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLayerMaskBit" }
         }}
   }
 }

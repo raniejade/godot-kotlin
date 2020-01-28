@@ -23,11 +23,96 @@ import kotlinx.cinterop.reinterpret
 open class SceneTree(
   _handle: COpaquePointer
 ) : MainLoop(_handle) {
+  var currentScene: Node
+    get() {
+       return getCurrentScene() 
+    }
+    set(value) {
+      setCurrentScene(value)
+    }
+
+  var debugCollisionsHint: Boolean
+    get() {
+       return isDebuggingCollisionsHint() 
+    }
+    set(value) {
+      setDebugCollisionsHint(value)
+    }
+
+  var debugNavigationHint: Boolean
+    get() {
+       return isDebuggingNavigationHint() 
+    }
+    set(value) {
+      setDebugNavigationHint(value)
+    }
+
+  var editedSceneRoot: Node
+    get() {
+       return getEditedSceneRoot() 
+    }
+    set(value) {
+      setEditedSceneRoot(value)
+    }
+
+  var multiplayer: MultiplayerAPI
+    get() {
+       return getMultiplayer() 
+    }
+    set(value) {
+      setMultiplayer(value)
+    }
+
+  var multiplayerPoll: Boolean
+    get() {
+       return isMultiplayerPollEnabled() 
+    }
+    set(value) {
+      setMultiplayerPollEnabled(value)
+    }
+
+  var networkPeer: NetworkedMultiplayerPeer
+    get() {
+       return getNetworkPeer() 
+    }
+    set(value) {
+      setNetworkPeer(value)
+    }
+
+  var paused: Boolean
+    get() {
+       return isPaused() 
+    }
+    set(value) {
+      setPause(value)
+    }
+
+  var refuseNewNetworkConnections: Boolean
+    get() {
+       return isRefusingNewNetworkConnections() 
+    }
+    set(value) {
+      setRefuseNewNetworkConnections(value)
+    }
+
+  val root: Node
+    get() {
+       return getRoot() 
+    }
+
+  var useFontOversampling: Boolean
+    get() {
+       return isUsingFontOversampling() 
+    }
+    set(value) {
+      setUseFontOversampling(value)
+    }
+
   fun callGroup(group: String, method: String): Variant {
     val _args = VariantArray.new()
     _args.append(group)
     _args.append(method)
-    val _ret = __method_bind.call_group.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.callGroup.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
@@ -40,19 +125,19 @@ open class SceneTree(
     _args.append(flags)
     _args.append(group)
     _args.append(method)
-    val _ret = __method_bind.call_group_flags.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.callGroupFlags.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun changeScene(path: String): GDError {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.change_scene.call(this._handle, _arg, 1)
+    val _ret = __method_bind.changeScene.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun changeSceneTo(packedScene: PackedScene): GDError {
     val _arg = Variant.new(packedScene)
-    val _ret = __method_bind.change_scene_to.call(this._handle, _arg, 1)
+    val _ret = __method_bind.changeSceneTo.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -60,114 +145,114 @@ open class SceneTree(
     val _args = VariantArray.new()
     _args.append(timeSec)
     _args.append(pauseModeProcess)
-    val _ret = __method_bind.create_timer.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.createTimer.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::SceneTreeTimer)!!
   }
 
   fun getCurrentScene(): Node {
-    val _ret = __method_bind.get_current_scene.call(this._handle)
+    val _ret = __method_bind.getCurrentScene.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getEditedSceneRoot(): Node {
-    val _ret = __method_bind.get_edited_scene_root.call(this._handle)
+    val _ret = __method_bind.getEditedSceneRoot.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.get_frame.call(this._handle)
+    val _ret = __method_bind.getFrame.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMultiplayer(): MultiplayerAPI {
-    val _ret = __method_bind.get_multiplayer.call(this._handle)
+    val _ret = __method_bind.getMultiplayer.call(this._handle)
     return _ret.asObject(::MultiplayerAPI)!!
   }
 
   fun getNetworkConnectedPeers(): PoolIntArray {
-    val _ret = __method_bind.get_network_connected_peers.call(this._handle)
+    val _ret = __method_bind.getNetworkConnectedPeers.call(this._handle)
     return _ret.asPoolIntArray()
   }
 
   fun getNetworkPeer(): NetworkedMultiplayerPeer {
-    val _ret = __method_bind.get_network_peer.call(this._handle)
+    val _ret = __method_bind.getNetworkPeer.call(this._handle)
     return _ret.asObject(::NetworkedMultiplayerPeer)!!
   }
 
   fun getNetworkUniqueId(): Int {
-    val _ret = __method_bind.get_network_unique_id.call(this._handle)
+    val _ret = __method_bind.getNetworkUniqueId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNodeCount(): Int {
-    val _ret = __method_bind.get_node_count.call(this._handle)
+    val _ret = __method_bind.getNodeCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNodesInGroup(group: String): VariantArray {
     val _arg = Variant.new(group)
-    val _ret = __method_bind.get_nodes_in_group.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodesInGroup.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun getRoot(): Viewport {
-    val _ret = __method_bind.get_root.call(this._handle)
+    val _ret = __method_bind.getRoot.call(this._handle)
     return _ret.asObject(::Viewport)!!
   }
 
   fun getRpcSenderId(): Int {
-    val _ret = __method_bind.get_rpc_sender_id.call(this._handle)
+    val _ret = __method_bind.getRpcSenderId.call(this._handle)
     return _ret.asInt()
   }
 
   fun hasGroup(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_group.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasGroup.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun hasNetworkPeer(): Boolean {
-    val _ret = __method_bind.has_network_peer.call(this._handle)
+    val _ret = __method_bind.hasNetworkPeer.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDebuggingCollisionsHint(): Boolean {
-    val _ret = __method_bind.is_debugging_collisions_hint.call(this._handle)
+    val _ret = __method_bind.isDebuggingCollisionsHint.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDebuggingNavigationHint(): Boolean {
-    val _ret = __method_bind.is_debugging_navigation_hint.call(this._handle)
+    val _ret = __method_bind.isDebuggingNavigationHint.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isInputHandled(): Boolean {
-    val _ret = __method_bind.is_input_handled.call(this._handle)
+    val _ret = __method_bind.isInputHandled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isMultiplayerPollEnabled(): Boolean {
-    val _ret = __method_bind.is_multiplayer_poll_enabled.call(this._handle)
+    val _ret = __method_bind.isMultiplayerPollEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isNetworkServer(): Boolean {
-    val _ret = __method_bind.is_network_server.call(this._handle)
+    val _ret = __method_bind.isNetworkServer.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isPaused(): Boolean {
-    val _ret = __method_bind.is_paused.call(this._handle)
+    val _ret = __method_bind.isPaused.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
-    val _ret = __method_bind.is_refusing_new_network_connections.call(this._handle)
+    val _ret = __method_bind.isRefusingNewNetworkConnections.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isUsingFontOversampling(): Boolean {
-    val _ret = __method_bind.is_using_font_oversampling.call(this._handle)
+    val _ret = __method_bind.isUsingFontOversampling.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -175,7 +260,7 @@ open class SceneTree(
     val _args = VariantArray.new()
     _args.append(group)
     _args.append(notification)
-    __method_bind.notify_group.call(this._handle, _args.toVariant(), 2)
+    __method_bind.notifyGroup.call(this._handle, _args.toVariant(), 2)
   }
 
   fun notifyGroupFlags(
@@ -187,12 +272,12 @@ open class SceneTree(
     _args.append(callFlags)
     _args.append(group)
     _args.append(notification)
-    __method_bind.notify_group_flags.call(this._handle, _args.toVariant(), 3)
+    __method_bind.notifyGroupFlags.call(this._handle, _args.toVariant(), 3)
   }
 
   fun queueDelete(obj: Object) {
     val _arg = Variant.new(obj)
-    __method_bind.queue_delete.call(this._handle, _arg, 1)
+    __method_bind.queueDelete.call(this._handle, _arg, 1)
   }
 
   fun quit() {
@@ -200,33 +285,33 @@ open class SceneTree(
   }
 
   fun reloadCurrentScene(): GDError {
-    val _ret = __method_bind.reload_current_scene.call(this._handle)
+    val _ret = __method_bind.reloadCurrentScene.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
   fun setAutoAcceptQuit(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_auto_accept_quit.call(this._handle, _arg, 1)
+    __method_bind.setAutoAcceptQuit.call(this._handle, _arg, 1)
   }
 
   fun setCurrentScene(childNode: Node) {
     val _arg = Variant.new(childNode)
-    __method_bind.set_current_scene.call(this._handle, _arg, 1)
+    __method_bind.setCurrentScene.call(this._handle, _arg, 1)
   }
 
   fun setDebugCollisionsHint(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_debug_collisions_hint.call(this._handle, _arg, 1)
+    __method_bind.setDebugCollisionsHint.call(this._handle, _arg, 1)
   }
 
   fun setDebugNavigationHint(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_debug_navigation_hint.call(this._handle, _arg, 1)
+    __method_bind.setDebugNavigationHint.call(this._handle, _arg, 1)
   }
 
   fun setEditedSceneRoot(scene: Node) {
     val _arg = Variant.new(scene)
-    __method_bind.set_edited_scene_root.call(this._handle, _arg, 1)
+    __method_bind.setEditedSceneRoot.call(this._handle, _arg, 1)
   }
 
   fun setGroup(
@@ -238,7 +323,7 @@ open class SceneTree(
     _args.append(group)
     _args.append(property)
     _args.append(value)
-    __method_bind.set_group.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setGroup.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setGroupFlags(
@@ -252,41 +337,41 @@ open class SceneTree(
     _args.append(group)
     _args.append(property)
     _args.append(value)
-    __method_bind.set_group_flags.call(this._handle, _args.toVariant(), 4)
+    __method_bind.setGroupFlags.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setInputAsHandled() {
-    __method_bind.set_input_as_handled.call(this._handle)
+    __method_bind.setInputAsHandled.call(this._handle)
   }
 
   fun setMultiplayer(multiplayer: MultiplayerAPI) {
     val _arg = Variant.new(multiplayer)
-    __method_bind.set_multiplayer.call(this._handle, _arg, 1)
+    __method_bind.setMultiplayer.call(this._handle, _arg, 1)
   }
 
   fun setMultiplayerPollEnabled(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_multiplayer_poll_enabled.call(this._handle, _arg, 1)
+    __method_bind.setMultiplayerPollEnabled.call(this._handle, _arg, 1)
   }
 
   fun setNetworkPeer(peer: NetworkedMultiplayerPeer) {
     val _arg = Variant.new(peer)
-    __method_bind.set_network_peer.call(this._handle, _arg, 1)
+    __method_bind.setNetworkPeer.call(this._handle, _arg, 1)
   }
 
   fun setPause(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_pause.call(this._handle, _arg, 1)
+    __method_bind.setPause.call(this._handle, _arg, 1)
   }
 
   fun setQuitOnGoBack(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_quit_on_go_back.call(this._handle, _arg, 1)
+    __method_bind.setQuitOnGoBack.call(this._handle, _arg, 1)
   }
 
   fun setRefuseNewNetworkConnections(refuse: Boolean) {
     val _arg = Variant.new(refuse)
-    __method_bind.set_refuse_new_network_connections.call(this._handle, _arg, 1)
+    __method_bind.setRefuseNewNetworkConnections.call(this._handle, _arg, 1)
   }
 
   fun setScreenStretch(
@@ -300,12 +385,12 @@ open class SceneTree(
     _args.append(aspect)
     _args.append(minsize)
     _args.append(shrink)
-    __method_bind.set_screen_stretch.call(this._handle, _args.toVariant(), 4)
+    __method_bind.setScreenStretch.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setUseFontOversampling(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_font_oversampling.call(this._handle, _arg, 1)
+    __method_bind.setUseFontOversampling.call(this._handle, _arg, 1)
   }
 
   enum class StretchAspect(
@@ -415,180 +500,179 @@ open class SceneTree(
      * Container for method_bind pointers for SceneTree
      */
     private object __method_bind {
-      val call_group: CPointer<godot_method_bind>
+      val callGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "call_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call_group" }
+            "callGroup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method callGroup" }
         }
-      val call_group_flags: CPointer<godot_method_bind>
+      val callGroupFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "call_group_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call_group_flags" }
+            "callGroupFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method callGroupFlags" }
         }
-      val change_scene: CPointer<godot_method_bind>
+      val changeScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "change_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method change_scene" }
+            "changeScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method changeScene" }
         }
-      val change_scene_to: CPointer<godot_method_bind>
+      val changeSceneTo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "change_scene_to".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method change_scene_to" }
+            "changeSceneTo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method changeSceneTo" }
         }
-      val create_timer: CPointer<godot_method_bind>
+      val createTimer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "create_timer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_timer" }
+            "createTimer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createTimer" }
         }
-      val get_current_scene: CPointer<godot_method_bind>
+      val getCurrentScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_current_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_scene" }
+            "getCurrentScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentScene" }
         }
-      val get_edited_scene_root: CPointer<godot_method_bind>
+      val getEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_edited_scene_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edited_scene_root" }
+            "getEditedSceneRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEditedSceneRoot" }
         }
-      val get_frame: CPointer<godot_method_bind>
+      val getFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame" }
+            "getFrame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrame" }
         }
-      val get_multiplayer: CPointer<godot_method_bind>
+      val getMultiplayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_multiplayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_multiplayer" }
+            "getMultiplayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMultiplayer" }
         }
-      val get_network_connected_peers: CPointer<godot_method_bind>
+      val getNetworkConnectedPeers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_network_connected_peers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_network_connected_peers" }
+            "getNetworkConnectedPeers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNetworkConnectedPeers" }
         }
-      val get_network_peer: CPointer<godot_method_bind>
+      val getNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_network_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_network_peer" }
+            "getNetworkPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNetworkPeer" }
         }
-      val get_network_unique_id: CPointer<godot_method_bind>
+      val getNetworkUniqueId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_network_unique_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_network_unique_id" }
+            "getNetworkUniqueId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNetworkUniqueId" }
         }
-      val get_node_count: CPointer<godot_method_bind>
+      val getNodeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_node_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_count" }
+            "getNodeCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeCount" }
         }
-      val get_nodes_in_group: CPointer<godot_method_bind>
+      val getNodesInGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_nodes_in_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_nodes_in_group" }
+            "getNodesInGroup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodesInGroup" }
         }
-      val get_root: CPointer<godot_method_bind>
+      val getRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_root" }
+            "getRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRoot" }
         }
-      val get_rpc_sender_id: CPointer<godot_method_bind>
+      val getRpcSenderId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "get_rpc_sender_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rpc_sender_id" }
+            "getRpcSenderId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRpcSenderId" }
         }
-      val has_group: CPointer<godot_method_bind>
+      val hasGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "has_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_group" }
+            "hasGroup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasGroup" }
         }
-      val has_network_peer: CPointer<godot_method_bind>
+      val hasNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "has_network_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_network_peer" }
+            "hasNetworkPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasNetworkPeer" }
         }
-      val is_debugging_collisions_hint: CPointer<godot_method_bind>
+      val isDebuggingCollisionsHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_debugging_collisions_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_debugging_collisions_hint" }
+            "isDebuggingCollisionsHint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDebuggingCollisionsHint" }
         }
-      val is_debugging_navigation_hint: CPointer<godot_method_bind>
+      val isDebuggingNavigationHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_debugging_navigation_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_debugging_navigation_hint" }
+            "isDebuggingNavigationHint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDebuggingNavigationHint" }
         }
-      val is_input_handled: CPointer<godot_method_bind>
+      val isInputHandled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_input_handled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_input_handled" }
+            "isInputHandled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isInputHandled" }
         }
-      val is_multiplayer_poll_enabled: CPointer<godot_method_bind>
+      val isMultiplayerPollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_multiplayer_poll_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_multiplayer_poll_enabled" }
+            "isMultiplayerPollEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isMultiplayerPollEnabled" }
         }
-      val is_network_server: CPointer<godot_method_bind>
+      val isNetworkServer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_network_server".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_network_server" }
+            "isNetworkServer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isNetworkServer" }
         }
-      val is_paused: CPointer<godot_method_bind>
+      val isPaused: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_paused".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_paused" }
+            "isPaused".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPaused" }
         }
-      val is_refusing_new_network_connections: CPointer<godot_method_bind>
+      val isRefusingNewNetworkConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_refusing_new_network_connections".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method is_refusing_new_network_connections" }
+            "isRefusingNewNetworkConnections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isRefusingNewNetworkConnections" }
         }
-      val is_using_font_oversampling: CPointer<godot_method_bind>
+      val isUsingFontOversampling: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "is_using_font_oversampling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_font_oversampling" }
+            "isUsingFontOversampling".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isUsingFontOversampling" }
         }
-      val notify_group: CPointer<godot_method_bind>
+      val notifyGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "notify_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method notify_group" }
+            "notifyGroup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method notifyGroup" }
         }
-      val notify_group_flags: CPointer<godot_method_bind>
+      val notifyGroupFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "notify_group_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method notify_group_flags" }
+            "notifyGroupFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method notifyGroupFlags" }
         }
-      val queue_delete: CPointer<godot_method_bind>
+      val queueDelete: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "queue_delete".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_delete" }
+            "queueDelete".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queueDelete" }
         }
       val quit: CPointer<godot_method_bind>
         get() = memScoped {
@@ -596,108 +680,107 @@ open class SceneTree(
             "quit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method quit" }
         }
-      val reload_current_scene: CPointer<godot_method_bind>
+      val reloadCurrentScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "reload_current_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reload_current_scene" }
+            "reloadCurrentScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reloadCurrentScene" }
         }
-      val set_auto_accept_quit: CPointer<godot_method_bind>
+      val setAutoAcceptQuit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_auto_accept_quit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_auto_accept_quit" }
+            "setAutoAcceptQuit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAutoAcceptQuit" }
         }
-      val set_current_scene: CPointer<godot_method_bind>
+      val setCurrentScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_current_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current_scene" }
+            "setCurrentScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCurrentScene" }
         }
-      val set_debug_collisions_hint: CPointer<godot_method_bind>
+      val setDebugCollisionsHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_debug_collisions_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_debug_collisions_hint" }
+            "setDebugCollisionsHint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDebugCollisionsHint" }
         }
-      val set_debug_navigation_hint: CPointer<godot_method_bind>
+      val setDebugNavigationHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_debug_navigation_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_debug_navigation_hint" }
+            "setDebugNavigationHint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDebugNavigationHint" }
         }
-      val set_edited_scene_root: CPointer<godot_method_bind>
+      val setEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_edited_scene_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edited_scene_root" }
+            "setEditedSceneRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEditedSceneRoot" }
         }
-      val set_group: CPointer<godot_method_bind>
+      val setGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_group" }
+            "setGroup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGroup" }
         }
-      val set_group_flags: CPointer<godot_method_bind>
+      val setGroupFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_group_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_group_flags" }
+            "setGroupFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGroupFlags" }
         }
-      val set_input_as_handled: CPointer<godot_method_bind>
+      val setInputAsHandled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_input_as_handled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_as_handled" }
+            "setInputAsHandled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInputAsHandled" }
         }
-      val set_multiplayer: CPointer<godot_method_bind>
+      val setMultiplayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_multiplayer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_multiplayer" }
+            "setMultiplayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMultiplayer" }
         }
-      val set_multiplayer_poll_enabled: CPointer<godot_method_bind>
+      val setMultiplayerPollEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_multiplayer_poll_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_multiplayer_poll_enabled" }
+            "setMultiplayerPollEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMultiplayerPollEnabled" }
         }
-      val set_network_peer: CPointer<godot_method_bind>
+      val setNetworkPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_network_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_network_peer" }
+            "setNetworkPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNetworkPeer" }
         }
-      val set_pause: CPointer<godot_method_bind>
+      val setPause: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_pause".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pause" }
+            "setPause".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPause" }
         }
-      val set_quit_on_go_back: CPointer<godot_method_bind>
+      val setQuitOnGoBack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_quit_on_go_back".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_quit_on_go_back" }
+            "setQuitOnGoBack".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setQuitOnGoBack" }
         }
-      val set_refuse_new_network_connections: CPointer<godot_method_bind>
+      val setRefuseNewNetworkConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_refuse_new_network_connections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_refuse_new_network_connections"
-            }
+            "setRefuseNewNetworkConnections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRefuseNewNetworkConnections" }
         }
-      val set_screen_stretch: CPointer<godot_method_bind>
+      val setScreenStretch: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_screen_stretch".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_screen_stretch" }
+            "setScreenStretch".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setScreenStretch" }
         }
-      val set_use_font_oversampling: CPointer<godot_method_bind>
+      val setUseFontOversampling: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTree".cstr.ptr,
-            "set_use_font_oversampling".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_font_oversampling" }
+            "setUseFontOversampling".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseFontOversampling" }
         }}
   }
 }

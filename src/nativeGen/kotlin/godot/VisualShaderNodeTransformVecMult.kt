@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeTransformVecMult(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  var operator: Int
+    get() {
+       return VisualShaderNodeTransformVecMult.Operator.from(getOperator()) 
+    }
+    set(value) {
+      setOperator(VisualShaderNodeTransformVecMult.Operator.from(value))
+    }
+
   fun getOperator(): Operator {
-    val _ret = __method_bind.get_operator.call(this._handle)
+    val _ret = __method_bind.getOperator.call(this._handle)
     return VisualShaderNodeTransformVecMult.Operator.from(_ret.asInt())
   }
 
   fun setOperator(op: Int) {
     val _arg = Variant.new(op)
-    __method_bind.set_operator.call(this._handle, _arg, 1)
+    __method_bind.setOperator.call(this._handle, _arg, 1)
   }
 
   enum class Operator(
@@ -74,19 +82,19 @@ open class VisualShaderNodeTransformVecMult(
      * Container for method_bind pointers for VisualShaderNodeTransformVecMult
      */
     private object __method_bind {
-      val get_operator: CPointer<godot_method_bind>
+      val getOperator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformVecMult".cstr.ptr,
-            "get_operator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_operator" }
+            "getOperator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOperator" }
         }
-      val set_operator: CPointer<godot_method_bind>
+      val setOperator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeTransformVecMult".cstr.ptr,
-            "set_operator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_operator" }
+            "setOperator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOperator" }
         }}
   }
 }

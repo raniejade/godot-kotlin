@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class BoxShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  var extents: Vector3
+    get() {
+       return getExtents() 
+    }
+    set(value) {
+      setExtents(value)
+    }
+
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.get_extents.call(this._handle)
+    val _ret = __method_bind.getExtents.call(this._handle)
     return _ret.asVector3()
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.set_extents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,17 +49,17 @@ open class BoxShape(
      * Container for method_bind pointers for BoxShape
      */
     private object __method_bind {
-      val get_extents: CPointer<godot_method_bind>
+      val getExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxShape".cstr.ptr,
-            "get_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_extents" }
+            "getExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExtents" }
         }
-      val set_extents: CPointer<godot_method_bind>
+      val setExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("BoxShape".cstr.ptr,
-            "set_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_extents" }
+            "setExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExtents" }
         }}
   }
 }

@@ -20,9 +20,41 @@ import kotlinx.cinterop.reinterpret
 open class NetworkedMultiplayerENet(
   _handle: COpaquePointer
 ) : NetworkedMultiplayerPeer(_handle) {
+  var alwaysOrdered: Boolean
+    get() {
+       return isAlwaysOrdered() 
+    }
+    set(value) {
+      setAlwaysOrdered(value)
+    }
+
+  var channelCount: Int
+    get() {
+       return getChannelCount() 
+    }
+    set(value) {
+      setChannelCount(value)
+    }
+
+  var compressionMode: Int
+    get() {
+       return NetworkedMultiplayerENet.CompressionMode.from(getCompressionMode()) 
+    }
+    set(value) {
+      setCompressionMode(NetworkedMultiplayerENet.CompressionMode.from(value))
+    }
+
+  var transferChannel: Int
+    get() {
+       return getTransferChannel() 
+    }
+    set(value) {
+      setTransferChannel(value)
+    }
+
   fun closeConnection(waitUsec: Int) {
     val _arg = Variant.new(waitUsec)
-    __method_bind.close_connection.call(this._handle, _arg, 1)
+    __method_bind.closeConnection.call(this._handle, _arg, 1)
   }
 
   fun createClient(
@@ -38,7 +70,7 @@ open class NetworkedMultiplayerENet(
     _args.append(inBandwidth)
     _args.append(outBandwidth)
     _args.append(clientPort)
-    val _ret = __method_bind.create_client.call(this._handle, _args.toVariant(), 5)
+    val _ret = __method_bind.createClient.call(this._handle, _args.toVariant(), 5)
     return GDError.from(_ret.asInt())
   }
 
@@ -53,7 +85,7 @@ open class NetworkedMultiplayerENet(
     _args.append(maxClients)
     _args.append(inBandwidth)
     _args.append(outBandwidth)
-    val _ret = __method_bind.create_server.call(this._handle, _args.toVariant(), 4)
+    val _ret = __method_bind.createServer.call(this._handle, _args.toVariant(), 4)
     return GDError.from(_ret.asInt())
   }
 
@@ -61,74 +93,74 @@ open class NetworkedMultiplayerENet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(now)
-    __method_bind.disconnect_peer.call(this._handle, _args.toVariant(), 2)
+    __method_bind.disconnectPeer.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getChannelCount(): Int {
-    val _ret = __method_bind.get_channel_count.call(this._handle)
+    val _ret = __method_bind.getChannelCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCompressionMode(): CompressionMode {
-    val _ret = __method_bind.get_compression_mode.call(this._handle)
+    val _ret = __method_bind.getCompressionMode.call(this._handle)
     return NetworkedMultiplayerENet.CompressionMode.from(_ret.asInt())
   }
 
   fun getLastPacketChannel(): Int {
-    val _ret = __method_bind.get_last_packet_channel.call(this._handle)
+    val _ret = __method_bind.getLastPacketChannel.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPacketChannel(): Int {
-    val _ret = __method_bind.get_packet_channel.call(this._handle)
+    val _ret = __method_bind.getPacketChannel.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPeerAddress(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_peer_address.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeerAddress.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getPeerPort(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.get_peer_port.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeerPort.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getTransferChannel(): Int {
-    val _ret = __method_bind.get_transfer_channel.call(this._handle)
+    val _ret = __method_bind.getTransferChannel.call(this._handle)
     return _ret.asInt()
   }
 
   fun isAlwaysOrdered(): Boolean {
-    val _ret = __method_bind.is_always_ordered.call(this._handle)
+    val _ret = __method_bind.isAlwaysOrdered.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {
     val _arg = Variant.new(ordered)
-    __method_bind.set_always_ordered.call(this._handle, _arg, 1)
+    __method_bind.setAlwaysOrdered.call(this._handle, _arg, 1)
   }
 
   fun setBindIp(ip: String) {
     val _arg = Variant.new(ip)
-    __method_bind.set_bind_ip.call(this._handle, _arg, 1)
+    __method_bind.setBindIp.call(this._handle, _arg, 1)
   }
 
   fun setChannelCount(channels: Int) {
     val _arg = Variant.new(channels)
-    __method_bind.set_channel_count.call(this._handle, _arg, 1)
+    __method_bind.setChannelCount.call(this._handle, _arg, 1)
   }
 
   fun setCompressionMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_compression_mode.call(this._handle, _arg, 1)
+    __method_bind.setCompressionMode.call(this._handle, _arg, 1)
   }
 
   fun setTransferChannel(channel: Int) {
     val _arg = Variant.new(channel)
-    __method_bind.set_transfer_channel.call(this._handle, _arg, 1)
+    __method_bind.setTransferChannel.call(this._handle, _arg, 1)
   }
 
   enum class CompressionMode(
@@ -181,124 +213,124 @@ open class NetworkedMultiplayerENet(
      * Container for method_bind pointers for NetworkedMultiplayerENet
      */
     private object __method_bind {
-      val close_connection: CPointer<godot_method_bind>
+      val closeConnection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "close_connection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method close_connection" }
+            "closeConnection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method closeConnection" }
         }
-      val create_client: CPointer<godot_method_bind>
+      val createClient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "create_client".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_client" }
+            "createClient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createClient" }
         }
-      val create_server: CPointer<godot_method_bind>
+      val createServer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "create_server".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_server" }
+            "createServer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createServer" }
         }
-      val disconnect_peer: CPointer<godot_method_bind>
+      val disconnectPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "disconnect_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnect_peer" }
+            "disconnectPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method disconnectPeer" }
         }
-      val get_channel_count: CPointer<godot_method_bind>
+      val getChannelCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_channel_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_channel_count" }
+            "getChannelCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getChannelCount" }
         }
-      val get_compression_mode: CPointer<godot_method_bind>
+      val getCompressionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_compression_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_compression_mode" }
+            "getCompressionMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCompressionMode" }
         }
-      val get_last_packet_channel: CPointer<godot_method_bind>
+      val getLastPacketChannel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_last_packet_channel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_packet_channel" }
+            "getLastPacketChannel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastPacketChannel" }
         }
-      val get_packet_channel: CPointer<godot_method_bind>
+      val getPacketChannel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_packet_channel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_packet_channel" }
+            "getPacketChannel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPacketChannel" }
         }
-      val get_peer_address: CPointer<godot_method_bind>
+      val getPeerAddress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_peer_address".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_peer_address" }
+            "getPeerAddress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPeerAddress" }
         }
-      val get_peer_port: CPointer<godot_method_bind>
+      val getPeerPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_peer_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_peer_port" }
+            "getPeerPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPeerPort" }
         }
-      val get_transfer_channel: CPointer<godot_method_bind>
+      val getTransferChannel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "get_transfer_channel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transfer_channel" }
+            "getTransferChannel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTransferChannel" }
         }
-      val is_always_ordered: CPointer<godot_method_bind>
+      val isAlwaysOrdered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "is_always_ordered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_always_ordered" }
+            "isAlwaysOrdered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isAlwaysOrdered" }
         }
-      val set_always_ordered: CPointer<godot_method_bind>
+      val setAlwaysOrdered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "set_always_ordered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_always_ordered" }
+            "setAlwaysOrdered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAlwaysOrdered" }
         }
-      val set_bind_ip: CPointer<godot_method_bind>
+      val setBindIp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "set_bind_ip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bind_ip" }
+            "setBindIp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBindIp" }
         }
-      val set_channel_count: CPointer<godot_method_bind>
+      val setChannelCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "set_channel_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_channel_count" }
+            "setChannelCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setChannelCount" }
         }
-      val set_compression_mode: CPointer<godot_method_bind>
+      val setCompressionMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "set_compression_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_compression_mode" }
+            "setCompressionMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCompressionMode" }
         }
-      val set_transfer_channel: CPointer<godot_method_bind>
+      val setTransferChannel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NetworkedMultiplayerENet".cstr.ptr,
-            "set_transfer_channel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_transfer_channel" }
+            "setTransferChannel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTransferChannel" }
         }}
   }
 }

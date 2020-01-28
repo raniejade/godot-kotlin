@@ -17,54 +17,94 @@ import kotlinx.cinterop.reinterpret
 open class InputEventWithModifiers(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  var alt: Boolean
+    get() {
+       return getAlt() 
+    }
+    set(value) {
+      setAlt(value)
+    }
+
+  var command: Boolean
+    get() {
+       return getCommand() 
+    }
+    set(value) {
+      setCommand(value)
+    }
+
+  var control: Boolean
+    get() {
+       return getControl() 
+    }
+    set(value) {
+      setControl(value)
+    }
+
+  var meta: Boolean
+    get() {
+       return getMetakey() 
+    }
+    set(value) {
+      setMetakey(value)
+    }
+
+  var shift: Boolean
+    get() {
+       return getShift() 
+    }
+    set(value) {
+      setShift(value)
+    }
+
   fun getAlt(): Boolean {
-    val _ret = __method_bind.get_alt.call(this._handle)
+    val _ret = __method_bind.getAlt.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getCommand(): Boolean {
-    val _ret = __method_bind.get_command.call(this._handle)
+    val _ret = __method_bind.getCommand.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getControl(): Boolean {
-    val _ret = __method_bind.get_control.call(this._handle)
+    val _ret = __method_bind.getControl.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getMetakey(): Boolean {
-    val _ret = __method_bind.get_metakey.call(this._handle)
+    val _ret = __method_bind.getMetakey.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getShift(): Boolean {
-    val _ret = __method_bind.get_shift.call(this._handle)
+    val _ret = __method_bind.getShift.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAlt(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_alt.call(this._handle, _arg, 1)
+    __method_bind.setAlt.call(this._handle, _arg, 1)
   }
 
   fun setCommand(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_command.call(this._handle, _arg, 1)
+    __method_bind.setCommand.call(this._handle, _arg, 1)
   }
 
   fun setControl(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_control.call(this._handle, _arg, 1)
+    __method_bind.setControl.call(this._handle, _arg, 1)
   }
 
   fun setMetakey(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_metakey.call(this._handle, _arg, 1)
+    __method_bind.setMetakey.call(this._handle, _arg, 1)
   }
 
   fun setShift(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_shift.call(this._handle, _arg, 1)
+    __method_bind.setShift.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -72,75 +112,75 @@ open class InputEventWithModifiers(
      * Container for method_bind pointers for InputEventWithModifiers
      */
     private object __method_bind {
-      val get_alt: CPointer<godot_method_bind>
+      val getAlt: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "get_alt".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_alt" }
+            "getAlt".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAlt" }
         }
-      val get_command: CPointer<godot_method_bind>
+      val getCommand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "get_command".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_command" }
+            "getCommand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCommand" }
         }
-      val get_control: CPointer<godot_method_bind>
+      val getControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "get_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_control" }
+            "getControl".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getControl" }
         }
-      val get_metakey: CPointer<godot_method_bind>
+      val getMetakey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "get_metakey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_metakey" }
+            "getMetakey".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMetakey" }
         }
-      val get_shift: CPointer<godot_method_bind>
+      val getShift: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "get_shift".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shift" }
+            "getShift".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShift" }
         }
-      val set_alt: CPointer<godot_method_bind>
+      val setAlt: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "set_alt".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_alt" }
+            "setAlt".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAlt" }
         }
-      val set_command: CPointer<godot_method_bind>
+      val setCommand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "set_command".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_command" }
+            "setCommand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCommand" }
         }
-      val set_control: CPointer<godot_method_bind>
+      val setControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "set_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_control" }
+            "setControl".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setControl" }
         }
-      val set_metakey: CPointer<godot_method_bind>
+      val setMetakey: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "set_metakey".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_metakey" }
+            "setMetakey".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMetakey" }
         }
-      val set_shift: CPointer<godot_method_bind>
+      val setShift: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventWithModifiers".cstr.ptr,
-            "set_shift".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shift" }
+            "setShift".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShift" }
         }}
   }
 }

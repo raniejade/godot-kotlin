@@ -22,11 +22,11 @@ open class Container(
     val _args = VariantArray.new()
     _args.append(child)
     _args.append(rect)
-    __method_bind.fit_child_in_rect.call(this._handle, _args.toVariant(), 2)
+    __method_bind.fitChildInRect.call(this._handle, _args.toVariant(), 2)
   }
 
   fun queueSort() {
-    __method_bind.queue_sort.call(this._handle)
+    __method_bind.queueSort.call(this._handle)
   }
 
   companion object {
@@ -45,17 +45,17 @@ open class Container(
      * Container for method_bind pointers for Container
      */
     private object __method_bind {
-      val fit_child_in_rect: CPointer<godot_method_bind>
+      val fitChildInRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-            "fit_child_in_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method fit_child_in_rect" }
+            "fitChildInRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method fitChildInRect" }
         }
-      val queue_sort: CPointer<godot_method_bind>
+      val queueSort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Container".cstr.ptr,
-            "queue_sort".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_sort" }
+            "queueSort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queueSort" }
         }}
   }
 }

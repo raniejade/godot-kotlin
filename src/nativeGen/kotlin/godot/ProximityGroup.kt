@@ -19,6 +19,30 @@ import kotlinx.cinterop.reinterpret
 open class ProximityGroup(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var dispatchMode: Int
+    get() {
+       return ProximityGroup.DispatchMode.from(getDispatchMode()) 
+    }
+    set(value) {
+      setDispatchMode(ProximityGroup.DispatchMode.from(value))
+    }
+
+  var gridRadius: Vector3
+    get() {
+       return getGridRadius() 
+    }
+    set(value) {
+      setGridRadius(value)
+    }
+
+  var groupName: String
+    get() {
+       return getGroupName() 
+    }
+    set(value) {
+      setGroupName(value)
+    }
+
   fun broadcast(name: String, parameters: Variant) {
     val _args = VariantArray.new()
     _args.append(name)
@@ -27,33 +51,33 @@ open class ProximityGroup(
   }
 
   fun getDispatchMode(): DispatchMode {
-    val _ret = __method_bind.get_dispatch_mode.call(this._handle)
+    val _ret = __method_bind.getDispatchMode.call(this._handle)
     return ProximityGroup.DispatchMode.from(_ret.asInt())
   }
 
   fun getGridRadius(): Vector3 {
-    val _ret = __method_bind.get_grid_radius.call(this._handle)
+    val _ret = __method_bind.getGridRadius.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getGroupName(): String {
-    val _ret = __method_bind.get_group_name.call(this._handle)
+    val _ret = __method_bind.getGroupName.call(this._handle)
     return _ret.asString()
   }
 
   fun setDispatchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_dispatch_mode.call(this._handle, _arg, 1)
+    __method_bind.setDispatchMode.call(this._handle, _arg, 1)
   }
 
   fun setGridRadius(radius: Vector3) {
     val _arg = Variant.new(radius)
-    __method_bind.set_grid_radius.call(this._handle, _arg, 1)
+    __method_bind.setGridRadius.call(this._handle, _arg, 1)
   }
 
   fun setGroupName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_group_name.call(this._handle, _arg, 1)
+    __method_bind.setGroupName.call(this._handle, _arg, 1)
   }
 
   enum class DispatchMode(
@@ -101,47 +125,47 @@ open class ProximityGroup(
             "broadcast".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method broadcast" }
         }
-      val get_dispatch_mode: CPointer<godot_method_bind>
+      val getDispatchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-            "get_dispatch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dispatch_mode" }
+            "getDispatchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDispatchMode" }
         }
-      val get_grid_radius: CPointer<godot_method_bind>
+      val getGridRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-            "get_grid_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_grid_radius" }
+            "getGridRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGridRadius" }
         }
-      val get_group_name: CPointer<godot_method_bind>
+      val getGroupName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-            "get_group_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_group_name" }
+            "getGroupName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGroupName" }
         }
-      val set_dispatch_mode: CPointer<godot_method_bind>
+      val setDispatchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-            "set_dispatch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dispatch_mode" }
+            "setDispatchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDispatchMode" }
         }
-      val set_grid_radius: CPointer<godot_method_bind>
+      val setGridRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-            "set_grid_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_grid_radius" }
+            "setGridRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGridRadius" }
         }
-      val set_group_name: CPointer<godot_method_bind>
+      val setGroupName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProximityGroup".cstr.ptr,
-            "set_group_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_group_name" }
+            "setGroupName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGroupName" }
         }}
   }
 }

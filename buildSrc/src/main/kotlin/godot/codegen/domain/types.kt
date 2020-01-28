@@ -1,6 +1,6 @@
 package godot.codegen.domain
 
-enum class GDType(val gdName: String, val mappedName: String? = null, val primitive: Boolean = false, val isEnum: Boolean = false) {
+enum class CoreType(val gdName: String, val mappedName: String? = null, val primitive: Boolean = false, val isEnum: Boolean = false) {
   STRING("String", mappedName = "String", primitive = true),
   INT("int", mappedName = "Int", primitive = true),
   FLOAT("float", mappedName = "Float", primitive = true),
@@ -38,19 +38,19 @@ enum class GDType(val gdName: String, val mappedName: String? = null, val primit
   val kotlinName = mappedName ?: gdName
 }
 
-object TypeRegistry {
-  private val types: Map<String, GDType>
+object CoreTypeRegistry {
+  private val types: Map<String, CoreType>
 
   init {
-    val tmp = mutableMapOf<String, GDType>()
-    GDType.values().forEach { v ->
+    val tmp = mutableMapOf<String, CoreType>()
+    CoreType.values().forEach { v ->
       tmp[v.gdName] = v
     }
 
     types = tmp.toMap()
   }
 
-  fun get(name: String): GDType? {
+  fun get(name: String): CoreType? {
     return types[name]
   }
 

@@ -21,6 +21,14 @@ import kotlinx.cinterop.reinterpret
 open class Theme(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var defaultFont: Font
+    get() {
+       return getDefaultFont() 
+    }
+    set(value) {
+      setDefaultFont(value)
+    }
+
   fun clear() {
     __method_bind.clear.call(this._handle)
   }
@@ -29,57 +37,57 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_color.call(this._handle, _args.toVariant(), 2)
+    __method_bind.clearColor.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearConstant(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_constant.call(this._handle, _args.toVariant(), 2)
+    __method_bind.clearConstant.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearFont(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_font.call(this._handle, _args.toVariant(), 2)
+    __method_bind.clearFont.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearIcon(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_icon.call(this._handle, _args.toVariant(), 2)
+    __method_bind.clearIcon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clearStylebox(name: String, type: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    __method_bind.clear_stylebox.call(this._handle, _args.toVariant(), 2)
+    __method_bind.clearStylebox.call(this._handle, _args.toVariant(), 2)
   }
 
   fun copyDefaultTheme() {
-    __method_bind.copy_default_theme.call(this._handle)
+    __method_bind.copyDefaultTheme.call(this._handle)
   }
 
   fun copyTheme(other: Theme) {
     val _arg = Variant.new(other)
-    __method_bind.copy_theme.call(this._handle, _arg, 1)
+    __method_bind.copyTheme.call(this._handle, _arg, 1)
   }
 
   fun getColor(name: String, type: String): Color {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_color.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getColor.call(this._handle, _args.toVariant(), 2)
     return _ret.asColor()
   }
 
   fun getColorList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_color_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getColorList.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -87,18 +95,18 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_constant.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getConstant.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getConstantList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_constant_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConstantList.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getDefaultFont(): Font {
-    val _ret = __method_bind.get_default_font.call(this._handle)
+    val _ret = __method_bind.getDefaultFont.call(this._handle)
     return _ret.asObject(::Font)!!
   }
 
@@ -106,13 +114,13 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_font.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getFont.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Font)!!
   }
 
   fun getFontList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_font_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFontList.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -120,13 +128,13 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_icon.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getIcon.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Texture)!!
   }
 
   fun getIconList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_icon_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getIconList.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -134,24 +142,24 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.get_stylebox.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getStylebox.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::StyleBox)!!
   }
 
   fun getStyleboxList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_stylebox_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStyleboxList.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getStyleboxTypes(): PoolStringArray {
-    val _ret = __method_bind.get_stylebox_types.call(this._handle)
+    val _ret = __method_bind.getStyleboxTypes.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getTypeList(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_type_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTypeList.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -159,7 +167,7 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_color.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.hasColor.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -167,7 +175,7 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_constant.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.hasConstant.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -175,7 +183,7 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_font.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.hasFont.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -183,7 +191,7 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_icon.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.hasIcon.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -191,7 +199,7 @@ open class Theme(
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
-    val _ret = __method_bind.has_stylebox.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.hasStylebox.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -204,7 +212,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     _args.append(color)
-    __method_bind.set_color.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setColor.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setConstant(
@@ -216,12 +224,12 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     _args.append(constant)
-    __method_bind.set_constant.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setConstant.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setDefaultFont(font: Font) {
     val _arg = Variant.new(font)
-    __method_bind.set_default_font.call(this._handle, _arg, 1)
+    __method_bind.setDefaultFont.call(this._handle, _arg, 1)
   }
 
   fun setFont(
@@ -233,7 +241,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     _args.append(font)
-    __method_bind.set_font.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setFont.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setIcon(
@@ -245,7 +253,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     _args.append(texture)
-    __method_bind.set_icon.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setIcon.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setStylebox(
@@ -257,7 +265,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     _args.append(texture)
-    __method_bind.set_stylebox.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setStylebox.call(this._handle, _args.toVariant(), 3)
   }
 
   companion object {
@@ -280,191 +288,191 @@ open class Theme(
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
-      val clear_color: CPointer<godot_method_bind>
+      val clearColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clear_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_color" }
+            "clearColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearColor" }
         }
-      val clear_constant: CPointer<godot_method_bind>
+      val clearConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clear_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_constant" }
+            "clearConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearConstant" }
         }
-      val clear_font: CPointer<godot_method_bind>
+      val clearFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clear_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_font" }
+            "clearFont".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearFont" }
         }
-      val clear_icon: CPointer<godot_method_bind>
+      val clearIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clear_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_icon" }
+            "clearIcon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearIcon" }
         }
-      val clear_stylebox: CPointer<godot_method_bind>
+      val clearStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "clear_stylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_stylebox" }
+            "clearStylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearStylebox" }
         }
-      val copy_default_theme: CPointer<godot_method_bind>
+      val copyDefaultTheme: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "copy_default_theme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copy_default_theme" }
+            "copyDefaultTheme".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method copyDefaultTheme" }
         }
-      val copy_theme: CPointer<godot_method_bind>
+      val copyTheme: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "copy_theme".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method copy_theme" }
+            "copyTheme".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method copyTheme" }
         }
-      val get_color: CPointer<godot_method_bind>
+      val getColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
+            "getColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColor" }
         }
-      val get_color_list: CPointer<godot_method_bind>
+      val getColorList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_color_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color_list" }
+            "getColorList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColorList" }
         }
-      val get_constant: CPointer<godot_method_bind>
+      val getConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant" }
+            "getConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstant" }
         }
-      val get_constant_list: CPointer<godot_method_bind>
+      val getConstantList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_constant_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_list" }
+            "getConstantList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstantList" }
         }
-      val get_default_font: CPointer<godot_method_bind>
+      val getDefaultFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_default_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_default_font" }
+            "getDefaultFont".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDefaultFont" }
         }
-      val get_font: CPointer<godot_method_bind>
+      val getFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_font" }
+            "getFont".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFont" }
         }
-      val get_font_list: CPointer<godot_method_bind>
+      val getFontList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_font_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_font_list" }
+            "getFontList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFontList" }
         }
-      val get_icon: CPointer<godot_method_bind>
+      val getIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_icon" }
+            "getIcon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getIcon" }
         }
-      val get_icon_list: CPointer<godot_method_bind>
+      val getIconList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_icon_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_icon_list" }
+            "getIconList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getIconList" }
         }
-      val get_stylebox: CPointer<godot_method_bind>
+      val getStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_stylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stylebox" }
+            "getStylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStylebox" }
         }
-      val get_stylebox_list: CPointer<godot_method_bind>
+      val getStyleboxList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_stylebox_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stylebox_list" }
+            "getStyleboxList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStyleboxList" }
         }
-      val get_stylebox_types: CPointer<godot_method_bind>
+      val getStyleboxTypes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_stylebox_types".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_stylebox_types" }
+            "getStyleboxTypes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStyleboxTypes" }
         }
-      val get_type_list: CPointer<godot_method_bind>
+      val getTypeList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "get_type_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_type_list" }
+            "getTypeList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTypeList" }
         }
-      val has_color: CPointer<godot_method_bind>
+      val hasColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "has_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_color" }
+            "hasColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasColor" }
         }
-      val has_constant: CPointer<godot_method_bind>
+      val hasConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "has_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_constant" }
+            "hasConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasConstant" }
         }
-      val has_font: CPointer<godot_method_bind>
+      val hasFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "has_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_font" }
+            "hasFont".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasFont" }
         }
-      val has_icon: CPointer<godot_method_bind>
+      val hasIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "has_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_icon" }
+            "hasIcon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasIcon" }
         }
-      val has_stylebox: CPointer<godot_method_bind>
+      val hasStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "has_stylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_stylebox" }
+            "hasStylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasStylebox" }
         }
-      val set_color: CPointer<godot_method_bind>
+      val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
+            "setColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setColor" }
         }
-      val set_constant: CPointer<godot_method_bind>
+      val setConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "set_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant" }
+            "setConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setConstant" }
         }
-      val set_default_font: CPointer<godot_method_bind>
+      val setDefaultFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "set_default_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_font" }
+            "setDefaultFont".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDefaultFont" }
         }
-      val set_font: CPointer<godot_method_bind>
+      val setFont: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "set_font".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_font" }
+            "setFont".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFont" }
         }
-      val set_icon: CPointer<godot_method_bind>
+      val setIcon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "set_icon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_icon" }
+            "setIcon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setIcon" }
         }
-      val set_stylebox: CPointer<godot_method_bind>
+      val setStylebox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Theme".cstr.ptr,
-            "set_stylebox".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_stylebox" }
+            "setStylebox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setStylebox" }
         }}
   }
 }

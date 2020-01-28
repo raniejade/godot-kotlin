@@ -21,89 +21,105 @@ import kotlinx.cinterop.reinterpret
 open class ARVRServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  var primaryInterface: Object
+    get() {
+       return getPrimaryInterface() 
+    }
+    set(value) {
+      setPrimaryInterface(value)
+    }
+
+  var worldScale: Float
+    get() {
+       return getWorldScale() 
+    }
+    set(value) {
+      setWorldScale(value)
+    }
+
   fun centerOnHmd(rotationMode: Int, keepHeight: Boolean) {
     val _args = VariantArray.new()
     _args.append(rotationMode)
     _args.append(keepHeight)
-    __method_bind.center_on_hmd.call(this._handle, _args.toVariant(), 2)
+    __method_bind.centerOnHmd.call(this._handle, _args.toVariant(), 2)
   }
 
   fun findInterface(name: String): ARVRInterface {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.find_interface.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findInterface.call(this._handle, _arg, 1)
     return _ret.asObject(::ARVRInterface)!!
   }
 
   fun getHmdTransform(): Transform {
-    val _ret = __method_bind.get_hmd_transform.call(this._handle)
+    val _ret = __method_bind.getHmdTransform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getInterface(idx: Int): ARVRInterface {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_interface.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInterface.call(this._handle, _arg, 1)
     return _ret.asObject(::ARVRInterface)!!
   }
 
   fun getInterfaceCount(): Int {
-    val _ret = __method_bind.get_interface_count.call(this._handle)
+    val _ret = __method_bind.getInterfaceCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInterfaces(): VariantArray {
-    val _ret = __method_bind.get_interfaces.call(this._handle)
+    val _ret = __method_bind.getInterfaces.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getLastCommitUsec(): Int {
-    val _ret = __method_bind.get_last_commit_usec.call(this._handle)
+    val _ret = __method_bind.getLastCommitUsec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLastFrameUsec(): Int {
-    val _ret = __method_bind.get_last_frame_usec.call(this._handle)
+    val _ret = __method_bind.getLastFrameUsec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLastProcessUsec(): Int {
-    val _ret = __method_bind.get_last_process_usec.call(this._handle)
+    val _ret = __method_bind.getLastProcessUsec.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPrimaryInterface(): ARVRInterface {
-    val _ret = __method_bind.get_primary_interface.call(this._handle)
+    val _ret = __method_bind.getPrimaryInterface.call(this._handle)
     return _ret.asObject(::ARVRInterface)!!
   }
 
   fun getReferenceFrame(): Transform {
-    val _ret = __method_bind.get_reference_frame.call(this._handle)
+    val _ret = __method_bind.getReferenceFrame.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getTracker(idx: Int): ARVRPositionalTracker {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_tracker.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTracker.call(this._handle, _arg, 1)
     return _ret.asObject(::ARVRPositionalTracker)!!
   }
 
   fun getTrackerCount(): Int {
-    val _ret = __method_bind.get_tracker_count.call(this._handle)
+    val _ret = __method_bind.getTrackerCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWorldScale(): Float {
-    val _ret = __method_bind.get_world_scale.call(this._handle)
+    val _ret = __method_bind.getWorldScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setPrimaryInterface(`interface`: ARVRInterface) {
     val _arg = Variant.new(`interface`)
-    __method_bind.set_primary_interface.call(this._handle, _arg, 1)
+    __method_bind.setPrimaryInterface.call(this._handle, _arg, 1)
   }
 
   fun setWorldScale(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_world_scale.call(this._handle, _arg, 1)
+    __method_bind.setWorldScale.call(this._handle, _arg, 1)
   }
 
   enum class RotationMode(
@@ -185,101 +201,101 @@ open class ARVRServer(
      * Container for method_bind pointers for ARVRServer
      */
     private object __method_bind {
-      val center_on_hmd: CPointer<godot_method_bind>
+      val centerOnHmd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "center_on_hmd".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method center_on_hmd" }
+            "centerOnHmd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method centerOnHmd" }
         }
-      val find_interface: CPointer<godot_method_bind>
+      val findInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "find_interface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_interface" }
+            "findInterface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findInterface" }
         }
-      val get_hmd_transform: CPointer<godot_method_bind>
+      val getHmdTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_hmd_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_hmd_transform" }
+            "getHmdTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHmdTransform" }
         }
-      val get_interface: CPointer<godot_method_bind>
+      val getInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_interface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interface" }
+            "getInterface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInterface" }
         }
-      val get_interface_count: CPointer<godot_method_bind>
+      val getInterfaceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_interface_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interface_count" }
+            "getInterfaceCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInterfaceCount" }
         }
-      val get_interfaces: CPointer<godot_method_bind>
+      val getInterfaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_interfaces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interfaces" }
+            "getInterfaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInterfaces" }
         }
-      val get_last_commit_usec: CPointer<godot_method_bind>
+      val getLastCommitUsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_last_commit_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_commit_usec" }
+            "getLastCommitUsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastCommitUsec" }
         }
-      val get_last_frame_usec: CPointer<godot_method_bind>
+      val getLastFrameUsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_last_frame_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_frame_usec" }
+            "getLastFrameUsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastFrameUsec" }
         }
-      val get_last_process_usec: CPointer<godot_method_bind>
+      val getLastProcessUsec: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_last_process_usec".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_process_usec" }
+            "getLastProcessUsec".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastProcessUsec" }
         }
-      val get_primary_interface: CPointer<godot_method_bind>
+      val getPrimaryInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_primary_interface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_primary_interface" }
+            "getPrimaryInterface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPrimaryInterface" }
         }
-      val get_reference_frame: CPointer<godot_method_bind>
+      val getReferenceFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_reference_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_reference_frame" }
+            "getReferenceFrame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getReferenceFrame" }
         }
-      val get_tracker: CPointer<godot_method_bind>
+      val getTracker: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_tracker".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tracker" }
+            "getTracker".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTracker" }
         }
-      val get_tracker_count: CPointer<godot_method_bind>
+      val getTrackerCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_tracker_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tracker_count" }
+            "getTrackerCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTrackerCount" }
         }
-      val get_world_scale: CPointer<godot_method_bind>
+      val getWorldScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "get_world_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_world_scale" }
+            "getWorldScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWorldScale" }
         }
-      val set_primary_interface: CPointer<godot_method_bind>
+      val setPrimaryInterface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "set_primary_interface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_primary_interface" }
+            "setPrimaryInterface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPrimaryInterface" }
         }
-      val set_world_scale: CPointer<godot_method_bind>
+      val setWorldScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRServer".cstr.ptr,
-            "set_world_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_world_scale" }
+            "setWorldScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWorldScale" }
         }}
   }
 }

@@ -20,64 +20,112 @@ import kotlinx.cinterop.reinterpret
 open class AnimationNodeStateMachineTransition(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var advanceCondition: String
+    get() {
+       return getAdvanceCondition() 
+    }
+    set(value) {
+      setAdvanceCondition(value)
+    }
+
+  var autoAdvance: Boolean
+    get() {
+       return hasAutoAdvance() 
+    }
+    set(value) {
+      setAutoAdvance(value)
+    }
+
+  var disabled: Boolean
+    get() {
+       return isDisabled() 
+    }
+    set(value) {
+      setDisabled(value)
+    }
+
+  var priority: Int
+    get() {
+       return getPriority() 
+    }
+    set(value) {
+      setPriority(value)
+    }
+
+  var switchMode: Int
+    get() {
+       return AnimationNodeStateMachineTransition.SwitchMode.from(getSwitchMode()) 
+    }
+    set(value) {
+      setSwitchMode(AnimationNodeStateMachineTransition.SwitchMode.from(value))
+    }
+
+  var xfadeTime: Float
+    get() {
+       return getXfadeTime() 
+    }
+    set(value) {
+      setXfadeTime(value)
+    }
+
   fun getAdvanceCondition(): String {
-    val _ret = __method_bind.get_advance_condition.call(this._handle)
+    val _ret = __method_bind.getAdvanceCondition.call(this._handle)
     return _ret.asString()
   }
 
   fun getPriority(): Int {
-    val _ret = __method_bind.get_priority.call(this._handle)
+    val _ret = __method_bind.getPriority.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSwitchMode(): SwitchMode {
-    val _ret = __method_bind.get_switch_mode.call(this._handle)
+    val _ret = __method_bind.getSwitchMode.call(this._handle)
     return AnimationNodeStateMachineTransition.SwitchMode.from(_ret.asInt())
   }
 
   fun getXfadeTime(): Float {
-    val _ret = __method_bind.get_xfade_time.call(this._handle)
+    val _ret = __method_bind.getXfadeTime.call(this._handle)
     return _ret.asFloat()
   }
 
   fun hasAutoAdvance(): Boolean {
-    val _ret = __method_bind.has_auto_advance.call(this._handle)
+    val _ret = __method_bind.hasAutoAdvance.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.is_disabled.call(this._handle)
+    val _ret = __method_bind.isDisabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAdvanceCondition(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_advance_condition.call(this._handle, _arg, 1)
+    __method_bind.setAdvanceCondition.call(this._handle, _arg, 1)
   }
 
   fun setAutoAdvance(autoAdvance: Boolean) {
     val _arg = Variant.new(autoAdvance)
-    __method_bind.set_auto_advance.call(this._handle, _arg, 1)
+    __method_bind.setAutoAdvance.call(this._handle, _arg, 1)
   }
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.set_disabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, _arg, 1)
   }
 
   fun setPriority(priority: Int) {
     val _arg = Variant.new(priority)
-    __method_bind.set_priority.call(this._handle, _arg, 1)
+    __method_bind.setPriority.call(this._handle, _arg, 1)
   }
 
   fun setSwitchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_switch_mode.call(this._handle, _arg, 1)
+    __method_bind.setSwitchMode.call(this._handle, _arg, 1)
   }
 
   fun setXfadeTime(secs: Float) {
     val _arg = Variant.new(secs)
-    __method_bind.set_xfade_time.call(this._handle, _arg, 1)
+    __method_bind.setXfadeTime.call(this._handle, _arg, 1)
   }
 
   enum class SwitchMode(
@@ -123,89 +171,89 @@ open class AnimationNodeStateMachineTransition(
      * Container for method_bind pointers for AnimationNodeStateMachineTransition
      */
     private object __method_bind {
-      val get_advance_condition: CPointer<godot_method_bind>
+      val getAdvanceCondition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "get_advance_condition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_advance_condition" }
+            "getAdvanceCondition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAdvanceCondition" }
         }
-      val get_priority: CPointer<godot_method_bind>
+      val getPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "get_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_priority" }
+            "getPriority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPriority" }
         }
-      val get_switch_mode: CPointer<godot_method_bind>
+      val getSwitchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "get_switch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_switch_mode" }
+            "getSwitchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSwitchMode" }
         }
-      val get_xfade_time: CPointer<godot_method_bind>
+      val getXfadeTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "get_xfade_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_xfade_time" }
+            "getXfadeTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getXfadeTime" }
         }
-      val has_auto_advance: CPointer<godot_method_bind>
+      val hasAutoAdvance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "has_auto_advance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_auto_advance" }
+            "hasAutoAdvance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasAutoAdvance" }
         }
-      val is_disabled: CPointer<godot_method_bind>
+      val isDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "is_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_disabled" }
+            "isDisabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDisabled" }
         }
-      val set_advance_condition: CPointer<godot_method_bind>
+      val setAdvanceCondition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "set_advance_condition".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_advance_condition" }
+            "setAdvanceCondition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAdvanceCondition" }
         }
-      val set_auto_advance: CPointer<godot_method_bind>
+      val setAutoAdvance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "set_auto_advance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_auto_advance" }
+            "setAutoAdvance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAutoAdvance" }
         }
-      val set_disabled: CPointer<godot_method_bind>
+      val setDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "set_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_disabled" }
+            "setDisabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDisabled" }
         }
-      val set_priority: CPointer<godot_method_bind>
+      val setPriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "set_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_priority" }
+            "setPriority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPriority" }
         }
-      val set_switch_mode: CPointer<godot_method_bind>
+      val setSwitchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "set_switch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_switch_mode" }
+            "setSwitchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSwitchMode" }
         }
-      val set_xfade_time: CPointer<godot_method_bind>
+      val setXfadeTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachineTransition".cstr.ptr,
-            "set_xfade_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_xfade_time" }
+            "setXfadeTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setXfadeTime" }
         }}
   }
 }

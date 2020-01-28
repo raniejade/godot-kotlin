@@ -19,6 +19,38 @@ import kotlinx.cinterop.reinterpret
 open class Curve(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var data: Int
+    get() {
+       return _getData() 
+    }
+    set(value) {
+      _setData(value)
+    }
+
+  var bakeResolution: Int
+    get() {
+       return getBakeResolution() 
+    }
+    set(value) {
+      setBakeResolution(value)
+    }
+
+  var maxValue: Float
+    get() {
+       return getMaxValue() 
+    }
+    set(value) {
+      setMaxValue(value)
+    }
+
+  var minValue: Float
+    get() {
+       return getMinValue() 
+    }
+    set(value) {
+      setMinValue(value)
+    }
+
   fun addPoint(
     position: Vector2,
     leftTangent: Float,
@@ -32,7 +64,7 @@ open class Curve(
     _args.append(rightTangent)
     _args.append(leftMode)
     _args.append(rightMode)
-    val _ret = __method_bind.add_point.call(this._handle, _args.toVariant(), 5)
+    val _ret = __method_bind.addPoint.call(this._handle, _args.toVariant(), 5)
     return _ret.asInt()
   }
 
@@ -41,60 +73,60 @@ open class Curve(
   }
 
   fun cleanDupes() {
-    __method_bind.clean_dupes.call(this._handle)
+    __method_bind.cleanDupes.call(this._handle)
   }
 
   fun clearPoints() {
-    __method_bind.clear_points.call(this._handle)
+    __method_bind.clearPoints.call(this._handle)
   }
 
   fun getBakeResolution(): Int {
-    val _ret = __method_bind.get_bake_resolution.call(this._handle)
+    val _ret = __method_bind.getBakeResolution.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaxValue(): Float {
-    val _ret = __method_bind.get_max_value.call(this._handle)
+    val _ret = __method_bind.getMaxValue.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMinValue(): Float {
-    val _ret = __method_bind.get_min_value.call(this._handle)
+    val _ret = __method_bind.getMinValue.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPointCount(): Int {
-    val _ret = __method_bind.get_point_count.call(this._handle)
+    val _ret = __method_bind.getPointCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPointLeftMode(index: Int): TangentMode {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_left_mode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointLeftMode.call(this._handle, _arg, 1)
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointLeftTangent(index: Int): Float {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_left_tangent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointLeftTangent.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getPointPosition(index: Int): Vector2 {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_position.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointPosition.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPointRightMode(index: Int): TangentMode {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_right_mode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointRightMode.call(this._handle, _arg, 1)
     return Curve.TangentMode.from(_ret.asInt())
   }
 
   fun getPointRightTangent(index: Int): Float {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_point_right_tangent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPointRightTangent.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -106,49 +138,49 @@ open class Curve(
 
   fun interpolateBaked(offset: Float): Float {
     val _arg = Variant.new(offset)
-    val _ret = __method_bind.interpolate_baked.call(this._handle, _arg, 1)
+    val _ret = __method_bind.interpolateBaked.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun removePoint(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.remove_point.call(this._handle, _arg, 1)
+    __method_bind.removePoint.call(this._handle, _arg, 1)
   }
 
   fun setBakeResolution(resolution: Int) {
     val _arg = Variant.new(resolution)
-    __method_bind.set_bake_resolution.call(this._handle, _arg, 1)
+    __method_bind.setBakeResolution.call(this._handle, _arg, 1)
   }
 
   fun setMaxValue(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.set_max_value.call(this._handle, _arg, 1)
+    __method_bind.setMaxValue.call(this._handle, _arg, 1)
   }
 
   fun setMinValue(min: Float) {
     val _arg = Variant.new(min)
-    __method_bind.set_min_value.call(this._handle, _arg, 1)
+    __method_bind.setMinValue.call(this._handle, _arg, 1)
   }
 
   fun setPointLeftMode(index: Int, mode: Int) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(mode)
-    __method_bind.set_point_left_mode.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPointLeftMode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointLeftTangent(index: Int, tangent: Float) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(tangent)
-    __method_bind.set_point_left_tangent.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPointLeftTangent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointOffset(index: Int, offset: Float): Int {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(offset)
-    val _ret = __method_bind.set_point_offset.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.setPointOffset.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -156,21 +188,21 @@ open class Curve(
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(mode)
-    __method_bind.set_point_right_mode.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPointRightMode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointRightTangent(index: Int, tangent: Float) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(tangent)
-    __method_bind.set_point_right_tangent.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPointRightTangent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPointValue(index: Int, y: Float) {
     val _args = VariantArray.new()
     _args.append(index)
     _args.append(y)
-    __method_bind.set_point_value.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPointValue.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class TangentMode(
@@ -214,11 +246,11 @@ open class Curve(
      * Container for method_bind pointers for Curve
      */
     private object __method_bind {
-      val add_point: CPointer<godot_method_bind>
+      val addPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "add_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_point" }
+            "addPoint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPoint" }
         }
       val bake: CPointer<godot_method_bind>
         get() = memScoped {
@@ -226,71 +258,71 @@ open class Curve(
             "bake".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method bake" }
         }
-      val clean_dupes: CPointer<godot_method_bind>
+      val cleanDupes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "clean_dupes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clean_dupes" }
+            "cleanDupes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method cleanDupes" }
         }
-      val clear_points: CPointer<godot_method_bind>
+      val clearPoints: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "clear_points".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_points" }
+            "clearPoints".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearPoints" }
         }
-      val get_bake_resolution: CPointer<godot_method_bind>
+      val getBakeResolution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_bake_resolution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bake_resolution" }
+            "getBakeResolution".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBakeResolution" }
         }
-      val get_max_value: CPointer<godot_method_bind>
+      val getMaxValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_max_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_value" }
+            "getMaxValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaxValue" }
         }
-      val get_min_value: CPointer<godot_method_bind>
+      val getMinValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_min_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_min_value" }
+            "getMinValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMinValue" }
         }
-      val get_point_count: CPointer<godot_method_bind>
+      val getPointCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_point_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_count" }
+            "getPointCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPointCount" }
         }
-      val get_point_left_mode: CPointer<godot_method_bind>
+      val getPointLeftMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_point_left_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_left_mode" }
+            "getPointLeftMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPointLeftMode" }
         }
-      val get_point_left_tangent: CPointer<godot_method_bind>
+      val getPointLeftTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_point_left_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_left_tangent" }
+            "getPointLeftTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPointLeftTangent" }
         }
-      val get_point_position: CPointer<godot_method_bind>
+      val getPointPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_point_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_position" }
+            "getPointPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPointPosition" }
         }
-      val get_point_right_mode: CPointer<godot_method_bind>
+      val getPointRightMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_point_right_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_right_mode" }
+            "getPointRightMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPointRightMode" }
         }
-      val get_point_right_tangent: CPointer<godot_method_bind>
+      val getPointRightTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "get_point_right_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_point_right_tangent" }
+            "getPointRightTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPointRightTangent" }
         }
       val interpolate: CPointer<godot_method_bind>
         get() = memScoped {
@@ -298,71 +330,71 @@ open class Curve(
             "interpolate".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method interpolate" }
         }
-      val interpolate_baked: CPointer<godot_method_bind>
+      val interpolateBaked: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "interpolate_baked".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_baked" }
+            "interpolateBaked".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method interpolateBaked" }
         }
-      val remove_point: CPointer<godot_method_bind>
+      val removePoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "remove_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_point" }
+            "removePoint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removePoint" }
         }
-      val set_bake_resolution: CPointer<godot_method_bind>
+      val setBakeResolution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_bake_resolution".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bake_resolution" }
+            "setBakeResolution".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBakeResolution" }
         }
-      val set_max_value: CPointer<godot_method_bind>
+      val setMaxValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_max_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max_value" }
+            "setMaxValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMaxValue" }
         }
-      val set_min_value: CPointer<godot_method_bind>
+      val setMinValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_min_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_min_value" }
+            "setMinValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMinValue" }
         }
-      val set_point_left_mode: CPointer<godot_method_bind>
+      val setPointLeftMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_point_left_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_left_mode" }
+            "setPointLeftMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPointLeftMode" }
         }
-      val set_point_left_tangent: CPointer<godot_method_bind>
+      val setPointLeftTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_point_left_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_left_tangent" }
+            "setPointLeftTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPointLeftTangent" }
         }
-      val set_point_offset: CPointer<godot_method_bind>
+      val setPointOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_point_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_offset" }
+            "setPointOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPointOffset" }
         }
-      val set_point_right_mode: CPointer<godot_method_bind>
+      val setPointRightMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_point_right_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_right_mode" }
+            "setPointRightMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPointRightMode" }
         }
-      val set_point_right_tangent: CPointer<godot_method_bind>
+      val setPointRightTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_point_right_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_right_tangent" }
+            "setPointRightTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPointRightTangent" }
         }
-      val set_point_value: CPointer<godot_method_bind>
+      val setPointValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Curve".cstr.ptr,
-            "set_point_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_point_value" }
+            "setPointValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPointValue" }
         }}
   }
 }

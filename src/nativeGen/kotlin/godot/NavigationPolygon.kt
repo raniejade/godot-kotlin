@@ -19,77 +19,101 @@ import kotlinx.cinterop.reinterpret
 open class NavigationPolygon(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var outlines: VariantArray
+    get() {
+       return _getOutlines() 
+    }
+    set(value) {
+      _setOutlines(value)
+    }
+
+  var polygons: VariantArray
+    get() {
+       return _getPolygons() 
+    }
+    set(value) {
+      _setPolygons(value)
+    }
+
+  var vertices: PoolVector2Array
+    get() {
+       return getVertices() 
+    }
+    set(value) {
+      setVertices(value)
+    }
+
   fun addOutline(outline: PoolVector2Array) {
     val _arg = Variant.new(outline)
-    __method_bind.add_outline.call(this._handle, _arg, 1)
+    __method_bind.addOutline.call(this._handle, _arg, 1)
   }
 
   fun addOutlineAtIndex(outline: PoolVector2Array, index: Int) {
     val _args = VariantArray.new()
     _args.append(outline)
     _args.append(index)
-    __method_bind.add_outline_at_index.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addOutlineAtIndex.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addPolygon(polygon: PoolIntArray) {
     val _arg = Variant.new(polygon)
-    __method_bind.add_polygon.call(this._handle, _arg, 1)
+    __method_bind.addPolygon.call(this._handle, _arg, 1)
   }
 
   fun clearOutlines() {
-    __method_bind.clear_outlines.call(this._handle)
+    __method_bind.clearOutlines.call(this._handle)
   }
 
   fun clearPolygons() {
-    __method_bind.clear_polygons.call(this._handle)
+    __method_bind.clearPolygons.call(this._handle)
   }
 
   fun getOutline(idx: Int): PoolVector2Array {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_outline.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getOutline.call(this._handle, _arg, 1)
     return _ret.asPoolVector2Array()
   }
 
   fun getOutlineCount(): Int {
-    val _ret = __method_bind.get_outline_count.call(this._handle)
+    val _ret = __method_bind.getOutlineCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPolygon(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_polygon.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPolygon.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun getPolygonCount(): Int {
-    val _ret = __method_bind.get_polygon_count.call(this._handle)
+    val _ret = __method_bind.getPolygonCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVertices(): PoolVector2Array {
-    val _ret = __method_bind.get_vertices.call(this._handle)
+    val _ret = __method_bind.getVertices.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun makePolygonsFromOutlines() {
-    __method_bind.make_polygons_from_outlines.call(this._handle)
+    __method_bind.makePolygonsFromOutlines.call(this._handle)
   }
 
   fun removeOutline(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.remove_outline.call(this._handle, _arg, 1)
+    __method_bind.removeOutline.call(this._handle, _arg, 1)
   }
 
   fun setOutline(idx: Int, outline: PoolVector2Array) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(outline)
-    __method_bind.set_outline.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setOutline.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertices(vertices: PoolVector2Array) {
     val _arg = Variant.new(vertices)
-    __method_bind.set_vertices.call(this._handle, _arg, 1)
+    __method_bind.setVertices.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -107,103 +131,103 @@ open class NavigationPolygon(
      * Container for method_bind pointers for NavigationPolygon
      */
     private object __method_bind {
-      val add_outline: CPointer<godot_method_bind>
+      val addOutline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "add_outline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_outline" }
+            "addOutline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addOutline" }
         }
-      val add_outline_at_index: CPointer<godot_method_bind>
+      val addOutlineAtIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "add_outline_at_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_outline_at_index" }
+            "addOutlineAtIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addOutlineAtIndex" }
         }
-      val add_polygon: CPointer<godot_method_bind>
+      val addPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "add_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_polygon" }
+            "addPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPolygon" }
         }
-      val clear_outlines: CPointer<godot_method_bind>
+      val clearOutlines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "clear_outlines".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_outlines" }
+            "clearOutlines".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearOutlines" }
         }
-      val clear_polygons: CPointer<godot_method_bind>
+      val clearPolygons: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "clear_polygons".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_polygons" }
+            "clearPolygons".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearPolygons" }
         }
-      val get_outline: CPointer<godot_method_bind>
+      val getOutline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "get_outline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_outline" }
+            "getOutline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOutline" }
         }
-      val get_outline_count: CPointer<godot_method_bind>
+      val getOutlineCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "get_outline_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_outline_count" }
+            "getOutlineCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOutlineCount" }
         }
-      val get_polygon: CPointer<godot_method_bind>
+      val getPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            "getPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPolygon" }
         }
-      val get_polygon_count: CPointer<godot_method_bind>
+      val getPolygonCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "get_polygon_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon_count" }
+            "getPolygonCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPolygonCount" }
         }
-      val get_vertices: CPointer<godot_method_bind>
+      val getVertices: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "get_vertices".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertices" }
+            "getVertices".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertices" }
         }
-      val make_polygons_from_outlines: CPointer<godot_method_bind>
+      val makePolygonsFromOutlines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "make_polygons_from_outlines".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_polygons_from_outlines" }
+            "makePolygonsFromOutlines".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makePolygonsFromOutlines" }
         }
-      val remove_outline: CPointer<godot_method_bind>
+      val removeOutline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "remove_outline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_outline" }
+            "removeOutline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeOutline" }
         }
-      val set_outline: CPointer<godot_method_bind>
+      val setOutline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "set_outline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_outline" }
+            "setOutline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOutline" }
         }
-      val set_vertices: CPointer<godot_method_bind>
+      val setVertices: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NavigationPolygon".cstr.ptr,
-            "set_vertices".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertices" }
+            "setVertices".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertices" }
         }}
   }
 }

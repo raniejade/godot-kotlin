@@ -19,23 +19,55 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedSprite3D(
   _handle: COpaquePointer
 ) : SpriteBase3D(_handle) {
+  var animation: String
+    get() {
+       return getAnimation() 
+    }
+    set(value) {
+      setAnimation(value)
+    }
+
+  var frame: Int
+    get() {
+       return getFrame() 
+    }
+    set(value) {
+      setFrame(value)
+    }
+
+  var frames: SpriteFrames
+    get() {
+       return getSpriteFrames() 
+    }
+    set(value) {
+      setSpriteFrames(value)
+    }
+
+  var playing: Boolean
+    get() {
+       return _isPlaying() 
+    }
+    set(value) {
+      _setPlaying(value)
+    }
+
   fun getAnimation(): String {
-    val _ret = __method_bind.get_animation.call(this._handle)
+    val _ret = __method_bind.getAnimation.call(this._handle)
     return _ret.asString()
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.get_frame.call(this._handle)
+    val _ret = __method_bind.getFrame.call(this._handle)
     return _ret.asInt()
   }
 
   fun getSpriteFrames(): SpriteFrames {
-    val _ret = __method_bind.get_sprite_frames.call(this._handle)
+    val _ret = __method_bind.getSpriteFrames.call(this._handle)
     return _ret.asObject(::SpriteFrames)!!
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this._handle)
+    val _ret = __method_bind.isPlaying.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -46,17 +78,17 @@ open class AnimatedSprite3D(
 
   fun setAnimation(animation: String) {
     val _arg = Variant.new(animation)
-    __method_bind.set_animation.call(this._handle, _arg, 1)
+    __method_bind.setAnimation.call(this._handle, _arg, 1)
   }
 
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
-    __method_bind.set_frame.call(this._handle, _arg, 1)
+    __method_bind.setFrame.call(this._handle, _arg, 1)
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
     val _arg = Variant.new(spriteFrames)
-    __method_bind.set_sprite_frames.call(this._handle, _arg, 1)
+    __method_bind.setSpriteFrames.call(this._handle, _arg, 1)
   }
 
   fun stop() {
@@ -78,33 +110,33 @@ open class AnimatedSprite3D(
      * Container for method_bind pointers for AnimatedSprite3D
      */
     private object __method_bind {
-      val get_animation: CPointer<godot_method_bind>
+      val getAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "get_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation" }
+            "getAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimation" }
         }
-      val get_frame: CPointer<godot_method_bind>
+      val getFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "get_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame" }
+            "getFrame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrame" }
         }
-      val get_sprite_frames: CPointer<godot_method_bind>
+      val getSpriteFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "get_sprite_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sprite_frames" }
+            "getSpriteFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpriteFrames" }
         }
-      val is_playing: CPointer<godot_method_bind>
+      val isPlaying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_playing" }
+            "isPlaying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPlaying" }
         }
       val play: CPointer<godot_method_bind>
         get() = memScoped {
@@ -113,26 +145,26 @@ open class AnimatedSprite3D(
             "play".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method play" }
         }
-      val set_animation: CPointer<godot_method_bind>
+      val setAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "set_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation" }
+            "setAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAnimation" }
         }
-      val set_frame: CPointer<godot_method_bind>
+      val setFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "set_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame" }
+            "setFrame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrame" }
         }
-      val set_sprite_frames: CPointer<godot_method_bind>
+      val setSpriteFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite3D".cstr.ptr,
-            "set_sprite_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sprite_frames" }
+            "setSpriteFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpriteFrames" }
         }
       val stop: CPointer<godot_method_bind>
         get() = memScoped {

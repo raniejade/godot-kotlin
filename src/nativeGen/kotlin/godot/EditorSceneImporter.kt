@@ -27,8 +27,8 @@ open class EditorSceneImporter(
     _args.append(path)
     _args.append(flags)
     _args.append(bakeFps)
-    val _ret = __method_bind.import_animation_from_other_importer.call(this._handle,
-        _args.toVariant(), 3)
+    val _ret = __method_bind.importAnimationFromOtherImporter.call(this._handle, _args.toVariant(),
+        3)
     return _ret.asObject(::Animation)!!
   }
 
@@ -41,8 +41,7 @@ open class EditorSceneImporter(
     _args.append(path)
     _args.append(flags)
     _args.append(bakeFps)
-    val _ret = __method_bind.import_scene_from_other_importer.call(this._handle, _args.toVariant(),
-        3)
+    val _ret = __method_bind.importSceneFromOtherImporter.call(this._handle, _args.toVariant(), 3)
     return _ret.asObject(::Node)!!
   }
 
@@ -81,20 +80,19 @@ open class EditorSceneImporter(
      * Container for method_bind pointers for EditorSceneImporter
      */
     private object __method_bind {
-      val import_animation_from_other_importer: CPointer<godot_method_bind>
+      val importAnimationFromOtherImporter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-            "import_animation_from_other_importer".cstr.ptr)
-          requireNotNull(ptr) {
-            "No method_bind found for method import_animation_from_other_importer" }
+            "importAnimationFromOtherImporter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method importAnimationFromOtherImporter" }
         }
-      val import_scene_from_other_importer: CPointer<godot_method_bind>
+      val importSceneFromOtherImporter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSceneImporter".cstr.ptr,
-            "import_scene_from_other_importer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method import_scene_from_other_importer" }
+            "importSceneFromOtherImporter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method importSceneFromOtherImporter" }
         }}
   }
 }

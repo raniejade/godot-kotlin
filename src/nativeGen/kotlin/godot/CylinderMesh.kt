@@ -18,54 +18,94 @@ import kotlinx.cinterop.reinterpret
 open class CylinderMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  var bottomRadius: Float
+    get() {
+       return getBottomRadius() 
+    }
+    set(value) {
+      setBottomRadius(value)
+    }
+
+  var height: Float
+    get() {
+       return getHeight() 
+    }
+    set(value) {
+      setHeight(value)
+    }
+
+  var radialSegments: Int
+    get() {
+       return getRadialSegments() 
+    }
+    set(value) {
+      setRadialSegments(value)
+    }
+
+  var rings: Int
+    get() {
+       return getRings() 
+    }
+    set(value) {
+      setRings(value)
+    }
+
+  var topRadius: Float
+    get() {
+       return getTopRadius() 
+    }
+    set(value) {
+      setTopRadius(value)
+    }
+
   fun getBottomRadius(): Float {
-    val _ret = __method_bind.get_bottom_radius.call(this._handle)
+    val _ret = __method_bind.getBottomRadius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this._handle)
+    val _ret = __method_bind.getHeight.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getRadialSegments(): Int {
-    val _ret = __method_bind.get_radial_segments.call(this._handle)
+    val _ret = __method_bind.getRadialSegments.call(this._handle)
     return _ret.asInt()
   }
 
   fun getRings(): Int {
-    val _ret = __method_bind.get_rings.call(this._handle)
+    val _ret = __method_bind.getRings.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTopRadius(): Float {
-    val _ret = __method_bind.get_top_radius.call(this._handle)
+    val _ret = __method_bind.getTopRadius.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setBottomRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_bottom_radius.call(this._handle, _arg, 1)
+    __method_bind.setBottomRadius.call(this._handle, _arg, 1)
   }
 
   fun setHeight(height: Float) {
     val _arg = Variant.new(height)
-    __method_bind.set_height.call(this._handle, _arg, 1)
+    __method_bind.setHeight.call(this._handle, _arg, 1)
   }
 
   fun setRadialSegments(segments: Int) {
     val _arg = Variant.new(segments)
-    __method_bind.set_radial_segments.call(this._handle, _arg, 1)
+    __method_bind.setRadialSegments.call(this._handle, _arg, 1)
   }
 
   fun setRings(rings: Int) {
     val _arg = Variant.new(rings)
-    __method_bind.set_rings.call(this._handle, _arg, 1)
+    __method_bind.setRings.call(this._handle, _arg, 1)
   }
 
   fun setTopRadius(radius: Float) {
     val _arg = Variant.new(radius)
-    __method_bind.set_top_radius.call(this._handle, _arg, 1)
+    __method_bind.setTopRadius.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -82,75 +122,75 @@ open class CylinderMesh(
      * Container for method_bind pointers for CylinderMesh
      */
     private object __method_bind {
-      val get_bottom_radius: CPointer<godot_method_bind>
+      val getBottomRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "get_bottom_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bottom_radius" }
+            "getBottomRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBottomRadius" }
         }
-      val get_height: CPointer<godot_method_bind>
+      val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
+            "getHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHeight" }
         }
-      val get_radial_segments: CPointer<godot_method_bind>
+      val getRadialSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "get_radial_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_radial_segments" }
+            "getRadialSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRadialSegments" }
         }
-      val get_rings: CPointer<godot_method_bind>
+      val getRings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "get_rings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rings" }
+            "getRings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRings" }
         }
-      val get_top_radius: CPointer<godot_method_bind>
+      val getTopRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "get_top_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_top_radius" }
+            "getTopRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTopRadius" }
         }
-      val set_bottom_radius: CPointer<godot_method_bind>
+      val setBottomRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "set_bottom_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bottom_radius" }
+            "setBottomRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBottomRadius" }
         }
-      val set_height: CPointer<godot_method_bind>
+      val setHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "set_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_height" }
+            "setHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHeight" }
         }
-      val set_radial_segments: CPointer<godot_method_bind>
+      val setRadialSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "set_radial_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_radial_segments" }
+            "setRadialSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRadialSegments" }
         }
-      val set_rings: CPointer<godot_method_bind>
+      val setRings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "set_rings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rings" }
+            "setRings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRings" }
         }
-      val set_top_radius: CPointer<godot_method_bind>
+      val setTopRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CylinderMesh".cstr.ptr,
-            "set_top_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_top_radius" }
+            "setTopRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTopRadius" }
         }}
   }
 }

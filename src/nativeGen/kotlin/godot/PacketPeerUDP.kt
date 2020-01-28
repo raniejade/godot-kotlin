@@ -25,17 +25,17 @@ open class PacketPeerUDP(
   }
 
   fun getPacketIp(): String {
-    val _ret = __method_bind.get_packet_ip.call(this._handle)
+    val _ret = __method_bind.getPacketIp.call(this._handle)
     return _ret.asString()
   }
 
   fun getPacketPort(): Int {
-    val _ret = __method_bind.get_packet_port.call(this._handle)
+    val _ret = __method_bind.getPacketPort.call(this._handle)
     return _ret.asInt()
   }
 
   fun isListening(): Boolean {
-    val _ret = __method_bind.is_listening.call(this._handle)
+    val _ret = __method_bind.isListening.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -56,7 +56,7 @@ open class PacketPeerUDP(
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(port)
-    val _ret = __method_bind.set_dest_address.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.setDestAddress.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
@@ -86,26 +86,26 @@ open class PacketPeerUDP(
             "close".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close" }
         }
-      val get_packet_ip: CPointer<godot_method_bind>
+      val getPacketIp: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
-            "get_packet_ip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_packet_ip" }
+            "getPacketIp".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPacketIp" }
         }
-      val get_packet_port: CPointer<godot_method_bind>
+      val getPacketPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
-            "get_packet_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_packet_port" }
+            "getPacketPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPacketPort" }
         }
-      val is_listening: CPointer<godot_method_bind>
+      val isListening: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
-            "is_listening".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_listening" }
+            "isListening".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isListening" }
         }
       val listen: CPointer<godot_method_bind>
         get() = memScoped {
@@ -114,12 +114,12 @@ open class PacketPeerUDP(
             "listen".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method listen" }
         }
-      val set_dest_address: CPointer<godot_method_bind>
+      val setDestAddress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PacketPeerUDP".cstr.ptr,
-            "set_dest_address".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dest_address" }
+            "setDestAddress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDestAddress" }
         }
       val wait: CPointer<godot_method_bind>
         get() = memScoped {

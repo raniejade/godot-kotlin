@@ -20,96 +20,136 @@ import kotlinx.cinterop.reinterpret
 open class ClippedCamera(
   _handle: COpaquePointer
 ) : Camera(_handle) {
+  var clipToAreas: Boolean
+    get() {
+       return isClipToAreasEnabled() 
+    }
+    set(value) {
+      setClipToAreas(value)
+    }
+
+  var clipToBodies: Boolean
+    get() {
+       return isClipToBodiesEnabled() 
+    }
+    set(value) {
+      setClipToBodies(value)
+    }
+
+  var collisionMask: Int
+    get() {
+       return getCollisionMask() 
+    }
+    set(value) {
+      setCollisionMask(value)
+    }
+
+  var margin: Float
+    get() {
+       return getMargin() 
+    }
+    set(value) {
+      setMargin(value)
+    }
+
+  var processMode: Int
+    get() {
+       return ClippedCamera.ProcessMode.from(getProcessMode()) 
+    }
+    set(value) {
+      setProcessMode(ClippedCamera.ProcessMode.from(value))
+    }
+
   fun addException(node: Object) {
     val _arg = Variant.new(node)
-    __method_bind.add_exception.call(this._handle, _arg, 1)
+    __method_bind.addException.call(this._handle, _arg, 1)
   }
 
   fun addExceptionRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.add_exception_rid.call(this._handle, _arg, 1)
+    __method_bind.addExceptionRid.call(this._handle, _arg, 1)
   }
 
   fun clearExceptions() {
-    __method_bind.clear_exceptions.call(this._handle)
+    __method_bind.clearExceptions.call(this._handle)
   }
 
   fun getClipOffset(): Float {
-    val _ret = __method_bind.get_clip_offset.call(this._handle)
+    val _ret = __method_bind.getClipOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.get_collision_mask.call(this._handle)
+    val _ret = __method_bind.getCollisionMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getMargin(): Float {
-    val _ret = __method_bind.get_margin.call(this._handle)
+    val _ret = __method_bind.getMargin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getProcessMode(): ProcessMode {
-    val _ret = __method_bind.get_process_mode.call(this._handle)
+    val _ret = __method_bind.getProcessMode.call(this._handle)
     return ClippedCamera.ProcessMode.from(_ret.asInt())
   }
 
   fun isClipToAreasEnabled(): Boolean {
-    val _ret = __method_bind.is_clip_to_areas_enabled.call(this._handle)
+    val _ret = __method_bind.isClipToAreasEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isClipToBodiesEnabled(): Boolean {
-    val _ret = __method_bind.is_clip_to_bodies_enabled.call(this._handle)
+    val _ret = __method_bind.isClipToBodiesEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun removeException(node: Object) {
     val _arg = Variant.new(node)
-    __method_bind.remove_exception.call(this._handle, _arg, 1)
+    __method_bind.removeException.call(this._handle, _arg, 1)
   }
 
   fun removeExceptionRid(rid: RID) {
     val _arg = Variant.new(rid)
-    __method_bind.remove_exception_rid.call(this._handle, _arg, 1)
+    __method_bind.removeExceptionRid.call(this._handle, _arg, 1)
   }
 
   fun setClipToAreas(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_to_areas.call(this._handle, _arg, 1)
+    __method_bind.setClipToAreas.call(this._handle, _arg, 1)
   }
 
   fun setClipToBodies(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_clip_to_bodies.call(this._handle, _arg, 1)
+    __method_bind.setClipToBodies.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_collision_mask.call(this._handle, _arg, 1)
+    __method_bind.setCollisionMask.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_mask_bit.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setCollisionMaskBit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_margin.call(this._handle, _arg, 1)
+    __method_bind.setMargin.call(this._handle, _arg, 1)
   }
 
   fun setProcessMode(processMode: Int) {
     val _arg = Variant.new(processMode)
-    __method_bind.set_process_mode.call(this._handle, _arg, 1)
+    __method_bind.setProcessMode.call(this._handle, _arg, 1)
   }
 
   enum class ProcessMode(
@@ -149,131 +189,131 @@ open class ClippedCamera(
      * Container for method_bind pointers for ClippedCamera
      */
     private object __method_bind {
-      val add_exception: CPointer<godot_method_bind>
+      val addException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "add_exception".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_exception" }
+            "addException".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addException" }
         }
-      val add_exception_rid: CPointer<godot_method_bind>
+      val addExceptionRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "add_exception_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_exception_rid" }
+            "addExceptionRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addExceptionRid" }
         }
-      val clear_exceptions: CPointer<godot_method_bind>
+      val clearExceptions: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "clear_exceptions".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_exceptions" }
+            "clearExceptions".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearExceptions" }
         }
-      val get_clip_offset: CPointer<godot_method_bind>
+      val getClipOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "get_clip_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_clip_offset" }
+            "getClipOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClipOffset" }
         }
-      val get_collision_mask: CPointer<godot_method_bind>
+      val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            "getCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
         }
-      val get_collision_mask_bit: CPointer<godot_method_bind>
+      val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "get_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
+            "getCollisionMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
         }
-      val get_margin: CPointer<godot_method_bind>
+      val getMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            "getMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMargin" }
         }
-      val get_process_mode: CPointer<godot_method_bind>
+      val getProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "get_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_process_mode" }
+            "getProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProcessMode" }
         }
-      val is_clip_to_areas_enabled: CPointer<godot_method_bind>
+      val isClipToAreasEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "is_clip_to_areas_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_clip_to_areas_enabled" }
+            "isClipToAreasEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isClipToAreasEnabled" }
         }
-      val is_clip_to_bodies_enabled: CPointer<godot_method_bind>
+      val isClipToBodiesEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "is_clip_to_bodies_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_clip_to_bodies_enabled" }
+            "isClipToBodiesEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isClipToBodiesEnabled" }
         }
-      val remove_exception: CPointer<godot_method_bind>
+      val removeException: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "remove_exception".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_exception" }
+            "removeException".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeException" }
         }
-      val remove_exception_rid: CPointer<godot_method_bind>
+      val removeExceptionRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "remove_exception_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_exception_rid" }
+            "removeExceptionRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeExceptionRid" }
         }
-      val set_clip_to_areas: CPointer<godot_method_bind>
+      val setClipToAreas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "set_clip_to_areas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clip_to_areas" }
+            "setClipToAreas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setClipToAreas" }
         }
-      val set_clip_to_bodies: CPointer<godot_method_bind>
+      val setClipToBodies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "set_clip_to_bodies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_clip_to_bodies" }
+            "setClipToBodies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setClipToBodies" }
         }
-      val set_collision_mask: CPointer<godot_method_bind>
+      val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            "setCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
         }
-      val set_collision_mask_bit: CPointer<godot_method_bind>
+      val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "set_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
+            "setCollisionMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
         }
-      val set_margin: CPointer<godot_method_bind>
+      val setMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "set_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin" }
+            "setMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMargin" }
         }
-      val set_process_mode: CPointer<godot_method_bind>
+      val setProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ClippedCamera".cstr.ptr,
-            "set_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_process_mode" }
+            "setProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setProcessMode" }
         }}
   }
 }

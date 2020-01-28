@@ -19,7 +19,7 @@ open class CameraServer(
 ) : Object(_handle) {
   fun addFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
-    __method_bind.add_feed.call(this._handle, _arg, 1)
+    __method_bind.addFeed.call(this._handle, _arg, 1)
   }
 
   fun feeds(): VariantArray {
@@ -29,18 +29,18 @@ open class CameraServer(
 
   fun getFeed(index: Int): CameraFeed {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_feed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFeed.call(this._handle, _arg, 1)
     return _ret.asObject(::CameraFeed)!!
   }
 
   fun getFeedCount(): Int {
-    val _ret = __method_bind.get_feed_count.call(this._handle)
+    val _ret = __method_bind.getFeedCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun removeFeed(feed: CameraFeed) {
     val _arg = Variant.new(feed)
-    __method_bind.remove_feed.call(this._handle, _arg, 1)
+    __method_bind.removeFeed.call(this._handle, _arg, 1)
   }
 
   enum class FeedImage(
@@ -88,12 +88,12 @@ open class CameraServer(
      * Container for method_bind pointers for CameraServer
      */
     private object __method_bind {
-      val add_feed: CPointer<godot_method_bind>
+      val addFeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "add_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_feed" }
+            "addFeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addFeed" }
         }
       val feeds: CPointer<godot_method_bind>
         get() = memScoped {
@@ -102,26 +102,26 @@ open class CameraServer(
             "feeds".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method feeds" }
         }
-      val get_feed: CPointer<godot_method_bind>
+      val getFeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "get_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_feed" }
+            "getFeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFeed" }
         }
-      val get_feed_count: CPointer<godot_method_bind>
+      val getFeedCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "get_feed_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_feed_count" }
+            "getFeedCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFeedCount" }
         }
-      val remove_feed: CPointer<godot_method_bind>
+      val removeFeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraServer".cstr.ptr,
-            "remove_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_feed" }
+            "removeFeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeFeed" }
         }}
   }
 }

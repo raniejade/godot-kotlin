@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeInput(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  var inputName: String
+    get() {
+       return getInputName() 
+    }
+    set(value) {
+      setInputName(value)
+    }
+
   fun getInputName(): String {
-    val _ret = __method_bind.get_input_name.call(this._handle)
+    val _ret = __method_bind.getInputName.call(this._handle)
     return _ret.asString()
   }
 
   fun setInputName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_input_name.call(this._handle, _arg, 1)
+    __method_bind.setInputName.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualShaderNodeInput(
      * Container for method_bind pointers for VisualShaderNodeInput
      */
     private object __method_bind {
-      val get_input_name: CPointer<godot_method_bind>
+      val getInputName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
-            "get_input_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_input_name" }
+            "getInputName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInputName" }
         }
-      val set_input_name: CPointer<godot_method_bind>
+      val setInputName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeInput".cstr.ptr,
-            "set_input_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_name" }
+            "setInputName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInputName" }
         }}
   }
 }

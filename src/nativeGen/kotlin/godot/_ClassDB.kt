@@ -24,19 +24,19 @@ open class _ClassDB(
 ) : Object(_handle) {
   fun canInstance(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.can_instance.call(this._handle, _arg, 1)
+    val _ret = __method_bind.canInstance.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun classExists(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.class_exists.call(this._handle, _arg, 1)
+    val _ret = __method_bind.classExists.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun classGetCategory(`class`: String): String {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.class_get_category.call(this._handle, _arg, 1)
+    val _ret = __method_bind.classGetCategory.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
@@ -44,7 +44,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(name)
-    val _ret = __method_bind.class_get_integer_constant.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classGetIntegerConstant.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -52,8 +52,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_integer_constant_list.call(this._handle, _args.toVariant(),
-        2)
+    val _ret = __method_bind.classGetIntegerConstantList.call(this._handle, _args.toVariant(), 2)
     return _ret.asPoolStringArray()
   }
 
@@ -61,7 +60,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_method_list.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classGetMethodList.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
@@ -69,7 +68,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(property)
-    val _ret = __method_bind.class_get_property.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classGetProperty.call(this._handle, _args.toVariant(), 2)
     return _ret
   }
 
@@ -77,7 +76,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_property_list.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classGetPropertyList.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
@@ -85,7 +84,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(signal)
-    val _ret = __method_bind.class_get_signal.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classGetSignal.call(this._handle, _args.toVariant(), 2)
     return _ret.asDictionary()
   }
 
@@ -93,7 +92,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_get_signal_list.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classGetSignalList.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
@@ -101,7 +100,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(name)
-    val _ret = __method_bind.class_has_integer_constant.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classHasIntegerConstant.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -114,7 +113,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(method)
     _args.append(noInheritance)
-    val _ret = __method_bind.class_has_method.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.classHasMethod.call(this._handle, _args.toVariant(), 3)
     return _ret.asBoolean()
   }
 
@@ -122,7 +121,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(signal)
-    val _ret = __method_bind.class_has_signal.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.classHasSignal.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -135,24 +134,24 @@ open class _ClassDB(
     _args.append(`object`)
     _args.append(property)
     _args.append(value)
-    val _ret = __method_bind.class_set_property.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.classSetProperty.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
   fun getClassList(): PoolStringArray {
-    val _ret = __method_bind.get_class_list.call(this._handle)
+    val _ret = __method_bind.getClassList.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun getInheritersFromClass(`class`: String): PoolStringArray {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.get_inheriters_from_class.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getInheritersFromClass.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getParentClass(`class`: String): String {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.get_parent_class.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParentClass.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
@@ -164,7 +163,7 @@ open class _ClassDB(
 
   fun isClassEnabled(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
-    val _ret = __method_bind.is_class_enabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isClassEnabled.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -172,7 +171,7 @@ open class _ClassDB(
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(inherits)
-    val _ret = __method_bind.is_parent_class.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.isParentClass.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -189,107 +188,107 @@ open class _ClassDB(
      * Container for method_bind pointers for _ClassDB
      */
     private object __method_bind {
-      val can_instance: CPointer<godot_method_bind>
+      val canInstance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "can_instance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_instance" }
+            "canInstance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canInstance" }
         }
-      val class_exists: CPointer<godot_method_bind>
+      val classExists: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_exists".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_exists" }
+            "classExists".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classExists" }
         }
-      val class_get_category: CPointer<godot_method_bind>
+      val classGetCategory: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_category".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_category" }
+            "classGetCategory".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetCategory" }
         }
-      val class_get_integer_constant: CPointer<godot_method_bind>
+      val classGetIntegerConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_integer_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_integer_constant" }
+            "classGetIntegerConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetIntegerConstant" }
         }
-      val class_get_integer_constant_list: CPointer<godot_method_bind>
+      val classGetIntegerConstantList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_integer_constant_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_integer_constant_list" }
+            "classGetIntegerConstantList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetIntegerConstantList" }
         }
-      val class_get_method_list: CPointer<godot_method_bind>
+      val classGetMethodList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_method_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_method_list" }
+            "classGetMethodList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetMethodList" }
         }
-      val class_get_property: CPointer<godot_method_bind>
+      val classGetProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_property" }
+            "classGetProperty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetProperty" }
         }
-      val class_get_property_list: CPointer<godot_method_bind>
+      val classGetPropertyList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_property_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_property_list" }
+            "classGetPropertyList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetPropertyList" }
         }
-      val class_get_signal: CPointer<godot_method_bind>
+      val classGetSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_signal" }
+            "classGetSignal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetSignal" }
         }
-      val class_get_signal_list: CPointer<godot_method_bind>
+      val classGetSignalList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_get_signal_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_get_signal_list" }
+            "classGetSignalList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classGetSignalList" }
         }
-      val class_has_integer_constant: CPointer<godot_method_bind>
+      val classHasIntegerConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_has_integer_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_has_integer_constant" }
+            "classHasIntegerConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classHasIntegerConstant" }
         }
-      val class_has_method: CPointer<godot_method_bind>
+      val classHasMethod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_has_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_has_method" }
+            "classHasMethod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classHasMethod" }
         }
-      val class_has_signal: CPointer<godot_method_bind>
+      val classHasSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_has_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_has_signal" }
+            "classHasSignal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classHasSignal" }
         }
-      val class_set_property: CPointer<godot_method_bind>
+      val classSetProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "class_set_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method class_set_property" }
+            "classSetProperty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method classSetProperty" }
         }
-      val get_class_list: CPointer<godot_method_bind>
+      val getClassList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "get_class_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_class_list" }
+            "getClassList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClassList" }
         }
-      val get_inheriters_from_class: CPointer<godot_method_bind>
+      val getInheritersFromClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "get_inheriters_from_class".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_inheriters_from_class" }
+            "getInheritersFromClass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInheritersFromClass" }
         }
-      val get_parent_class: CPointer<godot_method_bind>
+      val getParentClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "get_parent_class".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_parent_class" }
+            "getParentClass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParentClass" }
         }
       val instance: CPointer<godot_method_bind>
         get() = memScoped {
@@ -297,17 +296,17 @@ open class _ClassDB(
             "instance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method instance" }
         }
-      val is_class_enabled: CPointer<godot_method_bind>
+      val isClassEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "is_class_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_class_enabled" }
+            "isClassEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isClassEnabled" }
         }
-      val is_parent_class: CPointer<godot_method_bind>
+      val isParentClass: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ClassDB".cstr.ptr,
-            "is_parent_class".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_parent_class" }
+            "isParentClass".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isParentClass" }
         }}
   }
 }

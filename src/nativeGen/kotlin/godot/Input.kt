@@ -26,49 +26,49 @@ open class Input(
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(strength)
-    __method_bind.action_press.call(this._handle, _args.toVariant(), 2)
+    __method_bind.actionPress.call(this._handle, _args.toVariant(), 2)
   }
 
   fun actionRelease(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.action_release.call(this._handle, _arg, 1)
+    __method_bind.actionRelease.call(this._handle, _arg, 1)
   }
 
   fun addJoyMapping(mapping: String, updateExisting: Boolean) {
     val _args = VariantArray.new()
     _args.append(mapping)
     _args.append(updateExisting)
-    __method_bind.add_joy_mapping.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addJoyMapping.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getAccelerometer(): Vector3 {
-    val _ret = __method_bind.get_accelerometer.call(this._handle)
+    val _ret = __method_bind.getAccelerometer.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getActionStrength(action: String): Float {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.get_action_strength.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getActionStrength.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getConnectedJoypads(): VariantArray {
-    val _ret = __method_bind.get_connected_joypads.call(this._handle)
+    val _ret = __method_bind.getConnectedJoypads.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getCurrentCursorShape(): CursorShape {
-    val _ret = __method_bind.get_current_cursor_shape.call(this._handle)
+    val _ret = __method_bind.getCurrentCursorShape.call(this._handle)
     return Input.CursorShape.from(_ret.asInt())
   }
 
   fun getGravity(): Vector3 {
-    val _ret = __method_bind.get_gravity.call(this._handle)
+    val _ret = __method_bind.getGravity.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getGyroscope(): Vector3 {
-    val _ret = __method_bind.get_gyroscope.call(this._handle)
+    val _ret = __method_bind.getGyroscope.call(this._handle)
     return _ret.asVector3()
   }
 
@@ -76,93 +76,93 @@ open class Input(
     val _args = VariantArray.new()
     _args.append(device)
     _args.append(axis)
-    val _ret = __method_bind.get_joy_axis.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getJoyAxis.call(this._handle, _args.toVariant(), 2)
     return _ret.asFloat()
   }
 
   fun getJoyAxisIndexFromString(axis: String): Int {
     val _arg = Variant.new(axis)
-    val _ret = __method_bind.get_joy_axis_index_from_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyAxisIndexFromString.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getJoyAxisString(axisIndex: Int): String {
     val _arg = Variant.new(axisIndex)
-    val _ret = __method_bind.get_joy_axis_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyAxisString.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getJoyButtonIndexFromString(button: String): Int {
     val _arg = Variant.new(button)
-    val _ret = __method_bind.get_joy_button_index_from_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyButtonIndexFromString.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getJoyButtonString(buttonIndex: Int): String {
     val _arg = Variant.new(buttonIndex)
-    val _ret = __method_bind.get_joy_button_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyButtonString.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getJoyGuid(device: Int): String {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.get_joy_guid.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyGuid.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getJoyName(device: Int): String {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.get_joy_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getJoyVibrationDuration(device: Int): Float {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.get_joy_vibration_duration.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyVibrationDuration.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getJoyVibrationStrength(device: Int): Vector2 {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.get_joy_vibration_strength.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getJoyVibrationStrength.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getLastMouseSpeed(): Vector2 {
-    val _ret = __method_bind.get_last_mouse_speed.call(this._handle)
+    val _ret = __method_bind.getLastMouseSpeed.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMagnetometer(): Vector3 {
-    val _ret = __method_bind.get_magnetometer.call(this._handle)
+    val _ret = __method_bind.getMagnetometer.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getMouseButtonMask(): Int {
-    val _ret = __method_bind.get_mouse_button_mask.call(this._handle)
+    val _ret = __method_bind.getMouseButtonMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMouseMode(): MouseMode {
-    val _ret = __method_bind.get_mouse_mode.call(this._handle)
+    val _ret = __method_bind.getMouseMode.call(this._handle)
     return Input.MouseMode.from(_ret.asInt())
   }
 
   fun isActionJustPressed(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.is_action_just_pressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isActionJustPressed.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isActionJustReleased(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.is_action_just_released.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isActionJustReleased.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _arg = Variant.new(action)
-    val _ret = __method_bind.is_action_pressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isActionPressed.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -170,25 +170,25 @@ open class Input(
     val _args = VariantArray.new()
     _args.append(device)
     _args.append(button)
-    val _ret = __method_bind.is_joy_button_pressed.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.isJoyButtonPressed.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
   fun isJoyKnown(device: Int): Boolean {
     val _arg = Variant.new(device)
-    val _ret = __method_bind.is_joy_known.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isJoyKnown.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isKeyPressed(scancode: Int): Boolean {
     val _arg = Variant.new(scancode)
-    val _ret = __method_bind.is_key_pressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isKeyPressed.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isMouseButtonPressed(button: Int): Boolean {
     val _arg = Variant.new(button)
-    val _ret = __method_bind.is_mouse_button_pressed.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isMouseButtonPressed.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -203,17 +203,17 @@ open class Input(
     _args.append(connected)
     _args.append(name)
     _args.append(guid)
-    __method_bind.joy_connection_changed.call(this._handle, _args.toVariant(), 4)
+    __method_bind.joyConnectionChanged.call(this._handle, _args.toVariant(), 4)
   }
 
   fun parseInputEvent(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.parse_input_event.call(this._handle, _arg, 1)
+    __method_bind.parseInputEvent.call(this._handle, _arg, 1)
   }
 
   fun removeJoyMapping(guid: String) {
     val _arg = Variant.new(guid)
-    __method_bind.remove_joy_mapping.call(this._handle, _arg, 1)
+    __method_bind.removeJoyMapping.call(this._handle, _arg, 1)
   }
 
   fun setCustomMouseCursor(
@@ -225,22 +225,22 @@ open class Input(
     _args.append(image)
     _args.append(shape)
     _args.append(hotspot)
-    __method_bind.set_custom_mouse_cursor.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setCustomMouseCursor.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setDefaultCursorShape(shape: Int) {
     val _arg = Variant.new(shape)
-    __method_bind.set_default_cursor_shape.call(this._handle, _arg, 1)
+    __method_bind.setDefaultCursorShape.call(this._handle, _arg, 1)
   }
 
   fun setMouseMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_mouse_mode.call(this._handle, _arg, 1)
+    __method_bind.setMouseMode.call(this._handle, _arg, 1)
   }
 
   fun setUseAccumulatedInput(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_accumulated_input.call(this._handle, _arg, 1)
+    __method_bind.setUseAccumulatedInput.call(this._handle, _arg, 1)
   }
 
   fun startJoyVibration(
@@ -254,17 +254,17 @@ open class Input(
     _args.append(weakMagnitude)
     _args.append(strongMagnitude)
     _args.append(duration)
-    __method_bind.start_joy_vibration.call(this._handle, _args.toVariant(), 4)
+    __method_bind.startJoyVibration.call(this._handle, _args.toVariant(), 4)
   }
 
   fun stopJoyVibration(device: Int) {
     val _arg = Variant.new(device)
-    __method_bind.stop_joy_vibration.call(this._handle, _arg, 1)
+    __method_bind.stopJoyVibration.call(this._handle, _arg, 1)
   }
 
   fun warpMousePosition(to: Vector2) {
     val _arg = Variant.new(to)
-    __method_bind.warp_mouse_position.call(this._handle, _arg, 1)
+    __method_bind.warpMousePosition.call(this._handle, _arg, 1)
   }
 
   enum class MouseMode(
@@ -394,239 +394,239 @@ open class Input(
      * Container for method_bind pointers for Input
      */
     private object __method_bind {
-      val action_press: CPointer<godot_method_bind>
+      val actionPress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "action_press".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method action_press" }
+            "actionPress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method actionPress" }
         }
-      val action_release: CPointer<godot_method_bind>
+      val actionRelease: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "action_release".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method action_release" }
+            "actionRelease".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method actionRelease" }
         }
-      val add_joy_mapping: CPointer<godot_method_bind>
+      val addJoyMapping: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "add_joy_mapping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_joy_mapping" }
+            "addJoyMapping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addJoyMapping" }
         }
-      val get_accelerometer: CPointer<godot_method_bind>
+      val getAccelerometer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_accelerometer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_accelerometer" }
+            "getAccelerometer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAccelerometer" }
         }
-      val get_action_strength: CPointer<godot_method_bind>
+      val getActionStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_action_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_action_strength" }
+            "getActionStrength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getActionStrength" }
         }
-      val get_connected_joypads: CPointer<godot_method_bind>
+      val getConnectedJoypads: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_connected_joypads".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connected_joypads" }
+            "getConnectedJoypads".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectedJoypads" }
         }
-      val get_current_cursor_shape: CPointer<godot_method_bind>
+      val getCurrentCursorShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_current_cursor_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_cursor_shape" }
+            "getCurrentCursorShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentCursorShape" }
         }
-      val get_gravity: CPointer<godot_method_bind>
+      val getGravity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_gravity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gravity" }
+            "getGravity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGravity" }
         }
-      val get_gyroscope: CPointer<godot_method_bind>
+      val getGyroscope: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_gyroscope".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_gyroscope" }
+            "getGyroscope".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGyroscope" }
         }
-      val get_joy_axis: CPointer<godot_method_bind>
+      val getJoyAxis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_axis" }
+            "getJoyAxis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyAxis" }
         }
-      val get_joy_axis_index_from_string: CPointer<godot_method_bind>
+      val getJoyAxisIndexFromString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_axis_index_from_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_axis_index_from_string" }
+            "getJoyAxisIndexFromString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyAxisIndexFromString" }
         }
-      val get_joy_axis_string: CPointer<godot_method_bind>
+      val getJoyAxisString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_axis_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_axis_string" }
+            "getJoyAxisString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyAxisString" }
         }
-      val get_joy_button_index_from_string: CPointer<godot_method_bind>
+      val getJoyButtonIndexFromString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_button_index_from_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_button_index_from_string" }
+            "getJoyButtonIndexFromString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyButtonIndexFromString" }
         }
-      val get_joy_button_string: CPointer<godot_method_bind>
+      val getJoyButtonString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_button_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_button_string" }
+            "getJoyButtonString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyButtonString" }
         }
-      val get_joy_guid: CPointer<godot_method_bind>
+      val getJoyGuid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_guid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_guid" }
+            "getJoyGuid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyGuid" }
         }
-      val get_joy_name: CPointer<godot_method_bind>
+      val getJoyName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_name" }
+            "getJoyName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyName" }
         }
-      val get_joy_vibration_duration: CPointer<godot_method_bind>
+      val getJoyVibrationDuration: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_vibration_duration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_vibration_duration" }
+            "getJoyVibrationDuration".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyVibrationDuration" }
         }
-      val get_joy_vibration_strength: CPointer<godot_method_bind>
+      val getJoyVibrationStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_joy_vibration_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_vibration_strength" }
+            "getJoyVibrationStrength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyVibrationStrength" }
         }
-      val get_last_mouse_speed: CPointer<godot_method_bind>
+      val getLastMouseSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_last_mouse_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_mouse_speed" }
+            "getLastMouseSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastMouseSpeed" }
         }
-      val get_magnetometer: CPointer<godot_method_bind>
+      val getMagnetometer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_magnetometer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_magnetometer" }
+            "getMagnetometer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMagnetometer" }
         }
-      val get_mouse_button_mask: CPointer<godot_method_bind>
+      val getMouseButtonMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_mouse_button_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mouse_button_mask" }
+            "getMouseButtonMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMouseButtonMask" }
         }
-      val get_mouse_mode: CPointer<godot_method_bind>
+      val getMouseMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "get_mouse_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mouse_mode" }
+            "getMouseMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMouseMode" }
         }
-      val is_action_just_pressed: CPointer<godot_method_bind>
+      val isActionJustPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_action_just_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_action_just_pressed" }
+            "isActionJustPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isActionJustPressed" }
         }
-      val is_action_just_released: CPointer<godot_method_bind>
+      val isActionJustReleased: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_action_just_released".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_action_just_released" }
+            "isActionJustReleased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isActionJustReleased" }
         }
-      val is_action_pressed: CPointer<godot_method_bind>
+      val isActionPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_action_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_action_pressed" }
+            "isActionPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isActionPressed" }
         }
-      val is_joy_button_pressed: CPointer<godot_method_bind>
+      val isJoyButtonPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_joy_button_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_joy_button_pressed" }
+            "isJoyButtonPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isJoyButtonPressed" }
         }
-      val is_joy_known: CPointer<godot_method_bind>
+      val isJoyKnown: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_joy_known".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_joy_known" }
+            "isJoyKnown".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isJoyKnown" }
         }
-      val is_key_pressed: CPointer<godot_method_bind>
+      val isKeyPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_key_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_key_pressed" }
+            "isKeyPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isKeyPressed" }
         }
-      val is_mouse_button_pressed: CPointer<godot_method_bind>
+      val isMouseButtonPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "is_mouse_button_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_mouse_button_pressed" }
+            "isMouseButtonPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isMouseButtonPressed" }
         }
-      val joy_connection_changed: CPointer<godot_method_bind>
+      val joyConnectionChanged: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "joy_connection_changed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method joy_connection_changed" }
+            "joyConnectionChanged".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method joyConnectionChanged" }
         }
-      val parse_input_event: CPointer<godot_method_bind>
+      val parseInputEvent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "parse_input_event".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method parse_input_event" }
+            "parseInputEvent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method parseInputEvent" }
         }
-      val remove_joy_mapping: CPointer<godot_method_bind>
+      val removeJoyMapping: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "remove_joy_mapping".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_joy_mapping" }
+            "removeJoyMapping".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeJoyMapping" }
         }
-      val set_custom_mouse_cursor: CPointer<godot_method_bind>
+      val setCustomMouseCursor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "set_custom_mouse_cursor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_custom_mouse_cursor" }
+            "setCustomMouseCursor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCustomMouseCursor" }
         }
-      val set_default_cursor_shape: CPointer<godot_method_bind>
+      val setDefaultCursorShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "set_default_cursor_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_default_cursor_shape" }
+            "setDefaultCursorShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDefaultCursorShape" }
         }
-      val set_mouse_mode: CPointer<godot_method_bind>
+      val setMouseMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "set_mouse_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mouse_mode" }
+            "setMouseMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMouseMode" }
         }
-      val set_use_accumulated_input: CPointer<godot_method_bind>
+      val setUseAccumulatedInput: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "set_use_accumulated_input".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_accumulated_input" }
+            "setUseAccumulatedInput".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseAccumulatedInput" }
         }
-      val start_joy_vibration: CPointer<godot_method_bind>
+      val startJoyVibration: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "start_joy_vibration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method start_joy_vibration" }
+            "startJoyVibration".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method startJoyVibration" }
         }
-      val stop_joy_vibration: CPointer<godot_method_bind>
+      val stopJoyVibration: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "stop_joy_vibration".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stop_joy_vibration" }
+            "stopJoyVibration".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method stopJoyVibration" }
         }
-      val warp_mouse_position: CPointer<godot_method_bind>
+      val warpMousePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Input".cstr.ptr,
-            "warp_mouse_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method warp_mouse_position" }
+            "warpMousePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method warpMousePosition" }
         }}
   }
 }

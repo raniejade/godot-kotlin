@@ -22,38 +22,78 @@ import kotlinx.cinterop.reinterpret
 open class AnimationTree(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  var active: Boolean
+    get() {
+       return isActive() 
+    }
+    set(value) {
+      setActive(value)
+    }
+
+  var animPlayer: NodePath
+    get() {
+       return getAnimationPlayer() 
+    }
+    set(value) {
+      setAnimationPlayer(value)
+    }
+
+  var processMode: Int
+    get() {
+       return AnimationTree.AnimationProcessMode.from(getProcessMode()) 
+    }
+    set(value) {
+      setProcessMode(AnimationTree.AnimationProcessMode.from(value))
+    }
+
+  var rootMotionTrack: NodePath
+    get() {
+       return getRootMotionTrack() 
+    }
+    set(value) {
+      setRootMotionTrack(value)
+    }
+
+  var treeRoot: AnimationRootNode
+    get() {
+       return getTreeRoot() 
+    }
+    set(value) {
+      setTreeRoot(value)
+    }
+
   fun advance(delta: Float) {
     val _arg = Variant.new(delta)
     __method_bind.advance.call(this._handle, _arg, 1)
   }
 
   fun getAnimationPlayer(): NodePath {
-    val _ret = __method_bind.get_animation_player.call(this._handle)
+    val _ret = __method_bind.getAnimationPlayer.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getProcessMode(): AnimationProcessMode {
-    val _ret = __method_bind.get_process_mode.call(this._handle)
+    val _ret = __method_bind.getProcessMode.call(this._handle)
     return AnimationTree.AnimationProcessMode.from(_ret.asInt())
   }
 
   fun getRootMotionTrack(): NodePath {
-    val _ret = __method_bind.get_root_motion_track.call(this._handle)
+    val _ret = __method_bind.getRootMotionTrack.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getRootMotionTransform(): Transform {
-    val _ret = __method_bind.get_root_motion_transform.call(this._handle)
+    val _ret = __method_bind.getRootMotionTransform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getTreeRoot(): AnimationNode {
-    val _ret = __method_bind.get_tree_root.call(this._handle)
+    val _ret = __method_bind.getTreeRoot.call(this._handle)
     return _ret.asObject(::AnimationNode)!!
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.is_active.call(this._handle)
+    val _ret = __method_bind.isActive.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -61,32 +101,32 @@ open class AnimationTree(
     val _args = VariantArray.new()
     _args.append(oldName)
     _args.append(newName)
-    __method_bind.rename_parameter.call(this._handle, _args.toVariant(), 2)
+    __method_bind.renameParameter.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_active.call(this._handle, _arg, 1)
+    __method_bind.setActive.call(this._handle, _arg, 1)
   }
 
   fun setAnimationPlayer(root: NodePath) {
     val _arg = Variant.new(root)
-    __method_bind.set_animation_player.call(this._handle, _arg, 1)
+    __method_bind.setAnimationPlayer.call(this._handle, _arg, 1)
   }
 
   fun setProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_process_mode.call(this._handle, _arg, 1)
+    __method_bind.setProcessMode.call(this._handle, _arg, 1)
   }
 
   fun setRootMotionTrack(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_root_motion_track.call(this._handle, _arg, 1)
+    __method_bind.setRootMotionTrack.call(this._handle, _arg, 1)
   }
 
   fun setTreeRoot(root: AnimationNode) {
     val _arg = Variant.new(root)
-    __method_bind.set_tree_root.call(this._handle, _arg, 1)
+    __method_bind.setTreeRoot.call(this._handle, _arg, 1)
   }
 
   enum class AnimationProcessMode(
@@ -137,89 +177,89 @@ open class AnimationTree(
             "advance".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method advance" }
         }
-      val get_animation_player: CPointer<godot_method_bind>
+      val getAnimationPlayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "get_animation_player".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation_player" }
+            "getAnimationPlayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimationPlayer" }
         }
-      val get_process_mode: CPointer<godot_method_bind>
+      val getProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "get_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_process_mode" }
+            "getProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProcessMode" }
         }
-      val get_root_motion_track: CPointer<godot_method_bind>
+      val getRootMotionTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "get_root_motion_track".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_root_motion_track" }
+            "getRootMotionTrack".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRootMotionTrack" }
         }
-      val get_root_motion_transform: CPointer<godot_method_bind>
+      val getRootMotionTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "get_root_motion_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_root_motion_transform" }
+            "getRootMotionTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRootMotionTransform" }
         }
-      val get_tree_root: CPointer<godot_method_bind>
+      val getTreeRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "get_tree_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tree_root" }
+            "getTreeRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTreeRoot" }
         }
-      val is_active: CPointer<godot_method_bind>
+      val isActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_active" }
+            "isActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isActive" }
         }
-      val rename_parameter: CPointer<godot_method_bind>
+      val renameParameter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "rename_parameter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename_parameter" }
+            "renameParameter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method renameParameter" }
         }
-      val set_active: CPointer<godot_method_bind>
+      val setActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "set_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_active" }
+            "setActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setActive" }
         }
-      val set_animation_player: CPointer<godot_method_bind>
+      val setAnimationPlayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "set_animation_player".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation_player" }
+            "setAnimationPlayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAnimationPlayer" }
         }
-      val set_process_mode: CPointer<godot_method_bind>
+      val setProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "set_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_process_mode" }
+            "setProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setProcessMode" }
         }
-      val set_root_motion_track: CPointer<godot_method_bind>
+      val setRootMotionTrack: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "set_root_motion_track".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_root_motion_track" }
+            "setRootMotionTrack".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRootMotionTrack" }
         }
-      val set_tree_root: CPointer<godot_method_bind>
+      val setTreeRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationTree".cstr.ptr,
-            "set_tree_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tree_root" }
+            "setTreeRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTreeRoot" }
         }}
   }
 }

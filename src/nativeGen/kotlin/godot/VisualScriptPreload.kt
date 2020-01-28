@@ -16,14 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptPreload(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var resource: Resource
+    get() {
+       return getPreload() 
+    }
+    set(value) {
+      setPreload(value)
+    }
+
   fun getPreload(): Resource {
-    val _ret = __method_bind.get_preload.call(this._handle)
+    val _ret = __method_bind.getPreload.call(this._handle)
     return _ret.asObject(::Resource)!!
   }
 
   fun setPreload(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.set_preload.call(this._handle, _arg, 1)
+    __method_bind.setPreload.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,19 +49,19 @@ open class VisualScriptPreload(
      * Container for method_bind pointers for VisualScriptPreload
      */
     private object __method_bind {
-      val get_preload: CPointer<godot_method_bind>
+      val getPreload: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPreload".cstr.ptr,
-            "get_preload".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_preload" }
+            "getPreload".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPreload" }
         }
-      val set_preload: CPointer<godot_method_bind>
+      val setPreload: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptPreload".cstr.ptr,
-            "set_preload".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_preload" }
+            "setPreload".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPreload" }
         }}
   }
 }

@@ -18,34 +18,58 @@ import kotlinx.cinterop.reinterpret
 open class HeightMapShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  var mapData: PoolRealArray
+    get() {
+       return getMapData() 
+    }
+    set(value) {
+      setMapData(value)
+    }
+
+  var mapDepth: Int
+    get() {
+       return getMapDepth() 
+    }
+    set(value) {
+      setMapDepth(value)
+    }
+
+  var mapWidth: Int
+    get() {
+       return getMapWidth() 
+    }
+    set(value) {
+      setMapWidth(value)
+    }
+
   fun getMapData(): PoolRealArray {
-    val _ret = __method_bind.get_map_data.call(this._handle)
+    val _ret = __method_bind.getMapData.call(this._handle)
     return _ret.asPoolRealArray()
   }
 
   fun getMapDepth(): Int {
-    val _ret = __method_bind.get_map_depth.call(this._handle)
+    val _ret = __method_bind.getMapDepth.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMapWidth(): Int {
-    val _ret = __method_bind.get_map_width.call(this._handle)
+    val _ret = __method_bind.getMapWidth.call(this._handle)
     return _ret.asInt()
   }
 
   fun setMapData(data: PoolRealArray) {
     val _arg = Variant.new(data)
-    __method_bind.set_map_data.call(this._handle, _arg, 1)
+    __method_bind.setMapData.call(this._handle, _arg, 1)
   }
 
   fun setMapDepth(height: Int) {
     val _arg = Variant.new(height)
-    __method_bind.set_map_depth.call(this._handle, _arg, 1)
+    __method_bind.setMapDepth.call(this._handle, _arg, 1)
   }
 
   fun setMapWidth(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_map_width.call(this._handle, _arg, 1)
+    __method_bind.setMapWidth.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -63,47 +87,47 @@ open class HeightMapShape(
      * Container for method_bind pointers for HeightMapShape
      */
     private object __method_bind {
-      val get_map_data: CPointer<godot_method_bind>
+      val getMapData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
-            "get_map_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_map_data" }
+            "getMapData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMapData" }
         }
-      val get_map_depth: CPointer<godot_method_bind>
+      val getMapDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
-            "get_map_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_map_depth" }
+            "getMapDepth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMapDepth" }
         }
-      val get_map_width: CPointer<godot_method_bind>
+      val getMapWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
-            "get_map_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_map_width" }
+            "getMapWidth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMapWidth" }
         }
-      val set_map_data: CPointer<godot_method_bind>
+      val setMapData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
-            "set_map_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_map_data" }
+            "setMapData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMapData" }
         }
-      val set_map_depth: CPointer<godot_method_bind>
+      val setMapDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
-            "set_map_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_map_depth" }
+            "setMapDepth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMapDepth" }
         }
-      val set_map_width: CPointer<godot_method_bind>
+      val setMapWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HeightMapShape".cstr.ptr,
-            "set_map_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_map_width" }
+            "setMapWidth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMapWidth" }
         }}
   }
 }

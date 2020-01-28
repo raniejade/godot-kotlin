@@ -19,29 +19,53 @@ import kotlinx.cinterop.reinterpret
 open class InputEventScreenTouch(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  var index: Int
+    get() {
+       return getIndex() 
+    }
+    set(value) {
+      setIndex(value)
+    }
+
+  var position: Vector2
+    get() {
+       return getPosition() 
+    }
+    set(value) {
+      setPosition(value)
+    }
+
+  var pressed: Boolean
+    get() {
+       return isPressed() 
+    }
+    set(value) {
+      setPressed(value)
+    }
+
   fun getIndex(): Int {
-    val _ret = __method_bind.get_index.call(this._handle)
+    val _ret = __method_bind.getIndex.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this._handle)
+    val _ret = __method_bind.getPosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.set_index.call(this._handle, _arg, 1)
+    __method_bind.setIndex.call(this._handle, _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.set_pressed.call(this._handle, _arg, 1)
+    __method_bind.setPressed.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -59,40 +83,40 @@ open class InputEventScreenTouch(
      * Container for method_bind pointers for InputEventScreenTouch
      */
     private object __method_bind {
-      val get_index: CPointer<godot_method_bind>
+      val getIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "get_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_index" }
+            "getIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getIndex" }
         }
-      val get_position: CPointer<godot_method_bind>
+      val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
+            "getPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPosition" }
         }
-      val set_index: CPointer<godot_method_bind>
+      val setIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "set_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_index" }
+            "setIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setIndex" }
         }
-      val set_position: CPointer<godot_method_bind>
+      val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
+            "setPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPosition" }
         }
-      val set_pressed: CPointer<godot_method_bind>
+      val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenTouch".cstr.ptr,
-            "set_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
+            "setPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPressed" }
         }}
   }
 }

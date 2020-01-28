@@ -19,39 +19,63 @@ import kotlinx.cinterop.reinterpret
 open class InterpolatedCamera(
   _handle: COpaquePointer
 ) : Camera(_handle) {
+  var enabled: Boolean
+    get() {
+       return isInterpolationEnabled() 
+    }
+    set(value) {
+      setInterpolationEnabled(value)
+    }
+
+  var speed: Float
+    get() {
+       return getSpeed() 
+    }
+    set(value) {
+      setSpeed(value)
+    }
+
+  var target: NodePath
+    get() {
+       return getTargetPath() 
+    }
+    set(value) {
+      setTargetPath(value)
+    }
+
   fun getSpeed(): Float {
-    val _ret = __method_bind.get_speed.call(this._handle)
+    val _ret = __method_bind.getSpeed.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTargetPath(): NodePath {
-    val _ret = __method_bind.get_target_path.call(this._handle)
+    val _ret = __method_bind.getTargetPath.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun isInterpolationEnabled(): Boolean {
-    val _ret = __method_bind.is_interpolation_enabled.call(this._handle)
+    val _ret = __method_bind.isInterpolationEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setInterpolationEnabled(targetPath: Boolean) {
     val _arg = Variant.new(targetPath)
-    __method_bind.set_interpolation_enabled.call(this._handle, _arg, 1)
+    __method_bind.setInterpolationEnabled.call(this._handle, _arg, 1)
   }
 
   fun setSpeed(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed.call(this._handle, _arg, 1)
+    __method_bind.setSpeed.call(this._handle, _arg, 1)
   }
 
   fun setTarget(target: Object) {
     val _arg = Variant.new(target)
-    __method_bind.set_target.call(this._handle, _arg, 1)
+    __method_bind.setTarget.call(this._handle, _arg, 1)
   }
 
   fun setTargetPath(targetPath: NodePath) {
     val _arg = Variant.new(targetPath)
-    __method_bind.set_target_path.call(this._handle, _arg, 1)
+    __method_bind.setTargetPath.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -69,54 +93,54 @@ open class InterpolatedCamera(
      * Container for method_bind pointers for InterpolatedCamera
      */
     private object __method_bind {
-      val get_speed: CPointer<godot_method_bind>
+      val getSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "get_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed" }
+            "getSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeed" }
         }
-      val get_target_path: CPointer<godot_method_bind>
+      val getTargetPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "get_target_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_target_path" }
+            "getTargetPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTargetPath" }
         }
-      val is_interpolation_enabled: CPointer<godot_method_bind>
+      val isInterpolationEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "is_interpolation_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_interpolation_enabled" }
+            "isInterpolationEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isInterpolationEnabled" }
         }
-      val set_interpolation_enabled: CPointer<godot_method_bind>
+      val setInterpolationEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_interpolation_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interpolation_enabled" }
+            "setInterpolationEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInterpolationEnabled" }
         }
-      val set_speed: CPointer<godot_method_bind>
+      val setSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed" }
+            "setSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeed" }
         }
-      val set_target: CPointer<godot_method_bind>
+      val setTarget: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_target".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_target" }
+            "setTarget".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTarget" }
         }
-      val set_target_path: CPointer<godot_method_bind>
+      val setTargetPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InterpolatedCamera".cstr.ptr,
-            "set_target_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_target_path" }
+            "setTargetPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTargetPath" }
         }}
   }
 }

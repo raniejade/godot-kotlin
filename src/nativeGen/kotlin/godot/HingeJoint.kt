@@ -19,15 +19,31 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var angularLimitLower: Float
+    get() {
+       return _getLowerLimit() 
+    }
+    set(value) {
+      _setLowerLimit(value)
+    }
+
+  var angularLimitUpper: Float
+    get() {
+       return _getUpperLimit() 
+    }
+    set(value) {
+      _setUpperLimit(value)
+    }
+
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
-    val _ret = __method_bind.get_flag.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFlag.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -35,14 +51,14 @@ open class HingeJoint(
     val _args = VariantArray.new()
     _args.append(flag)
     _args.append(enabled)
-    __method_bind.set_flag.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFlag.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setParam(param: Int, value: Float) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setParam.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Param(
@@ -137,29 +153,29 @@ open class HingeJoint(
      * Container for method_bind pointers for HingeJoint
      */
     private object __method_bind {
-      val get_flag: CPointer<godot_method_bind>
+      val getFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "get_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flag" }
+            "getFlag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFlag" }
         }
-      val get_param: CPointer<godot_method_bind>
+      val getParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_param" }
+            "getParam".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParam" }
         }
-      val set_flag: CPointer<godot_method_bind>
+      val setFlag: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "set_flag".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flag" }
+            "setFlag".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlag" }
         }
-      val set_param: CPointer<godot_method_bind>
+      val setParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("HingeJoint".cstr.ptr,
-            "set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_param" }
+            "setParam".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParam" }
         }}
   }
 }

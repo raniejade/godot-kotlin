@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class LightOccluder2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var lightMask: Int
+    get() {
+       return getOccluderLightMask() 
+    }
+    set(value) {
+      setOccluderLightMask(value)
+    }
+
+  var occluder: OccluderPolygon2D
+    get() {
+       return getOccluderPolygon() 
+    }
+    set(value) {
+      setOccluderPolygon(value)
+    }
+
   fun getOccluderLightMask(): Int {
-    val _ret = __method_bind.get_occluder_light_mask.call(this._handle)
+    val _ret = __method_bind.getOccluderLightMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOccluderPolygon(): OccluderPolygon2D {
-    val _ret = __method_bind.get_occluder_polygon.call(this._handle)
+    val _ret = __method_bind.getOccluderPolygon.call(this._handle)
     return _ret.asObject(::OccluderPolygon2D)!!
   }
 
   fun setOccluderLightMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_occluder_light_mask.call(this._handle, _arg, 1)
+    __method_bind.setOccluderLightMask.call(this._handle, _arg, 1)
   }
 
   fun setOccluderPolygon(polygon: OccluderPolygon2D) {
     val _arg = Variant.new(polygon)
-    __method_bind.set_occluder_polygon.call(this._handle, _arg, 1)
+    __method_bind.setOccluderPolygon.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class LightOccluder2D(
      * Container for method_bind pointers for LightOccluder2D
      */
     private object __method_bind {
-      val get_occluder_light_mask: CPointer<godot_method_bind>
+      val getOccluderLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "get_occluder_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_occluder_light_mask" }
+            "getOccluderLightMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOccluderLightMask" }
         }
-      val get_occluder_polygon: CPointer<godot_method_bind>
+      val getOccluderPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "get_occluder_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_occluder_polygon" }
+            "getOccluderPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOccluderPolygon" }
         }
-      val set_occluder_light_mask: CPointer<godot_method_bind>
+      val setOccluderLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "set_occluder_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_occluder_light_mask" }
+            "setOccluderLightMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOccluderLightMask" }
         }
-      val set_occluder_polygon: CPointer<godot_method_bind>
+      val setOccluderPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LightOccluder2D".cstr.ptr,
-            "set_occluder_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_occluder_polygon" }
+            "setOccluderPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOccluderPolygon" }
         }}
   }
 }

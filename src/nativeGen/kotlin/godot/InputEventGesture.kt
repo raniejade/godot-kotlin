@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class InputEventGesture(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
+  var position: Vector2
+    get() {
+       return getPosition() 
+    }
+    set(value) {
+      setPosition(value)
+    }
+
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this._handle)
+    val _ret = __method_bind.getPosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -32,19 +40,19 @@ open class InputEventGesture(
      * Container for method_bind pointers for InputEventGesture
      */
     private object __method_bind {
-      val get_position: CPointer<godot_method_bind>
+      val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
+            "getPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPosition" }
         }
-      val set_position: CPointer<godot_method_bind>
+      val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventGesture".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
+            "setPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPosition" }
         }}
   }
 }

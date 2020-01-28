@@ -18,6 +18,14 @@ import kotlinx.cinterop.reinterpret
 open class GDNative(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var library: GDNativeLibrary
+    get() {
+       return getLibrary() 
+    }
+    set(value) {
+      setLibrary(value)
+    }
+
   fun callNative(
     callingType: String,
     procedureName: String,
@@ -27,12 +35,12 @@ open class GDNative(
     _args.append(callingType)
     _args.append(procedureName)
     _args.append(arguments)
-    val _ret = __method_bind.call_native.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.callNative.call(this._handle, _args.toVariant(), 3)
     return _ret
   }
 
   fun getLibrary(): GDNativeLibrary {
-    val _ret = __method_bind.get_library.call(this._handle)
+    val _ret = __method_bind.getLibrary.call(this._handle)
     return _ret.asObject(::GDNativeLibrary)!!
   }
 
@@ -43,7 +51,7 @@ open class GDNative(
 
   fun setLibrary(library: GDNativeLibrary) {
     val _arg = Variant.new(library)
-    __method_bind.set_library.call(this._handle, _arg, 1)
+    __method_bind.setLibrary.call(this._handle, _arg, 1)
   }
 
   fun terminate(): Boolean {
@@ -65,17 +73,17 @@ open class GDNative(
      * Container for method_bind pointers for GDNative
      */
     private object __method_bind {
-      val call_native: CPointer<godot_method_bind>
+      val callNative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
-            "call_native".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method call_native" }
+            "callNative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method callNative" }
         }
-      val get_library: CPointer<godot_method_bind>
+      val getLibrary: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
-            "get_library".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_library" }
+            "getLibrary".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLibrary" }
         }
       val initialize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -83,11 +91,11 @@ open class GDNative(
             "initialize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method initialize" }
         }
-      val set_library: CPointer<godot_method_bind>
+      val setLibrary: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDNative".cstr.ptr,
-            "set_library".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_library" }
+            "setLibrary".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLibrary" }
         }
       val terminate: CPointer<godot_method_bind>
         get() = memScoped {

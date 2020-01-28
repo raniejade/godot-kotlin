@@ -21,48 +21,120 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedSprite(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var animation: String
+    get() {
+       return getAnimation() 
+    }
+    set(value) {
+      setAnimation(value)
+    }
+
+  var centered: Boolean
+    get() {
+       return isCentered() 
+    }
+    set(value) {
+      setCentered(value)
+    }
+
+  var flipH: Boolean
+    get() {
+       return isFlippedH() 
+    }
+    set(value) {
+      setFlipH(value)
+    }
+
+  var flipV: Boolean
+    get() {
+       return isFlippedV() 
+    }
+    set(value) {
+      setFlipV(value)
+    }
+
+  var frame: Int
+    get() {
+       return getFrame() 
+    }
+    set(value) {
+      setFrame(value)
+    }
+
+  var frames: SpriteFrames
+    get() {
+       return getSpriteFrames() 
+    }
+    set(value) {
+      setSpriteFrames(value)
+    }
+
+  var offset: Vector2
+    get() {
+       return getOffset() 
+    }
+    set(value) {
+      setOffset(value)
+    }
+
+  var playing: Boolean
+    get() {
+       return _isPlaying() 
+    }
+    set(value) {
+      _setPlaying(value)
+    }
+
+  var speedScale: Float
+    get() {
+       return getSpeedScale() 
+    }
+    set(value) {
+      setSpeedScale(value)
+    }
+
   fun getAnimation(): String {
-    val _ret = __method_bind.get_animation.call(this._handle)
+    val _ret = __method_bind.getAnimation.call(this._handle)
     return _ret.asString()
   }
 
   fun getFrame(): Int {
-    val _ret = __method_bind.get_frame.call(this._handle)
+    val _ret = __method_bind.getFrame.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.get_offset.call(this._handle)
+    val _ret = __method_bind.getOffset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.get_speed_scale.call(this._handle)
+    val _ret = __method_bind.getSpeedScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSpriteFrames(): SpriteFrames {
-    val _ret = __method_bind.get_sprite_frames.call(this._handle)
+    val _ret = __method_bind.getSpriteFrames.call(this._handle)
     return _ret.asObject(::SpriteFrames)!!
   }
 
   fun isCentered(): Boolean {
-    val _ret = __method_bind.is_centered.call(this._handle)
+    val _ret = __method_bind.isCentered.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isFlippedH(): Boolean {
-    val _ret = __method_bind.is_flipped_h.call(this._handle)
+    val _ret = __method_bind.isFlippedH.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isFlippedV(): Boolean {
-    val _ret = __method_bind.is_flipped_v.call(this._handle)
+    val _ret = __method_bind.isFlippedV.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this._handle)
+    val _ret = __method_bind.isPlaying.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -75,42 +147,42 @@ open class AnimatedSprite(
 
   fun setAnimation(animation: String) {
     val _arg = Variant.new(animation)
-    __method_bind.set_animation.call(this._handle, _arg, 1)
+    __method_bind.setAnimation.call(this._handle, _arg, 1)
   }
 
   fun setCentered(centered: Boolean) {
     val _arg = Variant.new(centered)
-    __method_bind.set_centered.call(this._handle, _arg, 1)
+    __method_bind.setCentered.call(this._handle, _arg, 1)
   }
 
   fun setFlipH(flipH: Boolean) {
     val _arg = Variant.new(flipH)
-    __method_bind.set_flip_h.call(this._handle, _arg, 1)
+    __method_bind.setFlipH.call(this._handle, _arg, 1)
   }
 
   fun setFlipV(flipV: Boolean) {
     val _arg = Variant.new(flipV)
-    __method_bind.set_flip_v.call(this._handle, _arg, 1)
+    __method_bind.setFlipV.call(this._handle, _arg, 1)
   }
 
   fun setFrame(frame: Int) {
     val _arg = Variant.new(frame)
-    __method_bind.set_frame.call(this._handle, _arg, 1)
+    __method_bind.setFrame.call(this._handle, _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_offset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, _arg, 1)
   }
 
   fun setSpeedScale(speedScale: Float) {
     val _arg = Variant.new(speedScale)
-    __method_bind.set_speed_scale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
   }
 
   fun setSpriteFrames(spriteFrames: SpriteFrames) {
     val _arg = Variant.new(spriteFrames)
-    __method_bind.set_sprite_frames.call(this._handle, _arg, 1)
+    __method_bind.setSpriteFrames.call(this._handle, _arg, 1)
   }
 
   fun stop() {
@@ -132,68 +204,68 @@ open class AnimatedSprite(
      * Container for method_bind pointers for AnimatedSprite
      */
     private object __method_bind {
-      val get_animation: CPointer<godot_method_bind>
+      val getAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_animation" }
+            "getAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnimation" }
         }
-      val get_frame: CPointer<godot_method_bind>
+      val getFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame" }
+            "getFrame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrame" }
         }
-      val get_offset: CPointer<godot_method_bind>
+      val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            "getOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOffset" }
         }
-      val get_speed_scale: CPointer<godot_method_bind>
+      val getSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
+            "getSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeedScale" }
         }
-      val get_sprite_frames: CPointer<godot_method_bind>
+      val getSpriteFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "get_sprite_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_sprite_frames" }
+            "getSpriteFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpriteFrames" }
         }
-      val is_centered: CPointer<godot_method_bind>
+      val isCentered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_centered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_centered" }
+            "isCentered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCentered" }
         }
-      val is_flipped_h: CPointer<godot_method_bind>
+      val isFlippedH: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_flipped_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_h" }
+            "isFlippedH".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isFlippedH" }
         }
-      val is_flipped_v: CPointer<godot_method_bind>
+      val isFlippedV: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_flipped_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_flipped_v" }
+            "isFlippedV".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isFlippedV" }
         }
-      val is_playing: CPointer<godot_method_bind>
+      val isPlaying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_playing" }
+            "isPlaying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPlaying" }
         }
       val play: CPointer<godot_method_bind>
         get() = memScoped {
@@ -202,61 +274,61 @@ open class AnimatedSprite(
             "play".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method play" }
         }
-      val set_animation: CPointer<godot_method_bind>
+      val setAnimation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_animation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_animation" }
+            "setAnimation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAnimation" }
         }
-      val set_centered: CPointer<godot_method_bind>
+      val setCentered: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_centered".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_centered" }
+            "setCentered".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCentered" }
         }
-      val set_flip_h: CPointer<godot_method_bind>
+      val setFlipH: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_flip_h".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_h" }
+            "setFlipH".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlipH" }
         }
-      val set_flip_v: CPointer<godot_method_bind>
+      val setFlipV: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_flip_v".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flip_v" }
+            "setFlipV".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlipV" }
         }
-      val set_frame: CPointer<godot_method_bind>
+      val setFrame: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_frame".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame" }
+            "setFrame".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrame" }
         }
-      val set_offset: CPointer<godot_method_bind>
+      val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            "setOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOffset" }
         }
-      val set_speed_scale: CPointer<godot_method_bind>
+      val setSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
+            "setSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeedScale" }
         }
-      val set_sprite_frames: CPointer<godot_method_bind>
+      val setSpriteFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedSprite".cstr.ptr,
-            "set_sprite_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_sprite_frames" }
+            "setSpriteFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpriteFrames" }
         }
       val stop: CPointer<godot_method_bind>
         get() = memScoped {

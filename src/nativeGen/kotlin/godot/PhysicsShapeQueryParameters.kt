@@ -21,79 +21,135 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsShapeQueryParameters(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var collideWithAreas: Boolean
+    get() {
+       return isCollideWithAreasEnabled() 
+    }
+    set(value) {
+      setCollideWithAreas(value)
+    }
+
+  var collideWithBodies: Boolean
+    get() {
+       return isCollideWithBodiesEnabled() 
+    }
+    set(value) {
+      setCollideWithBodies(value)
+    }
+
+  var collisionMask: Int
+    get() {
+       return getCollisionMask() 
+    }
+    set(value) {
+      setCollisionMask(value)
+    }
+
+  var exclude: VariantArray
+    get() {
+       return getExclude() 
+    }
+    set(value) {
+      setExclude(value)
+    }
+
+  var margin: Float
+    get() {
+       return getMargin() 
+    }
+    set(value) {
+      setMargin(value)
+    }
+
+  var shapeRid: RID
+    get() {
+       return getShapeRid() 
+    }
+    set(value) {
+      setShapeRid(value)
+    }
+
+  var transform: Transform
+    get() {
+       return getTransform() 
+    }
+    set(value) {
+      setTransform(value)
+    }
+
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.get_collision_mask.call(this._handle)
+    val _ret = __method_bind.getCollisionMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getExclude(): VariantArray {
-    val _ret = __method_bind.get_exclude.call(this._handle)
+    val _ret = __method_bind.getExclude.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getMargin(): Float {
-    val _ret = __method_bind.get_margin.call(this._handle)
+    val _ret = __method_bind.getMargin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getShapeRid(): RID {
-    val _ret = __method_bind.get_shape_rid.call(this._handle)
+    val _ret = __method_bind.getShapeRid.call(this._handle)
     return _ret.asRID()
   }
 
   fun getTransform(): Transform {
-    val _ret = __method_bind.get_transform.call(this._handle)
+    val _ret = __method_bind.getTransform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
-    val _ret = __method_bind.is_collide_with_areas_enabled.call(this._handle)
+    val _ret = __method_bind.isCollideWithAreasEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
-    val _ret = __method_bind.is_collide_with_bodies_enabled.call(this._handle)
+    val _ret = __method_bind.isCollideWithBodiesEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setCollideWithAreas(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_collide_with_areas.call(this._handle, _arg, 1)
+    __method_bind.setCollideWithAreas.call(this._handle, _arg, 1)
   }
 
   fun setCollideWithBodies(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_collide_with_bodies.call(this._handle, _arg, 1)
+    __method_bind.setCollideWithBodies.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMask(collisionMask: Int) {
     val _arg = Variant.new(collisionMask)
-    __method_bind.set_collision_mask.call(this._handle, _arg, 1)
+    __method_bind.setCollisionMask.call(this._handle, _arg, 1)
   }
 
   fun setExclude(exclude: VariantArray) {
     val _arg = Variant.new(exclude)
-    __method_bind.set_exclude.call(this._handle, _arg, 1)
+    __method_bind.setExclude.call(this._handle, _arg, 1)
   }
 
   fun setMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_margin.call(this._handle, _arg, 1)
+    __method_bind.setMargin.call(this._handle, _arg, 1)
   }
 
   fun setShape(shape: Resource) {
     val _arg = Variant.new(shape)
-    __method_bind.set_shape.call(this._handle, _arg, 1)
+    __method_bind.setShape.call(this._handle, _arg, 1)
   }
 
   fun setShapeRid(shape: RID) {
     val _arg = Variant.new(shape)
-    __method_bind.set_shape_rid.call(this._handle, _arg, 1)
+    __method_bind.setShapeRid.call(this._handle, _arg, 1)
   }
 
   fun setTransform(transform: Transform) {
     val _arg = Variant.new(transform)
-    __method_bind.set_transform.call(this._handle, _arg, 1)
+    __method_bind.setTransform.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -111,110 +167,110 @@ open class PhysicsShapeQueryParameters(
      * Container for method_bind pointers for PhysicsShapeQueryParameters
      */
     private object __method_bind {
-      val get_collision_mask: CPointer<godot_method_bind>
+      val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            "getCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
         }
-      val get_exclude: CPointer<godot_method_bind>
+      val getExclude: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "get_exclude".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_exclude" }
+            "getExclude".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExclude" }
         }
-      val get_margin: CPointer<godot_method_bind>
+      val getMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            "getMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMargin" }
         }
-      val get_shape_rid: CPointer<godot_method_bind>
+      val getShapeRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "get_shape_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shape_rid" }
+            "getShapeRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShapeRid" }
         }
-      val get_transform: CPointer<godot_method_bind>
+      val getTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "get_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transform" }
+            "getTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTransform" }
         }
-      val is_collide_with_areas_enabled: CPointer<godot_method_bind>
+      val isCollideWithAreasEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "is_collide_with_areas_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_collide_with_areas_enabled" }
+            "isCollideWithAreasEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCollideWithAreasEnabled" }
         }
-      val is_collide_with_bodies_enabled: CPointer<godot_method_bind>
+      val isCollideWithBodiesEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "is_collide_with_bodies_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_collide_with_bodies_enabled" }
+            "isCollideWithBodiesEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCollideWithBodiesEnabled" }
         }
-      val set_collide_with_areas: CPointer<godot_method_bind>
+      val setCollideWithAreas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_collide_with_areas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collide_with_areas" }
+            "setCollideWithAreas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollideWithAreas" }
         }
-      val set_collide_with_bodies: CPointer<godot_method_bind>
+      val setCollideWithBodies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_collide_with_bodies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collide_with_bodies" }
+            "setCollideWithBodies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollideWithBodies" }
         }
-      val set_collision_mask: CPointer<godot_method_bind>
+      val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            "setCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
         }
-      val set_exclude: CPointer<godot_method_bind>
+      val setExclude: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_exclude".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exclude" }
+            "setExclude".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExclude" }
         }
-      val set_margin: CPointer<godot_method_bind>
+      val setMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin" }
+            "setMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMargin" }
         }
-      val set_shape: CPointer<godot_method_bind>
+      val setShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shape" }
+            "setShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShape" }
         }
-      val set_shape_rid: CPointer<godot_method_bind>
+      val setShapeRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_shape_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shape_rid" }
+            "setShapeRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShapeRid" }
         }
-      val set_transform: CPointer<godot_method_bind>
+      val setTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsShapeQueryParameters".cstr.ptr,
-            "set_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_transform" }
+            "setTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTransform" }
         }}
   }
 }

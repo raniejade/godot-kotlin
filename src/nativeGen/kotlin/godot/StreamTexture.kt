@@ -18,8 +18,16 @@ import kotlinx.cinterop.reinterpret
 open class StreamTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var loadPath: String
+    get() {
+       return getLoadPath() 
+    }
+    set(value) {
+      load(value)
+    }
+
   fun getLoadPath(): String {
-    val _ret = __method_bind.get_load_path.call(this._handle)
+    val _ret = __method_bind.getLoadPath.call(this._handle)
     return _ret.asString()
   }
 
@@ -43,12 +51,12 @@ open class StreamTexture(
      * Container for method_bind pointers for StreamTexture
      */
     private object __method_bind {
-      val get_load_path: CPointer<godot_method_bind>
+      val getLoadPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamTexture".cstr.ptr,
-            "get_load_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_load_path" }
+            "getLoadPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLoadPath" }
         }
       val load: CPointer<godot_method_bind>
         get() = memScoped {

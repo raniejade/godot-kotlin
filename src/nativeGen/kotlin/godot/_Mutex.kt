@@ -22,7 +22,7 @@ open class _Mutex(
   }
 
   fun tryLock(): GDError {
-    val _ret = __method_bind.try_lock.call(this._handle)
+    val _ret = __method_bind.tryLock.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
@@ -50,11 +50,11 @@ open class _Mutex(
             "lock".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method lock" }
         }
-      val try_lock: CPointer<godot_method_bind>
+      val tryLock: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_Mutex".cstr.ptr,
-            "try_lock".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method try_lock" }
+            "tryLock".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tryLock" }
         }
       val unlock: CPointer<godot_method_bind>
         get() = memScoped {

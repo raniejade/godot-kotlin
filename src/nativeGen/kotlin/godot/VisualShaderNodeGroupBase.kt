@@ -29,7 +29,7 @@ open class VisualShaderNodeGroupBase(
     _args.append(id)
     _args.append(type)
     _args.append(name)
-    __method_bind.add_input_port.call(this._handle, _args.toVariant(), 3)
+    __method_bind.addInputPort.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addOutputPort(
@@ -41,128 +41,128 @@ open class VisualShaderNodeGroupBase(
     _args.append(id)
     _args.append(type)
     _args.append(name)
-    __method_bind.add_output_port.call(this._handle, _args.toVariant(), 3)
+    __method_bind.addOutputPort.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clearInputPorts() {
-    __method_bind.clear_input_ports.call(this._handle)
+    __method_bind.clearInputPorts.call(this._handle)
   }
 
   fun clearOutputPorts() {
-    __method_bind.clear_output_ports.call(this._handle)
+    __method_bind.clearOutputPorts.call(this._handle)
   }
 
   fun getControl(index: Int): Control {
     val _arg = Variant.new(index)
-    val _ret = __method_bind.get_control.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getControl.call(this._handle, _arg, 1)
     return _ret.asObject(::Control)!!
   }
 
   fun getFreeInputPortId(): Int {
-    val _ret = __method_bind.get_free_input_port_id.call(this._handle)
+    val _ret = __method_bind.getFreeInputPortId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getFreeOutputPortId(): Int {
-    val _ret = __method_bind.get_free_output_port_id.call(this._handle)
+    val _ret = __method_bind.getFreeOutputPortId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInputPortCount(): Int {
-    val _ret = __method_bind.get_input_port_count.call(this._handle)
+    val _ret = __method_bind.getInputPortCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getInputs(): String {
-    val _ret = __method_bind.get_inputs.call(this._handle)
+    val _ret = __method_bind.getInputs.call(this._handle)
     return _ret.asString()
   }
 
   fun getOutputPortCount(): Int {
-    val _ret = __method_bind.get_output_port_count.call(this._handle)
+    val _ret = __method_bind.getOutputPortCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getOutputs(): String {
-    val _ret = __method_bind.get_outputs.call(this._handle)
+    val _ret = __method_bind.getOutputs.call(this._handle)
     return _ret.asString()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this._handle)
+    val _ret = __method_bind.getSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun hasInputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.has_input_port.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasInputPort.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun hasOutputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.has_output_port.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasOutputPort.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun removeInputPort(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_input_port.call(this._handle, _arg, 1)
+    __method_bind.removeInputPort.call(this._handle, _arg, 1)
   }
 
   fun removeOutputPort(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_output_port.call(this._handle, _arg, 1)
+    __method_bind.removeOutputPort.call(this._handle, _arg, 1)
   }
 
   fun setControl(control: Control, index: Int) {
     val _args = VariantArray.new()
     _args.append(control)
     _args.append(index)
-    __method_bind.set_control.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setControl.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputPortName(arg0: Int, arg1: String) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_input_port_name.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setInputPortName.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputPortType(arg0: Int, arg1: Int) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_input_port_type.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setInputPortType.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setInputs(inputs: String) {
     val _arg = Variant.new(inputs)
-    __method_bind.set_inputs.call(this._handle, _arg, 1)
+    __method_bind.setInputs.call(this._handle, _arg, 1)
   }
 
   fun setOutputPortName(arg0: Int, arg1: String) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_output_port_name.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setOutputPortName.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setOutputPortType(arg0: Int, arg1: Int) {
     val _args = VariantArray.new()
     _args.append(arg0)
     _args.append(arg1)
-    __method_bind.set_output_port_type.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setOutputPortType.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setOutputs(outputs: String) {
     val _arg = Variant.new(outputs)
-    __method_bind.set_outputs.call(this._handle, _arg, 1)
+    __method_bind.setOutputs.call(this._handle, _arg, 1)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -180,173 +180,173 @@ open class VisualShaderNodeGroupBase(
      * Container for method_bind pointers for VisualShaderNodeGroupBase
      */
     private object __method_bind {
-      val add_input_port: CPointer<godot_method_bind>
+      val addInputPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "add_input_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_input_port" }
+            "addInputPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addInputPort" }
         }
-      val add_output_port: CPointer<godot_method_bind>
+      val addOutputPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "add_output_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_output_port" }
+            "addOutputPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addOutputPort" }
         }
-      val clear_input_ports: CPointer<godot_method_bind>
+      val clearInputPorts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "clear_input_ports".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_input_ports" }
+            "clearInputPorts".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearInputPorts" }
         }
-      val clear_output_ports: CPointer<godot_method_bind>
+      val clearOutputPorts: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "clear_output_ports".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_output_ports" }
+            "clearOutputPorts".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearOutputPorts" }
         }
-      val get_control: CPointer<godot_method_bind>
+      val getControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_control" }
+            "getControl".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getControl" }
         }
-      val get_free_input_port_id: CPointer<godot_method_bind>
+      val getFreeInputPortId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_free_input_port_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_free_input_port_id" }
+            "getFreeInputPortId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFreeInputPortId" }
         }
-      val get_free_output_port_id: CPointer<godot_method_bind>
+      val getFreeOutputPortId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_free_output_port_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_free_output_port_id" }
+            "getFreeOutputPortId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFreeOutputPortId" }
         }
-      val get_input_port_count: CPointer<godot_method_bind>
+      val getInputPortCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_input_port_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_input_port_count" }
+            "getInputPortCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInputPortCount" }
         }
-      val get_inputs: CPointer<godot_method_bind>
+      val getInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_inputs" }
+            "getInputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInputs" }
         }
-      val get_output_port_count: CPointer<godot_method_bind>
+      val getOutputPortCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_output_port_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_output_port_count" }
+            "getOutputPortCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOutputPortCount" }
         }
-      val get_outputs: CPointer<godot_method_bind>
+      val getOutputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_outputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_outputs" }
+            "getOutputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOutputs" }
         }
-      val get_size: CPointer<godot_method_bind>
+      val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
+            "getSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSize" }
         }
-      val has_input_port: CPointer<godot_method_bind>
+      val hasInputPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "has_input_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_input_port" }
+            "hasInputPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasInputPort" }
         }
-      val has_output_port: CPointer<godot_method_bind>
+      val hasOutputPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "has_output_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_output_port" }
+            "hasOutputPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasOutputPort" }
         }
-      val remove_input_port: CPointer<godot_method_bind>
+      val removeInputPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "remove_input_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_input_port" }
+            "removeInputPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeInputPort" }
         }
-      val remove_output_port: CPointer<godot_method_bind>
+      val removeOutputPort: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "remove_output_port".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_output_port" }
+            "removeOutputPort".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeOutputPort" }
         }
-      val set_control: CPointer<godot_method_bind>
+      val setControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_control" }
+            "setControl".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setControl" }
         }
-      val set_input_port_name: CPointer<godot_method_bind>
+      val setInputPortName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_input_port_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_port_name" }
+            "setInputPortName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInputPortName" }
         }
-      val set_input_port_type: CPointer<godot_method_bind>
+      val setInputPortType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_input_port_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_input_port_type" }
+            "setInputPortType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInputPortType" }
         }
-      val set_inputs: CPointer<godot_method_bind>
+      val setInputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_inputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_inputs" }
+            "setInputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInputs" }
         }
-      val set_output_port_name: CPointer<godot_method_bind>
+      val setOutputPortName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_output_port_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_output_port_name" }
+            "setOutputPortName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOutputPortName" }
         }
-      val set_output_port_type: CPointer<godot_method_bind>
+      val setOutputPortType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_output_port_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_output_port_type" }
+            "setOutputPortType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOutputPortType" }
         }
-      val set_outputs: CPointer<godot_method_bind>
+      val setOutputs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_outputs".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_outputs" }
+            "setOutputs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOutputs" }
         }
-      val set_size: CPointer<godot_method_bind>
+      val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeGroupBase".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
+            "setSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSize" }
         }}
   }
 }

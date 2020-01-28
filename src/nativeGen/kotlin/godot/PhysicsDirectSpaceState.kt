@@ -24,7 +24,7 @@ open class PhysicsDirectSpaceState(
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(motion)
-    val _ret = __method_bind.cast_motion.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.castMotion.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
@@ -32,13 +32,13 @@ open class PhysicsDirectSpaceState(
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)
-    val _ret = __method_bind.collide_shape.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.collideShape.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
   fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
     val _arg = Variant.new(shape)
-    val _ret = __method_bind.get_rest_info.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRestInfo.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
@@ -57,7 +57,7 @@ open class PhysicsDirectSpaceState(
     _args.append(collisionMask)
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
-    val _ret = __method_bind.intersect_ray.call(this._handle, _args.toVariant(), 6)
+    val _ret = __method_bind.intersectRay.call(this._handle, _args.toVariant(), 6)
     return _ret.asDictionary()
   }
 
@@ -65,7 +65,7 @@ open class PhysicsDirectSpaceState(
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)
-    val _ret = __method_bind.intersect_shape.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.intersectShape.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
@@ -74,40 +74,40 @@ open class PhysicsDirectSpaceState(
      * Container for method_bind pointers for PhysicsDirectSpaceState
      */
     private object __method_bind {
-      val cast_motion: CPointer<godot_method_bind>
+      val castMotion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "cast_motion".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method cast_motion" }
+            "castMotion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method castMotion" }
         }
-      val collide_shape: CPointer<godot_method_bind>
+      val collideShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "collide_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method collide_shape" }
+            "collideShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method collideShape" }
         }
-      val get_rest_info: CPointer<godot_method_bind>
+      val getRestInfo: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "get_rest_info".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rest_info" }
+            "getRestInfo".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRestInfo" }
         }
-      val intersect_ray: CPointer<godot_method_bind>
+      val intersectRay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "intersect_ray".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersect_ray" }
+            "intersectRay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method intersectRay" }
         }
-      val intersect_shape: CPointer<godot_method_bind>
+      val intersectShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsDirectSpaceState".cstr.ptr,
-            "intersect_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method intersect_shape" }
+            "intersectShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method intersectShape" }
         }}
   }
 }

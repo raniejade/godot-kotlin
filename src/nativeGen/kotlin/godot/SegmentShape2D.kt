@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class SegmentShape2D(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  var a: Vector2
+    get() {
+       return getA() 
+    }
+    set(value) {
+      setA(value)
+    }
+
+  var b: Vector2
+    get() {
+       return getB() 
+    }
+    set(value) {
+      setB(value)
+    }
+
   fun getA(): Vector2 {
-    val _ret = __method_bind.get_a.call(this._handle)
+    val _ret = __method_bind.getA.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getB(): Vector2 {
-    val _ret = __method_bind.get_b.call(this._handle)
+    val _ret = __method_bind.getB.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setA(a: Vector2) {
     val _arg = Variant.new(a)
-    __method_bind.set_a.call(this._handle, _arg, 1)
+    __method_bind.setA.call(this._handle, _arg, 1)
   }
 
   fun setB(b: Vector2) {
     val _arg = Variant.new(b)
-    __method_bind.set_b.call(this._handle, _arg, 1)
+    __method_bind.setB.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class SegmentShape2D(
      * Container for method_bind pointers for SegmentShape2D
      */
     private object __method_bind {
-      val get_a: CPointer<godot_method_bind>
+      val getA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "get_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_a" }
+            "getA".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getA" }
         }
-      val get_b: CPointer<godot_method_bind>
+      val getB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "get_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_b" }
+            "getB".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getB" }
         }
-      val set_a: CPointer<godot_method_bind>
+      val setA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "set_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_a" }
+            "setA".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setA" }
         }
-      val set_b: CPointer<godot_method_bind>
+      val setB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SegmentShape2D".cstr.ptr,
-            "set_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_b" }
+            "setB".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setB" }
         }}
   }
 }

@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class GridContainer(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  var columns: Int
+    get() {
+       return getColumns() 
+    }
+    set(value) {
+      setColumns(value)
+    }
+
   fun getColumns(): Int {
-    val _ret = __method_bind.get_columns.call(this._handle)
+    val _ret = __method_bind.getColumns.call(this._handle)
     return _ret.asInt()
   }
 
   fun setColumns(columns: Int) {
     val _arg = Variant.new(columns)
-    __method_bind.set_columns.call(this._handle, _arg, 1)
+    __method_bind.setColumns.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,19 +49,19 @@ open class GridContainer(
      * Container for method_bind pointers for GridContainer
      */
     private object __method_bind {
-      val get_columns: CPointer<godot_method_bind>
+      val getColumns: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
-            "get_columns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_columns" }
+            "getColumns".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColumns" }
         }
-      val set_columns: CPointer<godot_method_bind>
+      val setColumns: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GridContainer".cstr.ptr,
-            "set_columns".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_columns" }
+            "setColumns".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setColumns" }
         }}
   }
 }

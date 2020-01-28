@@ -19,29 +19,53 @@ import kotlinx.cinterop.reinterpret
 open class InputEventAction(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  var action: String
+    get() {
+       return getAction() 
+    }
+    set(value) {
+      setAction(value)
+    }
+
+  var pressed: Boolean
+    get() {
+       return isPressed() 
+    }
+    set(value) {
+      setPressed(value)
+    }
+
+  var strength: Float
+    get() {
+       return getStrength() 
+    }
+    set(value) {
+      setStrength(value)
+    }
+
   fun getAction(): String {
-    val _ret = __method_bind.get_action.call(this._handle)
+    val _ret = __method_bind.getAction.call(this._handle)
     return _ret.asString()
   }
 
   fun getStrength(): Float {
-    val _ret = __method_bind.get_strength.call(this._handle)
+    val _ret = __method_bind.getStrength.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setAction(action: String) {
     val _arg = Variant.new(action)
-    __method_bind.set_action.call(this._handle, _arg, 1)
+    __method_bind.setAction.call(this._handle, _arg, 1)
   }
 
   fun setPressed(pressed: Boolean) {
     val _arg = Variant.new(pressed)
-    __method_bind.set_pressed.call(this._handle, _arg, 1)
+    __method_bind.setPressed.call(this._handle, _arg, 1)
   }
 
   fun setStrength(strength: Float) {
     val _arg = Variant.new(strength)
-    __method_bind.set_strength.call(this._handle, _arg, 1)
+    __method_bind.setStrength.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -59,40 +83,40 @@ open class InputEventAction(
      * Container for method_bind pointers for InputEventAction
      */
     private object __method_bind {
-      val get_action: CPointer<godot_method_bind>
+      val getAction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-            "get_action".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_action" }
+            "getAction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAction" }
         }
-      val get_strength: CPointer<godot_method_bind>
+      val getStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-            "get_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_strength" }
+            "getStrength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStrength" }
         }
-      val set_action: CPointer<godot_method_bind>
+      val setAction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-            "set_action".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_action" }
+            "setAction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAction" }
         }
-      val set_pressed: CPointer<godot_method_bind>
+      val setPressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-            "set_pressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pressed" }
+            "setPressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPressed" }
         }
-      val set_strength: CPointer<godot_method_bind>
+      val setStrength: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventAction".cstr.ptr,
-            "set_strength".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_strength" }
+            "setStrength".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setStrength" }
         }}
   }
 }

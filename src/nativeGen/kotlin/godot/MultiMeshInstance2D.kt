@@ -16,34 +16,58 @@ import kotlinx.cinterop.reinterpret
 open class MultiMeshInstance2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var multimesh: MultiMesh
+    get() {
+       return getMultimesh() 
+    }
+    set(value) {
+      setMultimesh(value)
+    }
+
+  var normalMap: Texture
+    get() {
+       return getNormalMap() 
+    }
+    set(value) {
+      setNormalMap(value)
+    }
+
+  var texture: Texture
+    get() {
+       return getTexture() 
+    }
+    set(value) {
+      setTexture(value)
+    }
+
   fun getMultimesh(): MultiMesh {
-    val _ret = __method_bind.get_multimesh.call(this._handle)
+    val _ret = __method_bind.getMultimesh.call(this._handle)
     return _ret.asObject(::MultiMesh)!!
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.get_normal_map.call(this._handle)
+    val _ret = __method_bind.getNormalMap.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this._handle)
+    val _ret = __method_bind.getTexture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setMultimesh(multimesh: MultiMesh) {
     val _arg = Variant.new(multimesh)
-    __method_bind.set_multimesh.call(this._handle, _arg, 1)
+    __method_bind.setMultimesh.call(this._handle, _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.set_normal_map.call(this._handle, _arg, 1)
+    __method_bind.setNormalMap.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -61,47 +85,47 @@ open class MultiMeshInstance2D(
      * Container for method_bind pointers for MultiMeshInstance2D
      */
     private object __method_bind {
-      val get_multimesh: CPointer<godot_method_bind>
+      val getMultimesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "get_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_multimesh" }
+            "getMultimesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMultimesh" }
         }
-      val get_normal_map: CPointer<godot_method_bind>
+      val getNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "get_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal_map" }
+            "getNormalMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNormalMap" }
         }
-      val get_texture: CPointer<godot_method_bind>
+      val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            "getTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTexture" }
         }
-      val set_multimesh: CPointer<godot_method_bind>
+      val setMultimesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "set_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_multimesh" }
+            "setMultimesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMultimesh" }
         }
-      val set_normal_map: CPointer<godot_method_bind>
+      val setNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "set_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal_map" }
+            "setNormalMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNormalMap" }
         }
-      val set_texture: CPointer<godot_method_bind>
+      val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MultiMeshInstance2D".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            "setTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTexture" }
         }}
   }
 }

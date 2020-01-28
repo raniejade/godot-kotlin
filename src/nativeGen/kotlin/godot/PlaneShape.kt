@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class PlaneShape(
   _handle: COpaquePointer
 ) : Shape(_handle) {
+  var plane: Plane
+    get() {
+       return getPlane() 
+    }
+    set(value) {
+      setPlane(value)
+    }
+
   fun getPlane(): Plane {
-    val _ret = __method_bind.get_plane.call(this._handle)
+    val _ret = __method_bind.getPlane.call(this._handle)
     return _ret.asPlane()
   }
 
   fun setPlane(plane: Plane) {
     val _arg = Variant.new(plane)
-    __method_bind.set_plane.call(this._handle, _arg, 1)
+    __method_bind.setPlane.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,17 +49,17 @@ open class PlaneShape(
      * Container for method_bind pointers for PlaneShape
      */
     private object __method_bind {
-      val get_plane: CPointer<godot_method_bind>
+      val getPlane: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
-            "get_plane".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_plane" }
+            "getPlane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPlane" }
         }
-      val set_plane: CPointer<godot_method_bind>
+      val setPlane: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PlaneShape".cstr.ptr,
-            "set_plane".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_plane" }
+            "setPlane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPlane" }
         }}
   }
 }

@@ -18,112 +18,136 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectChorus(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  var dry: Float
+    get() {
+       return getDry() 
+    }
+    set(value) {
+      setDry(value)
+    }
+
+  var voiceCount: Int
+    get() {
+       return getVoiceCount() 
+    }
+    set(value) {
+      setVoiceCount(value)
+    }
+
+  var wet: Float
+    get() {
+       return getWet() 
+    }
+    set(value) {
+      setWet(value)
+    }
+
   fun getDry(): Float {
-    val _ret = __method_bind.get_dry.call(this._handle)
+    val _ret = __method_bind.getDry.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getVoiceCount(): Int {
-    val _ret = __method_bind.get_voice_count.call(this._handle)
+    val _ret = __method_bind.getVoiceCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVoiceCutoffHz(voiceIdx: Int): Float {
     val _arg = Variant.new(voiceIdx)
-    val _ret = __method_bind.get_voice_cutoff_hz.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVoiceCutoffHz.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceDelayMs(voiceIdx: Int): Float {
     val _arg = Variant.new(voiceIdx)
-    val _ret = __method_bind.get_voice_delay_ms.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVoiceDelayMs.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceDepthMs(voiceIdx: Int): Float {
     val _arg = Variant.new(voiceIdx)
-    val _ret = __method_bind.get_voice_depth_ms.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVoiceDepthMs.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceLevelDb(voiceIdx: Int): Float {
     val _arg = Variant.new(voiceIdx)
-    val _ret = __method_bind.get_voice_level_db.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVoiceLevelDb.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoicePan(voiceIdx: Int): Float {
     val _arg = Variant.new(voiceIdx)
-    val _ret = __method_bind.get_voice_pan.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVoicePan.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getVoiceRateHz(voiceIdx: Int): Float {
     val _arg = Variant.new(voiceIdx)
-    val _ret = __method_bind.get_voice_rate_hz.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVoiceRateHz.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getWet(): Float {
-    val _ret = __method_bind.get_wet.call(this._handle)
+    val _ret = __method_bind.getWet.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setDry(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_dry.call(this._handle, _arg, 1)
+    __method_bind.setDry.call(this._handle, _arg, 1)
   }
 
   fun setVoiceCount(voices: Int) {
     val _arg = Variant.new(voices)
-    __method_bind.set_voice_count.call(this._handle, _arg, 1)
+    __method_bind.setVoiceCount.call(this._handle, _arg, 1)
   }
 
   fun setVoiceCutoffHz(voiceIdx: Int, cutoffHz: Float) {
     val _args = VariantArray.new()
     _args.append(voiceIdx)
     _args.append(cutoffHz)
-    __method_bind.set_voice_cutoff_hz.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVoiceCutoffHz.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVoiceDelayMs(voiceIdx: Int, delayMs: Float) {
     val _args = VariantArray.new()
     _args.append(voiceIdx)
     _args.append(delayMs)
-    __method_bind.set_voice_delay_ms.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVoiceDelayMs.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVoiceDepthMs(voiceIdx: Int, depthMs: Float) {
     val _args = VariantArray.new()
     _args.append(voiceIdx)
     _args.append(depthMs)
-    __method_bind.set_voice_depth_ms.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVoiceDepthMs.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVoiceLevelDb(voiceIdx: Int, levelDb: Float) {
     val _args = VariantArray.new()
     _args.append(voiceIdx)
     _args.append(levelDb)
-    __method_bind.set_voice_level_db.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVoiceLevelDb.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVoicePan(voiceIdx: Int, pan: Float) {
     val _args = VariantArray.new()
     _args.append(voiceIdx)
     _args.append(pan)
-    __method_bind.set_voice_pan.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVoicePan.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVoiceRateHz(voiceIdx: Int, rateHz: Float) {
     val _args = VariantArray.new()
     _args.append(voiceIdx)
     _args.append(rateHz)
-    __method_bind.set_voice_rate_hz.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVoiceRateHz.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setWet(amount: Float) {
     val _arg = Variant.new(amount)
-    __method_bind.set_wet.call(this._handle, _arg, 1)
+    __method_bind.setWet.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -141,131 +165,131 @@ open class AudioEffectChorus(
      * Container for method_bind pointers for AudioEffectChorus
      */
     private object __method_bind {
-      val get_dry: CPointer<godot_method_bind>
+      val getDry: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_dry".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dry" }
+            "getDry".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDry" }
         }
-      val get_voice_count: CPointer<godot_method_bind>
+      val getVoiceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_count" }
+            "getVoiceCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoiceCount" }
         }
-      val get_voice_cutoff_hz: CPointer<godot_method_bind>
+      val getVoiceCutoffHz: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_cutoff_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_cutoff_hz" }
+            "getVoiceCutoffHz".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoiceCutoffHz" }
         }
-      val get_voice_delay_ms: CPointer<godot_method_bind>
+      val getVoiceDelayMs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_delay_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_delay_ms" }
+            "getVoiceDelayMs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoiceDelayMs" }
         }
-      val get_voice_depth_ms: CPointer<godot_method_bind>
+      val getVoiceDepthMs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_depth_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_depth_ms" }
+            "getVoiceDepthMs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoiceDepthMs" }
         }
-      val get_voice_level_db: CPointer<godot_method_bind>
+      val getVoiceLevelDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_level_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_level_db" }
+            "getVoiceLevelDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoiceLevelDb" }
         }
-      val get_voice_pan: CPointer<godot_method_bind>
+      val getVoicePan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_pan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_pan" }
+            "getVoicePan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoicePan" }
         }
-      val get_voice_rate_hz: CPointer<godot_method_bind>
+      val getVoiceRateHz: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_voice_rate_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_voice_rate_hz" }
+            "getVoiceRateHz".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVoiceRateHz" }
         }
-      val get_wet: CPointer<godot_method_bind>
+      val getWet: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "get_wet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_wet" }
+            "getWet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWet" }
         }
-      val set_dry: CPointer<godot_method_bind>
+      val setDry: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_dry".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dry" }
+            "setDry".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDry" }
         }
-      val set_voice_count: CPointer<godot_method_bind>
+      val setVoiceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_count" }
+            "setVoiceCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoiceCount" }
         }
-      val set_voice_cutoff_hz: CPointer<godot_method_bind>
+      val setVoiceCutoffHz: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_cutoff_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_cutoff_hz" }
+            "setVoiceCutoffHz".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoiceCutoffHz" }
         }
-      val set_voice_delay_ms: CPointer<godot_method_bind>
+      val setVoiceDelayMs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_delay_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_delay_ms" }
+            "setVoiceDelayMs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoiceDelayMs" }
         }
-      val set_voice_depth_ms: CPointer<godot_method_bind>
+      val setVoiceDepthMs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_depth_ms".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_depth_ms" }
+            "setVoiceDepthMs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoiceDepthMs" }
         }
-      val set_voice_level_db: CPointer<godot_method_bind>
+      val setVoiceLevelDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_level_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_level_db" }
+            "setVoiceLevelDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoiceLevelDb" }
         }
-      val set_voice_pan: CPointer<godot_method_bind>
+      val setVoicePan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_pan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_pan" }
+            "setVoicePan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoicePan" }
         }
-      val set_voice_rate_hz: CPointer<godot_method_bind>
+      val setVoiceRateHz: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_voice_rate_hz".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_voice_rate_hz" }
+            "setVoiceRateHz".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVoiceRateHz" }
         }
-      val set_wet: CPointer<godot_method_bind>
+      val setWet: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectChorus".cstr.ptr,
-            "set_wet".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_wet" }
+            "setWet".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWet" }
         }}
   }
 }

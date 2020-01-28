@@ -18,44 +18,76 @@ import kotlinx.cinterop.reinterpret
 open class InputEventScreenDrag(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  var index: Int
+    get() {
+       return getIndex() 
+    }
+    set(value) {
+      setIndex(value)
+    }
+
+  var position: Vector2
+    get() {
+       return getPosition() 
+    }
+    set(value) {
+      setPosition(value)
+    }
+
+  var relative: Vector2
+    get() {
+       return getRelative() 
+    }
+    set(value) {
+      setRelative(value)
+    }
+
+  var speed: Vector2
+    get() {
+       return getSpeed() 
+    }
+    set(value) {
+      setSpeed(value)
+    }
+
   fun getIndex(): Int {
-    val _ret = __method_bind.get_index.call(this._handle)
+    val _ret = __method_bind.getIndex.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this._handle)
+    val _ret = __method_bind.getPosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getRelative(): Vector2 {
-    val _ret = __method_bind.get_relative.call(this._handle)
+    val _ret = __method_bind.getRelative.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getSpeed(): Vector2 {
-    val _ret = __method_bind.get_speed.call(this._handle)
+    val _ret = __method_bind.getSpeed.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.set_index.call(this._handle, _arg, 1)
+    __method_bind.setIndex.call(this._handle, _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, _arg, 1)
   }
 
   fun setRelative(relative: Vector2) {
     val _arg = Variant.new(relative)
-    __method_bind.set_relative.call(this._handle, _arg, 1)
+    __method_bind.setRelative.call(this._handle, _arg, 1)
   }
 
   fun setSpeed(speed: Vector2) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed.call(this._handle, _arg, 1)
+    __method_bind.setSpeed.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -73,61 +105,61 @@ open class InputEventScreenDrag(
      * Container for method_bind pointers for InputEventScreenDrag
      */
     private object __method_bind {
-      val get_index: CPointer<godot_method_bind>
+      val getIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_index" }
+            "getIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getIndex" }
         }
-      val get_position: CPointer<godot_method_bind>
+      val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
+            "getPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPosition" }
         }
-      val get_relative: CPointer<godot_method_bind>
+      val getRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_relative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_relative" }
+            "getRelative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRelative" }
         }
-      val get_speed: CPointer<godot_method_bind>
+      val getSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "get_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed" }
+            "getSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeed" }
         }
-      val set_index: CPointer<godot_method_bind>
+      val setIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_index" }
+            "setIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setIndex" }
         }
-      val set_position: CPointer<godot_method_bind>
+      val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
+            "setPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPosition" }
         }
-      val set_relative: CPointer<godot_method_bind>
+      val setRelative: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_relative".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_relative" }
+            "setRelative".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRelative" }
         }
-      val set_speed: CPointer<godot_method_bind>
+      val setSpeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventScreenDrag".cstr.ptr,
-            "set_speed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed" }
+            "setSpeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeed" }
         }}
   }
 }

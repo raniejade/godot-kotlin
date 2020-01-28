@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptBuiltinFunc(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var function: Int
+    get() {
+       return VisualScriptBuiltinFunc.BuiltinFunc.from(getFunc()) 
+    }
+    set(value) {
+      setFunc(VisualScriptBuiltinFunc.BuiltinFunc.from(value))
+    }
+
   fun getFunc(): BuiltinFunc {
-    val _ret = __method_bind.get_func.call(this._handle)
+    val _ret = __method_bind.getFunc.call(this._handle)
     return VisualScriptBuiltinFunc.BuiltinFunc.from(_ret.asInt())
   }
 
   fun setFunc(which: Int) {
     val _arg = Variant.new(which)
-    __method_bind.set_func.call(this._handle, _arg, 1)
+    __method_bind.setFunc.call(this._handle, _arg, 1)
   }
 
   enum class BuiltinFunc(
@@ -321,19 +329,19 @@ open class VisualScriptBuiltinFunc(
      * Container for method_bind pointers for VisualScriptBuiltinFunc
      */
     private object __method_bind {
-      val get_func: CPointer<godot_method_bind>
+      val getFunc: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
-            "get_func".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_func" }
+            "getFunc".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFunc" }
         }
-      val set_func: CPointer<godot_method_bind>
+      val setFunc: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptBuiltinFunc".cstr.ptr,
-            "set_func".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_func" }
+            "setFunc".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFunc" }
         }}
   }
 }

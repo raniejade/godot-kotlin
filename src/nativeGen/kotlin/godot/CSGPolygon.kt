@@ -21,134 +21,238 @@ import kotlinx.cinterop.reinterpret
 open class CSGPolygon(
   _handle: COpaquePointer
 ) : CSGPrimitive(_handle) {
+  var depth: Float
+    get() {
+       return getDepth() 
+    }
+    set(value) {
+      setDepth(value)
+    }
+
+  var material: `SpatialMaterial,ShaderMaterial`
+    get() {
+       return getMaterial() 
+    }
+    set(value) {
+      setMaterial(value)
+    }
+
+  var mode: Int
+    get() {
+       return CSGPolygon.Mode.from(getMode()) 
+    }
+    set(value) {
+      setMode(CSGPolygon.Mode.from(value))
+    }
+
+  var pathContinuousU: Boolean
+    get() {
+       return isPathContinuousU() 
+    }
+    set(value) {
+      setPathContinuousU(value)
+    }
+
+  var pathInterval: Float
+    get() {
+       return getPathInterval() 
+    }
+    set(value) {
+      setPathInterval(value)
+    }
+
+  var pathJoined: Boolean
+    get() {
+       return isPathJoined() 
+    }
+    set(value) {
+      setPathJoined(value)
+    }
+
+  var pathLocal: Boolean
+    get() {
+       return isPathLocal() 
+    }
+    set(value) {
+      setPathLocal(value)
+    }
+
+  var pathNode: NodePath
+    get() {
+       return getPathNode() 
+    }
+    set(value) {
+      setPathNode(value)
+    }
+
+  var pathRotation: Int
+    get() {
+       return CSGPolygon.PathRotation.from(getPathRotation()) 
+    }
+    set(value) {
+      setPathRotation(CSGPolygon.PathRotation.from(value))
+    }
+
+  var polygon: PoolVector2Array
+    get() {
+       return getPolygon() 
+    }
+    set(value) {
+      setPolygon(value)
+    }
+
+  var smoothFaces: Boolean
+    get() {
+       return getSmoothFaces() 
+    }
+    set(value) {
+      setSmoothFaces(value)
+    }
+
+  var spinDegrees: Float
+    get() {
+       return getSpinDegrees() 
+    }
+    set(value) {
+      setSpinDegrees(value)
+    }
+
+  var spinSides: Int
+    get() {
+       return getSpinSides() 
+    }
+    set(value) {
+      setSpinSides(value)
+    }
+
   fun getDepth(): Float {
-    val _ret = __method_bind.get_depth.call(this._handle)
+    val _ret = __method_bind.getDepth.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this._handle)
+    val _ret = __method_bind.getMaterial.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getMode(): Mode {
-    val _ret = __method_bind.get_mode.call(this._handle)
+    val _ret = __method_bind.getMode.call(this._handle)
     return CSGPolygon.Mode.from(_ret.asInt())
   }
 
   fun getPathInterval(): Float {
-    val _ret = __method_bind.get_path_interval.call(this._handle)
+    val _ret = __method_bind.getPathInterval.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPathNode(): NodePath {
-    val _ret = __method_bind.get_path_node.call(this._handle)
+    val _ret = __method_bind.getPathNode.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getPathRotation(): PathRotation {
-    val _ret = __method_bind.get_path_rotation.call(this._handle)
+    val _ret = __method_bind.getPathRotation.call(this._handle)
     return CSGPolygon.PathRotation.from(_ret.asInt())
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.get_polygon.call(this._handle)
+    val _ret = __method_bind.getPolygon.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun getSmoothFaces(): Boolean {
-    val _ret = __method_bind.get_smooth_faces.call(this._handle)
+    val _ret = __method_bind.getSmoothFaces.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getSpinDegrees(): Float {
-    val _ret = __method_bind.get_spin_degrees.call(this._handle)
+    val _ret = __method_bind.getSpinDegrees.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSpinSides(): Int {
-    val _ret = __method_bind.get_spin_sides.call(this._handle)
+    val _ret = __method_bind.getSpinSides.call(this._handle)
     return _ret.asInt()
   }
 
   fun isPathContinuousU(): Boolean {
-    val _ret = __method_bind.is_path_continuous_u.call(this._handle)
+    val _ret = __method_bind.isPathContinuousU.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isPathJoined(): Boolean {
-    val _ret = __method_bind.is_path_joined.call(this._handle)
+    val _ret = __method_bind.isPathJoined.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isPathLocal(): Boolean {
-    val _ret = __method_bind.is_path_local.call(this._handle)
+    val _ret = __method_bind.isPathLocal.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setDepth(depth: Float) {
     val _arg = Variant.new(depth)
-    __method_bind.set_depth.call(this._handle, _arg, 1)
+    __method_bind.setDepth.call(this._handle, _arg, 1)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, _arg, 1)
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_mode.call(this._handle, _arg, 1)
+    __method_bind.setMode.call(this._handle, _arg, 1)
   }
 
   fun setPathContinuousU(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_path_continuous_u.call(this._handle, _arg, 1)
+    __method_bind.setPathContinuousU.call(this._handle, _arg, 1)
   }
 
   fun setPathInterval(distance: Float) {
     val _arg = Variant.new(distance)
-    __method_bind.set_path_interval.call(this._handle, _arg, 1)
+    __method_bind.setPathInterval.call(this._handle, _arg, 1)
   }
 
   fun setPathJoined(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_path_joined.call(this._handle, _arg, 1)
+    __method_bind.setPathJoined.call(this._handle, _arg, 1)
   }
 
   fun setPathLocal(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_path_local.call(this._handle, _arg, 1)
+    __method_bind.setPathLocal.call(this._handle, _arg, 1)
   }
 
   fun setPathNode(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_path_node.call(this._handle, _arg, 1)
+    __method_bind.setPathNode.call(this._handle, _arg, 1)
   }
 
   fun setPathRotation(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_path_rotation.call(this._handle, _arg, 1)
+    __method_bind.setPathRotation.call(this._handle, _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.set_polygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, _arg, 1)
   }
 
   fun setSmoothFaces(smoothFaces: Boolean) {
     val _arg = Variant.new(smoothFaces)
-    __method_bind.set_smooth_faces.call(this._handle, _arg, 1)
+    __method_bind.setSmoothFaces.call(this._handle, _arg, 1)
   }
 
   fun setSpinDegrees(degrees: Float) {
     val _arg = Variant.new(degrees)
-    __method_bind.set_spin_degrees.call(this._handle, _arg, 1)
+    __method_bind.setSpinDegrees.call(this._handle, _arg, 1)
   }
 
   fun setSpinSides(spinSides: Int) {
     val _arg = Variant.new(spinSides)
-    __method_bind.set_spin_sides.call(this._handle, _arg, 1)
+    __method_bind.setSpinSides.call(this._handle, _arg, 1)
   }
 
   enum class PathRotation(
@@ -219,161 +323,161 @@ open class CSGPolygon(
      * Container for method_bind pointers for CSGPolygon
      */
     private object __method_bind {
-      val get_depth: CPointer<godot_method_bind>
+      val getDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_depth" }
+            "getDepth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDepth" }
         }
-      val get_material: CPointer<godot_method_bind>
+      val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_material" }
+            "getMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
         }
-      val get_mode: CPointer<godot_method_bind>
+      val getMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mode" }
+            "getMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMode" }
         }
-      val get_path_interval: CPointer<godot_method_bind>
+      val getPathInterval: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_path_interval".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_path_interval" }
+            "getPathInterval".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPathInterval" }
         }
-      val get_path_node: CPointer<godot_method_bind>
+      val getPathNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_path_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_path_node" }
+            "getPathNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPathNode" }
         }
-      val get_path_rotation: CPointer<godot_method_bind>
+      val getPathRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_path_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_path_rotation" }
+            "getPathRotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPathRotation" }
         }
-      val get_polygon: CPointer<godot_method_bind>
+      val getPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            "getPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPolygon" }
         }
-      val get_smooth_faces: CPointer<godot_method_bind>
+      val getSmoothFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_smooth_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_smooth_faces" }
+            "getSmoothFaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSmoothFaces" }
         }
-      val get_spin_degrees: CPointer<godot_method_bind>
+      val getSpinDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_spin_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_spin_degrees" }
+            "getSpinDegrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpinDegrees" }
         }
-      val get_spin_sides: CPointer<godot_method_bind>
+      val getSpinSides: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "get_spin_sides".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_spin_sides" }
+            "getSpinSides".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpinSides" }
         }
-      val is_path_continuous_u: CPointer<godot_method_bind>
+      val isPathContinuousU: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "is_path_continuous_u".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_path_continuous_u" }
+            "isPathContinuousU".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPathContinuousU" }
         }
-      val is_path_joined: CPointer<godot_method_bind>
+      val isPathJoined: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "is_path_joined".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_path_joined" }
+            "isPathJoined".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPathJoined" }
         }
-      val is_path_local: CPointer<godot_method_bind>
+      val isPathLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "is_path_local".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_path_local" }
+            "isPathLocal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPathLocal" }
         }
-      val set_depth: CPointer<godot_method_bind>
+      val setDepth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_depth".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_depth" }
+            "setDepth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDepth" }
         }
-      val set_material: CPointer<godot_method_bind>
+      val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
+            "setMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
         }
-      val set_mode: CPointer<godot_method_bind>
+      val setMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            "setMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMode" }
         }
-      val set_path_continuous_u: CPointer<godot_method_bind>
+      val setPathContinuousU: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_path_continuous_u".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path_continuous_u" }
+            "setPathContinuousU".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPathContinuousU" }
         }
-      val set_path_interval: CPointer<godot_method_bind>
+      val setPathInterval: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_path_interval".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path_interval" }
+            "setPathInterval".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPathInterval" }
         }
-      val set_path_joined: CPointer<godot_method_bind>
+      val setPathJoined: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_path_joined".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path_joined" }
+            "setPathJoined".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPathJoined" }
         }
-      val set_path_local: CPointer<godot_method_bind>
+      val setPathLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_path_local".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path_local" }
+            "setPathLocal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPathLocal" }
         }
-      val set_path_node: CPointer<godot_method_bind>
+      val setPathNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_path_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path_node" }
+            "setPathNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPathNode" }
         }
-      val set_path_rotation: CPointer<godot_method_bind>
+      val setPathRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_path_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_path_rotation" }
+            "setPathRotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPathRotation" }
         }
-      val set_polygon: CPointer<godot_method_bind>
+      val setPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
+            "setPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPolygon" }
         }
-      val set_smooth_faces: CPointer<godot_method_bind>
+      val setSmoothFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_smooth_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_smooth_faces" }
+            "setSmoothFaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSmoothFaces" }
         }
-      val set_spin_degrees: CPointer<godot_method_bind>
+      val setSpinDegrees: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_spin_degrees".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_spin_degrees" }
+            "setSpinDegrees".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpinDegrees" }
         }
-      val set_spin_sides: CPointer<godot_method_bind>
+      val setSpinSides: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPolygon".cstr.ptr,
-            "set_spin_sides".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_spin_sides" }
+            "setSpinSides".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpinSides" }
         }}
   }
 }

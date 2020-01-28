@@ -16,14 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class WorldEnvironment(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  var environment: Environment
+    get() {
+       return getEnvironment() 
+    }
+    set(value) {
+      setEnvironment(value)
+    }
+
   fun getEnvironment(): Environment {
-    val _ret = __method_bind.get_environment.call(this._handle)
+    val _ret = __method_bind.getEnvironment.call(this._handle)
     return _ret.asObject(::Environment)!!
   }
 
   fun setEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.set_environment.call(this._handle, _arg, 1)
+    __method_bind.setEnvironment.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,19 +49,19 @@ open class WorldEnvironment(
      * Container for method_bind pointers for WorldEnvironment
      */
     private object __method_bind {
-      val get_environment: CPointer<godot_method_bind>
+      val getEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            "getEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEnvironment" }
         }
-      val set_environment: CPointer<godot_method_bind>
+      val setEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WorldEnvironment".cstr.ptr,
-            "set_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_environment" }
+            "setEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnvironment" }
         }}
   }
 }

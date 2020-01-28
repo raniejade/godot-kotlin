@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptClassConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var baseType: String
+    get() {
+       return getBaseType() 
+    }
+    set(value) {
+      setBaseType(value)
+    }
+
+  var constant: String
+    get() {
+       return getClassConstant() 
+    }
+    set(value) {
+      setClassConstant(value)
+    }
+
   fun getBaseType(): String {
-    val _ret = __method_bind.get_base_type.call(this._handle)
+    val _ret = __method_bind.getBaseType.call(this._handle)
     return _ret.asString()
   }
 
   fun getClassConstant(): String {
-    val _ret = __method_bind.get_class_constant.call(this._handle)
+    val _ret = __method_bind.getClassConstant.call(this._handle)
     return _ret.asString()
   }
 
   fun setBaseType(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_base_type.call(this._handle, _arg, 1)
+    __method_bind.setBaseType.call(this._handle, _arg, 1)
   }
 
   fun setClassConstant(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_class_constant.call(this._handle, _arg, 1)
+    __method_bind.setClassConstant.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class VisualScriptClassConstant(
      * Container for method_bind pointers for VisualScriptClassConstant
      */
     private object __method_bind {
-      val get_base_type: CPointer<godot_method_bind>
+      val getBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-            "get_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
+            "getBaseType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBaseType" }
         }
-      val get_class_constant: CPointer<godot_method_bind>
+      val getClassConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-            "get_class_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_class_constant" }
+            "getClassConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClassConstant" }
         }
-      val set_base_type: CPointer<godot_method_bind>
+      val setBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-            "set_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
+            "setBaseType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBaseType" }
         }
-      val set_class_constant: CPointer<godot_method_bind>
+      val setClassConstant: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptClassConstant".cstr.ptr,
-            "set_class_constant".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_class_constant" }
+            "setClassConstant".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setClassConstant" }
         }}
   }
 }

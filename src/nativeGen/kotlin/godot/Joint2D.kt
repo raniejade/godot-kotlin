@@ -19,44 +19,76 @@ import kotlinx.cinterop.reinterpret
 open class Joint2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var bias: Float
+    get() {
+       return getBias() 
+    }
+    set(value) {
+      setBias(value)
+    }
+
+  var disableCollision: Boolean
+    get() {
+       return getExcludeNodesFromCollision() 
+    }
+    set(value) {
+      setExcludeNodesFromCollision(value)
+    }
+
+  var nodeA: NodePath
+    get() {
+       return getNodeA() 
+    }
+    set(value) {
+      setNodeA(value)
+    }
+
+  var nodeB: NodePath
+    get() {
+       return getNodeB() 
+    }
+    set(value) {
+      setNodeB(value)
+    }
+
   fun getBias(): Float {
-    val _ret = __method_bind.get_bias.call(this._handle)
+    val _ret = __method_bind.getBias.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getExcludeNodesFromCollision(): Boolean {
-    val _ret = __method_bind.get_exclude_nodes_from_collision.call(this._handle)
+    val _ret = __method_bind.getExcludeNodesFromCollision.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getNodeA(): NodePath {
-    val _ret = __method_bind.get_node_a.call(this._handle)
+    val _ret = __method_bind.getNodeA.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getNodeB(): NodePath {
-    val _ret = __method_bind.get_node_b.call(this._handle)
+    val _ret = __method_bind.getNodeB.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun setBias(bias: Float) {
     val _arg = Variant.new(bias)
-    __method_bind.set_bias.call(this._handle, _arg, 1)
+    __method_bind.setBias.call(this._handle, _arg, 1)
   }
 
   fun setExcludeNodesFromCollision(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_exclude_nodes_from_collision.call(this._handle, _arg, 1)
+    __method_bind.setExcludeNodesFromCollision.call(this._handle, _arg, 1)
   }
 
   fun setNodeA(node: NodePath) {
     val _arg = Variant.new(node)
-    __method_bind.set_node_a.call(this._handle, _arg, 1)
+    __method_bind.setNodeA.call(this._handle, _arg, 1)
   }
 
   fun setNodeB(node: NodePath) {
     val _arg = Variant.new(node)
-    __method_bind.set_node_b.call(this._handle, _arg, 1)
+    __method_bind.setNodeB.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -64,53 +96,53 @@ open class Joint2D(
      * Container for method_bind pointers for Joint2D
      */
     private object __method_bind {
-      val get_bias: CPointer<godot_method_bind>
+      val getBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "get_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bias" }
+            "getBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBias" }
         }
-      val get_exclude_nodes_from_collision: CPointer<godot_method_bind>
+      val getExcludeNodesFromCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "get_exclude_nodes_from_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_exclude_nodes_from_collision" }
+            "getExcludeNodesFromCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExcludeNodesFromCollision" }
         }
-      val get_node_a: CPointer<godot_method_bind>
+      val getNodeA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "get_node_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_a" }
+            "getNodeA".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeA" }
         }
-      val get_node_b: CPointer<godot_method_bind>
+      val getNodeB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "get_node_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_b" }
+            "getNodeB".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeB" }
         }
-      val set_bias: CPointer<godot_method_bind>
+      val setBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "set_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bias" }
+            "setBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBias" }
         }
-      val set_exclude_nodes_from_collision: CPointer<godot_method_bind>
+      val setExcludeNodesFromCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "set_exclude_nodes_from_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_exclude_nodes_from_collision" }
+            "setExcludeNodesFromCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExcludeNodesFromCollision" }
         }
-      val set_node_a: CPointer<godot_method_bind>
+      val setNodeA: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "set_node_a".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_a" }
+            "setNodeA".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNodeA" }
         }
-      val set_node_b: CPointer<godot_method_bind>
+      val setNodeB: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Joint2D".cstr.ptr,
-            "set_node_b".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_b" }
+            "setNodeB".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNodeB" }
         }}
   }
 }

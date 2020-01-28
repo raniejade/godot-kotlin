@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class ReferenceRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  var borderColor: Color
+    get() {
+       return getBorderColor() 
+    }
+    set(value) {
+      setBorderColor(value)
+    }
+
   fun getBorderColor(): Color {
-    val _ret = __method_bind.get_border_color.call(this._handle)
+    val _ret = __method_bind.getBorderColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun setBorderColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_border_color.call(this._handle, _arg, 1)
+    __method_bind.setBorderColor.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,19 +49,19 @@ open class ReferenceRect(
      * Container for method_bind pointers for ReferenceRect
      */
     private object __method_bind {
-      val get_border_color: CPointer<godot_method_bind>
+      val getBorderColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "get_border_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_border_color" }
+            "getBorderColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBorderColor" }
         }
-      val set_border_color: CPointer<godot_method_bind>
+      val setBorderColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReferenceRect".cstr.ptr,
-            "set_border_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_border_color" }
+            "setBorderColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBorderColor" }
         }}
   }
 }

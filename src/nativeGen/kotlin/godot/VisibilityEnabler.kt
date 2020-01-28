@@ -20,7 +20,7 @@ open class VisibilityEnabler(
 ) : VisibilityNotifier(_handle) {
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
-    val _ret = __method_bind.is_enabler_enabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isEnablerEnabled.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -28,7 +28,7 @@ open class VisibilityEnabler(
     val _args = VariantArray.new()
     _args.append(enabler)
     _args.append(enabled)
-    __method_bind.set_enabler.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setEnabler.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Enabler(
@@ -73,19 +73,19 @@ open class VisibilityEnabler(
      * Container for method_bind pointers for VisibilityEnabler
      */
     private object __method_bind {
-      val is_enabler_enabled: CPointer<godot_method_bind>
+      val isEnablerEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
-            "is_enabler_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_enabler_enabled" }
+            "isEnablerEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isEnablerEnabled" }
         }
-      val set_enabler: CPointer<godot_method_bind>
+      val setEnabler: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisibilityEnabler".cstr.ptr,
-            "set_enabler".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enabler" }
+            "setEnabler".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnabler" }
         }}
   }
 }

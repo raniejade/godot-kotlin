@@ -20,17 +20,17 @@ open class AnimationNodeStateMachinePlayback(
   _handle: COpaquePointer
 ) : Resource(_handle) {
   fun getCurrentNode(): String {
-    val _ret = __method_bind.get_current_node.call(this._handle)
+    val _ret = __method_bind.getCurrentNode.call(this._handle)
     return _ret.asString()
   }
 
   fun getTravelPath(): PoolStringArray {
-    val _ret = __method_bind.get_travel_path.call(this._handle)
+    val _ret = __method_bind.getTravelPath.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun isPlaying(): Boolean {
-    val _ret = __method_bind.is_playing.call(this._handle)
+    val _ret = __method_bind.isPlaying.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -64,26 +64,26 @@ open class AnimationNodeStateMachinePlayback(
      * Container for method_bind pointers for AnimationNodeStateMachinePlayback
      */
     private object __method_bind {
-      val get_current_node: CPointer<godot_method_bind>
+      val getCurrentNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachinePlayback".cstr.ptr,
-            "get_current_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_node" }
+            "getCurrentNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentNode" }
         }
-      val get_travel_path: CPointer<godot_method_bind>
+      val getTravelPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachinePlayback".cstr.ptr,
-            "get_travel_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_travel_path" }
+            "getTravelPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTravelPath" }
         }
-      val is_playing: CPointer<godot_method_bind>
+      val isPlaying: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimationNodeStateMachinePlayback".cstr.ptr,
-            "is_playing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_playing" }
+            "isPlaying".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPlaying" }
         }
       val start: CPointer<godot_method_bind>
         get() = memScoped {

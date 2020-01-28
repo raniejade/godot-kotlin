@@ -18,50 +18,66 @@ import kotlinx.cinterop.reinterpret
 open class AnimatedTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var fps: Float
+    get() {
+       return getFps() 
+    }
+    set(value) {
+      setFps(value)
+    }
+
+  var frames: Int
+    get() {
+       return getFrames() 
+    }
+    set(value) {
+      setFrames(value)
+    }
+
   fun getFps(): Float {
-    val _ret = __method_bind.get_fps.call(this._handle)
+    val _ret = __method_bind.getFps.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFrameDelay(frame: Int): Float {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.get_frame_delay.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFrameDelay.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getFrameTexture(frame: Int): Texture {
     val _arg = Variant.new(frame)
-    val _ret = __method_bind.get_frame_texture.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFrameTexture.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun getFrames(): Int {
-    val _ret = __method_bind.get_frames.call(this._handle)
+    val _ret = __method_bind.getFrames.call(this._handle)
     return _ret.asInt()
   }
 
   fun setFps(fps: Float) {
     val _arg = Variant.new(fps)
-    __method_bind.set_fps.call(this._handle, _arg, 1)
+    __method_bind.setFps.call(this._handle, _arg, 1)
   }
 
   fun setFrameDelay(frame: Int, delay: Float) {
     val _args = VariantArray.new()
     _args.append(frame)
     _args.append(delay)
-    __method_bind.set_frame_delay.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFrameDelay.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFrameTexture(frame: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(frame)
     _args.append(texture)
-    __method_bind.set_frame_texture.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFrameTexture.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFrames(frames: Int) {
     val _arg = Variant.new(frames)
-    __method_bind.set_frames.call(this._handle, _arg, 1)
+    __method_bind.setFrames.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -81,61 +97,61 @@ open class AnimatedTexture(
      * Container for method_bind pointers for AnimatedTexture
      */
     private object __method_bind {
-      val get_fps: CPointer<godot_method_bind>
+      val getFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "get_fps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fps" }
+            "getFps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFps" }
         }
-      val get_frame_delay: CPointer<godot_method_bind>
+      val getFrameDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "get_frame_delay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame_delay" }
+            "getFrameDelay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrameDelay" }
         }
-      val get_frame_texture: CPointer<godot_method_bind>
+      val getFrameTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "get_frame_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frame_texture" }
+            "getFrameTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrameTexture" }
         }
-      val get_frames: CPointer<godot_method_bind>
+      val getFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "get_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frames" }
+            "getFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrames" }
         }
-      val set_fps: CPointer<godot_method_bind>
+      val setFps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "set_fps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fps" }
+            "setFps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFps" }
         }
-      val set_frame_delay: CPointer<godot_method_bind>
+      val setFrameDelay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "set_frame_delay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame_delay" }
+            "setFrameDelay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrameDelay" }
         }
-      val set_frame_texture: CPointer<godot_method_bind>
+      val setFrameTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "set_frame_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frame_texture" }
+            "setFrameTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrameTexture" }
         }
-      val set_frames: CPointer<godot_method_bind>
+      val setFrames: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AnimatedTexture".cstr.ptr,
-            "set_frames".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frames" }
+            "setFrames".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrames" }
         }}
   }
 }

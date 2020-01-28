@@ -16,14 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class Path2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var curve: Curve2D
+    get() {
+       return getCurve() 
+    }
+    set(value) {
+      setCurve(value)
+    }
+
   fun getCurve(): Curve2D {
-    val _ret = __method_bind.get_curve.call(this._handle)
+    val _ret = __method_bind.getCurve.call(this._handle)
     return _ret.asObject(::Curve2D)!!
   }
 
   fun setCurve(curve: Curve2D) {
     val _arg = Variant.new(curve)
-    __method_bind.set_curve.call(this._handle, _arg, 1)
+    __method_bind.setCurve.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -40,17 +48,17 @@ open class Path2D(
      * Container for method_bind pointers for Path2D
      */
     private object __method_bind {
-      val get_curve: CPointer<godot_method_bind>
+      val getCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path2D".cstr.ptr,
-            "get_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_curve" }
+            "getCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurve" }
         }
-      val set_curve: CPointer<godot_method_bind>
+      val setCurve: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Path2D".cstr.ptr,
-            "set_curve".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_curve" }
+            "setCurve".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCurve" }
         }}
   }
 }

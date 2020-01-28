@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class ConcavePolygonShape2D(
   _handle: COpaquePointer
 ) : Shape2D(_handle) {
+  var segments: PoolVector2Array
+    get() {
+       return getSegments() 
+    }
+    set(value) {
+      setSegments(value)
+    }
+
   fun getSegments(): PoolVector2Array {
-    val _ret = __method_bind.get_segments.call(this._handle)
+    val _ret = __method_bind.getSegments.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun setSegments(segments: PoolVector2Array) {
     val _arg = Variant.new(segments)
-    __method_bind.set_segments.call(this._handle, _arg, 1)
+    __method_bind.setSegments.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class ConcavePolygonShape2D(
      * Container for method_bind pointers for ConcavePolygonShape2D
      */
     private object __method_bind {
-      val get_segments: CPointer<godot_method_bind>
+      val getSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
-            "get_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_segments" }
+            "getSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSegments" }
         }
-      val set_segments: CPointer<godot_method_bind>
+      val setSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ConcavePolygonShape2D".cstr.ptr,
-            "set_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_segments" }
+            "setSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSegments" }
         }}
   }
 }

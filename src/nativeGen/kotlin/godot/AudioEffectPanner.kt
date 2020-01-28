@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectPanner(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  var pan: Float
+    get() {
+       return getPan() 
+    }
+    set(value) {
+      setPan(value)
+    }
+
   fun getPan(): Float {
-    val _ret = __method_bind.get_pan.call(this._handle)
+    val _ret = __method_bind.getPan.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setPan(cpanume: Float) {
     val _arg = Variant.new(cpanume)
-    __method_bind.set_pan.call(this._handle, _arg, 1)
+    __method_bind.setPan.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class AudioEffectPanner(
      * Container for method_bind pointers for AudioEffectPanner
      */
     private object __method_bind {
-      val get_pan: CPointer<godot_method_bind>
+      val getPan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
-            "get_pan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_pan" }
+            "getPan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPan" }
         }
-      val set_pan: CPointer<godot_method_bind>
+      val setPan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectPanner".cstr.ptr,
-            "set_pan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_pan" }
+            "setPan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPan" }
         }}
   }
 }

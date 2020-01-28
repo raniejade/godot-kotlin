@@ -20,6 +20,86 @@ import kotlinx.cinterop.reinterpret
 open class GIProbe(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  var bias: Float
+    get() {
+       return getBias() 
+    }
+    set(value) {
+      setBias(value)
+    }
+
+  var compress: Boolean
+    get() {
+       return isCompressed() 
+    }
+    set(value) {
+      setCompress(value)
+    }
+
+  var data: GIProbeData
+    get() {
+       return getProbeData() 
+    }
+    set(value) {
+      setProbeData(value)
+    }
+
+  var dynamicRange: Int
+    get() {
+       return getDynamicRange() 
+    }
+    set(value) {
+      setDynamicRange(value)
+    }
+
+  var energy: Float
+    get() {
+       return getEnergy() 
+    }
+    set(value) {
+      setEnergy(value)
+    }
+
+  var extents: Vector3
+    get() {
+       return getExtents() 
+    }
+    set(value) {
+      setExtents(value)
+    }
+
+  var interior: Boolean
+    get() {
+       return isInterior() 
+    }
+    set(value) {
+      setInterior(value)
+    }
+
+  var normalBias: Float
+    get() {
+       return getNormalBias() 
+    }
+    set(value) {
+      setNormalBias(value)
+    }
+
+  var propagation: Float
+    get() {
+       return getPropagation() 
+    }
+    set(value) {
+      setPropagation(value)
+    }
+
+  var subdiv: Int
+    get() {
+       return GIProbe.Subdiv.from(getSubdiv()) 
+    }
+    set(value) {
+      setSubdiv(GIProbe.Subdiv.from(value))
+    }
+
   fun bake(fromNode: Node, createVisualDebug: Boolean) {
     val _args = VariantArray.new()
     _args.append(fromNode)
@@ -28,107 +108,107 @@ open class GIProbe(
   }
 
   fun debugBake() {
-    __method_bind.debug_bake.call(this._handle)
+    __method_bind.debugBake.call(this._handle)
   }
 
   fun getBias(): Float {
-    val _ret = __method_bind.get_bias.call(this._handle)
+    val _ret = __method_bind.getBias.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDynamicRange(): Int {
-    val _ret = __method_bind.get_dynamic_range.call(this._handle)
+    val _ret = __method_bind.getDynamicRange.call(this._handle)
     return _ret.asInt()
   }
 
   fun getEnergy(): Float {
-    val _ret = __method_bind.get_energy.call(this._handle)
+    val _ret = __method_bind.getEnergy.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.get_extents.call(this._handle)
+    val _ret = __method_bind.getExtents.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getNormalBias(): Float {
-    val _ret = __method_bind.get_normal_bias.call(this._handle)
+    val _ret = __method_bind.getNormalBias.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getProbeData(): GIProbeData {
-    val _ret = __method_bind.get_probe_data.call(this._handle)
+    val _ret = __method_bind.getProbeData.call(this._handle)
     return _ret.asObject(::GIProbeData)!!
   }
 
   fun getPropagation(): Float {
-    val _ret = __method_bind.get_propagation.call(this._handle)
+    val _ret = __method_bind.getPropagation.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSubdiv(): Subdiv {
-    val _ret = __method_bind.get_subdiv.call(this._handle)
+    val _ret = __method_bind.getSubdiv.call(this._handle)
     return GIProbe.Subdiv.from(_ret.asInt())
   }
 
   fun isCompressed(): Boolean {
-    val _ret = __method_bind.is_compressed.call(this._handle)
+    val _ret = __method_bind.isCompressed.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isInterior(): Boolean {
-    val _ret = __method_bind.is_interior.call(this._handle)
+    val _ret = __method_bind.isInterior.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setBias(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.set_bias.call(this._handle, _arg, 1)
+    __method_bind.setBias.call(this._handle, _arg, 1)
   }
 
   fun setCompress(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_compress.call(this._handle, _arg, 1)
+    __method_bind.setCompress.call(this._handle, _arg, 1)
   }
 
   fun setDynamicRange(max: Int) {
     val _arg = Variant.new(max)
-    __method_bind.set_dynamic_range.call(this._handle, _arg, 1)
+    __method_bind.setDynamicRange.call(this._handle, _arg, 1)
   }
 
   fun setEnergy(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.set_energy.call(this._handle, _arg, 1)
+    __method_bind.setEnergy.call(this._handle, _arg, 1)
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.set_extents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, _arg, 1)
   }
 
   fun setInterior(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_interior.call(this._handle, _arg, 1)
+    __method_bind.setInterior.call(this._handle, _arg, 1)
   }
 
   fun setNormalBias(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.set_normal_bias.call(this._handle, _arg, 1)
+    __method_bind.setNormalBias.call(this._handle, _arg, 1)
   }
 
   fun setProbeData(data: GIProbeData) {
     val _arg = Variant.new(data)
-    __method_bind.set_probe_data.call(this._handle, _arg, 1)
+    __method_bind.setProbeData.call(this._handle, _arg, 1)
   }
 
   fun setPropagation(max: Float) {
     val _arg = Variant.new(max)
-    __method_bind.set_propagation.call(this._handle, _arg, 1)
+    __method_bind.setPropagation.call(this._handle, _arg, 1)
   }
 
   fun setSubdiv(subdiv: Int) {
     val _arg = Variant.new(subdiv)
-    __method_bind.set_subdiv.call(this._handle, _arg, 1)
+    __method_bind.setSubdiv.call(this._handle, _arg, 1)
   }
 
   enum class Subdiv(
@@ -186,131 +266,131 @@ open class GIProbe(
             "bake".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method bake" }
         }
-      val debug_bake: CPointer<godot_method_bind>
+      val debugBake: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "debug_bake".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method debug_bake" }
+            "debugBake".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method debugBake" }
         }
-      val get_bias: CPointer<godot_method_bind>
+      val getBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bias" }
+            "getBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBias" }
         }
-      val get_dynamic_range: CPointer<godot_method_bind>
+      val getDynamicRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_dynamic_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dynamic_range" }
+            "getDynamicRange".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDynamicRange" }
         }
-      val get_energy: CPointer<godot_method_bind>
+      val getEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_energy" }
+            "getEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEnergy" }
         }
-      val get_extents: CPointer<godot_method_bind>
+      val getExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_extents" }
+            "getExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExtents" }
         }
-      val get_normal_bias: CPointer<godot_method_bind>
+      val getNormalBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_normal_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal_bias" }
+            "getNormalBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNormalBias" }
         }
-      val get_probe_data: CPointer<godot_method_bind>
+      val getProbeData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_probe_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_probe_data" }
+            "getProbeData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProbeData" }
         }
-      val get_propagation: CPointer<godot_method_bind>
+      val getPropagation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_propagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_propagation" }
+            "getPropagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPropagation" }
         }
-      val get_subdiv: CPointer<godot_method_bind>
+      val getSubdiv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "get_subdiv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_subdiv" }
+            "getSubdiv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSubdiv" }
         }
-      val is_compressed: CPointer<godot_method_bind>
+      val isCompressed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "is_compressed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_compressed" }
+            "isCompressed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCompressed" }
         }
-      val is_interior: CPointer<godot_method_bind>
+      val isInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "is_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_interior" }
+            "isInterior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isInterior" }
         }
-      val set_bias: CPointer<godot_method_bind>
+      val setBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bias" }
+            "setBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBias" }
         }
-      val set_compress: CPointer<godot_method_bind>
+      val setCompress: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_compress".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_compress" }
+            "setCompress".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCompress" }
         }
-      val set_dynamic_range: CPointer<godot_method_bind>
+      val setDynamicRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_dynamic_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_dynamic_range" }
+            "setDynamicRange".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDynamicRange" }
         }
-      val set_energy: CPointer<godot_method_bind>
+      val setEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_energy" }
+            "setEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnergy" }
         }
-      val set_extents: CPointer<godot_method_bind>
+      val setExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_extents" }
+            "setExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExtents" }
         }
-      val set_interior: CPointer<godot_method_bind>
+      val setInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interior" }
+            "setInterior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInterior" }
         }
-      val set_normal_bias: CPointer<godot_method_bind>
+      val setNormalBias: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_normal_bias".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal_bias" }
+            "setNormalBias".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNormalBias" }
         }
-      val set_probe_data: CPointer<godot_method_bind>
+      val setProbeData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_probe_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_probe_data" }
+            "setProbeData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setProbeData" }
         }
-      val set_propagation: CPointer<godot_method_bind>
+      val setPropagation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_propagation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_propagation" }
+            "setPropagation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPropagation" }
         }
-      val set_subdiv: CPointer<godot_method_bind>
+      val setSubdiv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GIProbe".cstr.ptr,
-            "set_subdiv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_subdiv" }
+            "setSubdiv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSubdiv" }
         }}
   }
 }

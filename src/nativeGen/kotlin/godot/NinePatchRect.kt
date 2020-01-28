@@ -19,67 +19,107 @@ import kotlinx.cinterop.reinterpret
 open class NinePatchRect(
   _handle: COpaquePointer
 ) : Control(_handle) {
+  var axisStretchHorizontal: Int
+    get() {
+       return NinePatchRect.AxisStretchMode.from(getHAxisStretchMode()) 
+    }
+    set(value) {
+      setHAxisStretchMode(NinePatchRect.AxisStretchMode.from(value))
+    }
+
+  var axisStretchVertical: Int
+    get() {
+       return NinePatchRect.AxisStretchMode.from(getVAxisStretchMode()) 
+    }
+    set(value) {
+      setVAxisStretchMode(NinePatchRect.AxisStretchMode.from(value))
+    }
+
+  var drawCenter: Boolean
+    get() {
+       return isDrawCenterEnabled() 
+    }
+    set(value) {
+      setDrawCenter(value)
+    }
+
+  var regionRect: Rect2
+    get() {
+       return getRegionRect() 
+    }
+    set(value) {
+      setRegionRect(value)
+    }
+
+  var texture: Texture
+    get() {
+       return getTexture() 
+    }
+    set(value) {
+      setTexture(value)
+    }
+
   fun getHAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_h_axis_stretch_mode.call(this._handle)
+    val _ret = __method_bind.getHAxisStretchMode.call(this._handle)
     return NinePatchRect.AxisStretchMode.from(_ret.asInt())
   }
 
   fun getPatchMargin(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_patch_margin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPatchMargin.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.get_region_rect.call(this._handle)
+    val _ret = __method_bind.getRegionRect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this._handle)
+    val _ret = __method_bind.getTexture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_v_axis_stretch_mode.call(this._handle)
+    val _ret = __method_bind.getVAxisStretchMode.call(this._handle)
     return NinePatchRect.AxisStretchMode.from(_ret.asInt())
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_center_enabled.call(this._handle)
+    val _ret = __method_bind.isDrawCenterEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
     val _arg = Variant.new(drawCenter)
-    __method_bind.set_draw_center.call(this._handle, _arg, 1)
+    __method_bind.setDrawCenter.call(this._handle, _arg, 1)
   }
 
   fun setHAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_h_axis_stretch_mode.call(this._handle, _arg, 1)
+    __method_bind.setHAxisStretchMode.call(this._handle, _arg, 1)
   }
 
   fun setPatchMargin(margin: Int, value: Int) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(value)
-    __method_bind.set_patch_margin.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPatchMargin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setRegionRect(rect: Rect2) {
     val _arg = Variant.new(rect)
-    __method_bind.set_region_rect.call(this._handle, _arg, 1)
+    __method_bind.setRegionRect.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, _arg, 1)
   }
 
   fun setVAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_v_axis_stretch_mode.call(this._handle, _arg, 1)
+    __method_bind.setVAxisStretchMode.call(this._handle, _arg, 1)
   }
 
   enum class AxisStretchMode(
@@ -123,89 +163,89 @@ open class NinePatchRect(
      * Container for method_bind pointers for NinePatchRect
      */
     private object __method_bind {
-      val get_h_axis_stretch_mode: CPointer<godot_method_bind>
+      val getHAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "get_h_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_axis_stretch_mode" }
+            "getHAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHAxisStretchMode" }
         }
-      val get_patch_margin: CPointer<godot_method_bind>
+      val getPatchMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "get_patch_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_patch_margin" }
+            "getPatchMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPatchMargin" }
         }
-      val get_region_rect: CPointer<godot_method_bind>
+      val getRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "get_region_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_region_rect" }
+            "getRegionRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRegionRect" }
         }
-      val get_texture: CPointer<godot_method_bind>
+      val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            "getTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTexture" }
         }
-      val get_v_axis_stretch_mode: CPointer<godot_method_bind>
+      val getVAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "get_v_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_axis_stretch_mode" }
+            "getVAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVAxisStretchMode" }
         }
-      val is_draw_center_enabled: CPointer<godot_method_bind>
+      val isDrawCenterEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "is_draw_center_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_draw_center_enabled" }
+            "isDrawCenterEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDrawCenterEnabled" }
         }
-      val set_draw_center: CPointer<godot_method_bind>
+      val setDrawCenter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "set_draw_center".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_center" }
+            "setDrawCenter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawCenter" }
         }
-      val set_h_axis_stretch_mode: CPointer<godot_method_bind>
+      val setHAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "set_h_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_axis_stretch_mode" }
+            "setHAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHAxisStretchMode" }
         }
-      val set_patch_margin: CPointer<godot_method_bind>
+      val setPatchMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "set_patch_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_patch_margin" }
+            "setPatchMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPatchMargin" }
         }
-      val set_region_rect: CPointer<godot_method_bind>
+      val setRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "set_region_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_region_rect" }
+            "setRegionRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRegionRect" }
         }
-      val set_texture: CPointer<godot_method_bind>
+      val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            "setTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTexture" }
         }
-      val set_v_axis_stretch_mode: CPointer<godot_method_bind>
+      val setVAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("NinePatchRect".cstr.ptr,
-            "set_v_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_axis_stretch_mode" }
+            "setVAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVAxisStretchMode" }
         }}
   }
 }

@@ -18,39 +18,47 @@ import kotlinx.cinterop.reinterpret
 open class ShaderMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  var shader: Shader
+    get() {
+       return getShader() 
+    }
+    set(value) {
+      setShader(value)
+    }
+
   fun getShader(): Shader {
-    val _ret = __method_bind.get_shader.call(this._handle)
+    val _ret = __method_bind.getShader.call(this._handle)
     return _ret.asObject(::Shader)!!
   }
 
   fun getShaderParam(param: String): Variant {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_shader_param.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getShaderParam.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_can_revert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyCanRevert.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.property_get_revert.call(this._handle, _arg, 1)
+    val _ret = __method_bind.propertyGetRevert.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun setShader(shader: Shader) {
     val _arg = Variant.new(shader)
-    __method_bind.set_shader.call(this._handle, _arg, 1)
+    __method_bind.setShader.call(this._handle, _arg, 1)
   }
 
   fun setShaderParam(param: String, value: Variant) {
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_shader_param.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setShaderParam.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -68,47 +76,47 @@ open class ShaderMaterial(
      * Container for method_bind pointers for ShaderMaterial
      */
     private object __method_bind {
-      val get_shader: CPointer<godot_method_bind>
+      val getShader: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-            "get_shader".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shader" }
+            "getShader".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShader" }
         }
-      val get_shader_param: CPointer<godot_method_bind>
+      val getShaderParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-            "get_shader_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shader_param" }
+            "getShaderParam".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShaderParam" }
         }
-      val property_can_revert: CPointer<godot_method_bind>
+      val propertyCanRevert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-            "property_can_revert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method property_can_revert" }
+            "propertyCanRevert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method propertyCanRevert" }
         }
-      val property_get_revert: CPointer<godot_method_bind>
+      val propertyGetRevert: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-            "property_get_revert".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method property_get_revert" }
+            "propertyGetRevert".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method propertyGetRevert" }
         }
-      val set_shader: CPointer<godot_method_bind>
+      val setShader: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-            "set_shader".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shader" }
+            "setShader".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShader" }
         }
-      val set_shader_param: CPointer<godot_method_bind>
+      val setShaderParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShaderMaterial".cstr.ptr,
-            "set_shader_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shader_param" }
+            "setShaderParam".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShaderParam" }
         }}
   }
 }

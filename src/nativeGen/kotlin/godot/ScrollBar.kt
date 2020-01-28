@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class ScrollBar(
   _handle: COpaquePointer
 ) : Range(_handle) {
+  var customStep: Float
+    get() {
+       return getCustomStep() 
+    }
+    set(value) {
+      setCustomStep(value)
+    }
+
   fun getCustomStep(): Float {
-    val _ret = __method_bind.get_custom_step.call(this._handle)
+    val _ret = __method_bind.getCustomStep.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setCustomStep(step: Float) {
     val _arg = Variant.new(step)
-    __method_bind.set_custom_step.call(this._handle, _arg, 1)
+    __method_bind.setCustomStep.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -32,17 +40,17 @@ open class ScrollBar(
      * Container for method_bind pointers for ScrollBar
      */
     private object __method_bind {
-      val get_custom_step: CPointer<godot_method_bind>
+      val getCustomStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollBar".cstr.ptr,
-            "get_custom_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_custom_step" }
+            "getCustomStep".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCustomStep" }
         }
-      val set_custom_step: CPointer<godot_method_bind>
+      val setCustomStep: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ScrollBar".cstr.ptr,
-            "set_custom_step".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_custom_step" }
+            "setCustomStep".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCustomStep" }
         }}
   }
 }

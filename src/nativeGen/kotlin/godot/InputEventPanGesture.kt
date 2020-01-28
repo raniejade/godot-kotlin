@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class InputEventPanGesture(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
+  var delta: Vector2
+    get() {
+       return getDelta() 
+    }
+    set(value) {
+      setDelta(value)
+    }
+
   fun getDelta(): Vector2 {
-    val _ret = __method_bind.get_delta.call(this._handle)
+    val _ret = __method_bind.getDelta.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setDelta(delta: Vector2) {
     val _arg = Variant.new(delta)
-    __method_bind.set_delta.call(this._handle, _arg, 1)
+    __method_bind.setDelta.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class InputEventPanGesture(
      * Container for method_bind pointers for InputEventPanGesture
      */
     private object __method_bind {
-      val get_delta: CPointer<godot_method_bind>
+      val getDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
-            "get_delta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_delta" }
+            "getDelta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDelta" }
         }
-      val set_delta: CPointer<godot_method_bind>
+      val setDelta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventPanGesture".cstr.ptr,
-            "set_delta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_delta" }
+            "setDelta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDelta" }
         }}
   }
 }

@@ -18,54 +18,94 @@ import kotlinx.cinterop.reinterpret
 open class StaticBody2D(
   _handle: COpaquePointer
 ) : PhysicsBody2D(_handle) {
+  var bounce: Float
+    get() {
+       return getBounce() 
+    }
+    set(value) {
+      setBounce(value)
+    }
+
+  var constantAngularVelocity: Float
+    get() {
+       return getConstantAngularVelocity() 
+    }
+    set(value) {
+      setConstantAngularVelocity(value)
+    }
+
+  var constantLinearVelocity: Vector2
+    get() {
+       return getConstantLinearVelocity() 
+    }
+    set(value) {
+      setConstantLinearVelocity(value)
+    }
+
+  var friction: Float
+    get() {
+       return getFriction() 
+    }
+    set(value) {
+      setFriction(value)
+    }
+
+  var physicsMaterialOverride: PhysicsMaterial
+    get() {
+       return getPhysicsMaterialOverride() 
+    }
+    set(value) {
+      setPhysicsMaterialOverride(value)
+    }
+
   fun getBounce(): Float {
-    val _ret = __method_bind.get_bounce.call(this._handle)
+    val _ret = __method_bind.getBounce.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getConstantAngularVelocity(): Float {
-    val _ret = __method_bind.get_constant_angular_velocity.call(this._handle)
+    val _ret = __method_bind.getConstantAngularVelocity.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getConstantLinearVelocity(): Vector2 {
-    val _ret = __method_bind.get_constant_linear_velocity.call(this._handle)
+    val _ret = __method_bind.getConstantLinearVelocity.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.get_friction.call(this._handle)
+    val _ret = __method_bind.getFriction.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPhysicsMaterialOverride(): PhysicsMaterial {
-    val _ret = __method_bind.get_physics_material_override.call(this._handle)
+    val _ret = __method_bind.getPhysicsMaterialOverride.call(this._handle)
     return _ret.asObject(::PhysicsMaterial)!!
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.set_bounce.call(this._handle, _arg, 1)
+    __method_bind.setBounce.call(this._handle, _arg, 1)
   }
 
   fun setConstantAngularVelocity(vel: Float) {
     val _arg = Variant.new(vel)
-    __method_bind.set_constant_angular_velocity.call(this._handle, _arg, 1)
+    __method_bind.setConstantAngularVelocity.call(this._handle, _arg, 1)
   }
 
   fun setConstantLinearVelocity(vel: Vector2) {
     val _arg = Variant.new(vel)
-    __method_bind.set_constant_linear_velocity.call(this._handle, _arg, 1)
+    __method_bind.setConstantLinearVelocity.call(this._handle, _arg, 1)
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.set_friction.call(this._handle, _arg, 1)
+    __method_bind.setFriction.call(this._handle, _arg, 1)
   }
 
   fun setPhysicsMaterialOverride(physicsMaterialOverride: PhysicsMaterial) {
     val _arg = Variant.new(physicsMaterialOverride)
-    __method_bind.set_physics_material_override.call(this._handle, _arg, 1)
+    __method_bind.setPhysicsMaterialOverride.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -82,75 +122,75 @@ open class StaticBody2D(
      * Container for method_bind pointers for StaticBody2D
      */
     private object __method_bind {
-      val get_bounce: CPointer<godot_method_bind>
+      val getBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "get_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
+            "getBounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBounce" }
         }
-      val get_constant_angular_velocity: CPointer<godot_method_bind>
+      val getConstantAngularVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "get_constant_angular_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_angular_velocity" }
+            "getConstantAngularVelocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstantAngularVelocity" }
         }
-      val get_constant_linear_velocity: CPointer<godot_method_bind>
+      val getConstantLinearVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "get_constant_linear_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_linear_velocity" }
+            "getConstantLinearVelocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstantLinearVelocity" }
         }
-      val get_friction: CPointer<godot_method_bind>
+      val getFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "get_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_friction" }
+            "getFriction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFriction" }
         }
-      val get_physics_material_override: CPointer<godot_method_bind>
+      val getPhysicsMaterialOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "get_physics_material_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_physics_material_override" }
+            "getPhysicsMaterialOverride".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPhysicsMaterialOverride" }
         }
-      val set_bounce: CPointer<godot_method_bind>
+      val setBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "set_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
+            "setBounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBounce" }
         }
-      val set_constant_angular_velocity: CPointer<godot_method_bind>
+      val setConstantAngularVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "set_constant_angular_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant_angular_velocity" }
+            "setConstantAngularVelocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setConstantAngularVelocity" }
         }
-      val set_constant_linear_velocity: CPointer<godot_method_bind>
+      val setConstantLinearVelocity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "set_constant_linear_velocity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant_linear_velocity" }
+            "setConstantLinearVelocity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setConstantLinearVelocity" }
         }
-      val set_friction: CPointer<godot_method_bind>
+      val setFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "set_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_friction" }
+            "setFriction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFriction" }
         }
-      val set_physics_material_override: CPointer<godot_method_bind>
+      val setPhysicsMaterialOverride: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StaticBody2D".cstr.ptr,
-            "set_physics_material_override".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_physics_material_override" }
+            "setPhysicsMaterialOverride".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPhysicsMaterialOverride" }
         }}
   }
 }

@@ -27,6 +27,70 @@ import kotlinx.cinterop.reinterpret
 open class CanvasItem(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  var lightMask: Int
+    get() {
+       return getLightMask() 
+    }
+    set(value) {
+      setLightMask(value)
+    }
+
+  var material: `ShaderMaterial,CanvasItemMaterial`
+    get() {
+       return getMaterial() 
+    }
+    set(value) {
+      setMaterial(value)
+    }
+
+  var modulate: Color
+    get() {
+       return getModulate() 
+    }
+    set(value) {
+      setModulate(value)
+    }
+
+  var selfModulate: Color
+    get() {
+       return getSelfModulate() 
+    }
+    set(value) {
+      setSelfModulate(value)
+    }
+
+  var showBehindParent: Boolean
+    get() {
+       return isDrawBehindParentEnabled() 
+    }
+    set(value) {
+      setDrawBehindParent(value)
+    }
+
+  var showOnTop: Boolean
+    get() {
+       return _isOnTop() 
+    }
+    set(value) {
+      _setOnTop(value)
+    }
+
+  var useParentMaterial: Boolean
+    get() {
+       return getUseParentMaterial() 
+    }
+    set(value) {
+      setUseParentMaterial(value)
+    }
+
+  var visible: Boolean
+    get() {
+       return isVisible() 
+    }
+    set(value) {
+      setVisible(value)
+    }
+
   fun drawChar(
     font: Font,
     position: Vector2,
@@ -40,7 +104,7 @@ open class CanvasItem(
     _args.append(char)
     _args.append(next)
     _args.append(modulate)
-    val _ret = __method_bind.draw_char.call(this._handle, _args.toVariant(), 5)
+    val _ret = __method_bind.drawChar.call(this._handle, _args.toVariant(), 5)
     return _ret.asFloat()
   }
 
@@ -53,7 +117,7 @@ open class CanvasItem(
     _args.append(position)
     _args.append(radius)
     _args.append(color)
-    __method_bind.draw_circle.call(this._handle, _args.toVariant(), 3)
+    __method_bind.drawCircle.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawColoredPolygon(
@@ -71,7 +135,7 @@ open class CanvasItem(
     _args.append(texture)
     _args.append(normalMap)
     _args.append(antialiased)
-    __method_bind.draw_colored_polygon.call(this._handle, _args.toVariant(), 6)
+    __method_bind.drawColoredPolygon.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawLine(
@@ -87,7 +151,7 @@ open class CanvasItem(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_line.call(this._handle, _args.toVariant(), 5)
+    __method_bind.drawLine.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawMesh(
@@ -103,7 +167,7 @@ open class CanvasItem(
     _args.append(normalMap)
     _args.append(transform)
     _args.append(modulate)
-    __method_bind.draw_mesh.call(this._handle, _args.toVariant(), 5)
+    __method_bind.drawMesh.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawMultiline(
@@ -117,7 +181,7 @@ open class CanvasItem(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_multiline.call(this._handle, _args.toVariant(), 4)
+    __method_bind.drawMultiline.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawMultilineColors(
@@ -131,7 +195,7 @@ open class CanvasItem(
     _args.append(colors)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_multiline_colors.call(this._handle, _args.toVariant(), 4)
+    __method_bind.drawMultilineColors.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawMultimesh(
@@ -143,7 +207,7 @@ open class CanvasItem(
     _args.append(multimesh)
     _args.append(texture)
     _args.append(normalMap)
-    __method_bind.draw_multimesh.call(this._handle, _args.toVariant(), 3)
+    __method_bind.drawMultimesh.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawPolygon(
@@ -161,7 +225,7 @@ open class CanvasItem(
     _args.append(texture)
     _args.append(normalMap)
     _args.append(antialiased)
-    __method_bind.draw_polygon.call(this._handle, _args.toVariant(), 6)
+    __method_bind.drawPolygon.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawPolyline(
@@ -175,7 +239,7 @@ open class CanvasItem(
     _args.append(color)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_polyline.call(this._handle, _args.toVariant(), 4)
+    __method_bind.drawPolyline.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawPolylineColors(
@@ -189,7 +253,7 @@ open class CanvasItem(
     _args.append(colors)
     _args.append(width)
     _args.append(antialiased)
-    __method_bind.draw_polyline_colors.call(this._handle, _args.toVariant(), 4)
+    __method_bind.drawPolylineColors.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawPrimitive(
@@ -207,7 +271,7 @@ open class CanvasItem(
     _args.append(texture)
     _args.append(width)
     _args.append(normalMap)
-    __method_bind.draw_primitive.call(this._handle, _args.toVariant(), 6)
+    __method_bind.drawPrimitive.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawRect(
@@ -219,7 +283,7 @@ open class CanvasItem(
     _args.append(rect)
     _args.append(color)
     _args.append(filled)
-    __method_bind.draw_rect.call(this._handle, _args.toVariant(), 3)
+    __method_bind.drawRect.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawSetTransform(
@@ -231,12 +295,12 @@ open class CanvasItem(
     _args.append(position)
     _args.append(rotation)
     _args.append(scale)
-    __method_bind.draw_set_transform.call(this._handle, _args.toVariant(), 3)
+    __method_bind.drawSetTransform.call(this._handle, _args.toVariant(), 3)
   }
 
   fun drawSetTransformMatrix(xform: Transform2D) {
     val _arg = Variant.new(xform)
-    __method_bind.draw_set_transform_matrix.call(this._handle, _arg, 1)
+    __method_bind.drawSetTransformMatrix.call(this._handle, _arg, 1)
   }
 
   fun drawString(
@@ -252,14 +316,14 @@ open class CanvasItem(
     _args.append(text)
     _args.append(modulate)
     _args.append(clipW)
-    __method_bind.draw_string.call(this._handle, _args.toVariant(), 5)
+    __method_bind.drawString.call(this._handle, _args.toVariant(), 5)
   }
 
   fun drawStyleBox(styleBox: StyleBox, rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(styleBox)
     _args.append(rect)
-    __method_bind.draw_style_box.call(this._handle, _args.toVariant(), 2)
+    __method_bind.drawStyleBox.call(this._handle, _args.toVariant(), 2)
   }
 
   fun drawTexture(
@@ -273,7 +337,7 @@ open class CanvasItem(
     _args.append(position)
     _args.append(modulate)
     _args.append(normalMap)
-    __method_bind.draw_texture.call(this._handle, _args.toVariant(), 4)
+    __method_bind.drawTexture.call(this._handle, _args.toVariant(), 4)
   }
 
   fun drawTextureRect(
@@ -291,7 +355,7 @@ open class CanvasItem(
     _args.append(modulate)
     _args.append(transpose)
     _args.append(normalMap)
-    __method_bind.draw_texture_rect.call(this._handle, _args.toVariant(), 6)
+    __method_bind.drawTextureRect.call(this._handle, _args.toVariant(), 6)
   }
 
   fun drawTextureRectRegion(
@@ -311,90 +375,90 @@ open class CanvasItem(
     _args.append(transpose)
     _args.append(normalMap)
     _args.append(clipUv)
-    __method_bind.draw_texture_rect_region.call(this._handle, _args.toVariant(), 7)
+    __method_bind.drawTextureRectRegion.call(this._handle, _args.toVariant(), 7)
   }
 
   fun forceUpdateTransform() {
-    __method_bind.force_update_transform.call(this._handle)
+    __method_bind.forceUpdateTransform.call(this._handle)
   }
 
   fun getCanvas(): RID {
-    val _ret = __method_bind.get_canvas.call(this._handle)
+    val _ret = __method_bind.getCanvas.call(this._handle)
     return _ret.asRID()
   }
 
   fun getCanvasItem(): RID {
-    val _ret = __method_bind.get_canvas_item.call(this._handle)
+    val _ret = __method_bind.getCanvasItem.call(this._handle)
     return _ret.asRID()
   }
 
   fun getCanvasTransform(): Transform2D {
-    val _ret = __method_bind.get_canvas_transform.call(this._handle)
+    val _ret = __method_bind.getCanvasTransform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getGlobalMousePosition(): Vector2 {
-    val _ret = __method_bind.get_global_mouse_position.call(this._handle)
+    val _ret = __method_bind.getGlobalMousePosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getGlobalTransform(): Transform2D {
-    val _ret = __method_bind.get_global_transform.call(this._handle)
+    val _ret = __method_bind.getGlobalTransform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getGlobalTransformWithCanvas(): Transform2D {
-    val _ret = __method_bind.get_global_transform_with_canvas.call(this._handle)
+    val _ret = __method_bind.getGlobalTransformWithCanvas.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getLightMask(): Int {
-    val _ret = __method_bind.get_light_mask.call(this._handle)
+    val _ret = __method_bind.getLightMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLocalMousePosition(): Vector2 {
-    val _ret = __method_bind.get_local_mouse_position.call(this._handle)
+    val _ret = __method_bind.getLocalMousePosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this._handle)
+    val _ret = __method_bind.getMaterial.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.get_modulate.call(this._handle)
+    val _ret = __method_bind.getModulate.call(this._handle)
     return _ret.asColor()
   }
 
   fun getSelfModulate(): Color {
-    val _ret = __method_bind.get_self_modulate.call(this._handle)
+    val _ret = __method_bind.getSelfModulate.call(this._handle)
     return _ret.asColor()
   }
 
   fun getTransform(): Transform2D {
-    val _ret = __method_bind.get_transform.call(this._handle)
+    val _ret = __method_bind.getTransform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getUseParentMaterial(): Boolean {
-    val _ret = __method_bind.get_use_parent_material.call(this._handle)
+    val _ret = __method_bind.getUseParentMaterial.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getViewportRect(): Rect2 {
-    val _ret = __method_bind.get_viewport_rect.call(this._handle)
+    val _ret = __method_bind.getViewportRect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getViewportTransform(): Transform2D {
-    val _ret = __method_bind.get_viewport_transform.call(this._handle)
+    val _ret = __method_bind.getViewportTransform.call(this._handle)
     return _ret.asTransform2D()
   }
 
   fun getWorld2d(): World2D {
-    val _ret = __method_bind.get_world_2d.call(this._handle)
+    val _ret = __method_bind.getWorld2d.call(this._handle)
     return _ret.asObject(::World2D)!!
   }
 
@@ -403,95 +467,95 @@ open class CanvasItem(
   }
 
   fun isDrawBehindParentEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_behind_parent_enabled.call(this._handle)
+    val _ret = __method_bind.isDrawBehindParentEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isLocalTransformNotificationEnabled(): Boolean {
-    val _ret = __method_bind.is_local_transform_notification_enabled.call(this._handle)
+    val _ret = __method_bind.isLocalTransformNotificationEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isSetAsToplevel(): Boolean {
-    val _ret = __method_bind.is_set_as_toplevel.call(this._handle)
+    val _ret = __method_bind.isSetAsToplevel.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isTransformNotificationEnabled(): Boolean {
-    val _ret = __method_bind.is_transform_notification_enabled.call(this._handle)
+    val _ret = __method_bind.isTransformNotificationEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isVisible(): Boolean {
-    val _ret = __method_bind.is_visible.call(this._handle)
+    val _ret = __method_bind.isVisible.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isVisibleInTree(): Boolean {
-    val _ret = __method_bind.is_visible_in_tree.call(this._handle)
+    val _ret = __method_bind.isVisibleInTree.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun makeCanvasPositionLocal(screenPoint: Vector2): Vector2 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.make_canvas_position_local.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeCanvasPositionLocal.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun makeInputLocal(event: InputEvent): InputEvent {
     val _arg = Variant.new(event)
-    val _ret = __method_bind.make_input_local.call(this._handle, _arg, 1)
+    val _ret = __method_bind.makeInputLocal.call(this._handle, _arg, 1)
     return _ret.asObject(::InputEvent)!!
   }
 
   fun setAsToplevel(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_as_toplevel.call(this._handle, _arg, 1)
+    __method_bind.setAsToplevel.call(this._handle, _arg, 1)
   }
 
   fun setDrawBehindParent(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_draw_behind_parent.call(this._handle, _arg, 1)
+    __method_bind.setDrawBehindParent.call(this._handle, _arg, 1)
   }
 
   fun setLightMask(lightMask: Int) {
     val _arg = Variant.new(lightMask)
-    __method_bind.set_light_mask.call(this._handle, _arg, 1)
+    __method_bind.setLightMask.call(this._handle, _arg, 1)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, _arg, 1)
   }
 
   fun setModulate(modulate: Color) {
     val _arg = Variant.new(modulate)
-    __method_bind.set_modulate.call(this._handle, _arg, 1)
+    __method_bind.setModulate.call(this._handle, _arg, 1)
   }
 
   fun setNotifyLocalTransform(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_notify_local_transform.call(this._handle, _arg, 1)
+    __method_bind.setNotifyLocalTransform.call(this._handle, _arg, 1)
   }
 
   fun setNotifyTransform(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_notify_transform.call(this._handle, _arg, 1)
+    __method_bind.setNotifyTransform.call(this._handle, _arg, 1)
   }
 
   fun setSelfModulate(selfModulate: Color) {
     val _arg = Variant.new(selfModulate)
-    __method_bind.set_self_modulate.call(this._handle, _arg, 1)
+    __method_bind.setSelfModulate.call(this._handle, _arg, 1)
   }
 
   fun setUseParentMaterial(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_use_parent_material.call(this._handle, _arg, 1)
+    __method_bind.setUseParentMaterial.call(this._handle, _arg, 1)
   }
 
   fun setVisible(visible: Boolean) {
     val _arg = Variant.new(visible)
-    __method_bind.set_visible.call(this._handle, _arg, 1)
+    __method_bind.setVisible.call(this._handle, _arg, 1)
   }
 
   fun show() {
@@ -556,227 +620,227 @@ open class CanvasItem(
      * Container for method_bind pointers for CanvasItem
      */
     private object __method_bind {
-      val draw_char: CPointer<godot_method_bind>
+      val drawChar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_char".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_char" }
+            "drawChar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawChar" }
         }
-      val draw_circle: CPointer<godot_method_bind>
+      val drawCircle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_circle".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_circle" }
+            "drawCircle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawCircle" }
         }
-      val draw_colored_polygon: CPointer<godot_method_bind>
+      val drawColoredPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_colored_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_colored_polygon" }
+            "drawColoredPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawColoredPolygon" }
         }
-      val draw_line: CPointer<godot_method_bind>
+      val drawLine: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_line".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_line" }
+            "drawLine".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawLine" }
         }
-      val draw_mesh: CPointer<godot_method_bind>
+      val drawMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_mesh" }
+            "drawMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawMesh" }
         }
-      val draw_multiline: CPointer<godot_method_bind>
+      val drawMultiline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_multiline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_multiline" }
+            "drawMultiline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawMultiline" }
         }
-      val draw_multiline_colors: CPointer<godot_method_bind>
+      val drawMultilineColors: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_multiline_colors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_multiline_colors" }
+            "drawMultilineColors".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawMultilineColors" }
         }
-      val draw_multimesh: CPointer<godot_method_bind>
+      val drawMultimesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_multimesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_multimesh" }
+            "drawMultimesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawMultimesh" }
         }
-      val draw_polygon: CPointer<godot_method_bind>
+      val drawPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_polygon" }
+            "drawPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawPolygon" }
         }
-      val draw_polyline: CPointer<godot_method_bind>
+      val drawPolyline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_polyline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_polyline" }
+            "drawPolyline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawPolyline" }
         }
-      val draw_polyline_colors: CPointer<godot_method_bind>
+      val drawPolylineColors: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_polyline_colors".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_polyline_colors" }
+            "drawPolylineColors".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawPolylineColors" }
         }
-      val draw_primitive: CPointer<godot_method_bind>
+      val drawPrimitive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_primitive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_primitive" }
+            "drawPrimitive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawPrimitive" }
         }
-      val draw_rect: CPointer<godot_method_bind>
+      val drawRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_rect" }
+            "drawRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawRect" }
         }
-      val draw_set_transform: CPointer<godot_method_bind>
+      val drawSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_set_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_set_transform" }
+            "drawSetTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawSetTransform" }
         }
-      val draw_set_transform_matrix: CPointer<godot_method_bind>
+      val drawSetTransformMatrix: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_set_transform_matrix".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_set_transform_matrix" }
+            "drawSetTransformMatrix".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawSetTransformMatrix" }
         }
-      val draw_string: CPointer<godot_method_bind>
+      val drawString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_string" }
+            "drawString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawString" }
         }
-      val draw_style_box: CPointer<godot_method_bind>
+      val drawStyleBox: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_style_box".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_style_box" }
+            "drawStyleBox".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawStyleBox" }
         }
-      val draw_texture: CPointer<godot_method_bind>
+      val drawTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_texture" }
+            "drawTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawTexture" }
         }
-      val draw_texture_rect: CPointer<godot_method_bind>
+      val drawTextureRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_texture_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_texture_rect" }
+            "drawTextureRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawTextureRect" }
         }
-      val draw_texture_rect_region: CPointer<godot_method_bind>
+      val drawTextureRectRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "draw_texture_rect_region".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_texture_rect_region" }
+            "drawTextureRectRegion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawTextureRectRegion" }
         }
-      val force_update_transform: CPointer<godot_method_bind>
+      val forceUpdateTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "force_update_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method force_update_transform" }
+            "forceUpdateTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method forceUpdateTransform" }
         }
-      val get_canvas: CPointer<godot_method_bind>
+      val getCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_canvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
+            "getCanvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCanvas" }
         }
-      val get_canvas_item: CPointer<godot_method_bind>
+      val getCanvasItem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_canvas_item".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas_item" }
+            "getCanvasItem".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCanvasItem" }
         }
-      val get_canvas_transform: CPointer<godot_method_bind>
+      val getCanvasTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_canvas_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas_transform" }
+            "getCanvasTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCanvasTransform" }
         }
-      val get_global_mouse_position: CPointer<godot_method_bind>
+      val getGlobalMousePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_global_mouse_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_mouse_position" }
+            "getGlobalMousePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlobalMousePosition" }
         }
-      val get_global_transform: CPointer<godot_method_bind>
+      val getGlobalTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_global_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_transform" }
+            "getGlobalTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlobalTransform" }
         }
-      val get_global_transform_with_canvas: CPointer<godot_method_bind>
+      val getGlobalTransformWithCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_global_transform_with_canvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_transform_with_canvas" }
+            "getGlobalTransformWithCanvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlobalTransformWithCanvas" }
         }
-      val get_light_mask: CPointer<godot_method_bind>
+      val getLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_light_mask" }
+            "getLightMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLightMask" }
         }
-      val get_local_mouse_position: CPointer<godot_method_bind>
+      val getLocalMousePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_local_mouse_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_local_mouse_position" }
+            "getLocalMousePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLocalMousePosition" }
         }
-      val get_material: CPointer<godot_method_bind>
+      val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_material" }
+            "getMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
         }
-      val get_modulate: CPointer<godot_method_bind>
+      val getModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_modulate" }
+            "getModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getModulate" }
         }
-      val get_self_modulate: CPointer<godot_method_bind>
+      val getSelfModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_self_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_self_modulate" }
+            "getSelfModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSelfModulate" }
         }
-      val get_transform: CPointer<godot_method_bind>
+      val getTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transform" }
+            "getTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTransform" }
         }
-      val get_use_parent_material: CPointer<godot_method_bind>
+      val getUseParentMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_use_parent_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_use_parent_material" }
+            "getUseParentMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUseParentMaterial" }
         }
-      val get_viewport_rect: CPointer<godot_method_bind>
+      val getViewportRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_viewport_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_viewport_rect" }
+            "getViewportRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getViewportRect" }
         }
-      val get_viewport_transform: CPointer<godot_method_bind>
+      val getViewportTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_viewport_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_viewport_transform" }
+            "getViewportTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getViewportTransform" }
         }
-      val get_world_2d: CPointer<godot_method_bind>
+      val getWorld2d: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "get_world_2d".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_world_2d" }
+            "getWorld2d".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWorld2d" }
         }
       val hide: CPointer<godot_method_bind>
         get() = memScoped {
@@ -784,115 +848,114 @@ open class CanvasItem(
             "hide".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method hide" }
         }
-      val is_draw_behind_parent_enabled: CPointer<godot_method_bind>
+      val isDrawBehindParentEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "is_draw_behind_parent_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_draw_behind_parent_enabled" }
+            "isDrawBehindParentEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDrawBehindParentEnabled" }
         }
-      val is_local_transform_notification_enabled: CPointer<godot_method_bind>
+      val isLocalTransformNotificationEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "is_local_transform_notification_enabled".cstr.ptr)
+            "isLocalTransformNotificationEnabled".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method is_local_transform_notification_enabled" }
+            "No method_bind found for method isLocalTransformNotificationEnabled" }
         }
-      val is_set_as_toplevel: CPointer<godot_method_bind>
+      val isSetAsToplevel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "is_set_as_toplevel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_set_as_toplevel" }
+            "isSetAsToplevel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSetAsToplevel" }
         }
-      val is_transform_notification_enabled: CPointer<godot_method_bind>
+      val isTransformNotificationEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "is_transform_notification_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_transform_notification_enabled"
-            }
+            "isTransformNotificationEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isTransformNotificationEnabled" }
         }
-      val is_visible: CPointer<godot_method_bind>
+      val isVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "is_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_visible" }
+            "isVisible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isVisible" }
         }
-      val is_visible_in_tree: CPointer<godot_method_bind>
+      val isVisibleInTree: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "is_visible_in_tree".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_visible_in_tree" }
+            "isVisibleInTree".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isVisibleInTree" }
         }
-      val make_canvas_position_local: CPointer<godot_method_bind>
+      val makeCanvasPositionLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "make_canvas_position_local".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_canvas_position_local" }
+            "makeCanvasPositionLocal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeCanvasPositionLocal" }
         }
-      val make_input_local: CPointer<godot_method_bind>
+      val makeInputLocal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "make_input_local".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_input_local" }
+            "makeInputLocal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeInputLocal" }
         }
-      val set_as_toplevel: CPointer<godot_method_bind>
+      val setAsToplevel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_as_toplevel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_as_toplevel" }
+            "setAsToplevel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAsToplevel" }
         }
-      val set_draw_behind_parent: CPointer<godot_method_bind>
+      val setDrawBehindParent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_draw_behind_parent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_behind_parent" }
+            "setDrawBehindParent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawBehindParent" }
         }
-      val set_light_mask: CPointer<godot_method_bind>
+      val setLightMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_light_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_light_mask" }
+            "setLightMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLightMask" }
         }
-      val set_material: CPointer<godot_method_bind>
+      val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
+            "setMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
         }
-      val set_modulate: CPointer<godot_method_bind>
+      val setModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_modulate" }
+            "setModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setModulate" }
         }
-      val set_notify_local_transform: CPointer<godot_method_bind>
+      val setNotifyLocalTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_notify_local_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_notify_local_transform" }
+            "setNotifyLocalTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNotifyLocalTransform" }
         }
-      val set_notify_transform: CPointer<godot_method_bind>
+      val setNotifyTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_notify_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_notify_transform" }
+            "setNotifyTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNotifyTransform" }
         }
-      val set_self_modulate: CPointer<godot_method_bind>
+      val setSelfModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_self_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_self_modulate" }
+            "setSelfModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSelfModulate" }
         }
-      val set_use_parent_material: CPointer<godot_method_bind>
+      val setUseParentMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_use_parent_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_parent_material" }
+            "setUseParentMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseParentMaterial" }
         }
-      val set_visible: CPointer<godot_method_bind>
+      val setVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CanvasItem".cstr.ptr,
-            "set_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_visible" }
+            "setVisible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVisible" }
         }
       val show: CPointer<godot_method_bind>
         get() = memScoped {

@@ -30,7 +30,7 @@ open class MeshDataTool(
 
   fun commitToSurface(mesh: ArrayMesh): GDError {
     val _arg = Variant.new(mesh)
-    val _ret = __method_bind.commit_to_surface.call(this._handle, _arg, 1)
+    val _ret = __method_bind.commitToSurface.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -38,24 +38,24 @@ open class MeshDataTool(
     val _args = VariantArray.new()
     _args.append(mesh)
     _args.append(surface)
-    val _ret = __method_bind.create_from_surface.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.createFromSurface.call(this._handle, _args.toVariant(), 2)
     return GDError.from(_ret.asInt())
   }
 
   fun getEdgeCount(): Int {
-    val _ret = __method_bind.get_edge_count.call(this._handle)
+    val _ret = __method_bind.getEdgeCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getEdgeFaces(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_edge_faces.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEdgeFaces.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun getEdgeMeta(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_edge_meta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getEdgeMeta.call(this._handle, _arg, 1)
     return _ret
   }
 
@@ -63,12 +63,12 @@ open class MeshDataTool(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(vertex)
-    val _ret = __method_bind.get_edge_vertex.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getEdgeVertex.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getFaceCount(): Int {
-    val _ret = __method_bind.get_face_count.call(this._handle)
+    val _ret = __method_bind.getFaceCount.call(this._handle)
     return _ret.asInt()
   }
 
@@ -76,19 +76,19 @@ open class MeshDataTool(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(edge)
-    val _ret = __method_bind.get_face_edge.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getFaceEdge.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getFaceMeta(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_face_meta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFaceMeta.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getFaceNormal(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_face_normal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getFaceNormal.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
@@ -96,88 +96,88 @@ open class MeshDataTool(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(vertex)
-    val _ret = __method_bind.get_face_vertex.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getFaceVertex.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun getFormat(): Int {
-    val _ret = __method_bind.get_format.call(this._handle)
+    val _ret = __method_bind.getFormat.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMaterial(): Material {
-    val _ret = __method_bind.get_material.call(this._handle)
+    val _ret = __method_bind.getMaterial.call(this._handle)
     return _ret.asObject(::Material)!!
   }
 
   fun getVertex(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertex.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getVertexBones(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_bones.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexBones.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun getVertexColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_color.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexColor.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getVertexCount(): Int {
-    val _ret = __method_bind.get_vertex_count.call(this._handle)
+    val _ret = __method_bind.getVertexCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getVertexEdges(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_edges.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexEdges.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun getVertexFaces(idx: Int): PoolIntArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_faces.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexFaces.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
   fun getVertexMeta(idx: Int): Variant {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_meta.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexMeta.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun getVertexNormal(idx: Int): Vector3 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_normal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexNormal.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getVertexTangent(idx: Int): Plane {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_tangent.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexTangent.call(this._handle, _arg, 1)
     return _ret.asPlane()
   }
 
   fun getVertexUv(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_uv.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexUv.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getVertexUv2(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_uv2.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexUv2.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getVertexWeights(idx: Int): PoolRealArray {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_vertex_weights.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVertexWeights.call(this._handle, _arg, 1)
     return _ret.asPoolRealArray()
   }
 
@@ -185,82 +185,82 @@ open class MeshDataTool(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(meta)
-    __method_bind.set_edge_meta.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setEdgeMeta.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setFaceMeta(idx: Int, meta: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(meta)
-    __method_bind.set_face_meta.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setFaceMeta.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, _arg, 1)
   }
 
   fun setVertex(idx: Int, vertex: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(vertex)
-    __method_bind.set_vertex.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertex.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexBones(idx: Int, bones: PoolIntArray) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(bones)
-    __method_bind.set_vertex_bones.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexBones.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexColor(idx: Int, color: Color) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(color)
-    __method_bind.set_vertex_color.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexColor.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexMeta(idx: Int, meta: Variant) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(meta)
-    __method_bind.set_vertex_meta.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexMeta.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexNormal(idx: Int, normal: Vector3) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(normal)
-    __method_bind.set_vertex_normal.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexNormal.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexTangent(idx: Int, tangent: Plane) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(tangent)
-    __method_bind.set_vertex_tangent.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexTangent.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexUv(idx: Int, uv: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(uv)
-    __method_bind.set_vertex_uv.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexUv.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexUv2(idx: Int, uv2: Vector2) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(uv2)
-    __method_bind.set_vertex_uv2.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexUv2.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setVertexWeights(idx: Int, weights: PoolRealArray) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(weights)
-    __method_bind.set_vertex_weights.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setVertexWeights.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -284,264 +284,264 @@ open class MeshDataTool(
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
-      val commit_to_surface: CPointer<godot_method_bind>
+      val commitToSurface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "commit_to_surface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commit_to_surface" }
+            "commitToSurface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method commitToSurface" }
         }
-      val create_from_surface: CPointer<godot_method_bind>
+      val createFromSurface: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "create_from_surface".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from_surface" }
+            "createFromSurface".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createFromSurface" }
         }
-      val get_edge_count: CPointer<godot_method_bind>
+      val getEdgeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_count" }
+            "getEdgeCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEdgeCount" }
         }
-      val get_edge_faces: CPointer<godot_method_bind>
+      val getEdgeFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_faces" }
+            "getEdgeFaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEdgeFaces" }
         }
-      val get_edge_meta: CPointer<godot_method_bind>
+      val getEdgeMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_meta" }
+            "getEdgeMeta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEdgeMeta" }
         }
-      val get_edge_vertex: CPointer<godot_method_bind>
+      val getEdgeVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_edge_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edge_vertex" }
+            "getEdgeVertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEdgeVertex" }
         }
-      val get_face_count: CPointer<godot_method_bind>
+      val getFaceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_count" }
+            "getFaceCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFaceCount" }
         }
-      val get_face_edge: CPointer<godot_method_bind>
+      val getFaceEdge: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_edge".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_edge" }
+            "getFaceEdge".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFaceEdge" }
         }
-      val get_face_meta: CPointer<godot_method_bind>
+      val getFaceMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_meta" }
+            "getFaceMeta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFaceMeta" }
         }
-      val get_face_normal: CPointer<godot_method_bind>
+      val getFaceNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_normal" }
+            "getFaceNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFaceNormal" }
         }
-      val get_face_vertex: CPointer<godot_method_bind>
+      val getFaceVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_face_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_face_vertex" }
+            "getFaceVertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFaceVertex" }
         }
-      val get_format: CPointer<godot_method_bind>
+      val getFormat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_format".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_format" }
+            "getFormat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFormat" }
         }
-      val get_material: CPointer<godot_method_bind>
+      val getMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_material" }
+            "getMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaterial" }
         }
-      val get_vertex: CPointer<godot_method_bind>
+      val getVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex" }
+            "getVertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertex" }
         }
-      val get_vertex_bones: CPointer<godot_method_bind>
+      val getVertexBones: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_bones" }
+            "getVertexBones".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexBones" }
         }
-      val get_vertex_color: CPointer<godot_method_bind>
+      val getVertexColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_color" }
+            "getVertexColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexColor" }
         }
-      val get_vertex_count: CPointer<godot_method_bind>
+      val getVertexCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_count" }
+            "getVertexCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexCount" }
         }
-      val get_vertex_edges: CPointer<godot_method_bind>
+      val getVertexEdges: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_edges".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_edges" }
+            "getVertexEdges".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexEdges" }
         }
-      val get_vertex_faces: CPointer<godot_method_bind>
+      val getVertexFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_faces" }
+            "getVertexFaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexFaces" }
         }
-      val get_vertex_meta: CPointer<godot_method_bind>
+      val getVertexMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_meta" }
+            "getVertexMeta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexMeta" }
         }
-      val get_vertex_normal: CPointer<godot_method_bind>
+      val getVertexNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_normal" }
+            "getVertexNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexNormal" }
         }
-      val get_vertex_tangent: CPointer<godot_method_bind>
+      val getVertexTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_tangent" }
+            "getVertexTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexTangent" }
         }
-      val get_vertex_uv: CPointer<godot_method_bind>
+      val getVertexUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_uv" }
+            "getVertexUv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexUv" }
         }
-      val get_vertex_uv2: CPointer<godot_method_bind>
+      val getVertexUv2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_uv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_uv2" }
+            "getVertexUv2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexUv2" }
         }
-      val get_vertex_weights: CPointer<godot_method_bind>
+      val getVertexWeights: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "get_vertex_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_vertex_weights" }
+            "getVertexWeights".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVertexWeights" }
         }
-      val set_edge_meta: CPointer<godot_method_bind>
+      val setEdgeMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_edge_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_edge_meta" }
+            "setEdgeMeta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEdgeMeta" }
         }
-      val set_face_meta: CPointer<godot_method_bind>
+      val setFaceMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_face_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_face_meta" }
+            "setFaceMeta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFaceMeta" }
         }
-      val set_material: CPointer<godot_method_bind>
+      val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
+            "setMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
         }
-      val set_vertex: CPointer<godot_method_bind>
+      val setVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex" }
+            "setVertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertex" }
         }
-      val set_vertex_bones: CPointer<godot_method_bind>
+      val setVertexBones: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_bones" }
+            "setVertexBones".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexBones" }
         }
-      val set_vertex_color: CPointer<godot_method_bind>
+      val setVertexColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_color" }
+            "setVertexColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexColor" }
         }
-      val set_vertex_meta: CPointer<godot_method_bind>
+      val setVertexMeta: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_meta".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_meta" }
+            "setVertexMeta".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexMeta" }
         }
-      val set_vertex_normal: CPointer<godot_method_bind>
+      val setVertexNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_normal" }
+            "setVertexNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexNormal" }
         }
-      val set_vertex_tangent: CPointer<godot_method_bind>
+      val setVertexTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_tangent" }
+            "setVertexTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexTangent" }
         }
-      val set_vertex_uv: CPointer<godot_method_bind>
+      val setVertexUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_uv" }
+            "setVertexUv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexUv" }
         }
-      val set_vertex_uv2: CPointer<godot_method_bind>
+      val setVertexUv2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_uv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_uv2" }
+            "setVertexUv2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexUv2" }
         }
-      val set_vertex_weights: CPointer<godot_method_bind>
+      val setVertexWeights: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MeshDataTool".cstr.ptr,
-            "set_vertex_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertex_weights" }
+            "setVertexWeights".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertexWeights" }
         }}
   }
 }

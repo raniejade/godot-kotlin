@@ -18,34 +18,58 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptComment(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var description: String
+    get() {
+       return getDescription() 
+    }
+    set(value) {
+      setDescription(value)
+    }
+
+  var size: Vector2
+    get() {
+       return getSize() 
+    }
+    set(value) {
+      setSize(value)
+    }
+
+  var title: String
+    get() {
+       return getTitle() 
+    }
+    set(value) {
+      setTitle(value)
+    }
+
   fun getDescription(): String {
-    val _ret = __method_bind.get_description.call(this._handle)
+    val _ret = __method_bind.getDescription.call(this._handle)
     return _ret.asString()
   }
 
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this._handle)
+    val _ret = __method_bind.getSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getTitle(): String {
-    val _ret = __method_bind.get_title.call(this._handle)
+    val _ret = __method_bind.getTitle.call(this._handle)
     return _ret.asString()
   }
 
   fun setDescription(description: String) {
     val _arg = Variant.new(description)
-    __method_bind.set_description.call(this._handle, _arg, 1)
+    __method_bind.setDescription.call(this._handle, _arg, 1)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, _arg, 1)
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.set_title.call(this._handle, _arg, 1)
+    __method_bind.setTitle.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -63,47 +87,47 @@ open class VisualScriptComment(
      * Container for method_bind pointers for VisualScriptComment
      */
     private object __method_bind {
-      val get_description: CPointer<godot_method_bind>
+      val getDescription: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "get_description".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_description" }
+            "getDescription".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDescription" }
         }
-      val get_size: CPointer<godot_method_bind>
+      val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
+            "getSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSize" }
         }
-      val get_title: CPointer<godot_method_bind>
+      val getTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "get_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_title" }
+            "getTitle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTitle" }
         }
-      val set_description: CPointer<godot_method_bind>
+      val setDescription: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "set_description".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_description" }
+            "setDescription".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDescription" }
         }
-      val set_size: CPointer<godot_method_bind>
+      val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
+            "setSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSize" }
         }
-      val set_title: CPointer<godot_method_bind>
+      val setTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptComment".cstr.ptr,
-            "set_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_title" }
+            "setTitle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTitle" }
         }}
   }
 }

@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptEmitSignal(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var signal: String
+    get() {
+       return getSignal() 
+    }
+    set(value) {
+      setSignal(value)
+    }
+
   fun getSignal(): String {
-    val _ret = __method_bind.get_signal.call(this._handle)
+    val _ret = __method_bind.getSignal.call(this._handle)
     return _ret.asString()
   }
 
   fun setSignal(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_signal.call(this._handle, _arg, 1)
+    __method_bind.setSignal.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptEmitSignal(
      * Container for method_bind pointers for VisualScriptEmitSignal
      */
     private object __method_bind {
-      val get_signal: CPointer<godot_method_bind>
+      val getSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
-            "get_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_signal" }
+            "getSignal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSignal" }
         }
-      val set_signal: CPointer<godot_method_bind>
+      val setSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEmitSignal".cstr.ptr,
-            "set_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_signal" }
+            "setSignal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSignal" }
         }}
   }
 }

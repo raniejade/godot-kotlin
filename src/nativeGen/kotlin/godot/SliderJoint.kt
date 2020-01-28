@@ -18,9 +18,25 @@ import kotlinx.cinterop.reinterpret
 open class SliderJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var angularLimitLowerAngle: Float
+    get() {
+       return _getLowerLimitAngular() 
+    }
+    set(value) {
+      _setLowerLimitAngular(value)
+    }
+
+  var angularLimitUpperAngle: Float
+    get() {
+       return _getUpperLimitAngular() 
+    }
+    set(value) {
+      _setUpperLimitAngular(value)
+    }
+
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
-    val _ret = __method_bind.get_param.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getParam.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
@@ -28,7 +44,7 @@ open class SliderJoint(
     val _args = VariantArray.new()
     _args.append(param)
     _args.append(value)
-    __method_bind.set_param.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setParam.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class Param(
@@ -152,19 +168,19 @@ open class SliderJoint(
      * Container for method_bind pointers for SliderJoint
      */
     private object __method_bind {
-      val get_param: CPointer<godot_method_bind>
+      val getParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-            "get_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_param" }
+            "getParam".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getParam" }
         }
-      val set_param: CPointer<godot_method_bind>
+      val setParam: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SliderJoint".cstr.ptr,
-            "set_param".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_param" }
+            "setParam".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setParam" }
         }}
   }
 }

@@ -20,54 +20,94 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxLine(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
+  var color: Color
+    get() {
+       return getColor() 
+    }
+    set(value) {
+      setColor(value)
+    }
+
+  var growBegin: Float
+    get() {
+       return getGrowBegin() 
+    }
+    set(value) {
+      setGrowBegin(value)
+    }
+
+  var growEnd: Float
+    get() {
+       return getGrowEnd() 
+    }
+    set(value) {
+      setGrowEnd(value)
+    }
+
+  var thickness: Int
+    get() {
+       return getThickness() 
+    }
+    set(value) {
+      setThickness(value)
+    }
+
+  var vertical: Boolean
+    get() {
+       return isVertical() 
+    }
+    set(value) {
+      setVertical(value)
+    }
+
   fun getColor(): Color {
-    val _ret = __method_bind.get_color.call(this._handle)
+    val _ret = __method_bind.getColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getGrowBegin(): Float {
-    val _ret = __method_bind.get_grow_begin.call(this._handle)
+    val _ret = __method_bind.getGrowBegin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getGrowEnd(): Float {
-    val _ret = __method_bind.get_grow_end.call(this._handle)
+    val _ret = __method_bind.getGrowEnd.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getThickness(): Int {
-    val _ret = __method_bind.get_thickness.call(this._handle)
+    val _ret = __method_bind.getThickness.call(this._handle)
     return _ret.asInt()
   }
 
   fun isVertical(): Boolean {
-    val _ret = __method_bind.is_vertical.call(this._handle)
+    val _ret = __method_bind.isVertical.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_color.call(this._handle, _arg, 1)
+    __method_bind.setColor.call(this._handle, _arg, 1)
   }
 
   fun setGrowBegin(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_grow_begin.call(this._handle, _arg, 1)
+    __method_bind.setGrowBegin.call(this._handle, _arg, 1)
   }
 
   fun setGrowEnd(offset: Float) {
     val _arg = Variant.new(offset)
-    __method_bind.set_grow_end.call(this._handle, _arg, 1)
+    __method_bind.setGrowEnd.call(this._handle, _arg, 1)
   }
 
   fun setThickness(thickness: Int) {
     val _arg = Variant.new(thickness)
-    __method_bind.set_thickness.call(this._handle, _arg, 1)
+    __method_bind.setThickness.call(this._handle, _arg, 1)
   }
 
   fun setVertical(vertical: Boolean) {
     val _arg = Variant.new(vertical)
-    __method_bind.set_vertical.call(this._handle, _arg, 1)
+    __method_bind.setVertical.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -84,75 +124,75 @@ open class StyleBoxLine(
      * Container for method_bind pointers for StyleBoxLine
      */
     private object __method_bind {
-      val get_color: CPointer<godot_method_bind>
+      val getColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_color" }
+            "getColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getColor" }
         }
-      val get_grow_begin: CPointer<godot_method_bind>
+      val getGrowBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_grow_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_grow_begin" }
+            "getGrowBegin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGrowBegin" }
         }
-      val get_grow_end: CPointer<godot_method_bind>
+      val getGrowEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_grow_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_grow_end" }
+            "getGrowEnd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGrowEnd" }
         }
-      val get_thickness: CPointer<godot_method_bind>
+      val getThickness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "get_thickness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_thickness" }
+            "getThickness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getThickness" }
         }
-      val is_vertical: CPointer<godot_method_bind>
+      val isVertical: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "is_vertical".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_vertical" }
+            "isVertical".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isVertical" }
         }
-      val set_color: CPointer<godot_method_bind>
+      val setColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_color" }
+            "setColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setColor" }
         }
-      val set_grow_begin: CPointer<godot_method_bind>
+      val setGrowBegin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_grow_begin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_grow_begin" }
+            "setGrowBegin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGrowBegin" }
         }
-      val set_grow_end: CPointer<godot_method_bind>
+      val setGrowEnd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_grow_end".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_grow_end" }
+            "setGrowEnd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGrowEnd" }
         }
-      val set_thickness: CPointer<godot_method_bind>
+      val setThickness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_thickness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_thickness" }
+            "setThickness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setThickness" }
         }
-      val set_vertical: CPointer<godot_method_bind>
+      val setVertical: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxLine".cstr.ptr,
-            "set_vertical".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_vertical" }
+            "setVertical".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVertical" }
         }}
   }
 }

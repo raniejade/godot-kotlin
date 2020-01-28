@@ -18,24 +18,40 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptYield(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var mode: Int
+    get() {
+       return VisualScriptYield.YieldMode.from(getYieldMode()) 
+    }
+    set(value) {
+      setYieldMode(VisualScriptYield.YieldMode.from(value))
+    }
+
+  var waitTime: Float
+    get() {
+       return getWaitTime() 
+    }
+    set(value) {
+      setWaitTime(value)
+    }
+
   fun getWaitTime(): Float {
-    val _ret = __method_bind.get_wait_time.call(this._handle)
+    val _ret = __method_bind.getWaitTime.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getYieldMode(): YieldMode {
-    val _ret = __method_bind.get_yield_mode.call(this._handle)
+    val _ret = __method_bind.getYieldMode.call(this._handle)
     return VisualScriptYield.YieldMode.from(_ret.asInt())
   }
 
   fun setWaitTime(sec: Float) {
     val _arg = Variant.new(sec)
-    __method_bind.set_wait_time.call(this._handle, _arg, 1)
+    __method_bind.setWaitTime.call(this._handle, _arg, 1)
   }
 
   fun setYieldMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_yield_mode.call(this._handle, _arg, 1)
+    __method_bind.setYieldMode.call(this._handle, _arg, 1)
   }
 
   enum class YieldMode(
@@ -80,33 +96,33 @@ open class VisualScriptYield(
      * Container for method_bind pointers for VisualScriptYield
      */
     private object __method_bind {
-      val get_wait_time: CPointer<godot_method_bind>
+      val getWaitTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "get_wait_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_wait_time" }
+            "getWaitTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWaitTime" }
         }
-      val get_yield_mode: CPointer<godot_method_bind>
+      val getYieldMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "get_yield_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_yield_mode" }
+            "getYieldMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getYieldMode" }
         }
-      val set_wait_time: CPointer<godot_method_bind>
+      val setWaitTime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "set_wait_time".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_wait_time" }
+            "setWaitTime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWaitTime" }
         }
-      val set_yield_mode: CPointer<godot_method_bind>
+      val setYieldMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptYield".cstr.ptr,
-            "set_yield_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_yield_mode" }
+            "setYieldMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setYieldMode" }
         }}
   }
 }

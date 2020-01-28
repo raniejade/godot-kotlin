@@ -26,26 +26,26 @@ open class TileSet(
 ) : Resource(_handle) {
   fun autotileClearBitmaskMap(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.autotile_clear_bitmask_map.call(this._handle, _arg, 1)
+    __method_bind.autotileClearBitmaskMap.call(this._handle, _arg, 1)
   }
 
   fun autotileGetBitmask(id: Int, coord: Vector2): Int {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(coord)
-    val _ret = __method_bind.autotile_get_bitmask.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.autotileGetBitmask.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
   fun autotileGetBitmaskMode(id: Int): BitmaskMode {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.autotile_get_bitmask_mode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.autotileGetBitmaskMode.call(this._handle, _arg, 1)
     return TileSet.BitmaskMode.from(_ret.asInt())
   }
 
   fun autotileGetIconCoordinate(id: Int): Vector2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.autotile_get_icon_coordinate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.autotileGetIconCoordinate.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
@@ -53,7 +53,7 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(coord)
-    val _ret = __method_bind.autotile_get_light_occluder.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.autotileGetLightOccluder.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::OccluderPolygon2D)!!
   }
 
@@ -61,20 +61,19 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(coord)
-    val _ret = __method_bind.autotile_get_navigation_polygon.call(this._handle, _args.toVariant(),
-        2)
+    val _ret = __method_bind.autotileGetNavigationPolygon.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::NavigationPolygon)!!
   }
 
   fun autotileGetSize(id: Int): Vector2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.autotile_get_size.call(this._handle, _arg, 1)
+    val _ret = __method_bind.autotileGetSize.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun autotileGetSpacing(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.autotile_get_spacing.call(this._handle, _arg, 1)
+    val _ret = __method_bind.autotileGetSpacing.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -82,7 +81,7 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(coord)
-    val _ret = __method_bind.autotile_get_subtile_priority.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.autotileGetSubtilePriority.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -90,7 +89,7 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(coord)
-    val _ret = __method_bind.autotile_get_z_index.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.autotileGetZIndex.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -103,21 +102,21 @@ open class TileSet(
     _args.append(id)
     _args.append(bitmask)
     _args.append(flag)
-    __method_bind.autotile_set_bitmask.call(this._handle, _args.toVariant(), 3)
+    __method_bind.autotileSetBitmask.call(this._handle, _args.toVariant(), 3)
   }
 
   fun autotileSetBitmaskMode(id: Int, mode: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(mode)
-    __method_bind.autotile_set_bitmask_mode.call(this._handle, _args.toVariant(), 2)
+    __method_bind.autotileSetBitmaskMode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun autotileSetIconCoordinate(id: Int, coord: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(coord)
-    __method_bind.autotile_set_icon_coordinate.call(this._handle, _args.toVariant(), 2)
+    __method_bind.autotileSetIconCoordinate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun autotileSetLightOccluder(
@@ -129,7 +128,7 @@ open class TileSet(
     _args.append(id)
     _args.append(lightOccluder)
     _args.append(coord)
-    __method_bind.autotile_set_light_occluder.call(this._handle, _args.toVariant(), 3)
+    __method_bind.autotileSetLightOccluder.call(this._handle, _args.toVariant(), 3)
   }
 
   fun autotileSetNavigationPolygon(
@@ -141,21 +140,21 @@ open class TileSet(
     _args.append(id)
     _args.append(navigationPolygon)
     _args.append(coord)
-    __method_bind.autotile_set_navigation_polygon.call(this._handle, _args.toVariant(), 3)
+    __method_bind.autotileSetNavigationPolygon.call(this._handle, _args.toVariant(), 3)
   }
 
   fun autotileSetSize(id: Int, size: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(size)
-    __method_bind.autotile_set_size.call(this._handle, _args.toVariant(), 2)
+    __method_bind.autotileSetSize.call(this._handle, _args.toVariant(), 2)
   }
 
   fun autotileSetSpacing(id: Int, spacing: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(spacing)
-    __method_bind.autotile_set_spacing.call(this._handle, _args.toVariant(), 2)
+    __method_bind.autotileSetSpacing.call(this._handle, _args.toVariant(), 2)
   }
 
   fun autotileSetSubtilePriority(
@@ -167,7 +166,7 @@ open class TileSet(
     _args.append(id)
     _args.append(coord)
     _args.append(priority)
-    __method_bind.autotile_set_subtile_priority.call(this._handle, _args.toVariant(), 3)
+    __method_bind.autotileSetSubtilePriority.call(this._handle, _args.toVariant(), 3)
   }
 
   fun autotileSetZIndex(
@@ -179,7 +178,7 @@ open class TileSet(
     _args.append(id)
     _args.append(coord)
     _args.append(zIndex)
-    __method_bind.autotile_set_z_index.call(this._handle, _args.toVariant(), 3)
+    __method_bind.autotileSetZIndex.call(this._handle, _args.toVariant(), 3)
   }
 
   fun clear() {
@@ -188,28 +187,28 @@ open class TileSet(
 
   fun createTile(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.create_tile.call(this._handle, _arg, 1)
+    __method_bind.createTile.call(this._handle, _arg, 1)
   }
 
   fun findTileByName(name: String): Int {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.find_tile_by_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.findTileByName.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getLastUnusedTileId(): Int {
-    val _ret = __method_bind.get_last_unused_tile_id.call(this._handle)
+    val _ret = __method_bind.getLastUnusedTileId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getTilesIds(): VariantArray {
-    val _ret = __method_bind.get_tiles_ids.call(this._handle)
+    val _ret = __method_bind.getTilesIds.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun removeTile(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.remove_tile.call(this._handle, _arg, 1)
+    __method_bind.removeTile.call(this._handle, _arg, 1)
   }
 
   fun tileAddShape(
@@ -225,60 +224,60 @@ open class TileSet(
     _args.append(shapeTransform)
     _args.append(oneWay)
     _args.append(autotileCoord)
-    __method_bind.tile_add_shape.call(this._handle, _args.toVariant(), 5)
+    __method_bind.tileAddShape.call(this._handle, _args.toVariant(), 5)
   }
 
   fun tileGetLightOccluder(id: Int): OccluderPolygon2D {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_light_occluder.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetLightOccluder.call(this._handle, _arg, 1)
     return _ret.asObject(::OccluderPolygon2D)!!
   }
 
   fun tileGetMaterial(id: Int): ShaderMaterial {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_material.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetMaterial.call(this._handle, _arg, 1)
     return _ret.asObject(::ShaderMaterial)!!
   }
 
   fun tileGetModulate(id: Int): Color {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_modulate.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetModulate.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun tileGetName(id: Int): String {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun tileGetNavigationPolygon(id: Int): NavigationPolygon {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_navigation_polygon.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetNavigationPolygon.call(this._handle, _arg, 1)
     return _ret.asObject(::NavigationPolygon)!!
   }
 
   fun tileGetNavigationPolygonOffset(id: Int): Vector2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_navigation_polygon_offset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetNavigationPolygonOffset.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun tileGetNormalMap(id: Int): Texture {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_normal_map.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetNormalMap.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun tileGetOccluderOffset(id: Int): Vector2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_occluder_offset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetOccluderOffset.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun tileGetRegion(id: Int): Rect2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_region.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetRegion.call(this._handle, _arg, 1)
     return _ret.asRect2()
   }
 
@@ -286,13 +285,13 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapeId)
-    val _ret = __method_bind.tile_get_shape.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.tileGetShape.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::Shape2D)!!
   }
 
   fun tileGetShapeCount(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_shape_count.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetShapeCount.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -300,7 +299,7 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapeId)
-    val _ret = __method_bind.tile_get_shape_offset.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.tileGetShapeOffset.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
@@ -308,7 +307,7 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapeId)
-    val _ret = __method_bind.tile_get_shape_one_way.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.tileGetShapeOneWay.call(this._handle, _args.toVariant(), 2)
     return _ret.asBoolean()
   }
 
@@ -316,7 +315,7 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapeId)
-    val _ret = __method_bind.tile_get_shape_one_way_margin.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.tileGetShapeOneWayMargin.call(this._handle, _args.toVariant(), 2)
     return _ret.asFloat()
   }
 
@@ -324,37 +323,37 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapeId)
-    val _ret = __method_bind.tile_get_shape_transform.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.tileGetShapeTransform.call(this._handle, _args.toVariant(), 2)
     return _ret.asTransform2D()
   }
 
   fun tileGetShapes(id: Int): VariantArray {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_shapes.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetShapes.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun tileGetTexture(id: Int): Texture {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_texture.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetTexture.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
   fun tileGetTextureOffset(id: Int): Vector2 {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_texture_offset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetTextureOffset.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun tileGetTileMode(id: Int): TileMode {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_tile_mode.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetTileMode.call(this._handle, _arg, 1)
     return TileSet.TileMode.from(_ret.asInt())
   }
 
   fun tileGetZIndex(id: Int): Int {
     val _arg = Variant.new(id)
-    val _ret = __method_bind.tile_get_z_index.call(this._handle, _arg, 1)
+    val _ret = __method_bind.tileGetZIndex.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -362,63 +361,63 @@ open class TileSet(
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(lightOccluder)
-    __method_bind.tile_set_light_occluder.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetLightOccluder.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetMaterial(id: Int, material: ShaderMaterial) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(material)
-    __method_bind.tile_set_material.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetMaterial.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetModulate(id: Int, color: Color) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(color)
-    __method_bind.tile_set_modulate.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetModulate.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetName(id: Int, name: String) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(name)
-    __method_bind.tile_set_name.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetName.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetNavigationPolygon(id: Int, navigationPolygon: NavigationPolygon) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(navigationPolygon)
-    __method_bind.tile_set_navigation_polygon.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetNavigationPolygon.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetNavigationPolygonOffset(id: Int, navigationPolygonOffset: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(navigationPolygonOffset)
-    __method_bind.tile_set_navigation_polygon_offset.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetNavigationPolygonOffset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetNormalMap(id: Int, normalMap: Texture) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(normalMap)
-    __method_bind.tile_set_normal_map.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetNormalMap.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetOccluderOffset(id: Int, occluderOffset: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(occluderOffset)
-    __method_bind.tile_set_occluder_offset.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetOccluderOffset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetRegion(id: Int, region: Rect2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(region)
-    __method_bind.tile_set_region.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetRegion.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetShape(
@@ -430,7 +429,7 @@ open class TileSet(
     _args.append(id)
     _args.append(shapeId)
     _args.append(shape)
-    __method_bind.tile_set_shape.call(this._handle, _args.toVariant(), 3)
+    __method_bind.tileSetShape.call(this._handle, _args.toVariant(), 3)
   }
 
   fun tileSetShapeOffset(
@@ -442,7 +441,7 @@ open class TileSet(
     _args.append(id)
     _args.append(shapeId)
     _args.append(shapeOffset)
-    __method_bind.tile_set_shape_offset.call(this._handle, _args.toVariant(), 3)
+    __method_bind.tileSetShapeOffset.call(this._handle, _args.toVariant(), 3)
   }
 
   fun tileSetShapeOneWay(
@@ -454,7 +453,7 @@ open class TileSet(
     _args.append(id)
     _args.append(shapeId)
     _args.append(oneWay)
-    __method_bind.tile_set_shape_one_way.call(this._handle, _args.toVariant(), 3)
+    __method_bind.tileSetShapeOneWay.call(this._handle, _args.toVariant(), 3)
   }
 
   fun tileSetShapeOneWayMargin(
@@ -466,7 +465,7 @@ open class TileSet(
     _args.append(id)
     _args.append(shapeId)
     _args.append(oneWay)
-    __method_bind.tile_set_shape_one_way_margin.call(this._handle, _args.toVariant(), 3)
+    __method_bind.tileSetShapeOneWayMargin.call(this._handle, _args.toVariant(), 3)
   }
 
   fun tileSetShapeTransform(
@@ -478,42 +477,42 @@ open class TileSet(
     _args.append(id)
     _args.append(shapeId)
     _args.append(shapeTransform)
-    __method_bind.tile_set_shape_transform.call(this._handle, _args.toVariant(), 3)
+    __method_bind.tileSetShapeTransform.call(this._handle, _args.toVariant(), 3)
   }
 
   fun tileSetShapes(id: Int, shapes: VariantArray) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(shapes)
-    __method_bind.tile_set_shapes.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetShapes.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetTexture(id: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(texture)
-    __method_bind.tile_set_texture.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetTexture.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetTextureOffset(id: Int, textureOffset: Vector2) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(textureOffset)
-    __method_bind.tile_set_texture_offset.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetTextureOffset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetTileMode(id: Int, tilemode: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(tilemode)
-    __method_bind.tile_set_tile_mode.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetTileMode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun tileSetZIndex(id: Int, zIndex: Int) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(zIndex)
-    __method_bind.tile_set_z_index.call(this._handle, _args.toVariant(), 2)
+    __method_bind.tileSetZIndex.call(this._handle, _args.toVariant(), 2)
   }
 
   enum class TileMode(
@@ -631,119 +630,119 @@ open class TileSet(
      * Container for method_bind pointers for TileSet
      */
     private object __method_bind {
-      val autotile_clear_bitmask_map: CPointer<godot_method_bind>
+      val autotileClearBitmaskMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_clear_bitmask_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_clear_bitmask_map" }
+            "autotileClearBitmaskMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileClearBitmaskMap" }
         }
-      val autotile_get_bitmask: CPointer<godot_method_bind>
+      val autotileGetBitmask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_bitmask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_bitmask" }
+            "autotileGetBitmask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetBitmask" }
         }
-      val autotile_get_bitmask_mode: CPointer<godot_method_bind>
+      val autotileGetBitmaskMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_bitmask_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_bitmask_mode" }
+            "autotileGetBitmaskMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetBitmaskMode" }
         }
-      val autotile_get_icon_coordinate: CPointer<godot_method_bind>
+      val autotileGetIconCoordinate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_icon_coordinate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_icon_coordinate" }
+            "autotileGetIconCoordinate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetIconCoordinate" }
         }
-      val autotile_get_light_occluder: CPointer<godot_method_bind>
+      val autotileGetLightOccluder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_light_occluder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_light_occluder" }
+            "autotileGetLightOccluder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetLightOccluder" }
         }
-      val autotile_get_navigation_polygon: CPointer<godot_method_bind>
+      val autotileGetNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_navigation_polygon" }
+            "autotileGetNavigationPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetNavigationPolygon" }
         }
-      val autotile_get_size: CPointer<godot_method_bind>
+      val autotileGetSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_size" }
+            "autotileGetSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetSize" }
         }
-      val autotile_get_spacing: CPointer<godot_method_bind>
+      val autotileGetSpacing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_spacing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_spacing" }
+            "autotileGetSpacing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetSpacing" }
         }
-      val autotile_get_subtile_priority: CPointer<godot_method_bind>
+      val autotileGetSubtilePriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_subtile_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_subtile_priority" }
+            "autotileGetSubtilePriority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetSubtilePriority" }
         }
-      val autotile_get_z_index: CPointer<godot_method_bind>
+      val autotileGetZIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_get_z_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_get_z_index" }
+            "autotileGetZIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileGetZIndex" }
         }
-      val autotile_set_bitmask: CPointer<godot_method_bind>
+      val autotileSetBitmask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_bitmask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_bitmask" }
+            "autotileSetBitmask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetBitmask" }
         }
-      val autotile_set_bitmask_mode: CPointer<godot_method_bind>
+      val autotileSetBitmaskMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_bitmask_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_bitmask_mode" }
+            "autotileSetBitmaskMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetBitmaskMode" }
         }
-      val autotile_set_icon_coordinate: CPointer<godot_method_bind>
+      val autotileSetIconCoordinate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_icon_coordinate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_icon_coordinate" }
+            "autotileSetIconCoordinate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetIconCoordinate" }
         }
-      val autotile_set_light_occluder: CPointer<godot_method_bind>
+      val autotileSetLightOccluder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_light_occluder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_light_occluder" }
+            "autotileSetLightOccluder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetLightOccluder" }
         }
-      val autotile_set_navigation_polygon: CPointer<godot_method_bind>
+      val autotileSetNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_navigation_polygon" }
+            "autotileSetNavigationPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetNavigationPolygon" }
         }
-      val autotile_set_size: CPointer<godot_method_bind>
+      val autotileSetSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_size" }
+            "autotileSetSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetSize" }
         }
-      val autotile_set_spacing: CPointer<godot_method_bind>
+      val autotileSetSpacing: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_spacing".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_spacing" }
+            "autotileSetSpacing".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetSpacing" }
         }
-      val autotile_set_subtile_priority: CPointer<godot_method_bind>
+      val autotileSetSubtilePriority: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_subtile_priority".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_subtile_priority" }
+            "autotileSetSubtilePriority".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetSubtilePriority" }
         }
-      val autotile_set_z_index: CPointer<godot_method_bind>
+      val autotileSetZIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "autotile_set_z_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method autotile_set_z_index" }
+            "autotileSetZIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method autotileSetZIndex" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -751,277 +750,275 @@ open class TileSet(
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
-      val create_tile: CPointer<godot_method_bind>
+      val createTile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "create_tile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_tile" }
+            "createTile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createTile" }
         }
-      val find_tile_by_name: CPointer<godot_method_bind>
+      val findTileByName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "find_tile_by_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method find_tile_by_name" }
+            "findTileByName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method findTileByName" }
         }
-      val get_last_unused_tile_id: CPointer<godot_method_bind>
+      val getLastUnusedTileId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "get_last_unused_tile_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_last_unused_tile_id" }
+            "getLastUnusedTileId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLastUnusedTileId" }
         }
-      val get_tiles_ids: CPointer<godot_method_bind>
+      val getTilesIds: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "get_tiles_ids".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tiles_ids" }
+            "getTilesIds".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTilesIds" }
         }
-      val remove_tile: CPointer<godot_method_bind>
+      val removeTile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "remove_tile".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_tile" }
+            "removeTile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeTile" }
         }
-      val tile_add_shape: CPointer<godot_method_bind>
+      val tileAddShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_add_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_add_shape" }
+            "tileAddShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileAddShape" }
         }
-      val tile_get_light_occluder: CPointer<godot_method_bind>
+      val tileGetLightOccluder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_light_occluder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_light_occluder" }
+            "tileGetLightOccluder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetLightOccluder" }
         }
-      val tile_get_material: CPointer<godot_method_bind>
+      val tileGetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_material" }
+            "tileGetMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetMaterial" }
         }
-      val tile_get_modulate: CPointer<godot_method_bind>
+      val tileGetModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_modulate" }
+            "tileGetModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetModulate" }
         }
-      val tile_get_name: CPointer<godot_method_bind>
+      val tileGetName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_name" }
+            "tileGetName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetName" }
         }
-      val tile_get_navigation_polygon: CPointer<godot_method_bind>
+      val tileGetNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_navigation_polygon" }
+            "tileGetNavigationPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetNavigationPolygon" }
         }
-      val tile_get_navigation_polygon_offset: CPointer<godot_method_bind>
+      val tileGetNavigationPolygonOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_navigation_polygon_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_navigation_polygon_offset"
-            }
+            "tileGetNavigationPolygonOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetNavigationPolygonOffset" }
         }
-      val tile_get_normal_map: CPointer<godot_method_bind>
+      val tileGetNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_normal_map" }
+            "tileGetNormalMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetNormalMap" }
         }
-      val tile_get_occluder_offset: CPointer<godot_method_bind>
+      val tileGetOccluderOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_occluder_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_occluder_offset" }
+            "tileGetOccluderOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetOccluderOffset" }
         }
-      val tile_get_region: CPointer<godot_method_bind>
+      val tileGetRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_region".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_region" }
+            "tileGetRegion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetRegion" }
         }
-      val tile_get_shape: CPointer<godot_method_bind>
+      val tileGetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shape" }
+            "tileGetShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShape" }
         }
-      val tile_get_shape_count: CPointer<godot_method_bind>
+      val tileGetShapeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shape_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shape_count" }
+            "tileGetShapeCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShapeCount" }
         }
-      val tile_get_shape_offset: CPointer<godot_method_bind>
+      val tileGetShapeOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shape_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shape_offset" }
+            "tileGetShapeOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShapeOffset" }
         }
-      val tile_get_shape_one_way: CPointer<godot_method_bind>
+      val tileGetShapeOneWay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shape_one_way".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shape_one_way" }
+            "tileGetShapeOneWay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShapeOneWay" }
         }
-      val tile_get_shape_one_way_margin: CPointer<godot_method_bind>
+      val tileGetShapeOneWayMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shape_one_way_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shape_one_way_margin" }
+            "tileGetShapeOneWayMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShapeOneWayMargin" }
         }
-      val tile_get_shape_transform: CPointer<godot_method_bind>
+      val tileGetShapeTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shape_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shape_transform" }
+            "tileGetShapeTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShapeTransform" }
         }
-      val tile_get_shapes: CPointer<godot_method_bind>
+      val tileGetShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_shapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_shapes" }
+            "tileGetShapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetShapes" }
         }
-      val tile_get_texture: CPointer<godot_method_bind>
+      val tileGetTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_texture" }
+            "tileGetTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetTexture" }
         }
-      val tile_get_texture_offset: CPointer<godot_method_bind>
+      val tileGetTextureOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_texture_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_texture_offset" }
+            "tileGetTextureOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetTextureOffset" }
         }
-      val tile_get_tile_mode: CPointer<godot_method_bind>
+      val tileGetTileMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_tile_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_tile_mode" }
+            "tileGetTileMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetTileMode" }
         }
-      val tile_get_z_index: CPointer<godot_method_bind>
+      val tileGetZIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_get_z_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_get_z_index" }
+            "tileGetZIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileGetZIndex" }
         }
-      val tile_set_light_occluder: CPointer<godot_method_bind>
+      val tileSetLightOccluder: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_light_occluder".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_light_occluder" }
+            "tileSetLightOccluder".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetLightOccluder" }
         }
-      val tile_set_material: CPointer<godot_method_bind>
+      val tileSetMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_material" }
+            "tileSetMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetMaterial" }
         }
-      val tile_set_modulate: CPointer<godot_method_bind>
+      val tileSetModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_modulate" }
+            "tileSetModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetModulate" }
         }
-      val tile_set_name: CPointer<godot_method_bind>
+      val tileSetName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_name" }
+            "tileSetName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetName" }
         }
-      val tile_set_navigation_polygon: CPointer<godot_method_bind>
+      val tileSetNavigationPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_navigation_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_navigation_polygon" }
+            "tileSetNavigationPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetNavigationPolygon" }
         }
-      val tile_set_navigation_polygon_offset: CPointer<godot_method_bind>
+      val tileSetNavigationPolygonOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_navigation_polygon_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_navigation_polygon_offset"
-            }
+            "tileSetNavigationPolygonOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetNavigationPolygonOffset" }
         }
-      val tile_set_normal_map: CPointer<godot_method_bind>
+      val tileSetNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_normal_map" }
+            "tileSetNormalMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetNormalMap" }
         }
-      val tile_set_occluder_offset: CPointer<godot_method_bind>
+      val tileSetOccluderOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_occluder_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_occluder_offset" }
+            "tileSetOccluderOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetOccluderOffset" }
         }
-      val tile_set_region: CPointer<godot_method_bind>
+      val tileSetRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_region".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_region" }
+            "tileSetRegion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetRegion" }
         }
-      val tile_set_shape: CPointer<godot_method_bind>
+      val tileSetShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_shape" }
+            "tileSetShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetShape" }
         }
-      val tile_set_shape_offset: CPointer<godot_method_bind>
+      val tileSetShapeOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_shape_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_shape_offset" }
+            "tileSetShapeOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetShapeOffset" }
         }
-      val tile_set_shape_one_way: CPointer<godot_method_bind>
+      val tileSetShapeOneWay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_shape_one_way".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_shape_one_way" }
+            "tileSetShapeOneWay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetShapeOneWay" }
         }
-      val tile_set_shape_one_way_margin: CPointer<godot_method_bind>
+      val tileSetShapeOneWayMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_shape_one_way_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_shape_one_way_margin" }
+            "tileSetShapeOneWayMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetShapeOneWayMargin" }
         }
-      val tile_set_shape_transform: CPointer<godot_method_bind>
+      val tileSetShapeTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_shape_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_shape_transform" }
+            "tileSetShapeTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetShapeTransform" }
         }
-      val tile_set_shapes: CPointer<godot_method_bind>
+      val tileSetShapes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_shapes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_shapes" }
+            "tileSetShapes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetShapes" }
         }
-      val tile_set_texture: CPointer<godot_method_bind>
+      val tileSetTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_texture" }
+            "tileSetTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetTexture" }
         }
-      val tile_set_texture_offset: CPointer<godot_method_bind>
+      val tileSetTextureOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_texture_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_texture_offset" }
+            "tileSetTextureOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetTextureOffset" }
         }
-      val tile_set_tile_mode: CPointer<godot_method_bind>
+      val tileSetTileMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_tile_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_tile_mode" }
+            "tileSetTileMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetTileMode" }
         }
-      val tile_set_z_index: CPointer<godot_method_bind>
+      val tileSetZIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("TileSet".cstr.ptr,
-            "tile_set_z_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method tile_set_z_index" }
+            "tileSetZIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method tileSetZIndex" }
         }}
   }
 }

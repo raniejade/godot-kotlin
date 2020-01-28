@@ -18,34 +18,58 @@ import kotlinx.cinterop.reinterpret
 open class CameraTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var cameraFeedId: Int
+    get() {
+       return getCameraFeedId() 
+    }
+    set(value) {
+      setCameraFeedId(value)
+    }
+
+  var cameraIsActive: Boolean
+    get() {
+       return getCameraActive() 
+    }
+    set(value) {
+      setCameraActive(value)
+    }
+
+  var whichFeed: Int
+    get() {
+       return CameraServer.FeedImage.from(getWhichFeed()) 
+    }
+    set(value) {
+      setWhichFeed(CameraServer.FeedImage.from(value))
+    }
+
   fun getCameraActive(): Boolean {
-    val _ret = __method_bind.get_camera_active.call(this._handle)
+    val _ret = __method_bind.getCameraActive.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getCameraFeedId(): Int {
-    val _ret = __method_bind.get_camera_feed_id.call(this._handle)
+    val _ret = __method_bind.getCameraFeedId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getWhichFeed(): CameraServer.FeedImage {
-    val _ret = __method_bind.get_which_feed.call(this._handle)
+    val _ret = __method_bind.getWhichFeed.call(this._handle)
     return CameraServer.FeedImage.from(_ret.asInt())
   }
 
   fun setCameraActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_camera_active.call(this._handle, _arg, 1)
+    __method_bind.setCameraActive.call(this._handle, _arg, 1)
   }
 
   fun setCameraFeedId(feedId: Int) {
     val _arg = Variant.new(feedId)
-    __method_bind.set_camera_feed_id.call(this._handle, _arg, 1)
+    __method_bind.setCameraFeedId.call(this._handle, _arg, 1)
   }
 
   fun setWhichFeed(whichFeed: Int) {
     val _arg = Variant.new(whichFeed)
-    __method_bind.set_which_feed.call(this._handle, _arg, 1)
+    __method_bind.setWhichFeed.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -62,47 +86,47 @@ open class CameraTexture(
      * Container for method_bind pointers for CameraTexture
      */
     private object __method_bind {
-      val get_camera_active: CPointer<godot_method_bind>
+      val getCameraActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-            "get_camera_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_active" }
+            "getCameraActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCameraActive" }
         }
-      val get_camera_feed_id: CPointer<godot_method_bind>
+      val getCameraFeedId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-            "get_camera_feed_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_feed_id" }
+            "getCameraFeedId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCameraFeedId" }
         }
-      val get_which_feed: CPointer<godot_method_bind>
+      val getWhichFeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-            "get_which_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_which_feed" }
+            "getWhichFeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWhichFeed" }
         }
-      val set_camera_active: CPointer<godot_method_bind>
+      val setCameraActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-            "set_camera_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_camera_active" }
+            "setCameraActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCameraActive" }
         }
-      val set_camera_feed_id: CPointer<godot_method_bind>
+      val setCameraFeedId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-            "set_camera_feed_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_camera_feed_id" }
+            "setCameraFeedId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCameraFeedId" }
         }
-      val set_which_feed: CPointer<godot_method_bind>
+      val setWhichFeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CameraTexture".cstr.ptr,
-            "set_which_feed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_which_feed" }
+            "setWhichFeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setWhichFeed" }
         }}
   }
 }

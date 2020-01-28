@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class PinJoint2D(
   _handle: COpaquePointer
 ) : Joint2D(_handle) {
+  var softness: Float
+    get() {
+       return getSoftness() 
+    }
+    set(value) {
+      setSoftness(value)
+    }
+
   fun getSoftness(): Float {
-    val _ret = __method_bind.get_softness.call(this._handle)
+    val _ret = __method_bind.getSoftness.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setSoftness(softness: Float) {
     val _arg = Variant.new(softness)
-    __method_bind.set_softness.call(this._handle, _arg, 1)
+    __method_bind.setSoftness.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,17 +49,17 @@ open class PinJoint2D(
      * Container for method_bind pointers for PinJoint2D
      */
     private object __method_bind {
-      val get_softness: CPointer<godot_method_bind>
+      val getSoftness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
-            "get_softness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_softness" }
+            "getSoftness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSoftness" }
         }
-      val set_softness: CPointer<godot_method_bind>
+      val setSoftness: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PinJoint2D".cstr.ptr,
-            "set_softness".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_softness" }
+            "setSoftness".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSoftness" }
         }}
   }
 }

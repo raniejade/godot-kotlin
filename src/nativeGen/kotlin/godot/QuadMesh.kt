@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class QuadMesh(
   _handle: COpaquePointer
 ) : PrimitiveMesh(_handle) {
+  var size: Vector2
+    get() {
+       return getSize() 
+    }
+    set(value) {
+      setSize(value)
+    }
+
   fun getSize(): Vector2 {
-    val _ret = __method_bind.get_size.call(this._handle)
+    val _ret = __method_bind.getSize.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -41,17 +49,17 @@ open class QuadMesh(
      * Container for method_bind pointers for QuadMesh
      */
     private object __method_bind {
-      val get_size: CPointer<godot_method_bind>
+      val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("QuadMesh".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
+            "getSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSize" }
         }
-      val set_size: CPointer<godot_method_bind>
+      val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("QuadMesh".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
+            "setSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSize" }
         }}
   }
 }

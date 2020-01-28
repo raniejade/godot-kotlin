@@ -27,11 +27,11 @@ open class VisualScriptFunctionState(
     _args.append(obj)
     _args.append(signals)
     _args.append(args)
-    __method_bind.connect_to_signal.call(this._handle, _args.toVariant(), 3)
+    __method_bind.connectToSignal.call(this._handle, _args.toVariant(), 3)
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.is_valid.call(this._handle)
+    val _ret = __method_bind.isValid.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -56,19 +56,19 @@ open class VisualScriptFunctionState(
      * Container for method_bind pointers for VisualScriptFunctionState
      */
     private object __method_bind {
-      val connect_to_signal: CPointer<godot_method_bind>
+      val connectToSignal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "connect_to_signal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_to_signal" }
+            "connectToSignal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method connectToSignal" }
         }
-      val is_valid: CPointer<godot_method_bind>
+      val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptFunctionState".cstr.ptr,
-            "is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid" }
+            "isValid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isValid" }
         }
       val resume: CPointer<godot_method_bind>
         get() = memScoped {

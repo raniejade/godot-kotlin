@@ -17,33 +17,49 @@ import kotlinx.cinterop.reinterpret
 open class CollisionShape(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var disabled: Boolean
+    get() {
+       return isDisabled() 
+    }
+    set(value) {
+      setDisabled(value)
+    }
+
+  var shape: Shape
+    get() {
+       return getShape() 
+    }
+    set(value) {
+      setShape(value)
+    }
+
   fun getShape(): Shape {
-    val _ret = __method_bind.get_shape.call(this._handle)
+    val _ret = __method_bind.getShape.call(this._handle)
     return _ret.asObject(::Shape)!!
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.is_disabled.call(this._handle)
+    val _ret = __method_bind.isDisabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun makeConvexFromBrothers() {
-    __method_bind.make_convex_from_brothers.call(this._handle)
+    __method_bind.makeConvexFromBrothers.call(this._handle)
   }
 
   fun resourceChanged(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.resource_changed.call(this._handle, _arg, 1)
+    __method_bind.resourceChanged.call(this._handle, _arg, 1)
   }
 
   fun setDisabled(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_disabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, _arg, 1)
   }
 
   fun setShape(shape: Shape) {
     val _arg = Variant.new(shape)
-    __method_bind.set_shape.call(this._handle, _arg, 1)
+    __method_bind.setShape.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -61,47 +77,47 @@ open class CollisionShape(
      * Container for method_bind pointers for CollisionShape
      */
     private object __method_bind {
-      val get_shape: CPointer<godot_method_bind>
+      val getShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-            "get_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shape" }
+            "getShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShape" }
         }
-      val is_disabled: CPointer<godot_method_bind>
+      val isDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-            "is_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_disabled" }
+            "isDisabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDisabled" }
         }
-      val make_convex_from_brothers: CPointer<godot_method_bind>
+      val makeConvexFromBrothers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-            "make_convex_from_brothers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_convex_from_brothers" }
+            "makeConvexFromBrothers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeConvexFromBrothers" }
         }
-      val resource_changed: CPointer<godot_method_bind>
+      val resourceChanged: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-            "resource_changed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resource_changed" }
+            "resourceChanged".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resourceChanged" }
         }
-      val set_disabled: CPointer<godot_method_bind>
+      val setDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-            "set_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_disabled" }
+            "setDisabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDisabled" }
         }
-      val set_shape: CPointer<godot_method_bind>
+      val setShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionShape".cstr.ptr,
-            "set_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shape" }
+            "setShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShape" }
         }}
   }
 }

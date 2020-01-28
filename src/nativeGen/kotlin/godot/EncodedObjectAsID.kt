@@ -18,13 +18,13 @@ open class EncodedObjectAsID(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getObjectId(): Int {
-    val _ret = __method_bind.get_object_id.call(this._handle)
+    val _ret = __method_bind.getObjectId.call(this._handle)
     return _ret.asInt()
   }
 
   fun setObjectId(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.set_object_id.call(this._handle, _arg, 1)
+    __method_bind.setObjectId.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +42,19 @@ open class EncodedObjectAsID(
      * Container for method_bind pointers for EncodedObjectAsID
      */
     private object __method_bind {
-      val get_object_id: CPointer<godot_method_bind>
+      val getObjectId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
-            "get_object_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_object_id" }
+            "getObjectId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getObjectId" }
         }
-      val set_object_id: CPointer<godot_method_bind>
+      val setObjectId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EncodedObjectAsID".cstr.ptr,
-            "set_object_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_object_id" }
+            "setObjectId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setObjectId" }
         }}
   }
 }

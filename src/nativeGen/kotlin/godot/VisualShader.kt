@@ -21,6 +21,14 @@ import kotlinx.cinterop.reinterpret
 open class VisualShader(
   _handle: COpaquePointer
 ) : Shader(_handle) {
+  var graphOffset: Vector2
+    get() {
+       return getGraphOffset() 
+    }
+    set(value) {
+      setGraphOffset(value)
+    }
+
   fun addNode(
     type: Int,
     node: VisualShaderNode,
@@ -32,7 +40,7 @@ open class VisualShader(
     _args.append(node)
     _args.append(position)
     _args.append(id)
-    __method_bind.add_node.call(this._handle, _args.toVariant(), 4)
+    __method_bind.addNode.call(this._handle, _args.toVariant(), 4)
   }
 
   fun canConnectNodes(
@@ -48,7 +56,7 @@ open class VisualShader(
     _args.append(fromPort)
     _args.append(toNode)
     _args.append(toPort)
-    val _ret = __method_bind.can_connect_nodes.call(this._handle, _args.toVariant(), 5)
+    val _ret = __method_bind.canConnectNodes.call(this._handle, _args.toVariant(), 5)
     return _ret.asBoolean()
   }
 
@@ -65,7 +73,7 @@ open class VisualShader(
     _args.append(fromPort)
     _args.append(toNode)
     _args.append(toPort)
-    val _ret = __method_bind.connect_nodes.call(this._handle, _args.toVariant(), 5)
+    val _ret = __method_bind.connectNodes.call(this._handle, _args.toVariant(), 5)
     return GDError.from(_ret.asInt())
   }
 
@@ -82,7 +90,7 @@ open class VisualShader(
     _args.append(fromPort)
     _args.append(toNode)
     _args.append(toPort)
-    __method_bind.connect_nodes_forced.call(this._handle, _args.toVariant(), 5)
+    __method_bind.connectNodesForced.call(this._handle, _args.toVariant(), 5)
   }
 
   fun disconnectNodes(
@@ -98,11 +106,11 @@ open class VisualShader(
     _args.append(fromPort)
     _args.append(toNode)
     _args.append(toPort)
-    __method_bind.disconnect_nodes.call(this._handle, _args.toVariant(), 5)
+    __method_bind.disconnectNodes.call(this._handle, _args.toVariant(), 5)
   }
 
   fun getGraphOffset(): Vector2 {
-    val _ret = __method_bind.get_graph_offset.call(this._handle)
+    val _ret = __method_bind.getGraphOffset.call(this._handle)
     return _ret.asVector2()
   }
 
@@ -110,19 +118,19 @@ open class VisualShader(
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(id)
-    val _ret = __method_bind.get_node.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getNode.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::VisualShaderNode)!!
   }
 
   fun getNodeConnections(type: Int): VariantArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_node_connections.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeConnections.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun getNodeList(type: Int): PoolIntArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_node_list.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNodeList.call(this._handle, _arg, 1)
     return _ret.asPoolIntArray()
   }
 
@@ -130,13 +138,13 @@ open class VisualShader(
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(id)
-    val _ret = __method_bind.get_node_position.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getNodePosition.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
   fun getValidNodeId(type: Int): Int {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_valid_node_id.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getValidNodeId.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
@@ -153,7 +161,7 @@ open class VisualShader(
     _args.append(fromPort)
     _args.append(toNode)
     _args.append(toPort)
-    val _ret = __method_bind.is_node_connection.call(this._handle, _args.toVariant(), 5)
+    val _ret = __method_bind.isNodeConnection.call(this._handle, _args.toVariant(), 5)
     return _ret.asBoolean()
   }
 
@@ -165,17 +173,17 @@ open class VisualShader(
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(id)
-    __method_bind.remove_node.call(this._handle, _args.toVariant(), 2)
+    __method_bind.removeNode.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setGraphOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_graph_offset.call(this._handle, _arg, 1)
+    __method_bind.setGraphOffset.call(this._handle, _arg, 1)
   }
 
   fun setMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_mode.call(this._handle, _arg, 1)
+    __method_bind.setMode.call(this._handle, _arg, 1)
   }
 
   fun setNodePosition(
@@ -187,7 +195,7 @@ open class VisualShader(
     _args.append(type)
     _args.append(id)
     _args.append(position)
-    __method_bind.set_node_position.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setNodePosition.call(this._handle, _args.toVariant(), 3)
   }
 
   enum class Type(
@@ -239,89 +247,89 @@ open class VisualShader(
      * Container for method_bind pointers for VisualShader
      */
     private object __method_bind {
-      val add_node: CPointer<godot_method_bind>
+      val addNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "add_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_node" }
+            "addNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addNode" }
         }
-      val can_connect_nodes: CPointer<godot_method_bind>
+      val canConnectNodes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "can_connect_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method can_connect_nodes" }
+            "canConnectNodes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method canConnectNodes" }
         }
-      val connect_nodes: CPointer<godot_method_bind>
+      val connectNodes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "connect_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_nodes" }
+            "connectNodes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method connectNodes" }
         }
-      val connect_nodes_forced: CPointer<godot_method_bind>
+      val connectNodesForced: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "connect_nodes_forced".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method connect_nodes_forced" }
+            "connectNodesForced".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method connectNodesForced" }
         }
-      val disconnect_nodes: CPointer<godot_method_bind>
+      val disconnectNodes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "disconnect_nodes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method disconnect_nodes" }
+            "disconnectNodes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method disconnectNodes" }
         }
-      val get_graph_offset: CPointer<godot_method_bind>
+      val getGraphOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_graph_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_graph_offset" }
+            "getGraphOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGraphOffset" }
         }
-      val get_node: CPointer<godot_method_bind>
+      val getNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node" }
+            "getNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNode" }
         }
-      val get_node_connections: CPointer<godot_method_bind>
+      val getNodeConnections: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node_connections".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_connections" }
+            "getNodeConnections".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeConnections" }
         }
-      val get_node_list: CPointer<godot_method_bind>
+      val getNodeList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_list" }
+            "getNodeList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeList" }
         }
-      val get_node_position: CPointer<godot_method_bind>
+      val getNodePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_node_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_position" }
+            "getNodePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodePosition" }
         }
-      val get_valid_node_id: CPointer<godot_method_bind>
+      val getValidNodeId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "get_valid_node_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_valid_node_id" }
+            "getValidNodeId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getValidNodeId" }
         }
-      val is_node_connection: CPointer<godot_method_bind>
+      val isNodeConnection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "is_node_connection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_node_connection" }
+            "isNodeConnection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isNodeConnection" }
         }
       val rebuild: CPointer<godot_method_bind>
         get() = memScoped {
@@ -330,33 +338,33 @@ open class VisualShader(
             "rebuild".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method rebuild" }
         }
-      val remove_node: CPointer<godot_method_bind>
+      val removeNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "remove_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_node" }
+            "removeNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeNode" }
         }
-      val set_graph_offset: CPointer<godot_method_bind>
+      val setGraphOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "set_graph_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_graph_offset" }
+            "setGraphOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGraphOffset" }
         }
-      val set_mode: CPointer<godot_method_bind>
+      val setMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "set_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_mode" }
+            "setMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMode" }
         }
-      val set_node_position: CPointer<godot_method_bind>
+      val setNodePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShader".cstr.ptr,
-            "set_node_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_node_position" }
+            "setNodePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNodePosition" }
         }}
   }
 }

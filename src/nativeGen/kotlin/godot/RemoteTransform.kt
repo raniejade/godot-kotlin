@@ -18,54 +18,94 @@ import kotlinx.cinterop.reinterpret
 open class RemoteTransform(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var remotePath: NodePath
+    get() {
+       return getRemoteNode() 
+    }
+    set(value) {
+      setRemoteNode(value)
+    }
+
+  var updatePosition: Boolean
+    get() {
+       return getUpdatePosition() 
+    }
+    set(value) {
+      setUpdatePosition(value)
+    }
+
+  var updateRotation: Boolean
+    get() {
+       return getUpdateRotation() 
+    }
+    set(value) {
+      setUpdateRotation(value)
+    }
+
+  var updateScale: Boolean
+    get() {
+       return getUpdateScale() 
+    }
+    set(value) {
+      setUpdateScale(value)
+    }
+
+  var useGlobalCoordinates: Boolean
+    get() {
+       return getUseGlobalCoordinates() 
+    }
+    set(value) {
+      setUseGlobalCoordinates(value)
+    }
+
   fun getRemoteNode(): NodePath {
-    val _ret = __method_bind.get_remote_node.call(this._handle)
+    val _ret = __method_bind.getRemoteNode.call(this._handle)
     return _ret.asNodePath()
   }
 
   fun getUpdatePosition(): Boolean {
-    val _ret = __method_bind.get_update_position.call(this._handle)
+    val _ret = __method_bind.getUpdatePosition.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getUpdateRotation(): Boolean {
-    val _ret = __method_bind.get_update_rotation.call(this._handle)
+    val _ret = __method_bind.getUpdateRotation.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getUpdateScale(): Boolean {
-    val _ret = __method_bind.get_update_scale.call(this._handle)
+    val _ret = __method_bind.getUpdateScale.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getUseGlobalCoordinates(): Boolean {
-    val _ret = __method_bind.get_use_global_coordinates.call(this._handle)
+    val _ret = __method_bind.getUseGlobalCoordinates.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setRemoteNode(path: NodePath) {
     val _arg = Variant.new(path)
-    __method_bind.set_remote_node.call(this._handle, _arg, 1)
+    __method_bind.setRemoteNode.call(this._handle, _arg, 1)
   }
 
   fun setUpdatePosition(updateRemotePosition: Boolean) {
     val _arg = Variant.new(updateRemotePosition)
-    __method_bind.set_update_position.call(this._handle, _arg, 1)
+    __method_bind.setUpdatePosition.call(this._handle, _arg, 1)
   }
 
   fun setUpdateRotation(updateRemoteRotation: Boolean) {
     val _arg = Variant.new(updateRemoteRotation)
-    __method_bind.set_update_rotation.call(this._handle, _arg, 1)
+    __method_bind.setUpdateRotation.call(this._handle, _arg, 1)
   }
 
   fun setUpdateScale(updateRemoteScale: Boolean) {
     val _arg = Variant.new(updateRemoteScale)
-    __method_bind.set_update_scale.call(this._handle, _arg, 1)
+    __method_bind.setUpdateScale.call(this._handle, _arg, 1)
   }
 
   fun setUseGlobalCoordinates(useGlobalCoordinates: Boolean) {
     val _arg = Variant.new(useGlobalCoordinates)
-    __method_bind.set_use_global_coordinates.call(this._handle, _arg, 1)
+    __method_bind.setUseGlobalCoordinates.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -83,75 +123,75 @@ open class RemoteTransform(
      * Container for method_bind pointers for RemoteTransform
      */
     private object __method_bind {
-      val get_remote_node: CPointer<godot_method_bind>
+      val getRemoteNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "get_remote_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_remote_node" }
+            "getRemoteNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRemoteNode" }
         }
-      val get_update_position: CPointer<godot_method_bind>
+      val getUpdatePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "get_update_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_position" }
+            "getUpdatePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUpdatePosition" }
         }
-      val get_update_rotation: CPointer<godot_method_bind>
+      val getUpdateRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "get_update_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_rotation" }
+            "getUpdateRotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUpdateRotation" }
         }
-      val get_update_scale: CPointer<godot_method_bind>
+      val getUpdateScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "get_update_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_scale" }
+            "getUpdateScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUpdateScale" }
         }
-      val get_use_global_coordinates: CPointer<godot_method_bind>
+      val getUseGlobalCoordinates: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "get_use_global_coordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_use_global_coordinates" }
+            "getUseGlobalCoordinates".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUseGlobalCoordinates" }
         }
-      val set_remote_node: CPointer<godot_method_bind>
+      val setRemoteNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "set_remote_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_remote_node" }
+            "setRemoteNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRemoteNode" }
         }
-      val set_update_position: CPointer<godot_method_bind>
+      val setUpdatePosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "set_update_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_position" }
+            "setUpdatePosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUpdatePosition" }
         }
-      val set_update_rotation: CPointer<godot_method_bind>
+      val setUpdateRotation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "set_update_rotation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_rotation" }
+            "setUpdateRotation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUpdateRotation" }
         }
-      val set_update_scale: CPointer<godot_method_bind>
+      val setUpdateScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "set_update_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_scale" }
+            "setUpdateScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUpdateScale" }
         }
-      val set_use_global_coordinates: CPointer<godot_method_bind>
+      val setUseGlobalCoordinates: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RemoteTransform".cstr.ptr,
-            "set_use_global_coordinates".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_global_coordinates" }
+            "setUseGlobalCoordinates".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseGlobalCoordinates" }
         }}
   }
 }

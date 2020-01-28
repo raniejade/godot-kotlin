@@ -23,110 +23,214 @@ import kotlinx.cinterop.reinterpret
 open class Camera(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var cullMask: Int
+    get() {
+       return getCullMask() 
+    }
+    set(value) {
+      setCullMask(value)
+    }
+
+  var current: Boolean
+    get() {
+       return isCurrent() 
+    }
+    set(value) {
+      setCurrent(value)
+    }
+
+  var dopplerTracking: Int
+    get() {
+       return Camera.DopplerTracking.from(getDopplerTracking()) 
+    }
+    set(value) {
+      setDopplerTracking(Camera.DopplerTracking.from(value))
+    }
+
+  var environment: Environment
+    get() {
+       return getEnvironment() 
+    }
+    set(value) {
+      setEnvironment(value)
+    }
+
+  var far: Float
+    get() {
+       return getZfar() 
+    }
+    set(value) {
+      setZfar(value)
+    }
+
+  var fov: Float
+    get() {
+       return getFov() 
+    }
+    set(value) {
+      setFov(value)
+    }
+
+  var frustumOffset: Vector2
+    get() {
+       return getFrustumOffset() 
+    }
+    set(value) {
+      setFrustumOffset(value)
+    }
+
+  var hOffset: Float
+    get() {
+       return getHOffset() 
+    }
+    set(value) {
+      setHOffset(value)
+    }
+
+  var keepAspect: Int
+    get() {
+       return Camera.KeepAspect.from(getKeepAspectMode()) 
+    }
+    set(value) {
+      setKeepAspectMode(Camera.KeepAspect.from(value))
+    }
+
+  var near: Float
+    get() {
+       return getZnear() 
+    }
+    set(value) {
+      setZnear(value)
+    }
+
+  var projection: Int
+    get() {
+       return Camera.Projection.from(getProjection()) 
+    }
+    set(value) {
+      setProjection(Camera.Projection.from(value))
+    }
+
+  var size: Float
+    get() {
+       return getSize() 
+    }
+    set(value) {
+      setSize(value)
+    }
+
+  var vOffset: Float
+    get() {
+       return getVOffset() 
+    }
+    set(value) {
+      setVOffset(value)
+    }
+
   fun clearCurrent(enableNext: Boolean) {
     val _arg = Variant.new(enableNext)
-    __method_bind.clear_current.call(this._handle, _arg, 1)
+    __method_bind.clearCurrent.call(this._handle, _arg, 1)
   }
 
   fun getCameraRid(): RID {
-    val _ret = __method_bind.get_camera_rid.call(this._handle)
+    val _ret = __method_bind.getCameraRid.call(this._handle)
     return _ret.asRID()
   }
 
   fun getCameraTransform(): Transform {
-    val _ret = __method_bind.get_camera_transform.call(this._handle)
+    val _ret = __method_bind.getCameraTransform.call(this._handle)
     return _ret.asTransform()
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.get_cull_mask.call(this._handle)
+    val _ret = __method_bind.getCullMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCullMaskBit(layer: Int): Boolean {
     val _arg = Variant.new(layer)
-    val _ret = __method_bind.get_cull_mask_bit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCullMaskBit.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getDopplerTracking(): DopplerTracking {
-    val _ret = __method_bind.get_doppler_tracking.call(this._handle)
+    val _ret = __method_bind.getDopplerTracking.call(this._handle)
     return Camera.DopplerTracking.from(_ret.asInt())
   }
 
   fun getEnvironment(): Environment {
-    val _ret = __method_bind.get_environment.call(this._handle)
+    val _ret = __method_bind.getEnvironment.call(this._handle)
     return _ret.asObject(::Environment)!!
   }
 
   fun getFov(): Float {
-    val _ret = __method_bind.get_fov.call(this._handle)
+    val _ret = __method_bind.getFov.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFrustum(): VariantArray {
-    val _ret = __method_bind.get_frustum.call(this._handle)
+    val _ret = __method_bind.getFrustum.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getFrustumOffset(): Vector2 {
-    val _ret = __method_bind.get_frustum_offset.call(this._handle)
+    val _ret = __method_bind.getFrustumOffset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getHOffset(): Float {
-    val _ret = __method_bind.get_h_offset.call(this._handle)
+    val _ret = __method_bind.getHOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getKeepAspectMode(): KeepAspect {
-    val _ret = __method_bind.get_keep_aspect_mode.call(this._handle)
+    val _ret = __method_bind.getKeepAspectMode.call(this._handle)
     return Camera.KeepAspect.from(_ret.asInt())
   }
 
   fun getProjection(): Projection {
-    val _ret = __method_bind.get_projection.call(this._handle)
+    val _ret = __method_bind.getProjection.call(this._handle)
     return Camera.Projection.from(_ret.asInt())
   }
 
   fun getSize(): Float {
-    val _ret = __method_bind.get_size.call(this._handle)
+    val _ret = __method_bind.getSize.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getVOffset(): Float {
-    val _ret = __method_bind.get_v_offset.call(this._handle)
+    val _ret = __method_bind.getVOffset.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getZfar(): Float {
-    val _ret = __method_bind.get_zfar.call(this._handle)
+    val _ret = __method_bind.getZfar.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getZnear(): Float {
-    val _ret = __method_bind.get_znear.call(this._handle)
+    val _ret = __method_bind.getZnear.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isCurrent(): Boolean {
-    val _ret = __method_bind.is_current.call(this._handle)
+    val _ret = __method_bind.isCurrent.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isPositionBehind(worldPoint: Vector3): Boolean {
     val _arg = Variant.new(worldPoint)
-    val _ret = __method_bind.is_position_behind.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPositionBehind.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun makeCurrent() {
-    __method_bind.make_current.call(this._handle)
+    __method_bind.makeCurrent.call(this._handle)
   }
 
   fun projectLocalRayNormal(screenPoint: Vector2): Vector3 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.project_local_ray_normal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.projectLocalRayNormal.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
@@ -134,52 +238,52 @@ open class Camera(
     val _args = VariantArray.new()
     _args.append(screenPoint)
     _args.append(zDepth)
-    val _ret = __method_bind.project_position.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.projectPosition.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector3()
   }
 
   fun projectRayNormal(screenPoint: Vector2): Vector3 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.project_ray_normal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.projectRayNormal.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun projectRayOrigin(screenPoint: Vector2): Vector3 {
     val _arg = Variant.new(screenPoint)
-    val _ret = __method_bind.project_ray_origin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.projectRayOrigin.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun setCullMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_cull_mask.call(this._handle, _arg, 1)
+    __method_bind.setCullMask.call(this._handle, _arg, 1)
   }
 
   fun setCullMaskBit(layer: Int, enable: Boolean) {
     val _args = VariantArray.new()
     _args.append(layer)
     _args.append(enable)
-    __method_bind.set_cull_mask_bit.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setCullMaskBit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setCurrent(arg0: Boolean) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_current.call(this._handle, _arg, 1)
+    __method_bind.setCurrent.call(this._handle, _arg, 1)
   }
 
   fun setDopplerTracking(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_doppler_tracking.call(this._handle, _arg, 1)
+    __method_bind.setDopplerTracking.call(this._handle, _arg, 1)
   }
 
   fun setEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.set_environment.call(this._handle, _arg, 1)
+    __method_bind.setEnvironment.call(this._handle, _arg, 1)
   }
 
   fun setFov(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_fov.call(this._handle, _arg, 1)
+    __method_bind.setFov.call(this._handle, _arg, 1)
   }
 
   fun setFrustum(
@@ -193,22 +297,22 @@ open class Camera(
     _args.append(offset)
     _args.append(zNear)
     _args.append(zFar)
-    __method_bind.set_frustum.call(this._handle, _args.toVariant(), 4)
+    __method_bind.setFrustum.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setFrustumOffset(arg0: Vector2) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_frustum_offset.call(this._handle, _arg, 1)
+    __method_bind.setFrustumOffset.call(this._handle, _arg, 1)
   }
 
   fun setHOffset(ofs: Float) {
     val _arg = Variant.new(ofs)
-    __method_bind.set_h_offset.call(this._handle, _arg, 1)
+    __method_bind.setHOffset.call(this._handle, _arg, 1)
   }
 
   fun setKeepAspectMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_keep_aspect_mode.call(this._handle, _arg, 1)
+    __method_bind.setKeepAspectMode.call(this._handle, _arg, 1)
   }
 
   fun setOrthogonal(
@@ -220,7 +324,7 @@ open class Camera(
     _args.append(size)
     _args.append(zNear)
     _args.append(zFar)
-    __method_bind.set_orthogonal.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setOrthogonal.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setPerspective(
@@ -232,37 +336,37 @@ open class Camera(
     _args.append(fov)
     _args.append(zNear)
     _args.append(zFar)
-    __method_bind.set_perspective.call(this._handle, _args.toVariant(), 3)
+    __method_bind.setPerspective.call(this._handle, _args.toVariant(), 3)
   }
 
   fun setProjection(arg0: Int) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_projection.call(this._handle, _arg, 1)
+    __method_bind.setProjection.call(this._handle, _arg, 1)
   }
 
   fun setSize(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_size.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, _arg, 1)
   }
 
   fun setVOffset(ofs: Float) {
     val _arg = Variant.new(ofs)
-    __method_bind.set_v_offset.call(this._handle, _arg, 1)
+    __method_bind.setVOffset.call(this._handle, _arg, 1)
   }
 
   fun setZfar(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_zfar.call(this._handle, _arg, 1)
+    __method_bind.setZfar.call(this._handle, _arg, 1)
   }
 
   fun setZnear(arg0: Float) {
     val _arg = Variant.new(arg0)
-    __method_bind.set_znear.call(this._handle, _arg, 1)
+    __method_bind.setZnear.call(this._handle, _arg, 1)
   }
 
   fun unprojectPosition(worldPoint: Vector3): Vector2 {
     val _arg = Variant.new(worldPoint)
-    val _ret = __method_bind.unproject_position.call(this._handle, _arg, 1)
+    val _ret = __method_bind.unprojectPosition.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
@@ -357,257 +461,257 @@ open class Camera(
      * Container for method_bind pointers for Camera
      */
     private object __method_bind {
-      val clear_current: CPointer<godot_method_bind>
+      val clearCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "clear_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_current" }
+            "clearCurrent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearCurrent" }
         }
-      val get_camera_rid: CPointer<godot_method_bind>
+      val getCameraRid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_camera_rid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_rid" }
+            "getCameraRid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCameraRid" }
         }
-      val get_camera_transform: CPointer<godot_method_bind>
+      val getCameraTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_camera_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_camera_transform" }
+            "getCameraTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCameraTransform" }
         }
-      val get_cull_mask: CPointer<godot_method_bind>
+      val getCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
+            "getCullMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCullMask" }
         }
-      val get_cull_mask_bit: CPointer<godot_method_bind>
+      val getCullMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_cull_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mask_bit" }
+            "getCullMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCullMaskBit" }
         }
-      val get_doppler_tracking: CPointer<godot_method_bind>
+      val getDopplerTracking: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_doppler_tracking".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_doppler_tracking" }
+            "getDopplerTracking".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDopplerTracking" }
         }
-      val get_environment: CPointer<godot_method_bind>
+      val getEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            "getEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEnvironment" }
         }
-      val get_fov: CPointer<godot_method_bind>
+      val getFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fov" }
+            "getFov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFov" }
         }
-      val get_frustum: CPointer<godot_method_bind>
+      val getFrustum: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_frustum".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frustum" }
+            "getFrustum".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrustum" }
         }
-      val get_frustum_offset: CPointer<godot_method_bind>
+      val getFrustumOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_frustum_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_frustum_offset" }
+            "getFrustumOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFrustumOffset" }
         }
-      val get_h_offset: CPointer<godot_method_bind>
+      val getHOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_offset" }
+            "getHOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHOffset" }
         }
-      val get_keep_aspect_mode: CPointer<godot_method_bind>
+      val getKeepAspectMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_keep_aspect_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_keep_aspect_mode" }
+            "getKeepAspectMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getKeepAspectMode" }
         }
-      val get_projection: CPointer<godot_method_bind>
+      val getProjection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_projection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_projection" }
+            "getProjection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getProjection" }
         }
-      val get_size: CPointer<godot_method_bind>
+      val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
+            "getSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSize" }
         }
-      val get_v_offset: CPointer<godot_method_bind>
+      val getVOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_offset" }
+            "getVOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVOffset" }
         }
-      val get_zfar: CPointer<godot_method_bind>
+      val getZfar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_zfar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_zfar" }
+            "getZfar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getZfar" }
         }
-      val get_znear: CPointer<godot_method_bind>
+      val getZnear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "get_znear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_znear" }
+            "getZnear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getZnear" }
         }
-      val is_current: CPointer<godot_method_bind>
+      val isCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "is_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_current" }
+            "isCurrent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCurrent" }
         }
-      val is_position_behind: CPointer<godot_method_bind>
+      val isPositionBehind: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "is_position_behind".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_position_behind" }
+            "isPositionBehind".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPositionBehind" }
         }
-      val make_current: CPointer<godot_method_bind>
+      val makeCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "make_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_current" }
+            "makeCurrent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeCurrent" }
         }
-      val project_local_ray_normal: CPointer<godot_method_bind>
+      val projectLocalRayNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_local_ray_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_local_ray_normal" }
+            "projectLocalRayNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method projectLocalRayNormal" }
         }
-      val project_position: CPointer<godot_method_bind>
+      val projectPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_position" }
+            "projectPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method projectPosition" }
         }
-      val project_ray_normal: CPointer<godot_method_bind>
+      val projectRayNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_ray_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_ray_normal" }
+            "projectRayNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method projectRayNormal" }
         }
-      val project_ray_origin: CPointer<godot_method_bind>
+      val projectRayOrigin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "project_ray_origin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method project_ray_origin" }
+            "projectRayOrigin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method projectRayOrigin" }
         }
-      val set_cull_mask: CPointer<godot_method_bind>
+      val setCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
+            "setCullMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCullMask" }
         }
-      val set_cull_mask_bit: CPointer<godot_method_bind>
+      val setCullMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_cull_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mask_bit" }
+            "setCullMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCullMaskBit" }
         }
-      val set_current: CPointer<godot_method_bind>
+      val setCurrent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_current".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_current" }
+            "setCurrent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCurrent" }
         }
-      val set_doppler_tracking: CPointer<godot_method_bind>
+      val setDopplerTracking: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_doppler_tracking".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_doppler_tracking" }
+            "setDopplerTracking".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDopplerTracking" }
         }
-      val set_environment: CPointer<godot_method_bind>
+      val setEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_environment" }
+            "setEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnvironment" }
         }
-      val set_fov: CPointer<godot_method_bind>
+      val setFov: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_fov".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fov" }
+            "setFov".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFov" }
         }
-      val set_frustum: CPointer<godot_method_bind>
+      val setFrustum: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_frustum".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frustum" }
+            "setFrustum".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrustum" }
         }
-      val set_frustum_offset: CPointer<godot_method_bind>
+      val setFrustumOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_frustum_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_frustum_offset" }
+            "setFrustumOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFrustumOffset" }
         }
-      val set_h_offset: CPointer<godot_method_bind>
+      val setHOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_h_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_offset" }
+            "setHOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHOffset" }
         }
-      val set_keep_aspect_mode: CPointer<godot_method_bind>
+      val setKeepAspectMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_keep_aspect_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_keep_aspect_mode" }
+            "setKeepAspectMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setKeepAspectMode" }
         }
-      val set_orthogonal: CPointer<godot_method_bind>
+      val setOrthogonal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_orthogonal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_orthogonal" }
+            "setOrthogonal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOrthogonal" }
         }
-      val set_perspective: CPointer<godot_method_bind>
+      val setPerspective: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_perspective".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_perspective" }
+            "setPerspective".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPerspective" }
         }
-      val set_projection: CPointer<godot_method_bind>
+      val setProjection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_projection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_projection" }
+            "setProjection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setProjection" }
         }
-      val set_size: CPointer<godot_method_bind>
+      val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
+            "setSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSize" }
         }
-      val set_v_offset: CPointer<godot_method_bind>
+      val setVOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_v_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_offset" }
+            "setVOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVOffset" }
         }
-      val set_zfar: CPointer<godot_method_bind>
+      val setZfar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_zfar".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_zfar" }
+            "setZfar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setZfar" }
         }
-      val set_znear: CPointer<godot_method_bind>
+      val setZnear: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "set_znear".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_znear" }
+            "setZnear".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setZnear" }
         }
-      val unproject_position: CPointer<godot_method_bind>
+      val unprojectPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Camera".cstr.ptr,
-            "unproject_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method unproject_position" }
+            "unprojectPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method unprojectPosition" }
         }}
   }
 }

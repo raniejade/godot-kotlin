@@ -21,6 +21,30 @@ import kotlinx.cinterop.reinterpret
 open class Tween(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  var playbackProcessMode: Int
+    get() {
+       return Tween.TweenProcessMode.from(getTweenProcessMode()) 
+    }
+    set(value) {
+      setTweenProcessMode(Tween.TweenProcessMode.from(value))
+    }
+
+  var playbackSpeed: Float
+    get() {
+       return getSpeedScale() 
+    }
+    set(value) {
+      setSpeedScale(value)
+    }
+
+  var repeat: Boolean
+    get() {
+       return isRepeat() 
+    }
+    set(value) {
+      setRepeat(value)
+    }
+
   fun followMethod(
     `object`: Object,
     method: String,
@@ -42,7 +66,7 @@ open class Tween(
     _args.append(transType)
     _args.append(easeType)
     _args.append(delay)
-    val _ret = __method_bind.follow_method.call(this._handle, _args.toVariant(), 9)
+    val _ret = __method_bind.followMethod.call(this._handle, _args.toVariant(), 9)
     return _ret.asBoolean()
   }
 
@@ -67,22 +91,22 @@ open class Tween(
     _args.append(transType)
     _args.append(easeType)
     _args.append(delay)
-    val _ret = __method_bind.follow_property.call(this._handle, _args.toVariant(), 9)
+    val _ret = __method_bind.followProperty.call(this._handle, _args.toVariant(), 9)
     return _ret.asBoolean()
   }
 
   fun getRuntime(): Float {
-    val _ret = __method_bind.get_runtime.call(this._handle)
+    val _ret = __method_bind.getRuntime.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSpeedScale(): Float {
-    val _ret = __method_bind.get_speed_scale.call(this._handle)
+    val _ret = __method_bind.getSpeedScale.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTweenProcessMode(): TweenProcessMode {
-    val _ret = __method_bind.get_tween_process_mode.call(this._handle)
+    val _ret = __method_bind.getTweenProcessMode.call(this._handle)
     return Tween.TweenProcessMode.from(_ret.asInt())
   }
 
@@ -105,7 +129,7 @@ open class Tween(
     _args.append(arg3)
     _args.append(arg4)
     _args.append(arg5)
-    val _ret = __method_bind.interpolate_callback.call(this._handle, _args.toVariant(), 8)
+    val _ret = __method_bind.interpolateCallback.call(this._handle, _args.toVariant(), 8)
     return _ret.asBoolean()
   }
 
@@ -128,7 +152,7 @@ open class Tween(
     _args.append(arg3)
     _args.append(arg4)
     _args.append(arg5)
-    val _ret = __method_bind.interpolate_deferred_callback.call(this._handle, _args.toVariant(), 8)
+    val _ret = __method_bind.interpolateDeferredCallback.call(this._handle, _args.toVariant(), 8)
     return _ret.asBoolean()
   }
 
@@ -151,7 +175,7 @@ open class Tween(
     _args.append(transType)
     _args.append(easeType)
     _args.append(delay)
-    val _ret = __method_bind.interpolate_method.call(this._handle, _args.toVariant(), 8)
+    val _ret = __method_bind.interpolateMethod.call(this._handle, _args.toVariant(), 8)
     return _ret.asBoolean()
   }
 
@@ -174,17 +198,17 @@ open class Tween(
     _args.append(transType)
     _args.append(easeType)
     _args.append(delay)
-    val _ret = __method_bind.interpolate_property.call(this._handle, _args.toVariant(), 8)
+    val _ret = __method_bind.interpolateProperty.call(this._handle, _args.toVariant(), 8)
     return _ret.asBoolean()
   }
 
   fun isActive(): Boolean {
-    val _ret = __method_bind.is_active.call(this._handle)
+    val _ret = __method_bind.isActive.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isRepeat(): Boolean {
-    val _ret = __method_bind.is_repeat.call(this._handle)
+    val _ret = __method_bind.isRepeat.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -197,7 +221,7 @@ open class Tween(
   }
 
   fun removeAll(): Boolean {
-    val _ret = __method_bind.remove_all.call(this._handle)
+    val _ret = __method_bind.removeAll.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -210,7 +234,7 @@ open class Tween(
   }
 
   fun resetAll(): Boolean {
-    val _ret = __method_bind.reset_all.call(this._handle)
+    val _ret = __method_bind.resetAll.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -223,7 +247,7 @@ open class Tween(
   }
 
   fun resumeAll(): Boolean {
-    val _ret = __method_bind.resume_all.call(this._handle)
+    val _ret = __method_bind.resumeAll.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -235,22 +259,22 @@ open class Tween(
 
   fun setActive(active: Boolean) {
     val _arg = Variant.new(active)
-    __method_bind.set_active.call(this._handle, _arg, 1)
+    __method_bind.setActive.call(this._handle, _arg, 1)
   }
 
   fun setRepeat(repeat: Boolean) {
     val _arg = Variant.new(repeat)
-    __method_bind.set_repeat.call(this._handle, _arg, 1)
+    __method_bind.setRepeat.call(this._handle, _arg, 1)
   }
 
   fun setSpeedScale(speed: Float) {
     val _arg = Variant.new(speed)
-    __method_bind.set_speed_scale.call(this._handle, _arg, 1)
+    __method_bind.setSpeedScale.call(this._handle, _arg, 1)
   }
 
   fun setTweenProcessMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_tween_process_mode.call(this._handle, _arg, 1)
+    __method_bind.setTweenProcessMode.call(this._handle, _arg, 1)
   }
 
   fun start(): Boolean {
@@ -267,7 +291,7 @@ open class Tween(
   }
 
   fun stopAll(): Boolean {
-    val _ret = __method_bind.stop_all.call(this._handle)
+    val _ret = __method_bind.stopAll.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -292,7 +316,7 @@ open class Tween(
     _args.append(transType)
     _args.append(easeType)
     _args.append(delay)
-    val _ret = __method_bind.targeting_method.call(this._handle, _args.toVariant(), 9)
+    val _ret = __method_bind.targetingMethod.call(this._handle, _args.toVariant(), 9)
     return _ret.asBoolean()
   }
 
@@ -317,7 +341,7 @@ open class Tween(
     _args.append(transType)
     _args.append(easeType)
     _args.append(delay)
-    val _ret = __method_bind.targeting_property.call(this._handle, _args.toVariant(), 9)
+    val _ret = __method_bind.targetingProperty.call(this._handle, _args.toVariant(), 9)
     return _ret.asBoolean()
   }
 
@@ -453,71 +477,71 @@ open class Tween(
      * Container for method_bind pointers for Tween
      */
     private object __method_bind {
-      val follow_method: CPointer<godot_method_bind>
+      val followMethod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "follow_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method follow_method" }
+            "followMethod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method followMethod" }
         }
-      val follow_property: CPointer<godot_method_bind>
+      val followProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "follow_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method follow_property" }
+            "followProperty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method followProperty" }
         }
-      val get_runtime: CPointer<godot_method_bind>
+      val getRuntime: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "get_runtime".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_runtime" }
+            "getRuntime".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRuntime" }
         }
-      val get_speed_scale: CPointer<godot_method_bind>
+      val getSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "get_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_speed_scale" }
+            "getSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpeedScale" }
         }
-      val get_tween_process_mode: CPointer<godot_method_bind>
+      val getTweenProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "get_tween_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tween_process_mode" }
+            "getTweenProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTweenProcessMode" }
         }
-      val interpolate_callback: CPointer<godot_method_bind>
+      val interpolateCallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_callback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_callback" }
+            "interpolateCallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method interpolateCallback" }
         }
-      val interpolate_deferred_callback: CPointer<godot_method_bind>
+      val interpolateDeferredCallback: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_deferred_callback".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_deferred_callback" }
+            "interpolateDeferredCallback".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method interpolateDeferredCallback" }
         }
-      val interpolate_method: CPointer<godot_method_bind>
+      val interpolateMethod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_method" }
+            "interpolateMethod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method interpolateMethod" }
         }
-      val interpolate_property: CPointer<godot_method_bind>
+      val interpolateProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "interpolate_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method interpolate_property" }
+            "interpolateProperty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method interpolateProperty" }
         }
-      val is_active: CPointer<godot_method_bind>
+      val isActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_active" }
+            "isActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isActive" }
         }
-      val is_repeat: CPointer<godot_method_bind>
+      val isRepeat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "is_repeat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_repeat" }
+            "isRepeat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isRepeat" }
         }
       val remove: CPointer<godot_method_bind>
         get() = memScoped {
@@ -525,11 +549,11 @@ open class Tween(
             "remove".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method remove" }
         }
-      val remove_all: CPointer<godot_method_bind>
+      val removeAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "remove_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_all" }
+            "removeAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeAll" }
         }
       val reset: CPointer<godot_method_bind>
         get() = memScoped {
@@ -537,11 +561,11 @@ open class Tween(
             "reset".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method reset" }
         }
-      val reset_all: CPointer<godot_method_bind>
+      val resetAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "reset_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reset_all" }
+            "resetAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resetAll" }
         }
       val resume: CPointer<godot_method_bind>
         get() = memScoped {
@@ -549,11 +573,11 @@ open class Tween(
             "resume".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method resume" }
         }
-      val resume_all: CPointer<godot_method_bind>
+      val resumeAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "resume_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method resume_all" }
+            "resumeAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method resumeAll" }
         }
       val seek: CPointer<godot_method_bind>
         get() = memScoped {
@@ -561,29 +585,29 @@ open class Tween(
             "seek".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method seek" }
         }
-      val set_active: CPointer<godot_method_bind>
+      val setActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_active" }
+            "setActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setActive" }
         }
-      val set_repeat: CPointer<godot_method_bind>
+      val setRepeat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_repeat".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_repeat" }
+            "setRepeat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRepeat" }
         }
-      val set_speed_scale: CPointer<godot_method_bind>
+      val setSpeedScale: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_speed_scale".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_speed_scale" }
+            "setSpeedScale".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpeedScale" }
         }
-      val set_tween_process_mode: CPointer<godot_method_bind>
+      val setTweenProcessMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "set_tween_process_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_tween_process_mode" }
+            "setTweenProcessMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTweenProcessMode" }
         }
       val start: CPointer<godot_method_bind>
         get() = memScoped {
@@ -597,23 +621,23 @@ open class Tween(
             "stop".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method stop" }
         }
-      val stop_all: CPointer<godot_method_bind>
+      val stopAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "stop_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method stop_all" }
+            "stopAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method stopAll" }
         }
-      val targeting_method: CPointer<godot_method_bind>
+      val targetingMethod: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "targeting_method".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method targeting_method" }
+            "targetingMethod".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method targetingMethod" }
         }
-      val targeting_property: CPointer<godot_method_bind>
+      val targetingProperty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Tween".cstr.ptr,
-            "targeting_property".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method targeting_property" }
+            "targetingProperty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method targetingProperty" }
         }
       val tell: CPointer<godot_method_bind>
         get() = memScoped {

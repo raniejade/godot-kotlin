@@ -31,32 +31,32 @@ open class SurfaceTool(
 ) : Reference(_handle) {
   fun addBones(bones: PoolIntArray) {
     val _arg = Variant.new(bones)
-    __method_bind.add_bones.call(this._handle, _arg, 1)
+    __method_bind.addBones.call(this._handle, _arg, 1)
   }
 
   fun addColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.add_color.call(this._handle, _arg, 1)
+    __method_bind.addColor.call(this._handle, _arg, 1)
   }
 
   fun addIndex(index: Int) {
     val _arg = Variant.new(index)
-    __method_bind.add_index.call(this._handle, _arg, 1)
+    __method_bind.addIndex.call(this._handle, _arg, 1)
   }
 
   fun addNormal(normal: Vector3) {
     val _arg = Variant.new(normal)
-    __method_bind.add_normal.call(this._handle, _arg, 1)
+    __method_bind.addNormal.call(this._handle, _arg, 1)
   }
 
   fun addSmoothGroup(smooth: Boolean) {
     val _arg = Variant.new(smooth)
-    __method_bind.add_smooth_group.call(this._handle, _arg, 1)
+    __method_bind.addSmoothGroup.call(this._handle, _arg, 1)
   }
 
   fun addTangent(tangent: Plane) {
     val _arg = Variant.new(tangent)
-    __method_bind.add_tangent.call(this._handle, _arg, 1)
+    __method_bind.addTangent.call(this._handle, _arg, 1)
   }
 
   fun addTriangleFan(
@@ -74,27 +74,27 @@ open class SurfaceTool(
     _args.append(uv2s)
     _args.append(normals)
     _args.append(tangents)
-    __method_bind.add_triangle_fan.call(this._handle, _args.toVariant(), 6)
+    __method_bind.addTriangleFan.call(this._handle, _args.toVariant(), 6)
   }
 
   fun addUv(uv: Vector2) {
     val _arg = Variant.new(uv)
-    __method_bind.add_uv.call(this._handle, _arg, 1)
+    __method_bind.addUv.call(this._handle, _arg, 1)
   }
 
   fun addUv2(uv2: Vector2) {
     val _arg = Variant.new(uv2)
-    __method_bind.add_uv2.call(this._handle, _arg, 1)
+    __method_bind.addUv2.call(this._handle, _arg, 1)
   }
 
   fun addVertex(vertex: Vector3) {
     val _arg = Variant.new(vertex)
-    __method_bind.add_vertex.call(this._handle, _arg, 1)
+    __method_bind.addVertex.call(this._handle, _arg, 1)
   }
 
   fun addWeights(weights: PoolRealArray) {
     val _arg = Variant.new(weights)
-    __method_bind.add_weights.call(this._handle, _arg, 1)
+    __method_bind.addWeights.call(this._handle, _arg, 1)
   }
 
   fun appendFrom(
@@ -106,7 +106,7 @@ open class SurfaceTool(
     _args.append(existing)
     _args.append(surface)
     _args.append(transform)
-    __method_bind.append_from.call(this._handle, _args.toVariant(), 3)
+    __method_bind.appendFrom.call(this._handle, _args.toVariant(), 3)
   }
 
   fun begin(primitive: Int) {
@@ -127,7 +127,7 @@ open class SurfaceTool(
   }
 
   fun commitToArrays(): VariantArray {
-    val _ret = __method_bind.commit_to_arrays.call(this._handle)
+    val _ret = __method_bind.commitToArrays.call(this._handle)
     return _ret.asVariantArray()
   }
 
@@ -135,7 +135,7 @@ open class SurfaceTool(
     val _args = VariantArray.new()
     _args.append(existing)
     _args.append(surface)
-    __method_bind.create_from.call(this._handle, _args.toVariant(), 2)
+    __method_bind.createFrom.call(this._handle, _args.toVariant(), 2)
   }
 
   fun createFromBlendShape(
@@ -147,7 +147,7 @@ open class SurfaceTool(
     _args.append(existing)
     _args.append(surface)
     _args.append(blendShape)
-    __method_bind.create_from_blend_shape.call(this._handle, _args.toVariant(), 3)
+    __method_bind.createFromBlendShape.call(this._handle, _args.toVariant(), 3)
   }
 
   fun deindex() {
@@ -156,11 +156,11 @@ open class SurfaceTool(
 
   fun generateNormals(flip: Boolean) {
     val _arg = Variant.new(flip)
-    __method_bind.generate_normals.call(this._handle, _arg, 1)
+    __method_bind.generateNormals.call(this._handle, _arg, 1)
   }
 
   fun generateTangents() {
-    __method_bind.generate_tangents.call(this._handle)
+    __method_bind.generateTangents.call(this._handle)
   }
 
   fun index() {
@@ -169,7 +169,7 @@ open class SurfaceTool(
 
   fun setMaterial(material: Material) {
     val _arg = Variant.new(material)
-    __method_bind.set_material.call(this._handle, _arg, 1)
+    __method_bind.setMaterial.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -186,89 +186,89 @@ open class SurfaceTool(
      * Container for method_bind pointers for SurfaceTool
      */
     private object __method_bind {
-      val add_bones: CPointer<godot_method_bind>
+      val addBones: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_bones".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_bones" }
+            "addBones".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addBones" }
         }
-      val add_color: CPointer<godot_method_bind>
+      val addColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_color" }
+            "addColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addColor" }
         }
-      val add_index: CPointer<godot_method_bind>
+      val addIndex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_index".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_index" }
+            "addIndex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addIndex" }
         }
-      val add_normal: CPointer<godot_method_bind>
+      val addNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_normal" }
+            "addNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addNormal" }
         }
-      val add_smooth_group: CPointer<godot_method_bind>
+      val addSmoothGroup: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_smooth_group".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_smooth_group" }
+            "addSmoothGroup".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addSmoothGroup" }
         }
-      val add_tangent: CPointer<godot_method_bind>
+      val addTangent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_tangent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_tangent" }
+            "addTangent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addTangent" }
         }
-      val add_triangle_fan: CPointer<godot_method_bind>
+      val addTriangleFan: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_triangle_fan".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_triangle_fan" }
+            "addTriangleFan".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addTriangleFan" }
         }
-      val add_uv: CPointer<godot_method_bind>
+      val addUv: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_uv".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_uv" }
+            "addUv".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addUv" }
         }
-      val add_uv2: CPointer<godot_method_bind>
+      val addUv2: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_uv2".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_uv2" }
+            "addUv2".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addUv2" }
         }
-      val add_vertex: CPointer<godot_method_bind>
+      val addVertex: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_vertex".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_vertex" }
+            "addVertex".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addVertex" }
         }
-      val add_weights: CPointer<godot_method_bind>
+      val addWeights: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "add_weights".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_weights" }
+            "addWeights".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addWeights" }
         }
-      val append_from: CPointer<godot_method_bind>
+      val appendFrom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "append_from".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method append_from" }
+            "appendFrom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method appendFrom" }
         }
       val begin: CPointer<godot_method_bind>
         get() = memScoped {
@@ -291,26 +291,26 @@ open class SurfaceTool(
             "commit".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method commit" }
         }
-      val commit_to_arrays: CPointer<godot_method_bind>
+      val commitToArrays: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "commit_to_arrays".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method commit_to_arrays" }
+            "commitToArrays".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method commitToArrays" }
         }
-      val create_from: CPointer<godot_method_bind>
+      val createFrom: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "create_from".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from" }
+            "createFrom".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createFrom" }
         }
-      val create_from_blend_shape: CPointer<godot_method_bind>
+      val createFromBlendShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "create_from_blend_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method create_from_blend_shape" }
+            "createFromBlendShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method createFromBlendShape" }
         }
       val deindex: CPointer<godot_method_bind>
         get() = memScoped {
@@ -319,19 +319,19 @@ open class SurfaceTool(
             "deindex".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method deindex" }
         }
-      val generate_normals: CPointer<godot_method_bind>
+      val generateNormals: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "generate_normals".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_normals" }
+            "generateNormals".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generateNormals" }
         }
-      val generate_tangents: CPointer<godot_method_bind>
+      val generateTangents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "generate_tangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method generate_tangents" }
+            "generateTangents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method generateTangents" }
         }
       val index: CPointer<godot_method_bind>
         get() = memScoped {
@@ -340,12 +340,12 @@ open class SurfaceTool(
             "index".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method index" }
         }
-      val set_material: CPointer<godot_method_bind>
+      val setMaterial: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SurfaceTool".cstr.ptr,
-            "set_material".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_material" }
+            "setMaterial".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMaterial" }
         }}
   }
 }

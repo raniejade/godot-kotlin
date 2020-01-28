@@ -19,34 +19,58 @@ import kotlinx.cinterop.reinterpret
 open class OccluderPolygon2D(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var closed: Boolean
+    get() {
+       return isClosed() 
+    }
+    set(value) {
+      setClosed(value)
+    }
+
+  var cullMode: Int
+    get() {
+       return OccluderPolygon2D.CullMode.from(getCullMode()) 
+    }
+    set(value) {
+      setCullMode(OccluderPolygon2D.CullMode.from(value))
+    }
+
+  var polygon: PoolVector2Array
+    get() {
+       return getPolygon() 
+    }
+    set(value) {
+      setPolygon(value)
+    }
+
   fun getCullMode(): CullMode {
-    val _ret = __method_bind.get_cull_mode.call(this._handle)
+    val _ret = __method_bind.getCullMode.call(this._handle)
     return OccluderPolygon2D.CullMode.from(_ret.asInt())
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.get_polygon.call(this._handle)
+    val _ret = __method_bind.getPolygon.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun isClosed(): Boolean {
-    val _ret = __method_bind.is_closed.call(this._handle)
+    val _ret = __method_bind.isClosed.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setClosed(closed: Boolean) {
     val _arg = Variant.new(closed)
-    __method_bind.set_closed.call(this._handle, _arg, 1)
+    __method_bind.setClosed.call(this._handle, _arg, 1)
   }
 
   fun setCullMode(cullMode: Int) {
     val _arg = Variant.new(cullMode)
-    __method_bind.set_cull_mode.call(this._handle, _arg, 1)
+    __method_bind.setCullMode.call(this._handle, _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.set_polygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, _arg, 1)
   }
 
   enum class CullMode(
@@ -91,47 +115,47 @@ open class OccluderPolygon2D(
      * Container for method_bind pointers for OccluderPolygon2D
      */
     private object __method_bind {
-      val get_cull_mode: CPointer<godot_method_bind>
+      val getCullMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-            "get_cull_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mode" }
+            "getCullMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCullMode" }
         }
-      val get_polygon: CPointer<godot_method_bind>
+      val getPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            "getPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPolygon" }
         }
-      val is_closed: CPointer<godot_method_bind>
+      val isClosed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-            "is_closed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_closed" }
+            "isClosed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isClosed" }
         }
-      val set_closed: CPointer<godot_method_bind>
+      val setClosed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-            "set_closed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_closed" }
+            "setClosed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setClosed" }
         }
-      val set_cull_mode: CPointer<godot_method_bind>
+      val setCullMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-            "set_cull_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mode" }
+            "setCullMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCullMode" }
         }
-      val set_polygon: CPointer<godot_method_bind>
+      val setPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("OccluderPolygon2D".cstr.ptr,
-            "set_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
+            "setPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPolygon" }
         }}
   }
 }

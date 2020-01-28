@@ -17,18 +17,33 @@ import kotlinx.cinterop.reinterpret
 open class World2D(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  val canvas: RID
+    get() {
+       return getCanvas() 
+    }
+
+  val directSpaceState: Physics2DDirectSpaceState
+    get() {
+       return getDirectSpaceState() 
+    }
+
+  val space: RID
+    get() {
+       return getSpace() 
+    }
+
   fun getCanvas(): RID {
-    val _ret = __method_bind.get_canvas.call(this._handle)
+    val _ret = __method_bind.getCanvas.call(this._handle)
     return _ret.asRID()
   }
 
   fun getDirectSpaceState(): Physics2DDirectSpaceState {
-    val _ret = __method_bind.get_direct_space_state.call(this._handle)
+    val _ret = __method_bind.getDirectSpaceState.call(this._handle)
     return _ret.asObject(::Physics2DDirectSpaceState)!!
   }
 
   fun getSpace(): RID {
-    val _ret = __method_bind.get_space.call(this._handle)
+    val _ret = __method_bind.getSpace.call(this._handle)
     return _ret.asRID()
   }
 
@@ -46,23 +61,23 @@ open class World2D(
      * Container for method_bind pointers for World2D
      */
     private object __method_bind {
-      val get_canvas: CPointer<godot_method_bind>
+      val getCanvas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "get_canvas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_canvas" }
+            "getCanvas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCanvas" }
         }
-      val get_direct_space_state: CPointer<godot_method_bind>
+      val getDirectSpaceState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "get_direct_space_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
+            "getDirectSpaceState".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDirectSpaceState" }
         }
-      val get_space: CPointer<godot_method_bind>
+      val getSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World2D".cstr.ptr,
-            "get_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_space" }
+            "getSpace".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpace" }
         }}
   }
 }

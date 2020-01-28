@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptConstant(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var type: Int
+    get() {
+       return Variant.Type.from(getConstantType()) 
+    }
+    set(value) {
+      setConstantType(Variant.Type.from(value))
+    }
+
+  var value: Variant
+    get() {
+       return getConstantValue() 
+    }
+    set(value) {
+      setConstantValue(value)
+    }
+
   fun getConstantType(): Variant.Type {
-    val _ret = __method_bind.get_constant_type.call(this._handle)
+    val _ret = __method_bind.getConstantType.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun getConstantValue(): Variant {
-    val _ret = __method_bind.get_constant_value.call(this._handle)
+    val _ret = __method_bind.getConstantValue.call(this._handle)
     return _ret
   }
 
   fun setConstantType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_constant_type.call(this._handle, _arg, 1)
+    __method_bind.setConstantType.call(this._handle, _arg, 1)
   }
 
   fun setConstantValue(value: Variant) {
     val _arg = Variant.new(value)
-    __method_bind.set_constant_value.call(this._handle, _arg, 1)
+    __method_bind.setConstantValue.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class VisualScriptConstant(
      * Container for method_bind pointers for VisualScriptConstant
      */
     private object __method_bind {
-      val get_constant_type: CPointer<godot_method_bind>
+      val getConstantType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "get_constant_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_type" }
+            "getConstantType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstantType" }
         }
-      val get_constant_value: CPointer<godot_method_bind>
+      val getConstantValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "get_constant_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_constant_value" }
+            "getConstantValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConstantValue" }
         }
-      val set_constant_type: CPointer<godot_method_bind>
+      val setConstantType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "set_constant_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant_type" }
+            "setConstantType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setConstantType" }
         }
-      val set_constant_value: CPointer<godot_method_bind>
+      val setConstantValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptConstant".cstr.ptr,
-            "set_constant_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_constant_value" }
+            "setConstantValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setConstantValue" }
         }}
   }
 }

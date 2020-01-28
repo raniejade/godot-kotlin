@@ -29,13 +29,13 @@ open class _ResourceLoader(
 
   fun getDependencies(path: String): PoolStringArray {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.get_dependencies.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getDependencies.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
   fun getRecognizedExtensionsForType(type: String): PoolStringArray {
     val _arg = Variant.new(type)
-    val _ret = __method_bind.get_recognized_extensions_for_type.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getRecognizedExtensionsForType.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
   }
 
@@ -47,7 +47,7 @@ open class _ResourceLoader(
 
   fun hasCached(path: String): Boolean {
     val _arg = Variant.new(path)
-    val _ret = __method_bind.has_cached.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasCached.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -68,13 +68,13 @@ open class _ResourceLoader(
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(typeHint)
-    val _ret = __method_bind.load_interactive.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.loadInteractive.call(this._handle, _args.toVariant(), 2)
     return _ret.asObject(::ResourceInteractiveLoader)!!
   }
 
   fun setAbortOnMissingResources(abort: Boolean) {
     val _arg = Variant.new(abort)
-    __method_bind.set_abort_on_missing_resources.call(this._handle, _arg, 1)
+    __method_bind.setAbortOnMissingResources.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -98,20 +98,19 @@ open class _ResourceLoader(
             "exists".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method exists" }
         }
-      val get_dependencies: CPointer<godot_method_bind>
+      val getDependencies: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "get_dependencies".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_dependencies" }
+            "getDependencies".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDependencies" }
         }
-      val get_recognized_extensions_for_type: CPointer<godot_method_bind>
+      val getRecognizedExtensionsForType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "get_recognized_extensions_for_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_recognized_extensions_for_type"
-            }
+            "getRecognizedExtensionsForType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRecognizedExtensionsForType" }
         }
       val has: CPointer<godot_method_bind>
         get() = memScoped {
@@ -120,12 +119,12 @@ open class _ResourceLoader(
             "has".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method has" }
         }
-      val has_cached: CPointer<godot_method_bind>
+      val hasCached: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "has_cached".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_cached" }
+            "hasCached".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasCached" }
         }
       val load: CPointer<godot_method_bind>
         get() = memScoped {
@@ -134,19 +133,19 @@ open class _ResourceLoader(
             "load".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method load" }
         }
-      val load_interactive: CPointer<godot_method_bind>
+      val loadInteractive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "load_interactive".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method load_interactive" }
+            "loadInteractive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method loadInteractive" }
         }
-      val set_abort_on_missing_resources: CPointer<godot_method_bind>
+      val setAbortOnMissingResources: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_ResourceLoader".cstr.ptr,
-            "set_abort_on_missing_resources".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_abort_on_missing_resources" }
+            "setAbortOnMissingResources".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAbortOnMissingResources" }
         }}
   }
 }

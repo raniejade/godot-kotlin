@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class CSGPrimitive(
   _handle: COpaquePointer
 ) : CSGShape(_handle) {
+  var invertFaces: Boolean
+    get() {
+       return isInvertingFaces() 
+    }
+    set(value) {
+      setInvertFaces(value)
+    }
+
   fun isInvertingFaces(): Boolean {
-    val _ret = __method_bind.is_inverting_faces.call(this._handle)
+    val _ret = __method_bind.isInvertingFaces.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setInvertFaces(invertFaces: Boolean) {
     val _arg = Variant.new(invertFaces)
-    __method_bind.set_invert_faces.call(this._handle, _arg, 1)
+    __method_bind.setInvertFaces.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -32,19 +40,19 @@ open class CSGPrimitive(
      * Container for method_bind pointers for CSGPrimitive
      */
     private object __method_bind {
-      val is_inverting_faces: CPointer<godot_method_bind>
+      val isInvertingFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
-            "is_inverting_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_inverting_faces" }
+            "isInvertingFaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isInvertingFaces" }
         }
-      val set_invert_faces: CPointer<godot_method_bind>
+      val setInvertFaces: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGPrimitive".cstr.ptr,
-            "set_invert_faces".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_invert_faces" }
+            "setInvertFaces".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInvertFaces" }
         }}
   }
 }

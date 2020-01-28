@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMagnifyGesture(
   _handle: COpaquePointer
 ) : InputEventGesture(_handle) {
+  var factor: Float
+    get() {
+       return getFactor() 
+    }
+    set(value) {
+      setFactor(value)
+    }
+
   fun getFactor(): Float {
-    val _ret = __method_bind.get_factor.call(this._handle)
+    val _ret = __method_bind.getFactor.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setFactor(factor: Float) {
     val _arg = Variant.new(factor)
-    __method_bind.set_factor.call(this._handle, _arg, 1)
+    __method_bind.setFactor.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class InputEventMagnifyGesture(
      * Container for method_bind pointers for InputEventMagnifyGesture
      */
     private object __method_bind {
-      val get_factor: CPointer<godot_method_bind>
+      val getFactor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
-            "get_factor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_factor" }
+            "getFactor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFactor" }
         }
-      val set_factor: CPointer<godot_method_bind>
+      val setFactor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMagnifyGesture".cstr.ptr,
-            "set_factor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_factor" }
+            "setFactor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFactor" }
         }}
   }
 }

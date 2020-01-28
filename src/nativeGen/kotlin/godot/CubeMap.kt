@@ -18,57 +18,81 @@ import kotlinx.cinterop.reinterpret
 open class CubeMap(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var flags: Int
+    get() {
+       return getFlags() 
+    }
+    set(value) {
+      setFlags(value)
+    }
+
+  var lossyStorageQuality: Float
+    get() {
+       return getLossyStorageQuality() 
+    }
+    set(value) {
+      setLossyStorageQuality(value)
+    }
+
+  var storageMode: Int
+    get() {
+       return CubeMap.Storage.from(getStorage()) 
+    }
+    set(value) {
+      setStorage(CubeMap.Storage.from(value))
+    }
+
   fun getFlags(): Int {
-    val _ret = __method_bind.get_flags.call(this._handle)
+    val _ret = __method_bind.getFlags.call(this._handle)
     return _ret.asInt()
   }
 
   fun getHeight(): Int {
-    val _ret = __method_bind.get_height.call(this._handle)
+    val _ret = __method_bind.getHeight.call(this._handle)
     return _ret.asInt()
   }
 
   fun getLossyStorageQuality(): Float {
-    val _ret = __method_bind.get_lossy_storage_quality.call(this._handle)
+    val _ret = __method_bind.getLossyStorageQuality.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSide(side: Int): Image {
     val _arg = Variant.new(side)
-    val _ret = __method_bind.get_side.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSide.call(this._handle, _arg, 1)
     return _ret.asObject(::Image)!!
   }
 
   fun getStorage(): Storage {
-    val _ret = __method_bind.get_storage.call(this._handle)
+    val _ret = __method_bind.getStorage.call(this._handle)
     return CubeMap.Storage.from(_ret.asInt())
   }
 
   fun getWidth(): Int {
-    val _ret = __method_bind.get_width.call(this._handle)
+    val _ret = __method_bind.getWidth.call(this._handle)
     return _ret.asInt()
   }
 
   fun setFlags(flags: Int) {
     val _arg = Variant.new(flags)
-    __method_bind.set_flags.call(this._handle, _arg, 1)
+    __method_bind.setFlags.call(this._handle, _arg, 1)
   }
 
   fun setLossyStorageQuality(quality: Float) {
     val _arg = Variant.new(quality)
-    __method_bind.set_lossy_storage_quality.call(this._handle, _arg, 1)
+    __method_bind.setLossyStorageQuality.call(this._handle, _arg, 1)
   }
 
   fun setSide(side: Int, image: Image) {
     val _args = VariantArray.new()
     _args.append(side)
     _args.append(image)
-    __method_bind.set_side.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setSide.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setStorage(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_storage.call(this._handle, _arg, 1)
+    __method_bind.setStorage.call(this._handle, _arg, 1)
   }
 
   enum class Flags(
@@ -182,65 +206,65 @@ open class CubeMap(
      * Container for method_bind pointers for CubeMap
      */
     private object __method_bind {
-      val get_flags: CPointer<godot_method_bind>
+      val getFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_flags" }
+            "getFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFlags" }
         }
-      val get_height: CPointer<godot_method_bind>
+      val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
+            "getHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHeight" }
         }
-      val get_lossy_storage_quality: CPointer<godot_method_bind>
+      val getLossyStorageQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_lossy_storage_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_lossy_storage_quality" }
+            "getLossyStorageQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLossyStorageQuality" }
         }
-      val get_side: CPointer<godot_method_bind>
+      val getSide: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_side".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_side" }
+            "getSide".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSide" }
         }
-      val get_storage: CPointer<godot_method_bind>
+      val getStorage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_storage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_storage" }
+            "getStorage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStorage" }
         }
-      val get_width: CPointer<godot_method_bind>
+      val getWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "get_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_width" }
+            "getWidth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWidth" }
         }
-      val set_flags: CPointer<godot_method_bind>
+      val setFlags: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_flags".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_flags" }
+            "setFlags".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFlags" }
         }
-      val set_lossy_storage_quality: CPointer<godot_method_bind>
+      val setLossyStorageQuality: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_lossy_storage_quality".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_lossy_storage_quality" }
+            "setLossyStorageQuality".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setLossyStorageQuality" }
         }
-      val set_side: CPointer<godot_method_bind>
+      val setSide: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_side".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_side" }
+            "setSide".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSide" }
         }
-      val set_storage: CPointer<godot_method_bind>
+      val setStorage: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CubeMap".cstr.ptr,
-            "set_storage".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_storage" }
+            "setStorage".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setStorage" }
         }}
   }
 }

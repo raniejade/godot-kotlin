@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class Shape(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var margin: Float
+    get() {
+       return getMargin() 
+    }
+    set(value) {
+      setMargin(value)
+    }
+
   fun getMargin(): Float {
-    val _ret = __method_bind.get_margin.call(this._handle)
+    val _ret = __method_bind.getMargin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_margin.call(this._handle, _arg, 1)
+    __method_bind.setMargin.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -32,17 +40,17 @@ open class Shape(
      * Container for method_bind pointers for Shape
      */
     private object __method_bind {
-      val get_margin: CPointer<godot_method_bind>
+      val getMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            "getMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMargin" }
         }
-      val set_margin: CPointer<godot_method_bind>
+      val setMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Shape".cstr.ptr,
-            "set_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin" }
+            "setMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMargin" }
         }}
   }
 }

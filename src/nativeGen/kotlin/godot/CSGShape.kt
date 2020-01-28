@@ -19,100 +19,148 @@ import kotlinx.cinterop.reinterpret
 open class CSGShape(
   _handle: COpaquePointer
 ) : GeometryInstance(_handle) {
+  var calculateTangents: Boolean
+    get() {
+       return isCalculatingTangents() 
+    }
+    set(value) {
+      setCalculateTangents(value)
+    }
+
+  var collisionLayer: Int
+    get() {
+       return getCollisionLayer() 
+    }
+    set(value) {
+      setCollisionLayer(value)
+    }
+
+  var collisionMask: Int
+    get() {
+       return getCollisionMask() 
+    }
+    set(value) {
+      setCollisionMask(value)
+    }
+
+  var operation: Int
+    get() {
+       return CSGShape.Operation.from(getOperation()) 
+    }
+    set(value) {
+      setOperation(CSGShape.Operation.from(value))
+    }
+
+  var snap: Float
+    get() {
+       return getSnap() 
+    }
+    set(value) {
+      setSnap(value)
+    }
+
+  var useCollision: Boolean
+    get() {
+       return isUsingCollision() 
+    }
+    set(value) {
+      setUseCollision(value)
+    }
+
   fun getCollisionLayer(): Int {
-    val _ret = __method_bind.get_collision_layer.call(this._handle)
+    val _ret = __method_bind.getCollisionLayer.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_layer_bit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionLayerBit.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getCollisionMask(): Int {
-    val _ret = __method_bind.get_collision_mask.call(this._handle)
+    val _ret = __method_bind.getCollisionMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
-    val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCollisionMaskBit.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun getMeshes(): VariantArray {
-    val _ret = __method_bind.get_meshes.call(this._handle)
+    val _ret = __method_bind.getMeshes.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getOperation(): Operation {
-    val _ret = __method_bind.get_operation.call(this._handle)
+    val _ret = __method_bind.getOperation.call(this._handle)
     return CSGShape.Operation.from(_ret.asInt())
   }
 
   fun getSnap(): Float {
-    val _ret = __method_bind.get_snap.call(this._handle)
+    val _ret = __method_bind.getSnap.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isCalculatingTangents(): Boolean {
-    val _ret = __method_bind.is_calculating_tangents.call(this._handle)
+    val _ret = __method_bind.isCalculatingTangents.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isRootShape(): Boolean {
-    val _ret = __method_bind.is_root_shape.call(this._handle)
+    val _ret = __method_bind.isRootShape.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isUsingCollision(): Boolean {
-    val _ret = __method_bind.is_using_collision.call(this._handle)
+    val _ret = __method_bind.isUsingCollision.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setCalculateTangents(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_calculate_tangents.call(this._handle, _arg, 1)
+    __method_bind.setCalculateTangents.call(this._handle, _arg, 1)
   }
 
   fun setCollisionLayer(layer: Int) {
     val _arg = Variant.new(layer)
-    __method_bind.set_collision_layer.call(this._handle, _arg, 1)
+    __method_bind.setCollisionLayer.call(this._handle, _arg, 1)
   }
 
   fun setCollisionLayerBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_layer_bit.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setCollisionLayerBit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setCollisionMask(mask: Int) {
     val _arg = Variant.new(mask)
-    __method_bind.set_collision_mask.call(this._handle, _arg, 1)
+    __method_bind.setCollisionMask.call(this._handle, _arg, 1)
   }
 
   fun setCollisionMaskBit(bit: Int, value: Boolean) {
     val _args = VariantArray.new()
     _args.append(bit)
     _args.append(value)
-    __method_bind.set_collision_mask_bit.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setCollisionMaskBit.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setOperation(operation: Int) {
     val _arg = Variant.new(operation)
-    __method_bind.set_operation.call(this._handle, _arg, 1)
+    __method_bind.setOperation.call(this._handle, _arg, 1)
   }
 
   fun setSnap(snap: Float) {
     val _arg = Variant.new(snap)
-    __method_bind.set_snap.call(this._handle, _arg, 1)
+    __method_bind.setSnap.call(this._handle, _arg, 1)
   }
 
   fun setUseCollision(operation: Boolean) {
     val _arg = Variant.new(operation)
-    __method_bind.set_use_collision.call(this._handle, _arg, 1)
+    __method_bind.setUseCollision.call(this._handle, _arg, 1)
   }
 
   enum class Operation(
@@ -147,113 +195,113 @@ open class CSGShape(
      * Container for method_bind pointers for CSGShape
      */
     private object __method_bind {
-      val get_collision_layer: CPointer<godot_method_bind>
+      val getCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_layer" }
+            "getCollisionLayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionLayer" }
         }
-      val get_collision_layer_bit: CPointer<godot_method_bind>
+      val getCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_collision_layer_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_layer_bit" }
+            "getCollisionLayerBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionLayerBit" }
         }
-      val get_collision_mask: CPointer<godot_method_bind>
+      val getCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask" }
+            "getCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMask" }
         }
-      val get_collision_mask_bit: CPointer<godot_method_bind>
+      val getCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_collision_mask_bit" }
+            "getCollisionMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCollisionMaskBit" }
         }
-      val get_meshes: CPointer<godot_method_bind>
+      val getMeshes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_meshes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_meshes" }
+            "getMeshes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMeshes" }
         }
-      val get_operation: CPointer<godot_method_bind>
+      val getOperation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_operation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_operation" }
+            "getOperation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOperation" }
         }
-      val get_snap: CPointer<godot_method_bind>
+      val getSnap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "get_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_snap" }
+            "getSnap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSnap" }
         }
-      val is_calculating_tangents: CPointer<godot_method_bind>
+      val isCalculatingTangents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "is_calculating_tangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_calculating_tangents" }
+            "isCalculatingTangents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCalculatingTangents" }
         }
-      val is_root_shape: CPointer<godot_method_bind>
+      val isRootShape: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "is_root_shape".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_root_shape" }
+            "isRootShape".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isRootShape" }
         }
-      val is_using_collision: CPointer<godot_method_bind>
+      val isUsingCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "is_using_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_using_collision" }
+            "isUsingCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isUsingCollision" }
         }
-      val set_calculate_tangents: CPointer<godot_method_bind>
+      val setCalculateTangents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_calculate_tangents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_calculate_tangents" }
+            "setCalculateTangents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCalculateTangents" }
         }
-      val set_collision_layer: CPointer<godot_method_bind>
+      val setCollisionLayer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_collision_layer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_layer" }
+            "setCollisionLayer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionLayer" }
         }
-      val set_collision_layer_bit: CPointer<godot_method_bind>
+      val setCollisionLayerBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_collision_layer_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_layer_bit" }
+            "setCollisionLayerBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionLayerBit" }
         }
-      val set_collision_mask: CPointer<godot_method_bind>
+      val setCollisionMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_collision_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask" }
+            "setCollisionMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMask" }
         }
-      val set_collision_mask_bit: CPointer<godot_method_bind>
+      val setCollisionMaskBit: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_collision_mask_bit".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_collision_mask_bit" }
+            "setCollisionMaskBit".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCollisionMaskBit" }
         }
-      val set_operation: CPointer<godot_method_bind>
+      val setOperation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_operation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_operation" }
+            "setOperation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOperation" }
         }
-      val set_snap: CPointer<godot_method_bind>
+      val setSnap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_snap".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_snap" }
+            "setSnap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSnap" }
         }
-      val set_use_collision: CPointer<godot_method_bind>
+      val setUseCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CSGShape".cstr.ptr,
-            "set_use_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_use_collision" }
+            "setUseCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUseCollision" }
         }}
   }
 }

@@ -19,7 +19,7 @@ open class GDScriptFunctionState(
 ) : Reference(_handle) {
   fun isValid(extendedCheck: Boolean): Boolean {
     val _arg = Variant.new(extendedCheck)
-    val _ret = __method_bind.is_valid.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isValid.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -34,12 +34,12 @@ open class GDScriptFunctionState(
      * Container for method_bind pointers for GDScriptFunctionState
      */
     private object __method_bind {
-      val is_valid: CPointer<godot_method_bind>
+      val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GDScriptFunctionState".cstr.ptr,
-            "is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid" }
+            "isValid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isValid" }
         }
       val resume: CPointer<godot_method_bind>
         get() = memScoped {

@@ -18,30 +18,38 @@ import kotlinx.cinterop.reinterpret
 open class ShortCut(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var shortcut: InputEvent
+    get() {
+       return getShortcut() 
+    }
+    set(value) {
+      setShortcut(value)
+    }
+
   fun getAsText(): String {
-    val _ret = __method_bind.get_as_text.call(this._handle)
+    val _ret = __method_bind.getAsText.call(this._handle)
     return _ret.asString()
   }
 
   fun getShortcut(): InputEvent {
-    val _ret = __method_bind.get_shortcut.call(this._handle)
+    val _ret = __method_bind.getShortcut.call(this._handle)
     return _ret.asObject(::InputEvent)!!
   }
 
   fun isShortcut(event: InputEvent): Boolean {
     val _arg = Variant.new(event)
-    val _ret = __method_bind.is_shortcut.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isShortcut.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isValid(): Boolean {
-    val _ret = __method_bind.is_valid.call(this._handle)
+    val _ret = __method_bind.isValid.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setShortcut(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.set_shortcut.call(this._handle, _arg, 1)
+    __method_bind.setShortcut.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -58,35 +66,35 @@ open class ShortCut(
      * Container for method_bind pointers for ShortCut
      */
     private object __method_bind {
-      val get_as_text: CPointer<godot_method_bind>
+      val getAsText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "get_as_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_as_text" }
+            "getAsText".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAsText" }
         }
-      val get_shortcut: CPointer<godot_method_bind>
+      val getShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "get_shortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shortcut" }
+            "getShortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShortcut" }
         }
-      val is_shortcut: CPointer<godot_method_bind>
+      val isShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "is_shortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_shortcut" }
+            "isShortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isShortcut" }
         }
-      val is_valid: CPointer<godot_method_bind>
+      val isValid: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "is_valid".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_valid" }
+            "isValid".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isValid" }
         }
-      val set_shortcut: CPointer<godot_method_bind>
+      val setShortcut: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ShortCut".cstr.ptr,
-            "set_shortcut".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shortcut" }
+            "setShortcut".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShortcut" }
         }}
   }
 }

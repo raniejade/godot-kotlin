@@ -21,61 +21,117 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxTexture(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
+  var axisStretchHorizontal: Int
+    get() {
+       return StyleBoxTexture.AxisStretchMode.from(getHAxisStretchMode()) 
+    }
+    set(value) {
+      setHAxisStretchMode(StyleBoxTexture.AxisStretchMode.from(value))
+    }
+
+  var axisStretchVertical: Int
+    get() {
+       return StyleBoxTexture.AxisStretchMode.from(getVAxisStretchMode()) 
+    }
+    set(value) {
+      setVAxisStretchMode(StyleBoxTexture.AxisStretchMode.from(value))
+    }
+
+  var drawCenter: Boolean
+    get() {
+       return isDrawCenterEnabled() 
+    }
+    set(value) {
+      setDrawCenter(value)
+    }
+
+  var modulateColor: Color
+    get() {
+       return getModulate() 
+    }
+    set(value) {
+      setModulate(value)
+    }
+
+  var normalMap: Texture
+    get() {
+       return getNormalMap() 
+    }
+    set(value) {
+      setNormalMap(value)
+    }
+
+  var regionRect: Rect2
+    get() {
+       return getRegionRect() 
+    }
+    set(value) {
+      setRegionRect(value)
+    }
+
+  var texture: Texture
+    get() {
+       return getTexture() 
+    }
+    set(value) {
+      setTexture(value)
+    }
+
   fun getExpandMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_expand_margin_size.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getExpandMarginSize.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getHAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_h_axis_stretch_mode.call(this._handle)
+    val _ret = __method_bind.getHAxisStretchMode.call(this._handle)
     return StyleBoxTexture.AxisStretchMode.from(_ret.asInt())
   }
 
   fun getMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_margin_size.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getMarginSize.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getModulate(): Color {
-    val _ret = __method_bind.get_modulate.call(this._handle)
+    val _ret = __method_bind.getModulate.call(this._handle)
     return _ret.asColor()
   }
 
   fun getNormalMap(): Texture {
-    val _ret = __method_bind.get_normal_map.call(this._handle)
+    val _ret = __method_bind.getNormalMap.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getRegionRect(): Rect2 {
-    val _ret = __method_bind.get_region_rect.call(this._handle)
+    val _ret = __method_bind.getRegionRect.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getTexture(): Texture {
-    val _ret = __method_bind.get_texture.call(this._handle)
+    val _ret = __method_bind.getTexture.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getVAxisStretchMode(): AxisStretchMode {
-    val _ret = __method_bind.get_v_axis_stretch_mode.call(this._handle)
+    val _ret = __method_bind.getVAxisStretchMode.call(this._handle)
     return StyleBoxTexture.AxisStretchMode.from(_ret.asInt())
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_center_enabled.call(this._handle)
+    val _ret = __method_bind.isDrawCenterEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setDrawCenter(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_draw_center.call(this._handle, _arg, 1)
+    __method_bind.setDrawCenter.call(this._handle, _arg, 1)
   }
 
   fun setExpandMarginAll(size: Float) {
     val _arg = Variant.new(size)
-    __method_bind.set_expand_margin_all.call(this._handle, _arg, 1)
+    __method_bind.setExpandMarginAll.call(this._handle, _arg, 1)
   }
 
   fun setExpandMarginIndividual(
@@ -89,51 +145,51 @@ open class StyleBoxTexture(
     _args.append(sizeTop)
     _args.append(sizeRight)
     _args.append(sizeBottom)
-    __method_bind.set_expand_margin_individual.call(this._handle, _args.toVariant(), 4)
+    __method_bind.setExpandMarginIndividual.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setExpandMarginSize(margin: Int, size: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(size)
-    __method_bind.set_expand_margin_size.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setExpandMarginSize.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setHAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_h_axis_stretch_mode.call(this._handle, _arg, 1)
+    __method_bind.setHAxisStretchMode.call(this._handle, _arg, 1)
   }
 
   fun setMarginSize(margin: Int, size: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(size)
-    __method_bind.set_margin_size.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setMarginSize.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setModulate(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_modulate.call(this._handle, _arg, 1)
+    __method_bind.setModulate.call(this._handle, _arg, 1)
   }
 
   fun setNormalMap(normalMap: Texture) {
     val _arg = Variant.new(normalMap)
-    __method_bind.set_normal_map.call(this._handle, _arg, 1)
+    __method_bind.setNormalMap.call(this._handle, _arg, 1)
   }
 
   fun setRegionRect(region: Rect2) {
     val _arg = Variant.new(region)
-    __method_bind.set_region_rect.call(this._handle, _arg, 1)
+    __method_bind.setRegionRect.call(this._handle, _arg, 1)
   }
 
   fun setTexture(texture: Texture) {
     val _arg = Variant.new(texture)
-    __method_bind.set_texture.call(this._handle, _arg, 1)
+    __method_bind.setTexture.call(this._handle, _arg, 1)
   }
 
   fun setVAxisStretchMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_v_axis_stretch_mode.call(this._handle, _arg, 1)
+    __method_bind.setVAxisStretchMode.call(this._handle, _arg, 1)
   }
 
   enum class AxisStretchMode(
@@ -178,145 +234,145 @@ open class StyleBoxTexture(
      * Container for method_bind pointers for StyleBoxTexture
      */
     private object __method_bind {
-      val get_expand_margin_size: CPointer<godot_method_bind>
+      val getExpandMarginSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_expand_margin_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_expand_margin_size" }
+            "getExpandMarginSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExpandMarginSize" }
         }
-      val get_h_axis_stretch_mode: CPointer<godot_method_bind>
+      val getHAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_h_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_h_axis_stretch_mode" }
+            "getHAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHAxisStretchMode" }
         }
-      val get_margin_size: CPointer<godot_method_bind>
+      val getMarginSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_margin_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin_size" }
+            "getMarginSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMarginSize" }
         }
-      val get_modulate: CPointer<godot_method_bind>
+      val getModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_modulate" }
+            "getModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getModulate" }
         }
-      val get_normal_map: CPointer<godot_method_bind>
+      val getNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_normal_map" }
+            "getNormalMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNormalMap" }
         }
-      val get_region_rect: CPointer<godot_method_bind>
+      val getRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_region_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_region_rect" }
+            "getRegionRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRegionRect" }
         }
-      val get_texture: CPointer<godot_method_bind>
+      val getTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_texture" }
+            "getTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTexture" }
         }
-      val get_v_axis_stretch_mode: CPointer<godot_method_bind>
+      val getVAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "get_v_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_v_axis_stretch_mode" }
+            "getVAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVAxisStretchMode" }
         }
-      val is_draw_center_enabled: CPointer<godot_method_bind>
+      val isDrawCenterEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "is_draw_center_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_draw_center_enabled" }
+            "isDrawCenterEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDrawCenterEnabled" }
         }
-      val set_draw_center: CPointer<godot_method_bind>
+      val setDrawCenter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_draw_center".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_center" }
+            "setDrawCenter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawCenter" }
         }
-      val set_expand_margin_all: CPointer<godot_method_bind>
+      val setExpandMarginAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_expand_margin_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_margin_all" }
+            "setExpandMarginAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpandMarginAll" }
         }
-      val set_expand_margin_individual: CPointer<godot_method_bind>
+      val setExpandMarginIndividual: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_expand_margin_individual".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_margin_individual" }
+            "setExpandMarginIndividual".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpandMarginIndividual" }
         }
-      val set_expand_margin_size: CPointer<godot_method_bind>
+      val setExpandMarginSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_expand_margin_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_margin_size" }
+            "setExpandMarginSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpandMarginSize" }
         }
-      val set_h_axis_stretch_mode: CPointer<godot_method_bind>
+      val setHAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_h_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_h_axis_stretch_mode" }
+            "setHAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHAxisStretchMode" }
         }
-      val set_margin_size: CPointer<godot_method_bind>
+      val setMarginSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_margin_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin_size" }
+            "setMarginSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMarginSize" }
         }
-      val set_modulate: CPointer<godot_method_bind>
+      val setModulate: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_modulate".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_modulate" }
+            "setModulate".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setModulate" }
         }
-      val set_normal_map: CPointer<godot_method_bind>
+      val setNormalMap: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_normal_map".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_normal_map" }
+            "setNormalMap".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setNormalMap" }
         }
-      val set_region_rect: CPointer<godot_method_bind>
+      val setRegionRect: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_region_rect".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_region_rect" }
+            "setRegionRect".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRegionRect" }
         }
-      val set_texture: CPointer<godot_method_bind>
+      val setTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_texture" }
+            "setTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTexture" }
         }
-      val set_v_axis_stretch_mode: CPointer<godot_method_bind>
+      val setVAxisStretchMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxTexture".cstr.ptr,
-            "set_v_axis_stretch_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_v_axis_stretch_mode" }
+            "setVAxisStretchMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVAxisStretchMode" }
         }}
   }
 }

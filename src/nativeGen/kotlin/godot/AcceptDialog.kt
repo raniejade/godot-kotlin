@@ -18,6 +18,22 @@ import kotlinx.cinterop.reinterpret
 open class AcceptDialog(
   _handle: COpaquePointer
 ) : WindowDialog(_handle) {
+  var dialogHideOnOk: Boolean
+    get() {
+       return getHideOnOk() 
+    }
+    set(value) {
+      setHideOnOk(value)
+    }
+
+  var dialogText: String
+    get() {
+       return getText() 
+    }
+    set(value) {
+      setText(value)
+    }
+
   fun addButton(
     text: String,
     right: Boolean,
@@ -27,49 +43,49 @@ open class AcceptDialog(
     _args.append(text)
     _args.append(right)
     _args.append(action)
-    val _ret = __method_bind.add_button.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.addButton.call(this._handle, _args.toVariant(), 3)
     return _ret.asObject(::Button)!!
   }
 
   fun addCancel(name: String): Button {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.add_cancel.call(this._handle, _arg, 1)
+    val _ret = __method_bind.addCancel.call(this._handle, _arg, 1)
     return _ret.asObject(::Button)!!
   }
 
   fun getHideOnOk(): Boolean {
-    val _ret = __method_bind.get_hide_on_ok.call(this._handle)
+    val _ret = __method_bind.getHideOnOk.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getLabel(): Label {
-    val _ret = __method_bind.get_label.call(this._handle)
+    val _ret = __method_bind.getLabel.call(this._handle)
     return _ret.asObject(::Label)!!
   }
 
   fun getOk(): Button {
-    val _ret = __method_bind.get_ok.call(this._handle)
+    val _ret = __method_bind.getOk.call(this._handle)
     return _ret.asObject(::Button)!!
   }
 
   fun getText(): String {
-    val _ret = __method_bind.get_text.call(this._handle)
+    val _ret = __method_bind.getText.call(this._handle)
     return _ret.asString()
   }
 
   fun registerTextEnter(lineEdit: Node) {
     val _arg = Variant.new(lineEdit)
-    __method_bind.register_text_enter.call(this._handle, _arg, 1)
+    __method_bind.registerTextEnter.call(this._handle, _arg, 1)
   }
 
   fun setHideOnOk(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_hide_on_ok.call(this._handle, _arg, 1)
+    __method_bind.setHideOnOk.call(this._handle, _arg, 1)
   }
 
   fun setText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.set_text.call(this._handle, _arg, 1)
+    __method_bind.setText.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -86,68 +102,68 @@ open class AcceptDialog(
      * Container for method_bind pointers for AcceptDialog
      */
     private object __method_bind {
-      val add_button: CPointer<godot_method_bind>
+      val addButton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "add_button".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_button" }
+            "addButton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addButton" }
         }
-      val add_cancel: CPointer<godot_method_bind>
+      val addCancel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "add_cancel".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_cancel" }
+            "addCancel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addCancel" }
         }
-      val get_hide_on_ok: CPointer<godot_method_bind>
+      val getHideOnOk: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "get_hide_on_ok".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_hide_on_ok" }
+            "getHideOnOk".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHideOnOk" }
         }
-      val get_label: CPointer<godot_method_bind>
+      val getLabel: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "get_label".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_label" }
+            "getLabel".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getLabel" }
         }
-      val get_ok: CPointer<godot_method_bind>
+      val getOk: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "get_ok".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ok" }
+            "getOk".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOk" }
         }
-      val get_text: CPointer<godot_method_bind>
+      val getText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "get_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_text" }
+            "getText".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getText" }
         }
-      val register_text_enter: CPointer<godot_method_bind>
+      val registerTextEnter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "register_text_enter".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method register_text_enter" }
+            "registerTextEnter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method registerTextEnter" }
         }
-      val set_hide_on_ok: CPointer<godot_method_bind>
+      val setHideOnOk: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "set_hide_on_ok".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_hide_on_ok" }
+            "setHideOnOk".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHideOnOk" }
         }
-      val set_text: CPointer<godot_method_bind>
+      val setText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AcceptDialog".cstr.ptr,
-            "set_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_text" }
+            "setText".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setText" }
         }}
   }
 }

@@ -18,34 +18,58 @@ import kotlinx.cinterop.reinterpret
 open class InputEventMouse(
   _handle: COpaquePointer
 ) : InputEventWithModifiers(_handle) {
+  var buttonMask: Int
+    get() {
+       return getButtonMask() 
+    }
+    set(value) {
+      setButtonMask(value)
+    }
+
+  var globalPosition: Vector2
+    get() {
+       return getGlobalPosition() 
+    }
+    set(value) {
+      setGlobalPosition(value)
+    }
+
+  var position: Vector2
+    get() {
+       return getPosition() 
+    }
+    set(value) {
+      setPosition(value)
+    }
+
   fun getButtonMask(): Int {
-    val _ret = __method_bind.get_button_mask.call(this._handle)
+    val _ret = __method_bind.getButtonMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getGlobalPosition(): Vector2 {
-    val _ret = __method_bind.get_global_position.call(this._handle)
+    val _ret = __method_bind.getGlobalPosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getPosition(): Vector2 {
-    val _ret = __method_bind.get_position.call(this._handle)
+    val _ret = __method_bind.getPosition.call(this._handle)
     return _ret.asVector2()
   }
 
   fun setButtonMask(buttonMask: Int) {
     val _arg = Variant.new(buttonMask)
-    __method_bind.set_button_mask.call(this._handle, _arg, 1)
+    __method_bind.setButtonMask.call(this._handle, _arg, 1)
   }
 
   fun setGlobalPosition(globalPosition: Vector2) {
     val _arg = Variant.new(globalPosition)
-    __method_bind.set_global_position.call(this._handle, _arg, 1)
+    __method_bind.setGlobalPosition.call(this._handle, _arg, 1)
   }
 
   fun setPosition(position: Vector2) {
     val _arg = Variant.new(position)
-    __method_bind.set_position.call(this._handle, _arg, 1)
+    __method_bind.setPosition.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -53,47 +77,47 @@ open class InputEventMouse(
      * Container for method_bind pointers for InputEventMouse
      */
     private object __method_bind {
-      val get_button_mask: CPointer<godot_method_bind>
+      val getButtonMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "get_button_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_button_mask" }
+            "getButtonMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getButtonMask" }
         }
-      val get_global_position: CPointer<godot_method_bind>
+      val getGlobalPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "get_global_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_global_position" }
+            "getGlobalPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getGlobalPosition" }
         }
-      val get_position: CPointer<godot_method_bind>
+      val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
+            "getPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPosition" }
         }
-      val set_button_mask: CPointer<godot_method_bind>
+      val setButtonMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "set_button_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_button_mask" }
+            "setButtonMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setButtonMask" }
         }
-      val set_global_position: CPointer<godot_method_bind>
+      val setGlobalPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "set_global_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_global_position" }
+            "setGlobalPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setGlobalPosition" }
         }
-      val set_position: CPointer<godot_method_bind>
+      val setPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventMouse".cstr.ptr,
-            "set_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_position" }
+            "setPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPosition" }
         }}
   }
 }

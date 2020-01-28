@@ -22,67 +22,67 @@ open class XMLParser(
   _handle: COpaquePointer
 ) : Reference(_handle) {
   fun getAttributeCount(): Int {
-    val _ret = __method_bind.get_attribute_count.call(this._handle)
+    val _ret = __method_bind.getAttributeCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAttributeName(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_attribute_name.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAttributeName.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getAttributeValue(idx: Int): String {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_attribute_value.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getAttributeValue.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getCurrentLine(): Int {
-    val _ret = __method_bind.get_current_line.call(this._handle)
+    val _ret = __method_bind.getCurrentLine.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNamedAttributeValue(name: String): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_named_attribute_value.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNamedAttributeValue.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getNamedAttributeValueSafe(name: String): String {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_named_attribute_value_safe.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getNamedAttributeValueSafe.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getNodeData(): String {
-    val _ret = __method_bind.get_node_data.call(this._handle)
+    val _ret = __method_bind.getNodeData.call(this._handle)
     return _ret.asString()
   }
 
   fun getNodeName(): String {
-    val _ret = __method_bind.get_node_name.call(this._handle)
+    val _ret = __method_bind.getNodeName.call(this._handle)
     return _ret.asString()
   }
 
   fun getNodeOffset(): Int {
-    val _ret = __method_bind.get_node_offset.call(this._handle)
+    val _ret = __method_bind.getNodeOffset.call(this._handle)
     return _ret.asInt()
   }
 
   fun getNodeType(): NodeType {
-    val _ret = __method_bind.get_node_type.call(this._handle)
+    val _ret = __method_bind.getNodeType.call(this._handle)
     return XMLParser.NodeType.from(_ret.asInt())
   }
 
   fun hasAttribute(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_attribute.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasAttribute.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isEmpty(): Boolean {
-    val _ret = __method_bind.is_empty.call(this._handle)
+    val _ret = __method_bind.isEmpty.call(this._handle)
     return _ret.asBoolean()
   }
 
@@ -94,7 +94,7 @@ open class XMLParser(
 
   fun openBuffer(buffer: PoolByteArray): GDError {
     val _arg = Variant.new(buffer)
-    val _ret = __method_bind.open_buffer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.openBuffer.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
@@ -110,7 +110,7 @@ open class XMLParser(
   }
 
   fun skipSection() {
-    __method_bind.skip_section.call(this._handle)
+    __method_bind.skipSection.call(this._handle)
   }
 
   enum class NodeType(
@@ -170,77 +170,77 @@ open class XMLParser(
      * Container for method_bind pointers for XMLParser
      */
     private object __method_bind {
-      val get_attribute_count: CPointer<godot_method_bind>
+      val getAttributeCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_attribute_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attribute_count" }
+            "getAttributeCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAttributeCount" }
         }
-      val get_attribute_name: CPointer<godot_method_bind>
+      val getAttributeName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_attribute_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attribute_name" }
+            "getAttributeName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAttributeName" }
         }
-      val get_attribute_value: CPointer<godot_method_bind>
+      val getAttributeValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_attribute_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_attribute_value" }
+            "getAttributeValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAttributeValue" }
         }
-      val get_current_line: CPointer<godot_method_bind>
+      val getCurrentLine: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_current_line".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_current_line" }
+            "getCurrentLine".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCurrentLine" }
         }
-      val get_named_attribute_value: CPointer<godot_method_bind>
+      val getNamedAttributeValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_named_attribute_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_named_attribute_value" }
+            "getNamedAttributeValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNamedAttributeValue" }
         }
-      val get_named_attribute_value_safe: CPointer<godot_method_bind>
+      val getNamedAttributeValueSafe: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_named_attribute_value_safe".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_named_attribute_value_safe" }
+            "getNamedAttributeValueSafe".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNamedAttributeValueSafe" }
         }
-      val get_node_data: CPointer<godot_method_bind>
+      val getNodeData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_data" }
+            "getNodeData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeData" }
         }
-      val get_node_name: CPointer<godot_method_bind>
+      val getNodeName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_name" }
+            "getNodeName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeName" }
         }
-      val get_node_offset: CPointer<godot_method_bind>
+      val getNodeOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_offset" }
+            "getNodeOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeOffset" }
         }
-      val get_node_type: CPointer<godot_method_bind>
+      val getNodeType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "get_node_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_node_type" }
+            "getNodeType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getNodeType" }
         }
-      val has_attribute: CPointer<godot_method_bind>
+      val hasAttribute: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "has_attribute".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_attribute" }
+            "hasAttribute".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasAttribute" }
         }
-      val is_empty: CPointer<godot_method_bind>
+      val isEmpty: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "is_empty".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_empty" }
+            "isEmpty".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isEmpty" }
         }
       val open: CPointer<godot_method_bind>
         get() = memScoped {
@@ -248,11 +248,11 @@ open class XMLParser(
             "open".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method open" }
         }
-      val open_buffer: CPointer<godot_method_bind>
+      val openBuffer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "open_buffer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_buffer" }
+            "openBuffer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method openBuffer" }
         }
       val read: CPointer<godot_method_bind>
         get() = memScoped {
@@ -266,11 +266,11 @@ open class XMLParser(
             "seek".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method seek" }
         }
-      val skip_section: CPointer<godot_method_bind>
+      val skipSection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("XMLParser".cstr.ptr,
-            "skip_section".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method skip_section" }
+            "skipSection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method skipSection" }
         }}
   }
 }

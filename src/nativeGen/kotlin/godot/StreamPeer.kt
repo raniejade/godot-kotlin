@@ -22,178 +22,186 @@ import kotlinx.cinterop.reinterpret
 open class StreamPeer(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var bigEndian: Boolean
+    get() {
+       return isBigEndianEnabled() 
+    }
+    set(value) {
+      setBigEndian(value)
+    }
+
   fun get16(): Int {
-    val _ret = __method_bind.get_16.call(this._handle)
+    val _ret = __method_bind.get16.call(this._handle)
     return _ret.asInt()
   }
 
   fun get32(): Int {
-    val _ret = __method_bind.get_32.call(this._handle)
+    val _ret = __method_bind.get32.call(this._handle)
     return _ret.asInt()
   }
 
   fun get64(): Int {
-    val _ret = __method_bind.get_64.call(this._handle)
+    val _ret = __method_bind.get64.call(this._handle)
     return _ret.asInt()
   }
 
   fun get8(): Int {
-    val _ret = __method_bind.get_8.call(this._handle)
+    val _ret = __method_bind.get8.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAvailableBytes(): Int {
-    val _ret = __method_bind.get_available_bytes.call(this._handle)
+    val _ret = __method_bind.getAvailableBytes.call(this._handle)
     return _ret.asInt()
   }
 
   fun getData(bytes: Int): VariantArray {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_data.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getData.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun getDouble(): Float {
-    val _ret = __method_bind.get_double.call(this._handle)
+    val _ret = __method_bind.getDouble.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFloat(): Float {
-    val _ret = __method_bind.get_float.call(this._handle)
+    val _ret = __method_bind.getFloat.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPartialData(bytes: Int): VariantArray {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_partial_data.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPartialData.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun getString(bytes: Int): String {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getString.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getU16(): Int {
-    val _ret = __method_bind.get_u16.call(this._handle)
+    val _ret = __method_bind.getU16.call(this._handle)
     return _ret.asInt()
   }
 
   fun getU32(): Int {
-    val _ret = __method_bind.get_u32.call(this._handle)
+    val _ret = __method_bind.getU32.call(this._handle)
     return _ret.asInt()
   }
 
   fun getU64(): Int {
-    val _ret = __method_bind.get_u64.call(this._handle)
+    val _ret = __method_bind.getU64.call(this._handle)
     return _ret.asInt()
   }
 
   fun getU8(): Int {
-    val _ret = __method_bind.get_u8.call(this._handle)
+    val _ret = __method_bind.getU8.call(this._handle)
     return _ret.asInt()
   }
 
   fun getUtf8String(bytes: Int): String {
     val _arg = Variant.new(bytes)
-    val _ret = __method_bind.get_utf8_string.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getUtf8String.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
   fun getVar(allowObjects: Boolean): Variant {
     val _arg = Variant.new(allowObjects)
-    val _ret = __method_bind.get_var.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getVar.call(this._handle, _arg, 1)
     return _ret
   }
 
   fun isBigEndianEnabled(): Boolean {
-    val _ret = __method_bind.is_big_endian_enabled.call(this._handle)
+    val _ret = __method_bind.isBigEndianEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun put16(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_16.call(this._handle, _arg, 1)
+    __method_bind.put16.call(this._handle, _arg, 1)
   }
 
   fun put32(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_32.call(this._handle, _arg, 1)
+    __method_bind.put32.call(this._handle, _arg, 1)
   }
 
   fun put64(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_64.call(this._handle, _arg, 1)
+    __method_bind.put64.call(this._handle, _arg, 1)
   }
 
   fun put8(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_8.call(this._handle, _arg, 1)
+    __method_bind.put8.call(this._handle, _arg, 1)
   }
 
   fun putData(data: PoolByteArray): GDError {
     val _arg = Variant.new(data)
-    val _ret = __method_bind.put_data.call(this._handle, _arg, 1)
+    val _ret = __method_bind.putData.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
   }
 
   fun putDouble(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.put_double.call(this._handle, _arg, 1)
+    __method_bind.putDouble.call(this._handle, _arg, 1)
   }
 
   fun putFloat(value: Float) {
     val _arg = Variant.new(value)
-    __method_bind.put_float.call(this._handle, _arg, 1)
+    __method_bind.putFloat.call(this._handle, _arg, 1)
   }
 
   fun putPartialData(data: PoolByteArray): VariantArray {
     val _arg = Variant.new(data)
-    val _ret = __method_bind.put_partial_data.call(this._handle, _arg, 1)
+    val _ret = __method_bind.putPartialData.call(this._handle, _arg, 1)
     return _ret.asVariantArray()
   }
 
   fun putString(value: String) {
     val _arg = Variant.new(value)
-    __method_bind.put_string.call(this._handle, _arg, 1)
+    __method_bind.putString.call(this._handle, _arg, 1)
   }
 
   fun putU16(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u16.call(this._handle, _arg, 1)
+    __method_bind.putU16.call(this._handle, _arg, 1)
   }
 
   fun putU32(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u32.call(this._handle, _arg, 1)
+    __method_bind.putU32.call(this._handle, _arg, 1)
   }
 
   fun putU64(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u64.call(this._handle, _arg, 1)
+    __method_bind.putU64.call(this._handle, _arg, 1)
   }
 
   fun putU8(value: Int) {
     val _arg = Variant.new(value)
-    __method_bind.put_u8.call(this._handle, _arg, 1)
+    __method_bind.putU8.call(this._handle, _arg, 1)
   }
 
   fun putUtf8String(value: String) {
     val _arg = Variant.new(value)
-    __method_bind.put_utf8_string.call(this._handle, _arg, 1)
+    __method_bind.putUtf8String.call(this._handle, _arg, 1)
   }
 
   fun putVar(value: Variant, fullObjects: Boolean) {
     val _args = VariantArray.new()
     _args.append(value)
     _args.append(fullObjects)
-    __method_bind.put_var.call(this._handle, _args.toVariant(), 2)
+    __method_bind.putVar.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setBigEndian(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_big_endian.call(this._handle, _arg, 1)
+    __method_bind.setBigEndian.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -201,203 +209,203 @@ open class StreamPeer(
      * Container for method_bind pointers for StreamPeer
      */
     private object __method_bind {
-      val get_16: CPointer<godot_method_bind>
+      val get16: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_16".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_16" }
+            "get16".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get16" }
         }
-      val get_32: CPointer<godot_method_bind>
+      val get32: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_32".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_32" }
+            "get32".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get32" }
         }
-      val get_64: CPointer<godot_method_bind>
+      val get64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_64" }
+            "get64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get64" }
         }
-      val get_8: CPointer<godot_method_bind>
+      val get8: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_8".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_8" }
+            "get8".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method get8" }
         }
-      val get_available_bytes: CPointer<godot_method_bind>
+      val getAvailableBytes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_available_bytes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_available_bytes" }
+            "getAvailableBytes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAvailableBytes" }
         }
-      val get_data: CPointer<godot_method_bind>
+      val getData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_data" }
+            "getData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getData" }
         }
-      val get_double: CPointer<godot_method_bind>
+      val getDouble: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_double".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_double" }
+            "getDouble".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDouble" }
         }
-      val get_float: CPointer<godot_method_bind>
+      val getFloat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_float".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_float" }
+            "getFloat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFloat" }
         }
-      val get_partial_data: CPointer<godot_method_bind>
+      val getPartialData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_partial_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_partial_data" }
+            "getPartialData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPartialData" }
         }
-      val get_string: CPointer<godot_method_bind>
+      val getString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_string" }
+            "getString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getString" }
         }
-      val get_u16: CPointer<godot_method_bind>
+      val getU16: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_u16".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_u16" }
+            "getU16".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getU16" }
         }
-      val get_u32: CPointer<godot_method_bind>
+      val getU32: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_u32".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_u32" }
+            "getU32".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getU32" }
         }
-      val get_u64: CPointer<godot_method_bind>
+      val getU64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_u64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_u64" }
+            "getU64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getU64" }
         }
-      val get_u8: CPointer<godot_method_bind>
+      val getU8: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_u8".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_u8" }
+            "getU8".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getU8" }
         }
-      val get_utf8_string: CPointer<godot_method_bind>
+      val getUtf8String: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_utf8_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_utf8_string" }
+            "getUtf8String".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUtf8String" }
         }
-      val get_var: CPointer<godot_method_bind>
+      val getVar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "get_var".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_var" }
+            "getVar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVar" }
         }
-      val is_big_endian_enabled: CPointer<godot_method_bind>
+      val isBigEndianEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "is_big_endian_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_big_endian_enabled" }
+            "isBigEndianEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isBigEndianEnabled" }
         }
-      val put_16: CPointer<godot_method_bind>
+      val put16: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_16".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_16" }
+            "put16".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method put16" }
         }
-      val put_32: CPointer<godot_method_bind>
+      val put32: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_32".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_32" }
+            "put32".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method put32" }
         }
-      val put_64: CPointer<godot_method_bind>
+      val put64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_64" }
+            "put64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method put64" }
         }
-      val put_8: CPointer<godot_method_bind>
+      val put8: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_8".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_8" }
+            "put8".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method put8" }
         }
-      val put_data: CPointer<godot_method_bind>
+      val putData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_data" }
+            "putData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putData" }
         }
-      val put_double: CPointer<godot_method_bind>
+      val putDouble: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_double".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_double" }
+            "putDouble".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putDouble" }
         }
-      val put_float: CPointer<godot_method_bind>
+      val putFloat: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_float".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_float" }
+            "putFloat".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putFloat" }
         }
-      val put_partial_data: CPointer<godot_method_bind>
+      val putPartialData: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_partial_data".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_partial_data" }
+            "putPartialData".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putPartialData" }
         }
-      val put_string: CPointer<godot_method_bind>
+      val putString: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_string" }
+            "putString".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putString" }
         }
-      val put_u16: CPointer<godot_method_bind>
+      val putU16: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_u16".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_u16" }
+            "putU16".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putU16" }
         }
-      val put_u32: CPointer<godot_method_bind>
+      val putU32: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_u32".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_u32" }
+            "putU32".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putU32" }
         }
-      val put_u64: CPointer<godot_method_bind>
+      val putU64: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_u64".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_u64" }
+            "putU64".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putU64" }
         }
-      val put_u8: CPointer<godot_method_bind>
+      val putU8: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_u8".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_u8" }
+            "putU8".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putU8" }
         }
-      val put_utf8_string: CPointer<godot_method_bind>
+      val putUtf8String: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_utf8_string".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_utf8_string" }
+            "putUtf8String".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putUtf8String" }
         }
-      val put_var: CPointer<godot_method_bind>
+      val putVar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "put_var".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method put_var" }
+            "putVar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method putVar" }
         }
-      val set_big_endian: CPointer<godot_method_bind>
+      val setBigEndian: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StreamPeer".cstr.ptr,
-            "set_big_endian".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_big_endian" }
+            "setBigEndian".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBigEndian" }
         }}
   }
 }

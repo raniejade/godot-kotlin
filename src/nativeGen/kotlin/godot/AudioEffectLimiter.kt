@@ -17,44 +17,76 @@ import kotlinx.cinterop.reinterpret
 open class AudioEffectLimiter(
   _handle: COpaquePointer
 ) : AudioEffect(_handle) {
+  var ceilingDb: Float
+    get() {
+       return getCeilingDb() 
+    }
+    set(value) {
+      setCeilingDb(value)
+    }
+
+  var softClipDb: Float
+    get() {
+       return getSoftClipDb() 
+    }
+    set(value) {
+      setSoftClipDb(value)
+    }
+
+  var softClipRatio: Float
+    get() {
+       return getSoftClipRatio() 
+    }
+    set(value) {
+      setSoftClipRatio(value)
+    }
+
+  var thresholdDb: Float
+    get() {
+       return getThresholdDb() 
+    }
+    set(value) {
+      setThresholdDb(value)
+    }
+
   fun getCeilingDb(): Float {
-    val _ret = __method_bind.get_ceiling_db.call(this._handle)
+    val _ret = __method_bind.getCeilingDb.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSoftClipDb(): Float {
-    val _ret = __method_bind.get_soft_clip_db.call(this._handle)
+    val _ret = __method_bind.getSoftClipDb.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getSoftClipRatio(): Float {
-    val _ret = __method_bind.get_soft_clip_ratio.call(this._handle)
+    val _ret = __method_bind.getSoftClipRatio.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getThresholdDb(): Float {
-    val _ret = __method_bind.get_threshold_db.call(this._handle)
+    val _ret = __method_bind.getThresholdDb.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setCeilingDb(ceiling: Float) {
     val _arg = Variant.new(ceiling)
-    __method_bind.set_ceiling_db.call(this._handle, _arg, 1)
+    __method_bind.setCeilingDb.call(this._handle, _arg, 1)
   }
 
   fun setSoftClipDb(softClip: Float) {
     val _arg = Variant.new(softClip)
-    __method_bind.set_soft_clip_db.call(this._handle, _arg, 1)
+    __method_bind.setSoftClipDb.call(this._handle, _arg, 1)
   }
 
   fun setSoftClipRatio(softClip: Float) {
     val _arg = Variant.new(softClip)
-    __method_bind.set_soft_clip_ratio.call(this._handle, _arg, 1)
+    __method_bind.setSoftClipRatio.call(this._handle, _arg, 1)
   }
 
   fun setThresholdDb(threshold: Float) {
     val _arg = Variant.new(threshold)
-    __method_bind.set_threshold_db.call(this._handle, _arg, 1)
+    __method_bind.setThresholdDb.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -72,61 +104,61 @@ open class AudioEffectLimiter(
      * Container for method_bind pointers for AudioEffectLimiter
      */
     private object __method_bind {
-      val get_ceiling_db: CPointer<godot_method_bind>
+      val getCeilingDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_ceiling_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ceiling_db" }
+            "getCeilingDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCeilingDb" }
         }
-      val get_soft_clip_db: CPointer<godot_method_bind>
+      val getSoftClipDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_soft_clip_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_soft_clip_db" }
+            "getSoftClipDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSoftClipDb" }
         }
-      val get_soft_clip_ratio: CPointer<godot_method_bind>
+      val getSoftClipRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_soft_clip_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_soft_clip_ratio" }
+            "getSoftClipRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSoftClipRatio" }
         }
-      val get_threshold_db: CPointer<godot_method_bind>
+      val getThresholdDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "get_threshold_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_threshold_db" }
+            "getThresholdDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getThresholdDb" }
         }
-      val set_ceiling_db: CPointer<godot_method_bind>
+      val setCeilingDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_ceiling_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_ceiling_db" }
+            "setCeilingDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCeilingDb" }
         }
-      val set_soft_clip_db: CPointer<godot_method_bind>
+      val setSoftClipDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_soft_clip_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_soft_clip_db" }
+            "setSoftClipDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSoftClipDb" }
         }
-      val set_soft_clip_ratio: CPointer<godot_method_bind>
+      val setSoftClipRatio: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_soft_clip_ratio".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_soft_clip_ratio" }
+            "setSoftClipRatio".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSoftClipRatio" }
         }
-      val set_threshold_db: CPointer<godot_method_bind>
+      val setThresholdDb: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AudioEffectLimiter".cstr.ptr,
-            "set_threshold_db".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_threshold_db" }
+            "setThresholdDb".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setThresholdDb" }
         }}
   }
 }

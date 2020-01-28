@@ -20,54 +20,94 @@ import kotlinx.cinterop.reinterpret
 open class CollisionPolygon2D(
   _handle: COpaquePointer
 ) : Node2D(_handle) {
+  var buildMode: Int
+    get() {
+       return CollisionPolygon2D.BuildMode.from(getBuildMode()) 
+    }
+    set(value) {
+      setBuildMode(CollisionPolygon2D.BuildMode.from(value))
+    }
+
+  var disabled: Boolean
+    get() {
+       return isDisabled() 
+    }
+    set(value) {
+      setDisabled(value)
+    }
+
+  var oneWayCollision: Boolean
+    get() {
+       return isOneWayCollisionEnabled() 
+    }
+    set(value) {
+      setOneWayCollision(value)
+    }
+
+  var oneWayCollisionMargin: Float
+    get() {
+       return getOneWayCollisionMargin() 
+    }
+    set(value) {
+      setOneWayCollisionMargin(value)
+    }
+
+  var polygon: PoolVector2Array
+    get() {
+       return getPolygon() 
+    }
+    set(value) {
+      setPolygon(value)
+    }
+
   fun getBuildMode(): BuildMode {
-    val _ret = __method_bind.get_build_mode.call(this._handle)
+    val _ret = __method_bind.getBuildMode.call(this._handle)
     return CollisionPolygon2D.BuildMode.from(_ret.asInt())
   }
 
   fun getOneWayCollisionMargin(): Float {
-    val _ret = __method_bind.get_one_way_collision_margin.call(this._handle)
+    val _ret = __method_bind.getOneWayCollisionMargin.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getPolygon(): PoolVector2Array {
-    val _ret = __method_bind.get_polygon.call(this._handle)
+    val _ret = __method_bind.getPolygon.call(this._handle)
     return _ret.asPoolVector2Array()
   }
 
   fun isDisabled(): Boolean {
-    val _ret = __method_bind.is_disabled.call(this._handle)
+    val _ret = __method_bind.isDisabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isOneWayCollisionEnabled(): Boolean {
-    val _ret = __method_bind.is_one_way_collision_enabled.call(this._handle)
+    val _ret = __method_bind.isOneWayCollisionEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setBuildMode(buildMode: Int) {
     val _arg = Variant.new(buildMode)
-    __method_bind.set_build_mode.call(this._handle, _arg, 1)
+    __method_bind.setBuildMode.call(this._handle, _arg, 1)
   }
 
   fun setDisabled(disabled: Boolean) {
     val _arg = Variant.new(disabled)
-    __method_bind.set_disabled.call(this._handle, _arg, 1)
+    __method_bind.setDisabled.call(this._handle, _arg, 1)
   }
 
   fun setOneWayCollision(enabled: Boolean) {
     val _arg = Variant.new(enabled)
-    __method_bind.set_one_way_collision.call(this._handle, _arg, 1)
+    __method_bind.setOneWayCollision.call(this._handle, _arg, 1)
   }
 
   fun setOneWayCollisionMargin(margin: Float) {
     val _arg = Variant.new(margin)
-    __method_bind.set_one_way_collision_margin.call(this._handle, _arg, 1)
+    __method_bind.setOneWayCollisionMargin.call(this._handle, _arg, 1)
   }
 
   fun setPolygon(polygon: PoolVector2Array) {
     val _arg = Variant.new(polygon)
-    __method_bind.set_polygon.call(this._handle, _arg, 1)
+    __method_bind.setPolygon.call(this._handle, _arg, 1)
   }
 
   enum class BuildMode(
@@ -108,75 +148,75 @@ open class CollisionPolygon2D(
      * Container for method_bind pointers for CollisionPolygon2D
      */
     private object __method_bind {
-      val get_build_mode: CPointer<godot_method_bind>
+      val getBuildMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "get_build_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_build_mode" }
+            "getBuildMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBuildMode" }
         }
-      val get_one_way_collision_margin: CPointer<godot_method_bind>
+      val getOneWayCollisionMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "get_one_way_collision_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_one_way_collision_margin" }
+            "getOneWayCollisionMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOneWayCollisionMargin" }
         }
-      val get_polygon: CPointer<godot_method_bind>
+      val getPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "get_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_polygon" }
+            "getPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPolygon" }
         }
-      val is_disabled: CPointer<godot_method_bind>
+      val isDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "is_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_disabled" }
+            "isDisabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDisabled" }
         }
-      val is_one_way_collision_enabled: CPointer<godot_method_bind>
+      val isOneWayCollisionEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "is_one_way_collision_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_one_way_collision_enabled" }
+            "isOneWayCollisionEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isOneWayCollisionEnabled" }
         }
-      val set_build_mode: CPointer<godot_method_bind>
+      val setBuildMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "set_build_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_build_mode" }
+            "setBuildMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBuildMode" }
         }
-      val set_disabled: CPointer<godot_method_bind>
+      val setDisabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "set_disabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_disabled" }
+            "setDisabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDisabled" }
         }
-      val set_one_way_collision: CPointer<godot_method_bind>
+      val setOneWayCollision: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "set_one_way_collision".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_one_way_collision" }
+            "setOneWayCollision".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOneWayCollision" }
         }
-      val set_one_way_collision_margin: CPointer<godot_method_bind>
+      val setOneWayCollisionMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "set_one_way_collision_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_one_way_collision_margin" }
+            "setOneWayCollisionMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOneWayCollisionMargin" }
         }
-      val set_polygon: CPointer<godot_method_bind>
+      val setPolygon: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("CollisionPolygon2D".cstr.ptr,
-            "set_polygon".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_polygon" }
+            "setPolygon".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPolygon" }
         }}
   }
 }

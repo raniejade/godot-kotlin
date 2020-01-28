@@ -4,49 +4,112 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.squareup.kotlinpoet.*
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
-import godot.codegen.domain.*
+import godot.codegen.domain.GDClass
+import godot.codegen.domain.GDClassIndex
+import godot.codegen.domain.GDMethod
+import godot.codegen.domain.RawGDClass
 import java.io.File
 
 class APIGenerator {
   private val mapper = jacksonObjectMapper()
 
   fun generate(source: File, outputDir: File) {
-    val types = parseJson(source)
-    types.map(this::generateFile)
+    val types = parseJson(source).map(GDClass.Companion::from)
+    val index = GDClassIndex(types.map { it.name to it }.toMap())
+    types.map { generateFile(it, index) }
       .forEach { fs ->
         fs.writeTo(outputDir)
       }
   }
 
-  private fun generateFile(cls: GDClass): FileSpec {
+  private fun generateFile(cls: GDClass, index: GDClassIndex): FileSpec {
     return FileSpec.builder(BASE_PACKAGE, cls.name)
       .addComment("""
         DO NOT EDIT, THIS FILE IS GENERATED FROM api.json
       """.trimIndent())
       .addCommonImports(cls)
-      .addType(generateType(cls))
+      .addType(generateType(cls, index))
       .build()
   }
 
-  private fun generateType(cls: GDClass): TypeSpec {
-    return generateInstanceType(cls)
+  private fun generateType(cls: GDClass, index: GDClassIndex): TypeSpec {
+    return generateInstanceType(cls, index)
   }
 
-  private fun generateInstanceType(cls: GDClass): TypeSpec {
+  private fun generateInstanceType(cls: GDClass, index: GDClassIndex): TypeSpec {
     val classBuilder = TypeSpec.classBuilder(cls.name)
       .addModifiers(KModifier.OPEN)
       .generatePrimaryConstructor(cls)
       .maybeGenerateInheritance(cls)
-      .generateEnums(cls.name, cls.enums)
-      .generateMethods(cls.name, cls.methods)
+      .generateEnums(cls)
+      .generateProperties(cls, index)
+      .generateMethods(cls)
       .generateCompanionObject(cls)
 
     return classBuilder
       .build()
   }
 
-  private fun TypeSpec.Builder.generateEnums(className: String, enums: List<GDEnum>): TypeSpec.Builder {
-    val enumSpecs = enums.map { enum ->
+  private fun TypeSpec.Builder.generateProperties(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
+    val propertySpecs = cls.properties.values.toList()
+      // skip properties requiring an index and begins with an _
+      .filter { property -> property.index == -1 && !property.isVirtual }
+      // getter should exist
+      .filter { property -> index.findMethod(cls, property.getter) != null }
+      .map { property ->
+        val propertyType = property.type
+        val propertyName = property.name
+
+        val typeClassName = checkNotNull(propertyType.toClassName())
+        val builder = PropertySpec.builder(propertyName, typeClassName)
+        val methodReturnType = checkNotNull(index.findMethod(cls, property.getter)) {
+          println(cls.name)
+          println(index.classes[cls.name]?.methods)
+          ""
+        }.returnType
+
+        // getter
+        val getter = FunSpec.getterBuilder()
+        val requireEnumCast = methodReturnType.isEnum && !propertyType.isEnum
+        if (!requireEnumCast) {
+          getter.addCode("""
+            « return %L() »
+          """.trimIndent(), property.getter)
+        } else {
+          getter.addCode("""
+            « return %L.from(%L()) »
+          """.trimIndent(), methodReturnType.fqName, property.getter)
+        }
+
+        builder.getter(getter.build())
+
+        // setter
+        if (property.isMutable) {
+          val setter = FunSpec.setterBuilder()
+            .addParameter("value", typeClassName)
+
+          if (!requireEnumCast) {
+            setter.addCode("""
+              %L(value)
+            """.trimIndent(), property.setter)
+          } else {
+            setter.addCode("""
+              %L(%L.from(value))
+            """.trimIndent(), property.setter,  methodReturnType.fqName)
+          }
+          builder.mutable(true)
+          builder.setter(setter.build())
+        }
+
+        builder.build()
+      }
+
+    addProperties(propertySpecs)
+    return this
+  }
+
+  private fun TypeSpec.Builder.generateEnums(cls: GDClass): TypeSpec.Builder {
+    val enumSpecs = cls.enums.values.toList().map { enum ->
       val paramName = "value"
       val builder = TypeSpec.enumBuilder(enum.name)
         .primaryConstructor(
@@ -65,7 +128,7 @@ class APIGenerator {
           .addFunction(
             FunSpec.builder("from")
               .addParameter("value", Int::class)
-              .returns(ClassName(BASE_PACKAGE, className, enum.name))
+              .returns(ClassName(BASE_PACKAGE, cls.name, enum.name))
               .addCode("""
                 for (enumValue in values()) {
                   if (enumValue.value == value) {
@@ -99,7 +162,7 @@ class APIGenerator {
     val handleName = "_handle"
     val cOpaquePointerType = ClassName("kotlinx.cinterop", "COpaquePointer")
 
-    if (cls.base_class.isEmpty()) {
+    if (cls.baseClass.isEmpty()) {
       addProperty(
         PropertySpec.builder(handleName, cOpaquePointerType, KModifier.INTERNAL)
           .initializer(handleName)
@@ -116,9 +179,9 @@ class APIGenerator {
   }
 
   private fun TypeSpec.Builder.maybeGenerateInheritance(cls: GDClass): TypeSpec.Builder {
-    if (cls.base_class.isNotBlank()) {
+    if (cls.baseClass.isNotBlank()) {
       superclass(
-        ClassName(BASE_PACKAGE, cls.base_class)
+        ClassName(BASE_PACKAGE, cls.baseClass)
       ).addSuperclassConstructorParameter("_handle")
     }
     return this
@@ -129,7 +192,7 @@ class APIGenerator {
     val className = ClassName(BASE_PACKAGE, cls.name)
 
     // constructor
-    if (cls.instanciable) {
+    if (cls.isInstanciable) {
       companionObjectBuilder.addFunction(
         FunSpec.builder("new")
           .addCode("""
@@ -158,7 +221,7 @@ class APIGenerator {
     }
 
     // singleton
-    if (cls.singleton) {
+    if (cls.isSingleton) {
       companionObjectBuilder.addProperty(
         PropertySpec.builder("Instance", className)
           .getter(
@@ -190,7 +253,7 @@ class APIGenerator {
 
     addType(
       companionObjectBuilder
-        .generateMethodBindObject(cls.name, cls.methods)
+        .generateMethodBindObject(cls.name, cls.methods.values.toList())
         .build()
     )
     return this
@@ -235,16 +298,17 @@ class APIGenerator {
   }
 
   private fun isMethodImplGeneratable(method: GDMethod): Boolean {
-    return !method.is_virtual && method.name != "free"
+    return !method.isVirtual && method.name != "free"
   }
 
-  private fun TypeSpec.Builder.generateMethods(className: String, methods: List<GDMethod>): TypeSpec.Builder {
-    val methodSpecs = methods.filter { method -> isMethodImplGeneratable(method) }
+  private fun TypeSpec.Builder.generateMethods(cls: GDClass): TypeSpec.Builder {
+    val methodSpecs = cls.methods.values.toList()
+      .filter { method -> isMethodImplGeneratable(method) }
       .map { method ->
-        val parsedType = ParsedType.parse(method.return_type)
+        val parsedType = method.returnType
         val returnTypeClassName = parsedType.toClassName()
 
-        val methodName = normalizeMethodName(method.name)
+        val methodName = method.name
         val builder = FunSpec.builder(methodName)
 
         if (isMethodOverrideRequired(methodName)) {
@@ -256,8 +320,8 @@ class APIGenerator {
         }
 
         val parameters = method.arguments.map { argument ->
-          val parsedArgType = ParsedType.parse(argument.type)
-          val argumentName = normalizeArgName(argument.name)
+          val parsedArgType = argument.type
+          val argumentName = argument.name
           val argumentType = checkNotNull(parsedArgType.toClassName())
           ParameterSpec.builder(argumentName, argumentType)
             .build()
@@ -317,8 +381,8 @@ class APIGenerator {
       }
 
     addFunctions(methodSpecs)
-    maybeGenerateFreeForObject(className)
-    maybeGenerateLifeCycleForObject(className)
+    maybeGenerateFreeForObject(cls.name)
+    maybeGenerateLifeCycleForObject(cls.name)
     return this
   }
 
@@ -363,80 +427,6 @@ class APIGenerator {
     return false
   }
 
-  private data class ParsedType(
-    val names: List<String>,
-    val fqName: String,
-    val isEnum: Boolean,
-    val coreType: GDType?
-  ) {
-    val isCoreType = coreType != null
-    val isInnerType = names.size > 1
-    val isVoid = coreType == GDType.VOID
-    val isVariant = coreType == GDType.VARIANT
-    val isPrimitive = coreType != null && coreType.primitive
-
-    fun toClassName(): ClassName? {
-      return when (coreType) {
-        GDType.VOID -> null
-        null -> ClassName("godot", names)
-        else -> {
-          val packageName = if (isPrimitive) {
-            "kotlin"
-          } else {
-            "godot.core"
-          }
-          ClassName(packageName, names)
-        }
-      }
-    }
-
-    companion object {
-      fun parse(name: String): ParsedType {
-        var processedName = name
-        var isEnum = false
-        if (processedName.startsWith("enum.")) {
-          processedName = processedName.replace("enum.", "")
-          isEnum = true
-        }
-        // can be an inner type
-        var names = processedName.split("::")
-        var fqName = names.joinToString(".")
-        val coreType = TypeRegistry.get(fqName)
-
-        if (coreType != null) {
-          names = coreType.kotlinName.split(".")
-          fqName = coreType.kotlinName
-        }
-
-        return ParsedType(
-          names,
-          fqName,
-          isEnum,
-          coreType
-        )
-      }
-    }
-  }
-
-  private fun normalizeMethodName(name: String): String {
-    val ret = name.split("_")
-      .joinToString("") { it.capitalize() }
-      .decapitalize()
-
-    // some godot methods begin with '_', we need to preserve it.
-    if (name.startsWith("_")) {
-      return "_$ret"
-    }
-
-    return ret
-  }
-
-  private fun normalizeArgName(name: String): String {
-    return name.split("_")
-      .joinToString("") { it.capitalize() }
-      .decapitalize()
-  }
-
   private fun getFormatFromConstantValue(v: Any): String {
     if (v is String) {
       return "%S"
@@ -444,7 +434,7 @@ class APIGenerator {
     return "%L"
   }
 
-  private fun parseJson(source: File): List<GDClass> {
+  private fun parseJson(source: File): List<RawGDClass> {
     return mapper.readValue(source)
   }
 

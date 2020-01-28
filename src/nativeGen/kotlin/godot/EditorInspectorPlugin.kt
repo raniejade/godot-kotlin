@@ -20,14 +20,14 @@ open class EditorInspectorPlugin(
 ) : Reference(_handle) {
   fun addCustomControl(control: Control) {
     val _arg = Variant.new(control)
-    __method_bind.add_custom_control.call(this._handle, _arg, 1)
+    __method_bind.addCustomControl.call(this._handle, _arg, 1)
   }
 
   fun addPropertyEditor(property: String, editor: Control) {
     val _args = VariantArray.new()
     _args.append(property)
     _args.append(editor)
-    __method_bind.add_property_editor.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addPropertyEditor.call(this._handle, _args.toVariant(), 2)
   }
 
   fun addPropertyEditorForMultipleProperties(
@@ -39,8 +39,7 @@ open class EditorInspectorPlugin(
     _args.append(label)
     _args.append(properties)
     _args.append(editor)
-    __method_bind.add_property_editor_for_multiple_properties.call(this._handle, _args.toVariant(),
-        3)
+    __method_bind.addPropertyEditorForMultipleProperties.call(this._handle, _args.toVariant(), 3)
   }
 
   companion object {
@@ -58,27 +57,27 @@ open class EditorInspectorPlugin(
      * Container for method_bind pointers for EditorInspectorPlugin
      */
     private object __method_bind {
-      val add_custom_control: CPointer<godot_method_bind>
+      val addCustomControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "add_custom_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_custom_control" }
+            "addCustomControl".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addCustomControl" }
         }
-      val add_property_editor: CPointer<godot_method_bind>
+      val addPropertyEditor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "add_property_editor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_property_editor" }
+            "addPropertyEditor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPropertyEditor" }
         }
-      val add_property_editor_for_multiple_properties: CPointer<godot_method_bind>
+      val addPropertyEditorForMultipleProperties: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInspectorPlugin".cstr.ptr,
-            "add_property_editor_for_multiple_properties".cstr.ptr)
+            "addPropertyEditorForMultipleProperties".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method add_property_editor_for_multiple_properties" }
+            "No method_bind found for method addPropertyEditorForMultipleProperties" }
         }}
   }
 }

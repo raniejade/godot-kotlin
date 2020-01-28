@@ -19,12 +19,12 @@ open class EditorResourcePreview(
 ) : Node(_handle) {
   fun addPreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
-    __method_bind.add_preview_generator.call(this._handle, _arg, 1)
+    __method_bind.addPreviewGenerator.call(this._handle, _arg, 1)
   }
 
   fun checkForInvalidation(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.check_for_invalidation.call(this._handle, _arg, 1)
+    __method_bind.checkForInvalidation.call(this._handle, _arg, 1)
   }
 
   fun queueEditedResourcePreview(
@@ -38,7 +38,7 @@ open class EditorResourcePreview(
     _args.append(receiver)
     _args.append(receiverFunc)
     _args.append(userdata)
-    __method_bind.queue_edited_resource_preview.call(this._handle, _args.toVariant(), 4)
+    __method_bind.queueEditedResourcePreview.call(this._handle, _args.toVariant(), 4)
   }
 
   fun queueResourcePreview(
@@ -52,12 +52,12 @@ open class EditorResourcePreview(
     _args.append(receiver)
     _args.append(receiverFunc)
     _args.append(userdata)
-    __method_bind.queue_resource_preview.call(this._handle, _args.toVariant(), 4)
+    __method_bind.queueResourcePreview.call(this._handle, _args.toVariant(), 4)
   }
 
   fun removePreviewGenerator(generator: EditorResourcePreviewGenerator) {
     val _arg = Variant.new(generator)
-    __method_bind.remove_preview_generator.call(this._handle, _arg, 1)
+    __method_bind.removePreviewGenerator.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -65,40 +65,40 @@ open class EditorResourcePreview(
      * Container for method_bind pointers for EditorResourcePreview
      */
     private object __method_bind {
-      val add_preview_generator: CPointer<godot_method_bind>
+      val addPreviewGenerator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "add_preview_generator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_preview_generator" }
+            "addPreviewGenerator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPreviewGenerator" }
         }
-      val check_for_invalidation: CPointer<godot_method_bind>
+      val checkForInvalidation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "check_for_invalidation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method check_for_invalidation" }
+            "checkForInvalidation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method checkForInvalidation" }
         }
-      val queue_edited_resource_preview: CPointer<godot_method_bind>
+      val queueEditedResourcePreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "queue_edited_resource_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_edited_resource_preview" }
+            "queueEditedResourcePreview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queueEditedResourcePreview" }
         }
-      val queue_resource_preview: CPointer<godot_method_bind>
+      val queueResourcePreview: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "queue_resource_preview".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method queue_resource_preview" }
+            "queueResourcePreview".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method queueResourcePreview" }
         }
-      val remove_preview_generator: CPointer<godot_method_bind>
+      val removePreviewGenerator: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorResourcePreview".cstr.ptr,
-            "remove_preview_generator".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_preview_generator" }
+            "removePreviewGenerator".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removePreviewGenerator" }
         }}
   }
 }

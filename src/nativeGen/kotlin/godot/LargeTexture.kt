@@ -18,11 +18,19 @@ import kotlinx.cinterop.reinterpret
 open class LargeTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var data: VariantArray
+    get() {
+       return _getData() 
+    }
+    set(value) {
+      _setData(value)
+    }
+
   fun addPiece(ofs: Vector2, texture: Texture): Int {
     val _args = VariantArray.new()
     _args.append(ofs)
     _args.append(texture)
-    val _ret = __method_bind.add_piece.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.addPiece.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -31,19 +39,19 @@ open class LargeTexture(
   }
 
   fun getPieceCount(): Int {
-    val _ret = __method_bind.get_piece_count.call(this._handle)
+    val _ret = __method_bind.getPieceCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getPieceOffset(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_piece_offset.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPieceOffset.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getPieceTexture(idx: Int): Texture {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_piece_texture.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPieceTexture.call(this._handle, _arg, 1)
     return _ret.asObject(::Texture)!!
   }
 
@@ -51,19 +59,19 @@ open class LargeTexture(
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(ofs)
-    __method_bind.set_piece_offset.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPieceOffset.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setPieceTexture(idx: Int, texture: Texture) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(texture)
-    __method_bind.set_piece_texture.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPieceTexture.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setSize(size: Vector2) {
     val _arg = Variant.new(size)
-    __method_bind.set_size.call(this._handle, _arg, 1)
+    __method_bind.setSize.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -80,12 +88,12 @@ open class LargeTexture(
      * Container for method_bind pointers for LargeTexture
      */
     private object __method_bind {
-      val add_piece: CPointer<godot_method_bind>
+      val addPiece: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "add_piece".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_piece" }
+            "addPiece".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPiece" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -94,47 +102,47 @@ open class LargeTexture(
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
-      val get_piece_count: CPointer<godot_method_bind>
+      val getPieceCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "get_piece_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_piece_count" }
+            "getPieceCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPieceCount" }
         }
-      val get_piece_offset: CPointer<godot_method_bind>
+      val getPieceOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "get_piece_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_piece_offset" }
+            "getPieceOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPieceOffset" }
         }
-      val get_piece_texture: CPointer<godot_method_bind>
+      val getPieceTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "get_piece_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_piece_texture" }
+            "getPieceTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPieceTexture" }
         }
-      val set_piece_offset: CPointer<godot_method_bind>
+      val setPieceOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "set_piece_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_piece_offset" }
+            "setPieceOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPieceOffset" }
         }
-      val set_piece_texture: CPointer<godot_method_bind>
+      val setPieceTexture: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "set_piece_texture".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_piece_texture" }
+            "setPieceTexture".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPieceTexture" }
         }
-      val set_size: CPointer<godot_method_bind>
+      val setSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("LargeTexture".cstr.ptr,
-            "set_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_size" }
+            "setSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSize" }
         }}
   }
 }

@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeUniform(
   _handle: COpaquePointer
 ) : VisualShaderNode(_handle) {
+  var uniformName: String
+    get() {
+       return getUniformName() 
+    }
+    set(value) {
+      setUniformName(value)
+    }
+
   fun getUniformName(): String {
-    val _ret = __method_bind.get_uniform_name.call(this._handle)
+    val _ret = __method_bind.getUniformName.call(this._handle)
     return _ret.asString()
   }
 
   fun setUniformName(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_uniform_name.call(this._handle, _arg, 1)
+    __method_bind.setUniformName.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -32,19 +40,19 @@ open class VisualShaderNodeUniform(
      * Container for method_bind pointers for VisualShaderNodeUniform
      */
     private object __method_bind {
-      val get_uniform_name: CPointer<godot_method_bind>
+      val getUniformName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
-            "get_uniform_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_uniform_name" }
+            "getUniformName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUniformName" }
         }
-      val set_uniform_name: CPointer<godot_method_bind>
+      val setUniformName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeUniform".cstr.ptr,
-            "set_uniform_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_uniform_name" }
+            "setUniformName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUniformName" }
         }}
   }
 }

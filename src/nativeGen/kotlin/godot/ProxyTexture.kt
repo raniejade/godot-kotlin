@@ -16,14 +16,22 @@ import kotlinx.cinterop.reinterpret
 open class ProxyTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var base: Texture
+    get() {
+       return getBase() 
+    }
+    set(value) {
+      setBase(value)
+    }
+
   fun getBase(): Texture {
-    val _ret = __method_bind.get_base.call(this._handle)
+    val _ret = __method_bind.getBase.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun setBase(base: Texture) {
     val _arg = Variant.new(base)
-    __method_bind.set_base.call(this._handle, _arg, 1)
+    __method_bind.setBase.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -40,19 +48,19 @@ open class ProxyTexture(
      * Container for method_bind pointers for ProxyTexture
      */
     private object __method_bind {
-      val get_base: CPointer<godot_method_bind>
+      val getBase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
-            "get_base".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base" }
+            "getBase".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBase" }
         }
-      val set_base: CPointer<godot_method_bind>
+      val setBase: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ProxyTexture".cstr.ptr,
-            "set_base".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base" }
+            "setBase".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBase" }
         }}
   }
 }

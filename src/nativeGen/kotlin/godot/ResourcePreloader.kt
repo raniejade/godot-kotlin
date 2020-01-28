@@ -19,40 +19,48 @@ import kotlinx.cinterop.reinterpret
 open class ResourcePreloader(
   _handle: COpaquePointer
 ) : Node(_handle) {
+  var resources: VariantArray
+    get() {
+       return _getResources() 
+    }
+    set(value) {
+      _setResources(value)
+    }
+
   fun addResource(name: String, resource: Resource) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(resource)
-    __method_bind.add_resource.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addResource.call(this._handle, _args.toVariant(), 2)
   }
 
   fun getResource(name: String): Resource {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.get_resource.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getResource.call(this._handle, _arg, 1)
     return _ret.asObject(::Resource)!!
   }
 
   fun getResourceList(): PoolStringArray {
-    val _ret = __method_bind.get_resource_list.call(this._handle)
+    val _ret = __method_bind.getResourceList.call(this._handle)
     return _ret.asPoolStringArray()
   }
 
   fun hasResource(name: String): Boolean {
     val _arg = Variant.new(name)
-    val _ret = __method_bind.has_resource.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasResource.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun removeResource(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.remove_resource.call(this._handle, _arg, 1)
+    __method_bind.removeResource.call(this._handle, _arg, 1)
   }
 
   fun renameResource(name: String, newname: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(newname)
-    __method_bind.rename_resource.call(this._handle, _args.toVariant(), 2)
+    __method_bind.renameResource.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -70,47 +78,47 @@ open class ResourcePreloader(
      * Container for method_bind pointers for ResourcePreloader
      */
     private object __method_bind {
-      val add_resource: CPointer<godot_method_bind>
+      val addResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
-            "add_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_resource" }
+            "addResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addResource" }
         }
-      val get_resource: CPointer<godot_method_bind>
+      val getResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
-            "get_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource" }
+            "getResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getResource" }
         }
-      val get_resource_list: CPointer<godot_method_bind>
+      val getResourceList: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
-            "get_resource_list".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource_list" }
+            "getResourceList".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getResourceList" }
         }
-      val has_resource: CPointer<godot_method_bind>
+      val hasResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
-            "has_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_resource" }
+            "hasResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasResource" }
         }
-      val remove_resource: CPointer<godot_method_bind>
+      val removeResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
-            "remove_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_resource" }
+            "removeResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeResource" }
         }
-      val rename_resource: CPointer<godot_method_bind>
+      val renameResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ResourcePreloader".cstr.ptr,
-            "rename_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method rename_resource" }
+            "renameResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method renameResource" }
         }}
   }
 }

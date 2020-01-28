@@ -17,18 +17,26 @@ import kotlinx.cinterop.reinterpret
 open class VisualShaderNodeExpression(
   _handle: COpaquePointer
 ) : VisualShaderNodeGroupBase(_handle) {
+  var expression: String
+    get() {
+       return getExpression() 
+    }
+    set(value) {
+      setExpression(value)
+    }
+
   fun build() {
     __method_bind.build.call(this._handle)
   }
 
   fun getExpression(): String {
-    val _ret = __method_bind.get_expression.call(this._handle)
+    val _ret = __method_bind.getExpression.call(this._handle)
     return _ret.asString()
   }
 
   fun setExpression(expression: String) {
     val _arg = Variant.new(expression)
-    __method_bind.set_expression.call(this._handle, _arg, 1)
+    __method_bind.setExpression.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -53,19 +61,19 @@ open class VisualShaderNodeExpression(
             "build".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method build" }
         }
-      val get_expression: CPointer<godot_method_bind>
+      val getExpression: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "get_expression".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_expression" }
+            "getExpression".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExpression" }
         }
-      val set_expression: CPointer<godot_method_bind>
+      val setExpression: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualShaderNodeExpression".cstr.ptr,
-            "set_expression".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expression" }
+            "setExpression".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpression" }
         }}
   }
 }

@@ -21,160 +21,216 @@ import kotlinx.cinterop.reinterpret
 open class GraphNode(
   _handle: COpaquePointer
 ) : Container(_handle) {
+  var comment: Boolean
+    get() {
+       return isComment() 
+    }
+    set(value) {
+      setComment(value)
+    }
+
+  var offset: Vector2
+    get() {
+       return getOffset() 
+    }
+    set(value) {
+      setOffset(value)
+    }
+
+  var overlay: Int
+    get() {
+       return GraphNode.Overlay.from(getOverlay()) 
+    }
+    set(value) {
+      setOverlay(GraphNode.Overlay.from(value))
+    }
+
+  var resizable: Boolean
+    get() {
+       return isResizable() 
+    }
+    set(value) {
+      setResizable(value)
+    }
+
+  var selected: Boolean
+    get() {
+       return isSelected() 
+    }
+    set(value) {
+      setSelected(value)
+    }
+
+  var showClose: Boolean
+    get() {
+       return isCloseButtonVisible() 
+    }
+    set(value) {
+      setShowCloseButton(value)
+    }
+
+  var title: String
+    get() {
+       return getTitle() 
+    }
+    set(value) {
+      setTitle(value)
+    }
+
   fun clearAllSlots() {
-    __method_bind.clear_all_slots.call(this._handle)
+    __method_bind.clearAllSlots.call(this._handle)
   }
 
   fun clearSlot(idx: Int) {
     val _arg = Variant.new(idx)
-    __method_bind.clear_slot.call(this._handle, _arg, 1)
+    __method_bind.clearSlot.call(this._handle, _arg, 1)
   }
 
   fun getConnectionInputColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_input_color.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionInputColor.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getConnectionInputCount(): Int {
-    val _ret = __method_bind.get_connection_input_count.call(this._handle)
+    val _ret = __method_bind.getConnectionInputCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getConnectionInputPosition(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_input_position.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionInputPosition.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getConnectionInputType(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_input_type.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionInputType.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getConnectionOutputColor(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_output_color.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionOutputColor.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getConnectionOutputCount(): Int {
-    val _ret = __method_bind.get_connection_output_count.call(this._handle)
+    val _ret = __method_bind.getConnectionOutputCount.call(this._handle)
     return _ret.asInt()
   }
 
   fun getConnectionOutputPosition(idx: Int): Vector2 {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_output_position.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionOutputPosition.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
   fun getConnectionOutputType(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_connection_output_type.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getConnectionOutputType.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getOffset(): Vector2 {
-    val _ret = __method_bind.get_offset.call(this._handle)
+    val _ret = __method_bind.getOffset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getOverlay(): Overlay {
-    val _ret = __method_bind.get_overlay.call(this._handle)
+    val _ret = __method_bind.getOverlay.call(this._handle)
     return GraphNode.Overlay.from(_ret.asInt())
   }
 
   fun getSlotColorLeft(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_color_left.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotColorLeft.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getSlotColorRight(idx: Int): Color {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_color_right.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotColorRight.call(this._handle, _arg, 1)
     return _ret.asColor()
   }
 
   fun getSlotTypeLeft(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_type_left.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotTypeLeft.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getSlotTypeRight(idx: Int): Int {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.get_slot_type_right.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getSlotTypeRight.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getTitle(): String {
-    val _ret = __method_bind.get_title.call(this._handle)
+    val _ret = __method_bind.getTitle.call(this._handle)
     return _ret.asString()
   }
 
   fun isCloseButtonVisible(): Boolean {
-    val _ret = __method_bind.is_close_button_visible.call(this._handle)
+    val _ret = __method_bind.isCloseButtonVisible.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isComment(): Boolean {
-    val _ret = __method_bind.is_comment.call(this._handle)
+    val _ret = __method_bind.isComment.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isResizable(): Boolean {
-    val _ret = __method_bind.is_resizable.call(this._handle)
+    val _ret = __method_bind.isResizable.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isSelected(): Boolean {
-    val _ret = __method_bind.is_selected.call(this._handle)
+    val _ret = __method_bind.isSelected.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_slot_enabled_left.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSlotEnabledLeft.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
     val _arg = Variant.new(idx)
-    val _ret = __method_bind.is_slot_enabled_right.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isSlotEnabledRight.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
   fun setComment(comment: Boolean) {
     val _arg = Variant.new(comment)
-    __method_bind.set_comment.call(this._handle, _arg, 1)
+    __method_bind.setComment.call(this._handle, _arg, 1)
   }
 
   fun setOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_offset.call(this._handle, _arg, 1)
+    __method_bind.setOffset.call(this._handle, _arg, 1)
   }
 
   fun setOverlay(overlay: Int) {
     val _arg = Variant.new(overlay)
-    __method_bind.set_overlay.call(this._handle, _arg, 1)
+    __method_bind.setOverlay.call(this._handle, _arg, 1)
   }
 
   fun setResizable(resizable: Boolean) {
     val _arg = Variant.new(resizable)
-    __method_bind.set_resizable.call(this._handle, _arg, 1)
+    __method_bind.setResizable.call(this._handle, _arg, 1)
   }
 
   fun setSelected(selected: Boolean) {
     val _arg = Variant.new(selected)
-    __method_bind.set_selected.call(this._handle, _arg, 1)
+    __method_bind.setSelected.call(this._handle, _arg, 1)
   }
 
   fun setShowCloseButton(show: Boolean) {
     val _arg = Variant.new(show)
-    __method_bind.set_show_close_button.call(this._handle, _arg, 1)
+    __method_bind.setShowCloseButton.call(this._handle, _arg, 1)
   }
 
   fun setSlot(
@@ -198,12 +254,12 @@ open class GraphNode(
     _args.append(colorRight)
     _args.append(customLeft)
     _args.append(customRight)
-    __method_bind.set_slot.call(this._handle, _args.toVariant(), 9)
+    __method_bind.setSlot.call(this._handle, _args.toVariant(), 9)
   }
 
   fun setTitle(title: String) {
     val _arg = Variant.new(title)
-    __method_bind.set_title.call(this._handle, _arg, 1)
+    __method_bind.setTitle.call(this._handle, _arg, 1)
   }
 
   enum class Overlay(
@@ -247,191 +303,191 @@ open class GraphNode(
      * Container for method_bind pointers for GraphNode
      */
     private object __method_bind {
-      val clear_all_slots: CPointer<godot_method_bind>
+      val clearAllSlots: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "clear_all_slots".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_all_slots" }
+            "clearAllSlots".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearAllSlots" }
         }
-      val clear_slot: CPointer<godot_method_bind>
+      val clearSlot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "clear_slot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method clear_slot" }
+            "clearSlot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method clearSlot" }
         }
-      val get_connection_input_color: CPointer<godot_method_bind>
+      val getConnectionInputColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_color" }
+            "getConnectionInputColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionInputColor" }
         }
-      val get_connection_input_count: CPointer<godot_method_bind>
+      val getConnectionInputCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_count" }
+            "getConnectionInputCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionInputCount" }
         }
-      val get_connection_input_position: CPointer<godot_method_bind>
+      val getConnectionInputPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_position" }
+            "getConnectionInputPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionInputPosition" }
         }
-      val get_connection_input_type: CPointer<godot_method_bind>
+      val getConnectionInputType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_input_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_input_type" }
+            "getConnectionInputType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionInputType" }
         }
-      val get_connection_output_color: CPointer<godot_method_bind>
+      val getConnectionOutputColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_color" }
+            "getConnectionOutputColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputColor" }
         }
-      val get_connection_output_count: CPointer<godot_method_bind>
+      val getConnectionOutputCount: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_count".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_count" }
+            "getConnectionOutputCount".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputCount" }
         }
-      val get_connection_output_position: CPointer<godot_method_bind>
+      val getConnectionOutputPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_position" }
+            "getConnectionOutputPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputPosition" }
         }
-      val get_connection_output_type: CPointer<godot_method_bind>
+      val getConnectionOutputType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_connection_output_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_connection_output_type" }
+            "getConnectionOutputType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getConnectionOutputType" }
         }
-      val get_offset: CPointer<godot_method_bind>
+      val getOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_offset" }
+            "getOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOffset" }
         }
-      val get_overlay: CPointer<godot_method_bind>
+      val getOverlay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_overlay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_overlay" }
+            "getOverlay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOverlay" }
         }
-      val get_slot_color_left: CPointer<godot_method_bind>
+      val getSlotColorLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_color_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_color_left" }
+            "getSlotColorLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSlotColorLeft" }
         }
-      val get_slot_color_right: CPointer<godot_method_bind>
+      val getSlotColorRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_color_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_color_right" }
+            "getSlotColorRight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSlotColorRight" }
         }
-      val get_slot_type_left: CPointer<godot_method_bind>
+      val getSlotTypeLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_type_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_type_left" }
+            "getSlotTypeLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSlotTypeLeft" }
         }
-      val get_slot_type_right: CPointer<godot_method_bind>
+      val getSlotTypeRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_slot_type_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_slot_type_right" }
+            "getSlotTypeRight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSlotTypeRight" }
         }
-      val get_title: CPointer<godot_method_bind>
+      val getTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "get_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_title" }
+            "getTitle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTitle" }
         }
-      val is_close_button_visible: CPointer<godot_method_bind>
+      val isCloseButtonVisible: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_close_button_visible".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_close_button_visible" }
+            "isCloseButtonVisible".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isCloseButtonVisible" }
         }
-      val is_comment: CPointer<godot_method_bind>
+      val isComment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_comment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_comment" }
+            "isComment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isComment" }
         }
-      val is_resizable: CPointer<godot_method_bind>
+      val isResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_resizable" }
+            "isResizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isResizable" }
         }
-      val is_selected: CPointer<godot_method_bind>
+      val isSelected: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_selected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_selected" }
+            "isSelected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSelected" }
         }
-      val is_slot_enabled_left: CPointer<godot_method_bind>
+      val isSlotEnabledLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_slot_enabled_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_left" }
+            "isSlotEnabledLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSlotEnabledLeft" }
         }
-      val is_slot_enabled_right: CPointer<godot_method_bind>
+      val isSlotEnabledRight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "is_slot_enabled_right".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_slot_enabled_right" }
+            "isSlotEnabledRight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSlotEnabledRight" }
         }
-      val set_comment: CPointer<godot_method_bind>
+      val setComment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_comment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_comment" }
+            "setComment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setComment" }
         }
-      val set_offset: CPointer<godot_method_bind>
+      val setOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_offset" }
+            "setOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOffset" }
         }
-      val set_overlay: CPointer<godot_method_bind>
+      val setOverlay: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_overlay".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_overlay" }
+            "setOverlay".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOverlay" }
         }
-      val set_resizable: CPointer<godot_method_bind>
+      val setResizable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_resizable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_resizable" }
+            "setResizable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setResizable" }
         }
-      val set_selected: CPointer<godot_method_bind>
+      val setSelected: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_selected".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_selected" }
+            "setSelected".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSelected" }
         }
-      val set_show_close_button: CPointer<godot_method_bind>
+      val setShowCloseButton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_show_close_button".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_show_close_button" }
+            "setShowCloseButton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShowCloseButton" }
         }
-      val set_slot: CPointer<godot_method_bind>
+      val setSlot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_slot".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_slot" }
+            "setSlot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSlot" }
         }
-      val set_title: CPointer<godot_method_bind>
+      val setTitle: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("GraphNode".cstr.ptr,
-            "set_title".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_title" }
+            "setTitle".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTitle" }
         }}
   }
 }

@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptEngineSingleton(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var constant: String
+    get() {
+       return getSingleton() 
+    }
+    set(value) {
+      setSingleton(value)
+    }
+
   fun getSingleton(): String {
-    val _ret = __method_bind.get_singleton.call(this._handle)
+    val _ret = __method_bind.getSingleton.call(this._handle)
     return _ret.asString()
   }
 
   fun setSingleton(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_singleton.call(this._handle, _arg, 1)
+    __method_bind.setSingleton.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptEngineSingleton(
      * Container for method_bind pointers for VisualScriptEngineSingleton
      */
     private object __method_bind {
-      val get_singleton: CPointer<godot_method_bind>
+      val getSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEngineSingleton".cstr.ptr,
-            "get_singleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_singleton" }
+            "getSingleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSingleton" }
         }
-      val set_singleton: CPointer<godot_method_bind>
+      val setSingleton: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptEngineSingleton".cstr.ptr,
-            "set_singleton".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_singleton" }
+            "setSingleton".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSingleton" }
         }}
   }
 }

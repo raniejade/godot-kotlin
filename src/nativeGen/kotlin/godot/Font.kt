@@ -56,28 +56,28 @@ open class Font(
     _args.append(next)
     _args.append(modulate)
     _args.append(outline)
-    val _ret = __method_bind.draw_char.call(this._handle, _args.toVariant(), 6)
+    val _ret = __method_bind.drawChar.call(this._handle, _args.toVariant(), 6)
     return _ret.asFloat()
   }
 
   fun getAscent(): Float {
-    val _ret = __method_bind.get_ascent.call(this._handle)
+    val _ret = __method_bind.getAscent.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getDescent(): Float {
-    val _ret = __method_bind.get_descent.call(this._handle)
+    val _ret = __method_bind.getDescent.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getHeight(): Float {
-    val _ret = __method_bind.get_height.call(this._handle)
+    val _ret = __method_bind.getHeight.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getStringSize(string: String): Vector2 {
     val _arg = Variant.new(string)
-    val _ret = __method_bind.get_string_size.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getStringSize.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
@@ -85,22 +85,22 @@ open class Font(
     val _args = VariantArray.new()
     _args.append(string)
     _args.append(pWidth)
-    val _ret = __method_bind.get_wordwrap_string_size.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.getWordwrapStringSize.call(this._handle, _args.toVariant(), 2)
     return _ret.asVector2()
   }
 
   fun hasOutline(): Boolean {
-    val _ret = __method_bind.has_outline.call(this._handle)
+    val _ret = __method_bind.hasOutline.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDistanceFieldHint(): Boolean {
-    val _ret = __method_bind.is_distance_field_hint.call(this._handle)
+    val _ret = __method_bind.isDistanceFieldHint.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun updateChanges() {
-    __method_bind.update_changes.call(this._handle)
+    __method_bind.updateChanges.call(this._handle)
   }
 
   companion object {
@@ -114,59 +114,59 @@ open class Font(
             "draw".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method draw" }
         }
-      val draw_char: CPointer<godot_method_bind>
+      val drawChar: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "draw_char".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method draw_char" }
+            "drawChar".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method drawChar" }
         }
-      val get_ascent: CPointer<godot_method_bind>
+      val getAscent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_ascent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_ascent" }
+            "getAscent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAscent" }
         }
-      val get_descent: CPointer<godot_method_bind>
+      val getDescent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_descent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_descent" }
+            "getDescent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDescent" }
         }
-      val get_height: CPointer<godot_method_bind>
+      val getHeight: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_height".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_height" }
+            "getHeight".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHeight" }
         }
-      val get_string_size: CPointer<godot_method_bind>
+      val getStringSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_string_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_string_size" }
+            "getStringSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getStringSize" }
         }
-      val get_wordwrap_string_size: CPointer<godot_method_bind>
+      val getWordwrapStringSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "get_wordwrap_string_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_wordwrap_string_size" }
+            "getWordwrapStringSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getWordwrapStringSize" }
         }
-      val has_outline: CPointer<godot_method_bind>
+      val hasOutline: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "has_outline".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_outline" }
+            "hasOutline".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasOutline" }
         }
-      val is_distance_field_hint: CPointer<godot_method_bind>
+      val isDistanceFieldHint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "is_distance_field_hint".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_distance_field_hint" }
+            "isDistanceFieldHint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDistanceFieldHint" }
         }
-      val update_changes: CPointer<godot_method_bind>
+      val updateChanges: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Font".cstr.ptr,
-            "update_changes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method update_changes" }
+            "updateChanges".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method updateChanges" }
         }}
   }
 }

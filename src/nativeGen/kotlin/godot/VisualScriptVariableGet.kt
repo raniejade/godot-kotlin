@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptVariableGet(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var varName: String
+    get() {
+       return getVariable() 
+    }
+    set(value) {
+      setVariable(value)
+    }
+
   fun getVariable(): String {
-    val _ret = __method_bind.get_variable.call(this._handle)
+    val _ret = __method_bind.getVariable.call(this._handle)
     return _ret.asString()
   }
 
   fun setVariable(name: String) {
     val _arg = Variant.new(name)
-    __method_bind.set_variable.call(this._handle, _arg, 1)
+    __method_bind.setVariable.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptVariableGet(
      * Container for method_bind pointers for VisualScriptVariableGet
      */
     private object __method_bind {
-      val get_variable: CPointer<godot_method_bind>
+      val getVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableGet".cstr.ptr,
-            "get_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_variable" }
+            "getVariable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getVariable" }
         }
-      val set_variable: CPointer<godot_method_bind>
+      val setVariable: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptVariableGet".cstr.ptr,
-            "set_variable".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_variable" }
+            "setVariable".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setVariable" }
         }}
   }
 }

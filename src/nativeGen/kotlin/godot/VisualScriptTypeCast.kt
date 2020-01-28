@@ -17,24 +17,40 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptTypeCast(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var baseScript: String
+    get() {
+       return getBaseScript() 
+    }
+    set(value) {
+      setBaseScript(value)
+    }
+
+  var baseType: String
+    get() {
+       return getBaseType() 
+    }
+    set(value) {
+      setBaseType(value)
+    }
+
   fun getBaseScript(): String {
-    val _ret = __method_bind.get_base_script.call(this._handle)
+    val _ret = __method_bind.getBaseScript.call(this._handle)
     return _ret.asString()
   }
 
   fun getBaseType(): String {
-    val _ret = __method_bind.get_base_type.call(this._handle)
+    val _ret = __method_bind.getBaseType.call(this._handle)
     return _ret.asString()
   }
 
   fun setBaseScript(path: String) {
     val _arg = Variant.new(path)
-    __method_bind.set_base_script.call(this._handle, _arg, 1)
+    __method_bind.setBaseScript.call(this._handle, _arg, 1)
   }
 
   fun setBaseType(type: String) {
     val _arg = Variant.new(type)
-    __method_bind.set_base_type.call(this._handle, _arg, 1)
+    __method_bind.setBaseType.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -52,33 +68,33 @@ open class VisualScriptTypeCast(
      * Container for method_bind pointers for VisualScriptTypeCast
      */
     private object __method_bind {
-      val get_base_script: CPointer<godot_method_bind>
+      val getBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "get_base_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_script" }
+            "getBaseScript".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBaseScript" }
         }
-      val get_base_type: CPointer<godot_method_bind>
+      val getBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "get_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_type" }
+            "getBaseType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBaseType" }
         }
-      val set_base_script: CPointer<godot_method_bind>
+      val setBaseScript: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "set_base_script".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_script" }
+            "setBaseScript".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBaseScript" }
         }
-      val set_base_type: CPointer<godot_method_bind>
+      val setBaseType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptTypeCast".cstr.ptr,
-            "set_base_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_base_type" }
+            "setBaseType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBaseType" }
         }}
   }
 }

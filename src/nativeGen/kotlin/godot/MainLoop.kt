@@ -36,12 +36,12 @@ open class MainLoop(
 
   fun inputEvent(event: InputEvent) {
     val _arg = Variant.new(event)
-    __method_bind.input_event.call(this._handle, _arg, 1)
+    __method_bind.inputEvent.call(this._handle, _arg, 1)
   }
 
   fun inputText(text: String) {
     val _arg = Variant.new(text)
-    __method_bind.input_text.call(this._handle, _arg, 1)
+    __method_bind.inputText.call(this._handle, _arg, 1)
   }
 
   fun iteration(delta: Float): Boolean {
@@ -106,17 +106,17 @@ open class MainLoop(
             "init".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method init" }
         }
-      val input_event: CPointer<godot_method_bind>
+      val inputEvent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "input_event".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method input_event" }
+            "inputEvent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method inputEvent" }
         }
-      val input_text: CPointer<godot_method_bind>
+      val inputText: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("MainLoop".cstr.ptr,
-            "input_text".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method input_text" }
+            "inputText".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method inputText" }
         }
       val iteration: CPointer<godot_method_bind>
         get() = memScoped {

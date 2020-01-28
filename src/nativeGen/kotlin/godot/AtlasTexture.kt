@@ -18,44 +18,76 @@ import kotlinx.cinterop.reinterpret
 open class AtlasTexture(
   _handle: COpaquePointer
 ) : Texture(_handle) {
+  var atlas: Texture
+    get() {
+       return getAtlas() 
+    }
+    set(value) {
+      setAtlas(value)
+    }
+
+  var filterClip: Boolean
+    get() {
+       return hasFilterClip() 
+    }
+    set(value) {
+      setFilterClip(value)
+    }
+
+  var margin: Rect2
+    get() {
+       return getMargin() 
+    }
+    set(value) {
+      setMargin(value)
+    }
+
+  var region: Rect2
+    get() {
+       return getRegion() 
+    }
+    set(value) {
+      setRegion(value)
+    }
+
   fun getAtlas(): Texture {
-    val _ret = __method_bind.get_atlas.call(this._handle)
+    val _ret = __method_bind.getAtlas.call(this._handle)
     return _ret.asObject(::Texture)!!
   }
 
   fun getMargin(): Rect2 {
-    val _ret = __method_bind.get_margin.call(this._handle)
+    val _ret = __method_bind.getMargin.call(this._handle)
     return _ret.asRect2()
   }
 
   fun getRegion(): Rect2 {
-    val _ret = __method_bind.get_region.call(this._handle)
+    val _ret = __method_bind.getRegion.call(this._handle)
     return _ret.asRect2()
   }
 
   fun hasFilterClip(): Boolean {
-    val _ret = __method_bind.has_filter_clip.call(this._handle)
+    val _ret = __method_bind.hasFilterClip.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAtlas(atlas: Texture) {
     val _arg = Variant.new(atlas)
-    __method_bind.set_atlas.call(this._handle, _arg, 1)
+    __method_bind.setAtlas.call(this._handle, _arg, 1)
   }
 
   fun setFilterClip(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_filter_clip.call(this._handle, _arg, 1)
+    __method_bind.setFilterClip.call(this._handle, _arg, 1)
   }
 
   fun setMargin(margin: Rect2) {
     val _arg = Variant.new(margin)
-    __method_bind.set_margin.call(this._handle, _arg, 1)
+    __method_bind.setMargin.call(this._handle, _arg, 1)
   }
 
   fun setRegion(region: Rect2) {
     val _arg = Variant.new(region)
-    __method_bind.set_region.call(this._handle, _arg, 1)
+    __method_bind.setRegion.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -72,61 +104,61 @@ open class AtlasTexture(
      * Container for method_bind pointers for AtlasTexture
      */
     private object __method_bind {
-      val get_atlas: CPointer<godot_method_bind>
+      val getAtlas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "get_atlas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_atlas" }
+            "getAtlas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAtlas" }
         }
-      val get_margin: CPointer<godot_method_bind>
+      val getMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "get_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_margin" }
+            "getMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMargin" }
         }
-      val get_region: CPointer<godot_method_bind>
+      val getRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "get_region".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_region" }
+            "getRegion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRegion" }
         }
-      val has_filter_clip: CPointer<godot_method_bind>
+      val hasFilterClip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "has_filter_clip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_filter_clip" }
+            "hasFilterClip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasFilterClip" }
         }
-      val set_atlas: CPointer<godot_method_bind>
+      val setAtlas: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "set_atlas".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_atlas" }
+            "setAtlas".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAtlas" }
         }
-      val set_filter_clip: CPointer<godot_method_bind>
+      val setFilterClip: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "set_filter_clip".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_filter_clip" }
+            "setFilterClip".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFilterClip" }
         }
-      val set_margin: CPointer<godot_method_bind>
+      val setMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "set_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_margin" }
+            "setMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMargin" }
         }
-      val set_region: CPointer<godot_method_bind>
+      val setRegion: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("AtlasTexture".cstr.ptr,
-            "set_region".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_region" }
+            "setRegion".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRegion" }
         }}
   }
 }

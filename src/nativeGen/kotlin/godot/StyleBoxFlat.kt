@@ -21,131 +21,211 @@ import kotlinx.cinterop.reinterpret
 open class StyleBoxFlat(
   _handle: COpaquePointer
 ) : StyleBox(_handle) {
+  var antiAliasing: Boolean
+    get() {
+       return isAntiAliased() 
+    }
+    set(value) {
+      setAntiAliased(value)
+    }
+
+  var antiAliasingSize: Int
+    get() {
+       return getAaSize() 
+    }
+    set(value) {
+      setAaSize(value)
+    }
+
+  var bgColor: Color
+    get() {
+       return getBgColor() 
+    }
+    set(value) {
+      setBgColor(value)
+    }
+
+  var borderBlend: Boolean
+    get() {
+       return getBorderBlend() 
+    }
+    set(value) {
+      setBorderBlend(value)
+    }
+
+  var borderColor: Color
+    get() {
+       return getBorderColor() 
+    }
+    set(value) {
+      setBorderColor(value)
+    }
+
+  var cornerDetail: Int
+    get() {
+       return getCornerDetail() 
+    }
+    set(value) {
+      setCornerDetail(value)
+    }
+
+  var drawCenter: Boolean
+    get() {
+       return isDrawCenterEnabled() 
+    }
+    set(value) {
+      setDrawCenter(value)
+    }
+
+  var shadowColor: Color
+    get() {
+       return getShadowColor() 
+    }
+    set(value) {
+      setShadowColor(value)
+    }
+
+  var shadowOffset: Vector2
+    get() {
+       return getShadowOffset() 
+    }
+    set(value) {
+      setShadowOffset(value)
+    }
+
+  var shadowSize: Int
+    get() {
+       return getShadowSize() 
+    }
+    set(value) {
+      setShadowSize(value)
+    }
+
   fun getAaSize(): Int {
-    val _ret = __method_bind.get_aa_size.call(this._handle)
+    val _ret = __method_bind.getAaSize.call(this._handle)
     return _ret.asInt()
   }
 
   fun getBgColor(): Color {
-    val _ret = __method_bind.get_bg_color.call(this._handle)
+    val _ret = __method_bind.getBgColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getBorderBlend(): Boolean {
-    val _ret = __method_bind.get_border_blend.call(this._handle)
+    val _ret = __method_bind.getBorderBlend.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getBorderColor(): Color {
-    val _ret = __method_bind.get_border_color.call(this._handle)
+    val _ret = __method_bind.getBorderColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getBorderWidth(margin: Int): Int {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_border_width.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getBorderWidth.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getBorderWidthMin(): Int {
-    val _ret = __method_bind.get_border_width_min.call(this._handle)
+    val _ret = __method_bind.getBorderWidthMin.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCornerDetail(): Int {
-    val _ret = __method_bind.get_corner_detail.call(this._handle)
+    val _ret = __method_bind.getCornerDetail.call(this._handle)
     return _ret.asInt()
   }
 
   fun getCornerRadius(corner: Int): Int {
     val _arg = Variant.new(corner)
-    val _ret = __method_bind.get_corner_radius.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getCornerRadius.call(this._handle, _arg, 1)
     return _ret.asInt()
   }
 
   fun getExpandMargin(margin: Int): Float {
     val _arg = Variant.new(margin)
-    val _ret = __method_bind.get_expand_margin.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getExpandMargin.call(this._handle, _arg, 1)
     return _ret.asFloat()
   }
 
   fun getShadowColor(): Color {
-    val _ret = __method_bind.get_shadow_color.call(this._handle)
+    val _ret = __method_bind.getShadowColor.call(this._handle)
     return _ret.asColor()
   }
 
   fun getShadowOffset(): Vector2 {
-    val _ret = __method_bind.get_shadow_offset.call(this._handle)
+    val _ret = __method_bind.getShadowOffset.call(this._handle)
     return _ret.asVector2()
   }
 
   fun getShadowSize(): Int {
-    val _ret = __method_bind.get_shadow_size.call(this._handle)
+    val _ret = __method_bind.getShadowSize.call(this._handle)
     return _ret.asInt()
   }
 
   fun isAntiAliased(): Boolean {
-    val _ret = __method_bind.is_anti_aliased.call(this._handle)
+    val _ret = __method_bind.isAntiAliased.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isDrawCenterEnabled(): Boolean {
-    val _ret = __method_bind.is_draw_center_enabled.call(this._handle)
+    val _ret = __method_bind.isDrawCenterEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAaSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.set_aa_size.call(this._handle, _arg, 1)
+    __method_bind.setAaSize.call(this._handle, _arg, 1)
   }
 
   fun setAntiAliased(antiAliased: Boolean) {
     val _arg = Variant.new(antiAliased)
-    __method_bind.set_anti_aliased.call(this._handle, _arg, 1)
+    __method_bind.setAntiAliased.call(this._handle, _arg, 1)
   }
 
   fun setBgColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_bg_color.call(this._handle, _arg, 1)
+    __method_bind.setBgColor.call(this._handle, _arg, 1)
   }
 
   fun setBorderBlend(blend: Boolean) {
     val _arg = Variant.new(blend)
-    __method_bind.set_border_blend.call(this._handle, _arg, 1)
+    __method_bind.setBorderBlend.call(this._handle, _arg, 1)
   }
 
   fun setBorderColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_border_color.call(this._handle, _arg, 1)
+    __method_bind.setBorderColor.call(this._handle, _arg, 1)
   }
 
   fun setBorderWidth(margin: Int, width: Int) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(width)
-    __method_bind.set_border_width.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setBorderWidth.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setBorderWidthAll(width: Int) {
     val _arg = Variant.new(width)
-    __method_bind.set_border_width_all.call(this._handle, _arg, 1)
+    __method_bind.setBorderWidthAll.call(this._handle, _arg, 1)
   }
 
   fun setCornerDetail(detail: Int) {
     val _arg = Variant.new(detail)
-    __method_bind.set_corner_detail.call(this._handle, _arg, 1)
+    __method_bind.setCornerDetail.call(this._handle, _arg, 1)
   }
 
   fun setCornerRadius(corner: Int, radius: Int) {
     val _args = VariantArray.new()
     _args.append(corner)
     _args.append(radius)
-    __method_bind.set_corner_radius.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setCornerRadius.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setCornerRadiusAll(radius: Int) {
     val _arg = Variant.new(radius)
-    __method_bind.set_corner_radius_all.call(this._handle, _arg, 1)
+    __method_bind.setCornerRadiusAll.call(this._handle, _arg, 1)
   }
 
   fun setCornerRadiusIndividual(
@@ -159,24 +239,24 @@ open class StyleBoxFlat(
     _args.append(radiusTopRight)
     _args.append(radiusBottomRight)
     _args.append(radiusBottomLeft)
-    __method_bind.set_corner_radius_individual.call(this._handle, _args.toVariant(), 4)
+    __method_bind.setCornerRadiusIndividual.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setDrawCenter(drawCenter: Boolean) {
     val _arg = Variant.new(drawCenter)
-    __method_bind.set_draw_center.call(this._handle, _arg, 1)
+    __method_bind.setDrawCenter.call(this._handle, _arg, 1)
   }
 
   fun setExpandMargin(margin: Int, size: Float) {
     val _args = VariantArray.new()
     _args.append(margin)
     _args.append(size)
-    __method_bind.set_expand_margin.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setExpandMargin.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setExpandMarginAll(size: Float) {
     val _arg = Variant.new(size)
-    __method_bind.set_expand_margin_all.call(this._handle, _arg, 1)
+    __method_bind.setExpandMarginAll.call(this._handle, _arg, 1)
   }
 
   fun setExpandMarginIndividual(
@@ -190,22 +270,22 @@ open class StyleBoxFlat(
     _args.append(sizeTop)
     _args.append(sizeRight)
     _args.append(sizeBottom)
-    __method_bind.set_expand_margin_individual.call(this._handle, _args.toVariant(), 4)
+    __method_bind.setExpandMarginIndividual.call(this._handle, _args.toVariant(), 4)
   }
 
   fun setShadowColor(color: Color) {
     val _arg = Variant.new(color)
-    __method_bind.set_shadow_color.call(this._handle, _arg, 1)
+    __method_bind.setShadowColor.call(this._handle, _arg, 1)
   }
 
   fun setShadowOffset(offset: Vector2) {
     val _arg = Variant.new(offset)
-    __method_bind.set_shadow_offset.call(this._handle, _arg, 1)
+    __method_bind.setShadowOffset.call(this._handle, _arg, 1)
   }
 
   fun setShadowSize(size: Int) {
     val _arg = Variant.new(size)
-    __method_bind.set_shadow_size.call(this._handle, _arg, 1)
+    __method_bind.setShadowSize.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -222,229 +302,229 @@ open class StyleBoxFlat(
      * Container for method_bind pointers for StyleBoxFlat
      */
     private object __method_bind {
-      val get_aa_size: CPointer<godot_method_bind>
+      val getAaSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_aa_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_aa_size" }
+            "getAaSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAaSize" }
         }
-      val get_bg_color: CPointer<godot_method_bind>
+      val getBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_bg_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bg_color" }
+            "getBgColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBgColor" }
         }
-      val get_border_blend: CPointer<godot_method_bind>
+      val getBorderBlend: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_border_blend".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_border_blend" }
+            "getBorderBlend".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBorderBlend" }
         }
-      val get_border_color: CPointer<godot_method_bind>
+      val getBorderColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_border_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_border_color" }
+            "getBorderColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBorderColor" }
         }
-      val get_border_width: CPointer<godot_method_bind>
+      val getBorderWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_border_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_border_width" }
+            "getBorderWidth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBorderWidth" }
         }
-      val get_border_width_min: CPointer<godot_method_bind>
+      val getBorderWidthMin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_border_width_min".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_border_width_min" }
+            "getBorderWidthMin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBorderWidthMin" }
         }
-      val get_corner_detail: CPointer<godot_method_bind>
+      val getCornerDetail: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_corner_detail".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_corner_detail" }
+            "getCornerDetail".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCornerDetail" }
         }
-      val get_corner_radius: CPointer<godot_method_bind>
+      val getCornerRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_corner_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_corner_radius" }
+            "getCornerRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCornerRadius" }
         }
-      val get_expand_margin: CPointer<godot_method_bind>
+      val getExpandMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_expand_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_expand_margin" }
+            "getExpandMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExpandMargin" }
         }
-      val get_shadow_color: CPointer<godot_method_bind>
+      val getShadowColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_shadow_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_color" }
+            "getShadowColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShadowColor" }
         }
-      val get_shadow_offset: CPointer<godot_method_bind>
+      val getShadowOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_shadow_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_offset" }
+            "getShadowOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShadowOffset" }
         }
-      val get_shadow_size: CPointer<godot_method_bind>
+      val getShadowSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "get_shadow_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_shadow_size" }
+            "getShadowSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getShadowSize" }
         }
-      val is_anti_aliased: CPointer<godot_method_bind>
+      val isAntiAliased: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "is_anti_aliased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_anti_aliased" }
+            "isAntiAliased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isAntiAliased" }
         }
-      val is_draw_center_enabled: CPointer<godot_method_bind>
+      val isDrawCenterEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "is_draw_center_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_draw_center_enabled" }
+            "isDrawCenterEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isDrawCenterEnabled" }
         }
-      val set_aa_size: CPointer<godot_method_bind>
+      val setAaSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_aa_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_aa_size" }
+            "setAaSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAaSize" }
         }
-      val set_anti_aliased: CPointer<godot_method_bind>
+      val setAntiAliased: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_anti_aliased".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anti_aliased" }
+            "setAntiAliased".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAntiAliased" }
         }
-      val set_bg_color: CPointer<godot_method_bind>
+      val setBgColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_bg_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bg_color" }
+            "setBgColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBgColor" }
         }
-      val set_border_blend: CPointer<godot_method_bind>
+      val setBorderBlend: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_border_blend".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_border_blend" }
+            "setBorderBlend".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBorderBlend" }
         }
-      val set_border_color: CPointer<godot_method_bind>
+      val setBorderColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_border_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_border_color" }
+            "setBorderColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBorderColor" }
         }
-      val set_border_width: CPointer<godot_method_bind>
+      val setBorderWidth: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_border_width".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_border_width" }
+            "setBorderWidth".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBorderWidth" }
         }
-      val set_border_width_all: CPointer<godot_method_bind>
+      val setBorderWidthAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_border_width_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_border_width_all" }
+            "setBorderWidthAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBorderWidthAll" }
         }
-      val set_corner_detail: CPointer<godot_method_bind>
+      val setCornerDetail: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_corner_detail".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_corner_detail" }
+            "setCornerDetail".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCornerDetail" }
         }
-      val set_corner_radius: CPointer<godot_method_bind>
+      val setCornerRadius: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_corner_radius".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_corner_radius" }
+            "setCornerRadius".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCornerRadius" }
         }
-      val set_corner_radius_all: CPointer<godot_method_bind>
+      val setCornerRadiusAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_corner_radius_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_corner_radius_all" }
+            "setCornerRadiusAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCornerRadiusAll" }
         }
-      val set_corner_radius_individual: CPointer<godot_method_bind>
+      val setCornerRadiusIndividual: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_corner_radius_individual".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_corner_radius_individual" }
+            "setCornerRadiusIndividual".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCornerRadiusIndividual" }
         }
-      val set_draw_center: CPointer<godot_method_bind>
+      val setDrawCenter: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_draw_center".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_draw_center" }
+            "setDrawCenter".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setDrawCenter" }
         }
-      val set_expand_margin: CPointer<godot_method_bind>
+      val setExpandMargin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_expand_margin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_margin" }
+            "setExpandMargin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpandMargin" }
         }
-      val set_expand_margin_all: CPointer<godot_method_bind>
+      val setExpandMarginAll: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_expand_margin_all".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_margin_all" }
+            "setExpandMarginAll".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpandMarginAll" }
         }
-      val set_expand_margin_individual: CPointer<godot_method_bind>
+      val setExpandMarginIndividual: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_expand_margin_individual".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_expand_margin_individual" }
+            "setExpandMarginIndividual".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExpandMarginIndividual" }
         }
-      val set_shadow_color: CPointer<godot_method_bind>
+      val setShadowColor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_shadow_color".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_color" }
+            "setShadowColor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShadowColor" }
         }
-      val set_shadow_offset: CPointer<godot_method_bind>
+      val setShadowOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_shadow_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_offset" }
+            "setShadowOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShadowOffset" }
         }
-      val set_shadow_size: CPointer<godot_method_bind>
+      val setShadowSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("StyleBoxFlat".cstr.ptr,
-            "set_shadow_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_shadow_size" }
+            "setShadowSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setShadowSize" }
         }}
   }
 }

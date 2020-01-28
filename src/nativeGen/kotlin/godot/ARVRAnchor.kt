@@ -21,39 +21,47 @@ import kotlinx.cinterop.reinterpret
 open class ARVRAnchor(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var anchorId: Int
+    get() {
+       return getAnchorId() 
+    }
+    set(value) {
+      setAnchorId(value)
+    }
+
   fun getAnchorId(): Int {
-    val _ret = __method_bind.get_anchor_id.call(this._handle)
+    val _ret = __method_bind.getAnchorId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAnchorName(): String {
-    val _ret = __method_bind.get_anchor_name.call(this._handle)
+    val _ret = __method_bind.getAnchorName.call(this._handle)
     return _ret.asString()
   }
 
   fun getIsActive(): Boolean {
-    val _ret = __method_bind.get_is_active.call(this._handle)
+    val _ret = __method_bind.getIsActive.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this._handle)
+    val _ret = __method_bind.getMesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getPlane(): Plane {
-    val _ret = __method_bind.get_plane.call(this._handle)
+    val _ret = __method_bind.getPlane.call(this._handle)
     return _ret.asPlane()
   }
 
   fun getSize(): Vector3 {
-    val _ret = __method_bind.get_size.call(this._handle)
+    val _ret = __method_bind.getSize.call(this._handle)
     return _ret.asVector3()
   }
 
   fun setAnchorId(anchorId: Int) {
     val _arg = Variant.new(anchorId)
-    __method_bind.set_anchor_id.call(this._handle, _arg, 1)
+    __method_bind.setAnchorId.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -70,47 +78,47 @@ open class ARVRAnchor(
      * Container for method_bind pointers for ARVRAnchor
      */
     private object __method_bind {
-      val get_anchor_id: CPointer<godot_method_bind>
+      val getAnchorId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_anchor_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_anchor_id" }
+            "getAnchorId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnchorId" }
         }
-      val get_anchor_name: CPointer<godot_method_bind>
+      val getAnchorName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_anchor_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_anchor_name" }
+            "getAnchorName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAnchorName" }
         }
-      val get_is_active: CPointer<godot_method_bind>
+      val getIsActive: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_is_active".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_is_active" }
+            "getIsActive".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getIsActive" }
         }
-      val get_mesh: CPointer<godot_method_bind>
+      val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            "getMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMesh" }
         }
-      val get_plane: CPointer<godot_method_bind>
+      val getPlane: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_plane".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_plane" }
+            "getPlane".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPlane" }
         }
-      val get_size: CPointer<godot_method_bind>
+      val getSize: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "get_size".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_size" }
+            "getSize".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSize" }
         }
-      val set_anchor_id: CPointer<godot_method_bind>
+      val setAnchorId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRAnchor".cstr.ptr,
-            "set_anchor_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_anchor_id" }
+            "setAnchorId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAnchorId" }
         }}
   }
 }

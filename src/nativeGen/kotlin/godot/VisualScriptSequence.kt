@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptSequence(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var steps: Int
+    get() {
+       return getSteps() 
+    }
+    set(value) {
+      setSteps(value)
+    }
+
   fun getSteps(): Int {
-    val _ret = __method_bind.get_steps.call(this._handle)
+    val _ret = __method_bind.getSteps.call(this._handle)
     return _ret.asInt()
   }
 
   fun setSteps(steps: Int) {
     val _arg = Variant.new(steps)
-    __method_bind.set_steps.call(this._handle, _arg, 1)
+    __method_bind.setSteps.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -42,19 +50,19 @@ open class VisualScriptSequence(
      * Container for method_bind pointers for VisualScriptSequence
      */
     private object __method_bind {
-      val get_steps: CPointer<godot_method_bind>
+      val getSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
-            "get_steps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_steps" }
+            "getSteps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSteps" }
         }
-      val set_steps: CPointer<godot_method_bind>
+      val setSteps: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptSequence".cstr.ptr,
-            "set_steps".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_steps" }
+            "setSteps".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSteps" }
         }}
   }
 }

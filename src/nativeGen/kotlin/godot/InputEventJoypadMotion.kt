@@ -18,24 +18,40 @@ import kotlinx.cinterop.reinterpret
 open class InputEventJoypadMotion(
   _handle: COpaquePointer
 ) : InputEvent(_handle) {
+  var axis: Int
+    get() {
+       return getAxis() 
+    }
+    set(value) {
+      setAxis(value)
+    }
+
+  var axisValue: Float
+    get() {
+       return getAxisValue() 
+    }
+    set(value) {
+      setAxisValue(value)
+    }
+
   fun getAxis(): Int {
-    val _ret = __method_bind.get_axis.call(this._handle)
+    val _ret = __method_bind.getAxis.call(this._handle)
     return _ret.asInt()
   }
 
   fun getAxisValue(): Float {
-    val _ret = __method_bind.get_axis_value.call(this._handle)
+    val _ret = __method_bind.getAxisValue.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setAxis(axis: Int) {
     val _arg = Variant.new(axis)
-    __method_bind.set_axis.call(this._handle, _arg, 1)
+    __method_bind.setAxis.call(this._handle, _arg, 1)
   }
 
   fun setAxisValue(axisValue: Float) {
     val _arg = Variant.new(axisValue)
-    __method_bind.set_axis_value.call(this._handle, _arg, 1)
+    __method_bind.setAxisValue.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -53,33 +69,33 @@ open class InputEventJoypadMotion(
      * Container for method_bind pointers for InputEventJoypadMotion
      */
     private object __method_bind {
-      val get_axis: CPointer<godot_method_bind>
+      val getAxis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "get_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis" }
+            "getAxis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAxis" }
         }
-      val get_axis_value: CPointer<godot_method_bind>
+      val getAxisValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "get_axis_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_axis_value" }
+            "getAxisValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getAxisValue" }
         }
-      val set_axis: CPointer<godot_method_bind>
+      val setAxis: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "set_axis".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis" }
+            "setAxis".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAxis" }
         }
-      val set_axis_value: CPointer<godot_method_bind>
+      val setAxisValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("InputEventJoypadMotion".cstr.ptr,
-            "set_axis_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_axis_value" }
+            "setAxisValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAxisValue" }
         }}
   }
 }

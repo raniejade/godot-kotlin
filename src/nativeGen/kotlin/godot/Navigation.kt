@@ -21,21 +21,29 @@ import kotlinx.cinterop.reinterpret
 open class Navigation(
   _handle: COpaquePointer
 ) : Spatial(_handle) {
+  var upVector: Vector3
+    get() {
+       return getUpVector() 
+    }
+    set(value) {
+      setUpVector(value)
+    }
+
   fun getClosestPoint(toPoint: Vector3): Vector3 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_point.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPoint.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getClosestPointNormal(toPoint: Vector3): Vector3 {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_point_normal.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPointNormal.call(this._handle, _arg, 1)
     return _ret.asVector3()
   }
 
   fun getClosestPointOwner(toPoint: Vector3): Object {
     val _arg = Variant.new(toPoint)
-    val _ret = __method_bind.get_closest_point_owner.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getClosestPointOwner.call(this._handle, _arg, 1)
     return _ret.asObject(::Object)!!
   }
 
@@ -48,7 +56,7 @@ open class Navigation(
     _args.append(start)
     _args.append(end)
     _args.append(useCollision)
-    val _ret = __method_bind.get_closest_point_to_segment.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.getClosestPointToSegment.call(this._handle, _args.toVariant(), 3)
     return _ret.asVector3()
   }
 
@@ -61,12 +69,12 @@ open class Navigation(
     _args.append(start)
     _args.append(end)
     _args.append(optimize)
-    val _ret = __method_bind.get_simple_path.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.getSimplePath.call(this._handle, _args.toVariant(), 3)
     return _ret.asPoolVector3Array()
   }
 
   fun getUpVector(): Vector3 {
-    val _ret = __method_bind.get_up_vector.call(this._handle)
+    val _ret = __method_bind.getUpVector.call(this._handle)
     return _ret.asVector3()
   }
 
@@ -79,25 +87,25 @@ open class Navigation(
     _args.append(mesh)
     _args.append(xform)
     _args.append(owner)
-    val _ret = __method_bind.navmesh_add.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.navmeshAdd.call(this._handle, _args.toVariant(), 3)
     return _ret.asInt()
   }
 
   fun navmeshRemove(id: Int) {
     val _arg = Variant.new(id)
-    __method_bind.navmesh_remove.call(this._handle, _arg, 1)
+    __method_bind.navmeshRemove.call(this._handle, _arg, 1)
   }
 
   fun navmeshSetTransform(id: Int, xform: Transform) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(xform)
-    __method_bind.navmesh_set_transform.call(this._handle, _args.toVariant(), 2)
+    __method_bind.navmeshSetTransform.call(this._handle, _args.toVariant(), 2)
   }
 
   fun setUpVector(up: Vector3) {
     val _arg = Variant.new(up)
-    __method_bind.set_up_vector.call(this._handle, _arg, 1)
+    __method_bind.setUpVector.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -114,65 +122,65 @@ open class Navigation(
      * Container for method_bind pointers for Navigation
      */
     private object __method_bind {
-      val get_closest_point: CPointer<godot_method_bind>
+      val getClosestPoint: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point" }
+            "getClosestPoint".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClosestPoint" }
         }
-      val get_closest_point_normal: CPointer<godot_method_bind>
+      val getClosestPointNormal: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point_normal".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point_normal" }
+            "getClosestPointNormal".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClosestPointNormal" }
         }
-      val get_closest_point_owner: CPointer<godot_method_bind>
+      val getClosestPointOwner: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point_owner".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point_owner" }
+            "getClosestPointOwner".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClosestPointOwner" }
         }
-      val get_closest_point_to_segment: CPointer<godot_method_bind>
+      val getClosestPointToSegment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_closest_point_to_segment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_closest_point_to_segment" }
+            "getClosestPointToSegment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getClosestPointToSegment" }
         }
-      val get_simple_path: CPointer<godot_method_bind>
+      val getSimplePath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_simple_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_simple_path" }
+            "getSimplePath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSimplePath" }
         }
-      val get_up_vector: CPointer<godot_method_bind>
+      val getUpVector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "get_up_vector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_up_vector" }
+            "getUpVector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUpVector" }
         }
-      val navmesh_add: CPointer<godot_method_bind>
+      val navmeshAdd: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "navmesh_add".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navmesh_add" }
+            "navmeshAdd".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method navmeshAdd" }
         }
-      val navmesh_remove: CPointer<godot_method_bind>
+      val navmeshRemove: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "navmesh_remove".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navmesh_remove" }
+            "navmeshRemove".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method navmeshRemove" }
         }
-      val navmesh_set_transform: CPointer<godot_method_bind>
+      val navmeshSetTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "navmesh_set_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method navmesh_set_transform" }
+            "navmeshSetTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method navmeshSetTransform" }
         }
-      val set_up_vector: CPointer<godot_method_bind>
+      val setUpVector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("Navigation".cstr.ptr,
-            "set_up_vector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_up_vector" }
+            "setUpVector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUpVector" }
         }}
   }
 }

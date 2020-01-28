@@ -23,65 +23,73 @@ import kotlinx.cinterop.reinterpret
 open class ARVRPositionalTracker(
   _handle: COpaquePointer
 ) : Object(_handle) {
+  var rumble: Float
+    get() {
+       return getRumble() 
+    }
+    set(value) {
+      setRumble(value)
+    }
+
   fun getHand(): TrackerHand {
-    val _ret = __method_bind.get_hand.call(this._handle)
+    val _ret = __method_bind.getHand.call(this._handle)
     return ARVRPositionalTracker.TrackerHand.from(_ret.asInt())
   }
 
   fun getJoyId(): Int {
-    val _ret = __method_bind.get_joy_id.call(this._handle)
+    val _ret = __method_bind.getJoyId.call(this._handle)
     return _ret.asInt()
   }
 
   fun getMesh(): Mesh {
-    val _ret = __method_bind.get_mesh.call(this._handle)
+    val _ret = __method_bind.getMesh.call(this._handle)
     return _ret.asObject(::Mesh)!!
   }
 
   fun getName(): String {
-    val _ret = __method_bind.get_name.call(this._handle)
+    val _ret = __method_bind.getName.call(this._handle)
     return _ret.asString()
   }
 
   fun getOrientation(): Basis {
-    val _ret = __method_bind.get_orientation.call(this._handle)
+    val _ret = __method_bind.getOrientation.call(this._handle)
     return _ret.asBasis()
   }
 
   fun getPosition(): Vector3 {
-    val _ret = __method_bind.get_position.call(this._handle)
+    val _ret = __method_bind.getPosition.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getRumble(): Float {
-    val _ret = __method_bind.get_rumble.call(this._handle)
+    val _ret = __method_bind.getRumble.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getTracksOrientation(): Boolean {
-    val _ret = __method_bind.get_tracks_orientation.call(this._handle)
+    val _ret = __method_bind.getTracksOrientation.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getTracksPosition(): Boolean {
-    val _ret = __method_bind.get_tracks_position.call(this._handle)
+    val _ret = __method_bind.getTracksPosition.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getTransform(adjustByReferenceFrame: Boolean): Transform {
     val _arg = Variant.new(adjustByReferenceFrame)
-    val _ret = __method_bind.get_transform.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getTransform.call(this._handle, _arg, 1)
     return _ret.asTransform()
   }
 
   fun getType(): ARVRServer.TrackerType {
-    val _ret = __method_bind.get_type.call(this._handle)
+    val _ret = __method_bind.getType.call(this._handle)
     return ARVRServer.TrackerType.from(_ret.asInt())
   }
 
   fun setRumble(rumble: Float) {
     val _arg = Variant.new(rumble)
-    __method_bind.set_rumble.call(this._handle, _arg, 1)
+    __method_bind.setRumble.call(this._handle, _arg, 1)
   }
 
   enum class TrackerHand(
@@ -126,89 +134,89 @@ open class ARVRPositionalTracker(
      * Container for method_bind pointers for ARVRPositionalTracker
      */
     private object __method_bind {
-      val get_hand: CPointer<godot_method_bind>
+      val getHand: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_hand".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_hand" }
+            "getHand".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getHand" }
         }
-      val get_joy_id: CPointer<godot_method_bind>
+      val getJoyId: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_joy_id".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_joy_id" }
+            "getJoyId".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getJoyId" }
         }
-      val get_mesh: CPointer<godot_method_bind>
+      val getMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_mesh" }
+            "getMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMesh" }
         }
-      val get_name: CPointer<godot_method_bind>
+      val getName: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_name".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_name" }
+            "getName".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getName" }
         }
-      val get_orientation: CPointer<godot_method_bind>
+      val getOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_orientation" }
+            "getOrientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOrientation" }
         }
-      val get_position: CPointer<godot_method_bind>
+      val getPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_position" }
+            "getPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPosition" }
         }
-      val get_rumble: CPointer<godot_method_bind>
+      val getRumble: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_rumble".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_rumble" }
+            "getRumble".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getRumble" }
         }
-      val get_tracks_orientation: CPointer<godot_method_bind>
+      val getTracksOrientation: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_tracks_orientation".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tracks_orientation" }
+            "getTracksOrientation".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTracksOrientation" }
         }
-      val get_tracks_position: CPointer<godot_method_bind>
+      val getTracksPosition: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_tracks_position".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_tracks_position" }
+            "getTracksPosition".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTracksPosition" }
         }
-      val get_transform: CPointer<godot_method_bind>
+      val getTransform: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_transform".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_transform" }
+            "getTransform".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTransform" }
         }
-      val get_type: CPointer<godot_method_bind>
+      val getType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "get_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_type" }
+            "getType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getType" }
         }
-      val set_rumble: CPointer<godot_method_bind>
+      val setRumble: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ARVRPositionalTracker".cstr.ptr,
-            "set_rumble".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rumble" }
+            "setRumble".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRumble" }
         }}
   }
 }

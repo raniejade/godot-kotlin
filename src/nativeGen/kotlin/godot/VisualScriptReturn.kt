@@ -18,24 +18,40 @@ import kotlinx.cinterop.reinterpret
 open class VisualScriptReturn(
   _handle: COpaquePointer
 ) : VisualScriptNode(_handle) {
+  var returnEnabled: Boolean
+    get() {
+       return isReturnValueEnabled() 
+    }
+    set(value) {
+      setEnableReturnValue(value)
+    }
+
+  var returnType: Int
+    get() {
+       return Variant.Type.from(getReturnType()) 
+    }
+    set(value) {
+      setReturnType(Variant.Type.from(value))
+    }
+
   fun getReturnType(): Variant.Type {
-    val _ret = __method_bind.get_return_type.call(this._handle)
+    val _ret = __method_bind.getReturnType.call(this._handle)
     return Variant.Type.from(_ret.asInt())
   }
 
   fun isReturnValueEnabled(): Boolean {
-    val _ret = __method_bind.is_return_value_enabled.call(this._handle)
+    val _ret = __method_bind.isReturnValueEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setEnableReturnValue(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_return_value.call(this._handle, _arg, 1)
+    __method_bind.setEnableReturnValue.call(this._handle, _arg, 1)
   }
 
   fun setReturnType(type: Int) {
     val _arg = Variant.new(type)
-    __method_bind.set_return_type.call(this._handle, _arg, 1)
+    __method_bind.setReturnType.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -53,33 +69,33 @@ open class VisualScriptReturn(
      * Container for method_bind pointers for VisualScriptReturn
      */
     private object __method_bind {
-      val get_return_type: CPointer<godot_method_bind>
+      val getReturnType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "get_return_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_return_type" }
+            "getReturnType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getReturnType" }
         }
-      val is_return_value_enabled: CPointer<godot_method_bind>
+      val isReturnValueEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "is_return_value_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_return_value_enabled" }
+            "isReturnValueEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isReturnValueEnabled" }
         }
-      val set_enable_return_value: CPointer<godot_method_bind>
+      val setEnableReturnValue: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "set_enable_return_value".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enable_return_value" }
+            "setEnableReturnValue".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnableReturnValue" }
         }
-      val set_return_type: CPointer<godot_method_bind>
+      val setReturnType: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("VisualScriptReturn".cstr.ptr,
-            "set_return_type".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_return_type" }
+            "setReturnType".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setReturnType" }
         }}
   }
 }

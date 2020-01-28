@@ -18,44 +18,76 @@ import kotlinx.cinterop.reinterpret
 open class PhysicsMaterial(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var absorbent: Boolean
+    get() {
+       return isAbsorbent() 
+    }
+    set(value) {
+      setAbsorbent(value)
+    }
+
+  var bounce: Float
+    get() {
+       return getBounce() 
+    }
+    set(value) {
+      setBounce(value)
+    }
+
+  var friction: Float
+    get() {
+       return getFriction() 
+    }
+    set(value) {
+      setFriction(value)
+    }
+
+  var rough: Boolean
+    get() {
+       return isRough() 
+    }
+    set(value) {
+      setRough(value)
+    }
+
   fun getBounce(): Float {
-    val _ret = __method_bind.get_bounce.call(this._handle)
+    val _ret = __method_bind.getBounce.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getFriction(): Float {
-    val _ret = __method_bind.get_friction.call(this._handle)
+    val _ret = __method_bind.getFriction.call(this._handle)
     return _ret.asFloat()
   }
 
   fun isAbsorbent(): Boolean {
-    val _ret = __method_bind.is_absorbent.call(this._handle)
+    val _ret = __method_bind.isAbsorbent.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isRough(): Boolean {
-    val _ret = __method_bind.is_rough.call(this._handle)
+    val _ret = __method_bind.isRough.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAbsorbent(absorbent: Boolean) {
     val _arg = Variant.new(absorbent)
-    __method_bind.set_absorbent.call(this._handle, _arg, 1)
+    __method_bind.setAbsorbent.call(this._handle, _arg, 1)
   }
 
   fun setBounce(bounce: Float) {
     val _arg = Variant.new(bounce)
-    __method_bind.set_bounce.call(this._handle, _arg, 1)
+    __method_bind.setBounce.call(this._handle, _arg, 1)
   }
 
   fun setFriction(friction: Float) {
     val _arg = Variant.new(friction)
-    __method_bind.set_friction.call(this._handle, _arg, 1)
+    __method_bind.setFriction.call(this._handle, _arg, 1)
   }
 
   fun setRough(rough: Boolean) {
     val _arg = Variant.new(rough)
-    __method_bind.set_rough.call(this._handle, _arg, 1)
+    __method_bind.setRough.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -73,61 +105,61 @@ open class PhysicsMaterial(
      * Container for method_bind pointers for PhysicsMaterial
      */
     private object __method_bind {
-      val get_bounce: CPointer<godot_method_bind>
+      val getBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "get_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_bounce" }
+            "getBounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBounce" }
         }
-      val get_friction: CPointer<godot_method_bind>
+      val getFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "get_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_friction" }
+            "getFriction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFriction" }
         }
-      val is_absorbent: CPointer<godot_method_bind>
+      val isAbsorbent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "is_absorbent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_absorbent" }
+            "isAbsorbent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isAbsorbent" }
         }
-      val is_rough: CPointer<godot_method_bind>
+      val isRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "is_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_rough" }
+            "isRough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isRough" }
         }
-      val set_absorbent: CPointer<godot_method_bind>
+      val setAbsorbent: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_absorbent".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_absorbent" }
+            "setAbsorbent".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAbsorbent" }
         }
-      val set_bounce: CPointer<godot_method_bind>
+      val setBounce: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_bounce".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_bounce" }
+            "setBounce".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setBounce" }
         }
-      val set_friction: CPointer<godot_method_bind>
+      val setFriction: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_friction".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_friction" }
+            "setFriction".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFriction" }
         }
-      val set_rough: CPointer<godot_method_bind>
+      val setRough: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("PhysicsMaterial".cstr.ptr,
-            "set_rough".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_rough" }
+            "setRough".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setRough" }
         }}
   }
 }

@@ -22,61 +22,61 @@ open class EditorInterface(
 ) : Node(_handle) {
   fun editResource(resource: Resource) {
     val _arg = Variant.new(resource)
-    __method_bind.edit_resource.call(this._handle, _arg, 1)
+    __method_bind.editResource.call(this._handle, _arg, 1)
   }
 
   fun getBaseControl(): Control {
-    val _ret = __method_bind.get_base_control.call(this._handle)
+    val _ret = __method_bind.getBaseControl.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getEditedSceneRoot(): Node {
-    val _ret = __method_bind.get_edited_scene_root.call(this._handle)
+    val _ret = __method_bind.getEditedSceneRoot.call(this._handle)
     return _ret.asObject(::Node)!!
   }
 
   fun getEditorSettings(): EditorSettings {
-    val _ret = __method_bind.get_editor_settings.call(this._handle)
+    val _ret = __method_bind.getEditorSettings.call(this._handle)
     return _ret.asObject(::EditorSettings)!!
   }
 
   fun getEditorViewport(): Control {
-    val _ret = __method_bind.get_editor_viewport.call(this._handle)
+    val _ret = __method_bind.getEditorViewport.call(this._handle)
     return _ret.asObject(::Control)!!
   }
 
   fun getInspector(): EditorInspector {
-    val _ret = __method_bind.get_inspector.call(this._handle)
+    val _ret = __method_bind.getInspector.call(this._handle)
     return _ret.asObject(::EditorInspector)!!
   }
 
   fun getOpenScenes(): VariantArray {
-    val _ret = __method_bind.get_open_scenes.call(this._handle)
+    val _ret = __method_bind.getOpenScenes.call(this._handle)
     return _ret.asVariantArray()
   }
 
   fun getResourceFilesystem(): EditorFileSystem {
-    val _ret = __method_bind.get_resource_filesystem.call(this._handle)
+    val _ret = __method_bind.getResourceFilesystem.call(this._handle)
     return _ret.asObject(::EditorFileSystem)!!
   }
 
   fun getResourcePreviewer(): EditorResourcePreview {
-    val _ret = __method_bind.get_resource_previewer.call(this._handle)
+    val _ret = __method_bind.getResourcePreviewer.call(this._handle)
     return _ret.asObject(::EditorResourcePreview)!!
   }
 
   fun getScriptEditor(): ScriptEditor {
-    val _ret = __method_bind.get_script_editor.call(this._handle)
+    val _ret = __method_bind.getScriptEditor.call(this._handle)
     return _ret.asObject(::ScriptEditor)!!
   }
 
   fun getSelectedPath(): String {
-    val _ret = __method_bind.get_selected_path.call(this._handle)
+    val _ret = __method_bind.getSelectedPath.call(this._handle)
     return _ret.asString()
   }
 
   fun getSelection(): EditorSelection {
-    val _ret = __method_bind.get_selection.call(this._handle)
+    val _ret = __method_bind.getSelection.call(this._handle)
     return _ret.asObject(::EditorSelection)!!
   }
 
@@ -84,12 +84,12 @@ open class EditorInterface(
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(forProperty)
-    __method_bind.inspect_object.call(this._handle, _args.toVariant(), 2)
+    __method_bind.inspectObject.call(this._handle, _args.toVariant(), 2)
   }
 
   fun isPluginEnabled(plugin: String): Boolean {
     val _arg = Variant.new(plugin)
-    val _ret = __method_bind.is_plugin_enabled.call(this._handle, _arg, 1)
+    val _ret = __method_bind.isPluginEnabled.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -97,22 +97,22 @@ open class EditorInterface(
     val _args = VariantArray.new()
     _args.append(meshes)
     _args.append(previewSize)
-    val _ret = __method_bind.make_mesh_previews.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.makeMeshPreviews.call(this._handle, _args.toVariant(), 2)
     return _ret.asVariantArray()
   }
 
   fun openSceneFromPath(sceneFilepath: String) {
     val _arg = Variant.new(sceneFilepath)
-    __method_bind.open_scene_from_path.call(this._handle, _arg, 1)
+    __method_bind.openSceneFromPath.call(this._handle, _arg, 1)
   }
 
   fun reloadSceneFromPath(sceneFilepath: String) {
     val _arg = Variant.new(sceneFilepath)
-    __method_bind.reload_scene_from_path.call(this._handle, _arg, 1)
+    __method_bind.reloadSceneFromPath.call(this._handle, _arg, 1)
   }
 
   fun saveScene(): GDError {
-    val _ret = __method_bind.save_scene.call(this._handle)
+    val _ret = __method_bind.saveScene.call(this._handle)
     return GDError.from(_ret.asInt())
   }
 
@@ -120,19 +120,19 @@ open class EditorInterface(
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(withPreview)
-    __method_bind.save_scene_as.call(this._handle, _args.toVariant(), 2)
+    __method_bind.saveSceneAs.call(this._handle, _args.toVariant(), 2)
   }
 
   fun selectFile(file: String) {
     val _arg = Variant.new(file)
-    __method_bind.select_file.call(this._handle, _arg, 1)
+    __method_bind.selectFile.call(this._handle, _arg, 1)
   }
 
   fun setPluginEnabled(plugin: String, enabled: Boolean) {
     val _args = VariantArray.new()
     _args.append(plugin)
     _args.append(enabled)
-    __method_bind.set_plugin_enabled.call(this._handle, _args.toVariant(), 2)
+    __method_bind.setPluginEnabled.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -140,152 +140,152 @@ open class EditorInterface(
      * Container for method_bind pointers for EditorInterface
      */
     private object __method_bind {
-      val edit_resource: CPointer<godot_method_bind>
+      val editResource: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "edit_resource".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method edit_resource" }
+            "editResource".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method editResource" }
         }
-      val get_base_control: CPointer<godot_method_bind>
+      val getBaseControl: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_base_control".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_base_control" }
+            "getBaseControl".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getBaseControl" }
         }
-      val get_edited_scene_root: CPointer<godot_method_bind>
+      val getEditedSceneRoot: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_edited_scene_root".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_edited_scene_root" }
+            "getEditedSceneRoot".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEditedSceneRoot" }
         }
-      val get_editor_settings: CPointer<godot_method_bind>
+      val getEditorSettings: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_editor_settings".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_settings" }
+            "getEditorSettings".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEditorSettings" }
         }
-      val get_editor_viewport: CPointer<godot_method_bind>
+      val getEditorViewport: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_editor_viewport".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_editor_viewport" }
+            "getEditorViewport".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEditorViewport" }
         }
-      val get_inspector: CPointer<godot_method_bind>
+      val getInspector: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_inspector".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_inspector" }
+            "getInspector".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInspector" }
         }
-      val get_open_scenes: CPointer<godot_method_bind>
+      val getOpenScenes: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_open_scenes".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_open_scenes" }
+            "getOpenScenes".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOpenScenes" }
         }
-      val get_resource_filesystem: CPointer<godot_method_bind>
+      val getResourceFilesystem: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_resource_filesystem".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource_filesystem" }
+            "getResourceFilesystem".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getResourceFilesystem" }
         }
-      val get_resource_previewer: CPointer<godot_method_bind>
+      val getResourcePreviewer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_resource_previewer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_resource_previewer" }
+            "getResourcePreviewer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getResourcePreviewer" }
         }
-      val get_script_editor: CPointer<godot_method_bind>
+      val getScriptEditor: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_script_editor".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_script_editor" }
+            "getScriptEditor".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScriptEditor" }
         }
-      val get_selected_path: CPointer<godot_method_bind>
+      val getSelectedPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_selected_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_selected_path" }
+            "getSelectedPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSelectedPath" }
         }
-      val get_selection: CPointer<godot_method_bind>
+      val getSelection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "get_selection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_selection" }
+            "getSelection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSelection" }
         }
-      val inspect_object: CPointer<godot_method_bind>
+      val inspectObject: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "inspect_object".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method inspect_object" }
+            "inspectObject".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method inspectObject" }
         }
-      val is_plugin_enabled: CPointer<godot_method_bind>
+      val isPluginEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "is_plugin_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_plugin_enabled" }
+            "isPluginEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isPluginEnabled" }
         }
-      val make_mesh_previews: CPointer<godot_method_bind>
+      val makeMeshPreviews: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "make_mesh_previews".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method make_mesh_previews" }
+            "makeMeshPreviews".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method makeMeshPreviews" }
         }
-      val open_scene_from_path: CPointer<godot_method_bind>
+      val openSceneFromPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "open_scene_from_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method open_scene_from_path" }
+            "openSceneFromPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method openSceneFromPath" }
         }
-      val reload_scene_from_path: CPointer<godot_method_bind>
+      val reloadSceneFromPath: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "reload_scene_from_path".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method reload_scene_from_path" }
+            "reloadSceneFromPath".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method reloadSceneFromPath" }
         }
-      val save_scene: CPointer<godot_method_bind>
+      val saveScene: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "save_scene".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_scene" }
+            "saveScene".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method saveScene" }
         }
-      val save_scene_as: CPointer<godot_method_bind>
+      val saveSceneAs: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "save_scene_as".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method save_scene_as" }
+            "saveSceneAs".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method saveSceneAs" }
         }
-      val select_file: CPointer<godot_method_bind>
+      val selectFile: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "select_file".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method select_file" }
+            "selectFile".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method selectFile" }
         }
-      val set_plugin_enabled: CPointer<godot_method_bind>
+      val setPluginEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorInterface".cstr.ptr,
-            "set_plugin_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_plugin_enabled" }
+            "setPluginEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setPluginEnabled" }
         }}
   }
 }

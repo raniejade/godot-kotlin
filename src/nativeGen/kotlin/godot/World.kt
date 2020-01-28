@@ -17,39 +17,70 @@ import kotlinx.cinterop.reinterpret
 open class World(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  val directSpaceState: PhysicsDirectSpaceState
+    get() {
+       return getDirectSpaceState() 
+    }
+
+  var environment: Environment
+    get() {
+       return getEnvironment() 
+    }
+    set(value) {
+      setEnvironment(value)
+    }
+
+  var fallbackEnvironment: Environment
+    get() {
+       return getFallbackEnvironment() 
+    }
+    set(value) {
+      setFallbackEnvironment(value)
+    }
+
+  val scenario: RID
+    get() {
+       return getScenario() 
+    }
+
+  val space: RID
+    get() {
+       return getSpace() 
+    }
+
   fun getDirectSpaceState(): PhysicsDirectSpaceState {
-    val _ret = __method_bind.get_direct_space_state.call(this._handle)
+    val _ret = __method_bind.getDirectSpaceState.call(this._handle)
     return _ret.asObject(::PhysicsDirectSpaceState)!!
   }
 
   fun getEnvironment(): Environment {
-    val _ret = __method_bind.get_environment.call(this._handle)
+    val _ret = __method_bind.getEnvironment.call(this._handle)
     return _ret.asObject(::Environment)!!
   }
 
   fun getFallbackEnvironment(): Environment {
-    val _ret = __method_bind.get_fallback_environment.call(this._handle)
+    val _ret = __method_bind.getFallbackEnvironment.call(this._handle)
     return _ret.asObject(::Environment)!!
   }
 
   fun getScenario(): RID {
-    val _ret = __method_bind.get_scenario.call(this._handle)
+    val _ret = __method_bind.getScenario.call(this._handle)
     return _ret.asRID()
   }
 
   fun getSpace(): RID {
-    val _ret = __method_bind.get_space.call(this._handle)
+    val _ret = __method_bind.getSpace.call(this._handle)
     return _ret.asRID()
   }
 
   fun setEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.set_environment.call(this._handle, _arg, 1)
+    __method_bind.setEnvironment.call(this._handle, _arg, 1)
   }
 
   fun setFallbackEnvironment(env: Environment) {
     val _arg = Variant.new(env)
-    __method_bind.set_fallback_environment.call(this._handle, _arg, 1)
+    __method_bind.setFallbackEnvironment.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -66,47 +97,47 @@ open class World(
      * Container for method_bind pointers for World
      */
     private object __method_bind {
-      val get_direct_space_state: CPointer<godot_method_bind>
+      val getDirectSpaceState: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "get_direct_space_state".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_direct_space_state" }
+            "getDirectSpaceState".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getDirectSpaceState" }
         }
-      val get_environment: CPointer<godot_method_bind>
+      val getEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "get_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_environment" }
+            "getEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getEnvironment" }
         }
-      val get_fallback_environment: CPointer<godot_method_bind>
+      val getFallbackEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "get_fallback_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_fallback_environment" }
+            "getFallbackEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getFallbackEnvironment" }
         }
-      val get_scenario: CPointer<godot_method_bind>
+      val getScenario: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "get_scenario".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_scenario" }
+            "getScenario".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getScenario" }
         }
-      val get_space: CPointer<godot_method_bind>
+      val getSpace: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "get_space".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_space" }
+            "getSpace".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpace" }
         }
-      val set_environment: CPointer<godot_method_bind>
+      val setEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "set_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_environment" }
+            "setEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnvironment" }
         }
-      val set_fallback_environment: CPointer<godot_method_bind>
+      val setFallbackEnvironment: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr = checkNotNull(Godot.gdnative.godot_method_bind_get_method)("World".cstr.ptr,
-            "set_fallback_environment".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_fallback_environment" }
+            "setFallbackEnvironment".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setFallbackEnvironment" }
         }}
   }
 }

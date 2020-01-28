@@ -17,14 +17,22 @@ import kotlinx.cinterop.reinterpret
 open class SceneTreeTimer(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var timeLeft: Float
+    get() {
+       return getTimeLeft() 
+    }
+    set(value) {
+      setTimeLeft(value)
+    }
+
   fun getTimeLeft(): Float {
-    val _ret = __method_bind.get_time_left.call(this._handle)
+    val _ret = __method_bind.getTimeLeft.call(this._handle)
     return _ret.asFloat()
   }
 
   fun setTimeLeft(time: Float) {
     val _arg = Variant.new(time)
-    __method_bind.set_time_left.call(this._handle, _arg, 1)
+    __method_bind.setTimeLeft.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -32,19 +40,19 @@ open class SceneTreeTimer(
      * Container for method_bind pointers for SceneTreeTimer
      */
     private object __method_bind {
-      val get_time_left: CPointer<godot_method_bind>
+      val getTimeLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTreeTimer".cstr.ptr,
-            "get_time_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_time_left" }
+            "getTimeLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getTimeLeft" }
         }
-      val set_time_left: CPointer<godot_method_bind>
+      val setTimeLeft: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("SceneTreeTimer".cstr.ptr,
-            "set_time_left".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_time_left" }
+            "setTimeLeft".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setTimeLeft" }
         }}
   }
 }

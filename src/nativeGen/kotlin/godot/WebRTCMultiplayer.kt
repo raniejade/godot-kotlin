@@ -29,7 +29,7 @@ open class WebRTCMultiplayer(
     _args.append(peer)
     _args.append(peerId)
     _args.append(unreliableLifetime)
-    val _ret = __method_bind.add_peer.call(this._handle, _args.toVariant(), 3)
+    val _ret = __method_bind.addPeer.call(this._handle, _args.toVariant(), 3)
     return GDError.from(_ret.asInt())
   }
 
@@ -39,18 +39,18 @@ open class WebRTCMultiplayer(
 
   fun getPeer(peerId: Int): Dictionary {
     val _arg = Variant.new(peerId)
-    val _ret = __method_bind.get_peer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.getPeer.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
   fun getPeers(): Dictionary {
-    val _ret = __method_bind.get_peers.call(this._handle)
+    val _ret = __method_bind.getPeers.call(this._handle)
     return _ret.asDictionary()
   }
 
   fun hasPeer(peerId: Int): Boolean {
     val _arg = Variant.new(peerId)
-    val _ret = __method_bind.has_peer.call(this._handle, _arg, 1)
+    val _ret = __method_bind.hasPeer.call(this._handle, _arg, 1)
     return _ret.asBoolean()
   }
 
@@ -64,7 +64,7 @@ open class WebRTCMultiplayer(
 
   fun removePeer(peerId: Int) {
     val _arg = Variant.new(peerId)
-    __method_bind.remove_peer.call(this._handle, _arg, 1)
+    __method_bind.removePeer.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -82,12 +82,12 @@ open class WebRTCMultiplayer(
      * Container for method_bind pointers for WebRTCMultiplayer
      */
     private object __method_bind {
-      val add_peer: CPointer<godot_method_bind>
+      val addPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "add_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_peer" }
+            "addPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addPeer" }
         }
       val close: CPointer<godot_method_bind>
         get() = memScoped {
@@ -96,26 +96,26 @@ open class WebRTCMultiplayer(
             "close".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method close" }
         }
-      val get_peer: CPointer<godot_method_bind>
+      val getPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "get_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_peer" }
+            "getPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPeer" }
         }
-      val get_peers: CPointer<godot_method_bind>
+      val getPeers: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "get_peers".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_peers" }
+            "getPeers".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPeers" }
         }
-      val has_peer: CPointer<godot_method_bind>
+      val hasPeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "has_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method has_peer" }
+            "hasPeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method hasPeer" }
         }
       val initialize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -124,12 +124,12 @@ open class WebRTCMultiplayer(
             "initialize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method initialize" }
         }
-      val remove_peer: CPointer<godot_method_bind>
+      val removePeer: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("WebRTCMultiplayer".cstr.ptr,
-            "remove_peer".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_peer" }
+            "removePeer".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removePeer" }
         }}
   }
 }

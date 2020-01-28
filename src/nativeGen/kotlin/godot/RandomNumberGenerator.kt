@@ -18,8 +18,16 @@ import kotlinx.cinterop.reinterpret
 open class RandomNumberGenerator(
   _handle: COpaquePointer
 ) : Reference(_handle) {
+  var seed: Int
+    get() {
+       return getSeed() 
+    }
+    set(value) {
+      setSeed(value)
+    }
+
   fun getSeed(): Int {
-    val _ret = __method_bind.get_seed.call(this._handle)
+    val _ret = __method_bind.getSeed.call(this._handle)
     return _ret.asInt()
   }
 
@@ -32,7 +40,7 @@ open class RandomNumberGenerator(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.randf_range.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.randfRange.call(this._handle, _args.toVariant(), 2)
     return _ret.asFloat()
   }
 
@@ -53,7 +61,7 @@ open class RandomNumberGenerator(
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)
-    val _ret = __method_bind.randi_range.call(this._handle, _args.toVariant(), 2)
+    val _ret = __method_bind.randiRange.call(this._handle, _args.toVariant(), 2)
     return _ret.asInt()
   }
 
@@ -63,7 +71,7 @@ open class RandomNumberGenerator(
 
   fun setSeed(seed: Int) {
     val _arg = Variant.new(seed)
-    __method_bind.set_seed.call(this._handle, _arg, 1)
+    __method_bind.setSeed.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -81,12 +89,12 @@ open class RandomNumberGenerator(
      * Container for method_bind pointers for RandomNumberGenerator
      */
     private object __method_bind {
-      val get_seed: CPointer<godot_method_bind>
+      val getSeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
-            "get_seed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_seed" }
+            "getSeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSeed" }
         }
       val randf: CPointer<godot_method_bind>
         get() = memScoped {
@@ -95,12 +103,12 @@ open class RandomNumberGenerator(
             "randf".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randf" }
         }
-      val randf_range: CPointer<godot_method_bind>
+      val randfRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
-            "randf_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method randf_range" }
+            "randfRange".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method randfRange" }
         }
       val randfn: CPointer<godot_method_bind>
         get() = memScoped {
@@ -116,12 +124,12 @@ open class RandomNumberGenerator(
             "randi".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randi" }
         }
-      val randi_range: CPointer<godot_method_bind>
+      val randiRange: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
-            "randi_range".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method randi_range" }
+            "randiRange".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method randiRange" }
         }
       val randomize: CPointer<godot_method_bind>
         get() = memScoped {
@@ -130,12 +138,12 @@ open class RandomNumberGenerator(
             "randomize".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method randomize" }
         }
-      val set_seed: CPointer<godot_method_bind>
+      val setSeed: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("RandomNumberGenerator".cstr.ptr,
-            "set_seed".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_seed" }
+            "setSeed".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSeed" }
         }}
   }
 }

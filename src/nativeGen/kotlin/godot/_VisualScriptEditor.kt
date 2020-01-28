@@ -26,14 +26,14 @@ open class _VisualScriptEditor(
     _args.append(name)
     _args.append(category)
     _args.append(script)
-    __method_bind.add_custom_node.call(this._handle, _args.toVariant(), 3)
+    __method_bind.addCustomNode.call(this._handle, _args.toVariant(), 3)
   }
 
   fun removeCustomNode(name: String, category: String) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(category)
-    __method_bind.remove_custom_node.call(this._handle, _args.toVariant(), 2)
+    __method_bind.removeCustomNode.call(this._handle, _args.toVariant(), 2)
   }
 
   companion object {
@@ -50,19 +50,19 @@ open class _VisualScriptEditor(
      * Container for method_bind pointers for _VisualScriptEditor
      */
     private object __method_bind {
-      val add_custom_node: CPointer<godot_method_bind>
+      val addCustomNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-            "add_custom_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_custom_node" }
+            "addCustomNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addCustomNode" }
         }
-      val remove_custom_node: CPointer<godot_method_bind>
+      val removeCustomNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("_VisualScriptEditor".cstr.ptr,
-            "remove_custom_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method remove_custom_node" }
+            "removeCustomNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method removeCustomNode" }
         }}
   }
 }

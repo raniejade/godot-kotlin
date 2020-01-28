@@ -21,124 +21,220 @@ import kotlinx.cinterop.reinterpret
 open class ReflectionProbe(
   _handle: COpaquePointer
 ) : VisualInstance(_handle) {
+  var boxProjection: Boolean
+    get() {
+       return isBoxProjectionEnabled() 
+    }
+    set(value) {
+      setEnableBoxProjection(value)
+    }
+
+  var cullMask: Int
+    get() {
+       return getCullMask() 
+    }
+    set(value) {
+      setCullMask(value)
+    }
+
+  var enableShadows: Boolean
+    get() {
+       return areShadowsEnabled() 
+    }
+    set(value) {
+      setEnableShadows(value)
+    }
+
+  var extents: Vector3
+    get() {
+       return getExtents() 
+    }
+    set(value) {
+      setExtents(value)
+    }
+
+  var intensity: Float
+    get() {
+       return getIntensity() 
+    }
+    set(value) {
+      setIntensity(value)
+    }
+
+  var interiorAmbientColor: Color
+    get() {
+       return getInteriorAmbient() 
+    }
+    set(value) {
+      setInteriorAmbient(value)
+    }
+
+  var interiorAmbientContrib: Float
+    get() {
+       return getInteriorAmbientProbeContribution() 
+    }
+    set(value) {
+      setInteriorAmbientProbeContribution(value)
+    }
+
+  var interiorAmbientEnergy: Float
+    get() {
+       return getInteriorAmbientEnergy() 
+    }
+    set(value) {
+      setInteriorAmbientEnergy(value)
+    }
+
+  var interiorEnable: Boolean
+    get() {
+       return isSetAsInterior() 
+    }
+    set(value) {
+      setAsInterior(value)
+    }
+
+  var maxDistance: Float
+    get() {
+       return getMaxDistance() 
+    }
+    set(value) {
+      setMaxDistance(value)
+    }
+
+  var originOffset: Vector3
+    get() {
+       return getOriginOffset() 
+    }
+    set(value) {
+      setOriginOffset(value)
+    }
+
+  var updateMode: Int
+    get() {
+       return ReflectionProbe.UpdateMode.from(getUpdateMode()) 
+    }
+    set(value) {
+      setUpdateMode(ReflectionProbe.UpdateMode.from(value))
+    }
+
   fun areShadowsEnabled(): Boolean {
-    val _ret = __method_bind.are_shadows_enabled.call(this._handle)
+    val _ret = __method_bind.areShadowsEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun getCullMask(): Int {
-    val _ret = __method_bind.get_cull_mask.call(this._handle)
+    val _ret = __method_bind.getCullMask.call(this._handle)
     return _ret.asInt()
   }
 
   fun getExtents(): Vector3 {
-    val _ret = __method_bind.get_extents.call(this._handle)
+    val _ret = __method_bind.getExtents.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getIntensity(): Float {
-    val _ret = __method_bind.get_intensity.call(this._handle)
+    val _ret = __method_bind.getIntensity.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getInteriorAmbient(): Color {
-    val _ret = __method_bind.get_interior_ambient.call(this._handle)
+    val _ret = __method_bind.getInteriorAmbient.call(this._handle)
     return _ret.asColor()
   }
 
   fun getInteriorAmbientEnergy(): Float {
-    val _ret = __method_bind.get_interior_ambient_energy.call(this._handle)
+    val _ret = __method_bind.getInteriorAmbientEnergy.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getInteriorAmbientProbeContribution(): Float {
-    val _ret = __method_bind.get_interior_ambient_probe_contribution.call(this._handle)
+    val _ret = __method_bind.getInteriorAmbientProbeContribution.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getMaxDistance(): Float {
-    val _ret = __method_bind.get_max_distance.call(this._handle)
+    val _ret = __method_bind.getMaxDistance.call(this._handle)
     return _ret.asFloat()
   }
 
   fun getOriginOffset(): Vector3 {
-    val _ret = __method_bind.get_origin_offset.call(this._handle)
+    val _ret = __method_bind.getOriginOffset.call(this._handle)
     return _ret.asVector3()
   }
 
   fun getUpdateMode(): UpdateMode {
-    val _ret = __method_bind.get_update_mode.call(this._handle)
+    val _ret = __method_bind.getUpdateMode.call(this._handle)
     return ReflectionProbe.UpdateMode.from(_ret.asInt())
   }
 
   fun isBoxProjectionEnabled(): Boolean {
-    val _ret = __method_bind.is_box_projection_enabled.call(this._handle)
+    val _ret = __method_bind.isBoxProjectionEnabled.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun isSetAsInterior(): Boolean {
-    val _ret = __method_bind.is_set_as_interior.call(this._handle)
+    val _ret = __method_bind.isSetAsInterior.call(this._handle)
     return _ret.asBoolean()
   }
 
   fun setAsInterior(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_as_interior.call(this._handle, _arg, 1)
+    __method_bind.setAsInterior.call(this._handle, _arg, 1)
   }
 
   fun setCullMask(layers: Int) {
     val _arg = Variant.new(layers)
-    __method_bind.set_cull_mask.call(this._handle, _arg, 1)
+    __method_bind.setCullMask.call(this._handle, _arg, 1)
   }
 
   fun setEnableBoxProjection(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_box_projection.call(this._handle, _arg, 1)
+    __method_bind.setEnableBoxProjection.call(this._handle, _arg, 1)
   }
 
   fun setEnableShadows(enable: Boolean) {
     val _arg = Variant.new(enable)
-    __method_bind.set_enable_shadows.call(this._handle, _arg, 1)
+    __method_bind.setEnableShadows.call(this._handle, _arg, 1)
   }
 
   fun setExtents(extents: Vector3) {
     val _arg = Variant.new(extents)
-    __method_bind.set_extents.call(this._handle, _arg, 1)
+    __method_bind.setExtents.call(this._handle, _arg, 1)
   }
 
   fun setIntensity(intensity: Float) {
     val _arg = Variant.new(intensity)
-    __method_bind.set_intensity.call(this._handle, _arg, 1)
+    __method_bind.setIntensity.call(this._handle, _arg, 1)
   }
 
   fun setInteriorAmbient(ambient: Color) {
     val _arg = Variant.new(ambient)
-    __method_bind.set_interior_ambient.call(this._handle, _arg, 1)
+    __method_bind.setInteriorAmbient.call(this._handle, _arg, 1)
   }
 
   fun setInteriorAmbientEnergy(ambientEnergy: Float) {
     val _arg = Variant.new(ambientEnergy)
-    __method_bind.set_interior_ambient_energy.call(this._handle, _arg, 1)
+    __method_bind.setInteriorAmbientEnergy.call(this._handle, _arg, 1)
   }
 
   fun setInteriorAmbientProbeContribution(ambientProbeContribution: Float) {
     val _arg = Variant.new(ambientProbeContribution)
-    __method_bind.set_interior_ambient_probe_contribution.call(this._handle, _arg, 1)
+    __method_bind.setInteriorAmbientProbeContribution.call(this._handle, _arg, 1)
   }
 
   fun setMaxDistance(maxDistance: Float) {
     val _arg = Variant.new(maxDistance)
-    __method_bind.set_max_distance.call(this._handle, _arg, 1)
+    __method_bind.setMaxDistance.call(this._handle, _arg, 1)
   }
 
   fun setOriginOffset(originOffset: Vector3) {
     val _arg = Variant.new(originOffset)
-    __method_bind.set_origin_offset.call(this._handle, _arg, 1)
+    __method_bind.setOriginOffset.call(this._handle, _arg, 1)
   }
 
   fun setUpdateMode(mode: Int) {
     val _arg = Variant.new(mode)
-    __method_bind.set_update_mode.call(this._handle, _arg, 1)
+    __method_bind.setUpdateMode.call(this._handle, _arg, 1)
   }
 
   enum class UpdateMode(
@@ -179,175 +275,175 @@ open class ReflectionProbe(
      * Container for method_bind pointers for ReflectionProbe
      */
     private object __method_bind {
-      val are_shadows_enabled: CPointer<godot_method_bind>
+      val areShadowsEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "are_shadows_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method are_shadows_enabled" }
+            "areShadowsEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method areShadowsEnabled" }
         }
-      val get_cull_mask: CPointer<godot_method_bind>
+      val getCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_cull_mask" }
+            "getCullMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getCullMask" }
         }
-      val get_extents: CPointer<godot_method_bind>
+      val getExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_extents" }
+            "getExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getExtents" }
         }
-      val get_intensity: CPointer<godot_method_bind>
+      val getIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_intensity" }
+            "getIntensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getIntensity" }
         }
-      val get_interior_ambient: CPointer<godot_method_bind>
+      val getInteriorAmbient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_interior_ambient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interior_ambient" }
+            "getInteriorAmbient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInteriorAmbient" }
         }
-      val get_interior_ambient_energy: CPointer<godot_method_bind>
+      val getInteriorAmbientEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_interior_ambient_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_interior_ambient_energy" }
+            "getInteriorAmbientEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getInteriorAmbientEnergy" }
         }
-      val get_interior_ambient_probe_contribution: CPointer<godot_method_bind>
+      val getInteriorAmbientProbeContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_interior_ambient_probe_contribution".cstr.ptr)
+            "getInteriorAmbientProbeContribution".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method get_interior_ambient_probe_contribution" }
+            "No method_bind found for method getInteriorAmbientProbeContribution" }
         }
-      val get_max_distance: CPointer<godot_method_bind>
+      val getMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_max_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_max_distance" }
+            "getMaxDistance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getMaxDistance" }
         }
-      val get_origin_offset: CPointer<godot_method_bind>
+      val getOriginOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_origin_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_origin_offset" }
+            "getOriginOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getOriginOffset" }
         }
-      val get_update_mode: CPointer<godot_method_bind>
+      val getUpdateMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "get_update_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_update_mode" }
+            "getUpdateMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getUpdateMode" }
         }
-      val is_box_projection_enabled: CPointer<godot_method_bind>
+      val isBoxProjectionEnabled: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "is_box_projection_enabled".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_box_projection_enabled" }
+            "isBoxProjectionEnabled".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isBoxProjectionEnabled" }
         }
-      val is_set_as_interior: CPointer<godot_method_bind>
+      val isSetAsInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "is_set_as_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method is_set_as_interior" }
+            "isSetAsInterior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method isSetAsInterior" }
         }
-      val set_as_interior: CPointer<godot_method_bind>
+      val setAsInterior: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_as_interior".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_as_interior" }
+            "setAsInterior".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setAsInterior" }
         }
-      val set_cull_mask: CPointer<godot_method_bind>
+      val setCullMask: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_cull_mask".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_cull_mask" }
+            "setCullMask".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setCullMask" }
         }
-      val set_enable_box_projection: CPointer<godot_method_bind>
+      val setEnableBoxProjection: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_enable_box_projection".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enable_box_projection" }
+            "setEnableBoxProjection".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnableBoxProjection" }
         }
-      val set_enable_shadows: CPointer<godot_method_bind>
+      val setEnableShadows: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_enable_shadows".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_enable_shadows" }
+            "setEnableShadows".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setEnableShadows" }
         }
-      val set_extents: CPointer<godot_method_bind>
+      val setExtents: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_extents".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_extents" }
+            "setExtents".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setExtents" }
         }
-      val set_intensity: CPointer<godot_method_bind>
+      val setIntensity: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_intensity".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_intensity" }
+            "setIntensity".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setIntensity" }
         }
-      val set_interior_ambient: CPointer<godot_method_bind>
+      val setInteriorAmbient: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_interior_ambient".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interior_ambient" }
+            "setInteriorAmbient".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInteriorAmbient" }
         }
-      val set_interior_ambient_energy: CPointer<godot_method_bind>
+      val setInteriorAmbientEnergy: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_interior_ambient_energy".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_interior_ambient_energy" }
+            "setInteriorAmbientEnergy".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setInteriorAmbientEnergy" }
         }
-      val set_interior_ambient_probe_contribution: CPointer<godot_method_bind>
+      val setInteriorAmbientProbeContribution: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_interior_ambient_probe_contribution".cstr.ptr)
+            "setInteriorAmbientProbeContribution".cstr.ptr)
           requireNotNull(ptr) {
-            "No method_bind found for method set_interior_ambient_probe_contribution" }
+            "No method_bind found for method setInteriorAmbientProbeContribution" }
         }
-      val set_max_distance: CPointer<godot_method_bind>
+      val setMaxDistance: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_max_distance".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_max_distance" }
+            "setMaxDistance".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setMaxDistance" }
         }
-      val set_origin_offset: CPointer<godot_method_bind>
+      val setOriginOffset: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_origin_offset".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_origin_offset" }
+            "setOriginOffset".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setOriginOffset" }
         }
-      val set_update_mode: CPointer<godot_method_bind>
+      val setUpdateMode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("ReflectionProbe".cstr.ptr,
-            "set_update_mode".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_update_mode" }
+            "setUpdateMode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setUpdateMode" }
         }}
   }
 }

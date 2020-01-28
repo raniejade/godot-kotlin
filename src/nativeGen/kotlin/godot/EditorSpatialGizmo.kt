@@ -22,12 +22,12 @@ open class EditorSpatialGizmo(
 ) : SpatialGizmo(_handle) {
   fun addCollisionSegments(segments: PoolVector3Array) {
     val _arg = Variant.new(segments)
-    __method_bind.add_collision_segments.call(this._handle, _arg, 1)
+    __method_bind.addCollisionSegments.call(this._handle, _arg, 1)
   }
 
   fun addCollisionTriangles(triangles: TriangleMesh) {
     val _arg = Variant.new(triangles)
-    __method_bind.add_collision_triangles.call(this._handle, _arg, 1)
+    __method_bind.addCollisionTriangles.call(this._handle, _arg, 1)
   }
 
   fun addHandles(
@@ -41,7 +41,7 @@ open class EditorSpatialGizmo(
     _args.append(material)
     _args.append(billboard)
     _args.append(secondary)
-    __method_bind.add_handles.call(this._handle, _args.toVariant(), 4)
+    __method_bind.addHandles.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addLines(
@@ -53,7 +53,7 @@ open class EditorSpatialGizmo(
     _args.append(lines)
     _args.append(material)
     _args.append(billboard)
-    __method_bind.add_lines.call(this._handle, _args.toVariant(), 3)
+    __method_bind.addLines.call(this._handle, _args.toVariant(), 3)
   }
 
   fun addMesh(
@@ -67,14 +67,14 @@ open class EditorSpatialGizmo(
     _args.append(billboard)
     _args.append(skeleton)
     _args.append(material)
-    __method_bind.add_mesh.call(this._handle, _args.toVariant(), 4)
+    __method_bind.addMesh.call(this._handle, _args.toVariant(), 4)
   }
 
   fun addUnscaledBillboard(material: Material, defaultScale: Float) {
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(defaultScale)
-    __method_bind.add_unscaled_billboard.call(this._handle, _args.toVariant(), 2)
+    __method_bind.addUnscaledBillboard.call(this._handle, _args.toVariant(), 2)
   }
 
   fun clear() {
@@ -82,23 +82,23 @@ open class EditorSpatialGizmo(
   }
 
   fun getPlugin(): EditorSpatialGizmoPlugin {
-    val _ret = __method_bind.get_plugin.call(this._handle)
+    val _ret = __method_bind.getPlugin.call(this._handle)
     return _ret.asObject(::EditorSpatialGizmoPlugin)!!
   }
 
   fun getSpatialNode(): Spatial {
-    val _ret = __method_bind.get_spatial_node.call(this._handle)
+    val _ret = __method_bind.getSpatialNode.call(this._handle)
     return _ret.asObject(::Spatial)!!
   }
 
   fun setHidden(hidden: Boolean) {
     val _arg = Variant.new(hidden)
-    __method_bind.set_hidden.call(this._handle, _arg, 1)
+    __method_bind.setHidden.call(this._handle, _arg, 1)
   }
 
   fun setSpatialNode(node: Node) {
     val _arg = Variant.new(node)
-    __method_bind.set_spatial_node.call(this._handle, _arg, 1)
+    __method_bind.setSpatialNode.call(this._handle, _arg, 1)
   }
 
   companion object {
@@ -116,47 +116,47 @@ open class EditorSpatialGizmo(
      * Container for method_bind pointers for EditorSpatialGizmo
      */
     private object __method_bind {
-      val add_collision_segments: CPointer<godot_method_bind>
+      val addCollisionSegments: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "add_collision_segments".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_collision_segments" }
+            "addCollisionSegments".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addCollisionSegments" }
         }
-      val add_collision_triangles: CPointer<godot_method_bind>
+      val addCollisionTriangles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "add_collision_triangles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_collision_triangles" }
+            "addCollisionTriangles".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addCollisionTriangles" }
         }
-      val add_handles: CPointer<godot_method_bind>
+      val addHandles: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "add_handles".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_handles" }
+            "addHandles".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addHandles" }
         }
-      val add_lines: CPointer<godot_method_bind>
+      val addLines: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "add_lines".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_lines" }
+            "addLines".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addLines" }
         }
-      val add_mesh: CPointer<godot_method_bind>
+      val addMesh: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "add_mesh".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_mesh" }
+            "addMesh".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addMesh" }
         }
-      val add_unscaled_billboard: CPointer<godot_method_bind>
+      val addUnscaledBillboard: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "add_unscaled_billboard".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method add_unscaled_billboard" }
+            "addUnscaledBillboard".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method addUnscaledBillboard" }
         }
       val clear: CPointer<godot_method_bind>
         get() = memScoped {
@@ -165,33 +165,33 @@ open class EditorSpatialGizmo(
             "clear".cstr.ptr)
           requireNotNull(ptr) { "No method_bind found for method clear" }
         }
-      val get_plugin: CPointer<godot_method_bind>
+      val getPlugin: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "get_plugin".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_plugin" }
+            "getPlugin".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getPlugin" }
         }
-      val get_spatial_node: CPointer<godot_method_bind>
+      val getSpatialNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "get_spatial_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method get_spatial_node" }
+            "getSpatialNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method getSpatialNode" }
         }
-      val set_hidden: CPointer<godot_method_bind>
+      val setHidden: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "set_hidden".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_hidden" }
+            "setHidden".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setHidden" }
         }
-      val set_spatial_node: CPointer<godot_method_bind>
+      val setSpatialNode: CPointer<godot_method_bind>
         get() = memScoped {
           val ptr =
             checkNotNull(Godot.gdnative.godot_method_bind_get_method)("EditorSpatialGizmo".cstr.ptr,
-            "set_spatial_node".cstr.ptr)
-          requireNotNull(ptr) { "No method_bind found for method set_spatial_node" }
+            "setSpatialNode".cstr.ptr)
+          requireNotNull(ptr) { "No method_bind found for method setSpatialNode" }
         }}
   }
 }
