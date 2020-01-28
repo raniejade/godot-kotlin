@@ -11,6 +11,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -61,6 +62,33 @@ open class BakedLightmapData(
     set(value) {
       setOctree(value)
     }
+
+  /**
+   * Specialized setter for bounds
+   */
+  fun bounds(cb: AABB.() -> Unit) {
+    val _p = bounds
+    cb(_p)
+    bounds = _p
+  }
+
+  /**
+   * Specialized setter for cellSpaceTransform
+   */
+  fun cellSpaceTransform(cb: Transform.() -> Unit) {
+    val _p = cellSpaceTransform
+    cb(_p)
+    cellSpaceTransform = _p
+  }
+
+  /**
+   * Specialized setter for octree
+   */
+  fun octree(cb: PoolByteArray.() -> Unit) {
+    val _p = octree
+    cb(_p)
+    octree = _p
+  }
 
   fun addUser(
     path: NodePath,

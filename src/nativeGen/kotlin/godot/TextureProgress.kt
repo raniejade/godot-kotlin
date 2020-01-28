@@ -10,6 +10,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -108,6 +109,42 @@ open class TextureProgress(
     set(value) {
       setTintUnder(value)
     }
+
+  /**
+   * Specialized setter for radialCenterOffset
+   */
+  fun radialCenterOffset(cb: Vector2.() -> Unit) {
+    val _p = radialCenterOffset
+    cb(_p)
+    radialCenterOffset = _p
+  }
+
+  /**
+   * Specialized setter for tintOver
+   */
+  fun tintOver(cb: Color.() -> Unit) {
+    val _p = tintOver
+    cb(_p)
+    tintOver = _p
+  }
+
+  /**
+   * Specialized setter for tintProgress
+   */
+  fun tintProgress(cb: Color.() -> Unit) {
+    val _p = tintProgress
+    cb(_p)
+    tintProgress = _p
+  }
+
+  /**
+   * Specialized setter for tintUnder
+   */
+  fun tintUnder(cb: Color.() -> Unit) {
+    val _p = tintUnder
+    cb(_p)
+    tintUnder = _p
+  }
 
   fun getFillDegrees(): Float {
     val _ret = __method_bind.getFillDegrees.call(this._handle)

@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -76,6 +77,24 @@ open class PhysicsShapeQueryParameters(
     set(value) {
       setTransform(value)
     }
+
+  /**
+   * Specialized setter for shapeRid
+   */
+  fun shapeRid(cb: RID.() -> Unit) {
+    val _p = shapeRid
+    cb(_p)
+    shapeRid = _p
+  }
+
+  /**
+   * Specialized setter for transform
+   */
+  fun transform(cb: Transform.() -> Unit) {
+    val _p = transform
+    cb(_p)
+    transform = _p
+  }
 
   fun getCollisionMask(): Int {
     val _ret = __method_bind.getCollisionMask.call(this._handle)

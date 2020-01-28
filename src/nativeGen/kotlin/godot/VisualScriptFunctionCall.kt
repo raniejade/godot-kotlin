@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -99,6 +100,15 @@ open class VisualScriptFunctionCall(
     set(value) {
       setValidate(value)
     }
+
+  /**
+   * Specialized setter for nodePath
+   */
+  fun nodePath(cb: NodePath.() -> Unit) {
+    val _p = nodePath
+    cb(_p)
+    nodePath = _p
+  }
 
   fun getBasePath(): NodePath {
     val _ret = __method_bind.getBasePath.call(this._handle)

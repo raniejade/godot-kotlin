@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -116,6 +117,33 @@ open class ReflectionProbe(
     set(value) {
       setUpdateMode(value.value)
     }
+
+  /**
+   * Specialized setter for extents
+   */
+  fun extents(cb: Vector3.() -> Unit) {
+    val _p = extents
+    cb(_p)
+    extents = _p
+  }
+
+  /**
+   * Specialized setter for interiorAmbientColor
+   */
+  fun interiorAmbientColor(cb: Color.() -> Unit) {
+    val _p = interiorAmbientColor
+    cb(_p)
+    interiorAmbientColor = _p
+  }
+
+  /**
+   * Specialized setter for originOffset
+   */
+  fun originOffset(cb: Vector3.() -> Unit) {
+    val _p = originOffset
+    cb(_p)
+    originOffset = _p
+  }
 
   fun areShadowsEnabled(): Boolean {
     val _ret = __method_bind.areShadowsEnabled.call(this._handle)

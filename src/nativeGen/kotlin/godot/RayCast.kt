@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -67,6 +68,15 @@ open class RayCast(
     set(value) {
       setExcludeParentBody(value)
     }
+
+  /**
+   * Specialized setter for castTo
+   */
+  fun castTo(cb: Vector3.() -> Unit) {
+    val _p = castTo
+    cb(_p)
+    castTo = _p
+  }
 
   fun addException(node: Object) {
     val _arg = Variant.new(node)

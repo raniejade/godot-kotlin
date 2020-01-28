@@ -11,6 +11,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -109,6 +110,33 @@ open class GIProbeData(
     set(value) {
       setToCellXform(value)
     }
+
+  /**
+   * Specialized setter for bounds
+   */
+  fun bounds(cb: AABB.() -> Unit) {
+    val _p = bounds
+    cb(_p)
+    bounds = _p
+  }
+
+  /**
+   * Specialized setter for dynamicData
+   */
+  fun dynamicData(cb: PoolIntArray.() -> Unit) {
+    val _p = dynamicData
+    cb(_p)
+    dynamicData = _p
+  }
+
+  /**
+   * Specialized setter for toCellXform
+   */
+  fun toCellXform(cb: Transform.() -> Unit) {
+    val _p = toCellXform
+    cb(_p)
+    toCellXform = _p
+  }
 
   fun getBias(): Float {
     val _ret = __method_bind.getBias.call(this._handle)

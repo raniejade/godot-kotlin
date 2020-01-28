@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -27,6 +28,15 @@ open class AnimationNodeBlendTree(
     set(value) {
       setGraphOffset(value)
     }
+
+  /**
+   * Specialized setter for graphOffset
+   */
+  fun graphOffset(cb: Vector2.() -> Unit) {
+    val _p = graphOffset
+    cb(_p)
+    graphOffset = _p
+  }
 
   fun addNode(
     name: String,

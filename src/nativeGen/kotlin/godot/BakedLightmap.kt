@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -100,6 +101,15 @@ open class BakedLightmap(
     set(value) {
       setLightData(value)
     }
+
+  /**
+   * Specialized setter for bakeExtents
+   */
+  fun bakeExtents(cb: Vector3.() -> Unit) {
+    val _p = bakeExtents
+    cb(_p)
+    bakeExtents = _p
+  }
 
   fun bake(fromNode: Node, createVisualDebug: Boolean): BakeError {
     val _args = VariantArray.new()

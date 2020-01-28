@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -180,6 +181,15 @@ open class NavigationMesh(
     set(value) {
       setVertices(value)
     }
+
+  /**
+   * Specialized setter for vertices
+   */
+  fun vertices(cb: PoolVector3Array.() -> Unit) {
+    val _p = vertices
+    cb(_p)
+    vertices = _p
+  }
 
   fun addPolygon(polygon: PoolIntArray) {
     val _arg = Variant.new(polygon)

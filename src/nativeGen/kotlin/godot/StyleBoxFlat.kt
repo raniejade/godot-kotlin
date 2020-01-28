@@ -10,6 +10,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -100,6 +101,42 @@ open class StyleBoxFlat(
     set(value) {
       setShadowSize(value)
     }
+
+  /**
+   * Specialized setter for bgColor
+   */
+  fun bgColor(cb: Color.() -> Unit) {
+    val _p = bgColor
+    cb(_p)
+    bgColor = _p
+  }
+
+  /**
+   * Specialized setter for borderColor
+   */
+  fun borderColor(cb: Color.() -> Unit) {
+    val _p = borderColor
+    cb(_p)
+    borderColor = _p
+  }
+
+  /**
+   * Specialized setter for shadowColor
+   */
+  fun shadowColor(cb: Color.() -> Unit) {
+    val _p = shadowColor
+    cb(_p)
+    shadowColor = _p
+  }
+
+  /**
+   * Specialized setter for shadowOffset
+   */
+  fun shadowOffset(cb: Vector2.() -> Unit) {
+    val _p = shadowOffset
+    cb(_p)
+    shadowOffset = _p
+  }
 
   fun getAaSize(): Int {
     val _ret = __method_bind.getAaSize.call(this._handle)

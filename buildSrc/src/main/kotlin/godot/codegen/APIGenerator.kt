@@ -4,10 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.squareup.kotlinpoet.*
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
-import godot.codegen.domain.GDClass
-import godot.codegen.domain.GDClassIndex
-import godot.codegen.domain.GDMethod
-import godot.codegen.domain.RawGDClass
+import godot.codegen.domain.*
 import java.io.File
 
 class APIGenerator {
@@ -51,6 +48,7 @@ class APIGenerator {
   }
 
   private fun TypeSpec.Builder.generateProperties(cls: GDClass, index: GDClassIndex): TypeSpec.Builder {
+    val specializedSetters = mutableListOf<Pair<GDProperty, GDType>>()
     val propertySpecs = cls.properties.values.toList()
       // skip properties requiring an index and begins with an _
       .filter { property -> property.index == -1 && !property.isVirtual }
@@ -127,12 +125,28 @@ class APIGenerator {
           }
           builder.mutable(true)
           builder.setter(setter.build())
+          specializedSetters.add(property to propertyType)
         }
 
         builder.build()
       }
 
     addProperties(propertySpecs)
+    specializedSetters
+      .filter { (_, type) -> type.isCoreType && !type.isEnum && !type.isPrimitive && type.coreType != CoreType.VARIANT_ARRAY }
+      .forEach { (property, type) ->
+        val lambdaType = LambdaTypeName.get(type.toClassName(), emptyList(), ClassName("kotlin", "Unit"))
+        val builder = FunSpec.builder(property.name)
+          .addKdoc("Specialized setter for %L", property.name)
+          .addParameter(
+            ParameterSpec.builder("cb", lambdaType)
+              .build()
+          )
+          .addStatement("val _p = %L", property.name)
+          .addStatement("cb(_p)")
+          .addStatement("%L = _p",  property.name)
+        addFunction(builder.build())
+      }
     return this
   }
 

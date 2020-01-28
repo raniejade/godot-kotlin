@@ -14,6 +14,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -152,6 +153,78 @@ open class Polygon2D(
     set(value) {
       setVertexColors(value)
     }
+
+  /**
+   * Specialized setter for color
+   */
+  fun color(cb: Color.() -> Unit) {
+    val _p = color
+    cb(_p)
+    color = _p
+  }
+
+  /**
+   * Specialized setter for offset
+   */
+  fun offset(cb: Vector2.() -> Unit) {
+    val _p = offset
+    cb(_p)
+    offset = _p
+  }
+
+  /**
+   * Specialized setter for polygon
+   */
+  fun polygon(cb: PoolVector2Array.() -> Unit) {
+    val _p = polygon
+    cb(_p)
+    polygon = _p
+  }
+
+  /**
+   * Specialized setter for skeleton
+   */
+  fun skeleton(cb: NodePath.() -> Unit) {
+    val _p = skeleton
+    cb(_p)
+    skeleton = _p
+  }
+
+  /**
+   * Specialized setter for textureOffset
+   */
+  fun textureOffset(cb: Vector2.() -> Unit) {
+    val _p = textureOffset
+    cb(_p)
+    textureOffset = _p
+  }
+
+  /**
+   * Specialized setter for textureScale
+   */
+  fun textureScale(cb: Vector2.() -> Unit) {
+    val _p = textureScale
+    cb(_p)
+    textureScale = _p
+  }
+
+  /**
+   * Specialized setter for uv
+   */
+  fun uv(cb: PoolVector2Array.() -> Unit) {
+    val _p = uv
+    cb(_p)
+    uv = _p
+  }
+
+  /**
+   * Specialized setter for vertexColors
+   */
+  fun vertexColors(cb: PoolColorArray.() -> Unit) {
+    val _p = vertexColors
+    cb(_p)
+    vertexColors = _p
+  }
 
   fun addBone(path: NodePath, weights: PoolRealArray) {
     val _args = VariantArray.new()

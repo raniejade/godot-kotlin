@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -115,6 +116,15 @@ open class SoftBody(
     set(value) {
       setVolumeStiffness(value)
     }
+
+  /**
+   * Specialized setter for parentCollisionIgnore
+   */
+  fun parentCollisionIgnore(cb: NodePath.() -> Unit) {
+    val _p = parentCollisionIgnore
+    cb(_p)
+    parentCollisionIgnore = _p
+  }
 
   fun addCollisionExceptionWith(body: Node) {
     val _arg = Variant.new(body)

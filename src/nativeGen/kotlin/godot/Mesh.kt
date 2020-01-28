@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -27,6 +28,15 @@ open class Mesh(
     set(value) {
       setLightmapSizeHint(value)
     }
+
+  /**
+   * Specialized setter for lightmapSizeHint
+   */
+  fun lightmapSizeHint(cb: Vector2.() -> Unit) {
+    val _p = lightmapSizeHint
+    cb(_p)
+    lightmapSizeHint = _p
+  }
 
   fun createConvexShape(): Shape {
     val _ret = __method_bind.createConvexShape.call(this._handle)

@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -147,6 +148,24 @@ open class Camera2D(
     set(value) {
       setZoom(value)
     }
+
+  /**
+   * Specialized setter for offset
+   */
+  fun offset(cb: Vector2.() -> Unit) {
+    val _p = offset
+    cb(_p)
+    offset = _p
+  }
+
+  /**
+   * Specialized setter for zoom
+   */
+  fun zoom(cb: Vector2.() -> Unit) {
+    val _p = zoom
+    cb(_p)
+    zoom = _p
+  }
 
   fun align() {
     __method_bind.align.call(this._handle)

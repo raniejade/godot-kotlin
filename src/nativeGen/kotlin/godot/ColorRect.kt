@@ -6,6 +6,7 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class ColorRect(
     set(value) {
       setFrameColor(value)
     }
+
+  /**
+   * Specialized setter for color
+   */
+  fun color(cb: Color.() -> Unit) {
+    val _p = color
+    cb(_p)
+    color = _p
+  }
 
   fun getFrameColor(): Color {
     val _ret = __method_bind.getFrameColor.call(this._handle)

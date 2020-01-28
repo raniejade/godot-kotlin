@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -42,6 +43,15 @@ open class InterpolatedCamera(
     set(value) {
       setTargetPath(value)
     }
+
+  /**
+   * Specialized setter for target
+   */
+  fun target(cb: NodePath.() -> Unit) {
+    val _p = target
+    cb(_p)
+    target = _p
+  }
 
   fun getSpeed(): Float {
     val _ret = __method_bind.getSpeed.call(this._handle)

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -32,6 +33,24 @@ open class InputEventMouseMotion(
     set(value) {
       setSpeed(value)
     }
+
+  /**
+   * Specialized setter for relative
+   */
+  fun relative(cb: Vector2.() -> Unit) {
+    val _p = relative
+    cb(_p)
+    relative = _p
+  }
+
+  /**
+   * Specialized setter for speed
+   */
+  fun speed(cb: Vector2.() -> Unit) {
+    val _p = speed
+    cb(_p)
+    speed = _p
+  }
 
   fun getRelative(): Vector2 {
     val _ret = __method_bind.getRelative.call(this._handle)

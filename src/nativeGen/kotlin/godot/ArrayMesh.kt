@@ -12,6 +12,7 @@ import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -38,6 +39,15 @@ open class ArrayMesh(
     set(value) {
       setCustomAabb(value)
     }
+
+  /**
+   * Specialized setter for customAabb
+   */
+  fun customAabb(cb: AABB.() -> Unit) {
+    val _p = customAabb
+    cb(_p)
+    customAabb = _p
+  }
 
   fun addBlendShape(name: String) {
     val _arg = Variant.new(name)

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class InputEventPanGesture(
     set(value) {
       setDelta(value)
     }
+
+  /**
+   * Specialized setter for delta
+   */
+  fun delta(cb: Vector2.() -> Unit) {
+    val _p = delta
+    cb(_p)
+    delta = _p
+  }
 
   fun getDelta(): Vector2 {
     val _ret = __method_bind.getDelta.call(this._handle)

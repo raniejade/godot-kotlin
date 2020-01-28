@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -42,6 +43,15 @@ open class CollisionPolygon(
     set(value) {
       setPolygon(value)
     }
+
+  /**
+   * Specialized setter for polygon
+   */
+  fun polygon(cb: PoolVector2Array.() -> Unit) {
+    val _p = polygon
+    cb(_p)
+    polygon = _p
+  }
 
   fun getDepth(): Float {
     val _ret = __method_bind.getDepth.call(this._handle)

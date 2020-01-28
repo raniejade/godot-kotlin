@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -84,6 +85,15 @@ open class AnimatedSprite(
     set(value) {
       setSpeedScale(value)
     }
+
+  /**
+   * Specialized setter for offset
+   */
+  fun offset(cb: Vector2.() -> Unit) {
+    val _p = offset
+    cb(_p)
+    offset = _p
+  }
 
   fun getAnimation(): String {
     val _ret = __method_bind.getAnimation.call(this._handle)

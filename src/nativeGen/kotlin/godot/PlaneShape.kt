@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Plane
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class PlaneShape(
     set(value) {
       setPlane(value)
     }
+
+  /**
+   * Specialized setter for plane
+   */
+  fun plane(cb: Plane.() -> Unit) {
+    val _p = plane
+    cb(_p)
+    plane = _p
+  }
 
   fun getPlane(): Plane {
     val _ret = __method_bind.getPlane.call(this._handle)

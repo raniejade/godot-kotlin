@@ -7,6 +7,7 @@ import godot.core.PoolByteArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -25,6 +26,15 @@ open class StreamPeerBuffer(
     set(value) {
       setDataArray(value)
     }
+
+  /**
+   * Specialized setter for dataArray
+   */
+  fun dataArray(cb: PoolByteArray.() -> Unit) {
+    val _p = dataArray
+    cb(_p)
+    dataArray = _p
+  }
 
   fun clear() {
     __method_bind.clear.call(this._handle)

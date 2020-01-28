@@ -13,6 +13,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -111,6 +112,15 @@ open class ItemList(
     set(value) {
       setSelectMode(value.value)
     }
+
+  /**
+   * Specialized setter for fixedIconSize
+   */
+  fun fixedIconSize(cb: Vector2.() -> Unit) {
+    val _p = fixedIconSize
+    cb(_p)
+    fixedIconSize = _p
+  }
 
   fun addIconItem(icon: Texture, selectable: Boolean) {
     val _args = VariantArray.new()

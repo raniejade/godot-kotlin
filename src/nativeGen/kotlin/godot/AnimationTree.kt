@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -61,6 +62,24 @@ open class AnimationTree(
     set(value) {
       setTreeRoot(value)
     }
+
+  /**
+   * Specialized setter for animPlayer
+   */
+  fun animPlayer(cb: NodePath.() -> Unit) {
+    val _p = animPlayer
+    cb(_p)
+    animPlayer = _p
+  }
+
+  /**
+   * Specialized setter for rootMotionTrack
+   */
+  fun rootMotionTrack(cb: NodePath.() -> Unit) {
+    val _p = rootMotionTrack
+    cb(_p)
+    rootMotionTrack = _p
+  }
 
   fun advance(delta: Float) {
     val _arg = Variant.new(delta)

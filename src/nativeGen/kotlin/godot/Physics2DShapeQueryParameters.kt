@@ -11,6 +11,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -85,6 +86,33 @@ open class Physics2DShapeQueryParameters(
     set(value) {
       setTransform(value)
     }
+
+  /**
+   * Specialized setter for motion
+   */
+  fun motion(cb: Vector2.() -> Unit) {
+    val _p = motion
+    cb(_p)
+    motion = _p
+  }
+
+  /**
+   * Specialized setter for shapeRid
+   */
+  fun shapeRid(cb: RID.() -> Unit) {
+    val _p = shapeRid
+    cb(_p)
+    shapeRid = _p
+  }
+
+  /**
+   * Specialized setter for transform
+   */
+  fun transform(cb: Transform2D.() -> Unit) {
+    val _p = transform
+    cb(_p)
+    transform = _p
+  }
 
   fun getCollisionLayer(): Int {
     val _ret = __method_bind.getCollisionLayer.call(this._handle)

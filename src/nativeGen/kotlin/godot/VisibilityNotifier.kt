@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -25,6 +26,15 @@ open class VisibilityNotifier(
     set(value) {
       setAabb(value)
     }
+
+  /**
+   * Specialized setter for aabb
+   */
+  fun aabb(cb: AABB.() -> Unit) {
+    val _p = aabb
+    cb(_p)
+    aabb = _p
+  }
 
   fun getAabb(): AABB {
     val _ret = __method_bind.getAabb.call(this._handle)

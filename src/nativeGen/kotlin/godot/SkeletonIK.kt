@@ -12,6 +12,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -102,6 +103,33 @@ open class SkeletonIK(
     set(value) {
       setUseMagnet(value)
     }
+
+  /**
+   * Specialized setter for magnet
+   */
+  fun magnet(cb: Vector3.() -> Unit) {
+    val _p = magnet
+    cb(_p)
+    magnet = _p
+  }
+
+  /**
+   * Specialized setter for target
+   */
+  fun target(cb: Transform.() -> Unit) {
+    val _p = target
+    cb(_p)
+    target = _p
+  }
+
+  /**
+   * Specialized setter for targetNode
+   */
+  fun targetNode(cb: NodePath.() -> Unit) {
+    val _p = targetNode
+    cb(_p)
+    targetNode = _p
+  }
 
   fun getInterpolation(): Float {
     val _ret = __method_bind.getInterpolation.call(this._handle)

@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -58,6 +59,15 @@ open class PrismMesh(
     set(value) {
       setSubdivideWidth(value)
     }
+
+  /**
+   * Specialized setter for size
+   */
+  fun size(cb: Vector3.() -> Unit) {
+    val _p = size
+    cb(_p)
+    size = _p
+  }
 
   fun getLeftToRight(): Float {
     val _ret = __method_bind.getLeftToRight.call(this._handle)

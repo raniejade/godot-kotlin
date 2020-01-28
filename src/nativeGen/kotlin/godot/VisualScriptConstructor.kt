@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -33,6 +34,15 @@ open class VisualScriptConstructor(
     set(value) {
       setConstructorType(value.value)
     }
+
+  /**
+   * Specialized setter for constructor
+   */
+  fun constructor(cb: Dictionary.() -> Unit) {
+    val _p = constructor
+    cb(_p)
+    constructor = _p
+  }
 
   fun getConstructor(): Dictionary {
     val _ret = __method_bind.getConstructor.call(this._handle)

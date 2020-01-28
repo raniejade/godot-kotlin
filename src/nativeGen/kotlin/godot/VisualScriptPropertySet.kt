@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -82,6 +83,15 @@ open class VisualScriptPropertySet(
     set(value) {
       setCallMode(value.value)
     }
+
+  /**
+   * Specialized setter for nodePath
+   */
+  fun nodePath(cb: NodePath.() -> Unit) {
+    val _p = nodePath
+    cb(_p)
+    nodePath = _p
+  }
 
   fun getAssignOp(): AssignOp {
     val _ret = __method_bind.getAssignOp.call(this._handle)

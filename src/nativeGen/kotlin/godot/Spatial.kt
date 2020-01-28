@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -84,6 +85,60 @@ open class Spatial(
     set(value) {
       setVisible(value)
     }
+
+  /**
+   * Specialized setter for globalTransform
+   */
+  fun globalTransform(cb: Transform.() -> Unit) {
+    val _p = globalTransform
+    cb(_p)
+    globalTransform = _p
+  }
+
+  /**
+   * Specialized setter for rotation
+   */
+  fun rotation(cb: Vector3.() -> Unit) {
+    val _p = rotation
+    cb(_p)
+    rotation = _p
+  }
+
+  /**
+   * Specialized setter for rotationDegrees
+   */
+  fun rotationDegrees(cb: Vector3.() -> Unit) {
+    val _p = rotationDegrees
+    cb(_p)
+    rotationDegrees = _p
+  }
+
+  /**
+   * Specialized setter for scale
+   */
+  fun scale(cb: Vector3.() -> Unit) {
+    val _p = scale
+    cb(_p)
+    scale = _p
+  }
+
+  /**
+   * Specialized setter for transform
+   */
+  fun transform(cb: Transform.() -> Unit) {
+    val _p = transform
+    cb(_p)
+    transform = _p
+  }
+
+  /**
+   * Specialized setter for translation
+   */
+  fun translation(cb: Vector3.() -> Unit) {
+    val _p = translation
+    cb(_p)
+    translation = _p
+  }
 
   fun forceUpdateTransform() {
     __method_bind.forceUpdateTransform.call(this._handle)

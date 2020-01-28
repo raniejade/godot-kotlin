@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -124,6 +125,24 @@ open class CSGPolygon(
     set(value) {
       setSpinSides(value)
     }
+
+  /**
+   * Specialized setter for pathNode
+   */
+  fun pathNode(cb: NodePath.() -> Unit) {
+    val _p = pathNode
+    cb(_p)
+    pathNode = _p
+  }
+
+  /**
+   * Specialized setter for polygon
+   */
+  fun polygon(cb: PoolVector2Array.() -> Unit) {
+    val _p = polygon
+    cb(_p)
+    polygon = _p
+  }
 
   fun getDepth(): Float {
     val _ret = __method_bind.getDepth.call(this._handle)

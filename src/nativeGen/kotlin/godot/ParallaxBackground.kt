@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -65,6 +66,51 @@ open class ParallaxBackground(
     set(value) {
       setScrollOffset(value)
     }
+
+  /**
+   * Specialized setter for scrollBaseOffset
+   */
+  fun scrollBaseOffset(cb: Vector2.() -> Unit) {
+    val _p = scrollBaseOffset
+    cb(_p)
+    scrollBaseOffset = _p
+  }
+
+  /**
+   * Specialized setter for scrollBaseScale
+   */
+  fun scrollBaseScale(cb: Vector2.() -> Unit) {
+    val _p = scrollBaseScale
+    cb(_p)
+    scrollBaseScale = _p
+  }
+
+  /**
+   * Specialized setter for scrollLimitBegin
+   */
+  fun scrollLimitBegin(cb: Vector2.() -> Unit) {
+    val _p = scrollLimitBegin
+    cb(_p)
+    scrollLimitBegin = _p
+  }
+
+  /**
+   * Specialized setter for scrollLimitEnd
+   */
+  fun scrollLimitEnd(cb: Vector2.() -> Unit) {
+    val _p = scrollLimitEnd
+    cb(_p)
+    scrollLimitEnd = _p
+  }
+
+  /**
+   * Specialized setter for scrollOffset
+   */
+  fun scrollOffset(cb: Vector2.() -> Unit) {
+    val _p = scrollOffset
+    cb(_p)
+    scrollOffset = _p
+  }
 
   fun getLimitBegin(): Vector2 {
     val _ret = __method_bind.getLimitBegin.call(this._handle)

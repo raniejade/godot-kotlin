@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -40,6 +41,15 @@ open class MeshTexture(
     set(value) {
       setMesh(value)
     }
+
+  /**
+   * Specialized setter for imageSize
+   */
+  fun imageSize(cb: Vector2.() -> Unit) {
+    val _p = imageSize
+    cb(_p)
+    imageSize = _p
+  }
 
   fun getBaseTexture(): Texture {
     val _ret = __method_bind.getBaseTexture.call(this._handle)

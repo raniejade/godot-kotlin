@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -33,6 +34,15 @@ open class ColorPickerButton(
     set(value) {
       setEditAlpha(value)
     }
+
+  /**
+   * Specialized setter for color
+   */
+  fun color(cb: Color.() -> Unit) {
+    val _p = color
+    cb(_p)
+    color = _p
+  }
 
   fun getPickColor(): Color {
     val _ret = __method_bind.getPickColor.call(this._handle)

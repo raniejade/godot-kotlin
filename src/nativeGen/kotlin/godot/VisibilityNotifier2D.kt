@@ -7,6 +7,7 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -25,6 +26,15 @@ open class VisibilityNotifier2D(
     set(value) {
       setRect(value)
     }
+
+  /**
+   * Specialized setter for rect
+   */
+  fun rect(cb: Rect2.() -> Unit) {
+    val _p = rect
+    cb(_p)
+    rect = _p
+  }
 
   fun getRect(): Rect2 {
     val _ret = __method_bind.getRect.call(this._handle)

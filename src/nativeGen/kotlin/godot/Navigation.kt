@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -28,6 +29,15 @@ open class Navigation(
     set(value) {
       setUpVector(value)
     }
+
+  /**
+   * Specialized setter for upVector
+   */
+  fun upVector(cb: Vector3.() -> Unit) {
+    val _p = upVector
+    cb(_p)
+    upVector = _p
+  }
 
   fun getClosestPoint(toPoint: Vector3): Vector3 {
     val _arg = Variant.new(toPoint)

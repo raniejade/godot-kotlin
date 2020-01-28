@@ -11,6 +11,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -61,6 +62,15 @@ open class GraphEdit(
     set(value) {
       setZoom(value)
     }
+
+  /**
+   * Specialized setter for scrollOffset
+   */
+  fun scrollOffset(cb: Vector2.() -> Unit) {
+    val _p = scrollOffset
+    cb(_p)
+    scrollOffset = _p
+  }
 
   fun addValidConnectionType(fromType: Int, toType: Int) {
     val _args = VariantArray.new()

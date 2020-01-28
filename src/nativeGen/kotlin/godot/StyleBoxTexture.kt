@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -76,6 +77,24 @@ open class StyleBoxTexture(
     set(value) {
       setTexture(value)
     }
+
+  /**
+   * Specialized setter for modulateColor
+   */
+  fun modulateColor(cb: Color.() -> Unit) {
+    val _p = modulateColor
+    cb(_p)
+    modulateColor = _p
+  }
+
+  /**
+   * Specialized setter for regionRect
+   */
+  fun regionRect(cb: Rect2.() -> Unit) {
+    val _p = regionRect
+    cb(_p)
+    regionRect = _p
+  }
 
   fun getExpandMarginSize(margin: Int): Float {
     val _arg = Variant.new(margin)

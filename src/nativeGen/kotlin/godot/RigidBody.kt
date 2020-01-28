@@ -9,6 +9,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -155,6 +156,24 @@ open class RigidBody(
     set(value) {
       setWeight(value)
     }
+
+  /**
+   * Specialized setter for angularVelocity
+   */
+  fun angularVelocity(cb: Vector3.() -> Unit) {
+    val _p = angularVelocity
+    cb(_p)
+    angularVelocity = _p
+  }
+
+  /**
+   * Specialized setter for linearVelocity
+   */
+  fun linearVelocity(cb: Vector3.() -> Unit) {
+    val _p = linearVelocity
+    cb(_p)
+    linearVelocity = _p
+  }
 
   fun addCentralForce(force: Vector3) {
     val _arg = Variant.new(force)

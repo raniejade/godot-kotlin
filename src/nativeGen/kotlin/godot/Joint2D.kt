@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -50,6 +51,24 @@ open class Joint2D(
     set(value) {
       setNodeB(value)
     }
+
+  /**
+   * Specialized setter for nodeA
+   */
+  fun nodeA(cb: NodePath.() -> Unit) {
+    val _p = nodeA
+    cb(_p)
+    nodeA = _p
+  }
+
+  /**
+   * Specialized setter for nodeB
+   */
+  fun nodeB(cb: NodePath.() -> Unit) {
+    val _p = nodeB
+    cb(_p)
+    nodeB = _p
+  }
 
   fun getBias(): Float {
     val _ret = __method_bind.getBias.call(this._handle)

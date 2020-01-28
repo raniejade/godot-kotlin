@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -34,6 +35,15 @@ open class Bone2D(
     set(value) {
       setRest(value)
     }
+
+  /**
+   * Specialized setter for rest
+   */
+  fun rest(cb: Transform2D.() -> Unit) {
+    val _p = rest
+    cb(_p)
+    rest = _p
+  }
 
   fun applyRest() {
     __method_bind.applyRest.call(this._handle)

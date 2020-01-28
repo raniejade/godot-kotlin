@@ -7,6 +7,7 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -49,6 +50,24 @@ open class AtlasTexture(
     set(value) {
       setRegion(value)
     }
+
+  /**
+   * Specialized setter for margin
+   */
+  fun margin(cb: Rect2.() -> Unit) {
+    val _p = margin
+    cb(_p)
+    margin = _p
+  }
+
+  /**
+   * Specialized setter for region
+   */
+  fun region(cb: Rect2.() -> Unit) {
+    val _p = region
+    cb(_p)
+    region = _p
+  }
 
   fun getAtlas(): Texture {
     val _ret = __method_bind.getAtlas.call(this._handle)

@@ -7,6 +7,7 @@ import godot.core.PoolRealArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -41,6 +42,15 @@ open class HeightMapShape(
     set(value) {
       setMapWidth(value)
     }
+
+  /**
+   * Specialized setter for mapData
+   */
+  fun mapData(cb: PoolRealArray.() -> Unit) {
+    val _p = mapData
+    cb(_p)
+    mapData = _p
+  }
 
   fun getMapData(): PoolRealArray {
     val _ret = __method_bind.getMapData.call(this._handle)

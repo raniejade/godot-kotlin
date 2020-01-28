@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -139,6 +140,15 @@ open class Particles(
     set(value) {
       setVisibilityAabb(value)
     }
+
+  /**
+   * Specialized setter for visibilityAabb
+   */
+  fun visibilityAabb(cb: AABB.() -> Unit) {
+    val _p = visibilityAabb
+    cb(_p)
+    visibilityAabb = _p
+  }
 
   fun captureAabb(): AABB {
     val _ret = __method_bind.captureAabb.call(this._handle)

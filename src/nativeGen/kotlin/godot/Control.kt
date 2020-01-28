@@ -13,6 +13,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -151,6 +152,51 @@ open class Control(
     set(value) {
       setTheme(value)
     }
+
+  /**
+   * Specialized setter for focusNext
+   */
+  fun focusNext(cb: NodePath.() -> Unit) {
+    val _p = focusNext
+    cb(_p)
+    focusNext = _p
+  }
+
+  /**
+   * Specialized setter for focusPrevious
+   */
+  fun focusPrevious(cb: NodePath.() -> Unit) {
+    val _p = focusPrevious
+    cb(_p)
+    focusPrevious = _p
+  }
+
+  /**
+   * Specialized setter for rectMinSize
+   */
+  fun rectMinSize(cb: Vector2.() -> Unit) {
+    val _p = rectMinSize
+    cb(_p)
+    rectMinSize = _p
+  }
+
+  /**
+   * Specialized setter for rectPivotOffset
+   */
+  fun rectPivotOffset(cb: Vector2.() -> Unit) {
+    val _p = rectPivotOffset
+    cb(_p)
+    rectPivotOffset = _p
+  }
+
+  /**
+   * Specialized setter for rectScale
+   */
+  fun rectScale(cb: Vector2.() -> Unit) {
+    val _p = rectScale
+    cb(_p)
+    rectScale = _p
+  }
 
   fun acceptEvent() {
     __method_bind.acceptEvent.call(this._handle)

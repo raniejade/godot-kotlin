@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -35,6 +36,15 @@ open class CameraFeed(
     set(value) {
       setTransform(value)
     }
+
+  /**
+   * Specialized setter for feedTransform
+   */
+  fun feedTransform(cb: Transform2D.() -> Unit) {
+    val _p = feedTransform
+    cb(_p)
+    feedTransform = _p
+  }
 
   fun getId(): Int {
     val _ret = __method_bind.getId.call(this._handle)

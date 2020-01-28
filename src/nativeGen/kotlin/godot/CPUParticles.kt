@@ -12,6 +12,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -214,6 +215,60 @@ open class CPUParticles(
     set(value) {
       setSpread(value)
     }
+
+  /**
+   * Specialized setter for color
+   */
+  fun color(cb: Color.() -> Unit) {
+    val _p = color
+    cb(_p)
+    color = _p
+  }
+
+  /**
+   * Specialized setter for emissionBoxExtents
+   */
+  fun emissionBoxExtents(cb: Vector3.() -> Unit) {
+    val _p = emissionBoxExtents
+    cb(_p)
+    emissionBoxExtents = _p
+  }
+
+  /**
+   * Specialized setter for emissionColors
+   */
+  fun emissionColors(cb: PoolColorArray.() -> Unit) {
+    val _p = emissionColors
+    cb(_p)
+    emissionColors = _p
+  }
+
+  /**
+   * Specialized setter for emissionNormals
+   */
+  fun emissionNormals(cb: PoolVector3Array.() -> Unit) {
+    val _p = emissionNormals
+    cb(_p)
+    emissionNormals = _p
+  }
+
+  /**
+   * Specialized setter for emissionPoints
+   */
+  fun emissionPoints(cb: PoolVector3Array.() -> Unit) {
+    val _p = emissionPoints
+    cb(_p)
+    emissionPoints = _p
+  }
+
+  /**
+   * Specialized setter for gravity
+   */
+  fun gravity(cb: Vector3.() -> Unit) {
+    val _p = gravity
+    cb(_p)
+    gravity = _p
+  }
 
   fun convertFromParticles(particles: Node) {
     val _arg = Variant.new(particles)

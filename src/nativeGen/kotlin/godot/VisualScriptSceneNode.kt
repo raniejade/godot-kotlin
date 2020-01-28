@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class VisualScriptSceneNode(
     set(value) {
       setNodePath(value)
     }
+
+  /**
+   * Specialized setter for nodePath
+   */
+  fun nodePath(cb: NodePath.() -> Unit) {
+    val _p = nodePath
+    cb(_p)
+    nodePath = _p
+  }
 
   fun getNodePath(): NodePath {
     val _ret = __method_bind.getNodePath.call(this._handle)

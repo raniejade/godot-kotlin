@@ -9,6 +9,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -99,6 +100,15 @@ open class GIProbe(
     set(value) {
       setSubdiv(value.value)
     }
+
+  /**
+   * Specialized setter for extents
+   */
+  fun extents(cb: Vector3.() -> Unit) {
+    val _p = extents
+    cb(_p)
+    extents = _p
+  }
 
   fun bake(fromNode: Node, createVisualDebug: Boolean) {
     val _args = VariantArray.new()

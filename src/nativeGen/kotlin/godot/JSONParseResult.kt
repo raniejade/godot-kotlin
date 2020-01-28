@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -50,6 +51,15 @@ open class JSONParseResult(
     set(value) {
       setResult(value)
     }
+
+  /**
+   * Specialized setter for result
+   */
+  fun result(cb: Variant.() -> Unit) {
+    val _p = result
+    cb(_p)
+    result = _p
+  }
 
   fun getError(): GDError {
     val _ret = __method_bind.getError.call(this._handle)

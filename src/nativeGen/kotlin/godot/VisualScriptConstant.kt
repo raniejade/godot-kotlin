@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -32,6 +33,15 @@ open class VisualScriptConstant(
     set(value) {
       setConstantValue(value)
     }
+
+  /**
+   * Specialized setter for value
+   */
+  fun value(cb: Variant.() -> Unit) {
+    val _p = value
+    cb(_p)
+    value = _p
+  }
 
   fun getConstantType(): Variant.Type {
     val _ret = __method_bind.getConstantType.call(this._handle)

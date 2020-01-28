@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -42,6 +43,15 @@ open class ProximityGroup(
     set(value) {
       setGroupName(value)
     }
+
+  /**
+   * Specialized setter for gridRadius
+   */
+  fun gridRadius(cb: Vector3.() -> Unit) {
+    val _p = gridRadius
+    cb(_p)
+    gridRadius = _p
+  }
 
   fun broadcast(name: String, parameters: Variant) {
     val _args = VariantArray.new()

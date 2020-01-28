@@ -8,6 +8,7 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -42,6 +43,15 @@ open class InputEventScreenTouch(
     set(value) {
       setPressed(value)
     }
+
+  /**
+   * Specialized setter for position
+   */
+  fun position(cb: Vector2.() -> Unit) {
+    val _p = position
+    cb(_p)
+    position = _p
+  }
 
   fun getIndex(): Int {
     val _ret = __method_bind.getIndex.call(this._handle)

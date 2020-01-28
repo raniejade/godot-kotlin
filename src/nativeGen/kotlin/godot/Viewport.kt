@@ -11,6 +11,7 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -221,6 +222,33 @@ open class Viewport(
     set(value) {
       setWorld2d(value)
     }
+
+  /**
+   * Specialized setter for canvasTransform
+   */
+  fun canvasTransform(cb: Transform2D.() -> Unit) {
+    val _p = canvasTransform
+    cb(_p)
+    canvasTransform = _p
+  }
+
+  /**
+   * Specialized setter for globalCanvasTransform
+   */
+  fun globalCanvasTransform(cb: Transform2D.() -> Unit) {
+    val _p = globalCanvasTransform
+    cb(_p)
+    globalCanvasTransform = _p
+  }
+
+  /**
+   * Specialized setter for size
+   */
+  fun size(cb: Vector2.() -> Unit) {
+    val _p = size
+    cb(_p)
+    size = _p
+  }
 
   fun findWorld(): World {
     val _ret = __method_bind.findWorld.call(this._handle)

@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -140,6 +141,33 @@ open class ParticlesMaterial(
     set(value) {
       setTrailSizeModifier(value)
     }
+
+  /**
+   * Specialized setter for color
+   */
+  fun color(cb: Color.() -> Unit) {
+    val _p = color
+    cb(_p)
+    color = _p
+  }
+
+  /**
+   * Specialized setter for emissionBoxExtents
+   */
+  fun emissionBoxExtents(cb: Vector3.() -> Unit) {
+    val _p = emissionBoxExtents
+    cb(_p)
+    emissionBoxExtents = _p
+  }
+
+  /**
+   * Specialized setter for gravity
+   */
+  fun gravity(cb: Vector3.() -> Unit) {
+    val _p = gravity
+    cb(_p)
+    gravity = _p
+  }
 
   fun getColor(): Color {
     val _ret = __method_bind.getColor.call(this._handle)

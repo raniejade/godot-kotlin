@@ -8,6 +8,7 @@ import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -26,6 +27,15 @@ open class NavigationPolygon(
     set(value) {
       setVertices(value)
     }
+
+  /**
+   * Specialized setter for vertices
+   */
+  fun vertices(cb: PoolVector2Array.() -> Unit) {
+    val _p = vertices
+    cb(_p)
+    vertices = _p
+  }
 
   fun addOutline(outline: PoolVector2Array) {
     val _arg = Variant.new(outline)

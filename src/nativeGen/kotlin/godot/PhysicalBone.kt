@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -83,6 +84,24 @@ open class PhysicalBone(
     set(value) {
       setWeight(value)
     }
+
+  /**
+   * Specialized setter for bodyOffset
+   */
+  fun bodyOffset(cb: Transform.() -> Unit) {
+    val _p = bodyOffset
+    cb(_p)
+    bodyOffset = _p
+  }
+
+  /**
+   * Specialized setter for jointOffset
+   */
+  fun jointOffset(cb: Transform.() -> Unit) {
+    val _p = jointOffset
+    cb(_p)
+    jointOffset = _p
+  }
 
   fun getBodyOffset(): Transform {
     val _ret = __method_bind.getBodyOffset.call(this._handle)

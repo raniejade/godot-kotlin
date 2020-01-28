@@ -11,6 +11,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -637,6 +638,78 @@ open class Environment(
     set(value) {
       setTonemapWhite(value)
     }
+
+  /**
+   * Specialized setter for ambientLightColor
+   */
+  fun ambientLightColor(cb: Color.() -> Unit) {
+    val _p = ambientLightColor
+    cb(_p)
+    ambientLightColor = _p
+  }
+
+  /**
+   * Specialized setter for backgroundColor
+   */
+  fun backgroundColor(cb: Color.() -> Unit) {
+    val _p = backgroundColor
+    cb(_p)
+    backgroundColor = _p
+  }
+
+  /**
+   * Specialized setter for backgroundSkyOrientation
+   */
+  fun backgroundSkyOrientation(cb: Basis.() -> Unit) {
+    val _p = backgroundSkyOrientation
+    cb(_p)
+    backgroundSkyOrientation = _p
+  }
+
+  /**
+   * Specialized setter for backgroundSkyRotation
+   */
+  fun backgroundSkyRotation(cb: Vector3.() -> Unit) {
+    val _p = backgroundSkyRotation
+    cb(_p)
+    backgroundSkyRotation = _p
+  }
+
+  /**
+   * Specialized setter for backgroundSkyRotationDegrees
+   */
+  fun backgroundSkyRotationDegrees(cb: Vector3.() -> Unit) {
+    val _p = backgroundSkyRotationDegrees
+    cb(_p)
+    backgroundSkyRotationDegrees = _p
+  }
+
+  /**
+   * Specialized setter for fogColor
+   */
+  fun fogColor(cb: Color.() -> Unit) {
+    val _p = fogColor
+    cb(_p)
+    fogColor = _p
+  }
+
+  /**
+   * Specialized setter for fogSunColor
+   */
+  fun fogSunColor(cb: Color.() -> Unit) {
+    val _p = fogSunColor
+    cb(_p)
+    fogSunColor = _p
+  }
+
+  /**
+   * Specialized setter for ssaoColor
+   */
+  fun ssaoColor(cb: Color.() -> Unit) {
+    val _p = ssaoColor
+    cb(_p)
+    ssaoColor = _p
+  }
 
   fun getAdjustmentBrightness(): Float {
     val _ret = __method_bind.getAdjustmentBrightness.call(this._handle)

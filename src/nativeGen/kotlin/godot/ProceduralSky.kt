@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -146,6 +147,51 @@ open class ProceduralSky(
     set(value) {
       setTextureSize(value.value)
     }
+
+  /**
+   * Specialized setter for groundBottomColor
+   */
+  fun groundBottomColor(cb: Color.() -> Unit) {
+    val _p = groundBottomColor
+    cb(_p)
+    groundBottomColor = _p
+  }
+
+  /**
+   * Specialized setter for groundHorizonColor
+   */
+  fun groundHorizonColor(cb: Color.() -> Unit) {
+    val _p = groundHorizonColor
+    cb(_p)
+    groundHorizonColor = _p
+  }
+
+  /**
+   * Specialized setter for skyHorizonColor
+   */
+  fun skyHorizonColor(cb: Color.() -> Unit) {
+    val _p = skyHorizonColor
+    cb(_p)
+    skyHorizonColor = _p
+  }
+
+  /**
+   * Specialized setter for skyTopColor
+   */
+  fun skyTopColor(cb: Color.() -> Unit) {
+    val _p = skyTopColor
+    cb(_p)
+    skyTopColor = _p
+  }
+
+  /**
+   * Specialized setter for sunColor
+   */
+  fun sunColor(cb: Color.() -> Unit) {
+    val _p = sunColor
+    cb(_p)
+    sunColor = _p
+  }
 
   fun getGroundBottomColor(): Color {
     val _ret = __method_bind.getGroundBottomColor.call(this._handle)

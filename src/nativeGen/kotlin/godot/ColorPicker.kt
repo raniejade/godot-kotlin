@@ -8,6 +8,7 @@ import godot.core.PoolColorArray
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -66,6 +67,15 @@ open class ColorPicker(
     set(value) {
       setRawMode(value)
     }
+
+  /**
+   * Specialized setter for color
+   */
+  fun color(cb: Color.() -> Unit) {
+    val _p = color
+    cb(_p)
+    color = _p
+  }
 
   fun addPreset(color: Color) {
     val _arg = Variant.new(color)

@@ -10,6 +10,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -76,6 +77,15 @@ open class GraphNode(
     set(value) {
       setTitle(value)
     }
+
+  /**
+   * Specialized setter for offset
+   */
+  fun offset(cb: Vector2.() -> Unit) {
+    val _p = offset
+    cb(_p)
+    offset = _p
+  }
 
   fun clearAllSlots() {
     __method_bind.clearAllSlots.call(this._handle)

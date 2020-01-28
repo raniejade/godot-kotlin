@@ -6,6 +6,7 @@ import godot.core.Color
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class ReferenceRect(
     set(value) {
       setBorderColor(value)
     }
+
+  /**
+   * Specialized setter for borderColor
+   */
+  fun borderColor(cb: Color.() -> Unit) {
+    val _p = borderColor
+    cb(_p)
+    borderColor = _p
+  }
 
   fun getBorderColor(): Color {
     val _ret = __method_bind.getBorderColor.call(this._handle)

@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -147,6 +148,15 @@ open class Particles2D(
     set(value) {
       setVisibilityRect(value)
     }
+
+  /**
+   * Specialized setter for visibilityRect
+   */
+  fun visibilityRect(cb: Rect2.() -> Unit) {
+    val _p = visibilityRect
+    cb(_p)
+    visibilityRect = _p
+  }
 
   fun captureRect(): Rect2 {
     val _ret = __method_bind.captureRect.call(this._handle)

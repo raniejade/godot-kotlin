@@ -11,6 +11,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -93,6 +94,33 @@ open class CanvasLayer(
     set(value) {
       setTransform(value)
     }
+
+  /**
+   * Specialized setter for offset
+   */
+  fun offset(cb: Vector2.() -> Unit) {
+    val _p = offset
+    cb(_p)
+    offset = _p
+  }
+
+  /**
+   * Specialized setter for scale
+   */
+  fun scale(cb: Vector2.() -> Unit) {
+    val _p = scale
+    cb(_p)
+    scale = _p
+  }
+
+  /**
+   * Specialized setter for transform
+   */
+  fun transform(cb: Transform2D.() -> Unit) {
+    val _p = transform
+    cb(_p)
+    transform = _p
+  }
 
   fun getCanvas(): RID {
     val _ret = __method_bind.getCanvas.call(this._handle)

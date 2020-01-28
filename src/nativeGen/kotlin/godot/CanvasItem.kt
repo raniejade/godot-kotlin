@@ -16,6 +16,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -82,6 +83,24 @@ open class CanvasItem(
     set(value) {
       setVisible(value)
     }
+
+  /**
+   * Specialized setter for modulate
+   */
+  fun modulate(cb: Color.() -> Unit) {
+    val _p = modulate
+    cb(_p)
+    modulate = _p
+  }
+
+  /**
+   * Specialized setter for selfModulate
+   */
+  fun selfModulate(cb: Color.() -> Unit) {
+    val _p = selfModulate
+    cb(_p)
+    selfModulate = _p
+  }
 
   fun drawChar(
     font: Font,

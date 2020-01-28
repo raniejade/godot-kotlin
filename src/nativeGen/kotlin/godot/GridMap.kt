@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -100,6 +101,15 @@ open class GridMap(
     set(value) {
       setTheme(value)
     }
+
+  /**
+   * Specialized setter for cellSize
+   */
+  fun cellSize(cb: Vector3.() -> Unit) {
+    val _p = cellSize
+    cb(_p)
+    cellSize = _p
+  }
 
   fun clear() {
     __method_bind.clear.call(this._handle)

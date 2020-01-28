@@ -10,6 +10,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -452,6 +453,69 @@ open class SpatialMaterial(
     set(value) {
       setUv2TriplanarBlendSharpness(value)
     }
+
+  /**
+   * Specialized setter for albedoColor
+   */
+  fun albedoColor(cb: Color.() -> Unit) {
+    val _p = albedoColor
+    cb(_p)
+    albedoColor = _p
+  }
+
+  /**
+   * Specialized setter for emission
+   */
+  fun emission(cb: Color.() -> Unit) {
+    val _p = emission
+    cb(_p)
+    emission = _p
+  }
+
+  /**
+   * Specialized setter for transmission
+   */
+  fun transmission(cb: Color.() -> Unit) {
+    val _p = transmission
+    cb(_p)
+    transmission = _p
+  }
+
+  /**
+   * Specialized setter for uv1Offset
+   */
+  fun uv1Offset(cb: Vector3.() -> Unit) {
+    val _p = uv1Offset
+    cb(_p)
+    uv1Offset = _p
+  }
+
+  /**
+   * Specialized setter for uv1Scale
+   */
+  fun uv1Scale(cb: Vector3.() -> Unit) {
+    val _p = uv1Scale
+    cb(_p)
+    uv1Scale = _p
+  }
+
+  /**
+   * Specialized setter for uv2Offset
+   */
+  fun uv2Offset(cb: Vector3.() -> Unit) {
+    val _p = uv2Offset
+    cb(_p)
+    uv2Offset = _p
+  }
+
+  /**
+   * Specialized setter for uv2Scale
+   */
+  fun uv2Scale(cb: Vector3.() -> Unit) {
+    val _p = uv2Scale
+    cb(_p)
+    uv2Scale = _p
+  }
 
   fun getAlbedo(): Color {
     val _ret = __method_bind.getAlbedo.call(this._handle)

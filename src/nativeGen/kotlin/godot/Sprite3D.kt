@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -66,6 +67,15 @@ open class Sprite3D(
     set(value) {
       setVframes(value)
     }
+
+  /**
+   * Specialized setter for regionRect
+   */
+  fun regionRect(cb: Rect2.() -> Unit) {
+    val _p = regionRect
+    cb(_p)
+    regionRect = _p
+  }
 
   fun getFrame(): Int {
     val _ret = __method_bind.getFrame.call(this._handle)

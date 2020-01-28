@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolVector2Array
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class ConcavePolygonShape2D(
     set(value) {
       setSegments(value)
     }
+
+  /**
+   * Specialized setter for segments
+   */
+  fun segments(cb: PoolVector2Array.() -> Unit) {
+    val _p = segments
+    cb(_p)
+    segments = _p
+  }
 
   fun getSegments(): PoolVector2Array {
     val _ret = __method_bind.getSegments.call(this._handle)

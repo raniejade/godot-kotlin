@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -42,6 +43,15 @@ open class AudioStreamOGGVorbis(
     set(value) {
       setLoopOffset(value)
     }
+
+  /**
+   * Specialized setter for data
+   */
+  fun data(cb: PoolByteArray.() -> Unit) {
+    val _p = data
+    cb(_p)
+    data = _p
+  }
 
   fun getData(): PoolByteArray {
     val _ret = __method_bind.getData.call(this._handle)

@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -83,6 +84,15 @@ open class FileDialog(
     set(value) {
       setShowHiddenFiles(value)
     }
+
+  /**
+   * Specialized setter for filters
+   */
+  fun filters(cb: PoolStringArray.() -> Unit) {
+    val _p = filters
+    cb(_p)
+    filters = _p
+  }
 
   fun addFilter(filter: String) {
     val _arg = Variant.new(filter)

@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -41,6 +42,24 @@ open class InputEventMouse(
     set(value) {
       setPosition(value)
     }
+
+  /**
+   * Specialized setter for globalPosition
+   */
+  fun globalPosition(cb: Vector2.() -> Unit) {
+    val _p = globalPosition
+    cb(_p)
+    globalPosition = _p
+  }
+
+  /**
+   * Specialized setter for position
+   */
+  fun position(cb: Vector2.() -> Unit) {
+    val _p = position
+    cb(_p)
+    position = _p
+  }
 
   fun getButtonMask(): Int {
     val _ret = __method_bind.getButtonMask.call(this._handle)

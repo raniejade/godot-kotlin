@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Float
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -57,6 +58,24 @@ open class StaticBody(
     set(value) {
       setPhysicsMaterialOverride(value)
     }
+
+  /**
+   * Specialized setter for constantAngularVelocity
+   */
+  fun constantAngularVelocity(cb: Vector3.() -> Unit) {
+    val _p = constantAngularVelocity
+    cb(_p)
+    constantAngularVelocity = _p
+  }
+
+  /**
+   * Specialized setter for constantLinearVelocity
+   */
+  fun constantLinearVelocity(cb: Vector3.() -> Unit) {
+    val _p = constantLinearVelocity
+    cb(_p)
+    constantLinearVelocity = _p
+  }
 
   fun getBounce(): Float {
     val _ret = __method_bind.getBounce.call(this._handle)

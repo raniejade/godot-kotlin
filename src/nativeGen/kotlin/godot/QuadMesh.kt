@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class QuadMesh(
     set(value) {
       setSize(value)
     }
+
+  /**
+   * Specialized setter for size
+   */
+  fun size(cb: Vector2.() -> Unit) {
+    val _p = size
+    cb(_p)
+    size = _p
+  }
 
   fun getSize(): Vector2 {
     val _ret = __method_bind.getSize.call(this._handle)

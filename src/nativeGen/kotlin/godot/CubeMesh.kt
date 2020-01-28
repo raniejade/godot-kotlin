@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -49,6 +50,15 @@ open class CubeMesh(
     set(value) {
       setSubdivideWidth(value)
     }
+
+  /**
+   * Specialized setter for size
+   */
+  fun size(cb: Vector3.() -> Unit) {
+    val _p = size
+    cb(_p)
+    size = _p
+  }
 
   fun getSize(): Vector3 {
     val _ret = __method_bind.getSize.call(this._handle)

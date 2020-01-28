@@ -9,6 +9,7 @@ import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -83,6 +84,24 @@ open class Light(
     set(value) {
       setShadowReverseCullFace(value)
     }
+
+  /**
+   * Specialized setter for lightColor
+   */
+  fun lightColor(cb: Color.() -> Unit) {
+    val _p = lightColor
+    cb(_p)
+    lightColor = _p
+  }
+
+  /**
+   * Specialized setter for shadowColor
+   */
+  fun shadowColor(cb: Color.() -> Unit) {
+    val _p = shadowColor
+    cb(_p)
+    shadowColor = _p
+  }
 
   fun getBakeMode(): BakeMode {
     val _ret = __method_bind.getBakeMode.call(this._handle)

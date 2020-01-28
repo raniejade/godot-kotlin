@@ -12,6 +12,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -96,6 +97,15 @@ open class AnimationPlayer(
     set(value) {
       setRoot(value)
     }
+
+  /**
+   * Specialized setter for rootNode
+   */
+  fun rootNode(cb: NodePath.() -> Unit) {
+    val _p = rootNode
+    cb(_p)
+    rootNode = _p
+  }
 
   fun addAnimation(name: String, animation: Animation): GDError {
     val _args = VariantArray.new()

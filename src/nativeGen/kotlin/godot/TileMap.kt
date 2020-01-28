@@ -11,6 +11,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -141,6 +142,24 @@ open class TileMap(
     set(value) {
       setTileset(value)
     }
+
+  /**
+   * Specialized setter for cellCustomTransform
+   */
+  fun cellCustomTransform(cb: Transform2D.() -> Unit) {
+    val _p = cellCustomTransform
+    cb(_p)
+    cellCustomTransform = _p
+  }
+
+  /**
+   * Specialized setter for cellSize
+   */
+  fun cellSize(cb: Vector2.() -> Unit) {
+    val _p = cellSize
+    cb(_p)
+    cellSize = _p
+  }
 
   fun clear() {
     __method_bind.clear.call(this._handle)

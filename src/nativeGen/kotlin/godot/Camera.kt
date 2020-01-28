@@ -12,6 +12,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -126,6 +127,15 @@ open class Camera(
     set(value) {
       setVOffset(value)
     }
+
+  /**
+   * Specialized setter for frustumOffset
+   */
+  fun frustumOffset(cb: Vector2.() -> Unit) {
+    val _p = frustumOffset
+    cb(_p)
+    frustumOffset = _p
+  }
 
   fun clearCurrent(enableNext: Boolean) {
     val _arg = Variant.new(enableNext)

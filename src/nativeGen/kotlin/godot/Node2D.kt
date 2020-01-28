@@ -10,6 +10,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -116,6 +117,60 @@ open class Node2D(
     set(value) {
       setZIndex(value)
     }
+
+  /**
+   * Specialized setter for globalPosition
+   */
+  fun globalPosition(cb: Vector2.() -> Unit) {
+    val _p = globalPosition
+    cb(_p)
+    globalPosition = _p
+  }
+
+  /**
+   * Specialized setter for globalScale
+   */
+  fun globalScale(cb: Vector2.() -> Unit) {
+    val _p = globalScale
+    cb(_p)
+    globalScale = _p
+  }
+
+  /**
+   * Specialized setter for globalTransform
+   */
+  fun globalTransform(cb: Transform2D.() -> Unit) {
+    val _p = globalTransform
+    cb(_p)
+    globalTransform = _p
+  }
+
+  /**
+   * Specialized setter for position
+   */
+  fun position(cb: Vector2.() -> Unit) {
+    val _p = position
+    cb(_p)
+    position = _p
+  }
+
+  /**
+   * Specialized setter for scale
+   */
+  fun scale(cb: Vector2.() -> Unit) {
+    val _p = scale
+    cb(_p)
+    scale = _p
+  }
+
+  /**
+   * Specialized setter for transform
+   */
+  fun transform(cb: Transform2D.() -> Unit) {
+    val _p = transform
+    cb(_p)
+    transform = _p
+  }
 
   fun applyScale(ratio: Vector2) {
     val _arg = Variant.new(ratio)

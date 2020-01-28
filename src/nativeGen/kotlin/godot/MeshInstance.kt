@@ -7,6 +7,7 @@ import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -33,6 +34,15 @@ open class MeshInstance(
     set(value) {
       setSkeletonPath(value)
     }
+
+  /**
+   * Specialized setter for skeleton
+   */
+  fun skeleton(cb: NodePath.() -> Unit) {
+    val _p = skeleton
+    cb(_p)
+    skeleton = _p
+  }
 
   fun createConvexCollision() {
     __method_bind.createConvexCollision.call(this._handle)

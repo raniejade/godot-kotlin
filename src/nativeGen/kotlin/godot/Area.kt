@@ -10,6 +10,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -164,6 +165,15 @@ open class Area(
     set(value) {
       setSpaceOverrideMode(value.value)
     }
+
+  /**
+   * Specialized setter for gravityVec
+   */
+  fun gravityVec(cb: Vector3.() -> Unit) {
+    val _p = gravityVec
+    cb(_p)
+    gravityVec = _p
+  }
 
   fun getAngularDamp(): Float {
     val _ret = __method_bind.getAngularDamp.call(this._handle)

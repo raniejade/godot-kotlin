@@ -10,6 +10,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -36,6 +37,24 @@ open class Gradient(
     set(value) {
       setOffsets(value)
     }
+
+  /**
+   * Specialized setter for colors
+   */
+  fun colors(cb: PoolColorArray.() -> Unit) {
+    val _p = colors
+    cb(_p)
+    colors = _p
+  }
+
+  /**
+   * Specialized setter for offsets
+   */
+  fun offsets(cb: PoolRealArray.() -> Unit) {
+    val _p = offsets
+    cb(_p)
+    offsets = _p
+  }
 
   fun addPoint(offset: Float, color: Color) {
     val _args = VariantArray.new()

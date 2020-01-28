@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class RectangleShape2D(
     set(value) {
       setExtents(value)
     }
+
+  /**
+   * Specialized setter for extents
+   */
+  fun extents(cb: Vector2.() -> Unit) {
+    val _p = extents
+    cb(_p)
+    extents = _p
+  }
 
   fun getExtents(): Vector2 {
     val _ret = __method_bind.getExtents.call(this._handle)

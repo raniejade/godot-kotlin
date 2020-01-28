@@ -10,6 +10,7 @@ import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -108,6 +109,24 @@ open class Line2D(
     set(value) {
       setWidth(value)
     }
+
+  /**
+   * Specialized setter for defaultColor
+   */
+  fun defaultColor(cb: Color.() -> Unit) {
+    val _p = defaultColor
+    cb(_p)
+    defaultColor = _p
+  }
+
+  /**
+   * Specialized setter for points
+   */
+  fun points(cb: PoolVector2Array.() -> Unit) {
+    val _p = points
+    cb(_p)
+    points = _p
+  }
 
   fun addPoint(position: Vector2, atPosition: Int) {
     val _args = VariantArray.new()

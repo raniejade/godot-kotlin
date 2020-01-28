@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -40,6 +41,33 @@ open class ParallaxLayer(
     set(value) {
       setMotionScale(value)
     }
+
+  /**
+   * Specialized setter for motionMirroring
+   */
+  fun motionMirroring(cb: Vector2.() -> Unit) {
+    val _p = motionMirroring
+    cb(_p)
+    motionMirroring = _p
+  }
+
+  /**
+   * Specialized setter for motionOffset
+   */
+  fun motionOffset(cb: Vector2.() -> Unit) {
+    val _p = motionOffset
+    cb(_p)
+    motionOffset = _p
+  }
+
+  /**
+   * Specialized setter for motionScale
+   */
+  fun motionScale(cb: Vector2.() -> Unit) {
+    val _p = motionScale
+    cb(_p)
+    motionScale = _p
+  }
 
   fun getMirroring(): Vector2 {
     val _ret = __method_bind.getMirroring.call(this._handle)

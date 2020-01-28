@@ -12,6 +12,7 @@ import godot.core.Vector3
 import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -94,6 +95,24 @@ open class SpriteBase3D(
     set(value) {
       setPixelSize(value)
     }
+
+  /**
+   * Specialized setter for modulate
+   */
+  fun modulate(cb: Color.() -> Unit) {
+    val _p = modulate
+    cb(_p)
+    modulate = _p
+  }
+
+  /**
+   * Specialized setter for offset
+   */
+  fun offset(cb: Vector2.() -> Unit) {
+    val _p = offset
+    cb(_p)
+    offset = _p
+  }
 
   fun generateTriangleMesh(): TriangleMesh {
     val _ret = __method_bind.generateTriangleMesh.call(this._handle)

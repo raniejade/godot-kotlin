@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class ViewportTexture(
     set(value) {
       setViewportPathInScene(value)
     }
+
+  /**
+   * Specialized setter for viewportPath
+   */
+  fun viewportPath(cb: NodePath.() -> Unit) {
+    val _p = viewportPath
+    cb(_p)
+    viewportPath = _p
+  }
 
   fun getViewportPathInScene(): NodePath {
     val _ret = __method_bind.getViewportPathInScene.call(this._handle)

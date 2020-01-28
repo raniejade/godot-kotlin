@@ -7,6 +7,7 @@ import godot.core.Rect2
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -33,6 +34,15 @@ open class BackBufferCopy(
     set(value) {
       setRect(value)
     }
+
+  /**
+   * Specialized setter for rect
+   */
+  fun rect(cb: Rect2.() -> Unit) {
+    val _p = rect
+    cb(_p)
+    rect = _p
+  }
 
   fun getCopyMode(): CopyMode {
     val _ret = __method_bind.getCopyMode.call(this._handle)

@@ -7,6 +7,7 @@ import godot.core.NodePath
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -57,6 +58,15 @@ open class RemoteTransform2D(
     set(value) {
       setUseGlobalCoordinates(value)
     }
+
+  /**
+   * Specialized setter for remotePath
+   */
+  fun remotePath(cb: NodePath.() -> Unit) {
+    val _p = remotePath
+    cb(_p)
+    remotePath = _p
+  }
 
   fun getRemoteNode(): NodePath {
     val _ret = __method_bind.getRemoteNode.call(this._handle)

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.PoolVector3Array
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class ConcavePolygonShape(
     set(value) {
       setFaces(value)
     }
+
+  /**
+   * Specialized setter for data
+   */
+  fun data(cb: PoolVector3Array.() -> Unit) {
+    val _p = data
+    cb(_p)
+    data = _p
+  }
 
   fun getFaces(): PoolVector3Array {
     val _ret = __method_bind.getFaces.call(this._handle)

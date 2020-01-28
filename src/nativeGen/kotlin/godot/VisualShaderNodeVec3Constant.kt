@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector3
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -24,6 +25,15 @@ open class VisualShaderNodeVec3Constant(
     set(value) {
       setConstant(value)
     }
+
+  /**
+   * Specialized setter for constant
+   */
+  fun constant(cb: Vector3.() -> Unit) {
+    val _p = constant
+    cb(_p)
+    constant = _p
+  }
 
   fun getConstant(): Vector3 {
     val _ret = __method_bind.getConstant.call(this._handle)

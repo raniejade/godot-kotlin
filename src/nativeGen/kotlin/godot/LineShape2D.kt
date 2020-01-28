@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Float
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -33,6 +34,15 @@ open class LineShape2D(
     set(value) {
       setNormal(value)
     }
+
+  /**
+   * Specialized setter for normal
+   */
+  fun normal(cb: Vector2.() -> Unit) {
+    val _p = normal
+    cb(_p)
+    normal = _p
+  }
 
   fun getD(): Float {
     val _ret = __method_bind.getD.call(this._handle)

@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -32,6 +33,24 @@ open class SegmentShape2D(
     set(value) {
       setB(value)
     }
+
+  /**
+   * Specialized setter for a
+   */
+  fun a(cb: Vector2.() -> Unit) {
+    val _p = a
+    cb(_p)
+    a = _p
+  }
+
+  /**
+   * Specialized setter for b
+   */
+  fun b(cb: Vector2.() -> Unit) {
+    val _p = b
+    cb(_p)
+    b = _p
+  }
 
   fun getA(): Vector2 {
     val _ret = __method_bind.getA.call(this._handle)

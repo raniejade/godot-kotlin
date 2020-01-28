@@ -7,6 +7,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import godot.core.Vector2
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -49,6 +50,33 @@ open class InputEventScreenDrag(
     set(value) {
       setSpeed(value)
     }
+
+  /**
+   * Specialized setter for position
+   */
+  fun position(cb: Vector2.() -> Unit) {
+    val _p = position
+    cb(_p)
+    position = _p
+  }
+
+  /**
+   * Specialized setter for relative
+   */
+  fun relative(cb: Vector2.() -> Unit) {
+    val _p = relative
+    cb(_p)
+    relative = _p
+  }
+
+  /**
+   * Specialized setter for speed
+   */
+  fun speed(cb: Vector2.() -> Unit) {
+    val _p = speed
+    cb(_p)
+    speed = _p
+  }
 
   fun getIndex(): Int {
     val _ret = __method_bind.getIndex.call(this._handle)

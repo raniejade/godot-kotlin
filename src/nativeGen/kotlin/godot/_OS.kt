@@ -14,6 +14,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -144,6 +145,24 @@ open class _OS(
     set(value) {
       setWindowSize(value)
     }
+
+  /**
+   * Specialized setter for windowPosition
+   */
+  fun windowPosition(cb: Vector2.() -> Unit) {
+    val _p = windowPosition
+    cb(_p)
+    windowPosition = _p
+  }
+
+  /**
+   * Specialized setter for windowSize
+   */
+  fun windowSize(cb: Vector2.() -> Unit) {
+    val _p = windowSize
+    cb(_p)
+    windowSize = _p
+  }
 
   fun alert(text: String, title: String) {
     val _args = VariantArray.new()

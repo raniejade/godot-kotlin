@@ -13,6 +13,7 @@ import kotlin.Boolean
 import kotlin.Float
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -55,6 +56,24 @@ open class AnimationTreePlayer(
     set(value) {
       setAnimationProcessMode(value.value)
     }
+
+  /**
+   * Specialized setter for basePath
+   */
+  fun basePath(cb: NodePath.() -> Unit) {
+    val _p = basePath
+    cb(_p)
+    basePath = _p
+  }
+
+  /**
+   * Specialized setter for masterPlayer
+   */
+  fun masterPlayer(cb: NodePath.() -> Unit) {
+    val _p = masterPlayer
+    cb(_p)
+    masterPlayer = _p
+  }
 
   fun addNode(type: Int, id: String) {
     val _args = VariantArray.new()

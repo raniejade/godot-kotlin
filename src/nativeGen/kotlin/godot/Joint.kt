@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -50,6 +51,24 @@ open class Joint(
     set(value) {
       setSolverPriority(value)
     }
+
+  /**
+   * Specialized setter for nodesNodeA
+   */
+  fun nodesNodeA(cb: NodePath.() -> Unit) {
+    val _p = nodesNodeA
+    cb(_p)
+    nodesNodeA = _p
+  }
+
+  /**
+   * Specialized setter for nodesNodeB
+   */
+  fun nodesNodeB(cb: NodePath.() -> Unit) {
+    val _p = nodesNodeB
+    cb(_p)
+    nodesNodeB = _p
+  }
 
   fun getExcludeNodesFromCollision(): Boolean {
     val _ret = __method_bind.getExcludeNodesFromCollision.call(this._handle)

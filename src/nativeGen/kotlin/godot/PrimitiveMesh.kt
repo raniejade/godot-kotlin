@@ -7,6 +7,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -41,6 +42,15 @@ open class PrimitiveMesh(
     set(value) {
       setMaterial(value)
     }
+
+  /**
+   * Specialized setter for customAabb
+   */
+  fun customAabb(cb: AABB.() -> Unit) {
+    val _p = customAabb
+    cb(_p)
+    customAabb = _p
+  }
 
   fun getCustomAabb(): AABB {
     val _ret = __method_bind.getCustomAabb.call(this._handle)

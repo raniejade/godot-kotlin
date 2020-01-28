@@ -8,6 +8,7 @@ import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
 import kotlin.Int
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -66,6 +67,15 @@ open class DynamicFont(
     set(value) {
       setUseMipmaps(value)
     }
+
+  /**
+   * Specialized setter for outlineColor
+   */
+  fun outlineColor(cb: Color.() -> Unit) {
+    val _p = outlineColor
+    cb(_p)
+    outlineColor = _p
+  }
 
   fun addFallback(data: DynamicFontData) {
     val _arg = Variant.new(data)

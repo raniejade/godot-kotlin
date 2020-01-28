@@ -9,6 +9,7 @@ import godot.core.Vector2
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.CPointer
@@ -75,6 +76,33 @@ open class AnimationNodeBlendSpace2D(
     set(value) {
       setYLabel(value)
     }
+
+  /**
+   * Specialized setter for maxSpace
+   */
+  fun maxSpace(cb: Vector2.() -> Unit) {
+    val _p = maxSpace
+    cb(_p)
+    maxSpace = _p
+  }
+
+  /**
+   * Specialized setter for minSpace
+   */
+  fun minSpace(cb: Vector2.() -> Unit) {
+    val _p = minSpace
+    cb(_p)
+    minSpace = _p
+  }
+
+  /**
+   * Specialized setter for snap
+   */
+  fun snap(cb: Vector2.() -> Unit) {
+    val _p = snap
+    cb(_p)
+    snap = _p
+  }
 
   fun addBlendPoint(
     node: AnimationRootNode,
