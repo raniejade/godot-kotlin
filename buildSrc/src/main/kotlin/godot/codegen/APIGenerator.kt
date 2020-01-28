@@ -242,8 +242,6 @@ class APIGenerator {
     val methodSpecs = methods.filter { method -> isMethodImplGeneratable(method) }
       .map { method ->
         val parsedType = ParsedType.parse(method.return_type)
-        //val returnTypeName = parseTypeName(method.return_type)
-        //val returnGDType = TypeRegistry.get(returnTypeName.fullName)
         val returnTypeClassName = parsedType.toClassName()
 
         val methodName = normalizeMethodName(method.name)
@@ -258,16 +256,16 @@ class APIGenerator {
         }
 
         val parameters = method.arguments.map { argument ->
+          val parsedArgType = ParsedType.parse(argument.type)
           val argumentName = normalizeArgName(argument.name)
-          val argumentTypeName = parseTypeName(argument.type)
-          val argumentType = checkNotNull(toClassName(argumentTypeName.fqName, TypeRegistry.get(argumentTypeName.fqName[0])))
+          val argumentType = checkNotNull(parsedArgType.toClassName())
           ParameterSpec.builder(argumentName, argumentType)
             .build()
         }
 
         builder.addParameters(parameters)
 
-        val returnVar = if (method.return_type == "void") {
+        val returnVar = if (parsedType.isVoid) {
           ""
         } else {
           "val _ret = "
@@ -420,25 +418,6 @@ class APIGenerator {
     }
   }
 
-  private data class TypeInfo(
-    val fqName: List<String>,
-    val isEnum: Boolean
-  ) {
-    val fullName = fqName.joinToString(".")
-  }
-
-  private fun parseTypeName(name: String): TypeInfo {
-    if (name.startsWith("enum")) {
-      return TypeInfo(
-        name.replace("enum.", "")
-          .split("::"),
-        true
-      )
-    }
-
-    return TypeInfo(listOf(name), false)
-  }
-
   private fun normalizeMethodName(name: String): String {
     val ret = name.split("_")
       .joinToString("") { it.capitalize() }
@@ -463,28 +442,6 @@ class APIGenerator {
       return "%S"
     }
     return "%L"
-  }
-
-  private fun toClassName(fqName: List<String>, type: GDType?): ClassName? {
-    return when (type) {
-      GDType.VOID -> null
-      null -> ClassName("godot", fqName)
-      else -> {
-        val packageName = if (type.primitive) {
-          "kotlin"
-        } else {
-          "godot.core"
-        }
-        val classNames = mutableListOf<String>()
-
-        if (type.isEnum) {
-          classNames.addAll(type.kotlinName.split("."))
-        } else {
-          classNames.add(type.kotlinName)
-        }
-        ClassName(packageName, classNames)
-      }
-    }
   }
 
   private fun parseJson(source: File): List<GDClass> {

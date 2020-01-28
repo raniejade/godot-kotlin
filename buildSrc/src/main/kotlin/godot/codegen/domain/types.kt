@@ -29,7 +29,7 @@ enum class GDType(val gdName: String, val mappedName: String? = null, val primit
   VARIANT("Variant"),
   VARIANT_TYPE("Variant.Type", isEnum = true),
   VARIANT_OPERATOR("Variant.Operator", isEnum = true),
-  VARIANT_ARRAY("VariantArray", mappedName = "VariantArray"),
+  VARIANT_ARRAY("Array", mappedName = "VariantArray"),
   VECTOR2("Vector2"),
   VECTOR3("Vector3"),
   VECTOR3_AXIS("Vector3.Axis", isEnum = true);
