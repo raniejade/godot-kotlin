@@ -171,7 +171,7 @@ open class PopupMenu(
 
   fun getAllowSearch(): Boolean {
     val _ret = __method_bind.get_allow_search.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getItemAccelerator(idx: Int): Int {
@@ -240,58 +240,58 @@ open class PopupMenu(
 
   fun isHideOnCheckableItemSelection(): Boolean {
     val _ret = __method_bind.is_hide_on_checkable_item_selection.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHideOnItemSelection(): Boolean {
     val _ret = __method_bind.is_hide_on_item_selection.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHideOnStateItemSelection(): Boolean {
     val _ret = __method_bind.is_hide_on_state_item_selection.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHideOnWindowLoseFocus(): Boolean {
     val _ret = __method_bind.is_hide_on_window_lose_focus.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemCheckable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_checkable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemChecked(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_checked.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemRadioCheckable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_radio_checkable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemSeparator(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_separator.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemShortcutDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_shortcut_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeItem(idx: Int) {

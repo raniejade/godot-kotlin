@@ -39,7 +39,7 @@ open class AStar(
     _args.append(id)
     _args.append(toId)
     val _ret = __method_bind.are_points_connected.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun clear() {
@@ -118,19 +118,19 @@ open class AStar(
 
   fun getPoints(): VariantArray {
     val _ret = __method_bind.get_points.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun hasPoint(id: Int): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.has_point.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPointDisabled(id: Int): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.is_point_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removePoint(id: Int) {

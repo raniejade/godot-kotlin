@@ -69,12 +69,12 @@ open class EditorFileDialog(
 
   fun isOverwriteWarningDisabled(): Boolean {
     val _ret = __method_bind.is_overwrite_warning_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShowingHiddenFiles(): Boolean {
     val _ret = __method_bind.is_showing_hidden_files.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAccess(access: Int) {

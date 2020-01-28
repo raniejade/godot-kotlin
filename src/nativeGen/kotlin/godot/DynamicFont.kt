@@ -63,12 +63,12 @@ open class DynamicFont(
 
   fun getUseFilter(): Boolean {
     val _ret = __method_bind.get_use_filter.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getUseMipmaps(): Boolean {
     val _ret = __method_bind.get_use_mipmaps.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeFallback(idx: Int) {

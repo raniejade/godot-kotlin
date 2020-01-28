@@ -57,7 +57,7 @@ open class SpringArm(
   fun removeExcludedObject(rID: RID): Boolean {
     val _arg = Variant.new(rID)
     val _ret = __method_bind.remove_excluded_object.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCollisionMask(mask: Int) {

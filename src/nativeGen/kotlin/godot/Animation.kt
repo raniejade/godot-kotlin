@@ -265,7 +265,7 @@ open class Animation(
 
   fun hasLoop(): Boolean {
     val _ret = __method_bind.has_loop.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun methodTrackGetKeyIndices(
@@ -294,7 +294,7 @@ open class Animation(
     _args.append(idx)
     _args.append(keyIdx)
     val _ret = __method_bind.method_track_get_params.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun removeTrack(idx: Int) {
@@ -333,7 +333,7 @@ open class Animation(
   fun trackGetInterpolationLoopWrap(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.track_get_interpolation_loop_wrap.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun trackGetInterpolationType(idx: Int): InterpolationType {
@@ -401,13 +401,13 @@ open class Animation(
   fun trackIsEnabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.track_is_enabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun trackIsImported(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.track_is_imported.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun trackMoveDown(idx: Int) {
@@ -541,7 +541,7 @@ open class Animation(
     _args.append(idx)
     _args.append(timeSec)
     val _ret = __method_bind.transform_track_interpolate.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun valueTrackGetKeyIndices(

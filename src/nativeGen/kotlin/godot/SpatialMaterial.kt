@@ -73,12 +73,12 @@ open class SpatialMaterial(
 
   fun getDepthDeepParallaxFlipBinormal(): Boolean {
     val _ret = __method_bind.get_depth_deep_parallax_flip_binormal.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getDepthDeepParallaxFlipTangent(): Boolean {
     val _ret = __method_bind.get_depth_deep_parallax_flip_tangent.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getDepthDeepParallaxMaxLayers(): Int {
@@ -149,13 +149,13 @@ open class SpatialMaterial(
   fun getFeature(feature: Int): Boolean {
     val _arg = Variant.new(feature)
     val _ret = __method_bind.get_feature.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_flag.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getGrow(): Float {
@@ -190,7 +190,7 @@ open class SpatialMaterial(
 
   fun getParticlesAnimLoop(): Boolean {
     val _ret = __method_bind.get_particles_anim_loop.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getParticlesAnimVFrames(): Int {
@@ -296,17 +296,17 @@ open class SpatialMaterial(
 
   fun isDepthDeepParallaxEnabled(): Boolean {
     val _ret = __method_bind.is_depth_deep_parallax_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isGrowEnabled(): Boolean {
     val _ret = __method_bind.is_grow_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isProximityFadeEnabled(): Boolean {
     val _ret = __method_bind.is_proximity_fade_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAlbedo(albedo: Color) {

@@ -117,34 +117,34 @@ open class GraphNode(
 
   fun isCloseButtonVisible(): Boolean {
     val _ret = __method_bind.is_close_button_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isComment(): Boolean {
     val _ret = __method_bind.is_comment.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isResizable(): Boolean {
     val _ret = __method_bind.is_resizable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSelected(): Boolean {
     val _ret = __method_bind.is_selected.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSlotEnabledLeft(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_slot_enabled_left.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSlotEnabledRight(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_slot_enabled_right.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setComment(comment: Boolean) {

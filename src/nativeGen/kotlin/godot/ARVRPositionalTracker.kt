@@ -60,12 +60,12 @@ open class ARVRPositionalTracker(
 
   fun getTracksOrientation(): Boolean {
     val _ret = __method_bind.get_tracks_orientation.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTracksPosition(): Boolean {
     val _ret = __method_bind.get_tracks_position.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTransform(adjustByReferenceFrame: Boolean): Transform {

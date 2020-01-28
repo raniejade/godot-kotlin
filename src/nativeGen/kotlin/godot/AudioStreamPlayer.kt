@@ -47,7 +47,7 @@ open class AudioStreamPlayer(
 
   fun getStreamPaused(): Boolean {
     val _ret = __method_bind.get_stream_paused.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getStreamPlayback(): AudioStreamPlayback {
@@ -62,12 +62,12 @@ open class AudioStreamPlayer(
 
   fun isAutoplayEnabled(): Boolean {
     val _ret = __method_bind.is_autoplay_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun play(fromPosition: Float) {

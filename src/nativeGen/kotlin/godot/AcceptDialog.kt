@@ -39,7 +39,7 @@ open class AcceptDialog(
 
   fun getHideOnOk(): Boolean {
     val _ret = __method_bind.get_hide_on_ok.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getLabel(): Label {

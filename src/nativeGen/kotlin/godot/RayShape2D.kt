@@ -25,7 +25,7 @@ open class RayShape2D(
 
   fun getSlipsOnSlope(): Boolean {
     val _ret = __method_bind.get_slips_on_slope.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setLength(length: Float) {

@@ -28,7 +28,7 @@ open class CollisionObject(
 
   fun getCaptureInputOnDrag(): Boolean {
     val _ret = __method_bind.get_capture_input_on_drag.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getRid(): RID {
@@ -38,18 +38,18 @@ open class CollisionObject(
 
   fun getShapeOwners(): VariantArray {
     val _ret = __method_bind.get_shape_owners.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun isRayPickable(): Boolean {
     val _ret = __method_bind.is_ray_pickable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShapeOwnerDisabled(ownerId: Int): Boolean {
     val _arg = Variant.new(ownerId)
     val _ret = __method_bind.is_shape_owner_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeShapeOwner(ownerId: Int) {

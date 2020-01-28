@@ -80,7 +80,7 @@ open class BakedLightmap(
 
   fun isHdr(): Boolean {
     val _ret = __method_bind.is_hdr.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBakeCellSize(bakeCellSize: Float) {

@@ -42,7 +42,7 @@ open class StyleBoxLine(
 
   fun isVertical(): Boolean {
     val _ret = __method_bind.is_vertical.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setColor(color: Color) {

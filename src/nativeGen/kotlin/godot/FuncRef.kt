@@ -25,7 +25,7 @@ open class FuncRef(
 
   fun isValid(): Boolean {
     val _ret = __method_bind.is_valid.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setFunction(name: String) {

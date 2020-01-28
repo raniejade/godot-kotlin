@@ -28,7 +28,7 @@ open class TranslationServer(
 
   fun getLoadedLocales(): VariantArray {
     val _ret = __method_bind.get_loaded_locales.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getLocale(): String {

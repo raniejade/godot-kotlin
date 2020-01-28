@@ -19,7 +19,7 @@ open class AnimationNodeBlend3(
 ) : AnimationNode(_handle) {
   fun isUsingSync(): Boolean {
     val _ret = __method_bind.is_using_sync.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setUseSync(enable: Boolean) {

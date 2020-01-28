@@ -33,7 +33,7 @@ open class StyleBoxFlat(
 
   fun getBorderBlend(): Boolean {
     val _ret = __method_bind.get_border_blend.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getBorderColor(): Color {
@@ -86,12 +86,12 @@ open class StyleBoxFlat(
 
   fun isAntiAliased(): Boolean {
     val _ret = __method_bind.is_anti_aliased.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDrawCenterEnabled(): Boolean {
     val _ret = __method_bind.is_draw_center_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAaSize(size: Int) {

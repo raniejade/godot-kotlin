@@ -47,7 +47,7 @@ open class ClippedCamera(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getMargin(): Float {
@@ -62,12 +62,12 @@ open class ClippedCamera(
 
   fun isClipToAreasEnabled(): Boolean {
     val _ret = __method_bind.is_clip_to_areas_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isClipToBodiesEnabled(): Boolean {
     val _ret = __method_bind.is_clip_to_bodies_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeException(node: Object) {

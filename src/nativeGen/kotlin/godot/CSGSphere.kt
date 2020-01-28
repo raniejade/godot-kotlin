@@ -41,7 +41,7 @@ open class CSGSphere(
 
   fun getSmoothFaces(): Boolean {
     val _ret = __method_bind.get_smooth_faces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setMaterial(material: Material) {

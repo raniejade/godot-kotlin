@@ -70,17 +70,17 @@ open class AudioEffectDelay(
 
   fun isFeedbackActive(): Boolean {
     val _ret = __method_bind.is_feedback_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isTap1Active(): Boolean {
     val _ret = __method_bind.is_tap1_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isTap2Active(): Boolean {
     val _ret = __method_bind.is_tap2_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDry(amount: Float) {

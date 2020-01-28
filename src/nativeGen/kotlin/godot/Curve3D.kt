@@ -138,7 +138,7 @@ open class Curve3D(
 
   fun isUpVectorEnabled(): Boolean {
     val _ret = __method_bind.is_up_vector_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removePoint(idx: Int) {

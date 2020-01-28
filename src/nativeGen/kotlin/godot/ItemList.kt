@@ -53,12 +53,12 @@ open class ItemList(
 
   fun getAllowReselect(): Boolean {
     val _ret = __method_bind.get_allow_reselect.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getAllowRmbSelect(): Boolean {
     val _ret = __method_bind.get_allow_rmb_select.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFixedColumnWidth(): Int {
@@ -169,47 +169,47 @@ open class ItemList(
 
   fun hasAutoHeight(): Boolean {
     val _ret = __method_bind.has_auto_height.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isAnythingSelected(): Boolean {
     val _ret = __method_bind.is_anything_selected.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemIconTransposed(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_icon_transposed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemSelectable(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_selectable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isItemTooltipEnabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_tooltip_enabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSameColumnWidth(): Boolean {
     val _ret = __method_bind.is_same_column_width.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSelected(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_selected.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun moveItem(fromIdx: Int, toIdx: Int) {

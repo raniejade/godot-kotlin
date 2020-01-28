@@ -50,7 +50,7 @@ open class StreamPeerSSL(
 
   fun isBlockingHandshakeEnabled(): Boolean {
     val _ret = __method_bind.is_blocking_handshake_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun poll() {

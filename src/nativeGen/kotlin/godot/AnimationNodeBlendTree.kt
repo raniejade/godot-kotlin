@@ -71,7 +71,7 @@ open class AnimationNodeBlendTree(
   fun hasNode(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_node.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeNode(name: String) {

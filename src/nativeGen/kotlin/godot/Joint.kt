@@ -21,7 +21,7 @@ open class Joint(
 ) : Spatial(_handle) {
   fun getExcludeNodesFromCollision(): Boolean {
     val _ret = __method_bind.get_exclude_nodes_from_collision.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getNodeA(): NodePath {

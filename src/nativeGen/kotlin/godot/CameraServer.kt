@@ -24,7 +24,7 @@ open class CameraServer(
 
   fun feeds(): VariantArray {
     val _ret = __method_bind.feeds.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getFeed(index: Int): CameraFeed {

@@ -25,13 +25,13 @@ open class _ClassDB(
   fun canInstance(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
     val _ret = __method_bind.can_instance.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun classExists(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
     val _ret = __method_bind.class_exists.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun classGetCategory(`class`: String): String {
@@ -62,7 +62,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_method_list.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun classGetProperty(`object`: Object, property: String): Variant {
@@ -78,7 +78,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_property_list.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun classGetSignal(`class`: String, signal: String): Dictionary {
@@ -94,7 +94,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(noInheritance)
     val _ret = __method_bind.class_get_signal_list.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun classHasIntegerConstant(`class`: String, name: String): Boolean {
@@ -102,7 +102,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(name)
     val _ret = __method_bind.class_has_integer_constant.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun classHasMethod(
@@ -115,7 +115,7 @@ open class _ClassDB(
     _args.append(method)
     _args.append(noInheritance)
     val _ret = __method_bind.class_has_method.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun classHasSignal(`class`: String, signal: String): Boolean {
@@ -123,7 +123,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(signal)
     val _ret = __method_bind.class_has_signal.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun classSetProperty(
@@ -165,7 +165,7 @@ open class _ClassDB(
   fun isClassEnabled(`class`: String): Boolean {
     val _arg = Variant.new(`class`)
     val _ret = __method_bind.is_class_enabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isParentClass(`class`: String, inherits: String): Boolean {
@@ -173,7 +173,7 @@ open class _ClassDB(
     _args.append(`class`)
     _args.append(inherits)
     val _ret = __method_bind.is_parent_class.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

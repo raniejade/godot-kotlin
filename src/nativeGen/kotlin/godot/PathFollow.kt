@@ -21,7 +21,7 @@ open class PathFollow(
 ) : Spatial(_handle) {
   fun getCubicInterpolation(): Boolean {
     val _ret = __method_bind.get_cubic_interpolation.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getHOffset(): Float {
@@ -51,7 +51,7 @@ open class PathFollow(
 
   fun hasLoop(): Boolean {
     val _ret = __method_bind.has_loop.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCubicInterpolation(enable: Boolean) {

@@ -49,7 +49,7 @@ open class VisualShader(
     _args.append(toNode)
     _args.append(toPort)
     val _ret = __method_bind.can_connect_nodes.call(this._handle, _args.toVariant(), 5)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun connectNodes(
@@ -117,7 +117,7 @@ open class VisualShader(
   fun getNodeConnections(type: Int): VariantArray {
     val _arg = Variant.new(type)
     val _ret = __method_bind.get_node_connections.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getNodeList(type: Int): PoolIntArray {
@@ -154,7 +154,7 @@ open class VisualShader(
     _args.append(toNode)
     _args.append(toPort)
     val _ret = __method_bind.is_node_connection.call(this._handle, _args.toVariant(), 5)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun rebuild() {

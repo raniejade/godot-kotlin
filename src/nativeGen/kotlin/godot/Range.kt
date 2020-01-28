@@ -50,22 +50,22 @@ open class Range(
 
   fun isGreaterAllowed(): Boolean {
     val _ret = __method_bind.is_greater_allowed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isLesserAllowed(): Boolean {
     val _ret = __method_bind.is_lesser_allowed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRatioExp(): Boolean {
     val _ret = __method_bind.is_ratio_exp.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingRoundedValues(): Boolean {
     val _ret = __method_bind.is_using_rounded_values.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAllowGreater(allow: Boolean) {

@@ -58,7 +58,7 @@ open class CSGPolygon(
 
   fun getSmoothFaces(): Boolean {
     val _ret = __method_bind.get_smooth_faces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getSpinDegrees(): Float {
@@ -73,17 +73,17 @@ open class CSGPolygon(
 
   fun isPathContinuousU(): Boolean {
     val _ret = __method_bind.is_path_continuous_u.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPathJoined(): Boolean {
     val _ret = __method_bind.is_path_joined.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPathLocal(): Boolean {
     val _ret = __method_bind.is_path_local.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDepth(depth: Float) {

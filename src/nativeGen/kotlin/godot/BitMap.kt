@@ -36,7 +36,7 @@ open class BitMap(
   fun getBit(position: Vector2): Boolean {
     val _arg = Variant.new(position)
     val _ret = __method_bind.get_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getSize(): Vector2 {
@@ -61,7 +61,7 @@ open class BitMap(
     _args.append(rect)
     _args.append(epsilon)
     val _ret = __method_bind.opaque_to_polygons.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun setBit(position: Vector2, bit: Boolean) {

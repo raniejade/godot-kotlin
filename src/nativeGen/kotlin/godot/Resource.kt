@@ -47,7 +47,7 @@ open class Resource(
 
   fun isLocalToScene(): Boolean {
     val _ret = __method_bind.is_local_to_scene.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setLocalToScene(enable: Boolean) {

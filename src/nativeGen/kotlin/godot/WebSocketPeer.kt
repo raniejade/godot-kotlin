@@ -43,7 +43,7 @@ open class WebSocketPeer(
 
   fun isConnectedToHost(): Boolean {
     val _ret = __method_bind.is_connected_to_host.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setWriteMode(mode: Int) {
@@ -53,7 +53,7 @@ open class WebSocketPeer(
 
   fun wasStringPacket(): Boolean {
     val _ret = __method_bind.was_string_packet.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   enum class WriteMode(

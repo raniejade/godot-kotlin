@@ -21,7 +21,7 @@ open class TabContainer(
 ) : Container(_handle) {
   fun areTabsVisible(): Boolean {
     val _ret = __method_bind.are_tabs_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCurrentTab(): Int {
@@ -36,7 +36,7 @@ open class TabContainer(
 
   fun getDragToRearrangeEnabled(): Boolean {
     val _ret = __method_bind.get_drag_to_rearrange_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getPopup(): Popup {
@@ -68,7 +68,7 @@ open class TabContainer(
   fun getTabDisabled(tabIdx: Int): Boolean {
     val _arg = Variant.new(tabIdx)
     val _ret = __method_bind.get_tab_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTabIcon(tabIdx: Int): Texture {

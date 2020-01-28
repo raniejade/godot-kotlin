@@ -300,13 +300,13 @@ open class Control(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_color.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasColorOverride(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_color_override.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasConstant(name: String, type: String): Boolean {
@@ -314,18 +314,18 @@ open class Control(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_constant.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasConstantOverride(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_constant_override.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFocus(): Boolean {
     val _ret = __method_bind.has_focus.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFont(name: String, type: String): Boolean {
@@ -333,13 +333,13 @@ open class Control(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_font.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFontOverride(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_font_override.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasIcon(name: String, type: String): Boolean {
@@ -347,19 +347,19 @@ open class Control(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_icon.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasIconOverride(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_icon_override.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasShaderOverride(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_shader_override.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasStylebox(name: String, type: String): Boolean {
@@ -367,18 +367,18 @@ open class Control(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_stylebox.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasStyleboxOverride(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_stylebox_override.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isClippingContents(): Boolean {
     val _ret = __method_bind.is_clipping_contents.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun minimumSizeChanged() {

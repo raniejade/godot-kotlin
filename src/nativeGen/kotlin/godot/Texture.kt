@@ -103,7 +103,7 @@ open class Texture(
 
   fun hasAlpha(): Boolean {
     val _ret = __method_bind.has_alpha.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setFlags(flags: Int) {

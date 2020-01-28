@@ -36,7 +36,7 @@ open class AnimatedSprite3D(
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun play(anim: String) {

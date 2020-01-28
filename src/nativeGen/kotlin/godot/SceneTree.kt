@@ -107,7 +107,7 @@ open class SceneTree(
   fun getNodesInGroup(group: String): VariantArray {
     val _arg = Variant.new(group)
     val _ret = __method_bind.get_nodes_in_group.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getRoot(): Viewport {
@@ -123,52 +123,52 @@ open class SceneTree(
   fun hasGroup(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_group.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasNetworkPeer(): Boolean {
     val _ret = __method_bind.has_network_peer.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDebuggingCollisionsHint(): Boolean {
     val _ret = __method_bind.is_debugging_collisions_hint.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDebuggingNavigationHint(): Boolean {
     val _ret = __method_bind.is_debugging_navigation_hint.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInputHandled(): Boolean {
     val _ret = __method_bind.is_input_handled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isMultiplayerPollEnabled(): Boolean {
     val _ret = __method_bind.is_multiplayer_poll_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isNetworkServer(): Boolean {
     val _ret = __method_bind.is_network_server.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPaused(): Boolean {
     val _ret = __method_bind.is_paused.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
     val _ret = __method_bind.is_refusing_new_network_connections.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingFontOversampling(): Boolean {
     val _ret = __method_bind.is_using_font_oversampling.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun notifyGroup(group: String, notification: Int) {

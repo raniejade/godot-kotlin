@@ -50,7 +50,7 @@ open class SpriteFrames(
   fun getAnimationLoop(anim: String): Boolean {
     val _arg = Variant.new(anim)
     val _ret = __method_bind.get_animation_loop.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getAnimationNames(): PoolStringArray {
@@ -81,7 +81,7 @@ open class SpriteFrames(
   fun hasAnimation(anim: String): Boolean {
     val _arg = Variant.new(anim)
     val _ret = __method_bind.has_animation.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeAnimation(anim: String) {

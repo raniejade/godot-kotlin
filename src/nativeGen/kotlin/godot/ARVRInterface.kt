@@ -22,7 +22,7 @@ open class ARVRInterface(
 ) : Reference(_handle) {
   fun getAnchorDetectionIsEnabled(): Boolean {
     val _ret = __method_bind.get_anchor_detection_is_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCameraFeedId(): Int {
@@ -52,22 +52,22 @@ open class ARVRInterface(
 
   fun initialize(): Boolean {
     val _ret = __method_bind.initialize.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInitialized(): Boolean {
     val _ret = __method_bind.is_initialized.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPrimary(): Boolean {
     val _ret = __method_bind.is_primary.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isStereo(): Boolean {
     val _ret = __method_bind.is_stereo.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAnchorDetectionIsEnabled(enable: Boolean) {

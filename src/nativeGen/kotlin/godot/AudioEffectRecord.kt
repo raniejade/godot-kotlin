@@ -30,7 +30,7 @@ open class AudioEffectRecord(
 
   fun isRecordingActive(): Boolean {
     val _ret = __method_bind.is_recording_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setFormat(format: Int) {

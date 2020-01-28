@@ -46,7 +46,7 @@ open class CSGTorus(
 
   fun getSmoothFaces(): Boolean {
     val _ret = __method_bind.get_smooth_faces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setInnerRadius(radius: Float) {

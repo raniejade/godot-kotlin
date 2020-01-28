@@ -31,7 +31,7 @@ open class LineEdit(
 
   fun cursorGetBlinkEnabled(): Boolean {
     val _ret = __method_bind.cursor_get_blink_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun cursorGetBlinkSpeed(): Float {
@@ -65,7 +65,7 @@ open class LineEdit(
 
   fun getExpandToTextLength(): Boolean {
     val _ret = __method_bind.get_expand_to_text_length.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getMaxLength(): Int {
@@ -100,22 +100,22 @@ open class LineEdit(
 
   fun isClearButtonEnabled(): Boolean {
     val _ret = __method_bind.is_clear_button_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isContextMenuEnabled(): Boolean {
     val _ret = __method_bind.is_context_menu_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEditable(): Boolean {
     val _ret = __method_bind.is_editable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSecret(): Boolean {
     val _ret = __method_bind.is_secret.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun menuOption(option: Int) {

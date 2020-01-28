@@ -69,12 +69,12 @@ open class GIProbeData(
 
   fun isCompressed(): Boolean {
     val _ret = __method_bind.is_compressed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInterior(): Boolean {
     val _ret = __method_bind.is_interior.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBias(bias: Float) {

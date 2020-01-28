@@ -19,7 +19,7 @@ open class CSGPrimitive(
 ) : CSGShape(_handle) {
   fun isInvertingFaces(): Boolean {
     val _ret = __method_bind.is_inverting_faces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setInvertFaces(invertFaces: Boolean) {

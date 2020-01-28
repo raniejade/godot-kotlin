@@ -91,12 +91,12 @@ open class Font(
 
   fun hasOutline(): Boolean {
     val _ret = __method_bind.has_outline.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDistanceFieldHint(): Boolean {
     val _ret = __method_bind.is_distance_field_hint.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun updateChanges() {

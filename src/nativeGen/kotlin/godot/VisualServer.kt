@@ -1179,13 +1179,13 @@ open class VisualServer(
   fun giProbeIsCompressed(probe: RID): Boolean {
     val _arg = Variant.new(probe)
     val _ret = __method_bind.gi_probe_is_compressed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun giProbeIsInterior(probe: RID): Boolean {
     val _arg = Variant.new(probe)
     val _ret = __method_bind.gi_probe_is_interior.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun giProbeSetBias(probe: RID, bias: Float) {
@@ -1267,19 +1267,19 @@ open class VisualServer(
 
   fun hasChanged(): Boolean {
     val _ret = __method_bind.has_changed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFeature(feature: Int): Boolean {
     val _arg = Variant.new(feature)
     val _ret = __method_bind.has_feature.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasOsFeature(feature: String): Boolean {
     val _arg = Variant.new(feature)
     val _ret = __method_bind.has_os_feature.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun immediateBegin(
@@ -1549,7 +1549,7 @@ open class VisualServer(
     _args.append(aabb)
     _args.append(scenario)
     val _ret = __method_bind.instances_cull_aabb.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun instancesCullConvex(convex: VariantArray, scenario: RID): VariantArray {
@@ -1557,7 +1557,7 @@ open class VisualServer(
     _args.append(convex)
     _args.append(scenario)
     val _ret = __method_bind.instances_cull_convex.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun instancesCullRay(
@@ -1570,7 +1570,7 @@ open class VisualServer(
     _args.append(to)
     _args.append(scenario)
     val _ret = __method_bind.instances_cull_ray.call(this._handle, _args.toVariant(), 3)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun lightDirectionalSetBlendSplits(light: RID, enable: Boolean) {
@@ -1944,7 +1944,7 @@ open class VisualServer(
     _args.append(mesh)
     _args.append(surface)
     val _ret = __method_bind.mesh_surface_get_arrays.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun meshSurfaceGetBlendShapeArrays(mesh: RID, surface: Int): VariantArray {
@@ -1953,7 +1953,7 @@ open class VisualServer(
     _args.append(surface)
     val _ret = __method_bind.mesh_surface_get_blend_shape_arrays.call(this._handle,
         _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun meshSurfaceGetFormat(mesh: RID, surface: Int): Int {
@@ -2022,7 +2022,7 @@ open class VisualServer(
     _args.append(mesh)
     _args.append(surface)
     val _ret = __method_bind.mesh_surface_get_skeleton_aabb.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun meshSurfaceSetMaterial(
@@ -2214,7 +2214,7 @@ open class VisualServer(
   fun particlesGetEmitting(particles: RID): Boolean {
     val _arg = Variant.new(particles)
     val _ret = __method_bind.particles_get_emitting.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun particlesRestart(particles: RID) {
@@ -2535,7 +2535,7 @@ open class VisualServer(
   fun shaderGetParamList(shader: RID): VariantArray {
     val _arg = Variant.new(shader)
     val _ret = __method_bind.shader_get_param_list.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun shaderSetCode(shader: RID, code: String) {
@@ -2688,7 +2688,7 @@ open class VisualServer(
 
   fun textureDebugUsage(): VariantArray {
     val _ret = __method_bind.texture_debug_usage.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun textureGetData(texture: RID, cubeSide: Int): Image {

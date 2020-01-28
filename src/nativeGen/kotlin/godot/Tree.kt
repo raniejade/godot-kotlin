@@ -23,7 +23,7 @@ open class Tree(
 ) : Control(_handle) {
   fun areColumnTitlesVisible(): Boolean {
     val _ret = __method_bind.are_column_titles_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun clear() {
@@ -44,12 +44,12 @@ open class Tree(
 
   fun getAllowReselect(): Boolean {
     val _ret = __method_bind.get_allow_reselect.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getAllowRmbSelect(): Boolean {
     val _ret = __method_bind.get_allow_rmb_select.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getColumnAtPosition(position: Vector2): Int {
@@ -153,12 +153,12 @@ open class Tree(
 
   fun isFoldingHidden(): Boolean {
     val _ret = __method_bind.is_folding_hidden.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRootHidden(): Boolean {
     val _ret = __method_bind.is_root_hidden.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAllowReselect(allow: Boolean) {

@@ -39,7 +39,7 @@ open class Area2D(
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionMask(): Int {
@@ -50,7 +50,7 @@ open class Area2D(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getGravity(): Float {
@@ -75,12 +75,12 @@ open class Area2D(
 
   fun getOverlappingAreas(): VariantArray {
     val _ret = __method_bind.get_overlapping_areas.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getOverlappingBodies(): VariantArray {
     val _ret = __method_bind.get_overlapping_bodies.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getPriority(): Float {
@@ -95,34 +95,34 @@ open class Area2D(
 
   fun isGravityAPoint(): Boolean {
     val _ret = __method_bind.is_gravity_a_point.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isMonitorable(): Boolean {
     val _ret = __method_bind.is_monitorable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isMonitoring(): Boolean {
     val _ret = __method_bind.is_monitoring.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOverridingAudioBus(): Boolean {
     val _ret = __method_bind.is_overriding_audio_bus.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun overlapsArea(area: Node): Boolean {
     val _arg = Variant.new(area)
     val _ret = __method_bind.overlaps_area.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun overlapsBody(body: Node): Boolean {
     val _arg = Variant.new(body)
     val _ret = __method_bind.overlaps_body.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAngularDamp(angularDamp: Float) {

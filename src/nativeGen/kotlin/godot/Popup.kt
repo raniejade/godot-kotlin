@@ -23,7 +23,7 @@ open class Popup(
 ) : Control(_handle) {
   fun isExclusive(): Boolean {
     val _ret = __method_bind.is_exclusive.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun popup(bounds: Rect2) {

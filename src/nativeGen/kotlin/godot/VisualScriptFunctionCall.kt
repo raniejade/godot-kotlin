@@ -67,7 +67,7 @@ open class VisualScriptFunctionCall(
 
   fun getValidate(): Boolean {
     val _ret = __method_bind.get_validate.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBasePath(basePath: NodePath) {

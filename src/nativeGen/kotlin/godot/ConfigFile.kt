@@ -52,7 +52,7 @@ open class ConfigFile(
   fun hasSection(section: String): Boolean {
     val _arg = Variant.new(section)
     val _ret = __method_bind.has_section.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasSectionKey(section: String, key: String): Boolean {
@@ -60,7 +60,7 @@ open class ConfigFile(
     _args.append(section)
     _args.append(key)
     val _ret = __method_bind.has_section_key.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun load(path: String): GDError {

@@ -24,7 +24,7 @@ open class KinematicBody(
   fun getAxisLock(axis: Int): Boolean {
     val _arg = Variant.new(axis)
     val _ret = __method_bind.get_axis_lock.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFloorVelocity(): Vector3 {
@@ -50,17 +50,17 @@ open class KinematicBody(
 
   fun isOnCeiling(): Boolean {
     val _ret = __method_bind.is_on_ceiling.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOnFloor(): Boolean {
     val _ret = __method_bind.is_on_floor.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOnWall(): Boolean {
     val _ret = __method_bind.is_on_wall.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun moveAndCollide(
@@ -140,7 +140,7 @@ open class KinematicBody(
     _args.append(relVec)
     _args.append(infiniteInertia)
     val _ret = __method_bind.test_move.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

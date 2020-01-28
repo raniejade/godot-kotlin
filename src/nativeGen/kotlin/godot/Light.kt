@@ -48,22 +48,22 @@ open class Light(
 
   fun getShadowReverseCullFace(): Boolean {
     val _ret = __method_bind.get_shadow_reverse_cull_face.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasShadow(): Boolean {
     val _ret = __method_bind.has_shadow.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEditorOnly(): Boolean {
     val _ret = __method_bind.is_editor_only.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isNegative(): Boolean {
     val _ret = __method_bind.is_negative.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBakeMode(bakeMode: Int) {

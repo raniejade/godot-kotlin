@@ -96,47 +96,47 @@ open class Camera2D(
 
   fun isCurrent(): Boolean {
     val _ret = __method_bind.is_current.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFollowSmoothingEnabled(): Boolean {
     val _ret = __method_bind.is_follow_smoothing_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHDragEnabled(): Boolean {
     val _ret = __method_bind.is_h_drag_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isLimitDrawingEnabled(): Boolean {
     val _ret = __method_bind.is_limit_drawing_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isLimitSmoothingEnabled(): Boolean {
     val _ret = __method_bind.is_limit_smoothing_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isMarginDrawingEnabled(): Boolean {
     val _ret = __method_bind.is_margin_drawing_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRotating(): Boolean {
     val _ret = __method_bind.is_rotating.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isScreenDrawingEnabled(): Boolean {
     val _ret = __method_bind.is_screen_drawing_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isVDragEnabled(): Boolean {
     val _ret = __method_bind.is_v_drag_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun makeCurrent() {

@@ -43,7 +43,7 @@ open class VisualInstance(
   fun getLayerMaskBit(layer: Int): Boolean {
     val _arg = Variant.new(layer)
     val _ret = __method_bind.get_layer_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTransformedAabb(): AABB {

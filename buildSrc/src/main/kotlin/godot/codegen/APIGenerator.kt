@@ -241,9 +241,10 @@ class APIGenerator {
   private fun TypeSpec.Builder.generateMethods(className: String, methods: List<GDMethod>): TypeSpec.Builder {
     val methodSpecs = methods.filter { method -> isMethodImplGeneratable(method) }
       .map { method ->
-        val returnTypeName = parseTypeName(method.return_type)
-        val returnGDType = TypeRegistry.get(returnTypeName.fullName)
-        val returnType = toClassName(returnTypeName.fqName, returnGDType)
+        val parsedType = ParsedType.parse(method.return_type)
+        //val returnTypeName = parseTypeName(method.return_type)
+        //val returnGDType = TypeRegistry.get(returnTypeName.fullName)
+        val returnTypeClassName = parsedType.toClassName()
 
         val methodName = normalizeMethodName(method.name)
         val builder = FunSpec.builder(methodName)
@@ -252,8 +253,8 @@ class APIGenerator {
           builder.addModifiers(KModifier.OVERRIDE)
         }
 
-        if (returnType != null) {
-          builder.returns(returnType)
+        if (returnTypeClassName != null) {
+          builder.returns(returnTypeClassName)
         }
 
         val parameters = method.arguments.map { argument ->
@@ -291,24 +292,24 @@ class APIGenerator {
         }
 
         if (returnVar.isNotEmpty()) {
-          if (returnGDType !=  null) {
+          if (parsedType.isCoreType) {
             when {
-              returnGDType.isEnum -> {
-                builder.addStatement("return ${returnGDType.kotlinName}.from(_ret.asInt())")
+              parsedType.isEnum -> {
+                builder.addStatement("return ${parsedType.fqName}.from(_ret.asInt())")
               }
-              returnGDType != GDType.VARIANT -> {
-                builder.addStatement("return _ret.as${returnGDType.gdName.capitalize()}()")
+              !parsedType.isVariant -> {
+                builder.addStatement("return _ret.as${parsedType.fqName.capitalize()}()")
               }
               else -> {
                 builder.addStatement("return _ret")
               }
             }
           } else {
-            if (returnTypeName.isEnum) {
-              builder.addStatement("return ${returnTypeName.fqName.joinToString(".")}.from(_ret.asInt())")
+            if (parsedType.isEnum) {
+              builder.addStatement("return ${parsedType.fqName}.from(_ret.asInt())")
             } else {
               // TODO: what to do with nullability, at the moment assume nothing can be null
-              builder.addStatement("return _ret.asObject(::${returnTypeName.fqName.first()})!!")
+              builder.addStatement("return _ret.asObject(::${parsedType.fqName})!!")
             }
 
           }
@@ -362,6 +363,61 @@ class APIGenerator {
       return true
     }
     return false
+  }
+
+  private data class ParsedType(
+    val names: List<String>,
+    val fqName: String,
+    val isEnum: Boolean,
+    val coreType: GDType?
+  ) {
+    val isCoreType = coreType != null
+    val isInnerType = names.size > 1
+    val isVoid = coreType == GDType.VOID
+    val isVariant = coreType == GDType.VARIANT
+    val isPrimitive = coreType != null && coreType.primitive
+
+    fun toClassName(): ClassName? {
+      return when (coreType) {
+        GDType.VOID -> null
+        null -> ClassName("godot", names)
+        else -> {
+          val packageName = if (isPrimitive) {
+            "kotlin"
+          } else {
+            "godot.core"
+          }
+          ClassName(packageName, names)
+        }
+      }
+    }
+
+    companion object {
+      fun parse(name: String): ParsedType {
+        var processedName = name
+        var isEnum = false
+        if (processedName.startsWith("enum.")) {
+          processedName = processedName.replace("enum.", "")
+          isEnum = true
+        }
+        // can be an inner type
+        var names = processedName.split("::")
+        var fqName = names.joinToString(".")
+        val coreType = TypeRegistry.get(fqName)
+
+        if (coreType != null) {
+          names = coreType.kotlinName.split(".")
+          fqName = coreType.kotlinName
+        }
+
+        return ParsedType(
+          names,
+          fqName,
+          isEnum,
+          coreType
+        )
+      }
+    }
   }
 
   private data class TypeInfo(

@@ -48,22 +48,22 @@ open class AnimatedSprite(
 
   fun isCentered(): Boolean {
     val _ret = __method_bind.is_centered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun play(anim: String, backwards: Boolean) {

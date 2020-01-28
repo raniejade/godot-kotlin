@@ -241,22 +241,22 @@ open class Image(
 
   fun hasMipmaps(): Boolean {
     val _ret = __method_bind.has_mipmaps.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCompressed(): Boolean {
     val _ret = __method_bind.is_compressed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEmpty(): Boolean {
     val _ret = __method_bind.is_empty.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInvisible(): Boolean {
     val _ret = __method_bind.is_invisible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun load(path: String): GDError {

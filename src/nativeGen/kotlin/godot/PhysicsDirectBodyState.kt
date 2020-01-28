@@ -188,7 +188,7 @@ open class PhysicsDirectBodyState(
 
   fun isSleeping(): Boolean {
     val _ret = __method_bind.is_sleeping.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAngularVelocity(velocity: Vector3) {

@@ -24,7 +24,7 @@ open class NavigationMeshInstance(
 
   fun isEnabled(): Boolean {
     val _ret = __method_bind.is_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setEnabled(enabled: Boolean) {

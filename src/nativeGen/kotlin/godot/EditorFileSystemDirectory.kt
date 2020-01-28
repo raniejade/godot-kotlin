@@ -45,7 +45,7 @@ open class EditorFileSystemDirectory(
   fun getFileImportIsValid(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.get_file_import_is_valid.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFilePath(idx: Int): String {

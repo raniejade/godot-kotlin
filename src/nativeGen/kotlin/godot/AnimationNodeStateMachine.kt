@@ -103,7 +103,7 @@ open class AnimationNodeStateMachine(
   fun hasNode(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_node.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasTransition(from: String, to: String): Boolean {
@@ -111,7 +111,7 @@ open class AnimationNodeStateMachine(
     _args.append(from)
     _args.append(to)
     val _ret = __method_bind.has_transition.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeNode(name: String) {

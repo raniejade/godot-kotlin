@@ -74,7 +74,7 @@ open class GraphEdit(
 
   fun getConnectionList(): VariantArray {
     val _ret = __method_bind.get_connection_list.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getScrollOfs(): Vector2 {
@@ -109,17 +109,17 @@ open class GraphEdit(
     _args.append(to)
     _args.append(toPort)
     val _ret = __method_bind.is_node_connected.call(this._handle, _args.toVariant(), 4)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRightDisconnectsEnabled(): Boolean {
     val _ret = __method_bind.is_right_disconnects_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingSnap(): Boolean {
     val _ret = __method_bind.is_using_snap.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isValidConnectionType(fromType: Int, toType: Int): Boolean {
@@ -127,7 +127,7 @@ open class GraphEdit(
     _args.append(fromType)
     _args.append(toType)
     val _ret = __method_bind.is_valid_connection_type.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeValidConnectionType(fromType: Int, toType: Int) {

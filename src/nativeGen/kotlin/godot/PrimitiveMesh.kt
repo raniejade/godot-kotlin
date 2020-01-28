@@ -25,7 +25,7 @@ open class PrimitiveMesh(
 
   fun getFlipFaces(): Boolean {
     val _ret = __method_bind.get_flip_faces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getMaterial(): Material {
@@ -35,7 +35,7 @@ open class PrimitiveMesh(
 
   fun getMeshArrays(): VariantArray {
     val _ret = __method_bind.get_mesh_arrays.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun setCustomAabb(aabb: AABB) {

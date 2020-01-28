@@ -50,7 +50,7 @@ open class StreamPeer(
   fun getData(bytes: Int): VariantArray {
     val _arg = Variant.new(bytes)
     val _ret = __method_bind.get_data.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getDouble(): Float {
@@ -66,7 +66,7 @@ open class StreamPeer(
   fun getPartialData(bytes: Int): VariantArray {
     val _arg = Variant.new(bytes)
     val _ret = __method_bind.get_partial_data.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getString(bytes: Int): String {
@@ -109,7 +109,7 @@ open class StreamPeer(
 
   fun isBigEndianEnabled(): Boolean {
     val _ret = __method_bind.is_big_endian_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun put16(value: Int) {
@@ -151,7 +151,7 @@ open class StreamPeer(
   fun putPartialData(data: PoolByteArray): VariantArray {
     val _arg = Variant.new(data)
     val _ret = __method_bind.put_partial_data.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun putString(value: String) {

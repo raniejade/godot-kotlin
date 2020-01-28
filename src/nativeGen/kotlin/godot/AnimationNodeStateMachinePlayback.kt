@@ -31,7 +31,7 @@ open class AnimationNodeStateMachinePlayback(
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun start(node: String) {

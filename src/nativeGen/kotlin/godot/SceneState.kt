@@ -24,7 +24,7 @@ open class SceneState(
   fun getConnectionBinds(idx: Int): VariantArray {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.get_connection_binds.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getConnectionCount(): Int {
@@ -142,7 +142,7 @@ open class SceneState(
   fun isNodeInstancePlaceholder(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_node_instance_placeholder.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   enum class GenEditState(

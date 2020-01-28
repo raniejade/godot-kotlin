@@ -25,7 +25,7 @@ open class VisibilityNotifier(
 
   fun isOnScreen(): Boolean {
     val _ret = __method_bind.is_on_screen.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAabb(rect: AABB) {

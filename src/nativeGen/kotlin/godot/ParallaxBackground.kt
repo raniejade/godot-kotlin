@@ -45,7 +45,7 @@ open class ParallaxBackground(
 
   fun isIgnoreCameraZoom(): Boolean {
     val _ret = __method_bind.is_ignore_camera_zoom.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setIgnoreCameraZoom(ignore: Boolean) {

@@ -52,7 +52,7 @@ open class ARVRServer(
 
   fun getInterfaces(): VariantArray {
     val _ret = __method_bind.get_interfaces.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getLastCommitUsec(): Int {

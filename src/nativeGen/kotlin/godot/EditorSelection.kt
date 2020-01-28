@@ -27,12 +27,12 @@ open class EditorSelection(
 
   fun getSelectedNodes(): VariantArray {
     val _ret = __method_bind.get_selected_nodes.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getTransformableSelectedNodes(): VariantArray {
     val _ret = __method_bind.get_transformable_selected_nodes.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun removeNode(node: Node) {

@@ -101,13 +101,13 @@ open class AnimationNode(
 
   fun isFilterEnabled(): Boolean {
     val _ret = __method_bind.is_filter_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPathFiltered(path: NodePath): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.is_path_filtered.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeInput(index: Int) {

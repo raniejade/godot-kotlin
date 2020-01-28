@@ -40,7 +40,7 @@ open class NetworkedMultiplayerPeer(
 
   fun isRefusingNewConnections(): Boolean {
     val _ret = __method_bind.is_refusing_new_connections.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun poll() {

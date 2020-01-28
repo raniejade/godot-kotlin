@@ -64,13 +64,13 @@ open class Mesh(
   fun surfaceGetArrays(surfIdx: Int): VariantArray {
     val _arg = Variant.new(surfIdx)
     val _ret = __method_bind.surface_get_arrays.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun surfaceGetBlendShapeArrays(surfIdx: Int): VariantArray {
     val _arg = Variant.new(surfIdx)
     val _ret = __method_bind.surface_get_blend_shape_arrays.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun surfaceGetMaterial(surfIdx: Int): Material {

@@ -41,7 +41,7 @@ open class SpriteBase3D(
   fun getDrawFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_draw_flag.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getItemRect(): Rect2 {
@@ -71,17 +71,17 @@ open class SpriteBase3D(
 
   fun isCentered(): Boolean {
     val _ret = __method_bind.is_centered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAlphaCutMode(mode: Int) {

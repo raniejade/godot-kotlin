@@ -29,13 +29,13 @@ open class _File(
 
   fun eofReached(): Boolean {
     val _ret = __method_bind.eof_reached.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun fileExists(path: String): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.file_exists.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun get16(): Int {
@@ -82,7 +82,7 @@ open class _File(
 
   fun getEndianSwap(): Boolean {
     val _ret = __method_bind.get_endian_swap.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getError(): GDError {
@@ -156,7 +156,7 @@ open class _File(
 
   fun isOpen(): Boolean {
     val _ret = __method_bind.is_open.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun open(path: String, flags: Int): GDError {

@@ -41,12 +41,12 @@ open class CSGCylinder(
 
   fun getSmoothFaces(): Boolean {
     val _ret = __method_bind.get_smooth_faces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCone(): Boolean {
     val _ret = __method_bind.is_cone.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCone(cone: Boolean) {

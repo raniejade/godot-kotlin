@@ -443,7 +443,7 @@ open class Physics2DServer(
   fun bodyIsOmittingForceIntegration(body: RID): Boolean {
     val _arg = Variant.new(body)
     val _ret = __method_bind.body_is_omitting_force_integration.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun bodyRemoveCollisionException(body: RID, exceptedBody: RID) {
@@ -633,7 +633,7 @@ open class Physics2DServer(
     _args.append(margin)
     _args.append(result)
     val _ret = __method_bind.body_test_motion.call(this._handle, _args.toVariant(), 6)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun capsuleShapeCreate(): RID {
@@ -824,7 +824,7 @@ open class Physics2DServer(
   fun spaceIsActive(space: RID): Boolean {
     val _arg = Variant.new(space)
     val _ret = __method_bind.space_is_active.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun spaceSetActive(space: RID, active: Boolean) {

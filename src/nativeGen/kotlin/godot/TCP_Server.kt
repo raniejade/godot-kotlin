@@ -22,7 +22,7 @@ open class TCP_Server(
 ) : Reference(_handle) {
   fun isConnectionAvailable(): Boolean {
     val _ret = __method_bind.is_connection_available.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun listen(port: Int, bindAddress: String): GDError {

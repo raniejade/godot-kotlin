@@ -31,7 +31,7 @@ open class OccluderPolygon2D(
 
   fun isClosed(): Boolean {
     val _ret = __method_bind.is_closed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setClosed(closed: Boolean) {

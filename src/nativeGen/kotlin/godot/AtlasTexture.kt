@@ -35,7 +35,7 @@ open class AtlasTexture(
 
   fun hasFilterClip(): Boolean {
     val _ret = __method_bind.has_filter_clip.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAtlas(atlas: Texture) {

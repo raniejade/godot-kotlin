@@ -36,7 +36,7 @@ open class PacketPeerUDP(
 
   fun isListening(): Boolean {
     val _ret = __method_bind.is_listening.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun listen(

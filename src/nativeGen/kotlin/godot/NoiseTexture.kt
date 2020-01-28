@@ -31,12 +31,12 @@ open class NoiseTexture(
 
   fun getSeamless(): Boolean {
     val _ret = __method_bind.get_seamless.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isNormalmap(): Boolean {
     val _ret = __method_bind.is_normalmap.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAsNormalmap(asNormalmap: Boolean) {

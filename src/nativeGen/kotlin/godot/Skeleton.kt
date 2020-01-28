@@ -93,18 +93,18 @@ open class Skeleton(
   fun getBoundChildNodesToBone(boneIdx: Int): VariantArray {
     val _arg = Variant.new(boneIdx)
     val _ret = __method_bind.get_bound_child_nodes_to_bone.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun isBoneRestDisabled(boneIdx: Int): Boolean {
     val _arg = Variant.new(boneIdx)
     val _ret = __method_bind.is_bone_rest_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingBonesInWorldTransform(): Boolean {
     val _ret = __method_bind.is_using_bones_in_world_transform.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun localizeRests() {

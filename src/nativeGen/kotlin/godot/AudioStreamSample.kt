@@ -53,7 +53,7 @@ open class AudioStreamSample(
 
   fun isStereo(): Boolean {
     val _ret = __method_bind.is_stereo.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun saveToWav(path: String): GDError {

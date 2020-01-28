@@ -76,7 +76,7 @@ open class UPNPDevice(
 
   fun isValidGateway(): Boolean {
     val _ret = __method_bind.is_valid_gateway.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun queryExternalAddress(): String {

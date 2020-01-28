@@ -39,22 +39,22 @@ open class Tabs(
 
   fun getDragToRearrangeEnabled(): Boolean {
     val _ret = __method_bind.get_drag_to_rearrange_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getOffsetButtonsVisible(): Boolean {
     val _ret = __method_bind.get_offset_buttons_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getScrollingEnabled(): Boolean {
     val _ret = __method_bind.get_scrolling_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getSelectWithRmb(): Boolean {
     val _ret = __method_bind.get_select_with_rmb.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTabAlign(): TabAlign {
@@ -75,7 +75,7 @@ open class Tabs(
   fun getTabDisabled(tabIdx: Int): Boolean {
     val _arg = Variant.new(tabIdx)
     val _ret = __method_bind.get_tab_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTabIcon(tabIdx: Int): Texture {

@@ -59,7 +59,7 @@ open class TileMap(
 
   fun getClipUv(): Boolean {
     val _ret = __method_bind.get_clip_uv.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionBounce(): Float {
@@ -80,7 +80,7 @@ open class TileMap(
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionMask(): Int {
@@ -91,12 +91,12 @@ open class TileMap(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionUseKinematic(): Boolean {
     val _ret = __method_bind.get_collision_use_kinematic.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCustomTransform(): Transform2D {
@@ -136,13 +136,13 @@ open class TileMap(
 
   fun getUsedCells(): VariantArray {
     val _ret = __method_bind.get_used_cells.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getUsedCellsById(id: Int): VariantArray {
     val _arg = Variant.new(id)
     val _ret = __method_bind.get_used_cells_by_id.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getUsedRect(): Rect2 {
@@ -155,7 +155,7 @@ open class TileMap(
     _args.append(x)
     _args.append(y)
     val _ret = __method_bind.is_cell_transposed.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCellXFlipped(x: Int, y: Int): Boolean {
@@ -163,7 +163,7 @@ open class TileMap(
     _args.append(x)
     _args.append(y)
     val _ret = __method_bind.is_cell_x_flipped.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCellYFlipped(x: Int, y: Int): Boolean {
@@ -171,12 +171,12 @@ open class TileMap(
     _args.append(x)
     _args.append(y)
     val _ret = __method_bind.is_cell_y_flipped.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isYSortModeEnabled(): Boolean {
     val _ret = __method_bind.is_y_sort_mode_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun mapToWorld(mapPosition: Vector2, ignoreHalfOfs: Boolean): Vector2 {

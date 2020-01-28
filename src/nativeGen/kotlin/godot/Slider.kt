@@ -25,17 +25,17 @@ open class Slider(
 
   fun getTicksOnBorders(): Boolean {
     val _ret = __method_bind.get_ticks_on_borders.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEditable(): Boolean {
     val _ret = __method_bind.is_editable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isScrollable(): Boolean {
     val _ret = __method_bind.is_scrollable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setEditable(editable: Boolean) {

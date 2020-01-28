@@ -30,7 +30,7 @@ open class Shape2D(
     _args.append(withShape)
     _args.append(shapeXform)
     val _ret = __method_bind.collide.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun collideAndGetContacts(
@@ -43,7 +43,7 @@ open class Shape2D(
     _args.append(withShape)
     _args.append(shapeXform)
     val _ret = __method_bind.collide_and_get_contacts.call(this._handle, _args.toVariant(), 3)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun collideWithMotion(
@@ -60,7 +60,7 @@ open class Shape2D(
     _args.append(shapeXform)
     _args.append(shapeMotion)
     val _ret = __method_bind.collide_with_motion.call(this._handle, _args.toVariant(), 5)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun collideWithMotionAndGetContacts(
@@ -78,7 +78,7 @@ open class Shape2D(
     _args.append(shapeMotion)
     val _ret = __method_bind.collide_with_motion_and_get_contacts.call(this._handle,
         _args.toVariant(), 5)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getCustomSolverBias(): Float {

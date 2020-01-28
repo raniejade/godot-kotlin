@@ -30,7 +30,7 @@ open class IP(
 
   fun getLocalAddresses(): VariantArray {
     val _ret = __method_bind.get_local_addresses.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getResolveItemAddress(id: Int): String {

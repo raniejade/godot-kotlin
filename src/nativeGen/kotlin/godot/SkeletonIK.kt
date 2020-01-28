@@ -70,17 +70,17 @@ open class SkeletonIK(
 
   fun isOverrideTipBasis(): Boolean {
     val _ret = __method_bind.is_override_tip_basis.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRunning(): Boolean {
     val _ret = __method_bind.is_running.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingMagnet(): Boolean {
     val _ret = __method_bind.is_using_magnet.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setInterpolation(interpolation: Float) {

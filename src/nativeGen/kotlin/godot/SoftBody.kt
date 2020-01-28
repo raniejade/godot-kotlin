@@ -32,7 +32,7 @@ open class SoftBody(
 
   fun getCollisionExceptions(): VariantArray {
     val _ret = __method_bind.get_collision_exceptions.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getCollisionLayer(): Int {
@@ -43,7 +43,7 @@ open class SoftBody(
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionMask(): Int {
@@ -54,7 +54,7 @@ open class SoftBody(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getDampingCoefficient(): Float {
@@ -104,7 +104,7 @@ open class SoftBody(
 
   fun isRayPickable(): Boolean {
     val _ret = __method_bind.is_ray_pickable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeCollisionExceptionWith(body: Node) {

@@ -77,17 +77,17 @@ open class Label(
 
   fun hasAutowrap(): Boolean {
     val _ret = __method_bind.has_autowrap.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isClippingText(): Boolean {
     val _ret = __method_bind.is_clipping_text.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUppercase(): Boolean {
     val _ret = __method_bind.is_uppercase.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAlign(align: Int) {

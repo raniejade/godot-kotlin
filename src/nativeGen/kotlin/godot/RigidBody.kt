@@ -67,7 +67,7 @@ open class RigidBody(
   fun getAxisLock(axis: Int): Boolean {
     val _arg = Variant.new(axis)
     val _ret = __method_bind.get_axis_lock.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getBounce(): Float {
@@ -77,7 +77,7 @@ open class RigidBody(
 
   fun getCollidingBodies(): VariantArray {
     val _ret = __method_bind.get_colliding_bodies.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getFriction(): Float {
@@ -127,27 +127,27 @@ open class RigidBody(
 
   fun isAbleToSleep(): Boolean {
     val _ret = __method_bind.is_able_to_sleep.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isContactMonitorEnabled(): Boolean {
     val _ret = __method_bind.is_contact_monitor_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSleeping(): Boolean {
     val _ret = __method_bind.is_sleeping.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingContinuousCollisionDetection(): Boolean {
     val _ret = __method_bind.is_using_continuous_collision_detection.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingCustomIntegrator(): Boolean {
     val _ret = __method_bind.is_using_custom_integrator.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAngularDamp(angularDamp: Float) {

@@ -24,7 +24,7 @@ open class CollisionShape(
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun makeConvexFromBrothers() {

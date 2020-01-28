@@ -36,22 +36,22 @@ open class Timer(
 
   fun hasAutostart(): Boolean {
     val _ret = __method_bind.has_autostart.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOneShot(): Boolean {
     val _ret = __method_bind.is_one_shot.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPaused(): Boolean {
     val _ret = __method_bind.is_paused.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isStopped(): Boolean {
     val _ret = __method_bind.is_stopped.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAutostart(enable: Boolean) {

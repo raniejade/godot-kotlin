@@ -62,33 +62,33 @@ open class Sprite(
 
   fun isCentered(): Boolean {
     val _ret = __method_bind.is_centered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPixelOpaque(pos: Vector2): Boolean {
     val _arg = Variant.new(pos)
     val _ret = __method_bind.is_pixel_opaque.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRegion(): Boolean {
     val _ret = __method_bind.is_region.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRegionFilterClipEnabled(): Boolean {
     val _ret = __method_bind.is_region_filter_clip_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCentered(centered: Boolean) {

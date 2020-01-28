@@ -31,12 +31,12 @@ open class ShortCut(
   fun isShortcut(event: InputEvent): Boolean {
     val _arg = Variant.new(event)
     val _ret = __method_bind.is_shortcut.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isValid(): Boolean {
     val _ret = __method_bind.is_valid.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setShortcut(event: InputEvent) {

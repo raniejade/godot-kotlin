@@ -96,13 +96,13 @@ open class VisualShaderNodeGroupBase(
   fun hasInputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.has_input_port.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasOutputPort(id: Int): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.has_output_port.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeInputPort(id: Int) {

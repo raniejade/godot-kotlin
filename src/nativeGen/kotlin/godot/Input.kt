@@ -54,7 +54,7 @@ open class Input(
 
   fun getConnectedJoypads(): VariantArray {
     val _ret = __method_bind.get_connected_joypads.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getCurrentCursorShape(): CursorShape {
@@ -151,19 +151,19 @@ open class Input(
   fun isActionJustPressed(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.is_action_just_pressed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActionJustReleased(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.is_action_just_released.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.is_action_pressed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isJoyButtonPressed(device: Int, button: Int): Boolean {
@@ -171,25 +171,25 @@ open class Input(
     _args.append(device)
     _args.append(button)
     val _ret = __method_bind.is_joy_button_pressed.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isJoyKnown(device: Int): Boolean {
     val _arg = Variant.new(device)
     val _ret = __method_bind.is_joy_known.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isKeyPressed(scancode: Int): Boolean {
     val _arg = Variant.new(scancode)
     val _ret = __method_bind.is_key_pressed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isMouseButtonPressed(button: Int): Boolean {
     val _arg = Variant.new(button)
     val _ret = __method_bind.is_mouse_button_pressed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun joyConnectionChanged(

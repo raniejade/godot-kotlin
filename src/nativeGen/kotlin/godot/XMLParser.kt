@@ -78,12 +78,12 @@ open class XMLParser(
   fun hasAttribute(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_attribute.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEmpty(): Boolean {
     val _ret = __method_bind.is_empty.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun open(file: String): GDError {

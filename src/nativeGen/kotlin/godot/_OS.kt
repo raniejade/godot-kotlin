@@ -34,12 +34,12 @@ open class _OS(
 
   fun canDraw(): Boolean {
     val _ret = __method_bind.can_draw.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun canUseThreads(): Boolean {
     val _ret = __method_bind.can_use_threads.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun centerWindow() {
@@ -106,7 +106,7 @@ open class _OS(
 
   fun getBorderlessWindow(): Boolean {
     val _ret = __method_bind.get_borderless_window.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getClipboard(): String {
@@ -358,7 +358,7 @@ open class _OS(
 
   fun getWindowPerPixelTransparencyEnabled(): Boolean {
     val _ret = __method_bind.get_window_per_pixel_transparency_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getWindowPosition(): Vector2 {
@@ -379,23 +379,23 @@ open class _OS(
   fun hasEnvironment(environment: String): Boolean {
     val _arg = Variant.new(environment)
     val _ret = __method_bind.has_environment.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFeature(tagName: String): Boolean {
     val _arg = Variant.new(tagName)
     val _ret = __method_bind.has_feature.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasTouchscreenUiHint(): Boolean {
     val _ret = __method_bind.has_touchscreen_ui_hint.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasVirtualKeyboard(): Boolean {
     val _ret = __method_bind.has_virtual_keyboard.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hideVirtualKeyboard() {
@@ -404,68 +404,68 @@ open class _OS(
 
   fun isDebugBuild(): Boolean {
     val _ret = __method_bind.is_debug_build.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInLowProcessorUsageMode(): Boolean {
     val _ret = __method_bind.is_in_low_processor_usage_mode.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isKeepScreenOn(): Boolean {
     val _ret = __method_bind.is_keep_screen_on.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOkLeftAndCancelRight(): Boolean {
     val _ret = __method_bind.is_ok_left_and_cancel_right.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isScancodeUnicode(code: Int): Boolean {
     val _arg = Variant.new(code)
     val _ret = __method_bind.is_scancode_unicode.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isStdoutVerbose(): Boolean {
     val _ret = __method_bind.is_stdout_verbose.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUserfsPersistent(): Boolean {
     val _ret = __method_bind.is_userfs_persistent.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isVsyncEnabled(): Boolean {
     val _ret = __method_bind.is_vsync_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isWindowAlwaysOnTop(): Boolean {
     val _ret = __method_bind.is_window_always_on_top.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isWindowFullscreen(): Boolean {
     val _ret = __method_bind.is_window_fullscreen.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isWindowMaximized(): Boolean {
     val _ret = __method_bind.is_window_maximized.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isWindowMinimized(): Boolean {
     val _ret = __method_bind.is_window_minimized.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isWindowResizable(): Boolean {
     val _ret = __method_bind.is_window_resizable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun kill(pid: Int): GDError {
@@ -480,7 +480,7 @@ open class _OS(
 
   fun nativeVideoIsPlaying(): Boolean {
     val _ret = __method_bind.native_video_is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun nativeVideoPause() {
@@ -540,7 +540,7 @@ open class _OS(
   fun requestPermission(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.request_permission.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBorderlessWindow(borderless: Boolean) {

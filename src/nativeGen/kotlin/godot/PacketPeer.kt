@@ -43,7 +43,7 @@ open class PacketPeer(
 
   fun isObjectDecodingAllowed(): Boolean {
     val _ret = __method_bind.is_object_decoding_allowed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun putPacket(buffer: PoolByteArray): GDError {

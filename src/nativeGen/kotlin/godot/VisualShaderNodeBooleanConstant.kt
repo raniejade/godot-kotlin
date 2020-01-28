@@ -19,7 +19,7 @@ open class VisualShaderNodeBooleanConstant(
 ) : VisualShaderNode(_handle) {
   fun getConstant(): Boolean {
     val _ret = __method_bind.get_constant.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setConstant(value: Boolean) {

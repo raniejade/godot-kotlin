@@ -90,7 +90,7 @@ open class AnimationTreePlayer(
     _args.append(dstId)
     _args.append(dstInputIdx)
     val _ret = __method_bind.are_nodes_connected.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun blend2NodeGetAmount(id: String): Float {
@@ -186,7 +186,7 @@ open class AnimationTreePlayer(
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun mixNodeGetAmount(id: String): Float {
@@ -205,7 +205,7 @@ open class AnimationTreePlayer(
   fun nodeExists(node: String): Boolean {
     val _arg = Variant.new(node)
     val _ret = __method_bind.node_exists.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun nodeGetInputCount(id: String): Int {
@@ -276,13 +276,13 @@ open class AnimationTreePlayer(
   fun oneshotNodeHasAutorestart(id: String): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.oneshot_node_has_autorestart.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun oneshotNodeIsActive(id: String): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.oneshot_node_is_active.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun oneshotNodeSetAutorestart(id: String, enable: Boolean) {
@@ -426,7 +426,7 @@ open class AnimationTreePlayer(
     _args.append(inputIdx)
     val _ret = __method_bind.transition_node_has_input_auto_advance.call(this._handle,
         _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun transitionNodeSetCurrent(id: String, inputIdx: Int) {

@@ -19,7 +19,7 @@ open class YSort(
 ) : Node2D(_handle) {
   fun isSortEnabled(): Boolean {
     val _ret = __method_bind.is_sort_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setSortEnabled(enabled: Boolean) {

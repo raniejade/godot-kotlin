@@ -44,22 +44,22 @@ open class KinematicBody2D(
 
   fun isOnCeiling(): Boolean {
     val _ret = __method_bind.is_on_ceiling.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOnFloor(): Boolean {
     val _ret = __method_bind.is_on_floor.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOnWall(): Boolean {
     val _ret = __method_bind.is_on_wall.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSyncToPhysicsEnabled(): Boolean {
     val _ret = __method_bind.is_sync_to_physics_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun moveAndCollide(
@@ -137,7 +137,7 @@ open class KinematicBody2D(
     _args.append(relVec)
     _args.append(infiniteInertia)
     val _ret = __method_bind.test_move.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

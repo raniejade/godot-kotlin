@@ -51,7 +51,7 @@ open class Object(
 
   fun canTranslateMessages(): Boolean {
     val _ret = __method_bind.can_translate_messages.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun connect(
@@ -102,7 +102,7 @@ open class Object(
 
   fun getIncomingConnections(): VariantArray {
     val _ret = __method_bind.get_incoming_connections.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getIndexed(property: NodePath): Variant {
@@ -129,12 +129,12 @@ open class Object(
 
   fun getMethodList(): VariantArray {
     val _ret = __method_bind.get_method_list.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getPropertyList(): VariantArray {
     val _ret = __method_bind.get_property_list.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getScript(): Reference {
@@ -145,41 +145,41 @@ open class Object(
   fun getSignalConnectionList(signal: String): VariantArray {
     val _arg = Variant.new(signal)
     val _ret = __method_bind.get_signal_connection_list.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getSignalList(): VariantArray {
     val _ret = __method_bind.get_signal_list.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun hasMeta(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_meta.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasMethod(method: String): Boolean {
     val _arg = Variant.new(method)
     val _ret = __method_bind.has_method.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasUserSignal(signal: String): Boolean {
     val _arg = Variant.new(signal)
     val _ret = __method_bind.has_user_signal.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isBlockingSignals(): Boolean {
     val _ret = __method_bind.is_blocking_signals.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isClass(type: String): Boolean {
     val _arg = Variant.new(type)
     val _ret = __method_bind.is_class.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isConnected(
@@ -192,12 +192,12 @@ open class Object(
     _args.append(target)
     _args.append(method)
     val _ret = __method_bind.is_connected.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isQueuedForDeletion(): Boolean {
     val _ret = __method_bind.is_queued_for_deletion.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun notification(what: Int, reversed: Boolean) {

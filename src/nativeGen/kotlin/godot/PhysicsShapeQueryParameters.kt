@@ -28,7 +28,7 @@ open class PhysicsShapeQueryParameters(
 
   fun getExclude(): VariantArray {
     val _ret = __method_bind.get_exclude.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getMargin(): Float {
@@ -48,12 +48,12 @@ open class PhysicsShapeQueryParameters(
 
   fun isCollideWithAreasEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_areas_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_bodies_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCollideWithAreas(enable: Boolean) {

@@ -26,7 +26,7 @@ open class SphereMesh(
 
   fun getIsHemisphere(): Boolean {
     val _ret = __method_bind.get_is_hemisphere.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getRadialSegments(): Int {

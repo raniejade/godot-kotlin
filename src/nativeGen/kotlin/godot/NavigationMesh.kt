@@ -73,7 +73,7 @@ open class NavigationMesh(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getDetailSampleDistance(): Float {
@@ -98,17 +98,17 @@ open class NavigationMesh(
 
   fun getFilterLedgeSpans(): Boolean {
     val _ret = __method_bind.get_filter_ledge_spans.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFilterLowHangingObstacles(): Boolean {
     val _ret = __method_bind.get_filter_low_hanging_obstacles.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFilterWalkableLowHeightSpans(): Boolean {
     val _ret = __method_bind.get_filter_walkable_low_height_spans.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getParsedGeometryType(): Int {

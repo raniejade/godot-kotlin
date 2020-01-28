@@ -22,19 +22,19 @@ open class Generic6DOFJoint(
   fun getFlagX(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_flag_x.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFlagY(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_flag_y.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFlagZ(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_flag_z.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getParamX(param: Int): Float {

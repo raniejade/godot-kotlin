@@ -25,7 +25,7 @@ open class ViewportContainer(
 
   fun isStretchEnabled(): Boolean {
     val _ret = __method_bind.is_stretch_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setStretch(enable: Boolean) {

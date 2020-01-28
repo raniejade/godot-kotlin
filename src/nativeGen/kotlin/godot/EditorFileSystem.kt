@@ -43,7 +43,7 @@ open class EditorFileSystem(
 
   fun isScanning(): Boolean {
     val _ret = __method_bind.is_scanning.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun scan() {

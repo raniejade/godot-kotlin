@@ -29,13 +29,13 @@ open class EditorFeatureProfile(
   fun isClassDisabled(className: String): Boolean {
     val _arg = Variant.new(className)
     val _ret = __method_bind.is_class_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isClassEditorDisabled(className: String): Boolean {
     val _arg = Variant.new(className)
     val _ret = __method_bind.is_class_editor_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isClassPropertyDisabled(className: String, arg1: String): Boolean {
@@ -43,13 +43,13 @@ open class EditorFeatureProfile(
     _args.append(className)
     _args.append(arg1)
     val _ret = __method_bind.is_class_property_disabled.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFeatureDisabled(feature: Int): Boolean {
     val _arg = Variant.new(feature)
     val _ret = __method_bind.is_feature_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun loadFromFile(path: String): GDError {

@@ -23,7 +23,7 @@ open class ReflectionProbe(
 ) : VisualInstance(_handle) {
   fun areShadowsEnabled(): Boolean {
     val _ret = __method_bind.are_shadows_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCullMask(): Int {
@@ -73,12 +73,12 @@ open class ReflectionProbe(
 
   fun isBoxProjectionEnabled(): Boolean {
     val _ret = __method_bind.is_box_projection_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSetAsInterior(): Boolean {
     val _ret = __method_bind.is_set_as_interior.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAsInterior(enable: Boolean) {

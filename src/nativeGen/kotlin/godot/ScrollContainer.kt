@@ -45,12 +45,12 @@ open class ScrollContainer(
 
   fun isHScrollEnabled(): Boolean {
     val _ret = __method_bind.is_h_scroll_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isVScrollEnabled(): Boolean {
     val _ret = __method_bind.is_v_scroll_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDeadzone(deadzone: Int) {

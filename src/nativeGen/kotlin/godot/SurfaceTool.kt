@@ -128,7 +128,7 @@ open class SurfaceTool(
 
   fun commitToArrays(): VariantArray {
     val _ret = __method_bind.commit_to_arrays.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun createFrom(existing: Mesh, surface: Int) {

@@ -49,7 +49,7 @@ open class RegExMatch(
 
   fun getStrings(): VariantArray {
     val _ret = __method_bind.get_strings.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getSubject(): String {

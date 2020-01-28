@@ -37,12 +37,12 @@ open class CollisionPolygon2D(
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOneWayCollisionEnabled(): Boolean {
     val _ret = __method_bind.is_one_way_collision_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBuildMode(buildMode: Int) {

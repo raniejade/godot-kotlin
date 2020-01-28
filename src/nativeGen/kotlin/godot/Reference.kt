@@ -19,17 +19,17 @@ open class Reference(
 ) : Object(_handle) {
   fun initRef(): Boolean {
     val _ret = __method_bind.init_ref.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun reference(): Boolean {
     val _ret = __method_bind.reference.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun unreference(): Boolean {
     val _ret = __method_bind.unreference.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

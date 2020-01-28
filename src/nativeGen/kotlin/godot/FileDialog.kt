@@ -79,12 +79,12 @@ open class FileDialog(
 
   fun isModeOverridingTitle(): Boolean {
     val _ret = __method_bind.is_mode_overriding_title.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShowingHiddenFiles(): Boolean {
     val _ret = __method_bind.is_showing_hidden_files.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAccess(access: Int) {

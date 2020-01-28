@@ -24,7 +24,7 @@ open class _ResourceLoader(
     _args.append(path)
     _args.append(typeHint)
     val _ret = __method_bind.exists.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getDependencies(path: String): PoolStringArray {
@@ -42,13 +42,13 @@ open class _ResourceLoader(
   fun has(path: String): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.has.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasCached(path: String): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.has_cached.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun load(

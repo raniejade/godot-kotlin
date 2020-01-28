@@ -30,12 +30,12 @@ open class PhysicsMaterial(
 
   fun isAbsorbent(): Boolean {
     val _ret = __method_bind.is_absorbent.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRough(): Boolean {
     val _ret = __method_bind.is_rough.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAbsorbent(absorbent: Boolean) {

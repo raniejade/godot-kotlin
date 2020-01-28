@@ -19,7 +19,7 @@ open class ProgressBar(
 ) : Range(_handle) {
   fun isPercentVisible(): Boolean {
     val _ret = __method_bind.is_percent_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setPercentVisible(visible: Boolean) {

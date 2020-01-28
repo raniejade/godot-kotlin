@@ -160,7 +160,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_color.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasConstant(name: String, type: String): Boolean {
@@ -168,7 +168,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_constant.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFont(name: String, type: String): Boolean {
@@ -176,7 +176,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_font.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasIcon(name: String, type: String): Boolean {
@@ -184,7 +184,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_icon.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasStylebox(name: String, type: String): Boolean {
@@ -192,7 +192,7 @@ open class Theme(
     _args.append(name)
     _args.append(type)
     val _ret = __method_bind.has_stylebox.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setColor(

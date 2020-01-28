@@ -25,7 +25,7 @@ open class InputEvent(
   fun accumulate(withEvent: InputEvent): Boolean {
     val _arg = Variant.new(withEvent)
     val _ret = __method_bind.accumulate.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun asText(): String {
@@ -47,34 +47,34 @@ open class InputEvent(
   fun isAction(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.is_action.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActionPressed(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.is_action_pressed.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActionReleased(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.is_action_released.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActionType(): Boolean {
     val _ret = __method_bind.is_action_type.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEcho(): Boolean {
     val _ret = __method_bind.is_echo.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPressed(): Boolean {
     val _ret = __method_bind.is_pressed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDevice(device: Int) {
@@ -85,7 +85,7 @@ open class InputEvent(
   fun shortcutMatch(event: InputEvent): Boolean {
     val _arg = Variant.new(event)
     val _ret = __method_bind.shortcut_match.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun xformedBy(xform: Transform2D, localOfs: Vector2): InputEvent {

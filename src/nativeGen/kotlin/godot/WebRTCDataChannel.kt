@@ -61,12 +61,12 @@ open class WebRTCDataChannel(
 
   fun isNegotiated(): Boolean {
     val _ret = __method_bind.is_negotiated.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOrdered(): Boolean {
     val _ret = __method_bind.is_ordered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun poll(): GDError {
@@ -81,7 +81,7 @@ open class WebRTCDataChannel(
 
   fun wasStringPacket(): Boolean {
     val _ret = __method_bind.was_string_packet.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   enum class WriteMode(

@@ -33,7 +33,7 @@ open class TextureProgress(
 
   fun getNinePatchStretch(): Boolean {
     val _ret = __method_bind.get_nine_patch_stretch.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getOverTexture(): Texture {

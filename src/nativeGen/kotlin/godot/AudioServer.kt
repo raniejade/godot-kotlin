@@ -44,7 +44,7 @@ open class AudioServer(
 
   fun captureGetDeviceList(): VariantArray {
     val _ret = __method_bind.capture_get_device_list.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun captureSetDevice(name: String) {
@@ -142,7 +142,7 @@ open class AudioServer(
 
   fun getDeviceList(): VariantArray {
     val _ret = __method_bind.get_device_list.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getMixRate(): Float {
@@ -173,7 +173,7 @@ open class AudioServer(
   fun isBusBypassingEffects(busIdx: Int): Boolean {
     val _arg = Variant.new(busIdx)
     val _ret = __method_bind.is_bus_bypassing_effects.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isBusEffectEnabled(busIdx: Int, effectIdx: Int): Boolean {
@@ -181,19 +181,19 @@ open class AudioServer(
     _args.append(busIdx)
     _args.append(effectIdx)
     val _ret = __method_bind.is_bus_effect_enabled.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isBusMute(busIdx: Int): Boolean {
     val _arg = Variant.new(busIdx)
     val _ret = __method_bind.is_bus_mute.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isBusSolo(busIdx: Int): Boolean {
     val _arg = Variant.new(busIdx)
     val _ret = __method_bind.is_bus_solo.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun lock() {

@@ -309,7 +309,7 @@ open class Environment(
 
   fun getTonemapAutoExposure(): Boolean {
     val _ret = __method_bind.get_tonemap_auto_exposure.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTonemapAutoExposureGrey(): Float {
@@ -349,68 +349,68 @@ open class Environment(
 
   fun isAdjustmentEnabled(): Boolean {
     val _ret = __method_bind.is_adjustment_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDofBlurFarEnabled(): Boolean {
     val _ret = __method_bind.is_dof_blur_far_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDofBlurNearEnabled(): Boolean {
     val _ret = __method_bind.is_dof_blur_near_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFogDepthEnabled(): Boolean {
     val _ret = __method_bind.is_fog_depth_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFogEnabled(): Boolean {
     val _ret = __method_bind.is_fog_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFogHeightEnabled(): Boolean {
     val _ret = __method_bind.is_fog_height_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFogTransmitEnabled(): Boolean {
     val _ret = __method_bind.is_fog_transmit_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isGlowBicubicUpscaleEnabled(): Boolean {
     val _ret = __method_bind.is_glow_bicubic_upscale_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isGlowEnabled(): Boolean {
     val _ret = __method_bind.is_glow_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isGlowLevelEnabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_glow_level_enabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSsaoEnabled(): Boolean {
     val _ret = __method_bind.is_ssao_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSsrEnabled(): Boolean {
     val _ret = __method_bind.is_ssr_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSsrRough(): Boolean {
     val _ret = __method_bind.is_ssr_rough.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAdjustmentBrightness(brightness: Float) {

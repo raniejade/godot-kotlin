@@ -26,12 +26,12 @@ open class ColorPicker(
 
   fun arePresetsEnabled(): Boolean {
     val _ret = __method_bind.are_presets_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun arePresetsVisible(): Boolean {
     val _ret = __method_bind.are_presets_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun erasePreset(color: Color) {
@@ -51,17 +51,17 @@ open class ColorPicker(
 
   fun isDeferredMode(): Boolean {
     val _ret = __method_bind.is_deferred_mode.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEditingAlpha(): Boolean {
     val _ret = __method_bind.is_editing_alpha.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRawMode(): Boolean {
     val _ret = __method_bind.is_raw_mode.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDeferredMode(mode: Boolean) {

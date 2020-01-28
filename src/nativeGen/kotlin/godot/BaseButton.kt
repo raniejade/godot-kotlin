@@ -50,32 +50,32 @@ open class BaseButton(
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHovered(): Boolean {
     val _ret = __method_bind.is_hovered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isKeepPressedOutside(): Boolean {
     val _ret = __method_bind.is_keep_pressed_outside.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPressed(): Boolean {
     val _ret = __method_bind.is_pressed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShortcutInTooltipEnabled(): Boolean {
     val _ret = __method_bind.is_shortcut_in_tooltip_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isToggleMode(): Boolean {
     val _ret = __method_bind.is_toggle_mode.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setActionMode(mode: Int) {

@@ -49,7 +49,7 @@ open class StreamPeerTCP(
 
   fun isConnectedToHost(): Boolean {
     val _ret = __method_bind.is_connected_to_host.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setNoDelay(enabled: Boolean) {

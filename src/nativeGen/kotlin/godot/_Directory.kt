@@ -36,19 +36,19 @@ open class _Directory(
 
   fun currentIsDir(): Boolean {
     val _ret = __method_bind.current_is_dir.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun dirExists(path: String): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.dir_exists.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun fileExists(path: String): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.file_exists.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCurrentDir(): String {

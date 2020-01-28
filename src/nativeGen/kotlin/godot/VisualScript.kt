@@ -207,7 +207,7 @@ open class VisualScript(
   fun getVariableExport(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.get_variable_export.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getVariableInfo(name: String): Dictionary {
@@ -219,7 +219,7 @@ open class VisualScript(
   fun hasCustomSignal(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_custom_signal.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasDataConnection(
@@ -236,13 +236,13 @@ open class VisualScript(
     _args.append(toNode)
     _args.append(toPort)
     val _ret = __method_bind.has_data_connection.call(this._handle, _args.toVariant(), 5)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasFunction(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_function.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasNode(func: String, id: Int): Boolean {
@@ -250,7 +250,7 @@ open class VisualScript(
     _args.append(func)
     _args.append(id)
     val _ret = __method_bind.has_node.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasSequenceConnection(
@@ -265,13 +265,13 @@ open class VisualScript(
     _args.append(fromOutput)
     _args.append(toNode)
     val _ret = __method_bind.has_sequence_connection.call(this._handle, _args.toVariant(), 4)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasVariable(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_variable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeCustomSignal(name: String) {

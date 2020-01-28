@@ -41,7 +41,7 @@ open class SpinBox(
 
   fun isEditable(): Boolean {
     val _ret = __method_bind.is_editable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAlign(align: Int) {

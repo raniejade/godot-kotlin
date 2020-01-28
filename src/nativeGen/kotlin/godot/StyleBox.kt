@@ -73,7 +73,7 @@ open class StyleBox(
     _args.append(point)
     _args.append(rect)
     val _ret = __method_bind.test_mask.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

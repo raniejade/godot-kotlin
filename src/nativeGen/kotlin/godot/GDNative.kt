@@ -38,7 +38,7 @@ open class GDNative(
 
   fun initialize(): Boolean {
     val _ret = __method_bind.initialize.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setLibrary(library: GDNativeLibrary) {
@@ -48,7 +48,7 @@ open class GDNative(
 
   fun terminate(): Boolean {
     val _ret = __method_bind.terminate.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

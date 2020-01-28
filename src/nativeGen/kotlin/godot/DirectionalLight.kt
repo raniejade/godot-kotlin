@@ -30,7 +30,7 @@ open class DirectionalLight(
 
   fun isBlendSplitsEnabled(): Boolean {
     val _ret = __method_bind.is_blend_splits_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBlendSplits(enabled: Boolean) {

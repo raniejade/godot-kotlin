@@ -94,32 +94,32 @@ open class RichTextLabel(
 
   fun isMetaUnderlined(): Boolean {
     val _ret = __method_bind.is_meta_underlined.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOverridingSelectedFontColor(): Boolean {
     val _ret = __method_bind.is_overriding_selected_font_color.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isScrollActive(): Boolean {
     val _ret = __method_bind.is_scroll_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isScrollFollowing(): Boolean {
     val _ret = __method_bind.is_scroll_following.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSelectionEnabled(): Boolean {
     val _ret = __method_bind.is_selection_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingBbcode(): Boolean {
     val _ret = __method_bind.is_using_bbcode.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun newline() {
@@ -186,7 +186,7 @@ open class RichTextLabel(
   fun removeLine(line: Int): Boolean {
     val _arg = Variant.new(line)
     val _ret = __method_bind.remove_line.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun scrollToLine(line: Int) {

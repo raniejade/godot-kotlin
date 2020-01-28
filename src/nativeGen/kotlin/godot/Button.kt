@@ -26,7 +26,7 @@ open class Button(
 
   fun getClipText(): Boolean {
     val _ret = __method_bind.get_clip_text.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getText(): String {
@@ -41,7 +41,7 @@ open class Button(
 
   fun isFlat(): Boolean {
     val _ret = __method_bind.is_flat.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setButtonIcon(texture: Texture) {

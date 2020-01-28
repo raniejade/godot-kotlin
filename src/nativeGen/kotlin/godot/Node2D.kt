@@ -90,7 +90,7 @@ open class Node2D(
 
   fun isZRelative(): Boolean {
     val _ret = __method_bind.is_z_relative.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun lookAt(point: Vector2) {

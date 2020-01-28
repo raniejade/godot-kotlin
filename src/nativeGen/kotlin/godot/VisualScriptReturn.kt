@@ -25,7 +25,7 @@ open class VisualScriptReturn(
 
   fun isReturnValueEnabled(): Boolean {
     val _ret = __method_bind.is_return_value_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setEnableReturnValue(enable: Boolean) {

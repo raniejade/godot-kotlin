@@ -25,22 +25,22 @@ open class RemoteTransform(
 
   fun getUpdatePosition(): Boolean {
     val _ret = __method_bind.get_update_position.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getUpdateRotation(): Boolean {
     val _ret = __method_bind.get_update_rotation.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getUpdateScale(): Boolean {
     val _ret = __method_bind.get_update_scale.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getUseGlobalCoordinates(): Boolean {
     val _ret = __method_bind.get_use_global_coordinates.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setRemoteNode(path: NodePath) {

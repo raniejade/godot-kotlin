@@ -30,7 +30,7 @@ open class ScriptEditor(
     _args.append(data)
     _args.append(from)
     val _ret = __method_bind.can_drop_data_fw.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun dropDataFw(
@@ -60,7 +60,7 @@ open class ScriptEditor(
 
   fun getOpenScripts(): VariantArray {
     val _ret = __method_bind.get_open_scripts.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun gotoLine(lineNumber: Int) {

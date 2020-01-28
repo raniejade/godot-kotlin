@@ -103,7 +103,7 @@ open class NetworkedMultiplayerENet(
 
   fun isAlwaysOrdered(): Boolean {
     val _ret = __method_bind.is_always_ordered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAlwaysOrdered(ordered: Boolean) {

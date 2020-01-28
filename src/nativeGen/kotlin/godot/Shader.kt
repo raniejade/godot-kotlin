@@ -38,7 +38,7 @@ open class Shader(
   fun hasParam(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_param.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCode(code: String) {

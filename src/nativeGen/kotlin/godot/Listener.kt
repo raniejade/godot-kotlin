@@ -29,7 +29,7 @@ open class Listener(
 
   fun isCurrent(): Boolean {
     val _ret = __method_bind.is_current.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun makeCurrent() {

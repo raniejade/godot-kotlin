@@ -40,7 +40,7 @@ open class Expression(
 
   fun hasExecuteFailed(): Boolean {
     val _ret = __method_bind.has_execute_failed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun parse(expression: String, inputNames: PoolStringArray): GDError {

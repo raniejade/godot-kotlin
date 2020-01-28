@@ -39,7 +39,7 @@ open class AnimationNodeTransition(
   fun isInputSetAsAutoAdvance(input: Int): Boolean {
     val _arg = Variant.new(input)
     val _ret = __method_bind.is_input_set_as_auto_advance.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCrossFadeTime(time: Float) {

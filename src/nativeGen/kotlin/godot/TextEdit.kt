@@ -46,7 +46,7 @@ open class TextEdit(
   fun canFold(line: Int): Boolean {
     val _arg = Variant.new(line)
     val _ret = __method_bind.can_fold.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun clearColors() {
@@ -63,7 +63,7 @@ open class TextEdit(
 
   fun cursorGetBlinkEnabled(): Boolean {
     val _ret = __method_bind.cursor_get_blink_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun cursorGetBlinkSpeed(): Float {
@@ -83,7 +83,7 @@ open class TextEdit(
 
   fun cursorIsBlockMode(): Boolean {
     val _ret = __method_bind.cursor_is_block_mode.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun cursorSetBlinkEnabled(enable: Boolean) {
@@ -141,7 +141,7 @@ open class TextEdit(
 
   fun getBreakpoints(): VariantArray {
     val _ret = __method_bind.get_breakpoints.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getKeywordColor(keyword: String): Color {
@@ -209,7 +209,7 @@ open class TextEdit(
   fun hasKeywordColor(keyword: String): Boolean {
     val _arg = Variant.new(keyword)
     val _ret = __method_bind.has_keyword_color.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun insertTextAtCursor(text: String) {
@@ -219,94 +219,94 @@ open class TextEdit(
 
   fun isBreakpointGutterEnabled(): Boolean {
     val _ret = __method_bind.is_breakpoint_gutter_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isContextMenuEnabled(): Boolean {
     val _ret = __method_bind.is_context_menu_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDrawingFoldGutter(): Boolean {
     val _ret = __method_bind.is_drawing_fold_gutter.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDrawingSpaces(): Boolean {
     val _ret = __method_bind.is_drawing_spaces.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDrawingTabs(): Boolean {
     val _ret = __method_bind.is_drawing_tabs.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFolded(line: Int): Boolean {
     val _arg = Variant.new(line)
     val _ret = __method_bind.is_folded.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHidingEnabled(): Boolean {
     val _ret = __method_bind.is_hiding_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHighlightAllOccurrencesEnabled(): Boolean {
     val _ret = __method_bind.is_highlight_all_occurrences_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHighlightCurrentLineEnabled(): Boolean {
     val _ret = __method_bind.is_highlight_current_line_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isLineHidden(line: Int): Boolean {
     val _arg = Variant.new(line)
     val _ret = __method_bind.is_line_hidden.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isOverridingSelectedFontColor(): Boolean {
     val _ret = __method_bind.is_overriding_selected_font_color.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isReadonly(): Boolean {
     val _ret = __method_bind.is_readonly.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRightClickMovingCaret(): Boolean {
     val _ret = __method_bind.is_right_click_moving_caret.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSelectionActive(): Boolean {
     val _ret = __method_bind.is_selection_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShowLineNumbersEnabled(): Boolean {
     val _ret = __method_bind.is_show_line_numbers_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSmoothScrollEnabled(): Boolean {
     val _ret = __method_bind.is_smooth_scroll_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSyntaxColoringEnabled(): Boolean {
     val _ret = __method_bind.is_syntax_coloring_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isWrapEnabled(): Boolean {
     val _ret = __method_bind.is_wrap_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun menuOption(option: Int) {

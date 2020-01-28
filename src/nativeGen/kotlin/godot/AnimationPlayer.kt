@@ -140,17 +140,17 @@ open class AnimationPlayer(
   fun hasAnimation(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_animation.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun play(

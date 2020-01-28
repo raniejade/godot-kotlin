@@ -52,7 +52,7 @@ open class EditorInterface(
 
   fun getOpenScenes(): VariantArray {
     val _ret = __method_bind.get_open_scenes.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getResourceFilesystem(): EditorFileSystem {
@@ -90,7 +90,7 @@ open class EditorInterface(
   fun isPluginEnabled(plugin: String): Boolean {
     val _arg = Variant.new(plugin)
     val _ret = __method_bind.is_plugin_enabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun makeMeshPreviews(meshes: VariantArray, previewSize: Int): VariantArray {
@@ -98,7 +98,7 @@ open class EditorInterface(
     _args.append(meshes)
     _args.append(previewSize)
     val _ret = __method_bind.make_mesh_previews.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun openSceneFromPath(sceneFilepath: String) {

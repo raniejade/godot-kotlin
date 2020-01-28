@@ -27,7 +27,7 @@ open class CSGShape(
   fun getCollisionLayerBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_layer_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionMask(): Int {
@@ -38,12 +38,12 @@ open class CSGShape(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getMeshes(): VariantArray {
     val _ret = __method_bind.get_meshes.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getOperation(): Operation {
@@ -58,17 +58,17 @@ open class CSGShape(
 
   fun isCalculatingTangents(): Boolean {
     val _ret = __method_bind.is_calculating_tangents.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRootShape(): Boolean {
     val _ret = __method_bind.is_root_shape.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingCollision(): Boolean {
     val _ret = __method_bind.is_using_collision.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCalculateTangents(enabled: Boolean) {

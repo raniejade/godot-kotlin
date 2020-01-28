@@ -27,7 +27,7 @@ open class MainLoop(
   fun idle(delta: Float): Boolean {
     val _arg = Variant.new(delta)
     val _ret = __method_bind.idle.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun init() {
@@ -47,7 +47,7 @@ open class MainLoop(
   fun iteration(delta: Float): Boolean {
     val _arg = Variant.new(delta)
     val _ret = __method_bind.iteration.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

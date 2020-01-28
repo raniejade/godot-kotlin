@@ -67,22 +67,22 @@ open class VideoPlayer(
 
   fun hasAutoplay(): Boolean {
     val _ret = __method_bind.has_autoplay.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasExpand(): Boolean {
     val _ret = __method_bind.has_expand.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPaused(): Boolean {
     val _ret = __method_bind.is_paused.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPlaying(): Boolean {
     val _ret = __method_bind.is_playing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun play() {

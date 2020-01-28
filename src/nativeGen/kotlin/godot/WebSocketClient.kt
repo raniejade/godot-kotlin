@@ -43,7 +43,7 @@ open class WebSocketClient(
 
   fun isVerifySslEnabled(): Boolean {
     val _ret = __method_bind.is_verify_ssl_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setVerifySslEnabled(enabled: Boolean) {

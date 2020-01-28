@@ -49,7 +49,7 @@ open class Node(
 
   fun canProcess(): Boolean {
     val _ret = __method_bind.can_process.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun duplicate(flags: Int): Node {
@@ -90,7 +90,7 @@ open class Node(
 
   fun getChildren(): VariantArray {
     val _ret = __method_bind.get_children.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getCustomMultiplayer(): MultiplayerAPI {
@@ -105,7 +105,7 @@ open class Node(
 
   fun getGroups(): VariantArray {
     val _ret = __method_bind.get_groups.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getIndex(): Int {
@@ -137,7 +137,7 @@ open class Node(
   fun getNodeAndResource(path: NodePath): VariantArray {
     val _arg = Variant.new(path)
     val _ret = __method_bind.get_node_and_resource.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getNodeOrNull(path: NodePath): Node {
@@ -189,7 +189,7 @@ open class Node(
 
   fun getSceneInstanceLoadPlaceholder(): Boolean {
     val _ret = __method_bind.get_scene_instance_load_placeholder.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTree(): SceneTree {
@@ -205,81 +205,81 @@ open class Node(
   fun hasNode(path: NodePath): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.has_node.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasNodeAndResource(path: NodePath): Boolean {
     val _arg = Variant.new(path)
     val _ret = __method_bind.has_node_and_resource.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isAParentOf(node: Node): Boolean {
     val _arg = Variant.new(node)
     val _ret = __method_bind.is_a_parent_of.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDisplayedFolded(): Boolean {
     val _ret = __method_bind.is_displayed_folded.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isGreaterThan(node: Node): Boolean {
     val _arg = Variant.new(node)
     val _ret = __method_bind.is_greater_than.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInGroup(group: String): Boolean {
     val _arg = Variant.new(group)
     val _ret = __method_bind.is_in_group.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInsideTree(): Boolean {
     val _ret = __method_bind.is_inside_tree.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isNetworkMaster(): Boolean {
     val _ret = __method_bind.is_network_master.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPhysicsProcessing(): Boolean {
     val _ret = __method_bind.is_physics_processing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPhysicsProcessingInternal(): Boolean {
     val _ret = __method_bind.is_physics_processing_internal.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isProcessing(): Boolean {
     val _ret = __method_bind.is_processing.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isProcessingInput(): Boolean {
     val _ret = __method_bind.is_processing_input.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isProcessingInternal(): Boolean {
     val _ret = __method_bind.is_processing_internal.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isProcessingUnhandledInput(): Boolean {
     val _ret = __method_bind.is_processing_unhandled_input.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isProcessingUnhandledKeyInput(): Boolean {
     val _ret = __method_bind.is_processing_unhandled_key_input.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun moveChild(childNode: Node, toPosition: Int) {

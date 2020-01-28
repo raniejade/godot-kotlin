@@ -47,22 +47,22 @@ open class MultiplayerAPI(
 
   fun hasNetworkPeer(): Boolean {
     val _ret = __method_bind.has_network_peer.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isNetworkServer(): Boolean {
     val _ret = __method_bind.is_network_server.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isObjectDecodingAllowed(): Boolean {
     val _ret = __method_bind.is_object_decoding_allowed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRefusingNewNetworkConnections(): Boolean {
     val _ret = __method_bind.is_refusing_new_network_connections.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun poll() {

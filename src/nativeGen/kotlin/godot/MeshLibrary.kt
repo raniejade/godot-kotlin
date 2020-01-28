@@ -73,7 +73,7 @@ open class MeshLibrary(
   fun getItemShapes(id: Int): VariantArray {
     val _arg = Variant.new(id)
     val _ret = __method_bind.get_item_shapes.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getLastUnusedItemId(): Int {

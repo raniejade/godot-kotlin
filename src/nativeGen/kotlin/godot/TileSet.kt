@@ -204,7 +204,7 @@ open class TileSet(
 
   fun getTilesIds(): VariantArray {
     val _ret = __method_bind.get_tiles_ids.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun removeTile(id: Int) {
@@ -309,7 +309,7 @@ open class TileSet(
     _args.append(id)
     _args.append(shapeId)
     val _ret = __method_bind.tile_get_shape_one_way.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun tileGetShapeOneWayMargin(id: Int, shapeId: Int): Float {
@@ -331,7 +331,7 @@ open class TileSet(
   fun tileGetShapes(id: Int): VariantArray {
     val _arg = Variant.new(id)
     val _ret = __method_bind.tile_get_shapes.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun tileGetTexture(id: Int): Texture {

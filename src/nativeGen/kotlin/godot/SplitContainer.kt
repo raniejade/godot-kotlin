@@ -34,7 +34,7 @@ open class SplitContainer(
 
   fun isCollapsed(): Boolean {
     val _ret = __method_bind.is_collapsed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCollapsed(collapsed: Boolean) {

@@ -35,7 +35,7 @@ open class CanvasItemMaterial(
 
   fun getParticlesAnimLoop(): Boolean {
     val _ret = __method_bind.get_particles_anim_loop.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getParticlesAnimVFrames(): Int {
@@ -45,7 +45,7 @@ open class CanvasItemMaterial(
 
   fun getParticlesAnimation(): Boolean {
     val _ret = __method_bind.get_particles_animation.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBlendMode(blendMode: Int) {

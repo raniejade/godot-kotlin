@@ -18,7 +18,7 @@ open class ButtonGroup(
 ) : Resource(_handle) {
   fun getButtons(): VariantArray {
     val _ret = __method_bind.get_buttons.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getPressedButton(): BaseButton {

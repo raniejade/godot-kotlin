@@ -69,7 +69,7 @@ open class CanvasLayer(
 
   fun isFollowingViewport(): Boolean {
     val _ret = __method_bind.is_following_viewport.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setCustomViewport(viewport: Node) {

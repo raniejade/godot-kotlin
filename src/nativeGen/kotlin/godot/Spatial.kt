@@ -93,32 +93,32 @@ open class Spatial(
 
   fun isLocalTransformNotificationEnabled(): Boolean {
     val _ret = __method_bind.is_local_transform_notification_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isScaleDisabled(): Boolean {
     val _ret = __method_bind.is_scale_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSetAsToplevel(): Boolean {
     val _ret = __method_bind.is_set_as_toplevel.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isTransformNotificationEnabled(): Boolean {
     val _ret = __method_bind.is_transform_notification_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isVisible(): Boolean {
     val _ret = __method_bind.is_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isVisibleInTree(): Boolean {
     val _ret = __method_bind.is_visible_in_tree.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun lookAt(target: Vector3, up: Vector3) {

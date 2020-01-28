@@ -51,22 +51,22 @@ open class TouchScreenButton(
 
   fun isPassbyPressEnabled(): Boolean {
     val _ret = __method_bind.is_passby_press_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPressed(): Boolean {
     val _ret = __method_bind.is_pressed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShapeCentered(): Boolean {
     val _ret = __method_bind.is_shape_centered.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShapeVisible(): Boolean {
     val _ret = __method_bind.is_shape_visible.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAction(action: String) {

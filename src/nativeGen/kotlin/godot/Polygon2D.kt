@@ -43,7 +43,7 @@ open class Polygon2D(
 
   fun getAntialiased(): Boolean {
     val _ret = __method_bind.get_antialiased.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getBoneCount(): Int {
@@ -75,7 +75,7 @@ open class Polygon2D(
 
   fun getInvert(): Boolean {
     val _ret = __method_bind.get_invert.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getInvertBorder(): Float {
@@ -95,7 +95,7 @@ open class Polygon2D(
 
   fun getPolygons(): VariantArray {
     val _ret = __method_bind.get_polygons.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getSkeleton(): NodePath {

@@ -111,7 +111,7 @@ open class PhysicsServer(
   fun areaIsRayPickable(area: RID): Boolean {
     val _arg = Variant.new(area)
     val _ret = __method_bind.area_is_ray_pickable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun areaRemoveShape(area: RID, shapeIdx: Int) {
@@ -426,26 +426,26 @@ open class PhysicsServer(
     _args.append(body)
     _args.append(axis)
     val _ret = __method_bind.body_is_axis_locked.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun bodyIsContinuousCollisionDetectionEnabled(body: RID): Boolean {
     val _arg = Variant.new(body)
     val _ret = __method_bind.body_is_continuous_collision_detection_enabled.call(this._handle, _arg,
         1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun bodyIsOmittingForceIntegration(body: RID): Boolean {
     val _arg = Variant.new(body)
     val _ret = __method_bind.body_is_omitting_force_integration.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun bodyIsRayPickable(body: RID): Boolean {
     val _arg = Variant.new(body)
     val _ret = __method_bind.body_is_ray_pickable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun bodyRemoveCollisionException(body: RID, exceptedBody: RID) {
@@ -654,7 +654,7 @@ open class PhysicsServer(
     _args.append(axis)
     _args.append(flag)
     val _ret = __method_bind.generic_6dof_joint_get_flag.call(this._handle, _args.toVariant(), 3)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun generic6dofJointGetParam(
@@ -709,7 +709,7 @@ open class PhysicsServer(
     _args.append(joint)
     _args.append(flag)
     val _ret = __method_bind.hinge_joint_get_flag.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hingeJointGetParam(joint: RID, param: Int): Float {
@@ -956,7 +956,7 @@ open class PhysicsServer(
   fun spaceIsActive(space: RID): Boolean {
     val _arg = Variant.new(space)
     val _ret = __method_bind.space_is_active.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun spaceSetActive(space: RID, active: Boolean) {

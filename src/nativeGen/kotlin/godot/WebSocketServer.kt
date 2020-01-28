@@ -48,12 +48,12 @@ open class WebSocketServer(
   fun hasPeer(id: Int): Boolean {
     val _arg = Variant.new(id)
     val _ret = __method_bind.has_peer.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isListening(): Boolean {
     val _ret = __method_bind.is_listening.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun listen(

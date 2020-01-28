@@ -24,7 +24,7 @@ open class MenuButton(
 
   fun isSwitchOnHover(): Boolean {
     val _ret = __method_bind.is_switch_on_hover.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDisableShortcuts(disabled: Boolean) {

@@ -21,7 +21,7 @@ open class Script(
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
     val _ret = __method_bind.can_instance.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getBaseScript(): Script {
@@ -42,23 +42,23 @@ open class Script(
   fun hasScriptSignal(signalName: String): Boolean {
     val _arg = Variant.new(signalName)
     val _ret = __method_bind.has_script_signal.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasSourceCode(): Boolean {
     val _ret = __method_bind.has_source_code.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun instanceHas(baseObject: Object): Boolean {
     val _arg = Variant.new(baseObject)
     val _ret = __method_bind.instance_has.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isTool(): Boolean {
     val _ret = __method_bind.is_tool.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun reload(keepState: Boolean): GDError {

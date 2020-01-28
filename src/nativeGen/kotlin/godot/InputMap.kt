@@ -43,7 +43,7 @@ open class InputMap(
     _args.append(action)
     _args.append(event)
     val _ret = __method_bind.action_has_event.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun actionSetDeadzone(action: String, deadzone: Float) {
@@ -70,24 +70,24 @@ open class InputMap(
     _args.append(event)
     _args.append(action)
     val _ret = __method_bind.event_is_action.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getActionList(action: String): VariantArray {
     val _arg = Variant.new(action)
     val _ret = __method_bind.get_action_list.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getActions(): VariantArray {
     val _ret = __method_bind.get_actions.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun hasAction(action: String): Boolean {
     val _arg = Variant.new(action)
     val _ret = __method_bind.has_action.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun loadFromGlobals() {

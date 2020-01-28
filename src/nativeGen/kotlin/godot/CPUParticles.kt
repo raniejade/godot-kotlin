@@ -95,7 +95,7 @@ open class CPUParticles(
 
   fun getFractionalDelta(): Boolean {
     val _ret = __method_bind.get_fractional_delta.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getGravity(): Vector3 {
@@ -115,7 +115,7 @@ open class CPUParticles(
 
   fun getOneShot(): Boolean {
     val _ret = __method_bind.get_one_shot.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getParam(param: Int): Float {
@@ -139,7 +139,7 @@ open class CPUParticles(
   fun getParticleFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_particle_flag.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getPreProcessTime(): Float {
@@ -164,12 +164,12 @@ open class CPUParticles(
 
   fun getUseLocalCoordinates(): Boolean {
     val _ret = __method_bind.get_use_local_coordinates.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEmitting(): Boolean {
     val _ret = __method_bind.is_emitting.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun restart() {

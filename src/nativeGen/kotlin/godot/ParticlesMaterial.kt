@@ -69,7 +69,7 @@ open class ParticlesMaterial(
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.get_flag.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getFlatness(): Float {

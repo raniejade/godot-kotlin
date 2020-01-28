@@ -30,17 +30,17 @@ open class TextureRect(
 
   fun hasExpand(): Boolean {
     val _ret = __method_bind.has_expand.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedH(): Boolean {
     val _ret = __method_bind.is_flipped_h.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFlippedV(): Boolean {
     val _ret = __method_bind.is_flipped_v.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setExpand(enable: Boolean) {

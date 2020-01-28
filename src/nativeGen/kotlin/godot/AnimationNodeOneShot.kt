@@ -46,12 +46,12 @@ open class AnimationNodeOneShot(
 
   fun hasAutorestart(): Boolean {
     val _ret = __method_bind.has_autorestart.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingSync(): Boolean {
     val _ret = __method_bind.is_using_sync.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAutorestart(enable: Boolean) {

@@ -52,13 +52,13 @@ open class ProjectSettings(
   fun hasSetting(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_setting.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun loadResourcePack(pack: String): Boolean {
     val _arg = Variant.new(pack)
     val _ret = __method_bind.load_resource_pack.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun localizePath(path: String): String {
@@ -70,7 +70,7 @@ open class ProjectSettings(
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.property_can_revert.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {

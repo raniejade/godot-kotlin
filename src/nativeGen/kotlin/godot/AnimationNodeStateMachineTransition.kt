@@ -42,12 +42,12 @@ open class AnimationNodeStateMachineTransition(
 
   fun hasAutoAdvance(): Boolean {
     val _ret = __method_bind.has_auto_advance.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDisabled(): Boolean {
     val _ret = __method_bind.is_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAdvanceCondition(name: String) {

@@ -31,7 +31,7 @@ open class InputEventMouseButton(
 
   fun isDoubleclick(): Boolean {
     val _ret = __method_bind.is_doubleclick.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setButtonIndex(buttonIndex: Int) {

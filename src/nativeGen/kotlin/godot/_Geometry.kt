@@ -30,7 +30,7 @@ open class _Geometry(
   fun buildBoxPlanes(extents: Vector3): VariantArray {
     val _arg = Variant.new(extents)
     val _ret = __method_bind.build_box_planes.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun buildCapsulePlanes(
@@ -47,7 +47,7 @@ open class _Geometry(
     _args.append(lats)
     _args.append(axis)
     val _ret = __method_bind.build_capsule_planes.call(this._handle, _args.toVariant(), 5)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun buildCylinderPlanes(
@@ -62,7 +62,7 @@ open class _Geometry(
     _args.append(sides)
     _args.append(axis)
     val _ret = __method_bind.build_cylinder_planes.call(this._handle, _args.toVariant(), 4)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun clipPolygon(points: PoolVector3Array, plane: Plane): PoolVector3Array {
@@ -78,7 +78,7 @@ open class _Geometry(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.clip_polygons_2d.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun clipPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
@@ -87,7 +87,7 @@ open class _Geometry(
     _args.append(polyline)
     _args.append(polygon)
     val _ret = __method_bind.clip_polyline_with_polygon_2d.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun convexHull2d(points: PoolVector2Array): PoolVector2Array {
@@ -101,7 +101,7 @@ open class _Geometry(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.exclude_polygons_2d.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getClosestPointToSegment(
@@ -202,7 +202,7 @@ open class _Geometry(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.intersect_polygons_2d.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun intersectPolylineWithPolygon2d(polyline: PoolVector2Array, polygon: PoolVector2Array):
@@ -212,13 +212,13 @@ open class _Geometry(
     _args.append(polygon)
     val _ret = __method_bind.intersect_polyline_with_polygon_2d.call(this._handle,
         _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun isPolygonClockwise(polygon: PoolVector2Array): Boolean {
     val _arg = Variant.new(polygon)
     val _ret = __method_bind.is_polygon_clockwise.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun lineIntersectsLine2d(
@@ -247,7 +247,7 @@ open class _Geometry(
     _args.append(polygonA)
     _args.append(polygonB)
     val _ret = __method_bind.merge_polygons_2d.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun offsetPolygon2d(
@@ -260,7 +260,7 @@ open class _Geometry(
     _args.append(delta)
     _args.append(joinType)
     val _ret = __method_bind.offset_polygon_2d.call(this._handle, _args.toVariant(), 3)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun offsetPolyline2d(
@@ -275,7 +275,7 @@ open class _Geometry(
     _args.append(joinType)
     _args.append(endType)
     val _ret = __method_bind.offset_polyline_2d.call(this._handle, _args.toVariant(), 4)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun pointIsInsideTriangle(
@@ -290,7 +290,7 @@ open class _Geometry(
     _args.append(b)
     _args.append(c)
     val _ret = __method_bind.point_is_inside_triangle.call(this._handle, _args.toVariant(), 4)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun rayIntersectsTriangle(

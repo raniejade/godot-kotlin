@@ -46,7 +46,7 @@ open class Camera(
   fun getCullMaskBit(layer: Int): Boolean {
     val _arg = Variant.new(layer)
     val _ret = __method_bind.get_cull_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getDopplerTracking(): DopplerTracking {
@@ -66,7 +66,7 @@ open class Camera(
 
   fun getFrustum(): VariantArray {
     val _ret = __method_bind.get_frustum.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getFrustumOffset(): Vector2 {
@@ -111,13 +111,13 @@ open class Camera(
 
   fun isCurrent(): Boolean {
     val _ret = __method_bind.is_current.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isPositionBehind(worldPoint: Vector3): Boolean {
     val _arg = Variant.new(worldPoint)
     val _ret = __method_bind.is_position_behind.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun makeCurrent() {

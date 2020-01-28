@@ -25,7 +25,7 @@ open class SpatialVelocityTracker(
 
   fun isTrackingPhysicsStep(): Boolean {
     val _ret = __method_bind.is_tracking_physics_step.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun reset(position: Vector3) {

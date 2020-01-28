@@ -75,17 +75,17 @@ open class VehicleWheel(
 
   fun isInContact(): Boolean {
     val _ret = __method_bind.is_in_contact.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsedAsSteering(): Boolean {
     val _ret = __method_bind.is_used_as_steering.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsedAsTraction(): Boolean {
     val _ret = __method_bind.is_used_as_traction.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setDampingCompression(length: Float) {

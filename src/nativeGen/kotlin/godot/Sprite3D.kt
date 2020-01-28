@@ -46,7 +46,7 @@ open class Sprite3D(
 
   fun isRegion(): Boolean {
     val _ret = __method_bind.is_region.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setFrame(frame: Int) {

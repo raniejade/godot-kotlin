@@ -113,17 +113,17 @@ open class Light2D(
 
   fun isEditorOnly(): Boolean {
     val _ret = __method_bind.is_editor_only.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEnabled(): Boolean {
     val _ret = __method_bind.is_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isShadowEnabled(): Boolean {
     val _ret = __method_bind.is_shadow_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setColor(color: Color) {

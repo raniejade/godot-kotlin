@@ -41,12 +41,12 @@ open class GDNativeLibrary(
 
   fun isReloadable(): Boolean {
     val _ret = __method_bind.is_reloadable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSingleton(): Boolean {
     val _ret = __method_bind.is_singleton.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setConfigFile(configFile: ConfigFile) {
@@ -76,7 +76,7 @@ open class GDNativeLibrary(
 
   fun shouldLoadOnce(): Boolean {
     val _ret = __method_bind.should_load_once.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   companion object {

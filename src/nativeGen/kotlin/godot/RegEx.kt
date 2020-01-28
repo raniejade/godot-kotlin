@@ -37,7 +37,7 @@ open class RegEx(
 
   fun getNames(): VariantArray {
     val _ret = __method_bind.get_names.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getPattern(): String {
@@ -47,7 +47,7 @@ open class RegEx(
 
   fun isValid(): Boolean {
     val _ret = __method_bind.is_valid.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun search(
@@ -73,7 +73,7 @@ open class RegEx(
     _args.append(offset)
     _args.append(end)
     val _ret = __method_bind.search_all.call(this._handle, _args.toVariant(), 3)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun sub(

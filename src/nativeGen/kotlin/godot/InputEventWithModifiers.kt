@@ -19,27 +19,27 @@ open class InputEventWithModifiers(
 ) : InputEvent(_handle) {
   fun getAlt(): Boolean {
     val _ret = __method_bind.get_alt.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCommand(): Boolean {
     val _ret = __method_bind.get_command.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getControl(): Boolean {
     val _ret = __method_bind.get_control.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getMetakey(): Boolean {
     val _ret = __method_bind.get_metakey.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getShift(): Boolean {
     val _ret = __method_bind.get_shift.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAlt(enable: Boolean) {

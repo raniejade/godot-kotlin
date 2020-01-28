@@ -64,12 +64,12 @@ open class Viewport(
 
   fun getHdr(): Boolean {
     val _ret = __method_bind.get_hdr.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getKeep3dLinear(): Boolean {
     val _ret = __method_bind.get_keep_3d_linear.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getModalStackTop(): Control {
@@ -89,7 +89,7 @@ open class Viewport(
 
   fun getPhysicsObjectPicking(): Boolean {
     val _ret = __method_bind.get_physics_object_picking.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getRenderInfo(info: Int): Int {
@@ -136,7 +136,7 @@ open class Viewport(
 
   fun getVflip(): Boolean {
     val _ret = __method_bind.get_vflip.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getViewportRid(): RID {
@@ -166,17 +166,17 @@ open class Viewport(
 
   fun guiHasModalStack(): Boolean {
     val _ret = __method_bind.gui_has_modal_stack.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun guiIsDragging(): Boolean {
     val _ret = __method_bind.gui_is_dragging.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun hasTransparentBackground(): Boolean {
     val _ret = __method_bind.has_transparent_background.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun input(localEvent: InputEvent) {
@@ -186,57 +186,57 @@ open class Viewport(
 
   fun is3dDisabled(): Boolean {
     val _ret = __method_bind.is_3d_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isAudioListener(): Boolean {
     val _ret = __method_bind.is_audio_listener.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isAudioListener2d(): Boolean {
     val _ret = __method_bind.is_audio_listener_2d.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isHandlingInputLocally(): Boolean {
     val _ret = __method_bind.is_handling_input_locally.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInputDisabled(): Boolean {
     val _ret = __method_bind.is_input_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInputHandled(): Boolean {
     val _ret = __method_bind.is_input_handled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSizeOverrideEnabled(): Boolean {
     val _ret = __method_bind.is_size_override_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSizeOverrideStretchEnabled(): Boolean {
     val _ret = __method_bind.is_size_override_stretch_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSnapControlsToPixelsEnabled(): Boolean {
     val _ret = __method_bind.is_snap_controls_to_pixels_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingOwnWorld(): Boolean {
     val _ret = __method_bind.is_using_own_world.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingRenderDirectToScreen(): Boolean {
     val _ret = __method_bind.is_using_render_direct_to_screen.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAsAudioListener(enable: Boolean) {
@@ -408,7 +408,7 @@ open class Viewport(
 
   fun useArvr(): Boolean {
     val _ret = __method_bind.use_arvr.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun warpMouse(toPosition: Vector2) {

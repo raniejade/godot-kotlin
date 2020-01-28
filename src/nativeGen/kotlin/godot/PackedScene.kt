@@ -21,7 +21,7 @@ open class PackedScene(
 ) : Resource(_handle) {
   fun canInstance(): Boolean {
     val _ret = __method_bind.can_instance.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getState(): SceneState {

@@ -61,7 +61,7 @@ open class RayCast2D(
   fun getCollisionMaskBit(bit: Int): Boolean {
     val _arg = Variant.new(bit)
     val _ret = __method_bind.get_collision_mask_bit.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCollisionNormal(): Vector2 {
@@ -76,27 +76,27 @@ open class RayCast2D(
 
   fun getExcludeParentBody(): Boolean {
     val _ret = __method_bind.get_exclude_parent_body.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCollideWithAreasEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_areas_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCollideWithBodiesEnabled(): Boolean {
     val _ret = __method_bind.is_collide_with_bodies_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isColliding(): Boolean {
     val _ret = __method_bind.is_colliding.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEnabled(): Boolean {
     val _ret = __method_bind.is_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeException(node: Object) {

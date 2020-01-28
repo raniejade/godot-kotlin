@@ -104,7 +104,7 @@ open class OptionButton(
   fun isItemDisabled(idx: Int): Boolean {
     val _arg = Variant.new(idx)
     val _ret = __method_bind.is_item_disabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeItem(idx: Int) {

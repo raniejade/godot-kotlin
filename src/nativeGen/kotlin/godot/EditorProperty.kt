@@ -59,27 +59,27 @@ open class EditorProperty(
 
   fun isCheckable(): Boolean {
     val _ret = __method_bind.is_checkable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isChecked(): Boolean {
     val _ret = __method_bind.is_checked.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isDrawRed(): Boolean {
     val _ret = __method_bind.is_draw_red.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isKeying(): Boolean {
     val _ret = __method_bind.is_keying.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isReadOnly(): Boolean {
     val _ret = __method_bind.is_read_only.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBottomEditor(editor: Control) {

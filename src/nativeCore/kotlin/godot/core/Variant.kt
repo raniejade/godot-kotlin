@@ -161,7 +161,7 @@ class Variant(
     return asDouble().toFloat()
   }
 
-  fun asBool(): Boolean {
+  fun asBoolean(): Boolean {
     return transmute {
       checkNotNull(Godot.gdnative.godot_variant_as_bool)(it)
     }
@@ -179,7 +179,7 @@ class Variant(
     }
   }
 
-  fun asArray(): VariantArray {
+  fun asVariantArray(): VariantArray {
     return transmute(::VariantArray) {
       checkNotNull(Godot.gdnative.godot_variant_as_array)(it)
     }
@@ -303,12 +303,12 @@ class Variant(
   fun toAny(): Any {
     return when (type) {
       Type.NIL, Type.OBJECT -> throw UnsupportedOperationException("Can't convert to Any type")
-      Type.BOOL -> asBool()
+      Type.BOOL -> asBoolean()
       Type.FLOAT -> asFloat()
       Type.INT -> asInt()
       Type.STRING -> asString()
       Type.AABB -> asAABB()
-      Type.ARRAY -> asArray()
+      Type.ARRAY -> asVariantArray()
       Type.BASIS -> asBasis()
       Type.COLOR -> asColor()
       Type.DICTIONARY -> asDictionary()

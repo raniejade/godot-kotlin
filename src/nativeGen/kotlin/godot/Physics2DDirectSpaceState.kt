@@ -23,7 +23,7 @@ open class Physics2DDirectSpaceState(
   fun castMotion(shape: Physics2DShapeQueryParameters): VariantArray {
     val _arg = Variant.new(shape)
     val _ret = __method_bind.cast_motion.call(this._handle, _arg, 1)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun collideShape(shape: Physics2DShapeQueryParameters, maxResults: Int): VariantArray {
@@ -31,7 +31,7 @@ open class Physics2DDirectSpaceState(
     _args.append(shape)
     _args.append(maxResults)
     val _ret = __method_bind.collide_shape.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getRestInfo(shape: Physics2DShapeQueryParameters): Dictionary {
@@ -56,7 +56,7 @@ open class Physics2DDirectSpaceState(
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
     val _ret = __method_bind.intersect_point.call(this._handle, _args.toVariant(), 6)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun intersectPointOnCanvas(
@@ -77,7 +77,7 @@ open class Physics2DDirectSpaceState(
     _args.append(collideWithBodies)
     _args.append(collideWithAreas)
     val _ret = __method_bind.intersect_point_on_canvas.call(this._handle, _args.toVariant(), 7)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun intersectRay(
@@ -104,7 +104,7 @@ open class Physics2DDirectSpaceState(
     _args.append(shape)
     _args.append(maxResults)
     val _ret = __method_bind.intersect_shape.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   companion object {

@@ -43,7 +43,7 @@ open class Tween(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.follow_method.call(this._handle, _args.toVariant(), 9)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun followProperty(
@@ -68,7 +68,7 @@ open class Tween(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.follow_property.call(this._handle, _args.toVariant(), 9)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getRuntime(): Float {
@@ -106,7 +106,7 @@ open class Tween(
     _args.append(arg4)
     _args.append(arg5)
     val _ret = __method_bind.interpolate_callback.call(this._handle, _args.toVariant(), 8)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun interpolateDeferredCallback(
@@ -129,7 +129,7 @@ open class Tween(
     _args.append(arg4)
     _args.append(arg5)
     val _ret = __method_bind.interpolate_deferred_callback.call(this._handle, _args.toVariant(), 8)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun interpolateMethod(
@@ -152,7 +152,7 @@ open class Tween(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.interpolate_method.call(this._handle, _args.toVariant(), 8)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun interpolateProperty(
@@ -175,17 +175,17 @@ open class Tween(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.interpolate_property.call(this._handle, _args.toVariant(), 8)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isRepeat(): Boolean {
     val _ret = __method_bind.is_repeat.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun remove(`object`: Object, key: String): Boolean {
@@ -193,12 +193,12 @@ open class Tween(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.remove.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun removeAll(): Boolean {
     val _ret = __method_bind.remove_all.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun reset(`object`: Object, key: String): Boolean {
@@ -206,12 +206,12 @@ open class Tween(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.reset.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun resetAll(): Boolean {
     val _ret = __method_bind.reset_all.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun resume(`object`: Object, key: String): Boolean {
@@ -219,18 +219,18 @@ open class Tween(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.resume.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun resumeAll(): Boolean {
     val _ret = __method_bind.resume_all.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun seek(time: Float): Boolean {
     val _arg = Variant.new(time)
     val _ret = __method_bind.seek.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setActive(active: Boolean) {
@@ -255,7 +255,7 @@ open class Tween(
 
   fun start(): Boolean {
     val _ret = __method_bind.start.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun stop(`object`: Object, key: String): Boolean {
@@ -263,12 +263,12 @@ open class Tween(
     _args.append(`object`)
     _args.append(key)
     val _ret = __method_bind.stop.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun stopAll(): Boolean {
     val _ret = __method_bind.stop_all.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun targetingMethod(
@@ -293,7 +293,7 @@ open class Tween(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.targeting_method.call(this._handle, _args.toVariant(), 9)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun targetingProperty(
@@ -318,7 +318,7 @@ open class Tween(
     _args.append(easeType)
     _args.append(delay)
     val _ret = __method_bind.targeting_property.call(this._handle, _args.toVariant(), 9)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun tell(): Float {

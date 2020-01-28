@@ -42,7 +42,7 @@ open class CameraFeed(
 
   fun isActive(): Boolean {
     val _ret = __method_bind.is_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setActive(active: Boolean) {

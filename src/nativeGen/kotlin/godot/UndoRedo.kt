@@ -97,17 +97,17 @@ open class UndoRedo(
 
   fun isCommitingAction(): Boolean {
     val _ret = __method_bind.is_commiting_action.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun redo(): Boolean {
     val _ret = __method_bind.redo.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun undo(): Boolean {
     val _ret = __method_bind.undo.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   enum class MergeMode(

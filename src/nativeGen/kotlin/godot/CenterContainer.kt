@@ -19,7 +19,7 @@ open class CenterContainer(
 ) : Container(_handle) {
   fun isUsingTopLeft(): Boolean {
     val _ret = __method_bind.is_using_top_left.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setUseTopLeft(enable: Boolean) {

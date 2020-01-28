@@ -100,7 +100,7 @@ open class TreeItem(
   fun getExpandRight(column: Int): Boolean {
     val _arg = Variant.new(column)
     val _ret = __method_bind.get_expand_right.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getIcon(column: Int): Texture {
@@ -189,47 +189,47 @@ open class TreeItem(
     _args.append(column)
     _args.append(buttonIdx)
     val _ret = __method_bind.is_button_disabled.call(this._handle, _args.toVariant(), 2)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isChecked(column: Int): Boolean {
     val _arg = Variant.new(column)
     val _ret = __method_bind.is_checked.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCollapsed(): Boolean {
     val _ret = __method_bind.is_collapsed.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isCustomSetAsButton(column: Int): Boolean {
     val _arg = Variant.new(column)
     val _ret = __method_bind.is_custom_set_as_button.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEditable(column: Int): Boolean {
     val _arg = Variant.new(column)
     val _ret = __method_bind.is_editable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isFoldingDisabled(): Boolean {
     val _ret = __method_bind.is_folding_disabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSelectable(column: Int): Boolean {
     val _arg = Variant.new(column)
     val _ret = __method_bind.is_selectable.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSelected(column: Int): Boolean {
     val _arg = Variant.new(column)
     val _ret = __method_bind.is_selected.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun moveToBottom() {

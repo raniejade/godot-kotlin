@@ -74,17 +74,17 @@ open class HTTPClient(
 
   fun hasResponse(): Boolean {
     val _ret = __method_bind.has_response.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isBlockingModeEnabled(): Boolean {
     val _ret = __method_bind.is_blocking_mode_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isResponseChunked(): Boolean {
     val _ret = __method_bind.is_response_chunked.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun poll(): GDError {

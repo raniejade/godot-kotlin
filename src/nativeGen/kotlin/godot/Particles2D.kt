@@ -47,7 +47,7 @@ open class Particles2D(
 
   fun getFractionalDelta(): Boolean {
     val _ret = __method_bind.get_fractional_delta.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getLifetime(): Float {
@@ -62,7 +62,7 @@ open class Particles2D(
 
   fun getOneShot(): Boolean {
     val _ret = __method_bind.get_one_shot.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getPreProcessTime(): Float {
@@ -92,7 +92,7 @@ open class Particles2D(
 
   fun getUseLocalCoordinates(): Boolean {
     val _ret = __method_bind.get_use_local_coordinates.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getVisibilityRect(): Rect2 {
@@ -102,7 +102,7 @@ open class Particles2D(
 
   fun isEmitting(): Boolean {
     val _ret = __method_bind.is_emitting.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun restart() {

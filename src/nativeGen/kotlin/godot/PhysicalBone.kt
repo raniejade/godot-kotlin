@@ -62,7 +62,7 @@ open class PhysicalBone(
 
   fun getSimulatePhysics(): Boolean {
     val _ret = __method_bind.get_simulate_physics.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getWeight(): Float {
@@ -72,12 +72,12 @@ open class PhysicalBone(
 
   fun isSimulatingPhysics(): Boolean {
     val _ret = __method_bind.is_simulating_physics.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isStaticBody(): Boolean {
     val _ret = __method_bind.is_static_body.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setBodyOffset(offset: Transform) {

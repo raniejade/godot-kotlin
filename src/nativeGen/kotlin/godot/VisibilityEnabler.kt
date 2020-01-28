@@ -21,7 +21,7 @@ open class VisibilityEnabler(
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
     val _ret = __method_bind.is_enabler_enabled.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setEnabler(enabler: Int, enabled: Boolean) {

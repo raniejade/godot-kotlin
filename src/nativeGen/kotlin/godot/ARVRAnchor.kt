@@ -33,7 +33,7 @@ open class ARVRAnchor(
 
   fun getIsActive(): Boolean {
     val _ret = __method_bind.get_is_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getMesh(): Mesh {

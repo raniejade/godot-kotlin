@@ -25,7 +25,7 @@ open class WindowDialog(
 
   fun getResizable(): Boolean {
     val _ret = __method_bind.get_resizable.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getTitle(): String {

@@ -25,7 +25,7 @@ open class PhysicsDirectSpaceState(
     _args.append(shape)
     _args.append(motion)
     val _ret = __method_bind.cast_motion.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun collideShape(shape: PhysicsShapeQueryParameters, maxResults: Int): VariantArray {
@@ -33,7 +33,7 @@ open class PhysicsDirectSpaceState(
     _args.append(shape)
     _args.append(maxResults)
     val _ret = __method_bind.collide_shape.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getRestInfo(shape: PhysicsShapeQueryParameters): Dictionary {
@@ -66,7 +66,7 @@ open class PhysicsDirectSpaceState(
     _args.append(shape)
     _args.append(maxResults)
     val _ret = __method_bind.intersect_shape.call(this._handle, _args.toVariant(), 2)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   companion object {

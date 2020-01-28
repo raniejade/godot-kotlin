@@ -59,7 +59,7 @@ open class PolygonPathFinder(
   fun isPointInside(point: Vector2): Boolean {
     val _arg = Variant.new(point)
     val _ret = __method_bind.is_point_inside.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setPointPenalty(idx: Int, penalty: Float) {

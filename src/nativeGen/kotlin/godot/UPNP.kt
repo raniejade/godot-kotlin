@@ -94,7 +94,7 @@ open class UPNP(
 
   fun isDiscoverIpv6(): Boolean {
     val _ret = __method_bind.is_discover_ipv6.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun queryExternalAddress(): String {

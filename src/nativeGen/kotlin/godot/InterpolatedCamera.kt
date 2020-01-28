@@ -31,7 +31,7 @@ open class InterpolatedCamera(
 
   fun isInterpolationEnabled(): Boolean {
     val _ret = __method_bind.is_interpolation_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setInterpolationEnabled(targetPath: Boolean) {

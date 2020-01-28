@@ -48,7 +48,7 @@ open class AnimationNodeBlendSpace2D(
 
   fun getAutoTriangles(): Boolean {
     val _ret = __method_bind.get_auto_triangles.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getBlendMode(): BlendMode {

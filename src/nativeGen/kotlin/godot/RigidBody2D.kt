@@ -81,7 +81,7 @@ open class RigidBody2D(
 
   fun getCollidingBodies(): VariantArray {
     val _ret = __method_bind.get_colliding_bodies.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getContinuousCollisionDetectionMode(): CCDMode {
@@ -141,22 +141,22 @@ open class RigidBody2D(
 
   fun isAbleToSleep(): Boolean {
     val _ret = __method_bind.is_able_to_sleep.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isContactMonitorEnabled(): Boolean {
     val _ret = __method_bind.is_contact_monitor_enabled.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isSleeping(): Boolean {
     val _ret = __method_bind.is_sleeping.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isUsingCustomIntegrator(): Boolean {
     val _ret = __method_bind.is_using_custom_integrator.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setAngularDamp(angularDamp: Float) {
@@ -276,7 +276,7 @@ open class RigidBody2D(
     _args.append(margin)
     _args.append(result)
     val _ret = __method_bind.test_motion.call(this._handle, _args.toVariant(), 4)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   enum class Mode(

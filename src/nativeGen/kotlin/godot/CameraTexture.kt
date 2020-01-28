@@ -20,7 +20,7 @@ open class CameraTexture(
 ) : Texture(_handle) {
   fun getCameraActive(): Boolean {
     val _ret = __method_bind.get_camera_active.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun getCameraFeedId(): Int {

@@ -28,7 +28,7 @@ open class _Engine(
 
   fun getCopyrightInfo(): VariantArray {
     val _ret = __method_bind.get_copyright_info.call(this._handle)
-    return _ret.asArray()
+    return _ret.asVariantArray()
   }
 
   fun getDonorInfo(): Dictionary {
@@ -95,17 +95,17 @@ open class _Engine(
   fun hasSingleton(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.has_singleton.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isEditorHint(): Boolean {
     val _ret = __method_bind.is_editor_hint.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun isInPhysicsFrame(): Boolean {
     val _ret = __method_bind.is_in_physics_frame.call(this._handle)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun setEditorHint(enabled: Boolean) {

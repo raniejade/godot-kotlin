@@ -32,7 +32,7 @@ open class ShaderMaterial(
   fun propertyCanRevert(name: String): Boolean {
     val _arg = Variant.new(name)
     val _ret = __method_bind.property_can_revert.call(this._handle, _arg, 1)
-    return _ret.asBool()
+    return _ret.asBoolean()
   }
 
   fun propertyGetRevert(name: String): Variant {
