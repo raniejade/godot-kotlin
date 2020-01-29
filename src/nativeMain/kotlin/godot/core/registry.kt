@@ -71,14 +71,14 @@ class MethodHandle1<T: Object, A1, R>(val method: (T, A1) -> R): MethodHandle<T,
 }
 
 class MethodRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
-  inline fun <reified K: (T) -> Unit> registerMethod(method: K) {
+  inline fun <R, reified K: (T) -> R> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle0(method)
     val methodHandleRef = StableRef.create(methodHandle).asCPointer()
     registerMethod(className, methodName, methodHandleRef)
   }
 
-  inline fun <A1, reified K: (T, A1) -> Unit> registerMethod(method: K) {
+  inline fun <R, A1, reified K: (T, A1) -> R> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle1(method)
     val methodHandleRef = StableRef.create(methodHandle).asCPointer()
