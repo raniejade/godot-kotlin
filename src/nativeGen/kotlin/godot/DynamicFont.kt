@@ -20,6 +20,38 @@ import kotlinx.cinterop.reinterpret
 open class DynamicFont(
   _handle: COpaquePointer
 ) : Font(_handle) {
+  var extraSpacingBottom: Int
+    get() {
+       return getSpacing(1) 
+    }
+    set(value) {
+      setSpacing(1, value)
+    }
+
+  var extraSpacingChar: Int
+    get() {
+       return getSpacing(2) 
+    }
+    set(value) {
+      setSpacing(2, value)
+    }
+
+  var extraSpacingSpace: Int
+    get() {
+       return getSpacing(3) 
+    }
+    set(value) {
+      setSpacing(3, value)
+    }
+
+  var extraSpacingTop: Int
+    get() {
+       return getSpacing(0) 
+    }
+    set(value) {
+      setSpacing(0, value)
+    }
+
   var fontData: DynamicFontData
     get() {
        return getFontData() 

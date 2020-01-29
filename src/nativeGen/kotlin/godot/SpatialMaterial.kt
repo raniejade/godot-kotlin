@@ -30,6 +30,14 @@ open class SpatialMaterial(
       setAlbedo(value)
     }
 
+  var albedoTexture: Texture
+    get() {
+       return getTexture(0) 
+    }
+    set(value) {
+      setTexture(0, value)
+    }
+
   var anisotropy: Float
     get() {
        return getAnisotropy() 
@@ -38,12 +46,52 @@ open class SpatialMaterial(
       setAnisotropy(value)
     }
 
+  var anisotropyEnabled: Boolean
+    get() {
+       return getFeature(5) 
+    }
+    set(value) {
+      setFeature(5, value)
+    }
+
+  var anisotropyFlowmap: Texture
+    get() {
+       return getTexture(7) 
+    }
+    set(value) {
+      setTexture(7, value)
+    }
+
+  var aoEnabled: Boolean
+    get() {
+       return getFeature(6) 
+    }
+    set(value) {
+      setFeature(6, value)
+    }
+
   var aoLightAffect: Float
     get() {
        return getAoLightAffect() 
     }
     set(value) {
       setAoLightAffect(value)
+    }
+
+  var aoOnUv2: Boolean
+    get() {
+       return getFlag(11) 
+    }
+    set(value) {
+      setFlag(11, value)
+    }
+
+  var aoTexture: Texture
+    get() {
+       return getTexture(8) 
+    }
+    set(value) {
+      setTexture(8, value)
     }
 
   var aoTextureChannel: TextureChannel
@@ -62,6 +110,14 @@ open class SpatialMaterial(
       setClearcoat(value)
     }
 
+  var clearcoatEnabled: Boolean
+    get() {
+       return getFeature(4) 
+    }
+    set(value) {
+      setFeature(4, value)
+    }
+
   var clearcoatGloss: Float
     get() {
        return getClearcoatGloss() 
@@ -70,12 +126,28 @@ open class SpatialMaterial(
       setClearcoatGloss(value)
     }
 
+  var clearcoatTexture: Texture
+    get() {
+       return getTexture(6) 
+    }
+    set(value) {
+      setTexture(6, value)
+    }
+
   var depthDeepParallax: Boolean
     get() {
        return isDepthDeepParallaxEnabled() 
     }
     set(value) {
       setDepthDeepParallax(value)
+    }
+
+  var depthEnabled: Boolean
+    get() {
+       return getFeature(7) 
+    }
+    set(value) {
+      setFeature(7, value)
     }
 
   var depthFlipBinormal: Boolean
@@ -118,12 +190,52 @@ open class SpatialMaterial(
       setDepthScale(value)
     }
 
+  var depthTexture: Texture
+    get() {
+       return getTexture(9) 
+    }
+    set(value) {
+      setTexture(9, value)
+    }
+
+  var detailAlbedo: Texture
+    get() {
+       return getTexture(14) 
+    }
+    set(value) {
+      setTexture(14, value)
+    }
+
   var detailBlendMode: BlendMode
     get() {
        return getDetailBlendMode() 
     }
     set(value) {
       setDetailBlendMode(value.value)
+    }
+
+  var detailEnabled: Boolean
+    get() {
+       return getFeature(11) 
+    }
+    set(value) {
+      setFeature(11, value)
+    }
+
+  var detailMask: Texture
+    get() {
+       return getTexture(13) 
+    }
+    set(value) {
+      setTexture(13, value)
+    }
+
+  var detailNormal: Texture
+    get() {
+       return getTexture(15) 
+    }
+    set(value) {
+      setTexture(15, value)
     }
 
   var detailUvLayer: DetailUV
@@ -166,6 +278,14 @@ open class SpatialMaterial(
       setEmission(value)
     }
 
+  var emissionEnabled: Boolean
+    get() {
+       return getFeature(1) 
+    }
+    set(value) {
+      setFeature(1, value)
+    }
+
   var emissionEnergy: Float
     get() {
        return getEmissionEnergy() 
@@ -174,12 +294,124 @@ open class SpatialMaterial(
       setEmissionEnergy(value)
     }
 
+  var emissionOnUv2: Boolean
+    get() {
+       return getFlag(12) 
+    }
+    set(value) {
+      setFlag(12, value)
+    }
+
   var emissionOperator: EmissionOperator
     get() {
        return getEmissionOperator() 
     }
     set(value) {
       setEmissionOperator(value.value)
+    }
+
+  var emissionTexture: Texture
+    get() {
+       return getTexture(3) 
+    }
+    set(value) {
+      setTexture(3, value)
+    }
+
+  var flagsAlbedoTexForceSrgb: Boolean
+    get() {
+       return getFlag(14) 
+    }
+    set(value) {
+      setFlag(14, value)
+    }
+
+  var flagsDisableAmbientLight: Boolean
+    get() {
+       return getFlag(17) 
+    }
+    set(value) {
+      setFlag(17, value)
+    }
+
+  var flagsDoNotReceiveShadows: Boolean
+    get() {
+       return getFlag(15) 
+    }
+    set(value) {
+      setFlag(15, value)
+    }
+
+  var flagsEnsureCorrectNormals: Boolean
+    get() {
+       return getFlag(16) 
+    }
+    set(value) {
+      setFlag(16, value)
+    }
+
+  var flagsFixedSize: Boolean
+    get() {
+       return getFlag(6) 
+    }
+    set(value) {
+      setFlag(6, value)
+    }
+
+  var flagsNoDepthTest: Boolean
+    get() {
+       return getFlag(2) 
+    }
+    set(value) {
+      setFlag(2, value)
+    }
+
+  var flagsTransparent: Boolean
+    get() {
+       return getFeature(0) 
+    }
+    set(value) {
+      setFeature(0, value)
+    }
+
+  var flagsUnshaded: Boolean
+    get() {
+       return getFlag(0) 
+    }
+    set(value) {
+      setFlag(0, value)
+    }
+
+  var flagsUsePointSize: Boolean
+    get() {
+       return getFlag(5) 
+    }
+    set(value) {
+      setFlag(5, value)
+    }
+
+  var flagsUseShadowToOpacity: Boolean
+    get() {
+       return getFlag(18) 
+    }
+    set(value) {
+      setFlag(18, value)
+    }
+
+  var flagsVertexLighting: Boolean
+    get() {
+       return getFlag(1) 
+    }
+    set(value) {
+      setFlag(1, value)
+    }
+
+  var flagsWorldTriplanar: Boolean
+    get() {
+       return getFlag(10) 
+    }
+    set(value) {
+      setFlag(10, value)
     }
 
   var metallic: Float
@@ -198,12 +430,28 @@ open class SpatialMaterial(
       setSpecular(value)
     }
 
+  var metallicTexture: Texture
+    get() {
+       return getTexture(1) 
+    }
+    set(value) {
+      setTexture(1, value)
+    }
+
   var metallicTextureChannel: TextureChannel
     get() {
        return getMetallicTextureChannel() 
     }
     set(value) {
       setMetallicTextureChannel(value.value)
+    }
+
+  var normalEnabled: Boolean
+    get() {
+       return getFeature(2) 
+    }
+    set(value) {
+      setFeature(2, value)
     }
 
   var normalScale: Float
@@ -214,12 +462,28 @@ open class SpatialMaterial(
       setNormalScale(value)
     }
 
+  var normalTexture: Texture
+    get() {
+       return getTexture(4) 
+    }
+    set(value) {
+      setTexture(4, value)
+    }
+
   var paramsAlphaScissorThreshold: Float
     get() {
        return getAlphaScissorThreshold() 
     }
     set(value) {
       setAlphaScissorThreshold(value)
+    }
+
+  var paramsBillboardKeepScale: Boolean
+    get() {
+       return getFlag(7) 
+    }
+    set(value) {
+      setFlag(7, value)
     }
 
   var paramsBillboardMode: BillboardMode
@@ -302,6 +566,14 @@ open class SpatialMaterial(
       setSpecularMode(value.value)
     }
 
+  var paramsUseAlphaScissor: Boolean
+    get() {
+       return getFlag(13) 
+    }
+    set(value) {
+      setFlag(13, value)
+    }
+
   var particlesAnimHFrames: Int
     get() {
        return getParticlesAnimHFrames() 
@@ -342,12 +614,28 @@ open class SpatialMaterial(
       setProximityFade(value)
     }
 
+  var refractionEnabled: Boolean
+    get() {
+       return getFeature(10) 
+    }
+    set(value) {
+      setFeature(10, value)
+    }
+
   var refractionScale: Float
     get() {
        return getRefraction() 
     }
     set(value) {
       setRefraction(value)
+    }
+
+  var refractionTexture: Texture
+    get() {
+       return getTexture(12) 
+    }
+    set(value) {
+      setTexture(12, value)
     }
 
   var refractionTextureChannel: TextureChannel
@@ -366,6 +654,22 @@ open class SpatialMaterial(
       setRim(value)
     }
 
+  var rimEnabled: Boolean
+    get() {
+       return getFeature(3) 
+    }
+    set(value) {
+      setFeature(3, value)
+    }
+
+  var rimTexture: Texture
+    get() {
+       return getTexture(5) 
+    }
+    set(value) {
+      setTexture(5, value)
+    }
+
   var rimTint: Float
     get() {
        return getRimTint() 
@@ -382,12 +686,28 @@ open class SpatialMaterial(
       setRoughness(value)
     }
 
+  var roughnessTexture: Texture
+    get() {
+       return getTexture(2) 
+    }
+    set(value) {
+      setTexture(2, value)
+    }
+
   var roughnessTextureChannel: TextureChannel
     get() {
        return getRoughnessTextureChannel() 
     }
     set(value) {
       setRoughnessTextureChannel(value.value)
+    }
+
+  var subsurfScatterEnabled: Boolean
+    get() {
+       return getFeature(8) 
+    }
+    set(value) {
+      setFeature(8, value)
     }
 
   var subsurfScatterStrength: Float
@@ -398,12 +718,36 @@ open class SpatialMaterial(
       setSubsurfaceScatteringStrength(value)
     }
 
+  var subsurfScatterTexture: Texture
+    get() {
+       return getTexture(10) 
+    }
+    set(value) {
+      setTexture(10, value)
+    }
+
   var transmission: Color
     get() {
        return getTransmission() 
     }
     set(value) {
       setTransmission(value)
+    }
+
+  var transmissionEnabled: Boolean
+    get() {
+       return getFeature(9) 
+    }
+    set(value) {
+      setFeature(9, value)
+    }
+
+  var transmissionTexture: Texture
+    get() {
+       return getTexture(11) 
+    }
+    set(value) {
+      setTexture(11, value)
     }
 
   var uv1Offset: Vector3
@@ -420,6 +764,14 @@ open class SpatialMaterial(
     }
     set(value) {
       setUv1Scale(value)
+    }
+
+  var uv1Triplanar: Boolean
+    get() {
+       return getFlag(8) 
+    }
+    set(value) {
+      setFlag(8, value)
     }
 
   var uv1TriplanarSharpness: Float
@@ -446,12 +798,36 @@ open class SpatialMaterial(
       setUv2Scale(value)
     }
 
+  var uv2Triplanar: Boolean
+    get() {
+       return getFlag(9) 
+    }
+    set(value) {
+      setFlag(9, value)
+    }
+
   var uv2TriplanarSharpness: Float
     get() {
        return getUv2TriplanarBlendSharpness() 
     }
     set(value) {
       setUv2TriplanarBlendSharpness(value)
+    }
+
+  var vertexColorIsSrgb: Boolean
+    get() {
+       return getFlag(4) 
+    }
+    set(value) {
+      setFlag(4, value)
+    }
+
+  var vertexColorUseAsAlbedo: Boolean
+    get() {
+       return getFlag(3) 
+    }
+    set(value) {
+      setFlag(3, value)
     }
 
   /**

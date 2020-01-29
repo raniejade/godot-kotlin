@@ -26,6 +26,198 @@ open class AudioEffectChorus(
       setDry(value)
     }
 
+  var voice1CutoffHz: Float
+    get() {
+       return getVoiceCutoffHz(0) 
+    }
+    set(value) {
+      setVoiceCutoffHz(0, value)
+    }
+
+  var voice1DelayMs: Float
+    get() {
+       return getVoiceDelayMs(0) 
+    }
+    set(value) {
+      setVoiceDelayMs(0, value)
+    }
+
+  var voice1DepthMs: Float
+    get() {
+       return getVoiceDepthMs(0) 
+    }
+    set(value) {
+      setVoiceDepthMs(0, value)
+    }
+
+  var voice1LevelDb: Float
+    get() {
+       return getVoiceLevelDb(0) 
+    }
+    set(value) {
+      setVoiceLevelDb(0, value)
+    }
+
+  var voice1Pan: Float
+    get() {
+       return getVoicePan(0) 
+    }
+    set(value) {
+      setVoicePan(0, value)
+    }
+
+  var voice1RateHz: Float
+    get() {
+       return getVoiceRateHz(0) 
+    }
+    set(value) {
+      setVoiceRateHz(0, value)
+    }
+
+  var voice2CutoffHz: Float
+    get() {
+       return getVoiceCutoffHz(1) 
+    }
+    set(value) {
+      setVoiceCutoffHz(1, value)
+    }
+
+  var voice2DelayMs: Float
+    get() {
+       return getVoiceDelayMs(1) 
+    }
+    set(value) {
+      setVoiceDelayMs(1, value)
+    }
+
+  var voice2DepthMs: Float
+    get() {
+       return getVoiceDepthMs(1) 
+    }
+    set(value) {
+      setVoiceDepthMs(1, value)
+    }
+
+  var voice2LevelDb: Float
+    get() {
+       return getVoiceLevelDb(1) 
+    }
+    set(value) {
+      setVoiceLevelDb(1, value)
+    }
+
+  var voice2Pan: Float
+    get() {
+       return getVoicePan(1) 
+    }
+    set(value) {
+      setVoicePan(1, value)
+    }
+
+  var voice2RateHz: Float
+    get() {
+       return getVoiceRateHz(1) 
+    }
+    set(value) {
+      setVoiceRateHz(1, value)
+    }
+
+  var voice3CutoffHz: Float
+    get() {
+       return getVoiceCutoffHz(2) 
+    }
+    set(value) {
+      setVoiceCutoffHz(2, value)
+    }
+
+  var voice3DelayMs: Float
+    get() {
+       return getVoiceDelayMs(2) 
+    }
+    set(value) {
+      setVoiceDelayMs(2, value)
+    }
+
+  var voice3DepthMs: Float
+    get() {
+       return getVoiceDepthMs(2) 
+    }
+    set(value) {
+      setVoiceDepthMs(2, value)
+    }
+
+  var voice3LevelDb: Float
+    get() {
+       return getVoiceLevelDb(2) 
+    }
+    set(value) {
+      setVoiceLevelDb(2, value)
+    }
+
+  var voice3Pan: Float
+    get() {
+       return getVoicePan(2) 
+    }
+    set(value) {
+      setVoicePan(2, value)
+    }
+
+  var voice3RateHz: Float
+    get() {
+       return getVoiceRateHz(2) 
+    }
+    set(value) {
+      setVoiceRateHz(2, value)
+    }
+
+  var voice4CutoffHz: Float
+    get() {
+       return getVoiceCutoffHz(3) 
+    }
+    set(value) {
+      setVoiceCutoffHz(3, value)
+    }
+
+  var voice4DelayMs: Float
+    get() {
+       return getVoiceDelayMs(3) 
+    }
+    set(value) {
+      setVoiceDelayMs(3, value)
+    }
+
+  var voice4DepthMs: Float
+    get() {
+       return getVoiceDepthMs(3) 
+    }
+    set(value) {
+      setVoiceDepthMs(3, value)
+    }
+
+  var voice4LevelDb: Float
+    get() {
+       return getVoiceLevelDb(3) 
+    }
+    set(value) {
+      setVoiceLevelDb(3, value)
+    }
+
+  var voice4Pan: Float
+    get() {
+       return getVoicePan(3) 
+    }
+    set(value) {
+      setVoicePan(3, value)
+    }
+
+  var voice4RateHz: Float
+    get() {
+       return getVoiceRateHz(3) 
+    }
+    set(value) {
+      setVoiceRateHz(3, value)
+    }
+
   var voiceCount: Int
     get() {
        return getVoiceCount() 

@@ -29,6 +29,30 @@ open class KinematicBody(
       setSafeMargin(value)
     }
 
+  var moveLockX: Boolean
+    get() {
+       return getAxisLock(1) 
+    }
+    set(value) {
+      setAxisLock(1, value)
+    }
+
+  var moveLockY: Boolean
+    get() {
+       return getAxisLock(2) 
+    }
+    set(value) {
+      setAxisLock(2, value)
+    }
+
+  var moveLockZ: Boolean
+    get() {
+       return getAxisLock(4) 
+    }
+    set(value) {
+      setAxisLock(4, value)
+    }
+
   fun getAxisLock(axis: Int): Boolean {
     val _arg = Variant.new(axis)
     val _ret = __method_bind.getAxisLock.call(this._handle, _arg, 1)

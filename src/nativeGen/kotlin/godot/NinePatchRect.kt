@@ -44,6 +44,38 @@ open class NinePatchRect(
       setDrawCenter(value)
     }
 
+  var patchMarginBottom: Int
+    get() {
+       return getPatchMargin(3) 
+    }
+    set(value) {
+      setPatchMargin(3, value)
+    }
+
+  var patchMarginLeft: Int
+    get() {
+       return getPatchMargin(0) 
+    }
+    set(value) {
+      setPatchMargin(0, value)
+    }
+
+  var patchMarginRight: Int
+    get() {
+       return getPatchMargin(2) 
+    }
+    set(value) {
+      setPatchMargin(2, value)
+    }
+
+  var patchMarginTop: Int
+    get() {
+       return getPatchMargin(1) 
+    }
+    set(value) {
+      setPatchMargin(1, value)
+    }
+
   var regionRect: Rect2
     get() {
        return getRegionRect() 

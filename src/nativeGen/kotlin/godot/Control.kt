@@ -33,6 +33,38 @@ open class Control(
       setFocusMode(value.value)
     }
 
+  var focusNeighbourBottom: NodePath
+    get() {
+       return getFocusNeighbour(3) 
+    }
+    set(value) {
+      setFocusNeighbour(3, value)
+    }
+
+  var focusNeighbourLeft: NodePath
+    get() {
+       return getFocusNeighbour(0) 
+    }
+    set(value) {
+      setFocusNeighbour(0, value)
+    }
+
+  var focusNeighbourRight: NodePath
+    get() {
+       return getFocusNeighbour(2) 
+    }
+    set(value) {
+      setFocusNeighbour(2, value)
+    }
+
+  var focusNeighbourTop: NodePath
+    get() {
+       return getFocusNeighbour(1) 
+    }
+    set(value) {
+      setFocusNeighbour(1, value)
+    }
+
   var focusNext: NodePath
     get() {
        return getFocusNext() 
@@ -63,6 +95,38 @@ open class Control(
     }
     set(value) {
       setVGrowDirection(value.value)
+    }
+
+  var marginBottom: Float
+    get() {
+       return getMargin(3) 
+    }
+    set(value) {
+      setMargin(3, value)
+    }
+
+  var marginLeft: Float
+    get() {
+       return getMargin(0) 
+    }
+    set(value) {
+      setMargin(0, value)
+    }
+
+  var marginRight: Float
+    get() {
+       return getMargin(2) 
+    }
+    set(value) {
+      setMargin(2, value)
+    }
+
+  var marginTop: Float
+    get() {
+       return getMargin(1) 
+    }
+    set(value) {
+      setMargin(1, value)
     }
 
   var mouseDefaultCursorShape: CursorShape
@@ -152,6 +216,42 @@ open class Control(
     set(value) {
       setTheme(value)
     }
+
+  /**
+   * Specialized setter for focusNeighbourBottom
+   */
+  fun focusNeighbourBottom(cb: NodePath.() -> Unit) {
+    val _p = focusNeighbourBottom
+    cb(_p)
+    focusNeighbourBottom = _p
+  }
+
+  /**
+   * Specialized setter for focusNeighbourLeft
+   */
+  fun focusNeighbourLeft(cb: NodePath.() -> Unit) {
+    val _p = focusNeighbourLeft
+    cb(_p)
+    focusNeighbourLeft = _p
+  }
+
+  /**
+   * Specialized setter for focusNeighbourRight
+   */
+  fun focusNeighbourRight(cb: NodePath.() -> Unit) {
+    val _p = focusNeighbourRight
+    cb(_p)
+    focusNeighbourRight = _p
+  }
+
+  /**
+   * Specialized setter for focusNeighbourTop
+   */
+  fun focusNeighbourTop(cb: NodePath.() -> Unit) {
+    val _p = focusNeighbourTop
+    cb(_p)
+    focusNeighbourTop = _p
+  }
 
   /**
    * Specialized setter for focusNext

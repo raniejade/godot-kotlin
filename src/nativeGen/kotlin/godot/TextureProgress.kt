@@ -62,6 +62,38 @@ open class TextureProgress(
       setRadialInitialAngle(value)
     }
 
+  var stretchMarginBottom: Int
+    get() {
+       return getStretchMargin(3) 
+    }
+    set(value) {
+      setStretchMargin(3, value)
+    }
+
+  var stretchMarginLeft: Int
+    get() {
+       return getStretchMargin(0) 
+    }
+    set(value) {
+      setStretchMargin(0, value)
+    }
+
+  var stretchMarginRight: Int
+    get() {
+       return getStretchMargin(2) 
+    }
+    set(value) {
+      setStretchMargin(2, value)
+    }
+
+  var stretchMarginTop: Int
+    get() {
+       return getStretchMargin(1) 
+    }
+    set(value) {
+      setStretchMargin(1, value)
+    }
+
   var textureOver: Texture
     get() {
        return getOverTexture() 

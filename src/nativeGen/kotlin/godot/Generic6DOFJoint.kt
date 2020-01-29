@@ -19,6 +19,630 @@ import kotlinx.cinterop.reinterpret
 open class Generic6DOFJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var angularLimitXDamping: Float
+    get() {
+       return getParamX(13) 
+    }
+    set(value) {
+      setParamX(13, value)
+    }
+
+  var angularLimitXEnabled: Boolean
+    get() {
+       return getFlagX(1) 
+    }
+    set(value) {
+      setFlagX(1, value)
+    }
+
+  var angularLimitXErp: Float
+    get() {
+       return getParamX(16) 
+    }
+    set(value) {
+      setParamX(16, value)
+    }
+
+  var angularLimitXForceLimit: Float
+    get() {
+       return getParamX(15) 
+    }
+    set(value) {
+      setParamX(15, value)
+    }
+
+  var angularLimitXRestitution: Float
+    get() {
+       return getParamX(14) 
+    }
+    set(value) {
+      setParamX(14, value)
+    }
+
+  var angularLimitXSoftness: Float
+    get() {
+       return getParamX(12) 
+    }
+    set(value) {
+      setParamX(12, value)
+    }
+
+  var angularLimitYDamping: Float
+    get() {
+       return getParamY(13) 
+    }
+    set(value) {
+      setParamY(13, value)
+    }
+
+  var angularLimitYEnabled: Boolean
+    get() {
+       return getFlagY(1) 
+    }
+    set(value) {
+      setFlagY(1, value)
+    }
+
+  var angularLimitYErp: Float
+    get() {
+       return getParamY(16) 
+    }
+    set(value) {
+      setParamY(16, value)
+    }
+
+  var angularLimitYForceLimit: Float
+    get() {
+       return getParamY(15) 
+    }
+    set(value) {
+      setParamY(15, value)
+    }
+
+  var angularLimitYRestitution: Float
+    get() {
+       return getParamY(14) 
+    }
+    set(value) {
+      setParamY(14, value)
+    }
+
+  var angularLimitYSoftness: Float
+    get() {
+       return getParamY(12) 
+    }
+    set(value) {
+      setParamY(12, value)
+    }
+
+  var angularLimitZDamping: Float
+    get() {
+       return getParamZ(13) 
+    }
+    set(value) {
+      setParamZ(13, value)
+    }
+
+  var angularLimitZEnabled: Boolean
+    get() {
+       return getFlagZ(1) 
+    }
+    set(value) {
+      setFlagZ(1, value)
+    }
+
+  var angularLimitZErp: Float
+    get() {
+       return getParamZ(16) 
+    }
+    set(value) {
+      setParamZ(16, value)
+    }
+
+  var angularLimitZForceLimit: Float
+    get() {
+       return getParamZ(15) 
+    }
+    set(value) {
+      setParamZ(15, value)
+    }
+
+  var angularLimitZRestitution: Float
+    get() {
+       return getParamZ(14) 
+    }
+    set(value) {
+      setParamZ(14, value)
+    }
+
+  var angularLimitZSoftness: Float
+    get() {
+       return getParamZ(12) 
+    }
+    set(value) {
+      setParamZ(12, value)
+    }
+
+  var angularMotorXEnabled: Boolean
+    get() {
+       return getFlagX(4) 
+    }
+    set(value) {
+      setFlagX(4, value)
+    }
+
+  var angularMotorXForceLimit: Float
+    get() {
+       return getParamX(18) 
+    }
+    set(value) {
+      setParamX(18, value)
+    }
+
+  var angularMotorXTargetVelocity: Float
+    get() {
+       return getParamX(17) 
+    }
+    set(value) {
+      setParamX(17, value)
+    }
+
+  var angularMotorYEnabled: Boolean
+    get() {
+       return getFlagY(4) 
+    }
+    set(value) {
+      setFlagY(4, value)
+    }
+
+  var angularMotorYForceLimit: Float
+    get() {
+       return getParamY(18) 
+    }
+    set(value) {
+      setParamY(18, value)
+    }
+
+  var angularMotorYTargetVelocity: Float
+    get() {
+       return getParamY(17) 
+    }
+    set(value) {
+      setParamY(17, value)
+    }
+
+  var angularMotorZEnabled: Boolean
+    get() {
+       return getFlagZ(4) 
+    }
+    set(value) {
+      setFlagZ(4, value)
+    }
+
+  var angularMotorZForceLimit: Float
+    get() {
+       return getParamZ(18) 
+    }
+    set(value) {
+      setParamZ(18, value)
+    }
+
+  var angularMotorZTargetVelocity: Float
+    get() {
+       return getParamZ(17) 
+    }
+    set(value) {
+      setParamZ(17, value)
+    }
+
+  var angularSpringXDamping: Float
+    get() {
+       return getParamX(20) 
+    }
+    set(value) {
+      setParamX(20, value)
+    }
+
+  var angularSpringXEnabled: Boolean
+    get() {
+       return getFlagX(2) 
+    }
+    set(value) {
+      setFlagX(2, value)
+    }
+
+  var angularSpringXEquilibriumPoint: Float
+    get() {
+       return getParamX(21) 
+    }
+    set(value) {
+      setParamX(21, value)
+    }
+
+  var angularSpringXStiffness: Float
+    get() {
+       return getParamX(19) 
+    }
+    set(value) {
+      setParamX(19, value)
+    }
+
+  var angularSpringYDamping: Float
+    get() {
+       return getParamY(20) 
+    }
+    set(value) {
+      setParamY(20, value)
+    }
+
+  var angularSpringYEnabled: Boolean
+    get() {
+       return getFlagY(2) 
+    }
+    set(value) {
+      setFlagY(2, value)
+    }
+
+  var angularSpringYEquilibriumPoint: Float
+    get() {
+       return getParamY(21) 
+    }
+    set(value) {
+      setParamY(21, value)
+    }
+
+  var angularSpringYStiffness: Float
+    get() {
+       return getParamY(19) 
+    }
+    set(value) {
+      setParamY(19, value)
+    }
+
+  var angularSpringZDamping: Float
+    get() {
+       return getParamZ(20) 
+    }
+    set(value) {
+      setParamZ(20, value)
+    }
+
+  var angularSpringZEnabled: Boolean
+    get() {
+       return getFlagZ(2) 
+    }
+    set(value) {
+      setFlagZ(2, value)
+    }
+
+  var angularSpringZEquilibriumPoint: Float
+    get() {
+       return getParamZ(21) 
+    }
+    set(value) {
+      setParamZ(21, value)
+    }
+
+  var angularSpringZStiffness: Float
+    get() {
+       return getParamZ(19) 
+    }
+    set(value) {
+      setParamZ(19, value)
+    }
+
+  var linearLimitXDamping: Float
+    get() {
+       return getParamX(4) 
+    }
+    set(value) {
+      setParamX(4, value)
+    }
+
+  var linearLimitXEnabled: Boolean
+    get() {
+       return getFlagX(0) 
+    }
+    set(value) {
+      setFlagX(0, value)
+    }
+
+  var linearLimitXLowerDistance: Float
+    get() {
+       return getParamX(0) 
+    }
+    set(value) {
+      setParamX(0, value)
+    }
+
+  var linearLimitXRestitution: Float
+    get() {
+       return getParamX(3) 
+    }
+    set(value) {
+      setParamX(3, value)
+    }
+
+  var linearLimitXSoftness: Float
+    get() {
+       return getParamX(2) 
+    }
+    set(value) {
+      setParamX(2, value)
+    }
+
+  var linearLimitXUpperDistance: Float
+    get() {
+       return getParamX(1) 
+    }
+    set(value) {
+      setParamX(1, value)
+    }
+
+  var linearLimitYDamping: Float
+    get() {
+       return getParamY(4) 
+    }
+    set(value) {
+      setParamY(4, value)
+    }
+
+  var linearLimitYEnabled: Boolean
+    get() {
+       return getFlagY(0) 
+    }
+    set(value) {
+      setFlagY(0, value)
+    }
+
+  var linearLimitYLowerDistance: Float
+    get() {
+       return getParamY(0) 
+    }
+    set(value) {
+      setParamY(0, value)
+    }
+
+  var linearLimitYRestitution: Float
+    get() {
+       return getParamY(3) 
+    }
+    set(value) {
+      setParamY(3, value)
+    }
+
+  var linearLimitYSoftness: Float
+    get() {
+       return getParamY(2) 
+    }
+    set(value) {
+      setParamY(2, value)
+    }
+
+  var linearLimitYUpperDistance: Float
+    get() {
+       return getParamY(1) 
+    }
+    set(value) {
+      setParamY(1, value)
+    }
+
+  var linearLimitZDamping: Float
+    get() {
+       return getParamZ(4) 
+    }
+    set(value) {
+      setParamZ(4, value)
+    }
+
+  var linearLimitZEnabled: Boolean
+    get() {
+       return getFlagZ(0) 
+    }
+    set(value) {
+      setFlagZ(0, value)
+    }
+
+  var linearLimitZLowerDistance: Float
+    get() {
+       return getParamZ(0) 
+    }
+    set(value) {
+      setParamZ(0, value)
+    }
+
+  var linearLimitZRestitution: Float
+    get() {
+       return getParamZ(3) 
+    }
+    set(value) {
+      setParamZ(3, value)
+    }
+
+  var linearLimitZSoftness: Float
+    get() {
+       return getParamZ(2) 
+    }
+    set(value) {
+      setParamZ(2, value)
+    }
+
+  var linearLimitZUpperDistance: Float
+    get() {
+       return getParamZ(1) 
+    }
+    set(value) {
+      setParamZ(1, value)
+    }
+
+  var linearMotorXEnabled: Boolean
+    get() {
+       return getFlagX(5) 
+    }
+    set(value) {
+      setFlagX(5, value)
+    }
+
+  var linearMotorXForceLimit: Float
+    get() {
+       return getParamX(6) 
+    }
+    set(value) {
+      setParamX(6, value)
+    }
+
+  var linearMotorXTargetVelocity: Float
+    get() {
+       return getParamX(5) 
+    }
+    set(value) {
+      setParamX(5, value)
+    }
+
+  var linearMotorYEnabled: Boolean
+    get() {
+       return getFlagY(5) 
+    }
+    set(value) {
+      setFlagY(5, value)
+    }
+
+  var linearMotorYForceLimit: Float
+    get() {
+       return getParamY(6) 
+    }
+    set(value) {
+      setParamY(6, value)
+    }
+
+  var linearMotorYTargetVelocity: Float
+    get() {
+       return getParamY(5) 
+    }
+    set(value) {
+      setParamY(5, value)
+    }
+
+  var linearMotorZEnabled: Boolean
+    get() {
+       return getFlagZ(5) 
+    }
+    set(value) {
+      setFlagZ(5, value)
+    }
+
+  var linearMotorZForceLimit: Float
+    get() {
+       return getParamZ(6) 
+    }
+    set(value) {
+      setParamZ(6, value)
+    }
+
+  var linearMotorZTargetVelocity: Float
+    get() {
+       return getParamZ(5) 
+    }
+    set(value) {
+      setParamZ(5, value)
+    }
+
+  var linearSpringXDamping: Float
+    get() {
+       return getParamX(8) 
+    }
+    set(value) {
+      setParamX(8, value)
+    }
+
+  var linearSpringXEnabled: Boolean
+    get() {
+       return getFlagX(3) 
+    }
+    set(value) {
+      setFlagX(3, value)
+    }
+
+  var linearSpringXEquilibriumPoint: Float
+    get() {
+       return getParamX(9) 
+    }
+    set(value) {
+      setParamX(9, value)
+    }
+
+  var linearSpringXStiffness: Float
+    get() {
+       return getParamX(7) 
+    }
+    set(value) {
+      setParamX(7, value)
+    }
+
+  var linearSpringYDamping: Float
+    get() {
+       return getParamY(8) 
+    }
+    set(value) {
+      setParamY(8, value)
+    }
+
+  var linearSpringYEnabled: Boolean
+    get() {
+       return getFlagY(3) 
+    }
+    set(value) {
+      setFlagY(3, value)
+    }
+
+  var linearSpringYEquilibriumPoint: Float
+    get() {
+       return getParamY(9) 
+    }
+    set(value) {
+      setParamY(9, value)
+    }
+
+  var linearSpringYStiffness: Float
+    get() {
+       return getParamY(7) 
+    }
+    set(value) {
+      setParamY(7, value)
+    }
+
+  var linearSpringZDamping: Float
+    get() {
+       return getParamZ(8) 
+    }
+    set(value) {
+      setParamZ(8, value)
+    }
+
+  var linearSpringZEnabled: Boolean
+    get() {
+       return getFlagZ(3) 
+    }
+    set(value) {
+      setFlagZ(3, value)
+    }
+
+  var linearSpringZEquilibriumPoint: Float
+    get() {
+       return getParamZ(9) 
+    }
+    set(value) {
+      setParamZ(9, value)
+    }
+
+  var linearSpringZStiffness: Float
+    get() {
+       return getParamZ(7) 
+    }
+    set(value) {
+      setParamZ(7, value)
+    }
+
   var precision: Int
     get() {
        return getPrecision() 

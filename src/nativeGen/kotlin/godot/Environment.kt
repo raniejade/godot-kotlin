@@ -463,6 +463,62 @@ open class Environment(
       setGlowIntensity(value)
     }
 
+  var glowLevels1: Boolean
+    get() {
+       return isGlowLevelEnabled(0) 
+    }
+    set(value) {
+      setGlowLevel(0, value)
+    }
+
+  var glowLevels2: Boolean
+    get() {
+       return isGlowLevelEnabled(1) 
+    }
+    set(value) {
+      setGlowLevel(1, value)
+    }
+
+  var glowLevels3: Boolean
+    get() {
+       return isGlowLevelEnabled(2) 
+    }
+    set(value) {
+      setGlowLevel(2, value)
+    }
+
+  var glowLevels4: Boolean
+    get() {
+       return isGlowLevelEnabled(3) 
+    }
+    set(value) {
+      setGlowLevel(3, value)
+    }
+
+  var glowLevels5: Boolean
+    get() {
+       return isGlowLevelEnabled(4) 
+    }
+    set(value) {
+      setGlowLevel(4, value)
+    }
+
+  var glowLevels6: Boolean
+    get() {
+       return isGlowLevelEnabled(5) 
+    }
+    set(value) {
+      setGlowLevel(5, value)
+    }
+
+  var glowLevels7: Boolean
+    get() {
+       return isGlowLevelEnabled(6) 
+    }
+    set(value) {
+      setGlowLevel(6, value)
+    }
+
   var glowStrength: Float
     get() {
        return getGlowStrength() 

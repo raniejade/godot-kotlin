@@ -48,6 +48,14 @@ open class SpriteBase3D(
       setCentered(value)
     }
 
+  var doubleSided: Boolean
+    get() {
+       return getDrawFlag(2) 
+    }
+    set(value) {
+      setDrawFlag(2, value)
+    }
+
   var flipH: Boolean
     get() {
        return isFlippedH() 
@@ -94,6 +102,22 @@ open class SpriteBase3D(
     }
     set(value) {
       setPixelSize(value)
+    }
+
+  var shaded: Boolean
+    get() {
+       return getDrawFlag(1) 
+    }
+    set(value) {
+      setDrawFlag(1, value)
+    }
+
+  var transparent: Boolean
+    get() {
+       return getDrawFlag(0) 
+    }
+    set(value) {
+      setDrawFlag(0, value)
     }
 
   /**

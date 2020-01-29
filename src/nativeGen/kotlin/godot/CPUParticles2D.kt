@@ -32,6 +32,102 @@ open class CPUParticles2D(
       setAmount(value)
     }
 
+  var angle: Float
+    get() {
+       return getParam(7) 
+    }
+    set(value) {
+      setParam(7, value)
+    }
+
+  var angleCurve: Curve
+    get() {
+       return getParamCurve(7) 
+    }
+    set(value) {
+      setParamCurve(7, value)
+    }
+
+  var angleRandom: Float
+    get() {
+       return getParamRandomness(7) 
+    }
+    set(value) {
+      setParamRandomness(7, value)
+    }
+
+  var angularVelocity: Float
+    get() {
+       return getParam(1) 
+    }
+    set(value) {
+      setParam(1, value)
+    }
+
+  var angularVelocityCurve: Curve
+    get() {
+       return getParamCurve(1) 
+    }
+    set(value) {
+      setParamCurve(1, value)
+    }
+
+  var angularVelocityRandom: Float
+    get() {
+       return getParamRandomness(1) 
+    }
+    set(value) {
+      setParamRandomness(1, value)
+    }
+
+  var animOffset: Float
+    get() {
+       return getParam(11) 
+    }
+    set(value) {
+      setParam(11, value)
+    }
+
+  var animOffsetCurve: Curve
+    get() {
+       return getParamCurve(11) 
+    }
+    set(value) {
+      setParamCurve(11, value)
+    }
+
+  var animOffsetRandom: Float
+    get() {
+       return getParamRandomness(11) 
+    }
+    set(value) {
+      setParamRandomness(11, value)
+    }
+
+  var animSpeed: Float
+    get() {
+       return getParam(10) 
+    }
+    set(value) {
+      setParam(10, value)
+    }
+
+  var animSpeedCurve: Curve
+    get() {
+       return getParamCurve(10) 
+    }
+    set(value) {
+      setParamCurve(10, value)
+    }
+
+  var animSpeedRandom: Float
+    get() {
+       return getParamRandomness(10) 
+    }
+    set(value) {
+      setParamRandomness(10, value)
+    }
+
   var color: Color
     get() {
        return getColor() 
@@ -46,6 +142,30 @@ open class CPUParticles2D(
     }
     set(value) {
       setColorRamp(value)
+    }
+
+  var damping: Float
+    get() {
+       return getParam(6) 
+    }
+    set(value) {
+      setParam(6, value)
+    }
+
+  var dampingCurve: Curve
+    get() {
+       return getParamCurve(6) 
+    }
+    set(value) {
+      setParamCurve(6, value)
+    }
+
+  var dampingRandom: Float
+    get() {
+       return getParamRandomness(6) 
+    }
+    set(value) {
+      setParamRandomness(6, value)
     }
 
   var drawOrder: DrawOrder
@@ -128,6 +248,14 @@ open class CPUParticles2D(
       setFixedFps(value)
     }
 
+  var flagAlignY: Boolean
+    get() {
+       return getParticleFlag(0) 
+    }
+    set(value) {
+      setParticleFlag(0, value)
+    }
+
   var flatness: Float
     get() {
        return getFlatness() 
@@ -152,12 +280,76 @@ open class CPUParticles2D(
       setGravity(value)
     }
 
+  var hueVariation: Float
+    get() {
+       return getParam(9) 
+    }
+    set(value) {
+      setParam(9, value)
+    }
+
+  var hueVariationCurve: Curve
+    get() {
+       return getParamCurve(9) 
+    }
+    set(value) {
+      setParamCurve(9, value)
+    }
+
+  var hueVariationRandom: Float
+    get() {
+       return getParamRandomness(9) 
+    }
+    set(value) {
+      setParamRandomness(9, value)
+    }
+
+  var initialVelocity: Float
+    get() {
+       return getParam(0) 
+    }
+    set(value) {
+      setParam(0, value)
+    }
+
+  var initialVelocityRandom: Float
+    get() {
+       return getParamRandomness(0) 
+    }
+    set(value) {
+      setParamRandomness(0, value)
+    }
+
   var lifetime: Float
     get() {
        return getLifetime() 
     }
     set(value) {
       setLifetime(value)
+    }
+
+  var linearAccel: Float
+    get() {
+       return getParam(3) 
+    }
+    set(value) {
+      setParam(3, value)
+    }
+
+  var linearAccelCurve: Curve
+    get() {
+       return getParamCurve(3) 
+    }
+    set(value) {
+      setParamCurve(3, value)
+    }
+
+  var linearAccelRandom: Float
+    get() {
+       return getParamRandomness(3) 
+    }
+    set(value) {
+      setParamRandomness(3, value)
     }
 
   var localCoords: Boolean
@@ -184,6 +376,30 @@ open class CPUParticles2D(
       setOneShot(value)
     }
 
+  var orbitVelocity: Float
+    get() {
+       return getParam(2) 
+    }
+    set(value) {
+      setParam(2, value)
+    }
+
+  var orbitVelocityCurve: Curve
+    get() {
+       return getParamCurve(2) 
+    }
+    set(value) {
+      setParamCurve(2, value)
+    }
+
+  var orbitVelocityRandom: Float
+    get() {
+       return getParamRandomness(2) 
+    }
+    set(value) {
+      setParamRandomness(2, value)
+    }
+
   var preprocess: Float
     get() {
        return getPreProcessTime() 
@@ -192,12 +408,60 @@ open class CPUParticles2D(
       setPreProcessTime(value)
     }
 
+  var radialAccel: Float
+    get() {
+       return getParam(4) 
+    }
+    set(value) {
+      setParam(4, value)
+    }
+
+  var radialAccelCurve: Curve
+    get() {
+       return getParamCurve(4) 
+    }
+    set(value) {
+      setParamCurve(4, value)
+    }
+
+  var radialAccelRandom: Float
+    get() {
+       return getParamRandomness(4) 
+    }
+    set(value) {
+      setParamRandomness(4, value)
+    }
+
   var randomness: Float
     get() {
        return getRandomnessRatio() 
     }
     set(value) {
       setRandomnessRatio(value)
+    }
+
+  var scaleAmount: Float
+    get() {
+       return getParam(8) 
+    }
+    set(value) {
+      setParam(8, value)
+    }
+
+  var scaleAmountCurve: Curve
+    get() {
+       return getParamCurve(8) 
+    }
+    set(value) {
+      setParamCurve(8, value)
+    }
+
+  var scaleAmountRandom: Float
+    get() {
+       return getParamRandomness(8) 
+    }
+    set(value) {
+      setParamRandomness(8, value)
     }
 
   var speedScale: Float
@@ -214,6 +478,30 @@ open class CPUParticles2D(
     }
     set(value) {
       setSpread(value)
+    }
+
+  var tangentialAccel: Float
+    get() {
+       return getParam(5) 
+    }
+    set(value) {
+      setParam(5, value)
+    }
+
+  var tangentialAccelCurve: Curve
+    get() {
+       return getParamCurve(5) 
+    }
+    set(value) {
+      setParamCurve(5, value)
+    }
+
+  var tangentialAccelRandom: Float
+    get() {
+       return getParamRandomness(5) 
+    }
+    set(value) {
+      setParamRandomness(5, value)
     }
 
   var texture: Texture

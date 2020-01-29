@@ -62,6 +62,38 @@ open class StyleBoxFlat(
       setBorderColor(value)
     }
 
+  var borderWidthBottom: Int
+    get() {
+       return getBorderWidth(3) 
+    }
+    set(value) {
+      setBorderWidth(3, value)
+    }
+
+  var borderWidthLeft: Int
+    get() {
+       return getBorderWidth(0) 
+    }
+    set(value) {
+      setBorderWidth(0, value)
+    }
+
+  var borderWidthRight: Int
+    get() {
+       return getBorderWidth(2) 
+    }
+    set(value) {
+      setBorderWidth(2, value)
+    }
+
+  var borderWidthTop: Int
+    get() {
+       return getBorderWidth(1) 
+    }
+    set(value) {
+      setBorderWidth(1, value)
+    }
+
   var cornerDetail: Int
     get() {
        return getCornerDetail() 
@@ -70,12 +102,76 @@ open class StyleBoxFlat(
       setCornerDetail(value)
     }
 
+  var cornerRadiusBottomLeft: Int
+    get() {
+       return getCornerRadius(3) 
+    }
+    set(value) {
+      setCornerRadius(3, value)
+    }
+
+  var cornerRadiusBottomRight: Int
+    get() {
+       return getCornerRadius(2) 
+    }
+    set(value) {
+      setCornerRadius(2, value)
+    }
+
+  var cornerRadiusTopLeft: Int
+    get() {
+       return getCornerRadius(0) 
+    }
+    set(value) {
+      setCornerRadius(0, value)
+    }
+
+  var cornerRadiusTopRight: Int
+    get() {
+       return getCornerRadius(1) 
+    }
+    set(value) {
+      setCornerRadius(1, value)
+    }
+
   var drawCenter: Boolean
     get() {
        return isDrawCenterEnabled() 
     }
     set(value) {
       setDrawCenter(value)
+    }
+
+  var expandMarginBottom: Float
+    get() {
+       return getExpandMargin(3) 
+    }
+    set(value) {
+      setExpandMargin(3, value)
+    }
+
+  var expandMarginLeft: Float
+    get() {
+       return getExpandMargin(0) 
+    }
+    set(value) {
+      setExpandMargin(0, value)
+    }
+
+  var expandMarginRight: Float
+    get() {
+       return getExpandMargin(2) 
+    }
+    set(value) {
+      setExpandMargin(2, value)
+    }
+
+  var expandMarginTop: Float
+    get() {
+       return getExpandMargin(1) 
+    }
+    set(value) {
+      setExpandMargin(1, value)
     }
 
   var shadowColor: Color

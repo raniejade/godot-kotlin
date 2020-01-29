@@ -18,6 +18,30 @@ import kotlinx.cinterop.reinterpret
 open class PinJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var paramsBias: Float
+    get() {
+       return getParam(0) 
+    }
+    set(value) {
+      setParam(0, value)
+    }
+
+  var paramsDamping: Float
+    get() {
+       return getParam(1) 
+    }
+    set(value) {
+      setParam(1, value)
+    }
+
+  var paramsImpulseClamp: Float
+    get() {
+       return getParam(2) 
+    }
+    set(value) {
+      setParam(2, value)
+    }
+
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
     val _ret = __method_bind.getParam.call(this._handle, _arg, 1)

@@ -53,6 +53,22 @@ open class Light(
       setCullMask(value)
     }
 
+  var lightEnergy: Float
+    get() {
+       return getParam(0) 
+    }
+    set(value) {
+      setParam(0, value)
+    }
+
+  var lightIndirectEnergy: Float
+    get() {
+       return getParam(1) 
+    }
+    set(value) {
+      setParam(1, value)
+    }
+
   var lightNegative: Boolean
     get() {
        return isNegative() 
@@ -61,12 +77,36 @@ open class Light(
       setNegative(value)
     }
 
+  var lightSpecular: Float
+    get() {
+       return getParam(2) 
+    }
+    set(value) {
+      setParam(2, value)
+    }
+
+  var shadowBias: Float
+    get() {
+       return getParam(13) 
+    }
+    set(value) {
+      setParam(13, value)
+    }
+
   var shadowColor: Color
     get() {
        return getShadowColor() 
     }
     set(value) {
       setShadowColor(value)
+    }
+
+  var shadowContact: Float
+    get() {
+       return getParam(7) 
+    }
+    set(value) {
+      setParam(7, value)
     }
 
   var shadowEnabled: Boolean

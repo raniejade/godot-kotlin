@@ -22,6 +22,102 @@ import kotlinx.cinterop.reinterpret
 open class ParticlesMaterial(
   _handle: COpaquePointer
 ) : Material(_handle) {
+  var angle: Float
+    get() {
+       return getParam(7) 
+    }
+    set(value) {
+      setParam(7, value)
+    }
+
+  var angleCurve: Texture
+    get() {
+       return getParamTexture(7) 
+    }
+    set(value) {
+      setParamTexture(7, value)
+    }
+
+  var angleRandom: Float
+    get() {
+       return getParamRandomness(7) 
+    }
+    set(value) {
+      setParamRandomness(7, value)
+    }
+
+  var angularVelocity: Float
+    get() {
+       return getParam(1) 
+    }
+    set(value) {
+      setParam(1, value)
+    }
+
+  var angularVelocityCurve: Texture
+    get() {
+       return getParamTexture(1) 
+    }
+    set(value) {
+      setParamTexture(1, value)
+    }
+
+  var angularVelocityRandom: Float
+    get() {
+       return getParamRandomness(1) 
+    }
+    set(value) {
+      setParamRandomness(1, value)
+    }
+
+  var animOffset: Float
+    get() {
+       return getParam(11) 
+    }
+    set(value) {
+      setParam(11, value)
+    }
+
+  var animOffsetCurve: Texture
+    get() {
+       return getParamTexture(11) 
+    }
+    set(value) {
+      setParamTexture(11, value)
+    }
+
+  var animOffsetRandom: Float
+    get() {
+       return getParamRandomness(11) 
+    }
+    set(value) {
+      setParamRandomness(11, value)
+    }
+
+  var animSpeed: Float
+    get() {
+       return getParam(10) 
+    }
+    set(value) {
+      setParam(10, value)
+    }
+
+  var animSpeedCurve: Texture
+    get() {
+       return getParamTexture(10) 
+    }
+    set(value) {
+      setParamTexture(10, value)
+    }
+
+  var animSpeedRandom: Float
+    get() {
+       return getParamRandomness(10) 
+    }
+    set(value) {
+      setParamRandomness(10, value)
+    }
+
   var color: Color
     get() {
        return getColor() 
@@ -36,6 +132,30 @@ open class ParticlesMaterial(
     }
     set(value) {
       setColorRamp(value)
+    }
+
+  var damping: Float
+    get() {
+       return getParam(6) 
+    }
+    set(value) {
+      setParam(6, value)
+    }
+
+  var dampingCurve: Texture
+    get() {
+       return getParamTexture(6) 
+    }
+    set(value) {
+      setParamTexture(6, value)
+    }
+
+  var dampingRandom: Float
+    get() {
+       return getParamRandomness(6) 
+    }
+    set(value) {
+      setParamRandomness(6, value)
     }
 
   var emissionBoxExtents: Vector3
@@ -94,6 +214,30 @@ open class ParticlesMaterial(
       setEmissionSphereRadius(value)
     }
 
+  var flagAlignY: Boolean
+    get() {
+       return getFlag(0) 
+    }
+    set(value) {
+      setFlag(0, value)
+    }
+
+  var flagDisableZ: Boolean
+    get() {
+       return getFlag(2) 
+    }
+    set(value) {
+      setFlag(2, value)
+    }
+
+  var flagRotateY: Boolean
+    get() {
+       return getFlag(1) 
+    }
+    set(value) {
+      setFlag(1, value)
+    }
+
   var flatness: Float
     get() {
        return getFlatness() 
@@ -110,12 +254,172 @@ open class ParticlesMaterial(
       setGravity(value)
     }
 
+  var hueVariation: Float
+    get() {
+       return getParam(9) 
+    }
+    set(value) {
+      setParam(9, value)
+    }
+
+  var hueVariationCurve: Texture
+    get() {
+       return getParamTexture(9) 
+    }
+    set(value) {
+      setParamTexture(9, value)
+    }
+
+  var hueVariationRandom: Float
+    get() {
+       return getParamRandomness(9) 
+    }
+    set(value) {
+      setParamRandomness(9, value)
+    }
+
+  var initialVelocity: Float
+    get() {
+       return getParam(0) 
+    }
+    set(value) {
+      setParam(0, value)
+    }
+
+  var initialVelocityRandom: Float
+    get() {
+       return getParamRandomness(0) 
+    }
+    set(value) {
+      setParamRandomness(0, value)
+    }
+
+  var linearAccel: Float
+    get() {
+       return getParam(3) 
+    }
+    set(value) {
+      setParam(3, value)
+    }
+
+  var linearAccelCurve: Texture
+    get() {
+       return getParamTexture(3) 
+    }
+    set(value) {
+      setParamTexture(3, value)
+    }
+
+  var linearAccelRandom: Float
+    get() {
+       return getParamRandomness(3) 
+    }
+    set(value) {
+      setParamRandomness(3, value)
+    }
+
+  var orbitVelocity: Float
+    get() {
+       return getParam(2) 
+    }
+    set(value) {
+      setParam(2, value)
+    }
+
+  var orbitVelocityCurve: Texture
+    get() {
+       return getParamTexture(2) 
+    }
+    set(value) {
+      setParamTexture(2, value)
+    }
+
+  var orbitVelocityRandom: Float
+    get() {
+       return getParamRandomness(2) 
+    }
+    set(value) {
+      setParamRandomness(2, value)
+    }
+
+  var radialAccel: Float
+    get() {
+       return getParam(4) 
+    }
+    set(value) {
+      setParam(4, value)
+    }
+
+  var radialAccelCurve: Texture
+    get() {
+       return getParamTexture(4) 
+    }
+    set(value) {
+      setParamTexture(4, value)
+    }
+
+  var radialAccelRandom: Float
+    get() {
+       return getParamRandomness(4) 
+    }
+    set(value) {
+      setParamRandomness(4, value)
+    }
+
+  var scale: Float
+    get() {
+       return getParam(8) 
+    }
+    set(value) {
+      setParam(8, value)
+    }
+
+  var scaleCurve: Texture
+    get() {
+       return getParamTexture(8) 
+    }
+    set(value) {
+      setParamTexture(8, value)
+    }
+
+  var scaleRandom: Float
+    get() {
+       return getParamRandomness(8) 
+    }
+    set(value) {
+      setParamRandomness(8, value)
+    }
+
   var spread: Float
     get() {
        return getSpread() 
     }
     set(value) {
       setSpread(value)
+    }
+
+  var tangentialAccel: Float
+    get() {
+       return getParam(5) 
+    }
+    set(value) {
+      setParam(5, value)
+    }
+
+  var tangentialAccelCurve: Texture
+    get() {
+       return getParamTexture(5) 
+    }
+    set(value) {
+      setParamTexture(5, value)
+    }
+
+  var tangentialAccelRandom: Float
+    get() {
+       return getParamRandomness(5) 
+    }
+    set(value) {
+      setParamRandomness(5, value)
     }
 
   var trailColorModifier: GradientTexture

@@ -18,6 +18,22 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityEnabler(
   _handle: COpaquePointer
 ) : VisibilityNotifier(_handle) {
+  var freezeBodies: Boolean
+    get() {
+       return isEnablerEnabled(1) 
+    }
+    set(value) {
+      setEnabler(1, value)
+    }
+
+  var pauseAnimations: Boolean
+    get() {
+       return isEnablerEnabled(0) 
+    }
+    set(value) {
+      setEnabler(0, value)
+    }
+
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
     val _ret = __method_bind.isEnablerEnabled.call(this._handle, _arg, 1)

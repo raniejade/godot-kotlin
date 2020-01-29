@@ -76,6 +76,14 @@ open class GeometryInstance(
       setMaterialOverride(value)
     }
 
+  var useInBakedLight: Boolean
+    get() {
+       return getFlag(0) 
+    }
+    set(value) {
+      setFlag(0, value)
+    }
+
   fun getCastShadowsSetting(): ShadowCastingSetting {
     val _ret = __method_bind.getCastShadowsSetting.call(this._handle)
     return GeometryInstance.ShadowCastingSetting.from(_ret.asInt())

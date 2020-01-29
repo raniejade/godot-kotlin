@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Float
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.cstr
@@ -15,6 +16,38 @@ import kotlinx.cinterop.reinterpret
 open class SpotLight(
   _handle: COpaquePointer
 ) : Light(_handle) {
+  var spotAngle: Float
+    get() {
+       return getParam(5) 
+    }
+    set(value) {
+      setParam(5, value)
+    }
+
+  var spotAngleAttenuation: Float
+    get() {
+       return getParam(6) 
+    }
+    set(value) {
+      setParam(6, value)
+    }
+
+  var spotAttenuation: Float
+    get() {
+       return getParam(4) 
+    }
+    set(value) {
+      setParam(4, value)
+    }
+
+  var spotRange: Float
+    get() {
+       return getParam(3) 
+    }
+    set(value) {
+      setParam(3, value)
+    }
+
   companion object {
     fun new(): SpotLight = memScoped {
       val fnPtr = checkNotNull(Godot.gdnative.godot_get_class_constructor)("SpotLight".cstr.ptr)

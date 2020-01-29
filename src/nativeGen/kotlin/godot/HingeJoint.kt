@@ -19,6 +19,70 @@ import kotlinx.cinterop.reinterpret
 open class HingeJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var angularLimitBias: Float
+    get() {
+       return getParam(3) 
+    }
+    set(value) {
+      setParam(3, value)
+    }
+
+  var angularLimitEnable: Boolean
+    get() {
+       return getFlag(0) 
+    }
+    set(value) {
+      setFlag(0, value)
+    }
+
+  var angularLimitRelaxation: Float
+    get() {
+       return getParam(5) 
+    }
+    set(value) {
+      setParam(5, value)
+    }
+
+  var angularLimitSoftness: Float
+    get() {
+       return getParam(4) 
+    }
+    set(value) {
+      setParam(4, value)
+    }
+
+  var motorEnable: Boolean
+    get() {
+       return getFlag(1) 
+    }
+    set(value) {
+      setFlag(1, value)
+    }
+
+  var motorMaxImpulse: Float
+    get() {
+       return getParam(7) 
+    }
+    set(value) {
+      setParam(7, value)
+    }
+
+  var motorTargetVelocity: Float
+    get() {
+       return getParam(6) 
+    }
+    set(value) {
+      setParam(6, value)
+    }
+
+  var paramsBias: Float
+    get() {
+       return getParam(0) 
+    }
+    set(value) {
+      setParam(0, value)
+    }
+
   fun getFlag(flag: Int): Boolean {
     val _arg = Variant.new(flag)
     val _ret = __method_bind.getFlag.call(this._handle, _arg, 1)

@@ -37,6 +37,54 @@ open class RigidBody(
       setAngularVelocity(value)
     }
 
+  var axisLockAngularX: Boolean
+    get() {
+       return getAxisLock(8) 
+    }
+    set(value) {
+      setAxisLock(8, value)
+    }
+
+  var axisLockAngularY: Boolean
+    get() {
+       return getAxisLock(16) 
+    }
+    set(value) {
+      setAxisLock(16, value)
+    }
+
+  var axisLockAngularZ: Boolean
+    get() {
+       return getAxisLock(32) 
+    }
+    set(value) {
+      setAxisLock(32, value)
+    }
+
+  var axisLockLinearX: Boolean
+    get() {
+       return getAxisLock(1) 
+    }
+    set(value) {
+      setAxisLock(1, value)
+    }
+
+  var axisLockLinearY: Boolean
+    get() {
+       return getAxisLock(2) 
+    }
+    set(value) {
+      setAxisLock(2, value)
+    }
+
+  var axisLockLinearZ: Boolean
+    get() {
+       return getAxisLock(4) 
+    }
+    set(value) {
+      setAxisLock(4, value)
+    }
+
   var bounce: Float
     get() {
        return getBounce() 

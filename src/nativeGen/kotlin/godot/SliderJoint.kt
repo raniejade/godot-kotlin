@@ -18,6 +18,166 @@ import kotlinx.cinterop.reinterpret
 open class SliderJoint(
   _handle: COpaquePointer
 ) : Joint(_handle) {
+  var angularLimitDamping: Float
+    get() {
+       return getParam(15) 
+    }
+    set(value) {
+      setParam(15, value)
+    }
+
+  var angularLimitRestitution: Float
+    get() {
+       return getParam(14) 
+    }
+    set(value) {
+      setParam(14, value)
+    }
+
+  var angularLimitSoftness: Float
+    get() {
+       return getParam(13) 
+    }
+    set(value) {
+      setParam(13, value)
+    }
+
+  var angularMotionDamping: Float
+    get() {
+       return getParam(18) 
+    }
+    set(value) {
+      setParam(18, value)
+    }
+
+  var angularMotionRestitution: Float
+    get() {
+       return getParam(17) 
+    }
+    set(value) {
+      setParam(17, value)
+    }
+
+  var angularMotionSoftness: Float
+    get() {
+       return getParam(16) 
+    }
+    set(value) {
+      setParam(16, value)
+    }
+
+  var angularOrthoDamping: Float
+    get() {
+       return getParam(21) 
+    }
+    set(value) {
+      setParam(21, value)
+    }
+
+  var angularOrthoRestitution: Float
+    get() {
+       return getParam(20) 
+    }
+    set(value) {
+      setParam(20, value)
+    }
+
+  var angularOrthoSoftness: Float
+    get() {
+       return getParam(19) 
+    }
+    set(value) {
+      setParam(19, value)
+    }
+
+  var linearLimitDamping: Float
+    get() {
+       return getParam(4) 
+    }
+    set(value) {
+      setParam(4, value)
+    }
+
+  var linearLimitLowerDistance: Float
+    get() {
+       return getParam(1) 
+    }
+    set(value) {
+      setParam(1, value)
+    }
+
+  var linearLimitRestitution: Float
+    get() {
+       return getParam(3) 
+    }
+    set(value) {
+      setParam(3, value)
+    }
+
+  var linearLimitSoftness: Float
+    get() {
+       return getParam(2) 
+    }
+    set(value) {
+      setParam(2, value)
+    }
+
+  var linearLimitUpperDistance: Float
+    get() {
+       return getParam(0) 
+    }
+    set(value) {
+      setParam(0, value)
+    }
+
+  var linearMotionDamping: Float
+    get() {
+       return getParam(7) 
+    }
+    set(value) {
+      setParam(7, value)
+    }
+
+  var linearMotionRestitution: Float
+    get() {
+       return getParam(6) 
+    }
+    set(value) {
+      setParam(6, value)
+    }
+
+  var linearMotionSoftness: Float
+    get() {
+       return getParam(5) 
+    }
+    set(value) {
+      setParam(5, value)
+    }
+
+  var linearOrthoDamping: Float
+    get() {
+       return getParam(10) 
+    }
+    set(value) {
+      setParam(10, value)
+    }
+
+  var linearOrthoRestitution: Float
+    get() {
+       return getParam(9) 
+    }
+    set(value) {
+      setParam(9, value)
+    }
+
+  var linearOrthoSoftness: Float
+    get() {
+       return getParam(8) 
+    }
+    set(value) {
+      setParam(8, value)
+    }
+
   fun getParam(param: Int): Float {
     val _arg = Variant.new(param)
     val _ret = __method_bind.getParam.call(this._handle, _arg, 1)

@@ -51,7 +51,7 @@ class APIGenerator {
     val specializedSetters = mutableListOf<Pair<GDProperty, GDType>>()
     val propertySpecs = cls.properties.values.toList()
       // skip properties requiring an index and begins with an _
-      .filter { property -> property.index == -1 && !property.isVirtual }
+      .filter { property -> !property.isVirtual }
       // getter should exist and not virtual
       .filter { property ->
         val method = index.findMethod(cls, property.getter)
@@ -84,17 +84,23 @@ class APIGenerator {
         val typeClassName = checkNotNull(propertyType.toClassName())
         val builder = PropertySpec.builder(propertyName, typeClassName)
 
+        val getterIdxStr = if (property.index >= 0) {
+          "${property.index}"
+        } else {
+          ""
+        }
+
         // getter
         val getter = FunSpec.getterBuilder()
         val requireEnumCast = getterReturnType.isEnum && !propertyType.isEnum
         if (!requireEnumCast) {
           getter.addCode("""
-            « return %L() »
-          """.trimIndent(), property.getter)
+            « return %L(%L) »
+          """.trimIndent(), property.getter, getterIdxStr)
         } else {
           getter.addCode("""
-            « return %L.from(%L()) »
-          """.trimIndent(), getterReturnType.fqName, property.getter)
+            « return %L.from(%L(%L)) »
+          """.trimIndent(), getterReturnType.fqName, property.getter, getterIdxStr)
         }
 
         builder.getter(getter.build())
@@ -108,20 +114,26 @@ class APIGenerator {
           val setter = FunSpec.setterBuilder()
             .addParameter("value", typeClassName)
 
+          val setterIdxStr = if (property.index >= 0) {
+            "${property.index}, "
+          } else {
+            ""
+          }
+
           if (!requireEnumCast) {
             if (!reverseCast) {
               setter.addCode("""
-                %L(value)
-              """.trimIndent(), property.setter)
+                %L(%Lvalue)
+              """.trimIndent(), property.setter, setterIdxStr)
             } else {
               setter.addCode("""
-                %L(value.value)
-              """.trimIndent(), property.setter)
+                %L(%Lvalue.value)
+              """.trimIndent(), property.setter, setterIdxStr)
             }
           } else {
             setter.addCode("""
-              %L(%L.from(value))
-            """.trimIndent(), property.setter,  propertyType.fqName)
+              %L(%L%L.from(value))
+            """.trimIndent(), property.setter,  setterIdxStr, propertyType.fqName)
           }
           builder.mutable(true)
           builder.setter(setter.build())

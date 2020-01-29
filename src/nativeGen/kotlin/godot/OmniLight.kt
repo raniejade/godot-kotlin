@@ -5,6 +5,7 @@ import gdnative.godot_method_bind
 import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -17,6 +18,22 @@ import kotlinx.cinterop.reinterpret
 open class OmniLight(
   _handle: COpaquePointer
 ) : Light(_handle) {
+  var omniAttenuation: Float
+    get() {
+       return getParam(4) 
+    }
+    set(value) {
+      setParam(4, value)
+    }
+
+  var omniRange: Float
+    get() {
+       return getParam(3) 
+    }
+    set(value) {
+      setParam(3, value)
+    }
+
   var omniShadowDetail: ShadowDetail
     get() {
        return getShadowDetail() 

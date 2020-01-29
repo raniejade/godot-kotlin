@@ -22,6 +22,38 @@ import kotlinx.cinterop.reinterpret
 open class StyleBox(
   _handle: COpaquePointer
 ) : Resource(_handle) {
+  var contentMarginBottom: Float
+    get() {
+       return getDefaultMargin(3) 
+    }
+    set(value) {
+      setDefaultMargin(3, value)
+    }
+
+  var contentMarginLeft: Float
+    get() {
+       return getDefaultMargin(0) 
+    }
+    set(value) {
+      setDefaultMargin(0, value)
+    }
+
+  var contentMarginRight: Float
+    get() {
+       return getDefaultMargin(2) 
+    }
+    set(value) {
+      setDefaultMargin(2, value)
+    }
+
+  var contentMarginTop: Float
+    get() {
+       return getDefaultMargin(1) 
+    }
+    set(value) {
+      setDefaultMargin(1, value)
+    }
+
   fun draw(canvasItem: RID, rect: Rect2) {
     val _args = VariantArray.new()
     _args.append(canvasItem)

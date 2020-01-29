@@ -46,6 +46,70 @@ open class StyleBoxTexture(
       setDrawCenter(value)
     }
 
+  var expandMarginBottom: Float
+    get() {
+       return getExpandMarginSize(3) 
+    }
+    set(value) {
+      setExpandMarginSize(3, value)
+    }
+
+  var expandMarginLeft: Float
+    get() {
+       return getExpandMarginSize(0) 
+    }
+    set(value) {
+      setExpandMarginSize(0, value)
+    }
+
+  var expandMarginRight: Float
+    get() {
+       return getExpandMarginSize(2) 
+    }
+    set(value) {
+      setExpandMarginSize(2, value)
+    }
+
+  var expandMarginTop: Float
+    get() {
+       return getExpandMarginSize(1) 
+    }
+    set(value) {
+      setExpandMarginSize(1, value)
+    }
+
+  var marginBottom: Float
+    get() {
+       return getMarginSize(3) 
+    }
+    set(value) {
+      setMarginSize(3, value)
+    }
+
+  var marginLeft: Float
+    get() {
+       return getMarginSize(0) 
+    }
+    set(value) {
+      setMarginSize(0, value)
+    }
+
+  var marginRight: Float
+    get() {
+       return getMarginSize(2) 
+    }
+    set(value) {
+      setMarginSize(2, value)
+    }
+
+  var marginTop: Float
+    get() {
+       return getMarginSize(1) 
+    }
+    set(value) {
+      setMarginSize(1, value)
+    }
+
   var modulateColor: Color
     get() {
        return getModulate() 

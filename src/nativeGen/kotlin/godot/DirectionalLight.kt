@@ -6,6 +6,7 @@ import godot.core.Godot
 import godot.core.Variant
 import godot.core.VariantArray
 import kotlin.Boolean
+import kotlin.Float
 import kotlin.Int
 import kotlinx.cinterop.CFunction
 import kotlinx.cinterop.COpaquePointer
@@ -18,6 +19,14 @@ import kotlinx.cinterop.reinterpret
 open class DirectionalLight(
   _handle: COpaquePointer
 ) : Light(_handle) {
+  var directionalShadowBiasSplitScale: Float
+    get() {
+       return getParam(14) 
+    }
+    set(value) {
+      setParam(14, value)
+    }
+
   var directionalShadowBlendSplits: Boolean
     get() {
        return isBlendSplitsEnabled() 
@@ -34,12 +43,52 @@ open class DirectionalLight(
       setShadowDepthRange(value.value)
     }
 
+  var directionalShadowMaxDistance: Float
+    get() {
+       return getParam(8) 
+    }
+    set(value) {
+      setParam(8, value)
+    }
+
   var directionalShadowMode: ShadowMode
     get() {
        return getShadowMode() 
     }
     set(value) {
       setShadowMode(value.value)
+    }
+
+  var directionalShadowNormalBias: Float
+    get() {
+       return getParam(12) 
+    }
+    set(value) {
+      setParam(12, value)
+    }
+
+  var directionalShadowSplit1: Float
+    get() {
+       return getParam(9) 
+    }
+    set(value) {
+      setParam(9, value)
+    }
+
+  var directionalShadowSplit2: Float
+    get() {
+       return getParam(10) 
+    }
+    set(value) {
+      setParam(10, value)
+    }
+
+  var directionalShadowSplit3: Float
+    get() {
+       return getParam(11) 
+    }
+    set(value) {
+      setParam(11, value)
     }
 
   fun getShadowDepthRange(): ShadowDepthRange {

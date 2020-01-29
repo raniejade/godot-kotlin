@@ -175,6 +175,38 @@ open class Viewport(
       setVflip(value)
     }
 
+  var shadowAtlasQuad0: ShadowAtlasQuadrantSubdiv
+    get() {
+       return getShadowAtlasQuadrantSubdiv(0) 
+    }
+    set(value) {
+      setShadowAtlasQuadrantSubdiv(0, value.value)
+    }
+
+  var shadowAtlasQuad1: ShadowAtlasQuadrantSubdiv
+    get() {
+       return getShadowAtlasQuadrantSubdiv(1) 
+    }
+    set(value) {
+      setShadowAtlasQuadrantSubdiv(1, value.value)
+    }
+
+  var shadowAtlasQuad2: ShadowAtlasQuadrantSubdiv
+    get() {
+       return getShadowAtlasQuadrantSubdiv(2) 
+    }
+    set(value) {
+      setShadowAtlasQuadrantSubdiv(2, value.value)
+    }
+
+  var shadowAtlasQuad3: ShadowAtlasQuadrantSubdiv
+    get() {
+       return getShadowAtlasQuadrantSubdiv(3) 
+    }
+    set(value) {
+      setShadowAtlasQuadrantSubdiv(3, value.value)
+    }
+
   var shadowAtlasSize: Int
     get() {
        return getShadowAtlasSize() 

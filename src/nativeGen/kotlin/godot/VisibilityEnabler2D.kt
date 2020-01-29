@@ -18,6 +18,54 @@ import kotlinx.cinterop.reinterpret
 open class VisibilityEnabler2D(
   _handle: COpaquePointer
 ) : VisibilityNotifier2D(_handle) {
+  var freezeBodies: Boolean
+    get() {
+       return isEnablerEnabled(1) 
+    }
+    set(value) {
+      setEnabler(1, value)
+    }
+
+  var pauseAnimatedSprites: Boolean
+    get() {
+       return isEnablerEnabled(5) 
+    }
+    set(value) {
+      setEnabler(5, value)
+    }
+
+  var pauseAnimations: Boolean
+    get() {
+       return isEnablerEnabled(0) 
+    }
+    set(value) {
+      setEnabler(0, value)
+    }
+
+  var pauseParticles: Boolean
+    get() {
+       return isEnablerEnabled(2) 
+    }
+    set(value) {
+      setEnabler(2, value)
+    }
+
+  var physicsProcessParent: Boolean
+    get() {
+       return isEnablerEnabled(4) 
+    }
+    set(value) {
+      setEnabler(4, value)
+    }
+
+  var processParent: Boolean
+    get() {
+       return isEnablerEnabled(3) 
+    }
+    set(value) {
+      setEnabler(3, value)
+    }
+
   fun isEnablerEnabled(enabler: Int): Boolean {
     val _arg = Variant.new(enabler)
     val _ret = __method_bind.isEnablerEnabled.call(this._handle, _arg, 1)

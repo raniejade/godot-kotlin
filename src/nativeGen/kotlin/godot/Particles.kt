@@ -37,6 +37,38 @@ open class Particles(
       setDrawOrder(value.value)
     }
 
+  var drawPass1: Mesh
+    get() {
+       return getDrawPassMesh(0) 
+    }
+    set(value) {
+      setDrawPassMesh(0, value)
+    }
+
+  var drawPass2: Mesh
+    get() {
+       return getDrawPassMesh(1) 
+    }
+    set(value) {
+      setDrawPassMesh(1, value)
+    }
+
+  var drawPass3: Mesh
+    get() {
+       return getDrawPassMesh(2) 
+    }
+    set(value) {
+      setDrawPassMesh(2, value)
+    }
+
+  var drawPass4: Mesh
+    get() {
+       return getDrawPassMesh(3) 
+    }
+    set(value) {
+      setDrawPassMesh(3, value)
+    }
+
   var drawPasses: Int
     get() {
        return getDrawPasses() 

@@ -37,12 +37,44 @@ open class Camera2D(
       setCustomViewport(value)
     }
 
+  var dragMarginBottom: Float
+    get() {
+       return getDragMargin(3) 
+    }
+    set(value) {
+      setDragMargin(3, value)
+    }
+
   var dragMarginHEnabled: Boolean
     get() {
        return isHDragEnabled() 
     }
     set(value) {
       setHDragEnabled(value)
+    }
+
+  var dragMarginLeft: Float
+    get() {
+       return getDragMargin(0) 
+    }
+    set(value) {
+      setDragMargin(0, value)
+    }
+
+  var dragMarginRight: Float
+    get() {
+       return getDragMargin(2) 
+    }
+    set(value) {
+      setDragMargin(2, value)
+    }
+
+  var dragMarginTop: Float
+    get() {
+       return getDragMargin(1) 
+    }
+    set(value) {
+      setDragMargin(1, value)
     }
 
   var dragMarginVEnabled: Boolean
@@ -77,12 +109,44 @@ open class Camera2D(
       setScreenDrawingEnabled(value)
     }
 
+  var limitBottom: Int
+    get() {
+       return getLimit(3) 
+    }
+    set(value) {
+      setLimit(3, value)
+    }
+
+  var limitLeft: Int
+    get() {
+       return getLimit(0) 
+    }
+    set(value) {
+      setLimit(0, value)
+    }
+
+  var limitRight: Int
+    get() {
+       return getLimit(2) 
+    }
+    set(value) {
+      setLimit(2, value)
+    }
+
   var limitSmoothed: Boolean
     get() {
        return isLimitSmoothingEnabled() 
     }
     set(value) {
       setLimitSmoothingEnabled(value)
+    }
+
+  var limitTop: Int
+    get() {
+       return getLimit(1) 
+    }
+    set(value) {
+      setLimit(1, value)
     }
 
   var offset: Vector2
