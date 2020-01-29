@@ -1,7 +1,7 @@
 import godot.Spatial
-import godot.core.GodotClass
-import godot.core.MethodRegistry
+import godot.core.ClassMemberRegistry
 import godot.core.Godot
+import godot.core.GodotClass
 import kotlinx.cinterop.COpaquePointer
 
 class Simple(value: COpaquePointer): Spatial(value) {
@@ -20,7 +20,7 @@ class Simple(value: COpaquePointer): Spatial(value) {
   }
 
   companion object: GodotClass<Simple>(::Simple) {
-    override fun init(registry: MethodRegistry<Simple>) {
+    override fun init(registry: ClassMemberRegistry<Simple>) {
       with(registry) {
         registerMethod(Simple::_ready)
       }

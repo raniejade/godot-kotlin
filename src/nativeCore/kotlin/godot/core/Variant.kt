@@ -282,9 +282,10 @@ class Variant(
     }
   }
 
-  fun toAny(): Any {
+  fun toAny(): Any? {
     return when (type) {
-      Type.NIL, Type.OBJECT -> throw UnsupportedOperationException("Can't convert to Any type")
+      Type.NIL -> null
+      Type.OBJECT -> throw UnsupportedOperationException("Can't convert to Any type")
       Type.BOOL -> asBoolean()
       Type.FLOAT -> asFloat()
       Type.INT -> asInt()
@@ -512,7 +513,10 @@ class Variant(
       return variant
     }
 
-    fun fromAny(value: Any): Variant {
+    fun fromAny(value: Any?): Variant {
+      if (value == null) {
+        return new()
+      }
       return when (value) {
         is Unit -> new()
         is CoreType<*> -> value.toVariant()

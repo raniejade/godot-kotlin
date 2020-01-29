@@ -2,8 +2,11 @@ package godot.core
 
 import gdnative.*
 import godot.Object
+import godot.Resource
 import kotlinx.cinterop.*
 import kotlin.reflect.KCallable
+import kotlin.reflect.KMutableProperty1
+import kotlin.reflect.KProperty1
 
 class ClassRegistry(val handle: COpaquePointer) {
   inline fun <reified S: Object, reified T: S> registerClass(info: GodotClass<T>) {
@@ -45,7 +48,7 @@ class ClassHandle<T: Object>(
       )
     }
 
-    val registry = MethodRegistry<T>(handle, className)
+    val registry = ClassMemberRegistry<T>(handle, className)
     info.init(registry)
   }
 }
@@ -70,7 +73,7 @@ class MethodHandle1<T: Object, A1, R>(val method: (T, A1) -> R): MethodHandle<T,
   }
 }
 
-class MethodRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
+class ClassMemberRegistry<T: Object>(val handle: COpaquePointer, val className: String) {
   inline fun <R, reified K: (T) -> R> registerMethod(method: K) {
     val methodName = (method as KCallable<Unit>).name
     val methodHandle = MethodHandle0(method)
@@ -106,6 +109,150 @@ class MethodRegistry<T: Object>(val handle: COpaquePointer, val className: Strin
         instanceMethod
       )
     }
+  }
+
+  inline fun <T: Object, reified P: KProperty1<T, Int>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = PropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT)
+  }
+  inline fun <T: Object, reified P: KMutableProperty1<T, Int>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.INT, isMutable = true)
+  }
+
+  inline fun <T: Object, reified P: KProperty1<T, Float>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = PropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT)
+  }
+  inline fun <T: Object, reified P: KMutableProperty1<T, Float>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.FLOAT, isMutable = true)
+  }
+
+  inline fun <T: Object, reified P: KProperty1<T, String>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = PropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING)
+  }
+  inline fun <T: Object, reified P: KMutableProperty1<T, String>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.STRING, isMutable = true)
+  }
+
+  inline fun <T: Object, reified P: KProperty1<T, Boolean>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = PropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL)
+  }
+  inline fun <T: Object, reified P: KMutableProperty1<T, Boolean>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.BOOL, isMutable = true)
+  }
+
+  inline fun <T: Object, R: Object, reified P: KProperty1<T, R>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = PropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT)
+  }
+  inline fun <T: Object, R: Object, reified P: KMutableProperty1<T, R>> registerProperty(property: P) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, isMutable = true)
+  }
+
+  inline fun <T: Object, reified R: Resource, reified P: KProperty1<T, R>> registerResourceProperty(property: P) {
+    val propertyName = property.name
+    val handler = PropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, isResource = true)
+  }
+  inline fun <T: Object, reified R: Resource, reified P: KMutableProperty1<T, R>> registerResourceProperty(property: P) {
+    val propertyName = property.name
+    val handler = MutablePropertyHandler(property)
+    val propertyHandleRef = StableRef.create(handler).asCPointer()
+    registerProperty(className, propertyName, propertyHandleRef, Variant.Type.OBJECT, isResource = true, isMutable = true)
+  }
+
+  // TODO: register core types & add default values
+
+  @PublishedApi
+  internal fun registerProperty(
+    className: String,
+    propertyName: String,
+    propertyHandleRef: COpaquePointer,
+    propertyType: Variant.Type,
+    isResource: Boolean = false,
+    isMutable: Boolean = false) {
+    memScoped {
+      var usageFlags = GODOT_PROPERTY_USAGE_DEFAULT
+
+      if (isMutable) {
+        usageFlags = usageFlags or GODOT_PROPERTY_USAGE_SCRIPT_VARIABLE
+      }
+
+      val attribs = cValue<godot_property_attributes> {
+        rset_type = GODOT_METHOD_RPC_MODE_DISABLED
+        usage = usageFlags
+        type = propertyType.value
+
+        if (propertyType == Variant.Type.OBJECT && isResource) {
+          hint = godot_property_hint.GODOT_PROPERTY_HINT_RESOURCE_TYPE
+        }
+      }
+
+      val getter = cValue<godot_property_get_func> {
+        method_data = propertyHandleRef
+        get_func = staticCFunction(::getProperty)
+      }
+
+      val setter = cValue<godot_property_set_func> {
+        method_data = propertyHandleRef
+        set_func = if (isMutable) {
+          staticCFunction(::setProperty)
+        } else {
+          staticCFunction(::setPropertyFail)
+        }
+      }
+
+      checkNotNull(Godot.nativescript.godot_nativescript_register_property)(
+        handle,
+        className.cstr.ptr,
+        propertyName.cstr.ptr,
+        attribs.ptr,
+        setter,
+        getter
+      )
+    }
+  }
+}
+
+open class PropertyHandler<T: Object, R, P: KProperty1<T, R>>(val property: P) {
+  fun get(instance: T): Variant {
+    return Variant.fromAny(
+      property.get(instance) as Any
+    )
+  }
+}
+
+class MutablePropertyHandler<T: Object, R>(property: KMutableProperty1<T, R>): PropertyHandler<T, R, KMutableProperty1<T, R>>(property) {
+  fun set(instance: T, value: Variant) {
+    property.set(instance, value.toAny() as R)
   }
 }
 
@@ -155,8 +302,48 @@ fun invokeMethod(instance: COpaquePointer?,
   return methodHandle(kotlinInstance, variantArgs)._value
 }
 
+fun getProperty(
+  instance: COpaquePointer?,
+  methodData: COpaquePointer?,
+  classData: COpaquePointer?
+): CValue<godot_variant> {
+  val kotlinInstanceRef = checkNotNull(classData).asStableRef<Object>()
+  val kotlinInstance = kotlinInstanceRef.get()
+  val propertyHandleRef = checkNotNull(methodData).asStableRef<PropertyHandler<Object, *, KProperty1<Object, *>>>()
+  val propertyHandler = propertyHandleRef.get()
+
+  return propertyHandler.get(kotlinInstance)._value
+}
+
+fun setProperty(
+  instance: COpaquePointer?,
+  methodData: COpaquePointer?,
+  classData: COpaquePointer?,
+  value: CPointer<godot_variant>?
+) {
+  val kotlinInstanceRef = checkNotNull(classData).asStableRef<Object>()
+  val kotlinInstance = kotlinInstanceRef.get()
+  val propertyHandleRef = checkNotNull(methodData).asStableRef<MutablePropertyHandler<Object, *>>()
+  val propertyHandler = propertyHandleRef.get()
+  val arg = if (value == null) {
+    Variant.new()
+  } else {
+    Variant(value.pointed.readValue())
+  }
+  propertyHandler.set(kotlinInstance, arg)
+}
+
+fun setPropertyFail(
+  instance: COpaquePointer?,
+  methodData: COpaquePointer?,
+  classData: COpaquePointer?,
+  value: CPointer<godot_variant>?
+) {
+  throw IllegalStateException("Property is immutable!")
+}
+
 abstract class GodotClass<T: Object>(
   val factory: (COpaquePointer) -> T
 ) {
-  open fun init(registry: MethodRegistry<T>) {}
+  open fun init(registry: ClassMemberRegistry<T>) {}
 }

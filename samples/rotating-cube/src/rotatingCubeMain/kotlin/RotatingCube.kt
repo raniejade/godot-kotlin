@@ -1,10 +1,12 @@
 import godot.Spatial
+import godot.core.ClassMemberRegistry
 import godot.core.GodotClass
-import godot.core.MethodRegistry
 import godot.core.Vector3
 import kotlinx.cinterop.COpaquePointer
 
 class RotatingCube(handle: COpaquePointer): Spatial(handle) {
+  var rotationSpeed: Float = 0f
+
   override fun _onInit() {
     rotationDegrees = Vector3.new(y = 1f)
   }
@@ -15,7 +17,7 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
 
     // this will work
     rotationDegrees {
-      y += delta * 12f
+      y += delta * rotationSpeed
     }
 
     // the code below is functionally the same as above
@@ -25,9 +27,10 @@ class RotatingCube(handle: COpaquePointer): Spatial(handle) {
   }
 
   companion object: GodotClass<RotatingCube>(::RotatingCube) {
-    override fun init(registry: MethodRegistry<RotatingCube>) {
+    override fun init(registry: ClassMemberRegistry<RotatingCube>) {
       with(registry) {
         registerMethod(RotatingCube::_process)
+        registerProperty(RotatingCube::rotationSpeed)
       }
     }
   }
