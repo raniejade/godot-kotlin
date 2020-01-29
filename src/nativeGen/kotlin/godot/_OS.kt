@@ -164,7 +164,7 @@ open class _OS(
     windowSize = _p
   }
 
-  fun alert(text: String, title: String) {
+  fun alert(text: String, title: String = "Alert!") {
     val _args = VariantArray.new()
     _args.append(text)
     _args.append(title)
@@ -214,7 +214,7 @@ open class _OS(
     arguments: PoolStringArray,
     blocking: Boolean,
     output: VariantArray,
-    readStderr: Boolean
+    readStderr: Boolean = false
   ): Int {
     val _args = VariantArray.new()
     _args.append(path)
@@ -273,13 +273,13 @@ open class _OS(
     return _OS.VideoDriver.from(_ret.asInt())
   }
 
-  fun getDate(utc: Boolean): Dictionary {
+  fun getDate(utc: Boolean = false): Dictionary {
     val _arg = Variant.new(utc)
     val _ret = __method_bind.getDate.call(this._handle, _arg, 1)
     return _ret.asDictionary()
   }
 
-  fun getDatetime(utc: Boolean): Dictionary {
+  fun getDatetime(utc: Boolean = false): Dictionary {
     val _arg = Variant.new(utc)
     val _ret = __method_bind.getDatetime.call(this._handle, _arg, 1)
     return _ret.asDictionary()
@@ -383,7 +383,7 @@ open class _OS(
     return _ret.asInt()
   }
 
-  fun getScreenDpi(screen: Int): Int {
+  fun getScreenDpi(screen: Int = -1): Int {
     val _arg = Variant.new(screen)
     val _ret = __method_bind.getScreenDpi.call(this._handle, _arg, 1)
     return _ret.asInt()
@@ -394,13 +394,13 @@ open class _OS(
     return _OS.ScreenOrientation.from(_ret.asInt())
   }
 
-  fun getScreenPosition(screen: Int): Vector2 {
+  fun getScreenPosition(screen: Int = -1): Vector2 {
     val _arg = Variant.new(screen)
     val _ret = __method_bind.getScreenPosition.call(this._handle, _arg, 1)
     return _ret.asVector2()
   }
 
-  fun getScreenSize(screen: Int): Vector2 {
+  fun getScreenSize(screen: Int = -1): Vector2 {
     val _arg = Variant.new(screen)
     val _ret = __method_bind.getScreenSize.call(this._handle, _arg, 1)
     return _ret.asVector2()
@@ -447,7 +447,7 @@ open class _OS(
     return _ret.asInt()
   }
 
-  fun getTime(utc: Boolean): Dictionary {
+  fun getTime(utc: Boolean = false): Dictionary {
     val _arg = Variant.new(utc)
     val _ret = __method_bind.getTime.call(this._handle, _arg, 1)
     return _ret.asDictionary()
@@ -653,7 +653,7 @@ open class _OS(
     __method_bind.openMidiInputs.call(this._handle)
   }
 
-  fun printAllResources(tofile: String) {
+  fun printAllResources(tofile: String = "") {
     val _arg = Variant.new(tofile)
     __method_bind.printAllResources.call(this._handle, _arg, 1)
   }
@@ -667,7 +667,7 @@ open class _OS(
     __method_bind.printResourcesByType.call(this._handle, _arg, 1)
   }
 
-  fun printResourcesInUse(short: Boolean) {
+  fun printResourcesInUse(short: Boolean = false) {
     val _arg = Variant.new(short)
     __method_bind.printResourcesInUse.call(this._handle, _arg, 1)
   }
@@ -804,7 +804,7 @@ open class _OS(
     return GDError.from(_ret.asInt())
   }
 
-  fun showVirtualKeyboard(existingText: String) {
+  fun showVirtualKeyboard(existingText: String = "") {
     val _arg = Variant.new(existingText)
     __method_bind.showVirtualKeyboard.call(this._handle, _arg, 1)
   }

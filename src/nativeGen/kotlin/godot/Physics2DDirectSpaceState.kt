@@ -26,7 +26,7 @@ open class Physics2DDirectSpaceState(
     return _ret.asVariantArray()
   }
 
-  fun collideShape(shape: Physics2DShapeQueryParameters, maxResults: Int): VariantArray {
+  fun collideShape(shape: Physics2DShapeQueryParameters, maxResults: Int = 32): VariantArray {
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)
@@ -42,11 +42,11 @@ open class Physics2DDirectSpaceState(
 
   fun intersectPoint(
     point: Vector2,
-    maxResults: Int,
+    maxResults: Int = 32,
     exclude: VariantArray,
-    collisionLayer: Int,
-    collideWithBodies: Boolean,
-    collideWithAreas: Boolean
+    collisionLayer: Int = 2147483647,
+    collideWithBodies: Boolean = true,
+    collideWithAreas: Boolean = false
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(point)
@@ -62,11 +62,11 @@ open class Physics2DDirectSpaceState(
   fun intersectPointOnCanvas(
     point: Vector2,
     canvasInstanceId: Int,
-    maxResults: Int,
+    maxResults: Int = 32,
     exclude: VariantArray,
-    collisionLayer: Int,
-    collideWithBodies: Boolean,
-    collideWithAreas: Boolean
+    collisionLayer: Int = 2147483647,
+    collideWithBodies: Boolean = true,
+    collideWithAreas: Boolean = false
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(point)
@@ -84,9 +84,9 @@ open class Physics2DDirectSpaceState(
     from: Vector2,
     to: Vector2,
     exclude: VariantArray,
-    collisionLayer: Int,
-    collideWithBodies: Boolean,
-    collideWithAreas: Boolean
+    collisionLayer: Int = 2147483647,
+    collideWithBodies: Boolean = true,
+    collideWithAreas: Boolean = false
   ): Dictionary {
     val _args = VariantArray.new()
     _args.append(from)
@@ -99,7 +99,7 @@ open class Physics2DDirectSpaceState(
     return _ret.asDictionary()
   }
 
-  fun intersectShape(shape: Physics2DShapeQueryParameters, maxResults: Int): VariantArray {
+  fun intersectShape(shape: Physics2DShapeQueryParameters, maxResults: Int = 32): VariantArray {
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)

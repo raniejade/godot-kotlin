@@ -29,7 +29,7 @@ open class _ResourceSaver(
   fun save(
     path: String,
     resource: Resource,
-    flags: Int
+    flags: Int = 0
   ): GDError {
     val _args = VariantArray.new()
     _args.append(path)

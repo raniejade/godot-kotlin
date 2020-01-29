@@ -566,7 +566,7 @@ open class AnimationNodeBlendSpace1D(
   fun addBlendPoint(
     node: AnimationRootNode,
     pos: Float,
-    atIndex: Int
+    atIndex: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(node)

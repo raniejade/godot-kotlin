@@ -38,7 +38,7 @@ open class _Geometry(
     height: Float,
     sides: Int,
     lats: Int,
-    axis: Int
+    axis: Int = 2
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(radius)
@@ -54,7 +54,7 @@ open class _Geometry(
     radius: Float,
     height: Float,
     sides: Int,
-    axis: Int
+    axis: Int = 2
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(radius)
@@ -251,7 +251,7 @@ open class _Geometry(
   fun offsetPolygon2d(
     polygon: PoolVector2Array,
     delta: Float,
-    joinType: Int
+    joinType: Int = 0
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(polygon)
@@ -264,8 +264,8 @@ open class _Geometry(
   fun offsetPolyline2d(
     polyline: PoolVector2Array,
     delta: Float,
-    joinType: Int,
-    endType: Int
+    joinType: Int = 0,
+    endType: Int = 3
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(polyline)

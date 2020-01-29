@@ -22,7 +22,7 @@ open class OptionButton(
   fun addIconItem(
     texture: Texture,
     label: String,
-    id: Int
+    id: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -31,7 +31,7 @@ open class OptionButton(
     __method_bind.addIconItem.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun addItem(label: String, id: Int) {
+  fun addItem(label: String, id: Int = -1) {
     val _args = VariantArray.new()
     _args.append(label)
     _args.append(id)

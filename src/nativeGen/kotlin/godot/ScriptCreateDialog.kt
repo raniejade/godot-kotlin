@@ -21,7 +21,7 @@ open class ScriptCreateDialog(
   fun config(
     inherits: String,
     path: String,
-    builtInEnabled: Boolean
+    builtInEnabled: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(inherits)

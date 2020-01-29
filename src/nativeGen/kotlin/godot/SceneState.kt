@@ -103,7 +103,7 @@ open class SceneState(
     return _ret.asNodePath()
   }
 
-  fun getNodePath(idx: Int, forParent: Boolean): NodePath {
+  fun getNodePath(idx: Int, forParent: Boolean = false): NodePath {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(forParent)

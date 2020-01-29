@@ -385,8 +385,15 @@ class APIGenerator {
           val parsedArgType = argument.type
           val argumentName = argument.name
           val argumentType = checkNotNull(parsedArgType.toClassName())
-          ParameterSpec.builder(argumentName, argumentType)
-            .build()
+          val parameterBuilder = ParameterSpec.builder(argumentName, argumentType)
+
+          if (argument.hasDefaultValue) {
+            DefaultArgHelper.parse(argument.type, argument.defaultValue)?.let {
+              parameterBuilder.defaultValue("%L", it)
+            }
+          }
+
+          parameterBuilder.build()
         }
 
         builder.addParameters(parameters)

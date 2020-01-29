@@ -53,7 +53,7 @@ open class InputMap(
     __method_bind.actionSetDeadzone.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun addAction(action: String, deadzone: Float) {
+  fun addAction(action: String, deadzone: Float = 0.5f) {
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(deadzone)

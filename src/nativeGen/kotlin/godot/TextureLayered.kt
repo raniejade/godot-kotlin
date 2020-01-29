@@ -30,7 +30,7 @@ open class TextureLayered(
     height: Int,
     depth: Int,
     format: Int,
-    flags: Int
+    flags: Int = 4
   ) {
     val _args = VariantArray.new()
     _args.append(width)
@@ -77,7 +77,7 @@ open class TextureLayered(
     xOffset: Int,
     yOffset: Int,
     layer: Int,
-    mipmap: Int
+    mipmap: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(image)

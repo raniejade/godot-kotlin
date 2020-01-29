@@ -80,7 +80,7 @@ open class EditorInterface(
     return _ret.asObject(::EditorSelection)!!
   }
 
-  fun inspectObject(`object`: Object, forProperty: String) {
+  fun inspectObject(`object`: Object, forProperty: String = "") {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(forProperty)
@@ -116,7 +116,7 @@ open class EditorInterface(
     return GDError.from(_ret.asInt())
   }
 
-  fun saveSceneAs(path: String, withPreview: Boolean) {
+  fun saveSceneAs(path: String, withPreview: Boolean = true) {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(withPreview)

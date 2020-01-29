@@ -22,7 +22,7 @@ open class AudioEffectSpectrumAnalyzerInstance(
   fun getMagnitudeForFrequencyRange(
     fromHz: Float,
     toHz: Float,
-    mode: Int
+    mode: Int = 1
   ): Vector2 {
     val _args = VariantArray.new()
     _args.append(fromHz)

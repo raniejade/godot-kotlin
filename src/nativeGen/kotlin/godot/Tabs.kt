@@ -60,7 +60,7 @@ open class Tabs(
       setTabCloseDisplayPolicy(value.value)
     }
 
-  fun addTab(title: String, icon: Texture) {
+  fun addTab(title: String = "", icon: Texture) {
     val _args = VariantArray.new()
     _args.append(title)
     _args.append(icon)

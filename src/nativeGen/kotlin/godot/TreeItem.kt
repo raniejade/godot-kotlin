@@ -50,9 +50,9 @@ open class TreeItem(
   fun addButton(
     column: Int,
     button: Texture,
-    buttonIdx: Int,
-    disabled: Boolean,
-    tooltip: String
+    buttonIdx: Int = -1,
+    disabled: Boolean = false,
+    tooltip: String = ""
   ) {
     val _args = VariantArray.new()
     _args.append(column)
@@ -156,7 +156,7 @@ open class TreeItem(
     return _ret.asObject(::TreeItem)!!
   }
 
-  fun getNextVisible(wrap: Boolean): TreeItem {
+  fun getNextVisible(wrap: Boolean = false): TreeItem {
     val _arg = Variant.new(wrap)
     val _ret = __method_bind.getNextVisible.call(this._handle, _arg, 1)
     return _ret.asObject(::TreeItem)!!
@@ -172,7 +172,7 @@ open class TreeItem(
     return _ret.asObject(::TreeItem)!!
   }
 
-  fun getPrevVisible(wrap: Boolean): TreeItem {
+  fun getPrevVisible(wrap: Boolean = false): TreeItem {
     val _arg = Variant.new(wrap)
     val _ret = __method_bind.getPrevVisible.call(this._handle, _arg, 1)
     return _ret.asObject(::TreeItem)!!
@@ -315,7 +315,7 @@ open class TreeItem(
   fun setCustomBgColor(
     column: Int,
     color: Color,
-    justOutline: Boolean
+    justOutline: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(column)
@@ -407,7 +407,7 @@ open class TreeItem(
     min: Float,
     max: Float,
     step: Float,
-    expr: Boolean
+    expr: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(column)

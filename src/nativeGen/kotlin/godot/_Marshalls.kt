@@ -31,7 +31,7 @@ open class _Marshalls(
     return _ret.asString()
   }
 
-  fun base64ToVariant(base64Str: String, allowObjects: Boolean): Variant {
+  fun base64ToVariant(base64Str: String, allowObjects: Boolean = false): Variant {
     val _args = VariantArray.new()
     _args.append(base64Str)
     _args.append(allowObjects)
@@ -51,7 +51,7 @@ open class _Marshalls(
     return _ret.asString()
   }
 
-  fun variantToBase64(variant: Variant, fullObjects: Boolean): String {
+  fun variantToBase64(variant: Variant, fullObjects: Boolean = false): String {
     val _args = VariantArray.new()
     _args.append(variant)
     _args.append(fullObjects)

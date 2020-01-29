@@ -186,7 +186,7 @@ open class TextEdit(
     beginKey: String,
     endKey: String,
     color: Color,
-    lineOnly: Boolean
+    lineOnly: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(beginKey)
@@ -261,7 +261,7 @@ open class TextEdit(
     __method_bind.cursorSetBlockMode.call(this._handle, _arg, 1)
   }
 
-  fun cursorSetColumn(column: Int, adjustViewport: Boolean) {
+  fun cursorSetColumn(column: Int, adjustViewport: Boolean = true) {
     val _args = VariantArray.new()
     _args.append(column)
     _args.append(adjustViewport)
@@ -270,9 +270,9 @@ open class TextEdit(
 
   fun cursorSetLine(
     line: Int,
-    adjustViewport: Boolean,
-    canBeHidden: Boolean,
-    wrapIndex: Int
+    adjustViewport: Boolean = true,
+    canBeHidden: Boolean = true,
+    wrapIndex: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(line)

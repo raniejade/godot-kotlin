@@ -39,24 +39,24 @@ open class Popup(
     __method_bind.popup.call(this._handle, _arg, 1)
   }
 
-  fun popupCentered(size: Vector2) {
+  fun popupCentered(size: Vector2 = Vector2.new(0, 0)) {
     val _arg = Variant.new(size)
     __method_bind.popupCentered.call(this._handle, _arg, 1)
   }
 
-  fun popupCenteredClamped(size: Vector2, fallbackRatio: Float) {
+  fun popupCenteredClamped(size: Vector2 = Vector2.new(0, 0), fallbackRatio: Float = 0.75f) {
     val _args = VariantArray.new()
     _args.append(size)
     _args.append(fallbackRatio)
     __method_bind.popupCenteredClamped.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun popupCenteredMinsize(minsize: Vector2) {
+  fun popupCenteredMinsize(minsize: Vector2 = Vector2.new(0, 0)) {
     val _arg = Variant.new(minsize)
     __method_bind.popupCenteredMinsize.call(this._handle, _arg, 1)
   }
 
-  fun popupCenteredRatio(ratio: Float) {
+  fun popupCenteredRatio(ratio: Float = 0.75f) {
     val _arg = Variant.new(ratio)
     __method_bind.popupCenteredRatio.call(this._handle, _arg, 1)
   }

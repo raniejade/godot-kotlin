@@ -592,8 +592,8 @@ open class Viewport(
 
   fun setSizeOverride(
     enable: Boolean,
-    size: Vector2,
-    margin: Vector2
+    size: Vector2 = Vector2.new(-1, -1),
+    margin: Vector2 = Vector2.new(0, 0)
   ) {
     val _args = VariantArray.new()
     _args.append(enable)

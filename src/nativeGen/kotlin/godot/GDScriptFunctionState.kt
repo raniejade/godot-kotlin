@@ -17,7 +17,7 @@ import kotlinx.cinterop.reinterpret
 open class GDScriptFunctionState(
   _handle: COpaquePointer
 ) : Reference(_handle) {
-  fun isValid(extendedCheck: Boolean): Boolean {
+  fun isValid(extendedCheck: Boolean = false): Boolean {
     val _arg = Variant.new(extendedCheck)
     val _ret = __method_bind.isValid.call(this._handle, _arg, 1)
     return _ret.asBoolean()

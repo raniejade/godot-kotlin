@@ -36,8 +36,8 @@ open class StreamPeerSSL(
 
   fun connectToStream(
     stream: StreamPeer,
-    validateCerts: Boolean,
-    forHostname: String
+    validateCerts: Boolean = false,
+    forHostname: String = ""
   ): GDError {
     val _args = VariantArray.new()
     _args.append(stream)

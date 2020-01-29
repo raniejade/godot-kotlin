@@ -27,9 +27,9 @@ open class Font(
     canvasItem: RID,
     position: Vector2,
     string: String,
-    modulate: Color,
-    clipW: Int,
-    outlineModulate: Color
+    modulate: Color = Color.rgb(1,1,1,1),
+    clipW: Int = -1,
+    outlineModulate: Color = Color.rgb(1,1,1,1)
   ) {
     val _args = VariantArray.new()
     _args.append(canvasItem)
@@ -45,9 +45,9 @@ open class Font(
     canvasItem: RID,
     position: Vector2,
     char: Int,
-    next: Int,
-    modulate: Color,
-    outline: Boolean
+    next: Int = -1,
+    modulate: Color = Color.rgb(1,1,1,1),
+    outline: Boolean = false
   ): Float {
     val _args = VariantArray.new()
     _args.append(canvasItem)

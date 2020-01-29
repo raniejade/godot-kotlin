@@ -228,7 +228,7 @@ open class GridMap(
     return _ret.asVariantArray()
   }
 
-  fun makeBakedMeshes(genLightmapUv: Boolean, lightmapUvTexelSize: Float) {
+  fun makeBakedMeshes(genLightmapUv: Boolean = false, lightmapUvTexelSize: Float = 0.1f) {
     val _args = VariantArray.new()
     _args.append(genLightmapUv)
     _args.append(lightmapUvTexelSize)
@@ -258,7 +258,7 @@ open class GridMap(
     y: Int,
     z: Int,
     item: Int,
-    orientation: Int
+    orientation: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(x)
@@ -296,9 +296,9 @@ open class GridMap(
 
   fun setClip(
     enabled: Boolean,
-    clipabove: Boolean,
-    floor: Int,
-    axis: Int
+    clipabove: Boolean = true,
+    floor: Int = 0,
+    axis: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(enabled)

@@ -249,14 +249,14 @@ open class Node2D(
     __method_bind.lookAt.call(this._handle, _arg, 1)
   }
 
-  fun moveLocalX(delta: Float, scaled: Boolean) {
+  fun moveLocalX(delta: Float, scaled: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(delta)
     _args.append(scaled)
     __method_bind.moveLocalX.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun moveLocalY(delta: Float, scaled: Boolean) {
+  fun moveLocalY(delta: Float, scaled: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(delta)
     _args.append(scaled)

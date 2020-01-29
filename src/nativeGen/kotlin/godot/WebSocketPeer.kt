@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class WebSocketPeer(
   _handle: COpaquePointer
 ) : PacketPeer(_handle) {
-  fun close(code: Int, reason: String) {
+  fun close(code: Int = 1000, reason: String = "") {
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(reason)

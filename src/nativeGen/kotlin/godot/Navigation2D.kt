@@ -36,7 +36,7 @@ open class Navigation2D(
   fun getSimplePath(
     start: Vector2,
     end: Vector2,
-    optimize: Boolean
+    optimize: Boolean = true
   ): PoolVector2Array {
     val _args = VariantArray.new()
     _args.append(start)

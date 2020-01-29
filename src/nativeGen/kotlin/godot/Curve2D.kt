@@ -31,9 +31,9 @@ open class Curve2D(
 
   fun addPoint(
     position: Vector2,
-    `in`: Vector2,
-    out: Vector2,
-    atPosition: Int
+    `in`: Vector2 = Vector2.new(0, 0),
+    out: Vector2 = Vector2.new(0, 0),
+    atPosition: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(position)
@@ -105,7 +105,7 @@ open class Curve2D(
     return _ret.asVector2()
   }
 
-  fun interpolateBaked(offset: Float, cubic: Boolean): Vector2 {
+  fun interpolateBaked(offset: Float, cubic: Boolean = false): Vector2 {
     val _args = VariantArray.new()
     _args.append(offset)
     _args.append(cubic)
@@ -150,7 +150,7 @@ open class Curve2D(
     __method_bind.setPointPosition.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun tessellate(maxStages: Int, toleranceDegrees: Float): PoolVector2Array {
+  fun tessellate(maxStages: Int = 5, toleranceDegrees: Float = 4.0f): PoolVector2Array {
     val _args = VariantArray.new()
     _args.append(maxStages)
     _args.append(toleranceDegrees)

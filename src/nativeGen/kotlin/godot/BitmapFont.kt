@@ -59,8 +59,8 @@ open class BitmapFont(
     character: Int,
     texture: Int,
     rect: Rect2,
-    align: Vector2,
-    advance: Float
+    align: Vector2 = Vector2.new(0, 0),
+    advance: Float = -1.0f
   ) {
     val _args = VariantArray.new()
     _args.append(character)
@@ -98,7 +98,7 @@ open class BitmapFont(
     return GDError.from(_ret.asInt())
   }
 
-  fun getCharSize(char: Int, next: Int): Vector2 {
+  fun getCharSize(char: Int, next: Int = 0): Vector2 {
     val _args = VariantArray.new()
     _args.append(char)
     _args.append(next)

@@ -118,7 +118,7 @@ open class SurfaceTool(
     __method_bind.clear.call(this._handle)
   }
 
-  fun commit(existing: ArrayMesh, flags: Int): ArrayMesh {
+  fun commit(existing: ArrayMesh, flags: Int = 97280): ArrayMesh {
     val _args = VariantArray.new()
     _args.append(existing)
     _args.append(flags)
@@ -154,7 +154,7 @@ open class SurfaceTool(
     __method_bind.deindex.call(this._handle)
   }
 
-  fun generateNormals(flip: Boolean) {
+  fun generateNormals(flip: Boolean = false) {
     val _arg = Variant.new(flip)
     __method_bind.generateNormals.call(this._handle, _arg, 1)
   }

@@ -22,7 +22,7 @@ import kotlinx.cinterop.reinterpret
 open class Input(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun actionPress(action: String, strength: Float) {
+  fun actionPress(action: String, strength: Float = 1.0f) {
     val _args = VariantArray.new()
     _args.append(action)
     _args.append(strength)
@@ -34,7 +34,7 @@ open class Input(
     __method_bind.actionRelease.call(this._handle, _arg, 1)
   }
 
-  fun addJoyMapping(mapping: String, updateExisting: Boolean) {
+  fun addJoyMapping(mapping: String, updateExisting: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(mapping)
     _args.append(updateExisting)
@@ -218,8 +218,8 @@ open class Input(
 
   fun setCustomMouseCursor(
     image: Resource,
-    shape: Int,
-    hotspot: Vector2
+    shape: Int = 0,
+    hotspot: Vector2 = Vector2.new(0, 0)
   ) {
     val _args = VariantArray.new()
     _args.append(image)
@@ -228,7 +228,7 @@ open class Input(
     __method_bind.setCustomMouseCursor.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun setDefaultCursorShape(shape: Int) {
+  fun setDefaultCursorShape(shape: Int = 0) {
     val _arg = Variant.new(shape)
     __method_bind.setDefaultCursorShape.call(this._handle, _arg, 1)
   }
@@ -247,7 +247,7 @@ open class Input(
     device: Int,
     weakMagnitude: Float,
     strongMagnitude: Float,
-    duration: Float
+    duration: Float = 0.0f
   ) {
     val _args = VariantArray.new()
     _args.append(device)

@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class InstancePlaceholder(
   _handle: COpaquePointer
 ) : Node(_handle) {
-  fun createInstance(replace: Boolean, customScene: PackedScene): Node {
+  fun createInstance(replace: Boolean = false, customScene: PackedScene): Node {
     val _args = VariantArray.new()
     _args.append(replace)
     _args.append(customScene)
@@ -32,7 +32,7 @@ open class InstancePlaceholder(
     return _ret.asString()
   }
 
-  fun getStoredValues(withOrder: Boolean): Dictionary {
+  fun getStoredValues(withOrder: Boolean = false): Dictionary {
     val _arg = Variant.new(withOrder)
     val _ret = __method_bind.getStoredValues.call(this._handle, _arg, 1)
     return _ret.asDictionary()

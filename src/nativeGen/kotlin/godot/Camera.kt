@@ -137,7 +137,7 @@ open class Camera(
     frustumOffset = _p
   }
 
-  fun clearCurrent(enableNext: Boolean) {
+  fun clearCurrent(enableNext: Boolean = true) {
     val _arg = Variant.new(enableNext)
     __method_bind.clearCurrent.call(this._handle, _arg, 1)
   }
@@ -244,7 +244,7 @@ open class Camera(
     return _ret.asVector3()
   }
 
-  fun projectPosition(screenPoint: Vector2, zDepth: Float): Vector3 {
+  fun projectPosition(screenPoint: Vector2, zDepth: Float = 0.0f): Vector3 {
     val _args = VariantArray.new()
     _args.append(screenPoint)
     _args.append(zDepth)

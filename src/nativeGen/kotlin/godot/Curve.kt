@@ -45,10 +45,10 @@ open class Curve(
 
   fun addPoint(
     position: Vector2,
-    leftTangent: Float,
-    rightTangent: Float,
-    leftMode: Int,
-    rightMode: Int
+    leftTangent: Float = 0.0f,
+    rightTangent: Float = 0.0f,
+    leftMode: Int = 0,
+    rightMode: Int = 0
   ): Int {
     val _args = VariantArray.new()
     _args.append(position)

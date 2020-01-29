@@ -111,7 +111,7 @@ open class BakedLightmap(
     bakeExtents = _p
   }
 
-  fun bake(fromNode: Node, createVisualDebug: Boolean): BakeError {
+  fun bake(fromNode: Node, createVisualDebug: Boolean = false): BakeError {
     val _args = VariantArray.new()
     _args.append(fromNode)
     _args.append(createVisualDebug)

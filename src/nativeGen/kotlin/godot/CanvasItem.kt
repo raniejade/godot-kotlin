@@ -107,7 +107,7 @@ open class CanvasItem(
     position: Vector2,
     char: String,
     next: String,
-    modulate: Color
+    modulate: Color = Color.rgb(1,1,1,1)
   ): Float {
     val _args = VariantArray.new()
     _args.append(font)
@@ -137,7 +137,7 @@ open class CanvasItem(
     uvs: PoolVector2Array,
     texture: Texture,
     normalMap: Texture,
-    antialiased: Boolean
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(points)
@@ -153,8 +153,8 @@ open class CanvasItem(
     from: Vector2,
     to: Vector2,
     color: Color,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(from)
@@ -169,8 +169,9 @@ open class CanvasItem(
     mesh: Mesh,
     texture: Texture,
     normalMap: Texture,
-    transform: Transform2D,
-    modulate: Color
+    transform: Transform2D = Transform2D.new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(0,
+        0)),
+    modulate: Color = Color.rgb(1,1,1,1)
   ) {
     val _args = VariantArray.new()
     _args.append(mesh)
@@ -184,8 +185,8 @@ open class CanvasItem(
   fun drawMultiline(
     points: PoolVector2Array,
     color: Color,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(points)
@@ -198,8 +199,8 @@ open class CanvasItem(
   fun drawMultilineColors(
     points: PoolVector2Array,
     colors: PoolColorArray,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(points)
@@ -227,7 +228,7 @@ open class CanvasItem(
     uvs: PoolVector2Array,
     texture: Texture,
     normalMap: Texture,
-    antialiased: Boolean
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(points)
@@ -242,8 +243,8 @@ open class CanvasItem(
   fun drawPolyline(
     points: PoolVector2Array,
     color: Color,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(points)
@@ -256,8 +257,8 @@ open class CanvasItem(
   fun drawPolylineColors(
     points: PoolVector2Array,
     colors: PoolColorArray,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(points)
@@ -272,7 +273,7 @@ open class CanvasItem(
     colors: PoolColorArray,
     uvs: PoolVector2Array,
     texture: Texture,
-    width: Float,
+    width: Float = 1.0f,
     normalMap: Texture
   ) {
     val _args = VariantArray.new()
@@ -288,7 +289,7 @@ open class CanvasItem(
   fun drawRect(
     rect: Rect2,
     color: Color,
-    filled: Boolean
+    filled: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(rect)
@@ -318,8 +319,8 @@ open class CanvasItem(
     font: Font,
     position: Vector2,
     text: String,
-    modulate: Color,
-    clipW: Int
+    modulate: Color = Color.rgb(1,1,1,1),
+    clipW: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(font)
@@ -340,7 +341,7 @@ open class CanvasItem(
   fun drawTexture(
     texture: Texture,
     position: Vector2,
-    modulate: Color,
+    modulate: Color = Color.rgb(1,1,1,1),
     normalMap: Texture
   ) {
     val _args = VariantArray.new()
@@ -355,8 +356,8 @@ open class CanvasItem(
     texture: Texture,
     rect: Rect2,
     tile: Boolean,
-    modulate: Color,
-    transpose: Boolean,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: Texture
   ) {
     val _args = VariantArray.new()
@@ -373,10 +374,10 @@ open class CanvasItem(
     texture: Texture,
     rect: Rect2,
     srcRect: Rect2,
-    modulate: Color,
-    transpose: Boolean,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: Texture,
-    clipUv: Boolean
+    clipUv: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(texture)

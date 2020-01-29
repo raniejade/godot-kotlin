@@ -27,7 +27,7 @@ open class PhysicsServer(
     area: RID,
     shape: RID,
     transform: Transform,
-    disabled: Boolean
+    disabled: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(area)
@@ -272,7 +272,7 @@ open class PhysicsServer(
     body: RID,
     shape: RID,
     transform: Transform,
-    disabled: Boolean
+    disabled: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(body)
@@ -327,7 +327,7 @@ open class PhysicsServer(
     __method_bind.bodyClearShapes.call(this._handle, _arg, 1)
   }
 
-  fun bodyCreate(mode: Int, initSleeping: Boolean): RID {
+  fun bodyCreate(mode: Int = 2, initSleeping: Boolean = false): RID {
     val _args = VariantArray.new()
     _args.append(mode)
     _args.append(initSleeping)

@@ -19,7 +19,7 @@ import kotlinx.cinterop.reinterpret
 open class _ResourceLoader(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun exists(path: String, typeHint: String): Boolean {
+  fun exists(path: String, typeHint: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(typeHint)
@@ -53,8 +53,8 @@ open class _ResourceLoader(
 
   fun load(
     path: String,
-    typeHint: String,
-    noCache: Boolean
+    typeHint: String = "",
+    noCache: Boolean = false
   ): Resource {
     val _args = VariantArray.new()
     _args.append(path)
@@ -64,7 +64,7 @@ open class _ResourceLoader(
     return _ret.asObject(::Resource)!!
   }
 
-  fun loadInteractive(path: String, typeHint: String): ResourceInteractiveLoader {
+  fun loadInteractive(path: String, typeHint: String = ""): ResourceInteractiveLoader {
     val _args = VariantArray.new()
     _args.append(path)
     _args.append(typeHint)

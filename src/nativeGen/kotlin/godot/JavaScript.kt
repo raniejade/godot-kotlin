@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class JavaScript(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun eval(code: String, useGlobalExecutionContext: Boolean): Variant {
+  fun eval(code: String, useGlobalExecutionContext: Boolean = false): Variant {
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(useGlobalExecutionContext)

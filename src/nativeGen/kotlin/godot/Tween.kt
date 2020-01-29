@@ -54,7 +54,7 @@ open class Tween(
     duration: Float,
     transType: Int,
     easeType: Int,
-    delay: Float
+    delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
@@ -79,7 +79,7 @@ open class Tween(
     duration: Float,
     transType: Int,
     easeType: Int,
-    delay: Float
+    delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
@@ -164,7 +164,7 @@ open class Tween(
     duration: Float,
     transType: Int,
     easeType: Int,
-    delay: Float
+    delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
@@ -187,7 +187,7 @@ open class Tween(
     duration: Float,
     transType: Int,
     easeType: Int,
-    delay: Float
+    delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
@@ -212,7 +212,7 @@ open class Tween(
     return _ret.asBoolean()
   }
 
-  fun remove(`object`: Object, key: String): Boolean {
+  fun remove(`object`: Object, key: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(key)
@@ -225,7 +225,7 @@ open class Tween(
     return _ret.asBoolean()
   }
 
-  fun reset(`object`: Object, key: String): Boolean {
+  fun reset(`object`: Object, key: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(key)
@@ -238,7 +238,7 @@ open class Tween(
     return _ret.asBoolean()
   }
 
-  fun resume(`object`: Object, key: String): Boolean {
+  fun resume(`object`: Object, key: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(key)
@@ -282,7 +282,7 @@ open class Tween(
     return _ret.asBoolean()
   }
 
-  fun stop(`object`: Object, key: String): Boolean {
+  fun stop(`object`: Object, key: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
     _args.append(key)
@@ -304,7 +304,7 @@ open class Tween(
     duration: Float,
     transType: Int,
     easeType: Int,
-    delay: Float
+    delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)
@@ -329,7 +329,7 @@ open class Tween(
     duration: Float,
     transType: Int,
     easeType: Int,
-    delay: Float
+    delay: Float = 0.0f
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`object`)

@@ -35,7 +35,7 @@ open class VisualScript(
     func: String,
     id: Int,
     node: VisualScriptNode,
-    position: Vector2
+    position: Vector2 = Vector2.new(0, 0)
   ) {
     val _args = VariantArray.new()
     _args.append(func)
@@ -48,7 +48,7 @@ open class VisualScript(
   fun addVariable(
     name: String,
     defaultValue: Variant,
-    export: Boolean
+    export: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(name)
@@ -61,7 +61,7 @@ open class VisualScript(
     name: String,
     type: Int,
     argname: String,
-    index: Int
+    index: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(name)

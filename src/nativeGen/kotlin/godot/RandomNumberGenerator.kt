@@ -44,7 +44,7 @@ open class RandomNumberGenerator(
     return _ret.asFloat()
   }
 
-  fun randfn(mean: Float, deviation: Float): Float {
+  fun randfn(mean: Float = 0.0f, deviation: Float = 1.0f): Float {
     val _args = VariantArray.new()
     _args.append(mean)
     _args.append(deviation)

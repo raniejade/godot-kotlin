@@ -26,8 +26,8 @@ open class _JSON(
 
   fun print(
     value: Variant,
-    indent: String,
-    sortKeys: Boolean
+    indent: String = "",
+    sortKeys: Boolean = false
   ): String {
     val _args = VariantArray.new()
     _args.append(value)

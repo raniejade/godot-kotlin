@@ -55,8 +55,8 @@ open class AnimationNode(
     time: Float,
     seek: Boolean,
     blend: Float,
-    filter: Int,
-    optimize: Boolean
+    filter: Int = 0,
+    optimize: Boolean = true
   ): Float {
     val _args = VariantArray.new()
     _args.append(inputIndex)
@@ -75,8 +75,8 @@ open class AnimationNode(
     time: Float,
     seek: Boolean,
     blend: Float,
-    filter: Int,
-    optimize: Boolean
+    filter: Int = 0,
+    optimize: Boolean = true
   ): Float {
     val _args = VariantArray.new()
     _args.append(name)

@@ -235,7 +235,7 @@ open class LineEdit(
     __method_bind.menuOption.call(this._handle, _arg, 1)
   }
 
-  fun select(from: Int, to: Int) {
+  fun select(from: Int = 0, to: Int = -1) {
     val _args = VariantArray.new()
     _args.append(from)
     _args.append(to)

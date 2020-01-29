@@ -20,7 +20,7 @@ import kotlinx.cinterop.reinterpret
 open class AudioServer(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun addBus(atPosition: Int) {
+  fun addBus(atPosition: Int = -1) {
     val _arg = Variant.new(atPosition)
     __method_bind.addBus.call(this._handle, _arg, 1)
   }
@@ -28,7 +28,7 @@ open class AudioServer(
   fun addBusEffect(
     busIdx: Int,
     effect: AudioEffect,
-    atPosition: Int
+    atPosition: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(busIdx)
@@ -85,7 +85,7 @@ open class AudioServer(
   fun getBusEffectInstance(
     busIdx: Int,
     effectIdx: Int,
-    channel: Int
+    channel: Int = 0
   ): AudioEffectInstance {
     val _args = VariantArray.new()
     _args.append(busIdx)

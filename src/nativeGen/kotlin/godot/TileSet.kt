@@ -215,8 +215,8 @@ open class TileSet(
     id: Int,
     shape: Shape2D,
     shapeTransform: Transform2D,
-    oneWay: Boolean,
-    autotileCoord: Vector2
+    oneWay: Boolean = false,
+    autotileCoord: Vector2 = Vector2.new(0, 0)
   ) {
     val _args = VariantArray.new()
     _args.append(id)

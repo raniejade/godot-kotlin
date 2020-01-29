@@ -77,7 +77,7 @@ open class _File(
     return _ret.asPoolByteArray()
   }
 
-  fun getCsvLine(delim: String): PoolStringArray {
+  fun getCsvLine(delim: String = ","): PoolStringArray {
     val _arg = Variant.new(delim)
     val _ret = __method_bind.getCsvLine.call(this._handle, _arg, 1)
     return _ret.asPoolStringArray()
@@ -156,7 +156,7 @@ open class _File(
     return _ret.asString()
   }
 
-  fun getVar(allowObjects: Boolean): Variant {
+  fun getVar(allowObjects: Boolean = false): Variant {
     val _arg = Variant.new(allowObjects)
     val _ret = __method_bind.getVar.call(this._handle, _arg, 1)
     return _ret
@@ -178,7 +178,7 @@ open class _File(
   fun openCompressed(
     path: String,
     modeFlags: Int,
-    compressionMode: Int
+    compressionMode: Int = 0
   ): GDError {
     val _args = VariantArray.new()
     _args.append(path)
@@ -219,7 +219,7 @@ open class _File(
     __method_bind.seek.call(this._handle, _arg, 1)
   }
 
-  fun seekEnd(position: Int) {
+  fun seekEnd(position: Int = 0) {
     val _arg = Variant.new(position)
     __method_bind.seekEnd.call(this._handle, _arg, 1)
   }
@@ -254,7 +254,7 @@ open class _File(
     __method_bind.storeBuffer.call(this._handle, _arg, 1)
   }
 
-  fun storeCsvLine(values: PoolStringArray, delim: String) {
+  fun storeCsvLine(values: PoolStringArray, delim: String = ",") {
     val _args = VariantArray.new()
     _args.append(values)
     _args.append(delim)
@@ -291,7 +291,7 @@ open class _File(
     __method_bind.storeString.call(this._handle, _arg, 1)
   }
 
-  fun storeVar(value: Variant, fullObjects: Boolean) {
+  fun storeVar(value: Variant, fullObjects: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(value)
     _args.append(fullObjects)

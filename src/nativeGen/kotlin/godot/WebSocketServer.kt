@@ -23,8 +23,8 @@ open class WebSocketServer(
 ) : WebSocketMultiplayerPeer(_handle) {
   fun disconnectPeer(
     id: Int,
-    code: Int,
-    reason: String
+    code: Int = 1000,
+    reason: String = ""
   ) {
     val _args = VariantArray.new()
     _args.append(id)
@@ -59,7 +59,7 @@ open class WebSocketServer(
   fun listen(
     port: Int,
     protocols: PoolStringArray,
-    gdMpApi: Boolean
+    gdMpApi: Boolean = false
   ): GDError {
     val _args = VariantArray.new()
     _args.append(port)

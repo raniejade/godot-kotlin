@@ -18,7 +18,7 @@ import kotlinx.cinterop.reinterpret
 open class IP(
   _handle: COpaquePointer
 ) : Object(_handle) {
-  fun clearCache(hostname: String) {
+  fun clearCache(hostname: String = "") {
     val _arg = Variant.new(hostname)
     __method_bind.clearCache.call(this._handle, _arg, 1)
   }
@@ -45,7 +45,7 @@ open class IP(
     return IP.ResolverStatus.from(_ret.asInt())
   }
 
-  fun resolveHostname(host: String, ipType: Int): String {
+  fun resolveHostname(host: String, ipType: Int = 3): String {
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(ipType)
@@ -53,7 +53,7 @@ open class IP(
     return _ret.asString()
   }
 
-  fun resolveHostnameQueueItem(host: String, ipType: Int): Int {
+  fun resolveHostnameQueueItem(host: String, ipType: Int = 3): Int {
     val _args = VariantArray.new()
     _args.append(host)
     _args.append(ipType)

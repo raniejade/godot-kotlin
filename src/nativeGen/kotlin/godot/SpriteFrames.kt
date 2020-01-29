@@ -29,7 +29,7 @@ open class SpriteFrames(
   fun addFrame(
     anim: String,
     frame: Texture,
-    atPosition: Int
+    atPosition: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(anim)

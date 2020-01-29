@@ -80,9 +80,9 @@ open class KinematicBody2D(
 
   fun moveAndCollide(
     relVec: Vector2,
-    infiniteInertia: Boolean,
-    excludeRaycastShapes: Boolean,
-    testOnly: Boolean
+    infiniteInertia: Boolean = true,
+    excludeRaycastShapes: Boolean = true,
+    testOnly: Boolean = false
   ): KinematicCollision2D {
     val _args = VariantArray.new()
     _args.append(relVec)
@@ -95,11 +95,11 @@ open class KinematicBody2D(
 
   fun moveAndSlide(
     linearVelocity: Vector2,
-    floorNormal: Vector2,
-    stopOnSlope: Boolean,
-    maxSlides: Int,
-    floorMaxAngle: Float,
-    infiniteInertia: Boolean
+    floorNormal: Vector2 = Vector2.new(0, 0),
+    stopOnSlope: Boolean = false,
+    maxSlides: Int = 4,
+    floorMaxAngle: Float = 0.785398f,
+    infiniteInertia: Boolean = true
   ): Vector2 {
     val _args = VariantArray.new()
     _args.append(linearVelocity)
@@ -115,11 +115,11 @@ open class KinematicBody2D(
   fun moveAndSlideWithSnap(
     linearVelocity: Vector2,
     snap: Vector2,
-    floorNormal: Vector2,
-    stopOnSlope: Boolean,
-    maxSlides: Int,
-    floorMaxAngle: Float,
-    infiniteInertia: Boolean
+    floorNormal: Vector2 = Vector2.new(0, 0),
+    stopOnSlope: Boolean = false,
+    maxSlides: Int = 4,
+    floorMaxAngle: Float = 0.785398f,
+    infiniteInertia: Boolean = true
   ): Vector2 {
     val _args = VariantArray.new()
     _args.append(linearVelocity)
@@ -146,7 +146,7 @@ open class KinematicBody2D(
   fun testMove(
     from: Transform2D,
     relVec: Vector2,
-    infiniteInertia: Boolean
+    infiniteInertia: Boolean = true
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(from)

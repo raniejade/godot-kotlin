@@ -26,8 +26,9 @@ open class Physics2DServer(
   fun areaAddShape(
     area: RID,
     shape: RID,
-    transform: Transform2D,
-    disabled: Boolean
+    transform: Transform2D = Transform2D.new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(0,
+        0)),
+    disabled: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(area)
@@ -271,8 +272,9 @@ open class Physics2DServer(
   fun bodyAddShape(
     body: RID,
     shape: RID,
-    transform: Transform2D,
-    disabled: Boolean
+    transform: Transform2D = Transform2D.new(Vector2.new(1, 0), Vector2.new(0, 1), Vector2.new(0,
+        0)),
+    disabled: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(body)
@@ -620,7 +622,7 @@ open class Physics2DServer(
     from: Transform2D,
     motion: Vector2,
     infiniteInertia: Boolean,
-    margin: Float,
+    margin: Float = 0.08f,
     result: Physics2DTestMotionResult
   ): Boolean {
     val _args = VariantArray.new()

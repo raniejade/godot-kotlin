@@ -36,8 +36,8 @@ open class AcceptDialog(
 
   fun addButton(
     text: String,
-    right: Boolean,
-    action: String
+    right: Boolean = false,
+    action: String = ""
   ): Button {
     val _args = VariantArray.new()
     _args.append(text)

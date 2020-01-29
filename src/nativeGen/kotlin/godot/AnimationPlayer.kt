@@ -238,10 +238,10 @@ open class AnimationPlayer(
   }
 
   fun play(
-    name: String,
-    customBlend: Float,
-    customSpeed: Float,
-    fromEnd: Boolean
+    name: String = "",
+    customBlend: Float = -1.0f,
+    customSpeed: Float = 1.0f,
+    fromEnd: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(name)
@@ -251,7 +251,7 @@ open class AnimationPlayer(
     __method_bind.play.call(this._handle, _args.toVariant(), 4)
   }
 
-  fun playBackwards(name: String, customBlend: Float) {
+  fun playBackwards(name: String = "", customBlend: Float = -1.0f) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(customBlend)
@@ -275,7 +275,7 @@ open class AnimationPlayer(
     __method_bind.renameAnimation.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun seek(seconds: Float, update: Boolean) {
+  fun seek(seconds: Float, update: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(seconds)
     _args.append(update)
@@ -334,7 +334,7 @@ open class AnimationPlayer(
     __method_bind.setSpeedScale.call(this._handle, _arg, 1)
   }
 
-  fun stop(reset: Boolean) {
+  fun stop(reset: Boolean = true) {
     val _arg = Variant.new(reset)
     __method_bind.stop.call(this._handle, _arg, 1)
   }

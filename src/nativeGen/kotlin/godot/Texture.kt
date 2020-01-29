@@ -33,8 +33,8 @@ open class Texture(
   fun draw(
     canvasItem: RID,
     position: Vector2,
-    modulate: Color,
-    transpose: Boolean,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: Texture
   ) {
     val _args = VariantArray.new()
@@ -50,8 +50,8 @@ open class Texture(
     canvasItem: RID,
     rect: Rect2,
     tile: Boolean,
-    modulate: Color,
-    transpose: Boolean,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: Texture
   ) {
     val _args = VariantArray.new()
@@ -68,10 +68,10 @@ open class Texture(
     canvasItem: RID,
     rect: Rect2,
     srcRect: Rect2,
-    modulate: Color,
-    transpose: Boolean,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: Texture,
-    clipUv: Boolean
+    clipUv: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(canvasItem)

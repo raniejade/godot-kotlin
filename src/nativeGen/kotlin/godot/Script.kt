@@ -69,7 +69,7 @@ open class Script(
     return _ret.asBoolean()
   }
 
-  fun reload(keepState: Boolean): GDError {
+  fun reload(keepState: Boolean = false): GDError {
     val _arg = Variant.new(keepState)
     val _ret = __method_bind.reload.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())

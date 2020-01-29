@@ -28,7 +28,7 @@ open class PhysicsDirectSpaceState(
     return _ret.asVariantArray()
   }
 
-  fun collideShape(shape: PhysicsShapeQueryParameters, maxResults: Int): VariantArray {
+  fun collideShape(shape: PhysicsShapeQueryParameters, maxResults: Int = 32): VariantArray {
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)
@@ -46,9 +46,9 @@ open class PhysicsDirectSpaceState(
     from: Vector3,
     to: Vector3,
     exclude: VariantArray,
-    collisionMask: Int,
-    collideWithBodies: Boolean,
-    collideWithAreas: Boolean
+    collisionMask: Int = 2147483647,
+    collideWithBodies: Boolean = true,
+    collideWithAreas: Boolean = false
   ): Dictionary {
     val _args = VariantArray.new()
     _args.append(from)
@@ -61,7 +61,7 @@ open class PhysicsDirectSpaceState(
     return _ret.asDictionary()
   }
 
-  fun intersectShape(shape: PhysicsShapeQueryParameters, maxResults: Int): VariantArray {
+  fun intersectShape(shape: PhysicsShapeQueryParameters, maxResults: Int = 32): VariantArray {
     val _args = VariantArray.new()
     _args.append(shape)
     _args.append(maxResults)

@@ -69,10 +69,10 @@ open class UPNPDevice(
 
   fun addPortMapping(
     port: Int,
-    portInternal: Int,
-    desc: String,
-    proto: String,
-    duration: Int
+    portInternal: Int = 0,
+    desc: String = "",
+    proto: String = "UDP",
+    duration: Int = 0
   ): Int {
     val _args = VariantArray.new()
     _args.append(port)
@@ -84,7 +84,7 @@ open class UPNPDevice(
     return _ret.asInt()
   }
 
-  fun deletePortMapping(port: Int, proto: String): Int {
+  fun deletePortMapping(port: Int, proto: String = "UDP"): Int {
     val _args = VariantArray.new()
     _args.append(port)
     _args.append(proto)

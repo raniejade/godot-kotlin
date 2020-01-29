@@ -128,7 +128,7 @@ open class Line2D(
     points = _p
   }
 
-  fun addPoint(position: Vector2, atPosition: Int) {
+  fun addPoint(position: Vector2, atPosition: Int = -1) {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(atPosition)

@@ -346,20 +346,24 @@ class Vector3(
   }
 
   companion object {
-    val Zero = new()
-    val One = new(1f, 1f, 0f)
-    val Inf = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
-    val Left = new(-1f, 0f, 0f)
-    val Right = new(1f, 0f, 0f)
-    val Up = new(0f, -1f, 0f)
-    val Down = new(0f, 1f, 0f)
-    val Forward = new(0f, 0f, -1f)
-    val Back = new(0f, 0f, 1f)
+    val ZERO = new()
+    val ONE = new(1f, 1f, 0f)
+    val INF = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val LEFT = new(-1f, 0f, 0f)
+    val RIGHT = new(1f, 0f, 0f)
+    val UP = new(0f, -1f, 0f)
+    val DOWN = new(0f, 1f, 0f)
+    val FORWARD = new(0f, 0f, -1f)
+    val BACK = new(0f, 0f, 1f)
 
     fun new(x: Float = 0f, y: Float = 0f, z: Float = 0f): Vector3 {
       return allocType(::Vector3) {
         checkNotNull(Godot.gdnative.godot_vector3_new)(it, x, y, z)
       }
+    }
+
+    fun new(x: Int, y: Int, z: Int): Vector3 {
+      return new(x.toFloat(), y.toFloat(), z.toFloat())
     }
   }
 }

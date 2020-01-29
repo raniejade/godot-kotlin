@@ -95,9 +95,9 @@ open class HTTPRequest(
   fun request(
     url: String,
     customHeaders: PoolStringArray,
-    sslValidateDomain: Boolean,
-    method: Int,
-    requestData: String
+    sslValidateDomain: Boolean = true,
+    method: Int = 0,
+    requestData: String = ""
   ): GDError {
     val _args = VariantArray.new()
     _args.append(url)

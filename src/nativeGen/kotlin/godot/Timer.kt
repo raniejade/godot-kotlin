@@ -124,7 +124,7 @@ open class Timer(
     __method_bind.setWaitTime.call(this._handle, _arg, 1)
   }
 
-  fun start(timeSec: Float) {
+  fun start(timeSec: Float = -1.0f) {
     val _arg = Variant.new(timeSec)
     __method_bind.start.call(this._handle, _arg, 1)
   }

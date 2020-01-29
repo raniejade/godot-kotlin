@@ -320,18 +320,22 @@ class Vector2(
   }
 
   companion object {
-    val Zero = new()
-    val One = new(1f, 1f)
-    val Inf = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
-    val Left = new(-1f, 0f)
-    val Right = new(1f, 0f)
-    val Up = new(0f, -1f)
-    val Down = new(0f, 1f)
+    val ZERO = new()
+    val ONE = new(1f, 1f)
+    val INF = new(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    val LEFT = new(-1f, 0f)
+    val RIGHT = new(1f, 0f)
+    val UP = new(0f, -1f)
+    val DOWN = new(0f, 1f)
 
     fun new(x: Float = 0f, y: Float = 0f): Vector2 {
       return allocType(::Vector2) {
         checkNotNull(Godot.gdnative.godot_vector2_new)(it, x, y)
       }
+    }
+
+    fun new(x: Int, y: Int): Vector2 {
+      return new(x.toFloat(), y.toFloat())
     }
   }
 }

@@ -43,7 +43,7 @@ open class Resource(
       setPath(value)
     }
 
-  fun duplicate(subresources: Boolean): Resource {
+  fun duplicate(subresources: Boolean = false): Resource {
     val _arg = Variant.new(subresources)
     val _ret = __method_bind.duplicate.call(this._handle, _arg, 1)
     return _ret.asObject(::Resource)!!

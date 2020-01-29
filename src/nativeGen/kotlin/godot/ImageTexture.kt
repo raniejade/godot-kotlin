@@ -41,7 +41,7 @@ open class ImageTexture(
     width: Int,
     height: Int,
     format: Int,
-    flags: Int
+    flags: Int = 7
   ) {
     val _args = VariantArray.new()
     _args.append(width)
@@ -51,7 +51,7 @@ open class ImageTexture(
     __method_bind.create.call(this._handle, _args.toVariant(), 4)
   }
 
-  fun createFromImage(image: Image, flags: Int) {
+  fun createFromImage(image: Image, flags: Int = 7) {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(flags)

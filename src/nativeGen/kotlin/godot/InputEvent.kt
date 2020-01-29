@@ -96,7 +96,7 @@ open class InputEvent(
     return _ret.asBoolean()
   }
 
-  fun xformedBy(xform: Transform2D, localOfs: Vector2): InputEvent {
+  fun xformedBy(xform: Transform2D, localOfs: Vector2 = Vector2.new(0, 0)): InputEvent {
     val _args = VariantArray.new()
     _args.append(xform)
     _args.append(localOfs)

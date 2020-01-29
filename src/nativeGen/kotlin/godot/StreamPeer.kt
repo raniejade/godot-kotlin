@@ -77,7 +77,7 @@ open class StreamPeer(
     return _ret.asVariantArray()
   }
 
-  fun getString(bytes: Int): String {
+  fun getString(bytes: Int = -1): String {
     val _arg = Variant.new(bytes)
     val _ret = __method_bind.getString.call(this._handle, _arg, 1)
     return _ret.asString()
@@ -103,13 +103,13 @@ open class StreamPeer(
     return _ret.asInt()
   }
 
-  fun getUtf8String(bytes: Int): String {
+  fun getUtf8String(bytes: Int = -1): String {
     val _arg = Variant.new(bytes)
     val _ret = __method_bind.getUtf8String.call(this._handle, _arg, 1)
     return _ret.asString()
   }
 
-  fun getVar(allowObjects: Boolean): Variant {
+  fun getVar(allowObjects: Boolean = false): Variant {
     val _arg = Variant.new(allowObjects)
     val _ret = __method_bind.getVar.call(this._handle, _arg, 1)
     return _ret
@@ -192,7 +192,7 @@ open class StreamPeer(
     __method_bind.putUtf8String.call(this._handle, _arg, 1)
   }
 
-  fun putVar(value: Variant, fullObjects: Boolean) {
+  fun putVar(value: Variant, fullObjects: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(value)
     _args.append(fullObjects)

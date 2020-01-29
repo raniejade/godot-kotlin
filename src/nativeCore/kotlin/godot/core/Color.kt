@@ -117,6 +117,10 @@ class Color(
       }
     }
 
+    fun rgb(r: Int, g: Int, b: Int, a: Int = 1): Color {
+      return rgb(r.toFloat(), g.toFloat(), b.toFloat(), a.toFloat())
+    }
+
     // COLOR CONSTANTS
     val Gray = rgb(0.75f, 0.75f, 0.75f)
     val AliceBlue = rgb(0.94f, 0.97f, 1f)

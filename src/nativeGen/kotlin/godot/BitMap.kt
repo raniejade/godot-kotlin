@@ -26,7 +26,7 @@ open class BitMap(
     __method_bind.create.call(this._handle, _arg, 1)
   }
 
-  fun createFromImageAlpha(image: Image, threshold: Float) {
+  fun createFromImageAlpha(image: Image, threshold: Float = 0.1f) {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(threshold)
@@ -56,7 +56,7 @@ open class BitMap(
     __method_bind.growMask.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun opaqueToPolygons(rect: Rect2, epsilon: Float): VariantArray {
+  fun opaqueToPolygons(rect: Rect2, epsilon: Float = 2.0f): VariantArray {
     val _args = VariantArray.new()
     _args.append(rect)
     _args.append(epsilon)

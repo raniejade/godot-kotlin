@@ -52,8 +52,8 @@ open class RegEx(
 
   fun search(
     subject: String,
-    offset: Int,
-    end: Int
+    offset: Int = 0,
+    end: Int = -1
   ): RegExMatch {
     val _args = VariantArray.new()
     _args.append(subject)
@@ -65,8 +65,8 @@ open class RegEx(
 
   fun searchAll(
     subject: String,
-    offset: Int,
-    end: Int
+    offset: Int = 0,
+    end: Int = -1
   ): VariantArray {
     val _args = VariantArray.new()
     _args.append(subject)
@@ -79,9 +79,9 @@ open class RegEx(
   fun sub(
     subject: String,
     replacement: String,
-    all: Boolean,
-    offset: Int,
-    end: Int
+    all: Boolean = false,
+    offset: Int = 0,
+    end: Int = -1
   ): String {
     val _args = VariantArray.new()
     _args.append(subject)

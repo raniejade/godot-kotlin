@@ -23,7 +23,7 @@ open class WebRTCMultiplayer(
   fun addPeer(
     peer: WebRTCPeerConnection,
     peerId: Int,
-    unreliableLifetime: Int
+    unreliableLifetime: Int = 1
   ): GDError {
     val _args = VariantArray.new()
     _args.append(peer)
@@ -54,7 +54,7 @@ open class WebRTCMultiplayer(
     return _ret.asBoolean()
   }
 
-  fun initialize(peerId: Int, serverCompatibility: Boolean): GDError {
+  fun initialize(peerId: Int, serverCompatibility: Boolean = false): GDError {
     val _args = VariantArray.new()
     _args.append(peerId)
     _args.append(serverCompatibility)

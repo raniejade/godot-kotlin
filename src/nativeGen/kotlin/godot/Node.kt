@@ -66,7 +66,7 @@ open class Node(
       setPauseMode(value.value)
     }
 
-  fun addChild(node: Node, legibleUniqueName: Boolean) {
+  fun addChild(node: Node, legibleUniqueName: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(node)
     _args.append(legibleUniqueName)
@@ -76,7 +76,7 @@ open class Node(
   fun addChildBelowNode(
     node: Node,
     childNode: Node,
-    legibleUniqueName: Boolean
+    legibleUniqueName: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(node)
@@ -85,7 +85,7 @@ open class Node(
     __method_bind.addChildBelowNode.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun addToGroup(group: String, persistent: Boolean) {
+  fun addToGroup(group: String, persistent: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(group)
     _args.append(persistent)
@@ -97,7 +97,7 @@ open class Node(
     return _ret.asBoolean()
   }
 
-  fun duplicate(flags: Int): Node {
+  fun duplicate(flags: Int = 15): Node {
     val _arg = Variant.new(flags)
     val _ret = __method_bind.duplicate.call(this._handle, _arg, 1)
     return _ret.asObject(::Node)!!
@@ -105,8 +105,8 @@ open class Node(
 
   fun findNode(
     mask: String,
-    recursive: Boolean,
-    owned: Boolean
+    recursive: Boolean = true,
+    owned: Boolean = true
   ): Node {
     val _args = VariantArray.new()
     _args.append(mask)
@@ -349,7 +349,7 @@ open class Node(
   fun propagateCall(
     method: String,
     args: VariantArray,
-    parentFirst: Boolean
+    parentFirst: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(method)
@@ -385,7 +385,7 @@ open class Node(
     __method_bind.removeFromGroup.call(this._handle, _arg, 1)
   }
 
-  fun replaceBy(node: Node, keepData: Boolean) {
+  fun replaceBy(node: Node, keepData: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(node)
     _args.append(keepData)
@@ -496,7 +496,7 @@ open class Node(
     __method_bind.setName.call(this._handle, _arg, 1)
   }
 
-  fun setNetworkMaster(id: Int, recursive: Boolean) {
+  fun setNetworkMaster(id: Int, recursive: Boolean = true) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(recursive)

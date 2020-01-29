@@ -52,7 +52,7 @@ open class NetworkedMultiplayerENet(
       setTransferChannel(value)
     }
 
-  fun closeConnection(waitUsec: Int) {
+  fun closeConnection(waitUsec: Int = 100) {
     val _arg = Variant.new(waitUsec)
     __method_bind.closeConnection.call(this._handle, _arg, 1)
   }
@@ -60,9 +60,9 @@ open class NetworkedMultiplayerENet(
   fun createClient(
     address: String,
     port: Int,
-    inBandwidth: Int,
-    outBandwidth: Int,
-    clientPort: Int
+    inBandwidth: Int = 0,
+    outBandwidth: Int = 0,
+    clientPort: Int = 0
   ): GDError {
     val _args = VariantArray.new()
     _args.append(address)
@@ -76,9 +76,9 @@ open class NetworkedMultiplayerENet(
 
   fun createServer(
     port: Int,
-    maxClients: Int,
-    inBandwidth: Int,
-    outBandwidth: Int
+    maxClients: Int = 32,
+    inBandwidth: Int = 0,
+    outBandwidth: Int = 0
   ): GDError {
     val _args = VariantArray.new()
     _args.append(port)
@@ -89,7 +89,7 @@ open class NetworkedMultiplayerENet(
     return GDError.from(_ret.asInt())
   }
 
-  fun disconnectPeer(id: Int, now: Boolean) {
+  fun disconnectPeer(id: Int, now: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(now)

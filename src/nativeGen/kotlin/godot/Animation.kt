@@ -49,7 +49,7 @@ open class Animation(
       setStep(value)
     }
 
-  fun addTrack(type: Int, atPosition: Int): Int {
+  fun addTrack(type: Int, atPosition: Int = -1): Int {
     val _args = VariantArray.new()
     _args.append(type)
     _args.append(atPosition)
@@ -118,8 +118,8 @@ open class Animation(
     track: Int,
     time: Float,
     stream: Resource,
-    startOffset: Float,
-    endOffset: Float
+    startOffset: Float = 0.0f,
+    endOffset: Float = 0.0f
   ): Int {
     val _args = VariantArray.new()
     _args.append(track)
@@ -195,8 +195,8 @@ open class Animation(
     track: Int,
     time: Float,
     value: Float,
-    inHandle: Vector2,
-    outHandle: Vector2
+    inHandle: Vector2 = Vector2.new(0, 0),
+    outHandle: Vector2 = Vector2.new(0, 0)
   ): Int {
     val _args = VariantArray.new()
     _args.append(track)
@@ -341,7 +341,7 @@ open class Animation(
   fun trackFindKey(
     idx: Int,
     time: Float,
-    exact: Boolean
+    exact: Boolean = false
   ): Int {
     val _args = VariantArray.new()
     _args.append(idx)
@@ -409,7 +409,7 @@ open class Animation(
     idx: Int,
     time: Float,
     key: Variant,
-    transition: Float
+    transition: Float = 1.0f
   ) {
     val _args = VariantArray.new()
     _args.append(idx)

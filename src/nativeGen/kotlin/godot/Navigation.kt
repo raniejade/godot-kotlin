@@ -60,7 +60,7 @@ open class Navigation(
   fun getClosestPointToSegment(
     start: Vector3,
     end: Vector3,
-    useCollision: Boolean
+    useCollision: Boolean = false
   ): Vector3 {
     val _args = VariantArray.new()
     _args.append(start)
@@ -73,7 +73,7 @@ open class Navigation(
   fun getSimplePath(
     start: Vector3,
     end: Vector3,
-    optimize: Boolean
+    optimize: Boolean = true
   ): PoolVector3Array {
     val _args = VariantArray.new()
     _args.append(start)

@@ -141,7 +141,7 @@ open class SceneTree(
     return GDError.from(_ret.asInt())
   }
 
-  fun createTimer(timeSec: Float, pauseModeProcess: Boolean): SceneTreeTimer {
+  fun createTimer(timeSec: Float, pauseModeProcess: Boolean = true): SceneTreeTimer {
     val _args = VariantArray.new()
     _args.append(timeSec)
     _args.append(pauseModeProcess)
@@ -378,7 +378,7 @@ open class SceneTree(
     mode: Int,
     aspect: Int,
     minsize: Vector2,
-    shrink: Float
+    shrink: Float = 1.0f
   ) {
     val _args = VariantArray.new()
     _args.append(mode)

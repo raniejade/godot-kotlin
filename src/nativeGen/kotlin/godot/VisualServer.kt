@@ -171,8 +171,8 @@ open class VisualServer(
     from: Vector2,
     to: Vector2,
     color: Color,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(item)
@@ -223,10 +223,10 @@ open class VisualServer(
     texture: RID,
     topleft: Vector2,
     bottomright: Vector2,
-    xAxisMode: Int,
-    yAxisMode: Int,
-    drawCenter: Boolean,
-    modulate: Color,
+    xAxisMode: Int = 0,
+    yAxisMode: Int = 0,
+    drawCenter: Boolean = true,
+    modulate: Color = Color.rgb(1,1,1,1),
     normalMap: RID
   ) {
     val _args = VariantArray.new()
@@ -265,7 +265,7 @@ open class VisualServer(
     uvs: PoolVector2Array,
     texture: RID,
     normalMap: RID,
-    antialiased: Boolean
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(item)
@@ -282,8 +282,8 @@ open class VisualServer(
     item: RID,
     points: PoolVector2Array,
     colors: PoolColorArray,
-    width: Float,
-    antialiased: Boolean
+    width: Float = 1.0f,
+    antialiased: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(item)
@@ -300,7 +300,7 @@ open class VisualServer(
     colors: PoolColorArray,
     uvs: PoolVector2Array,
     texture: RID,
-    width: Float,
+    width: Float = 1.0f,
     normalMap: RID
   ) {
     val _args = VariantArray.new()
@@ -337,9 +337,9 @@ open class VisualServer(
     item: RID,
     rect: Rect2,
     texture: RID,
-    tile: Boolean,
-    modulate: Color,
-    transpose: Boolean,
+    tile: Boolean = false,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: RID
   ) {
     val _args = VariantArray.new()
@@ -358,10 +358,10 @@ open class VisualServer(
     rect: Rect2,
     texture: RID,
     srcRect: Rect2,
-    modulate: Color,
-    transpose: Boolean,
+    modulate: Color = Color.rgb(1,1,1,1),
+    transpose: Boolean = false,
     normalMap: RID,
-    clipUv: Boolean
+    clipUv: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(item)
@@ -384,7 +384,7 @@ open class VisualServer(
     bones: PoolIntArray,
     weights: PoolRealArray,
     texture: RID,
-    count: Int,
+    count: Int = -1,
     normalMap: RID
   ) {
     val _args = VariantArray.new()
@@ -790,7 +790,7 @@ open class VisualServer(
     return _ret.asRID()
   }
 
-  fun draw(swapBuffers: Boolean, frameStep: Float) {
+  fun draw(swapBuffers: Boolean = true, frameStep: Float = 0.0f) {
     val _args = VariantArray.new()
     _args.append(swapBuffers)
     _args.append(frameStep)
@@ -823,8 +823,8 @@ open class VisualServer(
   fun environmentSetAmbientLight(
     env: RID,
     color: Color,
-    energy: Float,
-    skyContibution: Float
+    energy: Float = 1.0f,
+    skyContibution: Float = 0.0f
   ) {
     val _args = VariantArray.new()
     _args.append(env)
@@ -1079,7 +1079,7 @@ open class VisualServer(
     __method_bind.finish.call(this._handle)
   }
 
-  fun forceDraw(swapBuffers: Boolean, frameStep: Float) {
+  fun forceDraw(swapBuffers: Boolean = true, frameStep: Float = 0.0f) {
     val _args = VariantArray.new()
     _args.append(swapBuffers)
     _args.append(frameStep)
@@ -1829,7 +1829,7 @@ open class VisualServer(
     primtive: Int,
     arrays: VariantArray,
     blendShapes: VariantArray,
-    compressFormat: Int
+    compressFormat: Int = 97280
   ) {
     val _args = VariantArray.new()
     _args.append(mesh)
@@ -2049,7 +2049,7 @@ open class VisualServer(
     instances: Int,
     transformFormat: Int,
     colorFormat: Int,
-    customDataFormat: Int
+    customDataFormat: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(multimesh)
@@ -2481,7 +2481,7 @@ open class VisualServer(
     image: Image,
     color: Color,
     scale: Boolean,
-    useFilter: Boolean
+    useFilter: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(image)
@@ -2548,7 +2548,7 @@ open class VisualServer(
   fun skeletonAllocate(
     skeleton: RID,
     bones: Int,
-    is2dSkeleton: Boolean
+    is2dSkeleton: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(skeleton)
@@ -2641,7 +2641,7 @@ open class VisualServer(
     depth3d: Int,
     format: Int,
     type: Int,
-    flags: Int
+    flags: Int = 7
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -2666,7 +2666,7 @@ open class VisualServer(
     return _ret.asRID()
   }
 
-  fun textureCreateFromImage(image: Image, flags: Int): RID {
+  fun textureCreateFromImage(image: Image, flags: Int = 7): RID {
     val _args = VariantArray.new()
     _args.append(image)
     _args.append(flags)
@@ -2679,7 +2679,7 @@ open class VisualServer(
     return _ret.asVariantArray()
   }
 
-  fun textureGetData(texture: RID, cubeSide: Int): Image {
+  fun textureGetData(texture: RID, cubeSide: Int = 0): Image {
     val _args = VariantArray.new()
     _args.append(texture)
     _args.append(cubeSide)
@@ -2738,7 +2738,7 @@ open class VisualServer(
   fun textureSetData(
     texture: RID,
     image: Image,
-    layer: Int
+    layer: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -2757,7 +2757,7 @@ open class VisualServer(
     dstX: Int,
     dstY: Int,
     dstMip: Int,
-    layer: Int
+    layer: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -2828,7 +2828,7 @@ open class VisualServer(
   fun viewportAttachToScreen(
     viewport: RID,
     rect: Rect2,
-    screen: Int
+    screen: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(viewport)

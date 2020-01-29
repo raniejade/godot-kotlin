@@ -45,9 +45,9 @@ open class HTTPClient(
 
   fun connectToHost(
     host: String,
-    port: Int,
-    useSsl: Boolean,
-    verifyHost: Boolean
+    port: Int = -1,
+    useSsl: Boolean = false,
+    verifyHost: Boolean = true
   ): GDError {
     val _args = VariantArray.new()
     _args.append(host)
@@ -123,7 +123,7 @@ open class HTTPClient(
     method: Int,
     url: String,
     headers: PoolStringArray,
-    body: String
+    body: String = ""
   ): GDError {
     val _args = VariantArray.new()
     _args.append(method)

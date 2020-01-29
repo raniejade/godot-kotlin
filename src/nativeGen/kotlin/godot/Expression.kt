@@ -23,7 +23,7 @@ open class Expression(
   fun execute(
     inputs: VariantArray,
     baseInstance: Object,
-    showError: Boolean
+    showError: Boolean = true
   ): Variant {
     val _args = VariantArray.new()
     _args.append(inputs)

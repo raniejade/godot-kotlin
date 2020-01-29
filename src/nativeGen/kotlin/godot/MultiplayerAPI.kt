@@ -95,8 +95,8 @@ open class MultiplayerAPI(
 
   fun sendBytes(
     bytes: PoolByteArray,
-    id: Int,
-    mode: Int
+    id: Int = 0,
+    mode: Int = 2
   ): GDError {
     val _args = VariantArray.new()
     _args.append(bytes)

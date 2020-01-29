@@ -19,4 +19,12 @@ class Transform2D(
       )
     }
   }
+
+  companion object {
+    fun new(xAxis: Vector2, yAxis: Vector2, origin: Vector2): Transform2D {
+      return allocType(::Transform2D) {
+        checkNotNull(Godot.gdnative.godot_transform2d_new_axis_origin)(it, xAxis._value.ptr, yAxis._value.ptr, origin._value.ptr)
+      }
+    }
+  }
 }

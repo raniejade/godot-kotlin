@@ -110,7 +110,7 @@ open class GIProbe(
     extents = _p
   }
 
-  fun bake(fromNode: Node, createVisualDebug: Boolean) {
+  fun bake(fromNode: Node, createVisualDebug: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(fromNode)
     _args.append(createVisualDebug)

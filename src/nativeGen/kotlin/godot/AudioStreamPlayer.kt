@@ -126,7 +126,7 @@ open class AudioStreamPlayer(
     return _ret.asBoolean()
   }
 
-  fun play(fromPosition: Float) {
+  fun play(fromPosition: Float = 0.0f) {
     val _arg = Variant.new(fromPosition)
     __method_bind.play.call(this._handle, _arg, 1)
   }

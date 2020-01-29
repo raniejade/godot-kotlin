@@ -77,7 +77,7 @@ open class Image(
     __method_bind.blitRectMask.call(this._handle, _args.toVariant(), 4)
   }
 
-  fun bumpmapToNormalmap(bumpScale: Float) {
+  fun bumpmapToNormalmap(bumpScale: Float = 1.0f) {
     val _arg = Variant.new(bumpScale)
     __method_bind.bumpmapToNormalmap.call(this._handle, _arg, 1)
   }
@@ -177,7 +177,7 @@ open class Image(
     __method_bind.flipY.call(this._handle)
   }
 
-  fun generateMipmaps(renormalize: Boolean): GDError {
+  fun generateMipmaps(renormalize: Boolean = false): GDError {
     val _arg = Variant.new(renormalize)
     val _ret = __method_bind.generateMipmaps.call(this._handle, _arg, 1)
     return GDError.from(_ret.asInt())
@@ -298,7 +298,7 @@ open class Image(
   fun resize(
     width: Int,
     height: Int,
-    interpolation: Int
+    interpolation: Int = 1
   ) {
     val _args = VariantArray.new()
     _args.append(width)
@@ -307,7 +307,7 @@ open class Image(
     __method_bind.resize.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun resizeToPo2(square: Boolean) {
+  fun resizeToPo2(square: Boolean = false) {
     val _arg = Variant.new(square)
     __method_bind.resizeToPo2.call(this._handle, _arg, 1)
   }

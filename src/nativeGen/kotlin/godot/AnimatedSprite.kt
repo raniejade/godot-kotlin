@@ -140,7 +140,7 @@ open class AnimatedSprite(
     return _ret.asBoolean()
   }
 
-  fun play(anim: String, backwards: Boolean) {
+  fun play(anim: String = "", backwards: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(anim)
     _args.append(backwards)

@@ -122,7 +122,7 @@ open class ItemList(
     fixedIconSize = _p
   }
 
-  fun addIconItem(icon: Texture, selectable: Boolean) {
+  fun addIconItem(icon: Texture, selectable: Boolean = true) {
     val _args = VariantArray.new()
     _args.append(icon)
     _args.append(selectable)
@@ -132,7 +132,7 @@ open class ItemList(
   fun addItem(
     text: String,
     icon: Texture,
-    selectable: Boolean
+    selectable: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(text)
@@ -179,7 +179,7 @@ open class ItemList(
     return _ret.asFloat()
   }
 
-  fun getItemAtPosition(position: Vector2, exact: Boolean): Int {
+  fun getItemAtPosition(position: Vector2, exact: Boolean = false): Int {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(exact)
@@ -322,7 +322,7 @@ open class ItemList(
     __method_bind.removeItem.call(this._handle, _arg, 1)
   }
 
-  fun select(idx: Int, single: Boolean) {
+  fun select(idx: Int, single: Boolean = true) {
     val _args = VariantArray.new()
     _args.append(idx)
     _args.append(single)

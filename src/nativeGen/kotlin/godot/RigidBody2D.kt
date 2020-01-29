@@ -445,8 +445,8 @@ open class RigidBody2D(
 
   fun testMotion(
     motion: Vector2,
-    infiniteInertia: Boolean,
-    margin: Float,
+    infiniteInertia: Boolean = true,
+    margin: Float = 0.08f,
     result: Physics2DTestMotionResult
   ): Boolean {
     val _args = VariantArray.new()

@@ -86,7 +86,7 @@ open class Tree(
     __method_bind.clear.call(this._handle)
   }
 
-  fun createItem(parent: Object, idx: Int): TreeItem {
+  fun createItem(parent: Object, idx: Int = -1): TreeItem {
     val _args = VariantArray.new()
     _args.append(parent)
     _args.append(idx)
@@ -157,7 +157,7 @@ open class Tree(
     return _ret.asInt()
   }
 
-  fun getItemAreaRect(item: Object, column: Int): Rect2 {
+  fun getItemAreaRect(item: Object, column: Int = -1): Rect2 {
     val _args = VariantArray.new()
     _args.append(item)
     _args.append(column)

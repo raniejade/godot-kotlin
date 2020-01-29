@@ -69,7 +69,7 @@ open class UndoRedo(
     __method_bind.addUndoReference.call(this._handle, _arg, 1)
   }
 
-  fun clearHistory(increaseVersion: Boolean) {
+  fun clearHistory(increaseVersion: Boolean = true) {
     val _arg = Variant.new(increaseVersion)
     __method_bind.clearHistory.call(this._handle, _arg, 1)
   }
@@ -78,7 +78,7 @@ open class UndoRedo(
     __method_bind.commitAction.call(this._handle)
   }
 
-  fun createAction(name: String, mergeMode: Int) {
+  fun createAction(name: String, mergeMode: Int = 0) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(mergeMode)

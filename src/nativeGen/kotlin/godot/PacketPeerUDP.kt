@@ -41,8 +41,8 @@ open class PacketPeerUDP(
 
   fun listen(
     port: Int,
-    bindAddress: String,
-    recvBufSize: Int
+    bindAddress: String = "*",
+    recvBufSize: Int = 65536
   ): GDError {
     val _args = VariantArray.new()
     _args.append(port)

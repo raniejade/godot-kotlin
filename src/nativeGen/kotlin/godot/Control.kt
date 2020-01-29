@@ -362,7 +362,7 @@ open class Control(
     return _ret.asVector2()
   }
 
-  fun getColor(name: String, type: String): Color {
+  fun getColor(name: String, type: String = ""): Color {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -375,7 +375,7 @@ open class Control(
     return _ret.asVector2()
   }
 
-  fun getConstant(name: String, type: String): Int {
+  fun getConstant(name: String, type: String = ""): Int {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -383,7 +383,7 @@ open class Control(
     return _ret.asInt()
   }
 
-  fun getCursorShape(position: Vector2): CursorShape {
+  fun getCursorShape(position: Vector2 = Vector2.new(0, 0)): CursorShape {
     val _arg = Variant.new(position)
     val _ret = __method_bind.getCursorShape.call(this._handle, _arg, 1)
     return Control.CursorShape.from(_ret.asInt())
@@ -430,7 +430,7 @@ open class Control(
     return _ret.asNodePath()
   }
 
-  fun getFont(name: String, type: String): Font {
+  fun getFont(name: String, type: String = ""): Font {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -458,7 +458,7 @@ open class Control(
     return _ret.asInt()
   }
 
-  fun getIcon(name: String, type: String): Texture {
+  fun getIcon(name: String, type: String = ""): Texture {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -532,7 +532,7 @@ open class Control(
     return _ret.asFloat()
   }
 
-  fun getStylebox(name: String, type: String): StyleBox {
+  fun getStylebox(name: String, type: String = ""): StyleBox {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -545,7 +545,7 @@ open class Control(
     return _ret.asObject(::Theme)!!
   }
 
-  fun getTooltip(atPosition: Vector2): String {
+  fun getTooltip(atPosition: Vector2 = Vector2.new(0, 0)): String {
     val _arg = Variant.new(atPosition)
     val _ret = __method_bind.getTooltip.call(this._handle, _arg, 1)
     return _ret.asString()
@@ -569,7 +569,7 @@ open class Control(
     __method_bind.grabFocus.call(this._handle)
   }
 
-  fun hasColor(name: String, type: String): Boolean {
+  fun hasColor(name: String, type: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -583,7 +583,7 @@ open class Control(
     return _ret.asBoolean()
   }
 
-  fun hasConstant(name: String, type: String): Boolean {
+  fun hasConstant(name: String, type: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -602,7 +602,7 @@ open class Control(
     return _ret.asBoolean()
   }
 
-  fun hasFont(name: String, type: String): Boolean {
+  fun hasFont(name: String, type: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -616,7 +616,7 @@ open class Control(
     return _ret.asBoolean()
   }
 
-  fun hasIcon(name: String, type: String): Boolean {
+  fun hasIcon(name: String, type: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -636,7 +636,7 @@ open class Control(
     return _ret.asBoolean()
   }
 
-  fun hasStylebox(name: String, type: String): Boolean {
+  fun hasStylebox(name: String, type: String = ""): Boolean {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(type)
@@ -666,8 +666,8 @@ open class Control(
   fun setAnchor(
     margin: Int,
     anchor: Float,
-    keepMargin: Boolean,
-    pushOppositeAnchor: Boolean
+    keepMargin: Boolean = false,
+    pushOppositeAnchor: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(margin)
@@ -681,7 +681,7 @@ open class Control(
     margin: Int,
     anchor: Float,
     offset: Float,
-    pushOppositeAnchor: Boolean
+    pushOppositeAnchor: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(margin)
@@ -693,8 +693,8 @@ open class Control(
 
   fun setAnchorsAndMarginsPreset(
     preset: Int,
-    resizeMode: Int,
-    margin: Int
+    resizeMode: Int = 0,
+    margin: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(preset)
@@ -703,7 +703,7 @@ open class Control(
     __method_bind.setAnchorsAndMarginsPreset.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun setAnchorsPreset(preset: Int, keepMargins: Boolean) {
+  fun setAnchorsPreset(preset: Int, keepMargins: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(preset)
     _args.append(keepMargins)
@@ -767,7 +767,7 @@ open class Control(
     __method_bind.setFocusPrevious.call(this._handle, _arg, 1)
   }
 
-  fun setGlobalPosition(position: Vector2, keepMargins: Boolean) {
+  fun setGlobalPosition(position: Vector2, keepMargins: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(keepMargins)
@@ -793,8 +793,8 @@ open class Control(
 
   fun setMarginsPreset(
     preset: Int,
-    resizeMode: Int,
-    margin: Int
+    resizeMode: Int = 0,
+    margin: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(preset)
@@ -813,7 +813,7 @@ open class Control(
     __method_bind.setPivotOffset.call(this._handle, _arg, 1)
   }
 
-  fun setPosition(position: Vector2, keepMargins: Boolean) {
+  fun setPosition(position: Vector2, keepMargins: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(position)
     _args.append(keepMargins)
@@ -835,7 +835,7 @@ open class Control(
     __method_bind.setScale.call(this._handle, _arg, 1)
   }
 
-  fun setSize(size: Vector2, keepMargins: Boolean) {
+  fun setSize(size: Vector2, keepMargins: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(size)
     _args.append(keepMargins)
@@ -867,7 +867,7 @@ open class Control(
     __method_bind.setVSizeFlags.call(this._handle, _arg, 1)
   }
 
-  fun showModal(exclusive: Boolean) {
+  fun showModal(exclusive: Boolean = false) {
     val _arg = Variant.new(exclusive)
     __method_bind.showModal.call(this._handle, _arg, 1)
   }

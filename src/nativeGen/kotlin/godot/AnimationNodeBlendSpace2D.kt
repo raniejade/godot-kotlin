@@ -1195,7 +1195,7 @@ open class AnimationNodeBlendSpace2D(
   fun addBlendPoint(
     node: AnimationRootNode,
     pos: Vector2,
-    atIndex: Int
+    atIndex: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(node)
@@ -1208,7 +1208,7 @@ open class AnimationNodeBlendSpace2D(
     x: Int,
     y: Int,
     z: Int,
-    atIndex: Int
+    atIndex: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(x)

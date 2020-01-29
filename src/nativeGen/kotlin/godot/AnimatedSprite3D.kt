@@ -63,7 +63,7 @@ open class AnimatedSprite3D(
     return _ret.asBoolean()
   }
 
-  fun play(anim: String) {
+  fun play(anim: String = "") {
     val _arg = Variant.new(anim)
     __method_bind.play.call(this._handle, _arg, 1)
   }

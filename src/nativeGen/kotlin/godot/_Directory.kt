@@ -82,7 +82,7 @@ open class _Directory(
     return _ret.asInt()
   }
 
-  fun listDirBegin(skipNavigational: Boolean, skipHidden: Boolean): GDError {
+  fun listDirBegin(skipNavigational: Boolean = false, skipHidden: Boolean = false): GDError {
     val _args = VariantArray.new()
     _args.append(skipNavigational)
     _args.append(skipHidden)

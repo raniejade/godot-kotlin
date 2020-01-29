@@ -32,7 +32,7 @@ open class WebSocketClient(
   fun connectToUrl(
     url: String,
     protocols: PoolStringArray,
-    gdMpApi: Boolean
+    gdMpApi: Boolean = false
   ): GDError {
     val _args = VariantArray.new()
     _args.append(url)
@@ -42,7 +42,7 @@ open class WebSocketClient(
     return GDError.from(_ret.asInt())
   }
 
-  fun disconnectFromHost(code: Int, reason: String) {
+  fun disconnectFromHost(code: Int = 1000, reason: String = "") {
     val _args = VariantArray.new()
     _args.append(code)
     _args.append(reason)

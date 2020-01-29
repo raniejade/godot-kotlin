@@ -59,7 +59,7 @@ open class Object(
     target: Object,
     method: String,
     binds: VariantArray,
-    flags: Int
+    flags: Int = 0
   ): GDError {
     val _args = VariantArray.new()
     _args.append(signal)
@@ -200,7 +200,7 @@ open class Object(
     return _ret.asBoolean()
   }
 
-  fun notification(what: Int, reversed: Boolean) {
+  fun notification(what: Int, reversed: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(what)
     _args.append(reversed)

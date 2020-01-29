@@ -241,7 +241,7 @@ open class SkeletonIK(
     __method_bind.setUseMagnet.call(this._handle, _arg, 1)
   }
 
-  fun start(oneTime: Boolean) {
+  fun start(oneTime: Boolean = false) {
     val _arg = Variant.new(oneTime)
     __method_bind.start.call(this._handle, _arg, 1)
   }

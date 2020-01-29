@@ -58,7 +58,7 @@ open class ArrayMesh(
     primitive: Int,
     arrays: VariantArray,
     blendShapes: VariantArray,
-    compressFlags: Int
+    compressFlags: Int = 97280
   ) {
     val _args = VariantArray.new()
     _args.append(primitive)

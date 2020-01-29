@@ -25,7 +25,7 @@ open class AStar(
   fun addPoint(
     id: Int,
     position: Vector3,
-    weightScale: Float
+    weightScale: Float = 1.0f
   ) {
     val _args = VariantArray.new()
     _args.append(id)
@@ -49,7 +49,7 @@ open class AStar(
   fun connectPoints(
     id: Int,
     toId: Int,
-    bidirectional: Boolean
+    bidirectional: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(id)
@@ -138,7 +138,7 @@ open class AStar(
     __method_bind.removePoint.call(this._handle, _arg, 1)
   }
 
-  fun setPointDisabled(id: Int, disabled: Boolean) {
+  fun setPointDisabled(id: Int, disabled: Boolean = true) {
     val _args = VariantArray.new()
     _args.append(id)
     _args.append(disabled)

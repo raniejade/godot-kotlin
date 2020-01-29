@@ -26,7 +26,7 @@ open class EditorSpatialGizmoPlugin(
     __method_bind.addMaterial.call(this._handle, _args.toVariant(), 2)
   }
 
-  fun createHandleMaterial(name: String, billboard: Boolean) {
+  fun createHandleMaterial(name: String, billboard: Boolean = false) {
     val _args = VariantArray.new()
     _args.append(name)
     _args.append(billboard)
@@ -36,8 +36,8 @@ open class EditorSpatialGizmoPlugin(
   fun createIconMaterial(
     name: String,
     texture: Texture,
-    onTop: Boolean,
-    color: Color
+    onTop: Boolean = false,
+    color: Color = Color.rgb(1,1,1,1)
   ) {
     val _args = VariantArray.new()
     _args.append(name)
@@ -50,9 +50,9 @@ open class EditorSpatialGizmoPlugin(
   fun createMaterial(
     name: String,
     color: Color,
-    billboard: Boolean,
-    onTop: Boolean,
-    useVertexColor: Boolean
+    billboard: Boolean = false,
+    onTop: Boolean = false,
+    useVertexColor: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(name)

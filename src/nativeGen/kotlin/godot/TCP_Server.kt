@@ -25,7 +25,7 @@ open class TCP_Server(
     return _ret.asBoolean()
   }
 
-  fun listen(port: Int, bindAddress: String): GDError {
+  fun listen(port: Int, bindAddress: String = "*"): GDError {
     val _args = VariantArray.new()
     _args.append(port)
     _args.append(bindAddress)

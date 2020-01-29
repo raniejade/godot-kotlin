@@ -43,7 +43,7 @@ open class PacketPeer(
     return GDError.from(_ret.asInt())
   }
 
-  fun getVar(allowObjects: Boolean): Variant {
+  fun getVar(allowObjects: Boolean = false): Variant {
     val _arg = Variant.new(allowObjects)
     val _ret = __method_bind.getVar.call(this._handle, _arg, 1)
     return _ret
@@ -60,7 +60,7 @@ open class PacketPeer(
     return GDError.from(_ret.asInt())
   }
 
-  fun putVar(`var`: Variant, fullObjects: Boolean): GDError {
+  fun putVar(`var`: Variant, fullObjects: Boolean = false): GDError {
     val _args = VariantArray.new()
     _args.append(`var`)
     _args.append(fullObjects)

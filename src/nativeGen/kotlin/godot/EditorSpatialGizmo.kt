@@ -33,8 +33,8 @@ open class EditorSpatialGizmo(
   fun addHandles(
     handles: PoolVector3Array,
     material: Material,
-    billboard: Boolean,
-    secondary: Boolean
+    billboard: Boolean = false,
+    secondary: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(handles)
@@ -47,7 +47,7 @@ open class EditorSpatialGizmo(
   fun addLines(
     lines: PoolVector3Array,
     material: Material,
-    billboard: Boolean
+    billboard: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(lines)
@@ -58,7 +58,7 @@ open class EditorSpatialGizmo(
 
   fun addMesh(
     mesh: ArrayMesh,
-    billboard: Boolean,
+    billboard: Boolean = false,
     skeleton: RID,
     material: Material
   ) {
@@ -70,7 +70,7 @@ open class EditorSpatialGizmo(
     __method_bind.addMesh.call(this._handle, _args.toVariant(), 4)
   }
 
-  fun addUnscaledBillboard(material: Material, defaultScale: Float) {
+  fun addUnscaledBillboard(material: Material, defaultScale: Float = 1.0f) {
     val _args = VariantArray.new()
     _args.append(material)
     _args.append(defaultScale)

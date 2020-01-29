@@ -48,7 +48,8 @@ open class _ClassDB(
     return _ret.asInt()
   }
 
-  fun classGetIntegerConstantList(`class`: String, noInheritance: Boolean): PoolStringArray {
+  fun classGetIntegerConstantList(`class`: String, noInheritance: Boolean = false):
+      PoolStringArray {
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
@@ -56,7 +57,7 @@ open class _ClassDB(
     return _ret.asPoolStringArray()
   }
 
-  fun classGetMethodList(`class`: String, noInheritance: Boolean): VariantArray {
+  fun classGetMethodList(`class`: String, noInheritance: Boolean = false): VariantArray {
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
@@ -72,7 +73,7 @@ open class _ClassDB(
     return _ret
   }
 
-  fun classGetPropertyList(`class`: String, noInheritance: Boolean): VariantArray {
+  fun classGetPropertyList(`class`: String, noInheritance: Boolean = false): VariantArray {
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
@@ -88,7 +89,7 @@ open class _ClassDB(
     return _ret.asDictionary()
   }
 
-  fun classGetSignalList(`class`: String, noInheritance: Boolean): VariantArray {
+  fun classGetSignalList(`class`: String, noInheritance: Boolean = false): VariantArray {
     val _args = VariantArray.new()
     _args.append(`class`)
     _args.append(noInheritance)
@@ -107,7 +108,7 @@ open class _ClassDB(
   fun classHasMethod(
     `class`: String,
     method: String,
-    noInheritance: Boolean
+    noInheritance: Boolean = false
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(`class`)

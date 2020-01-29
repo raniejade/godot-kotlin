@@ -62,8 +62,8 @@ open class PopupMenu(
 
   fun addCheckItem(
     label: String,
-    id: Int,
-    accel: Int
+    id: Int = -1,
+    accel: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(label)
@@ -74,8 +74,8 @@ open class PopupMenu(
 
   fun addCheckShortcut(
     shortcut: ShortCut,
-    id: Int,
-    global: Boolean
+    id: Int = -1,
+    global: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(shortcut)
@@ -87,8 +87,8 @@ open class PopupMenu(
   fun addIconCheckItem(
     texture: Texture,
     label: String,
-    id: Int,
-    accel: Int
+    id: Int = -1,
+    accel: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -101,8 +101,8 @@ open class PopupMenu(
   fun addIconCheckShortcut(
     texture: Texture,
     shortcut: ShortCut,
-    id: Int,
-    global: Boolean
+    id: Int = -1,
+    global: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -115,8 +115,8 @@ open class PopupMenu(
   fun addIconItem(
     texture: Texture,
     label: String,
-    id: Int,
-    accel: Int
+    id: Int = -1,
+    accel: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -129,8 +129,8 @@ open class PopupMenu(
   fun addIconShortcut(
     texture: Texture,
     shortcut: ShortCut,
-    id: Int,
-    global: Boolean
+    id: Int = -1,
+    global: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(texture)
@@ -142,8 +142,8 @@ open class PopupMenu(
 
   fun addItem(
     label: String,
-    id: Int,
-    accel: Int
+    id: Int = -1,
+    accel: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(label)
@@ -154,8 +154,8 @@ open class PopupMenu(
 
   fun addRadioCheckItem(
     label: String,
-    id: Int,
-    accel: Int
+    id: Int = -1,
+    accel: Int = 0
   ) {
     val _args = VariantArray.new()
     _args.append(label)
@@ -166,8 +166,8 @@ open class PopupMenu(
 
   fun addRadioCheckShortcut(
     shortcut: ShortCut,
-    id: Int,
-    global: Boolean
+    id: Int = -1,
+    global: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(shortcut)
@@ -176,15 +176,15 @@ open class PopupMenu(
     __method_bind.addRadioCheckShortcut.call(this._handle, _args.toVariant(), 3)
   }
 
-  fun addSeparator(label: String) {
+  fun addSeparator(label: String = "") {
     val _arg = Variant.new(label)
     __method_bind.addSeparator.call(this._handle, _arg, 1)
   }
 
   fun addShortcut(
     shortcut: ShortCut,
-    id: Int,
-    global: Boolean
+    id: Int = -1,
+    global: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(shortcut)
@@ -196,7 +196,7 @@ open class PopupMenu(
   fun addSubmenuItem(
     label: String,
     submenu: String,
-    id: Int
+    id: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(label)
@@ -437,7 +437,7 @@ open class PopupMenu(
   fun setItemShortcut(
     idx: Int,
     shortcut: ShortCut,
-    global: Boolean
+    global: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(idx)

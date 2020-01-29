@@ -29,7 +29,7 @@ open class PackedScene(
     return _ret.asObject(::SceneState)!!
   }
 
-  fun instance(editState: Int): Node {
+  fun instance(editState: Int = 0): Node {
     val _arg = Variant.new(editState)
     val _ret = __method_bind.instance.call(this._handle, _arg, 1)
     return _ret.asObject(::Node)!!

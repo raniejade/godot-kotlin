@@ -318,7 +318,7 @@ open class TileMap(
     return _ret.asBoolean()
   }
 
-  fun mapToWorld(mapPosition: Vector2, ignoreHalfOfs: Boolean): Vector2 {
+  fun mapToWorld(mapPosition: Vector2, ignoreHalfOfs: Boolean = false): Vector2 {
     val _args = VariantArray.new()
     _args.append(mapPosition)
     _args.append(ignoreHalfOfs)
@@ -330,10 +330,10 @@ open class TileMap(
     x: Int,
     y: Int,
     tile: Int,
-    flipX: Boolean,
-    flipY: Boolean,
-    transpose: Boolean,
-    autotileCoord: Vector2
+    flipX: Boolean = false,
+    flipY: Boolean = false,
+    transpose: Boolean = false,
+    autotileCoord: Vector2 = Vector2.new(0, 0)
   ) {
     val _args = VariantArray.new()
     _args.append(x)
@@ -354,9 +354,9 @@ open class TileMap(
   fun setCellv(
     position: Vector2,
     tile: Int,
-    flipX: Boolean,
-    flipY: Boolean,
-    transpose: Boolean
+    flipX: Boolean = false,
+    flipY: Boolean = false,
+    transpose: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(position)
@@ -456,7 +456,7 @@ open class TileMap(
     __method_bind.updateBitmaskArea.call(this._handle, _arg, 1)
   }
 
-  fun updateBitmaskRegion(start: Vector2, end: Vector2) {
+  fun updateBitmaskRegion(start: Vector2 = Vector2.new(0, 0), end: Vector2 = Vector2.new(0, 0)) {
     val _args = VariantArray.new()
     _args.append(start)
     _args.append(end)

@@ -97,9 +97,9 @@ open class KinematicBody(
 
   fun moveAndCollide(
     relVec: Vector3,
-    infiniteInertia: Boolean,
-    excludeRaycastShapes: Boolean,
-    testOnly: Boolean
+    infiniteInertia: Boolean = true,
+    excludeRaycastShapes: Boolean = true,
+    testOnly: Boolean = false
   ): KinematicCollision {
     val _args = VariantArray.new()
     _args.append(relVec)
@@ -112,11 +112,11 @@ open class KinematicBody(
 
   fun moveAndSlide(
     linearVelocity: Vector3,
-    floorNormal: Vector3,
-    stopOnSlope: Boolean,
-    maxSlides: Int,
-    floorMaxAngle: Float,
-    infiniteInertia: Boolean
+    floorNormal: Vector3 = Vector3.new(0, 0, 0),
+    stopOnSlope: Boolean = false,
+    maxSlides: Int = 4,
+    floorMaxAngle: Float = 0.785398f,
+    infiniteInertia: Boolean = true
   ): Vector3 {
     val _args = VariantArray.new()
     _args.append(linearVelocity)
@@ -132,11 +132,11 @@ open class KinematicBody(
   fun moveAndSlideWithSnap(
     linearVelocity: Vector3,
     snap: Vector3,
-    floorNormal: Vector3,
-    stopOnSlope: Boolean,
-    maxSlides: Int,
-    floorMaxAngle: Float,
-    infiniteInertia: Boolean
+    floorNormal: Vector3 = Vector3.new(0, 0, 0),
+    stopOnSlope: Boolean = false,
+    maxSlides: Int = 4,
+    floorMaxAngle: Float = 0.785398f,
+    infiniteInertia: Boolean = true
   ): Vector3 {
     val _args = VariantArray.new()
     _args.append(linearVelocity)
@@ -165,7 +165,7 @@ open class KinematicBody(
   fun testMove(
     from: Transform,
     relVec: Vector3,
-    infiniteInertia: Boolean
+    infiniteInertia: Boolean = true
   ): Boolean {
     val _args = VariantArray.new()
     _args.append(from)

@@ -41,7 +41,7 @@ open class AnimationNodeBlendTree(
   fun addNode(
     name: String,
     node: AnimationNode,
-    position: Vector2
+    position: Vector2 = Vector2.new(0, 0)
   ) {
     val _args = VariantArray.new()
     _args.append(name)

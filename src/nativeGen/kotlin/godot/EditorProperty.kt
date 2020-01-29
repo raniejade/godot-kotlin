@@ -74,8 +74,8 @@ open class EditorProperty(
   fun emitChanged(
     property: String,
     value: Variant,
-    field: String,
-    changing: Boolean
+    field: String = "",
+    changing: Boolean = false
   ) {
     val _args = VariantArray.new()
     _args.append(property)

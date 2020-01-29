@@ -40,9 +40,9 @@ open class Curve3D(
 
   fun addPoint(
     position: Vector3,
-    `in`: Vector3,
-    out: Vector3,
-    atPosition: Int
+    `in`: Vector3 = Vector3.new(0, 0, 0),
+    out: Vector3 = Vector3.new(0, 0, 0),
+    atPosition: Int = -1
   ) {
     val _args = VariantArray.new()
     _args.append(position)
@@ -130,7 +130,7 @@ open class Curve3D(
     return _ret.asVector3()
   }
 
-  fun interpolateBaked(offset: Float, cubic: Boolean): Vector3 {
+  fun interpolateBaked(offset: Float, cubic: Boolean = false): Vector3 {
     val _args = VariantArray.new()
     _args.append(offset)
     _args.append(cubic)
@@ -138,7 +138,7 @@ open class Curve3D(
     return _ret.asVector3()
   }
 
-  fun interpolateBakedUpVector(offset: Float, applyTilt: Boolean): Vector3 {
+  fun interpolateBakedUpVector(offset: Float, applyTilt: Boolean = false): Vector3 {
     val _args = VariantArray.new()
     _args.append(offset)
     _args.append(applyTilt)
@@ -200,7 +200,7 @@ open class Curve3D(
     __method_bind.setUpVectorEnabled.call(this._handle, _arg, 1)
   }
 
-  fun tessellate(maxStages: Int, toleranceDegrees: Float): PoolVector3Array {
+  fun tessellate(maxStages: Int = 5, toleranceDegrees: Float = 4.0f): PoolVector3Array {
     val _args = VariantArray.new()
     _args.append(maxStages)
     _args.append(toleranceDegrees)

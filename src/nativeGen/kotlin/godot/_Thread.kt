@@ -34,7 +34,7 @@ open class _Thread(
     instance: Object,
     method: String,
     userdata: Variant,
-    priority: Int
+    priority: Int = 1
   ): GDError {
     val _args = VariantArray.new()
     _args.append(instance)

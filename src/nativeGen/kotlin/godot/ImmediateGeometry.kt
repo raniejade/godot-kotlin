@@ -27,7 +27,7 @@ open class ImmediateGeometry(
     lats: Int,
     lons: Int,
     radius: Float,
-    addUv: Boolean
+    addUv: Boolean = true
   ) {
     val _args = VariantArray.new()
     _args.append(lats)
